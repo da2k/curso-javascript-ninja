@@ -1,4 +1,4 @@
-[![Curso Ninja Javascript - Da2k](https://cloud.githubusercontent.com/assets/487669/6222054/86f1f8d6-b634-11e4-89b3-104d9c1330e6.jpg)](http://www.eventick.com.br/curso-javascript-ninja)
+[![Curso Ninja Javascript - Da2k](https://cloud.githubusercontent.com/assets/487669/6239059/58b94ab0-b6e7-11e4-8e5d-a5f2740870fd.png)](http://www.eventick.com.br/curso-javascript-ninja)
 
 # Curso Javascript Ninja
 
