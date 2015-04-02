@@ -11,7 +11,7 @@ myvar = 10;
 var soma = 15 + 8; // soma = 23
 
 // Atribua à variável `soma` todo o valor dela, somando 1, usando o operador de soma abreviado.
-soma += 1; // soma = 24
+soma++; // soma = 24
 
 // Atribua à variável `soma` todo o valor dela, multiplicando por 3, usando o operador de multiplicação abreviado.
 soma *= 3; // soma = 72
