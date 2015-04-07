@@ -25,7 +25,7 @@ Onde VALOR é o novo valor da variável.
 function addValue(){
 	noValue = 10;
 	return 'O valor da variável agora é '+noValue+'.
-			Onde '+noValue+' é o novo valor da variável.'
+		Onde '+noValue+' é o novo valor da variável.'
 }
 
 // Invoque a função criada acima.
@@ -84,7 +84,6 @@ function outraQualquer(x, y, z){
 	}else {
 		return false;
 	}
-
 	return null;
 }
 
