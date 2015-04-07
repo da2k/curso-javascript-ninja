@@ -24,8 +24,7 @@ Onde VALOR é o novo valor da variável.
 */
 function addValue(){
 	noValue = 10;
-	return 'O valor da variável agora é '+noValue+'.
-			Onde '+noValue+' é o novo valor da variável.'
+	return 'O valor da variável agora é '+noValue+'.';
 }
 
 // Invoque a função criada acima.
@@ -33,8 +32,7 @@ addValue();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
-	'O valor da variavel agora é 10. 
-	Onde 10 é o novo valor da variavel.'
+	'O valor da variavel agora é 10.'
 */
 
 /*
@@ -45,7 +43,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function qualquer(x, y, z){
-	if(x == null && y == null && z == null){
+	if(x === undefined || y === undefined || z === undefined){
 		return 'Preencha todos os valores corretamente!';
 	}else{
 		return (x * y * z) + 2;
@@ -74,17 +72,16 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function outraQualquer(x, y, z){
-	if(x != null){
-		if(y != null && z == null){
+	if(x != undefined){
+		if(y != undefined && z === undefined){
 			return x + y;
-		}else if(z != null){
+		}else if(z != undefined){
 			return (x + y) / z;
 		}
 		return x;
 	}else {
 		return false;
 	}
-
 	return null;
 }
 
