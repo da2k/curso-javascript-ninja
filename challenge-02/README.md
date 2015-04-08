@@ -86,13 +86,9 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
--01
 function valores(valor1,valor2, valor3){
-
-
   //com um argumento 
   if(valor1 && !valor2 && !valor3){
-  
     return valor1; 
   }
   //RESULTADO 1
@@ -100,7 +96,6 @@ function valores(valor1,valor2, valor3){
   //com dois argumentos 
   else if(valor1 && valor2 && !valor3){
     return valor1+valor2;
-  
   }
   //RESULTADO 3
   /*=-------------------------*/
@@ -116,11 +111,9 @@ function valores(valor1,valor2, valor3){
   }
   //RESULTADO false
   /*=-------------------------*/
-  
   else{
     return null;
   }
-
 
 }
 
