@@ -8,15 +8,10 @@ function soma( x,y ){
 	return  x + y;
 }
 soma (15, 8);
-<<<<<<< HEAD
 
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
 
-=======
-
-// Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
->>>>>>> origin/chanllenge-01
 var total = soma (15, 8)+5;
 
 // Qual o valor atualizado dessa variável?
@@ -35,15 +30,9 @@ function retornavalor(semvalor){
   return semvalor;
 	
 }
-<<<<<<< HEAD
-
-// Invoque a função criada acima.
-retornavalor("valor");
-=======
 // Invoque a função criada acima.
 retornavalor("valor");
 
->>>>>>> origin/chanllenge-01
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
@@ -60,10 +49,7 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/chanllenge-01
 function tree( w, z, s){
   
   if( !w || !z || !s ){
@@ -75,22 +61,14 @@ function tree( w, z, s){
 	}
 
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/chanllenge-01
 
 // Invoque a função criada acima, passando só dois números como argumento.
 tree( 2, 4, '' );
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-<<<<<<< HEAD
 //como o valor do terceiro é nulo, aparece a mensagem "Preencha todos os valores corretamente!".
 Preencha todos os valores corretamente!
 
-=======
-Preencha todos os valores corretamente!
->>>>>>> origin/chanllenge-01
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 tree( 1, 2, 3 );
@@ -108,10 +86,7 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/chanllenge-01
+-01
 function valores(valor1,valor2, valor3){
 
 
@@ -161,8 +136,5 @@ valores(1,2,'');  // resultado 3
 valores(3,9,5); // resultado 4
 
 //com nenhum argumento
-<<<<<<< HEAD
 valores('','',''); // resultado false
-=======
-valores('','',''); // resultado false
->>>>>>> origin/chanllenge-01
+
