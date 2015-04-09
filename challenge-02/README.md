@@ -22,13 +22,13 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function addvalor(x) {
-	valor = x;
-	return ("O valor da variavel é " + valor);
+function addvalor() {
+	valor = 5;
+	return "O valor da variavel é " + valor;
 }
 
 // Invoque a função criada acima.
-addvalor(5)
+addvalor();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /* 'O valor da variavel é 5' */
@@ -41,21 +41,21 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function tresArg(a, b, c) {
-	if (a && b && c !== undefined) {
+	if (a !== undefined && b !== undefined && c !== undefined) {
 		return a * b * c + 2;
-	} {
-		return ("Preencha todos os valores corretamente!");
+	} else {
+		return "Preencha todos os valores corretamente!";
 	}
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
-tresArg(1, 2)
+tresArg(1, 2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 // 'Preencha todos os valores corretamente!'
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-tresArg(1, 2, 3)
+tresArg(1, 2, 3);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 // 8
@@ -70,13 +70,13 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function tres(a, b, c){
-	if(a !== null && b == null && c == null){
+	if(a !== undefined && b === undefined && c === undefined){
 		return a;
-	} else if(a !== null && b !== null && c == null){
+	} else if(a !== undefined && b !== undefined && c === undefined){
 		return a + b;
-	} else if(a !== && b !== && c !== null){
+	} else if(a !== undefined && b !== undefined && c !== undefined){
 		return (a + b) / c;
-	} else if (a == null && b == null && c == null){
+	} else if (a === undefined && b === undefined && c === undefined){
 		return false
 	} else {
 		return null
@@ -85,7 +85,7 @@ function tres(a, b, c){
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 ?
-tres() // undefined
-tres(1) // 1
-tres(1, 2) // 3
-tres(1, 2, 3) // 1
+tres(); // false
+tres(1); // 1
+tres(1, 2); // 3
+tres(1, 2, 3); // 1
