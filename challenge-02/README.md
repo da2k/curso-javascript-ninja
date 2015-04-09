@@ -72,10 +72,10 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function outraQualquer(x, y, z){
-	if(x != undefined){
-		if(y != undefined && z === undefined){
+	if(x !== undefined){
+		if(y !== undefined && z === undefined){
 			return x + y;
-		}else if(z != undefined){
+		}else if(z !== undefined){
 			return (x + y) / z;
 		}
 		return x;
