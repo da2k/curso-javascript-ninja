@@ -9,7 +9,7 @@ function soma (x, y) {
 }
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-var soma = soma(10, 5) + 5;
+var resultado = soma(10, 5) + 5;
 
 // Qual o valor atualizado dessa variável?
 20
@@ -24,7 +24,7 @@ Onde VALOR é o novo valor da variável.
 */
 function adcValor () {
 	semValor = 5;
-	return 'O valor da variável agora é: ', semValor;
+	return 'O valor da variável agora é: ' +semValor;
 }
 
 // Invoque a função criada acima.
@@ -43,7 +43,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function args (x, y, z) {
-	if (x == null || y == null || z == null) {
+	if (x === undefined || y === undefined || z === undefined) {
 		return 'Preencha todos os valores corretamente!';
 	} else {
 		return x * y * z + 2;
@@ -69,16 +69,19 @@ Crie uma função com as seguintes características:
 3. Se dois argumentos forem passados, retorne a soma dos dois argumentos.
 4. Se todos os argumentos forem passados, retorne a soma do primeiro com o segundo, e o resultado, dividido pelo terceiro.
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
+6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function argumentos (x, y, z) {
-	if (x != null && y == null && z == null) {
+	if (x !== undefined && y === undefined && z === undefined) {
 		return x;
-	} else if (x != null && y != null && z == null) {
+	} else if (x !== undefined && y !== undefined && z === undefined) {
 		return x + y;
-	} else if (x != null && y != null && z != null) {
+	} else if (x !== undefined && y !== undefined && z !== undefined) {
 		return (x + y) / z;
-	} else {
+	} else if (x === undefined && y === undefined && z === undefined) {
 		return false;
+	} else {
+		return null;
 	}
 }
 
