@@ -23,7 +23,7 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 function valor_texto(valor) {
-	return 'O valor da variável agora é ' + valor + '. \nOnde ' + valor + ' é o novo valor da variável.';
+	return 'O valor da variável agora é ' + valor;
 }
 
 // Invoque a função criada acima.
@@ -31,8 +31,7 @@ valor_texto(50);
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
-O valor da variável agora é ' + valor + '.
-Onde ' + valor + ' é o novo valor da variável.
+O valor da variável agora é 50
 */
 
 /*
@@ -82,7 +81,7 @@ function soma_com_condicao( primeiro_valor, segundo_valor, termeiro_valor ) {
 	} else if ( primeiro_valor === undefined && segundo_valor === undefined && termeiro_valor === undefined ) {
 		var resultado = false;
 	} else {
-		var resultado = NULL;
+		var resultado = null;
 	}
 	return resultado;
 }
