@@ -77,9 +77,9 @@ function tres(a, b, c){
 	} else if(a !== undefined && b !== undefined && c !== undefined){
 		return (a + b) / c;
 	} else if (a === undefined && b === undefined && c === undefined){
-		return false
+		return false;
 	} else {
-		return null
+		return null;
 	}
 }
 
