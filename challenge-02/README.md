@@ -94,7 +94,7 @@ function values(x,y,z){
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 ?
 ```
-values(); // False 
-values(5); // 5
-values(5,5); // 10 
-values(10,10,2); // 10
+values(); // False.
+values(5); // 5.
+values(5,5); // 10. 
+values(10,10,2); // 10.
