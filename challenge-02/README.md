@@ -7,12 +7,11 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 function soma( x,y ){
 	return  x + y;
 }
-soma (15, 8);
 
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
 
-var total = soma (15, 8)+5;
+var total =soma(15, 8) + 5;
 
 // Qual o valor atualizado dessa variável?
 28
@@ -25,22 +24,19 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function retornavalor(semvalor){
-	var semvalor;
-  return semvalor;
-	
+function retornavalor(){
+  return retornavalor;
 }
+
 // Invoque a função criada acima.
-retornavalor("valor");
+retornavalor();
 
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
-Fiz uma função chamada retornavalor com um argumento semvalor. 
-Abaixo coloquei a varíavel semvalor. E retornei ele.
-*/
-
 valor
+
+*/
 
 /*
 Crie uma função com as seguintes características:
@@ -63,19 +59,18 @@ function tree( w, z, s){
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
-tree( 2, 4, '' );
+tree( 2, 4 );
+//No teste ele considera '' vazio. No console ele não considerou argumento ''. 
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-//como o valor do terceiro é nulo, aparece a mensagem "Preencha todos os valores corretamente!".
-Preencha todos os valores corretamente!
+//"Preencha todos os valores corretamente!".
 
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 tree( 1, 2, 3 );
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-//entra na condição do else logo os valores multiplicaram e depois soma com 2.
-8
+//8
 
 /*
 Crie uma função com as seguintes características:
@@ -120,14 +115,19 @@ function valores(valor1,valor2, valor3){
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 //com um argumento 
-valores(1,'',''); // Resultado 1
+valores(1); // Resultado 1
+//No teste ele considera '' vazio. No console ele não considerou argumento ''. 
+
 
 //com dois argumentos
-valores(1,2,'');  // resultado 3
+valores(1,2);  // resultado 3
+//No teste ele considera '' vazio. No console ele não considerou argumento ''. 
+
 
 //com tres argumentos
 valores(3,9,5); // resultado 4
 
 //com nenhum argumento
-valores('','',''); // resultado false
+valores(); // resultado false
+//No teste ele considera '' vazio. No console ele não considerou argumento ''. 
 
