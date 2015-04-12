@@ -22,7 +22,7 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function adicionaValor(numero){
+function adicionaValor(){
 	numero = 30;
 	return "O valor da variavel agora é " + numero;
 }
@@ -72,27 +72,22 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function testaArgumentos(a, b, c){
-	if(a != null && b == null && c == null){
+	if(a !== undefined && b === undefined && c === undefined){
 		return a;
-	} else if(a == null && b != null && c == null){
-		return b;
-	} else if(a == null && b == null && c != null){
-		return c;
-	} else if(a != null && b != null && c == null){
+	} else if(a !== undefined && b !== undefined && c === undefined){
 		return a + b;
-	} else if(a != null && b != null && c != null){
+	} else if(a !== undefined && b !== undefined && c !== undefined){
 		return (a + b) / c;
-	} else if(a == null && b == null && c == null){
+	} else if(a === undefined && b === undefined && c === undefined){
 		return false;
+	} else {
+	return undefined;
 	}
-} else {
-	return null;
-}
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 testaArgumentos(5); // 5
-testaArgumentos(5, 2); // 10
+testaArgumentos(5, 2); // 7
 testaArgumentos(10, 5, 3); // 5 
 testaArgumentos(); // false
 ```
