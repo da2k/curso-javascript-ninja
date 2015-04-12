@@ -9,6 +9,7 @@ Declarar uma variável `pessoa`, que receba suas informações pessoais.
 As propriedades e tipos de valores para cada propriedade desse objeto devem ser:
 - `nome` - String
 - `sobrenome` - String
+- `sexo` - String
 - `idade` - Number
 - `altura` - Number
 - `peso` - Number
@@ -139,6 +140,8 @@ retornar a string:
 - "Olá, eu sou o [NOME COMPLETO], tenho [IDADE] anos, [ALTURA], meu peso é [PESO] e, só hoje, eu já caminhei [CAMINHOU QUANTOS METROS] metros!"
 
 Só que, antes de retornar a string, você vai fazer algumas validações:
+- Se o `sexo` de `pessoa` for "Feminino", a frase acima, no início da
+apresentação, onde diz "eu sou o", deve mostrar "a" no lugar do "o";
 - Se a idade for `1`, a frase acima, na parte que fala da idade, vai mostrar a
 palavra "ano" ao invés de "anos", pois é singular;
 - Se a quantidade de metros caminhados for igual a `1`, então a palavra que
