@@ -22,16 +22,16 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function newvalor(novoValor){
-	newvar = novoValor;
+function newvalor(){
+	newvar = 7;
 	return 'O valor da variável agora é ' + newvar;
 }
 
 // Invoque a função criada acima.
-newvalor(5);
+newvalor();
 
 // Qual o retorno da função? (Use comentários de bloco).
-/* O valor da variavel agora é 5 */
+/* O valor da variavel agora é 7 */
 
 /*
 Crie uma função com as seguintes características:
@@ -40,7 +40,7 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-function multiplicação(x, y, z){
+function multiplicacao(x, y, z){
 	if(x === undefined || y === undefined || z === undefined){
 		return 'Preencha todos os valores corretamente';
 	} else {
@@ -49,13 +49,13 @@ function multiplicação(x, y, z){
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
-multiplicação(2, 3);
+multiplicacao(2, 3);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 //Preencha todos os valores corretamente
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-multiplicação(2, 3, 4)
+multiplicacao(2, 3, 4);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 26
