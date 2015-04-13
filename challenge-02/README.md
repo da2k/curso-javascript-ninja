@@ -24,13 +24,15 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
+
 function retornavalor(){
-  return retornavalor;
+	semvalor = 10;
+	return 'o valor da variável agora é' +retornavalor;
 }
 //não entendi o que é para fazer aqui.
 
 // Invoque a função criada acima.
-retornavalor();
+retornavalor(10);
 
 
 // Qual o retorno da função? (Use comentários de bloco).
