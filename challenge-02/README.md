@@ -35,10 +35,9 @@ retornavalor();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
-valor
+"o valor da variável agora é: 10"
 
 */
-//não entendi o que é para fazer aqui.
 
 /*
 Crie uma função com as seguintes características:
