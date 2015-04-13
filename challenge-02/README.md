@@ -27,13 +27,11 @@ Onde VALOR é o novo valor da variável.
 
 function retornavalor(){
 	semvalor = 10;
-	return 'o valor da variável agora é' +retornavalor;
+  return 'o valor da variável agora é: ' +semvalor;
 }
-//não entendi o que é para fazer aqui.
 
 // Invoque a função criada acima.
-retornavalor(10);
-
+retornavalor();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
