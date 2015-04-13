@@ -27,6 +27,7 @@ Onde VALOR é o novo valor da variável.
 function retornavalor(){
   return retornavalor;
 }
+//não entendi o que é para fazer aqui.
 
 // Invoque a função criada acima.
 retornavalor();
@@ -37,6 +38,7 @@ retornavalor();
 valor
 
 */
+//não entendi o que é para fazer aqui.
 
 /*
 Crie uma função com as seguintes características:
