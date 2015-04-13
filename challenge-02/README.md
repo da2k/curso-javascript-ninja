@@ -22,12 +22,13 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function valor_texto(valor) {
+function valor_texto() {
+	var valor = 50;
 	return 'O valor da variável agora é ' + valor;
 }
 
 // Invoque a função criada acima.
-valor_texto(50);
+valor_texto();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
