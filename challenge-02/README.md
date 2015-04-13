@@ -22,8 +22,8 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 function addValor(){
-	valor = 5
- 	return 'O valor da variavel agora e' + valor;
+	valor = 5;
+ 	return 'O valor da variavel agora é ' + valor;
 }
 
 // Invoque a função criada acima.
