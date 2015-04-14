@@ -4,15 +4,15 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-function multiplicar(x, y) {
-	return x * y;
+function somar(x, y) {
+	return x + y;
 }
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-var soma = multiplicar(10, 2) + 5;
+var soma = somar(10, 2) + 5;
 
 // Qual o valor atualizado dessa variável?
-25
+17
 
 // Declare uma nova variável, sem valor.
 var qualquer;
