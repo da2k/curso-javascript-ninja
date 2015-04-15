@@ -119,7 +119,6 @@ pessoa.mostrarAltura(); // Minha altura é 1.81m.
 /*
 Faça a `pessoa` fazer 3 aniversários.
 */
-
 pessoa.fazerAniversario();
 pessoa.fazerAniversario();
 pessoa.fazerAniversario();
