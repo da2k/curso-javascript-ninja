@@ -45,7 +45,6 @@ function nova(x, y, z){
 		"Preencha todos os valores corretamente!"
 	}
 	return x * y * z;
-	
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
