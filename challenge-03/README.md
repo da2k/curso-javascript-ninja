@@ -16,8 +16,17 @@ As propriedades e tipos de valores para cada propriedade desse objeto devem ser:
 - `andando` - Boolean - recebe "falso" por padrão
 - `caminhouQuantosMetros` - Number - recebe "zero" por padrão
 */
-var pessoa = { nome: 'Silvio', sobrenome: 'Coelho', sexo: 'Masculino', idade: 30, altura: 1.75, peso: 72, andando: false, caminhouQuantosMetros: 0}
-
+var pessoa = { 
+	nome: 'Silvio', 
+	sobrenome: 'Coelho', 
+	sexo: 'Masculino', 
+	idade: 30, 
+	altura: 1.75, 
+	peso: 72, 
+	andando: false, 
+	caminhouQuantosMetros: 0
+};
+// assim?
 /*
 Adicione um método ao objeto `pessoa` chamado `fazerAniversario`. O método deve
 alterar o valor da propriedade `idade` dessa pessoa, somando `1` a cada vez que
@@ -54,7 +63,7 @@ Crie um método chamado `nomeCompleto`, que retorne a frase:
 - "Olá! Meu nome é [NOME] [SOBRENOME]!"
 */
 pessoa.nomeCompleto = function() {
-	return "Olá! Meu nome é " + pessoa.nome + " " + pessoa.sobrenome + "!";
+	return 'Olá! Meu nome é ' + pessoa.nome + ' ' + pessoa.sobrenome + '!';
 }
 
 /*
@@ -62,7 +71,7 @@ Crie um método chamado `mostrarIdade`, que retorne a frase:
 - "Olá, eu tenho [IDADE] anos!"
 */
 pessoa.mostrarIdade = function() {
-	return "Olá! eu tenho " + pessoa.idade + " anos!";
+	return 'Olá! eu tenho ' + pessoa.idade + ' anos!';
 }
 
 /*
@@ -70,7 +79,7 @@ Crie um método chamado `mostrarPeso`, que retorne a frase:
 - "Eu peso [PESO]Kg."
 */
 pessoa.mostrarPeso = function() {
-	return "Eu peso " + pessoa.peso + "Kg.";
+	return 'Eu peso ' + pessoa.peso + 'Kg.';
 }
 
 /*
@@ -78,7 +87,7 @@ Crie um método chamado `mostrarAltura` que retorne a frase:
 - "Minha altura é [ALTURA]m."
 */
 pessoa.mostrarAltura = function() {
-	return "Minha altura é " + pessoa.altura + "m";
+	return 'Minha altura é ' + pessoa.altura + 'm';
 }
 
 /*
@@ -149,7 +158,7 @@ pessoa.andando; // false
 Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
 inline ao lado da instrução para mostrar a resposta retornada)
 */
-pessoa.caminhouQuantosMetros; // 15
+pessoa.caminhouQuantosMetros; // 30
 
 /*
 Agora vamos deixar a brincadeira um pouco mais divertida! :D
@@ -169,21 +178,21 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.aprensentacao = function() {
-	var sexo = "eu sou o"
-	var idade = "anos"
-	var metros = "metros"
-	if ( pessoa.sexo === "Feminino" ) {
-		sexo = "eu sou a";
-	} { }
+	var sexo = 'eu sou o';
+	var idade = 'anos';
+	var metros = 'metros';
+	if ( pessoa.sexo === 'Feminino' ) {
+		sexo = 'eu sou a';
+	}
 	if ( pessoa.idade === 1 ) {
-		idade = "ano";
-	} { }
+		idade = 'ano';
+	} 
 	if ( pessoa.metros === 1 ) {
-		idade = "metro";
-	} { }
-	return "Olá, " + sexo + " " + pessoa.nome + " " + pessoa.sobrenome +", tenho " + pessoa.idade + " " + idade + ", " + pessoa.altura + ", meu peso é " + pessoa.peso + "kg e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " " + metros +"!";
+		idade = 'metro';
+	} 
+	return 'Olá, ' + sexo + ' ' + pessoa.nome + ' ' + pessoa.sobrenome +', tenho ' + pessoa.idade + " " + idade + ', ' + pessoa.altura + ', meu peso é ' + pessoa.peso + 'kg e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' ' + metros +'!';
 }
 
 // Agora, apresente-se ;)
 ?
-pessoa.aprensentação(); // "Olá, eu sou o Silvio Coelho, tenho 33 anos, 1.75, meu peso é 72kg e, só hoje, eu já caminhei 30 metros!"
+pessoa.aprensentacao(); // "Olá, eu sou o Silvio Coelho, tenho 33 anos, 1.75, meu peso é 72kg e, só hoje, eu já caminhei 30 metros!"
