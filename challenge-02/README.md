@@ -21,8 +21,8 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 function addValue() { 
-  novar = 'O valor da variável agora é VALOR.';
-  return novar;                    
+  novar = 25;
+  return 'O valor da variável agora é ' + novar;                    
 
  }
 
@@ -69,7 +69,9 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `undefined`.
 */
 function threeArg2(x, y, z) {
-  if(x === undefined && y === undefined && z !== undefined) {
+  if( x === undefined && y === undefined && z === undefined) {
+    return false;
+  } else if(x === undefined && y === undefined && z !== undefined) {
     return z;
   } else if(x === undefined && z === undefined && y !== undefined) {
       return y;
@@ -83,8 +85,6 @@ function threeArg2(x, y, z) {
       return x + y;
   } else if(x !== undefined && y !== undefined && z!== undefined) {
       return (x + y) / z;
-  } else if( x === undefined && y === undefined && z === undefined) {
-      return false;
   } else {
       return undefined; 
   }
