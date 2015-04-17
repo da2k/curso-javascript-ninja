@@ -71,17 +71,9 @@ Crie uma função com as seguintes características:
 function threeArg2(x, y, z) {
   if( x === undefined && y === undefined && z === undefined) {
     return false;
-  } else if(x === undefined && y === undefined && z !== undefined) {
-    return z;
-  } else if(x === undefined && z === undefined && y !== undefined) {
-      return y;
-  } else if(y === undefined && z === undefined && x !== undefined) {
-      return x;
-  } else if(y === undefined) {
-      return x + z;
-  } else if(x === undefined) {
-      return y + z;
-  } else if(z === undefined) {
+  } else if(x !=== undefined && y === undefined && z === undefined) {
+    return x;
+  } else if(x !=== undefined && !y === undefined && z === undefined) {
       return x + y;
   } else if(x !== undefined && y !== undefined && z!== undefined) {
       return (x + y) / z;
