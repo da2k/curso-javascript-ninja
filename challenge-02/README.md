@@ -4,9 +4,9 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-	function soma(x, y){
-		return x + y;
-	}
+function soma(x, y){
+return x + y;
+}
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
 	var x = soma(5, 5) + 5;
@@ -41,10 +41,12 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function nova(x, y, z){
-	if(x == undefined || y == undefined || z == undefined){
-		"Preencha todos os valores corretamente!"
+	if(x === undefined || y === undefined || z === undefined){
+		return "Preencha todos os valores corretamente!"
 	}
-	return x * y * z;
+	else{
+	return (x * y * z) + 2;
+}
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
@@ -54,7 +56,7 @@ nova(5, 5);
 /* Preencha todos os valores corretamente! */
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-nova(1, 1, 5,);
+nova(1, 1, 5);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 /* 5 */
@@ -68,10 +70,28 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-function myfunction(a, b, c){
-	
+function myfunction(x, y, z){
+	if(x != undefined && y === undefined && z === undefined){
+	return x;
+}
+else if(x != undefined && y != undefined && z === undefined){
+	return x + y;
+}
+else if(x != undefined && y != undefined && z != undefined){
+	return (x + y) / z;
+}
+else if(x === undefined && y === undefined && z === undefined){
+	return false;
+}
+else{
+	return null;
+}
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+myfunction(); //false
+myfunction(10); //10
+myfunction(10, 10); //20
+myfunction(10, 10, 2); //10
+
 ```
