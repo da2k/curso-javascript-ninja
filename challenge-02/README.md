@@ -9,29 +9,29 @@ return x + y;
 }
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-	var x = soma(5, 5) + 5;
+var x = soma(5, 5) + 5;
 
 // Qual o valor atualizado dessa variável?
-	15
+15
 
 // Declare uma nova variável, sem valor.
-	var valor;
+var valor;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-	function chamada(){
-		valor = 10;
-		return "O valor da variável agora é " + valor;
-	}
+function chamada(){
+	valor = 10;
+	return "O valor da variável agora é " + valor;
+}
 
 // Invoque a função criada acima.
-	chamada();
+chamada();
 
 // Qual o retorno da função? (Use comentários de bloco).
-	/* O valor da variável agora é 10 */
+/* O valor da variável agora é 10 */
 
 /*
 Crie uma função com as seguintes características:
@@ -41,10 +41,10 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function nova(x, y, z){
-	if(x === undefined || y === undefined || z === undefined){
-		return "Preencha todos os valores corretamente!"
-	}
-	else{
+if(x === undefined || y === undefined || z === undefined){
+	return "Preencha todos os valores corretamente!"
+}
+else{
 	return (x * y * z) + 2;
 }
 }
@@ -71,13 +71,13 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function myfunction(x, y, z){
-	if(x != undefined && y === undefined && z === undefined){
+if(x !== undefined && y === undefined && z === undefined){
 	return x;
 }
-else if(x != undefined && y != undefined && z === undefined){
+else if(x !== undefined && y !== undefined && z === undefined){
 	return x + y;
 }
-else if(x != undefined && y != undefined && z != undefined){
+else if(x !== undefined && y !== undefined && z !== undefined){
 	return (x + y) / z;
 }
 else if(x === undefined && y === undefined && z === undefined){
