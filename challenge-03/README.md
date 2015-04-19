@@ -86,7 +86,7 @@ Agora vamos brincar um pouco com o objeto criado:
 Qual o nome completo da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.nomeCompleto(); // 'José Augusto'
+pessoa.nomeCompleto(); // 'Olá, meu nome é José Augusto'
 
 /*
 Qual a idade da pessoa? (Use a instrução para responder e comentários
@@ -170,8 +170,22 @@ deve conter no retorno da frase acima é "metro" no lugar de "metros".
 método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
-?
+pessoa.apresentacao = function() {
+  var vogal = ' o ';
+  var anos = ' anos ';
+  var metros = ' metros';
+  if(pessoa.sexo === 'Feminino') {
+   vogal = ' a ';
+  } 
+  if(pessoa.idade === 1) {
+    anos = ' ano ';
+  } 
+  if(pessoa.caminhouQuantosMetros === 1) {
+   metros = ' metro ';
+  } 
+  return 'Olá, eu sou' + vogal + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + anos + ', ' + pessoa.altura + 'm' + ', meu peso é ' + pessoa.peso + 'Kg e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + metros + '!';
+};
 
 // Agora, apresente-se ;)
-?
+pessoa.apresentacao();
 ```
