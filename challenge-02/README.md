@@ -41,12 +41,12 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function nova(x, y, z){
-if(x === undefined || y === undefined || z === undefined){
-	return "Preencha todos os valores corretamente!"
-}
-else{
-	return (x * y * z) + 2;
-}
+	if(x === undefined || y === undefined || z === undefined){
+		return "Preencha todos os valores corretamente!"
+	}
+	else{
+		return (x * y * z) + 2;
+	}
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
@@ -71,21 +71,21 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function myfunction(x, y, z){
-if(x !== undefined && y === undefined && z === undefined){
-	return x;
-}
-else if(x !== undefined && y !== undefined && z === undefined){
-	return x + y;
-}
-else if(x !== undefined && y !== undefined && z !== undefined){
-	return (x + y) / z;
-}
-else if(x === undefined && y === undefined && z === undefined){
-	return false;
-}
-else{
-	return null;
-}
+	if(x !== undefined && y === undefined && z === undefined){
+		return x;
+	}
+	else if(x !== undefined && y !== undefined && z === undefined){
+		return x + y;
+	}
+	else if(x !== undefined && y !== undefined && z !== undefined){
+		return (x + y) / z;
+	}
+	else if(x === undefined && y === undefined && z === undefined){
+		return false;
+	}
+	else{
+		return null;
+	}
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
