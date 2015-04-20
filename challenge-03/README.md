@@ -1,6 +1,6 @@
-# Desafio da semana #3
+//# Desafio da semana #3
 
-```js
+//```js
 // Declarar uma variável qualquer, que receba um objeto vazio.
 var objeto = {};
 
@@ -25,7 +25,7 @@ var pessoa = {
 	peso: 65,
 	andando: false,
 	caminhouQuantosMetros: 0
-}
+};
 
 /*
 Adicione um método ao objeto `pessoa` chamado `fazerAniversario`. O método deve
@@ -34,7 +34,7 @@ for chamado.
 */
 pessoa.fazerAniversario = function() {
 	pessoa.idade++;
-}
+};
 
 /*
 Adicione um método ao objeto `pessoa` chamado `andar`, que terá as seguintes
@@ -49,7 +49,7 @@ booleano que representa "verdadeiro";
 pessoa.andar = function(metros) {
 	pessoa.caminhouQuantosMetros += metros;
 	pessoa.andando = true;
-}
+};
 
 /*
 Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o valor
@@ -57,7 +57,7 @@ da propriedade `andando` para o valor booleano que representa "falso".
 */
 pessoa.parar = function() {
 	pessoa.andando = false;
-}
+};
 
 /*
 Crie um método chamado `nomeCompleto`, que retorne a frase:
@@ -65,7 +65,7 @@ Crie um método chamado `nomeCompleto`, que retorne a frase:
 */
 pessoa.nomeCompleto = function() {
 	return 'Olá! Meu nome é ' + pessoa.nome + ' ' + pessoa.sobrenome + '!';
-}
+};
 
 /*
 Crie um método chamado `mostrarIdade`, que retorne a frase:
@@ -73,7 +73,7 @@ Crie um método chamado `mostrarIdade`, que retorne a frase:
 */
 pessoa.mostrarIdade = function() {
 	return 'Olá! Eu tenho ' + pessoa.idade + ' anos!';
-}
+};
 
 /*
 Crie um método chamado `mostrarPeso`, que retorne a frase:
@@ -81,7 +81,7 @@ Crie um método chamado `mostrarPeso`, que retorne a frase:
 */
 pessoa.mostrarPeso = function() {
 	return 'Olá! Eu peso ' + pessoa.peso + 'Kg.';
-}
+};
 
 /*
 Crie um método chamado `mostrarAltura` que retorne a frase:
@@ -89,7 +89,7 @@ Crie um método chamado `mostrarAltura` que retorne a frase:
 */
 pessoa.mostrarAltura = function() {
 	return 'Minha altura é ' + pessoa.altura + 'm.';
-}
+};
 
 /*
 Agora vamos brincar um pouco com o objeto criado:
@@ -179,27 +179,27 @@ deve conter no retorno da frase acima é "metro" no lugar de "metros".
 método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
-pessoa.apresentação = function(){
+pessoa.apresentacao = function(){
 	
-	var parte1 = 'Olá, eu sou o ' + pessoa.nome + ' ' + pessoa.sobrenome + ',';
-	var parte2 = ' tenho ' + pessoa.idade + ' anos,';
-	var parte3 = 'eu ja caminhei ' + pessoa.caminhouQuantosMetros + ' metros!';
+	var parte1 = 'o';
+	var parte2 = 'anos';
+	var parte3 = 'metros!';
 	
 	if(pessoa.sexo === 'Feminino'){
-		parte1 = 'Olá, eu sou a ' + pessoa.nome + ' ' + pessoa.sobrenome + ',';
+		parte1 = 'a';
 	}
 
 	if(pessoa.idade === 1){
-		parte2 = ' tenho ' + pessoa.idade + ' ano,';
+		parte2 = 'ano';
 	}
 
 	if(pessoa.caminhouQuantosMetros === 1){
-		parte3 = 'eu ja caminhei ' + pessoa.caminhouQuantosMetros + ' metro!';
+		parte3 = 'metro!';
 	}
 
-	return parte1 + parte2 + ' ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, so hoje, ' + parte3;
-}
+	return 'Olá, eu sou ' + parte1 + ' ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + ' ' + parte2 + ', ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros  + ' ' + parte3;
+};
 
 // Agora, apresente-se ;)
-pessoa.apresentação();
-```
+pessoa.apresentacao();
+//```
