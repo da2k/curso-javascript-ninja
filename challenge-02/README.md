@@ -13,7 +13,7 @@ var testeSoma = soma(1, 1) + 5;
 7
 
 // Declare uma nova variável, sem valor.
-var novar
+var novar;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
@@ -71,27 +71,23 @@ Crie uma função com as seguintes características:
 function threeArg2(x, y, z) {
   if( x === undefined && y === undefined && z === undefined) {
     return false;
-  } else if(x !=== undefined && y === undefined && z === undefined) {
+  } else if(x !== undefined && y === undefined && z === undefined) {
     return x;
-  } else if(x !=== undefined && !y === undefined && z === undefined) {
+  } else if(x !== undefined && y !== undefined && z === undefined) {
       return x + y;
-  } else if(x !== undefined && y !== undefined && z!== undefined) {
+  } else if(x !== undefined && y !== undefined && z !== undefined) {
       return (x + y) / z;
   } else {
-      return undefined; 
+      return null; 
   }
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 /*
-threeArg2();
-undefined
-threeArg2(2);
-2
-threeArg2(2,2);
-4
-threeArg2(2,2,2);
-2
+threeArg2(); // false
+threeArg2(2); // 2
+threeArg2(2,2); // 4
+threeArg2(2,2,2); // 2
 */
 
 ```
