@@ -97,7 +97,7 @@ function	recebeargumentos( a , b , c ) {
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 
-recebeargumentos(); // NaN ????
+recebeargumentos(); // NaN ?
 recebeargumentos( 10 ); // 10
 recebeargumentos( 10 , 10 ); // 20
 recebeargumentos( 10 , 10 , 10 ); // 2
