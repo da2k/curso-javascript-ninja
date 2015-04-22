@@ -24,16 +24,14 @@ Onde VALOR é o novo valor da variável.
 */
 function proJs(){
 	ninja = 30;
-	return " O valor da variável agora é " + ninja; 
+	return 'O valor da variável agora é' + ninja; 
 }
 
 // Invoque a função criada acima.
 proJs();
 
 // Qual o retorno da função? (Use comentários de bloco).
-
 /* O valor da variável agora é 30.*/
-
 
 Crie uma função com as seguintes características:
 1. A função deve receber 3 argumentos;
@@ -43,10 +41,9 @@ Crie uma função com as seguintes características:
 function loveJavascript(ar1,ar2,ar3){
 	if(ar1 === undefined || ar2 === undefined || ar3 === undefined ) {
 		return 'Preencha todos os valores corretamente!';
-	} else{
-    return ar1 * ar2 * ar3 + 2;  
-  }
-	
+	} else {
+		return ar1 * ar2 * ar3 + 2;  
+	}
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
