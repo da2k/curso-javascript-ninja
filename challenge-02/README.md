@@ -4,12 +4,12 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-function js-ninja(x,y){
+function jsNinja(x,y){
 	return x + y;
 }
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-var retornar = js-ninja(6,6) + 5;
+var retornar = jsNinja(6,6) + 5;
 
 // Qual o valor atualizado dessa variável?
 17
@@ -22,32 +22,32 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function pro-js(){
+function proJs(){
 	ninja = 30;
 	return " O valor da variável agora é VALOR.
 	Onde VALOR é o novo valor da variável."; 
 }
 
 // Invoque a função criada acima.
-pro-js();
+proJs();
 
 // Qual o retorno da função? (Use comentários de bloco).
-/*
- O valor da variável agora é VALOR.
-Onde VALOR é o novo valor da variável.
-*/
 
-/*
+/* O valor da variável agora é VALOR.*/
+
+
 Crie uma função com as seguintes características:
 1. A função deve receber 3 argumentos;
 2. Se qualquer um dos três argumentos não estiverem preenchidos, a função deve retornar a string:
     Preencha todos os valores corretamente!
-3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
+3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado   da multiplicação.
 function loveJavascript(ar1,ar2,ar3){
-	if(ar1 === undefined) {
-		return 'Preencha todos os valores 		corretamente!';
-	}
-	console.log(ar1 * ar2 * ar3 + 2) ;
+	if(ar1 !== undefined && ar2 !== undefined && ar3 === undefined ) {
+		return 'Preencha todos os valores corretamente!';
+	} else{
+    return ar1 * ar2 * ar3 + 2;  
+  }
+	
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
@@ -72,14 +72,14 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function argumentando(par1,par2,par3){
-  if(par1 !== undefined && par2 == undefined && par3 == undefined ) {
+  if(par1 !== undefined && par2 === undefined && par3 === undefined ) {
     return par1;
-  } else if(par1 !== undefined && par2 !== undefined && par3 == undefined){
+  } else if(par1 !== undefined && par2 !== undefined && par3 === undefined){
     return par1 + par2;
   } else if(par1 !== undefined && par2 !== undefined && par3 !== undefined){
     return (par1 + par2) / par3;
   }else if(par1 === undefined && par2 === undefined && par3 === undefined){
-    return true;
+    return false;
   }else{
     return null;
   }
@@ -90,6 +90,6 @@ function argumentando(par1,par2,par3){
 ?
 argumentando(100); // 100
 argumentando(100,10); // 110
-argumentando(100,20,2); /60
-argumentando(); // true
+argumentando(100,20,2); //60
+argumentando(); // false
 ```
