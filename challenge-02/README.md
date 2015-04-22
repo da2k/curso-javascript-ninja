@@ -41,7 +41,7 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado   da multiplicação.
 function loveJavascript(ar1,ar2,ar3){
-	if(ar1 !== undefined && ar2 !== undefined && ar3 === undefined ) {
+	if(ar1 === undefined || ar2 === undefined || ar3 === undefined ) {
 		return 'Preencha todos os valores corretamente!';
 	} else{
     return ar1 * ar2 * ar3 + 2;  
