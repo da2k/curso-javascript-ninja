@@ -24,7 +24,7 @@ Onde VALOR é o novo valor da variável.
 */
 function proJs(){
 	ninja = 30;
-	return 'O valor da variável agora é' + ninja; 
+	return 'O valor da variável agora é ' + ninja; 
 }
 
 // Invoque a função criada acima.
