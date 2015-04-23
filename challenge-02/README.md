@@ -83,7 +83,6 @@ function argumentando(par1,par2,par3){
 
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
 argumentando(100); // 100
 argumentando(100,10); // 110
 argumentando(100,20,2); //60
