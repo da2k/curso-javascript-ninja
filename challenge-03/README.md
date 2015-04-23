@@ -190,7 +190,7 @@ pessoa.apresentacao = function() {
 	if ( pessoa.metros === 1 ) {
 		idade = 'metro';
 	} 
-	return 'Olá, ' + sexo + ' ' + pessoa.nome + ' ' + pessoa.sobrenome +', tenho ' + pessoa.idade + " " + idade + ', ' + pessoa.altura + ', meu peso é ' + pessoa.peso + 'kg e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' ' + metros +'!';
+	return 'Olá, ' + sexo + ' ' + pessoa.nome + ' ' + pessoa.sobrenome +', tenho ' + pessoa.idade + ' ' + idade + ', ' + pessoa.altura + ', meu peso é ' + pessoa.peso + 'kg e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' ' + metros +'!';
 };
 
 // Agora, apresente-se ;)
