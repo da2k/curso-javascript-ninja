@@ -143,19 +143,19 @@ carro.mudaCor('verde musgo');
 carro.obterMarcaModelo(); // Peugout 208
 
 // Adicione 2 pessoas no carro.
-carro.entraPessoas(2);
+carro.entraPessoas(2);// Ja temos 2 pessoas no carro!
 
 // Adicione mais 4 pessoas no carro.
-carro.entraPessoas(4);
+carro.entraPessoas(4);// So cabem mais 3 pessoas!
 
 // Faça o carro encher.
-carro.entraPessoas(3);
+carro.entraPessoas(3);// Ja temos 5 pessoas no carro
 
 // Tire 4 pessoas do carro.
 carro.quantidadePessoas -= 4;
 
 // Adicione 10 pessoas no carro.
-carro.entraPessoas(10);
+carro.entraPessoas(10);// so cabem mais 4 pessoas!
 
 // Quantas pessoas temos no carro?
 //1
