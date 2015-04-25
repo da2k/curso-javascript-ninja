@@ -45,7 +45,7 @@ valor dessa propriedade a quantidade passada por parâmetro;
 booleano que representa "verdadeiro";
 */
 pessoa.andar = function(m) { 
-  pessoa.caminhouQuantosMetros =+ m;
+  pessoa.caminhouQuantosMetros += m;
   pessoa.andando = true;
 };
 
@@ -61,7 +61,7 @@ pessoa.parar = function() {
 Crie um método chamado `nomeCompleto`, que retorne a frase:
 - "Olá! Meu nome é [NOME] [SOBRENOME]!"
 */
-pessoa.nomeCompleto = function() { return 'Olá! Meu nome é ' + pessoa.nome + " " + pessoa.sobrenome; }
+pessoa.nomeCompleto = function() { return 'Olá! Meu nome é ' + pessoa.nome + ' ' + pessoa.sobrenome; }
 
 /*
 Crie um método chamado `mostrarIdade`, que retorne a frase:
@@ -92,20 +92,20 @@ pessoa.nomeCompleto(); // 'Olá, meu nome é José Augusto'
 Qual a idade da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.idade; // 30
+pessoa.mostrarIdade(); // 30
 
 
 /*
 Qual o peso da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.peso; // 84
+pessoa.mostrarPeso(); // 84
 
 /*
 Qual a altura da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.altura; // 1.8
+pessoa.mostrarAltura(); // 1.8
 
 /*
 Faça a `pessoa` fazer 3 aniversários.
@@ -188,4 +188,5 @@ pessoa.apresentacao = function() {
 
 // Agora, apresente-se ;)
 pessoa.apresentacao();
+/* "Olá, eu sou o José Augusto, tenho 33 anos, 1.8m, meu peso é 84Kg e, só hoje, eu já caminhei 10 metros!" */
 ```
