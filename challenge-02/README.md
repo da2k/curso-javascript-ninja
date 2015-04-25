@@ -25,14 +25,14 @@ Onde VALOR é o novo valor da variável.
 */
 function atribuiValor() {
     valor = 100;
-    return "O valor da variável agora é: " + valor;
+    return 'O valor da variável agora é: ' + valor;
 }
 
 // Invoque a função criada acima.
 atribuiValor();
 
 // Qual o retorno da função? (Use comentários de bloco).
-/* Retorna o valor da variável junto com texto explicativo */
+/* 'O valor da variável agora é: 100' */
 
 /*
 Crie uma função com as seguintes características:
