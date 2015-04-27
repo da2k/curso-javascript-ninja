@@ -32,7 +32,7 @@ addValue();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
-1
+O valor da variável agora é: 1
 */
 
 /*
@@ -72,17 +72,18 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function testArgs(arg1, arg2, arg3) {
-  if (arg1 && !arg2 && !arg3)
+  if (arg1 && !arg2 && !arg3) {
     return arg1;
-  else if (arg1 && arg2 && !arg3)
+  } else if (arg1 && arg2 && !arg3) {
     return arg1 + arg2;
-  else if(arg1 && arg2 && arg3)
+  } else if(arg1 && arg2 && arg3) {
     return (arg1 + arg2) / arg3;
-  else if (!arg1 && !arg2 && !arg3)
+  } else if (!arg1 && !arg2 && !arg3) {
     return false;
-  else
+  } else {
     return null;
-} 
+  }
+}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 testArgs(); // false
