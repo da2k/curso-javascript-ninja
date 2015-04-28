@@ -131,7 +131,7 @@ var addPeople = function(num_people) {
   } else {
     carro.quantidadePessoas += num_people;
   }
-  return 'Já temos ' + carro.quantidadePessoas + ' ' + pessoas + ' no carro.';
+  return carro.quantidadePessoas === 1 ? 'Já temos ' + carro.quantidadePessoas + ' pessoa no carro.' : 'Já temos '+ carro.quantidadePessoas + ' pessoas no carro.';
 };
 
 /*
