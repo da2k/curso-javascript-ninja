@@ -123,7 +123,7 @@ var addPeople = function(num_people) {
   if(lugaresVagos === 1) {
    pessoas = 'pessoa';
   }
-  if(lugaresVagos <= 0) {
+  if(lugaresVagos <= 0 && num_people > 0) {
     return 'O carro já está lotado';
   }
   if(num_people > lugaresVagos) {
@@ -131,7 +131,7 @@ var addPeople = function(num_people) {
   } else {
     carro.quantidadePessoas += num_people;
   }
-  return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro.';
+  return 'Já temos ' + carro.quantidadePessoas + ' ' + pessoas + ' no carro.';
 };
 
 /*
@@ -169,7 +169,7 @@ addPeople(4); // retorna que só cabem mais 3 pessoas.
 addPeople(3); // Já temos 5 pessoas no carro.
 
 // Tire 4 pessoas do carro.
-carro.quantidadePessoas -= 4; // Foi solicitado criar um metodo para isso? 
+carro.addPeople(-4); // Já temos 1 pessoas no carro.
 
 // Adicione 10 pessoas no carro.
 addPeople(10); // retorna que só cabem mais 4 pessoas. 
