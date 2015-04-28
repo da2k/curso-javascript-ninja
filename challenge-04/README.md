@@ -160,13 +160,13 @@ carro.cor; // verde musgo
 carro.obterMarcaModelo(); // Esse carro é um Honda Civic
 
 // Adicione 2 pessoas no carro.
-addPeople(2);
+addPeople(2); // Já temos 2 pessoas no carro.
 
 // Adicione mais 4 pessoas no carro.
 addPeople(4); // retorna que só cabem mais 3 pessoas.
 
 // Faça o carro encher.
-addPeople(3);
+addPeople(3); // Já temos 5 pessoas no carro.
 
 // Tire 4 pessoas do carro.
 carro.quantidadePessoas -= 4; // Foi solicitado criar um metodo para isso? 
