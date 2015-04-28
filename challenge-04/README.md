@@ -30,15 +30,15 @@ isTruthy('');
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
 isTruthy(true);
-isTruthy(1);
-isTruthy(2);
-isTruthy(3);
+isTruthy([]);
+isTruthy({});
+isTruthy(function() {});
 isTruthy(4);
 isTruthy(5);
 isTruthy(6);
 isTruthy(7);
 isTruthy(8);
-isisTruthy('dez');
+isTruthy('dez');
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
