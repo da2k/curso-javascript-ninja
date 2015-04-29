@@ -8,18 +8,8 @@ equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
 var isTruthy = function(arg) {
-	if(arg) {
-		 return true;
-	} else {
-		return false;
-	}
+ return !!arg;
 };
-/* 
-Eu tentei fazer utilizando condicional ternario dessa maneira:
-var isTruthy = function(arg) {
-   arg ? true : false;
-};
-mas ele retorna apenas undefined.
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 isTruthy(false);
@@ -101,7 +91,7 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 carro.obterMarcaModelo = function() {
-	return carro.obterMarca() + ' ' + carro.obterModelo();
+	return 'Esse carro é um ' + carro.obterMarca() + ' ' + carro.obterModelo();
 };
 
 /*
@@ -121,20 +111,15 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 citado acima, no lugar de "pessoas".
 */
 carro.addPessoas = function(n) {
+    var nPessoas = carro.quantidadePessoas + n;
     var assentosLivres = carro.assentos - carro.quantidadePessoas;
-    var nPessoas = carro.quantidadePessoas + n
-    var pessoas = 'pessoas'
-	if( nPessoas <= carro.assentos ){ 
-		carro.quantidadePessoas += n;
-	}
-	if( assentosLivres === 1 ) {
-		pessoas = 'pessoa'
-	}
-    if( assentosLivres === 0 ) {
+    var pessoas = assentosLivres === 1 ? 'pessoa' : 'pessoas';
+    if( carro.quantidadePessoas === carro.assentos && nPessoas >= carro.assentos) {
         return 'O carro já esta lotado';
     } else if( nPessoas > carro.assentos ) {
         return 'Só cabem mais ' + assentosLivres + ' ' + pessoas; 
     }
+	carro.quantidadePessoas += n;
     	return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!';
 };
 /* 
@@ -148,19 +133,19 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-carro.cor; //"Preto"
+carro.obterCor(); //"Preto"
 
-Mude a cor do carro para vermelho.
+// Mude a cor do carro para vermelho.
 carro.mudaCor('Vermelho');
 
 // E agora, qual a cor do carro?
-carro.cor; // "Vermelho"
+carro.obterCor(); // "Vermelho"
 
 // Mude a cor do carro para verde musgo.
 carro.mudaCor('verde musgo');
 
 // E agora, qual a cor do carro?
-carro.cor; // "verde musgo"
+carro.obterCor(); // "verde musgo"
 // Qual a marca e modelo do carro?
 carro.obterMarcaModelo(); // "Fiat Bravo"
 
@@ -174,7 +159,7 @@ carro.addPessoas(4); // "Só cabem mais 3 pessoas"
 carro.addPessoas(3); // "Já temos 5 pessoas no carro!"
 
 // Tire 4 pessoas do carro.
-carro.addPessoas(-4); // "O carro já esta lotado"
+carro.addPessoas(-4); // "Já temos 1 pessoas no carro!"
 
 // Adicione 10 pessoas no carro.
 carro.addPessoas(10); // "Só cabem mais 4 pessoas"
