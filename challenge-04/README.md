@@ -134,11 +134,11 @@ utilize sempre o formato de invocação do método (ou chamada da propriedade),
 adicionando comentários _inline_ ao lado com o valor retornado, se o método
 retornar algum valor.
 
-// Qual a cor atual do carro?
+Qual a cor atual do carro?
 */
 carro.obterCor(); // 'Preto'
 
-Mude a cor do carro para vermelho.
+// Mude a cor do carro para vermelho.
 carro.mudarCor('Vermelho');
 
 // E agora, qual a cor do carro?
