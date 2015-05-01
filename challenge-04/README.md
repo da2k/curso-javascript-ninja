@@ -8,22 +8,26 @@ equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
 var isTruthy = function(myVar) {
-	return Myvar ? true : false;
+	return myVar ? true : false;
 };
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 isTruthy(0);
+isTruthy(false);
+isTruthy(null);
+isTruthy(undefined);
+isTruthy("");
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
 isTruthy(1);
-isTruthy(2);
-isTruthy(3);
-isTruthy(4);
-isTruthy(5);
-isTruthy(6);
-isTruthy(7);
+isTruthy(true);
+isTruthy([]);
+isTruthy({});
+isTruthy("oi");
+isTruthy(3.14);
+isTruthy(1 > 0);
 isTruthy(8);
 isTruthy(9);
 isTruthy(10);
@@ -46,7 +50,7 @@ var carro = {
 	placa : 'MOA-7373',
 	ano : 2014,
 	cor: 'branco',
-	quatasPortas : 4,
+	quantasPortas : 4,
 	assentos : 5,
 	quantidadePessoas : 0
 };
@@ -55,7 +59,7 @@ var carro = {
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
-carro.mudaCor = function(color) {
+carro.mudarCor = function(color) {
 	carro.cor = color;
 };
 
@@ -86,7 +90,7 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 carro.obterMarcaModelo = function() {
-	return 'Esse carro e um ' + carro.obterMarca + ' ' + carro.obterModelo;
+	return 'Esse carro e um ' + carro.obterMarca() + ' ' + carro.obterModelo();
 };
 
 /*
@@ -125,22 +129,22 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-//branco
+carro.obterCor();//branco
 
 //Mude a cor do carro para vermelho.
 carro.mudaCor('vermelho');
 
 // E agora, qual a cor do carro?
-//vermelho
+carro.obterCor();//vermelho
 
 // Mude a cor do carro para verde musgo.
 carro.mudaCor('verde musgo');
 
 // E agora, qual a cor do carro?
-//verde musgo
+carro.obterCor();//verde musgo
 
 // Qual a marca e modelo do carro?
-carro.obterMarcaModelo(); // Peugout 208
+carro.obterMarcaModelo(); // Esse carro e um Peugout 208
 
 // Adicione 2 pessoas no carro.
 carro.entraPessoas(2);// Ja temos 2 pessoas no carro!
@@ -152,11 +156,11 @@ carro.entraPessoas(4);// So cabem mais 3 pessoas!
 carro.entraPessoas(3);// Ja temos 5 pessoas no carro
 
 // Tire 4 pessoas do carro.
-carro.quantidadePessoas -= 4;
+carro.entraPessoas(-4);
 
 // Adicione 10 pessoas no carro.
 carro.entraPessoas(10);// so cabem mais 4 pessoas!
 
 // Quantas pessoas temos no carro?
-//1
+carro.quantidadePessoas;//1
 ```
