@@ -39,8 +39,6 @@ ShowArray2(array2, 1);
 ShowArray2(array2, 2);
 ShowArray2(array2, 3);
 ShowArray2(array2, 4);
-//ou
-ShowArray(array2);
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -76,7 +74,7 @@ function book(bookname){
 	}
 
 		if (bookname !== undefined){
-			return table.bookname;
+			return table[bookname];
 		}else{
 			return table;
 		}
@@ -87,25 +85,25 @@ function book(bookname){
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-// ?
+book();
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// ?
+'O livro bookname1 tem ' + book(bookname1).quantidadePaginas + ' paginas!';
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
+'O autor do livro bookname1 e ' + book('bookname1').autor + '.';
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-// ?
+'O livro bookname1 foi publicado pela editora' + book(bookname1) + '.';
