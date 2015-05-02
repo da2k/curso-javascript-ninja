@@ -1,6 +1,6 @@
-//# Desafio da semana #3
+# Desafio da semana #3
 
-//```js
+```js
 // Declarar uma variável qualquer, que receba um objeto vazio.
 var objeto = {};
 
@@ -201,5 +201,5 @@ pessoa.apresentacao = function(){
 };
 
 // Agora, apresente-se ;)
-pessoa.apresentacao();
-//```
+pessoa.apresentacao(); //Ola, eu sou o Mateus Jabour, tenho 18 anos, 1.80, meu peso e 65 e, so hoje, eu ja caminhei 33 metros!
+```
