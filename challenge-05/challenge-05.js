@@ -23,10 +23,7 @@ no primeiro parâmetro. O índice a ser retornado, deve ser o número passado no
 segundo parâmetro.
 */
 var arrayIndice = function(arg, indice) {
-    if (indice) {
-        return arg[indice];    
-    }
-        return arg;
+    return arg[indice];
 }
 
 /*
@@ -38,7 +35,11 @@ var arr2 = ['string', 10, NaN, true, undefined];
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-console.log(arrayIndice(arr2));
+console.log(arrayIndice(arr2, 0));
+console.log(arrayIndice(arr2, 1));
+console.log(arrayIndice(arr2, 2));
+console.log(arrayIndice(arr2, 3));
+console.log(arrayIndice(arr2, 4));
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -97,7 +98,7 @@ Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log('O autor do Harry Potter é ' + book('Harry Potter').autor + '.');
+console.log('O autor do livro Harry Potter é ' + book('Harry Potter').autor + '.');
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
