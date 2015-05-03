@@ -9,7 +9,7 @@ para o contrário.
 */
 var isTruthy = function( a ) {
 	return !!a;
-}
+};
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 isTruthy(undefined);
@@ -112,19 +112,21 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-carro.adicionarPessoas = function(quantidade) {
-	var total = quantidade + carro.quantidadePessoas;
-	if ( total < carro.assentos ) {
-		carro.quantidadePessoas += quantidade;
-		return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!';
-	} else if ( total === carro.assentos ) {
-		return 'O carro já está lotado!';
-	} else {
-		var totalPessoasRestantes = carro.assentos - carro.quantidadePessoas;
-		var acrescentaS = ( totalPessoasRestantes > 1 ) ? 's' : '';
-		return 'Só cabem mais ' + totalPessoasRestantes + ' pessoa' + acrescentaS + '!';
-	}
-};
+carro.adicionarPessoas = function( numeroPessoas ) {
+    var totalPessoas = carro.quantidadePessoas + numeroPessoas;
+	var quantasPessoasCabem = carro.assentos - carro.quantidadePessoas;
+	pluralOuSingular = quantasPessoasCabem === 1 ? ' pessoa' : ' pessoas';
+    if ( carro.quantidadePessoas === carro.assentos && totalPessoas >= carro.assentos ) {
+        return 'O carro já está logado!';
+    }
+    
+    if ( totalPessoas > carro.assentos ) {
+		return 'Só cabem mais ' + quantasPessoasCabem + pluralOuSingular + '!';
+    }
+    
+    carro.quantidadePessoas += numeroPessoas;
+    return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!';
+}
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -132,7 +134,7 @@ utilize sempre o formato de invocação do método (ou chamada da propriedade),
 adicionando comentários _inline_ ao lado com o valor retornado, se o método
 retornar algum valor.
 
-Qual a cor atual do carro?
+// Qual a cor atual do carro?
 */
 carro.obterCor(); // 'Preto'
 
@@ -158,10 +160,10 @@ carro.adicionarPessoas(2); // Já temos 2 pessoas no carro!
 carro.adicionarPessoas(4); // "Só cabem mais 3 pessoas!"
 
 // Faça o carro encher.
-carro.adicionarPessoas(3); // "O carro já está lotado!"
+carro.adicionarPessoas(3); // "Já temos 5 pessoas no carro!"
 
 // Tire 4 pessoas do carro.
-carro.quantidadePessoas -= 4;
+carro.adicionarPessoas(-4);
 
 // Adicione 10 pessoas no carro.
 carro.adicionarPessoas(10); // "Só cabem mais 4 pessoas!"
