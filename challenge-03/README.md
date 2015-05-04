@@ -233,4 +233,7 @@ pessoa.apresentacao = function (){
 }
 
 // Agora, apresente-se ;)
+pessoa.apresentacao();
+/*
 "Olá, eu sou a Simone Myrrha , tenho 37 anos, 1.6, meu peso é 65 e, só hoje, eu já caminhei 160 metros!"
+*/
