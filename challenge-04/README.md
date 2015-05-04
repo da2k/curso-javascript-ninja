@@ -14,28 +14,28 @@ var isTruthy = function(parametro){
 
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
-isTruthy (false);
-isTruthy (null);
-isTruthy (undefined);
-isTruthy ('');
-isTruthy (0);
-isTruthy (-0);
-isTruthy (NaN);
+isTruthy(false);
+isTruthy(null);
+isTruthy(undefined);
+isTruthy('');
+isTruthy(0);
+isTruthy(-0);
+isTruthy(NaN);
 
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
-isTruthy (true);
-isTruthy (1);
-isTruthy ('verdade');
-isTruthy ({});
-isTruthy ([]);
-isTruthy (function(){});
-isTruthy ('5/5');
-isTruthy ('Boa noite!');
-isTruthy ('Curso NinjaJS!');
-isTruthy ([1,2,3]);
+isTruthy(true);
+isTruthy(1);
+isTruthy('verdade');
+isTruthy({});
+isTruthy([]);
+isTruthy(function(){});
+isTruthy('5/5');
+isTruthy('Boa noite!');
+isTruthy('Curso NinjaJS!');
+isTruthy([1,2,3]);
 
 
 /*
@@ -68,7 +68,7 @@ passado por parâmetro.
 */
 carro.mudarCor = function ( cor ){
   carro.cor = cor;
-}
+};
 
 
 /*
@@ -76,7 +76,7 @@ Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
 carro.obterCor = function (){
  return  carro.cor;
-}
+};
 
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
@@ -84,12 +84,12 @@ Crie um método chamado `obterModelo` que retorne o modelo do carro.
 
 carro.obterModelo = function(){
  return carro.modelo;
-}
+};
 
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
 */
-carro.obterMarca= function(){
+carro.obterMarca = function(){
  return carro.marca;
 }
 
@@ -99,8 +99,8 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 carro.obterMarcaModelo = function(){
- return 'Esse carro é um '+ carro.obterMarca() +' '+ carro.obterModelo();
-}
+ return 'Esse carro é um ' + carro.obterMarca() + ' ' + carro.obterModelo();
+};
 
 
 /*
@@ -133,11 +133,8 @@ carro.adicionarPessoas = function ( numeroPessoas ){
 		return 'Só cabem mais '+ qtdPessoasCabem +' '+plSing + '!';
 
 	}
-
-
-  	carro.quantidadePessoas += numeroPessoas;
-  	return 'Já temos '+ carro.quantidadePessoas + ' pessoas no carro! ';
-
+ 	carro.quantidadePessoas += numeroPessoas;
+ 	return 'Já temos '+ carro.quantidadePessoas + ' pessoas no carro! ';
 }
 
 
@@ -182,4 +179,4 @@ carro.adicionarPessoas(-4); // "Já temos 1 pessoas no carro! "
 carro.adicionarPessoas(10); // "Só cabem mais 4 pessoas!"
 
 // Quantas pessoas temos no carro?
-carro.quantidadePessoas // 1
+carro.quantidadePessoas; // 1
