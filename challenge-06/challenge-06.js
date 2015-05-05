@@ -14,7 +14,6 @@ estar na ordem em que eles aparecem na tabela no momento da solução desse
 desafio.
 */
 var teams = [ 'Santos', 'Palmeiras', 'Corinthians', 'São Paulo', 'RB Brasil' ];
-
 console.log( 'Times que estão participando do campeonato:', teams );
 
 /*
@@ -44,8 +43,6 @@ função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 console.log(showTeamPosition(0));
 console.log(showTeamPosition(1));
 console.log(showTeamPosition(2));
-console.log(showTeamPosition(3));
-console.log(showTeamPosition(4));
 console.log(showTeamPosition(5));
 
 /*
