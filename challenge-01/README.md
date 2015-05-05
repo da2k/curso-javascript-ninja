@@ -14,7 +14,7 @@ var soma = 15 + 8;
 soma++;
 
 // Atribua à variável `soma` todo o valor dela, multiplicando por 3, usando o operador de multiplicação abreviado.
-soma = soma*3;
+soma *= 3;
 
 // Qual é o valor da variável `soma` até aqui?
 72
@@ -23,7 +23,7 @@ soma = soma*3;
 var souninja = true;
 
 // Declare uma variável chamada `comida` que recebe um array com os valores 'arroz', 'feijão' e 'ovo'.
-var comida[] = {'arroz', 'feijão', 'ovo'}; 
+var comida = ['arroz', 'feijão', 'ovo']; 
 
 // Digite a instrução que imprime o valor de 'feijao', que está na variável `comida`.
 comida[1];
