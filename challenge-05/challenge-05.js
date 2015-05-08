@@ -2,7 +2,7 @@
 Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
-var array = [1, 2, 3, 4, 5];
+var array = [1, 'mateus', true, 4, NaN];
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
@@ -13,7 +13,7 @@ function ShowArray(arr){
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-ShowArray(array)[2];
+console.log(ShowArray(array)[1]);
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -28,17 +28,17 @@ function ShowArray2(arr, i){
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
-var array2 = [1, null, "oi", true, undefined];
+var array2 = [1, null, 'oi', true, undefined];
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-ShowArray2(array2, 0);
-ShowArray2(array2, 1);
-ShowArray2(array2, 2);
-ShowArray2(array2, 3);
-ShowArray2(array2, 4);
+console.log(ShowArray2(array2, 0));
+console.log(ShowArray2(array2, 1));
+console.log(ShowArray2(array2, 2));
+console.log(ShowArray2(array2, 3));
+console.log(ShowArray2(array2, 4));
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
