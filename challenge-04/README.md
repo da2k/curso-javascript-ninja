@@ -17,6 +17,7 @@ isTruthy(false);
 isTruthy(null);
 isTruthy(undefined);
 isTruthy("");
+isTruthy(NaN);
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
@@ -132,13 +133,13 @@ Qual a cor atual do carro?
 carro.obterCor();//branco
 
 //Mude a cor do carro para vermelho.
-carro.mudaCor('vermelho');
+carro.mudarCor('vermelho');
 
 // E agora, qual a cor do carro?
 carro.obterCor();//vermelho
 
 // Mude a cor do carro para verde musgo.
-carro.mudaCor('verde musgo');
+carro.mudarCor('verde musgo');
 
 // E agora, qual a cor do carro?
 carro.obterCor();//verde musgo
