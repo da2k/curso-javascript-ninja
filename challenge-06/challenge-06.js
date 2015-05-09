@@ -4,7 +4,10 @@ para começar o desafio.
 Declare uma variável chamada `championship` que receberá o nome do campeonato,
 e imprima o nome desse campeonato no console.
 */
-// ?
+
+var championship  = 'campeonato carioca';
+
+console.log(championship);
 
 /*
 Declare uma variável chamada `teams`, que receberá um array com 5 elementos.
@@ -12,7 +15,7 @@ Os elementos serão nomes de times do campeonato escolhido, e os nomes devem
 estar na ordem em que eles aparecem na tabela no momento da solução desse
 desafio.
 */
-// ?
+var teams = ['flamengo', 'vasco', 'fluminence', 'palmeiras', 'botafogo'];
 
 console.log( 'Times que estão participando do campeonato:', teams );
 
@@ -32,20 +35,49 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     - Se não houver time para a posição passada, deve retornar a mensagem:
     "Não temos a informação do time que está nessa posição."
 */
-// ?
+
+function showTeamPosition(position){
+    switch(position){
+        case 1 :
+        return "O time que está em " + position + "°" + " lugar é o " + teams[position -1] + ".";
+        break;
+        case 2 :
+        return "O time que está em " + position + "°" + " lugar é o " + teams[position -1] + ".";
+        break;
+        case 3 :
+        return "O time que está em " + position + "°" + " lugar é o " + teams[position -1] + ".";
+        break;
+        case 4 :
+        return "O time que está em " + position + "°" + " lugar é o " + teams[position -1] + ".";
+        break;
+        case 5 :
+        return "O time que está em " + position + "°" + " lugar é o " + teams[position -1] + ".";
+        break;
+        default :
+        return "Não temos a informação do time que está nessa posição.";
+    }
+
+}
 
 /*
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
-// ?
+
+console.log(showTeamPosition(1)); // O time que está em 1° lugar é o flamengo.
+console.log(showTeamPosition(3)); //O time que está em 3° lugar é o fluminence.
+console.log(showTeamPosition(5)); // O time que está em 5° lugar é o botafogo.
+console.log(showTeamPosition(7)); //Não temos a informação do time que está nessa posição.
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
 repetição "while".
 */
-// ?
 
+var contagem = 20;
+while(contagem < 30){
+    console.log(++contagem);
+}
 /*
 Crie uma função chamada `convertToHex`, com as seguintes características:
     - A função recebe uma cor por parâmetro, do tipo string. Exemplo: "red";
@@ -58,4 +90,24 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     a frase:
     "Não temos o equivalente hexadecimal para [COR]."
 */
-// ?
+function convertToHex(color){
+    switch(color){
+        case "red" :
+        return  "O hexadecimal para a cor " + color + " é " + "#db0c0c" + ".";
+        break;
+
+        case "green" :
+        return  "O hexadecimal para a cor " + color + " é " + "#38db0c" + ".";
+        break;
+
+        case "blue" :
+        return  "O hexadecimal para a cor " + color + " é " + "#1f0cdb" + ".";
+        break;
+
+        default :
+        return "Não temos o equivalente hexadecimal para " + color + ".";
+    }
+}
+
+
+
