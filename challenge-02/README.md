@@ -11,7 +11,7 @@ function soma(x,y){
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
 
-var varSoma = soma(10, 10 + 5);
+var varSoma = soma(10, 10) + 5;
 
 // Qual o valor atualizado dessa variável?
 
@@ -19,7 +19,7 @@ var varSoma = soma(10, 10 + 5);
 
 // Declare uma nova variável, sem valor.
 
-var retornarValor;
+var noValue;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
@@ -28,7 +28,8 @@ Onde VALOR é o novo valor da variável.
 */
 
 function retornarValor(){
-	return "O valor da variável agora é 25.";
+	noValue = 25
+	return "O valor da variável agora é " + noValue + ".";
 }
 
 // Invoque a função criada acima.
@@ -47,8 +48,8 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 
-function testeArgumento(x,y,z){
-	if ( x == undefined || y == undefined || z == undefined) {
+function testeArgumento(x, y, z){
+	if ( x === undefined || y === undefined || z === undefined) {
 		return "Preencha todos os valores corretamente!";
 	}
 	else{
@@ -83,16 +84,16 @@ Crie uma função com as seguintes características:
 */
 
 function varArgumento(x,y,z){
-	if(x != undefined && y == undefined && z == undefined){
+	if(x != undefined && y === undefined && z === undefined){
 		return x;
 	}
-	if(x != undefined && y != undefined && z == undefined){
+	if(x != undefined && y != undefined && z === undefined){
 			return x + y;
 	}
 	if (x != undefined && y != undefined && z != undefined) {
 			return (x + y) / 3;
 	}
-	if (x == undefined && y == undefined && z == undefined) {
+	if (x === undefined && y === undefined && z === undefined) {
 			return false;
 	}
 	else{
