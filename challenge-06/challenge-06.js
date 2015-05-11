@@ -37,21 +37,22 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
 */
 
 function showTeamPosition(position){
+    var teamPositions = "O time que está em " + position + "°" + " lugar é o ";
     switch(position){
         case 1 :
-        return "O time que está em " + position + "°" + " lugar é o " + teams[position -1] + ".";
+        return teamPositions + teams[position -1] + ".";
         break;
         case 2 :
-        return "O time que está em " + position + "°" + " lugar é o " + teams[position -1] + ".";
+        return teamPositions + teams[position -1] + ".";
         break;
         case 3 :
-        return "O time que está em " + position + "°" + " lugar é o " + teams[position -1] + ".";
+        return teamPositions + teams[position -1] + ".";
         break;
         case 4 :
-        return "O time que está em " + position + "°" + " lugar é o " + teams[position -1] + ".";
+        return teamPositions + teams[position -1] + ".";
         break;
         case 5 :
-        return "O time que está em " + position + "°" + " lugar é o " + teams[position -1] + ".";
+        return teamPositions + teams[position -1] + ".";
         break;
         default :
         return "Não temos a informação do time que está nessa posição.";
@@ -74,7 +75,7 @@ Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
 repetição "while".
 */
 
-var contagem = 20;
+var contagem = 19;
 while(contagem < 30){
     console.log(++contagem);
 }
@@ -91,17 +92,18 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 function convertToHex(color){
+    var varColor = "O hexadecimal para a cor " + color + " é ";
     switch(color){
         case "red" :
-        return  "O hexadecimal para a cor " + color + " é " + "#db0c0c" + ".";
+        return  varColor + "#db0c0c" + ".";
         break;
 
         case "green" :
-        return  "O hexadecimal para a cor " + color + " é " + "#38db0c" + ".";
+        return  varColor + "#38db0c" + ".";
         break;
 
         case "blue" :
-        return  "O hexadecimal para a cor " + color + " é " + "#1f0cdb" + ".";
+        return  varColor + "#1f0cdb" + ".";
         break;
 
         default :
