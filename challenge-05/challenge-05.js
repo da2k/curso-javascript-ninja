@@ -42,11 +42,12 @@ Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
 
-myFunction(newArray, 0);
-myFunction(newArray, 1);
-myFunction(newArray, 2);
-myFunction(newArray, 3);
-myFunction(newArray, 4);
+
+console.log(myFunction(newArray, 0));
+console.log(myFunction(newArray, 1));
+console.log(myFunction(newArray, 2));
+console.log(myFunction(newArray, 3));
+console.log(myFunction(newArray, 4));
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -81,7 +82,7 @@ function book(bookName){
 			editora : "Casa Do Código",
 		}
 	};
-	if(bookName == undefined){
+	if(bookName === undefined){
 		return books;
 	}else{
 		return books[bookName];
@@ -92,7 +93,7 @@ function book(bookName){
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
 
-book();
+console.log(book());
 
 
 /*
@@ -100,8 +101,9 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
+var nameBook = 'Guia Front End';
 
-console.log("O livro Guia Front End tem " + book('Guia Front End').quantidadePaginas + " páginas!");
+console.log("O livro " + nameBook + " tem " + book('Guia Front End').quantidadePaginas + " páginas!");
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
@@ -109,7 +111,7 @@ a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
 
-console.log("O autor do livro Coletânea Front End é " + book('Coletânea Front end').autor + ".");
+console.log("O autor do livro " + nameBook +  " é " + book('Guia Front End').autor + ".");
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
@@ -117,4 +119,4 @@ a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
 
-console.log("O livro HTML5 foi publicado pela editora " + book('HTML5').editora + ".");
+console.log("O livro " + nameBook + " foi publicado pela editora " + book('Guia Front End').editora + ".");
