@@ -12,9 +12,7 @@ var isTruthy = function(x){
 	if (x){
 		return true;
 	}
-	else{
-		return false;
-	}
+	return false;
 };
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
@@ -163,7 +161,7 @@ carro.adicionarPessoas = function(nPessoas){
 	var verPalavra = carro.quantidadePessoas === 1 ? "pessoa" : "pessoas";
 
 	return "Já temos " + carro.quantidadePessoas + ' ' +  verPalavra + " no carro!";
-}
+};
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -176,7 +174,7 @@ Qual a cor atual do carro?
 
 carro.obterCor(); // verde
 
-Mude a cor do carro para vermelho.
+/* Mude a cor do carro para vermelho. */
 
 carro.mudarCor("vermelho");
 
@@ -194,7 +192,7 @@ carro.obterCor(); // verde musgo
 
 // Qual a marca e modelo do carro?
 
-carro.obterMarcaModelo()
+carro.obterMarcaModelo();
 
 // Adicione 2 pessoas no carro.
 
