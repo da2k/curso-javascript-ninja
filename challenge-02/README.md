@@ -28,7 +28,7 @@ Onde VALOR é o novo valor da variável.
 */
 
 function retornarValor(){
-	noValue = 25
+	noValue = 25;
 	return "O valor da variável agora é " + noValue + ".";
 }
 
