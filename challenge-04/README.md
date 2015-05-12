@@ -15,7 +15,7 @@ var isTruthy = function (arg) {
 isTruthy(0);
 isTruthy(-0);
 isTruthy('');
-isTruthy("");
+isTruthy(NaN);
 isTruthy(false);
 isTruthy(null);
 isTruthy(undefined);
@@ -27,7 +27,7 @@ isTruthy(true);
 isTruthy(1);
 isTruthy(10 === 10);
 isTruthy(10);
-isTruthy('1');
+isTruthy(function(){});
 isTruthy('String');
 isTruthy(!false);
 isTruthy(!!true);
@@ -93,7 +93,7 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 carro.obterMarcaModelo = function(){
-	return 'Esse carro é um ' + carro.obterMarca() + ' ' + carro.obterModelo() + '';
+	return 'Esse carro é um ' + carro.obterMarca() + ' ' + carro.obterModelo();
 };
 
 /*
@@ -116,16 +116,14 @@ carro.addPessoas = function(qtdPessoas){
 	var assentosRestantes = carro.assentos - carro.quantidadePessoas;
 	var pessoas = assentosRestantes === 1 ? 'pessoa' : 'pessoas';
 
-	if(carro.quantidadePessoas === carro.assentos){
+	if(carro.quantidadePessoas === carro.assentos && qtdPessoas >= assentosRestantes ){
 		return 'O carro já está lotado!';
 	}
-	if(assentosRestantes > 0){
-		if(qtdPessoas > assentosRestantes){
-			return 'Só cabem mais ' + assentosRestantes + ' ' + pessoas + '!';
-		}else{
-			carro.quantidadePessoas += qtdPessoas;
-		}
+	if(qtdPessoas > assentosRestantes){
+		return 'Só cabem mais ' + assentosRestantes + ' ' + pessoas + '!';
 	}
+
+	carro.quantidadePessoas += qtdPessoas;
 	return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!';
 };
 
@@ -164,7 +162,7 @@ carro.addPessoas(4); // 'Só cabem mais 3 pessoas!'
 carro.addPessoas(3); //'Já temos 5 pessoas no carro!'
 
 // Tire 4 pessoas do carro.
-carro.quantidadePessoas -= 4;
+carro.addPessoas(-4);
 
 // Adicione 10 pessoas no carro.
 carro.addPessoas(10) //'Só cabem mais 4 pessoas!'
