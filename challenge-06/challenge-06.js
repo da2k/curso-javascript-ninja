@@ -5,7 +5,7 @@ Declare uma variável chamada `championship` que receberá o nome do campeonato,
 e imprima o nome desse campeonato no console.
 */
 var championship = 'Campeonato Carioca';
-console.log(championship);//Campeonato Carioca
+console.log(championship);
 
 /*
 Declare uma variável chamada `teams`, que receberá um array com 5 elementos.
@@ -15,7 +15,6 @@ desafio.
 */
 var teams = ['Botafogo', 'Flamengo', 'Vasco', 'Fluminense', 'Madureira'];
 console.log( 'Times que estão participando do campeonato:', teams );
-//Times que estão participando do campeonato: [ 'Botafogo', 'Flamengo', 'Vasco', 'Fluminense', 'Madureira' ]
 
 /*
 Crie uma função chamada `showTeamPosition` com as seguintes características:
@@ -34,34 +33,20 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 function showTeamPosition(numPosition) {
-    switch (numPosition) {
-        case 1:
-            return ('O time que está em ' + numPosition + 'º lugar é o ' + teams[numPosition - 1] + '.');
-            break;
-        case 2:
-            return ('O time que está em ' + numPosition + 'º lugar é o ' + teams[numPosition - 1] + '.');
-            break;
-        case 3:
-            return ('O time que está em ' + numPosition + 'º lugar é o ' + teams[numPosition - 1] + '.');
-            break;
-        case 4:
-            return ('O time que está em ' + numPosition + 'º lugar é o ' + teams[numPosition - 1] + '.');
-            break;
-        case 5:
-            return ('O time que está em ' + numPosition + 'º lugar é o ' + teams[numPosition - 1] + '.');
-            break;
-        default:
-            return ('Não temos a informação do time que está nessa posição.');
+    if(numPosition > 0 && numPosition < 6) {
+        return ('O time que está em ' + numPosition + 'º lugar é o ' + teams[numPosition - 1] + '.');
+    } else {
+         return ('Não temos a informação do time que está nessa posição.');
     }
 }
 /*
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
-console.log(showTeamPosition(1));//O time que está em 1º lugar é o Botafogo.
-console.log(showTeamPosition(3));//O time que está em 3º lugar é o Vasco.
-console.log(showTeamPosition(5));//O time que está em 5º lugar é o Madureira.
-console.log(showTeamPosition(7));//Não temos a informação do time que está nessa posição.
+console.log(showTeamPosition(1));
+console.log(showTeamPosition(3));
+console.log(showTeamPosition(5));
+console.log(showTeamPosition(7));
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
@@ -86,23 +71,26 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 function convertToHex(color){
+    var hexaCor;
     switch (color) {
         case 'red':
-            return 'FF0000';
+            hexaCor = 'FF0000';
             break;
         case 'white':
-            return 'FFFFFF';
+            hexaCor = 'FFFFFF';
             break;
         case 'black':
-            return '000000';
+            hexaCor = '000000';
             break;
         case 'blue':
-            return '0033CC';
+            hexaCor = '0033CC';
             break;
         case 'green':
-            return '00CC00';
+            hexaCor = '00CC00';
             break;
         default:
             return 'Não temos o equivalente hexadecimal para '+ color + '.';
+
+        return ('O hexadecimal para a cor ' + color + ' é ' + hexaCor + '.');
     }
 }
