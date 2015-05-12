@@ -15,7 +15,7 @@ var isTruthy = function (arg) {
 isTruthy(0);
 isTruthy(-0);
 isTruthy('');
-isTruthy("");
+isTruthy(NaN);
 isTruthy(false);
 isTruthy(null);
 isTruthy(undefined);
@@ -27,7 +27,7 @@ isTruthy(true);
 isTruthy(1);
 isTruthy(10 === 10);
 isTruthy(10);
-isTruthy('1');
+isTruthy(function(){});
 isTruthy('String');
 isTruthy(!false);
 isTruthy(!!true);
@@ -93,7 +93,7 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 carro.obterMarcaModelo = function(){
-	return 'Esse carro é um ' + carro.obterMarca() + ' ' + carro.obterModelo() + '';
+	return 'Esse carro é um ' + carro.obterMarca() + ' ' + carro.obterModelo();
 };
 
 /*
@@ -116,7 +116,7 @@ carro.addPessoas = function(qtdPessoas){
 	var assentosRestantes = carro.assentos - carro.quantidadePessoas;
 	var pessoas = assentosRestantes === 1 ? 'pessoa' : 'pessoas';
 
-	if(carro.quantidadePessoas === carro.assentos){
+	if(carro.quantidadePessoas === carro.assentos && carro.quantidadePessoas >= carro.assentos){
 		return 'O carro já está lotado!';
 	}
 	if(assentosRestantes > 0){
