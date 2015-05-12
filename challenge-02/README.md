@@ -90,10 +90,11 @@ function equacao(x, y, z){
     return null;
 }
 
+
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 equacao()      //false
 equacao(4)     //4
 equacao(4,5)   //9
 equacao(4,5,6) //4.5
 
-```
+````
