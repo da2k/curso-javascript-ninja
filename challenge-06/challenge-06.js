@@ -34,7 +34,7 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 function showTeamPosition(numero) {
-    return numero <= 5 ? 'O time que está em ' + numero + 'º lugar é o ' + teams[--numero] + '.' : 'Não temos a informação do time que está nessa posição.';
+    return numero > 0 && numero <= 5 ? 'O time que está em ' + numero + 'º lugar é o ' + teams[numero - 1] + '.' : 'Não temos a informação do time que está nessa posição.';
 }
 
 /*
@@ -45,15 +45,14 @@ console.log(showTeamPosition(3));
 console.log(showTeamPosition(5));
 console.log(showTeamPosition(2));
 console.log(showTeamPosition(3));
-/* nao sei como fazer isso, haha */
+console.log(showTeamPosition(-1));
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
 repetição "while".
 */
 var counter = 20;
 while ( counter <= 30 ) {
-    console.log(counter);
-    counter++;
+    console.log(counter++);
 }
 
 /*
@@ -69,23 +68,25 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 function convertToHex(color) {
+    var hex
     switch(color) {
         case 'preto':
-        console.log('O hexadecimal para a cor ' + color + ' é #000000.');
-        break;
+            hex = '#000000';
+            break;
         case 'azul':
-        console.log('O hexadecimal para a cor ' + color + ' é #0000FF.');
-        break;
+            hex = '#0000FF';
+            break;
         case 'vermelho':
-        console.log('O hexadecimal para a cor ' + color + ' é #FF0000.');
-        break;
+            hex = '#FF0000';
+            break;
         case 'amarelo':
-        console.log('O hexadecimal para a cor ' + color + ' é #FFFF00.');
-        case 'verde':
-        console.log('O hexadecimal para a cor ' + color + ' é #008000.');
-        break;
+            hex = '#FFFF00';
+            break;
+        case 'verde':    
+            hex = '#008000';
+            break;
         default: 
-        console.log('Não temos o equivalente hexadecimal para ' + color + '.')
+        return 'Não temos o equivalente hexadecimal para ' + color + '.'
     }
+        return 'O hexadecimal para a cor ' + color + ' é ' + hex + '.';
 }
-/* se eu invoco a função assim: convertToHex(preto); ele retorna undefined. só funciona usando '' no parametro */
