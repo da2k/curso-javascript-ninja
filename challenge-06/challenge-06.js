@@ -33,17 +33,17 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 function showTeamPosition (position) {
-    return position <= 4 ? 'O time que está em ' + position + 'º lugar é o ' + teams[position] + '.' : 'Não temos a informação do time que está nessa posição.';
+    return position <= 5 ? 'O time que está em ' + position + 'º lugar é o ' + teams[position - 1] + '.' : 'Não temos a informação do time que está nessa posição.';
 }
 
 /*
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
-console.log(showTeamPosition(0));
 console.log(showTeamPosition(1));
 console.log(showTeamPosition(2));
-console.log(showTeamPosition(5));
+console.log(showTeamPosition(3));
+console.log(showTeamPosition(6));
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
@@ -51,7 +51,7 @@ repetição "while".
 */
 var num = 20;
 while(num <= 30){
-    console.log(num++);
+    console.log( num++ );
 }
 
 /*
@@ -68,7 +68,7 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
 */
 function convertToHex (color) {
     var hexColor;
-    switch(color){
+    switch( color ){
         case 'red':
             hexColor = '#FF0000';
             break;
@@ -90,4 +90,4 @@ function convertToHex (color) {
     }
     return 'O hexadecimal para a cor ' + color + ' é ' + hexColor + '.';
 }
-console.log(convertToHex('black'));
+console.log( convertToHex( 'black' ) );
