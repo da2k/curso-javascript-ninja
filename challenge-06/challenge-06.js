@@ -59,3 +59,8 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 // ?
+
+/*
+Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
+*/
+// ?

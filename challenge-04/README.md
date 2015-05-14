@@ -87,7 +87,7 @@ Qual a cor atual do carro?
 */
 ?
 
-Mude a cor do carro para vermelho.
+// Mude a cor do carro para vermelho.
 ?
 
 // E agora, qual a cor do carro?
