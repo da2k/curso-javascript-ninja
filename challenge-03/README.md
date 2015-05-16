@@ -2,7 +2,7 @@
 
 ```js
 // Declarar uma variável qualquer, que receba um objeto vazio.
-var objeto = {}
+var objeto = {};
 
 /*
 Declarar uma variável `pessoa`, que receba suas informações pessoais.
@@ -25,7 +25,7 @@ var pessoa = {
   peso: 68,
   andando: false,
   caminhouQuantosMetros: 0
-}
+};
 
 /*
 Adicione um método ao objeto `pessoa` chamado `fazerAniversario`. O método deve
@@ -64,7 +64,7 @@ Crie um método chamado `nomeCompleto`, que retorne a frase:
 - "Olá! Meu nome é [NOME] [SOBRENOME]!"
 */
 pessoa.nomeCompleto = function() {
-    return 'Olá! Meu nome é ' pessoa.nome + ' ' + pessoa.sobrenome + '!';
+    return 'Olá! Meu nome é ' + pessoa.nome + ' ' + pessoa.sobrenome + '!';
 };
 
 /*
@@ -115,7 +115,7 @@ pessoa.mostrarPeso(); // Eu peso 68kg.
 Qual a altura da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.mostrarAltura(); // Minha altura é 1.70m.
+pessoa.mostrarAltura(); // Minha altura é 1.7m.
 
 /*
 Faça a `pessoa` fazer 3 aniversários.
@@ -181,24 +181,20 @@ correta, de acordo com os dados inseridos no objeto.
 */
 
 pessoa.apresentacao = function() {
-    var genero, idade, metros;
+    var genero = 'Olá eu sou o ';
+    var idade = ' ano.';
+    var metros = ' metros!';
     if (pessoa.sexo === 'Feminino') {
         genero = 'Olá, eu sou a ';
-    } else {
-        genero = 'Olá, seu sou o ';
     };
 
     if (pessoa.idade > 1) {
         idade = ' anos, ';
-    } else {
-        idade = ' ano, ';
-    };
+    }
 
-    if (pessoa.caminhouQuantosMetros > 1) {
-        metros = ' metros!';
-    } else {
+    if (pessoa.caminhouQuantosMetros === 1) {
         metros = ' metro!';
-    };
+    }
 
     return genero + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + idade + pessoa.altura + 'm, meu peso é ' + pessoa.peso + 'Kg e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + metros;
 }
