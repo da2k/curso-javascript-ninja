@@ -190,14 +190,14 @@ pessoa.apresentacao = function() {
 
     if (pessoa.idade > 1) {
         idade = ' anos, ';
-    }
+    };
 
     if (pessoa.caminhouQuantosMetros === 1) {
         metros = ' metro!';
-    }
+    };
 
     return genero + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + idade + pessoa.altura + 'm, meu peso é ' + pessoa.peso + 'Kg e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + metros;
-}
+};
 
 // Agora, apresente-se ;)
 pessoa.apresentacao(); // Olá, seu sou o Warley Franco, tenho 27 anos, 1.7m, meu peso é 68Kg e, só hoje, eu já caminhei 35 metros!
