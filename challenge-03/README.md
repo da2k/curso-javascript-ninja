@@ -387,7 +387,7 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao = function(){
-	var sexo = '0';
+	var sexo = 'o';
 	var idadeAnos = 'anos';
 	var metrosCaminhados = 'metros';
 	
@@ -403,12 +403,10 @@ pessoa.apresentacao = function(){
 	  metrosCaminhados = 'metro';
 	}
 
-	//Minha função está exibindo o erro: Uncaught SyntaxError: Unexpected
-
-	Return 'Olá, eu sou ' + sexo + ' ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + ' ' + idadeAnos + ', ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e,
-só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' ' + metrosCaminhados + '!';
+	return 'Olá, eu sou ' + sexo + ' ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + ' anos, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' ' + metrosCaminhados + '!';
 };
 
 // Agora, apresente-se ;)
-//Olá, eu sou o Anderson Nascimento, tenho 36 anos, 1.73, meu peso é 98 e, só hoje eu já caminhei 18 metros!
+pessoa.apresentacao();
+//"Olá, eu sou o Anderson Nascimento, tenho 39 anos, 1.73, meu peso é 98 e, só hoje, eu já caminhei 18 metros!"
 `````
