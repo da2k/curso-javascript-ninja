@@ -12,8 +12,8 @@ A função deverá retornar o array atualizado.
 */
 
 function addItem(data) {
+	
 	arr.push(data);
-
 	return arr;
 }
 
@@ -52,7 +52,6 @@ pares entre 10 e 20, inclusive esses 2.
 var number = 10;
 
 while ( number <= 20 ){
-
 	number % 2 === 0 ? console.log( 'Números pares entre 10 e 20:' + number ) : ' ';
 	number++;
 }
@@ -63,7 +62,6 @@ Na mesma ideia do exercício acima: mostre agora os números ímpares.
 */
 var number = 10;
 while ( number < 20){
-
 	number % 2 === 1 ? console.log( 'Números ímpares entre 10 e 20:' + number ) : ' ' ;
 	number++;
 
