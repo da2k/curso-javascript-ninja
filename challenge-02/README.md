@@ -84,13 +84,13 @@ Crie uma função com as seguintes características:
 */
 
 function varArgumento(x,y,z){
-	if(x != undefined && y === undefined && z === undefined){
+	if(x !== undefined && y === undefined && z === undefined){
 		return x;
 	}
-	if(x != undefined && y != undefined && z === undefined){
+	if(x !== undefined && y !== undefined && z === undefined){
 			return x + y;
 	}
-	if (x != undefined && y != undefined && z != undefined) {
+	if (x !== undefined && y !== undefined && z !== undefined) {
 			return (x + y) / 3;
 	}
 	if (x === undefined && y === undefined && z === undefined) {
