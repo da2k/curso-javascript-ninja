@@ -17,7 +17,7 @@ function funcArray(array){
 Imprima o segundo índice do array retornado pela função criada acima.
 */
 
-console.log(funcArray(myArray)[0]);
+console.log(funcArray(myArray)[1]);
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -27,7 +27,7 @@ segundo parâmetro.
 */
 
 function myFunction(array, numArray){
-	return array [numArray];
+	return array[numArray];
 }
 
 
