@@ -13,14 +13,14 @@ var arrayCinco = [
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
-function funcaoArray(arg){
+function funcaoArray( arg ){
 	return arg;
 };
 
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-funcaoArray(arrayCinco)[1];
+console.log( funcaoArray( arrayCinco )[1] ); // vasco da gama
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -28,7 +28,7 @@ segundo, um número. A função deve retornar um índice do array que foi passad
 no primeiro parâmetro. O índice a ser retornado, deve ser o número passado no
 segundo parâmetro.
 */
-function funcaoDois(arg, x){
+function funcaoDois( arg, x ){
 	return arg[x];
 };
 
@@ -47,11 +47,11 @@ var arrayCinco2 = [
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-funcaoDois(arrayCinco2, 0); // 2015
-funcaoDois(arrayCinco2, 1); // "javascript ninja"
-funcaoDois(arrayCinco2, 2); // null
-funcaoDois(arrayCinco2, 3); // true
-funcaoDois(arrayCinco2, 4); // 12.5
+console.log( funcaoDois( arrayCinco2, 0 ) ); // 2015
+console.log( funcaoDois( arrayCinco2, 1 ) ); // "javascript ninja"
+console.log( funcaoDois( arrayCinco2, 2 ) ); // null
+console.log( funcaoDois( arrayCinco2, 3 ) ); // true
+console.log( funcaoDois( arrayCinco2, 4 ) ); // 12.5
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -68,19 +68,13 @@ propriedades:
 os livros.
 */
 
-/*
-@daciuk aqui a minha função funciona quando nenhum parametro é passado; não consegui fazer a ligação com o objeto que tem somente o nome do livro.
-
-Tentei livros.tituloLivro, livros.object, mas não tive sucesso. É como que o objeto tenha ficado anonimo.
-*/
-
-function book(tituloLivro){
+function book( tituloLivro ){
 	
 	var livros = {
 		'Como ser um programador melhor': {
 		quantidadePaginas: 383,
 		autor: 'Pete Goodliffe',
-		editora: 'novatec'
+		editora: 'Novatec'
 		},
 	
 		'Aprendendo Javascript': {
@@ -97,18 +91,13 @@ function book(tituloLivro){
 	
 	};
 	
-	if (tituloLivro != undefined){
-		return livros.tituloLivro;
-	} else {
-		return livros;
-	}
+		return !tituloLivro ? livros : livros[ tituloLivro ];
 };
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-book();
-// Object {Como ser um programador melhor: Object, Aprendendo Javascript: Object, Link-se: Object}
+console.log( book() ); // Object {Como ser um programador melhor: Object, Aprendendo Javascript: Object, Link-se: Object}
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
