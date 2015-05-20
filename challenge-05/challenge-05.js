@@ -72,21 +72,21 @@ function book( tituloLivro ){
 	
 	var livros = {
 		'Como ser um programador melhor': {
-		quantidadePaginas: 383,
-		autor: 'Pete Goodliffe',
-		editora: 'Novatec'
+			quantidadePaginas: 383,
+			autor: 'Pete Goodliffe',
+			editora: 'Novatec'
 		},
 	
 		'Aprendendo Javascript': {
-		quantidadePaginas: 407,
-		autor: 'Shelley Powers',
-		editora: 'OReilly'
+			quantidadePaginas: 407,
+			autor: 'Shelley Powers',
+			editora: 'OReilly'
 		},
 
 		'Link-se': {
-		quantidadePaginas: 175,
-		autor: 'Leslie Grossman',
-		editora: 'Gente'
+			quantidadePaginas: 175,
+			autor: 'Leslie Grossman',
+			editora: 'Gente'
 		}
 	
 	};
@@ -98,24 +98,26 @@ function book( tituloLivro ){
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
 console.log( book() ); // Object {Como ser um programador melhor: Object, Aprendendo Javascript: Object, Link-se: Object}
-
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// Como não consegui realizar completamente o exercicio da "function book" não consegui fazer esse exercicio.
+var tituloLivro = 'Aprendendo Javascript';
+console.log( 'O livro ' + tituloLivro + ' tem ' + book( tituloLivro ).quantidadePaginas + ' páginas!' );
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// Como não consegui realizar completamente o exercicio da "function book" não consegui fazer esse exercicio.
+var tituloLivro = 'Como ser um programador melhor';
+console.log( 'O autor do livro ' + tituloLivro + ' é '+ book( tituloLivro ).autor +'.' );
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-// Como não consegui realizar completamente o exercicio da "function book" não consegui fazer esse exercicio.
+var tituloLivro = 'Link-se';
+console.log( 'O livro ' + tituloLivro + ' foi publicado pela editora ' + book( tituloLivro ).editora + '.' );
