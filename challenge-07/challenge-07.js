@@ -17,7 +17,7 @@ var addItem = function(item) {
 Adicione um novo array ao array criado no início do desafio, com ao menos 3
 itens de tipos diferentes, mostrando o resultado no console.
 */
-addItem([1, 'string 2', false]);
+console.log(addItem([1, 'string 2', false]));
 
 /*
 Mostre no console o segundo elemento desse último array, criado acima, com a
@@ -48,7 +48,6 @@ var num = 10;
 while(num <=20) {
   if (num % 2 === 0) {
     console.log(num);
-    num++;
   };
   num++;
 }
@@ -61,7 +60,6 @@ var num = 10;
 while(num <=20) {
   if (num % 2 !== 0) {
     console.log(num);
-    num++;
   };
   num++;
 }
