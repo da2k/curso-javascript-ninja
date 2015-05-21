@@ -7,7 +7,7 @@ var arr = [5, true, undefined, 'String', {nome: 'Name'}];
 Crie uma função chamada `addItem`, que irá adicionar itens no array criado.
 A função deverá retornar o array atualizado.
 */
-var addItem = function(item) {
+var addItem = function addItem(item) {
   arr.push(item);
   return arr;
 
