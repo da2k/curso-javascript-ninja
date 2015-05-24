@@ -141,5 +141,5 @@ console.log( convertToHex('cinza') ); //O hexadecimal para a cor cinza é #80808
 console.log( convertToHex('laranja') ); //O hexadecimal para a cor laranja é #FFA500.
 console.log( convertToHex('branco') ); //O hexadecimal para a cor branco é #FFFFFF.
 console.log( convertToHex('amarelo') ); //Não temos o equivalente hexadecimal para amarelo.
-console.log( convertToHex('preto') ); //Não temos o equivalente hexadecimal para amarelo.
-console.log( convertToHex('verde') ); //Não temos o equivalente hexadecimal para amarelo.
+console.log( convertToHex('preto') ); //Não temos o equivalente hexadecimal para preto.
+console.log( convertToHex('verde') ); //Não temos o equivalente hexadecimal para verde.
