@@ -149,7 +149,7 @@ carro.mudarCor('verde musgo');
 carro.obterCor(); //"verde musgo"
 
 // Qual a marca e modelo do carro?
-carro.obterModelo(); //"fusca"
+carro.obterMarcaModelo(); //"Esse carro é um wolks fusca"
 
 // Adicione 2 pessoas no carro.
 carro.adicionarPessoas(2); //"Já temos 2 pessoas no carro!"
