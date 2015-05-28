@@ -19,14 +19,14 @@ itens de tipos diferentes, mostrando o resultado no console.
 */
 
 addItem([undefined, false, 2.2]);
-console.log(newArray[5]);
+console.log(addItem[5]);
 
 /*
 Mostre no console o segundo elemento desse último array, criado acima, com a
 frase:
 "O segundo elemento do segundo array é [ELEMENTO]."
 */
-console.log("O segundo elemento do segundo array é " + newArray[5][2] + ".");
+console.log("O segundo elemento do segundo array é " + newArray[5][1] + ".");
 
 /*
 Mostre no console quantos itens tem o primeiro array criado, com a frase:
@@ -45,19 +45,21 @@ console.log("O segundo array tem " + newArray[5].length + " itens.");
 Utilizando a estrutura de repetição `while`, mostre no console todos os números
 pares entre 10 e 20, inclusive esses 2.
 */
-
+console.log('Números pares entre 10 e 20: ');
 var pares = 10;
 while(pares <= 20){
-	pares % 2 === 0 ? console.log('Números pares entre 10 e 20: ' + pares) : ' ';
+	pares % 2 === 0 ? console.log(pares) : ' ';
 	pares++;
 }
 
 /*
 Na mesma ideia do exercício acima: mostre agora os números ímpares.
 */
-var pares = 10;
-while(pares <= 20){
-	(pares++) % 2 === 0 ? console.log('Números pares entre 10 e 20: ' + pares) : ' ';
+console.log( 'Números ímpares entre 10 e 20:' );
+var impar = 10;
+while(impar <= 20){
+	impar % 2 !== 0 ? console.log(impar) : ' ';
+	impar++;
 }
 
 /*
@@ -66,13 +68,14 @@ Só vamos mudar o range:
 - No primeiro "for", mostre os números pares entre 100 e 120, inclusive eles;
 - No segundo "for", mostre os números ímpares entre 111 e 125, inclusive eles.
 */
-
+console.log( 'Números pares entre 100 e 120:');
 for (pares = 100; pares <= 120; pares++ ){
-	pares % 2 === 0 ? console.log( 'Números pares entre 100 e 120: ' + pares) : ' ';
+	pares % 2 === 0 ? console.log(pares) : ' ';
 };
 
-for (pares = 111; pares <= 125; pares++) {
-	pares % 2 === 1 ? console.log( 'Números ímpares entre 111 e 125: ' + pares ) : ' ';
+console.log( 'Números ímpares entre 111 e 125:');
+for (impar = 111; impar <= 125; impar++) {
+	impar % 2 !== 0 ? console.log( impar ) : ' ';
 };
 
 // ?
