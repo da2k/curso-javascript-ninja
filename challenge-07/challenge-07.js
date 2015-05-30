@@ -2,17 +2,12 @@
 Crie um array com 5 items (tipos variados).
 */
  var arr = [ 100, function(){}, undefined, 'myrrha', 'olá curso' ];
-
-console.log( arr );
-
-
 /*
 Crie uma função chamada `addItem`, que irá adicionar itens no array criado.
 A função deverá retornar o array atualizado.
 */
 
 function addItem(data) {
-	
 	arr.push(data);
 	return arr;
 }
@@ -36,7 +31,7 @@ console.log('O segundo elemento do segundo array é ' + arr[5][1] + '.');
 Mostre no console quantos itens tem o primeiro array criado, com a frase:
 "O primeiro array tem [QUANTIDADE DE ITENS] itens."
 */
- console.log( arr.length );
+ console.log( 'O primeiro array tem ' + arr.length + ' itens.' );
 
 /*
 Agora mostre no console quantos itens tem o segundo array criado, com a frase:
@@ -48,11 +43,11 @@ console.log('O segundo array tem ' + arr[5].length + ' itens.');
 Utilizando a estrutura de repetição `while`, mostre no console todos os números
 pares entre 10 e 20, inclusive esses 2.
 */
-
+console.log( 'Números pares entre 10 e 20:' );
 var number = 10;
 
 while ( number <= 20 ){
-	number % 2 === 0 ? console.log( 'Números pares entre 10 e 20:' + number ) : ' ';
+	number % 2 === 0 ? console.log( number ) : ' ';
 	number++;
 }
 
@@ -60,11 +55,11 @@ while ( number <= 20 ){
 /*
 Na mesma ideia do exercício acima: mostre agora os números ímpares.
 */
+console.log( 'Números ímpares entre 10 e 20:' );
 var number = 10;
-while ( number < 20){
-	number % 2 === 1 ? console.log( 'Números ímpares entre 10 e 20:' + number ) : ' ' ;
+while ( number < 20 ){
+	number % 2 === 1 ? console.log( number ) : ' ' ;
 	number++;
-
 }
 
 /*
@@ -75,14 +70,12 @@ Só vamos mudar o range:
 */
 console.log( 'Números pares entre 100 e 120:' );
 
-for ( number = 100; number <=120; number++ ){
+for ( number = 100; number <= 120; number++ ){
 	number % 2 === 0 ? console.log( number ) : ' ';
-	console.log( '------------------------');
 }
 
 console.log( 'Números ímpares entre 111 e 125:' );
 
-for ( numberNew = 111; numberNew <=125; numberNew++ ){
-	numberNew % 2 === 1 ? console.log( numberNew ) : ' ';
-	console.log( '------------------------');
+for ( number = 111; number <= 125; number++ ){
+	number % 2 === 1 ? console.log( number ) : ' ';
 }
