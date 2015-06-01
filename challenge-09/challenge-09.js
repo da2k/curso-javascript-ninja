@@ -1,8 +1,8 @@
+(function (){
 /*
 Crie uma IIFE que envolva todo o código desse arquivo. Faça também a
 indentação correta do código, para ficar dentro da IIFE.
 */
-(function (){
 
 /*
 Analise as funções abaixo (`myFunction`, `myFunction2` e `myFunction3`, e
@@ -70,12 +70,11 @@ o retorno de `calculator`.
 por parâmetro, INVOCADA, e passando a ela por parâmetro os dois valores
 que foram passadas para a primeira função `calculator`.
 */
-
 function calculator(x, y){
     
     return function (callback){
         return callback(x, y);
-    }
+    };
 }
 
 /*
@@ -83,7 +82,6 @@ Declare uma variável chamada `sum`, e atribua a ela a função `calculator`,
 passando dois números por parâmetro.
 */
 var sum = calculator(2, 2);
-console.log();
 /*
 Sabemos que `sum` agora tem uma função atribuída a ela, que é o retorno de
 `calculator`. E essa função espera um parâmetro `callback`. O `callback`
@@ -102,9 +100,9 @@ Agora declare outra variáveis chamadas `subtraction`, `multiplication`,
 `division` e `mod`, e atribua à elas `calculator`, passando números
 diferentes para cada chamada.
 */
-var sub = calculator(3, 2);
-var mult = calculator(2, 2);
-var div = calculator(4, 2);
+var subtraction = calculator(3, 2);
+var multiplication = calculator(2, 2);
+var division = calculator(4, 2);
 var mod = calculator(3, 2);
 
 /*
@@ -114,15 +112,15 @@ divisão e módulo (resto de divisão), conforme a função utilizada.
 As suas respostas devem estar abaixo dos `console.log` referentes à cada
 chamada.
 */
-console.log( 'O resultado da subtração é:', sub(function (x, y)
+console.log( 'O resultado da subtração é:', subtraction(function (x, y)
                 {return x - y;}));
 // ?
 
-console.log( 'O resultado da multiplicação é:', mult(function (x, y)
+console.log( 'O resultado da multiplicação é:', multiplication(function (x, y)
                 {return x * y;}));
 // ?
 
-console.log( 'O resultado da divisão é:', div(function (x, y)
+console.log( 'O resultado da divisão é:', division(function (x, y)
                 {return x / y;}));
 // ?
 
