@@ -4,7 +4,7 @@ Declare uma variável chamada `sum` e atribua a ela uma função chamada
 desses parâmetros.
 */
 var sum = function calculateSum(x, y){
-    return (x + y);
+    return x + y;
 }
 
 /*
@@ -75,7 +75,7 @@ function calculator (operation) {
             default:
                 return('Operação inválida.');
         }
-        return(x + ' ' + operation + ' ' + y + ' = ' + result);
+        return('Resultado da operação: ' + x + ' ' + operation + ' ' + y + ' = ' + result);
     }
 }
 
@@ -95,16 +95,16 @@ Agora, declare algumas variáveis com os nomes `subtraction`, `multiplication`,
 `division` e `mod`, e atribua a elas a função `calculator`, passando o operador
 correto por parâmetro para cada uma delas.
 */
-var sub = calculator('-');
-var mult = calculator('*');
-var div = calculator('/');
+var subtraction = calculator('-');
+var multiplication = calculator('*');
+var division = calculator('/');
 var mod = calculator('%');
 
 /*
 Faça uma operação com cada uma das funções criadas acima, mostrando o resultado
 no console.
 */
-console.log(sub(3, 2));
-console.log(mult(3, 2));
-console.log(div(4, 2));
+console.log(subtraction(3, 2));
+console.log(multiplication(3, 2));
+console.log(division(4, 2));
 console.log(mod(3, 2));
