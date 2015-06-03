@@ -43,9 +43,8 @@
 	- O desafio é fazer o retorno sem usar "if" ou "switch".
 	*/
 	function isOperatorValid( operator ){
-		return true ? operator === '+' || operator === '-' || operator === '*' || operator === '/' || operator === '%' : false;
+		return !!operation[operator];
 	}
-
 	/*
 	Agora vamos criar a calculadora.
 	- Crie uma função chamada `calculator`, que receberá como parâmetro um
@@ -59,16 +58,15 @@
 	os dois parâmetros da função de retorno de "calculator".
 	*/
 	function calculator( operator ) {
-		if ( isOperatorValid( operator ) ) {
-			return function ( param1, param2 ) {
-				if (typeof param1 !== 'number' && typeof param2 !== 'number') {
-					return false;
-				} else {
-					return operation[operator]( param1, param2 );
-				}
-			};
-		}
-		return false;
+		if ( !isOperatorValid( operator ) )
+			return false;
+		
+		return function ( param1, param2 ) {
+			if (typeof param1 !== 'number' && typeof param2 !== 'number')
+				return false;
+			
+			return operation[operator]( param1, param2 );
+		};
 	}
 
 	/*
@@ -89,7 +87,7 @@
 	'Operação "[OPERATOR]" não permitida!'
 	*/
 	function showErrorMessage( operator ) {
-		return 'Operação ' + operator + ' não permitida!';
+		return 'Operação "' + operator + '" não permitida!';
 	}
 
 	/*
@@ -123,7 +121,7 @@
 	- O segundo, a função de soma, passando os dois operandos.
 	- Se "sum" for "false", mostrar no console a mensagem de erro.
 	*/
-	if (!!sum) {
+	if (sum) {
 		number1 = 10;
 		number2 = 20;
 		console.log( showOperationMessage( operationSignal, number1, number2 ), sum( number1, number2 ) );
@@ -143,7 +141,6 @@
 		number1 = 90;
 		number2 = 5;
 		console.log( showOperationMessage( operationSignal, number1, number2 ), subtraction( number1, number2 ) );
-		// console.log('true');
 	} else{
 		console.log( showErrorMessage( operationSignal ) );
 	}
