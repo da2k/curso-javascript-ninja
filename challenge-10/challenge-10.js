@@ -137,7 +137,7 @@
 	operationSignal = '-';
 	var subtraction = calculator( operationSignal );
 
-	if (!!subtraction) {
+	if (subtraction) {
 		number1 = 90;
 		number2 = 5;
 		console.log( showOperationMessage( operationSignal, number1, number2 ), subtraction( number1, number2 ) );
@@ -148,7 +148,7 @@
 	operationSignal = '*';
 	var multiplication = calculator( operationSignal );
 
-	if(!!multiplication){
+	if(multiplication){
 		number1 = 13;
 		number2 = 2;
 
@@ -160,7 +160,7 @@
 	operationSignal = '/';
 	var division = calculator( operationSignal );
 
-	if(!!division){
+	if(division){
 		number1 = 12;
 		number2 = 4;
 
@@ -172,7 +172,7 @@
 	operationSignal = '%';
 	var mod = calculator( operationSignal );
 
-	if(!!mod){
+	if(mod){
 		number1 = 123;
 		number2 = 98;
 
@@ -188,7 +188,7 @@
 	operationSignal = '@';
 	var sum = calculator( operationSignal );
 
-	if(!!sum){
+	if(sum){
 		number1 = 123;
 		number2 = 321;
 
