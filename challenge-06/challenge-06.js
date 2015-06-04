@@ -38,17 +38,17 @@ function showTeamPosition( numberPosition ){
     if( numberPosition < 1 || numberPosition > 5) {
         return 'Não temos a informação do time que está nessa posição.';
     }
-    return ', O time que está em '+ numberPosition +'º lugar é o '+ teams[ numberPosition - 1 ] +'.';
+    return 'O time que está em ' + numberPosition + 'º lugar é o ' + teams[ numberPosition - 1 ] + '.';
 }
 
 /*
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
-showTeamPosition(2);
-showTeamPosition(3);
-showTeamPosition(4);
-showTeamPosition(7);
+console.log( showTeamPosition(2) );
+console.log( showTeamPosition(3) );
+console.log( showTeamPosition(4) );
+console.log( showTeamPosition(7) );
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
@@ -78,23 +78,23 @@ function convertToHex( nameColor ){
     switch( nameColor ){
         case 'red':
             hexa = '#F00';
-        break;
+            break;
 
         case 'brown':
             hexa = '#A52A2A';
-        break;
+            break;
 
         case 'blue':
             hexa = '#00F';
-        break;
+            break;
 
         case 'yellow':
             hexa = '#FF0';
-        break;
+            break;
 
         case 'green':
             hexa = '#008000';
-        break;
+            break;
 
         default: 
             return 'Não temos o equivalente hexadecial para ' + nameColor + '.';
@@ -102,3 +102,14 @@ function convertToHex( nameColor ){
     
     return 'O hexadecimal para a cor '+ nameColor +' é '+ hexa +'.';
 }
+/*
+Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
+*/
+console.log( convertToHex('red') );
+console.log( convertToHex('blue') );
+console.log( convertToHex('brown') );
+console.log( convertToHex('orange') );
+console.log( convertToHex('green') );
+console.log( convertToHex('pink') );
+console.log( convertToHex('black') );
+console.log( convertToHex('white') );
