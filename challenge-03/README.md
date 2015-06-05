@@ -119,7 +119,7 @@ Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
 comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
-pessoa.idade; // 22
+pessoa.mostrarIdade(); // 22
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
 com metragens diferentes passadas por parâmetro.
@@ -127,7 +127,6 @@ com metragens diferentes passadas por parâmetro.
 pessoa.andar(20);
 pessoa.andar(30);
 pessoa.andar(80);
-
 /*
 A pessoa ainda está andando? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
@@ -152,7 +151,6 @@ Agora vamos deixar a brincadeira um pouco mais divertida! :D
 Crie um método para o objeto `pessoa` chamado `apresentacao`. Esse método deve
 retornar a string:
 - "Olá, eu sou o [NOME COMPLETO], tenho [IDADE] anos, [ALTURA], meu peso é [PESO] e, só hoje, eu já caminhei [CAMINHOU QUANTOS METROS] metros!"
-pessoa
 Só que, antes de retornar a string, você vai fazer algumas validações:
 - Se o `sexo` de `pessoa` for "Feminino", a frase acima, no início da
 apresentação, onde diz "eu sou o", deve mostrar "a" no lugar do "o";
