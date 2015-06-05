@@ -58,7 +58,6 @@ var carro = {
 	quantidadePessoas: 0
 
 };
-
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
@@ -66,36 +65,32 @@ passado por parâmetro.
 carro.mudarCor = function(mudancaCor){
 	carro.cor = mudancaCor; 
 };
-
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
 carro.obterCor = function(){
 	return carro.cor;
 };
-
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
 carro.obterModelo = function(){
 	return carro.modelo;
 };
-
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
 */
 carro.obterMarca = function(){
 	return carro.marca;
 };
-
 /*
 Crie um método chamado `obterMarcaModelo`, que retorne:
 "Esse carro é um [MARCA] [MODELO]"
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 carro.obterMarcaModelo = function(){
-	return 'Esse carro é um ' + carro.obterMarca() + ' ' + carro.obterModelo();
-}
+	return 'Esse carro é um ' + carro.obterMarca() + ' ' + carro.obterModelo()
+};
 /*
 Crie um método que irá adicionar pessoas no carro. Esse método terá as
 seguintes características:
@@ -114,22 +109,22 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-carro.adicionarPessoas = function(numeroPessoas){
+carro.adicionarPessoas = function( numeroPessoas ){
 	var total = carro.quantidadePessoas + numeroPessoas;
 
-	if(carro.quantidadePessoas === carro.assentos && total >= carro.assentos ){
+	if( carro.quantidadePessoas === carro.assentos && total >= carro.assentos ){
 		return 'O carro já está lotado!';
 	}
 	
 	if( total > carro.assentos ){
 		var quantidadeCabem = carro.assentos - carro.quantidadePessoas;
 		var quantidadePessoas = quantidadeCabem === 1 ? ' pessoa' : 'pessoas';
-		return 'Só cabem mais '+ quantidadeCabem + quantidadePessoas + ' !';
+		return 'Só cabem mais ' + quantidadeCabem + quantidadePessoas + ' !';
 	}
 
 	carro.quantidadePessoas += numeroPessoas;
 	
-	return 'Já temos '+ total +' pessoas no carro!';
+	return 'Já temos ' + total + ' pessoas no carro!';
 };
 
 /*
