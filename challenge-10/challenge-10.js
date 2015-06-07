@@ -99,7 +99,11 @@ operador da operação cálculo, quando a operação não for válida.
 Essa função deverá retornar a frase:
 'Operação "[OPERATOR]" não permitida!'
 */
-	function showErrorMessage()
+	function showErrorMessage(operador) {
+		if(isOperatorValid(operador) === false) {
+			return 'Operação ' + operador + ' não permitida!';
+		}
+	}
 
 /*
 Nossa calculadora está pronta! Agora vamos testá-la:
