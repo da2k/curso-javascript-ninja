@@ -13,7 +13,7 @@ resolver o problema corretamente.
 	var five = Number('5');
 	console.log( five + ' é número?', typeof five === 'number' );
 
-	var concat = String(10 + 10);
+	var concat = String(10) + 10;
 	console.log( '"' + concat + '" é uma string? E é igual a "1010"?', typeof concat === 'string' );
 
 /*
@@ -54,7 +54,7 @@ Caso contrário, "false".
 - O desafio é fazer o retorno sem usar "if" ou "switch".
 */
 	function isOperatorValid(operador){
-		return typeof operation[operador] === 'function';
+		return !!operation[operador];
 	}
 
 /*
@@ -70,17 +70,16 @@ operador passado para a função "calculator", e passando para esse método
 os dois parâmetros da função de retorno de "calculator".
 */
 	function calculator(operador) {
-		if( isOperatorValid(operador) === false ) {
+		if( !isOperatorValid(operador) ) {
 			return false;
-		} {
-			return function( x, y ) {
-				if( typeof x !== 'number' || y !== 'number') {
-					return false;
-				} {
-					return operation[operador]( x, y );
-				}
-			}
+		} 
+		return function( x, y ) {
+			if( typeof x !== 'number' && y !== 'number') {
+				return false;
+			} 
+				return operation[operador]( x, y );
 		}
+		
 	}
 /*
 Crie uma função chamada "showOperationMessage" que recebe três parâmetros:
@@ -90,7 +89,7 @@ deve ser a frase:
 Essa função mostrará a mensagem da operação que criaremos mais abaixo.
 */
 	function showOperationMessage( operador, x, y ) {
-		return 'A operação ' + x + operador + y + ' = ';
+		return 'A operação ' + x + ' ' + operador + ' ' + y + ' = ';
 	}
 
 /*
@@ -100,9 +99,7 @@ Essa função deverá retornar a frase:
 'Operação "[OPERATOR]" não permitida!'
 */
 	function showErrorMessage(operador) {
-		if(isOperatorValid(operador) === false) {
-			return 'Operação ' + operador + ' não permitida!';
-		}
+		return 'Operação ' + operador + ' não permitida!';
 	}
 
 /*
