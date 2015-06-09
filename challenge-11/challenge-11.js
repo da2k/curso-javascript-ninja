@@ -47,7 +47,7 @@ console.log( 'De 0 a 10:' );
 /*
 Faça outro loop de 0 a 20, que adicione a um array chamado `numbers` (já
 criado acima, só precisa ser reiniciado) números de 0 a 20, inclusive
-esses. Se o número for par, pular para o próximo número.
+esses. Se o número for ímpar, pular para o próximo número.
 Mostrar no console os números do array.
 */
 console.log( 'Pares de 0 a 20:' );
