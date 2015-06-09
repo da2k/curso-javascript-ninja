@@ -15,8 +15,7 @@ function addItem(add){
 Adicione um novo array ao array criado no início do desafio, com ao menos 3
 itens de tipos diferentes, mostrando o resultado no console.
 */
-addItem([ function(){}, {idade: function(){}}, 'Anderson Menezes' ]);
-console.log( arr );
+console.log( addItem([ function(){}, {idade: function(){}}, 'Anderson Menezes' ]) );
 
 /*
 Mostre no console o segundo elemento desse último array, criado acima, com a
@@ -64,11 +63,10 @@ Só vamos mudar o range:
 */
 console.log( 'Números pares entre 100 e 120:' );
 for( var num = 100; num <= 120; num++){
-	num % 2 === 0 ? console.log(num++) : '';
+	num % 2 === 0 ? console.log(num) : '';
 }
 
 console.log( 'Números ímpares entre 111 e 125:' );
 for ( var num = 111; num <= 125; num++){
 	num % 2 !== 0 ? console.log(num) : '';
-	num++;
 }
