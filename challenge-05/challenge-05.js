@@ -67,7 +67,6 @@ function book(bookName) {
 			autor: 'Maujor',
 			editora: 'Novatec'
 		},
-
 		'HTML5 A Bíblia': {
 			quantidadePaginas: 987,
 			autor: 'Seu Creysson',
