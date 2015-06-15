@@ -22,16 +22,16 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function adicionaValor (valor) {
-	var souninja = valor;
+function adicionaValor () {
+	souninja = valor;
 	return 'O valor da variável agora é ' + valor;
 }
 
 // Invoque a função criada acima.
-adicionaValor('verdade');
+adicionaValor();
 
 // Qual o retorno da função? (Use comentários de bloco).
-'O valor da variável agora é verdade'
+/* 'O valor da variável agora é verdade' */
 
 /*
 Crie uma função com as seguintes características:
