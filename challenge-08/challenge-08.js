@@ -27,7 +27,6 @@ seu nome.
 var showName = function showName() {
   return 'Thiago Nogueira';
 };
-//console.log(showName());
 
 /*
 Declare uma variável chamada `varShowName` que recebe a função criada acima.
@@ -55,10 +54,27 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
 */
 var calculator = function calculator(x) {
   return function (num1,num2) {
-    if (x === '+' || x === '-' || x === '*' || x === '/' || x === '%') {
-      var total = num1 + x + num2;
-       console.log('Resultado da operação: ' + num1 + ' ' + x + ' ' + num2 + ' = ' + eval(total) + ' .');
-    } else { console.log('Operação inválida'); }
+      var total;
+      switch(x) {
+        case '+': 
+          total = num1 + num2;
+          break;
+        case '-': 
+          total = num1 - num2;
+          break;
+        case '*': 
+          total = num1 * num2;
+          break;
+        case '/':
+          total = num1 / num2;
+          break;
+        case '%':
+          total = num1 % num2;
+          break;
+        default:
+          return 'Operação inválida.';
+      }
+      return 'Resultado da operação: ' + num1 + ' ' + x + ' ' + num2 + ' = ' + total + '.';
   }
 };
 
@@ -72,7 +88,7 @@ var sum = calculator('+');
 /*
 Agora `sum` é uma função. Mostre no console a soma de dois números, usando ela.
 */
-sum(3,4);
+console.log(sum(3,4));
 
 /*
 Agora, declare algumas variáveis com os nomes `subtraction`, `multiplication`,
@@ -88,7 +104,7 @@ var mod = calculator('%');
 Faça uma operação com cada uma das funções criadas acima, mostrando o resultado
 no console.
 */
-subtraction(4,3);
-multiplication(3,7);
-division(10,2);
-mod(5,2);
+console.log(subtraction(4,3));
+console.log(multiplication(3,7));
+console.log(division(10,2));
+console.log(mod(5,2));
