@@ -13,7 +13,7 @@ Os elementos serão nomes de times do campeonato escolhido, e os nomes devem
 estar na ordem em que eles aparecem na tabela no momento da solução desse
 desafio.
 */
-var teams = ['Santos', 'Palmeiras', 'Corinthians', 'São Paulo', 'Ponte preta']
+var teams = ['Santos', 'Palmeiras', 'Corinthians', 'São Paulo', 'Ponte preta'];
 
 console.log( 'Times que estão participando do campeonato:', teams );
 
@@ -34,7 +34,12 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 var showTeamPosition = function showTeamPosition(num) {
-  return num >= 0 && num < 6 ? 'O time que está em  ' + num + 'º lugar é o ' + teams[num-1] + '.' : 'Não temos a informação do time que está nessa posição.';
+    if (num >= 0 && num < 6) {
+        return 'O time que está em  ' + num + 'º lugar é o ' + teams[num-1] + '.' 
+    } else {
+        return 'Não temos a informação do time que está nessa posição.';
+    };
+  
 };
 
 /*
@@ -69,21 +74,22 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 var convertToHex = function convertToHex(color) {
+    var fraseCor = 'O hexadecimal para a cor ' + color + ' é';
   switch(color) {
     case 'vermelho':
-        return 'O hexadecimal para a cor vermelho é #ff0000.'
+        return fraseCor + ' #ff0000.'
         break;
     case 'azul':
-        return 'O hexadecimal para a cor azul é #0000ff.'
+        return fraseCor + ' #0000ff.'
         break;
     case 'cinza':
-        return 'O hexadecimal para a cor cinza  é #808080'
+        return fraseCor + ' #808080'
         break;
     case 'preto':
-        return 'O hexadecimal para a cor preto é #000000'
+        return fraseCor + ' #000000'
         break
     case 'laranja':
-        return 'O hexadecimal para a cor laranja é #ffa500'
+        return fraseCor +' #ffa500'
         break     
     default:
        return 'Não temos o equivalente hexadecimal para ' + color + '.';
