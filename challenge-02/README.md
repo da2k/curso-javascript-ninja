@@ -24,7 +24,7 @@ Onde VALOR é o novo valor da variável.
 */
 function adicionaValor () {
 	souninja = 'verdade';
-	return 'O valor da variável agora é ' + valor;
+	return 'O valor da variável agora é ' + souninja;
 }
 
 // Invoque a função criada acima.
