@@ -23,18 +23,16 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 
-function recebeValor (value) {
-	valor = value;
+function recebeValor () {
+	valor = 10;
 	return 'O valor da variável agora é ' + valor + '.';
 }
 
 // Invoque a função criada acima.
-recebeValor(10);
+recebeValor();
 
 // Qual o retorno da função? (Use comentários de bloco).
-/* A função recebeValor() retorna 
-   o seguinte valor: 'O valor da variável agora é 10.'
-*/
+/* 'O valor da variável agora é 10.' */
 
 /*
 Crie uma função com as seguintes características:
@@ -55,7 +53,7 @@ function multiplica (x, y, z) {
 multiplica(12, 2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-// 'preencha todos os valores'
+// 'Preencha todos os valores corretamente!'
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 multiplica(12, 2, 3);
@@ -73,22 +71,22 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function operacao(x, y, z) {
-	if(x === undefined && y === undefined && z === undefined) { 
-		return false;
-	} else if(x !== undefined && y === undefined && z === undefined) {
+	if(x !== undefined && y === undefined && z === undefined) {
 		return x;
 	} else if(x !== undefined && y !== undefined && z === undefined) {
 		return x + y;
 	} else if(x !== undefined && y !== undefined && z !== undefined) {
-		return (x + y) * z;
+		return (x + y) / z;
+	}else if(x === undefined && y === undefined && z === undefined) { 
+		return false;
 	}else {
 		return null;
 	}	
 } 
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-operacao(); // retorna false
-operacao(12); // retorna 12
-operacao(12, 2); // retorna 14
-operacao(10, 2, 3); // retorna 42
+operacao(); // false
+operacao(12); // 12
+operacao(12, 2); // 14
+operacao(10, 2, 3); // 4
 ```
