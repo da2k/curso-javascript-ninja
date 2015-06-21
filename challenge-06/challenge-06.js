@@ -33,7 +33,7 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 function showTeamPosition(position) {
-    if ((position >= 0) && (position < 6)) {
+    if ((position >= 0) && (position <= 4)) {
         return 'O time que está em ' + ++position + 'º lugar é o ' + teams[position - 1] + '.';
     } else {
         return "Não temos a informação do time que está nessa posição.";
