@@ -7,7 +7,8 @@ var arrey = ['Filipe', 27, true, {vingador: 'Hulk'}, function() {}];
 Crie uma função chamada `addItem`, que irá adicionar itens no array criado.
 A função deverá retornar o array atualizado.
 */
-function addItem() {
+function addItem(item) {
+	arrey.push(item);
 	return arrey;
 }
 
