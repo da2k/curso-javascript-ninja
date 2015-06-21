@@ -112,21 +112,21 @@ pessoa.mostrarPeso(); // 'Eu peso 83Kg.'
 Qual a altura da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.altura(); // 'Minha altura é 1.81m.'
+pessoa.mostrarAltura(); // 'Minha altura é 1.81m.'
 
 /*
 Faça a `pessoa` fazer 3 aniversários.
 */
-for(var i = 0; i < 3; i++) {
-	pessoa.fazerAniversario();
-}
+pessoa.fazerAniversario();
+pessoa.fazerAniversario();
+pessoa.fazerAniversario();
 
 /*
 Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
 comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
-pessoa.idade; // 36
+pessoa.mostrarIdade(); // 'Olá, eu tenho 36 anos!'
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
@@ -199,5 +199,5 @@ pessoa.apresentacao = function() {
 };
 
 // Agora, apresente-se ;)
-pessoa.apresentacao();
+pessoa.apresentacao(); /* 'Olá, eu sou o Adams Alves, tenho 36 anos, 1.81, meu peso é 83 e, só hoje, eu já caminhei 22 metros!' */
 ```
