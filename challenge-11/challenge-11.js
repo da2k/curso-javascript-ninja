@@ -80,7 +80,7 @@
   console.log( 'Pares de 0 a 20:' );
   numbers = [];
   for(i = 0; i <= 20; i++) {
-    if(i % 2 !== 0 || i === 0) {
+    if(i % 2 !== 0) {
       continue;
     }
     numbers.push(i);
