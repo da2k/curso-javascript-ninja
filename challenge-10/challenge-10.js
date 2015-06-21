@@ -63,10 +63,10 @@
   */
   function calculator(operator) {
     if (!isOperatorValid(operator)) {
-      return false
+      return false;
     }
     return function (n1, n2) {
-      if (typeof n1 !== 'number' && typeof n2 !== 'number') {
+      if (typeof n1 !== 'number' || typeof n2 !== 'number') {
         return false;
       };
       return operation[operator](n1,n2);
@@ -93,7 +93,7 @@
   'Operação "[OPERATOR]" não permitida!'
   */
   function showErrorMessage(operator) {
-    return 'Operação '+ operator + ' não permitida!'
+    return 'Operação '+ operator + ' não permitida!';
   }
 
   /*
