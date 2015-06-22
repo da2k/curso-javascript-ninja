@@ -16,7 +16,7 @@ function addItem(item) {
 Adicione um novo array ao array criado no início do desafio, com ao menos 3
 itens de tipos diferentes, mostrando o resultado no console.
 */
-addItem([55, 'Mamãe', {brava: true}]);
+console.log(addItem([55, 'Mamãe', {brava: true}]));
 
 /*
 Mostre no console o segundo elemento desse último array, criado acima, com a
@@ -58,7 +58,7 @@ console.log( 'Números ímpares entre 10 e 20:' );
 numero = 10;
 
 while (numero <= 20) {
-	numero % 2 === 1 ? console.log(numero) : '';
+	numero % 2 !== 0 ? console.log(numero) : '';
 	numero++;
 }
 
