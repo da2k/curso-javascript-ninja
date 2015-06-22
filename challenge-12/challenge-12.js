@@ -12,10 +12,10 @@ Preencha cada propriedade com os seus dados pessoais, respeitando o tipo
 de valor para cada propriedade.
 */
 var person = {
-	'name': 'Mateus',
-	'lastname': 'Jabour',
-	'age': 18
-}
+	name: 'Mateus',
+	lastname: 'Jabour',
+	age: 18
+};
 
 /*
 Mostre no console, em um array, todas as propriedades do objeto acima.
@@ -60,7 +60,7 @@ Converta os objetos que ficaram em `books` para strings.
 */
 // ?
 
-var objStr = JSON.stringify(books)
+var objStr = JSON.stringify(books);
 
 /*
 Mostre os livros nesse formato no console:
@@ -79,11 +79,10 @@ Mostre no console todas as propriedades e valores de todos os livros,
 no formato abaixo:
     "[PROPRIEDADE]: [VALOR]"
 */
-console.log(Object.keys(books[0])[0] + ': ', books[0].name);
-console.log(Object.keys(books[0])[1] + ': ', books[0].pages);
-
-console.log(Object.keys(books[1])[0] + ': ', books[1].name);
-console.log(Object.keys(books[1])[1] + ': ', books[1].pages);
+for(var i = 0; i <= 1; i++){
+		console.log(Object.keys(books[i])[0] + ': ', books[i].name);
+		console.log(Object.keys(books[i])[1] + ': ', books[i].pages);
+}
 
 /*
 Crie um array chamado `myName`. Cada item desse array deve ser uma letra do
