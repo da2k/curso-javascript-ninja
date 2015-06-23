@@ -36,15 +36,15 @@
   `name`: String
   `pages`: Number
   */
-  books = [ { name: 'Senhor dos Anéis', pages: 500 }, { name: 'Harry Potter', pages: 300 }, { name: 'Os homens que não amavam as mulheres', pages: 400 } ];
+  books.push({ name: 'Senhor dos Anéis', pages: 500 }); 
+  books.push({ name: 'Harry Potter', pages: 300 });
+  books.push({ name: 'Os homens que não amavam as mulheres', pages: 400 });
   console.log( '\nLista de livros:' );
 
   /*
   Mostre no console todos os livros.
   */
-  for(i = 0; i < books.length; i++) {
-    console.log(books[i].name);
-  }
+  console.log(books);
 
   console.log( '\nLivro que está sendo removido:' );
   /*
@@ -56,33 +56,32 @@
   /*
   Mostre no console os livros restantes.
   */
-  for(i = 0; i < books.length; i++) {
-    console.log(books[i].name);
-  }
+  console.log(books);
 
   /*
   Converta os objetos que ficaram em `books` para strings.
   */
-  JSON.stringify(books);
+  books = JSON.stringify(books);
   console.log( '\nLivros em formato string:' );
 
   /*
   Mostre os livros nesse formato no console:
   */
-  console.log(JSON.stringify(books));
+  console.log(books);
   /*
   Converta os livros novamente para objeto.
   */
-  
+  books = JSON.parse(books);
   console.log( '\nAgora os livros são objetos novamente:' );
-  console.log(books);
   /*
   Mostre no console todas as propriedades e valores de todos os livros,
   no formato abaixo:
       "[PROPRIEDADE]: [VALOR]"
   */
   for(i = 0; i < books.length; i++) {
-    console.log(JSON.stringify(books[i]));
+    for(var prop in books[i]) {
+      console.log( prop + ': ' + books[i][prop]);
+    }
   }
 
   /*
