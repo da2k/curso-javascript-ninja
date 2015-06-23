@@ -20,8 +20,8 @@ var pessoa = {
 	nome: 'Max', 
 	sobrenome: 'Arouca', 
 	sexo: 'masculino', 
-	idade:26, 
-	altura: 1,70, 
+	idade: 26, 
+	altura: 1.70, 
 	peso: 87, 
 	andando: false, 
 	caminhouQuantosMetros: 0 
@@ -33,7 +33,7 @@ alterar o valor da propriedade `idade` dessa pessoa, somando `1` a cada vez que
 for chamado.
 */
 pessoa.fazerAniversario = function () {
-	pessoa.idade++
+	pessoa.idade++;
 };
 
 /*
@@ -114,15 +114,15 @@ pessoa.mostrarPeso(); // 'Eu peso 87Kg!'
 Qual a altura da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.mostrarAltura(); // 'Minha altura é 1,70m!'
+pessoa.mostrarAltura(); // 'Minha altura é 1.70m!'
 
 
 /*
 Faça a `pessoa` fazer 3 aniversários.
 */
-pessoa.fazerAniversario ();
-pessoa.fazerAniversario ();
-pessoa.fazerAniversario ();
+pessoa.fazerAniversario();
+pessoa.fazerAniversario();
+pessoa.fazerAniversario();
 
 
 /*
@@ -161,7 +161,7 @@ pessoa.andando; // false
 Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
 inline ao lado da instrução para mostrar a resposta retornada)
 */
-pessoa.caminhouQuantosMetros; // 100
+pessoa.caminhouQuantosMetros; // 180
 
 /*
 Agora vamos deixar a brincadeira um pouco mais divertida! :D
@@ -198,11 +198,10 @@ pessoa.apresentacao = function (){
 	}
 
 
-	return 'Olá, eu sou ' + sexo + ' ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + ' ' + anos + ', ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' ' + qtdMetros + '!"
-	
-}
+	return 'Olá, eu sou ' + sexo + ' ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + ' ' + idade + ', ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' ' + qtdMetros + '!'
+};
 
 // Agora, apresente-se ;)
 pessoa.apresentacao();
-// 'Olá, eu sou o Max Arouca, tenho 29 anos, 1,70, meu peso é 87 e, só hoje, eu já caminhei 180 metros!'
+// 'Olá, eu sou o Max Arouca, tenho 29 anos, 1.70, meu peso é 87 e, só hoje, eu já caminhei 180 metros!'
 
