@@ -106,7 +106,7 @@ propriedades:
 var newBrasil = [];
 
 brasil.forEach(function(item, index) {
-	newBrasil.push({id: index, estado: item})
+	newBrasil.push({id: index, estado: item});
 });
 
 
@@ -129,7 +129,7 @@ var every = brasil.every(function (item) {
 });
 	if(every === true) {
 		console.log('Sim, todos os estados tem mais de 7 letras!');
-	}else {
+	} else {
 		console.log('Nem todos os estados tem mais de 7 letras!');
 	}
 
@@ -148,7 +148,7 @@ var some = brasil.some(function (item) {
 });
 	if(some === true) {
 		console.log('Ceará está incluído');
-	}else {
+	} else {
 		console.log('Ceará não está incluído');
 	}
 // ?
@@ -161,8 +161,8 @@ Atribua o novo array a uma variável chamada `map`.
 */
 
 var map = newBrasil.map(function (item, index) {
-	return({id: index + 1, estado: newBrasil[index].estado + ' pertence ao brasil.'})
-})
+	return {id: index + 1, estado: item.estado + ' pertence ao brasil.'};
+});
 
 /*
 Mostre no console o array criado acima:
@@ -175,10 +175,10 @@ Filtre o array criado acima, retornando somente os estados que tiverem
 ID par. Atribua o valor à uma variável chamada `filter`.
 */
 var filter = map.filter(function (item, index) {
-	if(( map[index].id ) % 2 == 0) {
-		return(map[index]);
+	if(( item.id ) % 2 === 0) {
+		return(item);
 	}
-})
+}); 
 /*
 Mostre o array filtrado acima no console.
 */
