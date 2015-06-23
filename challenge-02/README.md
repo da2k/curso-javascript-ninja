@@ -28,7 +28,7 @@ function return_val() {
 }
 
 // Invoque a função criada acima.
-return_val()
+return_val();
 
 // Qual o retorno da função? (Use comentários de bloco).
 
@@ -73,7 +73,7 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function argumentos( x, y, z) {
-  if ( x == undefined && y == undefined && z == undefined ) {
+  if ( x === undefined && y === undefined && z === undefined ) {
     return false;
   }
   else if ( x, y == undefined && z == undefined )  {
@@ -95,5 +95,4 @@ argumentos(); // => false
 argumentos(1); // => 1
 argumentos(1,2); // => 3
 argumentos(1,2,2); // => 1.5
-// A questão 6 fiquei com dúvida, não seria a mesma coisa do 5?
 ```
