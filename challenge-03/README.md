@@ -20,9 +20,9 @@ var pessoa = {
 	nome: 'Max', 
 	sobrenome: 'Arouca', 
 	sexo: 'masculino', 
-	idade:'26', 
-	altura: '1,70', 
-	peso: '87', 
+	idade:26, 
+	altura: 1,70, 
+	peso: 87, 
 	andando: false, 
 	caminhouQuantosMetros: 0 
 };
@@ -47,7 +47,7 @@ valor dessa propriedade a quantidade passada por parâmetro;
 booleano que representa "verdadeiro";
 */
 pessoa.andar = function (x) {
-	pessoa.caminhouQuantosMetros = x;
+	pessoa.caminhouQuantosMetros += x;
 	pessoa.andando = true;
 };
 
@@ -88,7 +88,7 @@ Crie um método chamado `mostrarAltura` que retorne a frase:
 - "Minha altura é [ALTURA]m."
 */
 pessoa.mostrarAltura = function () {
-	return 'Minha altura é ' + pessoa.altura + 'm!';
+	return 'Minha altura é ' + pessoa.altura + 'm.';
 };
 
 /*
@@ -120,9 +120,9 @@ pessoa.mostrarAltura(); // 'Minha altura é 1,70m!'
 /*
 Faça a `pessoa` fazer 3 aniversários.
 */
-pessoa.fazerAniversario ()
-pessoa.fazerAniversario ()
-pessoa.fazerAniversario ()
+pessoa.fazerAniversario ();
+pessoa.fazerAniversario ();
+pessoa.fazerAniversario ();
 
 
 /*
@@ -181,20 +181,28 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao = function (){
-	if ( pessoa.sexo === 'Feminino'){
-	return 'Olá, eu sou a ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + ' anos, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metros!';
+	var sexo = 'o';
+	var idade = 'anos';
+	var qtdMetros = 'metros';
+
+	if ( pessoa.sexo === 'Feminino' ){
+		sexo = 'a';
 	}
-	else if ( pessoa.idade === 1){
-	return 'Olá, eu sou o ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + ' ano, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metros!';
+
+	if ( pessoa.idade === 1 ){
+		idade = 'ano';
 	}
-	else if( pessoa.caminhouQuantosMetros === 1){
-	return 'Olá, eu sou o ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + ' anos, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metro!';
+
+	if ( pessoa.caminhouQuantosMetros === 1) {
+		qtdMetros = 'metro';
 	}
-	else {
-	return 'Olá, eu sou o ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + ' anos, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metros!';
-	}
+
+
+	return 'Olá, eu sou ' + sexo + ' ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + ' ' + anos + ', ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' ' + qtdMetros + '!"
+	
 }
 
 // Agora, apresente-se ;)
 pessoa.apresentacao();
-```
+// 'Olá, eu sou o Max Arouca, tenho 29 anos, 1,70, meu peso é 87 e, só hoje, eu já caminhei 180 metros!'
+
