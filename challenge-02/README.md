@@ -44,7 +44,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function multi( x,y,z ) {
-  if ( x == undefined || y == undefined || z == undefined ) {
+  if ( x === undefined || y === undefined || z === undefined ) {
     return "Preencha todos os valores corretamente!";
   } else {
     return ( x * y * z ) + 2;
@@ -76,16 +76,15 @@ function argumentos( x, y, z) {
   if ( x === undefined && y === undefined && z === undefined ) {
     return false;
   }
-  else if ( x, y == undefined && z == undefined )  {
+  else if ( x, y === undefined && z === undefined )  {
     return x;
   }
-  else if ( x, y && z == undefined ) {
+  else if ( x, y && z === undefined ) {
     return x + y;
   }
   else if ( x, y, z ) {
     return ( x + y ) / z;
-  }
-  else {
+  } else {
     return null;
   }
 }
