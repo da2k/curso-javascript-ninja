@@ -158,7 +158,7 @@
 	*/
 	var map = newBrasil.map( function( element, index, arr ) {
 		return { 
-			'id': index + 1,
+			'id': element.id + 1,
 			'estado': element.estado + ' pertence ao Brasil'
 		};
 	});
@@ -174,7 +174,7 @@
 	ID par. Atribua o valor à uma variável chamada `filter`.
 	*/
 	var filter = map.filter( function( element, index, arr ) {
-		return index % 2 !== 0;
+		return element.id % 2 === 0;
 	});
 
 	/*
