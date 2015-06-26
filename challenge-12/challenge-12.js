@@ -89,11 +89,12 @@
 	no formato abaixo:
 	    "[PROPRIEDADE]: [VALOR]"
 	*/
-	console.log( '"' + Object.keys( books[0] )[0] + ': ' + books[0].name + '"' );
-	console.log( '"' + Object.keys( books[0] )[1] + ': ' + books[0].pages + '"' );
-
-	console.log( '"' + Object.keys( books[1] )[0] + ': ' + books[1].name + '"' );
-	console.log( '"' + Object.keys( books[1] )[1] + ': ' + books[1].pages + '"' );
+	var booksLength = books.length;
+	for (var i = 0; i < booksLength; i++) {
+		for(prop in books[i]){
+			console.log( prop + ': ' + books[i][prop] );
+		}
+	}
 
 	/*
 	Crie um array chamado `myName`. Cada item desse array deve ser uma letra do
