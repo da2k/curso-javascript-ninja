@@ -14,7 +14,7 @@ o resultado no console, com a frase:
 */
 var value1 = 8;
 var value2 = 2;
-console.log( 'A soma de ' + value1 + ' e ' + value2 + ' é igual a ' + sum(8,2) + '.' )
+console.log( 'A soma de ' + value1 + ' e ' + value2 + ' é igual a ' + sum(value1,value2) + '.' );
 
 /*
 Mostre no console o nome da função criada acima, com a frase:
@@ -79,6 +79,11 @@ function calculator ( operationName ){
 			case '%':
 				result = numberOne % numberTwo;
 				break;
+
+			default:
+				result = 'Operação inválida';
+				break; 
+
 		}
 
 		return 'Resultado da operação: ' + numberOne +  operationName + numberTwo +  '=' + result +'.';
