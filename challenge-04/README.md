@@ -7,13 +7,9 @@ um único parâmetro como argumento. Essa função deve retornar `true` se o
 equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
-var isThuthy = function(param) {
-	if(!!param) {
-      return true;
-    } else {
-	  return false;
-    }
-}
+var isTruthy = function(param) {
+	return !!param;
+};
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 
@@ -76,7 +72,7 @@ var carro = {
 	quantasPortas: 2,
 	assentos: 5,
 	quantidadePessoas: 0
-}
+};
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
