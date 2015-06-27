@@ -71,7 +71,7 @@
     Declare uma variável chamada `sum`, e atribua a ela a função `calculator`,
     passando dois números por parâmetro.
     */
-    var sum = function calculator();
+    var sum = calculator(7,5);
 
     /*
     Sabemos que `sum` agora tem uma função atribuída a ela, que é o retorno de
@@ -83,14 +83,19 @@
     anônima tem como seus argumentos.
     */
     console.log( 'O resultado da soma é:' );
-    // ?
+    console.log( sum( function(x,y){
+        return x + y;
+    } ) );
 
     /*
     Agora declare outra variáveis chamadas `subtraction`, `multiplication`,
     `division` e `mod`, e atribua à elas `calculator`, passando números
     diferentes para cada chamada.
     */
-    // ?
+    var subtraction = calculator(8,2);
+    var multiplication = calculator(4,9);
+    var division = calculator(200,2);
+    var mod = calculator(100,10);
 
     /*
     Mostre as variáveis acima no `console` (uma chamada de console por variável),
@@ -100,14 +105,22 @@
     chamada.
     */
     console.log( 'O resultado da subtração é:' );
-    // ?
+    console.log( subtraction( function(x,y){
+        return x - y;
+    } ));
 
     console.log( 'O resultado da multiplicação é:' );
-    // ?
+    console.log( multiplication( function(x,y){
+        return x * y;
+    } ) );
 
     console.log( 'O resultado da divisão é:' );
-    // ?
+    console.log( division( function(x,y){
+        return x / y;
+    } ) );
 
     console.log( 'O resto da divisão é:' );
-    // ?
+    console.log( mod(function(x,y){
+        return x % y;
+    }) );
 })();
