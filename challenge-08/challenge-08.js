@@ -81,9 +81,7 @@ function calculator ( operationName ){
 				break;
 
 			default:
-				result = 'Operação inválida';
-				break; 
-
+				return 'Operação inválida';
 		}
 
 		return 'Resultado da operação: ' + numberOne +  operationName + numberTwo +  '=' + result +'.';
