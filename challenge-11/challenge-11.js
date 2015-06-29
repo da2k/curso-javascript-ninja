@@ -12,8 +12,7 @@
 	var once = false;
 	do{
 		console.log('Entrou ao menos uma vez');
-		break;
-	} while(once === false)
+	} while(once === true)
 
 	/*
 	Crie um objeto chamado `person`, que receba as seguintes propriedades:
@@ -21,10 +20,10 @@
 	para o nome, idade, peso e data de nascimento dessa pessoa.
 	*/
 	var person = {
-		name: "Cleyson",
+		name: 'Cleyson',
 		age: 22,
 		weight: 90,
-		birthday: "23/01/1993"
+		birthday: '23/01/1993'
 	};
 
 	/*
@@ -55,7 +54,7 @@
 		}
 		return false;
 	}
-	console.log('The person has more than 25 years old? ' + moreThan());
+	console.log('The person has more than 25 years old? ' + moreThan(25));
 	/*
 	Faça um loop de 0 a 20, que adicione cada número como um item de um
 	array chamado `numbers`. Se o contador for maior que 10, saia do loop.
@@ -77,6 +76,7 @@
 	esses. Se o número for ímpar, pular para o próximo número.
 	Mostrar no console os números do array.
 	*/
+	console.log( 'Pares de 0 a 20:' );
 	numbers = [];
 	for (var i = 0; i <= 20; i++) {
 		if(i % 2 !== 0){
@@ -84,7 +84,7 @@
 		}
 		numbers.push(i);
 	};
-	console.log('' + numbers)
+	console.log('' + numbers);
 
 	// ?
 
