@@ -79,9 +79,7 @@
 	Adicione os estados do `nordeste` ao array `brasil`. Esses estados devem
 	ficar no mesmo nível que os estados já existentes, não em um array separado.
 	*/
-	nordeste.forEach( function( element, index ){
-		brasil.unshift( element );
-	});
+	brasil = brasil.concat( nordeste );
 
 	/*
 	Mostre no console os estados em `newSudeste`.
@@ -125,11 +123,11 @@
 		return item.length > 7;
 	});
 
-	if ( result ) {
-		console.log( "Sim, todos os estados tem mais de 7 letras!" );
-	} else {
-		console.log( "Nem todos os estados tem mais de 7 letras!" );	
-	}
+	console.log( 
+		result 
+		? 'Sim, todos os estados tem mais de 7 letras!'
+		: 'Nem todos os estados tem mais de 7 letras!'
+	);
 	
 	/*
 	Percorra o array `brasil` e verifique se o Ceará está incluído, atribuindo o
@@ -140,15 +138,15 @@
 	- "Ceará não foi incluído :("
 	*/
 	console.log( '\nCeará está incluído em `brasil`?' );
-	var resultOther = brasil.some( function( item ){
+	var otherResult = brasil.some( function( item ){
 		return item === 'Ceará';
 	});
-
-	if ( resultOther ) {
-		console.log( "Ceará está incluído!" );
-	} else {
-		console.log( "Ceará não foi incluído :(" );	
-	}
+	
+	console.log( 
+		otherResult 
+		? 'Ceará está incluído!' 
+		: 'Ceará não foi incluído :('
+	);
 
 	/*
 	Percorra o array `newBrasil` e crie um novo array que some 1 no ID de cada
