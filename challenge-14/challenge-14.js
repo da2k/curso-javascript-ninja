@@ -13,7 +13,10 @@
   Mostre esse array no console.
   */
   console.log( 'Number Objects Array:' );
-  var numberObjects = [ { number: 1 }, { number: 2 }, { number: 3 }, { number: 4 }, { number: 5 }, { number: 6 }, { number: 7 }, { number: 8 }, { number: 9 }, { number: 10 } ];
+  var numberObjects = [];
+    for(i = 1; i < 11; i++) {
+      numberObjects.push({number: i});
+    }
   console.log(numberObjects);
   /*
   Crie um array chamado `justNumbers`, que terá como elementos somente os
@@ -75,7 +78,7 @@
   var name = ['Thi', 'a', 'go'];
   var linguaP = name.reduce(function (acumulado, item, index, array) {
     return (acumulado) + ('P'+ item) ; 
-  }, 0);
+  });
   console.log(linguaP);
 
   /*
@@ -104,16 +107,15 @@
   o que acontece ;)
   */
   console.log( '\nExiste um { number: 2 } em numberObjects?' );
-  var obj = { number: 2 };
-  
-
+  var queryObj = numberObjects[1];
+  numberObjects.indexOf(queryObj) > 0 ? console.log('Existe um objeto { number: 2 } em numberObjects!') : console.log('Não existe um objeto { number: 2 } em numberObjects :(');
 
   /*
   Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
   será que obtemos um resultado diferente? Faça a busca a partir do índice 2.
   */
   console.log( '\nE buscando a partir do último índice, o { number: 2 } existe?' );
-  console.log(numberObjects.lastIndexOf(obj));
+  numberObjects.lastIndexOf(queryObj, 2) > 0 ? console.log('Existe um objeto { number: 2 } em numberObjects!') : console.log('Não existe um objeto { number: 2 } em numberObjects :(');
 
   /*
   Verifique se `justMod2Or3` é um array. Se for, mostre-o no console, no
