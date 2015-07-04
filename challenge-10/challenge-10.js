@@ -147,6 +147,9 @@
 		var number2 = 5;
 		console.log( showOperationMessage( operationSignal, number1, number2 ), subtraction( number1, number2) );
 	}
+	else{
+		console.log(showErrorMessage(operationSignal));
+	}
 
 	operationSignal = '*' ;
 	var multiplication = calculator(operationSignal);
@@ -154,6 +157,9 @@
 		var number1 = 20;
 		var number2 = 30;
 		console.log( showOperationMessage( operationSignal, number1, number2 ), multiplication( number1, number2) );
+	}
+	else{
+		console.log(showErrorMessage(operationSignal));
 	}
 
 	operationSignal = '/' ;
@@ -163,6 +169,9 @@
 		var number2 = 2;
 		console.log( showOperationMessage( operationSignal, number1, number2 ), division( number1, number2) );
 	}
+	else{
+		console.log(showErrorMessage(operationSignal));
+	}
 
 	operationSignal = '%' ;
 	var mod = calculator(operationSignal);
@@ -170,6 +179,9 @@
 		var number1 = 78;
 		var number2 = 6;
 		console.log( showOperationMessage( operationSignal, number1, number2 ), mod( number1, number2) );
+	}
+	else{
+		console.log(showErrorMessage(operationSignal));
 	}
 
 	/*
