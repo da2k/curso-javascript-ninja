@@ -8,8 +8,8 @@ equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
 var isTruthy = function(x) {
-  return !!x ? true : false;
-}
+  return !!x;
+};
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 isTruthy('');
@@ -140,13 +140,13 @@ Qual a cor atual do carro?
 carro.obterCor(); // "azul"
 
 // Mude a cor do carro para vermelho.
-carro.cor = 'vermelho'; // "vermelho"
+carro.mudarCor('vermelho'); // "vermelho"
 
 // E agora, qual a cor do carro?
 carro.obterCor(); // "vermelho"
 
 // Mude a cor do carro para verde musgo.
-carro.cor = 'verde musgo'; // "verde musgo"
+carro.mudarCor('verde musgo'); // "verde musgo"
 
 // E agora, qual a cor do carro?
 carro.obterCor(); // "verde musgo"
