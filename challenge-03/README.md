@@ -33,7 +33,7 @@ alterar o valor da propriedade `idade` dessa pessoa, somando `1` a cada vez que
 for chamado.
 */
 pessoa.fazerAniversario = function() {
-  pessoa.idade++
+  pessoa.idade++;
 };
 
 /*
@@ -56,7 +56,7 @@ Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o val
 da propriedade `andando` para o valor booleano que representa "falso".
 */
 pessoa.parar = function() {
-  pessoa.andando = false
+  pessoa.andando = false;
 };
 
 /*
@@ -64,7 +64,7 @@ Crie um método chamado `nomeCompleto`, que retorne a frase:
 - "Olá! Meu nome é [NOME] [SOBRENOME]!"
 */
 pessoa.nomeCompleto = function() {
-  return 'Olá! Meu nome é '+ pessoa.nome + ' ' + pessoa.sobrenome+ '!'
+  return 'Olá! Meu nome é '+ pessoa.nome + ' ' + pessoa.sobrenome+ '!';
 };
 
 /*
@@ -72,7 +72,7 @@ Crie um método chamado `mostrarIdade`, que retorne a frase:
 - "Olá, eu tenho [IDADE] anos!"
 */
 pessoa.mostrarIdade = function() {
-  return 'Olá, eu tenho '+ pessoa.idade + ' anos!'
+  return 'Olá, eu tenho '+ pessoa.idade + ' anos!';
 };
 
 /*
@@ -80,7 +80,7 @@ Crie um método chamado `mostrarPeso`, que retorne a frase:
 - "Eu peso [PESO]Kg."
 */
 pessoa.mostrarPeso = function() {
-  return 'Eu peso '+ pessoa.peso+'Kg.'
+  return 'Eu peso '+ pessoa.peso+'Kg.';
 };
 
 /*
@@ -88,7 +88,7 @@ Crie um método chamado `mostrarAltura` que retorne a frase:
 - "Minha altura é [ALTURA]m."
 */
 pessoa.mostrarAltura = function() {
-  return 'Minha altura é '+ pessoa.altura+'m.'
+  return 'Minha altura é '+ pessoa.altura+'m.';
 };
 
 /*
@@ -179,10 +179,10 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao = function() {
-  var apresentacao,
-  sexo = 'Olá, eu sou o ';
-  idade = ' anos';
-  caminhou = ' metros!';
+  var apresentacao;
+  var sexo = 'Olá, eu sou o ';
+  var idade = ' anos';
+  var caminhou = ' metros!';
 
   if (pessoa.sexo == 'feminino') {
     sexo = 'Olá, eu sou a ';
