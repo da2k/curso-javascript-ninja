@@ -11,18 +11,10 @@
 	Mostre esse array no console.
 	*/
 	console.log( 'Number Objects Array:' );
-	var numberObjects = [
-		{ number: 1 },
-		{ number: 2 },
-		{ number: 3 },
-		{ number: 4 },
-		{ number: 5 },
-		{ number: 6 },
-		{ number: 7 },
-		{ number: 8 },
-		{ number: 9 },
-		{ number: 10 }
-	];
+	var numberObjects = [];
+	for( var i = 1; i <= 10; i++ ) {
+		numberObjects.push( { number: i } )
+	}
 	console.log( numberObjects );
 
 	/*
@@ -30,10 +22,9 @@
 	números do array criado acima. Mostre esse novo array no console.
 	*/
 	console.log( '\nJust Numbers:' );
-	var justNumbers = [];
-	numberObjects.forEach(function( element, index ){
-		justNumbers.push( element.number );
-	});
+	var justNumbers = numberObjects.map( function( item ){
+		return item.number;
+	} );
 	console.log( justNumbers );
 
 	/*
@@ -57,9 +48,7 @@
 	*/
 	console.log( '\nOperation:' );
 	var operation = justMod2Or3.reduce( function ( x, y ){
-		x += 1;
-		return x * y;
-
+		return ( x + 1 ) * y;
 	}, 0);
 	console.log( operation );
 
@@ -70,9 +59,7 @@
 	*/
 	console.log( '\nOperation 2:' );
 	var operation2 = justMod2Or3.reduceRight( function ( x, y ){
-		x += 1;
-		return x * y;
-
+		return ( x + 1 ) * y;
 	}, 0);
 	console.log( operation2 );
 
@@ -116,6 +103,11 @@
 	o que acontece ;)
 	*/
 	console.log( '\nExiste um { number: 2 } em numberObjects?' );
+	if ( numberObjects.indexOf( { number: 2 } ) > -1 ) {
+		console.log( 'Existe um objeto { number: 2 } em numberObjects!' );
+	} else {
+		console.log( 'Não existe um objeto { number: 2 } em numberObjects :(' );
+	}
 	console.log('Não será possivel, pois o objeto que eu for comparar é diferente um do outro, pois quando eles são criados cada um tem uma referencia difente na memoria, como foi dito na Aula #12');
 
 	/*
@@ -123,6 +115,11 @@
 	será que obtemos um resultado diferente? Faça a busca a partir do índice 2.
 	*/
 	console.log( '\nE buscando a partir do último índice, o { number: 2 } existe?' );
+	if ( numberObjects.lastIndexOf( { number: 2 }, 2 ) > -1 ) {
+		console.log( 'Existe um objeto { number: 2 } em numberObjects!' );
+	} else {
+		console.log( 'Não existe um objeto { number: 2 } em numberObjects :(' );
+	}
 	console.log( 'Resposta acima xD' );
 
 	/*
