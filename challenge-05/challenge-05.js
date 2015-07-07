@@ -96,11 +96,11 @@ Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log( 'O autor do livro HTML5 - A linguagem de marcação que revolucionou a web é '  + book('HTML5 - A linguagem de marcação que revolucionou a web').autor );
+console.log( 'O autor do livro HTML5 - A linguagem de marcação que revolucionou a web é '  + book( 'HTML5 - A linguagem de marcação que revolucionou a web' ).autor );
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log ( 'O livro As crônicas do gelo e fogo - A guerra dos tronos foi publicado pela editora ' + book('As crônicas do gelo e fogo - A guerra dos tronos').editora );
+console.log ( 'O livro As crônicas do gelo e fogo - A guerra dos tronos foi publicado pela editora ' + book( 'As crônicas do gelo e fogo - A guerra dos tronos' ).editora );
