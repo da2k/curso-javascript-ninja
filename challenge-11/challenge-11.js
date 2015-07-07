@@ -35,10 +35,12 @@
 	Após o loop, mostre a frase:
 	'The person has [COUNTER] properties'
 	*/
+	var counter = 0;
 	for( prop in person){
 		console.log('The ' + prop + ' of person is ' + person[prop] + ' ');
+		counter++;
 	}
-	console.log('The person has ' + prop.length + ' properties');
+	console.log('The person has ' + counter + ' properties');
 
 	/*
 	Crie uma função chamada `moreThan`, que vai verificar se a pessoa (objeto
@@ -48,11 +50,9 @@
 	'The person has more than 25 years old? [TRUE/FALSE]'
 	*/
 	function moreThan(age){
-		if( age > person.age ){
-			return true;
-		}
-		return false;
+		return person.age > age;
 	}
+	console.log('The person has more than 25 years old?', moreThan(25));
 
 	/*
 	Faça um loop de 0 a 20, que adicione cada número como um item de um
