@@ -77,8 +77,8 @@
   console.log( '\nSeu nome na língua do "P":' );
   var name = ['Thi', 'a', 'go'];
   var linguaP = name.reduce(function (acumulado, item, index, array) {
-    return (acumulado) + ('P'+ item) ; 
-  });
+    return acumulado + 'P' + item; 
+  }, '');
   console.log(linguaP);
 
   /*
@@ -108,14 +108,14 @@
   */
   console.log( '\nExiste um { number: 2 } em numberObjects?' );
   var queryObj = numberObjects[1];
-  numberObjects.indexOf(queryObj) > 0 ? console.log('Existe um objeto { number: 2 } em numberObjects!') : console.log('Não existe um objeto { number: 2 } em numberObjects :(');
+  numberObjects.indexOf(queryObj) > -1   ? console.log('Existe um objeto { number: 2 } em numberObjects!') : console.log('Não existe um objeto { number: 2 } em numberObjects :(');
 
   /*
   Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
   será que obtemos um resultado diferente? Faça a busca a partir do índice 2.
   */
   console.log( '\nE buscando a partir do último índice, o { number: 2 } existe?' );
-  numberObjects.lastIndexOf(queryObj, 2) > 0 ? console.log('Existe um objeto { number: 2 } em numberObjects!') : console.log('Não existe um objeto { number: 2 } em numberObjects :(');
+  numberObjects.lastIndexOf(queryObj, 2) > -1 ? console.log('Existe um objeto { number: 2 } em numberObjects!') : console.log('Não existe um objeto { number: 2 } em numberObjects :(');
 
   /*
   Verifique se `justMod2Or3` é um array. Se for, mostre-o no console, no
