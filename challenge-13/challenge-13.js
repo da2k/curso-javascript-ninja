@@ -15,8 +15,8 @@
 	Crie 2 arrays `sul` e `sudeste`, que serão as regiões do Brasil.
 	Cada array deve conter os estados dessa região.
 	*/
-	var sudeste = ['Espiríto Santo', 'Minas Gerais', 'Rio de Janeiro', 'São Pulo']
-	var sul = ['Paraná', 'Santa Catarina', 'Rio Grande do Sul']
+	var sudeste = ['Espiríto Santo', 'Minas Gerais', 'Rio de Janeiro', 'São Pulo'];
+	var sul = ['Paraná', 'Santa Catarina', 'Rio Grande do Sul'];
 
 	/*
 	Crie uma variável chamada `brasil`, que irá receber as duas regiões
@@ -90,7 +90,7 @@
 	Mostre no console os estados do `brasil`.
 	*/
 	console.log( '\nAlguns estados do Brasil:' );
-	console.log( brasil )
+	console.log( brasil );
 
 	/*
 	usando forEach, percorra o array `brasil` e gere um novo array chamado
@@ -136,7 +136,7 @@
 	- "Ceará não foi incluído :("
 	*/
 	console.log( '\nCeará está incluído em `brasil`?' );
-	some = brasil.some( function( item ) {
+	var some = brasil.some( function( item ) {
 		return item === 'Ceará';
 	});
 	if( some ) {
@@ -151,21 +151,21 @@
 	- "[ESTADO] pertence ao Brasil."
 	Atribua o novo array a uma variável chamada `map`.
 	*/
-	map =  newBrasil.map( function( item, index ) {
-		return { id: ++item.id, estado: item.estado + ' pertence ao Brasil.' }
+	var map =  newBrasil.map( function( item, index ) {
+		return { id: ++item.id, estado: item.estado + ' pertence ao Brasil.' };
 	});
 
 	/*
 	Mostre no console o array criado acima:
 	*/
 	console.log( '\nnewBrasil agora com mais informações:' );
-	console.log( map )
+	console.log( map );
 
 	/*
 	Filtre o array criado acima, retornando somente os estados que tiverem
 	ID par. Atribua o valor à uma variável chamada `filter`.
 	*/
-	filter = map.filter( function(item) {
+	var filter = map.filter( function(item) {
 		return item.id % 2 === 0;
 	});
 
