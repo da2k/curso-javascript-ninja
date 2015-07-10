@@ -33,7 +33,8 @@
       return this.age;
     };
     this.addAge = function addAge() {
-      return this.age += arguments[0];
+      this.age += arguments[0];
+      return this;
     };
   }
 
@@ -70,8 +71,11 @@
   cada um. A frase deverá ser no formato:
   - "[NOME COMPLETO] agora tem [NOVA IDADE] anos."
   */
+  joao.addAge(22);
+  maria.addAge(12);
+  mauricio.addAge(42);
   console.log( '\nNova idade das pessoas:' );
-  console.log( joao.getFullName() + ' agora tem ' + joao.addAge(22) + ' anos' );
-  console.log( maria.getFullName() + ' agora tem ' + maria.addAge(19) + ' anos' );
-  console.log( mauricio.getFullName() + ' agora tem ' + mauricio.addAge(67) + ' anos' );
+  console.log( joao.getFullName() + ' agora tem ' + joao.getAge() + ' anos' );
+  console.log( maria.getFullName() + ' agora tem ' + maria.getAge() + ' anos' );
+  console.log( mauricio.getFullName() + ' agora tem ' + mauricio.getAge() + ' anos' );
 }());
