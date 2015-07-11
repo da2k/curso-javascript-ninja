@@ -14,7 +14,7 @@ function myArray(param) {
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-console.log(myArray([1, 2, 3])[1]); // 2
+console.log(myArray(elements)[1]);
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -57,36 +57,24 @@ os livros.
 */
 function book(name) {
   var books = {
-    neuromancer: {
+    'Neuromancer': {
       quantidadePaginas: 271,
       autor: 'William Gibson',
       editora: 'Aleph'
     },
-    mindplayers: {
+    'Mindplayers': {
       quantidadePaginas: 276,
       autor: 'Pat Cadigan',
       editora: 'Bantam Spectra'
     },
-    software: {
+    'Software': {
       quantidadePaginas: 167,
       autor: 'Rudy Rucker',
       editora: 'Ace'
     }
   };
 
-  if ( name === 'neuromancer' ) {
-  	return books.neuromancer;
-  }
-
-  if ( name === 'mindplayers' ) {
-  	return books.mindplayers;
-  }
-
-  if ( name === 'software' ) {
-  	return books.software;
-  }
-
-  return books;
+  return !name ? books : books[name];
 }
 
 /*
@@ -99,18 +87,21 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-console.log( 'O livro Neuromancer tem '+ book('neuromancer').quantidadePaginas +' páginas!' );
+var bookName = 'Neuromancer';
+console.log( 'O livro '+ bookName +' tem '+ book(bookName).quantidadePaginas +' páginas!' );
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log( 'O autor do livro Mindplayers é '+ book('mindplayers').autor +'.' );
+bookName = 'Mindplayers';
+console.log( 'O autor do livro '+ bookName +' é '+ book(bookName).autor +'.' );
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log( 'O livro Software foi publicado pela editora '+ book('software').editora +'.' );
+bookName = 'Software';
+console.log( 'O livro '+ bookName +' foi publicado pela editora '+ book(bookName).editora +'.' );
