@@ -33,25 +33,12 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 function showTeamPosition(index) {
-    switch(index) {
-        case 1:
-            return 'O time que está em ' + index + 'º lugar é o ' + teams[index-1] + '.';
-            break;
-        case 2:
-            return 'O time que está em ' + index + 'º lugar é o ' + teams[index-1] + '.';
-            break;
-        case 3:
-            return 'O time que está em ' + index + 'º lugar é o ' + teams[index-1] + '.';
-            break;
-        case 4:
-            return 'O time que está em ' + index + 'º lugar é o ' + teams[index-1] + '.';
-            break;
-        case 5:
-            return 'O time que está em ' + index + 'º lugar é o ' + teams[index-1] + '.';
-            break;
-        default:
-            return 'Não temos a informação do time que está nessa posição.';                    
-    }
+    
+  if ( index > 0 && index < 6) {
+    return 'O time que está em ' + index + 'º lugar é o ' + teams[index-1] + '.';
+  }
+
+  return 'Não temos a informação do time que está nessa posição.';                    
 }
 
 /*
@@ -86,21 +73,30 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 function convertToHex(color) {
+  
+  var phrase = 'O hexadecimal para a cor ' + color + ' ';
+
+  var white = '#ffffff'; 
+  var grey = '#808080';
+  var orange = '#FFA500';
+  var gold = '#FFD700';
+  var green = '#008000';
+
   switch(color) {
     case 'white':
-      return 'O hexadecimal para a cor ' + color + ' é #ffffff.';
+      return phrase + white;
       break;
     case 'grey':
-      return 'O hexadecimal para a cor ' + color + ' é #808080.';
+      return phrase + grey;
       break;
     case 'orange':
-      return 'O hexadecimal para a cor ' + color + ' é #FFA500.';;
+      return phrase + orange;
       break;
     case 'gold':
-      return 'O hexadecimal para a cor ' + color + ' é #FFD700.';;
+      return phrase + gold;
       break;
     case 'green':
-      return 'O hexadecimal para a cor ' + color + ' é #008000.';;
+      return phrase + green;
       break;  
     default:
       return 'Não temos o equivalente hexadecimal para ' + color + '.';
