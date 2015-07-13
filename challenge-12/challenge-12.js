@@ -17,9 +17,6 @@
 		age: 19
 	};
 	console.log( 'Propriedades de "person":');
-	for( var prop in person){ 
-		console.log(prop)
-	}
 
 	/*
 	Mostre no console, em um array, todas as propriedades do objeto acima.
@@ -39,16 +36,16 @@
 	`pages`: Number
 	*/
 	books.push({
-		name: 'Livro 1',
-		pages: 200
+		name: 'Javascript Remoto',
+		pages: 384
 	});
 	books.push({
-		name: 'Livro 2',
-		pages: 300
-	});
-	books.push({
-		name: 'Livro 3',
+		name: 'JSON Básico',
 		pages: 400
+	});
+	books.push({
+		name: 'Princípios de Orientação a Objetos em JavaScript',
+		pages: 128
 	});
 	console.log( '\nLista de livros:' );
 
@@ -72,18 +69,18 @@
 	/*
 	Converta os objetos que ficaram em `books` para strings.
 	*/
-	var str = JSON.stringify(books);
+	books = JSON.stringify(books);
 	console.log( '\nLivros em formato string:' );
 
 	/*
 	Mostre os livros nesse formato no console:
 	*/
-	console.log(str);
+	console.log(books);
 
 	/*
 	Converta os livros novamente para objeto.
 	*/
-	JSON.parse(str);
+	books = JSON.parse(books);
 	console.log( '\nAgora os livros são objetos novamente:' );
 
 	/*
@@ -91,8 +88,10 @@
 	no formato abaixo:
 	    "[PROPRIEDADE]: [VALOR]"
 	*/
-	for(prop in person){
-		console.log(prop,':', person[prop])
+	for( var i = 0; i < books.length; i++ ){
+		for( prop in books[i] ){
+			console.log( prop + ':' + books[i][prop] );
+		}
 	}
 
 	/*
@@ -112,11 +111,11 @@
 	/*
 	Ainda usando o objeto acima, mostre no console seu nome invertido.
 	*/
-	console.log( myName.reverse() );
+	console.log( myName.reverse().join( '' ) );
 
 	console.log( '\nAgora em ordem alfabética:' );
 	/*
 	Mostre todos os itens do array acima, odenados alfabéticamente.
 	*/
-	console.log( myName.sort() );
+	console.log( myName.sort().join( '' ) );
 }());
