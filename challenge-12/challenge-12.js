@@ -90,7 +90,7 @@
 	*/
 	for( var i = 0; i < books.length; i++ ){
 		for( prop in books[i] ){
-			console.log( prop + ':' + books[i][prop] );
+			console.log( prop + ': ' + books[i][prop] );
 		}
 	}
 
