@@ -90,11 +90,11 @@
   Ex.: Nomes que deveriam funcionar: "Fernando", "RoBertO", "gabriEla", etc.
   */
   console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
-  var myName = 'Mauricio';
+  var myName = 'MAURICIO'.toLowerCase();
   var aux = '';
   for( var index = 0, length = myName.length; length > index; index++ ) {
     if ( index % 2 === 0 ) {
-      aux += myName[index].toLowerCase().toUpperCase();
+      aux += myName[index].toUpperCase();
       continue;
     }
     aux += myName[index];
