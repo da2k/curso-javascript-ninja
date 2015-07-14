@@ -21,7 +21,7 @@ console.log( 'A soma de '+ valor1 +' e '+ valor2 +' é igual a '+ sum( valor1, v
 Mostre no console o nome da função criada acima, com a frase:
 "O nome da função que faz a soma é [NOME DA FUNÇÃO]."
 */
-console.log( 'O nome da função que faz a soma é '+ sum.name +'.' );
+console.log( 'O nome da função que faz a soma é ' + sum.name + '.' );
 
 /*
 Crie uma função literal chamada `showName`. Essa função deve retornar o
@@ -41,7 +41,7 @@ Usando a variável criada acima, mostre no console o nome e o retorno da funçã
 atribuída a ela, com a seguinte frase:
 "A função [NOME DA FUNÇÃO] retorna [RETORNO DA FUNÇÃO]."
 */
-console.log( 'A função '+ varShowName.name +' retorna '+ showName() +'.' );
+console.log( 'A função ' + varShowName.name + ' retorna ' + showName() + '.' );
 
 /*
 Crie uma função literal chamada `calculator`, que funcione assim:
@@ -80,7 +80,7 @@ function calculator( operador ){
                 return 'Operação inválida';
         }
 
-        return 'Resultado da operação: '+ x +' '+ operador +' '+ x +' = '+ resultado +'';
+        return 'Resultado da operação: ' + x + ' ' + operador + ' ' + y + ' = ' + resultado + '';
     };
 };
 
