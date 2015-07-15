@@ -18,7 +18,7 @@ E assim por diante, até a última.
 console.log( 'As letras do seu nome:' );
 var name = 'Mateus';
 for(var i = 0; i < name.length; i++) {
-	console.log( name[i] + ' é a ' + (name.indexOf(name[i])+1) + ' letra do meu nome.');
+	console.log( name[i] + ' é a ' + ( i + 1 ) + ' letra do meu nome.');
 }
 
 /*
@@ -35,7 +35,10 @@ console.log para cada formato.
 */
 console.log( '\nNome convertido à partir de um slug:' );
 var fullName = 'mateus-jabour';
-var newFullName = fullName.replace(fullName[0], fullName[0].toUpperCase()).replace(fullName[fullName.indexOf('-') + 1], fullName[fullName.indexOf('-') + 1].toUpperCase()).split('-').join(' ');
+var firstLetter1 = fullName[0];
+var firstLetter2 = fullName[fullName.indexOf('-') + 1];
+
+var newFullName = fullName.replace(firstLetter1, firstLetter1.toUpperCase()).replace(firstLetter2, firstLetter2.toUpperCase()).split('-').join(' ');
 console.log(fullName, newFullName);
 
 /*
