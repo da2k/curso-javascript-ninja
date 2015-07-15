@@ -36,17 +36,13 @@
   */
   console.log( '\nNome convertido à partir de um slug:' );
   var fullName = 'roberto-rodrigo-ramos-da-silva';
-  var funName = function funName( name ){
-    var newName = name.split('-');
-    var aux = [];
-    for( var i = 0, len = newName.length; i < len; i++ ) {
-      var word = newName[i];
-      aux.push( word.replace( word[0], word[0].toUpperCase() ) );
-    }
-    return aux.join(' ');
-  };
+  var newName = fullName.split( '-' );
+
+  var mapNewName = newName.map(function( item ){
+    return item.replace( item[0], item[0].toUpperCase() );
+  }).join(' ');
   console.log( fullName );
-  console.log( funName( fullName ) );
+  console.log( mapNewName );
   /*
   - Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
   cada nome por vírgula. Entre o penúltimo e o último nome, o separador deve
