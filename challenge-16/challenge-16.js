@@ -35,15 +35,15 @@
   console.log para cada formato.
   */
   console.log( '\nNome convertido à partir de um slug:' );
-  var fullName = 'mauricio-ferreira-lima-junior';
+  var fullName = 'roberto-rodrigo-ramos-da-silva';
   var funName = function funName( name ){
     var newName = name.split('-');
-    var aux = name;
+    var aux = [];
     for( var i = 0, len = newName.length; i < len; i++ ) {
-      var word = newName[i][0];
-      aux = aux.replace( word, word.toUpperCase() );
+      var word = newName[i];
+      aux.push( word.replace( word[0], word[0].toUpperCase() ) );
     }
-    return aux.split('-').join(' ');
+    return aux.join(' ');
   };
   console.log( fullName );
   console.log( funName( fullName ) );
