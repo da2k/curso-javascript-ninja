@@ -34,12 +34,13 @@ curso para fazer isso funcionar corretamente :)
 console.log para cada formato.
 */
 console.log( '\nNome convertido à partir de um slug:' );
-var fullName = 'mateus-jabour';
-var firstLetter1 = fullName[0];
-var firstLetter2 = fullName[fullName.indexOf('-') + 1];
+var fullName = 'mateus-jabour-barbosa-pereira';
+var newName = fullName.split('-').map(function (item) {
+	var name = item.charAt(0).toUpperCase() + item.slice(1);
+	return name;
+}).join(' ');
 
-var newFullName = fullName.replace(firstLetter1, firstLetter1.toUpperCase()).replace(firstLetter2, firstLetter2.toUpperCase()).split('-').join(' ');
-console.log(fullName, newFullName);
+console.log(fullName, newName);
 
 /*
 - Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
