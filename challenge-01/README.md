@@ -23,7 +23,7 @@ soma *= 3;
 var  souninja = true;
 
 // Declare uma variável chamada `comida` que recebe um array com os valores 'arroz', 'feijão' e 'ovo'.
-var comida = ['arroz','feijão','ovo']
+var comida = ['arroz','feijão','ovo'];
 
 // Digite a instrução que imprime o valor de 'feijao', que está na variável `comida`.
 comida[1];
@@ -38,5 +38,5 @@ myvar <= soma;
 function divisao(x,y){return x / y;}
 
 // Invoque a função criada acima, passando os parâmetros 10 e 2.
-divisao(10,2)
+divisao(10,2);
 ```
