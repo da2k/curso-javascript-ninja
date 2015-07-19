@@ -39,10 +39,10 @@ console.log para cada formato.
 */
 console.log( '\nNome convertido à partir de um slug:' );
 var fullName = 'thiago-nogueira-pinheiro';
-var fullNameArray = fullName.split("-");
+var fullNameArray = fullName.split('-');
 var displayName = fullNameArray.map(function (item) {
   return item.replace( item[0], item[0].toUpperCase() );
-}).join(" ");
+}).join(' ');
 
 console.log(displayName);
 
@@ -57,7 +57,7 @@ O resultado final deve ficar mais ou menos assim:
 5 nomes foi somente uma sugestão ;)
 */
 console.log( '\nMeus amigos:' );
-var amigos = ["Elias", "Marcio", "Adriano", "Enio", "Lara"];
+var amigos = ['Elias', 'Marcio', 'Adriano', 'Enio', 'Lara'];
 
 var myFriends = amigos.reduce(function (prevValue, curValue, index, array) {
   return amigos.length === (index + 1) ? prevValue + ' e ' + curValue : prevValue + ',' + curValue;
@@ -70,8 +70,8 @@ Usando o replace(), faça a string "Roberto" virar "Roberta".
 Mostre o resultado no console.
 */
 console.log( '\nEra "Roberto", agora é:' );
-var roberto = "Roberto";
-var roberta = roberto.replace("to", "ta");
+var roberto = 'Roberto';
+var roberta = roberto.replace('to', 'ta');
 console.log(roberta);
 
 /*
@@ -91,7 +91,7 @@ de qualquer tamanho, escrito de qualquer forma.
 Ex.: Nomes que deveriam funcionar: "Fernando", "RoBertO", "gabriEla", etc.
 */
 console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
-var myName = "Fernando".toLowerCase();
+var myName = 'Fernando'.toLowerCase();
 var toCamelCase = function toCamelCase(string) {
   var camelCaseName = '';
   for(var i = 0; i < string.length; i++) {
