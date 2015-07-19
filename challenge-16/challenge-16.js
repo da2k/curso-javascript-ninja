@@ -38,19 +38,13 @@ curso para fazer isso funcionar corretamente :)
 console.log para cada formato.
 */
 console.log( '\nNome convertido à partir de um slug:' );
-var fullName = "thiago-nogueira-pinheiro";
+var fullName = 'thiago-nogueira-pinheiro';
+var fullNameArray = fullName.split("-");
+var displayName = fullNameArray.map(function (item) {
+  return item.replace( item[0], item[0].toUpperCase() );
+}).join(" ");
 
-var mySlug = function mySlug(name) {
-  var fullNameArray = fullName.split("-");
-  var displayName = [];
-  for(var i = 0; i < fullNameArray.length; i++) {
-    displayName.push(fullNameArray[i].charAt(0).toUpperCase() + fullNameArray[i].slice(1));
-  }
-  displayName = displayName.join(" ");
-  console.log(displayName);
-};
-
-mySlug(fullName);
+console.log(displayName);
 
 
 /*
@@ -65,12 +59,11 @@ O resultado final deve ficar mais ou menos assim:
 console.log( '\nMeus amigos:' );
 var amigos = ["Elias", "Marcio", "Adriano", "Enio", "Lara"];
 
-var myFriends = function myFriends(array) {
-  var amigosStr = array.toString();
-  var lastComma = amigosStr.lastIndexOf(",");
-  console.log(amigosStr.slice(0, (lastComma)) + " e " + amigos[amigos.length - 1] + " são meus amigos.");
-};
-myFriends(amigos);
+var myFriends = amigos.reduce(function (prevValue, curValue, index, array) {
+  return amigos.length === (index + 1) ? prevValue + ' e ' + curValue : prevValue + ',' + curValue;
+});
+console.log(myFriends.concat(' são meus amigos.'));
+
 
 /*
 Usando o replace(), faça a string "Roberto" virar "Roberta".
@@ -78,7 +71,7 @@ Mostre o resultado no console.
 */
 console.log( '\nEra "Roberto", agora é:' );
 var roberto = "Roberto";
-var roberta = roberto.slice(0,roberto.length - 1) + roberto.slice(roberto.length - 1).replace("o", "a"); // Dá pra diminuir bem mais, mas você pediu pra usar o replace.
+var roberta = roberto.replace("to", "ta");
 console.log(roberta);
 
 /*
@@ -86,8 +79,8 @@ Mostre no console a parte "nando" da string "Fernando". Use o método que
 faz a busca do final para o início da string.
 */
 console.log( '\nParte de uma string:' );
-console.log("Fernando".substring(8,3));
-
+var fernando = 'Fernando';
+console.log( fernando.slice( fernando.lastIndexOf( 'nando' ) ) );
 /*
 Declare uma variável chamada `myName`, que receba o seu primeiro nome,
 escrito de forma natural.
@@ -98,18 +91,15 @@ de qualquer tamanho, escrito de qualquer forma.
 Ex.: Nomes que deveriam funcionar: "Fernando", "RoBertO", "gabriEla", etc.
 */
 console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
-var myName = "thiago";
-
+var myName = "Fernando".toLowerCase();
 var toCamelCase = function toCamelCase(string) {
-  var camelCaseName = [];
+  var camelCaseName = '';
   for(var i = 0; i < string.length; i++) {
-    i % 2 === 0 ? camelCaseName.push(string.charAt(i).toUpperCase()) : camelCaseName.push(string[i]);
+    i % 2 === 0 ? camelCaseName += (string.charAt(i).toUpperCase()) : camelCaseName += (string[i]);
   }
 
-  console.log(camelCaseName.join(""));
+  console.log(camelCaseName);
 };
-toCamelCase(myName); // Acho que não entendi essa questão, os nomes que você deu de exemplo não estão alternando as letras, Fernando e gabriEla só tem uma letra maiúscula.
-
-
+toCamelCase(myName); 
 
 })();
