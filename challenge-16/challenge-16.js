@@ -16,11 +16,11 @@ Ex: no caso do nome ser "Fernando", deve mostrar as frases:
 E assim por diante, até a última.
 */
 console.log( 'As letras do seu nome:' );
-var name = "Thiago";
+var name = 'Thiago';
 
 var lettersOfMyName = function lettersOfMyName(name) {
   for(var i = 0; i < name.length; i++) {
-    console.log(name[i] + " é a " + (i+1) + "ª letra do meu nome.");
+    console.log(name[i] + ' é a ' + (i + 1) + 'ª letra do meu nome.');
   }
 };
 lettersOfMyName(name);
@@ -66,9 +66,9 @@ console.log( '\nMeus amigos:' );
 var amigos = ["Elias", "Marcio", "Adriano", "Enio", "Lara"];
 
 var myFriends = function myFriends(array) {
-  var amigosStr = array.toString(",");
+  var amigosStr = array.toString();
   var lastComma = amigosStr.lastIndexOf(",");
-  console.log(amigosStr.slice(0, (lastComma)).concat(" e ", amigosStr.slice(lastComma + 1), " são meus amigos."));
+  console.log(amigosStr.slice(0, (lastComma)) + " e " + amigos[amigos.length - 1] + " são meus amigos.");
 };
 myFriends(amigos);
 
@@ -78,7 +78,7 @@ Mostre o resultado no console.
 */
 console.log( '\nEra "Roberto", agora é:' );
 var roberto = "Roberto";
-var roberta = roberto.split("").reverse().join("").replace("o","a").split("").reverse().join("");
+var roberta = roberto.slice(0,roberto.length - 1) + roberto.slice(roberto.length - 1).replace("o", "a"); // Dá pra diminuir bem mais, mas você pediu pra usar o replace.
 console.log(roberta);
 
 /*
@@ -108,7 +108,7 @@ var toCamelCase = function toCamelCase(string) {
 
   console.log(camelCaseName.join(""));
 };
-toCamelCase(myName);
+toCamelCase(myName); // Acho que não entendi essa questão, os nomes que você deu de exemplo não estão alternando as letras, Fernando e gabriEla só tem uma letra maiúscula.
 
 
 
