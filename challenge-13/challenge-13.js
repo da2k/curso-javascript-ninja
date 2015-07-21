@@ -114,8 +114,8 @@
 	brasil.forEach(function(){
 		newBrasil = brasil.map(function( item, index ){
 			return { 'id': index, 'estado': item  } ;
-		})
-	})
+		});
+	});
 
 	/*
 	Mostre o array `newBrasil` no console
