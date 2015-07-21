@@ -12,8 +12,8 @@ var isTruthy = function(x) {
         return true;
     } else {
         return false;
-    } 
-}
+    }
+};
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 isTruthy(NaN);
@@ -60,7 +60,7 @@ var carro = {
     quantasPortas: 4,
     assentos: 5,
     quantidadePessoas: 0
-}
+};
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
@@ -118,17 +118,17 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 citado acima, no lugar de "pessoas".
 */
 carro.adicionarPessoas = function(qtd) {
-    var pessoas;
-    if (carro.quantidadePessoas === carro.assentos) {
-        return 'O carro já está lotado';
-    }  else if (qtd > carro.assentos - carro.quantidadePessoas) {
-            pessoas = (carro.assentos - carro.quantidadePessoas) === 1 ? ' pessoa' : ' pessoas';
-            return 'Só cabe mais ' + (carro.assentos - carro.quantidadePessoas) + pessoas;
-        } else {
-        carro.quantidadePessoas += qtd;
-        pessoas = carro.quantidadePessoas === 1 ? ' pessoa' : ' pessoas';
-        return 'Já temos ' + carro.quantidadePessoas + pessoas + ' no carro!';
-        }
+  var pessoas;
+  if (carro.quantidadePessoas === carro.assentos) {
+    return 'O carro já está lotado';
+  } else if (qtd > carro.assentos - carro.quantidadePessoas) {
+      pessoas = (carro.assentos - carro.quantidadePessoas) === 1 ? ' pessoa' : ' pessoas';
+      return 'Só cabe mais ' + (carro.assentos - carro.quantidadePessoas) + pessoas;
+  } else {
+      carro.quantidadePessoas += qtd;
+      pessoas = carro.quantidadePessoas === 1 ? ' pessoa' : ' pessoas';
+      return 'Já temos ' + carro.quantidadePessoas + pessoas + ' no carro!';
+  }
 }
 
 /*
@@ -166,7 +166,7 @@ carro.adicionarPessoas(4); // 'Só cabe mais 3 pessoas'
 carro.adicionarPessoas(3); // 'Já temos 5 pessoas no carro!'
 
 // Tire 4 pessoas do carro.
-carro.quantidadePessoas -= 4 // 1
+carro.quantidadePessoas = -4 // 1
 
 // Adicione 10 pessoas no carro.
 carro.adicionarPessoas(10); // Só cabe mais 4 pessoas'
