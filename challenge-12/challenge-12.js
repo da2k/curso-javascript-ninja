@@ -52,13 +52,13 @@
 	/*
 	Mostre no console todos os livros.
 	*/
-	console.log(books)
+	console.log(books);
 
 	console.log( '\nLivro que está sendo removido:' );
 	/*
 	Remova o último livro, e mostre-o no console.
 	*/
-	var remoteBook = books.pop();
+	console.log(books.pop());
 
 	console.log( '\nAgora sobraram somente os livros:' );
 	/*
