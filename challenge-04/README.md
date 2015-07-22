@@ -10,9 +10,8 @@ para o contrário.
 var isTruthy = function(parm) {
   if (parm) {
     return true;
-  } else {
-    return false;
   }
+  return false;
 };
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
@@ -29,14 +28,14 @@ Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
 isTruthy(true);
 isTruthy(1);
-isTruthy("a");
-isTruthy("string");
+isTruthy('a');
+isTruthy('string');
 isTruthy(10);
-isTruthy("Tannus");
+isTruthy('Tannus');
 isTruthy('0');
 isTruthy(4);
 isTruthy(9);
-isTruthy("300");
+isTruthy('300');
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
@@ -96,7 +95,7 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 carro.obterMarcaModelo = function() {
-  return 'Esse carro é um '+ carro.obterMarca() + ' ' +carro.obterModelo();
+  return 'Esse carro é um ' + carro.obterMarca() + ' ' + carro.obterModelo();
 };
 
 /*
@@ -119,18 +118,22 @@ carro.addPessoas = function(numPessoas) {
   var assentosDisp = carro.assentos - carro.quantidadePessoas
   var qtdPessoas = assentosDisp === 1 ? 'pessoa!' : 'pessoas!';
 
-  if (numPessoas != undefined && carro.quantidadePessoas >= 5) {
+  console.log(numPessoas);
+
+  if (numPessoas < 0) {
+    carro.quantidadePessoas += numPessoas;
+  }
+  else if (numPessoas !== undefined && carro.quantidadePessoas >= 5) {
     return 'O carro já está lotado!';
   }
   else if (carro.quantidadePessoas <= 5 && numPessoas > assentosDisp) {
-    return 'Só cabe mais ' + assentosDisp + ' '+ qtdPessoas;
+    return 'Só cabe mais ' + assentosDisp + ' ' + qtdPessoas;
   }
-  else if ( numPessoas != undefined && carro.quantidadePessoas <= 5 && numPessoas <= assentosDisp) {
+  else if ( numPessoas !== undefined && carro.quantidadePessoas <= 5 && numPessoas <= assentosDisp) {
     carro.quantidadePessoas += numPessoas;
-    return 'Já temos '+ carro.quantidadePessoas + ' pessoas no carro';
-  } else {
-    return 'Já temos '+ carro.quantidadePessoas + ' pessoas no carro';
   }
+    quantCarro = carro.quantidadePessoas === 1 ? 'pessoa' : 'pessoas';
+    return 'Já temos '+ carro.quantidadePessoas + ' ' + quantCarro + ' no carro!';
 };
 
 /*
@@ -168,11 +171,11 @@ carro.addPessoas(4); // 'Só cabe mais 3 pessoas!'
 carro.addPessoas(3); // 'Já temos 5 pessoas no carro'
 
 // Tire 4 pessoas do carro.
-? Era para criar um outro método? =/ haha
+carro.addPessoas(-4);
 
 // Adicione 10 pessoas no carro.
-carro.addPessoas(10);// O carro já está lotado!'
+carro.addPessoas(10);// "Só cabe mais 4 pessoas!"
 
 // Quantas pessoas temos no carro?
-carro.quantidadePessoas // 5
+carro.quantidadePessoas // 1
 ```
