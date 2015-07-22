@@ -23,7 +23,7 @@
 	concatenadas. Mostre o `brasil` no console.
 	*/
 	console.log( '\nAlguns Estados do Brasil:' );
-	var brasil = [].concat(sul,sudeste);
+	var brasil = sudeste.concat(sul);
 	console.log(brasil);
 	
 
@@ -81,7 +81,7 @@
 	console.log( nordeste );
 
 	/*
-	Remova de `brasil` os estados do `sudeste`, colocando-os em uma variável
+	Remova de `brasil` os sudesteestados do `, colocando-os em uma variável
 	chamada `newSudeste`.
 	*/
 	var newSudeste = brasil.splice(5);
