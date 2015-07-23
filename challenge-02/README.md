@@ -15,7 +15,7 @@ var ninja = adicao(5,10) + 5;
 20
 
 // Declare uma nova variável, sem valor.
-var ninja2
+var ninja2;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
