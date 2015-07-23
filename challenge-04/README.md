@@ -7,10 +7,10 @@ um único parâmetro como argumento. Essa função deve retornar `true` se o
 equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
-var isTruthy = function(a) { 
+var isTruthy = function(a) {
 
 	return a ? true : false;
-	
+
 };
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
@@ -66,7 +66,7 @@ Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
 carro.mudarCor = function(cor) {
-	carro.cor= cor;
+	carro.cor = cor;
 };
 
 /*
