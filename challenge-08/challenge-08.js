@@ -56,31 +56,31 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
   "Operação inválida."
 */
 function calculator( operator ) { 
-  function makeCalc( num1, num2 ) {
-  	var calc;
-	  switch(operator) {
-	  	case '+':
-	  	  calc = num1 + num2;
-	  	  break;
-	  	case '-':
-	  	  calc = num1 - num2;
-	  	  break;
-	  	case '*':
-	  	  calc = num1 * num2;
-	  	  break;
-	  	case '/':
-	  	  calc = num1 / num2;
-	  	  break;
-	  	case '%':
-	  	  calc = num1 % num2;
-	  	  break;
-	  	default:
-	  		return 'Operação Inválida';          
-	  }
-    return 'Resultado da operação: '+ num1 +' '+ operator +' '+ num2 +' = ' + calc + '.'
-  };
+	function makeCalc( num1, num2 ) {
+		var calc;
+		switch(operator) {
+			case '+':
+				calc = num1 + num2;
+				break;
+			case '-':
+				calc = num1 - num2;
+				break;
+			case '*':
+				calc = num1 * num2;
+				break;
+			case '/':
+				calc = num1 / num2;
+				break;
+			case '%':
+				calc = num1 % num2;
+				break;
+			default:
+			return 'Operação Inválida';          
+		}
+		return 'Resultado da operação: '+ num1 +' '+ operator +' '+ num2 +' = ' + calc + '.';
+	}
 
-  return makeCalc;
+	return makeCalc;
 }
 
 /*
