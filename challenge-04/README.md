@@ -26,7 +26,7 @@ Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 isTruthy(true);
 isTruthy(25);
 isTruthy(1 + 1);
-isTruthy(1 - 1);
+isTruthy(2 - 1);
 isTruthy(2 * 3);
 isTruthy(2 / 2);
 isTruthy('will');
@@ -140,13 +140,13 @@ carro.obterCor(); // vermelho
 carro.mudarCor('vermelho');
 
 // E agora, qual a cor do carro?
-'vermelho'
+carro.obterCor(); //'vermelho'
 
 // Mude a cor do carro para verde musgo.
 carro.mudarCor('verde musgo');
 
 // E agora, qual a cor do carro?
-'verde musgo'
+carro.obterCor(); // 'verde musgo'
 
 // Qual a marca e modelo do carro?
  carro.obterMarcaModelo(); // Esse carro é um fiat uno
@@ -167,5 +167,5 @@ carro.adicionarPessoas(-4); // Já temos 1 pessoas no carro!
 carro.adicionarPessoas(10); // Só cabem mais 4 pessoas!
 
 // Quantas pessoas temos no carro?
-1
+carro.quantidadePessoas; // 1
 ```
