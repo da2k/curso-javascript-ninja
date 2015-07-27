@@ -20,7 +20,7 @@ var pessoa = {
     nome: 'Willian',
     sobrenome: 'Justen',
     sexo: 'masculino',
-    idade: '25',
+    idade: 25,
     altura: '1.76',
     peso: '62',
     andando: false,
@@ -119,8 +119,9 @@ pessoa.mostrarAltura(); // Minha altura é 1.76m.
 /*
 Faça a `pessoa` fazer 3 aniversários.
 */
-for (var i=0; i<3;i++)
-    pessoa.fazerAniversario();
+pessoa.fazerAniversario();
+pessoa.fazerAniversario();
+pessoa.fazerAniversario();
 
 /*
 Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
