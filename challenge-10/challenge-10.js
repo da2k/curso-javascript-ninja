@@ -13,7 +13,7 @@
     var five = Number('5');
     console.log( five + ' é número?', typeof five === 'number' );
 
-    var concat = String(10 + 10);
+    var concat = String(10) + String(10);
     console.log( '"' + concat + '" é uma string? E é igual a "1010"?', typeof concat === 'string' );
 
     /*
@@ -70,7 +70,7 @@
     os dois parâmetros da função de retorno de "calculator".
     */
     function calculator( operator ) {
-        if( isOperatorValid( operator ) === false ) {
+        if( !isOperatorValid( operator ) ) {
             return false;
         }
 
@@ -101,9 +101,7 @@
     'Operação "[OPERATOR]" não permitida!'
     */
     function showErrorMessage( operator ) {
-         if( isOperatorValid( operator ) === false) {
-            return 'Operação ' + operator + ' não permitida!';
-        }
+        return 'Operação ' + operator + ' não permitida!';
     }
 
     /*
