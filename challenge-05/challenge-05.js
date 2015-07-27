@@ -2,7 +2,7 @@
 Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
-var qualquer = [1,2,3,4,5];
+var qualquer = [1, 2, 3, 4, 5];
 
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
@@ -29,7 +29,7 @@ function recebeDois(arr, num) {
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
-var lista = [1,2,3,4,5];
+var lista = [1, 2, 3, 4, 5];
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
@@ -71,7 +71,7 @@ function book(nome) {
         }
     };
 
-    return !(nome) ? biblioteca : biblioteca[nome];
+    return !nome ? biblioteca : biblioteca[nome];
 };
 
 /*
@@ -84,7 +84,7 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-console.log('O livro livro1 tem ' + book('livro1').quantidadePaginas + ' páginas!')
+console.log('O livro livro1 tem ' + book('livro1').quantidadePaginas + ' páginas!');
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
