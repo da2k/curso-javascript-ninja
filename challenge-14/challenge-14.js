@@ -12,7 +12,7 @@
 	*/
 	console.log( 'Number Objects Array:' );
 	var numberObjects = [];
-	for( var i = 0; i <= 10; i++ ){
+	for( var i = 1; i <= 10; i++ ){
 		numberObjects.push({ number: i })
 	}
 
@@ -35,9 +35,7 @@
 	*/
 	console.log( '\nJust module of division by 2 or 3:' );
 	var justMod2Or3 = justNumbers.filter(function(item){
-		if( item % 2 === 0 || item % 3 === 0 ){
-			return item;
-		}
+		return item % 2 === 0 || item % 3 === 0;
 	});
 	console.log(justMod2Or3);
 
@@ -87,8 +85,8 @@
 	*/
 	console.log( '\nInversed Name:' );	
 	var inversedName = name.reduceRight(function( accumulated, current ){
-		return  accumulated + 'P' + current;
-	}, '');
+		return accumulated  + current;
+	});
 	console.log(inversedName);
 
 	/*
