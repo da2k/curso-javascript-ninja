@@ -8,7 +8,7 @@
 	usando o método visto na aula 13.
 	*/
 	console.log( 'O array em formato de string é:' );
-	var arr = [ 1, 2, 3, 4, 5];
+	var arr = [ 1, 2, 3, 4, 5 ];
 	console.log(arr.toString());
 
 	/*
@@ -16,7 +16,7 @@
 	Cada array deve conter os estados dessa região.
 	*/
 	var sul = ['Paraná', 'Santa Catarina', 'Rio Grande do Sul'];
-	var sudeste =['Espírito Santo', 'Minas Gerais', 'Rio de Janeiro', 'São Paulo'];
+	var sudeste = ['Espírito Santo', 'Minas Gerais', 'Rio de Janeiro', 'São Paulo'];
 
 	/*
 	Crie uma variável chamada `brasil`, que irá receber as duas regiões
@@ -38,14 +38,14 @@
 	Remova o primeiro estado do array `brasil` e mostre-o no console.
 	*/
 	console.log( '\nEstado removido:' );
-	var stateRemove = brasil.shift(1);
+	var stateRemove = brasil.shift();
 	console.log(stateRemove);
 
 	/*
 	Crie um novo array chamado `newSul`, que receba somente os estados do sul,
 	pegando do array `brasil`. Não remova esses itens de `brasil`.
 	*/
-	var newSul = brasil.slice(2,5);
+	var newSul = brasil.slice(6);
 
 	/*
 	Mostre no console os estados que estão em `newSul`.
@@ -81,10 +81,10 @@
 	console.log( nordeste );
 
 	/*
-	Remova de `brasil` os sudesteestados do `, colocando-os em uma variável
+	Remova de `brasil` os estados do `sudeste`, colocando-os em uma variável
 	chamada `newSudeste`.
 	*/
-	var newSudeste = brasil.splice(5);
+	var newSudeste = brasil.splice(2,4);
 
 	/*
 	Adicione os estados do `nordeste` ao array `brasil`. Esses estados devem
@@ -111,10 +111,9 @@
 	- `id`: que será o índice do array `brasil`,
 	- `estado`: que será o estado do array `brasil`.
 	*/
-	brasil.forEach(function(){
-		newBrasil = brasil.map(function( item, index ){
-			return { 'id': index, 'estado': item  } ;
-		});
+	var newBrasil = [];
+	brasil.forEach(function( item, index){
+		newBrasil.push({ 'id': index, 'estado': item  }) ;
 	});
 
 	/*
@@ -131,11 +130,11 @@
 	- "Nem todos os estados tem mais de 7 letras!"
 	*/
 	console.log( '\nTodos os estados de `brasil` tem mais de 7 letras?' );
-	var lessOfSeven = brasil.every(function(item){
+	var moreOfSeven = brasil.every(function(item){
 		return item.length > 7;
 	});
 	console.log( 
-		lessOfSeven ? 'Sim, todos os estados tem mais de 7 letras!' 
+		moreOfSeven ? 'Sim, todos os estados tem mais de 7 letras!' 
 		: 'Nem todos os estados tem mais de 7 letras!' );
 	
 	/*
@@ -158,10 +157,10 @@
 	- "[ESTADO] pertence ao Brasil."
 	Atribua o novo array a uma variável chamada `map`.
 	*/
-	var otherBrasil = newBrasil.map(function( item, index ){
+	var map = newBrasil.map(function( item, index ){
 		return {
-			id: item.id++,
-			estado: item.estado += ' Pertence ao Brasil.'
+			id: item.id + 1,
+			estado: item.estado + ' Pertence ao Brasil.'
 		};
 
 	});
@@ -170,13 +169,13 @@
 	Mostre no console o array criado acima:
 	*/
 	console.log( '\nnewBrasil agora com mais informações:' );
-	console.log( otherBrasil );
+	console.log( map );
 
 	/*
 	Filtre o array criado acima, retornando somente os estados que tiverem
 	ID par. Atribua o valor à uma variável chamada `filter`.
 	*/
-	var filter = otherBrasil.filter(function(item){
+	var filter = map.filter(function(item){
 		return item.id % 2 === 0;
 	});
 
