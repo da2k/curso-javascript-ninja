@@ -44,10 +44,10 @@ function showTeamPosition(pos) {
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
-showTeamPosition(1); // "O time que está em 1º é o Vasco"
-showTeamPosition(4); // "O time que está em 4º é o Fluminense"
-showTeamPosition(7); // "Não temos a informação do time que está nessa posição."
-showTeamPosition(2); // "O time que está em 2º é o Botafogo"
+console.log(showTeamPosition(1)); // "O time que está em 1º é o Vasco"
+console.log(showTeamPosition(4)); // "O time que está em 4º é o Fluminense"
+console.log(showTeamPosition(7)); // "Não temos a informação do time que está nessa posição."
+console.log(showTeamPosition(2)); // "O time que está em 2º é o Botafogo"
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
 repetição "while".
@@ -71,25 +71,27 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 function convertToHex(cor) {
+  var hexa;
   switch(cor) {
     case 'vermelho':
-      console.log('O hexadecimal para a cor ' + cor + ' é #f00');
+      hexa = "#f00";
       break;
     case 'verde':
-      console.log('O hexadecimal para a cor ' + cor + ' é #0f0');
+      hexa = "#0f0";
       break;
     case 'azul':
-      console.log('O hexadecimal para a cor ' + cor + ' é #00f');
+      hexa = "#00f";
       break;
     case 'preto':
-      console.log('O hexadecimal para a cor ' + cor + ' é #000');
+      hexa = "#000"
       break;
     case 'branco':
-      console.log('O hexadecimal para a cor ' + cor + ' é #fff');
+      hexa = "#fff"
       break;
     default:
-      console.log('Não temos o equivalente hexadecimal para ' + cor);
+      return 'Não temos o equivalente hexadecimal para ' + cor;
   }
+  return 'O hexadecimal para a cor ' + cor + ' é ' + hexa;
 };
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
