@@ -1,5 +1,5 @@
 (function () {
-	'use strict'
+	'use strict';
 /*
 1. Envolva todo o conteúdo desse desafio em uma IIFE.
 2. Adicione a diretiva 'use strict';
@@ -18,9 +18,7 @@ eles! Use um console.log para cada CPF.
 */
 console.log( 'Limpando CPFs:' );
 function cleanCpf (cpf) {
-	return cpf.replace(/(\d+)[-\s\.x]+/g, function (total, num1) {
-		return num1;
-	});
+	return (cpf.match(/(\d+)/g).join(''));
 }
 console.log(cleanCpf('049-214 3421-1'));
 console.log(cleanCpf('210.458.522-05'));
@@ -33,11 +31,8 @@ Mostre o resultado no console.
 */
 console.log( '\nFormatando CPFs corretamente:' );
 function correctCpf (cpf) {
-	return cleanCpf(cpf).replace(/(\d{3})/g, function (total, num1, key) {
-		if(key === 6) {
-			return num1 + '-';
-		}
-		return num1 + '.';
+	return cleanCpf(cpf).replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, function (total, part1, part2, part3, part4) {
+		return part1 + '.' + part2 + '.' + part3 + '-' + part4;
 	});
 }
 console.log(correctCpf('049-214 3421-1'));
@@ -58,7 +53,7 @@ O resultado deve ser:
 */
 console.log( '\nMatch com as palavras "junho" ou "julho" para a frase "Os meses de janeiro, junho e julho começam com a letra j.":' );
 var string = 'Os meses de janeiro, junho e julho começam com a letra j.';
-console.log(string.match(/ju\w+/g));
+console.log(string.match(/(junho)|(julho)/g));
 
 /*
 Crie uma expressão regular que faça o match com a abertura de uma tag
@@ -109,7 +104,5 @@ corretas, para depois aplicar no código ;)
 */
 console.log( '\nFazer replace dos textos das tags:' );
 string = '<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>';
-console.log(string.replace( /(<(\w{1,6})>)([a-zA-z\sà-û]+)(<\/\w{1,6}>)/g , function (regex, openTag, tag, text, closeTag) {
-	return  openTag + 'O texto dentro da tag \'' + tag + '\' é \"' + text + '\"' + closeTag + '\n';
-}));
+console.log(string.replace( /(<(\w{1,6})>)([a-zA-z\sà-û]+)(<\/\w{1,6}>)/g , '$1 o texto dentro da tag \"$2\" é \"$3\"$4\n'));
 })(); 
