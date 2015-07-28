@@ -73,10 +73,10 @@ function calculator(op) {
                 result = a % b;
                 break;
             default:
-                return 'Operação inválida';
+                return 'Operação inválida.';
                 break;
         }
-        return 'Resultado da operação: ' + a + ' ' + op + ' ' + b + ' = ' + result;
+        return 'Resultado da operação: ' + a + ' ' + op + ' ' + b + ' = ' + result + '.';
     }
 }
 
