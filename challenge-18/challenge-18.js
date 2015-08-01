@@ -56,7 +56,7 @@
   console.log( '\nMatch com as palavras "junho" ou "julho" para a frase "Os meses de janeiro, junho e julho começam com a letra j.":' );
   var months = [];
   var str = "Os meses de janeiro, junho e julho começam com a letra j.";
-  months = str.match(/(ju\w{3}\b)/g);
+  months = str.match(/(ju[n|l]ho)/g);
 console.log(months);
   /*
   Crie uma expressão regular que faça o match com a abertura de uma tag
@@ -113,7 +113,7 @@ console.log(months);
   htmlRegex = /<(\w+)>(.+?)</g;
   var lastHtml = "<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>";
   var result = lastHtml.replace(htmlRegex, function (regex, m1, m2, pos) {
-    m2 = "\nO texto dentro da tag " + m1 + " é " + m2 + "<";
+    m2 = '\nO texto dentro da tag "'  + m1 + '" é "'  + m2 + '"<';
     return m2;
   });
   console.log(result);
