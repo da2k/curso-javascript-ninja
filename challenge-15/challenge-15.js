@@ -27,14 +27,14 @@
         this.lastName = lastName;
         this.age = age;
         this.getFullName = function(){
-            return name + ' ' + lastName;
+            return this.name + ' ' + this.lastName;
         }
         this.getAge = function(){
-            return age;
+            return this.age;
         }
         this.addAge = function(){
-            age = age + arguments[0];
-            return this.getAge();
+            this.age = this.age + arguments[0];
+            return this;
         }
     }
     /*
@@ -45,13 +45,9 @@
     */
     console.log( 'Novas pessoas criadas à partir de Person:' );
     var anderson = new Person('Anderson', 'Menezes', 18);
-    console.log(anderson.name);
-
     var felipe = new Person('Felipe', 'Santos', 40);
-    console.log(felipe.name);
-
     var andre = new Person('Andre', 'Andrade', 22);
-    console.log(andre.name);
+
     /*
     Mostre no console o nome completo de cada pessoa.
     */
@@ -66,16 +62,16 @@
     - "[NOME COMPLETO] tem [IDADE] anos."
     */
     console.log( '\nIdade das pessoas:' );
-    console.log( anderson.getFullName() + ' tem ' + anderson.age + ' anos.' );
-    console.log( felipe.getFullName() + ' tem ' + felipe.age + ' anos.' );
-    console.log( andre.getFullName() + ' tem ' + andre.age + ' anos.' );
+    console.log( anderson.getFullName() + ' tem ' + anderson.getAge() + ' anos.' );
+    console.log( felipe.getFullName() + ' tem ' + felipe.getAge() + ' anos.' );
+    console.log( andre.getFullName() + ' tem ' + andre.getAge() + ' anos.' );
     /*
     Adicione alguns anos à cada pessoa, e mostre no console a nova idade de
     cada um. A frase deverá ser no formato:
     - "[NOME COMPLETO] agora tem [NOVA IDADE] anos."
     */
     console.log( '\nNova idade das pessoas:' );
-    console.log( anderson.getFullName() + ' agora tem ' + anderson.addAge(12) + ' anos.' );
-    console.log( felipe.getFullName() + ' agora tem ' + felipe.addAge(15) + ' anos.' );
-    console.log( andre.getFullName() + ' agora tem ' + andre.addAge(18) + ' anos.' );
+    console.log( anderson.getFullName() + ' agora tem ' + anderson.addAge(12).getAge() + ' anos.' );
+    console.log( felipe.getFullName() + ' agora tem ' + felipe.addAge(15).getAge() + ' anos.' );
+    console.log( andre.getFullName() + ' agora tem ' + andre.addAge(18).getAge() + ' anos.' );
 }());
