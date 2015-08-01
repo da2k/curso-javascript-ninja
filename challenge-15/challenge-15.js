@@ -33,7 +33,7 @@
             return this.age;
         }
         this.addAge = function(){
-            this.age = this.age + arguments[0];
+            this.age += arguments[0];
             return this;
         }
     }
@@ -47,6 +47,10 @@
     var anderson = new Person('Anderson', 'Menezes', 18);
     var felipe = new Person('Felipe', 'Santos', 40);
     var andre = new Person('Andre', 'Andrade', 22);
+
+    console.log( anderson );
+    console.log( felipe );
+    console.log( andre );
 
     /*
     Mostre no console o nome completo de cada pessoa.
