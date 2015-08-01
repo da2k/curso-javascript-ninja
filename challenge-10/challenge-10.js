@@ -13,7 +13,7 @@
 	var five = Number('5');
 	console.log( five + ' é número?', typeof five === 'number' );
 
-	var concat = String(10 + '10');
+	var concat = String(10) + 10;
 	console.log( '"' + concat + '" é uma string? E é igual a "1010"?', typeof concat === 'string' );
 
 	/*
@@ -54,7 +54,7 @@
 	- O desafio é fazer o retorno sem usar "if" ou "switch".
 	*/
 	function isOperatorValid( operator ) {
-	  return operator === '+' || operator === '-' || operator === '*' || operator === '/' || operator === '%' ? true : false;
+	  return operator === '+' || operator === '-' || operator === '*' || operator === '/' || operator === '%';
 	}
 
 	/*
@@ -70,12 +70,15 @@
 	os dois parâmetros da função de retorno de "calculator".
 	*/
 	function calculator( operator ) {
-	  if ( isOperatorValid( operator ) ) {
-	  	return function( num1, num2 ) {
-	  	  return ( typeof num1 === 'number' && typeof num2 === 'number' ) ? operation[operator]( num1, num2 ) : false;
+	  if ( !isOperatorValid( operator ) ) { 
+	    return false;
+	  }	
+	  return function( num1, num2 ) {
+	  	if ( typeof num1 !== 'number' || typeof num2 !== 'number' ) { 
+	  	  return false;
 	  	}
+	  	return operation[operator]( num1, num2 );
 	  }
-	  return false;
 	}
 
 	/*
