@@ -25,11 +25,11 @@ isTruthy(false);
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
 isTruthy(10);
-isTruthy(nome);
+isTruthy('nome');
 isTruthy({});
 isTruthy([]);
 isTruthy('0');
-isTruthy('nome');
+isTruthy('ops errei');
 isTruthy(1.1);
 isTruthy(-1);
 isTruthy(true);
@@ -62,7 +62,7 @@ var carro = {
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
-carro.mudarCor = function(cor);
+carro.mudarCor = function(cor) {
     carro.cor = cor;
 };
 
