@@ -71,8 +71,8 @@ Crie uma função com as seguintes características:
 */
 
  function teste(x, y, z) {
-if(x !== undefined && y === undefined && z === undefined) {
-  return x; 
+  if(x !== undefined && y === undefined && z === undefined) {
+   return x; 
 }
 else if(x !== undefined && y !== undefined && z === undefined) {
   return x + y;
