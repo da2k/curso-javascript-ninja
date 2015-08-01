@@ -43,7 +43,7 @@ function exercicio(x, y, z) {
   if(x === undefined || y === undefined || z === undefined){
    return 'Preencha todos os valores corretamente!';
 }
-else {
+  else {
    return  x * y * z + 2;
 }
 }
@@ -72,20 +72,20 @@ Crie uma função com as seguintes características:
 
  function teste(x, y, z) {
   if(x !== undefined && y === undefined && z === undefined) {
-   return x; 
-}
-else if(x !== undefined && y !== undefined && z === undefined) {
-  return x + y;
-}
-else if(x !== undefined && y !== undefined && z !== undefined) {
-  return (x + y) / z; 
-}
-else if(x === undefined && y === undefined && z === undefined) {
-  return false; 
-}
-else {
-return null;
-}
+     return x; 
+  }
+  else if(x !== undefined && y !== undefined && z === undefined) {
+    return x + y;
+  }
+  else if(x !== undefined && y !== undefined && z !== undefined) {
+    return (x + y) / z; 
+  }
+  else if(x === undefined && y === undefined && z === undefined) {
+    return false; 
+  }
+  else {
+     return null;
+  }
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
