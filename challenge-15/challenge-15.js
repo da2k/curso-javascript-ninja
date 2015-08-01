@@ -33,10 +33,10 @@
             return age;
         }
         this.addAge = function(){
-            getAge =  this.age + arguments[0];
+            age = age + arguments[0];
+            return this.getAge();
         }
     }
-
     /*
     Crie 3 novos objetos usando o construtor acima. Os objetos serão novas
     pessoas. As variáveis deverão ser o primeiro nome da pessoa. Passe os
