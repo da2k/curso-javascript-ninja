@@ -32,9 +32,9 @@ Adicione um método ao objeto `pessoa` chamado `fazerAniversario`. O método dev
 alterar o valor da propriedade `idade` dessa pessoa, somando `1` a cada vez que
 for chamado.
 */
-pessoa.aniversario = function() {
+pessoa.fazerAniversario = function() {
 	pessoa.idade++;
-}
+};
 
 /*
 Adicione um método ao objeto `pessoa` chamado `andar`, que terá as seguintes
@@ -49,7 +49,7 @@ booleano que representa "verdadeiro";
 pessoa.andar = function(metros) {
 	pessoa.caminhouQuantosMetros += metros;
 	pessoa.andando = true; 
-}
+};
 
 /*
 Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o valor
@@ -57,38 +57,38 @@ da propriedade `andando` para o valor booleano que representa "falso".
 */
 pessoa.parar = function() {
 	pessoa.andando = false; 
-}
+};
 /*
 Crie um método chamado `nomeCompleto`, que retorne a frase:
 - "Olá! Meu nome é [NOME] [SOBRENOME]!"
 */
-pessoa.nomeCompleto = function(){
-	return 'Olá! Meu nome é '+pessoa.nome+' '+pessoa.sobrenome='!'; 
-}
+pessoa.nomeCompleto = function() {
+	return 'Olá! Meu nome é ' + pessoa.nome + ' ' + pessoa.sobrenome + '!'; 
+};
 
 /*
 Crie um método chamado `mostrarIdade`, que retorne a frase:
 - "Olá, eu tenho [IDADE] anos!"
 */
-pessoa.mostrarIdade = function(){
-	return 'Olá, eu tenho '+pessoa.idade+' anos!'; 
-}
+pessoa.mostrarIdade = function() {
+	return 'Olá, eu tenho ' + pessoa.idade + ' anos!'; 
+};
 
 /*
 Crie um método chamado `mostrarPeso`, que retorne a frase:
 - "Eu peso [PESO]Kg."
 */
-pessoa.mostrarPeso = function(){
-	return 'Eu peso '+pessoa.peso+'Kg'; 
-}
+pessoa.mostrarPeso = function() {
+	return 'Eu peso ' + pessoa.peso + 'Kg'; 
+};
 
 /*
 Crie um método chamado `mostrarAltura` que retorne a frase:
 - "Minha altura é [ALTURA]m."
 */
-pessoa.mostrarAltura = function(){
-	return 'Minha altura é '+pessoa.altura+'m'; 
-}
+pessoa.mostrarAltura = function() {
+	return 'Minha altura é ' + pessoa.altura + 'm'; 
+};
 
 /*
 Agora vamos brincar um pouco com o objeto criado:
@@ -118,9 +118,9 @@ pessoa.mostrarAltura(); // 'Minha altura é 1.96m'
 /*
 Faça a `pessoa` fazer 3 aniversários.
 */
-pessoa.aniversario();
-pessoa.aniversario();
-pessoa.aniversario();
+pessoa.fazerAniversario();
+pessoa.fazerAniversario();
+pessoa.fazerAniversario();
 
 /*
 Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
@@ -190,8 +190,8 @@ pessoa.apresentacao = function () {
   if (pessoa.caminhouQuantosMetros === 1) {
    valid3 = 'metro'; }
 
-   return 'Olá, eu sou '+valid1+' '+pessoa.nome+' '+pessoa.sobrenome+', tenho '+pessoa.idade+' '+valid2+', ' +pessoa.altura+', meu peso é '+pessoa.peso+' e, só hoje, eu já caminhei '+pessoa.caminhouQuantosMetros+' '+valid3+'!';
+   return 'Olá, eu sou ' + valid1 + ' ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + ' ' + valid2 + ', ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' ' + valid3 + '!';
 }
 // Agora, apresente-se ;)
-pessoa.apresentacao(); // "Olá, eu sou o Jason Voorhees, tenho 72 anos, 1.96, meu peso é 115 e, só hoje, eu já caminhei 90 metros!"
+pessoa.apresentacao(); // 'Olá, eu sou o Jason Voorhees, tenho 72 anos, 1.96, meu peso é 115 e, só hoje, eu já caminhei 90 metros!'
 ```
