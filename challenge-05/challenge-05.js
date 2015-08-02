@@ -11,8 +11,6 @@ function myFunction(arr){
 	return arr;
 };
 
-myFunction(myVar);
-
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
@@ -28,7 +26,7 @@ segundo parâmetro.
 // não entendi direito essa parte do desafio
 
 function myFunction2( arr, index ){
-	return arr [ index ];
+	return arr [index];
 };
 
 /*
@@ -40,11 +38,11 @@ var myVar2 = [10, 'Maximiler', true, null, [1,2,3]];
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-myFunction2(myVar2, 0);
-myFunction2(myVar2, 1);
-myFunction2(myVar2, 2);
-myFunction2(myVar2, 3);
-myFunction2(myVar2, 4);
+myFunction2(myVar2, 0); //10
+myFunction2(myVar2, 1); //"Maximiler"
+myFunction2(myVar2, 2); //true
+myFunction2(myVar2, 3); //null
+myFunction2(myVar2, 4); //[1, 2, 3]
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
