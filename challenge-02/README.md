@@ -22,7 +22,7 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-	function addValor(ninja2){
+function addValor(ninja2){
 	ninja2 = 30;
  	return 'O valor da variável agora é ' + ninja2;
 }
@@ -43,7 +43,7 @@ Crie uma função com as seguintes características:
 function threeArgs(x, y, z){
 	if(x === undefined || y === undefined || z === undefined){
 		return 'Preencha todos os valores corretamente!';
-	} else {
+	}
 		return x * y * z + 2;
 	}
 }
@@ -78,7 +78,8 @@ Crie uma função com as seguintes características:
 		return (x + y) / z;
 	} else if (x === undefined && y === undefined && z === undefined){
 		return false;
-	} else {
+	}
+		return null;
 	}
 }
 
