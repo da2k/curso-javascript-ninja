@@ -110,11 +110,9 @@ console.log(months);
   corretas, para depois aplicar no código ;)
   */
   console.log( '\nFazer replace dos textos das tags:' );
-  htmlRegex = /<(\w+)>(.+?)<(\/\w+)>/g;
+  htmlRegex = /<(\w+)>([^<]+)<(\/\w+)>/g;
   var lastHtml = "<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>";
-  var result = lastHtml.replace(htmlRegex, function (regex, m1, m2, m3) {
-    return '<' + m1 + '>O texto dentro da tag "' + m1 + '" é ' + '"' + m2 + '"<' + m3 + '>\n'; 
-  });
+  var result = lastHtml.replace(htmlRegex, '<$1>O texto dentro da tag "$1" é "$2"</$1>\n' );
   console.log(result);
   
 
