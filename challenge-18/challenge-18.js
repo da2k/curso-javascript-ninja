@@ -45,7 +45,7 @@
 	*/
 	console.log( '\nMatch com as palavras "junho" ou "julho" para a frase "Os meses de janeiro, junho e julho começam com a letra j.":' );
 	var phrase = 'Os meses de janeiro, junho e julho começam com a letra j.';
-	console.log( phrase.match( /j\w{3}o/g ) );
+	console.log( phrase.match( /ju[n|l]ho/g ) );
 
 	/*
 	Crie uma expressão regular que faça o match com a abertura de uma tag
@@ -96,5 +96,6 @@
 	corretas, para depois aplicar no código ;)
 	*/
 	console.log( '\nFazer replace dos textos das tags:' );
-	Travei haha
+	var newTags = '<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>';
+	console.log( newTags.replace( /<(\w+)>([^<]+)<\/\w+>/g, '<$1>O texto dentro da tag "$1" é "$2"</$1>\n' ) );
 })();
