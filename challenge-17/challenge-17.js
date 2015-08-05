@@ -1,5 +1,5 @@
 (function() {
-	'use strict'
+	'use strict';
 	/*
 	1. Envolva todo o conteúdo desse desafio em uma IIFE.
 	2. Adicione a diretiva 'use strict';
@@ -73,48 +73,25 @@
 	*/
 	console.log( '\nMeses representados por números:' );
 	function getMonthNumber( monthName ) {
-		switch ( monthName ) {
-			case 'janeiro': 
-				return '01';
-				break;
-			case 'fevereiro': 
-				return '02';
-				break;
-			case 'março': 
-				return '03';
-				break;
-			case 'abril': 
-				return '04';
-				break;
-			case 'maio': 
-				return '05';
-				break;
-			case 'junho': 
-				return '06';
-				break;
-			case 'julho': 
-				return '07';
-				break;
-			case 'agosto': 
-				return '08';
-				break;
-			case 'setembro': 
-				return '09';
-				break;
-			case 'outubro': 
-				return '10';
-				break;
-			case 'novembro': 
-				return '11';
-				break;
-			case 'dezembro': 
-				return '12';
-				break;
-		}
+ 		var months = {
+  			'janeiro': '1',
+  			'fevereiro': '2',
+  			'março': '3',
+  			'abril': '4',
+  			'maio': '5',
+  			'junho': '6',
+  			'julho': '7',
+  			'agosto': '8',
+  			'setembro': '9',
+  			'outubro': '10',
+  			'novembro': '11',
+  			'dezembro': '12'
+  		}
+  		return months[monthName] < 10 ? '0' + months[monthName] : months[monthName];
 	}
-	console.log( 'O mês de Março é representado pelo número ' + getMonthNumber('Março') );
-	console.log( 'O mês de Setembro é representado pelo número ' + getMonthNumber('Setembro') );
-	console.log( 'O mês de Dezembro é representado pelo número ' + getMonthNumber('Dezembro') );
+	console.log( 'O mês de Março é representado pelo número ' + getMonthNumber('março') );
+	console.log( 'O mês de Setembro é representado pelo número ' + getMonthNumber('setembro') );
+	console.log( 'O mês de Dezembro é representado pelo número ' + getMonthNumber('dezembro') );
 
 	/*
 	Agora, declare uma variável chamada `regexDate` que irá receber a expressão
