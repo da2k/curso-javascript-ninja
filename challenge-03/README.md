@@ -16,14 +16,16 @@ As propriedades e tipos de valores para cada propriedade desse objeto devem ser:
 - `andando` - Boolean - recebe "falso" por padrão
 - `caminhouQuantosMetros` - Number - recebe "zero" por padrão
 */
-var pessoa = {nome: 'Bruno', 
+var pessoa = {
+              nome: 'Bruno', 
               sobrenome: 'Tortelli', 
               sexo: 'Masculino', 
               idade: 27, 
               altura: 1.75, 
               peso: 72, 
               andando: false, 
-              caminhouQuantosMetros: 0 };
+              caminhouQuantosMetros: 0 
+};
 
 /*
 Adicione um método ao objeto `pessoa` chamado `fazerAniversario`. O método deve
@@ -32,7 +34,7 @@ for chamado.
 */
 pessoa.fazerAniversario = function(){
   pessoa.idade++;
-  };
+};
 
 /*
 Adicione um método ao objeto `pessoa` chamado `andar`, que terá as seguintes
@@ -70,7 +72,7 @@ Crie um método chamado `mostrarIdade`, que retorne a frase:
 - "Olá, eu tenho [IDADE] anos!"
 */
 pessoa.mostrarIdade = function(){
-  return 'Olá, eu tenho '+pessoa.idade+' anos!';
+  return 'Olá, eu tenho ' + pessoa.idade + ' anos!';
 };
 
 /*
@@ -185,15 +187,15 @@ pessoa.apresentacao = function(){
 
   if(pessoa.sexo === "Feminino"){
     var s = 'a';
-    }
+  }
 
   if(pessoa.idade === 1 ){
     var i = 'ano';
-    }
+  }
 
   if(pessoa.caminhouQuantosMetros === 1){
     var m = 'metro';
-    }
+  }
   
 return 'Olá, eu sou '+s+' '+pessoa.nome+' '+pessoa.sobrenome+', tenho '+pessoa.idade+' '+i+', '+pessoa.altura+', meu peso é '+pessoa.peso+' e, só hoje, eu já caminhei '+pessoa.caminhouQuantosMetros+' '+m+'!';
 
