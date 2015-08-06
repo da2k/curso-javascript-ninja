@@ -90,13 +90,13 @@
   var markup = '<main>\n  <div class="container">\n    <span class="text date"></span>\n    <p class=\'excerpt\'></p>\n  </div>\n</main>';
   console.log( '\nQuais classes CSS existem na marcação abaixo?\n\n', markup, '\n' );
   var hasClass = function(markup, cssClass) {
-    var regex = new RegExp('class="(.*'+cssClass+'.*)"', 'gm');
-    var foundClass = markup.match(regex);
-    return foundClass !== null;
+    var regex = new RegExp('class=.*('+cssClass+').*', 'gm');
+    var foundClass = regex.test(markup);
+    return foundClass;
   };
   var classes = ['container', 'text', 'date', 'excerpt', 'main'];
-  classes.forEach(function(c) {
-    console.log(hasClass(markup, c) + ' para a classe ' + c);
+  classes.forEach(function(cssClass) {
+    console.log(hasClass(markup, cssClass) + ' para a classe ' + cssClass);
   })
 
 
