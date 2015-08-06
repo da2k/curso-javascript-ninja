@@ -25,7 +25,7 @@ var pessoa = {
 	peso: 88, 
 	andando: false,
 	caminhouQuantosMetros: 0
-}
+};
 
 /*
 Adicione um método ao objeto `pessoa` chamado `fazerAniversario`. O método deve
@@ -34,7 +34,7 @@ for chamado.
 */
 pessoa.fazerAniversario = function () {
 	pessoa.idade++;
-}
+};
 
 /*
 Adicione um método ao objeto `pessoa` chamado `andar`, que terá as seguintes
@@ -49,7 +49,7 @@ booleano que representa "verdadeiro";
 pessoa.andar = function (metrosCaminhados) {
 	pessoa.caminhouQuantosMetros += metrosCaminhados;
 	pessoa.andando = true;
-}
+};
 
 /*
 Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o valor
@@ -57,7 +57,7 @@ da propriedade `andando` para o valor booleano que representa "falso".
 */
 pessoa.parar = function () {
 	pessoa.andando = false;
-}
+};
 
 /*
 Crie um método chamado `nomeCompleto`, que retorne a frase:
@@ -65,7 +65,7 @@ Crie um método chamado `nomeCompleto`, que retorne a frase:
 */
 pessoa.nomeCompleto = function () {
 	return 'Olá! Meu nome é ' + pessoa.nome + ' ' + pessoa.sobrenome + '!';
-}
+};
 
 /*
 Crie um método chamado `mostrarIdade`, que retorne a frase:
@@ -73,7 +73,7 @@ Crie um método chamado `mostrarIdade`, que retorne a frase:
 */
 pessoa.mostrarIdade = function () {
 	return 'Olá, eu tenho ' + pessoa.idade + ' anos!';
-}
+};
 
 /*
 Crie um método chamado `mostrarPeso`, que retorne a frase:
@@ -81,7 +81,7 @@ Crie um método chamado `mostrarPeso`, que retorne a frase:
 */
 pessoa.mostrarPeso = function () {
 	return 'Eu peso ' + pessoa.peso + 'Kg';
-}
+};
 
 /*
 Crie um método chamado `mostrarAltura` que retorne a frase:
@@ -89,7 +89,7 @@ Crie um método chamado `mostrarAltura` que retorne a frase:
 */
 pessoa.mostrarAltura = function () {
 	return 'Minha altura é ' + pessoa.altura + 'm.';
-}
+};
 
 /*
 Agora vamos brincar um pouco com o objeto criado:
@@ -129,7 +129,7 @@ comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
 pessoa.mostrarIdade(); // 20
-
+// 17 + 3... Errei?
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
 com metragens diferentes passadas por parâmetro.
@@ -198,5 +198,6 @@ pessoa.apresentacao = function () {
 }
 
 // Agora, apresente-se ;)
+pessoa.apresentacao();
 // Olá, eu sou o Matheus Martins, tenho 20 anos, 1.81, meu peso é 88 e, só hoje, eu já caminhei 30 metros
 ```
