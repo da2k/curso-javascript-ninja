@@ -18,7 +18,7 @@
 	console.log( 'As letras do seu nome:' );
 	var name = 'Anderson';
 	for( var i = 0; i < name.length; i++){
-		console.log( name[i] + ' é a posição ' + i + 'ª letra do meu nome.' );
+		console.log( name[i] + ' é a posição ' + (i + 1) + 'ª letra do meu nome.' );
 	}
 
 	/*
@@ -34,12 +34,12 @@
 	console.log para cada formato.
 	*/
 	console.log( '\nNome convertido à partir de um slug:' );
-	function funFullName( name ){
-		var fullName = name.toLowerCase().replace(' ', '-');
-		return fullName;
-	}
-	console.log( funFullName('Anderson Menezes') )
-	console.log( funFullName('João Almeida') )
+	var fullName = 'anderson-menezes';
+	var newFullName = fullName.split( '-').map(function(nome){
+		return nome[0].toUpperCase() + nome.slice(1);
+	});
+
+	console.log( newFullName );
 
 	/*
 	- Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
@@ -51,9 +51,13 @@
 	5 nomes foi somente uma sugestão ;)
 	*/
 	console.log( '\nMeus amigos:' );
-	var arr = [ 'Anderson', 'Fernando', 'Guilherme', 'Leonardo', 'Moraci' ]
-	.join(', ').replace('Leonardo,', 'Leonardo e');
-	console.log(arr)
+
+	var names = [ 'Anderson', 'Fernando', 'Guilherme', 'Leonardo', 'Moraci' ];
+	var friends = names.reduce(function( accumulated, current, index ){
+		var separator = names.length - 1 === index ? ' e ' : ', ';
+		return accumulated + separator + current;
+	}).concat(' são meus amigos. ');
+	console.log(friends);
 
 	/*
 	Usando o replace(), faça a string "Roberto" virar "Roberta".
@@ -61,7 +65,7 @@
 	*/
 	console.log( '\nEra "Roberto", agora é:' );
 	var roberto = 'Roberto'
-	console.log( roberto.slice(0, 6) + roberto[6].replace('o', 'a') );
+	console.log( 'Roberto'.replace('to', 'ta') );
 
 
 	/*
@@ -69,7 +73,7 @@
 	faz a busca do final para o início da string.
 	*/
 	console.log( '\nParte de uma string:' );
-	console.log('Fernando'.substring(8, 3))
+	console.log('Fernando'.substring(8, 3));
 
 	/*
 	Declare uma variável chamada `myName`, que receba o seu primeiro nome,
@@ -81,15 +85,11 @@
 	Ex.: Nomes que deveriam funcionar: "Fernando", "RoBertO", "gabriEla", etc.
 	*/
 	console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
-	var myName = 'anderson';
-	
+	var myName = 'Anderson';
+	var newMyName = [];
 	for( var i = 0; i < myName.length; i++ ){
-		if( i % 2 == 0 ){
-			console.log( myName[i].toUpperCase() ) ;
-		}
-		else{
-			console.log( myName[i].toLowerCase() ) ;
-		}
+		newMyName.push( i % 2 === 0 ? myName[i].toLowerCase() : myName[i].toUpperCase() );
 	}
 
+	console.log( newMyName.join('') );
 })();
