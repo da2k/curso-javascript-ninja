@@ -60,8 +60,6 @@ Adicione um listener de evento de click ao botão que faça o seguinte:
     - "Preencha o nome do usuário!"
 - Se o campo de "Email" não estiver preenchido, mostrar:
     - "Preencha o e-mail!"
-- Se o campo de "Email" não estiver preenchido, mostrar:
-    - "Preencha o e-mail!"
 - Se o campo de "Mensagem" não estiver preenchido, mostrar:
     - "Preencha a mensagem!"
 - Se o campo de "Email" for inválido, mostrar:
@@ -71,7 +69,7 @@ Adicione um listener de evento de click ao botão que faça o seguinte:
 o e-mail que foi entrado no campo de "Email" por parâmetro. (A função
 `isValidEmail` será criada logo abaixo).
 
-3. Se tudo estiver OK, pergunte ao usuário
+3. Se tudo estiver OK, pergunte ao usuário:
     - "Tem certeza que deseja enviar o formulário?"
 Se for confirmado, mostre um alerta com a mensagem:
     - "Enviado com sucesso!"
