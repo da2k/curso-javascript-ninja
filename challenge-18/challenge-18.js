@@ -32,9 +32,7 @@
   */
   console.log( '\nFormatando CPFs corretamente:' );
   function configCPF( cpf ) {
-    return cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, function( regex, w, x, y, z ) {
-      return w + '.' + x + '.' + y + '-' + z;
-    });
+    return cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, '$1.$2.$3-$4');
   }
   console.log( configCPF( cleanCPF( '049-214 3421-1' ) ) );
   console.log( configCPF( cleanCPF( '210.458.522-05' ) ) );
@@ -53,7 +51,7 @@
   */
   console.log( '\nMatch com as palavras "junho" ou "julho" para a frase "Os meses de janeiro, junho e julho começam com a letra j.":' );
   var phrase = 'Os meses de janeiro, junho e julho começam com a letra j.';
-  console.log( phrase.match( /\w+ho/g ) );
+  console.log( phrase.match( /ju[nl]ho/g ) );
 
   /*
   Crie uma expressão regular que faça o match com a abertura de uma tag
@@ -66,7 +64,7 @@
   */
   console.log( '\nMatch com a abertura de uma tag HTML:' );
   var tags = '<div><section><blockquote>Texto <img /></blockquote></section></div>';
-  console.log( tags.match( /<+\w+>/g ) );
+  console.log( tags.match( /<\w+>/g ) );
 
   /*
   Crie uma expressão regular que faça o match com uma tag HTML vazia, casando
@@ -79,7 +77,7 @@
   */
   console.log( '\nMatch com tags HTML vazias (abertura e fechamento da tag):' );
   var tags2 = '<div><ul><li></li><li></li><li><span></span></li></ul></div>';
-  console.log( tags2.match( /<+\w+><+\/\w+>/g ) );
+  console.log( tags2.match( /<\w+><+\/\w+>/g ) );
 
   /*
   Vamos complicar um pouco agora :D
@@ -105,7 +103,5 @@
   */
   console.log( '\nFazer replace dos textos das tags:' );
   var text = '<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>';
-  console.log( text.replace( /(<(\w+)>)([^<]+)(<\/+\w+>)/g, function( regex, w, x, y, z ){
-    return  w + 'O texto dentro da tag "' + x + '" é "' + y + '"' + z + '\n';
-  }));
+  console.log( text.replace( /(<(\w+)>)([^<]+)(<\/\w+>)/g, '$1O texto dentro da tag "$2" é "$3"$4\n' ) );
 })();
