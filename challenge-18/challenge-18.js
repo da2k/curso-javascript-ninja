@@ -77,7 +77,7 @@
   */
   console.log( '\nMatch com tags HTML vazias (abertura e fechamento da tag):' );
   var tags2 = '<div><ul><li></li><li></li><li><span></span></li></ul></div>';
-  console.log( tags2.match( /<\w+><+\/\w+>/g ) );
+  console.log( tags2.match( /<\w+><\/\w+>/g ) );
 
   /*
   Vamos complicar um pouco agora :D
