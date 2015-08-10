@@ -89,8 +89,8 @@
 		return regex.test( markup );
 	}
 	var classes = ['container', 'text', 'date', 'excerpt', 'main'];
-  classes.forEach(function(cssClass) {
-    console.log( hasClass( markup, cssClass ) + ' para a classe ' + cssClass );
-  })
+	classes.forEach(function(cssClass) {
+		console.log( hasClass( markup, cssClass ) + ' para a classe ' + cssClass );
+	});
 
 })();
