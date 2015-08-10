@@ -63,7 +63,7 @@ que foram passadas para a primeira função `calculator`.
 */
 function calculator(x, y) {
 	return function(callback) {
-		return callback(x, y)
+		return callback(x, y);
 	}
 }
 
