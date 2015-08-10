@@ -15,14 +15,15 @@ var ninja = adicao(5,10) + 5;
 20
 
 // Declare uma nova variável, sem valor.
-var ninja2;
+var ninja2
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function addValor(ninja2){
+
+function addValor(){
 	ninja2 = 30;
  	return 'O valor da variável agora é ' + ninja2;
 }
@@ -44,9 +45,9 @@ function threeArgs(x, y, z){
 	if(x === undefined || y === undefined || z === undefined){
 		return 'Preencha todos os valores corretamente!';
 	}
-		return x * y * z + 2;
-	}
+	return x * y * z + 2;
 }
+
 
 // Invoque a função criada acima, passando só dois números como argumento.
  	tresArgs (10, 2);
@@ -79,8 +80,7 @@ Crie uma função com as seguintes características:
 	} else if (x === undefined && y === undefined && z === undefined){
 		return false;
 	}
-		return null;
-	}
+	return null;
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
