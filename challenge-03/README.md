@@ -185,7 +185,7 @@ pessoa.apresentacao = function(){
   var i = 'anos';
   var m = 'metros';
 
-  if(pessoa.sexo === "Feminino"){
+  if(pessoa.sexo === 'Feminino'){
     var s = 'a';
   }
 
@@ -197,7 +197,7 @@ pessoa.apresentacao = function(){
     var m = 'metro';
   }
   
-return 'Olá, eu sou '+s+' '+pessoa.nome+' '+pessoa.sobrenome+', tenho '+pessoa.idade+' '+i+', '+pessoa.altura+', meu peso é '+pessoa.peso+' e, só hoje, eu já caminhei '+pessoa.caminhouQuantosMetros+' '+m+'!';
+return 'Olá, eu sou ' + s + ' ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + ' ' + i + ', ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' ' + m + '!';
 
 };
 
