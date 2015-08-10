@@ -80,7 +80,7 @@ function calculator(opMat) {
 			 return 'Operação inválida.';
 		}
 	    return 'Resultado da operação: ' + x + ' ' + opMat + ' ' + y + ' = ' + resultado + '.';
-	}
+	};
 }
 
 /*
