@@ -38,11 +38,11 @@ var myVar2 = [10, 'Maximiler', true, null, [1,2,3]];
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-myFunction2(myVar2, 0); //10
-myFunction2(myVar2, 1); //"Maximiler"
-myFunction2(myVar2, 2); //true
-myFunction2(myVar2, 3); //null
-myFunction2(myVar2, 4); //[1, 2, 3]
+console.log(myFunction2(myVar2, 0)); //10
+console.log(myFunction2(myVar2, 1)); //Maximiler
+console.log(myFunction2(myVar2, 2)); //true
+console.log(myFunction2(myVar2, 3)); //null
+console.log(myFunction2(myVar2, 4)); //[1,2,3]
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -61,33 +61,36 @@ os livros.
 
 function book(nomeLivro){
 	var todosLivros = {
-		livro1: {
-			quantidadePaginas: 120,
-			autor: 'Jose',
-			editora: 'Abril'
+		'Node.js': {
+			quantidadePaginas: 170,
+			autor: 'Caio Ribeiro Pereira',
+			editora: 'Casa do Código'
 		},
-		livro2: {
-			quantidadePaginas: 220,
-			autor: 'Paulo',
-			editora: 'Aurora'
+		'MEAN': {
+			quantidadePaginas: 367,
+			autor: 'Flávio Almeida',
+			editora: 'Casa do Código'
 		},
-		livro3: {
-			quantidadePaginas: 300,
-			autor: 'Marcos',
-			editora: 'Globo'
+		'PHP e MySQL': {
+			quantidadePaginas: 234,
+			autor: 'Evaldo Junior Bento',
+			editora: 'Casa do Código'
 		}
 	};
 
-	if (nomeLivro === undefined) {
+	if (!nomeLivro) {
 		return todosLivros;
 	};
+	return todosLivros[ nomeLivro ];
 
-	return todosLivros[nomeLivro];
-};
+	// return !nomeLivro ? todosLivros : todosLivros[nomeLivro];
+
+}
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
+
 console.log(book());
 
 /*
@@ -96,14 +99,26 @@ usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
 
-console.log("O livro livro1 tem " + book(todosLivros)livro1.quantidadePaginas  + " páginas!");
+var nomeLivro = 'MEAN'
+
+console.log(
+
+	"O livro " + nomeLivro + " tem " + book( nomeLivro ).quantidadePaginas + " páginas!"
+
+	);
+
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log("O autor do livro livro1 é " + book(todosLivros).livro1.autor + ".");
+
+console.log(
+
+"O autor do livro " + nomeLivro + " é " + book( nomeLivro ).autor + "."
+
+	);
 
 
 /*
@@ -111,7 +126,9 @@ Ainda com a função acima, imprima o nome da editora de um livro qualquer, usan
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log("O livro livro1 foi publicado pela editora " + book(todosLivros).livro1.editora + ".");
 
+console.log(
 
+"O livro " + nomeLivro + " foi publicado pela editora " + book( nomeLivro ).editora + "."
 
+	);
