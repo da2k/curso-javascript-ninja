@@ -26,7 +26,7 @@ segundo parâmetro.
 // não entendi direito essa parte do desafio
 
 function myFunction2( arr, index ){
-	return arr [index];
+	return arr[index];
 };
 
 /*
@@ -82,9 +82,6 @@ function book(nomeLivro){
 		return todosLivros;
 	};
 	return todosLivros[ nomeLivro ];
-
-	// return !nomeLivro ? todosLivros : todosLivros[nomeLivro];
-
 }
 
 /*
@@ -103,7 +100,7 @@ var nomeLivro = 'MEAN'
 
 console.log(
 
-	"O livro " + nomeLivro + " tem " + book( nomeLivro ).quantidadePaginas + " páginas!"
+	'O livro ' + nomeLivro + ' tem ' + book( nomeLivro ).quantidadePaginas + ' páginas!'
 
 	);
 
@@ -116,7 +113,7 @@ a frase:
 
 console.log(
 
-"O autor do livro " + nomeLivro + " é " + book( nomeLivro ).autor + "."
+'O autor do livro ' + nomeLivro + ' é ' + book( nomeLivro ).autor + '.'
 
 	);
 
@@ -129,6 +126,6 @@ a frase:
 
 console.log(
 
-"O livro " + nomeLivro + " foi publicado pela editora " + book( nomeLivro ).editora + "."
+'O livro ' + nomeLivro + ' foi publicado pela editora ' + book( nomeLivro ).editora + '.'
 
 	);
