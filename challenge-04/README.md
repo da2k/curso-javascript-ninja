@@ -1,6 +1,9 @@
 # Desafio da semana #4
 
 ```js
+# Desafio da semana #4
+
+```js
 /*
 Declare uma variável chamada `isTruthy`, e atribua a ela uma função que recebe
 um único parâmetro como argumento. Essa função deve retornar `true` se o
@@ -9,7 +12,7 @@ para o contrário.
 */
 var isTruthy =  function umParametro(x){
       return x ? true : false;
-      };
+};
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 isTruthy(NaN);
@@ -19,20 +22,21 @@ isTruthy(0);
 isTruthy(-0);
 isTruthy('');
 isTruthy("");
+isTruthy(false);
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
 isTruthy(1);
-isTruthy(5);
+isTruthy({});
 isTruthy(-10);
-isTruthy("github");
-isTruthy("-0");
-isTruthy('teste');
+isTruthy('github');
+isTruthy('-0');
+isTruthy([4, 3, 2]);
 isTruthy('Bruno');
 isTruthy(-555);
 isTruthy(true);
-isTruthy("String");
+isTruthy('String');
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
@@ -54,7 +58,8 @@ var carro = {
   cor:  'Vermelho',
   quantasPortas: 2,
   assentos: 5,
-  quantidadePessoas: 0};
+  quantidadePessoas: 0
+  };
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
@@ -69,21 +74,21 @@ Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
 carro.obterCor = function obterCor(){
   return carro.cor;
-  };
+};
 
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
 carro.obterModelo = function obterModelo(){
   return carro.modelo;
-  };
+};
 
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
 */
 carro.obterMarca = function obterMarca(){
   return carro.marca;
-  };
+};
 
 /*
 Crie um método chamado `obterMarcaModelo`, que retorne:
@@ -91,7 +96,7 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 carro.obterMarcaModelo = function obterMarcaModelo(){
-  return 'Esse carro é um '+carro.obterMarca()+' '+carro.obterModelo()+'.';
+  return 'Esse carro é um ' + carro.obterMarca() + ' ' + carro.obterModelo() + '.';
 };
 
 /*
@@ -112,17 +117,16 @@ citado acima, no lugar de "pessoas".
 */
 carro.adicionarPessoas = function(n){
   var novasPessoas = n;
-  var a;
+  var artigo = 'Só cabem mais 1 pessoa!';
   if(carro.quantidadePessoas + novasPessoas <= 5){
     carro.quantidadePessoas += n;
-    return 'Já temos '+carro.quantidadePessoas+' pessoas no carro!'; 
+    return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!'; 
   }
   else if(carro.quantidadePessoas === 5){
     return 'O carro já está lotado';
   }
   else if ((carro.quantidadePessoas + novasPessoas) > 5){
-    carro.quantidadePessoas === 4 ? a = 'a' : a = 'as';
-    return ('Só cabem mais '+( 5 - carro.quantidadePessoas)+' pesso'+a+'!');
+    return carro.quantidadePessoas === 4 ? artigo : 'Só cabem mais ' +(5 - carro.quantidadePessoas) + ' pessoas!' ;
   }
 };
 
@@ -134,9 +138,9 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-carro.obterCor() //Vermelho
+carro.obterCor(); //Vermelho
 
-Mude a cor do carro para vermelho.
+//Mude a cor do carro para vermelho.
 carro.mudarCor('vermelho');
 
 // E agora, qual a cor do carro?
