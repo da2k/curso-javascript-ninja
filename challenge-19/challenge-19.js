@@ -28,6 +28,7 @@
 	*/
 	console.log( 'Regex para números usando o construtor:' );
 	var justNumbersRegex = new RegExp( '^\\d+', 'gm' );
+	console.log( justNumbersRegex );
 
 	/*
 	Verifique se a regex acima casa com o texto na variável `text`, mostrando o
@@ -48,6 +49,7 @@
 	*/
 	console.log( '\nRegex para números somente no final das linhas:' );
 	var numbersAtTheEnd = new RegExp( '\\d+$', 'gm' );
+	console.log( numbersAtTheEnd );
 
 	/*
 	Verifique se a regex acima casa com o texto na variável `otherText`,
