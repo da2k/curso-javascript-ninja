@@ -86,10 +86,11 @@
       alert('Preencha o nome de usuário!');
     if(!$inputEmail.value)
       alert('Preencha o e-mail!');
-    if(!$message.value)
-      alert('Preencha a mensagem!');
     if(!isValidEmail($inputEmail.value))
       alert('Entre com um e-mail válido!');
+    if(!$message.value)
+      alert('Preencha a mensagem!');
+    confirm('Tem certeza que deseja enviar o formulário?') ? alert('Enviado com sucesso!') : alert('Não enviado.');
     
   }, false);
 
