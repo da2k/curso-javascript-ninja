@@ -37,8 +37,9 @@
 	var fullName = 'anderson-menezes';
 	var newFullName = fullName.split( '-').map(function(nome){
 		return nome[0].toUpperCase() + nome.slice(1);
-	});
+	}).join( ' ' );
 
+	console.log( fullName );
 	console.log( newFullName );
 
 	/*
@@ -64,7 +65,6 @@
 	Mostre o resultado no console.
 	*/
 	console.log( '\nEra "Roberto", agora é:' );
-	var roberto = 'Roberto'
 	console.log( 'Roberto'.replace('to', 'ta') );
 
 
