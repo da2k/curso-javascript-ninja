@@ -1,5 +1,5 @@
 /*
-O desafio de hoje será um pequeno projeto: um cronồmetro!
+O desafio de hoje será um pequeno projeto: um cronômetro!
 As regras para criação do cronômetro são as seguintes:
 1. Crie um arquivo index.html e adicione esse script a ele;
 2. Crie um campo `input` do tipo `text`, e inicie-o com um valor 0 (zero).
