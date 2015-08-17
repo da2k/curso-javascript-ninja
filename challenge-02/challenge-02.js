@@ -5,7 +5,7 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
 function somando( a , b ){
     return a + b;
-};
+}
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
 var soma = somando( 3 , 7 ) + 5;
@@ -14,7 +14,7 @@ var soma = somando( 3 , 7 ) + 5;
 15
 
 // Declare uma nova variável, sem valor.
-var novaVar
+var novaVar;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
@@ -24,7 +24,7 @@ Onde VALOR é o novo valor da variável.
 function addValor(){
     novaVar = "VALOR";
     return novaVar;
-};
+}
 
 // Invoque a função criada acima.
 addValor();
@@ -43,20 +43,20 @@ Crie uma função com as seguintes características:
 */
 function three( x , y , z ){
     if( x === undefined || y === undefined || z === undefined ){
-        return "Preencha todos os valores corretamente!";
+        return 'Preencha todos os valores corretamente!';
     } else{
         return ( x * y * z ) + 2;
     }
-};
+}
 
 // Invoque a função criada acima, passando só dois números como argumento.
-three(2,3);
+three( 2 , 3 );
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
     // "Preencha todos os valores corretamente!"
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-three(2,3,4);
+three( 2 , 3 , 4 );
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 // 26
@@ -77,7 +77,7 @@ function threeTwo( x , y , z ){
     else if ( x !== undefined && y !== undefined && z === undefined ) {
         return x + y;
     }
-    else if ( x != undefined && y != undefined && z != undefined ){
+    else if ( x !== undefined && y !== undefined && z !== undefined ){
         return ( x + y ) / z;
     }
     else if ( x === undefined && y === undefined && z === undefined ){
@@ -86,7 +86,7 @@ function threeTwo( x , y , z ){
     else{
         return null;
     }
-};
+}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 threeTwo( ); //False
