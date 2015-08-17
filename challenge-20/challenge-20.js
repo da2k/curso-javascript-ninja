@@ -41,7 +41,7 @@ uma variável chamada `email`.
 - Selecione o campo de "Mensagem", atribuindo-o à uma variável chamada
 `$message`.
 */
-    var $message = doc.getElementsByTagName('textarea')[0];
+    var $message = doc.querySelector('textarea');
 
 /*
 - Selecione o botão de envio do formulário, atribuindo-o à uma variável
@@ -80,29 +80,24 @@ Se for confirmado, mostre um alerta com a mensagem:
 Caso contrário, mostre um alerta com a mensagem:
     - "Não enviado."
 */
-function isValidEmail (email) {
-    var validation = email.match(/[\w\.\+\_]+@[\w\_]+\.\w{1,}\.?\w{0,2}/);
-    if (validation[0] === email)
-        return true;
-    return false;
-}
 
-$button.addEventListener('click', function (event) {
-    if ( $inputUsername.value === '' ) 
-        alert('Preencha o nome do usuário!');
-    else if ( $inputEmail.value === '' )
-        alert('Preencha o e-mail!');
-    else if ( $message.value === '' )
-        alert('Preencha a mensagem!');
-    else if ( !(isValidEmail($inputEmail.value)) )
-        alert('Entre com um e-mail válido!');
-    else
+
+    $button.addEventListener('click', function (event) {    
+        if ( !($inputUsername.value) )
+            return alert('Preencha o nome do usuário!');
+        if ( !($inputEmail.value) )
+            return alert('Preencha o e-mail!');
+        if ( !($message.value) )
+            return alert('Preencha a mensagem!');
+        if ( !(isValidEmail($inputEmail.value)) )
+            return alert('Entre com um e-mail válido!');
+        
         var confirmation = confirm('Tem certeza que deseja enviar o formulário?');
+        
         if ( confirmation )
-            alert('Enviado com sucesso!');
-        else 
-            alert('Não enviado!');
-})
+                return alert('Enviado com sucesso!'); 
+        return alert('Não enviado!');
+    });
 
 /*
 Crie uma função chamada `isValidEmail`, que será usada na validação do
@@ -130,4 +125,9 @@ Alguns e-mails inválidos:
     - "rita-marica@titica.a.b"
     - "agua_@evida.br.com"
 */
+
+    function isValidEmail (email) {
+        var regex = new RegExp('^[\w.+]+@\w+\.\w{2,}(?:\.\w{2})?$');
+        return regex.test(email);
+    }
 })(window, document);
