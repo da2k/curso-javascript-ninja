@@ -19,7 +19,10 @@
   Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
   */
   var username = prompt('Qual o seu nome?');
-  (username) ? alert('Bem vindo ' + username ) : username = 'Desconhecido';
+  if(!username)
+    username = 'Desconhecido';
+  alert('Bem vindo ' + username );
+
   /*
   Agora, pergunte ao usuário "Qual o seu e-mail?", atribuindo o resultado à
   uma variável chamada `email`.
@@ -83,14 +86,16 @@
   $button.addEventListener('click', function (event){
     event.preventDefault();
     if(!$inputUsername.value)
-      alert('Preencha o nome de usuário!');
+      return alert('Preencha o nome de usuário!');
     if(!$inputEmail.value)
-      alert('Preencha o e-mail!');
+      return alert('Preencha o e-mail!');
     if(!isValidEmail($inputEmail.value))
-      alert('Entre com um e-mail válido!');
+      return alert('Entre com um e-mail válido!');
     if(!$message.value)
-      alert('Preencha a mensagem!');
-    confirm('Tem certeza que deseja enviar o formulário?') ? alert('Enviado com sucesso!') : alert('Não enviado.');
+      return alert('Preencha a mensagem!');
+    if(!confirm('Tem certeza que deseja enviar o formulário?'))
+      return alert('Não enviado.');
+    return alert('Enviado com sucesso!');
     
   }, false);
 
@@ -121,7 +126,7 @@
       - "agua_@evida.br.com"
   */
   function isValidEmail(email) {
-    var regex = /(^[\d\w\.\+]+@\w+\.\w+\.?(\w{2})?$)/gmi;
+    var regex = /^[\w+.]+@\w+\.\w{2,}(?:\.\w{2})?$/gmi;
     return regex.test(email);   
   }
 
