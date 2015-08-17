@@ -56,7 +56,7 @@
 	*/
 	console.log( '\n"O Centauro de Luvas" em caixa alta:' );
 	console.log( text.replace(/O Centauro de Luvas/g, function(all){
-		return all.toUpperCase()
+		return all.toUpperCase();
 	}) );
 
 	/*
@@ -74,16 +74,26 @@
 	console.log( '\nMeses representados por números:' );
 	function getMonthNumber( monthName ){
 		var moths = {
+			'janeiro': '01',
+			'fevereiro': '02',
 			'março' : '03',
-			'setembro': '09',
+			'abril' : '04',
+			'maio' : '05',
+			'junho' : '06',
+			'julho' : '07',
+			'agosto' : '08',
+			'setembro' : '09',
+			'outubro': '10',
+			'novembro': '10',
 			'dezembro': '12'
 		}
-		return 'O mês de ' + monthName + ' é representado pelo número ' + moths[ monthName ] + '.'
+		return moths[ monthName ];
 	}
 
-	console.log(getMonthNumber('março'));
-	console.log(getMonthNumber('setembro'));
-	console.log(getMonthNumber('dezembro'));
+	console.log(  );
+	console.log( 'O mês de março é representado pelo número ' + getMonthNumber('março') + '.' );
+	console.log( 'O mês de setembro é representado pelo número ' + getMonthNumber('setembro') + '.' );
+	console.log( 'O mês de dezembro é representado pelo número ' + getMonthNumber('dezembro') + '.' );
 	/*
 	Agora, declare uma variável chamada `regexDate` que irá receber a expressão
 	regular que irá fazer o match com as datas. Crie grupos de captura para o
@@ -93,7 +103,7 @@
 	Mostre a regex no console.
 	*/
 	console.log( '\nRegex que vai fazer o match com as datas do texto:' );
-	 
+	var regexDate = / (\d\d) de (junho|julho) de (\d\d\d\d) /g;
 
 	/*
 	Agora crie a função que irá fazer o replace dos dados. A função será chamada
@@ -103,5 +113,8 @@
 	console o resultado.
 	*/
 	console.log( '\nReplace de datas:' );
-	// ?
+	function replaceDate( regex, day, month, year ){
+		return day + '/' + getMonthNumber(month) + '/' + year ;
+	}
+	console.log( text.replace( regexDate, replaceDate ) );
 }());
