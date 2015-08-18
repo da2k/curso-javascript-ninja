@@ -18,12 +18,12 @@ dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
 	var $startButton = doc.querySelector('[data-js="start-button"]');
 	var $stopButton = doc.querySelector('[data-js="stop-button"]');
 	var $resetButton = doc.querySelector('[data-js="reset-button"]');
-	var $cronometer = doc.querySelector('[data-js="cronometer"]');
-	var cronometerId;
+	var $chronometer = doc.querySelector('[data-js="chronometer"]');
+	var chronometerId;
 
 	function timer () {
-		($cronometer.value)++;
-		cronometerId = setTimeout(timer, 1000);
+		($chronometer.value)++;
+		chronometerId = setTimeout(timer, 1000);
 	}
 
 	$startButton.addEventListener('click', function () {
@@ -31,11 +31,11 @@ dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
 	}, false);
 
 	$stopButton.addEventListener('click', function () {
-		clearTimeout(cronometerId);
+		clearTimeout(chronometerId);
 	})
 
 	$resetButton.addEventListener('click', function () {
-		$cronometer.value = 0;
+		$chronometer.value = 0;
 	})
 
 
