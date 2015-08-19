@@ -186,15 +186,15 @@ pessoa.apresentacao = function(){
   var m = 'metros';
 
   if(pessoa.sexo === 'Feminino'){
-    var s = 'a';
+    s = 'a';
   }
 
   if(pessoa.idade === 1 ){
-    var i = 'ano';
+    i = 'ano';
   }
 
   if(pessoa.caminhouQuantosMetros === 1){
-    var m = 'metro';
+    m = 'metro';
   }
   
 return 'Olá, eu sou ' + s + ' ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + ' ' + i + ', ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' ' + m + '!';
