@@ -22,8 +22,12 @@ dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
 	var chronometerId;
 
 	function timer () {
-		($chronometer.value)++;
+		$chronometer.value++;
 		chronometerId = setTimeout(timer, 1000);
+	}
+
+	function timerStop () {
+		clearTimeout(chronometerId);
 	}
 
 	$startButton.addEventListener('click', function () {
@@ -31,11 +35,11 @@ dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
 	}, false);
 
 	$stopButton.addEventListener('click', function () {
-		clearTimeout(chronometerId);
+		timerStop();
 	}, false);
 
 	$resetButton.addEventListener('click', function () {
-		clearTimeout(chronometerId);
+		timerStop();
 		$chronometer.value = 0;
 	}, false);
 
