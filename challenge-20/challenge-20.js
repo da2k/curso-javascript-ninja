@@ -19,7 +19,7 @@
   Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
   */
   var username = prompt( 'Qual o seu nome?' ) || 'Desconhecido';
-  console.log( username );
+  alert( 'Bem vindo ' + username + '!' );
 
   /*
   Agora, pergunte ao usuário "Qual o seu e-mail?", atribuindo o resultado à
@@ -32,27 +32,23 @@
   `$inputUsername`.
   */
   var $inputUsername = doc.querySelector( '[type="text"]' );
-  console.log( $inputUsername );
   /*
   - Selecione o input de "Email", atribuindo-o à uma variável chamada
   `$inputEmail`.
   */
   var $inputEmail = doc.querySelector( '[type="email"]' );
-  console.log( $inputEmail );
 
   /*
   - Selecione o campo de "Mensagem", atribuindo-o à uma variável chamada
   `$message`.
   */
-  var $message = doc.getElementsByTagName( 'textarea' )[0];
-  console.log( $message );
+  var $message = doc.querySelector( 'textarea' );
 
   /*
   - Selecione o botão de envio do formulário, atribuindo-o à uma variável
   chamada `$button`.
   */
   var $button = doc.querySelector( '[type="submit"]' );
-  console.log( $button );
 
   /*
   Preencha os campos de "Nome" e "Email" que estão no documento com os valores
@@ -88,18 +84,18 @@
   $button.addEventListener( 'click', function( event ) {
     event.preventDefault();
 
-    if( $inputUsername.value === '' )
-      alert( 'Preencha o nome do usuário!' );
-    else if( $inputEmail.value === '' )
-      alert( 'Preencha o e-mail!' );
-    else if( !(isValidEmail( $inputEmail.value )) )
-      alert( 'Entre com um e-mail válido!' );
-    else if( $message.value === '' )
-      alert( 'Preencha a mensagem!' );
-    else
-      confirm( 'Tem certeza que deseja enviar o formulário?' ) ?
-        console.log( 'Enviado com sucesso!' ) :
-        console.log( 'Não enviado.' );
+    if( !$inputUsername.value )
+      return alert( 'Preencha o nome do usuário!' );
+    if( !$inputEmail.value )
+      return alert( 'Preencha o e-mail!' );
+    if( !(isValidEmail( $inputEmail.value )) )
+      return alert( 'Entre com um e-mail válido!' );
+    if( !$message.value )
+      return alert( 'Preencha a mensagem!' );
+    if( confirm( 'Tem certeza que deseja enviar o formulário?' ) )
+      return console.log( 'Enviado com sucesso!' );
+
+    return alert( 'Não enviado.' );
 
   }, false);
 
@@ -129,8 +125,8 @@
       - "rita-marica@titica.a.b"
       - "agua_@evida.br.com"
   */
-  var regexValidEmail = /(^[\w\.\_\+]*)@([\w\_]*)(\.\w{2,})\.?(\w{2})?$/;
   function isValidEmail( email ) {
+    var regexValidEmail = /^[\w+.]+@\w+\.\w{2,}(\.\w{2})?$/;
     return regexValidEmail.test( email );
   }
 })( window, document );
