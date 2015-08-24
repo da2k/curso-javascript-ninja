@@ -182,14 +182,12 @@ pessoa.apresentacao = function () {
 	if (pessoa.sexo === 'feminino') {
 		var artigo = 'a';
 	};
-	if (pessoa.idade === 1) {
-		var age = '';
-	} else{
-		var age = 's';
+	var age = '';
+	if (pessoa.idade > 1) {
+		var age = 'a';
 	};
-	if (pessoa.caminhouQuantosMetros === 1) {
-		var mtsCam = '';
-	} else{
+	var mtsCam = '';
+	if (pessoa.caminhouQuantosMetros > 1) {
 		var mtsCam = 's';
 	};
 	return 'Olá, eu sou ' + artigo + ' ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + ' ano' + age + ', ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metro' + mtsCam;
