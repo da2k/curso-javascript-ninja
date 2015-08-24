@@ -112,3 +112,4 @@ console.log(subtraction(12, 7));
 console.log(multiplication(5, 32));
 console.log(division(36, 6));
 console.log(mod(12, 22));
+ 
