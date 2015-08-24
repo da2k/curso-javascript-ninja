@@ -39,17 +39,11 @@ function resetCrono() {
   $crono.value = counter;
 }
 
-$start.addEventListener('click', function (){
-  startCrono();
-}, false);
+$start.addEventListener('click', startCrono, false);
 
-$stop.addEventListener('click', function (){
-  stopCrono();
-}, false);
+$stop.addEventListener('click', stopCrono, false);
 
-$reset.addEventListener('click', function (){
-  resetCrono();
-}, false);
+$reset.addEventListener('click', resetCrono, false);
 
 
 
