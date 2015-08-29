@@ -24,7 +24,7 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 function adicione(){
-	var x = 'VALOR';
+	var x = 'VALOR';   // aqui achei que era para colocar a string 'Valor'
 	return 'O valor da variável agora é' + x;
 }
 
@@ -42,7 +42,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function mult(a,b,c){
-	if (a == undefined || b == undefined || c == undefinede) {
+	if (a === undefined || b === undefined || c === undefinede) {
 		return 'Preencha todos os valores corretamente!';
 	} else {
 		return (a*b*c) + 2;	
@@ -70,13 +70,15 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-function tres(a,b,c){
+function adicionaTres(a,b,c){
 	if(typeof a === "number" && b == undefined && c == undefined){
 		return a;
 	} else if (typeof a === "number" && typeof b === "number" && c == undefined){
 		return a + b;
-	} else if (typeof a === "number" && typeof b === "number" && typeof c == "number"){
+	} else if (typeof a === "number" && typeof b === "number" && typeof c === "number"){
 		return (a + b) / 2;
+	} else if (typeof a !== "number" && typeof b !== "number" && typeof c !== "number"){
+		return false;
 	} else {
 		return 'null';
 	}
