@@ -4,14 +4,15 @@
   Crie dois objetos, que serão duas pessoas. Cada um deve ter as propriedades
   `name` e `lastName`, preenchidos com o nome e sobrenome da pessoa.
   */
-  function Person (name, lastName) {
-    this.name = name;
-    this.lastName = lastName;
+  var person1 = {
+    name: 'Mateus',
+    lastName: 'Jabour'
   }
 
-    var person1 = new Person('Mateus', 'Jabour');
-    var person2 = new Person('Fernando', 'Daciuk');
-  console.log(person1, person2);
+  var person2 = {
+    name: 'Fernando',
+    lastName: 'Daciuk'
+  }
   /*
   Agora crie uma função chamada `getFullName` que retorne as propriedades
   `name` e `lastName` dos objetos acima, formando um nome completo.
@@ -24,12 +25,12 @@
   contexto da função. Use um console.log por pessoa.
   */
   console.log( 'O nome das pessoas é:' );
-  Person.prototype.fullname = function () {
+  function getFullName () {
     return this.name + ' ' + this.lastName;
   };
 
-  console.log(person1.fullname());
-  console.log(person2.fullname());
+  console.log(getFullName.call(person1));
+  console.log(getFullName.call(person2));
 
   /*
   Crie uma função chamada `sum`. Essa função pode receber uma lista de
@@ -40,9 +41,10 @@
   */
 
   function sum () {
+    console.log(arguments);
     return Array.prototype.reduce.call(arguments, function (acumulated, actual, index) {
       return acumulated + actual;
-    })
+    });
   }
 
   /*
@@ -73,9 +75,9 @@
   */
   console.log( '\nFunção que limpa entrada do usuário (somente números):' );
   function justNumbers (string) {
-    var arr = string.match(/\d/g);
+    var arr = string.match(/\d+/g);
     return arr.map( function(element, index) {
-        return parseInt(element);
+        return Number(element);
     });
   }
 
