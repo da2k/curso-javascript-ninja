@@ -127,7 +127,7 @@ Alguns e-mails inválidos:
 */
 
     function isValidEmail (email) {
-        var regex = new RegExp('^[\w.+]+@\w+\.\w{2,}(?:\.\w{2})?$');
+        var regex = /^[\w.+]+@\w+\.\w{2,}(?:\.\w{2})?$/;
         return regex.test(email);
     }
 })(window, document);
