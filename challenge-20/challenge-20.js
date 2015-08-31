@@ -83,6 +83,7 @@ Caso contrário, mostre um alerta com a mensagem:
 
 
     $button.addEventListener('click', function (event) {    
+        event.preventDefault();
         if ( !($inputUsername.value) )
             return alert('Preencha o nome do usuário!');
         if ( !($inputEmail.value) )
