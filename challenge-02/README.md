@@ -71,13 +71,13 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function adicionaTres(a,b,c){
-	if(typeof a === "number" && b == undefined && c == undefined){
+	if(a !== undefined && b === undefined && c === undefined){
 		return a;
-	} else if (typeof a === "number" && typeof b === "number" && c == undefined){
+	} else if (a !== undefined &&  b !== undefined && c === undefined){
 		return a + b;
-	} else if (typeof a === "number" && typeof b === "number" && typeof c === "number"){
+	} else if (a !== undefined &&  b !== undefined && c !== undefined){
 		return (a + b) / 2;
-	} else if (typeof a !== "number" && typeof b !== "number" && typeof c !== "number"){
+	} else if (a === undefined && b === undefined && c === undefined){
 		return false;
 	} else {
 		return 'null';
