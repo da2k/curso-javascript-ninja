@@ -74,19 +74,19 @@ function convertToHex(cor) {
   var hexa;
   switch(cor) {
     case 'vermelho':
-      hexa = "#f00";
+      hexa = '#f00';
       break;
     case 'verde':
-      hexa = "#0f0";
+      hexa = '#0f0';
       break;
     case 'azul':
-      hexa = "#00f";
+      hexa = '#00f';
       break;
     case 'preto':
-      hexa = "#000"
+      hexa = '#000';
       break;
     case 'branco':
-      hexa = "#fff"
+      hexa = '#fff';
       break;
     default:
       return 'Não temos o equivalente hexadecimal para ' + cor;
@@ -96,11 +96,11 @@ function convertToHex(cor) {
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-convertToHex('azul');
-convertToHex('preto');
-convertToHex('rosa');
-convertToHex('vermelho');
-convertToHex('amarelo');
-convertToHex('branco');
-convertToHex('verde');
-convertToHex('magenta');
+console.log(convertToHex('azul'));
+console.log(convertToHex('preto'));
+console.log(convertToHex('rosa'));
+console.log(convertToHex('vermelho'));
+console.log(convertToHex('amarelo'));
+console.log(convertToHex('branco'));
+console.log(convertToHex('verde'));
+console.log(convertToHex('magenta'));
