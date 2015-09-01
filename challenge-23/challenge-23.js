@@ -1,3 +1,5 @@
+(function (win, doc) {
+  'use strict';
 /*
 Vamos desenvolver mais um projeto. A ideia é fazer uma mini-calculadora.
 As regras são:
@@ -23,3 +25,103 @@ multiplicação (x), então no input deve aparecer "1+2x".
 input;
 - Ao pressionar o botão "CE", o input deve ficar zerado.
 */
+
+  var $numberInput = doc.querySelector('#number-input');
+  var $numberBtn = doc.querySelectorAll('.number-btn-item');
+  var $operationBtn = doc.querySelectorAll('.operation-btn-item');
+  var $equalBtn = doc.querySelector('.equal-btn');
+  var $clearBtn = doc.querySelector('.ce-btn');
+
+  var inputValue;
+  var inputSize;
+
+  function justNumbers (arr) {
+    return arr.map( function(element, index) {
+      return Number(element);
+    });
+  }
+
+  function numberButton (btn) {
+    btn.addEventListener('click', function (event) {
+      $numberInput.value += btn.value;
+    });
+  }
+
+  function operationButton (btn) {
+    btn.addEventListener('click', function (event) {
+      inputValue = $numberInput.value;
+      inputSize = inputValue.length;
+      console.log($numberInput.value.charAt(inputSize - 1));
+
+      if (inputValue.charAt(inputSize - 1) === '+' ||
+          inputValue.charAt(inputSize - 1) === '-' ||
+          inputValue.charAt(inputSize - 1) === 'x' ||
+          inputValue.charAt(inputSize - 1) === '÷') {
+
+        $numberInput.value = inputValue.slice(0, inputSize - 1) + btn.value;
+
+      } else {
+
+        $numberInput.value += btn.value;
+
+      }
+    });
+  }
+
+  Array.prototype.forEach.call($numberBtn, function (item) {
+    numberButton(item);
+  });
+
+  Array.prototype.forEach.call($operationBtn, function (item) {
+    operationButton(item);
+  });
+
+  $equalBtn.addEventListener('click', function (event) {
+    var op = $numberInput.value.match(/[+\÷\-x]/g);
+    var num = justNumbers($numberInput.value.match(/\d+/g));
+
+    var result = num[0];
+
+    if (op === null) {
+
+      event.preventDefault();
+      alert('Digite um operador.');
+
+    } else if (op.length < num.length) {
+
+      for (var i = 0; i <= op.length; i++) {
+
+        switch ( op[i] ) {
+          case '+':
+            result += num[i + 1];
+            break;
+          case '-':
+            result -= num[i + 1];
+            break;
+          case 'x':
+            result *= num[i + 1];
+            break;
+          case '÷':
+            result /= num[i + 1];
+            break;
+          default:
+            console.log('error');
+        }
+      }
+
+    } else {
+
+      event.preventDefault();
+      alert('Sentença incorreta.');
+
+    }
+
+    $numberInput.value = result;
+
+  });
+
+  $clearBtn.addEventListener('click', function (event) {
+    $numberInput.value = '';
+  });
+
+})(window, document);
