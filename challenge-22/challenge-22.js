@@ -40,10 +40,15 @@
   */
   function sum() {
     console.log(arguments);
-
-    var result = Array.prototype.reduce.call(arguments, function (presentValue, currentValue, index) {
-      return presentValue + currentValue;
-    }, 0);
+    if(arguments.length <= 1) {
+        var result = Array.prototype.reduce.call(arguments[0], function(presentValue, currentValue, index) {
+          return presentValue + currentValue;
+        });
+    } else {
+      var result = Array.prototype.reduce.call(arguments, function (presentValue, currentValue, index) {
+          return presentValue + currentValue;
+        }, 0);
+      }
     return result;
 
   }
