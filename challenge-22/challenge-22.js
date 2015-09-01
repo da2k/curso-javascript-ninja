@@ -40,17 +40,10 @@
   */
   function sum() {
     console.log(arguments);
-    if(arguments.length <= 1) {
-        var result = Array.prototype.reduce.call(arguments[0], function(presentValue, currentValue, index) {
-          return presentValue + currentValue;
-        });
-    } else {
-      var result = Array.prototype.reduce.call(arguments, function (presentValue, currentValue, index) {
-          return presentValue + currentValue;
-        }, 0);
-      }
-    return result;
 
+        return Array.prototype.reduce.call(arguments, function(presentValue, currentValue, index) {
+          return +presentValue + +currentValue;
+        });
   }
 
   /*
@@ -82,9 +75,7 @@
   */
   console.log( '\nFunção que limpa entrada do usuário (somente números):' );
   function justNumbers(string) {
-    var regex = /\d/g;
-    var arr = string.match(regex).map(Number);
-    return arr;
+    return string.replace(/\D+/g, ',').split(',');
   }
   console.log(justNumbers.toString());
 
@@ -101,6 +92,6 @@
   números desse array e mostre o resultado no console.
   */
   console.log( '\nSomar números entrados pelo usuário:' );
-  console.log(sum(numbers));
+  console.log(sum.apply(sum, numbers));
 
 })(window, document);
