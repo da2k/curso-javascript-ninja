@@ -85,23 +85,26 @@
       - "Não enviado."
   */
   $button.addEventListener( 'click', function(event){
-    if( $inputUsername.value === 'Desconhecido' ){
-      alert( 'Preencha o nome do usuário!' );
+    event.preventDefault();
+    if( !$inputUsername.value ){
+      return alert( 'Preencha o nome do usuário!' );
     } 
-    if( $inputEmail.value === '' ){
-      alert( 'Preencha o e-mail!' );
+    if( !$inputEmail.value ){
+      return alert( 'Preencha o e-mail!' );
     }
-    if( $message.value === '' ){
-      alert( 'Preencha a mensagem!' );
+    if( !isValidEmail( $inputEmail ) ){
+      return alert( 'Entre com um e-mail válido!' );
+    }
+    if( !$message.value ){
+      return alert( 'Preencha a mensagem!' );
     }
     if( $inputUsername.value && $inputEmail.value && $message.value !== '' || 'Desconhecido' ){
       var confirmacao = confirm( 'Tem certeza que deseja enviar o formulário?' );
       if( confirmacao ){
-        alert( 'Enviado com sucesso!' );
+        return alert( 'Enviado com sucesso!' );
       }
       else{
-        event.preventDefault();
-        alert('Não enviado.')
+        return alert('Não enviado.')
       }
     }
   }, false );
@@ -133,6 +136,7 @@
       - "agua_@evida.br.com"
   */
   function isValidEmail( email ){
-    
+    var regex = /^[\w+.]+@\w+\.\w{2,}(?:\.\w{2})?$/
+    return regex.test( email );
   }
 }(window, document));
