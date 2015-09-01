@@ -16,13 +16,8 @@
   nome, `username` deve receber "Desconhecido".
   Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
   */
-  var username = prompt('Qual o seu nome?');
-
-  if( username )
-    alert( 'Bem vindo ' + username );
-  else
-    username = 'Desconhecido';
-
+  var username = prompt('Qual o seu nome?') || 'Desconhecido';
+  alert( 'Bem vindo ' + username + '!' );
   /*
   Agora, pergunte ao usuário "Qual o seu e-mail?", atribuindo o resultado à
   uma variável chamada `email`.
@@ -86,27 +81,17 @@
   */
   $button.addEventListener( 'click', function(event){
     event.preventDefault();
-    if( !$inputUsername.value ){
+    if( !$inputUsername.value )
       return alert( 'Preencha o nome do usuário!' );
-    } 
-    if( !$inputEmail.value ){
+    if( !$inputEmail.value )
       return alert( 'Preencha o e-mail!' );
-    }
-    if( !isValidEmail( $inputEmail ) ){
+    if( !isValidEmail( $inputEmail.value ) )
       return alert( 'Entre com um e-mail válido!' );
-    }
-    if( !$message.value ){
+    if( !$message.value )
       return alert( 'Preencha a mensagem!' );
-    }
-    if( $inputUsername.value && $inputEmail.value && $message.value !== '' || 'Desconhecido' ){
-      var confirmacao = confirm( 'Tem certeza que deseja enviar o formulário?' );
-      if( confirmacao ){
-        return alert( 'Enviado com sucesso!' );
-      }
-      else{
-        return alert('Não enviado.')
-      }
-    }
+    if( !confirm( 'Tem certeza que deseja enviar o formulário?') )
+      return alert( 'Não enviado.' );
+    return alert( 'Enviado com sucesso' );
   }, false );
 
   /*
