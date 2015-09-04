@@ -35,6 +35,6 @@ dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
 
 	$buttonReset.addEventListener('click', function(){
 		counter = 0;
-		$inputText.value = counter;
+		temp = $inputText.value = counter;
 	},false)
 })(window,document);
