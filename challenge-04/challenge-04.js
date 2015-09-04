@@ -11,13 +11,14 @@ var isTruthy = function( x ){
 };
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
-isTruthy( );
+isTruthy();
 isTruthy( null );
 isTruthy( NaN );
+isTruthy( undefined );
 isTruthy( false );
 isTruthy( 0 );
 isTruthy( -0 );
-isTruthy( ' ' );
+isTruthy( '' );
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
@@ -28,7 +29,7 @@ isTruthy( 'Olá' );
 isTruthy( 1 );
 isTruthy( 15 );
 isTruthy( [ ] );
-isTruthy( { x: 3, y: 4, } );
+isTruthy( { x: 3, y: 4 } );
 isTruthy( true );
 isTruthy( "Meu nome é Clara" );
 isTruthy( [ '1', 2, '3', 4 ] );
@@ -53,15 +54,15 @@ var carro = {
 	cor: 'Cinza',
 	quantasPortas: 4,
 	assentos: 5,
-	quantidadePessoas: 0,
+	quantidadePessoas: 0
 };
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
-carro.mudaCor = function(){
-	carro.cor = 'Preto';
+carro.mudaCor = function( novaCor ){
+	carro.cor = novaCor;
 };
 
 /*
@@ -134,13 +135,13 @@ Qual a cor atual do carro?
 carro.obterCor(); // Cinza
 
 // Mude a cor do carro para vermelho.
-carro.cor = 'Vermelho';
+carro.mudaCor( 'Vermelho' ); // Vermelho
 
 // E agora, qual a cor do carro?
 carro.obterCor(); // Vermelho
 
 // Mude a cor do carro para verde musgo.
-carro.cor = 'Verde Musgo';
+carro.mudaCor( 'Verde Musgo' ); // Verde Musgo
 
 // E agora, qual a cor do carro?
 carro.obterCor(); // Verde Musgo
@@ -155,7 +156,7 @@ carro.adicionarPessoas(2); // 'Já temos 2 pessoas no carro'
 carro.adicionarPessoas(4); // 'Só cabe mais 3 pessoas!'
 
 // Faça o carro encher.
-carro.adicionarPessoas(5); // 'Já temos 5 pessoas no carro'
+carro.adicionarPessoas(3); // 'Já temos 5 pessoas no carro'
 
 // Tire 4 pessoas do carro.
 carro.adicionarPessoas(-4); // 'Já temos 1 pessoa no carro'
@@ -164,4 +165,4 @@ carro.adicionarPessoas(-4); // 'Já temos 1 pessoa no carro'
 carro.adicionarPessoas(10); // 'Só cabe mais 4 pessoas!'
 
 // Quantas pessoas temos no carro?
-carro.quantidadePessoas // 1
+carro.quantidadePessoas; // 1
