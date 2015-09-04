@@ -16,24 +16,25 @@ dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
 */
 (function(win,doc){
 	
-	var $inputText = document.querySelector( '[type="text"]' );
-	var $buttonStart = document.querySelector( '[data-js="btn-start"]' );
-	var $buttonStop = document.querySelector( '[data-js="btn-stop"]' );
-	var $buttonReset = document.querySelector( '[data-js="btn-reset"]' );
+	var $inputText = doc.querySelector( '[type="text"]' );
+	var $buttonStart = doc.querySelector( '[data-js="btn-start"]' );
+	var $buttonStop = doc.querySelector( '[data-js="btn-stop"]' );
+	var $buttonReset = doc.querySelector( '[data-js="btn-reset"]' );
 	var counter = 0;
 	var temp;
 	$inputText.value = counter;
 
 	$buttonStart.addEventListener('click', function start(){
 		$inputText.value = counter++;
-		temp = setTimeout(start, 10)
+		temp = setTimeout(start, 100);
 	}, false);
 
 	$buttonStop.addEventListener('click', function(){
-		temp = clearTimeout(counter);
+		temp = clearTimeout(temp);
 	}, false);
 
 	$buttonReset.addEventListener('click', function(){
-		alert('Teste')
+		counter = 0;
+		$inputText.value = counter;
 	},false)
 })(window,document);
