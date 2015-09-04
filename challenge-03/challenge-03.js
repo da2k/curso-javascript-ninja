@@ -204,4 +204,4 @@ pessoa.apresentacao = function(){
 };
 
 // Agora, apresente-se ;)
-pessoa.apresentacao();
+pessoa.apresentacao(); // "Olá, eu sou a Clara Battesini tenho 23 anos, 1.55, meu peso é 61 e, só hoje, eu já caminhei 11 metros!"
