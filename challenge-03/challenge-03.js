@@ -23,7 +23,7 @@ var pessoa = {
 	altura: 1.55,
 	peso: 61,
 	andando: false,
-	caminhouQuantosMetros: 0,
+	caminhouQuantosMetros: 0
 };
 
 /*
@@ -127,7 +127,7 @@ Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
 comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
-pessoa.idade // 23
+pessoa.idade; // 23
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
@@ -141,7 +141,7 @@ pessoa.andar(6);
 A pessoa ainda está andando? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.andando // true
+pessoa.andando; // true
 
 /*
 Se a pessoa ainda está andando, faça-a parar.
@@ -152,13 +152,13 @@ pessoa.parar();
 E agora: a pessoa ainda está andando? (Use uma instrução para responder e
 comentários inline ao lado da instrução para mostrar a resposta retornada)
 */
-pessoa.andando // false
+pessoa.andando; // false
 
 /*
 Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
 inline ao lado da instrução para mostrar a resposta retornada)
 */
-pessoa.caminhouQuantosMetros // 11
+pessoa.caminhouQuantosMetros; // 11
 
 /*
 Agora vamos deixar a brincadeira um pouco mais divertida! :D
@@ -183,22 +183,22 @@ pessoa.apresentacao = function(){
 	var dist;
 	
 	if( pessoa.sexo === 'Feminino' ){
-		var art = 'a';
+		art = 'a';
 	}
 	else if( pessoa.sexo === 'Masculino' ){
-		var art = 'o';
+		art = 'o';
 	}
 	if( pessoa.idade > 1 ){
-		var idad = 'anos';
+		idad = 'anos';
 	}
 	else if ( pessoa.idade <= 1 ){
-		var idad = 'ano';
+		idad = 'ano';
 	}
 	if ( pessoa.caminhouQuantosMetros > 1 ){
-		var dist = 'metros';
+		dist = 'metros';
 	}
 	else if( pessoa.caminhouQuantosMetros <= 1 ){
-		var dist = 'metro';
+		dist = 'metro';
 	}		
 	return 'Olá, eu sou ' + art + ' ' + pessoa.nome + ' ' + pessoa.sobrenome + ' tenho ' + pessoa.idade + ' ' + idad + ', ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' ' + dist + '!' 
 };
