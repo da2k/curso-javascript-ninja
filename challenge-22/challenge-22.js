@@ -41,8 +41,7 @@
   */
   function sum() {
     console.log( arguments );
-    var testArguments = typeof arguments[0] === 'object' ? arguments[0] : arguments;
-    return Array.prototype.reduce.call( testArguments, function( ac, actual ) {
+    return Array.prototype.reduce.call( arguments, function( ac, actual ) {
       return Number( ac ) + Number( actual );
     });
   }
@@ -75,7 +74,7 @@
   */
   console.log( '\nFunção que limpa entrada do usuário (somente números):' );
   function justNumbers( string ) {
-    return string.match( /\d/g );
+    return string.match( /\d+/g );
   }
   console.log( justNumbers.toString() );
   /*
@@ -89,5 +88,5 @@
   números desse array e mostre o resultado no console.
   */
   console.log( '\nSomar números entrados pelo usuário:' );
-  console.log( sum( numbers ) );
+  console.log( sum.apply(sum, numbers ) );
 })();
