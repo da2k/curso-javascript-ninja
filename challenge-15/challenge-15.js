@@ -28,14 +28,14 @@
     this.age = age;
     this.getFullName = function() {
       return this.name + ' ' + this.lastName;
-    }
+    };
     this.getAge = function() {
       return this.age;
-    }
+    };
     this.addAge = function() {
       this.age += arguments[0];
-      return this.getAge();
-    }
+      return this;
+    };
   }
 
   /*
@@ -49,9 +49,9 @@
   var valentina = new Person( 'Valentina', 'Rossi', 23 );
   var rebeca = new Person( 'Rebeca', 'Alves', 10 );
 
-  console.log( joao.name );
-  console.log( valentina.name );
-  console.log( rebeca.name );
+  console.log( joao.name, joao.lastName, joao.age );
+  console.log( valentina.name, valentina.lastName, valentina.age );
+  console.log( rebeca.name, rebeca.lastName, rebeca.age );
   /*
   Mostre no console o nome completo de cada pessoa.
   */
@@ -65,9 +65,9 @@
   - "[NOME COMPLETO] tem [IDADE] anos."
   */
   console.log( '\nIdade das pessoas:' );
-  console.log( joao.getFullName() + " tem " + joao.getAge() + " anos." );
-  console.log( valentina.getFullName() + " tem " + valentina.getAge() + " anos." );
-  console.log( rebeca.getFullName() + " tem " + rebeca.getAge() + " anos." );
+  console.log( joao.getFullName() + ' tem ' + joao.getAge() + ' anos.' );
+  console.log( valentina.getFullName() + ' tem ' + valentina.getAge() + ' anos.' );
+  console.log( rebeca.getFullName() + ' tem ' + rebeca.getAge() + ' anos.' );
 
   /*
   Adicione alguns anos à cada pessoa, e mostre no console a nova idade de
@@ -75,7 +75,7 @@
   - "[NOME COMPLETO] agora tem [NOVA IDADE] anos."
   */
   console.log( '\nNova idade das pessoas:' );
-  console.log( joao.getFullName() + " agora tem " + joao.addAge( 1 ) + " anos." );
-  console.log( valentina.getFullName() + " agora tem " + valentina.addAge( 10 ) + " anos." );
-  console.log( rebeca.getFullName() + " agora tem " + rebeca.addAge( 8 ) + " anos." );
+  console.log( joao.getFullName() + ' agora tem ' + joao.addAge( 1 ).getAge() + ' anos.' );
+  console.log( valentina.getFullName() + ' agora tem ' + valentina.addAge( 10 ).getAge() + ' anos.' );
+  console.log( rebeca.getFullName() + ' agora tem ' + rebeca.addAge( 8 ).getAge() + ' anos.' );
 })();  
