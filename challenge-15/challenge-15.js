@@ -49,9 +49,9 @@
   var valentina = new Person( 'Valentina', 'Rossi', 23 );
   var rebeca = new Person( 'Rebeca', 'Alves', 10 );
 
-  console.log( joao.name, joao.lastName, joao.age );
-  console.log( valentina.name, valentina.lastName, valentina.age );
-  console.log( rebeca.name, rebeca.lastName, rebeca.age );
+  console.log( joao );
+  console.log( valentina );
+  console.log( rebeca );
   /*
   Mostre no console o nome completo de cada pessoa.
   */
