@@ -195,16 +195,16 @@ correta, de acordo com os dados inseridos no objeto.
 pessoa.apresentacao = function() {
 		var novoSexo = 'o';
 		if (pessoa.sexo === 'Feminino'){
-		novoSexo = 'a';
+		    novoSexo = 'a';
 		} 
 		var novaIdade = 'anos';
 	 	if (pessoa.idade === 1) {
-		novaIdade = 'ano';
+		    novaIdade = 'ano';
 		} 
 	
 		var novoMetro = 'metros'	
-	 	if(pessoa.caminhoQuantosMetros === 1) {
-		novoMetro = 'metro';
+	 	if (pessoa.caminhoQuantosMetros === 1) {
+		    novoMetro = 'metro';
 		}
 	
 	return 'Olá, eu sou ' + novoSexo + ' ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + ' ' 
