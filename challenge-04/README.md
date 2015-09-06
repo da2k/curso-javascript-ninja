@@ -9,9 +9,9 @@ para o contrário.
 */
 var isTruthy = function(a){
    if(a){
-   return true;
-	}
-	return false;
+      return true;
+	  }
+	    return false;
 	};
 // Esta correto agora?	
 
@@ -133,7 +133,8 @@ carro.adicionaPessoas = function(numeroPessoas){
 	} 
 
 	carro.quantidadePessoas += numeroPessoas;
-	return 'Já temos ' + carro.quantidadePessoas + ' de pessoas no carro!';
+	var pluralSingular = totalPessoas === 1 ? 'pessoa' : 'de pessoas';
+	return 'Já temos ' + carro.quantidadePessoas + ' ' + pluralSingular + ' no carro!';
 	
 };
 
