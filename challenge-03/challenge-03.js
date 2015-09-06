@@ -127,7 +127,7 @@ Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
 comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
-pessoa.idade; // 23
+pessoa.mostrarIdade(); // 23
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
@@ -178,28 +178,19 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao = function(){
-	var art;
-	var idad;
-	var dist;
+	var art = 'o';
+	var idad = 'ano';
+	var dist = 'metro';
 	
 	if( pessoa.sexo === 'Feminino' ){
 		art = 'a';
 	}
-	else if( pessoa.sexo === 'Masculino' ){
-		art = 'o';
-	}
 	if( pessoa.idade > 1 ){
 		idad = 'anos';
-	}
-	else if ( pessoa.idade <= 1 ){
-		idad = 'ano';
 	}
 	if ( pessoa.caminhouQuantosMetros > 1 ){
 		dist = 'metros';
 	}
-	else if( pessoa.caminhouQuantosMetros <= 1 ){
-		dist = 'metro';
-	}		
 	return 'Olá, eu sou ' + art + ' ' + pessoa.nome + ' ' + pessoa.sobrenome + ' tenho ' + pessoa.idade + ' ' + idad + ', ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' ' + dist + '!' 
 };
 
