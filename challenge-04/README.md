@@ -134,7 +134,8 @@ carro.adicionaPessoas = function(numeroPessoas){
 	} 
 
 	carro.quantidadePessoas += numeroPessoas;
-	return 'Já temos ' + carro.quantidadePessoas + ' de pessoas no carro!';
+	var pluralSingular = totalPessoas === 1 ? 'pessoa' : 'de pessoas';
+	return 'Já temos ' + carro.quantidadePessoas + ' ' + pluralSingular + ' no carro!';
 	
 }
 
@@ -149,34 +150,33 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-carro.obterCor()
-"preto"
+carro.obterCor() //"preto"
 
 // Mude a cor do carro para vermelho.
 carro.mudarCor('vermelho');
 
 // E agora, qual a cor do carro?
-carro.obterCor(); 'vermelho'
+carro.obterCor(); //'vermelho'
 
 // Mude a cor do carro para verde musgo.
-?
+
 carro.mudarCor('verde musgo');
 
 // E agora, qual a cor do carro?
-carro.obterCor(); 'verde musgo'
+carro.obterCor(); //'verde musgo'
 
 
 // Qual a marca e modelo do carro?
-carro.obterMarcaModelo(); "Esse carro é da marca Audi e modelo T8"
+carro.obterMarcaModelo(); //"Esse carro é da marca Audi e modelo T8"
 
 // Adicione 2 pessoas no carro.
-carro.adicionaPessoas(2) // "So cabem mais 2 pessoas!"
+carro.adicionaPessoas(2); // "So cabem mais 2 pessoas!"
 
 // Adicione mais 4 pessoas no carro.
-carro.adicionaPessoas(4) // "So cabem mais 3 pessoas!"
+carro.adicionaPessoas(4); // "So cabem mais 3 pessoas!"
 
 // Faça o carro encher.
-carro.adicionaPessoas(3) // "Já temos 5 de pessoas no carro!"
+carro.adicionaPessoas(3); // "Já temos 5 de pessoas no carro!"
 
 // Tire 4 pessoas do carro.
 carro.quantidadePessoas = 1;
