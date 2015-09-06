@@ -16,7 +16,7 @@ function addItem( add ){
 Adicione um novo array ao array criado no início do desafio, com ao menos 3
 itens de tipos diferentes, mostrando o resultado no console.
 */
-addItem( [1, '5', false] ); // [3, "String", null, undefined, true, [1, '5', false]]
+console.log(addItem( [1, '5', false] )); // [3, "String", null, undefined, true, [1, '5', false]]
 
 /*
 Mostre no console o segundo elemento desse último array, criado acima, com a
@@ -43,13 +43,11 @@ pares entre 10 e 20, inclusive esses 2.
 */
 console.log( 'Números pares entre 10 e 20:' );
 var num = 10; 
-while ( 10 <= num && num <= 20 ){
+while ( num <= 20 ){
 	if ( num % 2 === 0 ){
 		console.log( num );
-		num++;
-	} else {
-		num++;	
-	}	
+	}
+	num++;		
 }
 
 /*
@@ -57,13 +55,11 @@ Na mesma ideia do exercício acima: mostre agora os números ímpares.
 */
 console.log( 'Números ímpares entre 10 e 20:' );
 var num = 10; 
-while ( 10 <= num && num <= 20 ){
+while ( num <= 20 ){
 	if ( num % 2 !== 0 ){
 		console.log( num );
-		num++;
-	} else {
-		num++;	
-	}	
+	}
+	num++;	
 }
 
 /*
@@ -78,7 +74,7 @@ for( z = 100; z <= 120; z += 2 ){
 }
 
 console.log( 'Números ímpares entre 111 e 125:' );
-for( z = 100; z <= 125; z++ ){
+for( z = 110; z <= 125; z++ ){
 	if( z % 2 !== 0 ){
 		console.log( z );
 	} 
