@@ -23,7 +23,6 @@ dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
 	var $buttonReset = doc.querySelector( '[data-js="btn-reset"]' );
 	var counter = 0;
 	var timerID;
-	$inputText.value = counter;
 
 	$buttonStart.addEventListener('click', btnStart, false);
 	$buttonStop.addEventListener('click', btnStop, false);
