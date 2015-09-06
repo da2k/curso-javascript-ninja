@@ -15,13 +15,14 @@ usar o nome que achar melhor, desde que ele seja semântico, ou seja, o nome
 dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
 */
 (function(win,doc){
-	
+	'use strict';
+
 	var $inputText = doc.querySelector( '[data-js="timer"]' );
 	var $buttonStart = doc.querySelector( '[data-js="btn-start"]' );
 	var $buttonStop = doc.querySelector( '[data-js="btn-stop"]' );
 	var $buttonReset = doc.querySelector( '[data-js="btn-reset"]' );
 	var counter = 0;
-	var temp;
+	var timerID;
 	$inputText.value = counter;
 
 	$buttonStart.addEventListener('click', btnStart, false);
@@ -30,15 +31,13 @@ dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
 
 	function btnStart(){
 		$inputText.value = counter++;
-		temp = setTimeout(btnStart, 1000);
+		timerID = setTimeout(btnStart, 1000);
 	}
-
 	function btnStop(){
-		temp = clearTimeout(temp);
+		clearTimeout(timerID);
 	}
 
 	function btnReset(){
 		counter = 0;
-		temp = $inputText.value = counter;
 	}
 })(window,document);
