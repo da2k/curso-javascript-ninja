@@ -57,17 +57,17 @@ os livros.
 */
 function book( bookName ){
     var livros = {
-        'livro1': {
+        'Javascript: O Guia Definitivo': {
             quantidadePaginas: 700,
             autor: 'Flanagan',
             editora: 'Bookman'
         },
-        'livro2': {
+        'Crônicas de Gelo e Fogo': {
             quantidadePaginas: 1000,
             autor: 'R.R. Martin' ,
             editora: 'Leya',
         },
-        'livro3': {
+        'Harry Potter': {
             quantidadePaginas: 200,
             autor: 'J.K. Rowling',
             editora: 'Rocco'
@@ -86,18 +86,18 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-console.log( 'O livro1 tem ' + book('livro1').quantidadePaginas + ' páginas!' );
+console.log( 'O Javascript: O Guia Definitivo tem ' + book('Javascript: O Guia Definitivo').quantidadePaginas + ' páginas!' );
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log( 'O autor do livro livro2 é ' + book('livro2').autor );
+console.log( 'O autor do livro Crônicas de Gelo e Fogo é ' + book('Crônicas de Gelo e Fogo').autor );
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log( 'O livro livro3 foi publicado pela editora ' + book('livro3').editora );
+console.log( 'O livro Harry Potter foi publicado pela editora ' + book('Harry Potter').editora );
