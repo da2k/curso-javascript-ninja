@@ -138,7 +138,7 @@ retornada)
 */
 
 pessoa.mostrarIdade();
-//33
+//'Olá, eu tenho 33 anos!'
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
