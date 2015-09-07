@@ -55,7 +55,7 @@ Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
 repetição "while".
 */
 var x = 20;
-while ( ( x > 19 ) && ( x < 31 ) ){
+while ( x < 31 ){
     console.log( x );
     x++;
 }
