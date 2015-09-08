@@ -2,19 +2,19 @@ button {
   width: 40px;
   height: 40px;
 }
+
 .calculator {
   width: 150px;
 }
 
-
-.number-btn {
+.number-button {
   padding-left: 20px;
   width: 100px;
   display: inline-block;
 
 }
 
-.operation-btn {
+.operation-button {
   float: right;
   width: 30px;
   height: 100px;

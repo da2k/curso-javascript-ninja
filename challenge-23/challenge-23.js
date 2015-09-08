@@ -26,102 +26,134 @@ input;
 - Ao pressionar o botão "CE", o input deve ficar zerado.
 */
 
-  var $numberInput = doc.querySelector('#number-input');
-  var $numberBtn = doc.querySelectorAll('.number-btn-item');
-  var $operationBtn = doc.querySelectorAll('.operation-btn-item');
-  var $equalBtn = doc.querySelector('.equal-btn');
-  var $clearBtn = doc.querySelector('.ce-btn');
+  var $numberInput = doc.querySelector('[data-js="number-input"]');
+  var $numberButton = doc.querySelectorAll('[data-js="number-button-item"]');
+  var $operationButton = doc.querySelectorAll('[data-js="operation-button-item"]');
+  var $equalButton = doc.querySelector('[data-js="equal-button"]');
+  var $clearButton = doc.querySelector('[data-js="ce-button"]');
 
   var inputValue;
   var inputSize;
 
-  function justNumbers (arr) {
-    return arr.map( function(element, index) {
+  function sum (x, y) {
+    return x + y;
+  }
+
+  function subtraction (x, y) {
+    return x - y;
+  }
+
+  function multiplication (x, y) {
+    return x * y;
+  }
+
+  function division (x,y) {
+    return x / y;
+  }
+
+  function justNumbers (array) {
+    return array.map( function(element, index) {
       return Number(element);
     });
   }
 
-  function numberButton (btn) {
-    btn.addEventListener('click', function (event) {
-      $numberInput.value += btn.value;
-    });
+  function operation (operator, x, y) {
+    switch(operator) {
+
+      case '+':
+        return sum(x, y);
+
+      case '-':
+        return subtraction(x, y);
+
+      case 'x':
+        return multiplication(x, y);
+
+      case '÷':
+        return division(x, y)
+
+    }
   }
 
-  function operationButton (btn) {
-    btn.addEventListener('click', function (event) {
-      inputValue = $numberInput.value;
-      inputSize = inputValue.length;
-      console.log($numberInput.value.charAt(inputSize - 1));
-
-      if (inputValue.charAt(inputSize - 1) === '+' ||
-          inputValue.charAt(inputSize - 1) === '-' ||
-          inputValue.charAt(inputSize - 1) === 'x' ||
-          inputValue.charAt(inputSize - 1) === '÷') {
-
-        $numberInput.value = inputValue.slice(0, inputSize - 1) + btn.value;
-
-      } else {
-
-        $numberInput.value += btn.value;
-
-      }
-    });
+  function clearEverything () {
+    event.preventDefault();
+    $numberInput.value = '0';
   }
 
-  Array.prototype.forEach.call($numberBtn, function (item) {
-    numberButton(item);
-  });
+  function printNumber () {
+    event.preventDefault();
+    $numberInput.value += this.value;
 
-  Array.prototype.forEach.call($operationBtn, function (item) {
-    operationButton(item);
-  });
+    if ($numberInput.value.charAt(0) === '0') {
 
-  $equalBtn.addEventListener('click', function (event) {
-    var op = $numberInput.value.match(/[+\÷\-x]/g);
-    var num = justNumbers($numberInput.value.match(/\d+/g));
+      $numberInput.value = $numberInput.value.slice(1);
 
-    var result = num[0];
+    }
 
-    if (op === null) {
+  }
 
-      event.preventDefault();
+  function printOperator () {
+    event.preventDefault();
+    inputValue = $numberInput.value;
+    inputSize = inputValue.length;
+
+    if (inputValue.charAt(inputSize - 1) === '+' ||
+        inputValue.charAt(inputSize - 1) === '-' ||
+        inputValue.charAt(inputSize - 1) === 'x' ||
+        inputValue.charAt(inputSize - 1) === '÷') {
+
+      $numberInput.value = inputValue.slice(0, inputSize - 1) + this.value;
+
+    } else {
+
+      $numberInput.value += this.value;
+
+    }
+  }
+
+  function printResult () {
+    event.preventDefault();
+    var inputOperator = $numberInput.value.match(/[+\÷\-x]/g);
+    var inputNumber = justNumbers($numberInput.value.match(/\d+/g));
+
+    var result = inputNumber[0];
+
+    if (!inputOperator) {
+
       alert('Digite um operador.');
 
-    } else if (op.length < num.length) {
+    } else if (inputOperator.length < inputNumber.length) {
 
-      for (var i = 0; i <= op.length; i++) {
+      for (var i = 0; i < inputOperator.length; i++) {
 
-        switch ( op[i] ) {
-          case '+':
-            result += num[i + 1];
-            break;
-          case '-':
-            result -= num[i + 1];
-            break;
-          case 'x':
-            result *= num[i + 1];
-            break;
-          case '÷':
-            result /= num[i + 1];
-            break;
-          default:
-            console.log('error');
-        }
+      result = operation(inputOperator[i], result, inputNumber[i + 1]);
+
       }
 
     } else {
 
-      event.preventDefault();
       alert('Sentença incorreta.');
 
     }
 
     $numberInput.value = result;
 
+  }
+
+  function attachEvent (button, action) {
+    button.addEventListener('click', action);
+  }
+
+  Array.prototype.forEach.call($numberButton, function (item) {
+    attachEvent(item, printNumber);
   });
 
-  $clearBtn.addEventListener('click', function (event) {
-    $numberInput.value = '';
+  Array.prototype.forEach.call($operationButton, function (item) {
+    attachEvent(item, printOperator);
   });
+
+  attachEvent($equalButton, printResult);
+
+  attachEvent($clearButton, clearEverything);
 
 })(window, document);
