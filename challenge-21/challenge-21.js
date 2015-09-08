@@ -37,6 +37,8 @@ dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
 	}
 
 	function btnReset(){
-		counter = 0;
+		//counter = 0;
+		$inputText.value = counter;
+		btnStop();
 	}
 })(window,document);
