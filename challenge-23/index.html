@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora</title>
+  <style>
+    #corpo { width: 173px}
+    #btn-numbers { width: 50%; float: left;}
+    #other-btn { width: 50%; float: right;}
+    .btn { margin-top: 2px }
+    .btn-ce { width: 100%;}
+  </style>
+</head>
+<body>
+  <div id="corpo">
+    <input data-js="input" type="text" value="0">
+    <div id="btn-numbers">
+      <button class="btn" data-js="btnNumber" value="1">1</button>
+      <button class="btn" data-js="btnNumber" value="2">2</button>
+      <button class="btn" data-js="btnNumber" value="3">3</button>
+      <button class="btn" data-js="btnNumber" value="4">4</button>
+      <button class="btn" data-js="btnNumber" value="5">5</button>
+      <button class="btn" data-js="btnNumber" value="6">6</button>
+      <button class="btn" data-js="btnNumber" value="7">7</button>
+      <button class="btn" data-js="btnNumber" value="8">8</button>
+      <button class="btn" data-js="btnNumber" value="9">9</button>
+      <button class="btn" data-js="btnNumber" value="0">0</button>
+    </div>
+    <div id="other-btn">
+      <button class="btn-ce" data-js="ceBtn" value="0">CE</button>
+      <button class="btn" data-js="operatorBtn" value="+">+</button>
+      <button class="btn" data-js="operatorBtn" value="-">-</button>
+      <button class="btn" data-js="operatorBtn" value="x">x</button>
+      <button class="btn" data-js="operatorBtn" value="÷">÷</button>
+      <button class="btn" data-js="equalBtn" value="=">=</button>
+    </div>
+  </div>
+  <script src="challenge-23.js"></script>
+</body>
+</html>

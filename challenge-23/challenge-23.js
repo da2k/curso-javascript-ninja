@@ -23,3 +23,87 @@ multiplicação (x), então no input deve aparecer "1+2x".
 input;
 - Ao pressionar o botão "CE", o input deve ficar zerado.
 */
+(function(win, doc) {
+  'use strict';
+  var $inputNumber = doc.querySelector( '[data-js="input"]' );
+  var $numberBtn = doc.querySelectorAll( '[data-js="btnNumber"]' );
+  var $operatorBtn = doc.querySelectorAll( '[data-js="operatorBtn"]' );
+  var $equalBtn = doc.querySelector( '[data-js="equalBtn"]' );
+  var $ceBtn = doc.querySelector( '[data-js="ceBtn"]' );
+
+  Array.prototype.forEach.call( $numberBtn, function( button ) {
+    button.addEventListener( 'click', selectedNumber, false );
+  })
+
+  Array.prototype.forEach.call( $operatorBtn, function( button ) {
+    button.addEventListener( 'click', selectedOperator, false );
+  })
+
+  $ceBtn.addEventListener( 'click', selectedCeBtn, false );
+
+  $equalBtn.addEventListener( 'click', selectedEqual, false );
+
+  function selectedNumber() {
+    isInputStarZero( this );
+  }
+
+  function selectedOperator() {
+    removeLastOperator();
+    $inputNumber.value += this.value;
+  }
+
+  function selectedCeBtn() {
+    $inputNumber.value = 0;
+  }
+
+  function selectedEqual() {
+    removeLastOperator();
+    convertForNumber();
+
+  }
+
+  function isInputStarZero(button) {
+    if ( $inputNumber.value == 0 ) {
+      $inputNumber.value = button.value;
+    } else {
+      $inputNumber.value += button.value;
+    };
+  }
+
+  function isLastItemIsItAnOperator() {
+    var regex = /[+x÷-]$/;
+    var result = regex.test( $inputNumber.value );
+      return result;
+  }
+
+  function removeLastOperator() {
+    if ( isLastItemIsItAnOperator() ) {
+      $inputNumber.value = $inputNumber.value.slice( 0, -1 );
+    };
+  }
+
+  function convertForNumber() {
+    var getNumber = $inputNumber.value.match( /\d+/g );
+    var getOperator = $inputNumber.value.match( /[+x÷-]/g );
+    var counter = 0
+    var result = getNumber.reduce( function( acumulated, actual ) {
+      switch ( getOperator[counter] ) {
+        case '+':
+          counter++;
+          return +acumulated + +actual;
+        case 'x':
+          counter++;
+          return +acumulated * +actual;
+        case '÷':
+          counter++;
+          return +acumulated / +actual;
+        case '-':
+          counter++;
+          return +acumulated - +actual;
+      }
+    });
+    $inputNumber.value = result;
+    console.log( getNumber );
+    console.log( getOperator );
+}
+})( window, document);
