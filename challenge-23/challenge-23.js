@@ -37,51 +37,47 @@
     '*': '*',
     '/': '/'
   };
-  Array.prototype.forEach.call($justNumbers, function(element) {
-    setNumberInput(element);
+  Array.prototype.forEach.call($justNumbers, function(button) {
+    button.addEventListener('click', handleClickNumber, false);
   });
 
-  Array.prototype.forEach.call($justOperators, function(element) {
-    setOperatorsInput(element);
+  Array.prototype.forEach.call($justOperators, function(button) {
+    button.addEventListener('click', handleClickOperation, false);
   });
+  
+  $CEButton.addEventListener('click', handleClickCE, false);
+  $equalButton.addEventListener('click', handleClickEqual, false);
 
-  function setNumberInput(number) {
-    number.addEventListener('click', function(event) {
-      $input.value += this.value;
-    }, false);
+  function handleClickNumber() {
+    $input.value += this.value;
   }
 
-  function setOperatorsInput(operator) {
-    operator.addEventListener('click', function(event) {
-      if(!!operators[ $input.value[$input.value.length - 1] ]) {
-        $input.value = $input.value.replace( $input.value[$input.value.length - 1], this.value);
-        return;
-      }
-      $input.value += this.value;
-    });
-  }
-
-  function lastOperationItem() {
-    var lastItem = $input.value[$input.value.length - 1];
-    if (!!operators.lastItem) {
-      return true;
+  function handleClickOperation() {
+    if( islastOperationAnItem() ) {
+      $input.value = $input.value.slice(0, -1) + this.value;
+      return;
     }
-    return false;
+    $input.value += this.value;
+  }
+  function handleClickCE() {
+    $input.value = '0';
   }
 
-  $CEButton.addEventListener('click', function(event) {
-    $input.value = '0';
-  }, false);
+  function islastOperationAnItem() {
+    var lastItem = $input.value[$input.value.length - 1];
+    return !!operators[lastItem];
+  }
 
-  $equalButton.addEventListener('click', function(event) {
-    if (lastOperationItem()) {
+
+  function handleClickEqual() {
+    if (islastOperationAnItem()) {
         $input.value = $input.value.slice(0, -1);
     }
     var numbers = $input.value.match(/\d+/g);
     var operator = $input.value.match(/(\D)/g);
     var i = 0;
 
-    var result = numbers.reduce(function(acc, atual) {
+    $input.value = numbers.reduce(function(acc, atual) {
       switch (operator[i]) {
         case '+':
           i++;
@@ -97,9 +93,5 @@
           return +acc * +atual;
       }
     });
-    $input.value = result;
-
-  }, false);
-
-
+  }
 })( window, document );
