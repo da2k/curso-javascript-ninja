@@ -59,7 +59,7 @@ multiplicar(2,2);
 multiplicar(2,2,2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-10
+//10
 
 /*
 Crie uma função com as seguintes características:
