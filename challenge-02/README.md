@@ -2,7 +2,7 @@
 
 Nesse exercício, você está livre para escolher os nomes para suas variáveis e funções! :smile:
 
--```js
+```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
 
  function soma(a,b){
@@ -109,3 +109,4 @@ function somar( a, b , c ){
 // 1
 // 3
 // 1
+```
