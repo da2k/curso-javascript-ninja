@@ -35,11 +35,10 @@
     */
     var counter = 0;
     for ( var prop in person ){
-        console.log( 'The ' + prop + ' of person is ' + person[prop] );
         counter++;
-        console.log( 'The person has ' + counter + ' properties.' );
-        console.log( '---------------------------------------------' );
     }
+    console.log( 'The ' + prop + ' of person is ' + person[prop] );
+    console.log( 'The person has ' + counter + ' properties.' );
 
     /*
     Crie uma função chamada `moreThan`, que vai verificar se a pessoa (objeto
@@ -52,28 +51,27 @@
         var auxVar = false;
         if( person.age <= idade ){
             auxVar = true;
-            console.log( 'The person has more than 20 years old? ' + auxVar );
             return true;
         }
-        console.log( 'The person has more than 20 years old? ' + auxVar );
         return false;
     }
-
-    /* nesse exercício, pelos testes que eu fiz, tem duas opções, ou coloca dois consoles, ou deixa o ultimo console e tira os returns */
+    console.log( 'The person has more than 20 years old? ' + moreThan(12) );
 
     /*
     Faça um loop de 0 a 10, que adicione cada número como um item de um
     array chamado `numbers`. Se o contador for maior que 10, saia do loop.
     Mostre no console os números no array.
     */
-    console.log( 'De 0 a 10:' );
-    var count = 0;
+    console.log( 'De 0 a 20:' );
     var numbers = [];
-    do {
-        numbers.push( count );
-        count++;
-    } while ( count <= 10 ){
-        console.log( numbers );
+    for ( i = 0; i <= 20; i++ ){
+        if( i <= 10 ){
+            numbers.push( i );
+        }
+        else{
+            console.log( numbers );
+            break;
+        }
     }
 
     /*
@@ -85,7 +83,7 @@
     console.log( 'Pares de 0 a 20:' );
     var numbers = [];
     for (var i = 0; i <= 20; i++){
-        if ( i % 2 === 0 ){
+        if ( i % 2 === 1 ){
             continue;
         }
         numbers.push( i );
