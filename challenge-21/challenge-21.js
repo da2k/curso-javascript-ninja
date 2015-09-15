@@ -29,16 +29,16 @@ dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
 	$buttonReset.addEventListener('click', btnReset, false);
 
 	function btnStart(){
-		$inputText.value = counter++;
+    $inputText.value = +$inputText.value +1;
 		timerID = setTimeout(btnStart, 1000);
 	}
+
 	function btnStop(){
 		clearTimeout(timerID);
 	}
 
 	function btnReset(){
-		counter = 0;
-		$inputText.value = counter;
+		$inputText.value = 0;
 		btnStop();
 	}
 })(window,document);
