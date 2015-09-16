@@ -12,10 +12,10 @@ js
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
 
 function soma(a,b){
-       return a + b;
+       return (a + b)+5;
  }
 
- var somar=soma(2,3);
+ var somar=soma(2,3)+5;
 
 // Qual o valor atualizado dessa variável?
 undefined
@@ -101,6 +101,7 @@ function somar( a, b , c ){
         else if(false){
              return null;
         }
+
      }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
@@ -108,4 +109,4 @@ function somar( a, b , c ){
 // false
 // 1
 // 3
-// 1
+// 1 // lucas
