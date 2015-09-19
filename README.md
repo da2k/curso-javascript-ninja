@@ -12,3 +12,6 @@
 
 
 Aproveite o curso! :D
+
+## Sumário
+Veja o sumário completo do curso [aqui](summary.md).
