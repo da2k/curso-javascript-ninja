@@ -3,25 +3,25 @@
 Aqui vocẽ pode ver todo o conteúdo do curso disponível:
 
 - Variáveis e tipos de dados
-- Operadores aritmeticos
+- Operadores aritméticos
 - Operadores de igualdade e relacionais
 - Funções
-- Operadores Lógico
+- Operadores Lógicos
 - Operadores Unários
 - Estrutura Léxica
 - Instruções condicionais - IF
 - Truthy e Falsy
 - Condicional Ternário
 - Escopo de variáveis e funções
-- Retorno de funções com array e objetos
-- Parâmetros de Funçoẽscom array e objetos
-- Operador virgula e estrutura condicional switch
+- Retorno de funções com arrays e objetos
+- Parâmetros de Funções com arrays e objetos
+- Operador vírgula e estrutura condicional switch
 - Estrutura de repetição while
 - O operador módulo
-- Array a propriedade length
+- Array - a propriedade length
 - Array - método "push()" e Loop "for"
 - A importância de nomear funções
-- Introdução á Functinal Programming
+- Introdução à Functional Programming
 - Escopo de funções
 - Hoisting
 - IIFE - Immediately Invoked Function Expression
@@ -31,15 +31,15 @@ Aqui vocẽ pode ver todo o conteúdo do curso disponível:
 - Saltos
 - Criação de objetos
 - Criação de objetos - Object.create
-- Método de objeto
-- Array - Método
-- Array - toString, concat, unshitf, shift
+- Métodos de objeto
+- Array - Métodos
+- Array - toString, concat, unshift, shift
 - slice e splice
 - forEach, every, some
 - map, filter
 - reduce() e reduceRight()
 - indexOf(), lastIndexOf() e isArray()
-- Js no browser
+- JS no browser
 - this
 - Objeto arguments
 - use strict - Criação de variáveis sem o "var"
@@ -50,14 +50,14 @@ Aqui vocẽ pode ver todo o conteúdo do curso disponível:
 - Regex - Negação
 - Regex - Repetidores
 - Conhecendo outros símbolos usados na Regex
-- Método de string onde podemos usar regex
+- Métodos de string onde podemos usar regex
 - o objeto RegExp()
 - Js no browser - Selecionar elementos no DOM
 - Js no browser - Formulário e eventos
 - Sync vs async
 - setTimeout
 - setTimeout vs setInterval
-- Propriedade e método de funções
+- Propriedades e métodos de funções
 - Prototype
 - Array-like e editorconfig
 - Debug
