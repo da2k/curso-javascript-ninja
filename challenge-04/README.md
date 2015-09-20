@@ -113,16 +113,6 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-var carro = {
-        marca : "BMW",
-        modelo : "porsche",
-        placa : "ABC-1234",
-        ano : 2015,
-        cor : "preto",
-        quantasPortas : 4,
-        assentos : 5,
-        quantidadePessoas : 0
- };
 
 carro.adcionarPessoas = function(pessoas) {
      var totalPessoas = carro.quantidadePessoas + pessoas;
