@@ -41,11 +41,12 @@
   os parâmetros passados para essa função.
   */
   function sum(){
-    console.log( arguments );
-    var result = Array.prototype.reduce.apply( arguments, [function(acumulated, actual){
-      return acumulated + actual;
-    }]);
-    return result;
+    console.log(arguments);
+    return Array.prototype.reduce.call(arguments,
+      function(acumulated, actualItem) {
+        return acumulated + actualItem;
+      }
+    );
   }
 
   /*
@@ -53,9 +54,8 @@
   diferentes, com quantidades variáveis de parâmetros passados.
   */
   console.log( '\nSomar alguns números:' );
-  console.log( sum(1, 5 ,6) );
-  console.log( sum(2, 2 ,5, 8, 7, 9, 15, 19) );
-  console.log( sum(2, 4 ,4, 6, 7, 59, 7) );
+  var arr = [1,2]
+  console.log( sum(arr));
 
   /*
   Declare uma variável chamada `userEntry`, que irá receber alguns valores
@@ -81,6 +81,7 @@
     return entry.match(/\d+/g);
   }
 
+  console.log( justNumbers.toString() );
 
   /*
   Usando a função acima, faça a limpeza dos valores entrados pelo usuário,
