@@ -9,7 +9,7 @@ para o contrário.
 */
 var isTruthy = function(a) {
 	return a ? true : false;
-}
+};
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 isTruthy(0);
@@ -63,28 +63,28 @@ passado por parâmetro.
 */
 carro.mudarCor = function(novaCor){
 	carro.cor = novaCor;
-}
+};
 
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
 carro.obterCor = function(){
 	return carro.cor;
-}
+};
 
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
 carro.obterModelo = function() {
 	return carro.modelo;
-}
+};
 
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
 */
 carro.obterMarca = function() {
 	return carro.marca;
-}
+};
 
 /*
 Crie um método chamado `obterMarcaModelo`, que retorne:
@@ -120,7 +120,7 @@ carro.adicionarPessoas = function(numPessoas) {
 	if( totalPessoas > carro.assentos ) {
 		var qtdCabem = carro.assentos - carro.quantidadePessoas;
 		var qtdPessoas = qtdCabem === 1 ? 'pessoa' : 'pessoas';
-		return 'Só cabem mais ' + qtdCabem + qtdPessoas + '!';
+		return 'Só cabem mais ' + qtdCabem + ' ' + qtdPessoas + '!';
 	}
 	carro.quantidadePessoas += numPessoas;
 	return 'Já temos ' + totalPessoas + ' pessoas no carro';
