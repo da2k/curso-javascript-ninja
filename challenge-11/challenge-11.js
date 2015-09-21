@@ -36,8 +36,8 @@
     var counter = 0;
     for ( var prop in person ){
         counter++;
+        console.log( 'The ' + prop + ' of person is ' + person[prop] );
     }
-    console.log( 'The ' + prop + ' of person is ' + person[prop] );
     console.log( 'The person has ' + counter + ' properties.' );
 
     /*
@@ -45,20 +45,18 @@
     criado acima) é mais velha que a idade passada por parâmetro.
     Se verdadeiro, retornar `true`. Senão, retornar false.
     Após a função, mostrar a mensagem no console:
-    'The person has more than 20 years old? [TRUE/FALSE]'
+    'The person has more than 25 years old? [TRUE/FALSE]'
     */
     function moreThan( idade ){
-        var auxVar = false;
-        if( person.age <= idade ){
-            auxVar = true;
+        if( idade >= 25 ){
             return true;
         }
         return false;
     }
-    console.log( 'The person has more than 20 years old? ' + moreThan(12) );
+    console.log( 'The person has more than 25 years old? ' + moreThan(20) );
 
     /*
-    Faça um loop de 0 a 10, que adicione cada número como um item de um
+    Faça um loop de 0 a 20, que adicione cada número como um item de um
     array chamado `numbers`. Se o contador for maior que 10, saia do loop.
     Mostre no console os números no array.
     */
@@ -81,7 +79,7 @@
     Mostrar no console os números do array.
     */
     console.log( 'Pares de 0 a 20:' );
-    var numbers = [];
+    numbers = [];
     for (var i = 0; i <= 20; i++){
         if ( i % 2 === 1 ){
             continue;
