@@ -1,4 +1,6 @@
 (function(){
+  'use sctrict';
+
   /*
   Crie dois objetos, que serão duas pessoas. Cada um deve ter as propriedades
   `name` e `lastName`, preenchidos com o nome e sobrenome da pessoa.
@@ -43,8 +45,8 @@
   function sum(){
     console.log(arguments);
     return Array.prototype.reduce.call(arguments,
-      function(acumulated, actualItem) {
-        return acumulated + actualItem;
+      function(accumulated, actual) {
+        return Number(accumulated) + Number(actual);
       }
     );
   }
@@ -54,8 +56,9 @@
   diferentes, com quantidades variáveis de parâmetros passados.
   */
   console.log( '\nSomar alguns números:' );
-  var arr = [1,2]
-  console.log( sum(arr));
+  console.log( sum( 5,6 ) );
+  console.log( sum( 4,6 ) );
+  console.log( sum( 8,2 ) );
 
   /*
   Declare uma variável chamada `userEntry`, que irá receber alguns valores
@@ -78,7 +81,7 @@
   console.log( '\nFunção que limpa entrada do usuário (somente números):' );
 
   function justNumbers(entry){
-    return entry.match(/\d+/g);
+    return entry.match( /\d+/g );
   }
 
   console.log( justNumbers.toString() );
@@ -96,5 +99,5 @@
   números desse array e mostre o resultado no console.
   */
   console.log( '\nSomar números entrados pelo usuário:' );
-  console.log( sum(numbers) );
+  console.log( sum.apply(sum, numbers) );
 }());
