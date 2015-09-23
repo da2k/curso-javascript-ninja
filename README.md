@@ -10,5 +10,7 @@
 - Pesquise nas _issues_ abertas e fechadas, se a mesma dúvida já foi postada;
 - Se não foi, crie uma nova _issue_, coloque um título que tenha a ver com a sua dúvida, e descreva-a com o maior nível de detalhes possíveis, para que possamos te ajudar :)
 
+## Sumário
+Veja o sumário completo do curso [aqui](summary.md).
 
 Aproveite o curso! :D
