@@ -58,23 +58,23 @@ os livros.
 */
 function book(nomeDoLivro) {
     var livro ={
-        senhorDosAneis: {
+        "senhorDosAneis": {
             quantidadePaginas: 1212,
             autor: "J. R. R. Tolkien",
             editora: "Martins Fontes"
         },
-        oSilmarillion:{
+        "oSilmarillion":{
             quantidadePaginas: 480,
             autor: "J. R. R. Tolkien",
             editora: "Martins Fontes"
         },
-        oHobbit:{
+        "oHobbit":{
              quantidadePaginas: 328,
              autor: "J. R. R. Tolkien",
              editora: "Martins Fontes"
         }
     };
-    return livro;
+    return livro[nomeDoLivro];
 };
 
 /*
