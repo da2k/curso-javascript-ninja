@@ -57,7 +57,7 @@ function cont(){
         init ++;
     };
 }
-
+cont();
 /*
 Crie uma função chamada `convertToHex`, com as seguintes características:
     - A função recebe uma cor por parâmetro, do tipo string. Exemplo: "red";
@@ -95,7 +95,7 @@ function convertToHex(color) {
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
 convertToHex(true); // Não temos o equivalente hexadecimal para true
-convertToHex(false): //  Não temos o equivalente hexadecimal para false
+convertToHex(false); //  Não temos o equivalente hexadecimal para false
 convertToHex('red'); // O hexadecimal para a cor red é #FF0000.
 convertToHex('blue'); // O hexadecimal para a cor blue é #0000FF.
 convertToHex('gray'); // O hexadecimal para a cor gray é #808080.
