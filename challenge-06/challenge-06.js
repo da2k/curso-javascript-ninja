@@ -36,9 +36,9 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 function showTeamPosition(qualification) {
+    qualification >5 ? console.log('Não temos a informação do time que está nessa posição.'):
     console.log('O time que está em ' + qualification + 'º lugar é o ' + teams[qualification - 1]);
-
-    }
+  }
 
 /*
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
