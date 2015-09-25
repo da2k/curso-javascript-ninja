@@ -1,6 +1,6 @@
 ## Sumário
 
-Aqui vocẽ pode ver todo o conteúdo do curso disponível:
+Aqui você pode ver todo o conteúdo do curso disponível:
 
 - Variáveis e tipos de dados
 - Operadores aritméticos
