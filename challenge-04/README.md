@@ -124,7 +124,7 @@ carro.adicionarPessoas = function(numPessoas) {
 	}
 	carro.quantidadePessoas += numPessoas;
 	return 'Já temos ' + totalPessoas + ' pessoas no carro';
-}
+};
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
