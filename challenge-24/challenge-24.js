@@ -1,5 +1,5 @@
-(function () {
-
+(function (win, doc) {
+  'use strict';
   /*
   Nossa calculadora agora está funcional! A ideia desse desafio é modularizar
   o código, conforme vimos na aula anterior. Quebrar as responsabilidades
@@ -18,17 +18,20 @@
   var $buttonCE = document.querySelector('[data-js="button-ce"]');
   var $buttonEqual = document.querySelector('[data-js="button-equal"]');
 
-  Array.prototype.forEach.call($buttonsNumbers, function(button) {
-    attachEvent(button, handleClickNumber);
-  });
+  function initialize () {
+    initEvents();
+  }
 
-  Array.prototype.forEach.call($buttonsOperations, function(button) {
-    attachEvent(button, handleClickOperation);
-  });
-
-  attachEvent($buttonCE, handleClickCE);
-
-  attachEvent($buttonEqual, handleClickEqual);
+  function initEvents () {
+    Array.prototype.forEach.call($buttonsNumbers, function(button) {
+      attachEvent(button, handleClickNumber);
+    });
+    Array.prototype.forEach.call($buttonsOperations, function(button) {
+      attachEvent(button, handleClickOperation);
+    });
+    attachEvent($buttonCE, handleClickCE);
+    attachEvent($buttonEqual, handleClickEqual);
+  }
 
   function sum (x, y) {
     return x + y;
@@ -50,7 +53,7 @@
     return array.split('').pop();
   }
 
-  function removingLastItem (array) {
+  function removeLastItem (array) {
     return array.slice(0, -1);
   }
 
@@ -72,11 +75,11 @@
   }
 
   function attachEvent (button, action) {
-    button.addEventListener('click', action);
+    button.addEventListener('click', action`, false);
   }
 
   function isLastItemAnOperation(number) {
-    var operations = ['+', '-', 'x', '÷'];
+    var operations =  getOperations();
     var lastItem = getLastItem(number);
 
     return operations.some(function(operator) {
@@ -84,23 +87,39 @@
     });
   }
 
+  function getOperations () {
+    return Array.prototype.map.call($buttonsOperations, function (button) {
+      return button.value;
+    });
+  }
+
+  function getRegexOperations () {
+    return new RegExp('\\d+[' + getOperations().join('') + ']?', 'g');
+  }
+
+  function getLastOperator (value) {
+    return isLastItemAnOperation(value) ? getLastItem(value) : '';
+  }
+
   function removeLastItemIfItIsAnOperator(number) {
     if(isLastItemAnOperation(number)) {
-
-      return removingLastItem(number);
-
+      return removeLastItem(number);
     }
-
     return number;
   }
 
-  function handleClickNumber() {
-    if ($visor.value.charAt(0) === '0') {
-
-      $visor.value = $visor.value.slice(1);
-
+  function calculateAllValues(accumulated, actual) {
+      var firstValue = removeLastItem(accumulated);
+      var operator = getLastItem(accumulated);
+      var lastValue = removeLastItemIfItIsAnOperator(actual);
+      var lastOperator = getLastOperator(actual);
+      return operation(operator, Number(firstValue), Number(lastValue)) + lastOperator;
     }
 
+  function handleClickNumber() {
+    if ($visor.value.charAt(0) === '0') {
+      $visor.value = $visor.value.slice(1);
+    }
     $visor.value += this.value;
   }
 
@@ -115,16 +134,10 @@
 
   function handleClickEqual() {
     $visor.value = removeLastItemIfItIsAnOperator($visor.value);
-
-    var allValues = $visor.value.match(/\d+[+x÷-]?/g);
-
-    $visor.value = allValues.reduce(function(accumulated, actual) {
-      var firstValue = removingLastItem(accumulated);
-      var operator = getLastItem(accumulated);
-      var lastValue = removeLastItemIfItIsAnOperator(actual);
-      var lastOperator = isLastItemAnOperation(actual) ? getLastItem(actual) : '';
-      return operation(operator, Number(firstValue), Number(lastValue)) + lastOperator;
-    });
+    var allValues = $visor.value.match(getRegexOperations());
+    $visor.value = allValues.reduce(calculateAllValues);
   }
 
-})();
+  initialize();
+
+})(window, document);
