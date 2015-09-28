@@ -69,11 +69,11 @@
     os dois parâmetros da função de retorno de "calculator".
     */
     function calculator( operator ){
-        if ( !isOperatorValid( operator ) ){
+        if ( operator !== '+' || '*' || '-' || '/' || '%' ){
             return false;
         }
         return function( number1, number2 ){
-            if (typeof number1 !== 'number' || typeof number2 !== 'number'){
+            if ( number1 || number2 === NaN ){
                 return false;
             }
             return operation[operator]( number1, number2 );
