@@ -135,7 +135,7 @@
 	if (sum) {
 		number1 = 7;
 		number2 = 3;
-        console.log(showOperationMessage(operationSignal, number1, number2), sum(number1, number2));
+                console.log(showOperationMessage(operationSignal, number1, number2), sum(number1, number2));
 	}
 	else {
 		console.log(showErrorMessage(operationSignal));
@@ -151,7 +151,7 @@
 	if (subtraction) {
 		number1 = 7;
 		number2 = 2;
-        console.log(showOperationMessage(operationSignal, number1, number2), subtraction(number1, number2));
+                console.log(showOperationMessage(operationSignal, number1, number2), subtraction(number1, number2));
 	}
 	else {
 		console.log(showErrorMessage(operationSignal));
@@ -162,7 +162,7 @@
 	if (multiplication) {
 		number1 = 7;
 		number2 = 5;
-        console.log(showOperationMessage(operationSignal, number1, number2), multiplication(number1, number2));
+                console.log(showOperationMessage(operationSignal, number1, number2), multiplication(number1, number2));
 	}
 	else {
 		console.log(showErrorMessage(operationSignal));
@@ -173,7 +173,7 @@
 	if (division) {
 		number1 = 10;
 		number2 = 5;
-        console.log(showOperationMessage(operationSignal, number1, number2), division(number1, number2));
+                console.log(showOperationMessage(operationSignal, number1, number2), division(number1, number2));
 	}
 	else {
 		console.log(showErrorMessage(operationSignal));
@@ -184,7 +184,7 @@
 	if (mod) {
 		number1 = 11;
 		number2 = 5;
-        console.log(showOperationMessage(operationSignal, number1, number2), mod(number1, number2));
+                console.log(showOperationMessage(operationSignal, number1, number2), mod(number1, number2));
 	}
 	else {
 		console.log(showErrorMessage(operationSignal));
@@ -199,10 +199,10 @@
 	if (invalido) {
 		number1 = 20;
 		number2 = 5;
-      console.log(showOperationMessage(operationSignal, number1, number2), invalido(number1, number2));
+                console.log(showOperationMessage(operationSignal, number1, number2), invalido(number1, number2));
 	}
 	else {
-	  	console.log(showErrorMessage(operationSignal));
+        	console.log(showErrorMessage(operationSignal));
 	}
 
 } ());
