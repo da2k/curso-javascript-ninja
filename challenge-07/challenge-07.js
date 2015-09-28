@@ -59,7 +59,7 @@ Na mesma ideia do exercício acima: mostre agora os números ímpares.
 
 console.log( 'Números ímpares entre 10 e 20:' );
 
-function cont(){
+var cont = function cont(){
        var init = 10;
         while (init <=20){
             init % 2 == 1 ? console.log(init): '';

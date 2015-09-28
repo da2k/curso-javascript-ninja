@@ -54,10 +54,10 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
   "Operação inválida."
 */
 function calculator(operator) {
-    if(operator !== '*' || operator !=='/'  || operator !=='+' || operator !== '-' ||operator !== '%'  ){
-      return  console.log('Operação inválida.');
-    }
     return function operation(a,b) {
+      if(operator !== '*' && operator !=='/'  && operator !=='+' && operator !== '-' && operator !== '%'  ){
+         console.log('Operação inválida.');
+    }
         var result ='';
            if(operator === '*'){
               result =  a*b;
@@ -74,9 +74,9 @@ function calculator(operator) {
            if(operator === '%'){
               result = a%b;
             }
-         console.log('Resultado da operação: ' + a + ' '+ operator+ ' ' + b + ' = ' + result);
          };
-     }
+          console.log('Resultado da operação: ' + a + ' '+ operator+ ' ' + b + ' = ' + result);
+      }
 
 /*
 Declare uma variável chamada `sum`, que receberá a função acima, passando como
