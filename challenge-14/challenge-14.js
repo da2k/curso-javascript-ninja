@@ -10,18 +10,6 @@
     Mostre esse array no console.
     */
     console.log( 'Number Objects Array:' );
-    // var numberObjects = [
-    //     { number: 1 },
-    //     { number: 2 },
-    //     { number: 3 },
-    //     { number: 4 },
-    //     { number: 5 },
-    //     { number: 6 },
-    //     { number: 7 },
-    //     { number: 8 },
-    //     { number: 9 },
-    //     { number: 10 }
-    // ];
     var numberObjects = [];
     for ( i = 1; i <= 10; i++ ){
         numberObjects.push({ number: i });
@@ -129,7 +117,7 @@
     */
     console.log( '\nE buscando a partir do último índice, o { number: 2 } existe?' );
     var objeto = numberObjects[1];
-    if( numberObjects.lastIndexOf( objeto ) === -1 ){
+    if( numberObjects.lastIndexOf( objeto, 2 ) === -1 ){
         console.log( 'Não existe um objeto { number: 2 } em numberObjects :(' );
     } else {
         console.log( 'Existe um objeto { number: 2 } em numberObjects :) !' );
