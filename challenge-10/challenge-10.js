@@ -205,4 +205,4 @@
         	console.log(showErrorMessage(operationSignal));
 	}
 
-} ());
+})();
