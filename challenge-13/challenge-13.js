@@ -8,7 +8,7 @@
     */
     console.log( 'O array em formato de string é:' );
     var arrayString = [ 1, 2, 'a', 'b' ];
-    console.log( arrayString.toString() )
+    console.log( arrayString.toString() );
 
     /*
     Crie 2 arrays `sul` e `sudeste`, que serão as regiões do Brasil.
@@ -36,7 +36,7 @@
     Remova o primeiro estado do array `brasil` e mostre-o no console.
     */
     console.log( '\nEstado removido:' );
-    console.log( brasil.shift( 0 ) );
+    console.log( brasil.shift() );
 
     /*
     Crie um novo array chamado `newSul`, que receba somente os estados do sul,
@@ -118,13 +118,13 @@
     */
     console.log( '\nTodos os estados de `brasil` tem mais de 7 letras?' );
     var seteLetras = brasil.every(function(item){
-        if ( item.length >= 7){
-            console.log( 'Sim, todos os estados tem mais de 7 letras!' );
-        } else {
-        console.log( 'Nem todos os estados tem mais de 7 letras!' );
-        }
+        return item.length >= 7;
     });
-
+    if( seteLetras === true ){
+        console.log( 'Sim, todos os estados tem mais de 7 letras!' );
+    } else {
+        console.log( 'Nem todos os estados tem mais de 7 letras!' );
+    }
     /*
     Percorra o array `brasil` e verifique se o Ceará está incluído, atribuindo o
     resultado à uma variável. Se esse estado existir no array, mostrar a frase no
@@ -135,12 +135,13 @@
     */
     console.log( '\nCeará está incluído em `brasil`?' );
     var ceara = brasil.some(function(item){
-        if ( item === 'Ceará' ){
-            console.log( 'Ceará está incluído!' );
-        } else {
-            console.log( 'Ceará não foi incluído :(' );
-        }
+        return item === 'Ceará';
     });
+    if ( ceara === true ){
+        console.log( 'Ceará está incluído!' );
+    } else {
+        console.log( 'Ceará não foi incluído :(' );
+    }
 
     // A dúvida aqui é se ele deve mesmo retornar as frases várias vezes ou apenas uma.
 
@@ -152,7 +153,7 @@
     */
     var map = newBrasil.map(function(item){
         return {
-            id: item.id++,
+            id: item.id += 1,
             estado: item.estado + ' pertence ao Brasil.'
         };
     });
