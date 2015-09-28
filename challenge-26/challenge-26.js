@@ -23,23 +23,23 @@
   */
   // ?
 
-  function DOM (element) {
-    this.element = doc.querySelectorAll(element);
-    this.on = function (event, callback) {
+  function DOM (elements) {
+    this.element = doc.querySelectorAll(elements);
+  }
+
+  DOM.prototype.on = function on(event, callback) {
       Array.prototype.forEach.call(this.element, function (element) {
         element.addEventListener(event, callback, false);
       });
     }
-    this.off = function (event, callback) {
+    DOM.prototype.off = function off(event, callback) {
       Array.prototype.forEach.call(this.element, function (element) {
         element.removeEventListener(event, callback, false);
       });
     }
-    this.get = function () {
+    DOM.prototype.get = function get() {
       return this.element;
     }
-
-  }
 
   var $a = new DOM('[data-js="link"]');
   $a.on('click', function(e) {
