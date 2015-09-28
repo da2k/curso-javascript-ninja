@@ -25,7 +25,7 @@
 	função receberá dois parâmetros e retornará a operação referente à sua
 	propriedade, usando os valores passados por parâmetro.
 	*/
-    var operation = {
+      var operation = {
     	'+': function(x, y) { 
     		return x + y; 
     	}, 
@@ -41,7 +41,7 @@
 	    '%': function(x, y) { 
 	    	return x % y; 
 	    } 
-	};
+       };
 
 	/*
 	Crie uma função chamada `isOperatorValid`, que receberá um operador por
