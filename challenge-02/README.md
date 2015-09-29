@@ -30,7 +30,7 @@ function add(){
 
 
 // Invoque a função criada acima.
-add()
+add();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
@@ -59,11 +59,11 @@ continuacao(2,8);
 //"preencha todos os valores corretamente"
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-retorno(1,2,4)
+retorno(1,2,4);
 
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-10
+//10
 
 /*
 Crie uma função com as seguintes características:
