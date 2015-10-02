@@ -4,29 +4,36 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-?
+function soma(x, y) {
+  return x + y;
+}
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-?
+var y = soma(10, 10) + 5
 
 // Qual o valor atualizado dessa variável?
-?
+25
 
 // Declare uma nova variável, sem valor.
-?
+var z;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-?
+function setValue() {
+  var z;
+  return z = "O valor da variável agora é VALOR.";
+};
 
 // Invoque a função criada acima.
-?
+setValue();
 
 // Qual o retorno da função? (Use comentários de bloco).
-?
+/*
+  "O valor da variável agora é VALOR."
+*/
 
 /*
 Crie uma função com as seguintes características:
@@ -35,19 +42,25 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-?
+function multiplication(x,y,z) {
+  if(x !== undefined && typeof x === "number" && y !== undefined && typeof y === "number" && z !== undefined && typeof z === "number"){
+    return (x*y*z)+2;
+  } else {
+  	console.log("Preencha todos os valores corretamente!");
+  }
+}
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+multiplication(2, 2)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+Preencha todos os valores corretamente!
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+multiplication(2, 2, 2)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+10
 
 /*
 Crie uma função com as seguintes características:
@@ -58,8 +71,23 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+function trheeArgs(x, y, z) {
+	if (arguments.length == 1) {
+		return arguments[0];
+	} else if (arguments.length == 2) {
+		return arguments[0] + arguments[1];
+	} else if (arguments.length == 3) {
+		return (arguments[0] + arguments[1]) / arguments[2];
+	} else if (arguments.length == 0){
+		return false;
+	} else {
+		return null;
+	};
+}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+trheeArgs(1) // 1
+trheeArgs(1, 1) // 2
+trheeArgs(5, 5, 2) // 5
+trheeArgs() // false
 ```
