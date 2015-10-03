@@ -34,11 +34,11 @@ Onde VALOR é o novo valor da variável.
 
 // Invoque a função criada acima.
  
- newf()
+ newf();
 
 // Qual o retorno da função? (Use comentários de bloco).
 
-/*"O valor da variável agora é 10.";*/
+/*"O valor da variável agora é 10";*/
 
 /*
 Crie uma função com as seguintes características:
@@ -53,9 +53,7 @@ function myf(x, y, z) {
 		return "Preencha todos os valores corretamente!";
 	}
 
-	else {
-		return (x*y*z) + 2;
-	}
+	return (x*y*z) + 2;
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
@@ -94,12 +92,10 @@ function newfunc(x, y, z) {
 	else if (x !== undefined && y !== undefined && z !== undefined) {
 		return (x + y) / z;
 	}
-	else if (x === undefined && y === undefined && z === undefined) {
+	else (x === undefined && y === undefined && z === undefined); {
 		return false;
 	}
-	else {
-		return null;
-	}
+	return null;
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
