@@ -33,9 +33,9 @@
         myFunction2();
 
 
-/*
+        /*
          myFunction3();
-*/
+        */
         function myFunction3() {
             var number2 = 50;
             var number1 = 40;
