@@ -18,9 +18,9 @@
         }
         myFunction();
 
-/*
+        /*
         myFunction2();
-*/
+        */
         function myFunction2() {
             var number1 = 10;
             var number2 = 20;
