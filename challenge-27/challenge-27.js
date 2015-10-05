@@ -86,12 +86,12 @@
       Array.protype.filter.call(this.element, callback);
     }
 
-    DOM.prototype.reduce = function reduce (callback) {
-      Array.protype.reduce.call(this.element, callback);
+    DOM.prototype.reduce = function reduce (callback, initialValue) {
+      Array.protype.reduce.call(this.element, callback, initialValue);
     }
 
-    DOM.prototype.reduceRight = function reduceRight (callback) {
-      Array.protype.reduceRight.call(this.element, callback);
+    DOM.prototype.reduceRight = function reduceRight (callback, initialValue) {
+      Array.protype.reduceRight.call(this.element, callback, initialValue);
     }
 
     DOM.prototype.every = function every (callback) {
