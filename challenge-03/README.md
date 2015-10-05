@@ -147,7 +147,7 @@ pessoa.andando; // true
 /*
 Se a pessoa ainda está andando, faça-a parar.
 */
-pessoa.parar;
+pessoa.parar();
 
 /*
 E agora: a pessoa ainda está andando? (Use uma instrução para responder e
@@ -159,7 +159,7 @@ pessoa.andando; // false
 Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
 inline ao lado da instrução para mostrar a resposta retornada)
 */
-pessoa.caminhouQuantosMetros(); // 90
+pessoa.caminhouQuantosMetros; // 90
 
 /*
 Agora vamos deixar a brincadeira um pouco mais divertida! :D
