@@ -74,32 +74,32 @@
       return this.element;
     }
 
-    DOM.prototype.forEach = function forEach (callback) {
-      Array.protype.forEach.call(this.element, callback);
+    DOM.prototype.forEach = function forEach (arguments) {
+      Array.protype.forEach.apply(this.element, arguments);
     }
 
-    DOM.prototype.map = function map (callback) {
-      Array.protype.map.call(this.element, callback);
+    DOM.prototype.map = function map (arguments) {
+      Array.protype.map.apply(this.element, arguments);
     }
 
-    DOM.prototype.filter = function filter (callback) {
-      Array.protype.filter.call(this.element, callback);
+    DOM.prototype.filter = function filter (arguments) {
+      Array.protype.filter.apply(this.element, arguments);
     }
 
-    DOM.prototype.reduce = function reduce (callback, initialValue) {
-      Array.protype.reduce.call(this.element, callback, initialValue);
+    DOM.prototype.reduce = function reduce (arguments) {
+      Array.protype.reduce.apply(this.element, arguments);
     }
 
-    DOM.prototype.reduceRight = function reduceRight (callback, initialValue) {
-      Array.protype.reduceRight.call(this.element, callback, initialValue);
+    DOM.prototype.reduceRight = function reduceRight (arguments) {
+      Array.protype.reduceRight.apply(this.element, arguments);
     }
 
-    DOM.prototype.every = function every (callback) {
-      Array.protype.every.call(this.element, callback);
+    DOM.prototype.every = function every (arguments) {
+      Array.protype.every.apply(this.element, arguments);
     }
 
-    DOM.prototype.some = function some (callback) {
-      Array.protype.some.call(this.element, callback);
+    DOM.prototype.some = function some (arguments) {
+      Array.protype.some.apply(this.element, arguments);
     }
 
 })(window, document);
