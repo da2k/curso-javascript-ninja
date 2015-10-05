@@ -75,7 +75,7 @@
   }
 
   function attachEvent (button, action) {
-    button.addEventListener('click', action`, false);
+    button.addEventListener('click', action, false);
   }
 
   function isLastItemAnOperation(number) {
