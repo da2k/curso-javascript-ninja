@@ -1,3 +1,35 @@
+(function(win, doc){
+  'use strict';
+
+  var $display = doc.querySelector('[data-js="display"]');
+  var $bttNum = doc.querySelectorAll('[data-js="btt-number"]');
+  var $bttOper = doc.querySelectorAll('[data-js="btt-operation"]');
+  var $bttCE = doc.querySelector('[data-js="btt-ce"]');
+  var operators = ['+', '-', 'x', '÷'];
+
+  Array.prototype.forEach.call($bttNum, function(button){
+    button.addEventListener('click', numClickHandler, false);
+  })
+
+  Array.prototype.forEach.call($bttOper, function(button){
+    button.addEventListener('click', operClickHandler, false);
+  })
+
+  $bttCE.addEventListener('click', clearScreen, false);
+  function numClickHandler() {
+    $display.value !== '0' ? $display.value += this.value : $display.value = this.value ;
+  }
+  function operClickHandler() {
+    $display.value += this.value;
+  }
+  function clearScreen() {
+    $display.value = '0';
+  }
+
+  function isOper() {
+    operators.forEach()
+  }
+
 /*
 Vamos desenvolver mais um projeto. A ideia é fazer uma mini-calculadora.
 As regras são:
@@ -23,3 +55,4 @@ multiplicação (x), então no input deve aparecer "1+2x".
 input;
 - Ao pressionar o botão "CE", o input deve ficar zerado.
 */
+})(window, document);
