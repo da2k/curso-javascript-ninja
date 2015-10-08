@@ -22,7 +22,7 @@
     $display.value !== '0' ? $display.value += this.value : $display.value = this.value ;
   }
   function operClickHandler() {
-    removeOperFromLastChar();
+    $display.value = removeOperFromLastChar($display.value);
     $display.value += this.value;
   }
 
@@ -31,18 +31,40 @@
   }
 
   function calculateResult() {
-    removeOperFromLastChar();
+    $display.value = removeOperFromLastChar($display.value);
+    var valuesEntered = $display.value.match(/\d+[+-x÷]?/g);
+    $display.value = valuesEntered.reduce(function(accum, actual){
+      var a = Number(accum.slice(0, -1));
+      var b = Number(removeOperFromLastChar(actual));
+      var operation = getLastChar(accum);
+      var lastOper = isLastOper(actual) ? getLastChar(actual) : '';
+      switch(operation) {
+        case '+':
+          return (a + b) + lastOper;
+        case '-':
+          return (a - b) + lastOper;
+        case 'x':
+          return (a * b) + lastOper;
+        case '÷':
+          return (a / b) + lastOper;
+      }
+    });
   }
 
-  function isLastOper() {
-    var lastChar = $display.value.split('').pop();
+  function isLastOper(number) {
+    var lastChar = getLastChar(number);
     return ['+', '-', 'x', '÷'].some(function(operator){
         return operator === lastChar;
     });
   }
-  function removeOperFromLastChar() {
-    if(isLastOper())
-      $display.value = $display.value.slice(0, -1);
+  function removeOperFromLastChar(number) {
+    if(isLastOper(number)) {
+      return number.slice(0, -1);
+    }
+      return number;
+  }
+  function getLastChar(str) {
+    return str.split('').pop();
   }
 
 
