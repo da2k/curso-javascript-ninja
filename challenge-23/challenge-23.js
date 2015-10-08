@@ -5,7 +5,7 @@
   var $bttNum = doc.querySelectorAll('[data-js="btt-number"]');
   var $bttOper = doc.querySelectorAll('[data-js="btt-operation"]');
   var $bttCE = doc.querySelector('[data-js="btt-ce"]');
-  var operators = ['+', '-', 'x', '÷'];
+  var $bttEqual = doc.querySelector('[data-js="btt-equal"]');
 
   Array.prototype.forEach.call($bttNum, function(button){
     button.addEventListener('click', numClickHandler, false);
@@ -16,19 +16,35 @@
   })
 
   $bttCE.addEventListener('click', clearScreen, false);
+  $bttEqual.addEventListener('click', calculateResult, false);
+
   function numClickHandler() {
     $display.value !== '0' ? $display.value += this.value : $display.value = this.value ;
   }
   function operClickHandler() {
+    removeOperFromLastChar();
     $display.value += this.value;
   }
+
   function clearScreen() {
     $display.value = '0';
   }
 
-  function isOper() {
-    operators.forEach()
+  function calculateResult() {
+    removeOperFromLastChar();
   }
+
+  function isLastOper() {
+    var lastChar = $display.value.split('').pop();
+    return ['+', '-', 'x', '÷'].some(function(operator){
+        return operator === lastChar;
+    });
+  }
+  function removeOperFromLastChar() {
+    if(isLastOper())
+      $display.value = $display.value.slice(0, -1);
+  }
+
 
 /*
 Vamos desenvolver mais um projeto. A ideia é fazer uma mini-calculadora.
