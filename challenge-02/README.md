@@ -4,29 +4,35 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-?
+function cat(x, y) {
+	return x + y;
+}
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-?
+var pet = cat(2, 3);
+pet += 5;
 
 // Qual o valor atualizado dessa variável?
-?
+10
 
 // Declare uma nova variável, sem valor.
-?
+var cao;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-?
+function animal() {
+	var cao = "VALOR";
+	return cao;
+}
 
 // Invoque a função criada acima.
-?
+animal();
 
 // Qual o retorno da função? (Use comentários de bloco).
-?
+"VALOR"
 
 /*
 Crie uma função com as seguintes características:
@@ -35,19 +41,24 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-?
+function gato(x, y, z) {
+	if (x === 0 || y === 0 || z === 0) {
+		return "Preencha todos os valores corretamente!";
+	}
+	return (x * y * z) + 2;
+}
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+gato(1, 2)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+// NaN
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+gato(1, 2, 3)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+// 8
 
 /*
 Crie uma função com as seguintes características:
@@ -58,8 +69,24 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+function gato(x, y, z) {
+  if (x !== 0 && y === 0 && z === 0) {
+    return x;
+  } else if (x !== 0 && y !== 0 && z === 0) {
+    return x + y;
+  } else if (x !== 0 && y !== 0 && z !== 0) {
+    return (x + y) / z;
+  } else if (x === 0 && y === 0 && z === 0) {
+    return "false";
+  } else {
+    return "null";
+  }
+}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+gato(1, 0, 0) //1
+gato(10, 50, 0) //60
+gato(30, 60, 50) //1.8
+gato(0, 0, 0) //"false"
+gato(1, 0, 2) //"null"
 ```
