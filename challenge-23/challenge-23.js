@@ -43,6 +43,7 @@
 
 	function handleClickButton(){
 		$screen.value += this.value;
+		console.log(this);
 	}
 
 	function handleClickOperations(){
