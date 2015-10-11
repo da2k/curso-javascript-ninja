@@ -71,20 +71,18 @@
         os dois parâmetros da função de retorno de "calculator".
         */
         function calculator( operator ) {
-            if( isOperatorValid( operator ) === false ){
+            if( !isOperatorValid( operator ) ){
                 return false;
             }
-            if( isOperatorValid( operator ) === true ){
                 return function( a, b ){
-                    if( typeof a !== 'number' || typeof b !== 'number'){
-                        return false;
-                    }
-                    else if( typeof a === 'number' || typeof b === 'number' ){
+                    if( typeof a === 'number' &&  typeof b == 'number'){
                         return operation[operator]( a, b );
                     }
-                };
-            }
-        }
+                        return false;
+                    };
+                }
+
+
 
 
         /*
@@ -152,7 +150,7 @@
         */
         operationSignal = '8';
         var subtraction = calculator( operationSignal );
-         if(!!subtraction === true){
+         if( subtraction ){
          number1 = 10;
          number2 = 8;
          console.log(showOperationMessage(number1, operationSignal,number2),subtraction(number1,number2));
@@ -161,7 +159,7 @@
 
         operationSignal = '*';
         var multiplication = calculator( operationSignal );
-         if(!!multiplication === true){
+         if( multiplication ){
          number1 = 10;
          number2 = 8;
          console.log(showOperationMessage(number1, operationSignal,number2),multiplication(number1,number2));
@@ -169,7 +167,7 @@
 
         operationSignal = '/';
         var division = calculator( operationSignal );
-         if(!!division === true){
+         if( division ){
          number1 = 10;
          number2 = 8;
          console.log(showOperationMessage(number1, operationSignal,number2),division(number1,number2));
@@ -177,7 +175,7 @@
 
         operationSignal = '%';
         var mod = calculator ( operationSignal );
-         if(!!mod === true){
+         if( mod ){
          number1 = 10;
          number2 = 8;
          console.log(showOperationMessage(number1, operationSignal,number2),mod(number1,number2));
@@ -189,45 +187,45 @@
         */
          operationSignal = 'a';
          var subtraction = calculator( operationSignal );
-         if( !!subtraction === true ){
+         if( subtraction  ){
          number1 = 10;
          number2 = 8;
          console.log(showOperationMessage(number1, operationSignal,number2),subtraction(number1,number2));
        }
-        if( !!subtraction === false ){
+        if( !subtraction ){
             console.log(showErrorMessage( operationSignal ))
         }
 
          operationSignal = 'b';
          var multiplication = calculator( operationSignal );
-         if( !!multiplication === true ){
+         if( multiplication ){
          number1 = 10;
          number2 = 8;
          console.log(showOperationMessage(number1, operationSignal,number2),multiplication(number1,number2));
        }
-           if(!!multiplication === false){
+           if( !multiplication ){
             console.log( showErrorMessage( operationSignal ) )
         }
 
          operationSignal = 'c';
          var division = calculator( operationSignal );
-         if( !!division === true ){
+         if( division ){
          number1 = 10;
          number2 = 8;
          console.log(showOperationMessage(number1, operationSignal,number2),division(number1,number2));
        }
-           if( !!division === false ){
+           if( !division ){
             console.log(showErrorMessage( operationSignal ))
         }
 
          operationSignal = 'd';
          var mod = calculator ( operationSignal );
-         if( !!mod === true ){
+         if( mod ){
          number1 = 10;
          number2 = 8;
          console.log(showOperationMessage(number1, operationSignal,number2),mod(number1,number2));
        }
-           if( !!mod === false ){
+           if( !mod  ){
             console.log( showErrorMessage( operationSignal ))
         }
 
