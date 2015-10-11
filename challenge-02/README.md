@@ -24,15 +24,15 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 function animal() {
-	var cao = "VALOR";
-	return cao;
+	cao = 3;
+	return "O valor da variável agora é " + cao;
 }
 
 // Invoque a função criada acima.
 animal();
 
 // Qual o retorno da função? (Use comentários de bloco).
-"VALOR"
+/* O valor da variável agora é 3 */
 
 /*
 Crie uma função com as seguintes características:
@@ -42,9 +42,9 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function gato(x, y, z) {
-	if (x === 0 || y === 0 || z === 0) {
+	if (x === undefined || y === undefined || z === undefined) {
 		return "Preencha todos os valores corretamente!";
-	}
+	} 
 	return (x * y * z) + 2;
 }
 
@@ -52,7 +52,7 @@ function gato(x, y, z) {
 gato(1, 2)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-// NaN
+// "Preencha todos os valores corretamente!"
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 gato(1, 2, 3)
@@ -70,13 +70,13 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function gato(x, y, z) {
-  if (x !== 0 && y === 0 && z === 0) {
+  if (x !== undefined && y === undefined && z === undefined) {
     return x;
-  } else if (x !== 0 && y !== 0 && z === 0) {
+  } else if (x !== undefined && y !== undefined && z === undefined) {
     return x + y;
-  } else if (x !== 0 && y !== 0 && z !== 0) {
+  } else if (x !== undefined && y !== undefined && z !== undefined) {
     return (x + y) / z;
-  } else if (x === 0 && y === 0 && z === 0) {
+  } else if (x === undefined && y === undefined && z === undefined) {
     return "false";
   } else {
     return "null";
@@ -84,9 +84,8 @@ function gato(x, y, z) {
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-gato(1, 0, 0) //1
-gato(10, 50, 0) //60
-gato(30, 60, 50) //1.8
-gato(0, 0, 0) //"false"
-gato(1, 0, 2) //"null"
+gato() //false
+gato(10) //10
+gato(30, 60) //90
+gato(1, 2, 3) //1
 ```
