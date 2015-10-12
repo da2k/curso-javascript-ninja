@@ -41,7 +41,7 @@
             '%': function( a, b ) {
                 return a % b;
             }
-        }
+        };
         /*
         Crie uma função chamada `isOperatorValid`, que receberá um operador por
         parâmetro.
