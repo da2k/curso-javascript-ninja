@@ -218,7 +218,7 @@
             console.log(showErrorMessage( operationSignal ))
         }
 
-         operationSignal = 'e';
+         operationSignal = 'd';
          var mod = calculator ( operationSignal );
          if( mod ){
          number1 = 10;
