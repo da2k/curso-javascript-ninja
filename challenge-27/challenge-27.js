@@ -1,5 +1,5 @@
 (function(window, document, undefined) {
-
+  'use strict';
   /*
   Aproveitando a lib DOM que fizemos na semana anterior, crie agora para ela
   métodos semelhantes aos que existem no array, mas que sirvam para os
@@ -74,31 +74,31 @@
       return this.element;
     }
 
-    DOM.prototype.forEach = function forEach (arguments) {
+    DOM.prototype.forEach = function forEach () {
       Array.protype.forEach.apply(this.element, arguments);
     }
 
-    DOM.prototype.map = function map (arguments) {
+    DOM.prototype.map = function map () {
       Array.protype.map.apply(this.element, arguments);
     }
 
-    DOM.prototype.filter = function filter (arguments) {
+    DOM.prototype.filter = function filter () {
       Array.protype.filter.apply(this.element, arguments);
     }
 
-    DOM.prototype.reduce = function reduce (arguments) {
+    DOM.prototype.reduce = function reduce () {
       Array.protype.reduce.apply(this.element, arguments);
     }
 
-    DOM.prototype.reduceRight = function reduceRight (arguments) {
+    DOM.prototype.reduceRight = function reduceRight () {
       Array.protype.reduceRight.apply(this.element, arguments);
     }
 
-    DOM.prototype.every = function every (arguments) {
+    DOM.prototype.every = function every () {
       Array.protype.every.apply(this.element, arguments);
     }
 
-    DOM.prototype.some = function some (arguments) {
+    DOM.prototype.some = function some () {
       Array.protype.some.apply(this.element, arguments);
     }
 
