@@ -76,10 +76,8 @@
     });
   }
 
-  DOM.prototype.get = function get () {
-    if (arguments === [])
-      return this.element;
-    return this.element[arguments[0]];
+  DOM.prototype.get = function get (index) {
+    return this.element[index];
   }
 
   DOM.prototype.forEach = function forEach () {
@@ -118,21 +116,22 @@
   var estadoOutput = new DOM('[data-js="estado"]');
   var cidadeOutput = new DOM('[data-js="cidade"]');
   var cepOutput = new DOM('[data-js="cep"]');
-  var cepRegex = /\d{5}-\d{3}/g;
+  var cepRegex = /\d+/g;
+  var cleanCep = '';
 
-  var ajax = new XMLHttpRequest();
-
-  function isRequestOk () {
-    return ajax.readyState === 4 && ajax.status === 200;
+  function isRequestOk (request) {
+    return request.readyState === 4 && request.status === 200;
   }
 
   function changeWarning (message) {
     warning.get(0).textContent = message;
   }
 
-  function makeRequest (method, url) {
+  function makeRequest (method, url, callback) {
+    var ajax = new XMLHttpRequest();
     ajax.open(method, url);
     ajax.send();
+    ajax.addEventListener('readystatechange', callback);
   }
 
   function fillInputs (jsonFile) {
@@ -143,36 +142,32 @@
     cepOutput.get(0).value = jsonFile.cep;
   }
 
-   function usingRequest() {
-     if ( isRequestOk() ) {
+  function usingRequest () {
+    if ( isRequestOk(this) ) {
       try {
-        var data = JSON.parse(ajax.responseText);
-        fillInputs(data);
-        changeWarning('Endereço referente ao CEP ' + cepInput.get(0).value);
+       var data = JSON.parse(this.responseText);
+       fillInputs(data);
+       changeWarning('Endereço referente ao CEP ' + cleanCep);
       }
       catch(e) {
-        changeWarning('Não encontramos o endereço para o CEP ' + cepInput.get(0).value);
+        changeWarning('Não encontramos o endereço para o CEP ' + cleanCep);
       }
     }
   }
 
-  function submitAction(event) {
+  function submitAction (event) {
     event.preventDefault();
-    if (cepInput.get(0).value.length < 9) {
-      changeWarning('CEP inválido, submeta um CEP válido');
+    cleanCep = cepInput.get(0).value.match(cepRegex).join('');
+    if (cleanCep.length === 8) {
+      changeWarning('Buscando informações para o CEP ' + cleanCep );
+      makeRequest('GET', 'http://cep.correiocontrol.com.br/' + cleanCep + '.json', usingRequest);
     } else {
-      if ( cepRegex.test(cepInput.get(0).value) ) {
-        var cleanCep = cepInput.get(0).value.slice(0, 5) + cepInput.get(0).value.slice(6);
-        changeWarning('Buscando informações para o CEP ' + cepInput.get(0).value);
-        makeRequest('GET', 'http://cep.correiocontrol.com.br/' + cleanCep + '.json');
-      } else {
-        changeWarning('CEP inválido, submeta um CEP válido');
-      }
+      changeWarning('CEP inválido, submeta um CEP válido');
     }
   }
+
 
   submitButton.on('click', submitAction);
 
-  ajax.addEventListener('readystatechange', usingRequest);
 
 })(window, document);
