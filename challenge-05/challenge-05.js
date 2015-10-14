@@ -72,14 +72,14 @@ function book( bookName ){
 			autor: 'Vida',
 			editora: 'Editora3'
 		}
-	}
-	return !bookName ? books : books[ bookName ]
-};
+	};
+	return !bookName ? books : books [ bookName ]
+}
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-console.log(book());
+console.log( book() );
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
