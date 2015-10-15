@@ -2,27 +2,32 @@
   'use strict';
 
   var $display = doc.querySelector('[data-js="display"]');
-  var $bttNum = doc.querySelectorAll('[data-js="btt-number"]');
-  var $bttOper = doc.querySelectorAll('[data-js="btt-operation"]');
-  var $bttCE = doc.querySelector('[data-js="btt-ce"]');
-  var $bttEqual = doc.querySelector('[data-js="btt-equal"]');
+  var $buttonNumber = doc.querySelectorAll('[data-js="button-number"]');
+  var $buttonOperation = doc.querySelectorAll('[data-js="button-operation"]');
+  var $buttonCE = doc.querySelector('[data-js="button-ce"]');
+  var $buttonEqual = doc.querySelector('[data-js="button-equal"]');
 
-  Array.prototype.forEach.call($bttNum, function(button){
+  Array.prototype.forEach.call($buttonNumber, function(button){
     button.addEventListener('click', numClickHandler, false);
   })
 
-  Array.prototype.forEach.call($bttOper, function(button){
+  Array.prototype.forEach.call($buttonOperation, function(button){
     button.addEventListener('click', operClickHandler, false);
   })
 
-  $bttCE.addEventListener('click', clearScreen, false);
-  $bttEqual.addEventListener('click', calculateResult, false);
+  $buttonCE.addEventListener('click', clearScreen, false);
+  $buttonEqual.addEventListener('click', calculateResult, false);
 
   function numClickHandler() {
-    $display.value !== '0' ? $display.value += this.value : $display.value = this.value ;
+    if($display.value !== '0') {
+      $display.value += this.value;
+    } else {
+        $display.value = this.value;
+    }
+
   }
   function operClickHandler() {
-    $display.value = removeOperFromLastChar($display.value);
+    $display.value = removeOperatorFromLastChar($display.value);
     $display.value += this.value;
   }
 
@@ -31,34 +36,34 @@
   }
 
   function calculateResult() {
-    $display.value = removeOperFromLastChar($display.value);
+    $display.value = removeOperatorFromLastChar($display.value);
     var valuesEntered = $display.value.match(/\d+[+-x÷]?/g);
     $display.value = valuesEntered.reduce(function(accum, actual){
       var a = Number(accum.slice(0, -1));
-      var b = Number(removeOperFromLastChar(actual));
+      var b = Number(removeOperatorFromLastChar(actual));
       var operation = getLastChar(accum);
-      var lastOper = isLastOper(actual) ? getLastChar(actual) : '';
+      var lastOperator = isLastOperator(actual) ? getLastChar(actual) : '';
       switch(operation) {
         case '+':
-          return (a + b) + lastOper;
+          return (a + b) + lastOperator;
         case '-':
-          return (a - b) + lastOper;
+          return (a - b) + lastOperator;
         case 'x':
-          return (a * b) + lastOper;
+          return (a * b) + lastOperator;
         case '÷':
-          return (a / b) + lastOper;
+          return (a / b) + lastOperator;
       }
     });
   }
 
-  function isLastOper(number) {
+  function isLastOperator(number) {
     var lastChar = getLastChar(number);
     return ['+', '-', 'x', '÷'].some(function(operator){
         return operator === lastChar;
     });
   }
-  function removeOperFromLastChar(number) {
-    if(isLastOper(number)) {
+  function removeOperatorFromLastChar(number) {
+    if(isLastOperator(number)) {
       return number.slice(0, -1);
     }
       return number;
