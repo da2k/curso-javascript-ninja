@@ -114,9 +114,9 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 citado acima, no lugar de "pessoas".
 */
 carro.addPassageiro = function( quantidade ){
-	var total= carro.quantidadePessoas + quantidade,
-		livre = carro.assentos - carro.quantidadePessoas,
-		plural = livre > 1 ? 's!' : '!';
+	var total= carro.quantidadePessoas + quantidade;
+	var	livre = carro.assentos - carro.quantidadePessoas;
+	var	plural = livre > 1 ? 's!' : '!';
 
 	if(carro.quantidadePessoas === carro.assentos && total > carro.assentos)
 		return 'O carro já está lotado!';
