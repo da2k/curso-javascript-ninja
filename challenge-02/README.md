@@ -23,8 +23,8 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 function setValue() {
-  var z;
-  return z = "O valor da variável agora é VALOR.";
+  var z = 10
+  return "O valor da variável agora é " + z;
 };
 
 // Invoque a função criada acima.
@@ -43,7 +43,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function multiplication(x,y,z) {
-  if(x !== undefined && typeof x === "number" && y !== undefined && typeof y === "number" && z !== undefined && typeof z === "number"){
+  if(x !== undefined && y !== undefined && z !== undefined){
     return (x*y*z)+2;
   } else {
   	console.log("Preencha todos os valores corretamente!");
@@ -72,18 +72,18 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function trheeArgs(x, y, z) {
-	if (arguments.length == 1) {
-		return arguments[0];
-	} else if (arguments.length == 2) {
-		return arguments[0] + arguments[1];
-	} else if (arguments.length == 3) {
-		return (arguments[0] + arguments[1]) / arguments[2];
-	} else if (arguments.length == 0){
-		return false;
-	} else {
-		return null;
-	};
-};
+    if(x !== undefined && y === undefined && z === undefined) {
+        return x;
+    } else if(x !== undefined && y !== undefined && z === undefined) {
+        return x + y;
+    } else if(x !== undefined && y !== undefined && z !== undefined) {
+        return (x + y) / z;
+    }else if(x === undefined && y === undefined && z === undefined) { 
+        return false;
+    }else {
+        return null;
+    }   
+} 
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 trheeArgs(1); // 1
