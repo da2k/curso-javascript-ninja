@@ -25,11 +25,11 @@ isTruthy("");
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
 isTruthy(true);
-isTrsthy("1");
-isTrsthy("0");
+isTrsthy('1');
+isTrsthy('0');
 isTruthy(1);
 isTruthy(1 < 2);
-isTruthy("texo");
+isTruthy('texo');
 isTruthy({});
 isTruthy([]);
 isTruthy([1, 2, 3, 4]);
@@ -94,7 +94,7 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 carro.obterMarcaModelo = function () {
-	return "Este carro é um: " + carro.obterMarca() + " " + carro.obterModelo();
+	return 'Este carro é um: ' + carro.obterMarca() + ' ' + carro.obterModelo();
 };
 
 /*
@@ -116,16 +116,16 @@ citado acima, no lugar de "pessoas".
 carro.addPassageiro = function( quantidade ){
 	var total= carro.quantidadePessoas + quantidade,
 		livre = carro.assentos - carro.quantidadePessoas,
-		plural = livre > 1 ? "s!" : "!";
+		plural = livre > 1 ? 's!' : '!';
 
 	if(carro.quantidadePessoas === carro.assentos && total > carro.assentos)
-		return "O carro já está lotado!";
+		return 'O carro já está lotado!';
 
 	if (total > carro.assentos) {
-		return "Só cabem mais " + livre + " " + "pessoa" + plural;
+		return 'Só cabem mais ' + livre + ' ' + 'pessoa' + plural;
 	}
 	carro.quantidadePessoas += quantidade;
-	return "Já temos " + total + " pessoas no carro!";
+	return 'Já temos ' + total + ' pessoas no carro!';
 };
 
 /*
