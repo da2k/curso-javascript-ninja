@@ -17,9 +17,9 @@ As propriedades e tipos de valores para cada propriedade desse objeto devem ser:
 - `caminhouQuantosMetros` - Number - recebe "zero" por padrão
 */
 var pessoa = {
-	nome : "William",
-	sobrenome : "Oliveira",
-	sexo : "M",
+	nome : 'William',
+	sobrenome : 'Oliveira',
+	sexo : 'M',
 	idade : 24,
 	altura : 1.75,
 	peso : 60,
@@ -64,7 +64,7 @@ Crie um método chamado `nomeCompleto`, que retorne a frase:
 - "Olá! Meu nome é [NOME] [SOBRENOME]!"
 */
 pessoa.nomeCompleto = function (){
-	return "Olá! Meu nome é: " + pessoa.nome + " " + pessoa.sobrenome;
+	return 'Olá! Meu nome é: ' + pessoa.nome + " " + pessoa.sobrenome;
 };
 
 /*
@@ -72,7 +72,7 @@ Crie um método chamado `mostrarIdade`, que retorne a frase:
 - "Olá, eu tenho [IDADE] anos!"
 */
 pessoa.mostrarIdade = function() {
-	return "Olá, eu tenho: " + pessoa.idade + " anos!";
+	return 'Olá, eu tenho: ' + pessoa.idade + ' anos!';
 };
 
 /*
@@ -80,7 +80,7 @@ Crie um método chamado `mostrarPeso`, que retorne a frase:
 - "Eu peso [PESO]Kg."
 */
 pessoa.mostrarPeso = function(){
-	return "Eu peso: " + pessoa.peso + " Kg.";
+	return 'Eu peso: ' + pessoa.peso + ' Kg.';
 };
 
 /*
@@ -88,7 +88,7 @@ Crie um método chamado `mostrarAltura` que retorne a frase:
 - "Minha altura é [ALTURA]m."
 */
 pessoa.mostrarAltura = function(){
-	return "Minha altura é: " + pessoa.altura + " m.";
+	return 'Minha altura é: ' + pessoa.altura + ' m.';
 };
 
 /*
@@ -181,24 +181,24 @@ correta, de acordo com os dados inseridos no objeto.
 pessoa.apresentacao = function(){
 	var validacoes = [];
 
-	validacoes[0] = "o";
-	validacoes[1] = "anos";
-	validacoes[2] = "metros";
+	validacoes[0] = 'o';
+	validacoes[1] = 'anos';
+	validacoes[2] = 'metros';
 
-	if( pessoa.sexo === "F" ) {
-		validacoes[0] = "a";
+	if( pessoa.sexo === 'F' ) {
+		validacoes[0] = 'a';
 	}
 
 	if( pessoa.idade === 1 ){
-		validacoes[1] = "ano";
+		validacoes[1] = 'ano';
 	}
 
 	if(pessoa.caminhouQuantosMetros === 1){
-		validacoes[2] = "metro";
+		validacoes[2] = 'metro';
 	}
 
-	return "Olá, eu sou " + validacoes[0] + " " + pessoa.nome + " " + pessoa.sobrenome + ", tenho " + pessoa.idade
-		+ " " + validacoes[1] + ", " + pessoa.altura + ", meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei "
+	return 'Olá, eu sou ' + validacoes[0] + ' ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade
+		+ ' ' + validacoes[1] + ', ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei '
 		+ pessoa.caminhouQuantosMetros + " " + validacoes[2] + "!";
 };
 
