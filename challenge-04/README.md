@@ -63,28 +63,28 @@ Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
 carro.mudarCor = function (cor) {
-	this.cor = cor;
+	carro.cor = cor;
 };
 
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
 carro.obterCor = function () {
-	return this.cor;
+	return carro.cor;
 };
 
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
 carro.obterModelo = function () {
-	return this.modelo;
+	return carro.modelo;
 };
 
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
 */
 carro.obterMarca = function () {
-	return this.marca;
+	return carro.marca;
 };
 
 
@@ -94,7 +94,7 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 carro.obterMarcaModelo = function () {
-	return "Este carro é um: " + this.obterMarca() + " " + this.obterModelo();
+	return "Este carro é um: " + carro.obterMarca() + " " + carro.obterModelo();
 };
 
 /*
@@ -114,17 +114,17 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 citado acima, no lugar de "pessoas".
 */
 carro.addPassageiro = function( quantidade ){
-	var total= this.quantidadePessoas + quantidade,
-		livre = this.assentos - this.quantidadePessoas,
+	var total= carro.quantidadePessoas + quantidade,
+		livre = carro.assentos - carro.quantidadePessoas,
 		plural = livre > 1 ? "s!" : "!";
 
-	if(this.quantidadePessoas === this.assentos && total > this.assentos)
+	if(carro.quantidadePessoas === carro.assentos && total > carro.assentos)
 		return "O carro já está lotado!";
 
-	if (total > this.assentos) {
+	if (total > carro.assentos) {
 		return "Só cabem mais " + livre + " " + "pessoa" + plural;
 	}
-	this.quantidadePessoas += quantidade;
+	carro.quantidadePessoas += quantidade;
 	return "Já temos " + total + " pessoas no carro!";
 };
 
