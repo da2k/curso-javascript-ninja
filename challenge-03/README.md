@@ -33,7 +33,7 @@ alterar o valor da propriedade `idade` dessa pessoa, somando `1` a cada vez que
 for chamado.
 */
 pessoa.fazerAniversario = function(){
-	this.idade++
+	pessoa.idade++
 };
 
 /*
@@ -47,8 +47,8 @@ valor dessa propriedade a quantidade passada por parâmetro;
 booleano que representa "verdadeiro";
 */
 pessoa.andar = function(metros){
-	this.caminhouQuantosMetros = this.caminhouQuantosMetros + metros;
-	this.andando = true;
+	pessoa.caminhouQuantosMetros = pessoa.caminhouQuantosMetros + metros;
+	pessoa.andando = true;
 };
 
 /*
@@ -56,7 +56,7 @@ Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o val
 da propriedade `andando` para o valor booleano que representa "falso".
 */
 pessoa.parar = function(){
-	this.andando = false;
+	pessoa.andando = false;
 };
 
 /*
@@ -64,7 +64,7 @@ Crie um método chamado `nomeCompleto`, que retorne a frase:
 - "Olá! Meu nome é [NOME] [SOBRENOME]!"
 */
 pessoa.nomeCompleto = function (){
-	return "Olá! Meu nome é: " + this.nome + " " + this.sobrenome;
+	return "Olá! Meu nome é: " + pessoa.nome + " " + pessoa.sobrenome;
 };
 
 /*
@@ -72,7 +72,7 @@ Crie um método chamado `mostrarIdade`, que retorne a frase:
 - "Olá, eu tenho [IDADE] anos!"
 */
 pessoa.mostrarIdade = function() {
-	return "Olá, eu tenho: " + this.idade + " anos!";
+	return "Olá, eu tenho: " + pessoa.idade + " anos!";
 };
 
 /*
@@ -80,7 +80,7 @@ Crie um método chamado `mostrarPeso`, que retorne a frase:
 - "Eu peso [PESO]Kg."
 */
 pessoa.mostrarPeso = function(){
-	return "Eu peso: " + this.peso + " Kg.";
+	return "Eu peso: " + pessoa.peso + " Kg.";
 };
 
 /*
@@ -88,7 +88,7 @@ Crie um método chamado `mostrarAltura` que retorne a frase:
 - "Minha altura é [ALTURA]m."
 */
 pessoa.mostrarAltura = function(){
-	return "Minha altura é: " + this.altura + " m.";
+	return "Minha altura é: " + pessoa.altura + " m.";
 };
 
 /*
@@ -185,19 +185,19 @@ pessoa.apresentacao = function(){
 	validacoes[1] = "anos";
 	validacoes[2] = "metros";
 
-	if( this.sexo === "F" ) {
+	if( pessoa.sexo === "F" ) {
 		validacoes[0] = "a";
 	}
 
-	if( this.idade === 1 ){
+	if( pessoa.idade === 1 ){
 		validacoes[1] = "ano";
 	}
 
-	if(this.caminhouQuantosMetros === 1){
+	if(pessoa.caminhouQuantosMetros === 1){
 		validacoes[2] = "metro";
 	}
 
-	return "Olá, eu sou " + validacoes[0] + " " + this.nome + " " + this.sobrenome + ", tenho " + pessoa.idade
+	return "Olá, eu sou " + validacoes[0] + " " + pessoa.nome + " " + pessoa.sobrenome + ", tenho " + pessoa.idade
 		+ " " + validacoes[1] + ", " + pessoa.altura + ", meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei "
 		+ pessoa.caminhouQuantosMetros + " " + validacoes[2] + "!";
 };
