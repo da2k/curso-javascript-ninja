@@ -24,7 +24,7 @@ Onde VALOR é o novo valor da variável.
 */
 function setValue() {
   var z = 10
-  return "O valor da variável agora é " + z;
+  return 'O valor da variável agora é ' + z;
 };
 
 // Invoque a função criada acima.
@@ -46,7 +46,7 @@ function multiplication(x,y,z) {
   if(x !== undefined && y !== undefined && z !== undefined){
     return (x*y*z)+2;
   } else {
-  	console.log("Preencha todos os valores corretamente!");
+  	console.log('Preencha todos os valores corretamente!');
   }
 };
 
