@@ -25,7 +25,7 @@ Onde VALOR é o novo valor da variável.
 */
 function animal() {
 	cao = 3;
-	return "O valor da variável agora é " + cao;
+	return 'O valor da variável agora é ' + cao;
 }
 
 // Invoque a função criada acima.
@@ -43,19 +43,19 @@ Crie uma função com as seguintes características:
 */
 function gato(x, y, z) {
 	if (x === undefined || y === undefined || z === undefined) {
-		return "Preencha todos os valores corretamente!";
+		return 'Preencha todos os valores corretamente!';
 	} 
 	return (x * y * z) + 2;
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
-gato(1, 2)
+gato(1, 2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 // "Preencha todos os valores corretamente!"
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-gato(1, 2, 3)
+gato(1, 2, 3);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 // 8
@@ -77,9 +77,9 @@ function gato(x, y, z) {
   } else if (x !== undefined && y !== undefined && z !== undefined) {
     return (x + y) / z;
   } else if (x === undefined && y === undefined && z === undefined) {
-    return "false";
+    return false;
   } else {
-    return "null";
+    return null;
   }
 }
 
