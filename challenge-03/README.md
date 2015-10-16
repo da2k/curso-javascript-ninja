@@ -179,9 +179,9 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao = function(){
-  var a = 'o',
-      b = 'anos',
-      c = 'metros';
+  var a = 'o';
+  var b = 'anos';
+  var c = 'metros';
 
   if (pessoa.sexo === 'Feminino') {
     a = 'a';
