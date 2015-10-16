@@ -25,7 +25,7 @@ Onde VALOR é o novo valor da variável.
 */
 function addValor() {
   nova = 1;
-  return "O valor da variável agora é " + nova + ".";
+  return 'O valor da variável agora é ' + nova + '.';
 };
 
 // Invoque a função criada acima.
@@ -43,7 +43,7 @@ Crie uma função com as seguintes características:
 */
 function add3Valores(a, b, c) {
   if (a === undefined || b === undefined || c === undefined) {
-    return "Preencha todos os valores corretamente!";
+    return 'Preencha todos os valores corretamente!';
   }
   return (a * b * c) + 2;
 };
