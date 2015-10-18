@@ -27,7 +27,6 @@
             birthday: '23/04/1988'
         };
 
-
          /*
         Use um loop para percorrer o objeto criado acima, mostrando no console
         a frase:
