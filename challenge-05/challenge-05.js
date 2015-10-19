@@ -9,7 +9,7 @@ Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
 function paramArr(arr) {
   return arr;
-};
+}
 
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
@@ -35,7 +35,11 @@ var arrTips = ['Tannus', 12, 3.4, null, true];
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-console.log( paramArr(arrTips) );
+console.log( twoParams(arrTips, 0) );
+console.log( twoParams(arrTips, 1) );
+console.log( twoParams(arrTips, 2) );
+console.log( twoParams(arrTips, 3) );
+console.log( twoParams(arrTips, 4) );
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -56,18 +60,21 @@ function book(nameBook) {
     'Guia Front-End': {
       quantidadePaginas: 174,
       autor: 'Diego Eis',
-      editora: 'Casa do Código' },
+      editora: 'Casa do Código' 
+    },
     'UX Design': {
       quantidadePaginas: 217,
       autor: 'Fabricio Teixeira',
-      editora: 'Casa do Código' },
+      editora: 'Casa do Código' 
+    },
     'MEAN': {
       quantidadePaginas: 367,
       autor: 'Flávio Almeida',
-      editora: 'Casa do Código' }
+      editora: 'Casa do Código' 
+    }
   };
 
-  return nameBook === undefined ? books : books[nameBook];
+  return !nameBook ? books : books[nameBook];
 };
 
 /*
