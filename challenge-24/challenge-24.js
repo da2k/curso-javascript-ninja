@@ -1,4 +1,4 @@
-(function(win, doc){
+(function(win, doc) {
   'use strict';
 
   /*
@@ -23,13 +23,15 @@
     Array.prototype.forEach.call($buttonsNumbers, function(button) {
       handleClickEvent(button, handleClickNumber);
     });
+
     Array.prototype.forEach.call($buttonsOperations, function(button) {
       handleClickEvent(button, handleClickOperation);
     });
+
     handleClickEvent($buttonCE, handleClickCE);
     handleClickEvent($buttonEqual, handleClickEqual);
-  }
 
+  }
 
   function handleClickEvent(button, callback) {
     button.addEventListener('click', callback, false);
@@ -57,9 +59,10 @@
   }
 
   function removeLastItemIfItIsAnOperator(number) {
-    if(isLastItemAnOperation(number)) {
+    if (isLastItemAnOperation(number)) {
       return removeLastChar(number);
     }
+
     return number;
   }
 
@@ -68,28 +71,53 @@
   }
 
   function removeLastChar(str) {
-    return str.slice(0, -1)
+    return str.slice(0, -1);
   }
 
   function handleClickEqual() {
     $visor.value = removeLastItemIfItIsAnOperator($visor.value);
     var allValues = $visor.value.match(/\d+[+x÷-]?/g);
-    $visor.value = allValues.reduce(function(accumulated, actual) {
-      var firstValue = Number(removeLastChar(accumulated));
-      var operator = getLastChar(accumulated);
-      var lastValue = Number(removeLastItemIfItIsAnOperator(actual));
-      var lastOperator = isLastItemAnOperation(actual) ? getLastChar(actual) : '';
-      switch(operator) {
-        case '+':
-          return ( firstValue + lastValue ) + lastOperator;
-        case '-':
-          return (firstValue - lastValue ) + lastOperator;
-        case 'x':
-          return ( firstValue * lastValue ) + lastOperator;
-        case '÷':
-          return ( firstValue / lastValue ) + lastOperator;
-      }
-    });
+    $visor.value = allValues.reduce(calculate);
   }
+
+  function doOperation(operator, a, b) {
+    switch (operator) {
+      case '+':
+        return sum(a, b);
+      case '-':
+        return subtract(a, b);
+      case 'x':
+        return multiply(a, b);
+      case '÷':
+        return divide(a, b);
+    }
+  }
+
+  function calculate(accumulated, actual) {
+    var firstValue = Number(removeLastChar(accumulated));
+    var operator = getLastChar(accumulated);
+    var lastValue = Number(removeLastItemIfItIsAnOperator(actual));
+    var lastOperator = isLastItemAnOperation(actual) ? getLastChar(actual) : '';
+    return doOperation(operator, firstValue, lastValue) + lastOperator;
+
+  }
+
+  function sum(a, b) {
+    return a + b;
+  }
+
+  function subtract(a, b) {
+    a - b;
+  }
+
+  function divide(a, b) {
+    a / b;
+  }
+
+  function multiply(a, b) {
+    a * b;
+  }
+
   initButtonsEvents();
+
 })(window, document);
