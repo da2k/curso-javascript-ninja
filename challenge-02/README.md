@@ -22,14 +22,14 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function atribuiValor(x){
-	nova = x;
+function atribuiValor(){
+	nova = 10;
 	return 'O valor da variável agora é: ' + nova;
 }
 
 
 // Invoque a função criada acima.
-atribuiValor(9);
+atribuiValor();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /* 'O valor da variável agora é: 9' */
@@ -72,9 +72,9 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function calculo2(x, y, z){
-	if(y === undefined && z === undefined){
+	if(x !== undefined && y === undefined && z === undefined){
 		return x;
-	}else if (z === undefined) {
+	}else if (x !== undefined && y !== undefined && z === undefined) {
 		return x + y;
 	}else if (x !== undefined && y !== undefined && z !== undefined) {
 		return (x + y) / z
