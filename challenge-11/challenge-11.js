@@ -5,7 +5,7 @@
         /*
         Crie uma variável chamada `once`, que recebe `false` como seu valor.
         Crie um loop que execute enquanto essa variável for verdadeira. Dentro do
-        loop, mostre no console a mensagem:
+        loop, mostre no console a mensagem:p
         'Entrou ao menos uma vez!'
         Qual loop você deve usar para que essa mensagem seja mostrada no console?
         */
