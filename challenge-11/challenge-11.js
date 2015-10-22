@@ -93,6 +93,4 @@
     };
 
     console.log(numbers);
-
-
 })()
