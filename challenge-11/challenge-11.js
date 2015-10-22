@@ -36,6 +36,7 @@
     'The person has [COUNTER] properties'
     */
     var counter = 0;
+
     for ( var property in person ) {
         console.log('The ' + property + ' of person is ' + person[property]);
         counter++;
@@ -62,7 +63,17 @@
     Mostre no console os números no array.
     */
     console.log( 'De 0 a 10:' );
-    // ?
+
+    var numbers = [];
+
+    for (var counter = 0; counter <= 20; counter++) {
+        numbers.push(counter);
+
+        if(counter > 10 )
+            break;
+    };
+
+    console.log(numbers);
 
     /*
     Faça outro loop de 0 a 20, que adicione a um array chamado `numbers` (já
@@ -71,6 +82,17 @@
     Mostrar no console os números do array.
     */
     console.log( 'Pares de 0 a 20:' );
-    // ?
+
+    numbers = [];
+
+    for (var counter = 0; counter <= 20; counter++) {
+        if (counter % 2 === 0)
+            numbers.push(counter);
+        else
+            continue;
+    };
+
+    console.log(numbers);
+
 
 })()
