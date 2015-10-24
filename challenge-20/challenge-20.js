@@ -16,10 +16,8 @@
   nome, `username` deve receber "Desconhecido".
   Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
   */
-  var $username = prompt( 'Qual o seu nome?' );
-  $username = ( $username ) ? $username : 'Desconhecido';
-  if( $username )
-    alert( 'Bem vindo ' + $username );
+  var $username = prompt( 'Qual o seu nome?' ) || 'Desconhecido';
+  alert( 'Bem vindo ' + $username + '!' );
 
   /*
   Agora, pergunte ao usuário "Qual o seu e-mail?", atribuindo o resultado à
@@ -86,18 +84,17 @@
     event.preventDefault();
 
     if( !$inputUsername.value )
-      alert( 'Preencha o nome do usuário!' );
+      return alert( 'Preencha o nome do usuário!' );
     if( !$inputEmail.value )
-      alert( 'Preencha o e-mail!' );
+      return alert( 'Preencha o e-mail!' );
     if( !$message.value )
-      alert( 'Preencha a mensagem!' );
+      return alert( 'Preencha a mensagem!' );
     if( !isValidEmail( $inputEmail.value ) )
-      alert( 'Entre com um e-mail válido!' )
-
+      return alert( 'Entre com um e-mail válido!' );
     if( confirm( 'Tem certeza que deseja enviar o formulário?' ) )
-      alert( 'Enviado com sucesso!' );
-    else
-      alert( 'Não enviado.' );
+      return alert( 'Enviado com sucesso!' );
+    
+    return alert( 'Não enviado.' );
 
   }, false );
 
@@ -128,6 +125,7 @@
       - "agua_@evida.br.com"
   */
   function isValidEmail( email ) {
-    return email.match( /^([\w+]+(\.[\w+]+)?)@\w+((\.\w{2,6})(\.\w{2})?)$/gi );
+    var regex = /^([\w+]+(\.[\w+]+)?)@\w+((\.\w{2,6})(\.\w{2})?)$/gi;
+    return regex.test( email );
   }
 })(window, document);
