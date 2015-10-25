@@ -42,11 +42,11 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function calculo(x, y, z){
-if(x === undefined || y === undefined || z === undefined){
-		return 'Preencha todos os valores corretamente!';
-	}else{
-		return x * y * z + 2;
-	}
+	if(x === undefined || y === undefined || z === undefined){
+			return 'Preencha todos os valores corretamente!';
+		}else{
+			return x * y * z + 2;
+		}
 }
 
 
@@ -89,4 +89,4 @@ function calculo2(x, y, z){
 calculo2(3) //3
 calculo2(3, 3) //6
 calculo2(3, 7, 2) //5
-calculo2() //undefined
+calculo2() //false
