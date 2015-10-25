@@ -25,7 +25,7 @@ var pessoa = {
 	peso: 78,
 	andando: false,
 	caminhouQuantosMetros: 0
-}	
+};	
 
 
 /*
@@ -35,7 +35,7 @@ for chamado.
 */
 pessoa.fazerAniversario = function() {
 	pessoa.idade++;
-}
+};
 
 /*
 Adicione um método ao objeto `pessoa` chamado `andar`, que terá as seguintes
@@ -50,7 +50,7 @@ booleano que representa "verdadeiro";
 pessoa.andar = function(metros) {
 	pessoa.andando = true;
 	pessoa.caminhouQuantosMetros += metros;
-}
+};
 
 /*
 Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o valor
@@ -58,39 +58,39 @@ da propriedade `andando` para o valor booleano que representa "falso".
 */
 pessoa.parar = function() {
 	pessoa.andando = false;
-}
+};
 
 /*
 Crie um método chamado `nomeCompleto`, que retorne a frase:
 - "Olá! Meu nome é [NOME] [SOBRENOME]!"
 */
 pessoa.nomeCompleto = function() {
-	console.log('Olá! meu nome é ' + pessoa.nome + ' ' + pessoa.sobrenome);
-}
+	return 'Olá! meu nome é ' + pessoa.nome + ' ' + pessoa.sobrenome;
+};
 
 /*
 Crie um método chamado `mostrarIdade`, que retorne a frase:
 - "Olá, eu tenho [IDADE] anos!"
 */
 pessoa.mostrarIdade = function() {
-	console.log('Olá, eu tenho ' + pessoa.idade + ' anos!');
-}
+	return 'Olá, eu tenho ' + pessoa.idade + ' anos!';
+};
 
 /*
 Crie um método chamado `mostrarPeso`, que retorne a frase:
 - "Eu peso [PESO]Kg."
 */
 pessoa.mostrarPeso = function() {
-	console.log('Eu peso ' + pessoa.peso + 'Kg.');
-}
+	return 'Eu peso ' + pessoa.peso + 'Kg.';
+};
 
 /*
 Crie um método chamado `mostrarAltura` que retorne a frase:
 - "Minha altura é [ALTURA]m."
 */
 pessoa.mostrarAltura = function() {
-	console.log('Minha altura é ' + pessoa.altura + 'm.');
-}
+	return 'Minha altura é ' + pessoa.altura + 'm.';
+};
 
 /*
 Agora vamos brincar um pouco com o objeto criado:
@@ -129,7 +129,7 @@ Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
 comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
-pessoa.idade; //29
+pessoa.mostrarIdade(); //Olá, eu tenho 29 anos!
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
@@ -148,7 +148,7 @@ pessoa.andando; //true
 /*
 Se a pessoa ainda está andando, faça-a parar.
 */
-pessoa.parar;
+pessoa.parar();
 
 /*
 E agora: a pessoa ainda está andando? (Use uma instrução para responder e
@@ -180,30 +180,24 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao = function() {
-	var retorno;
-	if(pessoa.sexo === 'Masculino') {
-		retorno = 'Olá, eu sou o ' + pessoa.nome + ' ' + pessoa.sobrenome + ', ';
-	}else{
-		retorno = 'Olá, eu sou a ' + pessoa.nome + ' ' + pessoa.sobrenome + ', ';
-	}
+	var artigoSexo = 'o'
+	var stringIdade = 'anos'
+	var stringMetros = 'metros'
+	
+	if(pessoa.sexo ===  'Feminino'){
+		artigoSexo = 'a';
+	};
 
-	if(pessoa.idade === 1) {
-		retorno += 'tenho ' + pessoa.idade + ' ano, ';
-	}else{
-		retorno += 'tenho ' + pessoa.idade + ' anos, ';
-	}
+	if (pessoa.idade === 1) {
+		stringIdade = 'ano';
+	};
+	
+	if (pessoa.caminhouQuantosMetros === 1) {
+		stringMetros = 'metro';
+	};
 
-	retorno += pessoa.altura + 'm, ';
-	retorno += 'meu peso é ' + pessoa.peso + 'Kg ';
-
-	if(pessoa.caminhouQuantosMetros === 1) {
-		retorno +=  'e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros  + ' metro!';
-	}else{
-		retorno +=  'e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros  + ' metros!';
-	}
-
-	console.log(retorno);
-}
+	return 'Olá, eu sou ' + artigoSexo + ' ' + pessoa.nome + ' ' + pessoa.sobrenome + ', ' + 'tenho '  + 		        pessoa.idade + ' ' + stringIdade + ', ' + pessoa.altura + 'm, ' + 'meu peso é ' + pessoa.peso + 'Kg         e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros  + ' ' + stringMetros + '!';
+};
 
 // Agora, apresente-se ;)
 pessoa.apresentacao();
