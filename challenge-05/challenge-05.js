@@ -63,17 +63,17 @@ function book( bookName ){
 			editora: 'Editora1'
 		},
 		'The Lean Startup': {
-			quantidadePaginas: 350;
+			quantidadePaginas: 350,
 			autor: 'Eric Ries',
 			editora: 'Editora2'
 		},
-		Steve Jobs:{
+		'Steve Jobs':{
 			quantidadePaginas: 900,
 			autor: 'Vida',
 			editora: 'Editora3'
 		}
 	};
-	return !bookName ? books : books [ bookName ]
+	return !bookName ? books : books [ bookName ];
 }
 
 /*
@@ -86,7 +86,7 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-console.log( 'O livro The Lean Startup tem ' + book( 'The Lean Startup' ).quantidadePaginas + 'páginas' );
+console.log( 'O livro The Lean Startup tem ' + book( 'The Lean Startup' ).quantidadePaginas + ' páginas' );
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
