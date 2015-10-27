@@ -43,10 +43,10 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
  function multiple(x, y, z){
-  if (x == undefined || y == undefined || z == undefined ){
+  if (x === undefined || y === undefined || z === undefined ){
     return 'Preencha todos os valores corretamente';
-  }
-  return (x * y * z) + 2;
+  } else {
+      return (x * y * z) + 2;
  }
 
 // Invoque a função criada acima, passando só dois números como argumento.
@@ -73,13 +73,13 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function final(arg1, arg2, arg3){
-  if( arg1 != undefined && arg2 == undefined && arg3 == undefined ){
+  if( arg1 !== undefined && arg2 === undefined && arg3 === undefined ){
     return arg1;
-    } else if( arg1 != undefined && arg2 != undefined && arg3 == undefined){
+    } else if( arg1 !== undefined && arg2 !== undefined && arg3 === undefined){
         return arg1 + arg2;
-      } else if( arg1 != undefined && arg2 != undefined && arg3 != undefined ){
+      } else if( arg1 !== undefined && arg2 !== undefined && arg3 !== undefined ){
           return (arg1 + arg2) / arg3;
-        } else if( arg1 == undefined && arg2 == undefined && arg3 == undefined ){
+        } else if( arg1 === undefined && arg2 === undefined && arg3 === undefined ){
             return false;
           } else {
               return null;
