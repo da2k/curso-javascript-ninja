@@ -187,7 +187,7 @@ pessoa.apresentacao = function(){
       sexo = 'o';
     }
     
-  var idade
+  var idade;
     if( pessoa.idade === 1 ){
       idade = 'ano';
     }else {
@@ -200,7 +200,8 @@ pessoa.apresentacao = function(){
       } else {
       metros = 'metros';
       }
+       return 'Olá, eu sou ' + sexo + ' ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + ' ' + idade + ', ' + pessoa.altura + ', meu peso é ' + pessoa.peso + 'kg, só hoje, eu já caminhei '+ pessoa.caminhouQuantosMetros + ' ' + metros + '!';
+      }
       
-     return ;
-}
+
 ```
