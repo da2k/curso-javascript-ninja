@@ -178,5 +178,29 @@ correta, de acordo com os dados inseridos no objeto.
 
 
 // Agora, apresente-se ;)
-?
+pessoa.apresentacao = function(){
+
+  var sexo;
+    if( pessoa.sexo === 'Feminino' ){
+      sexo = 'a';
+    } else {
+      sexo = 'o';
+    }
+    
+  var idade
+    if( pessoa.idade === 1 ){
+      idade = 'ano';
+    }else {
+      idade = 'anos';
+    }
+    
+    var metros;
+      if(pessoa.caminhouQuantosMetros === 1 ){
+      metros = 'metro';
+      } else {
+      metros = 'metros';
+      }
+      
+     return ;
+}
 ```
