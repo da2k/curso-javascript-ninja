@@ -9,7 +9,7 @@ para o contrário.
 */
 var isTruthy = function(x) {
 	return !!x;
-}
+};
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 isTruthy(0);
@@ -19,6 +19,7 @@ isTruthy("");
 isTruthy(false);
 isTruthy(NaN);
 isTruthy(undefined);
+isTruthy(null);
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
@@ -46,36 +47,45 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `assentos` - Number - cinco por padrão
 - `quantidadePessoas` - Number - zero por padrão
 */
-var carro = {marca: 'Ford', modelo: 'Fiesta', placa: 'LKM-9999', ano: 2012, cor: 'Prata', quantasPortas: 4, assentos: 5, quantidadePessoas: 0}
+var carro = {
+	marca: 'Ford',
+	modelo: 'Fiesta', 
+	placa: 'LKM-9999', 
+	ano: 2012, 
+	cor: 'Prata', 
+	quantasPortas: 4, 
+	assentos: 5, 
+	quantidadePessoas: 0
+};
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
-carro.mudaCor = function(novaCor) {
+carro.mudarCor = function(novaCor) {
     carro.cor = novaCor;
-}
+};
 
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
 carro.obterCor = function() {
 	return carro.cor;
-}
+};
 
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
 carro.obterModelo = function() {
 	return carro.modelo;
-}
+};
 
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
 */
 carro.obterMarca = function() {
 	return carro.marca;
-}
+};
 
 /*
 Crie um método chamado `obterMarcaModelo`, que retorne:
@@ -83,8 +93,8 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 carro.obterMarcaModelo = function() {
-	return 'Esse carro é um ' + carro.marca + ' ' + carro.modelo;
-}
+	return 'Esse carro é um ' + obterMarca() + ' ' + obterModelo();
+};
 
 /*
 Crie um método que irá adicionar pessoas no carro. Esse método terá as
@@ -116,7 +126,7 @@ carro.adicionaPessoas = function(qtdPessoas) {
 		carro.quantidadePessoas += qtdPessoas;
 		return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro';
 	}
-}
+};
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -126,22 +136,22 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-carro.cor; //prata
+carro.obterCor(); //prata
 
 //Mude a cor do carro para vermelho.
-carro.cor = 'vermelho';
+carro.mudarCor('Vermelho');
 
 // E agora, qual a cor do carro?
-carro.cor; //vermelho
+carro.obterCor(); //vermelho
 
 // Mude a cor do carro para verde musgo.
-carro.cor = 'verde musgo';
+carro.obterCor('verde musgo');
 
 // E agora, qual a cor do carro?
-carro.cor; //verde musgo
+carro.obterCor(); //verde musgo
 
 // Qual a marca e modelo do carro?
-carro.obterMarcaModelo; //Ford Fiesta
+carro.obterMarcaModelo(); //Ford Fiesta
 
 // Adicione 2 pessoas no carro.
 carro.adicionaPessoas(2); //Já temos 2 pessoas no carro
@@ -153,7 +163,7 @@ carro.adicionaPessoas(4); //Só cabem mais 3 pessoas!
 carro.adicionaPessoas(3); //Já temos 5 pessoas no carro
 
 // Tire 4 pessoas do carro.
-carro.quantidadePessoas -= 4; //1
+carro.adicionaPessoas(-4); //1
 
 // Adicione 10 pessoas no carro.
 carro.adicionaPessoas(10); //Só cabem mais 4 pessoas!
