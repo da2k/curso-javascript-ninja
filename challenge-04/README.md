@@ -12,12 +12,27 @@ var isTruthy = function( x ){
 };
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
-?
+isTruthy( undefined );
+isTruthy( null );
+isTruthy( 0 );
+isTruthy( -0 );
+isTruthy( NaN );
+isTruthy( '' );
+isTruthy( false);
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
-?
+isTruthy( 'Felipe' );
+isTruthy( 1 );
+isTruthy( 1 + 2 );
+isTruthy( true );
+isTruthy( {} );
+isTruthy( [] );
+isTruthy( '0' );
+isTruthy( objeto.atributo );
+isTruthy( '1' );
+isTruthy( 50 );
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
@@ -31,35 +46,55 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `assentos` - Number - cinco por padrão
 - `quantidadePessoas` - Number - zero por padrão
 */
-?
+
+var carro = {
+  marca: 'Fiat', 
+  modelo: 'Uno', 
+  placa: 'frs0000', 
+  ano: 2010, 
+  cor: 'Preto', 
+  quantasPortas: 4,
+  assentos: 5, 
+  quantidadePessoas: 0,
+};
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
-?
+carro.mudaCor = function( x ){
+  carro.cor = x;
+};
 
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
-?
+carro.obterCor = function(){
+  return carro.cor;
+};
 
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
-?
+carro.obterModelor = function(){
+  return carro.modelo;
+};
 
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
 */
-?
+carro.obterMarca = function(){
+  return carro.marca;
+};
 
 /*
 Crie um método chamado `obterMarcaModelo`, que retorne:
 "Esse carro é um [MARCA] [MODELO]"
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
-?
+carro.obterMarcaModelo = function(){
+  return 'Esse carro é um ' + carro.marca + ' ' + carro.modelo + '.';
+};
 
 /*
 Crie um método que irá adicionar pessoas no carro. Esse método terá as
@@ -77,7 +112,17 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-?
+carro.adicionaPessoas = function( x ){
+  carro.quantidadePessoas += x;
+  if( carro.quantidadePessoas === 5){
+    return ' O carro está lotado.';
+  } else if( carro.quantidadePessoas + x  < 5 $$ carro.quantidadePessoas + x  > 0 ){
+      var pessoas = 5 - carro.quantidadePessoas + x;
+        return pessoas === 1  ? 'pessoa' : ' pessoas.';
+  } else{
+      return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!';
+  };
+};
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
