@@ -30,7 +30,7 @@ isTruthy( true );
 isTruthy( {} );
 isTruthy( [] );
 isTruthy( '0' );
-isTruthy( objeto.atributo );
+isTruthy( 20 / 5 );
 isTruthy( '1' );
 isTruthy( 50 );
 
@@ -63,7 +63,7 @@ Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
 carro.mudaCor = function( x ){
-  carro.cor = x;
+  return carro.cor = x;
 };
 
 /*
@@ -76,7 +76,7 @@ carro.obterCor = function(){
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
-carro.obterModelor = function(){
+carro.obterModelo = function(){
   return carro.modelo;
 };
 
@@ -94,7 +94,7 @@ Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 carro.obterMarcaModelo = function(){
   return 'Esse carro é um ' + carro.marca + ' ' + carro.modelo + '.';
-};
+}
 
 /*
 Crie um método que irá adicionar pessoas no carro. Esse método terá as
@@ -113,16 +113,14 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 citado acima, no lugar de "pessoas".
 */
 carro.adicionaPessoas = function( x ){
-  carro.quantidadePessoas += x;
-  if( carro.quantidadePessoas === 5){
-    return ' O carro está lotado.';
-  } else if( carro.quantidadePessoas + x  < 5 $$ carro.quantidadePessoas + x  > 0 ){
-      var pessoas = 5 - carro.quantidadePessoas + x;
-        return pessoas === 1  ? 'pessoa' : ' pessoas.';
-  } else{
-      return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!';
+  var quantidade = carro.quantidadePessoas += x;
+   if(quantidade > 5) {
+    return "O carro já está lotado!";
+      quantidade = 5;
+    }else{
+      return 'Já temos ' + quantidade + ' pessoas no carro!';
+    }
   };
-};
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
