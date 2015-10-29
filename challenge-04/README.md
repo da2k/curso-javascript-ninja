@@ -113,13 +113,20 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 citado acima, no lugar de "pessoas".
 */
 carro.adicionaPessoas = function( x ){
-  var quantidade = carro.quantidadePessoas += x;
-   if(quantidade > 5) {
-    return "O carro já está lotado!";
-      quantidade = 5;
-    }else{
-      return 'Já temos ' + quantidade + ' pessoas no carro!';
-    }
+  carro.quantidadePessoas += x;
+   if( carro.quantidadePessoas === carro.assentos){
+    return 'O carro ja esta lotado.';
+  };
+  
+  if(carro.quantidadePessoas > carro.assentos){
+    var assentosFaltam = carro.quantidadePessoas - carro.assentos;
+    var finalPalavra   = assentosFaltam === 1 ? 'a' : 'as';
+    
+      return 'Só cabem mais ' + assentosFaltam + ' pesso' + finalPalavra +'!';
+  };
+  
+      return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!';
+    
   };
 
 /*
