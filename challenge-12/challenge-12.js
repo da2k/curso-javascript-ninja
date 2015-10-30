@@ -11,7 +11,6 @@
     Preencha cada propriedade com os seus dados pessoais, respeitando o tipo
     de valor para cada propriedade.
     */
-
     var person = {
         name:     'Filipe',
         lastname: 'Lemos',
@@ -60,12 +59,14 @@
     console.log(books);
 
     console.log( '\nLivro que está sendo removido:' );
+
     /*
     Remova o último livro, e mostre-o no console.
     */
     console.log(books.pop());
 
     console.log( '\nAgora sobraram somente os livros:' );
+
     /*
     Mostre no console os livros restantes.
     */
@@ -122,6 +123,7 @@
     console.log(myName.reverse().join(''));
 
     console.log( '\nAgora em ordem alfabética:' );
+
     /*
     Mostre todos os itens do array acima, odenados alfabéticamente.
     */
