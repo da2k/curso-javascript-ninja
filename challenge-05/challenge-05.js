@@ -14,7 +14,7 @@ function myFunction(arr){
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-myFunction(myvar)[1];
+console.log(myFunction(myvar)[1]); // true
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -35,11 +35,11 @@ var myvar2 = [1, undefined, null, true, [1, 'dois', false]];
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-myFunction2(myvar2, 0);
-myFunction2(myvar2, 1);
-myFunction2(myvar2, 2);
-myFunction2(myvar2, 3);
-myFunction2(myvar2, 4);
+console.log(myFunction2(myvar2, 0)); // 1
+console.log(myFunction2(myvar2, 1)); // undefined
+console.log(myFunction2(myvar2, 2)); // null
+console.log(myFunction2(myvar2, 3)); // true
+console.log(myFunction2(myvar2, 4)); // [1, "dois", false]
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -79,7 +79,7 @@ function book(name){
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-book();
+console.log(book()); // Object {livro A: Object, livro B: Object, livro C: Object}
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
