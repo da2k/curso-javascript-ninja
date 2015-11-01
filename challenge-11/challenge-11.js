@@ -64,13 +64,15 @@
     */
     console.log( 'De 0 a 10:' );
 
+    var counter = 0;
     var numbers = [];
 
-    for (var counter = 0; counter <= 20; counter++) {
-        numbers.push(counter);
-
-        if(counter > 10 )
+    while (counter < 20) {
+        if(counter > 10 ) {
             break;
+        }
+
+        numbers.push(counter++);
     };
 
     console.log(numbers);
@@ -83,13 +85,16 @@
     */
     console.log( 'Pares de 0 a 20:' );
 
+    counter = 0;
     numbers = [];
 
-    for (var counter = 0; counter <= 20; counter++) {
-        if (counter % 2 === 0)
-            numbers.push(counter);
-        else
+    while (counter <= 20) {
+        if (counter % 2 !== 0) {
+            counter++;
             continue;
+        }
+
+        numbers.push(counter++);
     };
 
     console.log(numbers);
