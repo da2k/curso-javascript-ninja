@@ -25,25 +25,25 @@
   var counter = 0;
   var timer;
 
-  $start.addEventListener( 'click', function( event ) {
-    event.preventDefault();
+  $start.addEventListener( 'click', startCron, false );
+  $stop.addEventListener( 'click', stopCron, false );
+  $reset.addEventListener( 'click', resetCron, false );
+
+  function startCron() {
     function cron() {
       $display.value = counter++;
       timer = setTimeout( cron, 1000 );
     }
     cron();
-  }, false );
+  }
 
-  $stop.addEventListener( 'click', function( event ) {
-    event.preventDefault();
+  function stopCron() {
     return clearTimeout( timer );
-  }, false );
+  }
 
-  $reset.addEventListener( 'click', function( event ) {
-    event.preventDefault();
+  function resetCron() {
     counter = 0;
     $display.value = 0;
-    return clearTimeout( timer );
-  }, false );
-
+    return stopCron();
+  }
 })( window, document );	
