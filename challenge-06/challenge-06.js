@@ -37,9 +37,9 @@ function showTeamPosition(posicao) {
   var team_position = posicao - 1;
   if (teams[team_position]) {
     return 'O time que está em ' + posicao + 'º lugar é o ' + teams[team_position] + '.';
-  } else {
-    return 'Não temos a informação do time que está nessa posição.';
   }
+
+  return 'Não temos a informação do time que está nessa posição.';
 }
 
 /*
@@ -96,33 +96,33 @@ function convertToHex(cor) {
     default:
       return 'Não temos o equivalente hexadecimal para ' + cor + '.';
   }
-  return 'O hexadecimal para a cor ' + cor + ' é ' + hexadecimal + '.');
+  return 'O hexadecimal para a cor ' + cor + ' é ' + hexadecimal + '.';
 }
 
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
 
-convertToHex('black');
+console.log(convertToHex('black'));
 // O hexadecimal para a cor black é #000000.
 
-convertToHex('red');
+console.log(convertToHex('red'));
 // 19 O hexadecimal para a cor red é #FF0000.
 
-convertToHex('blue');
+console.log(convertToHex('blue'));
 // O hexadecimal para a cor blue é #0000FF.
 
-convertToHex('orange');
+console.log(convertToHex('orange'));
 // O hexadecimal para a cor orange é #FFA500.
 
-convertToHex('yellow');
+console.log(convertToHex('yellow'));
 // O hexadecimal para a cor yellow é #FFFF00.
 
-convertToHex('purple');
+console.log(convertToHex('purple'));
 // Não temos o equivalente hexadecimal para purple.
 
-convertToHex('pink');
+console.log(convertToHex('pink'));
 // Não temos o equivalente hexadecimal para purple.
 
-convertToHex('green');
+console.log(convertToHex('green'));
 // Não temos o equivalente hexadecimal para green.
