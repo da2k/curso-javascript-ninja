@@ -44,7 +44,7 @@ Crie uma função com as seguintes características:
 */
 function verifica( arg1, arg2, arg3 ){
 
-	if ( arg1 === undefined arg2 || === undefined || arg3 === undefined ){
+	if ( arg1 === undefined || arg2 === undefined || arg3 === undefined ){
 		return 'Preencha todos os valores corretamente!';
 	} else {
 		return ( arg1 * arg2 * arg3 ) + 2;
