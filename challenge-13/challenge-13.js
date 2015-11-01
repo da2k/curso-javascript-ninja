@@ -16,8 +16,8 @@
     Crie 2 arrays `sul` e `sudeste`, que serão as regiões do Brasil.
     Cada array deve conter os estados dessa região.
     */
-    var sul     = ["Paraná", "Rio Grande do Sul", "Santa Catarina"];
-    var sudeste = ["Espírito Santo", "Minas Gerais", "Rio de Janeiro", "São Paulo"];
+    var sul     = ['Paraná', 'Rio Grande do Sul', 'Santa Catarina'];
+    var sudeste = ['Espírito Santo', 'Minas Gerais', 'Rio de Janeiro', 'São Paulo'];
 
     /*
     Crie uma variável chamada `brasil`, que irá receber as duas regiões
@@ -33,7 +33,7 @@
     */
     console.log( '\nMais estados adicionados:' );
 
-    brasil.unshift("Acre", "Amazonas", "Pará");
+    brasil.unshift('Acre', 'Amazonas', 'Pará');
     console.log(brasil);
 
     /*
@@ -66,7 +66,7 @@
     /*
     Crie um novo array chamado `nordeste`, que tenha os estados do nordeste.
     */
-    var nordeste = ["Alagoas", "Bahia", "Ceará", "Maranhão", "Paraíba", "Pernambuco", "Piauí", "Rio Grande do Norte", "Sergipe"];
+    var nordeste = ['Alagoas', 'Bahia', 'Ceará', 'Maranhão', 'Paraíba', 'Pernambuco', 'Piauí', 'Rio Grande do Norte', 'Sergipe'];
 
     /*
     Mostre no console os estados do nordeste.
