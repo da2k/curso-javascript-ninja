@@ -79,13 +79,13 @@ Crie uma função com as seguintes características:
 */
 function myFunc( arg1, arg2, arg3 ){
 
-	if ( arg1 !== 'undefined' && arg2 === 'undefined' && arg3 === 'undefined' ){
+	if ( arg1 !== undefined && arg2 === undefined && arg3 === undefined ){
 		return arg1;
-	} else 	if ( arg1 !== 'undefined' && arg2 !== 'undefined' && arg3 === 'undefined' ) {
+	} else 	if ( arg1 !== undefined && arg2 !== undefined && arg3 === undefined ) {
 		return arg1 + arg2;
-	} else 	if ( arg1 !== 'undefined' && arg2 !== 'undefined' && arg3 !== 'undefined' ) {
+	} else 	if ( arg1 !== undefined && arg2 !== undefined && arg3 !== undefined ) {
 		return ( arg1 + arg2 ) / arg3;
-	} else 	if (arg1 === 'undefined' && arg2 === 'undefined' && arg3 === 'undefined') {
+	} else 	if (arg1 === undefined && arg2 === undefined && arg3 === undefined) {
 		return false;
 	} else {
 		return null;
