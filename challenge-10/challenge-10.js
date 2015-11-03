@@ -60,7 +60,7 @@
     os dois parâmetros da função de retorno de "calculator".
     */
     function calculator(operator) {
-        if(!isOperatorValid(operator)) {
+        if (!isOperatorValid(operator)) {
             return false;
         }
 
