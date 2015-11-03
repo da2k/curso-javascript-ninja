@@ -55,7 +55,7 @@ var carro = {
   cor: 'Preto', 
   quantasPortas: 4,
   assentos: 5, 
-  quantidadePessoas: 0,
+  quantidadePessoas: 0
 };
 
 /*
@@ -93,8 +93,8 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 carro.obterMarcaModelo = function(){
-  return 'Esse carro é um ' + carro.marca + ' ' + carro.modelo + '.';
-}
+  return 'Esse carro é um ' + carro.obterMarca + ' ' + carro.obterModelo + '.';
+};
 
 /*
 Crie um método que irá adicionar pessoas no carro. Esse método terá as
@@ -115,20 +115,19 @@ citado acima, no lugar de "pessoas".
 carro.adicionaPessoas = function( x ){
   var total = carro.quantidadePessoas + x;
   
-  if(carro.quantidadePessoas === carro.assentos){
-    return 'O carro está lotado';
-  } 
+    if(carro.quantidadePessoas === carro.assentos){
+      return 'O carro está lotado';
+    } 
   
-  if(carro.quantidadePessoas < carro.assentos && total > carro.assentos){
-    var assentosRestam = carro.assentos - carro.quantidadePessoas;
-    var palavraFinal = assentosRestam === 1 ? ' pessoa' : ' pessoas';
-      return 'Só cabem mais '+ assentosRestam + palavraFinal + '!';
-  }
+    if(carro.quantidadePessoas < carro.assentos && total > carro.assentos){
+      var assentosRestam = carro.assentos - carro.quantidadePessoas;
+      var palavraFinal = assentosRestam === 1 ? ' pessoa' : ' pessoas';
+        return 'Só cabem mais '+ assentosRestam + palavraFinal + '!';
+    }
   
-  carro.quantidadePessoas = total;
+        carro.quantidadePessoas = total;
   
-    return 'Já temos '+ carro.quantidadePessoas + ' pessoas no carro';
-  
+          return 'Já temos '+ carro.quantidadePessoas + ' pessoas no carro';
    };
 
 /*
@@ -169,7 +168,7 @@ carro.adicionaPessoas(3); // Resposta: Já temos 5 pessoas no carro.
 carro.quantidadePessoas = 1;
 
 // Adicione 10 pessoas no carro.
-carro.adicionaPessoas(10);
+carro.adicionaPessoas(-4);
 
 // Quantas pessoas temos no carro?
 1
