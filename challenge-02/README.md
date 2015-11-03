@@ -23,7 +23,7 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 function addValor(){
-  sValor = 'VALOR';
+  sValor = '55';
   return 'O valor da variável é ' + sValor + '.';
   }
 
@@ -32,7 +32,7 @@ addValor();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
-O valor da variável é 'O valor da variável é VALOR.'
+O valor da variável é 55.
 */
 
 /*
@@ -60,7 +60,7 @@ multiple(2,2,5);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 /*
-O valor é 22.
+22
 */
 
 /*
