@@ -2,17 +2,19 @@
 Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
-// ?
+var arr = ['Felipe', 27, 'Masculino', true, 'Garopaba'];
 
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
-// ?
+function returnArray(arg){
+  return arg;  
+};
 
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-// ?
+returnArray()[1];
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -20,18 +22,24 @@ segundo, um número. A função deve retornar um índice do array que foi passad
 no primeiro parâmetro. O índice a ser retornado, deve ser o número passado no
 segundo parâmetro.
 */
-// ?
+function twoParam(arg, num){
+  return arg[num];
+}
 
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
-// ?
+var fut = [null, 3, 'Azul', false, 5];
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-// ?
+twoParam(fut, 0);
+twoParam(fut, 1);
+twoParam(fut, 2);
+twoParam(fut, 3);
+twoParam(fut, 4);
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -47,19 +55,31 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-// ?
+function book(bookName){
+  var bookProp = {
+    quantidadePagina: 100,
+    autor: 'Felipe',
+    editora: 'Abril'
+  };
+  
+  if(bookName){
+    return bookName;
+  }else{
+    return bookProp;
+  }
+}
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-// ?
+book();
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// ?
+"O livro " + bookName + " tem " + book().quantidadePaginas + " páginas!"
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
