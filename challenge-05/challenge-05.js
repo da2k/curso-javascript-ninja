@@ -9,12 +9,12 @@ Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
 function returnArray(arg){
   return arg;  
-};
+}
 
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-returnArray(arr)[1];
+console.log( returnArray(arr)[1] );
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -35,11 +35,11 @@ var fut = [null, 3, 'Azul', false, 5];
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-twoParam(fut, 0);
-twoParam(fut, 1);
-twoParam(fut, 2);
-twoParam(fut, 3);
-twoParam(fut, 4);
+console.log( twoParam(fut, 0) );
+console.log( twoParam(fut, 1) );
+console.log( twoParam(fut, 2) );
+console.log( twoParam(fut, 3) );
+console.log( twoParam(fut, 4) );
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -56,37 +56,48 @@ propriedades:
 os livros.
 */
 function book(bookName){
-  var bookProp = {
-    quantidadePagina: 100,
-    autor: 'Felipe',
-    editora: 'Abril'
+  var books = {
+    'Javascript': {
+      quantidadePaginas: 400,
+      autor: 'Claudio',
+      editora: 'Livratec'
+    },
+    
+    'HTML5': {
+      quantidadePaginas: 200,
+      autor: 'Flávio',
+      editora: 'Teclivro'
+    },
+    
+    'CSS3': {
+      quantidadePaginas: 325,
+      autor: 'Beto',
+      editora: 'Infotec'
+    }
   };
   
-  if(bookName){
-    return bookName;
-  }else{
-    return bookProp;
-  }
+  return !bookName ? books : books [ bookName ];
+  
 }
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-book();
+console.log ( book() );
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-"O livro " + book('Javascript') + " tem " + book().quantidadePaginas + " páginas!";
+console.log ( 'O livro Javacript tem' + book( 'Javascript' ).quantidadePaginas + 'páginas!' );
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-"O autor do livro " + book('Javascript')  +" é " + book().autor + ".";
+console.log ( 'O autor do livro HTML5 é ' + book('HTML5').autor + '.' );
 
 
 /*
@@ -94,4 +105,4 @@ Ainda com a função acima, imprima o nome da editora de um livro qualquer, usan
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-"O livro " + book('Javascript') + " foi publicado pela editora " + book().editora + ".";
+console.log ( 'O livro CSS3 foi publicado pela editora ' + book('CSS3').editora + '.' );
