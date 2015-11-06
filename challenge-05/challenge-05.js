@@ -14,7 +14,7 @@ function returnArray(arg){
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-returnArray()[1];
+returnArray(arr)[1];
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
