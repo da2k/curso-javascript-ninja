@@ -4,7 +4,8 @@ para começar o desafio.
 Declare uma variável chamada `championship` que receberá o nome do campeonato,
 e imprima o nome desse campeonato no console.
 */
-// ?
+var championship = 'Campeonato dos Ruins de Bola'
+console.log(championship)
 
 /*
 Declare uma variável chamada `teams`, que receberá um array com 5 elementos.
@@ -12,9 +13,10 @@ Os elementos serão nomes de times do campeonato escolhido, e os nomes devem
 estar na ordem em que eles aparecem na tabela no momento da solução desse
 desafio.
 */
-// ?
 
-console.log( 'Times que estão participando do campeonato:', teams );
+var teams = new Array('Flamengo', 'Corintias', 'Goiás', 'Goku F.C' , 'BLE F.C')
+
+console.log( 'Times que estão participando do campeonato:', teams )
 
 /*
 Crie uma função chamada `showTeamPosition` com as seguintes características:
@@ -32,19 +34,32 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     - Se não houver time para a posição passada, deve retornar a mensagem:
     "Não temos a informação do time que está nessa posição."
 */
-// ?
+var showTeamPosition = function(position) {
+    if(position < 0 || position > 5)
+        return "Não temos a informação do time que está nessa posição."
+    else
+        return "O time que está em " + (position + 1) + "º lugar é o " + teams[position] + '.'
+}
 
 /*
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
-// ?
+var i = -1
+while(i < 3) {
+    console.log(showTeamPosition(i))
+    ++i
+}
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
 repetição "while".
 */
-// ?
+var i = 20
+while (i <= 30) {
+    console.log(i)
+    ++i;
+}
 
 /*
 Crie uma função chamada `convertToHex`, com as seguintes características:
@@ -63,4 +78,35 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-// ?
+var convertToHex = function(color) {
+    var hexColor;
+
+    switch(color) {
+
+
+        case 'yellow':
+            hexColor = '#FFFF00'
+            break
+        case 'orange':
+            hexColor = '#FFA500'
+            break
+        case 'red':
+            hexColor = '#FF0000'
+            break
+        case 'black':
+            hexColor = '#000000'
+            break
+        case 'white':
+            hexColor = '#FFFFFF'
+            break
+        case 'green':
+            hexColor = '#00FF00'
+            break
+        default: 
+            return "Não temos o hexadecimal equivalente a cor " + color + "."
+            break
+    }
+    return 'O hexadecimal para a cor ' + color + ' em hexadecimal é ' + hexColor + '.'
+}
+
+console.log(convertToHex('orange'))
