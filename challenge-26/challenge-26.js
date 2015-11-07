@@ -1,3 +1,4 @@
+
 /*
 O desafio dessa semana é criar uma mini library (biblioteca) para
 reutilizarmos nossos códigos quando fizermos manipulação de DOM!
@@ -19,7 +20,18 @@ selecionados.
 Dica: olhe os erros que acontecem no console, e vá resolvendo um a um.
 Só passe para o próximo problema quando tiver resolvido o anterior :)
 */
+
 // ?
+
+function DOM(elements) {
+  this.element = doc.querySelectorAll(elements);
+}
+
+DOM.prototype.on = function(event, callback) {
+  Array.prototype.forEach.call(this.element, function(element) {
+    element.addEventListener(event, callback, false);
+  });
+};
 
 var $a = new DOM('[data-js="link"]');
 $a.on('click', function(e) {
