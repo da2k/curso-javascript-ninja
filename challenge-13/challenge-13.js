@@ -109,7 +109,7 @@
 	Mostre o array `newBrasil` no console
 	*/
 	console.log( '\nnewBrasil:' );
-    console.log(newBrasil);
+        console.log(newBrasil);
 
 	/*
 	Percorra o array `brasil` e verifique se os estados tem mais de 7 letras cada,
@@ -168,7 +168,7 @@
 	*/
 	var filter = map.filter(function(item) {
 		return item.id % 2 === 0;
-  });
+        });
 
 	/*
 	Mostre o array filtrado acima no console.
