@@ -32,7 +32,7 @@ Adicione um método ao objeto `pessoa` chamado `fazerAniversario`. O método dev
 alterar o valor da propriedade `idade` dessa pessoa, somando `1` a cada vez que
 for chamado.
 */
-pessoa.fazerAniversario = function( x ){
+pessoa.fazerAniversario = function( ){
   pessoa.idade++;
 }
 
@@ -96,25 +96,25 @@ Agora vamos brincar um pouco com o objeto criado:
 Qual o nome completo da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.nomeCompleto(); // Felipe Ricardo Silveira Abbud
+pessoa.nomeCompleto(); // Olá! Meu nome é Felipe Ricardo Silveira Abbud
 
 /*
 Qual a idade da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.mostraIdade(); // 27
+pessoa.mostraIdade(); // Olá, eu tenho 27 anos!
 
 /*
 Qual o peso da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.mostrarPeso(); // 65
+pessoa.mostrarPeso(); //Eu peso 65kg
 
 /*
 Qual a altura da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.mostraAltura(); // 1.68
+pessoa.mostraAltura(); // Minha altura é 1.68.
 
 /*
 Faça a `pessoa` fazer 3 aniversários.
@@ -128,7 +128,7 @@ Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
 comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
-pessoa.mostraIdade(); // 30
+pessoa.mostraIdade(); // Olá, eu tenho 30 anos.
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
@@ -183,45 +183,36 @@ correta, de acordo com os dados inseridos no objeto.
 // Agora, apresente-se ;)
 pessoa.apresentacao = function(){
   
-  var sexo;
-  var sexoMasc = 'o';
-  var sexoFem= 'a';
   
-  var idade;
-  var idadeSing = 'ano';
-  var idadePlu = 'anos';
+  var sexoMasculino = 'o';
+  var sexoFeminino  = 'a';
+  var sexo = SexoMasculino;
   
-  var caminhou;
+  if( pessoa.sexo === 'Feminino' ){
+      sexo = sexoFeminino ;
+    } 
+  
+  
+  var idadeSingular = 'ano';
+  var idadePlural = 'anos';
+  var idade = idadeSingular;
+  
+   if( pessoa.idade > 1 ){
+      idade = idadePlural;
+    }
+    
+ 
   var metro  = 'metro';
   var metros = 'metros';
+  var caminhou = metro;
 
-    if( pessoa.sexo === 'Feminino' ){
-      sexo = sexoFem ;
-    } 
-    
-    if( pessoa.sexo === 'Masculino' ){
-      sexo = sexoMasc;
-    }
-    
-    if( pessoa.idade === 1 ){
-      idade = idadeSing;
-    }
-    
-    if( pessoa.idade > 1 ){
-      idade = idadePlu;
-    }
-    
-    if(pessoa.caminhouQuantosMetros === 1 ){
-      caminhou = metro;
-    }
-    
-     if(pessoa.caminhouQuantosMetros > 1 ){
+   if(pessoa.caminhouQuantosMetros > 1 ){
       caminhou = metros;
     }
      
        return 'Olá, eu sou ' + sexo + ' ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + ' ' + idade + ', ' + pessoa.altura + ', meu peso é ' + pessoa.peso + 'kg, só hoje, eu já caminhei '+ pessoa.caminhouQuantosMetros + ' ' + caminhou + '!';
       }
       
-pessoa.apresentação();
+pessoa.apresentacao();
 
 ```
