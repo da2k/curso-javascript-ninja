@@ -186,7 +186,7 @@ pessoa.apresentacao = function(){
   
   var sexoMasculino = 'o';
   var sexoFeminino  = 'a';
-  var sexo = SexoMasculino;
+  var sexo = sexoMasculino;
   
   if( pessoa.sexo === 'Feminino' ){
       sexo = sexoFeminino ;
