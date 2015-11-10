@@ -132,9 +132,14 @@
     - O segundo, a função de soma, passando os dois operandos.
     - Se "sum" for "false", mostrar no console a mensagem de erro.
     */
-    number1 = 4;
-    number2 = 6;
-    console.log( showOperationMessage( operationSignal, number1, number2 )  );
+    if(sum){
+        number1 = 4;
+        number2 = 6;
+        console.log( showOperationMessage( operationSignal, number1, number2 ), sum( number1, number2) );
+    }
+    else{
+        console.log( showOperationMessage( operationSignal ));
+    }
 
     /*
     Repita desde o "PASSO 2" com as operações de subtração, multiplicação,
@@ -142,36 +147,61 @@
     "multiplication", "division" e "mod".
     */
     operationSignal = '-';
-    var sub = calculator(operationSignal);
-    number1 = 3;
-    number2 = 1;
-    console.log( showOperationMessage( operationSignal, number1, number2 ) );
+    var subtraction = calculator(operationSignal);
+    if(subtraction){
+        number1 = 3;
+        number2 = 1;
+        console.log( showOperationMessage( operationSignal, number1, number2 ), subtraction( number1, number2) );
+    }
+    else{
+        console.log( showOperationMessage( operationSignal ));
+    }
 
     operationSignal = '*';
-    var mult = calculator(operationSignal);
-    number1 = 3;
-    number2 = 3;
-    console.log( showOperationMessage( operationSignal, number1, number2 ) );
+    var multiplication = calculator(operationSignal);
+    if(multiplication){
+        number1 = 3;
+        number2 = 3;
+        console.log( showOperationMessage( operationSignal, number1, number2 ), multiplication( number1, number2) );
+    }
+    else{
+        console.log( showOperationMessage( operationSignal ));
+    }
 
     operationSignal = '/';
-    var div = calculator(operationSignal);
-    number1 = 12;
-    number2 = 3;
-    console.log( showOperationMessage( operationSignal, number1, number2 ) );
+    var division = calculator(operationSignal);
+    if(division){
+        number1 = 12;
+        number2 = 3;
+        console.log( showOperationMessage( operationSignal, number1, number2 ), division( number1, number2) );
+    }
+    else{
+        console.log( showOperationMessage( operationSignal ));
+    }
 
     operationSignal = '%';
     var mod = calculator(operationSignal);
-    number1 = 9;
-    number2 = 4;
-    console.log( showOperationMessage( operationSignal, number1, number2 ) );
+    if(mod){
+        number1 = 3;
+        number2 = 2;
+        console.log( showOperationMessage( operationSignal, number1, number2 ), mod( number1, number2) );
+    }
+    else{
+        console.log( showOperationMessage( operationSignal ));
+    }
 
     /*
     Repita o PASSO 2 novamente, mas passando um operador inválido, para ver se
     a mensagem de erro será mostrada no console.
     */
     operationSignal = 'lalala';
-    var mod = calculator(operationSignal);
-    number1 = 9;
-    number2 = 4;
-    console.log( showOperationMessage( operationSignal, number1, number2 ) );
+    var subtraction = calculator(operationSignal);
+    if(subtraction){
+        number1 = 9;
+        number2 = 4;
+        console.log( showOperationMessage( operationSignal, number1, number2 ), subtraction( number1, number2) );
+    }
+    else{
+        console.log( showOperationMessage( operationSignal ));
+    }
 })();
