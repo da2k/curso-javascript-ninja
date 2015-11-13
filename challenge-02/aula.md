@@ -77,4 +77,52 @@ Explicado na aula 1, adiciona 1 ou remove 1 à operação. (Causa efeito colater
 var x = 1
 x++ // retorna 1 mas a variável já está 2.
 ++x // 3 utilizado pré-incremento, já retorna o valor atualizado
-``` 
+```
+
+##Estrutura Lexica##
+
+Conjunto de regras de como escrever nesta linguagem.
+
+###Case sensitive
+
+O Javascript diferencia letras maíusculas de minúsculas.
+
+```javascript
+var animal = 'cachorro';
+var Animal = 'macaco';
+animal //'cachorro'
+Animal //'macaco'
+animal !== Animal //true
+```
+
+###Comentários
+
+Dois tipos, de linha: ``` // ``` e de bloco: ``` /* */ ```
+
+###Literais
+
+Valores que aparecem diretamente no programa, que fazem parte do "core" do Javascript
+
+- 12
+- 1.2
+- 'ninja'
+- "ninja"
+- true
+- null
+- {a: 1} (Objeto literal)
+- [1, 2] (Array literal)
+
+###Identificadores
+
+Nada mais são que nomes, para nomear variáveis, nomes ...
+
+**Podem iniciar com:**
+- _ ou $
+- letras a a z
+- letras A a Z
+- digítos 0 a 9
+- qualquer caractere unicode (*mas não deve ser utilizado.. hehehe*)
+
+###Palavras reservadas
+
+Existem palavras reservadas da linguagem, a lista encontra-se [neste link](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords), que levará ao site da Mozilla.org.
