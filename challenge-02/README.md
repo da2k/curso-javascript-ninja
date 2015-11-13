@@ -44,7 +44,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function multiplica(x, y, z) {
-  if (x >= 0 && y >= 0 && z >= 0) {
+  if (x !== undefined && y !== undefined && z !== undefined) {
     return x * y * z + 2;
   } else {
     return 'Preencha todos os valores corretamente!';
