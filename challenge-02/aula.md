@@ -126,3 +126,65 @@ Nada mais são que nomes, para nomear variáveis, nomes ...
 ###Palavras reservadas
 
 Existem palavras reservadas da linguagem, a lista encontra-se [neste link](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords), que levará ao site da Mozilla.org.
+
+##Instruções condicionais **IF**##
+
+Verifica **SE** a condição é verdadeira ou falsa.
+
+```javascript
+var x = 3;
+var y = 7;
+if (x === 3){
+  y = 3;
+}
+y//3
+```
+Exemplo utilizando operadores lógicos:
+
+```javascript
+var x = 3;
+var y = 3;
+if(x === y && x ===3) {
+  x = 5;
+  y = 2;
+}
+x //5
+y //2
+```
+
+##Instruções condicionais **else**##
+
+Ele trabalha junto com ``` if  ```.
+
+```javascript
+var x = 1;
+var y = 1;
+if ( x === 2 ) {
+  y = 2;
+} else {
+  y = 10;
+}
+y //10
+```
+
+##Instruções condicionais **else if**##
+
+A instrução ```else if``` possibilita mais testes:
+
+```javascript
+x //1
+y //10
+if ( x === 2 ) {
+  y = 2;
+} else if( y === 3 ) {
+  x = 3;
+} else if( x === y ) {
+  x = 10;
+  y = 100;
+} else {
+  x = 0;
+  y = 0;
+}
+x //0
+y //0
+```
