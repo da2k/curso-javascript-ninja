@@ -25,9 +25,7 @@
   */
   console.log( '\nJust Numbers:' );
   var justNumbers = numberObjects.map( function( item, index ) {
-    for( var property in numberObjects[index] ) {
-      return item[ property ];
-    }
+      return item.number;
   } );
 
   console.log( justNumbers );
@@ -39,9 +37,7 @@
   */
   console.log( '\nJust module of division by 2 or 3:' );
   var justMod2Or3 = justNumbers.filter( function( item ) {
-    if( item % 2 === 0 || item % 3 === 0  ) {
-      return item;
-    }
+      return item % 2 === 0 || item % 3 === 0;
   } );
 
   console.log( justMod2Or3 );
@@ -88,7 +84,7 @@
 
   var nameWithP = name.reduce( function( acumulado, atual ) {
     return acumulado += ' P ' + atual;
-  } );
+  }, '' );
 
   console.log( nameWithP );
 
@@ -130,7 +126,7 @@
   será que obtemos um resultado diferente? Faça a busca a partir do índice 2.
   */
   console.log( '\nE buscando a partir do último índice, o { number: 2 } existe?' );
-  if( numberObjects.lastIndexOf( { number: 2 } ) > -1  ) {
+  if( numberObjects.lastIndexOf( { number: 2 }, 2 ) > -1  ) {
     console.log( 'Existe um objeto { number: 2 } em numberObjects!' );
   } else {
     console.log( 'Não existe um objeto { number: 2 } em numberObjects :(' );
