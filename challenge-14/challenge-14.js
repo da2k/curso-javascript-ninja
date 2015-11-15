@@ -84,7 +84,7 @@
   falada, como se você estivesse falando em código xD
   */
   console.log( '\nSeu nome na língua do "P":' );
-  var name = [ 'N', 'a', 't', 'a', 'n', 'A', 'l', 'v', 'e', 's' ];
+  var name = [ 'Na', 'tan', 'Al', 'ves' ];
 
   var nameWithP = name.reduce( function( acumulado, atual ) {
     return acumulado += ' P ' + atual;
