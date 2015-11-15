@@ -1,5 +1,5 @@
 (function() {
-  'use sctrict';
+  'use strict';
   /*
    Crie dois objetos, que serão duas pessoas. Cada um deve ter as propriedades
    `name` e `lastName`, preenchidos com o nome e sobrenome da pessoa.
@@ -7,11 +7,11 @@
    var person1 = {
      name: 'João',
      lastName: 'Nascimento'
-   }
+   };
    var person2 = {
      name: 'Antônio',
      lastName: 'Prado'
-   }
+   };
 
    /*
    Agora crie uma função chamada `getFullName` que retorne as propriedades
@@ -74,7 +74,7 @@
    */
    console.log( '\nFunção que limpa entrada do usuário (somente números):' );
    function justNumbers( userEntry ) {
-     return userEntry.match( /\d{1,}/g );
+     return userEntry.match( /\d+/g );
    }
    console.log( justNumbers.toString() );
    /*
