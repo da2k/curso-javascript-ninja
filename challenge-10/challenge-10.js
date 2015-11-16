@@ -69,14 +69,14 @@
     os dois parâmetros da função de retorno de "calculator".
     */
     function calculator( operator ){
-        if ( operator !== '+' || '*' || '-' || '/' || '%' ){
+        if ( operation.hasOwnProperty(operator) !== true ){
             return false;
         }
         return function( number1, number2 ){
-            if ( number1 || number2 === NaN ){
-                return false;
+            if ( typeof number1 === 'number' && typeof number2 === 'number' ){
+                return operation[operator]( number1, number2 );
             }
-            return operation[operator]( number1, number2 );
+            return false;
         }
     }
 
@@ -132,7 +132,7 @@
     - O segundo, a função de soma, passando os dois operandos.
     - Se "sum" for "false", mostrar no console a mensagem de erro.
     */
-   if(sum){
+    if(sum){
         number1 = 4;
         number2 = 6;
         console.log( showOperationMessage( operationSignal, number1, number2 ), sum( number1, number2) );
