@@ -99,9 +99,7 @@
   'Operação "[OPERATOR]" não permitida!'
   */
   function showErrorMessage(operador){
-    if (!isOperatorValid(operador)) {
-      return 'Operação "' + operador + '" não permitida!';
-    }
+    return 'Operação "' + operador + '" não permitida!';
   }
 
   /*
@@ -135,7 +133,7 @@
   - O segundo, a função de soma, passando os dois operandos.
   - Se "sum" for "false", mostrar no console a mensagem de erro.
   */
-  if (!!sum) {
+  if (sum) {
     number1 = 11;
     number2 = 22;
     console.log(showOperationMessage(operationSignal, number1, number2), sum(number1, number2));
@@ -149,7 +147,7 @@
   */
   operationSignal = '-';
   var subtraction = calculator(operationSignal);
-  if (!!subtraction) {
+  if (subtraction) {
     number1 = 22;
     number2 = 11;
     console.log(showOperationMessage(operationSignal, number1, number2), subtraction(number1, number2));
@@ -159,7 +157,7 @@
 
   operationSignal = '*';
   var multiplication = calculator(operationSignal);
-  if (!!multiplication) {
+  if (multiplication) {
     number1 = 11;
     number2 = 22;
     console.log(showOperationMessage(operationSignal, number1, number2), multiplication(number1, number2));
@@ -169,7 +167,7 @@
 
   operationSignal = '/';
   var division = calculator(operationSignal);
-  if (!!division) {
+  if (division) {
     number1 = 22;
     number2 = 11;
     console.log(showOperationMessage(operationSignal, number1, number2), division(number1, number2));
@@ -179,7 +177,7 @@
 
   operationSignal = '%';
   var mod = calculator(operationSignal);
-  if (!!mod) {
+  if (mod) {
     number1 = 123;
     number2 = 12;
     console.log(showOperationMessage(operationSignal, number1, number2), mod(number1, number2));
@@ -193,7 +191,7 @@
   */
   operationSignal = '&';
   var ecomercial = calculator(operationSignal);
-  if (!!ecomercial) {
+  if (ecomercial) {
     number1 = 11;
     number2 = 22;
     console.log(showOperationMessage(operationSignal, number1, number2), ecomercial(number1, number2));
