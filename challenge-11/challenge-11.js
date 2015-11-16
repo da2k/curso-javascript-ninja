@@ -20,8 +20,8 @@
   */
   var person = {
     name: 'Jean',
-    age: '28',
-    weight: '60',
+    age: 28,
+    weight: 60,
     birthday: '03/06'
   };
 
@@ -50,7 +50,7 @@
   */
   var age = 25;
   function moreThan(idade){
-    return idade > person.age;
+    return idade < person.age;
   }
   console.log('The person has more than ' + age + ' years old? ' + moreThan(age));
 
