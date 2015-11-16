@@ -132,13 +132,13 @@
     - O segundo, a função de soma, passando os dois operandos.
     - Se "sum" for "false", mostrar no console a mensagem de erro.
     */
-    if(sum){
+   if(sum){
         number1 = 4;
         number2 = 6;
         console.log( showOperationMessage( operationSignal, number1, number2 ), sum( number1, number2) );
     }
     else{
-        console.log( showOperationMessage( operationSignal ));
+        console.log( showErrorMessage( operationSignal ));
     }
 
     /*
@@ -154,7 +154,7 @@
         console.log( showOperationMessage( operationSignal, number1, number2 ), subtraction( number1, number2) );
     }
     else{
-        console.log( showOperationMessage( operationSignal ));
+        console.log( showErrorMessage( operationSignal ));
     }
 
     operationSignal = '*';
@@ -165,7 +165,7 @@
         console.log( showOperationMessage( operationSignal, number1, number2 ), multiplication( number1, number2) );
     }
     else{
-        console.log( showOperationMessage( operationSignal ));
+        console.log( showErrorMessage( operationSignal ));
     }
 
     operationSignal = '/';
@@ -176,7 +176,7 @@
         console.log( showOperationMessage( operationSignal, number1, number2 ), division( number1, number2) );
     }
     else{
-        console.log( showOperationMessage( operationSignal ));
+        console.log( showErrorMessage( operationSignal ));
     }
 
     operationSignal = '%';
@@ -187,7 +187,7 @@
         console.log( showOperationMessage( operationSignal, number1, number2 ), mod( number1, number2) );
     }
     else{
-        console.log( showOperationMessage( operationSignal ));
+        console.log( showErrorMessage( operationSignal ));
     }
 
     /*
@@ -202,6 +202,6 @@
         console.log( showOperationMessage( operationSignal, number1, number2 ), subtraction( number1, number2) );
     }
     else{
-        console.log( showOperationMessage( operationSignal ));
+        console.log( showErrorMessage( operationSignal ));
     }
 })();
