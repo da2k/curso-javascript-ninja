@@ -43,9 +43,8 @@ Crie uma função com as seguintes características:
 function calc(num1, num2, num3){
 	if(num1 == null || num2 == null || num3 == null){
 		return "Preencha todos os valores corretamente!";
-	} else {
-		return (num1 * num2 * num3) + 2;
-	}
+	} 
+	return (num1 * num2 * num3) + 2;
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
