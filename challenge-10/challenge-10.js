@@ -69,7 +69,7 @@
     os dois parâmetros da função de retorno de "calculator".
     */
     function calculator( operator ){
-        if ( operation.hasOwnProperty(operator) !== true ){
+        if ( isOperatorValid(operator) !== true ){
             return false;
         }
         return function( number1, number2 ){
