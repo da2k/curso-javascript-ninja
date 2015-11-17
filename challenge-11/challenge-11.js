@@ -50,7 +50,7 @@
   */
   var age = 25;
   function moreThan(idade){
-    return idade < person.age;
+    return person.age > idade;
   }
   console.log('The person has more than ' + age + ' years old? ' + moreThan(age));
 
