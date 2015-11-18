@@ -23,7 +23,7 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 function setValue() {
-  var z = 10
+  var z = 10;
   return 'O valor da variável agora é ' + z;
 };
 
@@ -44,7 +44,7 @@ Crie uma função com as seguintes características:
 */
 function multiplication(x,y,z) {
   if(x !== undefined && y !== undefined && z !== undefined){
-    return (x*y*z)+2;
+    return (x * y * z)+2;
   } else {
   	console.log('Preencha todos os valores corretamente!');
   }
