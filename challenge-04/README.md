@@ -155,19 +155,19 @@ citado acima, no lugar de "pessoas".
 
 carro.adicionando = function( addPessoas ) {
   var totalPessoas = carro.quantidadePessoas + addPessoas;
-
+  var disponivel = carro.assentos - carro.quantidadePessoas;
+  var pluralDisponivel = disponivel === 1 ? 'pessoa' : 'pessoas';
+  var plural = carro.quantidadePessoas === 1 ? 'pessoa' : 'pessoas';
+  
   if( totalPessoas === carro.assentos && totalPessoas >= carro.assentos ) {
     return 'O carro já está lotado!';
   }
   
   if( totalPessoas > carro.assentos ) {
-    var disponivel = carro.assentos - carro.quantidadePessoas;
-    var plural = disponivel === 1 ? 'pessoa' : 'pessoas';
-    return 'Só cabem mais ' + disponivel + ' ' + plural + '!';
+    return 'Só cabem mais ' + disponivel + ' ' + pluralDisponivel + '!';
   }
   
   carro.quantidadePessoas += addPessoas;
-  var plural = carro.quantidadePessoas === 1 ? 'pessoa' : 'pessoas';
   return 'Já temos ' + carro.quantidadePessoas + ' ' + plural + ' no carro!';
 };  
 
