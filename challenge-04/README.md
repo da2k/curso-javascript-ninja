@@ -157,7 +157,6 @@ carro.adicionando = function( addPessoas ) {
   var totalPessoas = carro.quantidadePessoas + addPessoas;
 
   if( totalPessoas === carro.assentos && totalPessoas >= carro.assentos ) {
-    carro.quantidadePessoas += addPessoas;
     return 'O carro já está lotado!';
   }
   
