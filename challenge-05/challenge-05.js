@@ -78,19 +78,13 @@ function book( livro ){
 		},
 	};
 
-	if ( livro === undefined ){
-		return obj;
-	}
-
-	return obj[ livro ];
+	return !livro ? obj : obj[ livro ];
 }
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-console.log( book('O Codigo Da Vinci') );
-console.log( book('O Alquimista') );
-console.log( book('A Cabana') );
+console.log( book() );
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
@@ -99,7 +93,9 @@ usando a frase:
 */
 // ?
 
-console.log( 'O livro O Alquimista tem '+ book('O Alquimista').quantidadePaginas +' páginas!');
+var nomeLivro = 'O Alquimista';
+
+console.log( 'O livro '+ nomeLivro + ' tem '+ book( nomeLivro ).quantidadePaginas +' páginas!');
 
 
 /*
@@ -107,11 +103,11 @@ Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log( 'O autor do livro A Cabana é '+ book('A Cabana').autor +'.');
+console.log( 'O autor do livro '+ nomeLivro +' é '+ book( nomeLivro ).autor +'.');
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log( 'O livro O Codigo Da Vinci foi publicado pela editora '+ book('A Cabana').editora +'.');
+console.log( 'O livro '+ nomeLivro +' foi publicado pela editora '+ book( nomeLivro ).editora +'.');
