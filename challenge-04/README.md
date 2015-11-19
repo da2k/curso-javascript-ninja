@@ -129,7 +129,12 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-carro.adicionando = function( addPessoas ) {
+
+
+
+// TENTATIVA ANTES DO VÍDEO DE SOLUÇÃO.
+
+/*carro.adicionando = function( addPessoas ) {
   var totalPessoas = carro.quantidadePessoas + addPessoas;
 
   if( totalPessoas < carro.assentos ) {
@@ -148,7 +153,28 @@ carro.adicionando = function( addPessoas ) {
     var plural = disponivel === 1 ? 'pessoa' : 'pessoas';
     return 'Só cabem mais ' + disponivel + ' ' + plural + '!';
   }
-};
+};*/
+
+carro.adicionando = function( addPessoas ) {
+  var totalPessoas = carro.quantidadePessoas + addPessoas;
+  var disponivel = carro.assentos - carro.quantidadePessoas;
+  var pluralDisponivel = disponivel === 1 ? 'pessoa' : 'pessoas';
+  var plural = carro.quantidadePessoas === 1 ? 'pessoa' : 'pessoas';
+
+  if( totalPessoas === carro.assentos && totalPessoas >= carro.assentos ) {
+    return 'O carro já está lotado!';
+  }
+
+  if( totalPessoas > carro.assentos ) {
+    return 'Só cabem mais ' + disponivel + ' ' + pluralDisponivel + '!';
+  }
+
+  carro.quantidadePessoas += addPessoas;
+  return 'Já temos ' + carro.quantidadePessoas + ' ' + plural + ' no carro!';
+};  
+
+
+
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
 utilize sempre o formato de invocação do método (ou chamada da propriedade),
