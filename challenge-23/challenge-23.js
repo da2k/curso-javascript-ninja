@@ -46,7 +46,7 @@
 		}, false );
 	} );
 
-	$reset.addEventListener( 'click', function resetDisplay() {
+	$reset.addEventListener( 'click', function() {
     return $display.value = 0;
   }, false );
 
