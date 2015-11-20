@@ -89,15 +89,15 @@
   Ex.: Nomes que deveriam funcionar: "Fernando", "RoBertO", "gabriEla", etc.
   */
   console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
-  var myName = 'gabriEla';
+  var myName = 'Natan';
   var lowerUpper = myName.split( '' );
   var newName = '';
 
   for( var i = 0; i < lowerUpper.length; i++ ) {
     if( i % 2 === 0 ) {
-      newName += lowerUpper[i].toUpperCase();
+      newName += lowerUpper[ i ].toUpperCase();
     } else {
-      newName += lowerUpper[i].toLowerCase();
+      newName += lowerUpper[ i ].toLowerCase();
     }
   }
 
