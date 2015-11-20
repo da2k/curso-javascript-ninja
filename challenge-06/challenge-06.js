@@ -70,7 +70,6 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 function convertToHex(color) {
-  var colorChoice = color;
   var pink = '#cc33aa';
   var yellow = '#e3ff00';
   var red = '#fe0a0a';
