@@ -35,19 +35,20 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
 */
 
 function showTeamPosition(number) {
-  var team = teams[ number ];
-  var position = ++number;
-  return 'O time que está em ' + position + 'º lugar é o ' + team + '.';
+  if (number < 1 || number > 5) {
+    return 'Não temos a informação do time que está nessa posição';
+  };
+  return 'O time que está em ' + number + 'º lugar é o ' + teams[ number - 1 ] + '.';
 };
 
 /*
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
-console.log( showTeamPosition(0) );
 console.log( showTeamPosition(1) );
-console.log( showTeamPosition(3) );
+console.log( showTeamPosition(2) );
 console.log( showTeamPosition(4) );
+console.log( showTeamPosition(6) );
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
 repetição "while".
