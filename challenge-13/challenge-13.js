@@ -31,14 +31,13 @@
 	*/
 	console.log( '\nMais estados adicionados:' );
 	brasil.unshift('Acre', 'Rondônia', 'Amazonas');
-	console.log(brasil);
+	console.log( brasil.slice(0, 3) );
 
 	/*
 	Remova o primeiro estado do array `brasil` e mostre-o no console.
 	*/
 	console.log( '\nEstado removido:' );
-	brasil.shift();
-	console.log(brasil);
+	console.log( brasil.shift() );
 
 	/*
 	Crie um novo array chamado `newSul`, que receba somente os estados do sul,
