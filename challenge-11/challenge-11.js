@@ -12,7 +12,7 @@
 	do {
 		console.log('Entrou ao menos uma vez!');
 	}
-	    while (once);
+	while (once);
 
 	/*
 	Crie um objeto chamado `person`, que receba as seguintes propriedades:
@@ -50,7 +50,7 @@
 	'The person has more than 25 years old? [TRUE/FALSE]'
 	*/
 	function moreThan(age) {
-		return age < person.age;
+		return person.age > age;
 	}
 	console.log('The person has more than 25 years old? ' + moreThan(25));
 
