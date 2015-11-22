@@ -67,7 +67,8 @@
 	["<div>", "<section>", "<blockquote>"]
 	*/
 	console.log( '\nMatch com a abertura de uma tag HTML:' );
-	// ?
+	var text2 = '<div><section><blockquote>Texto <img /></blockquote></section></div>';
+	console.log( text2.match(/<\w+>/g));
 
 	/*
 	Crie uma expressão regular que faça o match com uma tag HTML vazia, casando
