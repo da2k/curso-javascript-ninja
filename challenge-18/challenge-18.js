@@ -54,7 +54,10 @@
 	["junho", "julho"]
 	*/
 	console.log( '\nMatch com as palavras "junho" ou "julho" para a frase "Os meses de janeiro, junho e julho começam com a letra j.":' );
-	// ?
+	var text = 'Os meses de janeiro, junho e julho começam com a letra j.';
+	var arr = []; 
+	arr = text.match(/ju[nl]ho/g);
+	console.log(arr);
 
 	/*
 	Crie uma expressão regular que faça o match com a abertura de uma tag
