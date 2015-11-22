@@ -80,7 +80,8 @@
 	["<li></li>", "<li></li>", "<span></span>"]
 	*/
 	console.log( '\nMatch com tags HTML vazias (abertura e fechamento da tag):' );
-	// ?
+	var text3 = '<div><ul><li></li><li></li><li><span></span></li></ul></div>';
+	console.log( text3.match(/<\w+><\/\w+>/g));
 
 	/*
 	Vamos complicar um pouco agora :D
