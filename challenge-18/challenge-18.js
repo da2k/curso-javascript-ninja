@@ -106,5 +106,7 @@
 	corretas, para depois aplicar no código ;)
 	*/
 	console.log( '\nFazer replace dos textos das tags:' );
-	// ?
+	var text4 = "<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>";
+	text4 = text4.replace(/<(\w+)>([^<]+)<\/\w+>/g, '<$1>O texto dentro da tag "$1" é "$2"</$1>\n');
+	console.log(text4);
 })();
