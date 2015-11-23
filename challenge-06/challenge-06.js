@@ -47,10 +47,10 @@ function showTeamPosition(num){
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
-showTeamPosition(1);
-showTeamPosition(3);
-showTeamPosition(6);
-showTeamPosition(2);
+console.log( showTeamPosition(1) );
+console.log( showTeamPosition(3) );
+console.log( showTeamPosition(6) );
+console.log( showTeamPosition(2) );
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
@@ -58,10 +58,10 @@ repetição "while".
 */
 var count = 20;
 
-    while(count >= 20 && count < 30){
-        count++;
-            console.log(count);
-    }
+while(count > 20 && count < 30){
+    count++;
+    console.log(count);
+}
 
 /*
 Crie uma função chamada `convertToHex`, com as seguintes características:
@@ -77,35 +77,29 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
 */
 
 function convertToHex(cor){
-    var azul        = '0000f9';
-    var vermelho    = 'f90000';
-    var amarelo     = 'f9f900';
-    var verde       = '00f900';
-    var preto       = '000000';
-
     switch(cor){
         case 'azul':
-            console.log('O hexadecimal para a cor ' + cor + ' é '+ azul + '.');
+            return('O hexadecimal para a cor ' + cor + ' é 0000f9.');
         break;
 
         case 'vermelho':
-            console.log('O hexadecimal para a cor ' + cor + ' é '+ vermelho + '.');
+            return('O hexadecimal para a cor ' + cor + ' é f90000.');
         break;
 
         case 'amarelo':
-            console.log('O hexadecimal para a cor ' + cor + ' é '+ amarelo + '.');
+            return('O hexadecimal para a cor ' + cor + ' é f9f900.');
         break;
 
         case 'verde':
-            console.log('O hexadecimal para a cor ' + cor + ' é '+ verde + '.');
+            return('O hexadecimal para a cor ' + cor + ' é 00f900.');
         break;
 
         case 'preto':
-            console.log('O hexadecimal para a cor ' + cor + ' é '+ preto + '.');
+            return('O hexadecimal para a cor ' + cor + ' é 000000.');
         break;
 
         default:
-            console.log('Não temos o equivalente hexadecimal para a cor ' + cor + '.');
+            return('Não temos o equivalente hexadecimal para a cor ' + cor + '.');
 
     }
 }
@@ -113,11 +107,11 @@ function convertToHex(cor){
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-convertToHex('verde');
-convertToHex('vermelho');
-convertToHex('azul');
-convertToHex('preto');
-convertToHex('amarelo');
-convertToHex('rosa');
-convertToHex('branco');
-convertToHex('laranja');
+console.log( convertToHex('verde') );
+console.log( convertToHex('vermelho')  );
+console.log( convertToHex('azul') );
+console.log( convertToHex('preto') );
+console.log( convertToHex('amarelo') );
+console.log( convertToHex('rosa') );
+console.log( convertToHex('branco') );
+console.log( convertToHex('laranja') );
