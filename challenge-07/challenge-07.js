@@ -18,7 +18,7 @@ function addItem( add ){
 Adicione um novo array ao array criado no início do desafio, com ao menos 3
 itens de tipos diferentes, mostrando o resultado no console.
 */
-addItem( [4,5,6] );
+addItem( [4, null, 'Allef'] );
 
 /*
 Mostre no console o segundo elemento desse último array, criado acima, com a
@@ -56,7 +56,8 @@ Na mesma ideia do exercício acima: mostre agora os números ímpares.
 console.log( 'Números ímpares entre 10 e 20:' );
 num = 10;
 while( num < 20 ){
-	(num++) % 2 === 0 ? console.log( num ) : '';
+	num % 2 !== 0 ? console.log( num ) : '';
+	num++;
 }
 
 /*
@@ -72,5 +73,7 @@ for ( var i = 100;  i <= 120 ; i++) {
 
 console.log( 'Números ímpares entre 111 e 125:' );
 for ( var i = 111;  i <= 125 ; i++) {
-	i % 2 === 1 ? console.log( i ) : '';
+	if ( i % 2 !== 0 ) {
+	 	console.log( i );
+	}
 }
