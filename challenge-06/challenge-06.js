@@ -35,13 +35,12 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
 */
 
 function showTeamPosition( n ){
-    var posicaoCorreta = n - 1;
-
-    if ( n === 0 || n > 5 || !n ) {
+    
+    if ( n < 1 || n > 5  ) {
         return 'Não temos a informação do time que está nessa posição.';
     }
 
-    return 'O time que está em '+ n +'º lugar é o '+ teams[ posicaoCorreta ] +'.';
+    return 'O time que está em '+ n +'º lugar é o '+ teams[ n - 1 ] +'.';
 }
 
 
@@ -63,8 +62,7 @@ repetição "while".
 */
 var counter = 20;
 while( counter <= 30 ){
-    console.log( counter );
-    counter++;
+    console.log( counter++ );
 }
 
 /*
@@ -81,25 +79,30 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
 */
 
 function convertToHex( cor ){
+
+    var hexa;
+
     switch( cor ){
         case 'red':
-        return 'O hexadecimal para a cor '+ cor +' é #FF0000.';
-        break;
+            hexa = '#FF0000';
+            break;
         case 'white':
-        return 'O hexadecimal para a cor '+ cor +' é #FFFFFF.';
-        break;
+            hexa = '#FFFFFF';
+            break;
         case 'green':
-        return 'O hexadecimal para a cor '+ cor +' é #008000.';
-        break;
+            hexa = '#008000';
+            break;
         case 'blue':
-        return 'O hexadecimal para a cor '+ cor +' é #0000FF.';
-        break;
+            hexa = '#0000FF';
+            break;
         case 'orange':
-        return 'O hexadecimal para a cor '+ cor +' é #FFA500.';
-        break;
+            hexa = '#FFA500';
+            break;
         default:
-        return 'Não temos o equivalente hexadecimal para '+ cor +'.';
+            return 'Não temos o equivalente hexadecimal para '+ cor +'.';
     }
+
+    return 'O hexadecimal para a cor '+ cor +' é ' + hexa + '.';
 }
 
 
