@@ -95,7 +95,7 @@
 		console.log( result + ' para a classe ' + cssClass );
 	}
 	var classes = ["container", "text", "date", "excerpt", "main"];
-	for ( var i = 0; i <= classes.length; i++ ){
+	for ( var i = 0; i < classes.length; i++ ){
 		console.log( hasClass( markup, classes[i] ) );		
 	}
 })();
