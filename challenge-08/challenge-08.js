@@ -60,19 +60,19 @@ function calculator( operacoes ){
 		var calculoFinal;
 		switch ( operacoes ) {
 			case '+':				
-				var calculoFinal =  x + y;				
+				calculoFinal =  x + y;				
 				break;
 			case '-':
-				var calculoFinal =  x - y;
+				calculoFinal =  x - y;
 				break;
 			case '*':
-				var calculoFinal =  x * y;
+				calculoFinal =  x * y;
 				break;
 			case '/':
-				var calculoFinal =  x / y;
+				calculoFinal =  x / y;
 				break;
 			case '%':
-				var calculoFinal =  x % y;
+				calculoFinal =  x % y;
 				break;
 			default:
 				return 'Operação inválida.';
