@@ -27,32 +27,38 @@
 	*/
 	var $display = doc.querySelector('[data-js="display"]');
 	var $buttons = doc.querySelectorAll( '[data-js="number"]' );
-	var $operation = doc.querySelectorAll( '[data-js="operation"]' );
+	var $operations = doc.querySelectorAll( '[data-js="operation"]' );
 	var $equal = doc.querySelector( '[data-js="equal"]' );
 	var $reset = doc.querySelector( '[data-js="reset"]' );
 
 	$display.value = 0;
 
-
 	Array.prototype.forEach.call( $buttons, function(button) {
-		button.addEventListener( 'click', function() {
-			return $display.value += button.value;
-		}, false );
-	} );
+		button.addEventListener( 'click', clickNumbers, false );
+	});
+	Array.prototype.forEach.call( $operations, function(button) {
+		button.addEventListener( 'click', clickOperator, false );
+	});
 
-	Array.prototype.forEach.call( $operation, function(button) {
-		button.addEventListener( 'click', function() {
-			return $display.value += button.value;
-		}, false );
-	} );
+	$reset.addEventListener( 'click', clickReset, false );
+  $equal.addEventListener( 'click', clickEqual, false );
 
-	$reset.addEventListener( 'click', function() {
+  function clickNumbers() {
+    return $display.value += this.value;
+  }
+
+  function clickOperator() {
+    return $display.value += this.value;
+  }
+
+  function clickReset() {
     return $display.value = 0;
-  }, false );
+  }
 
-  $equal.addEventListener( 'click', function() {
-
-  }, false );
+  function clickEqual() {
+    var values = $display.value.match(/(\d+)[+*÷-]?/g);
+    console.log( values );
+  }
 
 
 })( window, document );
