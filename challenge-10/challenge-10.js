@@ -54,7 +54,7 @@
 	- O desafio é fazer o retorno sem usar "if" ou "switch".
 	*/	
 	function isOperatorValid( operador ){		
-		return ( operador === '+' || operador === '-' || operador === '*' || operador === '/' || operador === '%' ) ? true : false;
+		return !!operation[ operador ];
 	}
 
 	/*
@@ -76,11 +76,14 @@
 			return false;
 		}
 
-		if ( isOperatorValid( operador ) ){
-			return function( oper1, oper2 ){
-				return ( typeof oper1 !== 'number' || typeof oper2 !== 'number' ) ? false : operation[ operador ]( oper1, oper2 );
-			};
-		}
+		return function( oper1, oper2 ){
+			
+			if( typeof oper1 !== 'number' && typeof oper2 !== 'number' ){
+				return false;
+			}
+
+			return operation[ operador ]( oper1, oper2 );
+		};
 	}
 
 	/*
@@ -102,7 +105,7 @@
 	*/
 	
 	function showErrorMessage( operador ){
-		return 'Operação ' + operador + ' não permitida!';
+		return 'Operação "' + operador + '" não permitida!';
 	}
 
 	/*
