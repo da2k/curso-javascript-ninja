@@ -122,4 +122,4 @@ convertToHex('rosa') //Não temos o equivalente hexadecimal para rosa.
 //7
 convertToHex('azul') //Não temos o equivalente hexadecimal para azul.
 //8
-convertToHex('amarelo') //Não temos o equivalente hexadecimal para rosa.
+convertToHex('amarelo') //Não temos o equivalente hexadecimal para amarelo.
