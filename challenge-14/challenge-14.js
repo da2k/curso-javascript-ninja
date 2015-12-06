@@ -117,7 +117,7 @@
 
       var obj = { number: 2 };
       numberObjects.indexOf(obj) > -1 ? console.log('Existe um objeto { number: 2 } em numberObjects!') :
-                                                          console.log('Não existe um objeto { number: 2 } em numberObjects :(' );
+                                        console.log('Não existe um objeto { number: 2 } em numberObjects :(' );
 
       console.log('apesar dos objetos serem iguais, os mesmo estão alocados em locais difrentes na memoria portanto são diferentes ');
       /*
@@ -127,7 +127,7 @@
       console.log( '\nE buscando a partir do último índice, o { number: 2 } existe?' );
 
       numberObjects.lastIndexOf(obj, 2) > -1 ? console.log('Existe um objeto { number: 2 } em numberObjects!') :
-                                                                   console.log('Não existe um objeto { number: 2 } em numberObjects :(' );
+                                               console.log('Não existe um objeto { number: 2 } em numberObjects :(' );
 
       /*
       Verifique se `justMod2Or3` é um array. Se for, mostre-o no console, no
