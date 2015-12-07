@@ -85,12 +85,13 @@
     console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
     var myName = 'Clara';
     var armaz = [];
-    for( var i=0; i <= myName.length; i++ ){
-        myName[i].toLowerCase();
-        if( myName[i] % 2 === 0){
-            myName[i].toUpperCase();
+    for( var i=0; i < myName.length; i++ ){
+        if( i % 2 === 0){
+            armaz.push( myName[i].toUpperCase() );
+        }        
+        else{
+            armaz.push( myName[i].toLowerCase() );
         }
-        armaz.push( myName[i] )
     }
     console.log( armaz );
 })();
