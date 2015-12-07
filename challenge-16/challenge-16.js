@@ -53,7 +53,7 @@
     var frase = amigos.reduce(function(acumulado, atual, index){
         var separador = ', ';
         if( amigos.length -1 === index ){
-            separador = ' e '
+            separador = ' e ';
         }
         return acumulado + separador + atual;
     });        
