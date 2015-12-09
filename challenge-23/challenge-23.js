@@ -44,11 +44,26 @@
   $equal.addEventListener( 'click', clickEqual, false );
 
   function clickNumbers() {
-    return $display.value += this.value;
+    $display.value += this.value;
   }
 
   function clickOperator() {
-    return $display.value += this.value;
+    $display.value = removeLastItem( $display.value );
+    $display.value += this.value;
+  }
+
+  function isLastItem( number ) {
+    var operations = [ '+', '-', '*', '÷' ];
+    var lastItem = number.split('').pop();
+    return operations.some(function(operator) {
+      return operator === lastItem;
+    });
+  }
+
+  function removeLastItem(number) {
+    if (isLastItem(number))
+      return number.slice(0, -1);
+    return number;
   }
 
   function clickReset() {
@@ -56,9 +71,23 @@
   }
 
   function clickEqual() {
+    $display.value = removeLastItem( $display.value );
     var values = $display.value.match(/(\d+)[+*÷-]?/g);
-    console.log( values );
+    $display.value = values.reduce(function(accumulated, actual) {
+      var firstValue = accumulated.slice(0, -1);
+      var operator = accumulated.split('').pop();
+      var lastValue = removeLastItem(actual);
+      var lastOperator = isLastItem(actual) ? actual.split('').pop() : '';
+      switch(operator) {
+        case '+':
+          return ( Number(firstValue) + Number(lastValue) ) + lastOperator;
+        case '-':
+          return ( Number(firstValue) - Number(lastValue) ) + lastOperator;
+        case '*':
+          return ( Number(firstValue) * Number(lastValue) ) + lastOperator;
+        case '÷':
+          return ( Number(firstValue) / Number(lastValue) ) + lastOperator;
+      }
+    });
   }
-
-
 })( window, document );
