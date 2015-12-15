@@ -1,5 +1,5 @@
 /*
-Envolva todo o contéudo desse arquivo em uma IIFE.
+Envolva todo o conteúdo desse arquivo em uma IIFE.
 */
 
 /*
