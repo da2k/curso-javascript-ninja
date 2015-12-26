@@ -1,6 +1,5 @@
 'use strict';
 
-var app = require('../app');
 var express = require('express');
 var router = express.Router();
 var data = [];
