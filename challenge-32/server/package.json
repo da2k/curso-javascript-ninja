@@ -1,4 +1,6 @@
 {
+  "name": "Rest API",
+  "version": "0.1.0",
   "dependencies": {
     "body-parser": "^1.14.2",
     "cors": "^2.7.1",
