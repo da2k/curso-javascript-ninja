@@ -62,3 +62,15 @@ Aqui você pode ver todo o conteúdo do curso disponível:
 - Array-like e editorconfig
 - Debug
 - Modularização de código
+- Javascript inline
+- Eventos inline
+- Remover eventos
+- Eventos como métodos
+- DOM
+- documentFragments
+- Dicas de performance
+- Eventos para carregamento da tela
+- Copiar arrays
+- Pegar tipo correto de objetos
+- Ajax - método GET
+- try / catch 
