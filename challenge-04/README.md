@@ -5,13 +5,13 @@
 Declare uma variável chamada `isTruthy`, e atribua a ela uma função que recebe
 um único parâmetro como argumento. Essa função deve retornar `true` se o
 equivalente booleano para o valor passado no argumento for `true`, ou `false`
-para o contrário.
+para o contrário
 */
 var isTruthy = function(a){
   return !a ? true : false;
 }
 
-// Invoque a função criada acima, passando todos os tipos de valores `falsy`.
+// Invoque a função criada acima, passando todos os tipos de valores `falsy`.;
 isTruthy(0);
 isTruthy(-0);
 isTruthy('');
@@ -22,16 +22,16 @@ isTruthy(null);
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
-isTruthy(1)
-isTruthy(2)
-isTruthy(3)
-isTruthy(4)
-isTruthy(5)
-isTruthy({})
-isTruthy([])
-isTruthy("JavaScript")
-isTruthy('é incrível!')
-isTruthy(window)
+isTruthy(1);
+isTruthy(2);
+isTruthy(3);
+isTruthy(4);
+isTruthy(5);
+isTruthy({});
+isTruthy([]);
+isTruthy("JavaScript");
+isTruthy('é incrível!');
+isTruthy(window);
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
@@ -63,7 +63,7 @@ passado por parâmetro.
 */
 carro.mudarCor = function(cor) {
 	return carro.cor = cor;
-}
+};
 
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
@@ -77,7 +77,7 @@ Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
 carro.obterModelo = function() {
 	return carro.modelo;
-}
+};
 
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
