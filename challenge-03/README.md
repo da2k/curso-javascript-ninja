@@ -17,14 +17,15 @@ As propriedades e tipos de valores para cada propriedade desse objeto devem ser:
 - `caminhouQuantosMetros` - Number - recebe "zero" por padrão
 */
 var pessoa = {
-... nome: 'Leandro',
-... sobrenome: 'Alexandrino',
-... sexo: 'masculino',
-... idade: 29,
-... altura: 1.70,
-... peso: 90,
-... andando: false,
-... caminhouQuantosMetros: 0 };
+  nome: 'Leandro',
+  sobrenome: 'Alexandrino',
+  sexo: 'masculino',
+  idade: 29,
+  altura: 1.70,
+  peso: 90,
+  andando: false,
+  caminhouQuantosMetros: 0 
+};
 
 /*
 Adicione um método ao objeto `pessoa` chamado `fazerAniversario`. O método deve
@@ -191,23 +192,17 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao = function() {
-  var genero;
-  var anos;
-  var metros;
+  var genero = 'a';
+  var anos = 'anos';
+  var metros = 'metros';
   if (pessoa.sexo === 'masculino') {
     genero = 'o';
-  } else {
-    genero = 'a';
   };
   if (pessoa.idade === 1) {
     anos = 'ano';
-  } else {
-    anos = 'anos';
   };
   if (pessoa.caminhouQuantosMetros === 1) {
     metros = 'metro';
-  } else {
-    metros = 'metros';
   };
   return 'Olá, eu sou ' + genero + ' ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + ' ' + anos + ', ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' ' + metros + '!';
 };
