@@ -62,3 +62,32 @@ Aqui você pode ver todo o conteúdo do curso disponível:
 - Array-like e editorconfig
 - Debug
 - Modularização de código
+- Javascript inline
+- Eventos inline
+- Remover eventos
+- Eventos como métodos
+- DOM
+- documentFragments
+- Dicas de performance
+- Eventos para carregamento da tela
+- Copiar arrays
+- Pegar tipo correto de objetos
+- Ajax - método GET
+- try / catch 
+- Tratamento de dados via entrada do usuário
+- Module Pattern
+- Closures
+- Exportar módulo para usar em outros módulos
+- instanceof
+- element.classList
+- innerHTML, outerHTML e insertAdjacentHTML
+- Objeto Date
+- Objeto Math
+- Ajax - outros verbos
+- Backend para mostrar como ele recebe os dados do client
+- Enviar dados via Ajax
+- Enviar cabeçalhos via Ajax
+- Abortar requisição Ajax
+- Testes (TDD, BDD)
+- Ferramentas para escrever testes
+- Aula bônus
