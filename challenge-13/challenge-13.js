@@ -30,7 +30,7 @@
   Adicione 3 novos estados da região Norte no início do array e mostre no console.
   */
   console.log( '\nMais estados adicionados:' );
-  brasil.unshift('Amazonas', 'Acre', 'Pará')
+  brasil.unshift('Amazonas', 'Acre', 'Pará');
   console.log(brasil);
 
   /*
@@ -110,8 +110,8 @@
   - `estado`: que será o estado do array `brasil`.
   */
   var newBrasil = [];
-  brasil.forEach(function(value, index, array){
-    newBrasil.push({id: index, estado: value});
+  brasil.forEach(function( value, index ) {
+    newBrasil.push( { id: index, estado: value } );
   });
 
   /*
@@ -128,11 +128,15 @@
   - "Nem todos os estados tem mais de 7 letras!"
   */
   console.log( '\nTodos os estados de `brasil` tem mais de 7 letras?' );
-  var every = brasil.every(function(value, index, array){
+  var every = brasil.every(function( value ) {
     return value.length > 7;
   });
 
-  every ? console.log('Sim, todos os estados tem mais de 7 letras!') : console.log('Nem todos os estados tem mais de 7 letras!');
+  if ( every ) {
+    console.log('Sim, todos os estados tem mais de 7 letras!');
+  } else {
+    console.log('Nem todos os estados tem mais de 7 letras!');
+  }
 
   /*
   Percorra o array `brasil` e verifique se o Ceará está incluído, atribuindo o
@@ -143,7 +147,7 @@
   - "Ceará não foi incluído :("
   */
   console.log( '\nCeará está incluído em `brasil`?' );
-  var some = brasil.some(function(value, index, array){
+  var some = brasil.some(function( value ) {
     return 'Ceará' === value;
   });
   console.log(some);
@@ -154,7 +158,7 @@
   - "[ESTADO] pertence ao Brasil."
   Atribua o novo array a uma variável chamada `map`.
   */
-  var map = newBrasil.map(function(value, index, array){
+  var map = newBrasil.map(function( value ) {
     return {id: value.id + 1, estado: value.estado + ' pertence ao Brasil.'};
   });
 
@@ -168,7 +172,7 @@
   Filtre o array criado acima, retornando somente os estados que tiverem
   ID par. Atribua o valor à uma variável chamada `filter`.
   */
-  var filter = map.filter(function(value, index, array){
+  var filter = map.filter(function( value ) {
     return value.id % 2 === 0;
   });
 
