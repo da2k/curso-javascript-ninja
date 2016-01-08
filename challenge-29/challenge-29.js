@@ -1,4 +1,4 @@
-(function(DOM, doc) {
+(function ($, doc) {
   'use strict';
 
   /*
@@ -37,61 +37,58 @@
   */
 
   function app () {
-    var $inputImage = new DOM('[data-js="input-image"]');
-    var $inputBrand = new DOM('[data-js="input-brand"]');
-    var $inputYear = new DOM('[data-js="input-year"]');
-    var $inputColor = new DOM('[data-js="input-color"]');
-    var $submitForm = new DOM('[data-js="submit-form"]');
-    var $carTable = new DOM('[data-js="car-table"]');
-    var $interpriseName = new DOM('[data-js="interprise-name"]');
-    var $interpriseNumber = new DOM('[data-js="interprise-number"]');
-    var ajax = new XMLHttpRequest();
+    return {
+      init: function init () {
+        this.initEvents();
+        this.makeRequest('GET', '/company.json', this.handleAjax);
+      },
 
-
-    function makeRequest (method, url, callback) {
-      ajax.open(method, url);
-      ajax.send();
-      ajax.addEventListener('readystatechange', callback);
-    }
+      initEvents: function initEvents () {
+        $('[data-js="submit-form"]').on('click', this.handleSubmit);
+      },
     
-    function handleAjax () {
-      if( isRequestOk(ajax) ) {
+      makeRequest: function makeRequest (method, url, callback) {
+        var ajax = new XMLHttpRequest();
+        ajax.open(method, url);
+        ajax.send();
+        ajax.addEventListener('readystatechange', callback);
+      },
+    
+      handleAjax: function handleAjax () {
+      if( app().isRequestOk(this) ) {
         try{
-          var data = JSON.parse(ajax.responseText);
-          $interpriseName.get(0).textContent = data.name;
-          $interpriseNumber.get(0).textContent = data.phone;
-        }catch(e){
-          console.log(e);
+            var data = JSON.parse(this.responseText);
+            $('[data-js="interprise-name"]').get().textContent = data.name;
+            $('[data-js="interprise-number"]').get().textContent = data.phone;
+          }catch(e){
+            console.log(e);
+          }
         }
-         
+      },
+
+      appendTdOnTr: function appendTdOnTr (tr, text) {
+        var newTd = doc.createElement('td');
+        var textTd = doc.createTextNode(text);
+        newTd.appendChild(textTd);
+        tr.appendChild(newTd);
+      },
+
+      handleSubmit: function handleSubmit (event) {
+        event.preventDefault();
+        var newLine = doc.createElement('tr');
+        app().appendTdOnTr(newLine, $('[data-js="input-image"]').get().value);
+        app().appendTdOnTr(newLine, $('[data-js="input-brand"]').get().value);
+        app().appendTdOnTr(newLine, $('[data-js="input-year"]').get().value);
+        app().appendTdOnTr(newLine, $('[data-js="input-color"]').get().value);
+        $('[data-js="car-table"]').get().appendChild(newLine);
+      },
+
+      isRequestOk: function isRequestOk (request) {
+        return request.readyState === 4 && request.status === 200;
       }
     }
-
-    function appendTdonTr (tr, text) {
-      var newTd = doc.createElement('td');
-      var textTd = doc.createTextNode(text);
-      newTd.appendChild(textTd);
-      tr.appendChild(newTd);
-    }
-
-    function handleSubmit (event) {
-      event.preventDefault();
-      var newLine = doc.createElement('tr');
-      appendTdonTr(newLine, $inputImage.get(0).value);
-      appendTdonTr(newLine, $inputBrand.get(0).value);
-      appendTdonTr(newLine, $inputYear.get(0).value);
-      appendTdonTr(newLine, $inputColor.get(0).value);
-      $carTable.get(0).appendChild(newLine);
-    }
-
-    function isRequestOk (request) {
-      return request.readyState === 4 && request.status === 200;
-    }
-
-    $submitForm.on('click', handleSubmit);
-    makeRequest('GET', 'http://localhost:4000/company.json', handleAjax);
   }
 
+  app().init();
 
-  app();
 })(window.DOM, document);

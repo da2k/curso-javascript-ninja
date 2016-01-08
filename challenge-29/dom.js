@@ -2,8 +2,11 @@
     'use strict';
 
     function DOM (elements) {
+        if(!(this instanceof DOM))
+            return new DOM(elements);
         this.element = doc.querySelectorAll(elements);
     }
+    
  
     DOM.is = function (obj) {
         return Object.prototype.toString.call(obj);
@@ -49,10 +52,10 @@
         });
     }
 
-    DOM.prototype.get = function get () {
-        if (arguments === [])
-            return this.element;
-        return this.element[arguments[0]];
+    DOM.prototype.get = function get (index) {
+        if (!index)
+            return this.element[0];
+        return this.element[index];
     }
 
     DOM.prototype.forEach = function forEach () {
@@ -84,4 +87,5 @@
     }
 
     window.DOM = DOM;
+
  })(document, window);
