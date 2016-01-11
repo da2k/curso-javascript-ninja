@@ -108,18 +108,18 @@ function convertToHex(color) {
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
 //1
-convertToHex('preto') //O hexadecimal para a cor preto é #000.
+console.log(convertToHex('preto'))
 //2
-convertToHex('branco') //O hexadecimal para a cor branco é #FFF.
+console.log(convertToHex('branco'))
 //3
-convertToHex('cinza') //O hexadecimal para a cor cinza é #666.
+console.log(convertToHex('cinza'))
 //4
-convertToHex('roxo') //O hexadecimal para a cor roxo é #6E5494.
+console.log(convertToHex('roxo'))
 //5
-convertToHex('verde') //O hexadecimal para a cor verde é #6CC644.
+console.log(convertToHex('verde'))
 //6
-convertToHex('rosa') //Não temos o equivalente hexadecimal para rosa.
+console.log(convertToHex('rosa'))
 //7
-convertToHex('azul') //Não temos o equivalente hexadecimal para azul.
+console.log(convertToHex('azul'))
 //8
-convertToHex('amarelo') //Não temos o equivalente hexadecimal para amarelo.
+console.log(convertToHex('amarelo'))
