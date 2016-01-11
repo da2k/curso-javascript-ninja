@@ -14,7 +14,7 @@ function getArray (param) {
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-console.log(getArray([1, 2, 3, 4])[1]);
+console.log(getArray(myarray[1]);
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -23,7 +23,7 @@ no primeiro parâmetro. O índice a ser retornado, deve ser o número passado no
 segundo parâmetro.
 */
 function getArrayX (array, position) {
-  return !position ? array : array[position];
+  return array[position];
 };
 
 /*
@@ -35,7 +35,11 @@ var otherArray = [1, "String qualquer", false, {'comidaFavorita' : 'banana'}, []
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-console.log(getArrayX(otherArray));
+console.log(getArrayX(otherArray, 0));
+console.log(getArrayX(otherArray, 1));
+console.log(getArrayX(otherArray, 2));
+console.log(getArrayX(otherArray, 3));
+console.log(getArrayX(otherArray, 4));
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
