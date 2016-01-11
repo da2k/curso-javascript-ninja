@@ -16,20 +16,20 @@ function addItem(item) {
 Adicione um novo array ao array criado no início do desafio, com ao menos 3
 itens de tipos diferentes, mostrando o resultado no console.
 */
-addItem([ false, 0, 'Other String' ]);
+console.log(addItem([ false, 0, 'Other String' ]));
 
 /*
 Mostre no console o segundo elemento desse último array, criado acima, com a
 frase:
 "O segundo elemento do segundo array é [ELEMENTO]."
 */
-console.log('O segundo elemento do segundo array é ' + arr[5][1] + '.'); // O segundo elemento do segundo array é 0.
+console.log('O segundo elemento do segundo array é ' + arr[5][1] + '.');
 
 /*
 Mostre no console quantos itens tem o primeiro array criado, com a frase:
 "O primeiro array tem [QUANTIDADE DE ITENS] itens."
 */
-console.log('O primeiro array tem ' + arr.length + ' itens.'); // 6
+console.log('O primeiro array tem ' + arr.length + ' itens.');
 
 /*
 Agora mostre no console quantos itens tem o segundo array criado, com a frase:
