@@ -41,18 +41,13 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-function calcula (a, b, c) {
-	var alerta = "Preencha todos os valores corretamente!";
-    if (a == null) {
-        return alerta;
-    } else if (b == null) {
-        return alerta;
-    } else if (c == null) {
-        return alerta;
-    } else {
-        return a * b * c + 2;
-    }
-}
+function calcula(a, b, c){
+ 	if(x !== null && y !== null && z !== null){
+ 		return a * b * c + 2;
+ 	} else {
+ 		return "Preencha todos os valores corretamente!";
+ 	}
+ }
 
 // Invoque a função criada acima, passando só dois números como argumento.
 calcula(2,2);
