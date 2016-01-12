@@ -42,7 +42,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function calcula(a, b, c){
- 	if(x !== null && y !== null && z !== null){
+ 	if(a !== undefined && b !== undefined && c !== undefined){
  		return a * b * c + 2;
  	} else {
  		return "Preencha todos os valores corretamente!";
