@@ -23,18 +23,19 @@
     que será instanciado.
   */
 
-  function Person(name, lastName, age){
+  function Person( name, lastName, age ){
     this.name = name;
     this.lastName = lastName;
     this.age = age;
-    this.getFullName = function(){
+    this.getFullName = function getFullName(){
       return this.name + ' ' + this.lastName;
     };
-    this.getAge = function(){
+    this.getAge = function getAge(){
       return this.age;
     };
-    this.addAge = function(){
-      return this.age += arguments[0];
+    this.addAge = function addAge(){
+      this.age += arguments[0];
+      return this;
     }
   }
 
@@ -75,7 +76,7 @@
   - "[NOME COMPLETO] agora tem [NOVA IDADE] anos."
   */
   console.log( '\nNova idade das pessoas:' );
-  console.log('' + allef.getFullName() + ' agora tem ' + allef.addAge(10) + ' anos.');
-  console.log('' + lia.getFullName() + ' agora tem ' + lia.addAge(5) + ' anos.');
-  console.log('' + lucas.getFullName() + ' agora tem ' + lucas.addAge(3) + ' anos.');
+  console.log('' + allef.getFullName() + ' agora tem ' + allef.addAge(10).getAge() + ' anos.');
+  console.log('' + lia.getFullName() + ' agora tem ' + lia.addAge(5).getAge() + ' anos.');
+  console.log('' + lucas.getFullName() + ' agora tem ' + lucas.addAge(3).getAge() + ' anos.');
 })();
