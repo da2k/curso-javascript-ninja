@@ -45,8 +45,8 @@
         return sum();
         function sum() {
             return number1 + number2;
+            console.log( 'A soma de 40 e 50 é igual a', sum() );
         };
-        console.log( 'A soma de 40 e 50 é igual a', sum() );
     }
     myFunction3();
 
