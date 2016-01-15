@@ -1,8 +1,9 @@
+(function(){
 /*
 Crie uma IIFE que envolva todo esse arquivo (inclusive esse comentário),
 e faça a indentação correta.
 */
-(function(){
+
 	/*
 	Sem alterar os códigos nos `console.log` abaixo, faça com que o retorno
 	deles seja "true", usando os Wrapper Objects como "conversores" nos valores
@@ -53,7 +54,8 @@ e faça a indentação correta.
 	- O desafio é fazer o retorno sem usar "if" ou "switch".
 	*/
 	function isOperatorValid(operator){
-		return operation.hasOwnProperty(operator);
+		//return operation.hasOwnProperty(operator);
+		return !!operation[operator]; //A correção já explicou tudo :)
 	}
 
 	/*
@@ -86,7 +88,7 @@ e faça a indentação correta.
 	Essa função mostrará a mensagem da operação que criaremos mais abaixo.
 	*/
 	function showOperationMessage(operator, number1, number2){
-		return 'A operação '+ number1 +' '+ operator +' '+ number2 +' =';
+		return 'A operação ' + number1 + ' ' + operator + ' ' + number2 + ' =';
 	}
 
 	/*
@@ -96,8 +98,8 @@ e faça a indentação correta.
 	'Operação "[OPERATOR]" não permitida!'
 	*/
 	function showErrorMessage(wrongOperator){
-		return 'Operação "'+ wrongOperator +'" não permitida!';
-	};
+		return 'Operação "' + wrongOperator + '" não permitida!';
+	}
 
 	/*
 	Nossa calculadora está pronta! Agora vamos testá-la:
@@ -146,22 +148,42 @@ e faça a indentação correta.
 	*/
 	operationSignal = '-';
 	var subtraction = calculator(operationSignal);
+	if(subtraction){
+		console.log(showOperationMessage(operationSignal, number1, number2), subtraction(number1, number2));
+	} else {
+		console.log(showErrorMessage(operationSignal));
+	}
 	operationSignal = '*';
 	var multiplication = calculator(operationSignal);
+	if(multiplication){
+		console.log(showOperationMessage(operationSignal, number1, number2), multiplication(number1, number2));
+	} else {
+		console.log(showErrorMessage(operationSignal));
+	}
 	operationSignal = '/';
 	var division = calculator(operationSignal);
+	if(division){
+		console.log(showOperationMessage(operationSignal, number1, number2), division(number1, number2));
+	} else {
+		console.log(showErrorMessage(operationSignal));
+	}
 	operationSignal = '%';
 	var mod = calculator(operationSignal);
+	if(mod){
+		console.log(showOperationMessage(operationSignal, number1, number2), mod(number1, number2));
+	} else {
+		console.log(showErrorMessage(operationSignal));
+	}
 
 	/*
 	Repita o PASSO 2 novamente, mas passando um operador inválido, para ver se
 	a mensagem de erro será mostrada no console.
 	*/
 	operationSignal = '?';
-	var sum = calculator(operationSignal);
+	var err = calculator(operationSignal);
 
-	if(sum){
-		console.log(showOperationMessage(operationSignal, number1, number2), sum(number1, number2));
+	if(err){
+		console.log(showOperationMessage(operationSignal, number1, number2), err(number1, number2));
 	} else {
 		console.log(showErrorMessage(operationSignal));
 	}
