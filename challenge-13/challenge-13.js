@@ -147,7 +147,7 @@
 	var map = newBrasil.map(function( item , index ){
 		return {
 			id : item.id + 1,
-			estado : item.estado +' pertence ao Brasil.'
+			estado : item.estado + ' pertence ao Brasil.'
 		};
 	});
 
