@@ -13,7 +13,7 @@ function myArray(arg){
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-console.log(myArray(arr)[1]);
+console.log( myArray(arr)[1] );
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -56,23 +56,22 @@ os livros.
 */
 function book(title){
 	var books = {
-		the_book_thief: {
+		'The Book Thief': {
 			quantidadePaginas: 592,
 			autor: 'Mark Zusak',
 			editora: 'Picador'
 		},
-		digital_fortress: {
+		'Digital Fortress': {
 			quantidadePaginas: 521,
 			autor: 'Dan Brown',
 			editora: 'St. Martin\'s Press'
 		},
-		master_of_the_game: {
+		'Master of the Game': {
 			quantidadePaginas: 590,
 			autor: 'Sidney Sheldon',
 			editora: 'Grand Central Publishing'
 		}
 	};
-
 	//Se livro não for passado ou não existir no objeto, retorna todos
 	return books[title]!==undefined ? books[title] : books;
 }
@@ -87,18 +86,21 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-console.log('O livro Fortaleza Digital tem '+ book('digital_fortress').quantidadePaginas +' páginas!');
+var livro = 'Digital Fortress';
+console.log('O livro ' + livro + ' tem '+ book(livro).quantidadePaginas + ' páginas!');
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log('O autor do livro O Reverso da Medalha é '+ book('master_of_the_game').autor +'.');
+livro = 'Master of the Game';
+console.log('O autor do livro ' + livro + ' é '+ book(livro).autor + '.');
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log('O livro A Menina que Roubava Livros foi publicado pela editora '+ book('the_book_thief').editora +'.');
+livro = 'The Book Thief';
+console.log('O livro ' + livro + ' foi publicado pela editora ' + book(livro).editora + '.');
