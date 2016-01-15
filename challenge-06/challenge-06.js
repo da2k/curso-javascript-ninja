@@ -5,7 +5,6 @@ Declare uma variável chamada `championship` que receberá o nome do campeonato,
 e imprima o nome desse campeonato no console.
 */
 var championship = 'Campeonato Paulista';
-
 console.log(championship);
 
 /*
@@ -14,8 +13,7 @@ Os elementos serão nomes de times do campeonato escolhido, e os nomes devem
 estar na ordem em que eles aparecem na tabela no momento da solução desse
 desafio.
 */
-var teams = ['Corinthians', 'São Paulo', 'Santos', 'Ponte Preta', 'Palmeiras'];
-
+var teams = [ 'Corinthians', 'São Paulo', 'Santos', 'Ponte Preta', 'Palmeiras' ];
 console.log( 'Times que estão participando do campeonato:', teams );
 
 /*
@@ -35,12 +33,10 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 function showTeamPosition(position){
-
 	if(teams[position - 1] !== undefined){
-		return 'O time que está em '+ position +'º lugar é o '+ teams[position - 1] +'.';
+		return 'O time que está em ' + position + 'º lugar é o ' + teams[position - 1] + '.';
 	}
 	return 'Não temos a informação do time que está nessa posição.';
-
 }
 
 /*
@@ -57,7 +53,6 @@ Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
 repetição "while".
 */
 var counter = 20;
-
 while(counter <= 30){
 	console.log(counter++);
 }
@@ -75,34 +70,33 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 function convertToHex(color){
-
 	switch(color){
 		case 'red':
-		return 'O hexadecimal para a cor '+ color +' é #FF0000.';
+		return 'O hexadecimal para a cor ' + color + ' é #FF0000.';
 		break;
 
 		case 'tomato':
-		return 'O hexadecimal para a cor '+ color +' é #FF6347.';
+		return 'O hexadecimal para a cor ' + color + ' é #FF6347.';
 		break;
 
 		case 'green':
-		return 'O hexadecimal para a cor '+ color +' é #008000.';
+		return 'O hexadecimal para a cor ' + color + ' é #008000.';
 		break;
 
 		case 'olive':
-		return 'O hexadecimal para a cor '+ color +' é #808000.';
+		return 'O hexadecimal para a cor ' + color + ' é #808000.';
 		break;
 
 		case 'blue':
-		return 'O hexadecimal para a cor '+ color +' é #0000FF.';
+		return 'O hexadecimal para a cor ' + color + ' é #0000FF.';
 		break;
 
 		case 'darkcyan':
-		return 'O hexadecimal para a cor '+ color +' é #008B8B.';
+		return 'O hexadecimal para a cor ' + color + ' é #008B8B.';
 		break;
 
 		default:
-		return 'Não temos o equivalente hexadecimal para '+ color +'.';
+		return 'Não temos o equivalente hexadecimal para ' + color + '.';
 	}
 }
 
