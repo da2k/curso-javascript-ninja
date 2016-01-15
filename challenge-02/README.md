@@ -12,7 +12,7 @@ function soma(num1, num2){
 var resultado = soma(7, 14) + 5; //Fui no embalo 7-14-21 :D
 
 // Qual o valor atualizado dessa variável?
-26
+//26
 
 // Declare uma nova variável, sem valor.
 var paidesanto; //só recebe
@@ -23,8 +23,8 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 function geraFrase(){
-	paidesanto = 'Curso JS Ninja;
-	return 'O valor da variável agora é '+ valor +'.';
+	paidesanto = 'Curso JS Ninja';
+	return 'O valor da variável agora é '+ paidesanto +'.';
 }
 
 // Invoque a função criada acima.
