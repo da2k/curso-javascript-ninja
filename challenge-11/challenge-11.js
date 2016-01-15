@@ -36,10 +36,10 @@
 	*/
 	var counter = 0
 	for(var prop in person){
-		console.log('The '+ prop +' of person is '+ person[prop]);
+		console.log('The ' + prop + ' of person is ' + person[prop]);
 		counter++;
 	}
-	console.log('The person has '+ counter +' properties');
+	console.log('The person has ' + counter + ' properties');
 
 	/*
 	Crie uma função chamada `moreThan`, que vai verificar se a pessoa (objeto
@@ -48,8 +48,8 @@
 	Após a função, mostrar a mensagem no console:
 	'The person has more than 25 years old? [TRUE/FALSE]'
 	*/
-	function moreThan(ageArg){
-		return (person.age > ageArg) ? true : false;
+	function moreThan(age){
+		return person.age > age;
 	}
 
 	/*
@@ -66,9 +66,7 @@
 		numbers.push(i);
 	}
 
-	for(var pos in numbers){
-		console.log(numbers[pos]);
-	}
+	console.log(numbers);
 
 	/*
 	Faça outro loop de 0 a 20, que adicione a um array chamado `numbers` (já
@@ -82,7 +80,5 @@
 		if(i % 2 != 0) continue;
 		numbers.push(i);
 	}
-	for(var pos in numbers){
-		console.log(numbers[pos]);
-	}
+	console.log(numbers);
 })();
