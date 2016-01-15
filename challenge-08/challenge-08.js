@@ -12,13 +12,13 @@ Invoque a função criada acima, passando dois números que serão somados, e mo
 o resultado no console, com a frase:
 "A soma de [VALOR 1] e [VALOR2] é igual a [RESULTADO]."
 */
-console.log('A soma de 7 e 3 é igual a '+ sum(7, 3) +'.'); 
+console.log('A soma de 7 e 3 é igual a '+ sum(7, 3) + '.'); 
 
 /*
 Mostre no console o nome da função criada acima, com a frase:
 "O nome da função que faz a soma é [NOME DA FUNÇÃO]."
 */
-console.log('O nome da função que faz a soma é '+ sum.name +'.');
+console.log('O nome da função que faz a soma é ' + sum.name + '.');
 
 
 /*
@@ -39,7 +39,7 @@ Usando a variável criada acima, mostre no console o nome e o retorno da funçã
 atribuída a ela, com a seguinte frase:
 "A função [NOME DA FUNÇÃO] retorna [RETORNO DA FUNÇÃO]."
 */
-console.log('A função '+ varShowName.name +' retorna '+ varShowName() +'.');
+console.log('A função ' + varShowName.name + ' retorna ' + varShowName() + '.');
 
 /*
 Crie uma função literal chamada `calculator`, que funcione assim:
@@ -57,23 +57,23 @@ function calculator(operator){
 	return function(a, b){
 		switch(operator){
 			case '+':
-			return 'Resultado da operação: '+ a +' '+ operator +' '+ b +' = '+ (a + b) +'.';
+			return 'Resultado da operação: ' + a + ' ' + operator + ' ' + b + ' = ' + (a + b) + '.';
 			break;
 
 			case '-':
-			return 'Resultado da operação: '+ a +' '+ operator +' '+ b +' = '+ (a - b) +'.';
+			return 'Resultado da operação: ' + a + ' ' + operator + ' ' + b + ' = ' + (a - b) + '.';
 			break;
 
 			case '*':
-			return 'Resultado da operação: '+ a +' '+ operator +' '+ b +' = '+ (a * b) +'.';
+			return 'Resultado da operação: ' + a + ' ' + operator + ' ' + b + ' = ' + (a * b) + '.';
 			break;
 
 			case '/':
-			return 'Resultado da operação: '+ a +' '+ operator +' '+ b +' = '+ (a / b) +'.';
+			return 'Resultado da operação: ' + a + ' ' + operator + ' ' + b + ' = ' + (a / b) + '.';
 			break;
 
 			case '%':
-			return 'Resultado da operação: '+ a +' '+ operator +' '+ b +' = '+ (a % b) +'.';
+			return 'Resultado da operação: ' + a + ' ' + operator + ' ' + b + ' = ' + (a % b) + '.';
 			break;
 
 			default:
