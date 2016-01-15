@@ -12,10 +12,10 @@
 	de valor para cada propriedade.
 	*/
 	var person = {
-		name : 'Heveton',
+		name : 'Heverton',
 		lastname : 'Castro',
 		age : 25
-	}
+	};
 	console.log( 'Propriedades de "person":' );
 
 	/*
@@ -43,23 +43,19 @@
 	/*
 	Mostre no console todos os livros.
 	*/
-	for(var idx in books){
-		console.log(books[idx].name);
-	}
+	console.log(books);
 
 	console.log( '\nLivro que está sendo removido:' );
 	/*
 	Remova o último livro, e mostre-o no console.
 	*/
-	console.log(books.pop().name);
+	console.log(books.pop());
 
 	console.log( '\nAgora sobraram somente os livros:' );
 	/*
 	Mostre no console os livros restantes.
 	*/
-	for(var idx in books){
-		console.log(books[idx].name);
-	}
+	console.log(books);
 
 	/*
 	Converta os objetos que ficaram em `books` para strings.
@@ -87,7 +83,7 @@
 		var prop = Object.keys(books[idx]);
 		for(var i in prop){
 			currentProp = prop[i];
-			console.log(currentProp+': '+books[idx][currentProp]);
+			console.log(currentProp + ': ' + books[idx][currentProp]);
 		}
 	}
 
@@ -95,7 +91,7 @@
 	Crie um array chamado `myName`. Cada item desse array deve ser uma letra do
 	seu nome. Adicione seu nome completo no array.
 	*/
-	var myName = ['H', 'e', 'v', 'e', 'r', 't', 'o', 'n', ' ', 'C', 'a', 's', 't', 'r', 'o',];
+	var myName = [ 'H', 'e', 'v', 'e', 'r', 't', 'o', 'n', ' ', 'C', 'a', 's', 't', 'r', 'o' ];
 	console.log( '\nMeu nome é:' );
 
 	/*
