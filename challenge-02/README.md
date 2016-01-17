@@ -28,7 +28,7 @@ function bar(foo) {
 }
 
 // Invoque a função criada acima.
-bar(10);
+bar();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*O retorno da função é 10*/
