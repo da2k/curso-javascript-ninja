@@ -34,9 +34,9 @@
 	*/
 	console.log( '\nFormatando CPFs corretamente:' );
 	function formatCPF( cpf ){
-		cpf = cleanCPF(cpf);
-		cpf = cpf.replace(/(\d\d\d)(\d\d\d)(\d\d\d)(\d\d)/g, '$1.$2.$3-$4');
-		console.log( cpf, \n );
+		cpf = cleanCPF( cpf );
+		cpf = cpf.replace( /(\d\d\d)(\d\d\d)(\d\d\d)(\d\d)/g, '$1.$2.$3-$4' );
+		console.log( cpf );
 		return cpf;
 	}
 	formatCPF( '049-214 3421-1' );
