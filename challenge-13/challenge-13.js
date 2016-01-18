@@ -23,8 +23,7 @@
 	concatenadas. Mostre o `brasil` no console.
 	*/
 	console.log( '\nAlguns Estados do Brasil:' );
-	var brasil = [];
-	brasil = brasil.concat(sul, sudeste);
+	var brasil = sul.concat(sudeste);
 	console.log(brasil);
 
 	/*
@@ -79,7 +78,7 @@
 	Adicione os estados do `nordeste` ao array `brasil`. Esses estados devem
 	ficar no mesmo nível que os estados já existentes, não em um array separado.
 	*/
-	brasil = brasil.concat(brasil, nordeste);
+	brasil = brasil.concat(nordeste);
 
 	/*
 	Mostre no console os estados em `newSudeste`.
@@ -122,7 +121,7 @@
 	var moreThanSeven = brasil.every(function( item ){
 		return item.length > 7;
 	});
-	moreThanSeven ? console.log('Sim, todos os estados tem mais de 7 letras!') : console.log('Nem todos os estados tem mais de 7 letras!');
+	console.log(moreThanSeven ? 'Sim, todos os estados tem mais de 7 letras!') : 'Nem todos os estados tem mais de 7 letras!');
 
 	/*
 	Percorra o array `brasil` e verifique se o Ceará está incluído, atribuindo o
@@ -136,7 +135,7 @@
 	var stateExists = brasil.some(function( item ){
 		return item === 'Ceará';
 	});
-	stateExists ? console.log('Ceará está incluído!') : console.log('Ceará não foi incluído :(');
+	console.log(stateExists ? 'Ceará está incluído!' : 'Ceará não foi incluído :(');
 
 	/*
 	Percorra o array `newBrasil` e crie um novo array que some 1 no ID de cada
