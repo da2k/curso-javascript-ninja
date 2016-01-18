@@ -178,9 +178,27 @@ correta, de acordo com os dados inseridos no objeto.
 */
 
 pessoa.apresentacao = function(){
-  var sexo = pessoa.sexo === 'feminino' ? 'a' : 'o';
-  var idade = pessoa.idade === 1 ? 'ano' : 'anos';
-  var metros = pessoa.caminhouQuantosMetros === 1 ? 'metro' : 'metros';
+  var sexo;
+  var idade;
+  var metros;
+  
+  if(pessoa.sexo === 'feminino'){
+    sexo = 'a';
+  } else {
+    sexo = 'o';
+  }
+  
+  if(pessoa.idade === 1){
+    idade = 'ano';
+  } else {
+    idade = 'anos';
+  }
+  
+  if(pessoa.caminhouQuantosMetros === 1){
+    metros = 'metro';
+  } else {
+    metros = 'metros';
+  }
   
   return 'Olá, eu sou ' + sexo + ' ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + ' ' + idade + ', ' + pessoa.altura + 'm, meu peso é ' + pessoa.peso + 'kg e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' ' + metros + '!';
 };
