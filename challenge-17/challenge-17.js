@@ -49,7 +49,7 @@
   Mostre o resultado no console:
   */
   console.log( '\nTrocando "A" e "a" por "4":' );
-  console.log( text.replace( /[a]/gi, 4 ) );
+  console.log( text.replace( /a/gi, 4 ) );
 
   /*
   Substitua a frase "O Centauro de Luvas", deixando-a em caixa alta, usando
@@ -74,16 +74,27 @@
   */
   console.log( '\nMeses representados por números:' );
   function getMonthNumber( month ) {
-    var months = [ 'janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho',
-    'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro' ];
-    var result = months.indexOf( month ) + 1;
-
-    return result < 10 ? '0' + result : result.toString();
+    var months = {
+      'janeiro': '01',
+      'fevereiro': '02',
+      'março': '03',
+      'abril': '04',
+      'maio': '05',
+      'junho': '06',
+      'julho': '07',
+      'agosto': '08',
+      'setembro': '09',
+      'outubro': '10',
+      'novembro': '11',
+      'dezembro': '12'
+    };
+    return months[month]
   }
 
-  console.log( 'O mês de março é representado pelo número ' + getMonthNumber( 'março' ) + '.' );
-  console.log( 'O mês de setembro é representado pelo número ' + getMonthNumber( 'setembro' ) + '.' );
-  console.log( 'O mês de dezembro é representado pelo número ' + getMonthNumber( 'dezembro' ) + '.' );
+  var arrayMes = ['março', 'setembro', 'dezembro'];
+  arrayMes.forEach(function( item ) {
+    console.log( 'O mês de ' + item + ' é representado pelo número ' + getMonthNumber( item ) + '.' );
+  });
 
   /*
   Agora, declare uma variável chamada `regexDate` que irá receber a expressão
@@ -94,7 +105,7 @@
   Mostre a regex no console.
   */
   console.log( '\nRegex que vai fazer o match com as datas do texto:' );
-  var regexDate = /(\d\d) de (\w\w\w\w\w) de (\d\d\d\d)/g;
+  var regexDate = /(\d\d) de (junho|julho) de (\d\d\d\d)/g;
   console.log( regexDate );
 
   /*
@@ -106,7 +117,7 @@
   */
   console.log( '\nReplace de datas:' );
   function replaceDate() {
-    return text.replace( regexDate, function(){
+    return text.replace( regexDate, function( match, dia, mes, ano ){
       return arguments[1] + '/' + getMonthNumber( arguments[2] ) + '/' + arguments[3];
     });
   }
