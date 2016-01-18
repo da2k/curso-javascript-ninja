@@ -4,7 +4,7 @@
 	2. Adicione a diretiva 'use strict';
 	3. Crie um arquivo index.html e adicione esse script à ele.
 	*/
-	'use strict'
+	'use strict';
 
 	/*
 	Alguns detalhes importantes que faltou falar na aula:
@@ -87,14 +87,11 @@
 
 	console.log( '\nQuais classes CSS existem na marcação abaixo?\n\n', markup, '\n' );
 	function hasClass( markup, cssClass ){
-		var result = false;
-		var regex = RegExp('class="(.+)"', 'g');
-		if ( regex.test( markup ) === true ){
-			result = true;
-		}
+		var regex = RegExp('class=["\'].*(' + cssClass + ').*["\']', 'g');		
 		console.log( result + ' para a classe ' + cssClass );
+		return regex.test( markup );
 	}
-	var classes = ["container", "text", "date", "excerpt", "main"];
+	var classes = ["container", "text", "date", "excerpt", "main", "other"];
 	for ( var i = 0; i < classes.length; i++ ){
 		console.log( hasClass( markup, classes[i] ) );		
 	}
