@@ -23,7 +23,8 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function bar(foo) {
+function bar() {
+  foo = 10;
   return 'O valor da variável agora é ' + foo;
 }
 
@@ -51,13 +52,13 @@ function foo(x, y, z) {
 foo(1,2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-/*Preencha todos os valores corretamente!*/
+/* Preencha todos os valores corretamente! */
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 foo(1,2,3);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-/*8*/
+/* 8 */
 
 /*
 Crie uma função com as seguintes características:
@@ -68,11 +69,23 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-
+function foo(a,b,c) {
+  if(a !== undefined && b === undefined && c === undefined) {
+    return a;
+  } else if(a !== undefined && b !== undefined && c === undefined) {
+    return a + b;
+  } else if(a !== undefined && b !== undefined && c !== undefined) {
+    return (a + b) / c;
+  } else if(a === undefined && b === undefined && c === undefined) {
+    return false;
+  } else {
+    return null;
+  }
+}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 foo(); // false
 foo(1); // 1
 foo(1,2); // 3
-foo(1,2,3); // 0
+foo(1,2,3); // 1
 ```
