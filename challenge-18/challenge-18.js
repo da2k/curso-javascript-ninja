@@ -20,6 +20,7 @@
 	function cleanCPF( cpf ){
 		cpf = cpf.match( /\d/g ).join( '' );
 		console.log( cpf );
+		return cpf ;
 	}
 	cleanCPF( '049-214 3421-1' );
 	cleanCPF( '210.458.522-05' );
@@ -34,8 +35,9 @@
 	console.log( '\nFormatando CPFs corretamente:' );
 	function formatCPF( cpf ){
 		cpf = cleanCPF(cpf);
-		console.log(cpf);
 		cpf = cpf.replace(/(\d\d\d)(\d\d\d)(\d\d\d)(\d\d)/g, '$1.$2.$3-$4');
+		console.log( cpf, \n );
+		return cpf;
 	}
 	formatCPF( '049-214 3421-1' );
 	formatCPF( '210.458.522-05' );
@@ -68,7 +70,7 @@
 	*/
 	console.log( '\nMatch com a abertura de uma tag HTML:' );
 	var text2 = '<div><section><blockquote>Texto <img /></blockquote></section></div>';
-	console.log( text2.match(/<\w+>/g));
+	console.log( text2.match(/<\w+>/g));	
 
 	/*
 	Crie uma expressão regular que faça o match com uma tag HTML vazia, casando
