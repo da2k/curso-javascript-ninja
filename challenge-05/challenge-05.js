@@ -4,7 +4,6 @@ Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 */
 var myArr = [true, 'Allef', 'Silva', 22, 1993];
 
-
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
@@ -12,12 +11,10 @@ function myFunction( arr ){
 	return arr;
 }
 
-
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-// ?
-myFunction( myArr )[1]; // Allef
+console.log( myFunction( myArr )[1] ); // Allef
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -58,7 +55,6 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-
 function book( livro ){
 	var obj = {
 		'O Codigo Da Vinci': {
@@ -94,8 +90,7 @@ usando a frase:
 // ?
 
 var nomeLivro = 'O Alquimista';
-
-console.log( 'O livro '+ nomeLivro + ' tem '+ book( nomeLivro ).quantidadePaginas +' páginas!');
+console.log( 'O livro ' + nomeLivro + ' tem ' + book( nomeLivro ).quantidadePaginas + ' páginas!');
 
 
 /*
@@ -103,11 +98,11 @@ Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log( 'O autor do livro '+ nomeLivro +' é '+ book( nomeLivro ).autor +'.');
+console.log( 'O autor do livro ' + nomeLivro + ' é ' + book( nomeLivro ).autor + '.');
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log( 'O livro '+ nomeLivro +' foi publicado pela editora '+ book( nomeLivro ).editora +'.');
+console.log( 'O livro ' + nomeLivro + ' foi publicado pela editora ' + book( nomeLivro ).editora + '.');
