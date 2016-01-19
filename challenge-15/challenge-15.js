@@ -26,16 +26,16 @@ function Person(name, lastName, age){
   this.name = name;
   this.lastName = lastName;
   this.age = age;
-  this.getFullName = function(){
+  this.getFullName = function getFullName(){
     return this.name + ' ' + this.lastName;
-  },
-  this.getAge = function(){
+  };
+  this.getAge = function getAge(){
     return this.age;
-  },
-  this.addAge = function(){
+  };
+  this.addAge = function addAge(){
     this.age += arguments[0];
     return this;
-  }
+  };
 }
 
 /*
@@ -75,11 +75,8 @@ Adicione alguns anos à cada pessoa, e mostre no console a nova idade de
 cada um. A frase deverá ser no formato:
 - "[NOME COMPLETO] agora tem [NOVA IDADE] anos."
 */
-heverton.addAge(3);
-michele.addAge(5);
-enzo.addAge(2);
 console.log( '\nNova idade das pessoas:' );
-console.log(heverton.getFullName() + ' agora tem ' + heverton.getAge() + ' anos.');
-console.log(michele.getFullName() + ' agora tem ' + michele.getAge() + ' anos.');
-console.log(enzo.getFullName() + ' agora tem ' + enzo.getAge() + ' anos.');
+console.log(heverton.getFullName() + ' agora tem ' + heverton.addAge(3).getAge() + ' anos.');
+console.log(michele.getFullName() + ' agora tem ' + michele.addAge(5).getAge() + ' anos.');
+console.log(enzo.getFullName() + ' agora tem ' + enzo.addAge(2).getAge() + ' anos.');
 })();
