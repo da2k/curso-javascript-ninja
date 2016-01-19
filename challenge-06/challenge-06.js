@@ -14,7 +14,6 @@ estar na ordem em que eles aparecem na tabela no momento da solução desse
 desafio.
 */
 var teams = [ 'Corinthians', 'Atlético-MG', 'Grêmio', 'Santos', 'São Paulo'];
-
 console.log( 'Times que estão participando do campeonato:', teams );
 
 /*
@@ -33,13 +32,10 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     - Se não houver time para a posição passada, deve retornar a mensagem:
     "Não temos a informação do time que está nessa posição."
 */
-
-function showTeamPosition( n ){
-    
+function showTeamPosition(n){    
     if ( n < 1 || n > 5  ) {
         return 'Não temos a informação do time que está nessa posição.';
     }
-
     return 'O time que está em '+ n +'º lugar é o '+ teams[ n - 1 ] +'.';
 }
 
@@ -48,12 +44,11 @@ function showTeamPosition( n ){
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
-
- showTeamPosition(1);
- showTeamPosition(2);
- showTeamPosition(3);
- showTeamPosition(4);
- showTeamPosition(10);
+ console.log(showTeamPosition(1));
+ console.log(showTeamPosition(2));
+ console.log(showTeamPosition(3));
+ console.log(showTeamPosition(4));
+ console.log(showTeamPosition(10));
 
 
 /*
@@ -61,8 +56,8 @@ Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
 repetição "while".
 */
 var counter = 20;
-while( counter <= 30 ){
-    console.log( counter++ );
+while(counter <= 30){
+    console.log(counter++);
 }
 
 /*
@@ -77,12 +72,9 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     a frase:
     "Não temos o equivalente hexadecimal para [COR]."
 */
-
-function convertToHex( cor ){
-
+function convertToHex(cor){
     var hexa;
-
-    switch( cor ){
+    switch(cor){
         case 'red':
             hexa = '#FF0000';
             break;
@@ -101,7 +93,6 @@ function convertToHex( cor ){
         default:
             return 'Não temos o equivalente hexadecimal para '+ cor +'.';
     }
-
     return 'O hexadecimal para a cor '+ cor +' é ' + hexa + '.';
 }
 
@@ -109,11 +100,11 @@ function convertToHex( cor ){
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-convertToHex('red');
-convertToHex('orange');
-convertToHex('white');
-convertToHex('blue');
-convertToHex('green');
-convertToHex('purple');
-convertToHex('brown');
-convertToHex('pink');
+console.log(convertToHex('red'));
+console.log(convertToHex('orange'));
+console.log(convertToHex('white'));
+console.log(convertToHex('blue'));
+console.log(convertToHex('green'));
+console.log(convertToHex('purple'));
+console.log(convertToHex('brown'));
+console.log(convertToHex('pink'));
