@@ -3,7 +3,6 @@
 	Crie uma IIFE que envolva todo esse arquivo (inclusive esse comentário),
 	e faça a indentação correta.
 	*/
-
 	/*
 	Sem alterar os códigos nos `console.log` abaixo, faça com que o retorno
 	deles seja "true", usando os Wrapper Objects como "conversores" nos valores
@@ -70,18 +69,14 @@
 	operador passado para a função "calculator", e passando para esse método
 	os dois parâmetros da função de retorno de "calculator".
 	*/
-	function calculator( operador ){
-
-		if ( !isOperatorValid( operador ) ){
+	function calculator(operador){
+		if ( !isOperatorValid(operador) ){
 			return false;
 		}
-
-		return function( oper1, oper2 ){
-			
+		return function(oper1, oper2){			
 			if( typeof oper1 !== 'number' && typeof oper2 !== 'number' ){
 				return false;
 			}
-
 			return operation[ operador ]( oper1, oper2 );
 		};
 	}
@@ -104,7 +99,7 @@
 	'Operação "[OPERATOR]" não permitida!'
 	*/
 	
-	function showErrorMessage( operador ){
+	function showErrorMessage(operador){
 		return 'Operação "' + operador + '" não permitida!';
 	}
 
@@ -116,7 +111,7 @@
 	*/
 	var number1 = 0,
 		number2 = 0,
-		operationSignal,
+		operationSignal;
 
 	/*
 	PASSO 2:
@@ -125,7 +120,7 @@
 	parâmetro a variável que recebeu o sinal da operação.
 	*/
 	operationSignal = '+';
-	var sum = calculator( operationSignal );
+	var sum = calculator(operationSignal);
 
 	/*
 	PASSO 3:
@@ -139,57 +134,73 @@
 	- O primeiro será a mensagem da operação (usando a função criada acima);
 	- O segundo, a função de soma, passando os dois operandos.
 	- Se "sum" for "false", mostrar no console a mensagem de erro.
-	*/
-	
+	*/	
 	number1 = 1;
 	number2 = 3;
 
-	sum ? console.log( showOperationMessage( operationSignal, number1, number2 ), sum( number1, number2 ) ) : console.log( showErrorMessage( operationSignal ) );
+	if(sum){
+		console.log( showOperationMessage(operationSignal, number1, number2), sum(number1, number2) );
+	} else {
+		console.log( showErrorMessage(operationSignal) );
+	}	
 
 	/*
 	Repita desde o "PASSO 2" com as operações de subtração, multiplicação,
 	divisão e resto. Crie variáveis com os nomes "subtraction",
 	"multiplication", "division" e "mod".
 	*/
-	
+	// Subtraction
 	operationSignal = '-';
 	var subtraction = calculator( operationSignal );
-
 
 	number1 = 5;
 	number2 = 3;
 
-	subtraction ? console.log( showOperationMessage( operationSignal, number1, number2 ), subtraction( number1, number2 ) ) : console.log( showErrorMessage( operationSignal ) );
+	if(subtraction){
+		console.log( showOperationMessage(operationSignal, number1, number2), subtraction(number1, number2) );
+	} else {
+		console.log( showErrorMessage(operationSignal) );
+	}
 
-
+	// Multiplication
 	operationSignal = '*';
 	var multiplication = calculator( operationSignal );
-
 
 	number1 = 30;
 	number2 = 5;
 
-	multiplication ? console.log( showOperationMessage( operationSignal, number1, number2 ), multiplication( number1, number2 ) ) : console.log( showErrorMessage( operationSignal ) );
+	if(multiplication){
+		console.log( showOperationMessage(operationSignal, number1, number2), multiplication(number1, number2) );
+	} else {
+		console.log( showErrorMessage(operationSignal) );
+	}	 
 
-
+	// Division
 	operationSignal = '/';
 	var division = calculator( operationSignal );
 
 	number1 = 150;
 	number2 = 10;
 
-	division ? console.log( showOperationMessage( operationSignal, number1, number2 ), division( number1, number2 ) ) : console.log( showErrorMessage( operationSignal ) );
+	if(division){
+		console.log( showOperationMessage(operationSignal, number1, number2), division(number1, number2) );
+	} else {
+		console.log( showErrorMessage(operationSignal) );
+	} 
 
-
+	// Mod
 	operationSignal = '%';
 	var mod = calculator( operationSignal );
 
 	number1 = 15;
 	number2 = 2;
 
-	mod ? console.log( showOperationMessage( operationSignal, number1, number2 ), mod( number1, number2 ) ) : console.log( showErrorMessage( operationSignal ) );
-
-
+	if(mod){
+		console.log( showOperationMessage(operationSignal, number1, number2), mod(number1, number2) );
+	} else {
+		console.log( showErrorMessage(operationSignal) );
+	} 
+	 
 	/*
 	Repita o PASSO 2 novamente, mas passando um operador inválido, para ver se
 	a mensagem de erro será mostrada no console.
@@ -200,5 +211,9 @@
 	number1 = 30;
 	number2 = 20;
 
-	invalid ? console.log( showOperationMessage( operationSignal, number1, number2 ), invalid( number1, number2 ) ) : console.log( showErrorMessage( operationSignal ) );
+	if(invalid){
+		console.log( showOperationMessage(operationSignal, number1, number2), invalid(number1, number2) );
+	} else {
+		console.log( showErrorMessage(operationSignal) );
+	}
 })();
