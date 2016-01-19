@@ -7,18 +7,16 @@ var arr = [function(){}, [1, 2, 3], {a: 1, b: 2}, 'String', undefined];
 Crie uma função chamada `addItem`, que irá adicionar itens no array criado.
 A função deverá retornar o array atualizado.
 */
-
 function addItem( add ){
 	arr.push( add );
 	return arr;
 }
 
-
 /*
 Adicione um novo array ao array criado no início do desafio, com ao menos 3
 itens de tipos diferentes, mostrando o resultado no console.
 */
-addItem( [4, null, 'Allef'] );
+console.log( addItem([4, null, 'Allef']) );
 
 /*
 Mostre no console o segundo elemento desse último array, criado acima, com a
