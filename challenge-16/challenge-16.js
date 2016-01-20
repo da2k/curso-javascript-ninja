@@ -18,11 +18,11 @@
 	console.log( 'As letras do seu nome:' );
 	var name = 'Heverton';
 	//QUAL SERIA A MELHOR SOLUÇÃO DAS 3?
-	for(var i = 0; i < name.length; i++){
+	for(var i = 0, len = name.length; i < len; i++){
 		console.log(name[i] + ' é a ' + ( i + 1 ) + 'ª letra do meu nome.');
 	}
 
-	for(var i = 0; i < name.length; i++){
+	for(var i = 0, len = name.length; i < len; i++){
 		console.log(name.charAt(i) + ' é a ' + ( name.indexOf(name.charAt(i)) + 1 ) + 'ª letra do meu nome.');
 	}
 
@@ -67,12 +67,10 @@
 	console.log(myFriends(names));
 
 	function myFriends(arr){
-		return arr
-		//.toString().split(',') // necessario apenas pelo enunciado
-		.slice(0, -1).join(', ')
-		+ ' e ' +
-		arr.slice(-1)
-		+ ' são meus amigos';
+	  return arr.reduce(function(previousValue, currentValue, index){
+	    separator = arr.length - 1 === index ? ' e ' : ', ';
+	    return previousValue + separator + currentValue
+	  }).concat(' são meus amigos.');
 	}
 
 	/*
