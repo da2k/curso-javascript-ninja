@@ -7,11 +7,8 @@ var arr = [ 'Heverton', true, function(){}, undefined, null ];
 Crie uma função chamada `addItem`, que irá adicionar itens no array criado.
 A função deverá retornar o array atualizado.
 */
-function addItem(){
-	arr.push( 10 );
-	arr.push( 'JS Ninja' );
-	arr.push( [ 'Curso', 'JS', 'Ninja' ] );
-
+function addItem(item){
+	arr.push(item);
 	return arr;
 }
 
@@ -19,16 +16,14 @@ function addItem(){
 Adicione um novo array ao array criado no início do desafio, com ao menos 3
 itens de tipos diferentes, mostrando o resultado no console.
 */
-arr.push( [ { color: 'navy' }, false, 1.5 ] );
-
-console.log(arr);
+console.log(addItem( [ { color: 'navy' }, false, 1.5 ] ));
 
 /*
 Mostre no console o segundo elemento desse último array, criado acima, com a
 frase:
 "O segundo elemento do segundo array é [ELEMENTO]."
 */
-console.log('O segundo elemento do segundo array é ' + arr[8][1] + '.');
+console.log('O segundo elemento do segundo array é ' + arr[5][1] + '.');
 
 /*
 Mostre no console quantos itens tem o primeiro array criado, com a frase:
@@ -40,7 +35,7 @@ console.log('O primeiro array tem ' + arr.length + ' itens.');
 Agora mostre no console quantos itens tem o segundo array criado, com a frase:
 "O segundo array tem [QUANTIDADE DE ITENS] itens."
 */
-console.log('O segundo array tem ' + arr[8].length + ' itens.');
+console.log('O segundo array tem ' + arr[5].length + ' itens.');
 
 /*
 Utilizando a estrutura de repetição `while`, mostre no console todos os números
@@ -70,11 +65,11 @@ Só vamos mudar o range:
 - No segundo "for", mostre os números ímpares entre 111 e 125, inclusive eles.
 */
 console.log( 'Números pares entre 100 e 120:' );
-for(var i = 100; i <= 120; i++){
-	if(i % 2 === 0) console.log(i);
+for(var i = 100; i <= 120; i += 2){
+  console.log(i);
 }
 
 console.log( 'Números ímpares entre 111 e 125:' );
-for(var i = 111; i <= 125; i++){
-	if(i % 2 !== 0) console.log(i);
+for(var i = 111; i <= 125; i += 2){
+	console.log(i);
 }
