@@ -24,7 +24,6 @@
         myFunction2();
     */
     function myFunction2() {
-        
         var number1 = 10;
         var number2 = 20;
         var sum = function sum() {
@@ -39,14 +38,14 @@
         myFunction3();
     */
     function myFunction3() {
-        var number1 = 40;
-        var number2 = 50;
-        console.log( 'Na função myFunction3, number1 é igual a', number1 );
-        return sum();
         function sum() {
             return number1 + number2;
-            console.log( 'A soma de 40 e 50 é igual a', sum() );
         };
+        var number1 = 40;
+        var number2 = 50;
+        console.log( 'A soma de 40 e 50 é igual a', sum() );
+        console.log( 'Na função myFunction3, number1 é igual a', number1 );
+        return sum();
     }
     myFunction3();
 
