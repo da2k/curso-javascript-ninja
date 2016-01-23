@@ -93,7 +93,7 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 carro.obterMarcaModelo = function(){
-  return 'Esse carro é um ' + carro.obterMarca + ' ' + carro.obterModelo + '.';
+  return 'Esse carro é um ' + carro.obterMarca() + ' ' + carro.obterModelo() + '.';
 };
 
 /*
@@ -112,20 +112,21 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
+
 carro.adicionaPessoas = function( x ){
-  var total = x + carro.quantidadePessoas;
-  
-    if(carro.quantidadePessoas === carro.assentos){
-      return 'O carro está lotado';
-    } 
-  
-    if(carro.quantidadePessoas < carro.assentos && total > carro.assentos){
-      var assentosRestam = carro.assentos - carro.quantidadePessoas;
-      var palavraFinal = assentosRestam === 1 ? ' pessoa' : ' pessoas';
-        return 'Só cabem mais '+ assentosRestam + palavraFinal + '!';
-    }
-      carro.quantidadePessoas = total;
-        return 'Já temos '+ carro.quantidadePessoas + ' pessoas no carro';
+  var total = carro.quantidadePessoas + x;
+  if( carro.quantidadePessoas === carro.assentos && total >= carro.assentos ){
+    return "ocarro está lotado!";
+  }
+
+  if( total > carro.assentos ){
+    var assentosRestantes = carro.assentos - carro.quantidadePessoas;
+    var pluralOuSingular = assentosRestantes === 1 ? ' pessoas' : ' pessoas';
+    return 'Só cabem ' + assentosRestantes + pluralOuSingular + '!';
+  }
+
+  carro.quantidadePessoas += x;
+  return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!';
 };
 
 /*
@@ -139,10 +140,10 @@ Qual a cor atual do carro?
 carro.obterCor(); //preto
 
 // Mude a cor do carro para vermelho.
-carro.mudaCor('Azul');
+carro.mudaCor('vermelho');
 
 // E agora, qual a cor do carro?
-carro.obterCor(); // Azul
+carro.obterCor(); // vermelho
 
 // Mude a cor do carro para verde musgo.
 carro.mudaCor('verde musgo');
