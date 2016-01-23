@@ -30,7 +30,7 @@
 	Adicione 3 novos estados da região Norte no início do array e mostre no console.
 	*/
 	console.log( '\nMais estados adicionados:' );
-	brasil.push( 'Amazonas', 'Paraná', 'Acre' );
+	brasil.unshift( 'Amazonas', 'Pará', 'Acre' );
 	console.log( brasil );
 
 	/*
@@ -132,11 +132,13 @@
 	- "Ceará não foi incluído :("
 	*/
 	console.log( '\nCeará está incluído em `brasil`?' );
-	var isStateIncluded = brasil.filter( function ( item ) {
+	var isStateIncluded = brasil.some( function ( item ) {
 		return item === 'Ceará';
 	});
 
-	console.log( isStateIncluded ? 'Ceará está incluído!' : 'Ceará não foi incluído :(' );
+	console.log( isStateIncluded 
+	? 'Ceará está incluído!' 
+	: 'Ceará não foi incluído :(' );
 
 	/*
 	Percorra o array `newBrasil` e crie um novo array que some 1 no ID de cada
