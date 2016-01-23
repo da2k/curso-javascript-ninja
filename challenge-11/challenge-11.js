@@ -10,9 +10,9 @@ Qual loop você deve usar para que essa mensagem seja mostrada no console?
 */
 var once = false;
 do{
-	console.log( 'Entrou ao menos uma vez!' )
+	console.log( 'Entrou ao menos uma vez!' );
 }
-while ( once === true );
+while ( once );
 
 /*
 Crie um objeto chamado `person`, que receba as seguintes propriedades:
@@ -40,7 +40,7 @@ for ( caracteristic in person ){
 	console.log( 'The ' + caracteristic + ' of person is ' + person[caracteristic] );
 	counter++;
 }
-console.log( 'The person has ' + counter + ' properties' )
+console.log( 'The person has ' + counter + ' properties' );
 
 /*
 Crie uma função chamada `moreThan`, que vai verificar se a pessoa (objeto
@@ -66,8 +66,8 @@ while ( counter <= 20 ){
 	if( counter > 10 ) {
 		break;
 	}
-	numbers.push(counter++)
-	console.log( numbers )
+	numbers.push(counter++);
+	console.log( numbers );
 }
 
 /*
@@ -77,7 +77,7 @@ esses. Se o número for ímpar, pular para o próximo número.
 Mostrar no console os números do array.
 */
 console.log( 'Pares de 0 a 20:' );
-var numbers = [];
+numbers = [];
 var counter = 0;
 while ( counter <= 20 ){
 	if ( counter % 2 !== 0 ) {
