@@ -50,8 +50,8 @@
 	*/
 	console.log( '\nOperation:' );
 	var operation = justMod2Or3.reduce( function ( accumulated, current ) {
-		return ( 1 + accumulated ) * current;
-	} );
+		return ( accumulated + 1  ) * current;
+	}, 0 );
 	console.log ( operation );
 
 	/*
@@ -61,8 +61,8 @@
 	*/
 	console.log( '\nOperation 2:' );
 	var operation2 = justMod2Or3.reduceRight( function ( accumulated, current ) {
-		return ( 1 + accumulated ) * current;
-	} );
+		return ( accumulated + 1 ) * current;
+	}, 0 );
 	console.log ( operation2 );
 
 	/*
