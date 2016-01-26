@@ -44,7 +44,7 @@
 	minúsculo por "0" (número zero). Mostre o resultado no console:
 	*/
 	console.log( '\nTrocando de "D" a "h" por "0":' );
-	console.log(text.replace(/[D-h]/g, '0'));
+	console.log(text.replace(/[D-Za-h]/g, '0'));
 
 	/*
 	Substitua todos os "A" (maiúsculos ou minúsculos) por "4".
@@ -76,29 +76,27 @@
 	"O mês de [NOME DO MÊS] é representado pelo número [NÚMERO DO MÊS]."
 	*/
 	console.log( '\nMeses representados por números:' );
-	var months = {
-		'janeiro': '01',
-		'fevereiro': '02',
-		'março': '03',
-		'abril': '04',
-		'maio': '05',
-		'junho': '06',
-		'julho': '07',
-		'agosto': '08',
-		'setembro': '09',
-		'outubro': '10',
-		'novembro': '11',
-		'dezembro': '12'
-	};
+	
 	function getMonthNumber(month){
+	  var months = {
+  		'janeiro': '01',
+  		'fevereiro': '02',
+  		'março': '03',
+  		'abril': '04',
+  		'maio': '05',
+  		'junho': '06',
+  		'julho': '07',
+  		'agosto': '08',
+  		'setembro': '09',
+  		'outubro': '10',
+  		'novembro': '11',
+  		'dezembro': '12'
+  	};
 		return months[month];
 	}
-	var marco = 'março';
-	console.log('O mês de ' + marco + ' é representado pelo número ' + getMonthNumber(marco) + '.');
-	var setembro = 'setembro';
-	console.log('O mês de ' + setembro + ' é representado pelo número ' + getMonthNumber(setembro) + '.');
-	var dezembro = 'dezembro';
-	console.log('O mês de ' + dezembro + ' é representado pelo número ' + getMonthNumber(dezembro) + '.');
+	console.log('O mês de março é representado pelo número ' + getMonthNumber('março') + '.');
+	console.log('O mês de setembro é representado pelo número ' + getMonthNumber('setembro') + '.');
+	console.log('O mês de dezembro é representado pelo número ' + getMonthNumber('dezembro') + '.');
 
 	/*
 	Agora, declare uma variável chamada `regexDate` que irá receber a expressão
@@ -109,7 +107,7 @@
 	Mostre a regex no console.
 	*/
 	console.log( '\nRegex que vai fazer o match com as datas do texto:' );
-	var regexDate = /(\d\d de )(junho|julho)( de \d\d\d\d)/g;
+	var regexDate = /(\d\d) de (junho|julho) de (\d\d\d\d)/g;
 	console.log(regexDate);
 
 	/*
@@ -120,11 +118,8 @@
 	console o resultado.
 	*/
 	console.log( '\nReplace de datas:' );
-	function replaceDate(str){
-		return str.replace(regexDate, function(total, day, month, year){
-			return (day + '/' + getMonthNumber(month) + '/' + year).replace(/ de /g, '');
-		});
+	function replaceDate(regex, day, month, year){
+		return day + '/' + getMonthNumber(month) + '/' + year;
 	}
-	text = replaceDate(text);
-	console.log(text);
+	console.log(text.replace(regexDate, replaceDate));
 })();
