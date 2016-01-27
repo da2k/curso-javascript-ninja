@@ -85,15 +85,20 @@
   uma função anônima que irá retornar a soma dos dois números que essa função
   anônima tem como seus argumentos.
   */
-  console.log( 'O resultado da soma é: ' + sum + '.');
-  // ?
+  console.log( 'O resultado da soma é:' );
+  console.log( sum(function (number1, number2) {
+      return number1 + number2;
+  }));
 
   /*
   Agora declare outra variáveis chamadas `subtraction`, `multiplication`,
   `division` e `mod`, e atribua à elas `calculator`, passando números
   diferentes para cada chamada.
   */
-  // ?
+  var subtraction = calculator(10, 3);
+  var multiplication = calculator(4, 3);
+  var division = calculator(30, 5);
+  var mod = calculator(10, 3);
 
   /*
   Mostre as variáveis acima no `console` (uma chamada de console por variável),
@@ -103,15 +108,23 @@
   chamada.
   */
   console.log( 'O resultado da subtração é:' );
-  // ?
+  console.log( subtraction(function (number1, number2) {
+    return number1 - number2;
+  }));
 
   console.log( 'O resultado da multiplicação é:' );
-  // ?
+  console.log( multiplication(function (number1, number2) {
+    return number1 * number2;
+  }));
 
   console.log( 'O resultado da divisão é:' );
-  // ?
+  console.log( division(function (number1, number2) {
+    return number1 / number2;
+  }));
 
   console.log( 'O resto da divisão é:' );
-  // ?
+  console.log( mod(function (number1, number2) {
+    return number1 % number2;
+  }));
 
 })();
