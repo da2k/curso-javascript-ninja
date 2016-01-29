@@ -104,7 +104,7 @@
 	corretas, para depois aplicar no código ;)
 	*/
 	function tagText(str){
-		var regex = /(<(\w+)>)([\w\sÀ-ú]+)(<\/\w+>)/g;
+		var regex = /(<(\w+)>)([^<]+)(<\/\w+>)/g;
 
 		return str.replace(regex, function(match, openTag, tagName, tagContent, closeTag){
 			return openTag + 'O texto dentro da tag "' + tagName + '" é "' + tagContent + '"' + closeTag + '\n';
