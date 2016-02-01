@@ -9,14 +9,12 @@ function Somar ( numx, numy){
 }
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-1. var soma = Somar(4,1);
-2. var soma = Somar(3,3) + 5;
+var soma = Somar(3,3) + 5;
 
 //Não entendi se o resultado era para dar 5 ou somar 5 ao resultado
 
 // Qual o valor atualizado dessa variável?
-1. 5
-2. 11
+11
 
 // Declare uma nova variável, sem valor.
 var will;
@@ -26,17 +24,17 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-fucntion Adicionar(x){
-  will = will + x;
+fucntion Adicionar(){
+  will = 25;
   return 'O valor da variável agora é: ' + will;
 }
 
 // Invoque a função criada acima.
-Adicionar(7);
+Adicionar();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
-Aparentemente é NaN, acredito que como a variável criada não tem valor então ele não consegue somar, o que é estranho deveria ter somado o número ao nada, mas quem sou eu pra julgar rs. 
+O valor da variável agora é 5
 */
 
 /*
@@ -47,16 +45,14 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function Tripla(a, b, c){
-  if (a == null || b == null || c == null){
+  if (a === undefined || b === undefined || c === undefined){
     return 'Preencha todos os valores corretamente!';
   }else {
    return (a * b * c) + 2;
   }
 }
 
-/*
-Aqui eu primeiramente fiz o if comparando se é igual e por tipo, e ela retornava NaN. Por quê?
-*/
+
 
 // Invoque a função criada acima, passando só dois números como argumento.
 Tripla(1, 2);
@@ -80,13 +76,13 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function final(x,y,z){
-  if(x == null && y == null && z == null){
+  if(x === undefined && y === undefined && z === undefined){
     return false;
-  }else if(y == null && z == null){
+  }else if(y === undefined && z === undefined){
     return x;
-  }else if(z == null){
+  }else if(z === undefined){
     return x + y;
-  }else if(x != null && y != null && z != null){
+  }else if(x !== undefined && y !== undefined && z !== undefined){
     return (x+y)/z
   }else{
     return null;
