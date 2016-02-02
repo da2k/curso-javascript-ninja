@@ -94,11 +94,11 @@
     if ( !$inputEmail.value )
       return alert( 'Preencha o e-mail!' )
 
-    if ( !$message.value )
-      return alert( 'Preencha a mensagem!' );
-
     if ( !isValidEmail( $inputEmail.value ) )
       return alert( 'Entre com um e-mail válido!' );
+
+    if ( !$message.value )
+      return alert( 'Preencha a mensagem!' );
 
     enviado = confirm( 'Tem certeza que deseja enviar o formulário?' );
 
