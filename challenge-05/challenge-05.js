@@ -7,15 +7,16 @@ var foo = [1, 'Daniel', true, null, undefined];
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
-var foo = [1,2,3];
-function myFunction(foo) {
-  return foo;
-}
+
+var arr = [1, 2, 3];
+function myFunc(arg) {
+  return arg;
+};
 
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-myFunction(foo[1]);
+myFunc(arr[1]);
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -23,14 +24,16 @@ segundo, um número. A função deve retornar um índice do array que foi passad
 no primeiro parâmetro. O índice a ser retornado, deve ser o número passado no
 segundo parâmetro.
 */
-var foo = [1,2,3];
-function myFunc(foo, num) {
-  return foo[num];
-}
+
+var arr = [1, 2, 3];
+function myFunction(arr, arg) {
+  return arr[arg];
+};
 
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
+
 var bar = [1, null, 'daniel', true, {}];
 
 /*
@@ -38,6 +41,7 @@ Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
 
+myFunction(arr);
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -53,23 +57,28 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-function Book(nomeDoLivro) {
-  var bar = {
-    livor1: {
+
+function Book(params) {
+  var obj = {
+    livro1: {
       quantidadePaginas: 200,
-      autor: 'Lorem1',
-      editora: 'lorem ipsum1'
+      autor: 'Autor1',
+      editora: 'Editora1'
     },
     livro2: {
-      quantidadePaginas: 200,
-      autor: 'Lorem2',
-      editora: 'lorem ipsum2'
+      quantidadePaginas: 250,
+      autor: 'Autor2',
+      editora: 'Editora3'
     },
     livro3: {
-      quantidadePaginas: 200,
-      autor: 'Lorem3',
-      editora: 'lorem ipsum3'
+      quantidadePaginas: 300,
+      autor: 'Autor3',
+      editora: 'Editora3'
     }
+  };
+  return params;
+  if (params === false) {
+    return obj;
   }
 }
 
