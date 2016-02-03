@@ -77,18 +77,17 @@ function final(arg1, arg2, arg3){
     return arg1;
     } else if( arg1 !== undefined && arg2 !== undefined && arg3 === undefined){
         return arg1 + arg2;
-      } else if( arg1 !== undefined && arg2 !== undefined && arg3 !== undefined ){
-          return (arg1 + arg2) / arg3;
-        } else if( arg1 === undefined && arg2 === undefined && arg3 === undefined ){
-            return false;
-          } else {
-              return null;
-            }
-  }
+    } else if( arg1 !== undefined && arg2 !== undefined && arg3 !== undefined ){
+        return (arg1 + arg2) / arg3;
+    } else if( arg1 === undefined && arg2 === undefined && arg3 === undefined ){
+        return false;
+    } else {
+	    return null;
+    }
+}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 final(); // false
 final(2); // 2
 final(2,3); // 5
 final(2,3,4)// 1.25
-```
