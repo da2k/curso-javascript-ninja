@@ -19,11 +19,12 @@
 	function cleanCPF(cpf){
 		return cpf.replace(/\D/g, '');
 	}
+	
+	var cpfs = [ '049-214 3421-1', '210.458.522-05', '735 500 794 - 22', '101.123-131x32' ];
 	console.log( 'Limpando CPFs:' );
-	console.log(cleanCPF('049-214 3421-1'));
-	console.log(cleanCPF('210.458.522-05'));
-	console.log(cleanCPF('735 500 794 - 22'));
-	console.log(cleanCPF('101.123-131x32'));
+	cpfs.forEach(function(cpf){
+	  console.log(cleanCPF(cpf));
+	});
 
 	/*
 	Usando os CPFs limpos acima, deixe-os com a formatação correta de CPF.
@@ -32,16 +33,13 @@
 	*/
 	function maskCPF(cpf){
 		var regex = /(\d{3})(\d{3})(\d{3})(\d{2})/;
-		return cpf.replace(regex, function(match, one, two, three, four){
-			return one + '.' + two + '.' + three + '-' + four;
-		});
+		return cpf.replace(regex, '$1.$2.$3-$4');
 	}
 	console.log( '\nFormatando CPFs corretamente:' );
 	// ?
-	console.log(maskCPF('04921434211'));
-	console.log(maskCPF('21045852205'));
-	console.log(maskCPF('73550079422'));
-	console.log(maskCPF('10112313132'));
+	cpfs.forEach(function(cpf){
+	  console.log(maskCPF(cleanCPF(cpf)));
+	});
 
 	/*
 	Crie uma expressão regular que faça match com as palavras "junho" ou "julho",
@@ -105,7 +103,6 @@
 	*/
 	function tagText(str){
 		var regex = /(<(\w+)>)([^<]+)(<\/\w+>)/g;
-
 		return str.replace(regex, function(match, openTag, tagName, tagContent, closeTag){
 			return openTag + 'O texto dentro da tag "' + tagName + '" é "' + tagContent + '"' + closeTag + '\n';
 		});
