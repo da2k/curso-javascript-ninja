@@ -38,8 +38,6 @@ isTruthy(1.2);
 isTruthy(2 * 2);
 isTruthy(window);
 
-
-
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
 seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
