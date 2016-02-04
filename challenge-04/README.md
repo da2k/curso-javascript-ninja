@@ -53,10 +53,10 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `quantidadePessoas` - Number - zero por padrão
 */
 var carro = {
-  marca: '',
-  modelo: '',
-  placa: '',
-  ano: '',
+  marca: 'Volkswagen',
+  modelo: 'Gol',
+  placa: 'ABC-1234',
+  ano: 2015,
   quantasPortas: 4,
   assentos: 5,
   quantidadePessoas: 0
@@ -88,7 +88,7 @@ carro.obterModelo = function() {
 Crie um método chamado `obterMarca` que retorne a marca do carro.
 */
 carro.obterMarca = function() {
-  carro.marca;
+  return carro.marca;
 };
 
 /*
@@ -138,10 +138,10 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-carro.obterCor();
+carro.obterCor();//"preto"
 
 // Mude a cor do carro para vermelho.
-carro.mudarCor('vermelhor');//vermelho
+carro.mudarCor('vermelho');//vermelho
 
 // E agora, qual a cor do carro?
 //vermelho
@@ -153,23 +153,23 @@ carro.mudarCor('verde musgo');//verde musgo
 //verde musgo
 
 // Qual a marca e modelo do carro?
-obterMarca();//
+carro.obterMarca();//"Volkswagen"
 
 // Adicione 2 pessoas no carro.
-?
+carro.adicionarPessoas(2);//"Já temos 2 no carro!"
 
 // Adicione mais 4 pessoas no carro.
-?
+carro.adicionarPessoas(4);//"Só cabem mais 3 pessoas  no carro!"
 
 // Faça o carro encher.
-?
+carro.adicionarPessoas(3);//"Só cabem mais 3 pessoas  no carro!"
 
 // Tire 4 pessoas do carro.
-?
+carro.adicionarPessoas(4);//"Só cabem mais 3 pessoas  no carro!"
 
 // Adicione 10 pessoas no carro.
-?
+carro.adicionarPessoas(-4);//"Só cabem mais 3 pessoas  no carro!"
 
 // Quantas pessoas temos no carro?
-?
+//1
 ```
