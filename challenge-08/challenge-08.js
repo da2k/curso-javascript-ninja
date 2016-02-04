@@ -5,7 +5,7 @@ desses parâmetros.
 */
 var sum = function calculateSum( x, y ) {
   return x + y;
-}
+};
 
 /*
 Invoque a função criada acima, passando dois números que serão somados, e mostre
@@ -15,7 +15,7 @@ o resultado no console, com a frase:
 valor1 = 35;
 valor2 = 20;
 
-console.log('A soma de ' + valor1 +' e ' + valor2 + ' é igual a ' + sum(valor1, valor2) + '.')
+console.log('A soma de ' + valor1 +' e ' + valor2 + ' é igual a ' + sum(valor1, valor2) + '.');
 
 /*
 Mostre no console o nome da função criada acima, com a frase:
@@ -56,8 +56,11 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
   "Operação inválida."
 */
 function calculator( operator ) {
+
   return function calc( x, y){
+
     var result;
+
       switch( operator ){
         case '+' :
           result = x + y;
@@ -80,10 +83,11 @@ function calculator( operator ) {
           break;
         
         default :
-          console.log('Operação inválida.');
+          return 'Operação inválida.';
       }
-    console.log('Resultado da operação ' + x + ' ' + operator + ' ' + y + ' = ' + result + '.' );
-  }
+      
+    return 'Resultado da operação ' + x + ' ' + operator + ' ' + y + ' = ' + result + '.';
+  };
 }
 
 /*
