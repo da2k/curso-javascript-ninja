@@ -2,7 +2,7 @@
 Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
-var foo = [1, 'Daniel', true, null, undefined];
+var foo = [1, 'Daniel', true, null, {foo: 1}];
 
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
@@ -11,12 +11,12 @@ Crie uma função que receba um array como parâmetro, e retorne esse array.
 var arr = [1, 2, 3];
 function myFunc(arg) {
   return arg;
-};
+}
 
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-myFunc(arr[1]);
+console.log(myFunc(arr[1]));
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -34,14 +34,18 @@ function myFunction(arr, arg) {
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
 
-var bar = [1, null, 'daniel', true, {}];
+var bar = [1, null, 'daniel', true, [1,2,3,4]];
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
 
-myFunction(arr);
+console.log(myFunction(bar, 0));
+console.log(myFunction(bar, 1));
+console.log(myFunction(bar, 2));
+console.log(myFunction(bar, 3));
+console.log(myFunction(bar, 4));
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -58,52 +62,52 @@ propriedades:
 os livros.
 */
 
-function Book(params) {
+function book(params) {
   var obj = {
-    livro1: {
+    'Aprendendo CSS': {
       quantidadePaginas: 200,
-      autor: 'Autor1',
-      editora: 'Editora1'
+      autor: 'Fulano',
+      editora: 'Editora Aurora'
     },
-    livro2: {
+    'Javascript na prática': {
       quantidadePaginas: 250,
-      autor: 'Autor2',
-      editora: 'Editora3'
+      autor: 'Beltrano',
+      editora: 'Casa do codigo'
     },
-    livro3: {
+    'HTML5 em ação': {
       quantidadePaginas: 300,
-      autor: 'Autor3',
-      editora: 'Editora3'
+      autor: 'Cicrano',
+      editora: 'Novatec'
     }
   };
-  return params;
-  if (params === false) {
+  if (!params) {
     return obj;
   }
+  return obj[params];
 }
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-// ?
+console.log(book());
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// ?
+console.log('O livro Aprendendo CSS tem ' + book('Aprendendo CSS').quantidadePaginas + ' páginas!');
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
+console.log('O autor do livro Javascript na prática é ' + book('Javascript na prática').autor + '.');
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-// ?
+console.log('O livro HTML5 em ação foi publicado pela editora ' + book('HTML5 em ação').editora + '.');
