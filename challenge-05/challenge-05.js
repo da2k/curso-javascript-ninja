@@ -52,30 +52,50 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-// ?
+function book ( bookName ) {
+	// body...
+	var todosLivros = {
+		'Xhtml': {
+			'quantidadePaginas': 202,
+			'autor': 'Ana Laura Gomes',
+			'editora': 'SENAC SÃO PAULO'
+		},		
+		'Css3': {
+			'quantidadePaginas': 280,
+			'autor': 'Maurício Samy Silva',
+			'editora': 'SENAC SÃO PAULO'
+		},		
+		'Html5': {
+			'quantidadePaginas': 304,
+			'autor': 'Brian P. Hogan',
+			'editora': 'Brochura'
+		},
+	};
 
+	return bookName === undefined ? todosLivros : bookName;
+}
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-// ?
+console.log(book().Xhtml.quantidadePaginas);
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// ?
+console.log('O livro Css3 tem', book().Css3.quantidadePaginas, 'páginas!');
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
+console.log('O autor do livro Html5 é', book().Html5.autor,'.');
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-// ?
+console.log('O livro Css3 foi publicado pela editora', book().Css3.editora, '.');
