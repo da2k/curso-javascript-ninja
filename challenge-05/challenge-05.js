@@ -14,7 +14,7 @@ function retornaArray(arr) {
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
- console.log ( retornaArray(variavelQualquer)[1] ); // 29
+ console.log (retornaArray(variavelQualquer)[1]); // 29
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -34,11 +34,11 @@ var cincoDiferentes = ['Olá mundo!', 21, true, null, {a:2 , b:3}];
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-console.log(doisParametros(cincoDiferentes,0));
-console.log(doisParametros(cincoDiferentes,1));
-console.log(doisParametros(cincoDiferentes,2));
-console.log(doisParametros(cincoDiferentes,3));
-console.log(doisParametros(cincoDiferentes,4));
+console.log(doisParametros(cincoDiferentes, 0));
+console.log(doisParametros(cincoDiferentes, 1));
+console.log(doisParametros(cincoDiferentes, 2));
+console.log(doisParametros(cincoDiferentes, 3));
+console.log(doisParametros(cincoDiferentes, 4));
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
