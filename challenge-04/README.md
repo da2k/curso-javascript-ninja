@@ -79,7 +79,7 @@ var carro = {
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
-carro.mudaCor = function( novaCor ) {
+carro.mudarCor = function( novaCor ) {
   carro.cor = novaCor;
 };
 
@@ -182,13 +182,13 @@ Qual a cor atual do carro?
 carro.obterCor(); //branco
 
 // Mude a cor do carro para vermelho.
-carro.mudaCor('vermelho');
+carro.mudarCor('vermelho');
 
 // E agora, qual a cor do carro?
 carro.obterCor(); //vermelho
 
 // Mude a cor do carro para verde musgo.
-carro.mudaCor('verde musgo');
+carro.mudarCor('verde musgo');
 
 // E agora, qual a cor do carro?
 carro.obterCor(); //verde musgo
@@ -207,26 +207,7 @@ carro.adicionando(3);//"O carro já está lotado!"
 
 // Tire 4 pessoas do carro.
 
-carro.tirando = function( removePessoas ) {
-  var totalPessoas = carro.quantidadePessoas - removePessoas;
-
-  if( totalPessoas > 0 ) {
-    carro.quantidadePessoas -= removePessoas;
-    var plural = carro.quantidadePessoas === 1 ? 'pessoa' : 'pessoas';
-    return 'Ainda temos ' + carro.quantidadePessoas + ' ' + plural + ' no carro!';
-  }
-
-  if( totalPessoas === 0 ) {
-    carro.quantidadePessoas -= removePessoas;
-    return 'O carro já está vaziu!';
-  }
-
-  if( totalPessoas < 0 ) {
-    return 'Não existem pessoas suficientes para serem removidas!';
-  }
-};
-
-carro.tirando(4);//"Ainda temos 1 pessoa no carro!"
+carro.adicionando(-4);//"Ainda temos 1 pessoa no carro!"
 
 // Adicione 10 pessoas no carro.
 carro.adicionando(10);//"Só cabem mais 4 pessoas!"
