@@ -56,7 +56,6 @@ function showTeamPosition( posicao ) {
 
 		default: 
 		console.log('Não temos a informação do time que está nessa posição.');
-
 	}
 }
 /*
@@ -115,7 +114,6 @@ function convertToHex( cor ) {
 
 		default:
 		return 'Não temos o equivalente hexadecimal para ' + cor + '.';
-
 	}
 }
 
@@ -123,4 +121,13 @@ function convertToHex( cor ) {
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
 convertToHex('verde');
+convertToHex('amarelo');
+convertToHex('vermelho');
+convertToHex('roxo');
+convertToHex('cinza');
+convertToHex('azul');
+convertToHex('verde limão');
+convertToHex('azul marinho');
+
+
 
