@@ -7,8 +7,9 @@ var myArray = ['Danilo', true, false, NaN, {idade: 24}];
 Crie uma função chamada `addItem`, que irá adicionar itens no array criado.
 A função deverá retornar o array atualizado.
 */
-function addItem() {
-	return myArray;
+function addItem( item ) {
+	arr.push(item);
+	return arr;
 }
 
 /*
