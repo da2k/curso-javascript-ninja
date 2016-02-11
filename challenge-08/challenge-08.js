@@ -111,3 +111,4 @@ no console.
 console.log( subtraction( 5,2 ) );
 console.log( multiplication( 8,2 ) );
 console.log( division( 5,2 ) );
+console.log( mod( 5,2 ) );
