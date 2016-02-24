@@ -118,7 +118,7 @@
   console.log( '\nReplace de datas:' );
   function replaceDate() {
     return text.replace( regexDate, function( match, dia, mes, ano ){
-      return arguments[1] + '/' + getMonthNumber( arguments[2] ) + '/' + arguments[3];
+      return dia + '/' + getMonthNumber( mes ) + '/' + ano;
     });
   }
   console.log( replaceDate() );
