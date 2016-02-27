@@ -55,32 +55,16 @@
     return number;
   }
 
-  function doSum( firstValue, lastValue ) {
-    return Number(firstValue) + Number(lastValue);
-  }
-
-  function doMinus( firstValue, lastValue ) {
-    return Number(firstValue) - Number(lastValue);
-  }
-
-  function doMultiplication( firstValue, lastValue ) {
-    return Number(firstValue) * Number(lastValue);
-  }
-
-  function doDivision( firstValue, lastValue ) {
-    return Number(firstValue) / Number(lastValue);
-  }
-
   function whichOperation( firstValue, lastValue, lastOperator, operator ) {
     switch(operator) {
       case '+':
-        return doSum( firstValue, lastValue ) + lastOperator;
+        return ( Number(firstValue) + Number(lastValue) ) + lastOperator;
       case '-':
-        return doMinus( firstValue, lastValue ) + lastOperator;
+        return ( Number(firstValue) - Number(lastValue) ) + lastOperator;
       case 'x':
-        return doMultiplication( firstValue, lastValue ) + lastOperator;
+        return ( Number(firstValue) * Number(lastValue) ) + lastOperator;
       case '÷':
-        return doDivision( firstValue, lastValue ) + lastOperator;
+        return ( Number(firstValue) / Number(lastValue) ) + lastOperator;
     }
   }
 
