@@ -55,26 +55,42 @@
     return number;
   }
 
+  function doSum( firstValue, lastValue ) {
+    return Number(firstValue) + Number(lastValue);
+  }
+
+  function doMinus( firstValue, lastValue ) {
+    return Number(firstValue) - Number(lastValue);
+  }
+
+  function doMultiplication( firstValue, lastValue ) {
+    return Number(firstValue) * Number(lastValue);
+  }
+
+  function doDivision( firstValue, lastValue ) {
+    return Number(firstValue) / Number(lastValue);
+  }
+
+  function whichOperation( firstValue, lastValue, lastOperator, operator ) {
+    switch(operator) {
+      case '+':
+        return doSum( firstValue, lastValue ) + lastOperator;
+      case '-':
+        return doMinus( firstValue, lastValue ) + lastOperator;
+      case 'x':
+        return doMultiplication( firstValue, lastValue ) + lastOperator;
+      case '÷':
+        return doDivision( firstValue, lastValue ) + lastOperator;
+    }
+  }
+
   function getAllValuesInAPattern(number) {
     return number.match(/\d+[+x÷-]?/g);
   }
 
-  function whichOperation(firstValue, lastValue, lastOperator, operator) {
-    switch(operator) {
-      case '+':
-        return ( Number(firstValue) + Number(lastValue) ) + lastOperator;
-      case '-':
-        return ( Number(firstValue) - Number(lastValue) ) + lastOperator;
-      case 'x':
-        return ( Number(firstValue) * Number(lastValue) ) + lastOperator;
-      case '÷':
-        return ( Number(firstValue) / Number(lastValue) ) + lastOperator;
-    }
-  }
-
   function finalCalculations() {
     var allValues = getAllValuesInAPattern($visor.value);
-    
+
     return allValues.reduce(function(accumulated, actual) {
       var firstValue = accumulated.slice(0, -1);
       var operator = accumulated.split('').pop();
