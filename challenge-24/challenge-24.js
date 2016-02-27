@@ -59,24 +59,34 @@
     return number.match(/\d+[+x÷-]?/g);
   }
 
-  function handleClickEqual() {
-    $visor.value = removeLastItemIfItIsAnOperator($visor.value);
+  function whichOperation(firstValue, lastValue, lastOperator, operator) {
+    switch(operator) {
+      case '+':
+        return ( Number(firstValue) + Number(lastValue) ) + lastOperator;
+      case '-':
+        return ( Number(firstValue) - Number(lastValue) ) + lastOperator;
+      case 'x':
+        return ( Number(firstValue) * Number(lastValue) ) + lastOperator;
+      case '÷':
+        return ( Number(firstValue) / Number(lastValue) ) + lastOperator;
+    }
+  }
+
+  function finalCalculations() {
     var allValues = getAllValuesInAPattern($visor.value);
-    $visor.value = allValues.reduce(function(accumulated, actual) {
+    
+    return allValues.reduce(function(accumulated, actual) {
       var firstValue = accumulated.slice(0, -1);
       var operator = accumulated.split('').pop();
       var lastValue = removeLastItemIfItIsAnOperator(actual);
       var lastOperator = isLastItemAnOperation(actual) ? actual.split('').pop() : '';
-      switch(operator) {
-        case '+':
-          return ( Number(firstValue) + Number(lastValue) ) + lastOperator;
-        case '-':
-          return ( Number(firstValue) - Number(lastValue) ) + lastOperator;
-        case 'x':
-          return ( Number(firstValue) * Number(lastValue) ) + lastOperator;
-        case '÷':
-          return ( Number(firstValue) / Number(lastValue) ) + lastOperator;
-      }
+
+      return whichOperation(firstValue, lastValue, lastOperator, operator);
     });
+  }
+
+  function handleClickEqual() {
+    $visor.value = removeLastItemIfItIsAnOperator($visor.value);
+    $visor.value = finalCalculations();
   }
 })(window, document);
