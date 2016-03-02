@@ -73,13 +73,13 @@ Só vamos mudar o range:
 console.log( 'Números pares entre 100 e 120:' );
 for(var i = 100; i < 121; i++){
 	if(i % 2 === 0){
-		console.log(i)	
+		console.log(i);
 	}	 
 }
 
 console.log( 'Números ímpares entre 111 e 125:' );
 for(var i = 111; i < 126; i++){
 	if(i % 2 !== 0){
-		console.log(i)	
+		console.log(i);	
 	}	
 }
