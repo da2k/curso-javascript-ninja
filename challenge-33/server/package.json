@@ -1,0 +1,9 @@
+{
+  "name": "rest-api",
+  "version": "0.1.0",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "cors": "^2.7.1",
+    "express": "^4.13.3"
+  }
+}
