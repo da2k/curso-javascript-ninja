@@ -37,10 +37,13 @@ input;
   Array.prototype.forEach.call($buttonNumber, function(button) {
     button.addEventListener('click', clickNumbers, false);
   });
+
   Array.prototype.forEach.call($buttonOperation, function(button) {
     button.addEventListener('click', clickOperations, false);
   });
+
   $buttonCE.addEventListener('click', resetInput, false );
+  
   $buttonEqual.addEventListener('click', calculate, false);
 
   function clickNumbers() {
