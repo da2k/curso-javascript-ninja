@@ -23,34 +23,24 @@ dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
 	var $start = doc.querySelector('[data-js="start"]');
 	var $stop = doc.querySelector('[data-js="stop"]');
 	var $reset = doc.querySelector('[data-js="reset"]');
-	var counter = 0;
-	var stopClock;
+	var timeout;
+
+	$start.addEventListener('click', startClock, false);
+	$stop.addEventListener('click', stopClock, false);
+	$reset.addEventListener('click', resetClock, false);
 
 	function startClock(){
-		$clock.value = counter++;
-		stopClock = setTimeout(startClock, 1000);
+		$clock.value = +$clock.value + 1;
+		timeout = setTimeout(startClock, 1000);
 	}
 
-	$start.addEventListener('click', function(){
-		startClock();
-		$start.disabled = true;
-		$stop.disabled = false;
-		$reset.disabled = false;
-	}, false);
+	function stopClock(){
+		clearTimeout(timeout);
+	}
 
-	$stop.addEventListener('click', function(){
-		clearTimeout(stopClock);
-		$start.disabled = false;
-		$stop.disabled = true;
-	}, false);
-
-	$reset.addEventListener('click', function(){
-		clearTimeout(stopClock);
+	function resetClock(){
+		stopClock();
 		$clock.value = 0;
-		counter = 0;
-		$reset.disabled = true;
-		$start.disabled = false;
-		$stop.disabled = true;
-	}, false);
+	}
 
 })(document);
