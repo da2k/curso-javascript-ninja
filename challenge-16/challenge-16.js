@@ -68,7 +68,7 @@
 
 	function myFriends(arr){
 	  return arr.reduce(function(previousValue, currentValue, index){
-	    separator = arr.length - 1 === index ? ' e ' : ', ';
+	    var separator = arr.length - 1 === index ? ' e ' : ', ';
 	    return previousValue + separator + currentValue
 	  }).concat(' são meus amigos.');
 	}
