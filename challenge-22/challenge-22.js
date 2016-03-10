@@ -4,13 +4,13 @@
    Crie dois objetos, que serão duas pessoas. Cada um deve ter as propriedades
    `name` e `lastName`, preenchidos com o nome e sobrenome da pessoa.
    */
+   var heverton = {
+      name: 'Heverton',
+      lastName: 'Castro'
+   };
    var carla = {
       name: 'Carla',
       lastName: 'Reuter'
-   };
-   var angela = {
-      name: 'Angela',
-      lastName: 'Soares'
    };
 
    /*
@@ -30,8 +30,8 @@
       return this.name + ' ' + this.lastName;
    }
 
+   console.log(getFullName.call(heverton));
    console.log(getFullName.call(carla));
-   console.log(getFullName.call(angela));
 
    /*
    Crie uma função chamada `sum`. Essa função pode receber uma lista de
