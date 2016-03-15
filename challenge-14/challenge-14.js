@@ -12,18 +12,11 @@
 	Mostre esse array no console.
 	*/
 	console.log( 'Number Objects Array:' );
-	var numberObjects = [
-		{ number: 1 },
-		{ number: 2 },
-		{ number: 3 },
-		{ number: 4 },
-		{ number: 5 },
-		{ number: 6 },
-		{ number: 7 },
-		{ number: 8 },
-		{ number: 9 },
-		{ number: 10 }
-	];
+	var numberObjects = [];
+	for (var i = 1; i <= 10; i++) { 
+
+		numberObjects.push( { number: i } );
+	}
 
 	console.log( numberObjects );
 
@@ -66,8 +59,7 @@
 	var operation;
 
 	operation = justMod2Or3.reduce(function( acumulado, valorCorrente, index, array ) {
-		array[ index + 1] ? '' : acumulado += 1;
-		return acumulado * valorCorrente; 
+		return ( acumulado + 1) * valorCorrente;
 	}, 0);
 
 	console.log( operation );
@@ -81,8 +73,7 @@
 	var operation2;
 
 	operation2 = justMod2Or3.reduceRight(function( acumulado, valorCorrente, index, array ) {
-		array[ index + 1] ? '' : acumulado += 1;
-		return acumulado * valorCorrente; 
+		return ( acumulado + 1) * valorCorrente;
 	}, 0);
 
 	console.log( operation2 );
@@ -96,11 +87,11 @@
 	falada, como se você estivesse falando em código xD
 	*/
 	console.log( '\nSeu nome na língua do "P":' );
-	var name = ['R','a','f','a','e','l'];
+	var name = ['Ra','fa','el'];
 
 	nameP = name.reduce(function( acumulado, valorCorrente, index, array ) {
-		return acumulado + 'p' + valorCorrente;
-	});
+		return acumulado + 'P' + valorCorrente;
+	}, '');
 
 	console.log( nameP );
 
