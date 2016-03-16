@@ -151,7 +151,10 @@
 	*/
 	var map = newBrasil.map(function( item, index ) {
 
-		return  { estado: item.estado +" pertence ao Brasil.", id: item.id + 1 };
+		return  { 
+			estado: item.estado +" pertence ao Brasil.", 
+			id: item.id + 1 
+		};
 	});
 
 	/*
