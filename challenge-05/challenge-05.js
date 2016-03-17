@@ -16,7 +16,7 @@ function myFunction(arr) {
 Imprima o segundo índice do array retornado pela função criada acima.
 */
 
-// console.log(myFunction(arr[1]));
+console.log(myFunction(arr[1]));
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -39,11 +39,11 @@ Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
 
-// console.log(anotherFunction(myArr, 0));
-// console.log(anotherFunction(myArr, 1));
-// console.log(anotherFunction(myArr, 2));
-// console.log(anotherFunction(myArr, 3));
-// console.log(anotherFunction(myArr, 4));
+console.log(anotherFunction(myArr, 0));
+console.log(anotherFunction(myArr, 1));
+console.log(anotherFunction(myArr, 2));
+console.log(anotherFunction(myArr, 3));
+console.log(anotherFunction(myArr, 4));
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
