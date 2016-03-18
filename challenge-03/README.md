@@ -48,7 +48,7 @@ valor dessa propriedade a quantidade passada por parâmetro;
 booleano que representa "verdadeiro";
 */
 pessoa.andar = function (qtd) {
-  pessoa.caminhouQuantosMetros + qtd;
+  pessoa.caminhouQuantosMetros += qtd;
   pessoa.andando = true;
 }
 
@@ -65,7 +65,7 @@ Crie um método chamado `nomeCompleto`, que retorne a frase:
 - "Olá! Meu nome é [NOME] [SOBRENOME]!"
 */
 pessoa.nomeCompleto = function () {
-  return "Olá! Meu nome é " + pessoa.nome + " " + pessoa.sobrenome;
+  return "Olá! Meu nome é " + pessoa.nome + " " + pessoa.sobrenome + "!";
 }
 
 /*
