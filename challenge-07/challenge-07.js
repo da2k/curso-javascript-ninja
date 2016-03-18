@@ -8,7 +8,8 @@ Crie uma função chamada `addItem`, que irá adicionar itens no array criado.
 A função deverá retornar o array atualizado.
 */
 function addItem (item) {
-    return arr.push(item);
+    arr.push(item);
+    return arr;
 };
 
 /*
@@ -19,8 +20,6 @@ itens de tipos diferentes, mostrando o resultado no console.
 addItem([ 'Novo Array', 2.5, function(){} ]);
 
 console.log(arr);
-
-
 
 /*
 Mostre no console o segundo elemento desse último array, criado acima, com a
@@ -49,12 +48,12 @@ pares entre 10 e 20, inclusive esses 2.
 o numero é par, quando ele é dividido por 2 e o resto da divisao é 0, caso contrário ele é impar.
 */
 
-var inital = 9;
+var counter = 10;
 
-while (inital <= 20) {
-    inital++;
-    if (inital % 2 === 0) {
-        console.log( 'Números pares entre 10 e 20: ' + inital );
+while (counter <= 20) {
+    counter++;
+    if (counter % 2 === 0) {
+        console.log( 'Números pares entre 10 e 20: ' + counter );
     }
 }
 
@@ -63,7 +62,7 @@ Na mesma ideia do exercício acima: mostre agora os números ímpares.
 */
 var counter = 10;
 
-while (counter <= 19) {
+while (counter <= 20) {
     counter++;
     if (counter % 2 !== 0) {
         console.log( 'Números ímpares entre 10 e 20: ' + counter);
