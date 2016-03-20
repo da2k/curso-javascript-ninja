@@ -64,11 +64,11 @@
     */
 
     var numbers = [];
-    for ( var i = 0; i <= 20; i++ ) {
-        numbers.push(i);
-        if( i >= 10 ) {
+    for ( var i = 0; i < 20; i++ ) {
+        if( i > 10 ) {
             break;
         }
+        numbers.push(i);
     }
     console.log( 'De 0 a 10:', numbers);
 
@@ -82,9 +82,9 @@
 
     for ( var i = 0; i <= 20; i++ ) {
         if ( i % 2 !== 0) {
-            numbers.push(i);
             continue;
         }
+        numbers.push(i);
     }
     console.log( 'Pares de 0 a 20:', numbers );
 })();
