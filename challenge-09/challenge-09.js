@@ -41,7 +41,7 @@
         var number1 = 40;
         function sum() {
             return number1 + number2;
-        };
+        }
         console.log( 'A soma de 40 e 50 é igual a', sum() );
         console.log( 'Na função myFunction3, number1 é igual a', number1 );
         return sum();
@@ -71,9 +71,6 @@
         };
     }
 
-
-
-
     /*
     Declare uma variável chamada `sum`, e atribua a ela a função `calculator`,
     passando dois números por parâmetro.
@@ -100,6 +97,7 @@
     `division` e `mod`, e atribua à elas `calculator`, passando números
     diferentes para cada chamada.
     */
+
     var subtraction = calculator(30,7); // 23
     var multiplication = calculator(8,4); // 32
     var division = calculator(40,4); // 10
