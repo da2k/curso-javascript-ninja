@@ -14,6 +14,12 @@ Crie uma nova branch chamada `challenge-30`, e copie tudo o que foi feito no
 desafio da aula anterior para esse novo repositório, nessa branch
 `challenge-30`.
 
+Adicione um arquivo na raiz desse novo repositório chamado `.gitignore`.
+O conteúdeo desse arquivo deve ser somente as duas linhas abaixo:
+
+node_modules
+npm-debug.log
+
 Faça as melhorias que você achar que são necessárias no seu código, removendo
 duplicações, deixando-o o mais legível possível, e então suba essa alteração
 para o repositório do seu projeto.
