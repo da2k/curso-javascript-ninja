@@ -1,0 +1,44 @@
+body{
+	cursor: default;
+}
+main{
+	margin: 5em auto;
+	max-width: 220px;
+}
+[name='visor']{
+	width: 185px;
+	font-size: 1.5em;
+	text-align: right;
+	margin: 6px 0;
+	padding: 10px;
+}
+button{
+	cursor: pointer;
+}
+.btn{
+	max-width: 40px;
+	padding: 5px 10px;
+	margin: 3px;
+	font-size: .9em;
+	color: #333;
+}
+.operator{
+	width: 50px;
+	padding: 6px 10px;
+	border: 1px solid #666;
+	background: #FFF;
+}
+.operator:active{
+	background: #000;
+	color: #FFF;
+}
+[name="equal"]{
+	background: #5C9C62;
+	border: 2px solid #5C9C62;
+	color: #FFF;
+}
+[name="clear"]{
+	background: #ADADAD;
+	border: 2px solid #ADADAD;
+	color: #FFF;
+}
