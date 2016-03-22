@@ -1,3 +1,5 @@
+( function() {
+    
 // Envolva todo o código desse arquivo em uma IIFE (incluindo esse comentário).
 
 /*
@@ -7,14 +9,22 @@ loop, mostre no console a mensagem:
 'Entrou ao menos uma vez!'
 Qual loop você deve usar para que essa mensagem seja mostrada no console?
 */
-// ?
+var once = false;
+do {
+    console.log('Entrou ao menos uma vez!');
+} while( once === true );
 
 /*
 Crie um objeto chamado `person`, que receba as seguintes propriedades:
 - 'name', 'age', 'weight' e 'birthday'. Preencha com os valores corretos
 para o nome, idade, peso e data de nascimento dessa pessoa.
 */
-// ?
+var person = {
+    'name': 'Leandro Alexandrino',
+    'age': 30,
+    'weight': 90,
+    'birthday': '30 de dezembro'   
+};
 
 /*
 Use um loop para percorrer o objeto criado acima, mostrando no console
@@ -25,8 +35,12 @@ esse objeto tem.
 Após o loop, mostre a frase:
 'The person has [COUNTER] properties'
 */
-// ?
-
+var counter = 0;
+for( var prop in person) {
+    console.log( 'The ' + prop + ' of person is ' + person.prop ) ;
+    counter++;
+}
+console.log( 'The person has ' + counter + ' properties.' );
 /*
 Crie uma função chamada `moreThan`, que vai verificar se a pessoa (objeto
 criado acima) é mais velha que a idade passada por parâmetro.
@@ -52,3 +66,6 @@ Mostrar no console os números do array.
 */
 console.log( 'Pares de 0 a 20:' );
 // ?
+
+
+})();
