@@ -28,23 +28,21 @@ propriedade, usando os valores passados por parâmetro.
 
 var operation = {
     '+': function( x, y ) {
-        x + y;
+        return x + y;
     },
     '-': function( x, y ) {
-        x - y;
+        return x - y;
     },
     '*': function( x, y ) {
-        x * y;
+        return x * y;
     },
     '/': function( x, y ) {
-        x / y;
+        return x / y;
     },
     '%': function( x, y ) {
-        x % y;
+        return x % y;
     }
-}
-
- console.log( operation[ '+' ]( 10, 20 ) )
+};
 
 /*
 Crie uma função chamada `isOperatorValid`, que receberá um operador por
@@ -161,7 +159,7 @@ var subtraction = calculator( operationSignal );
 if ( subtraction ) {
     number1 = 10;
     number2 = 20;
-    console.log( showOperationMessage( operationSignal, number1, number2 ), sum( number1, number2 ) );
+    console.log( showOperationMessage( operationSignal, number1, number2 ), subtraction( number1, number2 ) );
 } else {
     console.log( showErrorMessage( operationSignal ) );
 }
@@ -172,7 +170,7 @@ var multiplication = calculator( operationSignal );
 if ( multiplication ) {
     number1 = 10;
     number2 = 20;
-    console.log( showOperationMessage( operationSignal, number1, number2 ), sum( number1, number2 ) );
+    console.log( showOperationMessage( operationSignal, number1, number2 ), multiplication( number1, number2 ) );
 } else {
     console.log( showErrorMessage( operationSignal ) );
 }
@@ -183,18 +181,18 @@ var division = calculator( operationSignal );
 if ( division ) {
     number1 = 10;
     number2 = 20;
-    console.log( showOperationMessage( operationSignal, number1, number2 ), sum( number1, number2 ) );
+    console.log( showOperationMessage( operationSignal, number1, number2 ), division( number1, number2 ) );
 } else {
     console.log( showErrorMessage( operationSignal ) );
 }
 
-operationSignal = '-';
+operationSignal = '%';
 var mod = calculator( operationSignal );
 
 if ( mod ) {
     number1 = 10;
     number2 = 20;
-    console.log( showOperationMessage( operationSignal, number1, number2 ), sum( number1, number2 ) );
+    console.log( showOperationMessage( operationSignal, number1, number2 ), mod( number1, number2 ) );
 } else {
     console.log( showErrorMessage( operationSignal ) );
 }
@@ -209,7 +207,7 @@ var mod = calculator( operationSignal );
 if ( mod ) {
     number1 = 10;
     number2 = 20;
-    console.log( showOperationMessage( operationSignal, number1, number2 ), sum( number1, number2 ) );
+    console.log( showOperationMessage( operationSignal, number1, number2 ), mod( number1, number2 ) );
 } else {
     console.log( showErrorMessage( operationSignal ) );
 }
