@@ -16,7 +16,7 @@
 	*/
 	console.log( 'As letras do seu nome:' );
 	var name = 'Allef';
-	for( var i =0; i < name.length; i++){
+	for( var i = 0; i < name.length; i++){
 		console.log( name.charAt(i) + ' é a ' + (i + 1) + 'ª letra do meu nome.');
 	}
 
