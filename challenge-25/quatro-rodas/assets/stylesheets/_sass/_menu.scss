@@ -1,0 +1,432 @@
+/* ==========================================================================
+   Menu and sub-menu
+   ========================================================================== */
+
+@media only screen and (min-width: 1px) and (max-width: 1139px) {
+
+    .main-menu{
+        visibility: hidden;
+        opacity: 0;
+        left: 100%;
+        position: absolute;
+        float: none;
+        top: 60px;
+        background: $background-menu;
+        width: 100%;
+        transition: .5s;
+        z-index: 9;
+
+        ul{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            border-bottom: 1px solid $border-menu;
+
+            a{
+                display: block;
+                padding: 15px 20px;
+                color: #FFF;
+                font-weight: bold;
+                text-transform: uppercase;
+                text-decoration: none;
+
+            }
+        }
+
+        .content {
+            a::after{
+                position: relative;
+                content: '\276F';
+                transform: rotate(90deg);
+                float: right;
+                margin-right: 4px;
+                font-size: .8em;
+                transition: .5s;
+            }
+            a:active{
+                background: $border-menu;
+            }
+            a.active-mobile::after{
+                position: relative;
+                content: '\276F';
+                transform: rotate(-90deg);
+                float: right;
+                margin-right: 7px;
+                font-size: .8em;
+            }
+
+        }
+
+        &.show{
+            visibility: visible;
+            opacity: 1;
+            left: 0;
+        }
+    }
+    .sub-menu{
+        display: block;
+        background: $background-submenu;
+        transition: .5s;
+        opacity: 0;
+
+        li{
+            border: none;
+            padding: 5px 0;
+
+            a{
+                display: block;
+                padding: 5px 20px;
+                color: #FFF;
+                font-weight: normal;
+                text-transform: none;
+                text-decoration: none;
+
+                &::after{
+                    position: relative;
+                    content: '' !important;
+                }
+
+            }
+        }
+
+        .link, .list{
+            display: none;
+        }
+
+        &.active-mobile{
+            opacity: 1;
+
+            &.itens{
+                & > .link{
+                    display: block;
+
+                }
+                & > .list{
+                    display: block;
+                }
+            }
+            &.cover{
+                & > .link{
+                    display: block;
+                }
+                & > .list{
+                    display: none;
+                }
+            }
+
+        }
+
+    }
+    .secondary-menu{
+        display: none;
+    }
+    .toogle-menu{
+        position: absolute;
+        top: 22px;
+        right: 20px;
+        width: 20px;
+        height: 19px;
+        display: block;
+        cursor: pointer;
+
+        &.active::before, &:hover::before{
+            position: absolute;
+            content: '';
+            top: -22px;
+            right: -20px;
+            width: 60px;
+            height: 60px;
+            background: $background-menu;
+        }
+
+        .line {
+            backface-visibility: hidden;
+            position: absolute;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: #FFF;
+            transition: 0.55s;
+            border-radius: 5px;
+
+            &.top {
+                top: 0;
+            }
+            &.middle {
+                top: 6px;
+            }
+            &.bottom {
+                top: 12px;
+            }
+        }
+
+        &.active{
+            .top {
+                backface-visibility: hidden;
+                top: 7px;
+                transform: rotate(45deg);
+                transition: 0.55s 0.5s;
+            }
+            .middle {
+                opacity: 0;
+            }
+            .bottom {
+                backface-visibility: hidden;
+                top: 7px;
+                transform: rotate(-45deg);
+                transition: 0.55s 0.5s;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1140px) {
+
+    .main-menu{
+        display: block;
+        float: left;
+        height: 80px;
+        margin-left: 146px;
+        ul{
+            margin: 0;
+            padding: 0;
+
+            li{
+                float: left;
+                display: inline;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+        a{
+            position: relative;
+            display: block;
+            font-weight: bold;
+            font-size: .875em;
+            color: #FFF;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+        .content{
+            & > a{
+                padding: 32px 28px 31px 10px;
+
+                &:hover{
+                    background: $background-submenu;
+                }
+                &.active-desktop{
+                    background: $background-submenu;
+                }
+                &::after{
+                    position: absolute;
+                    content: '\276F';
+                    transform: rotate(90deg);
+                    right: 10px;
+                    top: 30px;
+                }
+            }
+        }
+        .simple > a{
+            padding: 32px 14px 31px 12px;
+
+            &:hover{
+                background: $background-submenu;
+            }
+        }
+    }
+
+    .secondary-menu{
+        position: relative;
+        float: left;
+        width: 100%;
+        height: 28px;
+        background: $background-submenu;
+        display: block;
+
+        &::before{
+            height: 28px;
+            content: "+ ACESSADOS";
+            width: 100px;
+            position: relative;
+            float: left;
+            font-weight: bold;
+            font-size: .875em;
+            color: white;
+            padding: 0 20px 0 20px;
+            line-height: 1.8em;
+            background: #D41F1F url('../../images/layout/right-arrow.jpg') no-repeat right;
+        }
+
+        ul{
+            margin: 0;
+            padding: 0;
+
+            li{
+                float: left;
+                display: inline;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+        }
+        a{
+            position: relative;
+            display: block;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: .8125em;
+            text-decoration: none;
+            color: #FFF;
+            margin: 5px 18px;
+
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+    }
+
+    .sub-menu{
+        position: absolute;
+        width: 1320px;
+        background: $background-submenu;
+        z-index: 10;
+        left: 0;
+        top: 80px;
+        border-bottom: 2px solid #F00;
+        visibility: hidden;
+        display: block !important;
+        /*transition: top .5s;*/
+
+        &.active-desktop{
+            visibility: visible;
+            /*top: 80px;*/
+        }
+
+        ul{
+            margin: 0;
+            padding: 0;
+
+            li{
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+        }
+        a{
+            position: relative;
+            display: block;
+            text-transform: none;
+            font-size: 1em;
+            font-weight: 500;
+            text-decoration: none;
+            color: #FFF;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .link{
+            float: left;
+            height: 100%;
+        }
+        .list{
+            float: left;
+            height: 100%;
+            display: block;
+        }
+
+        &.itens{
+            .link{
+                width: 225px;
+                height: 160px;
+
+                li{
+                    &:first-child{
+                        margin: 20px 0 0 20px;
+                    }
+                    margin: 8px 0 0 20px;
+                }
+
+                a{
+                    width: 180px;
+                    height: 35px;
+                    background: #474747;
+                    text-align: center;
+                    line-height: 2;
+                    font-weight: 600;
+                }
+            }
+            .list{
+                width: 1095px;
+                height: 160px;
+
+                li{
+                    float: left;
+                    width: 20%;
+                }
+
+                a{
+                    margin: 12px 30px 4px 30px;
+                }
+            }
+        }
+        &.cover{
+            .link{
+                width: 175px;
+                height: 210px;
+                background: #474747;
+
+                li{
+                    &:first-child{
+                        margin-top: 20px;
+
+                        a{
+                            background: $background-submenu;
+
+                            &::after{
+                                position: absolute;
+                                content: '\276F';
+                                right: 10px;
+                            }
+                        }
+                    }
+                    margin: 0;
+                }
+
+                a{
+                    width: 145px;
+                    height: 35px;
+                    background: #474747;
+                    text-align: right;
+                    line-height: 2;
+                    padding: 0 30px 0 0;
+                }
+            }
+            .list{
+                width: 1145px;
+                height: 210px;
+
+                li{
+                    width: 200px;
+                    height: 190px;
+                    margin: 20px 0 0 23px;
+
+                    p{
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+    .toogle-menu {
+        display: none;
+    }
+}
