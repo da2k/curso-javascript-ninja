@@ -9,12 +9,15 @@
 
 		var $cards = doc.querySelectorAll('[data-js="card"]');
 		var $inputMoves = doc.querySelector('[data-js="moves"]');
+		var $buttonReset = doc.querySelector('[data-js="reset"]');
 
 		var allCards = [];
 		var lastCard = null;
 		var currentCard = null;
 		var moves = 0;
 		var isMoveFinished = true;
+
+		$buttonReset.addEventListener('click', resetGame, false);
 
 		Array.prototype.forEach.call($cards, function(card){
 			card.addEventListener('click', toogleClick, false);
@@ -24,51 +27,32 @@
 		});
 
 		function toogleClick(){
-
 			if(isIrregularMove(this)) return false;
 
 			if(isTheFirstMove()){
 				lastCard = this;
-				this.dataset.opened = true;
+				lastCard.dataset.opened = true;
 				toogleClass(this, 'active');
 				return false;
 			}
 
 			if(isMoveMatched(this, lastCard)){
-				currentCard = this;
-				setCardAlreadyChosen(currentCard, lastCard);
+				setCardAlreadyChosen(this, lastCard);
 				increaseMoves();
 				isTheGameWon();
+				lastCard = null;
+				currentCard = null;
 				return false;
 			}
 
-			isMoveFinished = false;
-
-			currentCard = this;
-			currentCard.dataset.opened = true;
-			toogleClass(currentCard, 'active');
-			increaseMoves()
-
-			setTimeout(function(){
-
-				toogleClass(lastCard, 'active');
-				toogleClass(currentCard, 'active');
-
-				lastCard.dataset.opened = false;
-				currentCard.dataset.opened = false;
-
-				//lastCard.dataset.matched = false;
-				//currentCard.dataset.matched = false;
-
-				lastCard = null;
-				currentCard = null;
-
-				isMoveFinished = true;
-			}, 1200);
+			isMoveWrong(this, lastCard);
+			increaseMoves();
+			lastCard = null;
+			currentCard = null;
 		}
 
 		function isIrregularMove(card){
-			if(card.dataset.matched === 'true' || card.dataset.opened === 'true' || !isMoveFinished)
+			if(JSON.parse(card.dataset.matched) || JSON.parse(card.dataset.opened) || !isMoveFinished)
 				return true;
 		}
 
@@ -76,21 +60,29 @@
 			if(lastCard === null) return true;
 		}
 
+		function isMoveMatched(currentCard, lastCard){
+			return currentCard.dataset.value === lastCard.dataset.value;
+		}
+
 		function setCardAlreadyChosen(currentCard, lastCard){
 			lastCard.dataset.matched = true;
 			currentCard.dataset.matched = true;
 			lastCard.dataset.opened = true;
 			currentCard.dataset.opened = true;
-			lastCard = null;
 			toogleClass(currentCard, 'active');
 		}
 
-		function isMoveMatched(currentCard, lastCard){
-			return currentCard.dataset.value === lastCard.dataset.value;
-		}
-
-		function isMoveWrong(){
-			
+		function isMoveWrong(currentCard, lastCard){
+			isMoveFinished = false;
+			currentCard.dataset.opened = true;
+			toogleClass(currentCard, 'active');
+			setTimeout(function(){
+				toogleClass(lastCard, 'active');
+				toogleClass(currentCard, 'active');
+				lastCard.dataset.opened = false;
+				currentCard.dataset.opened = false;
+				isMoveFinished = true;
+			}, 1200);
 		}
 
 		function increaseMoves(){
@@ -99,10 +91,28 @@
 
 		function isTheGameWon(){
 			var result = allCards.every(function(card){
-				return card.dataset.matched === 'true';
+				return JSON.parse(card.dataset.matched);
 			});
 			if(result)
-				return console.log('Ganhou com ' + moves + ' movimentos!');
+				alert('Você venceu com ' + moves + ' movimentos!');
+			return false;
+		}
+
+		function resetGame(){
+			var ask = confirm('Tem certeza que deseja reiniciar o jogo?');
+			if(ask){
+				allCards.forEach(function(card){
+					card.dataset.opened = false;
+					card.dataset.matched = false;
+					removeClass(card, 'active');
+				});
+
+				lastCard = null;
+				currentCard = null;
+				moves = 0;
+				$inputMoves.value = moves;
+				isMoveFinished = true;
+			}
 			return false;
 		}
 

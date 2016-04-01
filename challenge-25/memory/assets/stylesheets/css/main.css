@@ -455,14 +455,19 @@ main {
   position: relative;
   margin: 0 auto;
   width: 700px;
-  /*width: 720px;*/
-  background: #CAE2F7;
 }
 
 header {
   width: 100%;
   margin: 15px auto;
   text-align: right;
+}
+header button {
+  float: left;
+  margin-left: 10px;
+  border: 1px solid #000;
+  background: none;
+  padding: 3px 10px;
 }
 header input {
   width: 50px;
