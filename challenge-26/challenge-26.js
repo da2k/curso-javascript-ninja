@@ -28,19 +28,19 @@
 		});
 	}
 
-	DOM.prototype.on = function(event, callback) {
+	DOM.prototype.on = function on(event, callback) {
 		this.elementsNodes.forEach(function(node) {
 			node.addEventListener(event, callback, false);
 		});
 	};
 
-	DOM.prototype.off = function(event, callback) {
+	DOM.prototype.off = function off(event, callback) {
 		this.elementsNodes.forEach(function(node) {
 			node.removeEventListener(event, callback, false);
 		});
 	};
 
-	DOM.prototype.get = function() {
+	DOM.prototype.get = function get() {
 		return this.elementsNodes;
 	};
 
