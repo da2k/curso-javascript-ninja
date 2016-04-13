@@ -175,7 +175,7 @@ carro.removePessoas(4)
 carro.quantidadePessoas //1
 
 // Adicione 10 pessoas no carro.
-arro.carregaPessoas(10) //'Só cabem mais 4 pessoas!'
+carro.carregaPessoas(10) //'Só cabem mais 4 pessoas!'
 
 // Quantas pessoas temos no carro?
 carro.quantidadePessoas //1
