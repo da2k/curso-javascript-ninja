@@ -1,4 +1,4 @@
-(function() {
+(function(DOM, document){
   'use strict';
 
   /*
@@ -36,4 +36,94 @@
   que será nomeado de "app".
   */
 
-})();
+  function app(){
+    var ajax;
+    var fieldsCar;
+    var urlDataCompany;
+    var formCar;
+    var fieldsCompany;
+    var containerCar;
+
+    function initialize(){
+      settingVariables();
+      initEvents();
+      handleAjax();
+    }
+
+    function settingVariables(){
+      fieldsCar = [
+        '[data-js="input-imagem"]',
+        '[data-js="input-marca"]',
+        '[data-js="input-ano"]',
+        '[data-js="input-placa"]',
+        '[data-js="input-cor"]'
+      ];
+      urlDataCompany = 'company.json';
+      formCar = '[data-js="form-car"]';
+      fieldsCompany = {
+        name: '[data-js="company-name"]',
+        phone: '[data-js="company-phone"]'
+      };
+      containerCar = '[data-js="container-cars"]';
+    }
+
+    function initEvents(){
+      new DOM(formCar).get()[0].addEventListener('submit', handleFormCar, false);
+    }
+
+    function handleAjax(){
+      ajax = new XMLHttpRequest();
+      ajax.open('GET', urlDataCompany);
+      ajax.send();
+      ajax.addEventListener('readystatechange', handleReadyStateChange, false);
+    }
+
+    function handleReadyStateChange(){
+      if(isRequestOk())
+        fillDataCompany();
+    }
+
+    function isRequestOk(){
+      return ajax.readyState === 4 && ajax.status === 200;
+    }
+
+    function fillDataCompany(){
+      var data = JSON.parse(ajax.responseText);
+      new DOM(fieldsCompany.name).get()[0].textContent = data.name;
+      new DOM(fieldsCompany.phone).get()[0].textContent = data.phone;
+    }
+
+    function handleFormCar(event){
+      event.preventDefault();
+      fillRowTableCar();
+    }
+
+    function fillRowTableCar(){
+      var tr = document.createElement('tr');
+      fieldsCar.forEach(function(prop){
+        tr.appendChild(createCellTable(new DOM(prop).get()[0].value));
+      });
+      new DOM(containerCar).get()[0].appendChild(tr);
+      clearFields();
+    }
+
+    function createCellTable(value){
+      var td = document.createElement('td');
+      td.textContent = value;
+      return td;
+    }
+
+    function clearFields(){
+      fieldsCar.forEach(function(prop){
+        new DOM(prop).get()[0].value = '';
+      });
+    }
+
+    return {
+      initialize: initialize
+    };
+  }
+
+  app().initialize();
+
+})(window.DOM, document);
