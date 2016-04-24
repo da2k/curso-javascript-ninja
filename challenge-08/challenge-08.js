@@ -12,7 +12,9 @@ Invoque a função criada acima, passando dois números que serão somados, e mo
 o resultado no console, com a frase:
 "A soma de [VALOR 1] e [VALOR2] é igual a [RESULTADO]."
 */
-console.log('A soma de 3 e 4 é igual a ' + sum(3, 4) + '.');
+var value1 = 10;
+var value2 = 35;
+console.log('A soma de '+ value1 +' e '+ value2 +' é igual a ' + sum(value1, value2) + '.');
 
 /*
 Mostre no console o nome da função criada acima, com a frase:
@@ -55,28 +57,29 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
 function calculator(operator) {
     return function (x, y) {
         var mensagem = 'Resultado da operação: ' + x + ' ' + operator + ' ' + y + ' = ';
+        var resultado;
         switch (operator) {
         case '+':
-            var resultado = (x + y);
-            break
+            resultado = (x + y);
+            break;
         case '-':
-            var resultado = (x - y);
-            break
+            resultado = (x - y);
+            break;
         case '*':
-            var resultado = (x * y);
-            break
+            resultado = (x * y);
+            break;
         case '/':
-            var resultado = (x / y);
-            break
+            resultado = (x / y);
+            break;
         case '%':
-            var resultado = (x % y);
-            break
+            resultado = (x % y);
+            break;
         default:
             return 'Operação inválida.'
         }
 
         return mensagem + resultado;
-    }
+    };
 }
 
 
