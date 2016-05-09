@@ -10,13 +10,9 @@ function soma( num1, num2 ) {
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
 var total = soma( 20, 30 ) + 5;
-/* Se era para ser com string:
-var total = soma( 20, 30 ) + "5";
-*/
 
 // Qual o valor atualizado dessa variável?
 55
-// Ou "505"
 
 // Declare uma nova variável, sem valor.
 var novaVariavel;
@@ -47,13 +43,10 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function conta(num1, num2, num3) {
-    var resultado;
-    if( num1 && num2 && num3 ){
-        resultado = (num1 * num2 * num3) + 2; // Ou "2", se era pra ser string
-    } else {
-        resultado = "Preencha todos os valores corretamente!";
-    }
-    return resultado;
+	if( !num1 || !num2 || !num3 ) {
+		return "Preencha todos os valores corretamente!";
+	}	
+	return (num1 * num2 * num3) + 2;
 };
 
 // Invoque a função criada acima, passando só dois números como argumento.
@@ -66,7 +59,7 @@ conta(4, 5);
 conta(2, 3, 4);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-// 26. Ou "242", se era pra ser string.
+// 26
 
 /*
 Crie uma função com as seguintes características:
