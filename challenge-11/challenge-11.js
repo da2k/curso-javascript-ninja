@@ -50,10 +50,20 @@
 	*/
 	var verificaAge = 25;
 	function moreThan(verificaAge){
-		if( person.age > verificaAge  ){
+		/* minha solução
+		if( person.age > verificaAge ){
 			return true;
 		}
 		return false;
+		*/
+
+		/*soluçao do professor
+		return person.age > verificaAge ? true : false;
+		*/
+
+		/*soluçao do professor, mais otimizada, pois retirando o ternário, a verificação já retorna true/false.
+		*/
+		return person.age > verificaAge;
 	}
 	console.log('The person has more than 25 years old? ' + moreThan(verificaAge) );
 	/*
@@ -69,7 +79,8 @@
 		}
 		numbers.push(counter);	
 	}
-	console.log( 'De 0 a 10: ' + numbers );
+	console.log( 'De 0 a 10: ' );
+	console.log(  numbers );
 	// ?
 
 	/*
@@ -86,6 +97,7 @@
 		}
 		numbers.push(counter);	
 	}
-	console.log( 'Pares de 0 a 20: ' + numbers );
+	console.log( 'Pares de 0 a 20: ' );
+	console.log(  numbers );
 	// ?
 })();
