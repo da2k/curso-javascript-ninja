@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+}
+body {
+  background: black;
+  transition: background-color 3s ease;
+}
+input[readonly] {
+  background: #cecece
+}
+.container {
+  padding: 10px;
+  width: 20%;
+  margin: 0 auto
+}
+/* Classe tosca para estilizar sem criar um grid para isso */
+.container__item {
+  width: 100%;
+  display: inline-block;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 14px;
+  border-radius: 4px
+}
+.konamiPassed {
+  background: white
+}
