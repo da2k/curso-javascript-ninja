@@ -2,7 +2,10 @@
   'use strict';
 
   function DOM(elements){
+    if(!(this instanceof DOM))
+      return new DOM(elements);
     this.element = document.querySelectorAll(elements);
+    return this.get();
   };
 
   DOM.prototype.on = function on(event, callback){
@@ -18,6 +21,8 @@
   };
 
   DOM.prototype.get = function get(){
+    if(this.element.length === 1)
+      return this.element[0];
     return this.element;
   };
 

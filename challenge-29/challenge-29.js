@@ -1,6 +1,5 @@
-(function(DOM, document){
+(function($, document){
   'use strict';
-
   /*
   Vamos estruturar um pequeno app utilizando módulos.
   Nosso APP vai ser um cadastro de carros. Vamos fazê-lo por partes.
@@ -36,23 +35,25 @@
   que será nomeado de "app".
   */
 
-  function app(){
+  var app = (function(){
     var ajax;
     var fieldsCar;
     var urlDataCompany;
     var formCar;
     var fieldsCompany;
     var containerCar;
+    var fieldImage;
 
     function initialize(){
-      settingVariables();
+      settings();
       initEvents();
       handleAjax();
     }
 
-    function settingVariables(){
+    function settings(){
+      fieldImage = '[data-js="input-imagem"]';
       fieldsCar = [
-        '[data-js="input-imagem"]',
+        fieldImage,
         '[data-js="input-marca"]',
         '[data-js="input-ano"]',
         '[data-js="input-placa"]',
@@ -64,11 +65,11 @@
         name: '[data-js="company-name"]',
         phone: '[data-js="company-phone"]'
       };
-      containerCar = '[data-js="container-cars"]';
+      containerCar = '[data-js="wrap-cars"]';
     }
 
     function initEvents(){
-      new DOM(formCar).get()[0].addEventListener('submit', handleFormCar, false);
+      $(formCar).addEventListener('submit', handleFormCar, false);
     }
 
     function handleAjax(){
@@ -89,25 +90,36 @@
 
     function fillDataCompany(){
       var data = JSON.parse(ajax.responseText);
-      new DOM(fieldsCompany.name).get()[0].textContent = data.name;
-      new DOM(fieldsCompany.phone).get()[0].textContent = data.phone;
+      $(fieldsCompany.name).textContent = data.name;
+      $(fieldsCompany.phone).textContent = data.phone;
     }
 
     function handleFormCar(event){
       event.preventDefault();
-      fillRowTableCar();
+      createRow();
     }
 
-    function fillRowTableCar(){
+    function createRow(){
+      var fragment = document.createDocumentFragment();
       var tr = document.createElement('tr');
       fieldsCar.forEach(function(prop){
-        tr.appendChild(createCellTable(new DOM(prop).get()[0].value));
+        if(fieldImage === prop)
+          return tr.appendChild(createImage($(prop).value));
+        tr.appendChild(createCell($(prop).value));
       });
-      new DOM(containerCar).get()[0].appendChild(tr);
+      fragment.appendChild(tr);
+      $(containerCar).appendChild(fragment);
       clearFields();
     }
 
-    function createCellTable(value){
+    function createImage(value){
+      var img = document.createElement('img');
+      img.setAttribute('src', value);
+      img.classList.add('image__car');
+      return img;
+    }
+
+    function createCell(value){
       var td = document.createElement('td');
       td.textContent = value;
       return td;
@@ -115,15 +127,15 @@
 
     function clearFields(){
       fieldsCar.forEach(function(prop){
-        new DOM(prop).get()[0].value = '';
+        $(prop).value = '';
       });
     }
 
     return {
       initialize: initialize
     };
-  }
+  })();
 
-  app().initialize();
+  app.initialize();
 
 })(window.DOM, document);
