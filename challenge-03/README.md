@@ -34,7 +34,7 @@ for chamado.
 */
 pessoa.fazerAniversario = function(){
   return pessoa.idade++;
-}
+};
 
 /*
 Adicione um método ao objeto `pessoa` chamado `andar`, que terá as seguintes
@@ -52,7 +52,7 @@ pessoa.andar = function(metrosCaminhado){
   }
   pessoa.caminhouQuantosMetros += metrosCaminhado;
   pessoa.andando = true;
-}
+};
 
 /*
 Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o valor
@@ -60,7 +60,7 @@ da propriedade `andando` para o valor booleano que representa "falso".
 */
 pessoa.parar = function(){
   return pessoa.andando = false;
-}
+};
 
 /*
 Crie um método chamado `nomeCompleto`, que retorne a frase:
@@ -68,7 +68,7 @@ Crie um método chamado `nomeCompleto`, que retorne a frase:
 */
 pessoa.nomeCompleto = function(){
   return "Olá! Meu nome é "+ pessoa.nome +" "+ pessoa.sobrenome + "!";
-}
+};
 
 /*
 Crie um método chamado `mostrarIdade`, que retorne a frase:
@@ -76,23 +76,23 @@ Crie um método chamado `mostrarIdade`, que retorne a frase:
 */
 pessoa.mostrarIdade = function(){
   return "Olá, eu tenho "+ pessoa.idade + " anos!";
-}
+};
 
 /*
 Crie um método chamado `mostrarPeso`, que retorne a frase:
 - "Eu peso [PESO]Kg."
 */
 pessoa.mostrarPeso = function(){
-  return "Eu peso "+ pessoa.peso +"Kg."; 
-}
+  return "Eu peso "+ pessoa.peso + "Kg."; 
+};
 
 /*
 Crie um método chamado `mostrarAltura` que retorne a frase:
 - "Minha altura é [ALTURA]m."
 */
 pessoa.mostrarAltura = function(){
-  return "Minha altura é "+ pessoa.altura +"m.";
-}
+  return "Minha altura é "+ pessoa.altura + "m.";
+};
 
 /*
 Agora vamos brincar um pouco com o objeto criado:
@@ -192,7 +192,7 @@ pessoa.apresentacao = function(){
 	return "Olá, eu sou " + _artigo + " " + pessoa.nome + " " + pessoa.sobrenome +", tenho " + pessoa.idade +
 	" "+ _idade +", " + pessoa.altura +", meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei " 
 	+ pessoa.caminhouQuantosMetros + " " + _comprimento +"!";	
-}
+};
 
 // Agora, apresente-se ;)
 pessoa.apresentacao(); //"Olá, eu sou a Mara Jeannie, tenho 33 anos, 1.65, meu peso é 57 e, só hoje, eu já caminhei 1110 metros!"
