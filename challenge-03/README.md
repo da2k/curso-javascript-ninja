@@ -48,11 +48,10 @@ booleano que representa "verdadeiro";
 */
 pessoa.andar = function(metrosCaminhado){
   if(metrosCaminhado === undefined){
-    return 'Digite um parâmetro!'
-  } else {
-   pessoa.caminhouQuantosMetros += metrosCaminhado;
-   pessoa.andando = true;
-  }  
+    return 'Digite um parâmetro!';
+  }
+  pessoa.caminhouQuantosMetros += metrosCaminhado;
+  pessoa.andando = true;
 }
 
 /*
