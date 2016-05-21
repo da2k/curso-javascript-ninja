@@ -48,6 +48,7 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 var carro = {
 	marca: 'FIAT',
 	modelo: 'Palio',
+	placa: 'HZB-4343',
 	ano: 2016,
 	cor: 'Prata',
 	quantasPortas: 4,
@@ -90,7 +91,7 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 carro.obterMarcaModelo = function(){
-  return "Esse carro é um "+ carro.marca + " " + carro.modelo +".";
+  return "Esse carro é um "+ carro.obterMarca() + " " + carro.obterModelo() +".";
 };
 
 /*
@@ -110,18 +111,17 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 citado acima, no lugar de "pessoas".
 */
 carro.addPessoas = function(x) {
-	var _str = 'pessoa';
-	if(carro.quantidadePessoas < carro.assentos){
-		var cabem = carro.assentos - carro.quantidadePessoas;
-		if(x > cabem){
-			cabem <= 1 ? _str : _str = "pessoas";
-			return "Só cabem mais " + cabem + " "+ _str +"!";
-		}
-		 carro.quantidadePessoas += x;
-		 return "Já temos "+ carro.quantidadePessoas +" pessoas no carro!";
-	}else{
-		return "O carro já está lotado!";
-	}	
+  var totalPessoas = carro.quantidadePessoas + x;
+  var cabem = carro.assentos - carro.quantidadePessoas;
+  var _str = cabem === 1 ? ' pessoa' : ' pessoas';
+  if( carro.quantidadePessoas === carro.assentos && totalPessoas >= carro.assentos){
+      return 'O carro já está lotado!';
+  }
+  if(totalPessoas > carro.assentos){
+      return 'Só cabem mais '+ cabem + _str + '!';
+  }
+  carro.quantidadePessoas += x;
+  return 'Já temos '+ carro.quantidadePessoas + ' pessoas no carro!';
 };
 
 /*
@@ -159,7 +159,7 @@ carro.addPessoas(4); //"Só cabem mais 3 pessoas!"
 carro.addPessoas(3); //"Já temos 5 pessoas no carro!"
 
 // Tire 4 pessoas do carro.
-carro.quantidadePessoas = 1;
+carro.addPessoas(-4); //"Já temos 1 pessoas no carros!"
 
 // Adicione 10 pessoas no carro.
 carro.addPessoas(10); //"Só cabem mais 4 pessoas!"
