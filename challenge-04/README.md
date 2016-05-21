@@ -147,8 +147,7 @@ carro.mudarCor('verde musgo');
 carro.obterCor(); //"verde musgo"
 
 // Qual a marca e modelo do carro?
-var marcaModelo = carro.obterMarca()+ " " +carro.obterModelo();
-marcaModelo; //"FIAT Palio"
+carro.obterMarcaModelo(); // "Esse carro é um FIAT Palio";
 
 // Adicione 2 pessoas no carro.
 carro.addPessoas(2); //"Já temos 2 pessoas no carro!"
