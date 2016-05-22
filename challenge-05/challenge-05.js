@@ -14,7 +14,7 @@ function getArray( arr ) {
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-console.log( getArray( arr )[2] );
+console.log( getArray( arr )[1] );
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
