@@ -74,7 +74,7 @@ function book( bookName ) {
     }
   };
 
-  return books[bookName] ? books[bookName] : books;
+  return bookName ? books[bookName] : books;
 }
 
 /*
