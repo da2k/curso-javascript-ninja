@@ -113,10 +113,12 @@
     }
 
     function createImage(value){
+      var td = document.createElement('td');
       var img = document.createElement('img');
       img.setAttribute('src', value);
       img.classList.add('image__car');
-      return img;
+      td.appendChild(img);
+      return td;
     }
 
     function createCell(value){
