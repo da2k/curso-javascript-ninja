@@ -16,12 +16,8 @@
     nome, `username` deve receber "Desconhecido".
     Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
     */
-    var username = prompt('Qual o seu nome?');
-
-    if ( username ) 
-        alert('Bem vindo ' + username);
-    else
-        username = "Desconhecido";
+    var username = prompt('Qual o seu nome?') || 'Desconhecido';
+    alert('Bem vindo ' + username + '!');
 
     /*
     Agora, pergunte ao usuário "Qual o seu e-mail?", atribuindo o resultado à
@@ -86,28 +82,19 @@
     */
     
     $button.addEventListener('click', function(e){
-        e.preventDefault();
-        
-        if ( !$inputUsername.value)
-            alert('Preencha o nome do usuário!');
-        
+        e.preventDefault();        
+        if ( !$inputUsername.value )
+            return alert('Preencha o nome do usuário!');        
         if ( !$inputEmail.value )
-            alert('Preencha o e-mail!');
-
-        if ( $inputEmail.value ){
-            if ( !isValidEmail( $inputEmail.value ) )
-                alert('Entre com um e-mail válido!');
-        }
-
-        if (!$message.value)
-            alert('Preencha a mensagem!');
-        
-        if ( $inputEmail.value && $inputUsername.value && $message.value && isValidEmail( $inputEmail.value ) ){
-            var confirm = win.confirm('Tem certeza que deseja enviar o formulário?');
-            ( confirm ) ? alert('Enviado com sucesso!') : alert('Não enviado.');
-        }
-        
-    }, false);
+            return alert('Preencha o e-mail!');
+        if ( !isValidEmail( $inputEmail.value ) )
+            return alert('Entre com um e-mail válido!');        
+        if ( !$message.value )
+            return alert('Preencha a mensagem!');        
+        if ( !confirm('Tem certeza que deseja enviar o formulário?') )            
+            return alert('Não enviado.');
+         return alert('Enviado com sucesso!');        
+    }, false );
 
     /*
     Crie uma função chamada `isValidEmail`, que será usada na validação do
@@ -138,8 +125,7 @@
         - "rita-marica@titica.a.b"
         - "agua_@evida.br.com"
     */
-    function isValidEmail( email ){
-        var reg = new RegExp('.*@\\w+\\.\\w+(?:(?:\\.(?:\\D\\D))?)$', 'gm');
-        return reg.test( email );
+    function isValidEmail( email ){        
+        return /^[\w+.]+@\w+\.\w{2,}(?:\.\w{2})?$/.test( email );
     }
 })(window, document);
