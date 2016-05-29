@@ -10,10 +10,10 @@
   das variáveis. Analise o que está sendo impresso no console para saber como
   resolver o problema corretamente.
   */
-  var five = 5;
+  var five = Number('5');
   console.log( five + ' é número?', typeof five === 'number' );
 
-  var concat = '10' + '10';
+  var concat = String('10') + 10;
   console.log( '"' + concat + '" é uma string? E é igual a "1010"?', typeof concat === 'string' );
 
   /*
@@ -54,14 +54,7 @@
   - O desafio é fazer o retorno sem usar "if" ou "switch".
   */
   function isOperatorValid(operator) {
-    var operadores = [ '+', '-', '*', '/', '%' ];
-
-    for (var i = 0; i <= operadores.length; i++) {
-      if (operator === operadores[i]) {
-        return true;
-      }
-    }
-    return false;
+    return operation[operator] !== undefined;
   }
 
   /*
