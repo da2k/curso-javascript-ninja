@@ -35,7 +35,7 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 function showTeamPosition( posicao ){
-    return teams[ posicao - 1 ] !== undefined ? ' O time que está em '+ posicao +' lugar é o '+ teams[ posicao - 1 ] +'.' : ' Não temos a informação do time que está nessa posição.';
+    return teams[ posicao - 1 ] !== undefined ? ' O time que está em '+ posicao +'º lugar é o '+ teams[ posicao - 1 ] +'.' : ' Não temos a informação do time que está nessa posição.';
 }
 
 /*
