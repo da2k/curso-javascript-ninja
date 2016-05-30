@@ -43,6 +43,7 @@ Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
 console.log( showTeamPosition(1) );
+console.log( showTeamPosition(5) );
 console.log( showTeamPosition(2) );
 console.log( showTeamPosition(3) );
 console.log( showTeamPosition(10) );
