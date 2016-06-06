@@ -1,4 +1,4 @@
-(function(DOM, doc) {
+(function($, doc) {
     'use strict';
 
     /*
@@ -36,95 +36,107 @@
     que será nomeado de "app".
     */
 
-    var $form = new DOM('[data-js="form-cars"]');
+    var app = (function appController() {
+      return {
+        init: function init() {
+          this.companyInfo();
+          this.initEvents();
 
-    $form.on('submit', handleFormSubmit);
+        },
 
-    function handleFormSubmit(event) {
-        event.preventDefault();
+        initEvents: function initEvents() {
+          $('[data-js="form-cars"]').on('submit', this.handleSubmit);
+        },
 
-        var $image = new DOM('#image').get();
-        var $model = new DOM('#model').get();
-        var $year = new DOM('#year').get();
-        var $number = new DOM('#number').get();
-        var $color = new DOM('#color').get();
+        handleSubmit: function handleSubmit(event) {
+          event.preventDefault();
+          var $tableCar = $('[data-js="table-car"]').get();
+          var $none = $('[data-js="none"]').get();
+          if($none) $tableCar.removeChild($none);
+          $tableCar.appendChild(app.createNewCar());
+          app.showSuccessMessage();
+          this.reset();
+        },
 
-        var newTr = doc.createElement('tr');
-        var newTdModel = doc.createElement('td');
-        var newTdYear = doc.createElement('td');
-        var newTdNumber = doc.createElement('td');
-        var newTdColor = doc.createElement('td');
+        createNewCar: function createNewCar() {
 
-        newTdModel.appendChild(doc.createTextNode($model.value));
-        newTdYear.appendChild(doc.createTextNode($year.value));
-        newTdNumber.appendChild(doc.createTextNode($number.value));
-        newTdColor.appendChild(doc.createTextNode($color.value));
+          var $fragment = doc.createDocumentFragment();
 
-        newTr.appendChild(newTdModel);
-        newTr.appendChild(newTdYear);
-        newTr.appendChild(newTdNumber);
-        newTr.appendChild(newTdColor);
+          var $newTr = doc.createElement('tr');
+          var $newTdImage = doc.createElement('td');
+          var $newImage = doc.createElement('img');
+          var $newTdModel = doc.createElement('td');
+          var $newTdYear = doc.createElement('td');
+          var $newTdPlate = doc.createElement('td');
+          var $newTdColor = doc.createElement('td');
 
-        var $tableBody = new DOM('tbody').get();
+          $newImage.src = $('#image').get().value;
+          $newTdImage.appendChild($newImage);
+          $newTdModel.textContent = $('#model').get().value;
+          $newTdYear.textContent = $('#year').get().value;
+          $newTdPlate.textContent = $('#plate').value;
+          $newTdColor.textContent = $('#color').get().value;
 
-        var $none = new DOM('[data-js="none"]').get();
+          $newTr.appendChild($newTdImage);
+          $newTr.appendChild($newTdModel);
+          $newTr.appendChild($newTdYear);
+          $newTr.appendChild($newTdPlate);
+          $newTr.appendChild($newTdColor);
 
-        if($none) $tableBody.removeChild($none);
+          return $fragment.appendChild($newTr);
+        },
 
-        $tableBody.appendChild(newTr);
+        companyInfo: function companyInfo() {
+            var ajax = new XMLHttpRequest();
+            ajax.open('GET', 'company.json');
+            ajax.send();
+            ajax.addEventListener('readystatechange', this.getCompanyInfo, false);            
+        },
 
-        showSuccessMessage();
+        getCompanyInfo: function getCompanyInfo() {
+          if(!app.isReady.call(this))
+            return;
+          var response;
+          try{
+              response =  JSON.parse(this.responseText);
+          }
+          catch(e){
+              console.log(e);
+              response = this.responseText;
+          }
+          var $companyName = $('[data-js="company-name"]').get();
+          var $companyPhone = $('[data-js="company-phone"]').get();
+          $companyName.textContent = response.name;
+          $companyPhone.textContent = response.phone;
+        },
 
-        $form.get().reset();
-    }
+        isReady: function isReady() {
+          return this.readyState === 4 && this.status === 200;
+        },
 
-    function showSuccessMessage() {
-        var $notice = new DOM('[data-js="notice"]').get();
-        removeClass($notice, 'hidden');
-        hideSuccessMessage($notice)
-    }
+        showSuccessMessage: function showSuccessMessage() {
+          var $notice = $('[data-js="notice"]').get();
+          this.removeClass($notice, 'hidden');
+          app.hideSuccessMessage($notice);
+        },
 
-    function hideSuccessMessage(el) {
-        setTimeout(function() {
-            addClass(el, 'hidden');
-        }, 2000);
-    }
+        hideSuccessMessage: function hideSuccessMessage(el) {
+          setTimeout(function() {
+              app.addClass(el, 'hidden');
+          }, 2000);
+        },
 
-    function addClass(el, style){
+        addClass: function addClass(el, style){
           el.classList.add(style);
-     }
+        },
 
-     function removeClass(el, style){
+        removeClass: function removeClass(el, style){
           var regex = new RegExp('\\b' + style + '\\b', 'g');
           el.className = el.className.replace(regex,'');
-     }
-
-    var loadCompanyInfo = function loadCompanyInfo() {
-        var ajax = new XMLHttpRequest();
-        ajax.open('GET', 'company.json');
-        ajax.send();
-
-        ajax.addEventListener('readystatechange', function() {
-            if(isRequestOk()){
-                var response;
-                try{
-                    response =  JSON.parse(ajax.responseText);
-                }
-                catch(e){
-                    console.log(e);
-                    response = ajax.responseText;
-                }
-                var $companyName = new DOM('[data-js="company-name"]').get();
-                var $companyPhone = new DOM('[data-js="company-phone"]').get();
-                $companyName.textContent = response.name;
-                $companyPhone.textContent = response.phone;
-            }
-        }, false);
-
-        function isRequestOk() {
-            return ajax.readyState === 4 && ajax.status === 200;
         }
+      }
+    })();
 
-    }();
+    app.init();
 
 })(window.DOM, document);

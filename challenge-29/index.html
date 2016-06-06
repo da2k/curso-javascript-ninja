@@ -2,19 +2,29 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Challenge #28</title>
+		<title>Market Car</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<style>
+			img {
+				max-width: 35%;
+				height: auto;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="container">
-			<h1 data-js="company-name"> <small data-js="company-phone"></small></h1><br>
-			<form data-js="form-cars">
+			<header>
+				<h1 data-js="company-name"> 
+				<small data-js="company-phone"></small>
+				</h1><br>
+			</header>
+			<form action="/" data-js="form-cars">
 				<fieldset>
 					<legend>Cadastrar carro</legend>
 
 				<div class="form-group">
 					<label for="image">Imagem do carro</label>
-					<input type="text" class="form-control" id="image" name="image" placeholder="http://">
+					<input type="url" class="form-control" id="image" name="image" placeholder="http://">
 				</div>
 
 				<div class="row">
@@ -32,8 +42,8 @@
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-3">
 						<div class="form-group">
-							<label for="number">Placa</label>
-							<input type="text" class="form-control" id="number" name="number" placeholder="Placa" required>
+							<label for="plate">Placa</label>
+							<input type="text" class="form-control" id="plate" name="plate" placeholder="Placa" required>
 						</div>
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-3">
@@ -56,13 +66,14 @@
 			<table class="table table-striped">
 				 <thead>
 				 	<tr>
+				 		<th>Imagem</th>
 				 		<th>Marca / Modelo</th>
 				 		<th>Ano</th>
 				 		<th>Placa</th>
 				 		<th>Cor</th>
 				 	</tr>
 				 </thead>
-				 <tbody>
+				 <tbody data-js="table-car">
 				 	<tr data-js="none">
 				 		<td colspan="4" class="text-center">Nenhum carro cadastrado até o momento.</td>
 				 	</tr>

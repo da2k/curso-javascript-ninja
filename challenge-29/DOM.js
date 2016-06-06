@@ -2,6 +2,9 @@
 	'use strict';
 
 	function DOM(selector) {
+		if(!(this instanceof DOM))
+			return new DOM(selector);
+		
 		this.elements = document.querySelectorAll(selector);
 		this.elementsNodes = Array.prototype.map.call(this.elements, function(node) {
 			return node;
