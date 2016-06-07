@@ -44,21 +44,27 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 ?
-function nova(a,b,c) {
- return a * b * c + 2;
+function total(x,y,z){
+if(x === underfined || y === underfined || z === underfined){
+  return 'Prencha todos os valores Corretamente'; 
+ }
+ else{
+  return a * b * C + 2;
+ }
 }
+
 // Invoque a função criada acima, passando só dois números como argumento.
 ?
-nova();
+nova(5,4) + 2;
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 ?
-/* */
+/* O Valor é 22 */
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 ?
-nova(a,b,c);
+nova(10,30,24);
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 ?
-//resultado
+//resultado 7202
 /*
 Crie uma função com as seguintes características:
 1. A função deve receber 3 argumentos.
@@ -69,14 +75,19 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 ?
-function total(x,y,x){
-
-
+function total(x,y,z){
+if(x === underfined || y === underfined || z === underfined){
+  return 'Prencha todos os valores Corretamente'; 
+ }
+ else{
+  return a * b * C + 2;
+ }
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 ?
-```
-total();
-total(2);
+total(2,4);
 total(2,3,4);
+
+```
+
