@@ -44,7 +44,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 ?
-function total(x,y,z){
+function nova(x,y,z){
 if(x === underfined || y === underfined || z === underfined){
   return 'Prencha todos os valores Corretamente'; 
  }
@@ -76,18 +76,26 @@ Crie uma função com as seguintes características:
 */
 ?
 function total(x,y,z){
-if(x === underfined || y === underfined || z === underfined){
-  return 'Prencha todos os valores Corretamente'; 
+if(x !== underfined && y === underfined && z === underfined){
+  return x; 
+ }
+ else if(x !== underfined && y !== underfined && z === underfined){
+  return (x + y) / z;
+ }
+ else if(x === underfined && y === underfined && z === underfined){
+  return false;
  }
  else{
-  return a * b * C + 2;
+ return null
  }
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 ?
-total(2,4);
-total(2,3,4);
+total(); //false
+total(1); // 1
+total(2,4); // 6
+total(2,3,4); // 1.25
 
 ```
 
