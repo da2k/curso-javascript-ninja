@@ -74,8 +74,14 @@
     números da string. Mostre a representação em string dessa função no console.
     */
     console.log( '\nFunção que limpa entrada do usuário (somente números):' );
-    function justNumbers ( str ){
-        return str.match( /\d/g );
+    function justNumbers ( string ){
+        var array = string.match( /\d/g );
+        for ( var i = 0; i >= array.length; i++ ){
+            array[i] = Number(array[i]);
+            console.log(array[i]);
+        }
+        console.log(array);
+        return array;
     }
     console.log( justNumbers.toString() );
 
@@ -84,12 +90,12 @@
     atribuindo o resultado à uma variável `numbers`.
     */
     console.log( '\nEntrada do usuário limpa. Somente números:' );
-    var numbers = ;
+    var numbers = justNumbers( userEntry );
 
     /*
     Agora com o array de números, utilize a função `sum` para somar todos os
     números desse array e mostre o resultado no console.
     */
     console.log( '\nSomar números entrados pelo usuário:' );
-    console.log( sum.apply() );
+    console.log( sum.apply( numbers ) );
 })();
