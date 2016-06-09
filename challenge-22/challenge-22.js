@@ -78,9 +78,7 @@
         var array = string.match( /\d/g );
         for ( var i = 0; i >= array.length; i++ ){
             array[i] = Number(array[i]);
-            console.log(array[i]);
         }
-        console.log(array);
         return array;
     }
     console.log( justNumbers.toString() );
