@@ -77,7 +77,8 @@
     function justNumbers ( string ){
         var array = string.match( /\d/g );
         for ( var i = 0; i >= array.length; i++ ){
-            array[i] = Number(array[i]);
+            array[i] = +array[i];
+            console.log(i, array[i]);
         }
         return array;
     }
@@ -95,5 +96,5 @@
     números desse array e mostre o resultado no console.
     */
     console.log( '\nSomar números entrados pelo usuário:' );
-    console.log( sum.apply( numbers ) );
+    console.log( sum.apply( null, numbers ) );
 })();
