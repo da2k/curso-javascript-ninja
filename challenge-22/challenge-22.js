@@ -42,7 +42,7 @@
     function sum(){
         console.log( arguments );
         return Array.prototype.reduce.call( arguments, function( acumulated, actual ){
-            return acumulated + actual;
+            return +acumulated + +actual;
         });
     }
 
@@ -75,12 +75,7 @@
     */
     console.log( '\nFunção que limpa entrada do usuário (somente números):' );
     function justNumbers ( string ){
-        var array = string.match( /\d/g );
-        for ( var i = 0; i >= array.length; i++ ){
-            array[i] = +array[i];
-            console.log(i, array[i]);
-        }
-        return array;
+        return string.match( /\d/g );
     }
     console.log( justNumbers.toString() );
 
@@ -90,6 +85,7 @@
     */
     console.log( '\nEntrada do usuário limpa. Somente números:' );
     var numbers = justNumbers( userEntry );
+    console.log( numbers );
 
     /*
     Agora com o array de números, utilize a função `sum` para somar todos os
