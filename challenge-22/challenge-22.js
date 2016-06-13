@@ -42,7 +42,7 @@
     function sum(){
         console.log( arguments );
         return Array.prototype.reduce.call( arguments, function( acumulated, actual ){
-            return +acumulated + +actual;
+            return acumulated + actual;
         });
     }
 
@@ -74,9 +74,15 @@
     números da string. Mostre a representação em string dessa função no console.
     */
     console.log( '\nFunção que limpa entrada do usuário (somente números):' );
-    function justNumbers ( string ){
-        return string.match( /\d/g );
-    }
+     function justNumbers ( string ){
+        var array = string.match( /\d/g );
+        for ( var i = 0; i < array.length; i++ ){
+            array[i] = Number(array[i]);
+            array[i] = +array[i];
+            console.log(i, array[i]);
+        }
+        return array;
+      }
     console.log( justNumbers.toString() );
 
     /*
