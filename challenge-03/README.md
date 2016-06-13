@@ -25,7 +25,7 @@ for chamado.
 */
 ?
 pessoa.fazerAniversario = function (){
- return pessoa.idade + 1;
+ pessoa.idade ++;
 }
 /*
 Adicione um método ao objeto `pessoa` chamado `andar`, que terá as seguintes
