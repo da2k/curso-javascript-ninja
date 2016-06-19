@@ -122,7 +122,7 @@
   */
   console.log( '\nTodos os estados de `brasil` tem mais de 7 letras?' );
   var lenght = brasil.every(function(item) {
-    return item > 7
+    return item.lenght > 7
   });
 
   if( lenght ) {
