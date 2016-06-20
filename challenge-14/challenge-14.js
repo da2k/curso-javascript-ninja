@@ -11,18 +11,10 @@
   Mostre esse array no console.
   */
   console.log( 'Number Objects Array:' );
-  var numberObjects = [
-    { number: 1 },
-    { number: 2 },
-    { number: 3 },
-    { number: 4 },
-    { number: 5 },
-    { number: 6 },
-    { number: 7 },
-    { number: 8 },
-    { number: 9 },
-    { number: 10 }
-  ];
+  var numberObjects = [];
+  for( var i = 1; i <= 10; i++ ) {
+    numberObjects.push( { number: i } );
+  }
   console.log( numberObjects );
 
   /*
@@ -30,9 +22,8 @@
   números do array criado acima. Mostre esse novo array no console.
   */
   console.log( '\nJust Numbers:' );
-  var justNumbers = [];
-  numberObjects.forEach(function(item) {
-    justNumbers.push( item.number );
+  var justNumbers = numberObjects.map(function(item) {
+    return item.number;
   });
   console.log( justNumbers );
 
@@ -83,8 +74,8 @@
   console.log( '\nSeu nome na língua do "P":' );
   var name = [ 'Tan', 'nus' ];
   var reduce = name.reduce(function(acumulado, atual, index) {
-    return acumulado + 'p' + atual;
-  });
+    return acumulado + 'P' + atual;
+  }, '');
   console.log( reduce );
 
   /*
@@ -118,7 +109,10 @@
     ? 'Existe um objeto { number: 2 } em numberObjects!'
     : 'Não existe um objeto { number: 2 } em numberObjects :('
   );
-  console.log( 'Usando indexOf não conseguimos procurar no Array um Objeto, somente String.' );
+  // Escrevi besteira aqui. hahah
+  // Valeu pelo Review, não havia pensado por este lado.
+  // E tbm não é so String. =/
+  console.log( 'A referência do objeto não é a mesma.' );
 
   /*
   Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
