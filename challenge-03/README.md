@@ -38,37 +38,57 @@ valor dessa propriedade a quantidade passada por parâmetro;
 booleano que representa "verdadeiro";
 */
 ?
+pessoa.andar = function (){
+ 10 m;
+}
+pessoa.andando = function (){
+ true;
+}
+pessoa.caminhouQuantosMetros = function (){
+ true;
+}
 
 /*
 Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o valor
 da propriedade `andando` para o valor booleano que representa "falso".
 */
 ?
-
+pessoa.parar = function (){
+  pessoa.andando = false;
+}
 /*
 Crie um método chamado `nomeCompleto`, que retorne a frase:
 - "Olá! Meu nome é [NOME] [SOBRENOME]!"
 */
 ?
+pessoa.nomeCompleto = function (){
+  return "Olá! Meu nome é  pessoa.nome + pessoa.sobrenome!";
+}
 
 /*
 Crie um método chamado `mostrarIdade`, que retorne a frase:
 - "Olá, eu tenho [IDADE] anos!"
 */
 ?
-
+pessoa.mostraIdade = function (){
+ return "Olá, eu tenho pessoa.idade anos!"
+}
 /*
 Crie um método chamado `mostrarPeso`, que retorne a frase:
 - "Eu peso [PESO]Kg."
 */
 ?
-
+pessoa.mostrarPeso = function (){
+ return "Eu peso pessoa.peso Kg.";
+}
 /*
 Crie um método chamado `mostrarAltura` que retorne a frase:
 - "Minha altura é [ALTURA]m."
 */
 ?
-
+pessoa.mostrarAltura = function (){
+ return "Eu peso pessoa.altura Kg.";
+}
 /*
 Agora vamos brincar um pouco com o objeto criado:
 Qual o nome completo da pessoa? (Use a instrução para responder e comentários
