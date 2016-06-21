@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'/>
+  <title>Teste Eventos em JS</title>
+  <style>
+    input {
+      width: 300px;
+    }
+    .droptarget {
+      float: left;
+      width: 100px;
+      height: 35px;
+      margin: 15px;
+      padding: 10px;
+      border: 1px solid #aaaaaa;
+    }
+    #dragtarget {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <input type="text" data-js="input" placeholder="Digite um texto e tente copiar!">
+  </div>
+
+  <div>
+    <div class="droptarget" data-js="droptarget">
+      <p data-js="dragstart" draggable="true" id="dragtarget">Me Arraste!</p>
+    </div>
+    <div class="droptarget" data-js="droptarget"></div>
+    <div class="droptarget" data-js="droptarget"></div>
+  </div>
+
+  <div>
+    <p data-js="selected-text">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, natus! Tenetur
+      deserunt dolores cum eligendi porro sunt obcaecati quidem eos rerum nihil cumque
+      voluptas soluta dolorum distinctio beatae iusto, vitae.
+    </p>
+  </div>
+
+  <script src="challenge-25.js"></script>
+</body>
+</html>
