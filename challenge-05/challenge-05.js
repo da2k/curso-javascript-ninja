@@ -55,40 +55,26 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-function book( name ) {
-	var myBook = {
-		livro1 : {
+function book( bookName ) {
+	var myBooks = {
+		"Design + Front-end" : {
 			quantidadePaginas: 335,
 			autor: "Diogo Rodrigues",
 			editora: "Lado Design"
 		},
-		livro2 : {
+		"HTML e CSS" : {
 			quantidadePaginas: 620,
 			autor: "Maujor",
 			editora: "Novatec"
 		},
-		livro3 : {
+		"JS Ninja" : {
 			quantidadePaginas: 200,
 			autor: "Fernando Daciuk",
 			editora: "Casa do Código"
 		}
 	};
 
-	if ( name ) {
-		if ( name == "livro1" ) {
-			return myBook.livro1;
-		}
-
-		if ( name == "livro2" ) {
-			return myBook.livro2;
-		}
-
-		if ( name == "livro3" ) {
-			return myBook.livro3;
-		}
-	}	
-
-	return myBook;
+	return !bookName ? myBooks : myBooks[ bookName ];
 };
 
 /*
@@ -101,7 +87,7 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-var book1 = "livro1";
+var book1 = "Design + Front-end";
 
 console.log ( "O livro " + book1 + " tem " + book( book1 ).quantidadePaginas + " páginas!" );
 
@@ -110,7 +96,7 @@ Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-var book2 = "livro2";
+var book2 = "HTML e CSS";
 	
 console.log ( "O autor do livro " + book2 + " é " + book( book2 ).autor + "." );
 
@@ -119,6 +105,6 @@ Ainda com a função acima, imprima o nome da editora de um livro qualquer, usan
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-var book3 = "livro3";
+var book3 = "JS Ninja";
 
 console.log ( "O livro " + book3 + " foi publicado pela editora " + book( book3 ).editora + "." );
