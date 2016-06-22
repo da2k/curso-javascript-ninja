@@ -70,7 +70,6 @@
 	os dois parâmetros da função de retorno de "calculator".
 	*/
 	function calculator (operador) {
-		//var verificaOperador = isOperatorValid(operador);
 		if( !isOperatorValid(operador) ) {
 			return false;
 		}
