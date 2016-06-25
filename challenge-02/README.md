@@ -4,29 +4,37 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-?
+function soma(x, y) {
+  var resposta = x + y;
+  return resposta;
+}
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-?
+var varSoma = soma(10,10) + 5; // => 25
 
 // Qual o valor atualizado dessa variável?
-?
+25
 
 // Declare uma nova variável, sem valor.
-?
+var novaVariavel;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-?
+function adicionaTexto() {
+  novaVariavel = 25;
+  return "O valor da variável agora é "+novaVariavel+" Onde "+novaVariavel+" é o novo valor da variável.";
+}
 
 // Invoque a função criada acima.
-?
+adicionaTexto();
 
 // Qual o retorno da função? (Use comentários de bloco).
-?
+/*
+'O valor da variável agora é "25" Onde "25" é o novo valor da variável.'
+*/
 
 /*
 Crie uma função com as seguintes características:
@@ -35,19 +43,34 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-?
+function multiArgumentos(x,y,z) {
+  var resposta;
+  if(x === undefined || y === undefined || z === undefined) {
+    return "Preencha todos os valores corretamente!";
+  } else {
+    return (x*y*z) + 2;
+  }
+}
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+var x = 2;
+var y = 2;
+var z;
+multiArgumentos(x,y);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+/*
+"Preencha todos os valores corretamente!"
+*/
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+var x = 2;
+var y = 2;
+var z = 2;
+multiArgumentos(x,y,z);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+10
 
 /*
 Crie uma função com as seguintes características:
@@ -58,8 +81,23 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+function multiArgumentos2(x,y,z) {
+  if(x !== undefined && y === undefined && z === undefined) { // Só retorna true se o argumento X for passado
+    return x;
+  } else if(x !== undefined && y !== undefined && z === undefined) { // Só retorna true se o argumento X e o Y forem passados
+    return x + y;
+  } else if(x !== undefined && y !== undefined && z !== undefined) { // Só retorna true se o argumento X, Y e Z forem passados
+    return (x + y) / z;
+  } else if(x === undefined && y === undefined && z === undefined) { // Se nenhum for passado retorna false
+    return false;
+  } else {
+    return null;
+  }
+}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+multiArgumentos2(10); // > 10
+multiArgumentos2(10, 10); // > 20
+multiArgumentos2(10, 10, 10); // > 2
+multiArgumentos2(); //false
 ```
