@@ -4,7 +4,7 @@
 	2. Adicione a diretiva 'use strict';
 	3. Crie um arquivo index.html e adicione esse script à ele.
 	*/
-
+  'use strict';
 	/*
 	Crie uma função chamada `cleanCPF`, que receba um CPF por parâmetro, e
 	retorne esse CPF limpo (somente os números).
