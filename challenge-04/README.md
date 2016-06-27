@@ -117,21 +117,38 @@ citado acima, no lugar de "pessoas".
 */
 
 function receberPassageiros(qtdPessoas) {
-	if( carro.quantidadePessoas >= carro.assentos ) { // Verifica se o carro está cheio
-		return "O carro já está lotado!";
-	} else if( carro.quantidadePessoas < carro.assentos ) { // Verifica caso o numero de passageiros novos é maior que o numero de lugares livres
-		if( qtdPessoas + carro.quantidadePessoas > carro.assentos ) {
-			var diff = carro.assentos - carro.quantidadePessoas;
-			var genero = diff == 1 ? 'pessoa' : 'pessoas' ;
-			return "Só cabem mais " + diff + " " + genero + "!";
-		} else { // Caso o carro possua tranquilamente lugares vazios, adiciona pessoas
-			carro.quantidadePessoas += qtdPessoas;
-			return "Já temos " + carro.quantidadePessoas + " pessoas no carro!";
-		}
-	} else {
-		return "Error";
+	
+	var totalPessoas = carro.quantidadePessoas + qtdPessoas;
+	var quantasPessoasCabem = carro.assentos - carro.quantidadePessoas;
+	var pluralOuSingular = quantasPessoasCabem === 1 ? ' pessoa' : ' pessoas';
+
+	if( carro.quantidadePessoas === carro.assentos && totalPessoas >= carro.assentos ) {
+		return 'O carro já está lotado!';
 	}
+
+	if( totalPessoas > carro.assentos ) {
+		return 'Só cabem mais ' + quantasPessoasCabem + pluralOuSingular + '!';
+	}
+
+	carro.quantidadePessoas += qtdPessoas;
+	return 'Já temos ' + carro.quantidadePessoas + 'pessoas no carro!';
+
+	// if( carro.quantidadePessoas >= carro.assentos ) { // Verifica se o carro está cheio
+	// 	return "O carro já está lotado!";
+	// } else if( carro.quantidadePessoas < carro.assentos ) { // Verifica caso o numero de passageiros novos é maior que o numero de lugares livres
+	// 	if( qtdPessoas + carro.quantidadePessoas > carro.assentos ) {
+	// 		var diff = carro.assentos - carro.quantidadePessoas;
+	// 		var genero = diff == 1 ? 'pessoa' : 'pessoas' ;
+	// 		return "Só cabem mais " + diff + " " + genero + "!";
+	// 	} else { // Caso o carro possua tranquilamente lugares vazios, adiciona pessoas
+	// 		carro.quantidadePessoas += qtdPessoas;
+	// 		return "Já temos " + carro.quantidadePessoas + " pessoas no carro!";
+	// 	}
+	// } else {
+	// 	return "Error";
+	// }
 }
+
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
