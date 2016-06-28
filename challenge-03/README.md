@@ -87,7 +87,7 @@ Crie um método chamado `mostrarAltura` que retorne a frase:
 */
 ?
 pessoa.mostrarAltura = function (){
- return "Eu peso pessoa.altura Kg.";
+ return "Minha altura é pessoa.altura + m.";
 }
 /*
 Agora vamos brincar um pouco com o objeto criado:
@@ -95,6 +95,8 @@ Qual o nome completo da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
 ?
+pessoa.nomeCompleto;
+// Gustavo Rodrigues
 
 /*
 Qual a idade da pessoa? (Use a instrução para responder e comentários
@@ -102,35 +104,41 @@ inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
 ?
 
+pessoa.mostraIdade;
+
 /*
 Qual o peso da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
 ?
+pessoa.mostrarPeso;
 
 /*
 Qual a altura da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
 ?
-
+pessoa.mostrarPeso;
 /*
 Faça a `pessoa` fazer 3 aniversários.
 */
 ?
-
+pessoa.fazerAniversario + 3;
 /*
 Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
 comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
 ?
-
+//32
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
 com metragens diferentes passadas por parâmetro.
 */
 ?
+pessoa.andando (2m);
+pessoa.andando (3m);
+pessoa.andando (4m);
 
 /*
 A pessoa ainda está andando? (Use a instrução para responder e comentários
@@ -154,7 +162,7 @@ Quantos metros a pessoa andou? (Use uma instrução para responder e comentário
 inline ao lado da instrução para mostrar a resposta retornada)
 */
 ?
-
+pessoa.parar;
 /*
 Agora vamos deixar a brincadeira um pouco mais divertida! :D
 Crie um método para o objeto `pessoa` chamado `apresentacao`. Esse método deve
