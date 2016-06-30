@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculadora</title>
+	<style>
+		input {
+			font-size: 2em;
+		}
+		.visor, .numeros, .operacoes, .outros{
+			margin: 0.7em;
+		}
+	</style>
+</head>
+<body>
+	<div class="calc">
+		<div class="visor">
+			<input type="text" data-js="visor" readonly="true" value="0">
+		</div>
+		<div class="numeros">
+			<input type="button" data-js="numero" value="0">
+			<input type="button" data-js="numero" value="1">
+			<input type="button" data-js="numero" value="2">
+			<input type="button" data-js="numero" value="3">
+			<input type="button" data-js="numero" value="4">
+			<input type="button" data-js="numero" value="5">
+			<input type="button" data-js="numero" value="6">
+			<input type="button" data-js="numero" value="7">
+			<input type="button" data-js="numero" value="8">
+			<input type="button" data-js="numero" value="9">
+		</div>
+		<div class="operacoes">
+			<input type="button" data-js="operacao" value="+">
+			<input type="button" data-js="operacao" value="-">
+			<input type="button" data-js="operacao" value="x">
+			<input type="button" data-js="operacao" value="/">
+			<input type="button" data-js="igual" value="=">
+			<input type="button" data-js="ce" value="CE">
+		</div>
+	</div>
+</body>
+</html>
+<script src="challenge-23.js"></script>
