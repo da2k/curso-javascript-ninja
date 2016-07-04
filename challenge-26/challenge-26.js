@@ -1,4 +1,5 @@
 (function(win, doc) {
+  'use strict';
   /*
   O desafio dessa semana é criar uma mini library (biblioteca) para
   reutilizarmos nossos códigos quando fizermos manipulação de DOM!
@@ -22,33 +23,36 @@
   */
   // ?
 
-  function DOM(elem) {
-    this.element = doc.querySelectorAll(elem);
+  function DOM(elements) {
+    this.element = this.getDOMElements(elements);
   }
 
-  DOM.prototype.on = function (event, cb){
+  DOM.prototype.getDOMElements = function getDOMElements(elements) {
+    return doc.querySelectorAll(elements);
+  }
+
+  DOM.prototype.on = function on(event, cb){
     Array.prototype.forEach.call(this.element, function(element) {
       element.addEventListener(event, cb, false);
     });
   };
 
-  DOM.prototype.off = function (event, cb){
+  DOM.prototype.off = function off(event, cb){
     Array.prototype.forEach.call(this.element, function(element) {
       element.removeEventListener(event, cb, false);
     });
   };
 
-  DOM.prototype.get = function(){
+  DOM.prototype.get = function get(){
      return this.element;
   };
 
   var $a = new DOM('[data-js="link"]');
 
-  console.log($a);
-
-  $a.on('click', function(e) {
+  $a.on('click', function handleClick(e) {
     e.preventDefault();
     console.log('clicou');
+    $a.off('click', handleClick);
   });
 
   console.log('Elementos selecionados:', $a.get());
