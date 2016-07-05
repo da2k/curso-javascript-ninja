@@ -1,7 +1,4 @@
 // Declarar uma variável chamada `myvar`, sem valor.
-node
-
-// para chamar o nodejs caso estejamos trabalhando com ele
 var myvar;
 
 // Após declarada, atribua o valor 10 à variável `myvar`.
@@ -40,5 +37,6 @@ function divisao(){
 ... x = 10 / 2;
 ... return x;
 ... }
+
 // Invoque a função criada acima, passando os parâmetros 10 e 2.
 divisao(10,2);
