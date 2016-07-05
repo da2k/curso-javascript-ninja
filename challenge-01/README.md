@@ -1,5 +1,7 @@
 // Declarar uma variável chamada `myvar`, sem valor.
-node // para chamar o nodejs caso estejamos trabalhando com ele
+node
+
+// para chamar o nodejs caso estejamos trabalhando com ele
 var myvar;
 
 // Após declarada, atribua o valor 10 à variável `myvar`.
