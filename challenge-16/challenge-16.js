@@ -83,9 +83,9 @@
 	*/
 	console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
 	var myName = 'Aline';
-	var myNewName = [];
-	for( var i = 0, len = myName.length; i < len; i++ ) {
-		myNewName.push( i % 2 === 0 ? myName[i].toLowerCase() : myName[i].toUpperCase() );
-	}.join( '' );
-	console.log( myNewName );
+var myNewName = [];
+for( var i = 0, len = myName.length; i < len; i++ ) {
+    myNewName.push( i % 2 === 0 ? myName[i].toLowerCase() : myName[i].toUpperCase() );
+}
+console.log( myNewName.join( ' ' ) );
 }());
