@@ -9,7 +9,7 @@ var sum = function calculateSum( num1, num2 ) {
 
 /*
 Invoque a função criada acima, passando dois números que serão somados, e mostre
-o resultado no console, com a frase:
+o resultado no console, com a frase: 
 "A soma de [VALOR 1] e [VALOR2] é igual a [RESULTADO]."
 */
 console.log( 'A soma de 5 e 3 é igual a ' + sum( 5, 3 ) + '.'   );
