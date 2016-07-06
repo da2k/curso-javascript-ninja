@@ -1,1 +1,7 @@
+CREATE BRANCH
+git checkout -b NamesBranch
+
+MUDAR DE BRANCH
+git checkout NamesBranch
+
 git push origin challenge-02
