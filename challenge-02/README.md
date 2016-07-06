@@ -22,15 +22,15 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function resultado(valor){
-newvar = 'O valor da variável agora é ' + valor;
-return newvar;
+function resultado(){
+	newvar = 25;
+	return 'O valor da variável agora é ' + newvar;
 }
 // Invoque a função criada acima.
-resultado(8)
+resultado()
 
 // Qual o retorno da função? (Use comentários de bloco).
-/* O valor da variável agora é 8 */
+/* O valor da variável agora é 25 */
 
 /*
 Crie uma função com as seguintes características:
@@ -40,7 +40,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function argumentos(a,b,c){
-  if(a === undefined && b === undefined && c === undefined) || ( a === NaN && b === NaN && c === NaN ) {
+  if(a === undefined || b === undefined || c === undefined) {
     return 'Preencha todos os valores corretamente!';
   } else {
     return a * b * c + 2;
@@ -57,7 +57,7 @@ argumentos(3,4)
 argumentos(1,2,4)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-/* 10 */
+// 10
 
 /*
 Crie uma função com as seguintes características:
@@ -68,7 +68,21 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-
+function argumentos2(a,b,c){
+	if (a !== undefined && b === undefined && c === undefined) {
+		return a;
+	}
+	else if (a !== undefined && b !== undefined && c === undefined) {
+		return a + b;
+	}
+	else if (a !== undefined && b !== undefined && c !== undefined){
+		return ( a + b ) / c;
+	}
+	else if (a === undefined && b === undefined && c === undefined) {
+		return false;
+	}
+	return null;
+}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 ?
