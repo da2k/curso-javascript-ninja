@@ -85,5 +85,7 @@ function argumentos2(a,b,c){
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
-```
+argumentos(2) // 2
+argumentos(2,3) // 5
+argumentos2(1,9,3) // 3
+argumentos2() // false 
