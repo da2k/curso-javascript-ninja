@@ -4,4 +4,13 @@ git checkout -b NamesBranch
 MUDAR DE BRANCH
 git checkout NamesBranch
 
-git push origin challenge-02
+git push origin answers
+
+? = if
+: = else
+ex: 
+1 === 2 ? true : false;
+
+is the same that...
+
+if ( 1 === 2 ) { true; } else { false; }
