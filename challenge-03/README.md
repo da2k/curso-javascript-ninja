@@ -181,13 +181,20 @@ correta, de acordo com os dados inseridos no objeto.
 pessoa.apresentacao = function (){
 var sexo = 'o';
 var idadeAnos = 'Anos';
+var metrosCaminhados = "Metros"
+
 if(pessoa.sexo === feminino){
 sexo = 'a';}
-if(){
+if(pessoa.idade === '1'){
+ idadeAnos = 'ano';
 }
-return "Olá, eu sou + 'sexo' + [NOME COMPLETO], tenho [IDADE] anos, [ALTURA], meu peso é [PESO] e, só hoje, eu já caminhei [CAMINHOU QUANTOS METROS] metros!"
+if(pessoa.caminhouQuantosMetros === '1'){
+ mestrosCaminhados = 'metro';
+}
+return "Olá, eu sou + 'sexo' + '' + pessoa.nome + '' + pessoa.sobrenome +', tenho + pessoa.idade + '' +' idadeAnos ' + anos, pessoa.idade ', meu peso é'+ '' +pessoa.peso + '' + e, só hoje, eu já caminhei '+ '' + pessoa.caminhouQuantosMetros + '' + metrosCaminhados + ' !'
 }
 
 // Agora, apresente-se ;)
 ?
 ```
+pessoa.apresemtacao();
