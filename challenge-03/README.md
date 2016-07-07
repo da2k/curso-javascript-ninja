@@ -65,7 +65,7 @@ Crie um método chamado `mostrarIdade`, que retorne a frase:
 */
 ?
 pessoa.mostraIdade = function (){
- return 'Olá, eu tenho' + '' + pessoa.idade + '' + 'anos!"
+ return 'Olá, eu tenho' + '' + pessoa.idade + '' + 'anos!';
 }
 /*
 Crie um método chamado `mostrarPeso`, que retorne a frase:
@@ -73,7 +73,7 @@ Crie um método chamado `mostrarPeso`, que retorne a frase:
 */
 ?
 pessoa.mostrarPeso = function (){
- return 'Eu peso' + pessoa.peso + Kg.";
+ return 'Eu peso' + pessoa.peso + 'Kg';
 }
 /*
 Crie um método chamado `mostrarAltura` que retorne a frase:
@@ -179,13 +179,13 @@ correta, de acordo com os dados inseridos no objeto.
 */
 ?
 pessoa.apresentacao = function (){
-var sexo;
+var sexo = 'o';
+var idadeAnos = 'Anos';
 if(pessoa.sexo === feminino){
-sexo = 'a';
-}else{
-sexo = 'o';
+sexo = 'a';}
+if(){
 }
-return "Olá, eu sou o [NOME COMPLETO], tenho [IDADE] anos, [ALTURA], meu peso é [PESO] e, só hoje, eu já caminhei [CAMINHOU QUANTOS METROS] metros!"
+return "Olá, eu sou + 'sexo' + [NOME COMPLETO], tenho [IDADE] anos, [ALTURA], meu peso é [PESO] e, só hoje, eu já caminhei [CAMINHOU QUANTOS METROS] metros!"
 }
 
 // Agora, apresente-se ;)
