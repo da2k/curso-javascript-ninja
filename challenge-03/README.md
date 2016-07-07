@@ -17,7 +17,7 @@ As propriedades e tipos de valores para cada propriedade desse objeto devem ser:
 - `caminhouQuantosMetros` - Number - recebe "zero" por padrão
 */
 ?
-var pessoa = { nome: 'Gustavo', sobrenome: 'Rodrigues', sexo: 'Masculino', idade: 28, Altura: 1.70, peso: 70.0, andando: false, caminhouQuantosMetro:  0}
+var pessoa = { nome: 'Gustavo', sobrenome: 'Rodrigues', sexo: 'Masculino', idade: 28, Altura: 1.70, peso: 70.0, andando: false, caminhouQuantosMetro:  0};
 /*
 Adicione um método ao objeto `pessoa` chamado `fazerAniversario`. O método deve
 alterar o valor da propriedade `idade` dessa pessoa, somando `1` a cada vez que
@@ -115,7 +115,8 @@ pessoa.mostrarAltura(); //Eu tenho 1,70m
 Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
 comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
-? */
+*/
+?
 pessoa.fazerAniversario();
 pessoa.fazerAniversario();
 pessoa.fazerAniversario();
@@ -177,6 +178,15 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 ?
+pessoa.apresentacao = function (){
+var sexo;
+if(pessoa.sexo === feminino){
+sexo = 'a';
+}else{
+sexo = 'o';
+}
+return "Olá, eu sou o [NOME COMPLETO], tenho [IDADE] anos, [ALTURA], meu peso é [PESO] e, só hoje, eu já caminhei [CAMINHOU QUANTOS METROS] metros!"
+}
 
 // Agora, apresente-se ;)
 ?
