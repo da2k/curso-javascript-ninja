@@ -1,6 +1,5 @@
 # Desafio Semana #1
 
-```js
 // Declarar uma variável chamada `myvar`, sem valor.
 var myvar;
 
