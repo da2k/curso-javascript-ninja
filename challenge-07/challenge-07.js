@@ -1,7 +1,7 @@
 /*
 Crie um array com 5 items (tipos variados).
 */
-var arr = [ 'Mario', null, function soma( x,y ) { return x+y}, true, 100 ];
+var arr = [ 'Mario', null, function soma( x,y ) { return x+y }, true, 100 ];
 
 
 /*
