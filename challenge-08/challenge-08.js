@@ -107,7 +107,7 @@ var mod 			= calculator( '%' );
 Faça uma operação com cada uma das funções criadas acima, mostrando o resultado
 no console.
 */
-console.log( subtraction( 20, 3 ) );
+console.log( subtraction( 20, 3 ) ); 
 console.log( multiplication( 2, 130 ) );
 console.log( division( 100, 2 ) );
 console.log( mod( 5, 3 ) );
