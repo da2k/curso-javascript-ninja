@@ -12,7 +12,9 @@ Invoque a função criada acima, passando dois números que serão somados, e mo
 o resultado no console, com a frase: 
 "A soma de [VALOR 1] e [VALOR2] é igual a [RESULTADO]."
 */
-console.log( 'A soma de 5 e 3 é igual a ' + sum( 5, 3 ) + '.'   );
+var number1 = 5;
+var number2 = 3;
+console.log( 'A soma de ' + number1 + ' e ' + number2 + ' é igual a ' + sum( number1, number2 ) + '.'   );
 
 /*
 Mostre no console o nome da função criada acima, com a frase:
@@ -88,7 +90,7 @@ var sum = calculator( '+' );
 /*
 Agora `sum` é uma função. Mostre no console a soma de dois números, usando ela.
 */
-sum( 5, 10 );
+console.log( sum( 5, 10 ) );
 
 /*
 Agora, declare algumas variáveis com os nomes `subtraction`, `multiplication`,
@@ -105,7 +107,7 @@ var mod 			= calculator( '%' );
 Faça uma operação com cada uma das funções criadas acima, mostrando o resultado
 no console.
 */
-subtraction( 20, 3 );
-multiplication( 2, 130 );
-division( 100, 2 );
-mod( 5, 3 );
+console.log( subtraction( 20, 3 ) );
+console.log( multiplication( 2, 130 ) );
+console.log( division( 100, 2 ) );
+console.log( mod( 5, 3 ) );
