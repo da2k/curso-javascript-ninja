@@ -20,7 +20,7 @@
 	no console:
 	*/
 	console.log( 'Adicionando seu nome no texto:' );
-	console.log( text.replace( /Manuel Marques de Souza/, 'Aline Cristina' ) );
+	console.log( text.replace( /Manuel Marques de Sousa/, 'Aline Cristina' ) );
 
 	/*
 	Agora, substitua a palavra "brasileiro" por sua cidade natal e mostre no
