@@ -91,3 +91,7 @@ Aqui você pode ver todo o conteúdo do curso disponível:
 - Testes (TDD, BDD)
 - Ferramentas para escrever testes
 - Aula bônus
+	- uglifyjs
+	- sourcemaps
+	- console-log-return
+	- objetos 
