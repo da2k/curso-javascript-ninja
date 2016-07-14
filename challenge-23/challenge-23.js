@@ -79,6 +79,7 @@
   }
 
   function removerOperador(number){
+
     if(isLastItemAnOperation(number))
       return number.slice(0, -1);
     return number;
