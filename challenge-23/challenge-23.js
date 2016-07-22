@@ -1,4 +1,5 @@
 (function( win, doc ) {
+  'use strict';
   /*
   Vamos desenvolver mais um projeto. A ideia é fazer uma mini-calculadora.
   As regras são:
@@ -25,82 +26,93 @@
   - Ao pressionar o botão "CE", o input deve ficar zerado.
   */
 
-    var $display = doc.querySelector( '[data-js-display]' );
-    var $butonCE = doc.querySelector( '[data-js-operator="CE"]' );
-    var $butonEqual = doc.querySelector( '[data-js-operator="="]' );
-    var $butonsNum = doc.querySelectorAll( '[data-js-button]' );
+  var $display = doc.querySelector( '[data-js-display]' );
+  var $butonCE = doc.querySelector( '[data-js-operator="CE"]' );
+  var $butonEqual = doc.querySelector( '[data-js-operator="="]' );
+  var $butonsNum = doc.querySelectorAll( '[data-js-button]' );
 
-    function clearDisplay() {
-      $display.value = '0';
-    }
+  function initialize() {
+    initEvent();
+  }
 
-    function removeLastItemIfOperator() {
-      console.log( $display.value.slice( -1 ) )
-    }
-
-    function isOperator( item ) {
-      var regexpOperators = new RegExp('[x÷+-]');
-      if ( item.match( regexpOperators ) ) {
-        return true;
-      }
-      return false;
-    }
-
-    function lastItemIsOperator( number ) {
-      if ( isOperator( number.slice( -1 ) ) ) {
-        return true;
-      }
-      return false;
-    }
-
-    function removeLastItemIfOperator( number ) {
-      if ( lastItemIsOperator( number ) ) {
-        return number.slice( 0, -1 );
-      }
-      return number;
-    }
-
-    function updateDisplay() {
-
-      var digitednumber = this.value;
-
-      if ( isOperator( digitednumber ) && lastItemIsOperator( $display.value ) ) {
-        return $display.value = removeLastItemIfOperator( $display.value ) + digitednumber;
-      }
-      return $display.value = $display.value + digitednumber;
-    }
-
-    function calculate() {
-      var allOperators = $display.value.match( /\d+[+x÷-]?/g );
-      $display.value = allOperators.reduce(function( accumulated, actual ) {
-        var firstValue = accumulated.slice( 0, -1 );
-        var operator = accumulated.split( '' ).pop();
-        var lastValue = removeLastItemIfOperator( actual );
-        var lastOperator = lastItemIsOperator( actual ) ? actual.split( '' ).pop() : '';
-        switch( operator ) {
-          case '+':
-            return Number( firstValue ) + Number( lastValue ) + lastOperator;
-          break;
-          case 'x':
-            return Number( firstValue ) * Number( lastValue ) + lastOperator;
-          break;
-          case '-':
-            return Number( firstValue ) - Number( lastValue ) + lastOperator;
-          break;
-          case '÷':
-            return Number( firstValue ) / Number( lastValue ) + lastOperator;
-          break;
-        }
-      });
-
-    }
-
+  function initEvent() {
     Array.prototype.forEach.call( $butonsNum, function( item, index ) {
       item.addEventListener( 'click', updateDisplay, false );
     });
-
     $butonCE.addEventListener( 'click', clearDisplay, false );
     $butonEqual.addEventListener( 'click', calculate, false );
+  }
+
+  function clearDisplay() {
+    $display.value = '0';
+  }
+
+  function isOperator( item ) {
+    var regexpOperators = new RegExp('[x÷+-]');
+    if ( item.match( regexpOperators ) )
+      return true;
+    return false;
+  }
+
+  function getOperations() {
+
+  }
+
+  function lastItemIsOperator( string ) {
+    if ( isOperator( string.slice( -1 ) ) ) {
+      return true;
+    }
+    return false;
+  }
+
+  function removeLastItemIfOperator( string ) {
+    if ( lastItemIsOperator( string ) ) {
+      return string.slice( 0, -1 );
+    }
+    return string;
+  }
+
+  function updateDisplay() {
+
+    var digitednumber = this.value;
+
+    if ( isOperator( digitednumber ) && lastItemIsOperator( $display.value ) ) {
+      return $display.value = removeLastItemIfOperator( $display.value ) + digitednumber;
+    }
+    return $display.value = $display.value + digitednumber;
+  }
+
+  function calculate() {
+    var allOperators = $display.value.match( /\d+[+x÷-]?/g );
+    $display.value = allOperators.reduce( calculateAllValues );
+  }
+
+  function calculateAllValues( accumulated, actual ) {
+      var firstValue = accumulated.slice( 0, -1 );
+      var operator = accumulated.split( '' ).pop();
+      var lastValue = removeLastItemIfOperator( actual );
+      var lastOperator = lastItemIsOperator( actual ) ? actual.split( '' ).pop() : '';
+      return doOperation( operator, firstValue, lastValue ) + lastOperator;
+  }
+
+  function doOperation( operator, firstValue, lastValue ) {
+    switch( operator ) {
+        case '+':
+          return Number( firstValue ) + Number( lastValue );
+        break;
+        case 'x':
+          return Number( firstValue ) * Number( lastValue );
+        break;
+        case '-':
+          return Number( firstValue ) - Number( lastValue );
+        break;
+        case '÷':
+          return Number( firstValue ) / Number( lastValue );
+        break;
+      }
+  }
+
+  initialize();
 
 })( window, document );
 
