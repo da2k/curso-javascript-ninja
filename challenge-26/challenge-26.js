@@ -21,6 +21,26 @@ Só passe para o próximo problema quando tiver resolvido o anterior :)
 */
 // ?
 
+function DOM( selector ) {
+  this.element = document.querySelectorAll( selector );
+}
+
+DOM.prototype = {
+  on: function( setEvent, callback ) {
+    Array.prototype.forEach.call( this.element, function( item, index ) {
+      return item.addEventListener( setEvent, callback, null );
+    });
+  },
+  off: function( setEvent ) {
+    Array.prototype.forEach.call( this.element, function( item, index ) {
+      return item.removeEventListener( setEvent );
+    });
+  },
+  get: function() {
+    return this.element;
+  }
+}
+
 var $a = new DOM('[data-js="link"]');
 $a.on('click', function(e) {
   e.preventDefault();
