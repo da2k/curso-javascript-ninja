@@ -1,4 +1,4 @@
-/*
+ /*
 Essa semana você terá dois desafios:
 1) Revisar todo o contéudo passado até aqui, e ver se você realmente entendeu
 tudo o que foi passado! Se tiver dúvidas, anote, e então abra issues,
@@ -14,3 +14,30 @@ https://developer.mozilla.org/en-US/docs/Web/Events#Categories
 Tente aplicar na prática alguns dos eventos que estão ali e coloque nesse
 desafio os experimentos legais que você conseguir desenvolver :D
 */
+
+/*
+* array methods
+some
+every
+map
+forEach
+reduce
+
+apply
+call
+indexOff
+typeOff
+slice
+splice
+substring
+invert
+
+*/
+
+
+
+
+
+
+
+
