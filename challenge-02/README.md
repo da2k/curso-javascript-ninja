@@ -42,9 +42,9 @@ Crie uma função com as seguintes características:
 */
 function multiple(x, y, z){
 	if (x === undefined || y === undefined || z === undefined) {
-		return 'Preencha todos os valores corretamente!;
+	  return 'Preencha todos os valores corretamente!;
 	} else {
-		return ( x * y * z) + 2;
+	  return ( x * y * z) + 2;
 	}
 }
 
@@ -87,5 +87,5 @@ function MyTotal(a1, a2, a3){
 MyTotal(); // false
 MyTotal(2); // 2
 MyTotal(2,2); // 4
-MyTotal(2,2,2)// 2
+MyTotal(2,2,2) // 2
 ```
