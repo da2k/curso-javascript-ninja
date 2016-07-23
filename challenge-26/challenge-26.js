@@ -26,14 +26,14 @@ function DOM( selector ) {
 }
 
 DOM.prototype = {
-  on: function( setEvent, callback ) {
+  on: function( eventType, callback ) {
     Array.prototype.forEach.call( this.element, function( item, index ) {
-      return item.addEventListener( setEvent, callback, null );
+      return item.addEventListener( eventType, callback, null );
     });
   },
-  off: function( setEvent ) {
+  off: function( eventType ) {
     Array.prototype.forEach.call( this.element, function( item, index ) {
-      return item.removeEventListener( setEvent );
+      return item.removeEventListener( eventType );
     });
   },
   get: function() {
