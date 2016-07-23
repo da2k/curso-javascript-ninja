@@ -19,3 +19,83 @@ Crie os seguintes métodos para verificação de tipo:
 - isArray, isObject, isFunction, isNumber, isString, isBoolean, isNull.
 O método isNull deve retornar `true` se o valor for null ou undefined.
 */
+
+
+function DOM( selector ) {
+  this.element = document.querySelectorAll( selector );
+}
+
+DOM.prototype = {
+
+  on: function( eventType, callback ) {
+    Array.prototype.forEach.call( this.element, function( item, index ) {
+      return item.addEventListener( eventType, callback, null );
+    });
+  },
+
+  off: function( eventType ) {
+    Array.prototype.forEach.call( this.element, function( item, index ) {
+      return item.removeEventListener( eventType );
+    });
+  },
+
+  forEach: function( callback ) {
+    return Array.prototype.forEach.call( callback );
+  },
+
+  map: function( callback ) {
+    return Array.prototype.map.call( callback );
+  },
+
+  filter: function( callback ) {
+    return Array.prototype.filter.call( callback );
+  },
+
+  reduce: function( callback ) {
+    return Array.prototype.reduce.call( callback );
+  },
+
+  reduceRight: function( callback ) {
+    return Array.prototype.filterRight.call( callback );
+  },
+
+  every: function( callback ) {
+    return Array.prototype.every.call( callback );
+  },
+
+  some: function( callback ) {
+    return Array.prototype.some.call( callback );
+  },
+}
+
+DOM.isArray = function( obj ) {
+  return DOM.getType( obj ) === '[object Array]';
+};
+
+DOM.isObject = function( obj ) {
+  return DOM.getType( obj ) === '[object Object]';
+};
+
+DOM.isFunction = function( obj ) {
+  return DOM.getType( obj ) === '[object Function]';
+};
+
+DOM.isNumber = function( obj ) {
+  return DOM.getType( obj ) === '[object Number]';
+};
+
+DOM.isString = function( obj ) {
+  return DOM.getType( obj ) === '[object String]';
+};
+
+DOM.isBoolean = function( obj ) {
+  return DOM.getType( obj ) === '[object Boolean]';
+};
+
+DOM.isNull = function( obj ) {
+  return DOM.getType( obj ) === '[object Null]' || DOM.getType( obj ) === '[object Undefined]';
+};
+
+DOM.getType = function( obj ) {
+  return Object.prototype.toString.call( obj );
+};
