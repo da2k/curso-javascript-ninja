@@ -178,9 +178,6 @@ deve conter no retorno da frase acima é "metro" no lugar de "metros".
 método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
-?
-
-// Agora, apresente-se ;)
 pessoa.apresentacao = function() {
   var sexo = 'o';
   var anos = 'anos';
@@ -196,5 +193,7 @@ pessoa.apresentacao = function() {
     m = 'metro';
 
   return 'Olá, eu sou ' + sexo + ' ' + pessoa.nome + ', tenho ' + pessoa.idade + ' ' + anos + ', ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' ' + m + ' !';
-} // 'Olá, eu sou o Renan, tenho 22 anos, 1.78, meu peso é 65 e, só hoje, eu já caminhei 6 metros !'
+}
+
+// 'Olá, eu sou o Renan, tenho 22 anos, 1.78, meu peso é 65 e, só hoje, eu já caminhei 6 metros !'
 ```
