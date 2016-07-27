@@ -81,17 +81,16 @@
 	criado acima, só precisa ser reiniciado) números de 0 a 20, inclusive
 	esses. Se o número for ímpar, pular para o próximo número.
 	Mostrar no console os números do array.
-	*/
-	console.log( 'Pares de 0 a 20:' );
-	
+	*/	
 	numbers = [];
 
 	for( i = 0; i <= 20; i++ ){
 		if( i % 2 === 0 ) {
-			numbers.push( i );
-		}		
+			continue;
+		}	
+		numbers.push( i );	
 	}
 
-	console.log( 'De 0 a 10: ', numbers );
+	console.log( 'Pares de 0 a 20: ', numbers );
 
 })();
