@@ -33,7 +33,8 @@
       return this.age;
     };
     this.addAge = function() {
-      return this.age + arguments[0];
+      this.age += arguments[0];
+      return this;
     }
   }
 
@@ -64,9 +65,9 @@
   - "[NOME COMPLETO] tem [IDADE] anos."
   */
   console.log( '\nIdade das pessoas:' );
-  console.log( pessoa1.getFullName() + ' tem ' + pessoa1.age + ' anos.' );
-  console.log( pessoa2.getFullName() + ' tem ' + pessoa2.age + ' anos.' );
-  console.log( pessoa3.getFullName() + ' tem ' + pessoa3.age + ' anos.' );
+  console.log( pessoa1.getFullName() + ' tem ' + pessoa1.getAge() + ' anos.' );
+  console.log( pessoa2.getFullName() + ' tem ' + pessoa2.getAge() + ' anos.' );
+  console.log( pessoa3.getFullName() + ' tem ' + pessoa3.getAge() + ' anos.' );
 
   /*
   Adicione alguns anos à cada pessoa, e mostre no console a nova idade de
@@ -74,8 +75,8 @@
   - "[NOME COMPLETO] agora tem [NOVA IDADE] anos."
   */
   console.log( '\nNova idade das pessoas:' );
-  console.log( pessoa1.getFullName() + ' agora tem ' + pessoa1.addAge(5) + ' anos.' );
-  console.log( pessoa2.getFullName() + ' agora tem ' + pessoa2.addAge(3) + ' anos.' );
-  console.log( pessoa3.getFullName() + ' agora tem ' + pessoa3.addAge(10) + ' anos.' );
+  console.log( pessoa1.getFullName() + ' agora tem ' + pessoa1.addAge(5).getAge() + ' anos.' );
+  console.log( pessoa2.getFullName() + ' agora tem ' + pessoa2.addAge(3).getAge() + ' anos.' );
+  console.log( pessoa3.getFullName() + ' agora tem ' + pessoa3.addAge(10).getAge() + ' anos.' );
 
 })();
