@@ -31,9 +31,13 @@ input;
 	var $operacoes = document.querySelectorAll('[data-js="operacao"]');
 	var $ce = document.querySelector('[data-js="ce"]');
 	var $igual = document.querySelector('[data-js="igual"]');
-
+	
 	$ce.addEventListener('click', function(){
 		return ce();
+	}, false);
+
+    $igual.addEventListener('click', function(){
+		return igual();
 	}, false);
 
 	Array.prototype.forEach.call( $numeros, function( numero ){
@@ -43,20 +47,84 @@ input;
 		numero.addEventListener('click', digitarOp, false);
 	});
 
-	function digitar( event ){
+	function digitar(){
 		$visor.value += this.value; 
 	}
 
-	function digitarOp( event ){
-		var operacoes = ['+', '-', '/', 'x'];
-		var result = Array.prototype.lastIndexOf.apply( $visor.value, operacoes );
-		if ( result != -1 )
-			return $visor.value[result] += this.value;
-		return $visor.value += this.value;
+	function digitarOp(){
+		var ultimo = $visor.value.split('').pop();
+        var operadores = ['+', '-', '/', 'x'];
+		var result = operadores.some( function( item ){
+			if ( item == ultimo ){
+                return item;
+            }            
+		});
+		if ( result ){
+            $visor.value = $visor.value.slice(0,-1);
+        }
+        return $visor.value += this.value;
 	}
+
+    function igual() {
+        var valores = $visor.value.match(/(?:\d+)|[x\-*\/\+]/g);
+        while( valores.length != 1 ){
+            valores.forEach( function( item, index, array ) {
+                var result;
+                if ( item == 'x' ){
+                    result = multiplica( array[index-1], array[index+1] );
+                    valores.splice( index-1, 3 );
+                    valores.splice( index-1, 0, result );
+                }                
+                if ( item == '/' ){
+                    result = divide( array[index-1], array[index+1] );
+                    valores.splice( index-1, 3 );
+                    valores.splice( index-1, 0, result );
+                }                
+            });
+            valores.forEach( function( item, index, array ) {
+                var result;
+                if ( item == '+' ){
+                    result = soma( array[index-1], array[index+1] );
+                    valores.splice( index-1, 3 );
+                    valores.splice( index-1, 0, result );
+                }                
+                if ( item == '-' ){
+                    result = subtrai( array[index-1], array[index+1] );
+                    valores.splice( index-1, 3 );
+                    valores.splice( index-1, 0, result );
+                }                
+            });
+        }
+        valores.join('');
+        return $visor.value = valores;
+    }
 
 	function ce(){
 		return $visor.value = 0;
 	}
+
+    function soma(x,y) {
+        x = +x;
+        y = +y;
+        return x+y;
+    }
+
+    function multiplica(x,y) {
+        x = +x;
+        y = +y;
+        return x*y;
+    }
+
+    function divide(x,y) {
+        x = +x;
+        y = +y;
+        return x/y;
+    }
+
+    function subtrai(x,y) {
+        x = +x;
+        y = +y;
+        return x-y;
+    }
 
 })(window, document);
