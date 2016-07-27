@@ -39,33 +39,33 @@ DOM.prototype = {
     });
   },
 
-  forEach: function( callback ) {
-    return Array.prototype.forEach.call( callback );
+  forEach: function() {
+    return Array.prototype.forEach.apply( this.element, argumets );
   },
 
-  map: function( callback ) {
-    return Array.prototype.map.call( callback );
+  map: function() {
+    return Array.prototype.map.apply( this.element, argumets );
   },
 
-  filter: function( callback ) {
-    return Array.prototype.filter.call( callback );
+  filter: function() {
+    return Array.prototype.filter.apply( this.element, argumets );
   },
 
-  reduce: function( callback ) {
-    return Array.prototype.reduce.call( callback );
+  reduce: function() {
+    return Array.prototype.reduce.apply( this.element, argumets );
   },
 
-  reduceRight: function( callback ) {
-    return Array.prototype.filterRight.call( callback );
+  reduceRight: function() {
+    return Array.prototype.filterRight.apply( this.element, argumets );
   },
 
-  every: function( callback ) {
-    return Array.prototype.every.call( callback );
+  every: function() {
+    return Array.prototype.every.apply( this.element, argumets );
   },
 
-  some: function( callback ) {
-    return Array.prototype.some.call( callback );
-  },
+  some: function() {
+    return Array.prototype.some.apply( this.element, argumets );
+  }
 }
 
 DOM.isArray = function( obj ) {
