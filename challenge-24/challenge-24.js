@@ -1,3 +1,6 @@
+(function(window, document){
+	'use strict';
+
 /*
 Nossa calculadora agora está funcional! A ideia desse desafio é modularizar
 o código, conforme vimos na aula anterior. Quebrar as responsabilidades
@@ -10,66 +13,121 @@ listeners de eventos, etc);
 mesma funcionalidade.
 */
 
-var $visor = document.querySelector('[data-js="visor"]');
-var $buttonsNumbers = document.querySelectorAll('[data-js="button-number"]');
-var $buttonsOperations = document.querySelectorAll('[data-js="button-operation"]');
-var $buttonCE = document.querySelector('[data-js="button-ce"]');
-var $buttonEqual = document.querySelector('[data-js="button-equal"]');
+	var $visor = document.querySelector('[data-js="visor"]');
+	var $numeros = document.querySelectorAll('[data-js="numero"]');
+	var $operacoes = document.querySelectorAll('[data-js="operacao"]');
+	var $ce = document.querySelector('[data-js="ce"]');
+	var $igual = document.querySelector('[data-js="igual"]');
 
-Array.prototype.forEach.call($buttonsNumbers, function(button) {
-  button.addEventListener('click', handleClickNumber, false);
-});
-Array.prototype.forEach.call($buttonsOperations, function(button) {
-  button.addEventListener('click', handleClickOperation, false);
-});
-$buttonCE.addEventListener('click', handleClickCE, false);
-$buttonEqual.addEventListener('click', handleClickEqual, false);
-
-function handleClickNumber() {
-  $visor.value += this.value;
-}
-
-function handleClickOperation() {
-  $visor.value = removeLastItemIfItIsAnOperator($visor.value);
-  $visor.value += this.value;
-}
-
-function handleClickCE() {
-  $visor.value = 0;
-}
-
-function isLastItemAnOperation(number) {
-  var operations = ['+', '-', 'x', '÷'];
-  var lastItem = number.split('').pop();
-  return operations.some(function(operator) {
-    return operator === lastItem;
-  });
-}
-
-function removeLastItemIfItIsAnOperator(number) {
-  if(isLastItemAnOperation(number)) {
-    return number.slice(0, -1);
-  }
-  return number;
-}
-
-function handleClickEqual() {
-  $visor.value = removeLastItemIfItIsAnOperator($visor.value);
-  var allValues = $visor.value.match(/\d+[+x÷-]?/g);
-  $visor.value = allValues.reduce(function(accumulated, actual) {
-    var firstValue = accumulated.slice(0, -1);
-    var operator = accumulated.split('').pop();
-    var lastValue = removeLastItemIfItIsAnOperator(actual);
-    var lastOperator = isLastItemAnOperation(actual) ? actual.split('').pop() : '';
-    switch(operator) {
-      case '+':
-        return ( Number(firstValue) + Number(lastValue) ) + lastOperator;
-      case '-':
-        return ( Number(firstValue) - Number(lastValue) ) + lastOperator;
-      case 'x':
-        return ( Number(firstValue) * Number(lastValue) ) + lastOperator;
-      case '÷':
-        return ( Number(firstValue) / Number(lastValue) ) + lastOperator;
+    function initialize() {
+        eventos();
     }
-  });
-}
+
+    function eventos() {
+        $ce.addEventListener('click', limpaVisor, false);
+
+        $igual.addEventListener('click', calculaResultado, false);
+
+        Array.prototype.forEach.call( $numeros, function( numero ){
+            numero.addEventListener('click', digitarNumero, false);
+        });
+        Array.prototype.forEach.call( $operacoes, function( numero ){
+            numero.addEventListener('click', digitarOperacao, false);
+        });
+    }
+	
+	function digitarNumero(){
+		$visor.value += this.value; 
+	}
+
+    function ultimoCaractere( numero ){
+        var ultimo = $visor.value.split('').pop();
+        var operadores = recebeOperadores();
+		return operadores.some( function( item ){
+			if ( item == ultimo )
+                return item;            
+		});
+    }
+
+    function recebeOperadores() {
+        return Array.prototype.map.call($operacoes, function (button) {
+           return button.value; 
+        });
+    }
+
+	function digitarOperacao(){
+		if ( ultimoCaractere( $visor.value ) ){
+            $visor.value = $visor.value.slice(0,-1);
+        }
+        return $visor.value += this.value;
+	}
+
+    function calculaResultado() {
+        var valores = $visor.value.match(/(?:\d+)|[x\-*\/\+]/g);
+        while( valores.length != 1 ){
+            valores.forEach( calculaMultiplicaDivide );
+            valores.forEach( calculaSomaSubtrai );
+        }
+        valores.join('');
+        return $visor.value = valores;
+    }
+
+    function calculaMultiplicaDivide( item, index, array ) {
+        var result;
+        if ( item == 'x' ){
+            result = multiplica( array[index-1], array[index+1] );
+            array.splice( index-1, 3 );
+            array.splice( index-1, 0, result );
+        }                
+        if ( item == '/' ){
+            result = divide( array[index-1], array[index+1] );
+            array.splice( index-1, 3 );
+            array.splice( index-1, 0, result );
+        }                
+    }
+
+    function calculaSomaSubtrai( item, index, array ) {
+        var result;
+        if ( item == '+' ){
+            result = soma( array[index-1], array[index+1] );
+            array.splice( index-1, 3 );
+            array.splice( index-1, 0, result );
+        }                
+        if ( item == '-' ){
+            result = subtrai( array[index-1], array[index+1] );
+            array.splice( index-1, 3 );
+            array.splice( index-1, 0, result );
+        }                
+    }
+
+	function limpaVisor(){
+		return $visor.value = 0;
+	}
+
+    function soma(x,y) {
+        x = +x;
+        y = +y;
+        return x+y;
+    }
+
+    function multiplica(x,y) {
+        x = +x;
+        y = +y;
+        return x*y;
+    }
+
+    function divide(x,y) {
+        x = +x;
+        y = +y;
+        return x/y;
+    }
+
+    function subtrai(x,y) {
+        x = +x;
+        y = +y;
+        return x-y;
+    }
+
+    initialize();
+
+})(window, document);
