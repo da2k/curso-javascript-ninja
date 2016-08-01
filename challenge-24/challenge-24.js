@@ -40,23 +40,23 @@ mesma funcionalidade.
 		$visor.value += this.value; 
 	}
 
-    function ultimoCaractere( numero ){
+    function isLastCharacterAnOperator( numero ){
         var ultimo = $visor.value.split('').pop();
-        var operadores = recebeOperadores();
+        var operadores = obterOperadores();
 		return operadores.some( function( item ){
 			if ( item == ultimo )
                 return item;            
 		});
     }
 
-    function recebeOperadores() {
+    function obterOperadores() {
         return Array.prototype.map.call($operacoes, function (button) {
            return button.value; 
         });
     }
 
 	function digitarOperacao(){
-		if ( ultimoCaractere( $visor.value ) ){
+		if ( isLastCharacterAnOperator( $visor.value ) ){
             $visor.value = $visor.value.slice(0,-1);
         }
         return $visor.value += this.value;
