@@ -44,8 +44,7 @@ mesma funcionalidade.
         var ultimo = $visor.value.split('').pop();
         var operadores = obterOperadores();
 		return operadores.some( function( item ){
-			if ( item == ultimo )
-                return item;            
+            return item == ultimo;            
 		});
     }
 
