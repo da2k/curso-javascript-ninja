@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>WOLIVEIRAS CAR'S</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-decoration: none;
+      width: 90%;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+    }
+    form {
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+    }
+    label {
+      width: 140px;
+      display: inline-block;
+    }
+    ul {
+      list-style: none;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    img {
+      max-width: 200px;
+    }
+    table {
+      width: 100%
+    }
+    table, tr, th, td {
+      border: 1px solid #ccc;
+      border-collapse: collapse
+    }
+    td, th {
+      width: 225px;
+      text-align: center;
+    }
+    td {
+      height: 115px;
+    }
+    thead {
+      background: #ccc;
+      color: #383838;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>
+        <span data-js="company-name"></span> -
+        <span data-js="company-phone"></span>
+      </h1>
+  </header>
+
+  <form action="/" data-js="main-form">
+    <ul>
+      <li>
+        <label>Imagem do Carro:</label>
+        <input type="url" data-js="car-image">
+      </li>
+      <li>
+        <label>Marca / Modelo: </label>
+        <input type="text" data-js="car-model">
+      </li>
+      <li>
+        <label>Ano: </label>
+        <input type="text" data-js="car-year">
+      </li>
+      <li>
+        <label>Placa: </label>
+        <input type="text" data-js="car-plate">
+      </li>
+      <li>
+        <label>Cor: </label>
+        <input type="text" data-js="car-color">
+      </li>
+      <li>
+        <button type="submit">Cadastrar</button>
+      </li>
+    </ul>
+  </form>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Imagem do carro</th>
+        <th>Marca / Modelo</th>
+        <th>Ano</th>
+        <th>Placa</th>
+        <th>Cor</th>
+      </tr>
+    </thead>
+
+    <tbody data-js="results-table"></tbody>
+  </table>
+
+  <script src="js/libs/$.js"></script>
+  <script src="challenge-29.js"></script>
+</body>
+</html>
