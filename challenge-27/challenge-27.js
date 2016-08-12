@@ -39,6 +39,10 @@ DOM.prototype = {
     });
   },
 
+  get: function( eventType ) {
+    return this.element;
+  },
+
   forEach: function() {
     return Array.prototype.forEach.apply( this.element, argumets );
   },
