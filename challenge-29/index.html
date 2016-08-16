@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>challenge-29</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="section">
+      <h4 data-js-info="title"> </h4>
+      <p data-js-info="phone"> </p>
+      <div class="divider"></div>
+    </div>
+    <div class="section">
+      <h5>Cadastro de veículos</h5>
+      <form action="" class="row" data-js="form">
+        <div class="input-field col s12">
+          <label for="image-car">Imagem do carro</label>
+          <input type="text" name="image-car">
+        </div>
+        <div class="input-field col s3">
+          <label for="model">Marca / Modelo</label>
+          <input type="text" name="model">
+        </div>
+        <div class="input-field col s3">
+          <label for="year">Ano</label>
+          <input type="text" name="year">
+        </div>
+        <div class="input-field col s3">
+          <label for="board">Placa</label>
+          <input type="text" name="board">
+        </div>
+        <div class="input-field col s3">
+          <label for="color">Cor</label>
+          <input type="text" name="color">
+        </div>
+        <div class="col s12 right-align">
+          <button class="btn waves-light">Cadastrar</button>
+        </div>
+      </form>
+    </div>
+    <div class="section">
+      <div class="divider"></div>
+      <table class="highlight">
+        <tr>
+          <th>Marca / Modelo</th>
+          <th>Ano</th>
+          <th>Placa</th>
+          <th>Cor</th>
+        </tr>
+        <tbody data-js-table="collums"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+  <script src="dom.js"></script>
+  <script src="challenge-29.js"></script>
+</body>
+</html>
