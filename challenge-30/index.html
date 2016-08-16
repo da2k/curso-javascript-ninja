@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>challenge-29</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="section">
+      <h4 data-js-info="title"> </h4>
+      <p data-js-info="phone"> </p>
+      <div class="divider"></div>
+    </div>
+    <div class="section">
+      <h5>
+        Cadastro de veículo
+      </h5>
+      <form action="" data-js="form">
+        <div class="card-panel">
+          <div class="row valign-wrapper">
+            <div class="col s4">
+              <img data-js-image="image-car" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtIaPs4-y7dIpmrsurSkIMCvC1qjpMQC3jPxQ5kc_f4obOoyH8x3jFnRJp" class="responsive-img" alt="">
+            </div>
+            <div class="col s8">
+              <div class="input-field">
+                <label for="nome">Imagem do carro</label>
+                <input type="url" name="image-car" required="true" class="validate">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s3">
+            <input type="text" name="model" required="true" class="validate">
+            <label for="nome">Marca / Modelo</label>
+          </div>
+          <div class="input-field col s3">
+            <label for="nome">Ano</label>
+            <input type="text" pattern="(\d){4}" name="year" required="true" class="validate">
+          </div>
+          <div class="input-field col s3">
+            <label for="nome">Placa</label>
+            <input type="text" pattern="(\w){3}-(\d){4}" name="board" required="true" class="validate">
+          </div>
+          <div class="input-field col s3">
+            <label for="nome">Cor</label>
+            <input type="text" name="color" required="true" class="validate">
+          </div>
+        </div>
+        <div class="right-align">
+          <button class="btn waves-light" data-js-button="cadaster">Cadastrar</button>
+        </div>
+      </form>
+    </div>
+    <div class="section">
+      <table>
+        <tr>
+          <th>Imagem</th>
+          <th>Marca / Modelo</th>
+          <th>Ano</th>
+          <th>Placa</th>
+          <th>Cor</th>
+        </tr>
+        <tbody data-js-table="collums"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js" charset="utf-8"></script>
+  <script src="DOM.js" charset="utf-8"></script>
+  <script src="challenge-29.js" charset="utf-8"></script>
+</body>
+</html>
