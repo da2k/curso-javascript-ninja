@@ -44,10 +44,10 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function threeArg(a, b, c) {
-  if (a && b && c == undefined) {
+  if (a === undefined || b === undefined || c == undefined) {
     return "Preencha todos os valores corretamente!";
   }
-  return ((a * b) * c) + 2;
+  return (a * b * c) + 2;
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
@@ -71,20 +71,22 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-function threeOptios(a, b, c) {
-  if (a == undefined) {
+function threeOptions(a, b, c) {
+  if (a === undefined) {
     return false;
-  }else if(b == undefined) {
+  }else if(b === undefined) {
     return a;
-  }else if(c == undefined) {
+  }else if(c === undefined) {
     return a + b;
-  }else if() {
+  }else if(a !=== undefined && b !=== undefined && c !=== undefined) {
     return (a + b) / c;
   }else
     return null;
 }
-threeOptios();
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 ?
-OK
+threeOptios(); //false
+threeOptios(1); //1
+threeOptios(1, 2); //2
+threeOptios(10, 10, 2); //10
