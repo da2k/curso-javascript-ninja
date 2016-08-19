@@ -26,14 +26,15 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 function returnString() {
-  return varQualquer = "VALOR";
+  varQualquer = 10;
+  return varQualquer = "O valor da variável agora é " + varQualquer;
 }
 
 // Invoque a função criada acima.
 returnString();
 
 // Qual o retorno da função? (Use comentários de bloco).
-VALOR
+O valor da variável agora é 10
 
 /*
 Crie uma função com as seguintes características:
