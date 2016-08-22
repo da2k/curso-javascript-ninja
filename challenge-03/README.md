@@ -192,8 +192,8 @@ pessoa.apresentacao = function() {
     return resp + "\nOlá, eu sou a " + pessoa.nomeCompleto() + ", tenho " + pessoa.idade + " anos, " + pessoa.altura + ", meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " metro!";
 
   }else if (pessoa.sexo === "feminino" && pessoa.idade !== 1 && pessoa.caminhouQuantosMetros !== 1) {
-    var resp = "Olá, eu sou a " + pessoa.nomeCompleto() + ", tenho " + pessoa.idade + " ano, " + pessoa.altura + ", meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " metros!";
-    return resp + "\nOlá, eu sou a " + pessoa.nomeCompleto() + ", tenho " + pessoa.idade + " ano, " + pessoa.altura + ", meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " metros!";
+    var resp = "Olá, eu sou a " + pessoa.nomeCompleto() + ", tenho " + pessoa.idade + " anos, " + pessoa.altura + ", meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " metros!";
+    return resp + "\nOlá, eu sou a " + pessoa.nomeCompleto() + ", tenho " + pessoa.idade + " anos, " + pessoa.altura + ", meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " metros!";
 
   }else if (pessoa.sexo === "masculino" && pessoa.idade === 1 && pessoa.caminhouQuantosMetros === 1) {
     var resp = "Olá, eu sou o " + pessoa.nomeCompleto() + ", tenho " + pessoa.idade + " ano, " + pessoa.altura + ", meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " metro!";
@@ -214,4 +214,4 @@ pessoa.apresentacao = function() {
 
 // Agora, apresente-se ;)
 ?
-```
+pessoa.apresentacao();
