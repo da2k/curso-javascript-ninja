@@ -14,7 +14,7 @@ router.post('/', function(req, res) {
     brandModel: req.body.brandModel,
     year: req.body.year,
     plate: req.body.plate,
-    color: req.body.color 
+    color: req.body.color
   });
   res.json({ message: 'success' });
 });
