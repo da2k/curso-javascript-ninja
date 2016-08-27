@@ -71,7 +71,7 @@
 	console.
 	*/
 	console.log( '\nOperation 2:' );
-	var operation2 = justMod2Or3.reduce(function(itemAnterior, itemAtual, index, array){
+	var operation2 = justMod2Or3.reduceRight(function(itemAnterior, itemAtual, index, array){
 		return (itemAnterior + 1) * itemAtual;
 	}, 0);
 
@@ -87,9 +87,11 @@
 	*/
 	console.log( '\nSeu nome na língua do "P":' );
 	var name = ['lu', 'cas', 'ma', 'ia', 'e', 'sil', 'va'];
+	var reduceP = name.reduce(function(acumulado, atual){
+		return acumulado + 'P' + atual;
+	}, '');
 
-
-
+	console.log(reduceP);
 	/*
 	Crie uma variável chamada `inversedName`, que reduzirá o array em uma string
 	e atribuirá o seu nome invertido (usando o array criado acima).
@@ -115,6 +117,9 @@
 	Consegue prever o resultado? Deixe uma mensagem no console tentando explicar
 	o que acontece ;)
 	*/
+
+	console.log('Isso ocorre porque cada vez que criamos um objeto literal em Js, estamos criando um novo objeto, então mesmo que eles sejam idênticos em estrutura, são diferentes em alocação de memória')
+
 	console.log( '\nExiste um { number: 2 } em numberObjects?' );
 	var search = numberObjects.indexOf({ number: 2 });
 	search > 0 
