@@ -1,4 +1,4 @@
-(function() {
+(function(win, DOM, doc) {
   'use strict';
 
   /*
@@ -36,4 +36,117 @@
   que será nomeado de "app".
   */
 
-})();
+  function app() {
+    var $form = new DOM('[data-js="form-register"]'),
+        $image = new DOM('[data-js="input-image"]'),
+        $brand = new DOM('[data-js="input-brand"]'),
+        $year = new DOM('[data-js="input-year"]'),
+        $sign = new DOM('[data-js="input-sign"]'),
+        $color = new DOM('[data-js="input-color"]'),
+        $companyName = new DOM('[data-js="company-name"]'),
+        $companyPhone = new DOM('[data-js="company-phone"]'),
+        $carsList = new DOM('[data-js="cars-list"]'),
+        $carRegister = [],
+        ajax = new XMLHttpRequest();
+
+    $form.on('submit', handleFormRegister);
+    win.addEventListener('load', companyInfo);
+
+    function handleFormRegister(e) {
+      e.preventDefault();
+
+      var register = {
+        image: $image.get()[0].value,
+        brand: $brand.get()[0].value,
+        year: $year.get()[0].value,
+        sign: $sign.get()[0].value,
+        color: $color.get()[0].value
+      };
+      console.log(register);
+      clearRegister();
+      renderListCar(register);
+    }
+
+    function renderListCar(register) {
+      $carRegister.push(register);
+
+      var $tr = doc.createElement('tr');
+      var $image = doc.createElement('td');
+      var $imgTag = doc.createElement('img')
+      var $brand = doc.createElement('td');
+      var $year = doc.createElement('td');
+      var $sign = doc.createElement('td');
+      var $color = doc.createElement('td');
+
+      var image = doc.createTextNode(register.image);
+      var brand = doc.createTextNode(register.brand);
+      var year = doc.createTextNode(register.year);
+      var sign = doc.createTextNode(register.sign);
+      var color = doc.createTextNode(register.color);
+
+      $imgTag.setAttribute('src', image.textContent)
+      $image.appendChild($imgTag);
+      $tr.appendChild($image);
+      $brand.appendChild(brand);
+      $tr.appendChild($brand);
+      $year.appendChild(year);
+      $tr.appendChild($year);
+      $sign.appendChild(sign);
+      $tr.appendChild($sign);
+      $color.appendChild(color);
+      $tr.appendChild($color);
+      $carsList.get()[0].appendChild($tr);
+
+    }
+
+    function clearRegister() {
+       $image.get()[0].value = '';
+       $brand.get()[0].value = '';
+       $year.get()[0].value = '';
+       $sign.get()[0].value = '';
+       $color.get()[0].value = '';
+    }
+
+    function companyInfo() {
+      var company = 'company.json';
+      ajax.open('get', company);
+      ajax.send();
+      ajax.addEventListener('readystatechange', handleAjaxState);
+    }
+
+    function handleAjaxState() {
+      var data = parseDataCep();
+
+      if(isRequestOk()) {
+        $companyName.get()[0].textContent = data.name;
+        $companyPhone.get()[0].textContent = data.phone;
+      }
+
+    }
+
+    function parseDataCep() {
+      var result;
+
+      try {
+        result = JSON.parse(ajax.responseText);
+      } catch (e) {
+        result = null;
+      }
+      return result;
+    }
+
+    function isRequestOk() {
+      return ajax.readyState === 4 && ajax.status === 200;
+    }
+
+
+    return {
+      // métodos que eu quero que sejam exportados: Revealing Module Pattern
+    };
+  }
+
+  win.app = app; //executar a função depois app() -> Revealing Module Pattern
+
+  app();
+
+})(window, window.DOM, document);

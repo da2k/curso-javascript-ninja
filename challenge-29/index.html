@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang='pt-br'>
+<head>
+  <meta charset='utf-8'/>
+  <title>My Next Car App</title>
+  <style>
+    img {
+      width: 150px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>
+      <span data-js="company-name"></span> -
+      <span data-js="company-phone"></span>
+    </h1>
+  </header>
+  <main>
+    <h2>Cadastrar Carro</h2>
+    <form data-js="form-register">
+      <label for='image'>Imagem do carro</label>
+      <input type='text' id="image" data-js="input-image" name="car-image"/>
+      <label for='model'>Marca/Modelo</label>
+      <input type='text' id="model" data-js="input-brand" name="car-brand"/>
+      <label for='year'>Ano</label>
+      <input type='text' id="year" data-js="input-year" name="car-year"/>
+      <label for='sign'>Placa</label>
+      <input type='text' id="sign" data-js="input-sign" name="car-sign"/>
+      <label for='cor'>Cor</label>
+      <input type='text' id="cor" data-js="input-color" name="car-color"/>
+      <button type="submit" name="button">Cadastrar</button>
+    </form>
+    <br/>
+    <div class="cars-list">
+      <table>
+        <thead>
+          <tr>
+            <th>Foto</th>
+            <th>Marca/Modelo</th>
+            <th>Ano</th>
+            <th>Placa</th>
+            <th>Cor</th>
+          </tr>
+        </thead>
+        <tbody data-js="cars-list">
+
+        </tbody>
+      </table>
+    </div>
+  </main>
+  <script src="DOM.js"></script>
+  <script src="challenge-29.js"></script>
+</body>
+</html>
