@@ -1,4 +1,4 @@
-(function(win, DOM, doc) {
+(function($) {
   'use strict';
 
   /*
@@ -36,117 +36,84 @@
   que será nomeado de "app".
   */
 
-  function app() {
-    var $form = new DOM('[data-js="form-register"]'),
-        $image = new DOM('[data-js="input-image"]'),
-        $brand = new DOM('[data-js="input-brand"]'),
-        $year = new DOM('[data-js="input-year"]'),
-        $sign = new DOM('[data-js="input-sign"]'),
-        $color = new DOM('[data-js="input-color"]'),
-        $companyName = new DOM('[data-js="company-name"]'),
-        $companyPhone = new DOM('[data-js="company-phone"]'),
-        $carsList = new DOM('[data-js="cars-list"]'),
-        $carRegister = [],
-        ajax = new XMLHttpRequest();
-
-    $form.on('submit', handleFormRegister);
-    win.addEventListener('load', companyInfo);
-
-    function handleFormRegister(e) {
-      e.preventDefault();
-
-      var register = {
-        image: $image.get()[0].value,
-        brand: $brand.get()[0].value,
-        year: $year.get()[0].value,
-        sign: $sign.get()[0].value,
-        color: $color.get()[0].value
-      };
-      console.log(register);
-      clearRegister();
-      renderListCar(register);
-    }
-
-    function renderListCar(register) {
-      $carRegister.push(register);
-
-      var $tr = doc.createElement('tr');
-      var $image = doc.createElement('td');
-      var $imgTag = doc.createElement('img')
-      var $brand = doc.createElement('td');
-      var $year = doc.createElement('td');
-      var $sign = doc.createElement('td');
-      var $color = doc.createElement('td');
-
-      var image = doc.createTextNode(register.image);
-      var brand = doc.createTextNode(register.brand);
-      var year = doc.createTextNode(register.year);
-      var sign = doc.createTextNode(register.sign);
-      var color = doc.createTextNode(register.color);
-
-      $imgTag.setAttribute('src', image.textContent)
-      $image.appendChild($imgTag);
-      $tr.appendChild($image);
-      $brand.appendChild(brand);
-      $tr.appendChild($brand);
-      $year.appendChild(year);
-      $tr.appendChild($year);
-      $sign.appendChild(sign);
-      $tr.appendChild($sign);
-      $color.appendChild(color);
-      $tr.appendChild($color);
-      $carsList.get()[0].appendChild($tr);
-
-    }
-
-    function clearRegister() {
-       $image.get()[0].value = '';
-       $brand.get()[0].value = '';
-       $year.get()[0].value = '';
-       $sign.get()[0].value = '';
-       $color.get()[0].value = '';
-    }
-
-    function companyInfo() {
-      var company = 'company.json';
-      ajax.open('get', company);
-      ajax.send();
-      ajax.addEventListener('readystatechange', handleAjaxState);
-    }
-
-    function handleAjaxState() {
-      var data = parseDataCep();
-
-      if(isRequestOk()) {
-        $companyName.get()[0].textContent = data.name;
-        $companyPhone.get()[0].textContent = data.phone;
-      }
-
-    }
-
-    function parseDataCep() {
-      var result;
-
-      try {
-        result = JSON.parse(ajax.responseText);
-      } catch (e) {
-        result = null;
-      }
-      return result;
-    }
-
-    function isRequestOk() {
-      return ajax.readyState === 4 && ajax.status === 200;
-    }
-
-
+  var app = (function() {
     return {
-      // métodos que eu quero que sejam exportados: Revealing Module Pattern
+      init: function init() {
+        this.companyInfo();
+        this.initEvents();
+      },
+
+      initEvents: function initEvents() {
+        $('[data-js="form-register"]').on('submit', this.handleFormRegister)
+      },
+
+      handleFormRegister: function handleFormRegister(e) {
+        e.preventDefault();
+        var $carsList = $('[data-js="cars-list"]').get();
+        $carsList.appendChild(app.createNewCar());
+        app.clearFormRegister();
+      },
+
+      createNewCar: function createNewCar() {
+        var $fragment = document.createDocumentFragment();
+        var $tr = document.createElement('tr');
+        var $tdImage = document.createElement('td');
+        var $image = document.createElement('img');
+        var $tdBrand = document.createElement('td');
+        var $tdYear = document.createElement('td');
+        var $tdSign = document.createElement('td');
+        var $tdColor = document.createElement('td');
+
+        $image.setAttribute('src', $('[data-js="input-image"]').get().value)
+        $tdImage.appendChild($image);
+
+        $tdBrand.textContent = $('[data-js="input-brand"]').get().value;
+        $tdYear.textContent = $('[data-js="input-year"]').get().value;
+        $tdSign.textContent = $('[data-js="input-sign"]').get().value;
+        $tdColor.textContent = $('[data-js="input-color"]').get().value;
+
+        $tr.appendChild($tdImage);
+        $tr.appendChild($tdBrand);
+        $tr.appendChild($tdYear);
+        $tr.appendChild($tdSign);
+        $tr.appendChild($tdColor);
+
+        return $fragment.appendChild($tr);
+      },
+
+      clearFormRegister: function clearFormRegister() {
+        $('[data-js="input-image"]').get().value = '';
+        $('[data-js="input-brand"]').get().value = '';
+        $('[data-js="input-year"]').get().value = '';
+        $('[data-js="input-sign"]').get().value = '';
+        $('[data-js="input-color"]').get().value = '';
+      },
+
+      companyInfo: function companyInfo() {
+        var ajax = new XMLHttpRequest();
+        ajax.open('GET', '/company.json', true);
+        ajax.send();
+        ajax.addEventListener('readystatechange', this.getCompanyInfo, false);
+      },
+
+      getCompanyInfo: function getCompanyInfo() {
+        if(!app.isReady.call(this))
+          return;
+
+        var data = JSON.parse(this.responseText);
+        var $companyName = $('[data-js="company-name"]').get();
+        var $companyPhone = $('[data-js="company-phone"]').get();
+        $companyName.textContent = data.name;
+        $companyPhone.textContent = data.phone;
+      },
+
+      isReady: function isReady() {
+        return this.readyState === 4 && this.status === 200;
+      }
+
     };
-  }
+  })();
 
-  win.app = app; //executar a função depois app() -> Revealing Module Pattern
+  app.init();
 
-  app();
-
-})(window, window.DOM, document);
+})(window.DOM);

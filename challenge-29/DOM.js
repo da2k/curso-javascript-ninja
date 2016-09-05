@@ -1,9 +1,10 @@
 (function(win, doc) {
   'use strict';
 
-  function DOM(string) {
-    var element = doc.querySelectorAll(string);
-    this.element = element;
+  function DOM(elements) {
+    if(!(this instanceof DOM))
+      return new DOM(elements);
+    this.element = doc.querySelectorAll(elements);
   }
   DOM.prototype.on = function on( event, callback ) {
     return Array.prototype.forEach.call(this.element, function(element) {
@@ -15,8 +16,10 @@
       return element.removeEventListener(event, callback, false);
     });
   };
-  DOM.prototype.get = function get() {
-    return this.element;
+  DOM.prototype.get = function get(index) {
+    if(!index)
+      return this.element[0];
+    return this.element[index];
   };
   DOM.prototype.forEach = function forEach() {
     return Array.prototype.forEach.apply( this.element, arguments );
