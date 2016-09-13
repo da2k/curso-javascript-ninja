@@ -26,44 +26,67 @@
   - Ao pressionar o botão "CE", o input deve ficar zerado.
   */
 
-  function selectItem(id) {
-    return doc.querySelector('[data-js="' + id + '"]');
-  }
+  var $visor = document.querySelector('[data-js="visor"]');
+  var $buttonsNumbers = document.querySelectorAll('[data-js="button-number"]');
+  var $buttonsOperations = document.querySelectorAll('[data-js="button-operation"]');
+  var $buttonCE = document.querySelector('[data-js="button-ce"]');
+  var $buttonEqual = document.querySelector('[data-js="button-equal"]');
 
-
-  var arrIds = ['num0', 'num1', 'num2', 'num3','num4' ,'num5' ,'num6','num7' ,'num8' ,'num9'];
-  var arrOps = ['opsum', 'opsub', 'opmult', 'opdiv'];
-
-  arrOps.forEach(function(id){
-    selectItem(id).addEventListener('click', handleOp, false);
+  Array.prototype.forEach.call($buttonsNumbers, function(button) {
+    button.addEventListener('click', handleClickNumber, false);
   });
-
-
-  arrIds.forEach(function(id){
-    selectItem(id).addEventListener('click', handleClick, false);
+  Array.prototype.forEach.call($buttonsOperations, function(button) {
+    button.addEventListener('click', handleClickOperation, false);
   });
+  $buttonCE.addEventListener('click', handleClickCE, false);
+  $buttonEqual.addEventListener('click', handleClickEqual, false);
 
-  selectItem('ce').addEventListener('click', handleCE, false);
-
-  function handleClick() {
-    selectItem('display').value += this.innerHTML;
+  function handleClickNumber() {
+    $visor.value += this.value;
   }
 
-  function handleOp() {
-    if(isLastItemAnOperation())
-      selectItem('display').value = selectItem('display').value.slice(0, -1);
-    selectItem('display').value += this.innerHTML;
+  function handleClickOperation() {
+    $visor.value = removeLastItemIfItIsAnOperator($visor.value);
+    $visor.value += this.value;
   }
 
-  function handleCE() {
-    selectItem('display').value = '0';
+  function handleClickCE() {
+    $visor.value = 0;
   }
 
-  function isLastItemAnOperation() {
-    var operations = ['+', '-', '*', '/'];
-    var lastItem = selectItem('display').value.split('').pop();
-    return operations.some(function(operator){
+  function isLastItemAnOperation(number) {
+    var operations = ['+', '-', 'x', '÷'];
+    var lastItem = number.split('').pop();
+    return operations.some(function(operator) {
       return operator === lastItem;
+    });
+  }
+
+  function removeLastItemIfItIsAnOperator(number) {
+    if(isLastItemAnOperation(number)) {
+      return number.slice(0, -1);
+    }
+    return number;
+  }
+
+  function handleClickEqual() {
+    $visor.value = removeLastItemIfItIsAnOperator($visor.value);
+    var allValues = $visor.value.match(/\d+[+x÷-]?/g);
+    $visor.value = allValues.reduce(function(accumulated, actual) {
+      var firstValue = accumulated.slice(0, -1);
+      var operator = accumulated.split('').pop();
+      var lastValue = removeLastItemIfItIsAnOperator(actual);
+      var lastOperator = isLastItemAnOperation(actual) ? actual.split('').pop() : '';
+      switch(operator) {
+        case '+':
+          return ( Number(firstValue) + Number(lastValue) ) + lastOperator;
+        case '-':
+          return ( Number(firstValue) - Number(lastValue) ) + lastOperator;
+        case 'x':
+          return ( Number(firstValue) * Number(lastValue) ) + lastOperator;
+        case '÷':
+          return ( Number(firstValue) / Number(lastValue) ) + lastOperator;
+      }
     });
   }
 
