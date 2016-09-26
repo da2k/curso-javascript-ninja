@@ -1,3 +1,6 @@
+(function(doc){
+  'use strict';
+
   /*
   No HTML:
   - Crie um formulário com um input de texto que receberá um CEP e um botão
@@ -25,3 +28,71 @@
   - Utilize a lib DOM criada anteriormente para facilitar a manipulação e
   adicionar as informações em tela.
   */
+  var $msg = doc.querySelector('[data-js="resMsg"]');
+
+  function requestAjax(url) {
+    var ajax = new XMLHttpRequest();
+    ajax.open('GET', url);
+    ajax.send();
+
+    console.log('carregando ...');
+    ajax.addEventListener('readystatechange', function() {
+      // if(isRequestOk(ajax)){
+        var response;
+        try {
+          response = JSON.parse(ajax.responseText);
+          showResponse(response, fillHTML);
+          $msg.innerHTML = ajax.readyState;
+        }
+        catch(e) {
+          $msg.innerHTML = 'CEP não encontrado! ' + ajax.status;
+        }
+      // }
+    }, false);
+  }
+
+  function isRequestOk(ajax) {
+    return ajax.readyState === 4 && ajax.status === 200;
+  }
+
+  function showResponse(obj, arr) {
+    arr.forEach(function(item){
+      doc.querySelector('[data-js="' + item.datajs + '"]').innerHTML = obj[item.nomeProp];
+    });
+  }
+
+  var fillHTML = [
+    {datajs: 'resRua', nomeProp: 'logradouro'},
+    {datajs: 'resBairro', nomeProp: 'bairro'},
+    {datajs: 'resEstado', nomeProp: 'uf'},
+    {datajs: 'resCidade', nomeProp: 'localidade'},
+    {datajs: 'resCep', nomeProp: 'cep'}
+  ];
+
+  function formatCep(cep) {
+    var regex = /\D+/g;
+    return cep.replace(regex, function(item){
+      return '';
+    });
+  }
+
+  function isValidCep(cep) {
+    return cep.length === 8;
+  }
+
+  var $inputCEP = doc.querySelector('[data-js="cep"]');
+  var $form = doc.querySelector('[data-js="form"]');
+
+  $form.addEventListener('submit', function(e){
+    e.preventDefault();
+    // console.log($inputCEP.value);
+    console.log(formatCep($inputCEP.value));
+    if (isValidCep(formatCep($inputCEP.value))) {
+      requestAjax('https://viacep.com.br/ws/' + formatCep($inputCEP.value) + '/json/');
+    } else {
+      $msg.innerHTML = 'CEP inválido, o CEP deve possuir pelo 8 caracteres numéricos';
+    }
+
+  }, false);
+
+}(document));
