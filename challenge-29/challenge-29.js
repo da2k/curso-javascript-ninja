@@ -36,6 +36,7 @@
   que será nomeado de "app".
   */
 
+  /*
   var $formCadastro = new DOM('[data-js="formCadastro"]');
   var $inputImagem = new DOM('[data-js="inputImagem"]');
   var $inputMarcaModelo = new DOM('[data-js="inputMarcaModelo"]');
@@ -62,6 +63,77 @@
 
     console.log($display.get()[0]);
   }
+  */
+  var app = (function() {
+    return {
 
+      init: function() {
+        this.companyInfo();
+        this.initEvents();
+      },
+
+      initEvents: function initEvents() {
+        var $formCadastro = new DOM('[data-js="formCadastro"]');
+        $formCadastro.on('submit', this.handleSubmit);
+      },
+
+      handleSubmit: function handleSubmit(e) {
+        e.preventDefault();
+        var $display = new DOM('[data-js="display"]').get()[0];
+        $display.appendChild(app.createNewCar());
+      },
+
+      createNewCar: function createNewCar() {
+        var $fragment = document.createDocumentFragment();
+        var p = document.createElement('p');
+        var span = document.createElement('span');
+        // get the items
+        var $inputImagem = new DOM('[data-js="inputImagem"]');
+        var $inputMarcaModelo = new DOM('[data-js="inputMarcaModelo"]');
+        var $inputAno = new DOM('[data-js="inputAno"]');
+        var $inputPlaca = new DOM('[data-js="inputPlaca"]');
+        var $inputCor = new DOM('[data-js="inputCor"]');
+
+        span.textContent = $inputImagem.get()[0].value + ' - ';
+        span.textContent += $inputMarcaModelo.get()[0].value + ' - ';
+        span.textContent += $inputMarcaModelo.get()[0].value + ' - ';
+        span.textContent += $inputAno.get()[0].value + ' - ';
+        span.textContent += $inputPlaca.get()[0].value + ' - ';
+        span.textContent += $inputCor.get()[0].value;
+
+        p.appendChild(span);
+        $fragment.appendChild(p);
+
+        return $fragment;
+
+      },
+
+      companyInfo: function() {
+        var ajax = new XMLHttpRequest();
+        ajax.open('GET', './company.json', true);
+        ajax.send();
+        ajax.addEventListener('readystatechange', this.getCompanyInfo, false);
+      },
+
+      getCompanyInfo: function getCompanyInfo() {
+        // this aqui é o objeto ajax
+        if(!app.isReady.call(this))
+          return;
+        var data = JSON.parse(this.responseText);
+        var $companyName = new DOM('[data-js="companyName"]');
+        var $companyNumber = new DOM('[data-js="companyNumber"]');
+        $companyName.get()[0].textContent = data.name;
+        $companyNumber.get()[0].textContent = data.phone;
+      },
+
+      isReady: function isReady() {
+        return this.status === 200 && this.readyState === 4;
+      }
+
+
+    };
+  })();
+
+  app.init();
 
 })(window.DOM);

@@ -1,4 +1,4 @@
-(function(DOM){
+/*(function(DOM){
   var $companyName = new DOM('[data-js="companyName"]');
   var $companyNumber = new DOM('[data-js="companyNumber"]');
 
@@ -18,3 +18,4 @@
   }
 
 }(window.DOM));
+*/
