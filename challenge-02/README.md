@@ -73,19 +73,24 @@ Crie uma função com as seguintes características:
 */ 
 function calc(x, y, z) {
   var value;
-
+   
   if (x && y && z) {
     value = ((x + y) / z);
-  } else if (x && y) {
+  } else if (x && y && (!z)) {
     value = (x + y);
-  } else {
+  } else if (x && (!y) && (!z)) {
     value = x;
-  }
+  } else if (!(x && y && z)) {
+    value = false;
+  } else {
+    value = null;
+  } 
 
   return value;
 };
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
+calc();      // false
 calc(1);     // 1
 calc(1,3);   // 4
 calc(1,3,2); // 2
