@@ -57,27 +57,24 @@ os livros.
 */
 function book(name) {
   var bookName = { 
-    'book1': {
-      'nome': 'Revolução dos Bichos',
-      'quantidadePaginas': 300,
-      'autor': 'George Orwell',
-      'editora': 'Editora X'
+    'Revolução dos Bichos': { 
+      quantidadePaginas: 300,
+      autor: 'George Orwell',
+      editora: 'Editora X'
     },
-    'book2': {
-      'nome': 'Laranja Mecânica',
-      'quantidadePaginas': 400,
-      'autor': 'Anthony burgess',
-      'editora': 'Editora X'
+    'Laranja Mecânica': { 
+      quantidadePaginas: 400,
+      autor: 'Anthony Burgess',
+      editora: 'Editora X'
     },
-    'book3': {
-      'nome': 'Um Estranho Misterioso',
-      'quantidadePaginas': 200,
-      'autor': 'Mark Twain',
-      'editora': 'Editora X'
+    'Um Estranho Misterioso': { 
+      quantidadePaginas: 200,
+      autor: 'Mark Twain',
+      editora: 'Editora X'
     }
   };
 
-  return !name ? bookName : bookName[name];
+  return (!name) ? bookName : bookName[name];
 }
 
 /*
@@ -90,18 +87,18 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-console.log('O livro ' + book('book1').nome + ' tem ' + book('book1').quantidadePaginas + ' páginas!');
+console.log('O livro Revolução dos Bichos' + ' tem ' + book('Revolução dos Bichos').quantidadePaginas + ' páginas!');
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log('O autor do livro ' + book('book2').nome + ' é ' + book('book2').autor + '.');
+console.log('O autor do livro Laranja Mecânica' + ' é ' + book('Laranja Mecânica').autor + '.');
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log('O livro ' + book('book3').nome + ' foi publicado pela editora ' + book('book3').editora + '.');
+console.log('O livro Um Estranho Misterioso' + ' foi publicado pela editora ' + book('Um Estranho Misterioso').editora + '.');
