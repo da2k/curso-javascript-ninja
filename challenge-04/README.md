@@ -9,7 +9,7 @@ para o contrário.
 */
 var isTruthy = function(a){
   return (!!a);
-}
+};
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 isTruthy();
@@ -57,7 +57,7 @@ var carro = {
   quantasPortas: 4,
   assentos: 5,
   quantidadePessoas: 0
-}
+};
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
@@ -65,7 +65,7 @@ passado por parâmetro.
 */
 carro.mudarCor = function(color){
   carro.cor = color;
-}
+};
 
 
 /*
@@ -73,7 +73,7 @@ Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
 carro.obterCor = function(){
   return carro.cor;
-}
+};
 
 
 /*
@@ -81,7 +81,7 @@ Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
 carro.obterModelo = function(){
   return carro.modelo;
-}
+};
 
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
