@@ -74,7 +74,7 @@ function funcaoNinja(x, y, z) {
 	} else if(arguments.length === 2) {
 		return x + y;
 	} else if(arguments.length === 3) {
-		return x + y / z;
+		return (x + y) / z;
 	} else if(arguments.length === 0) {
 		return false;
 	} else {
