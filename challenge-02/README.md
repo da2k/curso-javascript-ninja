@@ -86,6 +86,6 @@ function funcaoNinja(x, y, z) {
 
 funcaoNinja(2); // 2
 funcaoNinja(2, 2); // 4
-funcaoNinja(2, 2, 4); // 2.5
+funcaoNinja(2, 2, 4); // 1
 funcaoNinja(); // false
 ```
