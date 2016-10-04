@@ -14,7 +14,9 @@ Crie uma função chamada `addItem`, que irá adicionar itens no array criado.
 A função deverá retornar o array atualizado.
 */
 function addItem(item) {
-  return arr.push(item);
+  arr.push(item);
+
+  return console.log(arr);
 };
 
 /*
@@ -23,7 +25,6 @@ itens de tipos diferentes, mostrando o resultado no console.
 */ 
 var newArr = ['a', 1, false];
 addItem(newArr); 
-console.log(arr);
 
 /*
 Mostre no console o segundo elemento desse último array, criado acima, com a
