@@ -179,7 +179,23 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 Pessoa.aprensentacao = function() {
-	return 'Olá, eu sou o ' + this.nome + ' tenho ' + this.idade + ' anos, ' + this.altura + 'm' + ', meu peso é ' + this.peso 'Kg.' + ' e, só hoje, eu já caminhei ' + this.caminhouQuantosMetros + ' metros!';
+	var sexo = 'o';
+	var idadeAnos = 'anos';
+	var metrosCaminhados = 'metros';
+
+	if (this.sexo === 'feminino') {
+		sexo = 'a';
+	}
+
+	if (this.idade === 1) {
+		idadeAnos = 'ano';
+	}
+
+	if (this.caminhouQuantosMetros === 1) {
+		metrosCaminhados = 'metro';
+	}
+
+	return 'Olá, eu sou ' + sexo + ' ' + this.nome + ' tenho ' + this.idade + ' ' + idade + ', ' + this.altura + 'm' + ', meu peso é ' + this.peso 'Kg.' + ' e, só hoje, eu já caminhei ' + this.caminhouQuantosMetros + ' ' + metrosCaminhados + '!';
 }
 
 // Agora, apresente-se ;)
