@@ -39,13 +39,9 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     - Se não houver time para a posição passada, deve retornar a mensagem:
     "Não temos a informação do time que está nessa posição."
 */
-function showTeamPosition(n) {
-  n--;
-
-  var position = n + 1;
-
-  if (teams[n]) {
-    return 'O time que está em ' + position + 'º lugar é o ' + teams[n] + '.';
+function showTeamPosition(position) {   
+  if (teams[position]) {
+    return 'O time que está em ' + position + 'º lugar é o ' + teams[position - 1] + '.';
   }
 
   return 'Não temos a informação do time que está nessa posição.'
