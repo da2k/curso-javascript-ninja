@@ -199,5 +199,5 @@ Pessoa.aprensentacao = function() {
 }
 
 // Agora, apresente-se ;)
-'Olá, eu sou o Kevin Oliveira, tenho 22 anos, 1.7m, meu peso é 65Kg. e, só hoje, eu já caminhei 12 metros!';
+Pessoa.apresentacao(); // 'Olá, eu sou o Kevin Oliveira, tenho 22 anos, 1.7m, meu peso é 65Kg. e, só hoje, eu já caminhei 12 metros!';
 ```
