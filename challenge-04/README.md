@@ -47,35 +47,54 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `assentos` - Number - cinco por padrão
 - `quantidadePessoas` - Number - zero por padrão
 */
-?
+var carro = {
+  marca: 'Ford',
+  modelo: 'Ka',
+  placa: 'ABC-1234',
+  ano: 2000,
+  cor: 'Preto',
+  quantasPortas: 2,
+  assentos: 5,
+  quantidadePessoas: 0
+}
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
-?
+carro.mudarCor = function(novaCor) {
+  carro.cor = novaCor;
+}
 
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
-?
+carro.obterCor = function() {
+  return carro.cor;
+}
 
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
-?
+carro.obterModelo = function() {
+  return carro.modelo;
+}
 
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
 */
-?
+carro.obterMarca = function() {
+  return carro.marca;
+}
 
 /*
 Crie um método chamado `obterMarcaModelo`, que retorne:
 "Esse carro é um [MARCA] [MODELO]"
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
-?
+carro.obterMarcaModelo = function() {
+  return 'Esse carro é um ' + carro.marca + ' ' + carro.modelo;
+}
 
 /*
 Crie um método que irá adicionar pessoas no carro. Esse método terá as
@@ -93,7 +112,23 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-?
+carro.addPessoas = function(pessoas) {
+  var totalPessoas = carro.quantidadePessoas + pessoas;
+  var assentosVazios = 5 - carro.quantidadePessoas;
+  
+  if ( carro.quantidadePessoas < 5 && totalPessoas <= 5 ) {
+    carro.quantidadePessoas += pessoas;
+    return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro';
+  } else if ( carro.quantidadePessoas < 5 && totalPessoas > 5 ) { 
+      if ( assentosVazios === 1 ) {
+        return 'Só cabe mais ' + assentosVazios + ' pessoa!';
+      } else {
+        return 'Só cabem mais ' + assentosVazios + ' pessoas!';
+      }
+  } else {
+    return 'O carro já está lotado!';
+  }
+}
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
