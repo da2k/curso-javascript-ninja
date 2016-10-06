@@ -1,8 +1,8 @@
 # Desafio da semana #3
 
-```js
+```javascript
 // Declarar uma variável qualquer, que receba um objeto vazio.
-?
+var obj = {};
 
 /*
 Declarar uma variável `pessoa`, que receba suas informações pessoais.
