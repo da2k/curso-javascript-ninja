@@ -187,15 +187,14 @@ correta, de acordo com os dados inseridos no objeto.
 */
 
 pessoa.apresentacao = function(){
-  var f;
+  var f = 'o';
   var i;
   var m;
 
   if(pessoa.sexo === 'Feminino'){
     f = 'a'
-  }else{
-    f = 'o';
   }
+
   if(pessoa.idade === 1){
     i = 'ano'
   }else{
