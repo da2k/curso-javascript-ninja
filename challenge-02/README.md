@@ -27,8 +27,9 @@ var x;
 Onde VALOR é o novo valor da variável.
 */
 function definirValor(){
-  x = "Valor";
-  return x;
+  x = 25;
+  return "O valor da variável agora é: " + x;
+
 }
 
 // Invoque a função criada acima.
