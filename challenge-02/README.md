@@ -50,7 +50,7 @@ Crie uma função com as seguintes características:
 3\. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function muntiplicacao(a, b, c){
-  if(arguments.length < 3){
+  if(a === undefined || b === undefined || c === undefined){
     return "Preencha todos os valores corretamente!";
   }
   return (a * b * c) + 2;
@@ -85,13 +85,13 @@ Crie uma função com as seguintes características:
 6\. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function testeArgumento(a, b, c){
-  if(arguments.length == 1){
+  if(a !== undefined && b === undefined && c === undefined){
     return a;
-  }else if(arguments.length == 2) {
+  }else if(a !== undefined && b !== undefined && c === undefined) {
       return a + b;
-  }else if(arguments.length == 3) {
+  }else if(a !== undefined && b !== undefined && c !== undefined) {
       return (a + b) / c;
-  }else if(arguments.length == 0) {
+  }else if(a === undefined && b === undefined && c === undefined) {
     return false;
   }else{
     return null;
@@ -103,5 +103,5 @@ testeArgumento(1); // 1
 testeArgumento(1, 2); // 3
 testeArgumento(1, 2, 3); // 1
 testeArgumento(); // false
-testeArgumento(1, 2, 3, 4); // null
+
 ```
