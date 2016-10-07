@@ -70,28 +70,22 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     a frase:
     "Não temos o equivalente hexadecimal para [COR]."
 */
-function convertToHex(color) {
-  var white = ['branca', '#FFFFFF'];
-  var black = ['preta', '#000000'];
-  var gray = ['cinza', '#CCCCCC'];
-  var red = ['vermelha', '#ABCDEF'];
-  var green = ['verde', '#GHIJKL'];
-  
+function convertToHex(color) {  
   switch(color) {
     case 'white': 
-      var colorName = white[0], colorHex = white[1];
+      var colorName = 'branca', colorHex = '#FFFFFF';
       break;
     case 'black': 
-      var colorName = black[0], colorHex = black[1];
+      var colorName = 'preta', colorHex = '#000000';
       break;
     case 'gray': 
-      var colorName = gray[0], colorHex = gray[1];
+      var colorName = 'cinza', colorHex = '#CCCCCC';
       break;
     case 'red': 
-      var colorName = red[0], colorHex = red[1];
+      var colorName = 'vermelha', colorHex = '#ABCDEF';
       break;
     case 'green': 
-      var colorName = green[0], colorHex = green[1];
+      var colorName = 'verde', colorHex = '#GHIJKL';
       break;
     default: 
       return "Não temos o equivalente hexadecimal para " + color + "."
