@@ -112,19 +112,20 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 citado acima, no lugar de "pessoas".
 */
 Carro.adicionarPessoas = function(n) {
-	this.quantidadePessoas += n;
-
-	var pessoaQtd = this.quantidadePessoas === 1 ? 'pessoa' : 'pessoas';
-	var restanteAssentos = this.assentos - this.quantidadePessoas;
-	
-
-	if(this.quantidadePessoas === 5) {
+	var totalPessoas = this.quantidadePessoas + n;
+	if(this.quantidadePessoas === this.assentos && totalPessoas >= this.assentos) {
 		return 'O carro já está lotado!';
-	} else if(n >= restanteAssentos) {
-		return 'Só cabem mais ' + restanteAssentos + ' ' + pessoaQtd + '!';
-	}  
-	
-	return 'Já temos ' + this.quantidadePessoas + ' ' + pessoaQtd + ' no carro!';	
+	}
+
+	if(totalPessoas > this.assentos) {
+		var pessoasCabem = this.assentos - this.quantidadePessoas;
+		var pessoasPlural = pessoasCabem === 1 ? 'pessoa' : 'pessoas';
+		var pessoasCabemPlural = pessoasCabem === 1 ? 'cabe' : 'cabem';
+		return 'Só ' + pessoasCabemPlural + ' mais ' + pessoasCabem + ' ' + pessoasPlural + '!';
+	}
+
+	this.quantidadePessoas += n;
+	return 'Já temos ' + this.quantidadePessoas + ' pessoas no carro!';	
 };
 
 /*
@@ -153,20 +154,20 @@ Verde musgo
 Carro.obterMarcaModelo(); // 'Este carro é um Volkswagen Fusca'
 
 // Adicione 2 pessoas no carro.
-Carro.adicionarPessoas(2);
+Carro.adicionarPessoas(2); // 'Já temos 2 pessoas no carro'
 
 // Adicione mais 4 pessoas no carro.
-Carro.adicionarPessoas(4);
+Carro.adicionarPessoas(4); // 'Só cabem mais 3 pessoas'
 
 // Faça o carro encher.
-Carro.adicionarPessoas(2);
+Carro.adicionarPessoas(3); // "Já temos 5 pessoas no carro!"
 
 // Tire 4 pessoas do carro.
-Carro.adicionarPessoas(-4);
+Carro.adicionarPessoas(-4); // "Já temos 1 pessoas no carro!"
 
 // Adicione 10 pessoas no carro.
-Carro.adicionarPessoas(10);
+Carro.adicionarPessoas(10); // "Só cabem mais 4 pessoas!"
 
 // Quantas pessoas temos no carro?
-Carro.quantidadePessoas; // 14
+Carro.quantidadePessoas; // 1
 ```
