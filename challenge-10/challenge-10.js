@@ -54,7 +54,7 @@
   - O desafio é fazer o retorno sem usar "if" ou "switch".
   */
   function isOperatorValid(op) {
-    return operation[op];
+    return !!operation[op];
   }
 
   /*
@@ -75,11 +75,11 @@
     }
 
     return function(x, y) {
-      if (typeof x !== 'number' || typeof y !== 'number') {
+      if (typeof x !== 'number' && typeof y !== 'number') {
         return false;
-      } else {
-        return operation[op](x, y);
       }
+
+      return operation[op](x, y);
     };
   }
 
@@ -136,8 +136,8 @@
   - Se "sum" for "false", mostrar no console a mensagem de erro.
   */
   if (sum) {
-    var number1 = 58;
-    var number2 = 65;
+    number1 = 58;
+    number2 = 65;
     var result = sum(number1, number2);
     console.log(showOperationMessage(operationSignal, number1, number2), result);
   } else {
@@ -151,9 +151,10 @@
   */
   operationSignal = '-';
   var subtraction = calculator(operationSignal);
+
   if (subtraction) {
-    var number1 = 78;
-    var number2 = 25;
+    number1 = 78;
+    number2 = 25;
     var result = subtraction(number1, number2);
     console.log(showOperationMessage(operationSignal, number1, number2), result);
   } else {
@@ -162,9 +163,10 @@
 
   operationSignal = '*';
   var multiplication = calculator(operationSignal);
+
   if (multiplication) {
-    var number1 = 236;
-    var number2 = 48;
+    number1 = 236;
+    number2 = 48;
     var result = multiplication(number1, number2);
     console.log(showOperationMessage(operationSignal, number1, number2), result);
   } else {
@@ -173,9 +175,10 @@
 
   operationSignal = '/';
   var division = calculator(operationSignal);
+
   if (division) {
-    var number1 = 598;
-    var number2 = 36;
+    number1 = 598;
+    number2 = 36;
     var result = division(number1, number2);
     console.log(showOperationMessage(operationSignal, number1, number2), result);
   } else {
@@ -184,9 +187,10 @@
 
   operationSignal = '%';
   var mod = calculator(operationSignal);
+
   if (mod) {
-    var number1 = 1259;
-    var number2 = 69;
+    number1 = 1259;
+    number2 = 69;
     var result = mod(number1, number2);
     console.log(showOperationMessage(operationSignal, number1, number2), result);
   } else {
@@ -199,9 +203,10 @@
   */
   operationSignal = ':)';
   var division = calculator(operationSignal);
+
   if (division) {
-    var number1 = 58;
-    var number2 = 65;
+    number1 = 58;
+    number2 = 65;
     var result = division(number1, number2);
     console.log(showOperationMessage(operationSignal, number1, number2), result);
   } else {
