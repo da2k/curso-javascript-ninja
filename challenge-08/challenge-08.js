@@ -56,24 +56,23 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
 */
 function calculator(operator) {
   return function(a, b) {
+    var result;
+
     if (operator === '+') {
-      var total = a + b;
-      return 'Resultado da operação: ' + a + ' ' + operator + ' ' + b + ' = ' + total + ' .'
+      result = a + b;
     } else if (operator === '-') {
-      var total = a - b;
-      return 'Resultado da operação: ' + a + ' ' + operator + ' ' + b + ' = ' + total + ' .'
+      result = a - b;
     } else if (operator === '*') {
-      var total = a * b;
-      return 'Resultado da operação: ' + a + ' ' + operator + ' ' + b + ' = ' + total + ' .'
+      result = a * b;
     } else if (operator === '/') {
-      var total = a / b;
-      return 'Resultado da operação: ' + a + ' ' + operator + ' ' + b + ' = ' + total + ' .'
+      result = a / b;
     } else if (operator === '%') {
-      var total = a % b;
-      return 'Resultado da operação: ' + a + ' ' + operator + ' ' + b + ' = ' + total + ' .'
+      result = a % b;
     } else {
       return 'Operação inválida';
     }
+
+    return 'Resultado da operação: ' + a + ' ' + operator + ' ' + b + ' = ' + result;
   }
 }
 
