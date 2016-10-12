@@ -74,42 +74,39 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 function convertToHex(color) {
-  var blue = '#0000FF';
-  var black = '#000000';
-  var pink = '#FFC0CB';
-  var red = '#FF0000';
-  var green = '#008000';
+  var hexa;
 
   switch(color) {
     case 'blue':
-      return 'O hexadecimal para a cor ' + color + ' é ' + blue + '.';
+      var hexa = '#0000FF';
       break;
     case 'black':
-      return 'O hexadecimal para a cor ' + color + ' é ' + black + '.';
+      var hexa = '#000000';
       break;
     case 'pink':
-      return 'O hexadecimal para a cor ' + color + ' é ' + pink + '.';
+      var hexa = '#FFC0CB';
       break;
     case 'red':
-      return 'O hexadecimal para a cor ' + color + ' é ' + red + '.';
+      var hexa = '#FF0000';
       break;
     case 'green':
-      return 'O hexadecimal para a cor ' + color + ' é ' + green + '.';
+      var hexa = '#00FF00';
       break;
     default:
       return 'Não temos o equivalente hexadecimal para ' + color + '.';
-      break;
   }
+
+  return 'O hexadecimal para a cor ' + color + ' é ' + hexa + '.';
 }
 
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-convertToHex('blue');
-convertToHex('red');
-convertToHex('darkBlue');
-convertToHex('green');
-convertToHex('marine');
-convertToHex('tomato');
-convertToHex('lightPink');
-convertToHex('pink');
+console.log(convertToHex('blue'));
+console.log(convertToHex('red'));
+console.log(convertToHex('darkBlue'));
+console.log(convertToHex('green'));
+console.log(convertToHex('marine'));
+console.log(convertToHex('tomato'));
+console.log(convertToHex('lightPink'));
+console.log(convertToHex('pink'));
