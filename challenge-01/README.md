@@ -2,7 +2,7 @@
 
 ```js
 // Declarar uma variável chamada `myvar`, sem valor.
-var myvar
+var myvar;
 
 // Após declarada, atribua o valor 10 à variável `myvar`.
 myvar = 10;
@@ -33,7 +33,7 @@ var comida = ['arroz', 'feijão', 'ovo'];
 comida[1]; //'feijão'
 
 // Digite o código que verifica se a variável `soma' é igual a variável `myvar` (testando também o tipo).
-soma !== myvar; // true
+soma === myvar; // false
 
 // Digite o código que verifica se a variável `myvar` é menor ou igual à variável `soma`.
 myvar <= soma; // true
