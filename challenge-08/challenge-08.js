@@ -5,40 +5,42 @@ desses parâmetros.
 */
 var sum = function calculateSum(x, y) {
   return x + y;
-}
+};
 
 /*
 Invoque a função criada acima, passando dois números que serão somados, e mostre
 o resultado no console, com a frase:
 "A soma de [VALOR 1] e [VALOR2] é igual a [RESULTADO]."
 */
-console.log('A soma de 2 e 2 é igual a ' + sum(2, 2));
+var value1 = 2;
+var value2 = 2;
+console.log('A soma de ' + value1 + ' e ' + value2 + ' é igual a ' + sum(value1, value2) + '.');
 
 /*
 Mostre no console o nome da função criada acima, com a frase:
 "O nome da função que faz a soma é [NOME DA FUNÇÃO]."
 */
-console.log(sum.name);
+console.log('O nome da função que faz a soma é ' + sum.name + '.');
 
 /*
 Crie uma função literal chamada `showName`. Essa função deve retornar o
 seu nome.
 */
-function showName(name) {
-  return name;
+function showName() {
+  return 'Kevin Oliveira';
 }
 
 /*
 Declare uma variável chamada `varShowName` que recebe a função criada acima.
 */
-var varShowName = showName('Kevin');
+var varShowName = showName;
 
 /*
 Usando a variável criada acima, mostre no console o nome e o retorno da função
 atribuída a ela, com a seguinte frase:
 "A função [NOME DA FUNÇÃO] retorna [RETORNO DA FUNÇÃO]."
 */
-console.log('A função ' + showName.name + ' retorna ' + varShowName);
+console.log('A função ' + varShowName.name + ' retorna ' + varShowName() + '.');
 
 /*
 Crie uma função literal chamada `calculator`, que funcione assim:
@@ -72,7 +74,7 @@ function calculator(operator) {
 	operatorChoice = arg1 % arg2;
 	break;
       default:
-	operatorChoice = 'Operação Inválida';
+	return 'Operação Inválida';
     }
     return 'Resultado da operação: ' + arg1 + ' ' + operator + ' ' + arg2 + ' = ' + operatorChoice  + '.';
   };
