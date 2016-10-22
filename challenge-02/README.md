@@ -22,17 +22,17 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function createValue(value) {
-    anyvalue = value;
-    return anyValue = 'O valor da variável agora é' + value;
+function createValue() {
+    anyValue = 'JS Rules';
+    return 'O valor da variável agora é' + anyValue;
 }
 
 // Invoque a função criada acima.
-createValue('JS Rules');
+createValue();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /* A função retorna o novo valor passado a variável anyValue, 
-   ou seja passa 'O valor da variável é VALOR' */
+   ou sejaJS Rules  */
 
 /*
 Crie uma função com as seguintes características:
@@ -42,7 +42,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function multiplyThreeValues(x,y,z) {
-    if (x && y  && z) {
+    if (x || y  || z) {
         return (x * y * z) + 2;
     }
     return 'Preencha todos os valores corretamente!' 
