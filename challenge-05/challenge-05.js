@@ -14,7 +14,7 @@ function myFunction(args) {
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-myFunction(arr)[1];
+console.log(myFunction(arr)[1]);
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
