@@ -26,21 +26,11 @@
   propriedade, usando os valores passados por parâmetro.
   */
   var Operation = {
-    '+': function sum(num1, num2) {
-      return num1 + num2;
-    },
-    '-': function subtraction(num1, num2) {
-      return num1 - num2;
-    },
-    '*': function multiplication(num1, num2) {
-      return num1 * num2;
-    },
-    '/': function division(num1, num2) {
-      return num1 / num2;
-    },
-    '%': function mod(num1, num2) {
-      return num1 % num2;
-    }
+    '+': function (num1, num2) { return num1 + num2; },
+    '-': function subtraction(num1, num2) { return num1 - num2; },
+    '*': function multiplication(num1, num2) { return num1 * num2; },
+    '/': function division(num1, num2) { return num1 / num2; },
+    '%': function mod(num1, num2) { return num1 % num2; }
   }
 
   /*
@@ -54,7 +44,7 @@
   - O desafio é fazer o retorno sem usar "if" ou "switch".
   */
   function isOperatorValid(oper) {
-    return oper === '+' || oper === '-' || oper === '*' || oper === '/' || oper === '%' ? true : false;
+    return !!Operation[oper];
   }
 
   /*
@@ -70,7 +60,7 @@
   os dois parâmetros da função de retorno de "calculator".
   */
   function calculator(oper) {
-    if(isOperatorValid(oper) === false) {
+    if(!isOperatorValid(oper)) {
       return false;
     }
 
@@ -131,7 +121,7 @@
   - O segundo, a função de soma, passando os dois operandos.
   - Se "sum" for "false", mostrar no console a mensagem de erro.
   */
-  if(sum !== false) {
+  if(sum) {
     number1 = 2;
     number2 = 5;
     console.log( showOperationMessage(operationSignal, number1, number2), sum(number1, number2) );
