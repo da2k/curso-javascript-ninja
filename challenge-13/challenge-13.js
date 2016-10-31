@@ -79,7 +79,7 @@
   Adicione os estados do `nordeste` ao array `brasil`. Esses estados devem
   ficar no mesmo nível que os estados já existentes, não em um array separado.
   */
-  brasil = brasil.concat(brasil, nordeste);
+  brasil = brasil.concat(nordeste);
 
   /*
   Mostre no console os estados em `newSudeste`.
