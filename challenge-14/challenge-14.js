@@ -58,7 +58,7 @@ console.
 */
 console.log('\nOperation 2:');
 var operation2 = justMod2Or3.reduceRight(function(previous, current) {
-  return previous + 1 * current;
+  return (previous + 1) * current;
 }, 0);
 console.log(operation2);
 
