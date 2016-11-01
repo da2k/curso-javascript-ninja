@@ -47,7 +47,7 @@ Mostre o resultado no console.
 */
 console.log('\nOperation:');
 var operation = justMod2Or3.reduce(function(previous, current) {
-  return previous + 1 * current;
+  return (previous + 1) * current;
 }, 0);
 console.log(operation);
 
