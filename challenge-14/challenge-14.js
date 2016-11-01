@@ -75,7 +75,7 @@ console.log('\nSeu nome na língua do "P":');
 var name = ['Fe', 'li', 'pe'];
 var nameOfP = name.reduce(function(previous, current) {
   return previous + 'P' + current;
-});
+}, '');
 console.log(nameOfP);
 
 /*
