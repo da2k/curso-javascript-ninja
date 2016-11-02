@@ -34,7 +34,8 @@
       return age;
     };
     this.addAge = function() {
-      return this.age += arguments[0];
+      this.age += arguments[0];
+      return this;
     }
   }
 
@@ -81,8 +82,8 @@
   */
   console.log('\nNova idade das pessoas:');
 
-  console.log(felipe.getFullName() + ' agora tem ' + felipe.addAge(10));
-  console.log(raul.getFullName() + ' agora tem ' + raul.addAge(25));
-  console.log(bowie.getFullName() + ' agora tem ' + bowie.addAge(4));
+  console.log(felipe.getFullName() + ' agora tem ' + felipe.addAge(10).getAge() + ' anos.');
+  console.log(raul.getFullName() + ' agora tem ' + raul.addAge(25).getAge() + ' anos.');
+  console.log(bowie.getFullName() + ' agora tem ' + bowie.addAge(4).getAge() + ' anos.');
 
 })()
