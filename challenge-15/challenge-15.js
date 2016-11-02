@@ -46,34 +46,33 @@
   */
   console.log('Novas pessoas criadas à partir de Person:');
 
-  var persons = [
-    { person: new Person('Felipe', 'Fialho', 26) },
-    { person: new Person('Raul', 'Seixas', 49) },
-    { person: new Person('David', 'Bowie', 69) }
-  ];
+  var felipe = new Person('Felipe', 'Fialho', 26);
+  var raul = new Person('Raul', 'Seixas', 49);
+  var bowie = new Person('David', 'Bowie', 69);
 
-  persons.forEach(function(item) {
-    console.log(item.person)
-  });
+  console.log(felipe);
+  console.log(raul);
+  console.log(bowie);
 
   /*
   Mostre no console o nome completo de cada pessoa.
   */
   console.log('\nNomes das pessoas:');
 
-  persons.forEach(function(item) {
-    console.log(item.person.getFullName());
-  });
+  console.log(felipe.getFullName());
+  console.log(raul.getFullName());
+  console.log(bowie.getFullName());
+
 
   /*
   Mostre no console as idades de cada pessoa, com a frase:
   - "[NOME COMPLETO] tem [IDADE] anos."
   */
-  console.log('\nIdade das pessoas:');
+  console.log('\nIdade das pessoas:')
 
-  persons.forEach(function(item) {
-    console.log(item.person.getFullName() + ' tem ' + item.person.getAge() + ' anos.');
-  });
+  console.log(felipe.getFullName() + ' tem ' + felipe.getAge() + ' anos.');
+  console.log(raul.getFullName() + ' tem ' + raul.getAge() + ' anos.');
+  console.log(bowie.getFullName() + ' tem ' + bowie.getAge() + ' anos.');
 
   /*
   Adicione alguns anos à cada pessoa, e mostre no console a nova idade de
@@ -82,15 +81,8 @@
   */
   console.log('\nNova idade das pessoas:');
 
-  function addAge(age, index) {
-    var index = index;
-    var value = persons[index - 1].person;
-
-    return console.log(value.getFullName() + ' agora tem ' + value.addAge(age));
-  }
-
-  addAge(5, 1);
-  addAge(5, 2);
-  addAge(5, 3);
+  console.log(felipe.getFullName() + ' agora tem ' + felipe.addAge(10));
+  console.log(raul.getFullName() + ' agora tem ' + raul.addAge(25));
+  console.log(bowie.getFullName() + ' agora tem ' + bowie.addAge(4));
 
 })()
