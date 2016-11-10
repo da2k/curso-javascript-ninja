@@ -26,11 +26,11 @@
 	propriedade, usando os valores passados por parâmetro.
 	*/
 	var operation = {
-		'sum': function (x,y){return x+y;},
-		'subtraction': function (x,y){return x-y;},
-		'multiplication': function (x,y){return x*y;},
-		'division': function (x,y){return x/y;},
-		'rest': function (x,y){return x%y;}
+		'+': function (x,y){return x+y;},
+		'-': function (x,y){return x-y;},
+		'*': function (x,y){return x*y;},
+		'/': function (x,y){return x/y;},
+		'%': function (x,y){return x%y;}
 	};
 
 	/*
@@ -59,8 +59,15 @@
 	operador passado para a função "calculator", e passando para esse método
 	os dois parâmetros da função de retorno de "calculator".
 	*/
-	function calculator(operator) {
-		
+	function calculator(operator, param1, param2) {
+		isOperatorValid(operator);
+
+		return function(param1, param2) {
+			if( typeof param1 !== 'number' || typeof param2 !== 'number' ) {
+				return false;
+			}
+			return operation[operator](param1, param2);
+		}
 	}
 
 	/*
