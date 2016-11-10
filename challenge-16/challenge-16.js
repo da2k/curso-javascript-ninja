@@ -37,10 +37,9 @@
   */
   console.log('\nNome convertido à partir de um slug:');
   var fullName = 'luiz-felipe-tartarotti-fialho';
-  var arrFullName = fullName.split('-').map(function(name) {
+  var newFullName = fullName.split('-').map(function(name) {
     return name[0].toUpperCase() + name.slice(1);
-  });
-  var newFullName = arrFullName.join(' ');
+  }).join(' ');
 
   console.log(fullName);
   console.log(newFullName);
@@ -106,10 +105,9 @@
   function lowerUpperString(name) {
     if (typeof name === 'string') {
       var arr = name.toLowerCase().split('');
-      var map = arr.map(function(item, index) {
+      var result = arr.map(function(item, index) {
         return (index % 2 === 0) ? item.toUpperCase() : item;
-      });
-      var result = map.join('');
+      }).join('');
 
       return result;
     }
