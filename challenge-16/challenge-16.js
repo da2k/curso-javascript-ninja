@@ -20,7 +20,7 @@
   console.log('As letras do seu nome:');
   var name = 'Felipe';
   var newName = name.split('').forEach(function(item, index) {
-    return console.log(item + ' é a ' + (index + 1) + 'ª letra do meu nome.')
+    console.log(item + ' é a ' + (index + 1) + 'ª letra do meu nome.')
   });
 
   /*
