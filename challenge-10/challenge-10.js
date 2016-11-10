@@ -26,11 +26,11 @@
 	propriedade, usando os valores passados por parâmetro.
 	*/
 	var operation = {
-		'+': function sum(x,y){return x+y},
-		'-': function subtraction(x,y){return x-y},
-		'*': function multiplication(x,y){return x*y},
-		'/': function division(x,y){return x/y},
-		'%': function rest(x,y){return x%y}
+		'sum': function (x,y){return x+y;},
+		'subtraction': function (x,y){return x-y;},
+		'multiplication': function (x,y){return x*y;},
+		'division': function (x,y){return x/y;},
+		'rest': function (x,y){return x%y;}
 	};
 
 	/*
@@ -43,7 +43,9 @@
 	Caso contrário, "false".
 	- O desafio é fazer o retorno sem usar "if" ou "switch".
 	*/
-	// ?
+	function isOperatorValid(param) {
+		return typeof param === 'string';
+	}
 
 	/*
 	Agora vamos criar a calculadora.
@@ -57,7 +59,9 @@
 	operador passado para a função "calculator", e passando para esse método
 	os dois parâmetros da função de retorno de "calculator".
 	*/
-	// ?
+	function calculator(operator) {
+		
+	}
 
 	/*
 	Crie uma função chamada "showOperationMessage" que recebe três parâmetros:
