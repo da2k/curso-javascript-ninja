@@ -48,6 +48,7 @@
     return false;
   }
 
+  console.log(fullName);
   console.log(transformName(fullName));
 
   /*
