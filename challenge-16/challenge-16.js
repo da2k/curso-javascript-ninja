@@ -36,18 +36,11 @@
   console.log para cada formato.
   */
   console.log('\nNome convertido à partir de um slug:');
-  var fullName = 'felipe-fialho';
-  var newFullName = transformName(fullName);
-
-  function transformName(name) {
-    if (typeof name === 'string') {
-      var firstName = name[0].toUpperCase() + name.slice(1).split('-')[0];
-      var lastName = name.split('-')[1][0].toUpperCase() + name.split('-')[1].slice(1);
-
-      return firstName + ' ' + lastName;
-    }
-    return false;
-  }
+  var fullName = 'luiz-felipe-tartarotti-fialho';
+  var arrFullName = fullName.split('-').map(function(name) {
+    return name[0].toUpperCase() + name.slice(1);
+  });
+  var newFullName = arrFullName.join(' ');
 
   console.log(fullName);
   console.log(newFullName);
