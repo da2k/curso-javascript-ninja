@@ -37,6 +37,7 @@
   */
   console.log('\nNome convertido à partir de um slug:');
   var fullName = 'felipe-fialho';
+  var newFullName = transformName(fullName);
 
   function transformName(name) {
     if (typeof name === 'string') {
@@ -49,7 +50,7 @@
   }
 
   console.log(fullName);
-  console.log(transformName(fullName));
+  console.log(newFullName);
 
   /*
   - Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
