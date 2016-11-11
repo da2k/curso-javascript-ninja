@@ -57,6 +57,41 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
 function calculator(operation) {
   return function(x, y) {
     var result;
+    function frase() {
+      return 'Resultado da operação: ' + x + operation + y + ' = ' + result + '.' ;
+    }
+    
+    switch(operation) {
+      case '+':
+        result = x + y;
+        return frase();
+        break;
+      case '-':
+        result =  x - y;
+        return frase();
+        break;
+      case '*':
+        result =  x * y;
+        return frase();
+        break;
+      case '/':
+        result =  x / y;
+        return frase();
+        break;
+      case '%':
+        result =  x % y;
+        return frase();
+        break;
+      default:
+        return 'Operação inválida.';
+    }      
+  }
+}
+
+/*
+function calculator(operation) {
+  return function(x, y) {
+    var result;
     
     switch(operation) {
       case '+':
@@ -84,6 +119,7 @@ function calculator(operation) {
     }      
   }
 }
+*/
 
 /*
 Declare uma variável chamada `sum`, que receberá a função acima, passando como
