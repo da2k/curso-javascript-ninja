@@ -36,11 +36,12 @@
   Após o loop, mostre a frase:
   'The person has [COUNTER] properties'
   */
+  var counter = 0;
+
   for(var prop in person) {
     console.log( 'The ' + prop + ' of person is ' + person[prop] );
+    counter++;
   }
-
-  var counter = Object.getOwnPropertyNames(person).length;
 
   console.log( 'The person has ' + counter + ' properties' );
 
@@ -60,7 +61,7 @@
 
   }
 
-  console.log( 'The person has more than 25 years old?' + moreThan(); );
+  console.log( 'The person has more than 25 years old?' + moreThan(25) );
 
   /*
   Faça um loop de 0 a 20, que adicione cada número como um item de um
