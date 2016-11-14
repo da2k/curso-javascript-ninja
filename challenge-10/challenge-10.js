@@ -27,11 +27,11 @@
   propriedade, usando os valores passados por parâmetro.
   */
   var operation = {
-    '+': function(x, y) { return x + y },
-    '-': function(x, y) { return x - y },
-    '*': function(x, y) { return x * y },
-    '/': function(x, y) { return x / y },
-    '%': function(x, y) { return x % y }
+    '+': function(x, y) { return x + y; },
+    '-': function(x, y) { return x - y; },
+    '*': function(x, y) { return x * y; },
+    '/': function(x, y) { return x / y; },
+    '%': function(x, y) { return x % y; }
   }
 
   /*
@@ -45,7 +45,8 @@
   - O desafio é fazer o retorno sem usar "if" ou "switch".
   */
   function isOperatorValid(op) {
-    return op === '+' || op === '-' || op === '*' || op === '/' || op === '%' ? true : false;
+    //return op === '+' || op === '-' || op === '*' || op === '/' || op === '%' ? true : false;
+    return !!operation[op];
   }
 
   /*
@@ -63,12 +64,11 @@
   function calculator(op) {
     if ( isOperatorValid(op) === false ) {
       return false;
-    } else if ( isOperatorValid(op) === true ) {
-      return function(x, y) {
-        return typeof x === 'number' && typeof y === 'number' ? operation[op](x, y) : false;
-      }
     }
-  }c
+    return function(x, y) {
+      return typeof x === 'number' && typeof y === 'number' ? operation[op](x, y) : false;
+    };
+  }
 
   /*
   Crie uma função chamada "showOperationMessage" que recebe três parâmetros:
@@ -77,8 +77,8 @@
   'A operação [NUMBER1] [OPERATOR] [NUMBER2] =';
   Essa função mostrará a mensagem da operação que criaremos mais abaixo.
   */
-  function showOperationMessage(op, x, y) {
-    return 'A operação ' + x + op + y + ' = ';
+  function showOperationMessage(op, number1, number2) {
+    return 'A operação ' + number1 + op + number2 + ' = ';
   }
 
   /*
@@ -107,8 +107,8 @@
   variável chamada "sum", que receba a função "calculator", passando por
   parâmetro a variável que recebeu o sinal da operação.
   */
-  operationSignal = '+";
-  var sum = function calculator(operationSignal);
+  operationSignal = '+';
+  var sum = calculator(operationSignal);
 
   /*
   PASSO 3:
@@ -122,6 +122,14 @@
   - O segundo, a função de soma, passando os dois operandos.
   - Se "sum" for "false", mostrar no console a mensagem de erro.
   */
+  function doSum() {
+    if ( sum !== false ) {
+      number1 = 10;
+      number2 = 20;
+      console.log( showOperationMessage(operationSignal, number1, number2), sum(number1, number2)  );
+    }
+    showErrorMessage(operationSignal);
+  }
 
   /*
   Repita desde o "PASSO 2" com as operações de subtração, multiplicação,
