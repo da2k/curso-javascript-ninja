@@ -50,12 +50,10 @@ Crie uma função com as seguintes características:
 */
 
 function funcao(x, y, z) {
-	if (arguments.length === 2) {
-	return "Preencha todos os valores corretamente!";
+	if (arguments.length <= 2) {
+		return "Preencha todos os valores corretamente!";
 	}
-	else {
 	return x * y * z + 2;
-	}
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
@@ -89,33 +87,20 @@ Crie uma função com as seguintes características:
 */
 
 function funcao(n1, n2, n3) {
-	if (arguments.length >= 0) && (arguments.length <= 3) {
-		if (n1 === undefined) && (n2 === undefined) && (n3 !== undefined ) {
-		return n3;
+	if ((arguments.length >= 0) && (arguments.length <= 3)) {
+		if ((n1 !== undefined) && (n2 === undefined) && (n3 === undefined )) {
+			return n1;
 		}
-		else if (n1 === undefined) && (n2 !== undefined) && (n3 === undefined ) {
-		return n2;
-		}
-		else if (n1 !== undefined) && (n2 === undefined) && (n3 === undefined ) {
-		return n1;
-		}
-		else if (n1 !== undefined) && (n2 !== undefined) || (n3 === undefined ) {
-		return n1 + n2;
-		}
-		else if (n1 !== undefined) && (n2 === undefined) || (n3 !== undefined ) {
-		return n1 + n3;
-		}
-		else if (n1 === undefined) && (n2 !== undefined) || (n3 !== undefined ) {
-		return n2 + n3;
+		else if ((n1 !== undefined) && (n2 !== undefined) && (n3 === undefined )) {
+			return n1 + n2;
 		}
 		else if (arguments.length === 3) {
-		return (n1 + n2) / n3;
+			return (n1 + n2) / n3;
 		}
 		else if (arguments.length === 0) {
-		return false;
+			return false;
 		}
 	}
-	else
 	return null;
 }
 
