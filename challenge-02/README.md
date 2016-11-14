@@ -87,21 +87,21 @@ Crie uma função com as seguintes características:
 */
 
 function funcao(n1, n2, n3) {
-	if ((arguments.length >= 0) && (arguments.length <= 3)) {
-		if ((n1 !== undefined) && (n2 === undefined) && (n3 === undefined )) {
-			return n1;
-		}
-		else if ((n1 !== undefined) && (n2 !== undefined) && (n3 === undefined )) {
-			return n1 + n2;
-		}
-		else if (arguments.length === 3) {
-			return (n1 + n2) / n3;
-		}
-		else if (arguments.length === 0) {
-			return false;
-		}
-	}
-	return null;
+    if ((arguments.length >= 0) && (arguments.length <= 3)) {
+        if (arguments.length === 1) {
+            return n1;
+        }
+        else if (arguments.length === 2) {
+            return n1 + n2;
+        }
+        else if (arguments.length === 3) {
+            return (n1 + n2) / n3;
+        }
+        else if (arguments.length === 0) {
+            return false;
+        }
+    }
+    return null;
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
