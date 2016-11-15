@@ -73,7 +73,7 @@ var pessoa = {
     this.idade++;
   },
   andar: function(x){
-    this.caminhouQuantosMetros + x;
+    this.caminhouQuantosMetros += x;
     this.andando = true;
   }
 };
@@ -367,7 +367,7 @@ var pessoa = {
   mostrarAltura: function(){
     return "Minha altura é " + this.altura + "m.";
   },
-  apresentacao: function(sexo, idade, caminhouQuantosMetros){
+  apresentacao: function(){
     var a = "a";
     var ano = "ano";
     var metro = "metro";
