@@ -103,6 +103,12 @@
   for ( var book in books ) {
     console.log( JSON.stringify(books[book]) );
   }
+  
+  for ( var counter = 0; counter < books.length; counter++ ) {
+    for ( var prop in books[counter] ) {
+      console.log( prop + ' : ' + books[counter][prop]  );
+    }
+  }
 
   /*
   Crie um array chamado `myName`. Cada item desse array deve ser uma letra do
