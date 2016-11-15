@@ -372,9 +372,9 @@ var pessoa = {
     var ano = "ano";
     var metro = "metro";
     if(this.sexo === "Feminino" || this.idade === 1 || this.caminhouQuantosMetros === 1){
-      return " Olá, eu sou" + a + this.nome + this.sobrenome + ", tenho " + this.idade + ano + this.mostrarAltura() + " , meu peso é " + this.peso + " e, só hoje, eu já caminhei " + this.caminhouQuantosMetros + metro"; 
+      return " Olá, eu sou" + a + this.nome + this.sobrenome + ", tenho " + this.idade + ano + this.mostrarAltura() + " , meu peso é " + this.peso + " e, só hoje, eu já caminhei " + this.caminhouQuantosMetros + metro ; 
     }
-    return  " Olá, eu sou o " + this.nome +  " " + this.sobrenome + ", tenho " + this.idade + " anos, " + this.mostrarAltura() + " , meu peso é " + this.peso + " e, só hoje, eu já caminhei " + this.caminhouQuantosMetros + " metros!";  
+    return  " Olá, eu sou o " + this.nome +  " " + this.sobrenome + ", tenho " + this.idade + " anos, " + this.mostrarAltura() + " , meu peso é " + this.peso + " e, só hoje, eu já caminhei " + this.caminhouQuantosMetros + " metros! ";  
   }
 
 };
