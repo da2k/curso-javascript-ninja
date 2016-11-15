@@ -99,11 +99,7 @@
   Mostre no console todas as propriedades e valores de todos os livros,
   no formato abaixo:
       "[PROPRIEDADE]: [VALOR]"
-  */
-  for ( var book in books ) {
-    console.log( JSON.stringify(books[book]) );
-  }
-  
+  */  
   for ( var counter = 0; counter < books.length; counter++ ) {
     for ( var prop in books[counter] ) {
       console.log( prop + ' : ' + books[counter][prop]  );
