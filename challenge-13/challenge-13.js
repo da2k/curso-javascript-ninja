@@ -24,37 +24,39 @@
   concatenadas. Mostre o `brasil` no console.
   */
   console.log( '\nAlguns Estados do Brasil:' );
-  var brasil = [];
-  brasil.concat(sul, sudeste);
+  var brasil = sul.concat(sudeste);
+  //var brasilConcat = brasil.concat(sul, sudeste);
 
   /*
   Adicione 3 novos estados da região Norte no início do array e mostre no console.
   */
   console.log( '\nMais estados adicionados:' );
+  brasil.unshift('AM', 'AC', 'PA');
 
   /*
   Remova o primeiro estado do array `brasil` e mostre-o no console.
   */
   console.log( '\nEstado removido:' );
-  // ?
+  brasilConcat.shift();
 
   /*
   Crie um novo array chamado `newSul`, que receba somente os estados do sul,
   pegando do array `brasil`. Não remova esses itens de `brasil`.
   */
-  // ?
+  var newSul = [];
+  newSul = brasilConcat.slice(2, 5);
 
   /*
   Mostre no console os estados que estão em `newSul`.
   */
   console.log( '\nEstados do Sul do Brasil:' );
-  // ?
+  console.log( newSul );
 
   /*
   Mostre no console todos os estados que estão em `brasil`.
   */
   console.log( '\nAlguns Estados do Brasil:' );
-  // ?
+  console.log( brasil );
 
   /*
   Crie um novo array chamado `nordeste`, que tenha os estados do nordeste.
