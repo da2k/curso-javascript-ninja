@@ -36,24 +36,16 @@ var souninja = true;
  comida[0];
 
 // Digite o código que verifica se a variável `soma' é igual a variável `myvar` (testando também o tipo).
-  var soma = 1 ;
-  var myvar = "danilo";
-
-  soma == myvar;
-
-  myvar == "danilo";
-  myvar;
-
-
+  soma === myvar
+  
 // Digite o código que verifica se a variável `myvar` é menor ou igual à variável `soma`.
   var soma = 1 ;
   var myvar = 2;
 
   soma <= myvar;
 
-
 // Crie uma função chamada `divisao` que receba como parâmetro dois números, e retorne o resultado da divisão entre eles.
-function divisao (x, y ){
+function divisao(x, y ){
   return x / y;
 }
 
