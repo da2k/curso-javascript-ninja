@@ -24,6 +24,8 @@
  72
 
 // Declare uma variável chamada `souninja`, atribuindo à ela o valor booleano que representa `verdadeiro`.
+var souninja = true;
+
 "souninja" == "souninja";
  
 // Declare uma variável chamada `comida` que recebe um array com os valores 'arroz', 'feijão' e 'ovo'.
