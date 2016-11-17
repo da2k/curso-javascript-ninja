@@ -42,19 +42,26 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-?
-
+function novaVar(x, y, z){
+  if( x === undefined || y === undefined || z === undefined){
+    return "Preencha todos os valores corretamente!";
+  } 
+  else{
+    return x * y * z + 2;
+  }
+}
+      
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+novaVar(10, 10);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+// "Preencha todos os valores corretamente!"
 
-// Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+// Agora invoque n a função criada acima, mas passando todos os três argumentos necessários.
+novaVar(10, 10, 10);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+// 1002
 
 /*
 Crie uma função com as seguintes características:
