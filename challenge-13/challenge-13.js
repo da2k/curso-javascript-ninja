@@ -25,7 +25,6 @@
   */
   console.log( '\nAlguns Estados do Brasil:' );
   var brasil = sul.concat(sudeste);
-  //var brasilConcat = brasil.concat(sul, sudeste);
 
   /*
   Adicione 3 novos estados da região Norte no início do array e mostre no console.
