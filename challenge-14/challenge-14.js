@@ -82,9 +82,9 @@
   */
   console.log( '\nSeu nome na língua do "P":' );
   var name = [ 'Mu', 'ra', 'ki' ];
-  /*var reducedName = name.reduce(function(acum, atual, index, array){
-    return acum + atual;
-  });*/
+  var reducedName = name.reduce(function(acum, atual, index, array){
+    return acum + 'P' + atual;
+  }, '');
   
 
   /*
@@ -92,13 +92,15 @@
   e atribuirá o seu nome invertido (usando o array criado acima).
   */
   console.log( '\nInversed Name:' );
-  // ?
+  var inversedName = name.reduceRight(function(acum, atual, index, array){
+    return acum + 'P' + atual;
+  }, '');
 
   /*
   Mostre no console o array `numberObjects`.
   */
   console.log( '\nNumber objects' );
-  // ?
+  console.log(numberObjects);
 
   /*
   Verifique se existem em algum índice de numberObjects um objeto ìgual a
@@ -110,7 +112,6 @@
   o que acontece ;)
   */
   console.log( '\nExiste um { number: 2 } em numberObjects?' );
-  // ?
 
   /*
   Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
@@ -124,6 +125,6 @@
   formato de String.
   */
   console.log( '\njustMod2Or3 é um array? Se for, a representação dele em String é:' );
-  // ?
+  Array.isArray(justMod2Or3) ? console.log( justMod2Or3.toString() ) : '';
 
 })();
