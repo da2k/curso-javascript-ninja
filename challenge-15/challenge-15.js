@@ -34,7 +34,8 @@
 			return this.age;
 		};
 		this.addAge = function addAge() {
-			return this.age += arguments[0];
+			this.age += arguments[0];
+			return this;
 		};
 	}
 
@@ -80,7 +81,8 @@
 	*/
 	console.log( '\nNova idade das pessoas:' );
 	personArray.forEach(function(item){
-		console.log( item.getFullName() + ' agora tem ' + item.addAge(10) + ' anos.' );
+		console.log( item.getFullName() + ' agora tem ' + item.addAge(10).getAge() + ' anos.' );
 	});
+
 
 })();
