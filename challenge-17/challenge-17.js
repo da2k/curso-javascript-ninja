@@ -1,4 +1,4 @@
-(function() {
+(function () {
 
   'use strict';
 
@@ -22,8 +22,7 @@
   no console:
   */
   console.log('Adicionando seu nome no texto:')
-  text = text.replace('Manuel Marques de Sousa', 'Felipe Fialho');
-  console.log(text);
+  console.log(text.replace(/Manuel Marques de Sousa/g, 'Felipe Fialho'));
 
   /*
   Agora, substitua a palavra "brasileiro" por sua cidade natal e mostre no
@@ -31,8 +30,7 @@
   Ex: Se você for da São Paulo, substitua por "paulista".
   */
   console.log('\nTrocando naturalidade:');
-  text = text.replace('brasileiro', 'paulistano');
-  console.log(text);
+  console.log(text.replace(/brasileiro/g, 'paulistano'));
 
   /*
   Substitua todos os números por um traço `-`. Cada caractere de número deve
@@ -61,7 +59,7 @@
   o método `toUpperCase()`. Mostre o resultado no console:
   */
   console.log('\n"O Centauro de Luvas" em caixa alta:');
-  text = text.replace(/(O Centauro de Luvas)/, function(total, item) {
+  text = text.replace(/(O Centauro de Luvas)/, function (total, item) {
     return item.toUpperCase();
   });
   console.log(text);
@@ -125,7 +123,7 @@
   console.log('\nReplace de datas:');
 
   function replaceDate(date) {
-    return date.replace(regexDate, function(total, day, month, year) {
+    return date.replace(regexDate, function (total, day, month, year) {
       return (day + '/' + getMonthNumber(month) + '/' + year).replace(/ de /g, '');
     });
   }
