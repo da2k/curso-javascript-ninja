@@ -44,7 +44,7 @@
   minúsculo por "0" (número zero). Mostre o resultado no console:
   */
   console.log('\nTrocando de "D" a "h" por "0":');
-  console.log(text.replace(/[D-Za-h]/g, '0'));
+  console.log(text.replace(/[D-Hd-h]/g, '0'));
 
   /*
   Substitua todos os "A" (maiúsculos ou minúsculos) por "4".
