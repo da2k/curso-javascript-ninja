@@ -73,7 +73,7 @@ Aqui você pode ver todo o conteúdo do curso disponível:
 - Copiar arrays
 - Pegar tipo correto de objetos
 - Ajax - método GET
-- try / catch 
+- try / catch
 - Tratamento de dados via entrada do usuário
 - Module Pattern
 - Closures
