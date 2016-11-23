@@ -26,7 +26,7 @@ Onde VALOR é o novo valor da variável.
 ?
 
 // Qual o retorno da função? (Use comentários de bloco).
-?
+/* O valor da variável agora é: O Palmeiras não tem mundial */
 
 /*
 Crie uma função com as seguintes características:
@@ -41,13 +41,13 @@ Crie uma função com as seguintes características:
 ?
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+// Preencha todos os valores corretamente!
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 ?
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+// 5 
 
 /*
 Crie uma função com as seguintes características:
@@ -57,7 +57,7 @@ Crie uma função com as seguintes características:
 4. Se todos os argumentos forem passados, retorne a soma do primeiro com o segundo, e o resultado, dividido pelo terceiro.
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
-*/
+*/ 
 ?
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
