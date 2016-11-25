@@ -1,6 +1,10 @@
 ## Sumário
 
+<<<<<<< HEAD
+Aqui vocẽ pode ver todo o conteúdo do curso disponível:
+=======
 Aqui você pode ver todo o conteúdo do curso disponível:
+>>>>>>> upstream/master
 
 - Variáveis e tipos de dados
 - Operadores aritméticos
