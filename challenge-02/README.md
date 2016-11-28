@@ -84,9 +84,9 @@ function calcular2(x, y, z){
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-calcular2(1);
-calcular2(5,5);
-calcular2(10,5,5);
-calcular2();
-calcular2(4,4,4,4,4,4,4);
+calcular2(1); //1
+calcular2(5,5); //10 
+calcular2(10,5,5); //3
+calcular2(); //false
+calcular2(4,4,4,4,4,4,4); //null
 ```
