@@ -36,20 +36,12 @@
     }
 
     this.addAge = function(){
-      var years =+ this.age;
-      return arguments;
-    }    
+      this.age += arguments[0];
+      return this.age;
+    }  
   }
 
-  // var pessoa = new Person('anderson', 'nascimento', 73);
-
-  // console.log('TESTE 1: ' + pessoa.getFullName());
-  // console.log('TESTE 2: ' + pessoa.getAge());
-  // console.log('TESTE 3: ' + pessoa.addAge(13));
-  // console.log('TESTE 3: ' + pessoa.addAge2(13));
-  
   console.log( new Person() );
-
 
   /*
   Crie 3 novos objetos usando o construtor acima. Os objetos serão novas
