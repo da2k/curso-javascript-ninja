@@ -39,6 +39,7 @@
   var counter = 0;
   for(var props in person) {
     counter++;
+    console.log('The ' + props + ' of person is ' + person[props]);
   }
 
   console.log('The person has ' + counter + ' properties');
