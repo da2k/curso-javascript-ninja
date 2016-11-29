@@ -12,7 +12,7 @@
   - O CEP pode ser entrado pelo usuário com qualquer tipo de caractere, mas
   deve ser limpo e enviado somente os números para a requisição abaixo;
   - Ao submeter esse formulário, deve ser feito um request Ajax para a URL:
-  "http://cep.correiocontrol.com.br/[CEP].json", onde [CEP] será o CEP passado
+  "https://viacep.com.br/ws/[CEP]/json/", onde [CEP] será o CEP passado
   no input criado no HTML;
   - Essa requisição trará dados de um CEP em JSON. Preencha campos na tela
   com os dados recebidos.
