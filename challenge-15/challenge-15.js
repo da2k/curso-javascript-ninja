@@ -38,7 +38,7 @@
     this.addAge = function(){
       this.age += arguments[0];
       return this.age;
-    }  
+    }
   }
 
   console.log( new Person() );
@@ -50,7 +50,7 @@
   Mostre as 3 novas pessoas criadas no console (Um console.log por pessoa).
   */
   console.log( 'Novas pessoas criadas à partir de Person:' );
-  
+
   var jhon  = new Person( 'jhon', 'doe', 28 );
   var mary  = new Person( 'mary', 'simpson', 23 );
   var peter = new Person( 'peter', 'bravo', 18 );
@@ -79,9 +79,12 @@
   cada um. A frase deverá ser no formato:
   - "[NOME COMPLETO] agora tem [NOVA IDADE] anos."
   */
-  console.log( '\nNova idade das pessoas:' );
-  console.log( jhon.getFullName() + ' agora tem ' + jhon.addAge( 12 ) + ' anos.' ); 
-  console.log( mary.getFullName() + ' agora tem ' + mary.addAge( 5 ) + ' anos.' );  
-  console.log( peter.getFullName() + ' agora tem ' + peter.addAge( 3 ) + ' anos.' );  
+  jhon.addAge( 12 );
+  mary.addAge( 5 );
+  peter.addAge( 3 );
+
+  console.log( jhon.getFullName() + ' agora tem ' + jhon.getAge() + ' anos.' );
+  console.log( mary.getFullName() + ' agora tem ' + mary.getAge() + ' anos.' );
+  console.log( peter.getFullName() + ' agora tem ' + peter.getAge() + ' anos.' );
 
 })();
