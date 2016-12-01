@@ -37,7 +37,7 @@
 
     this.addAge = function(){
       this.age += arguments[0];
-      return this.age;
+      return this;
     }
   }
 
@@ -79,12 +79,8 @@
   cada um. A frase deverá ser no formato:
   - "[NOME COMPLETO] agora tem [NOVA IDADE] anos."
   */
-  jhon.addAge( 12 );
-  mary.addAge( 5 );
-  peter.addAge( 3 );
-
-  console.log( jhon.getFullName() + ' agora tem ' + jhon.getAge() + ' anos.' );
-  console.log( mary.getFullName() + ' agora tem ' + mary.getAge() + ' anos.' );
-  console.log( peter.getFullName() + ' agora tem ' + peter.getAge() + ' anos.' );
+  console.log( jhon.getFullName() + ' agora tem ' + jhon.addAge(12).getAge() + ' anos.' );
+  console.log( mary.getFullName() + ' agora tem ' + mary.addAge(5).getAge() + ' anos.' );
+  console.log( peter.getFullName() + ' agora tem ' + peter.addAge(3).getAge() + ' anos.' );
 
 })();
