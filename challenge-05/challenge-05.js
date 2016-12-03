@@ -39,7 +39,7 @@ console.log(getArrayInPosition(myArray2, 0));
 console.log(getArrayInPosition(myArray2, 1));
 console.log(getArrayInPosition(myArray2, 2));
 console.log(getArrayInPosition(myArray2, 3));
-console.log(getArrayInPosition(myArray2,5));
+console.log(getArrayInPosition(myArray2, 4));
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
