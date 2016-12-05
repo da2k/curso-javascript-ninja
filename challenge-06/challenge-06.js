@@ -4,7 +4,8 @@ para começar o desafio.
 Declare uma variável chamada `championship` que receberá o nome do campeonato,
 e imprima o nome desse campeonato no console.
 */
-// ?
+var championship = 'Campeonato Espanhol';
+console.log(championship);
 
 /*
 Declare uma variável chamada `teams`, que receberá um array com 5 elementos.
@@ -12,9 +13,9 @@ Os elementos serão nomes de times do campeonato escolhido, e os nomes devem
 estar na ordem em que eles aparecem na tabela no momento da solução desse
 desafio.
 */
-// ?
-
+var teams = ['Real Madrid', 'Barcelona', 'Sevilla', 'Atlético de Madrid', 'Villarreal'];
 console.log( 'Times que estão participando do campeonato:', teams );
+
 
 /*
 Crie uma função chamada `showTeamPosition` com as seguintes características:
@@ -32,19 +33,33 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     - Se não houver time para a posição passada, deve retornar a mensagem:
     "Não temos a informação do time que está nessa posição."
 */
-// ?
+function showTeamPosition(pos){
+  var posArray = pos - 1 ;
+  if (teams[posArray] === undefined){
+    return 'Não temos a informação do time que está nessa posição.';
+  }
+
+  return 'O time que está em '+ pos +'º lugar é o '+ teams[posArray] +'.';
+
+}
 
 /*
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
-// ?
+showTeamPosition(1);
+showTeamPosition(3);
+showTeamPosition(4);
+showTeamPosition(8);
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
 repetição "while".
 */
-// ?
+var counter = 20;
+while(counter <= 30){
+  console.log(counter++);
+}
 
 /*
 Crie uma função chamada `convertToHex`, com as seguintes características:
@@ -58,9 +73,42 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     a frase:
     "Não temos o equivalente hexadecimal para [COR]."
 */
-// ?
+function convertToHex(colorName){
+    var hexadecimal;
+    var frase;
+
+    switch(colorName){
+      case 'red' :
+          hexadecimal = '#ff0000';
+          break;
+      case 'blue':
+        hexadecimal = '#0000ff';
+        break;
+      case 'green':
+        hexadecimal = '#009933';
+        break;
+      case 'brown':
+        hexadecimal = '#cc6600';
+        break;
+      case 'purple':
+        hexadecimal = '#9900cc';
+        break;
+      default :
+        return 'Não temos o equivalente hexadecimal para '+ colorName + '.';
+
+    }
+    frase = 'O hexadecimal para a cor '+ colorName +' é '+ hexadecimal +'.';
+    return frase;
+}
 
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-// ?
+convertToHex('red');
+convertToHex('blue');
+convertToHex('green');
+convertToHex('brown');
+convertToHex('purple');
+convertToHex('black');
+convertToHex('navy');
+convertToHex('yellow');
