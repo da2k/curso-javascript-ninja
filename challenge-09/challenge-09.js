@@ -125,4 +125,4 @@ indentação correta do código, para ficar dentro da IIFE.
 
     console.log( 'O resto da divisão é:' );
     console.log(mod(function (n1,n2){ return n1% n2 }));
-}())
+}());
