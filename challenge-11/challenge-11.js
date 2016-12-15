@@ -10,9 +10,9 @@
 	*/
 	var once = false;
 
-  while(once === true) {
+  do {
     console.log('Entrou ao menos uma vez!');
-  }
+  } while(once);
 
 	/*
 	Crie um objeto chamado `person`, que receba as seguintes propriedades:
@@ -50,10 +50,7 @@
 	'The person has more than 25 years old? [TRUE/FALSE]'
 	*/
 	function moreThan(age) {
-    if(person.age > age)
-      return true;
-    else
-      return false;
+    return person.age > age;
   }
   console.log('The person has more than 25 years old?', moreThan(25));
 
@@ -63,7 +60,7 @@
 	Mostre no console os números no array.
 	*/
 	console.log( 'De 0 a 10:' );
-  var numbers = new Array();
+  var numbers = [];
 	for(var i = 0; i <= 10; i++) {
     numbers.push(i);
   }
@@ -76,7 +73,6 @@
 	*/
 	console.log( 'Pares de 0 a 20:' );
 	numbers = [];
-  var numbers = new Array();
   for(var i = 0; i <= 20; i++) {
     if(i % 2 === 0)
       numbers.push(i);
