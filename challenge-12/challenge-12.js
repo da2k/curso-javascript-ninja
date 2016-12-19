@@ -36,18 +36,9 @@
   `name`: String
   `pages`: Number
   */
-  books[0] = {
-    name: 'CSS Avançado',
-    pages: 420
-  }
-  books[1] = {
-    name: 'O guia para projetar UX',
-    pages: 220
-  }
-  books[2] = {
-    name: 'O guia do programador Javascript',
-    pages: 650
-  }
+  books.push( { name: 'CSS Avançado', pages: 420 } );
+  books.push( { name: 'O guia para projetar UX', pages: 220 } );
+  books.push( { name: 'O guia do programador Javascript', pages: 650 } );
   console.log( '\nLista de livros:' );
 
   /*
@@ -70,18 +61,18 @@
   /*
   Converta os objetos que ficaram em `books` para strings.
   */
-  JSON.stringify(books);
+  books = JSON.stringify(books);
   console.log( '\nLivros em formato string:' );
 
   /*
   Mostre os livros nesse formato no console:
   */
-  console.log( JSON.stringify(books) );
+  console.log(books);
 
   /*
   Converta os livros novamente para objeto.
   */
-  console.log(books);
+  books = JSON.parse(books);
   console.log( '\nAgora os livros são objetos novamente:' );
 
   /*
@@ -90,7 +81,9 @@
       "[PROPRIEDADE]: [VALOR]"
   */
   for(var i=0; i < books.length; i++) {
-    console.log(books[i].name + ': ' + books[i].pages);
+    for(var prop in books[i]) {
+      console.log(prop + ': ' + books[i][prop]);
+    }
   }
 
   /*
