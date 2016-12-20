@@ -95,7 +95,9 @@
         "[PROPRIEDADE]: [VALOR]"
     */
     for (var prop in books){
-      console.log(books[prop]);
+      for(var propBook in books[prop]){
+        console.log(propBook + ': ' + books[prop][propBook]);
+      }
     }
 
     /*
