@@ -41,11 +41,10 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function expression(x, y, z) {
-	if (x && y && z) {
-		return (x * y * z) + 2;
-	} else {
-		return 'Preencha todos os valores corretamente!'
+	if (x === undefined || y === undefined || z === undefined) {
+		return 'Preencha todos os valores corretamente!' 
 	}
+	return (x * y * z) + 2;
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
