@@ -49,7 +49,7 @@ valor dessa propriedade a quantidade passada por parâmetro;
 booleano que representa "verdadeiro";
 */
 pessoa.andar = function(metrosCaminhados){
-   pessoa.caminhouQuantosMetros = caminhouQuantosMetros + metrosCaminhados;
+   pessoa.caminhouQuantosMetros += + metrosCaminhados;
    pessoa.andando = true;
 }
 
@@ -82,7 +82,7 @@ Crie um método chamado `mostrarPeso`, que retorne a frase:
 - "Eu peso [PESO]Kg."
 */
 pessoa.mostrarPeso = function(){
-	return "Eu peso " + pessoa.peso
+	return "Eu peso " + pessoa.peso + " kg."
 }
 
 /*
@@ -90,7 +90,7 @@ Crie um método chamado `mostrarAltura` que retorne a frase:
 - "Minha altura é [ALTURA]m."
 */
 pessoa.mostrarAltura = function(){
-	return "Minha altura e "+ pessoa.altura;
+	return "Minha altura e "+ pessoa.altura + " m.";
 }
 
 /*
@@ -216,7 +216,8 @@ var parte3;
 		parte3 = "metro!";
 	}
 
-	return parte1 + pessoa.nome + " "+ pessoa.sobrenome + ", tenho " + pessoa.idade + " " + parte2 + pessoa.altura + ", meu peso é "+ pessoa.peso + " e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " " + parte3
+	return parte1 + pessoa.nome + " "+ pessoa.sobrenome + 
+	", tenho " + pessoa.idade + " " + parte2 + pessoa.altura + ", meu peso é "+ pessoa.peso + " e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " " + parte3
 }
 
 
