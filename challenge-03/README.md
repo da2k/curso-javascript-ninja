@@ -64,7 +64,7 @@ Crie um método chamado `nomeCompleto`, que retorne a frase:
 - "Olá! Meu nome é [NOME] [SOBRENOME]!"
 */
 pessoa.nomeCompleto = function() {
-	return 'Olá! Meu nome é ' + pessoa.nome + ' ' + pessoa.sobrenome;
+	return 'Olá! Meu nome é ' + pessoa.nome + ' ' + pessoa.sobrenome + '!';
 };
 
 /*
@@ -73,7 +73,7 @@ Crie um método chamado `mostrarIdade`, que retorne a frase:
 */
 pessoa.mostrarIdade = function() {
 	return 'Olá, eu tenho ' + pessoa.idade + ' anos!'; 
-}
+};
 
 /*
 Crie um método chamado `mostrarPeso`, que retorne a frase:
@@ -96,70 +96,70 @@ Agora vamos brincar um pouco com o objeto criado:
 Qual o nome completo da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.nomeCompleto() // 'Olá! Meu nome é Lucas Stoque'
+pessoa.nomeCompleto(); // 'Olá! Meu nome é Lucas Stoque'
 
 /*
 Qual a idade da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.mostrarIdade() // 'Olá, eu tenho 22 anos!' 
+pessoa.mostrarIdade(); // 'Olá, eu tenho 22 anos!' 
 
 /*
 Qual o peso da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.mostrarPeso() // 'Eu peso 64Kg.'
+pessoa.mostrarPeso(); // 'Eu peso 64Kg.'
 
 /*
 Qual a altura da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.mostrarAltura() // 'Minha altura é 1.68m.'
+pessoa.mostrarAltura(); // 'Minha altura é 1.68m.'
 
 /*
 Faça a `pessoa` fazer 3 aniversários.
 */
-pessoa.fazerAniversario()
-pessoa.fazerAniversario()
-pessoa.fazerAniversario()
+pessoa.fazerAniversario();
+pessoa.fazerAniversario();
+pessoa.fazerAniversario();
 
 /*
 Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
 comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
-// 25
+pessoa.mostrarIdade(); // 'Olá, eu tenho 25 anos!'
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
 com metragens diferentes passadas por parâmetro.
 */
-pessoa.andar(10)
-pessoa.andar(13)
-pessoa.andar(5)
+pessoa.andar(10);
+pessoa.andar(13);
+pessoa.andar(5);
 
 /*
 A pessoa ainda está andando? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-// Sim
+pessoa.andando; // true
 
 /*
 Se a pessoa ainda está andando, faça-a parar.
 */
-pessoa.parar()
+pessoa.parar();
 
 /*
 E agora: a pessoa ainda está andando? (Use uma instrução para responder e
 comentários inline ao lado da instrução para mostrar a resposta retornada)
 */
-// Não
+pessoa.andando; // false
 
 /*
 Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
 inline ao lado da instrução para mostrar a resposta retornada)
 */
-// 28
+pessoa.caminhouQuantosMetros; // 28
 
 /*
 Agora vamos deixar a brincadeira um pouco mais divertida! :D
@@ -179,22 +179,23 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao = function() {
+	var sexo = 'o';
+	var idadeAnos = 'anos';
+	var metros = 'metros';
+
 	if (pessoa.sexo === 'Feminino') {
-		var intro = 'Olá, eu sou a ';
-	} else {
-		var intro = 'Olá, eu sou o ';
+		sexo = 'a';
 	}
+
 	if (pessoa.idade === 1) {
-		var idade = ' ano, ';
-	} else {
-		var idade = ' anos, ';
-	}
+		idadeAnos = 'ano';
+	} 
+
 	if (pessoa.caminhouQuantosMetros === 1) {
-		var metros = ' metro!';
-	} else {
-		var metros = ' metros!';
+		metros = ' metro';
 	}
-	return intro + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + idade + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + metros;
+
+	return 'Olá, eu sou ' + sexo + ' [NOME COMPLETO], tenho [IDADE] ' + idadeAnos + ', [ALTURA], meu peso é [PESO] e, só hoje, eu já caminhei [CAMINHOU QUANTOS METROS] metros!';
 }
 
 // Agora, apresente-se ;)
