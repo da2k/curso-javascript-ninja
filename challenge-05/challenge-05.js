@@ -45,11 +45,11 @@ Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
 
-console.log( myFunction(arr, 0) ); // => { nome: 'bruno' }
-console.log( myFunction(arr, 1) ); // => 531
-console.log( myFunction(arr, 2) ); // => true
-console.log( myFunction(arr, 3) ); // => null
-console.log( myFunction(arr, 4) ); // => NaN
+myFunction(arr, 0); // => { nome: 'bruno' }
+myFunction(arr, 1); // => 531
+myFunction(arr, 2); // => true
+myFunction(arr, 3); // => null
+myFunction(arr, 4); // => NaN
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -70,12 +70,12 @@ function book(bookName) {
 
 	var obj = {
 
-		'harryPotter': {
+		'harry potter': {
 			quantidadePaginas: 676,
 			autor: 'JK Rowling',
 			editora: 'Rocco',
 		},
-		'mochileiroDasGalaxias': {
+		'mochileiro das galaxias': {
 			quantidadePaginas: 231,
 			autor: 'Douglas Adams',
 			editora: 'Pan Books',
@@ -87,19 +87,14 @@ function book(bookName) {
 		},
 	};
 
-	if(arguments.length === 0) {
-		return obj;
-	}
-
-	return obj[bookName];
-
+	return !bookName ? obj : obj[bookName];
 }
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
 
-book();	
+book();
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
@@ -107,7 +102,7 @@ usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
 
-var bookChoice = 'harryPotter';
+var bookChoice = 'harry potter';
 
 `O livro ${bookChoice} tem ${book(bookChoice).quantidadePaginas} páginas!`; // O livro mochileiro tem 231 páginas!
 
