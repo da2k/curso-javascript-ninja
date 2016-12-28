@@ -73,7 +73,7 @@
     falada, como se você estivesse falando em código xD
     */
     console.log( '\nSeu nome na língua do "P":' );
-    var nome = ['B', 'r', 'u', 'n', 'o'];
+    var nome = ['Bru', 'no'];
     var redu = nome.reduce(function (acum, item){
         return acum + 'P' + item;
     }, '')
