@@ -1,0 +1,40 @@
+/*Minimal Reset*/
+* {
+ margin: 0;
+ padding: 0;
+}
+
+.wrapper {
+ width: 960px;
+ margin: 0 auto;
+}
+
+.calculadora {
+  width: 300px;
+  margin: 50px auto;
+  border: 1px solid #000;
+}
+
+.visor {
+  width: 90%;
+  display: block;
+  margin: 10px auto;
+}
+
+.teclas {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.btn {
+  width: 59px;
+  margin: 5px;
+}
+
+.btn.medium {
+  width: 132px;
+}
+
+.btn.large {
+  width: 204px;
+}
