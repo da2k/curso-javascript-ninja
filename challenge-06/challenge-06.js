@@ -82,33 +82,35 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
 */
 
 function convertToHex(color) {
+    var hexadecimal;
 
     switch(color) {
 
         case 'red':
-            return `O hexadecimal para a cor ${color} é #f00`;
+            hexadecimal = '#f00';
             break;
 
         case 'tomato':
-            return `O hexadecimal para a cor ${color} é #ff6347`;
+            hexadecimal = '#ff6347';
             break;
 
         case 'black':
-            return `O hexadecimal para a cor ${color} é #000`;
+            hexadecimal = '#000';
             break;
 
         case 'pink':
-            return `O hexadecimal para a cor ${color} é #ffc0cb`;
+            hexadecimal = '#ffc0cb';
             break;
 
         case 'brown':
-            return `O hexadecimal para a cor ${color} é #a52a2a`;
+            hexadecimal = '#a52a2a';
             break;
 
         default: 
-            return `Não temos o equivalente hexadecimal para ${color}.`;
+            return `Não temos o equivalente hexadecimal para ${ color }.`;
             break;
     }
+    return `O hexadecimal para a cor ${ color } é ${ hexadecimal }`;
 }
 
 
