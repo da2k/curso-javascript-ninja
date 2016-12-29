@@ -124,10 +124,3 @@ console.log(convertToHex('yellow')); // => return 'Não temos o equivalente hexa
 console.log(convertToHex('aqua')); // => return 'Não temos o equivalente hexadecimal para yellow';
 console.log(convertToHex('magenta')); // => return 'Não temos o equivalente hexadecimal para yellow';
 
-
-
-
-
-
-
-
