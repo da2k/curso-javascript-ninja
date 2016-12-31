@@ -56,14 +56,14 @@
     5 nomes foi somente uma sugestão ;)
     */
     console.log( '\nMeus amigos:' );
-    var nomes = ['Bruno', 'Bruna', 'Gerusa', 'Sarah', 'JSNinja'];
+    var nomes = ['Orlando', 'Lessa', 'Bruno', 'Bruna', 'Gerusa', 'Sarah', 'JSNinja'];
     //var nomesListados = nomes.slice(0, nomes.length - 1).join( ', ' ) + ' e ' + nomes.slice(nomes.length - 1 ); outra forma de fazer
     var nomesListados = nomes.reduce(function (total, item, index) {
-      if (index == nomes.length - 1){
+      if (index === nomes.length - 1){
         return total + ' e ' + item;
       }
       return total + ', ' + item;
-    });
+    }).concat(' são meus amigos.');
 
     console.log(nomesListados);
 
