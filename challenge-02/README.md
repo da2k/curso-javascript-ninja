@@ -4,29 +4,40 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-?
+function soma( x,y ){
+	return  x + y;
+}
+
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-?
+
+var total =soma(15, 8) + 5;
 
 // Qual o valor atualizado dessa variável?
-?
+28
 
 // Declare uma nova variável, sem valor.
-?
+var semvalor;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-?
+
+function retornavalor(){
+	semvalor = 10;
+  return 'o valor da variável agora é: ' +semvalor;
+}
 
 // Invoque a função criada acima.
-?
+retornavalor();
 
 // Qual o retorno da função? (Use comentários de bloco).
-?
+/*
+"o valor da variável agora é: 10"
+
+*/
 
 /*
 Crie uma função com as seguintes características:
@@ -35,19 +46,32 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-?
+
+function tree( w, z, s){
+  
+  if( !w || !z || !s ){
+   
+    return "Preencha todos os valores corretamente!";
+		
+	}else{
+		return (w*z*s)+2;
+	}
+
+}
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+tree( 2, 4 );
+//No teste ele considera '' vazio. No console ele não considerou argumento ''. 
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+//"Preencha todos os valores corretamente!".
+
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+tree( 1, 2, 3 );
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+//8
 
 /*
 Crie uma função com as seguintes características:
@@ -58,8 +82,53 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+function valores(valor1,valor2, valor3){
+  //com um argumento 
+  if(valor1 && !valor2 && !valor3){
+    return valor1; 
+  }
+  //RESULTADO 1
+  /*=-------------------------*/
+  //com dois argumentos 
+  else if(valor1 && valor2 && !valor3){
+    return valor1+valor2;
+  }
+  //RESULTADO 3
+  /*=-------------------------*/
+  //com tres argumentos
+  else if( valor1 && valor2 && valor3){
+    return (valor1+valor2)/3;
+  }
+  //RESULTADO 4
+  /*=-------------------------*/
+  //com nenhum argumento
+  else if(!valor1 && !valor2 && !valor3){
+    return false;
+  }
+  //RESULTADO false
+  /*=-------------------------*/
+  else{
+    return null;
+  }
+
+}
+
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
-```
+//com um argumento 
+valores(1); // Resultado 1
+//No teste ele considera '' vazio. No console ele não considerou argumento ''. 
+
+
+//com dois argumentos
+valores(1,2);  // resultado 3
+//No teste ele considera '' vazio. No console ele não considerou argumento ''. 
+
+
+//com tres argumentos
+valores(3,9,5); // resultado 4
+
+//com nenhum argumento
+valores(); // resultado false
+//No teste ele considera '' vazio. No console ele não considerou argumento ''. 
+
