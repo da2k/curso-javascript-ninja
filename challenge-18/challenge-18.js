@@ -1,3 +1,5 @@
+(function () {
+	'use strict';
 /*
 1. Envolva todo o conteúdo desse desafio em uma IIFE.
 2. Adicione a diretiva 'use strict';
@@ -15,15 +17,28 @@ eles! Use um console.log para cada CPF.
 - "101.123-131x32"
 */
 console.log( 'Limpando CPFs:' );
-// ?
-
+function cleanCpf (cpf) {
+	return (cpf.match(/(\d+)/g).join(''));
+}
+console.log(cleanCpf('049-214 3421-1'));
+console.log(cleanCpf('210.458.522-05'));
+console.log(cleanCpf('735 500 794 - 22'));
+console.log(cleanCpf('101.123-131x32'));
 /*
 Usando os CPFs limpos acima, deixe-os com a formatação correta de CPF.
 Ex.: "999.999.999-99"
 Mostre o resultado no console.
 */
 console.log( '\nFormatando CPFs corretamente:' );
-// ?
+function correctCpf (cpf) {
+	return cleanCpf(cpf).replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, function (total, part1, part2, part3, part4) {
+		return part1 + '.' + part2 + '.' + part3 + '-' + part4;
+	});
+}
+console.log(correctCpf('049-214 3421-1'));
+console.log(correctCpf('210.458.522-05'));
+console.log(correctCpf('735 500 794 - 22'));
+console.log(correctCpf('101.123-131x32'));
 
 /*
 Crie uma expressão regular que faça match com as palavras "junho" ou "julho",
@@ -37,7 +52,8 @@ O resultado deve ser:
 ["junho", "julho"]
 */
 console.log( '\nMatch com as palavras "junho" ou "julho" para a frase "Os meses de janeiro, junho e julho começam com a letra j.":' );
-// ?
+var string = 'Os meses de janeiro, junho e julho começam com a letra j.';
+console.log(string.match(/(junho)|(julho)/g));
 
 /*
 Crie uma expressão regular que faça o match com a abertura de uma tag
@@ -49,8 +65,8 @@ O resultado deve ser:
 ["<div>", "<section>", "<blockquote>"]
 */
 console.log( '\nMatch com a abertura de uma tag HTML:' );
-// ?
-
+string = '<div><section><blockquote>Texto <img /></blockquote></section></div>';
+console.log(string.match(/<\w+>/g));
 /*
 Crie uma expressão regular que faça o match com uma tag HTML vazia, casando
 com a abertura e fechamento da tag.
@@ -61,7 +77,8 @@ O resultado deve ser:
 ["<li></li>", "<li></li>", "<span></span>"]
 */
 console.log( '\nMatch com tags HTML vazias (abertura e fechamento da tag):' );
-// ?
+string = '<div><ul><li></li><li></li><li><span></span></li></ul></div>';
+console.log(string.match(/\<\w+\>\<\/\w+\>/g));
 
 /*
 Vamos complicar um pouco agora :D
@@ -86,4 +103,6 @@ https://regex101.com/#javascript e verifique se as capturas estão
 corretas, para depois aplicar no código ;)
 */
 console.log( '\nFazer replace dos textos das tags:' );
-// ?
+string = '<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>';
+console.log(string.replace( /(<(\w{1,6})>)([a-zA-z\sà-û]+)(<\/\w{1,6}>)/g , '$1 o texto dentro da tag \"$2\" é \"$3\"$4\n'));
+})(); 
