@@ -10,9 +10,13 @@ para o contrário.
 var isTruthy = function(a){
 	if(a){
 		return true;
-	}else{
-		return false;
 	}
+	return false;
+
+	//or
+	/*
+	return !!a;
+	*/
 };
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
@@ -126,8 +130,8 @@ var assentosDisponiveis = carro.assentos - carro.quantidadePessoas;
 	if(assentosDisponiveis <= 0){
 		return "O carro já está lotado!";
 	} else if(qtde > assentosDisponiveis){
-		var pessoas = assentosDisponiveis === 4? pessoas='pessoa' : pessoas='pessoas';
-		return "Só cabem mais "+ assentosDisponiveis +" "+ pessoas;
+		var pluralOuSingular = assentosDisponiveis === 1? pluralOuSingular='pessoa' : pluralOuSingular='pessoas';
+		return "Só cabem mais "+ assentosDisponiveis +" "+ pluralOuSingular;
 	} else{
 		carro.quantidadePessoas += qtde;
 		return "Já temos "+carro.quantidadePessoas+" pessoas no carro"
