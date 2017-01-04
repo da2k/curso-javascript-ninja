@@ -104,17 +104,19 @@
   corretas, para depois aplicar no código ;)
   */
   console.log( '\nFazer replace dos textos das tags:' );
-  var regexsTextsInsideTags = [ /<(h1)>([\w\W]+)(<\/h1>)/g, /<(p)>([\w\W]+)(<\/p>)/g, /<(footer)>([\w\W]+)(<\/footer>)/g ];
-  var texto = '<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>';
 
   function capturarTextoDentroTag(regex, aberturaTag, texto, fechamentoTag){
-    return 'O texto dentro da tag "'+ aberturaTag +'" é "'+ texto + '"\n';
+    return '<' + aberturaTag + '>O texto dentro da tag "'+ aberturaTag +'" é "'+ texto + fechamentoTag + '"' + '\n';
   }
 
-  var resultado = regexsTextsInsideTags.reduce(function(acum, regex){
-      return acum = acum.replace(regex, capturarTextoDentroTag);
-  }, texto);
+ console.log(
+   '<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>'.
+   replace(
+    /<(\w+)>([^<]+)(<\/\w+>)/g,
+    '<$1>O texto dentro da tag "$1" é "$2"</$1>\n'
+  )
+);
 
-  console.log(resultado);
+
 
 })();
