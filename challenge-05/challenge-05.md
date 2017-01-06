@@ -1,19 +1,25 @@
+# Desafio da semana 5 #
+
+```js
+
 /*
 Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
 // ?
-
+var arr = [1, 2, 3, 4, 5];
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
 // ?
-
+function functArr(arr){
+    return arr;
+}
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
 // ?
-
+functArr()[1];
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
 segundo, um número. A função deve retornar um índice do array que foi passado
@@ -21,17 +27,26 @@ no primeiro parâmetro. O índice a ser retornado, deve ser o número passado no
 segundo parâmetro.
 */
 // ?
-
+function returnArrNum(arr, num){
+    return arr[num];
+}
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
 // ?
+var values = [{name: 'Kalyane'}, 23, true, 0, null, 'Lordao' ]
 
+ 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
 // ?
+returnArrNum(values, 0);
+returnArrNum(values, 1);
+returnArrNum(values, 2);
+returnArrNum(values, 3);
+returnArrNum(values, 4);
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -48,29 +63,55 @@ propriedades:
 os livros.
 */
 // ?
+function book(name){
+    var obj = {
+        'livro1':{
+           quantidadePaginas: 45,
+           autor: 'Fulano',
+           editora: 'Teste'
+        },
+        'livro2':{
+           quantidadePaginas:300,
+           autor: 'Sicrano',
+           editora:'Teste2'
+        },
+        'livro3':{
+           quantidadePaginas:200,
+           autor: 'Beltrano',
+           editora: 'Teste3'
+        }
+    }
+    return !name ? obj : obj[name] ; 
+}
 
+//book('livro2');
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
 // ?
-
+book();
+//Retorna o objeto.
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
 // ?
+'O livro ' +('livro1')+ ' tem ' +book('livro1').quantidadePaginas+ ' páginas!'
+//"O livro livro1 tem 45 páginas!"
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
-
+'O autor do ' +('livro1')+ ' é o  ' +book('livro1').autor+ ' .'
+// "O autor do livro1 é o  Fulano ."
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
+'O livro ' +('livro1')+ 'foi publicado pela editora ' +book('livro1').editora+ '.';
 // ?
+
