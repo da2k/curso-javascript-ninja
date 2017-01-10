@@ -55,28 +55,27 @@ propriedades:
 os livros.
 */
 function book(nomeLivro){
-	var obj = {
-		segredo: {
-			quantidadePaginas: 500,
+	var books = {
+		'O Segredo': {
+			quantidadePaginas: 1500,
 			autor: 'Rhonda Byrne',
 			editora: 'Sextante'
 		},
-		harryPotter: {
+		'Harry Potter': {
 			quantidadePaginas: 500,
 			autor: 'JK Roling',
 			editora: 'Rocco'
 		},
-		revolucaoDosBichos: {
+		'Revolução dos Bichos': {
 			quantidadePaginas: 100,
 			autor: 'George Orwell',
 			editora: 'Companhia das letras'
 		}
-	};
-	if(nomeLivro === undefined){
-		return obj;
 	}
-	return nomeLivro;
-
+	if(!nomeLivro){
+		return books;
+	}
+	return books[nomeLivro]
 };
 
 
@@ -84,25 +83,25 @@ function book(nomeLivro){
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-book();
+console.log(book());
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-console.log('O livro O Segredo tem '+ book().segredo.quantidadePaginas + ' páginas.');
+console.log('O livro Revolução dos Bichos tem '+ book('Revolução dos Bichos').quantidadePaginas + ' páginas.');
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log('O autor do livro O Segredo é '+ book().segredo.autor);
+console.log('O autor do livro O Segredo é '+ book('O Segredo').autor);
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log('O autor do livro O Segredo é '+ book().segredo.autor);
+console.log('O livro Harry Potter foi publicado pela editora '+ book('Harry Potter').editora+'.');
 
