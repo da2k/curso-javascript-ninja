@@ -1,8 +1,3 @@
-#Challenge 09#
-
-
-```js
-
 (function (){
 /*
 Crie uma IIFE que envolva todo o código desse arquivo. Faça também a
@@ -136,4 +131,4 @@ console.log(mod(function (num1, num2) { return num1  % num2; })+ '.');
 1.
 
 })();
-```
+
