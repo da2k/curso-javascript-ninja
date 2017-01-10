@@ -1,7 +1,3 @@
-# Desafio da semana #3
-
-```js
-
 // Declarar uma variável qualquer, que receba um objeto vazio.
 var emptyVar = {};
 
@@ -213,4 +209,3 @@ return 'Olá, eu sou ' + validateSexo + ' ' + person.nome + ' ' + person.sobreno
 // Agora, apresente-se ;)
 person.apresentacao();
 
-```
