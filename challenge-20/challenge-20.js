@@ -86,17 +86,17 @@
     $button.addEventListener( 'click', function(event){
         var cadastroOk = true;
 
-        if (!$inputUsername.value || $inputUsername.value === ''){
+        if (!$inputUsername.value ){
             win.alert('Preencha o nome do usuário!');
             cadastroOk = false;
         }
 
-        if (!$inputEmail.value || $inputEmail.value === ''){
+        if (!$inputEmail.value ){
           win.alert('Preencha o e-mail!');
           cadastroOk = false;
         }
 
-        if (!$message.value || $message.value === ''){
+        if (!$message.value){
           win.alert('Preencha a mensagem!');
           cadastroOk = false;
         }
