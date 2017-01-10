@@ -35,7 +35,10 @@ var data = [1, 'some text', true, 0, {valor: 'value'}];
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-myFunction(data);
+
+for(var i = 0; i < data.length; i++){
+	console.log(myFunction2(data,i));	
+}
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
