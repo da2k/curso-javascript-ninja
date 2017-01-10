@@ -1,7 +1,3 @@
-# Desafio da semana #4
-
-```js
-
 /* Declare uma variável chamada `isTruthy`, e atribua a ela uma função que recebe
 um único parâmetro como argumento. Essa função deve retornar `true` se o
 equivalente booleano para o valor passado no argumento for `true`, ou `false`
@@ -183,4 +179,4 @@ carro.addPersonsInCar(10); //Só cabe mais 2 pessoas no carro.
 
 // Quantas pessoas temos no carro?
 carro.quantidadePessoas; //3
-```
+
