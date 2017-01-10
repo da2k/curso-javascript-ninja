@@ -1,6 +1,3 @@
-#Challenge 08#
-
-```js
 /*
 Declare uma variável chamada `sum` e atribua a ela uma função chamada
 `calculateSum`. A função deve receber dois parâmetros e retornar a soma
@@ -120,4 +117,3 @@ console.log(multiplication(3,2)); //" Resultado da operação: 3 * 2 = 6."
 console.log(division(4,2)); // "Resultado da operação: 4 / 2 = 8."
 console.log(mod(5,2)); //"Resultado da operação: 5 % 2 = 1."
 // ?
-```
