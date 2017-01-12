@@ -1,0 +1,22 @@
+h2 {
+  border: 1px solid black
+}
+
+.bg {
+  background-color: black;
+  color: white;
+}
+
+output {
+  font: 2em sans-serif;
+  border: 1px solid red;
+}
+
+.effect {
+  background-color: blue;
+  color: yellow;
+  transition-duration: 2s;
+  transition-timing-function: linear;
+  transition-delay: 1s;
+
+}

@@ -14,3 +14,34 @@ https://developer.mozilla.org/en-US/docs/Web/Events#Categories
 Tente aplicar na prática alguns dos eventos que estão ali e coloque nesse
 desafio os experimentos legais que você conseguir desenvolver :D
 */
+(function(){
+  'use strict';
+
+  var title = document.getElementsByTagName('h2');
+
+  function handleClickTitle(e) {
+    var el = e.target;
+    if(e.target && !e.target.texto) {
+      e.target.texto = e.target.innerHTML;
+    }
+    if(el.classList.contains('bg')) {
+     el.classList.remove('bg');
+     el.innerHTML = e.target.texto;
+    }else {
+     el.classList.add('bg');
+     el.innerHTML = 'Clicou-me';
+    }
+  // el.classList.toggle('bg');
+  }
+
+  Array.prototype.forEach.call( title, function( title ) {
+    title.addEventListener( 'click', handleClickTitle, false );
+  });
+
+  setInterval(function() {
+    var clock = document.getElementById('clock');
+    clock.classList.add('effect');
+    clock.value = new Date();
+  }, 1000);
+
+})();
