@@ -35,6 +35,8 @@
     $buttonStop.addEventListener( 'click', function() {
        if (idCronometer)
         clearTimeout(idCronometer);
+
+        idCronometer = undefined;
     }, false);
 
     $buttonReset.addEventListener( 'click', function() {
@@ -42,7 +44,7 @@
         clearTimeout(idCronometer);
 
       $inputTimer.value = 0;
-      idCronometer = undefined;  
+      idCronometer = undefined;
     }, false );
 
 })(window, document);
