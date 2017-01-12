@@ -13,9 +13,9 @@ de valor para cada propriedade.
 */
 // ?
 var person = {
-    'name' : String,
-    'lastname': String,
-    'age': Number
+    name : String,
+    lastname: String,
+    age: Number
 }
 
 
@@ -73,25 +73,31 @@ console.log( '\nAgora sobraram somente os livros:' books);
 Converta os objetos que ficaram em `books` para strings.
 */
 // ?
-var transformToString = JSON.stringify(books);
+books  = JSON.stringify(books);
 
 /*
 Mostre os livros nesse formato no console:
 */
-console.log( '\nLivros em formato string:', transformToString);
+console.log( '\nLivros em formato string:', books);
 
 /*
 Converta os livros novamente para objeto.
 */
 // ?
-console.log( '\nAgora os livros são objetos novamente:' );
+books = JSON.parse(books)
+console.log( '\nAgora os livros são objetos novamente:', books);
 
 /*
 Mostre no console todas as propriedades e valores de todos os livros,
 no formato abaixo:
     "[PROPRIEDADE]: [VALOR]"
 */
-console.log(books);
+for(var i = 0; i < object.keys( books).lenght; i++ ){
+    for (var prop in books[i]){
+    }
+    console.log(prop + ': ' + books[i][prop]);
+    }
+}
 
 /*
 Crie um array chamado `myName`. Cada item desse array deve ser uma letra do
