@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Challenge-23</title>
+
+  <style type="text/css">
+    .container{
+      width: 800px;
+      heigth: 800px;
+    }
+
+    .center{
+      margin: auto;
+      width: 50%;
+    }
+
+    .result {
+      margin: auto;
+      width: 100%;
+    }
+
+    .displayBlock{
+      display: block;
+    }
+
+    .inputResult{
+      font-size: 100px;
+      width: 100%;
+      height: 100px;
+    }
+
+    .button{
+      width: 25%;
+      height: 150px;
+      padding: 0px;
+      margin: 0px;
+      float: left;
+      font-size: 50px;
+    }
+
+  </style>
+
+
+</head>
+<body>
+  <div class="container center">
+
+    <div class="result displayBlock">
+      <input class="inputResult" type="text" data-js="resultado" disabled="true" value="0" />
+    </div>
+    <div class="numeros">
+      <button class="button" data-js="nove" value="9">9</button>
+      <button class="button" data-js="oito" value="8">8</button>
+      <button class="button" data-js="sete" value="7">7</button>
+      <button class="button" data-js="seis" value="6">6</button>
+      <button class="button" data-js="cinco" value="5">5</button>
+      <button class="button" data-js="quatro" value="4">4</button>
+      <button class="button" data-js="tres" value="3">3</button>
+      <button class="button" data-js="dois" value="2">2</button>
+      <button class="button" data-js="um" value="1">1</button>
+      <button class="button" data-js="zero" value="0">0</button>
+    </div>
+
+    <button class="button" data-js="soma" value="+">+</button>
+    <button class="button" data-js="subtracao" value="-">-</button>
+    <button class="button" data-js="multiplicacao" value="*">*</button>
+    <button class="button" data-js="divisao" value="÷">÷</button>
+    <button class="button" data-js="limpar" value="ce">CE</button>
+    <button class="button" data-js="igual" value="=">=</button>
+  </div>
+
+
+  <script src="challenge-23.js"></script>
+</body>
+</html>
+
