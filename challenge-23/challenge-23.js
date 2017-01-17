@@ -48,25 +48,20 @@
   var $numeros = doc.querySelectorAll('[data-js="numero"]');
   var $operadores = doc.querySelectorAll('[data-js="operador"]');
   var $resultado = doc.querySelector('[data-js="resultado"]');
+  var $buttonCE = doc.querySelector('[data-js="ce"]');
+  var $buttonIgual = doc.querySelector('[data-js="igual"]');
 
   Array.prototype.forEach.call( $numeros, function( item ) {
    item.addEventListener( 'click', cliqueNumeros, false );
   } );
 
   Array.prototype.forEach.call( $operadores, function ( item ) {
-    switch(item.value){
-      case 'ce':
-        item.addEventListener( 'click',  limpar, false);
-        break;
-      case '=':
-        item.addEventListener( 'click', calcular, false);
-        break;
-      default:
-        item.addEventListener( 'click', terminaComOperadorEntaoSubstituirPor, false );
-        break;
-
-    }
+    item.addEventListener( 'click', cliqueOperadorMatematico, false );
   });
+
+  $buttonCE.addEventListener( 'click',  cliqueCE, false);
+
+  $buttonIgual.addEventListener( 'click', cliqueCalcular, false);
 
   function cliqueNumeros(){
     setarValorInput(this.value);
@@ -76,16 +71,28 @@
     $resultado.value = $resultado.value === '0' ? valor : $resultado.value + valor;
   }
 
-  function terminaComOperadorEntaoSubstituirPor(){
+  function cliqueCE(){
+    limpar();
+  }
+
+  function cliqueCalcular(){
+    calcular();
+  }
+
+  function cliqueOperadorMatematico(){
+    removerUltimoCaracterSeEUmOperador();
+    $resultado.value += this.value;
+  }
+
+  function removerUltimoCaracterSeEUmOperador(){
     var regex = new RegExp('[+\\-*÷]$');
 
     if (regex.test($resultado.value))
-      $resultado.value = $resultado.value.replace( regex, this.value );
-    else
-      $resultado.value += this.value;
+      $resultado.value = $resultado.value.replace( regex, '' );
   }
 
   function calcular(){
+    removerUltimoCaracterSeEUmOperador();
     var valores = $resultado.value.match(/\d+/g);
     var operacoesDoUsuario = $resultado.value.match(/\D/g);
 
