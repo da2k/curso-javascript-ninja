@@ -1,0 +1,234 @@
+[33mcommit d042797755e2729dd13ebefa5357d69723cbc6cb[m
+Author: gustavo_m <gustavo_crj@hotmail.com>
+Date:   Tue Aug 2 11:36:40 2016 +0000
+
+    Challenge-13
+
+[1mdiff --git a/challenge-13/challenge-13.js b/challenge-13/challenge-13.js[m
+[1mindex 6cd99bd..3d970e1 100644[m
+[1m--- a/challenge-13/challenge-13.js[m
+[1m+++ b/challenge-13/challenge-13.js[m
+[36m@@ -1,3 +1,6 @@[m
+[32m+[m[32m(function(){[m
+[32m+[m[41m    [m
+[32m+[m
+ /*[m
+ Envolva todo o código desse desafio em uma IIFE.[m
+ */[m
+[36m@@ -7,85 +10,107 @@[m [mCrie um array e mostre no console a representação em String desse array,[m
+ usando o método visto na aula 13.[m
+ */[m
+ console.log( 'O array em formato de string é:' );[m
+[31m-// ?[m
+[32m+[m[32mvar myArray = [1,2,3,4,5];[m
+[32m+[m[32mconsole.log( myArray.toString() );[m
+ [m
+ /*[m
+ Crie 2 arrays `sul` e `sudeste`, que serão as regiões do Brasil.[m
+ Cada array deve conter os estados dessa região.[m
+ */[m
+[31m-// ?[m
+[32m+[m[32mvar sul = ['Paraná', 'Santa Catarina','Rio Grande do Sul'];[m
+[32m+[m[32mvar sudeste = ['Espírito Santo','Minas Gerail', 'Rio de Janeiro','São Paulo'];[m
+ [m
+ /*[m
+ Crie uma variável chamada `brasil`, que irá receber as duas regiões[m
+ concatenadas. Mostre o `brasil` no console.[m
+ */[m
+ console.log( '\nAlguns Estados do Brasil:' );[m
+[31m-// ?[m
+[32m+[m[32mvar brasil = sul.concat( sudeste );[m
+[32m+[m[32mconsole.log( brasil );[m
+ [m
+ /*[m
+ Adicione 3 novos estados da região Norte no início do array e mostre no console.[m
+ */[m
+ console.log( '\nMais estados adicionados:' );[m
+[31m-// ?[m
+[32m+[m[32m//var norte = 'Sergipe', 'Amapá', 'Roraima';[m
+[32m+[m[32mbrasil.unshift( 'Acre', 'Amapá', 'Amazonas');[m
+[32m+[m[32mconsole.log( brasil );[m
+ [m
+ /*[m
+ Remova o primeiro estado do array `brasil` e mostre-o no console.[m
+ */[m
+ console.log( '\nEstado removido:' );[m
+[31m-// ?[m
+[32m+[m[32mvar estadoRemovido = brasil.shift();[m
+[32m+[m[32mconsole.log( estadoRemovido );[m
+ [m
+ /*[m
+ Crie um novo array chamado `newSul`, que receba somente os estados do sul,[m
+ pegando do array `brasil`. Não remova esses itens de `brasil`.[m
+ */[m
+[31m-// ?[m
+[32m+[m[32mvar newSul = brasil.slice(2,5);[m
+ [m
+ /*[m
+ Mostre no console os estados que estão em `newSul`.[m
+ */[m
+ console.log( '\nEstados do Sul do Brasil:' );[m
+[31m-// ?[m
+[32m+[m[32m//console.log( newSul.toString() );[m
+[32m+[m[32mconsole.log( newSul );[m
+ [m
+ /*[m
+ Mostre no console todos os estados que estão em `brasil`.[m
+ */[m
+ console.log( '\nAlguns Estados do Brasil:' );[m
+[31m-// ?[m
+[32m+[m[32m// console.log( brasil.toString() );[m
+[32m+[m[32mconsole.log( brasil);[m
+ [m
+ /*[m
+ Crie um novo array chamado `nordeste`, que tenha os estados do nordeste.[m
+ */[m
+[31m-// ?[m
+[32m+[m[32mvar nordeste = [[m
+[32m+[m[32m    'Alagoas',[m
+[32m+[m[32m    'Bahia',[m
+[32m+[m[32m    'Ceará',[m
+[32m+[m[32m    'Maranhão',[m
+[32m+[m[32m    'Paraíba',[m
+[32m+[m[32m    'Pernanbuco',[m
+[32m+[m[32m    'Piauí',[m
+[32m+[m[32m    'Rio Grande do Norte',[m
+[32m+[m[32m    'Sergipe'[m
+[32m+[m[32m    ];[m
+ [m
+ /*[m
+ Mostre no console os estados do nordeste.[m
+ */[m
+ console.log( '\nEstados do Nordeste:' );[m
+[31m-// ?[m
+[32m+[m[32m// console.log( nordeste.toString() );[m
+[32m+[m[32mconsole.log( nordeste );[m
+ [m
+ /*[m
+ Remova de `brasil` os estados do `sudeste`, colocando-os em uma variável[m
+ chamada `newSudeste`.[m
+ */[m
+[31m-// ?[m
+[32m+[m[32mvar newSudeste = brasil.splice(5,4);[m
+ [m
+ /*[m
+ Adicione os estados do `nordeste` ao array `brasil`. Esses estados devem[m
+ ficar no mesmo nível que os estados já existentes, não em um array separado.[m
+ */[m
+[31m-// ?[m
+[32m+[m[32mbrasil = brasil.concat( nordeste );[m
+ [m
+ /*[m
+ Mostre no console os estados em `newSudeste`.[m
+ */[m
+ console.log( '\nEstados em newSudeste:' );[m
+[31m-// ?[m
+[32m+[m[32m// console.log( newSudeste.toString() );[m
+[32m+[m[32mconsole.log( newSudeste );[m
+ [m
+ /*[m
+ Mostre no console os estados do `brasil`.[m
+ */[m
+ console.log( '\nAlguns estados do Brasil:' );[m
+[31m-// ?[m
+[32m+[m[32m// console.log( brasil.toString() );[m
+[32m+[m[32mconsole.log( brasil );[m
+[32m+[m
+ [m
+ /*[m
+ usando forEach, percorra o array `brasil` e gere um novo array chamado[m
+[36m@@ -94,13 +119,18 @@[m [mpropriedades:[m
+ - `id`: que será o índice do array `brasil`,[m
+ - `estado`: que será o estado do array `brasil`.[m
+ */[m
+[31m-// ?[m
+[31m-[m
+[32m+[m[32mvar newBrasil = [];[m
+[32m+[m[32mbrasil.forEach(function(item, index) {[m
+[32m+[m[32m   newBrasil.push({[m
+[32m+[m[32m       id: index,[m
+[32m+[m[32m       estado: item[m
+[32m+[m[32m   });[m[41m [m
+[32m+[m[32m});[m
+ /*[m
+ Mostre o array `newBrasil` no console[m
+ */[m
+ console.log( '\nnewBrasil:' );[m
+[31m-// ?[m
+[32m+[m[32mconsole.log( newBrasil );[m
+ [m
+ /*[m
+ Percorra o array `brasil` e verifique se os estados tem mais de 7 letras cada,[m
+[36m@@ -110,8 +140,14 @@[m [mSenão, mostre no console:[m
+ - "Nem todos os estados tem mais de 7 letras!"[m
+ */[m
+ console.log( '\nTodos os estados de `brasil` tem mais de 7 letras?' );[m
+[31m-// ?[m
+[31m-[m
+[32m+[m[32mvar every = brasil.every(function(item){[m
+[32m+[m[32m    return item.length > 7;[m
+[32m+[m[32m});[m
+[32m+[m[32mconsole.log([m[41m [m
+[32m+[m[32m    every[m[41m [m
+[32m+[m[32m    ? 'Sim, todos os estados tem mais de 7 letras!'[m[41m [m
+[32m+[m[32m    : 'Nem todos os estados tem mais de 7 letras!'[m[41m [m
+[32m+[m[32m);[m
+ /*[m
+ Percorra o array `brasil` e verifique se o Ceará está incluído, atribuindo o[m
+ resultado à uma variável. Se esse estado existir no array, mostrar a frase no[m
+[36m@@ -121,7 +157,15 @@[m [mSenão, mostrar a frase:[m
+ - "Ceará não foi incluído :("[m
+ */[m
+ console.log( '\nCeará está incluído em `brasil`?' );[m
+[31m-// ?[m
+[32m+[m[32mvar some = brasil.some(function(item){[m
+[32m+[m[32m    return item === 'Ceará';[m
+[32m+[m[32m});[m
+[32m+[m
+[32m+[m[32mconsole.log([m
+[32m+[m[32m    some[m
+[32m+[m[32m    ? 'Ceará está incluído!'[m
+[32m+[m[32m    : 'Ceará não foi incluído :('[m
+[32m+[m[32m);[m
+ [m
+ /*[m
+ Percorra o array `newBrasil` e crie um novo array que some 1 no ID de cada[m
+[36m@@ -129,22 +173,32 @@[m [mobjeto desse array, e adicione a frase abaixo na propriedade `estado`:[m
+ - "[ESTADO] pertence ao Brasil."[m
+ Atribua o novo array a uma variável chamada `map`.[m
+ */[m
+[31m-// ?[m
+[32m+[m[32mvar map = newBrasil.map(function(item, index){[m
+[32m+[m[32m    return {[m
+[32m+[m[32m        id: item.id++,[m
+[32m+[m[32m        estado: item.estado += ' perternce ao Brasil'[m
+[32m+[m[32m    };[m
+[32m+[m[32m});[m
+[32m+[m
+ [m
+ /*[m
+ Mostre no console o array criado acima:[m
+ */[m
+ console.log( '\nnewBrasil agora com mais informações:' );[m
+[31m-// ?[m
+[32m+[m[32mconsole.log(map);[m
+ [m
+ /*[m
+ Filtre o array criado acima, retornando somente os estados que tiverem[m
+ ID par. Atribua o valor à uma variável chamada `filter`.[m
+ */[m
+[31m-// ?[m
+[32m+[m[32mvar filter = map.filter(function(item, index){[m
+[32m+[m[32m    return item.id % 2 === 0;[m
+[32m+[m[32m});[m
+ [m
+ /*[m
+ Mostre o array filtrado acima no console.[m
+ */[m
+ console.log( '\nEstados com ID par:' );[m
+[31m-// ?[m
+\ No newline at end of file[m
+[32m+[m[32mconsole.log( filter );[m
+[32m+[m
+[32m+[m[32m})();[m
+\ No newline at end of file[m
