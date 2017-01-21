@@ -1,4 +1,4 @@
-(function (){
+(function (win, doc){
   /*
   Nossa calculadora agora está funcional! A ideia desse desafio é modularizar
   o código, conforme vimos na aula anterior. Quebrar as responsabilidades
@@ -11,11 +11,11 @@
   mesma funcionalidade.
   */
 
-  var $visor = document.querySelector('[data-js="visor"]');
-  var $buttonsNumbers = document.querySelectorAll('[data-js="button-number"]');
-  var $buttonsOperations = document.querySelectorAll('[data-js="button-operation"]');
-  var $buttonCE = document.querySelector('[data-js="button-ce"]');
-  var $buttonEqual = document.querySelector('[data-js="button-equal"]');
+  var $visor = doc.querySelector('[data-js="visor"]');
+  var $buttonsNumbers = doc.querySelectorAll('[data-js="button-number"]');
+  var $buttonsOperations = doc.querySelectorAll('[data-js="button-operation"]');
+  var $buttonCE = doc.querySelector('[data-js="button-ce"]');
+  var $buttonEqual = doc.querySelector('[data-js="button-equal"]');
   var calculator = {
     '-': function(firstValue, lastValue){ return ( Number(firstValue) - Number(lastValue) ) },
     '+': function(firstValue, lastValue){ return ( Number(firstValue) + Number(lastValue) ) },
@@ -97,4 +97,4 @@
     var lastOperator = isLastItemAnOperation(actual) ? actual.split('').pop() : '';
     return calculator[operator](firstValue, lastValue) + lastOperator;
   }
-})();
+})(window, document);
