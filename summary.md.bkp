@@ -1,0 +1,93 @@
+## Sum   ário
+         
+Aqui v   ocê pode ver todo o conteúdo do curso disponível:
+         
+- Vari   áveis e tipos de dados
+- Oper   adores aritméticos
+- Oper   adores de igualdade e relacionais
+- Funç   ões
+- Oper   adores Lógicos
+- Oper   adores Unários
+- Estr   utura Léxica
+- Inst   ruções condicionais - IF
+- Trut   hy e Falsy
+- Cond   icional Ternário
+- Esco   po de variáveis e funções
+- Reto   rno de funções com arrays e objetos
+- Parâ   metros de Funções com arrays e objetos
+- Oper   ador vírgula e estrutura condicional switch
+- Estr   utura de repetição while
+- O op   erador módulo
+- Arra   y - a propriedade length
+- Arra   y - método "push()" e Loop "for"
+- A im   portância de nomear funções
+- Intr   odução à Functional Programming
+- Esco   po de funções
+- Hois   ting
+- IIFE    - Immediately Invoked Function Expression
+- Wrap   per Objects
+- type   of
+- Laço   s (Loops)
+- Salt   os
+- Cria   ção de objetos
+- Cria   ção de objetos - Object.create
+- Méto   dos de objeto
+- Arra   y - Métodos
+- Arra   y - toString, concat, unshift, shift
+- slic   e e splice
+- forE   ach, every, some
+- map,    filter
+- redu   ce() e reduceRight()
+- inde   xOf(), lastIndexOf() e isArray()
+- JS n   o browser
+- this   
+- Obje   to arguments
+- use    strict - Criação de variáveis sem o "var"
+- use    strict - Uso do width e global this === undefined
+- O op   erador delete, objetos e funções
+- Obje   to String
+- Rege   x
+- Rege   x - Negação
+- Rege   x - Repetidores
+- Conh   ecendo outros símbolos usados na Regex
+- Méto   dos de string onde podemos usar regex
+- o ob   jeto RegExp()
+- Js n   o browser - Selecionar elementos no DOM
+- Js n   o browser - Formulário e eventos
+- Sync    vs async
+- setT   imeout
+- setT   imeout vs setInterval
+- Prop   riedades e métodos de funções
+- Prot   otype
+- Arra   y-like e editorconfig
+- Debu   g
+- Modu   larização de código
+- Java   script inline
+- Even   tos inline
+- Remo   ver eventos
+- Even   tos como métodos
+- DOM    
+- docu   mentFragments
+- Dica   s de performance
+- Even   tos para carregamento da tela
+- Copi   ar arrays
+- Pega   r tipo correto de objetos
+- Ajax    - método GET
+- try    / catch 
+- Trat   amento de dados via entrada do usuário
+- Modu   le Pattern
+- Clos   ures
+- Expo   rtar módulo para usar em outros módulos
+- inst   anceof
+- elem   ent.classList
+- inne   rHTML, outerHTML e insertAdjacentHTML
+- Obje   to Date
+- Obje   to Math
+- Ajax    - outros verbos
+- Back   end para mostrar como ele recebe os dados do client
+- Envi   ar dados via Ajax
+- Envi   ar cabeçalhos via Ajax
+- Abor   tar requisição Ajax
+- Test   es (TDD, BDD)
+- Ferr   amentas para escrever testes
+- Aula    bônus
