@@ -180,27 +180,25 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao = function() {
+    var validaSexo = 'o';
+    var validaIdade = 'anos';
+    var validaMetrosPercorridos = 'metros';
     
     // validando o sexo da pessoa
     if (pessoa.sexo === 'Feminino' || pessoa.sexo === 'feminino') {
-        var validaSexo = 'a';
-    } else {
-    validaSexo = 'o';
+        validaSexo = 'a';
     }
     
     // validando a idade da pessoa
     if (pessoa.idade === 1) {
-        var validaIdade = 'ano';
-    } else {
-    validaIdade = 'anos';
+        validaIdade = 'ano';
     }
     
     // valida metros percorridos pela pessoa
     if (pessoa.caminhouQuantosMetros === 1) {
-        var validaMetrosPercorridos = 'metro';
-    } else {
-    validaMetrosPercorridos = 'metros';
+        validaMetrosPercorridos = 'metro';
     }
+    
     return 'Olá, eu sou ' + validaSexo + ' ' + pessoa.nome + ' ' + pessoa.sobrenome
         + ', tenho ' + pessoa.idade + ' ' + validaIdade + ', altura: ' + pessoa.altura + 'm, meu peso é ' + pessoa.peso + 'kg e, só hoje, já caminhei ' + pessoa.caminhouQuantosMetros + ' ' + validaMetrosPercorridos + '!';
 }
