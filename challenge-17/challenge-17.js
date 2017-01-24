@@ -46,7 +46,7 @@ minúsculo por "0" (número zero). Mostre o resultado no console:
 */
 var replaceLetter = text.replace(/[D-h]/g, '0');
 console.log( '\nTrocando de "D" a "h" por "0":', replaceLetter);
-// Trocando de "D" a "h" por "0": Manuel0Marques0de0Sousa,0Conde0de0Porto0Alegre0(Rio0Grande,0130de0jun0o0de018040–0Rio0de0Janeiro,0180de0jul0o0de01875),0apelidado0de00'O0Centauro0de0Luvas,0foi0um0militar,0político,0abolicionista0e0monarquista0brasileiro.
+//Trocando de "D" a "h" por "0": 00nu0l 00rqu0s 00 0ous0, Con00 00 0orto Al00r0 (0io 0r0n00, 13 00 jun0o 00 1804 – 0io 00 00n0iro, 18 00 jul0o 00 1875), 0p0li000o 00  '0 C0nt0uro 00 0uv0s, 0oi um milit0r, políti0o, 00oli0ionist0 0 mon0rquist0 0r0sil0iro.
 
 /*
 Substitua todos os "A" (maiúsculos ou minúsculos) por "4".
