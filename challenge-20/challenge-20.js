@@ -20,7 +20,7 @@
   */
 
   var username = prompt('Qual o seu nome?') || 'Desconhecido';
-  alert('Bem vindo ' + username)
+  alert('Bem vindo ' + username + '!')
 
   /*
   Agora, pergunte ao usuário "Qual o seu e-mail?", atribuindo o resultado à
@@ -141,6 +141,6 @@
   // ?
 
   function isValidEmail(email) {
-    return /^(\S+)+@(\w+)(\.)(\w{2,})(?:(\.)(\w{2})?)$/.test(email);
+    return /^(\w+.)+@(\w+)(\.)(\w{2,})(?:(\.)(\w{2})?)$/.test(email);
   }
 })(window, document);
