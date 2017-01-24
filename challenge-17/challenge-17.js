@@ -1,3 +1,5 @@
+(function(){
+    'use strict';
 /*
 1. Envolva todo o conteúdo desse desafio em uma IIFE.
 2. Adicione a diretiva 'use strict';
@@ -8,53 +10,61 @@
 Em todos os exercícios desse desafio, nós vamos utilizar expressões
 regulares! Para isso, iremos usar o texto abaixo. Coloque-o em uma
 variável chamada `text`:
-"Manuel Marques de Sousa, Conde de Porto Alegre (Rio Grande, 13 de junho de 1804 – Rio de Janeiro, 18 de julho de 1875), apelidado de "O Centauro de Luvas", foi um militar, político, abolicionista e monarquista brasileiro."
 */
-// ?
+var text = "Manuel Marques de Sousa, Conde de Porto Alegre (Rio Grande, 13 de junho de 1804 – Rio de Janeiro, 18 de julho de 1875), apelidado de  'O Centauro de Luvas, foi um militar, político, abolicionista e monarquista brasileiro."
+
 
 /*
 Vamos começar com umas brincadeiras fáceis :D
 Troque o nome "Manuel Marques de Souza" pelo seu nome, e mostre o resultado
 no console:
 */
-console.log( 'Adicionando seu nome no texto:' );
-// ?
+var rename = text.replace(/(Manuel Marques de Sousa)/g, 'Kalyane Menezes Lordao');
+console.log( 'Adicionando seu nome no texto:', rename);
+// Adicionando seu nome no texto: Kalyane Menezes Lordao, Conde de Porto Alegre (Rio Grande, 13 de junho de 1804 – Rio de Janeiro, 18 de julho de 1875), apelidado de  'O Centauro de Luvas, foi um militar, político, abolicionista e monarquista brasileiro.
 
 /*
 Agora, substitua a palavra "brasileiro" por sua cidade natal e mostre no
 console.
 Ex: Se você for da São Paulo, substitua por "paulista".
 */
-console.log( '\nTrocando naturalidade:' );
-// ?
+var renameCity = text.replace(/(brasileiro)/g, 'paraibana');
+console.log( '\nTrocando naturalidade:', renameCity);
+// Trocando naturalidade: Manuel Marques de Sousa, Conde de Porto Alegre (Rio Grande, 13 de junho de 1804 – Rio de Janeiro, 18 de julho de 1875), apelidado de  'O Centauro de Luvas, foi um militar, político, abolicionista e monarquista paraibana.
 
 /*
 Substitua todos os números por um traço `-`. Cada caractere de número deve
 ser um traço. Mostre o resultado no console:
 */
-console.log( '\nTrocando números por -:' );
-// ?
+var replaceNumber = text.replace(/(\d)/g, '-');
+console.log( '\nTrocando números por -:', replaceNumber);
+// Trocando números por -: Manuel Marques de Sousa, Conde de Porto Alegre (Rio Grande, -- de junho de ---- – Rio de Janeiro, -- de julho de ----), apelidado de  'O Centauro de Luvas, foi um militar, político, abolicionista e monarquista brasileiro.
 
 /*
 Substitua todas as letras (somente letras) de "D" maiúsculo até "h"
 minúsculo por "0" (número zero). Mostre o resultado no console:
 */
-console.log( '\nTrocando de "D" a "h" por "0":' );
-// ?
+var replaceLetter = text.replace(/[D - h]/g, '0');
+console.log( '\nTrocando de "D" a "h" por "0":', replaceLetter);
+// Trocando de "D" a "h" por "0": Manuel0Marques0de0Sousa,0Conde0de0Porto0Alegre0(Rio0Grande,0130de0jun0o0de018040–0Rio0de0Janeiro,0180de0jul0o0de01875),0apelidado0de00'O0Centauro0de0Luvas,0foi0um0militar,0político,0abolicionista0e0monarquista0brasileiro.
 
 /*
 Substitua todos os "A" (maiúsculos ou minúsculos) por "4".
 Mostre o resultado no console:
 */
-console.log( '\nTrocando "A" e "a" por "4":' );
-// ?
+var replaceA = text.replace(/(a)/gi, '4');
+console.log( '\nTrocando "A" e "a" por "4":', replaceA);
+// Trocando "A" e "a" por "4": M4nuel M4rques de Sous4, Conde de Porto 4legre (Rio Gr4nde, 13 de junho de 1804 – Rio de J4neiro, 18 de julho de 1875), 4pelid4do de  'O Cent4uro de Luv4s, foi um milit4r, político, 4bolicionist4 e mon4rquist4 br4sileiro
 
 /*
 Substitua a frase "O Centauro de Luvas", deixando-a em caixa alta, usando
 o método `toUpperCase()`. Mostre o resultado no console:
 */
-console.log( '\n"O Centauro de Luvas" em caixa alta:' );
-// ?
+console.log( '\n"O Centauro de Luvas" em caixa alta:', replacePhrase);
+var replacePhrase = text.replace(/(O centauro de luvas)/gi, function(capturaTotal, phrase){
+    return phrase.toUpperCase();
+});
+//"O Centauro de Luvas" em caixa alta: Manuel Marques de Sousa, Conde de Porto Alegre (Rio Grande, 13 de junho de 1804 – Rio de Janeiro, 18 de julho de 1875), apelidado de  'O CENTAURO DE LUVAS' , foi um militar, político, abolicionista e monarquista brasileiro.
 
 /*
 Agora iremos substituir as datas no formato "13 de junho de 1804" para
@@ -68,18 +78,41 @@ setembro e dezembro.
 Use um console.log para cada mês, usando a frase:
 "O mês de [NOME DO MÊS] é representado pelo número [NÚMERO DO MÊS]."
 */
-console.log( '\nMeses representados por números:' );
+function getMonthNumber(month){
+    var monthNumber = {
+      'janeiro' : '01',
+      'fevereiro' : '02',
+      'março' : '03',
+      'abril' : '04',
+      'maio' : '05',
+      'junho' : '06',
+      'julho' : '07',
+      'agosto' : '08',
+      'setembro' : '09',
+      'outubro' : '10',
+      'novembro' : '11',
+      'dezembro' : '12'
+    };
+    return monthNumber[month];
+};
+console.log( '\nMeses representados por números:');
+console.log('O mês de março é representado pelo número '+ getMonthNumber('março') +'.');
+console.log('O mês de setembro é representado pelo número '+ getMonthNumber('setembro') +'.');
+console.log('O mês de dezembro é representado pelo número '+ getMonthNumber('dezembro') +'.');
+
 // ?
 
 /*
 Agora, declare uma variável chamada `regexDate` que irá receber a expressão
 regular que irá fazer o match com as datas. Crie grupos de captura para o
 dia, o mês e o ano. Para os meses, você pode fazer o match somente com os
-meses que estão no texto, não precisa adicionar todos.
+meses que estão no texto, não jprecisa adicionar todos.
 Com o que vimos até agora, você consegue fazer :D
 Mostre a regex no console.
 */
 console.log( '\nRegex que vai fazer o match com as datas do texto:' );
+var regexDate = /(\d\d) de (junho|julho) de (\d\d\d\d)/g;
+console.log(regexDate);
 // ?
 
 /*
@@ -90,4 +123,10 @@ Após criar a função, faça o replace das datas no texto, mostrando no
 console o resultado.
 */
 console.log( '\nReplace de datas:' );
+function replaceDate(regex, day, month, year){
+        return day + '/' + getMonthNumber(month) + '/' + year;
+}
+    console.log(text.replace(regexDate, replaceDate));
 // ?
+
+}());
