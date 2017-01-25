@@ -25,12 +25,13 @@ var cpfs = ['049-214 3421-1', '210.458.522-05', '735 500 794 - 22', '101.123-131
       var cpf = cleanCPF( item );
         return cpf;
 });
+
 /* ['04921434211',
    '21045852205',
    '73550079422',
    10112313132']
 */
-
+  
 /*
 Usando os CPFs limpos acima, deixe-os com a formatação correta de CPF.
 Ex.: "999.999.999-99"
