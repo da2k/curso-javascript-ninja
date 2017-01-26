@@ -7,9 +7,7 @@ um único parâmetro como argumento. Essa função deve retornar `true` se o
 equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
-var isTruthy = function( a ) {
-. if ( a ) { return true;  } return false;
-}
+ 
 
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
@@ -64,7 +62,7 @@ Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
 carro.mudarCor = function( novaCor ) {
-... carro.cor = novaCor;
+... carro.cor = novaCor;  // não retorna 
 };
 
 /*
@@ -129,6 +127,33 @@ carro.addPessoas = function(n) {
     return "Já temos " + carro.quantidadePessoas + " pessoas no carro!";
 };
 
+
+// outra forma de fazer o mesmo método
+carro.addPessoas = function(n) {
+  // qtd de pessoas e qtd pessoas adicionadas
+  var totalPessoas = carro.quantidadePessoas + n;
+  
+  // diferença entre qtd de assentos e qtd de pessoas
+  var diference = carro.assentos - carro.quantidadePessoas;
+  
+  if (( totalPessoas ) <= ( carro.assentos )) {
+      carro.quantidadePessoas += n;
+    if (( carro.quantidadePessoas ) === ( carro.assentos )) {
+      return "O carro já está lotado!";
+    }
+  }
+  //verifica se falta só uma pessoa e usa a palavra pessoa no singular
+  else if ( diference === 1 ) {
+      return "Só cabe mais uma pessoa!";
+  }
+  else if (( totalPessoas > carro.assentos ) && ( carro.quantidadePessoas < carro.assentos )) {
+    return "Só cabem mais " + diference + " pessoas!";
+  }
+  return "Já temos " + carro.quantidadePessoas + " pessoas no carro!";
+};
+
+
+
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
 utilize sempre o formato de invocação do método (ou chamada da propriedade),
@@ -141,6 +166,7 @@ carro.obterCor();  // 'amarelo'
 
 // Mude a cor do carro para vermelho.
 carro.mudarCor('vermelho');
+// toda função que não retorna nenhum valor, sempre vai retornar undefined
 
 // E agora, qual a cor do carro?
 carro.obterCor();  // 'vermelho'
@@ -152,8 +178,7 @@ carro.mudarCor( 'verde musgo' );  // altera a cor para verde musgo
 carro.obterCor();  // 'verde musgo'
 
 // Qual a marca e modelo do carro?
-carro.obterMarca(); // Ford
-carro.obterModelo(); // Corcel
+carro.obterMarcaModelo(); // "Esse caroro é um Ford Corcel"
 
 // Adicione 2 pessoas no carro.
 carro.addPessoas(2);  //  "Já temos 2 pessoas no carro!"
@@ -166,10 +191,11 @@ carro.addPessoas(3);  //  "O carro já está lotado!"
 
 // Tire 4 pessoas do carro.
 carro.quantidadePessoas = 1;  // 5 - 4 === 1
+carro.addPessoas(-4);  //  'Já temos 1 pessoas no carro!'
 
 // Adicione 10 pessoas no carro.
 carro.addPessoas(10);  //  "Só cabem mais 4 pessoas!"
 
 // Quantas pessoas temos no carro?
-carro.quantidadePessoas;  // 1 pessoa
+carro.quantidadePessoas;  // 1
 ```
