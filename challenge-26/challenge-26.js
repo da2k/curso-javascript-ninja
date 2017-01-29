@@ -27,39 +27,51 @@
     this.element = getNodesWithName(nodeName);
 
     this.on = function addEvents( event, clickHandle ){
-      Array.prototype.forEach.call( this.element, function(item){
-        item.addEventListener(event, clickHandle);
-      } );
+      goThroughElementsToExecuteCallback(
+        this.get(),
+        function( item ){
+          item.addEventListener(event, clickHandle);
+        });
     };
 
     this.off = function removeEvents( event, handleRemove ){
-      Array.prototype.forEach.call( this.element, function(item){
-        item.removeEventListener(event, handleRemove);
-      } );
+      goThroughElementsToExecuteCallback(
+        this.get() ,
+        function( item ){
+          item.removeEventListener(event, handleRemove);
+        });
     };
 
     this.get = function getEvents(){
       return this.element;
     };
 
-    function getNodesWithName(nodeName){
-      return document.querySelectorAll(nodeName);
+    function getNodesWithName( nodeName ){
+      return document.querySelectorAll( nodeName );
+    }
+
+    function goThroughElementsToExecuteCallback(elements, callback){
+      Array.prototype.forEach.call( elements, function(item){
+        callback(item);
+      } );
     }
   }
 
-  function click(e) {
+  function clickHandle(e) {
     e.preventDefault();
     console.log('clicou');
   }
 
+  function removeClickHandle(e){
+    e.preventDefault();
+    $a.off('click', clickHandle);
+  }
+
   var $a = new DOM('[data-js="link"]');
-  $a.on('click', click);
+  $a.on('click', clickHandle);
 
   var $remover = new DOM('[data-js="remover"]');
-  $remover.on('click', function(e){
-    e.preventDefault();
-    $a.off('click', click);
-  });
+  $remover.on('click', removeClickHandle);
 
   console.log('Elementos selecionados:', $a.get());
   console.log('$a é filho de body?', $a.get()[0].parentNode === document.body);
