@@ -26,35 +26,31 @@
   function DOM(nodeName){
     this.element = getNodesWithName(nodeName);
 
-    this.on = function addEvents( event, clickHandle ){
-      goThroughElementsToExecuteCallback(
-        this.get(),
-        function( item ){
-          item.addEventListener(event, clickHandle);
-        });
-    };
-
-    this.off = function removeEvents( event, handleRemove ){
-      goThroughElementsToExecuteCallback(
-        this.get() ,
-        function( item ){
-          item.removeEventListener(event, handleRemove);
-        });
-    };
-
-    this.get = function getEvents(){
-      return this.element;
-    };
-
     function getNodesWithName( nodeName ){
       return document.querySelectorAll( nodeName );
     }
+  }
 
-    function goThroughElementsToExecuteCallback(elements, callback){
-      Array.prototype.forEach.call( elements, function(item){
-        callback(item);
-      } );
-    }
+  DOM.prototype.on = function on( event, clickHandle ) {
+    this.goThroughElementsToExecuteCallback(this.get(), function( item ){
+      item.addEventListener(event, clickHandle, false);
+    });
+  };
+
+  DOM.prototype.off = function off( event, handleRemove ) {
+    this.goThroughElementsToExecuteCallback(this.get() , function( item ){
+      item.removeEventListener(event, handleRemove, false);
+    });
+  };
+
+  DOM.prototype.get = function get() {
+    return this.element;
+  };
+
+  DOM.prototype.goThroughElementsToExecuteCallback = function goThroughElementsToExecuteCallback(elements, callback){
+    Array.prototype.forEach.call( elements, function(item){
+      callback(item);
+    });
   }
 
   function clickHandle(e) {
