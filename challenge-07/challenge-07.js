@@ -43,7 +43,7 @@ Utilizando a estrutura de repetição `while`, mostre no console todos os númer
 pares entre 10 e 20, inclusive esses 2.
 */
 console.log( 'Números pares entre 10 e 20:' );
-var contador = 0;
+var contador = 10;
 while(contador <= 20){
   if(contador % 2 === 0){
     console.log(contador);
