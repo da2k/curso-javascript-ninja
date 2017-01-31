@@ -45,14 +45,14 @@
   parâmetros variável, e deverá retornar a soma de todos eles.
   Não use estruturas de repetição para somar os argumentos.
   Na primeira linha, dentro da função, deixe um console.log para mostrar todos
-  os parâmetros passados para essa função.
+  os parâmetros passados para essa função.2
   */
 
   function sum(value) {
     console.log(arguments);
 
     return Array.prototype.reduce.call(arguments, function (total, item) {
-      return total + item;
+      return Number(total) + Number(item);
     });
   }
 
