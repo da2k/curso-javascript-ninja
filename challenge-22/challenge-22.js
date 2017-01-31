@@ -31,7 +31,7 @@
   */
   console.log('O nome das pessoas é:');
 
-  function getFullName(name, lastName) {
+  function getFullName() {
     return this.name + ' ' + this.lastName;
   }
 
