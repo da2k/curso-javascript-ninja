@@ -23,7 +23,7 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 function adicionaValor() {
-    novaVariavel = 10;
+    novaVariavel = 100;
     return 'O valor da variável agora é ' + novaVariavel;
 }
 
@@ -32,7 +32,7 @@ adicionaValor();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
-* 'VALOR'
+* 'O valor da variável agora é 100'
 */
 
 /*
