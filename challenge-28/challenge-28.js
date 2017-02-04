@@ -1,3 +1,4 @@
+( function( win, doc ){
   /*
   No HTML:
   - Crie um formulário com um input de texto que receberá um CEP e um botão
@@ -25,3 +26,71 @@
   - Utilize a lib DOM criada anteriormente para facilitar a manipulação e
   adicionar as informações em tela.
   */
+
+  function init(){
+    var $button = doc.querySelector('[data-js="consultar"]');
+    var $cep = doc.querySelector('[data-js="cep"]');
+    var $status = doc.querySelector('[data-js="status"]');
+    var $logradouro = doc.querySelector('[data-js="logradouro"]');
+    var $bairro = doc.querySelector('[data-js="bairro"]');
+    var $estado = doc.querySelector('[data-js="estado"]');
+    var $cidade = doc.querySelector('[data-js="cidade"]');
+    var $cepConsultado = doc.querySelector('[data-js="cep_consultado"]');
+    var ajax = new XMLHttpRequest();
+
+    $button.addEventListener( 'click', handleConsultar, false );
+
+    function handleConsultar( evt ){
+      evt.preventDefault();
+      consultarCEP();
+    };
+
+    function consultarCEP(){
+      ajax.open( 'GET', 'https://viacep.com.br/ws/' + cepParaBuscar() + '/json/' );
+      ajax.send();
+
+      ajax.addEventListener( 'readystatechange', ajaxHandle, false);
+    }
+
+    function ajaxHandle(){
+      if ( isRequestOK() ){
+        setStatus('Endereço referente ao CEP '+ cepParaBuscar() +':');
+        preencherDadosHTML();
+      }else if ( isCEPInexistente() ){
+        setStatus('Não encontramos o endereço para o CEP '+ cepParaBuscar() +'.');
+      }
+      else{
+        setStatus('Buscando informações para o CEP '+ cepParaBuscar() +'...');
+      }
+    }
+
+    function isRequestOK(){
+      return ajax.readyState === 4 && ajax.status === 200;
+    }
+
+    function isCEPInexistente(){
+      return ajax.readyState === 4 && ajax.status === 0;
+    }
+
+    function preencherDadosHTML(){
+      var data = JSON.parse( ajax.responseText );
+      $logradouro.value = data.logradouro;
+      $bairro.value = data.bairro;
+      $estado.value = data.uf;
+      $cidade.value = data.localidade;
+      $cepConsultado.value = data.cep;
+    }
+
+    function setStatus(text){
+      $status.replaceChild(doc.createTextNode( text ), $status.firstChild);
+    }
+
+    function cepParaBuscar(){
+      return $cep.value.replace(/[^0-9]/g, '');
+    }
+
+  }
+
+  init();
+
+})(window, document);
