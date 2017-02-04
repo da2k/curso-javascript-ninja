@@ -51,58 +51,32 @@
     });
   }
 
-  DOM.prototype.forEach = function forEach(callback){
-    Array.prototype.forEach.call(this.element, function(item, index, array){
-      return callback( item, index, array );
-    });
+  DOM.prototype.forEach = function forEach(){
+    Array.prototype.forEach.apply(this.element, arguments);
   }
 
-  DOM.prototype.map = function map(callback){
-    return Array.prototype.map.call(this.element, function(item, index, array){
-      return callback(item, index, array);
-    });
+  DOM.prototype.map = function map(){
+    return Array.prototype.map.apply(this.element, arguments);
   }
 
-  DOM.prototype.filter = function filter(callback){
-    return Array.prototype.filter.call(this.element, function(item, index, array){
-      return callback( item, index, array );
-    })
+  DOM.prototype.filter = function filter(){
+    return Array.prototype.filter.apply(this.element, arguments);
   }
 
-  DOM.prototype.reduce = function reduce(callback, initValue){
-    if (initValue){
-      return Array.prototype.reduce.call(this.element, function(acum, item, index, array){
-        return callback( acum, item, index, array );
-      }, initValue)
-    }else{
-      return Array.prototype.reduce.call(this.element, function(acum, item, index, array){
-        return callback( acum, item, index, array );
-      })
-    }
+  DOM.prototype.reduce = function reduce(){
+      return Array.prototype.reduce.apply(this.element, arguments);
   }
 
-  DOM.prototype.reduceRight = function reduceRight(callback, initValue){
-    if (initValue){
-      return Array.prototype.reduceRight.call(this.element, function(acum, item, index, array){
-        return callback( acum, item, index, array );
-      }, initValue)
-    }else{
-      return Array.prototype.reduceRight.call(this.element, function(acum, item, index, array){
-        return callback( acum, item, index, array );
-      })
-    }
+  DOM.prototype.reduceRight = function reduceRight(){
+      return Array.prototype.reduceRight.apply(this.element, arguments);
   }
 
-  DOM.prototype.every = function every(callback){
-    return Array.prototype.every.call(this.element, function( item, index, array){
-      return callback( item, index, array );
-    })
+  DOM.prototype.every = function every(){
+    return Array.prototype.every.apply(this.element, arguments);
   }
 
-  DOM.prototype.some = function some(callback){
-    return Array.prototype.some.call(this.element, function( item, index, array){
-      return callback( item, index, array );
-    })
+  DOM.prototype.some = function some(){
+    return Array.prototype.some.apply(this.element, arguments);
   }
 
   DOM.is = function is( obj ){
@@ -139,9 +113,9 @@
 
   var $a = new DOM('[data-js="link"]');
 
-  console.log($a.filter(function(item, index, array){
-    return item.firstChild.nodeValue == 'Link 2';
-  }));
+  console.log( $a.reduce( function(acc, item, index){
+    return acc + item.getAttribute('data-js') + index;
+  }, 0 ) );
 
   console.log( DOM.isArray([1, 2, 3]) ); // true
   console.log( DOM.isFunction(function() {}) ); // true
