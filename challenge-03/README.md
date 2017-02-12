@@ -135,7 +135,7 @@ pessoa.mostrarIdade();//'Olá, eu tenho 22 anos!'
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
 com metragens diferentes passadas por parâmetro.
 */
-pessoa.andar(50);
+pessoa.andar(60);
 pessoa.andar(75);
 pessoa.andar(100);
 
