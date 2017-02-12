@@ -29,6 +29,7 @@
     $reset.addEventListener( 'click', resetTimer, false );
     
     function timer(){
+        clearTimeout(temporizer);
         $timer.value = counter++;
         temporizer = setTimeout( timer, 1000 );
     }
