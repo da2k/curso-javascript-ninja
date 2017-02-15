@@ -1,8 +1,8 @@
-//# Desafio da semana #2
+# Desafio da semana #2
 
-//Nesse exercício, você está livre para escolher os nomes para suas variáveis e funções! :smile:
+Nesse exercício, você está livre para escolher os nomes para suas variáveis e funções! :smile:
 
-//```js
+```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
 function soma(x,y){
 	return x + y;
@@ -116,3 +116,5 @@ function foo(x, y, z){
 //foo(2, 3, null) // Retorna 5
 //foo(2, null, 4) // Retorna 6
 //foo(null, 3, 4) // Retorna 7
+
+ ```
