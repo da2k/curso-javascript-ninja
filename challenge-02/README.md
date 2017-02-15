@@ -80,41 +80,39 @@ function foo(x, y, z){
 	if(x && y && z){
 		return (x + y)/z;
 
-	}else if(x && y){
+	}else if(x && y && !z){
 		return x + y;
 
-		if(x && z){
-			return x + z;
-		}else{
-			return x + y;
-		}
+	}else if(x && !y && z){
+		return x + z;
 
-	}else if(x){
+	}else if(!x && y && z){
+		return y + z;
+
+	}else if(x && !y && !z){
 		return x;
 
-		if(y){
-			return y;
-		}else{
-			return z;
-		}
-	}else{
+	}else if(!x && y && !z){
+		return y;
+
+	}else if(!x && !y && z){
+		return z;
+
+	}else if(!x && !y && !z){
 		return false;
+
+	}else{
+		return null;
 	}
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
-//newThreeArgs() //Retorna null
-		//newThreeArgs(1,null,null) // Retorna 1
-		//newThreeArgs(null,2,null) // Retorna 2
-		//newThreeArgs(null,null,3) // Retorna 3
-		//newThreeArgs(2,3) // Retorna 5
-		//newThreeArgs(2,undefined,4) // Retorna 6
-		//newThreeArgs(undefined,3,4) // Retorna 7
-		//newThreeArgs()
-		//newThreeArgs()
-		// newThreeArgs(2,3,4) // Retorna 1.25
-		//newThreeArgs()
-		//newThreeArgs()
-		//newThreeArgs()
-		//newThreeArgs()
+
+//foo() //Retorna false
+//foo(2,3,4) // Retorna 1.25
+//foo(1,null,null) // Retorna 1
+//foo(null,2,null) // Retorna 2
+//foo(null,null,3) // Retorna 3
+//foo(2, 3, null) // Retorna 5
+//foo(2, null, 4) // Retorna 6
+//foo(null, 3, 4) // Retorna 7
