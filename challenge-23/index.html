@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Challenge 23</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+        }
+        
+        input,
+        button {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper-calc">
+        <div class="resultado">
+            <input type="text" name="resultado" data-js="visor" value="0" style="text-align: right;" readonly />
+        </div>
+        <div class="botoes">
+            <div class="numeros">
+                <button data-js="button-number" value="0">0</button>
+                <button data-js="button-number" value="1">1</button>
+                <button data-js="button-number" value="2">2</button>
+                <button data-js="button-number" value="3">3</button>
+                <button data-js="button-number" value="4">4</button>
+                <button data-js="button-number" value="5">5</button>
+                <button data-js="button-number" value="6">6</button>
+                <button data-js="button-number" value="7">7</button>
+                <button data-js="button-number" value="8">8</button>
+                <button data-js="button-number" value="9">9</button>
+            </div>
+            <div class="operations">
+                <button data-js="button-CE" data-id="button-operation-ce" value="ce">CE</button>
+                <button data-js="button-operation" value="+">+</button>
+                <button data-js="button-operation" value="-">-</button>
+                <button data-js="button-operation" value="x">x</button>
+                <button data-js="button-operation" value="÷">÷</button>
+                <button data-js="button-equal" data-id="button-operation-equal" value="=">=</button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="challenge-23.js"></script>
+</body>
+
+</html>
