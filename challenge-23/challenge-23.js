@@ -71,9 +71,9 @@
     }
 
     function removeLastItemIfItIsAnOperator(number) {
-        if (isLastItemAnOperation(number))
-            //$visor.value = $visor.value.slice(0, -1);
+        if (isLastItemAnOperation(number)){
             return number.slice(0,-1);
+        }
         return number;
     }
 
