@@ -69,9 +69,6 @@
       doc.querySelector('[data-js="telefone_empresa"]').textContent = data.phone;
     }
 
-
-    $buttonCadastrar.on( 'click', handleCadastrar, false );
-
     function handleCadastrar(){
       cadastrarCarro();
     }
@@ -112,13 +109,21 @@
       return fragment.appendChild(tr);
     }
 
-    $form.on( 'submit', function(evt){
-      evt.preventDefault();
-    } );
+    return {
+      init : function(){
 
-    carregarDadosEmpresa();
+        $buttonCadastrar.on( 'click', handleCadastrar, false );
+
+        $form.on( 'submit', function(evt){
+          evt.preventDefault();
+        } );
+
+        carregarDadosEmpresa();
+      }
+    }
+
   }
 
-  app();
+  app().init();
 
 })( window, document, window.DOM );
