@@ -22,13 +22,13 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function addToNewVar(x){
-	newVar = 0;
-	return 'O valor da variável agora é ' + (newVar + x);
+function addToNewVar(){
+	newVar = 5;
+	return 'O valor da variável agora é ' + newVar;
 }
 
 // Invoque a função criada acima.
-addToNewVar(5)
+addToNewVar()
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
@@ -43,15 +43,10 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function calculate(x,y,z){
-	if(x && y && z){
-		return (x * y * z) + 2;
-
+	if(x === undefined || y === undefined || z === undefined){
+		return 'Preencha todos os valores corretamente!';
 	}else{
-		if(x === 0 || y === 0 || z === 0){
-			return (x * y * z) + 2;
-		}else{
-			return 'Preencha todos os valores corretamente!';
-		}
+		return (x * y * z) + 2;
 	}
 }
 
@@ -83,20 +78,8 @@ function foo(x, y, z){
 	}else if(x && y && !z){
 		return x + y;
 
-	}else if(x && !y && z){
-		return x + z;
-
-	}else if(!x && y && z){
-		return y + z;
-
 	}else if(x && !y && !z){
 		return x;
-
-	}else if(!x && y && !z){
-		return y;
-
-	}else if(!x && !y && z){
-		return z;
 
 	}else if(!x && !y && !z){
 		return false;
@@ -108,13 +91,9 @@ function foo(x, y, z){
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 
-//foo() //Retorna false
-//foo(2,3,4) // Retorna 1.25
-//foo(1,null,null) // Retorna 1
-//foo(null,2,null) // Retorna 2
-//foo(null,null,3) // Retorna 3
-//foo(2, 3, null) // Retorna 5
-//foo(2, null, 4) // Retorna 6
-//foo(null, 3, 4) // Retorna 7
+foo() //Retorna false
+foo(2,3,4) // Retorna 1.25
+foo(1) // Retorna 1
+foo(2, 3) // Retorna 5
 
  ```
