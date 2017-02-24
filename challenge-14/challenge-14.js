@@ -11,18 +11,11 @@
   Mostre esse array no console.
   */
   console.log( 'Number Objects Array:' );
-  var numberObjects = [
-    { number: 1 },
-    { number: 2 },
-    { number: 3 },
-    { number: 4 },
-    { number: 5 },
-    { number: 6 },
-    { number: 7 },
-    { number: 8 },
-    { number: 9 },
-    { number: 10 }
-  ]
+  var numberObjects = [];
+
+  for(var i = 1; i <= 10; i++) {
+    numberObjects.push({ number: i });
+  }
 
   console.log( numberObjects );
 
@@ -31,11 +24,9 @@
   números do array criado acima. Mostre esse novo array no console.
   */
   console.log( '\nJust Numbers:' );
-  var justNumbers = [];
-
-  for (var i = 0; i < numberObjects.length; i++) {
-    justNumbers.push(numberObjects[i].number);
-  };
+  var justNumbers = numberObjects.map(function(item) {
+    return item.number;
+  });
 
   console.log( justNumbers );
 
@@ -45,12 +36,9 @@
   no console.
   */
   console.log( '\nJust module of division by 2 or 3:' );
-  var justMod20r3 = [];
-
-  for (var i = 0; i < justNumbers.length; i++) {
-    if (i % 2 === 0 || i % 3 === 0)
-      justMod20r3.push(i);
-  };
+  var justMod20r3 = justNumbers.filter(function(item) {
+    return item % 2 === 0 || item % 3 === 0;
+  });
 
   console.log( justMod20r3 );
 
@@ -64,7 +52,7 @@
   */
   console.log( '\nOperation:' );
   var operation = justMod20r3.reduce(function(prev, curr) {
-    return prev + 1 * curr;
+    return (prev + 1 ) * curr;
   }, 0);
 
   console.log( operation );
@@ -76,7 +64,7 @@
   */
   console.log( '\nOperation 2:' );
   var operation2 = justMod20r3.reduceRight(function(prev, curr) {
-    return prev + 1 * curr;
+    return (prev + 1) * curr;
   }, 0);
 
   console.log( operation2 );
@@ -92,8 +80,8 @@
   console.log( '\nSeu nome na língua do "P":' );
   var name = ['ke', 'vin'];
   var pLang = name.reduce(function(prev, curr) {
-    return 'P' + prev + 'P' + curr;
-  });
+    return prev + 'P' + curr;
+  }, '');
 
   console.log( pLang );
 
@@ -147,6 +135,6 @@
   */
   console.log( '\njustMod2Or3 é um array? Se for, a representação dele em String é:' );
   if (Array.isArray( justMod20r3 )) {
-    console.log( justMod20r3.join('') );
+    console.log( justMod20r3.toString('') );
   }
 })();
