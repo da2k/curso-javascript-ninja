@@ -123,7 +123,6 @@
     } else {
         console.log('Não existe um objeto { number: 2 } em numberObjects :(');
     }
-
     /*
     Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
     será que obtemos um resultado diferente? Faça a busca a partir do índice 2.
