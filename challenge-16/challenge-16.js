@@ -18,8 +18,8 @@
   */
   console.log( 'As letras do seu nome:' );
   var name = 'Kevin';
-  for ( var i = 0; i < name.length; i++ ) {
-    console.log( name.charAt(i) + ' é a ' + (i + 1) + 'ª ' + 'letra do meu nome.' );
+  for ( var i = 0, len = name.length; i < len; i++ ) {
+    console.log( name.charAt(i) + ' é a ' + (i + 1) + 'ª letra do meu nome.' );
   }
 
   /*
@@ -36,19 +36,12 @@
   */
   console.log( '\nNome convertido à partir de um slug:' );
   var fullName = 'kevin-oliveira';
-
-  function newFullName(name) {
-    var newFullName;
-    var tracePosition = name.indexOf('-');
-    var firstUpper = name.charAt(0).toUpperCase() + name.slice(1, tracePosition);
-    var lastUpper = name.charAt(tracePosition + 1).toUpperCase() + name.slice(tracePosition + 2);
-    var removeTrace = name.replace('-', ' ').slice(tracePosition, tracePosition + 1);
-
-    return newFullName = firstUpper + removeTrace + lastUpper;
-  }
+  var newFullName = fullName.split( '-' ).map(function(name) {
+    return name.charAt(0).toUpperCase() + name.slice(1);
+  }).join( ' ' );
 
   console.log( 'Formato slug: ' + fullName );
-  console.log( 'Formato normal: ' + newFullName(fullName) );
+  console.log( 'Formato normal: ' + newFullName );
 
   /*
   - Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
@@ -61,18 +54,13 @@
   */
   console.log( '\nMeus amigos:' );
 
-  var arrNames = [
-    'Kevin',
-    'José',
-    'Maria',
-    'Caroline',
-    'João'
-  ];
+  var friends = [ 'Pedro', 'José', 'Maria', 'Caroline', 'João' ];
+  var phrase = friends.reduce(function(acumulado, atual, index) {
+    var separator = friends.length - 1 === index ? ' e ' : ', ';
+    return acumulado + separator + atual;
+  }).concat( ' são meus amigos.' );
 
-  var arrNamesPosition = arrNames.length;
-  var arrNamesReduce = arrNames.slice(0, arrNamesPosition - 1).join(', ') + ' e ' + arrNames.slice(arrNamesPosition - 1);
-
-  console.log( arrNamesReduce + ' são meus amigos.' );
+  console.log( phrase );
 
   /*
   Usando o replace(), faça a string "Roberto" virar "Roberta".
@@ -86,7 +74,7 @@
   faz a busca do final para o início da string.
   */
   console.log( '\nParte de uma string:' );
-  console.log( 'Fernando'.slice(-5) );
+  console.log( 'Fernando'.substring( 8, 3 ) );
 
   /*
   Declare uma variável chamada `myName`, que receba o seu primeiro nome,
@@ -99,6 +87,11 @@
   */
   console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
   var myName = 'Kevin';
+  var myNewName = [];
 
-  console.log( myName );
+  for( var i = 0, len = myName.length; i < len; i++ ) {
+    myNewName.push( i % 2 === 0 ? myName[i].toLowerCase() : myName[i].toUpperCase() );
+  }
+
+  console.log( myNewName.join( '' ) );
 })();
