@@ -22,7 +22,7 @@
     var numbersOnly = cpfNumber.match( regex ).join('');
     return numbersOnly;
   }
-  
+
   console.log( cleanCPF('049-214 3421-1') );
   console.log( cleanCPF('210.458.522-05') );
   console.log( cleanCPF('735 500 794 - 22') );
@@ -34,7 +34,7 @@
   Mostre o resultado no console.
   */
   console.log( '\nFormatando CPFs corretamente:' );
-  
+
   console.log( cleanCPF('049-214 3421-1').replace( /(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-4' ) );
   console.log( cleanCPF('210.458.522-05').replace( /(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-4' ) );
   console.log( cleanCPF('735 500 794 - 22').replace( /(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-4' ) );
@@ -65,7 +65,7 @@
   */
   console.log( '\nMatch com a abertura de uma tag HTML:' );
   console.log( '<div><section><blockquote>Texto <img /></blockquote></section></div>'.match( /<\w+>/g ) );
-  
+
 
   /*
   Crie uma expressão regular que faça o match com uma tag HTML vazia, casando
@@ -102,5 +102,12 @@
   corretas, para depois aplicar no código ;)
   */
   console.log( '\nFazer replace dos textos das tags:' );
-  
+  var htmlPhrase = '<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>';
+  var regexHTML = /<(\w+)>(.+?)<\/\w+>/g;
+  function htmlRegexFunc(regex, tag, content) {
+    return 'O texto dentro da tag "' + tag + '" é "' + content + '"\n';
+  }
+
+  console.log( htmlPhrase.replace( regexHTML, htmlRegexFunc ) );
+
 })();
