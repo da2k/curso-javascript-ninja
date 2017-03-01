@@ -4,7 +4,8 @@ para começar o desafio.
 Declare uma variável chamada `championship` que receberá o nome do campeonato,
 e imprima o nome desse campeonato no console.
 */
-// ?
+var championship = 'Campeonato Brasileiro';
+console.log(championship);
 
 /*
 Declare uma variável chamada `teams`, que receberá um array com 5 elementos.
@@ -12,7 +13,7 @@ Os elementos serão nomes de times do campeonato escolhido, e os nomes devem
 estar na ordem em que eles aparecem na tabela no momento da solução desse
 desafio.
 */
-// ?
+var teams = ['Palmeiras', 'Santos', 'Flamengo', 'Atlético-MG', 'Botafogo'];
 
 console.log( 'Times que estão participando do campeonato:', teams );
 
@@ -32,19 +33,31 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     - Se não houver time para a posição passada, deve retornar a mensagem:
     "Não temos a informação do time que está nessa posição."
 */
-// ?
+function showTeamPosition(position) {
+    var getPosition = "O time que está em " + (position) + "º lugar é o " + teams[position-1] + ".";
+    var getInfo = "Não temos a informação do time que está nessa posição.";
+    
+    return position < 6 && position > 0 ? getPosition : getInfo;
+}
 
 /*
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
-// ?
+console.log(showTeamPosition(1)); // "O time que está em 1º lugar é o Palmeiras."
+console.log(showTeamPosition(2)); // "O time que está em 2º lugar é o Santos."
+console.log(showTeamPosition(5)); // "O time que está em 5º lugar é o Botafogo."
+console.log(showTeamPosition(9)); // "Não temos a informação do time que está nessa posição."
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
 repetição "while".
 */
-// ?
+var counter = 20;
+while(counter <= 30) {
+    console.log(counter);
+    counter++; 
+};
 
 /*
 Crie uma função chamada `convertToHex`, com as seguintes características:
@@ -58,9 +71,37 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     a frase:
     "Não temos o equivalente hexadecimal para [COR]."
 */
-// ?
+function convertToHex(color) {
+    var colorMessage = 'O hexadecimal para a cor ' + color + ' é ';
+    switch(color) {
+        case 'branco':
+        console.log(colorMessage + '#FFFFFF');
+        break;
+        case 'preto':
+        console.log(colorMessage + '#000000');
+        break;
+        case 'azul':
+        console.log(colorMessage + '#0000ff');
+        break;
+        case 'vermelho':
+        console.log(colorMessage + '#ff0000');
+        break;
+        case 'verde':
+        console.log(colorMessage + '#00cc00');
+        break;
+        default:
+        console.log('Não temos o equivalente hexadecimal para ' + color);
+    }
+}
 
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-// ?
+convertToHex('verde'); // O hexadecimal para a cor verde é #00cc00
+convertToHex('preto'); // O hexadecimal para a cor verde é #000000
+convertToHex('amarelo'); // Não temos o equivalente hexadecimal para amarelo
+convertToHex('vermelho'); // O hexadecimal para a cor vermelho é #ff0000
+convertToHex('azul');  // O hexadecimal para a cor azul é #0000ff
+convertToHex('branco');  // O hexadecimal para a cor branco é #FFFFFF
+convertToHex('marron'); // Não temos o equivalente hexadecimal para marron
+convertToHex('roza'); // Não temos o equivalente hexadecimal para roza
