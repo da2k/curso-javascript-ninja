@@ -25,3 +25,74 @@
   - Utilize a lib DOM criada anteriormente para facilitar a manipulação e
   adicionar as informações em tela.
   */
+(function(doc, win) {
+  'use strict';
+
+  var inputCEP = document.querySelector('[data-js="enter-cep"]');
+  var $status = document.querySelector('[data-js="status"]');
+
+  function clickButton() {
+    var clickButton = document.querySelector('[data-js="button-send"]');
+
+    clickButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      var cep = cleanInputCEP(inputCEP);
+      getAjaxresponse(cep);
+      $status.innerHTML = '';
+    });
+  }
+
+  function maskInputCEP() {
+    inputCEP.addEventListener('keyup', function() {
+      inputCEP.value = inputCEP.value.replace(/[^0-9\-]/, '');
+      if(inputCEP.value.length === 5) {
+        inputCEP.value += '-';
+      }
+    });
+  }
+
+  function cleanInputCEP(string) {
+    return string.value.replace(/-/g, '');
+  }
+
+  function readData(data) {
+    document.querySelector('[data-js="logradouro"]').innerHTML = data.logradouro;
+    document.querySelector('[data-js="bairro"]').innerHTML = data.bairro;
+    document.querySelector('[data-js="uf"]').innerHTML = data.uf;
+    document.querySelector('[data-js="localidade"]').innerHTML = data.localidade;
+    document.querySelector('[data-js="cep"]').innerHTML = data.cep;
+  }
+
+  function getAjaxresponse(cep) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'https://viacep.com.br/ws/' + cep + '/json/');
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        readData(JSON.parse(xhr.responseText));
+        getMessage('ok');
+      }else {
+        getMessage('error');
+      }
+    };
+    xhr.send();
+    getMessage('loading');
+  }
+
+  function getMessage(type) {
+    var cep = cleanInputCEP(inputCEP);
+    var messages = {
+      loading: 'Buscando informações para o CEP [CEP]...'.replace('[CEP]', cep),
+      ok: 'Endereço referente ao CEP [CEP]: '.replace('[CEP]', cep),
+      error: 'Não encontramos o endereço para o CEP [CEP].'.replace('[CEP]', cep)
+    };
+    $status.textContent = messages[type];
+  }
+
+  function init() {
+    clickButton();
+    maskInputCEP();
+  }
+
+  init();
+
+})(document, window);

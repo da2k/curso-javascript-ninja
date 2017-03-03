@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Challenge-28</title>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="card-panel">
+      <h1 class="center-align">Formulário</h1>
+    </header>
+    <form action="" class="row">
+      <label class="col s12" for="">Digite seu CEP</label>
+      <input class="col s6" name="cep" type="text" maxlength="9" placeholder="CEP" data-js="enter-cep" required>
+      <button class="btn waves-effect waves-light" type="submit" name="action" data-js="button-send">Consultar
+        <i class="material-icons right">send</i>
+      </button>
+    </form>
+    <section information">
+      <div class="row">
+        <p class="col s2">Logradouro:</p><p class="col s3" data-js="logradouro"></p>
+      </div>
+      <div class="row">
+        <p class="col s2">Bairro:</p><p class="col s3" data-js="bairro"></p>
+      </div>
+      <div class="row">
+        <p class="col s2">Estado:</p><p class="col s3" data-js="uf"></p>
+      </div>
+      <div class="row">
+        <p class="col s2">Cidade:</p><p class="col s3" data-js="localidade"></p>
+      </div>
+      <div class="row">
+        <p class="col s2">CEP:</p><p class="col s3" data-js="cep"></p>
+      </div>
+    </section>
+    <section class="row status">
+      <p class="status" data-js="status"></p>
+    </section>
+  </div>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+  <script src="challenge-28.js"></script>
+</body>
+</html>
