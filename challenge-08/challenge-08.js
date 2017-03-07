@@ -116,4 +116,7 @@ var mod = calculator('%');;
 Faça uma operação com cada uma das funções criadas acima, mostrando o resultado
 no console.
 */
+console.log(subtraction(3,6));
 console.log(multiplication(3,6));
+console.log(division(3,6));
+console.log(mod(3,6));
