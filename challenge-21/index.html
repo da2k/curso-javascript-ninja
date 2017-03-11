@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Challenge 21</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+        }
+        
+        input,
+        button {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+        
+        .wrapper {
+            width: 100%;
+            max-width: 80%;
+            margin: 35px auto;
+            text-align: center;
+        }
+        
+        .wrapper h1 {
+            font-weight: 700;
+            font-size: 40px;
+            margin: 0;
+        }
+        
+        [data-js="timer"] {
+            width: 100%;
+            border: none;
+            margin: 35px 0;
+            font-size: 70px;
+            text-align: center;
+            font-weight: 700;
+        }
+        button{
+            padding: 10px;
+            background: white;
+            border: solid 2px black;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>Cronômetro dos Ninjas</h1>
+        <input type="text" value="0" name="timer" data-js="timer" />
+        <button data-js="start">Start</button>
+        <button data-js="stop">Stop</button>
+        <button data-js="reset">Reset</button>
+    </div>
+    <script type="text/javascript" src="challenge-21.js"></script>
+</body>
+
+</html>
