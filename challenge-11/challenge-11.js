@@ -20,7 +20,12 @@
     - 'name', 'age', 'weight' e 'birthday'. Preencha com os valores corretos
     para o nome, idade, peso e data de nascimento dessa pessoa.
     */
-    // ?
+    var person = {
+        name: 'João Pessoa',
+        age: 35,
+        weight: 90,
+        birthday: '11/03/1986'
+    }
 
     /*
     Use um loop para percorrer o objeto criado acima, mostrando no console
@@ -31,7 +36,12 @@
     Após o loop, mostre a frase:
     'The person has [COUNTER] properties'
     */
-    // ?
+    var counter = 0;
+    for (var prop in person) {
+        console.log('The ' + prop + ' of person is ' + person[prop]);
+        counter++;
+    }
+    console.log('The person has ' + counter + ' properties')
 
     /*
     Crie uma função chamada `moreThan`, que vai verificar se a pessoa (objeto
@@ -40,14 +50,40 @@
     Após a função, mostrar a mensagem no console:
     'The person has more than 25 years old? [TRUE/FALSE]'
     */
-    // ?
+    var verificaAge = 25;
 
+    function moreThan(verificaAge) {
+        /* minha solução
+        if( person.age > verificaAge ){
+        	return true;
+        }
+        return false;
+        */
+
+        /*soluçao do professor
+        return person.age > verificaAge ? true : false;
+        */
+
+        /*soluçao do professor, mais otimizada, pois retirando o ternário, a verificação já retorna true/false.
+         */
+        return person.age > verificaAge;
+    }
+    console.log('The person has more than 25 years old? ' + moreThan(verificaAge));
     /*
     Faça um loop de 0 a 20, que adicione cada número como um item de um
     array chamado `numbers`. Se o contador for maior que 10, saia do loop.
     Mostre no console os números no array.
     */
-    console.log('De 0 a 10:');
+    var numbers = [];
+    var counter = 0;
+    for (counter = 0; counter < 20; counter++) {
+        if (counter > 10) {
+            break;
+        }
+        numbers.push(counter);
+    }
+    console.log('De 0 a 10: ');
+    console.log(numbers);
     // ?
 
     /*
@@ -56,7 +92,16 @@
     esses. Se o número for ímpar, pular para o próximo número.
     Mostrar no console os números do array.
     */
-    console.log('Pares de 0 a 20:');
+    var numbers = [];
+    var counter = 0;
+    for (counter = 0; counter < 20; counter++) {
+        if (counter % 2 !== 0) {
+            continue;
+        }
+        numbers.push(counter);
+    }
+    console.log('Pares de 0 a 20: ');
+    console.log(numbers);
     // ?
 
 })();
