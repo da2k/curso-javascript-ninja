@@ -1,3 +1,6 @@
+(function(){
+  
+
 /*
 Envolva todo o código desse desafio em uma IIFE.
 Crie um arquivo chamado index.html e adicione esse script ao HTML.
@@ -21,7 +24,21 @@ as seguintes características:
   adicionados à idade original (age). Esse método deverá retornar o objeto
   que será instanciado.
 */
-// ?
+function Person(name, lastName, age){
+  this.name = name;
+  this.lastName = lastName;
+  this.age = age;
+  this.getFullName = function getFullName(){
+    return this.name +' '+ this.lastName;
+  };
+  this.getAge = function getAge(){
+    return this.age;
+  };
+  this.addAge = function addAge(){
+    this.age += arguments[0];
+    return this;
+  };
+}
 
 /*
 Crie 3 novos objetos usando o construtor acima. Os objetos serão novas
@@ -30,20 +47,29 @@ parâmetros corretamente para o construtor para criar as novas pessoas.
 Mostre as 3 novas pessoas criadas no console (Um console.log por pessoa).
 */
 console.log( 'Novas pessoas criadas à partir de Person:' );
-// ?
+var gustavo = new Person('Gustavo', 'Martusewicz', 30);
+var marina = new Person('Marina', 'Galante', 28);
+var norimar = new Person('Norimar', 'Simonetti', 60);
+console.log(gustavo);
+console.log(marina);
+console.log(norimar);
 
 /*
 Mostre no console o nome completo de cada pessoa.
 */
 console.log( '\nNomes das pessoas:' );
-// ?
+console.log(gustavo.getFullName());
+console.log(marina.getFullName());
+console.log(norimar.getFullName());
 
 /*
 Mostre no console as idades de cada pessoa, com a frase:
 - "[NOME COMPLETO] tem [IDADE] anos."
 */
 console.log( '\nIdade das pessoas:' );
-// ?
+console.log(gustavo.getFullName() +' tem '+ gustavo.getAge()+' anos.');
+console.log(marina.getFullName() +' tem '+ marina.getAge()+' anos.');
+console.log(norimar.getFullName() +' tem '+ norimar.getAge()+' anos.');
 
 /*
 Adicione alguns anos à cada pessoa, e mostre no console a nova idade de
@@ -51,4 +77,9 @@ cada um. A frase deverá ser no formato:
 - "[NOME COMPLETO] agora tem [NOVA IDADE] anos."
 */
 console.log( '\nNova idade das pessoas:' );
-// ?
+
+console.log(gustavo.getFullName() +' agora tem '+ gustavo.addAge(3).getAge() +' anos.');
+console.log(marina.getFullName() +' tem '+ marina.addAge(10).getAge() +' anos.');
+console.log(norimar.getFullName() +' tem '+ norimar.addAge(5).getAge() +' anos.');
+
+})();
