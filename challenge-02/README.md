@@ -89,5 +89,4 @@ novaFuncao(); // false
 novaFuncao(10); // 10
 novaFuncao(10, 10); // 20
 novaFuncao(10, 20, 5); // 6
-novaFuncao(10, 20);
 ```
