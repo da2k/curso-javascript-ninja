@@ -180,28 +180,22 @@ correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentação = function() {
     var frases = {
-        artigo: null,
-        medida: null,
-        ano: null
+        artigo: "o",
+        medida: "metros",
+        ano: "anos"
     };
 
     if ( pessoa.sexo === "Feminino" ) {
         frases.artigo = "a";
-    } else {
-        frases.artigo = "o";
-    }
+    } 
 
     if ( pessoa.altura === 1 ) {
         frases.medida = "metro";
-    } else {
-        frases.medida = "metros";
-    }
+    } 
 
     if ( pessoa.idade === 1 ) {
         frases.ano = "ano";
-    } else {
-        frases.ano = "anos";
-    }
+    } 
 
     return "Olá, eu sou " + frases.artigo + " " + pessoa.nome + " " + pessoa.sobrenome + ", tenho " + pessoa.idade + " " + frases.ano + ", " + pessoa.altura + ", meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " " + frases.medida + "!";
 }
