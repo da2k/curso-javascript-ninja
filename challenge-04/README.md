@@ -15,7 +15,10 @@ var isTruthy = function(a) {
 isTruthy(false); // false
 isTruthy(undefined); // false
 isTruthy(0); // false
+isTruthy(-0); // false
 isTruthy(null); // false
+isTruthy(NaN); // false
+isTruthy(''); // false
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
@@ -29,7 +32,7 @@ isTruthy(-0.01); // true
 isTruthy([1, 2, 3]); // true
 isTruthy([]); // true
 isTruthy({}); // true
-isTruthy({"teste-1": 1, "teste-2": 2}); // true
+isTruthy(function() {}); // true
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
@@ -89,7 +92,7 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 carro.obterMarcaModelo = function() {
-    return "Esse carro é um " + carro.marca + " " + carro.modelo;
+    return "Esse carro é um " + carro.obterMarca() + " " + carro.obterModelo();
 }
 
 /*
@@ -109,22 +112,23 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 citado acima, no lugar de "pessoas".
 */
 carro.adicionarPessoas = function(pessoasAdicionadas) {
-    var assentosDisponiveis = carro.assentos - carro.quantidadePessoas;
-
     var lotacao = pessoasAdicionadas + carro.quantidadePessoas;
-    var pessoas = lotacao === 1 ? "pessoa" : "pessoas";
 
-    if (assentosDisponiveis > 0) {
-        if (pessoasAdicionadas <= assentosDisponiveis) {
-            carro.quantidadePessoas = lotacao;
-
-            return "Já temos " + carro.quantidadePessoas + " " + pessoas + " no carro!";
-        } else {
-            return "Só cabem mais " + assentosDisponiveis + " " + pessoas + "!";
-        }
-    } else {
+    if ( carro.quantidadePessoas === carro.assentos && lotacao >= carro.assentos ) {
         return "O carro já está lotado!"
     }
+
+    if ( lotacao > carro.assentos ) {
+        var assentosDisponiveis = carro.assentos - carro.quantidadePessoas;
+        var pessoas = lotacao === 1 ? "pessoa" : "pessoas";
+        var cabem = lotacao === 1 ? "cabe" : "cabem";
+
+        return "Só " + cabem + " mais " + assentosDisponiveis + " " + pessoas + "!";
+    }
+    
+    carro.quantidadePessoas += pessoasAdicionadas;
+
+    return "Já temos " + carro.quantidadePessoas + " pessoas no carro!";    
 }
 
 /*
