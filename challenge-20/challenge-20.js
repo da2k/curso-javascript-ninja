@@ -17,14 +17,14 @@
   nome, `username` deve receber "Desconhecido".
   Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
   */
-  var username = win.prompt('Qual o seu nome?');
-  win.alert('Bem vindo, ' + username + '!');
+  var username = prompt('Qual o seu nome?') || 'Desconhecido';
+  alert('Bem vindo, ' + username + '!');
 
   /*
   Agora, pergunte ao usuário "Qual o seu e-mail?", atribuindo o resultado à
   uma variável chamada `email`.
   */
-  var email = win.prompt('Qual o seu e-mail?');
+  var email = prompt('Qual o seu e-mail?');
 
   /*
   - Selecione o input de "Nome", atribuindo-o à uma variável chamada
@@ -82,23 +82,24 @@
       - "Não enviado."
   */
   $button.addEventListener('click', function(event) {
-    if ($inputUsername.value === '')
-      win.alert('Preencha o nome do usuário!');
+    event.preventDefault();
 
-    if ($inputEmail.value === '')
-      win.alert('Preencha o e-mail!');
+    if ( !$inputUsername.value )
+      return alert('Preencha o nome do usuário!');
 
-    if ($message.value === '')
-      win.alert('Preencha a mensagem!');
+    if ( !$inputEmail.value )
+      return alert('Preencha o e-mail!');
 
-    if (!!isValidEmail($inputEmail))
-      win.alert('Entre com um e-mail válido!');
+    if ( !isValidEmail($inputEmail.value) )
+      return alert('Entre com um e-mail válido!');
 
-    if ( win.confirm('Tem certeza que deseja enviar o formulário?') ) {
-      win.alert('Enviado com sucesso!');
-    } else {
-      win.alert('Não enviado.');
-    }
+    if ( !$message.value )
+      return alert('Preencha a mensagem!');
+
+    if ( !confirm('Tem certeza que deseja enviar o formulário?') )
+      return alert('Não enviado.')
+
+    alert('Enviado com sucesso!');
   }, false);
 
   /*
@@ -128,7 +129,8 @@
       - "agua_@evida.br.com"
   */
   function isValidEmail(email) {
-    var regex = /[a-zA-Z_+.]+@\w+\.\w{2,}(?:\.\w{2})?/g;
+    var regex = /^[\w+.]+@\w+\.\w{2,}(?:\.\w{2})?$/;
     return regex.test(email);
   }
+
 })(window, document);
