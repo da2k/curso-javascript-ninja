@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Challenge 23</title>
+  <style>
+  * {
+    box-sizing: border-box;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    align-items: center;
+    display: flex;
+    font-size: 10px;
+    height: 100vh;
+  }
+
+  .calculator {
+    border: silver solid 1rem;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, .4);
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 320px;
+    width: 90%;
+  }
+
+  .calculator__input {
+    display: block;
+    font-size: 2.5rem;
+    padding: 1rem 2rem;
+    text-align: right;
+    width: 100%;
+  }
+
+  .calculator__main {
+    display: flex;
+  }
+
+  .calculator__numbers {
+    display: flex;
+    flex: 75%;
+    flex-wrap: wrap;
+  }
+
+  .calculator__number {
+    cursor: pointer;
+    flex: auto;
+    font-size: 1.5rem;
+    height: 4.5rem;
+    width: 33.33%;
+  }
+
+  .calculator__operations {
+    display: flex;
+    flex: 25%;
+    flex-flow: column;
+  }
+
+  .calculator__operation {
+    background-color: orange;
+    cursor: pointer;
+    flex: auto;
+    font-size: 1.5rem;
+    height: 3rem;
+  }
+
+  </style>
+</head>
+
+<body>
+  <section class="calculator">
+    <input class="calculator__input" type="text" data-calculator="input" value="0" readonly>
+    <div class="calculator__main">
+      <div class="calculator__numbers">
+        <button class="calculator__number" data-calculator-number="7">7</button>
+        <button class="calculator__number" data-calculator-number="8">8</button>
+        <button class="calculator__number" data-calculator-number="9">9</button>
+        <button class="calculator__number" data-calculator-number="4">4</button>
+        <button class="calculator__number" data-calculator-number="5">5</button>
+        <button class="calculator__number" data-calculator-number="6">6</button>
+        <button class="calculator__number" data-calculator-number="1">1</button>
+        <button class="calculator__number" data-calculator-number="2">2</button>
+        <button class="calculator__number" data-calculator-number="3">3</button>
+        <button class="calculator__number" data-calculator-number="0">0</button>
+      </div>
+      <div class="calculator__operations">
+        <button class="calculator__operation" data-calculator="reset">CE</button>
+        <button class="calculator__operation" data-calculator-operation="÷">÷</button>
+        <button class="calculator__operation" data-calculator-operation="x">x</button>
+        <button class="calculator__operation" data-calculator-operation="-">-</button>
+        <button class="calculator__operation" data-calculator-operation="+">+</button>
+        <button class="calculator__operation" data-calculator="result">=</button>
+      </div>
+    </div>
+  </section>
+  <script src="challenge-23.js"></script>
+</body>
+
+</html>
+
