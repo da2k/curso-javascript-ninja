@@ -33,20 +33,21 @@
   var $buttonResult = d.querySelector('[data-calculator="result"]');
   var $buttonNumber = d.querySelectorAll('[data-calculator-number]');
   var $buttonOperation = d.querySelectorAll('[data-calculator-operation]');
+  var operators = ['+', '-', 'x', '÷'];
 
   function getLastValue(value) {
     return value.split('').pop();
   }
 
-  function checkLastOperator(value) {
+  function isLastOperator(value) {
     var lastValue = getLastValue(value);
-    return ['+', '-', 'x', '÷'].some(function (operator) {
+    return operators.some(function (operator) {
       return operator === lastValue;
     });
   }
 
   function removeLastOperator(value) {
-    if (checkLastOperator(value)) {
+    if (isLastOperator(value)) {
       return value.slice(0, -1);
     }
     return value;
@@ -57,7 +58,9 @@
   }
 
   function listenerNumber() {
-    let value = this.getAttribute('data-calculator-number');
+    var value = this.getAttribute('data-calculator-number');
+
+    console.log(isLastOperator(value));
 
     if ($input.value == 0) {
       return $input.value = value;
@@ -67,10 +70,10 @@
   }
 
   function listenerOperation() {
-    let value = this.getAttribute('data-calculator-operation');
+    var value = this.getAttribute('data-calculator-operation');
 
-    if (/\D$/g.test($input.value)) {
-      return false;
+    if (isLastOperator(value)) {
+      $input.value = removeLastOperator($input.value);
     }
 
     return $input.value += value;
@@ -85,7 +88,7 @@
       var y = Number(removeLastOperator(actual));
 
       var operation = getLastValue(accumulated);
-      var operator = checkLastOperator(actual) ? getLastValue(actual) : '';
+      var operator = isLastOperator(actual) ? getLastValue(actual) : '';
 
       switch (operation) {
       case 'x':
