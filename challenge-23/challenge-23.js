@@ -1,3 +1,78 @@
+(function(win, doc){
+  'use strict';
+
+  var $display = doc.querySelector('[data-js="display"]');
+  var $buttonNumber = doc.querySelectorAll('[data-js="button-number"]');
+  var $buttonOperation = doc.querySelectorAll('[data-js="button-operation"]');
+  var $buttonCE = doc.querySelector('[data-js="button-ce"]');
+  var $buttonEqual = doc.querySelector('[data-js="button-equal"]');
+
+  Array.prototype.forEach.call($buttonNumber, function(button){
+    button.addEventListener('click', numClickHandler, false);
+  })
+
+  Array.prototype.forEach.call($buttonOperation, function(button){
+    button.addEventListener('click', operClickHandler, false);
+  })
+
+  $buttonCE.addEventListener('click', clearScreen, false);
+  $buttonEqual.addEventListener('click', calculateResult, false);
+
+  function numClickHandler() {
+    if($display.value !== '0') {
+      $display.value += this.value;
+    } else {
+        $display.value = this.value;
+    }
+
+  }
+  function operClickHandler() {
+    $display.value = removeOperatorFromLastChar($display.value);
+    $display.value += this.value;
+  }
+
+  function clearScreen() {
+    $display.value = '0';
+  }
+
+  function calculateResult() {
+    $display.value = removeOperatorFromLastChar($display.value);
+    var valuesEntered = $display.value.match(/\d+[+-x÷]?/g);
+    $display.value = valuesEntered.reduce(function(accum, actual){
+      var a = Number(accum.slice(0, -1));
+      var b = Number(removeOperatorFromLastChar(actual));
+      var operation = getLastChar(accum);
+      var lastOperator = isLastOperator(actual) ? getLastChar(actual) : '';
+      switch(operation) {
+        case '+':
+          return (a + b) + lastOperator;
+        case '-':
+          return (a - b) + lastOperator;
+        case 'x':
+          return (a * b) + lastOperator;
+        case '÷':
+          return (a / b) + lastOperator;
+      }
+    });
+  }
+
+  function isLastOperator(number) {
+    var lastChar = getLastChar(number);
+    return ['+', '-', 'x', '÷'].some(function(operator){
+        return operator === lastChar;
+    });
+  }
+  function removeOperatorFromLastChar(number) {
+    if(isLastOperator(number)) {
+      return number.slice(0, -1);
+    }
+      return number;
+  }
+  function getLastChar(str) {
+    return str.split('').pop();
+  }
+
+
 /*
 Vamos desenvolver mais um projeto. A ideia é fazer uma mini-calculadora.
 As regras são:
@@ -23,3 +98,4 @@ multiplicação (x), então no input deve aparecer "1+2x".
 input;
 - Ao pressionar o botão "CE", o input deve ficar zerado.
 */
+})(window, document);
