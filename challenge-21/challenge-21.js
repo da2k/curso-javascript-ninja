@@ -18,28 +18,28 @@
   dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
   */
 
-  var $cronoScreen = doc.querySelector('[data-js="cronometer-screen"]');
-  var $cronoStart = doc.querySelector('[data-js="cronometer-start"]');
-  var $cronoStop = doc.querySelector('[data-js="cronometer-stop"]');
-  var $cronoReset = doc.querySelector('[data-js="cronometer-reset"]');
-  var temporizador;
-  $cronoScreen.value = 0;
+  var $screen = doc.querySelector('[data-js="cronometer-screen"]');
+  var $start = doc.querySelector('[data-js="cronometer-start"]');
+  var $stop = doc.querySelector('[data-js="cronometer-stop"]');
+  var $reset = doc.querySelector('[data-js="cronometer-reset"]');
+  var interval;
 
-  $cronoStart.addEventListener('click', function(event) {
-    function timer() {
-      $cronoScreen.value++;
-      temporizador = setTimeout(timer, 1000);
-    }
-    timer();
+  $start.addEventListener('click', startTimer, false);
+  $stop.addEventListener('click', stopTimer, false);
+  $reset.addEventListener('click', resetTimer, false);
 
-    $cronoStop.addEventListener('click', function(event) {
-      clearTimeout(temporizador);
-    }, false);
+  function startTimer() {
+    $screen.value = +$screen.value + 1;
+    interval = setTimeout(startTimer, 1000);
+  }
 
-    $cronoReset.addEventListener('click', function(event) {
-      $cronoScreen.value = 0;
-      clearTimeout(temporizador);
-    }, false);
-  }, false);
+  function stopTimer() {
+    clearTimeout(interval);
+  }
+
+  function resetTimer() {
+    $screen.value = 0;
+    stopTimer();
+  }
 
 })(window, document);
