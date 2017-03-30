@@ -20,15 +20,15 @@
   var $buttonCE = d.querySelector('[data-js="button-ce"]');
   var $buttonEqual = d.querySelector('[data-js="button-equal"]');
 
-  function isLastItemAnOperation (number) {
+  function isLastItemAnOperation(number) {
     var operations = ['+', '-', 'x', '÷'];
     var lastItem = number.split('').pop();
-    return operations.some(function (operator) {
+    return operations.some(function(operator) {
       return operator === lastItem;
     });
   }
 
-  function removeLastItemIfItIsAnOperator (number) {
+  function removeLastItemIfItIsAnOperator(number) {
     if (isLastItemAnOperation(number)) {
       return number.slice(0, -1);
     }
@@ -85,10 +85,10 @@
   }
 
   function startEvents() {
-    Array.prototype.forEach.call($buttonsNumbers, function (button) {
+    Array.prototype.forEach.call($buttonsNumbers, function(button) {
       button.addEventListener('click', handleClickNumber, false);
     });
-    Array.prototype.forEach.call($buttonsOperations, function (button) {
+    Array.prototype.forEach.call($buttonsOperations, function(button) {
       button.addEventListener('click', handleClickOperation, false);
     });
     $buttonCE.addEventListener('click', handleClickCE, false);
