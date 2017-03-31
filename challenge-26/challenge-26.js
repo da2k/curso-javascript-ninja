@@ -30,13 +30,13 @@
   }
 
   DOM.prototype.on = function on(event, callback) {
-    Array.prototype.forEach.call(this, function(element) {
+    Array.prototype.forEach.call(this.element, function(element) {
       element.addEventListener(event, callback);
     });
   };
 
   DOM.prototype.off = function off(event, callback) {
-    Array.prototype.forEach.call(this, function(element) {
+    Array.prototype.forEach.call(this.element, function(element) {
       element.removeEventListener(event, callback);
     });
   };
