@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Challenge 28</title>
+  <style>
+    html {
+      font-size: 20px;
+    }
+    body {
+      padding: 2rem;
+    }
+    input {
+      font-size: 2rem;
+      padding: 1rem;
+    }
+    button {
+      font-size: 2rem;
+      padding: 1rem;
+    }
+    table {
+      margin-top: 2rem;
+      text-align: left;
+    }
+    h1 {
+      font-weight: normal;
+      font-size: 2.5rem;
+      margin-top: 3rem;
+    }
+    .results {
+      display: none;
+    }
+
+    .results.in {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <form data-cep="form">
+    <input name="cep" type="text" placeholder="00000-000" data-cep="input" required>
+    <button type="submit" data-cep="button">Procurar</button>
+  </form>
+
+  <h1 data-cep="messages"></h1>
+
+  <section class="results" data-cep="results">
+    <table>
+      <tbody>
+        <tr>
+          <th>Logradouro:</th>
+          <td data-cep="logradouro"></td>
+        </tr>
+        <tr>
+          <th>Bairro:</th>
+          <td data-cep="bairro"></td>
+        </tr>
+        <tr>
+          <th>Estado:</th>
+          <td data-cep="estado"></td>
+        </tr>
+        <tr>
+          <th>Cidade:</th>
+          <td data-cep="cidade"></td>
+        </tr>
+        <tr>
+          <th>CEP:</th>
+          <td data-cep="cep"></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <script src="challenge-28.js"></script>
+</body>
+</html>
