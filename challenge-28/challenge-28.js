@@ -112,13 +112,7 @@
 
   var $form = $('[data-cep="form"]');
   var $input = $('[data-cep="input"]');
-  var $messages = $('[data-cep="messages"]');
   var $results = $('[data-cep="results"]');
-  var $logradouro = $('[data-cep="logradouro"]');
-  var $bairro = $('[data-cep="bairro"]');
-  var $estado = $('[data-cep="estado"]');
-  var $cidade = $('[data-cep="cidade"]');
-  var $cep = $('[data-cep="cep"]');
   var ajax = new XMLHttpRequest();
 
   function clearCEP() {
@@ -142,6 +136,7 @@
   }
 
   function getMessages(type) {
+    var $messages = $('[data-cep="messages"]');
     var messages = {
       loading: replaceCEP('Buscando informações para o CEP [CEP]...'),
       ok: replaceCEP('Endereço referente ao CEP [CEP]'),
@@ -153,6 +148,11 @@
 
   function createResponseFields() {
     var data = parseData();
+    var $logradouro = $('[data-cep="logradouro"]');
+    var $bairro = $('[data-cep="bairro"]');
+    var $estado = $('[data-cep="estado"]');
+    var $cidade = $('[data-cep="cidade"]');
+    var $cep = $('[data-cep="cep"]');
 
     if (!data) {
       getMessages('error');
