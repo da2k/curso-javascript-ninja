@@ -1,3 +1,5 @@
+(function(win, doc) {
+  'use strict';
   /*
   No HTML:
   - Crie um formulário com um input de texto que receberá um CEP e um botão
@@ -25,3 +27,147 @@
   - Utilize a lib DOM criada anteriormente para facilitar a manipulação e
   adicionar as informações em tela.
   */
+
+  function DOM (elements) {
+    this.element = doc.querySelectorAll(elements);
+  }
+
+  DOM.is = function (obj) {
+    return Object.prototype.toString.call(obj);
+  }
+
+  DOM.isArray = function (obj) {
+    return this.is(obj) === '[object Array]';
+  }
+
+  DOM.isObject = function (obj) {
+    return this.is(obj) === '[object Object]';
+  }
+
+  DOM.isFunction = function (obj) {
+    return this.is(obj) === '[object Function]';
+  }
+
+  DOM.isNumber = function (obj) {
+    return this.is(obj) === '[object Number]';
+  }
+
+  DOM.isString = function (obj) {
+    return this.is(obj) === '[object String]';
+  }
+
+  DOM.isBoolean = function (obj) {
+    return this.is(obj) === '[object Boolean]';
+  }
+
+  DOM.isNull = function (obj) {
+    return this.is(obj) === '[object Null]' || this.is(obj) === '[object Undefined]';
+  }
+
+  DOM.prototype.on = function on (event, callback) {
+    Array.prototype.forEach.call(this.element, function (element) {
+      element.addEventListener(event, callback, false);
+    });
+  }
+
+  DOM.prototype.off = function off (event, callback) {
+    Array.prototype.forEach.call(this.element, function (element) {
+      element.removeEventListener(event, callback, false);
+    });
+  }
+
+  DOM.prototype.get = function get (index) {
+    return this.element[index];
+  }
+
+  DOM.prototype.forEach = function forEach () {
+    Array.protype.forEach.apply(this.element, arguments);
+  }
+
+  DOM.prototype.map = function map () {
+    Array.protype.map.apply(this.element, arguments);
+  }
+
+  DOM.prototype.filter = function filter () {
+    Array.protype.filter.apply(this.element, arguments);
+  }
+
+  DOM.prototype.reduce = function reduce () {
+    Array.protype.reduce.apply(this.element, arguments);
+  }
+
+  DOM.prototype.reduceRight = function reduceRight () {
+    Array.protype.reduceRight.apply(this.element, arguments);
+  }
+
+  DOM.prototype.every = function every () {
+    Array.protype.every.apply(this.element, arguments);
+  }
+
+  DOM.prototype.some = function some () {
+    Array.protype.some.apply(this.element, arguments);
+  }
+
+  var cepInput = new DOM('[data-js="cep-input"]');
+  var warning = new DOM('[data-js="warning"]');
+  var submitButton = new DOM('[data-js="submit-button"]');
+  var logradouroOutput = new DOM('[data-js="logradouro"]');
+  var bairroOutput = new DOM('[data-js="bairro"]');
+  var estadoOutput = new DOM('[data-js="estado"]');
+  var cidadeOutput = new DOM('[data-js="cidade"]');
+  var cepOutput = new DOM('[data-js="cep"]');
+  var cepRegex = /\d+/g;
+  var cleanCep = '';
+
+  function isRequestOk (request) {
+    return request.readyState === 4 && request.status === 200;
+  }
+
+  function changeWarning (message) {
+    warning.get(0).textContent = message;
+  }
+
+  function makeRequest (method, url, callback) {
+    var ajax = new XMLHttpRequest();
+    ajax.open(method, url);
+    ajax.send();
+    ajax.addEventListener('readystatechange', callback);
+  }
+
+  function fillInputs (jsonFile) {
+    logradouroOutput.get(0).value = jsonFile.logradouro;
+    bairroOutput.get(0).value = jsonFile.bairro;
+    estadoOutput.get(0).value = jsonFile.uf;
+    cidadeOutput.get(0).value = jsonFile.localidade;
+    cepOutput.get(0).value = jsonFile.cep;
+  }
+
+  function usingRequest () {
+    if ( isRequestOk(this) ) {
+      try {
+       var data = JSON.parse(this.responseText);
+       fillInputs(data);
+       changeWarning('Endereço referente ao CEP ' + cleanCep);
+      }
+      catch(e) {
+        changeWarning('Não encontramos o endereço para o CEP ' + cleanCep);
+      }
+    }
+  }
+
+  function submitAction (event) {
+    event.preventDefault();
+    cleanCep = cepInput.get(0).value.match(cepRegex).join('');
+    if (cleanCep.length === 8) {
+      changeWarning('Buscando informações para o CEP ' + cleanCep );
+      makeRequest('GET', 'http://cep.correiocontrol.com.br/' + cleanCep + '.json', usingRequest);
+    } else {
+      changeWarning('CEP inválido, submeta um CEP válido');
+    }
+  }
+
+
+  submitButton.on('click', submitAction);
+
+
+})(window, document);
