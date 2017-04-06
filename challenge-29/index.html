@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Challenge 28</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      font-size: 10px;
+    }
+    body {
+      font-family: helvetica;
+      font-size: 2rem;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 900px;
+      padding: 5rem;
+    }
+    hr {
+      margin-bottom: 5rem;
+      margin-top: 5rem;
+    }
+    img {
+      max-width: 100%;
+    }
+    .header {
+      margin-bottom: 5rem;
+    }
+    .header__title {
+      font-weight: normal;
+      font-size: 8rem;
+      margin-bottom: 1rem;
+    }
+    .header__text {
+      font-weight: normal;
+      font-size: 2rem;
+    }
+    .form__group {
+      margin-bottom: 2rem;
+    }
+    .form__label {
+      cursor: pointer;
+      display: block;
+      font-size: 2rem;
+      margin-bottom: .5rem;
+    }
+    .form__input {
+      font-size: 2rem;
+      padding: 2rem;
+      width: 100%;
+    }
+    .form__button {
+      cursor: pointer;
+      font-size: 2rem;
+      padding: 2rem;
+    }
+    .table {
+      text-align: left;
+      width: 100%;
+    }
+    .table th,
+    .table td {
+      padding: 2rem;
+    }
+    .table td:not(:last-child) {
+      border-bottom: solid 1px #eee;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <h1 class="header__title" data-app="title">App</h1>
+    <p class="header__text"><span data-app="phone">Telefone</span></p>
+  </header>
+
+  <form action="" class="form" data-app="form">
+    <div class="form__group">
+      <label class="form__label" for="1">Imagem do carro</label>
+      <input class="form__input" id="1" name="image" type="text" placeholder="Insira uma URL">
+    </div>
+    <div class="form__group">
+      <label class="form__label" for="2">Marca / Modelo</label>
+      <input class="form__input" id="2" name="model" type="text" placeholder="Insira a marca e modelo">
+    </div>
+    <div class="form__group">
+      <label class="form__label" for="3">Ano</label>
+      <input class="form__input" id="3" name="year" type="number" placeholder="Insira o ano">
+    </div>
+    <div class="form__group">
+      <label class="form__label" for="4">Placa</label>
+      <input class="form__input" id="4" name="plate" type="text" placeholder="Insira a placa">
+    </div>
+    <div class="form__group">
+      <label class="form__label" for="5">Cor</label>
+      <input class="form__input" id="5" name="color" type="text" placeholder="Insira a cor">
+    </div>
+    <div class="form__group">
+      <button class="form__button" data-app="button">Cadastrar</button>
+    </div>
+  </form>
+
+  <hr>
+
+  <table class="table" data-app="table-data">
+    <thead>
+      <tr>
+        <th width="150">Imagem</th>
+        <th>Marca / Modelo</th>
+        <th>Ano</th>
+        <th>Placa</th>
+        <th>Cor</th>
+      </tr>
+    </thead>
+    <tbody class="table-data">
+    </tbody>
+  </table>
+
+  <script src="dom.js"></script>
+  <script src="challenge-29.js"></script>
+</body>
+</html>
