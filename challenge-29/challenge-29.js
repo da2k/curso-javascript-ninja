@@ -1,4 +1,4 @@
-(function() {
+(function ($, doc) {
   'use strict';
 
   /*
@@ -36,4 +36,59 @@
   que será nomeado de "app".
   */
 
-})();
+  function app () {
+    return {
+      init: function init () {
+        this.initEvents();
+        this.makeRequest('GET', '/company.json', this.handleAjax);
+      },
+
+      initEvents: function initEvents () {
+        $('[data-js="submit-form"]').on('click', this.handleSubmit);
+      },
+    
+      makeRequest: function makeRequest (method, url, callback) {
+        var ajax = new XMLHttpRequest();
+        ajax.open(method, url);
+        ajax.send();
+        ajax.addEventListener('readystatechange', callback);
+      },
+    
+      handleAjax: function handleAjax () {
+      if( app().isRequestOk(this) ) {
+        try{
+            var data = JSON.parse(this.responseText);
+            $('[data-js="interprise-name"]').get().textContent = data.name;
+            $('[data-js="interprise-number"]').get().textContent = data.phone;
+          }catch(e){
+            console.log(e);
+          }
+        }
+      },
+
+      appendTdOnTr: function appendTdOnTr (tr, text) {
+        var newTd = doc.createElement('td');
+        var textTd = doc.createTextNode(text);
+        newTd.appendChild(textTd);
+        tr.appendChild(newTd);
+      },
+
+      handleSubmit: function handleSubmit (event) {
+        event.preventDefault();
+        var newLine = doc.createElement('tr');
+        app().appendTdOnTr(newLine, $('[data-js="input-image"]').get().value);
+        app().appendTdOnTr(newLine, $('[data-js="input-brand"]').get().value);
+        app().appendTdOnTr(newLine, $('[data-js="input-year"]').get().value);
+        app().appendTdOnTr(newLine, $('[data-js="input-color"]').get().value);
+        $('[data-js="car-table"]').get().appendChild(newLine);
+      },
+
+      isRequestOk: function isRequestOk (request) {
+        return request.readyState === 4 && request.status === 200;
+      }
+    }
+  }
+
+  app().init();
+
+})(window.DOM, document);
