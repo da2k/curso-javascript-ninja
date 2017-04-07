@@ -1,4 +1,4 @@
-(function (d, w) {
+(function ($) {
 
   'use strict';
 
@@ -38,23 +38,10 @@
   */
 
 
-  function app() {
+  var app = (function appController() {
 
     var $form = $('[data-app="form"]');
-    var $inputImage = $('input[name="image"]');
-    var $inputModel = $('input[name="model"]');
-    var $inputAno = $('input[name="year"]');
-    var $inputPlate = $('input[name="plate"]');
-    var $inputColor = $('input[name="color"]');
     var $table = $('[data-app="table-data"]');
-    var $tableRow = $('[data-app="table-row"]');
-    var $tableImagem = $('[data-app="imagem"]');
-    var $tableModelo = $('[data-app="modelo"]');
-    var $tableAno = $('[data-app="ano"]');
-    var $tablePlaca = $('[data-app="placa"]');
-    var $tableCor = $('[data-app="cor"]');
-    var $companyTitle = $('[data-app="title"]');
-    var $companyPhone = $('[data-app="phone"]');
     var ajax = new XMLHttpRequest();
 
     function parseData() {
@@ -73,26 +60,29 @@
       return ajax.readyState === 4 && ajax.status === 200;
     }
 
-    function createAppHeader() {
+    function createHeader() {
+      var $companyTitle = $('[data-app="title"]');
+      var $companyPhone = $('[data-app="phone"]');
       var data = parseData();
 
       if (!data) {
-        getMessages('error');
+        return;
       }
 
-      $companyTitle.get()[0].textContent = data.name;
-      $companyPhone.get()[0].textContent = data.phone;
+      $companyTitle.get().textContent = data.name;
+      $companyPhone.get().textContent = data.phone;
     }
 
     function handleReadyStateChange() {
       if (isRequestAmazing()) {
-        createAppHeader();
+        createHeader();
       }
     }
 
     function initAjax() {
       var url = 'company.json';
-      ajax.open('GET', url);
+
+      ajax.open('GET', url, true);
       ajax.send();
       ajax.addEventListener('readystatechange', handleReadyStateChange);
     }
@@ -101,22 +91,25 @@
       var $fragment = document.createDocumentFragment();
       var $tr = document.createElement('tr');
       var $tdImage = document.createElement('td');
-      var $tdModel = document.createElement('td');
+      var $tdBrand = document.createElement('td');
       var $tdYear = document.createElement('td');
       var $tdPlate = document.createElement('td');
       var $tdColor = document.createElement('td');
       var $image = document.createElement('img');
+      var $inputImage = $('[data-app="car-image"]');
+      var $inputModel = $('[data-app="car-model"]');
+      var $inputAno = $('[data-app="car-year"]');
+      var $inputPlate = $('[data-app="car-plate"]');
+      var $inputColor = $('[data-app="car-color"]');
 
-      $image.setAttribute('src',  $inputImage.get()[0].value);
+      $image.setAttribute('src', $inputImage.get().value);
       $tdImage.appendChild($image);
-
-      $tdModel.textContent = $inputModel.get()[0].value;
-      $tdYear.textContent = $inputAno.get()[0].value;
-      $tdPlate.textContent = $inputPlate.get()[0].value;
-      $tdColor.textContent = $inputColor.get()[0].value;
-
+      $tdBrand.textContent = $inputModel.get().value;
+      $tdYear.textContent = $inputAno.get().value;
+      $tdPlate.textContent = $inputPlate.get().value;
+      $tdColor.textContent = $inputColor.get().value;
       $tr.appendChild($tdImage);
-      $tr.appendChild($tdModel);
+      $tr.appendChild($tdBrand);
       $tr.appendChild($tdYear);
       $tr.appendChild($tdPlate);
       $tr.appendChild($tdColor);
@@ -126,21 +119,21 @@
 
     function handleSubmitForm(ev) {
       ev.preventDefault();
-      $table.get()[0].appendChild(createCar());
+      $table.get().appendChild(createCar());
     }
 
     $form.on('submit', handleSubmitForm);
 
-    function init() {
-      initAjax();
-    }
-
     return {
-      init: init
+      companyInfo: function companyInfo() {
+        initAjax();
+      },
+      init: function init() {
+        this.companyInfo();
+      }
     };
-  }
+  })();
 
-  w.app = app();
-  w.app.init();
+  app.init();
 
-})(document, window);
+})(window.DOM);

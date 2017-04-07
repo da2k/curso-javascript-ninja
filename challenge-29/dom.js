@@ -3,6 +3,9 @@
   'use strict';
 
   function DOM(elements) {
+    if (!(this instanceof DOM)) {
+      return new DOM(elements);
+    }
     this.element = d.querySelectorAll(elements);
   }
 
@@ -74,14 +77,13 @@
     });
   }
 
-  DOM.prototype.get = function get() {
-    return this.element;
+  DOM.prototype.get = function get(index) {
+    if (!index) {
+      return this.element[0];
+    }
+    return this.element[index];
   }
 
-  function $(element) {
-    return new DOM(element);
-  }
-
-  w.$ = $;
+  w.DOM = DOM;
 
 })(document, window);
