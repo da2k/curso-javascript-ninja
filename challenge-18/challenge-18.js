@@ -18,11 +18,7 @@
 	*/
 	console.log( 'Limpando CPFs:' );
 	function cleanCPF(cpf){
-		var newCPF = '';
-		cpf.replace(/\d+/g, function(a){
-			newCPF += a;		
-		});
-		return newCPF;
+		return cpf.replace(/\D/g, '');
 	};
 	console.log(cleanCPF("049-214 3421-1"));
 	console.log(cleanCPF("210.458.522-05"));
@@ -35,12 +31,7 @@
 	*/
 	console.log( '\nFormatando CPFs corretamente:' );
 	function correctCPF(cpf){
-		return cpf.replace(/(\d{2,3})/g, function(regex, grupo, index){
-			if(index === 9){
-				return '-' + grupo;
-			}
-			return index === 6 ? grupo : grupo + '.';
-		});
+		return cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, '$1.$2.$3-$4');
 	};
 	console.log(correctCPF("04921434211"));
 	console.log(correctCPF("21045852205"));
