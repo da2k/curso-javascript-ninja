@@ -8,7 +8,7 @@ equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
 var isTruthy = function(x){
-	if(x === true){
+	if(x){
 	  return true;
    }else{
 	  return false;
@@ -30,13 +30,13 @@ isTruthy('a')
 isTruthy({})
 isTruthy([])
 isTruthy(function(){})
-isTruthy()
-isTruthy()
-isTruthy()
-isTruthy()
-isTruthy()
-isTruthy()
-isTruthy()
+isTruthy(1 + 1)
+isTruthy(!0)
+isTruthy(!undefined)
+isTruthy(!false)
+isTruthy(true)
+isTruthy(1*1)
+isTruthy(1/1)
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
@@ -108,23 +108,35 @@ poucos.
 - O método deve retornar a frase: "Já temos [X] pessoas no carro!"
 - Se o carro já estiver cheio, com todos os assentos já preenchidos, o método
 deve retornar a frase: "O carro já está lotado!"
+
+
+
 - Se ainda houverem lugares no carro, mas a quantidade de pessoas passadas por
 parâmetro for ultrapassar o limite de assentos do carro, então você deve
 mostrar quantos assentos ainda podem ser ocupados, com a frase:
 "Só cabem mais [QUANTIDADE_DE_PESSOAS_QUE_CABEM] pessoas!"
+
+
+
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
 carro.addPessoas = function(qtd){
-	if(this.quantidadePessoas === 5){
+
+	if(this.quantidadePessoas >= this.assentos){
 		return "O carro já está lotado!";
 	}
 
-	if(qtd > this.quantidadePessoas){
-		return "Só cabem mais " + this.quantidadePessoas - qtd + " pessoas!";
+	if(this.quantidadePessoas < this.assentos && (qtd + this.quantidadePessoas) > this.assentos){
+
+		if(this.assentos - this.quantidadePessoas === 1){
+			return "Só cabe mais uma pessoa!";
+		}
+		return "Só cabem mais " + (this.assentos - this.quantidadePessoas) + " pessoas!";
 	}
 
-	return "Já temos " + qtd + " pessoas no carro!"
+	this.quantidadePessoas += qtd;
+	return "Já temos " + (+this.quantidadePessoas) + " pessoas no carro!"
 }
 
 /*
@@ -135,22 +147,23 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-?
+carro.obterCor() // "Prata"
 
 // Mude a cor do carro para vermelho.
-?
+carro.mudarCor('Vermelho')
 
 // E agora, qual a cor do carro?
-?
+carro.obterCor() // "Vermelho"
+
 
 // Mude a cor do carro para verde musgo.
-?
+carro.mudarCor('Verde Musgo')
 
 // E agora, qual a cor do carro?
-?
+carro.obterCor() // "Verde Musgo"
 
 // Qual a marca e modelo do carro?
-?
+carro.obterMarcaModelo() // "Esse carro é um Toyota ABC."
 
 // Adicione 2 pessoas no carro.
 ?
@@ -170,31 +183,3 @@ Qual a cor atual do carro?
 // Quantas pessoas temos no carro?
 ?
 ```
-
-
-
-
-carro.ano
-
-2017
-carro.assentos
-
-5
-carro.cor
-
-"Prata"
-carro.marca
-
-"Toyota"
-carro.modelo
-
-"ABC"
-carro.placa
-
-"ABC123"
-carro.quantasPortas
-
-4
-carro.quantidadePessoas
-
-5
