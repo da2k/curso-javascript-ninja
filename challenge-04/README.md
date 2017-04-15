@@ -108,19 +108,14 @@ poucos.
 - O método deve retornar a frase: "Já temos [X] pessoas no carro!"
 - Se o carro já estiver cheio, com todos os assentos já preenchidos, o método
 deve retornar a frase: "O carro já está lotado!"
-
-
-
 - Se ainda houverem lugares no carro, mas a quantidade de pessoas passadas por
 parâmetro for ultrapassar o limite de assentos do carro, então você deve
 mostrar quantos assentos ainda podem ser ocupados, com a frase:
 "Só cabem mais [QUANTIDADE_DE_PESSOAS_QUE_CABEM] pessoas!"
-
-
-
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
+
 carro.addPessoas = function(qtd){
 
 	if(this.quantidadePessoas >= this.assentos){
@@ -155,7 +150,6 @@ carro.mudarCor('Vermelho')
 // E agora, qual a cor do carro?
 carro.obterCor() // "Vermelho"
 
-
 // Mude a cor do carro para verde musgo.
 carro.mudarCor('Verde Musgo')
 
@@ -166,20 +160,36 @@ carro.obterCor() // "Verde Musgo"
 carro.obterMarcaModelo() // "Esse carro é um Toyota ABC."
 
 // Adicione 2 pessoas no carro.
-?
+carro.addPessoas(2) // "Já temos 2 pessoas no carro!"
 
 // Adicione mais 4 pessoas no carro.
-?
+carro.addPessoas(4) // "Só cabem mais 3 pessoas!"
 
 // Faça o carro encher.
-?
+carro.addPessoas(3) // "Já temos 5 pessoas no carro!"
 
 // Tire 4 pessoas do carro.
-?
+carro.removerPessoas = function(remove){
+
+	if(remove > this.quantidadePessoas){
+		this.quantidadePessoas = 0;
+		return 'Não há mais ninguém no carro.';
+	}
+
+	this.quantidadePessoas = this.quantidadePessoas - remove;
+
+	if(this.quantidadePessoas === 1){
+		return 'Há ' + this.quantidadePessoas + ' pessoa no carro.';
+	}
+
+	return 'Há ' + this.quantidadePessoas + ' pessoas no carro.';
+}
+
+carro.removerPessoas(4) // "Há 1 pessoa no carro."
 
 // Adicione 10 pessoas no carro.
-?
+carro.addPessoas(10) // "Só cabem mais 4 pessoas!"
 
 // Quantas pessoas temos no carro?
-?
+carro.quantidadePessoas // 1
 ```
