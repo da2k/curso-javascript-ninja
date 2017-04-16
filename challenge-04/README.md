@@ -1,4 +1,4 @@
-# Desafio da semana #4
+ # Desafio da semana #4
 
 ```js
 /*
@@ -10,14 +10,15 @@ para o contrário.
 var isTruthy = function(x){
 	if(x){
 	  return true;
-   }else{
-	  return false;
    }
+
+	 return false;
 }
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 isTruthy(undefined)
 isTruthy(null)
+isTruthy(false)
 isTruthy(0)
 isTruthy('')
 isTruthy(NaN)
