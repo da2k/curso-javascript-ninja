@@ -37,7 +37,7 @@ function showTeamPosition(position) {
   const realPosition = position - 1;
   const selectedTeam = teams[realPosition];
 
-  if (position < || position > teams.length) {
+  if (position < 1 || position > teams.length) {
     return 'Não temos a informação do time que está nessa posição.';
   }
 
@@ -76,25 +76,29 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 function convertToHex(color) {
+  var hexa;
+
   switch (color) {
     case 'red':
-      return 'O hexadecimal para a cor red é #ff0000.';
+      hexa = '#ff0000';
       break;
     case 'blue':
-      return 'O hexadecimal para a cor blue é #0000ff.';
+      hexa = '#0000ff';
       break;
     case 'green':
-      return 'O hexadecimal para a cor green é #00ff00.';
+      hexa = '#00ff00';
       break;
     case 'yellow':
-      return 'O hexadecimal para a cor yellow é #ffff00.';
+      hexa = '#ffff00';
       break;
     case 'black':
-      return 'O hexadecimal para a cor black é #000000.';
+      hexa = '#000000';
       break;
     default:
       return `Não temos o equivalente hexadecimal para ${color}.`;
   }
+
+  return `O hexadecimal para a cor ${color} é ${hexa}.`;
 }
 
 /*
