@@ -37,7 +37,7 @@ function showTeamPosition(position) {
   const realPosition = position - 1;
   const selectedTeam = teams[realPosition];
 
-  if (position > teams.length) {
+  if (position < || position > teams.length) {
     return 'Não temos a informação do time que está nessa posição.';
   }
 
@@ -60,9 +60,7 @@ repetição "while".
 var counter = 20;
 
 while (counter <= 30) {
-  console.log(counter);
-
-  ++counter;
+  console.log(counter++);
 }
 
 /*
