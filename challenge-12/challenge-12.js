@@ -25,7 +25,7 @@
 	*/
 	var arrProps = Object.keys(person);
 
-	console.log(arrProps)
+	console.log(arrProps);
 
 	/*
 	Crie um array vazio chamado `books`.
@@ -49,7 +49,7 @@
 	/*
 	Mostre no console todos os livros.
 	*/
-	console.log( books )
+	console.log( books );
 
 	/*
 	Remova o último livro, e mostre-o no console.
@@ -62,7 +62,7 @@
 	Mostre no console os livros restantes.
 	*/
 	console.log( '\nAgora sobraram somente os livros:');
-	console.log(books)
+	console.log(books);
 
 
 	/*
@@ -76,7 +76,7 @@
 	/*
 	Mostre os livros nesse formato no console:
 	*/
-	console.log(books)
+	console.log(books);
 
 	/*
 	Converta os livros novamente para objeto.
@@ -92,8 +92,10 @@
 	    "[PROPRIEDADE]: [VALOR]"
 	*/
 	
-	for(var i = 0; i < Object.keys(books).length; i++) {
-		console.log(`${books[i].name}: ${books[i].pages}`)
+	for(let i = 0; i < books.length; i++) {
+		for( let prop in books[i] ) {
+			console.log(` ${ prop }: ${ books[i][prop] }`);
+		}
 	}
 
 	/*
