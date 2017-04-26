@@ -1,3 +1,93 @@
+(function() {
+  'use strict';
+
+
+
+
+  function DOM(elements) {
+    this.element = document.querySelectorAll(elements);
+  }
+
+  DOM.prototype.getDOMElements = function getDOMElements(elements) {
+    return document.querySelectorAll(elements);
+  };
+
+  DOM.prototype.on = function on(eventType, callback) {
+    Array.prototype.forEach.call(this.element, function(element) {
+      element.addEventListener(eventType, callback, false);
+    });
+  };
+
+  DOM.prototype.off = function off(eventType, callback) {
+    Array.prototype.forEach.call(this.element, function(element) {
+      element.removeEventListener(eventType, callback, false);
+    });
+  };
+
+  DOM.prototype.get = function get() {
+    return this.element;
+  };
+
+  //challenge 27
+
+  DOM.prototype.forEach = function forEach() {
+    return Array.prototype.forEach.apply(this.element, arguments);
+  };
+
+  DOM.prototype.map = function map() {
+    return Array.prototype.map.apply(this.element, arguments);
+  };
+
+  DOM.prototype.filter = function filter() {
+    return Array.prototype.filter.apply(this.element, arguments);
+  };
+
+  DOM.prototype.reduce = function reduce() {
+    return Array.prototype.reduce.apply(this.element, arguments);
+  };
+
+  DOM.prototype.reduceRight = function reduceRight() {
+    return Array.prototype.reduceRight.apply(this.element, arguments);
+  };
+
+  DOM.prototype.every = function every() {
+    return Array.prototype.every.apply(this.element, arguments);
+  };
+
+  DOM.prototype.some = function some() {
+    return Array.prototype.some.apply(this.element, arguments);
+  };
+
+
+  DOM.prototype.isArray = function isArray(param) {
+    return Object.prototype.toString.call(param) === '[object Array]';
+  };
+
+  DOM.prototype.isObject = function isObject(param) {
+    return Object.prototype.toString.call(param) === '[object Object]';
+  };
+
+  DOM.prototype.isFunction = function isFunction(param) {
+    return Object.prototype.toString.call(param) === '[object Function]';
+  };
+
+  DOM.prototype.isNumber = function isNumber(param) {
+    return Object.prototype.toString.call(param) === '[object Number]';
+  };
+
+  DOM.prototype.isString = function isString(param) {
+    return Object.prototype.toString.call(param) === '[object String]';
+  };
+
+  DOM.prototype.isBoolean = function isBoolean(param) {
+    return Object.prototype.toString.call(param) === '[object Boolean]';
+  };
+
+  DOM.prototype.isNull = function isNull(param) {
+    return Object.prototype.toString.call(param) === '[object Null]' || Object.prototype.toString.call(param) === '[Object Undefined]';
+  };
+
+
   /*
   No HTML:
   - Crie um formulário com um input de texto que receberá um CEP e um botão
@@ -24,4 +114,38 @@
   "Endereço referente ao CEP [CEP]:"
   - Utilize a lib DOM criada anteriormente para facilitar a manipulação e
   adicionar as informações em tela.
+  
+  
+  https://viacep.com.br/ws/[CEP]/json/
+  
   */
+
+
+  /*var ajax = new XMLHttpRequest();
+  ajax.open( 'GET', 'http://cep.correiocontrol.com.br/[CEP].json');
+  ajax.send();*/
+
+  var $formCep = new DOM('[data-js="form-cep"]');
+  var $campoCep = new DOM('[data-js="input-cep"]');
+  var $button = new DOM('[data-js="button"]');
+  
+  
+  
+  $formCep.on('submit', handleSubmitForCEP);
+  var ajax = new XMLHttpRequest();
+
+  function handleSubmitForCEP(event) {
+    event.preventDefault();
+    var url = 'https://viacep.com.br/ws/[CEP]/json/'.replace('[CEP]',$campoCep.get()[0].value);
+    ajax.open('GET', 'https://viacep.com.br/ws/[CEP]/json/');
+    ajax.send();
+    ajax.addEventListener('readyStateChange', handleReadyStateChange);
+  }
+
+  function handleReadyStateChange() {
+    if( ajax.readyState == 4 && ajax.status == 200 ){
+      console.log('Popular formulário', ajax.responseText);
+    }
+    console.log('carregando');
+  }
+})();
