@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lorenzzato Motor</title>
+    <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>
+                <span data-js="company-name"></span>
+            </h1>
+            <p data-js="company-phone"></p>
+        </header>
+        <form action="/" data-js="form-register">
+            <ul>
+                <li>
+                    <label>Imagem do carro: </label>
+                    <input type="url">
+                </li>
+                <li>
+                    <label>Marca / Modelo: </label>
+                    <input type="text">
+                </li>
+                <li>
+                    <label>Ano: </label>
+                    <input type="text">
+                </li>
+                <li>
+                    <label>Placa: </label>
+                    <input type="text">
+                </li>
+                <li>
+                    <label>Cor: </label>
+                    <input type="text">
+                </li>
+                <button class="btn waves-effect waves-light" type="submit" name="action">Cadastrar
+                    <i class="material-icons right">send</i>
+                </button>
+            </ul>
+        </form>
+        <table>
+            <thead>
+            <tr>
+                <th>Imagem do Carro</th>
+                <th>Marca / Modelo</th>
+                <th>Ano</th>
+                <th>Placa</th>
+                <th>Cor</th>              
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td>Alvin</td>
+                <td>Eclair</td>
+                <td>$0.87</td>
+                <td>Alan</td>
+                <td>Jellybean</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="DOM.js"></script>    
+    <script src="challenge-29.js"></script>
+</body>
+</html>
