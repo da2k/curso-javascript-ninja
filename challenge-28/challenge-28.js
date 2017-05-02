@@ -28,38 +28,71 @@
    adicionar as informações em tela.
    */
 
-   var $form = doc.querySelector('[data-js="form-cep"]');
-   var $campoCEP = doc.querySelector('[data-js="campo-CEP"]');
-   var $btnSubmit = doc.querySelector('[data-js="submit"]');
+   function DOM(elements) {
+     this.element = document.querySelectorAll(elements);
+   }
 
-   $form.addEventListener('submit', consultaCEP, false);
+   DOM.prototype.on = function on(eventType, callback) {
+     Array.prototype.forEach.call(this.element, function(element) {
+       element.addEventListener(eventType, callback, false)
+     });
+   };
+   DOM.prototype.off = function off(eventType, callback) {
+     Array.prototype.forEach.call(this.element, function(element) {
+       element.removeEventListener(eventType, callback, false)
+     });
+   };;
+   DOM.prototype.get = function get() {
+     return this.element;
+   };
+
+   /*var $form = doc.querySelector('[data-js="form-cep"]');
+   var $campoCEP = doc.querySelector('[data-js="campo-CEP"]');
+   var $btnSubmit = doc.querySelector('[data-js="submit"]');*/
+   var $form = new DOM('[data-js="form-cep"]');
+   var $campoCEP = new DOM('[data-js="campo-CEP"]');
+   var $btnSubmit = new DOM('[data-js="submit"]');
+
+   var $boxStatus = new DOM('[data-status="status"]');
+
+   var $dataContainer = new DOM('[data-js="logradouro"]');
+   var $dataContainer = new DOM('[data-js="bairro"]');
+   var $dataContainer = new DOM('[data-js="cidade"]');
+   var $dataContainer = new DOM('[data-js="estado"]');
+   var $dataContainer = new DOM('[data-js="cep"]');
+
+   $form.on('submit', consultaCEP);
 
 
    function consultaCEP(e) {
      e.preventDefault();
-     var valorCEP = $campoCEP.value;
-
+     var response = '';
+     var valorCEP = $campoCEP.get()[0].value;
 
 
      var ajax = new XMLHttpRequest();
      console.log(ajax.readyState);
-     ajax.open('GET', 'https://viacep.com.br/ws/'+ valorCEP +'/json/');
+     ajax.open('GET', 'https://viacep.com.br/ws/' + valorCEP + '/json/');
      console.log(ajax.readyState);
 
      ajax.send();
      console.log('Carregando...');
+     $boxStatus.get()[0].textContent = 'Carregando...';
 
      ajax.addEventListener('readystatechange', function() {
        if (isRequestOk()) {
-         //var data = JSON.parse(ajax.responseText);
-         console.log('requisição:\n ', ajax.responseText);
-         /*try{
-             response = JSON.parse(ajax.responseText);
+         //console.log('requisição:\n ', ajax.responseText);
+         //console.log('requisição:\n ', data.logradouro);
+
+         try {
+           var data = JSON.parse(ajax.responseText);
+           response = data;
          }
-         catch(e){
-             response = ajax.responseText;
+         catch (e) {
+           console.log('erroor');
+           //response = ajax.responseText;
          }
-         console.log(response);*/
+         console.log(response);
        }
 
 
