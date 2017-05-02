@@ -68,39 +68,43 @@
      e.preventDefault();
      var response = '';
      var valorCEP = $campoCEP.get()[0].value;
+     //https://regex101.com/r/4pNxbj/1
+     valorCEP = valorCEP.replace(/[\s\D]/g,'');
 
 
      var ajax = new XMLHttpRequest();
      console.log(ajax.readyState);
+
      ajax.open('GET', 'https://viacep.com.br/ws/' + valorCEP + '/json/');
      console.log(ajax.readyState);
+     if (valorCEP.length == 8) {
+       ajax.send();
+       console.log('Carregando...');
+       $boxStatus.get()[0].textContent = 'Buscando informações para o CEP ' + valorCEP + ' ...';
 
-     ajax.send();
-     console.log('Carregando...');
-     $boxStatus.get()[0].textContent = 'Buscando informações para o CEP '+ valorCEP +' ...';
+       ajax.addEventListener('readystatechange', function() {
+         if (isRequestOk()) {
+           //console.log('requisição:\n ', ajax.responseText);
+           //console.log('requisição:\n ', data.logradouro);
 
-     ajax.addEventListener('readystatechange', function() {
-       if (isRequestOk()) {
-         //console.log('requisição:\n ', ajax.responseText);
-         //console.log('requisição:\n ', data.logradouro);
-
-         try {
-          $boxStatus.get()[0].textContent = 'Informações sobre o CEP: '+ valorCEP;
-           var data = JSON.parse(ajax.responseText);
-           response = data;
+           try {
+             $boxStatus.get()[0].textContent = 'Informações sobre o CEP: ' + valorCEP;
+             var data = JSON.parse(ajax.responseText);
+             response = data;
+           }
+           catch (e) {
+             console.log('erroor');
+             //response = ajax.responseText;
+           }
+           console.log(response);
          }
-         catch (e) {
-           console.log('erroor');
-           //response = ajax.responseText;
-         }
-         console.log(response);
-       }
 
 
 
-       console.log('Terminou requisição.', ajax.readyState, ajax.status)
-     }, false);
-
+         console.log('Terminou requisição.', ajax.readyState, ajax.status)
+       }, false);
+     }
+    $boxStatus.get()[0].textContent = 'CEP incorreto ou incompleto, verifique. ';  
      function isRequestOk() {
        return ajax.readyState === 4 && ajax.status === 200;
      }
