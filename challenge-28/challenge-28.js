@@ -55,11 +55,11 @@
 
    var $boxStatus = new DOM('[data-status="status"]');
 
-   var $dataContainer = new DOM('[data-js="logradouro"]');
-   var $dataContainer = new DOM('[data-js="bairro"]');
-   var $dataContainer = new DOM('[data-js="cidade"]');
-   var $dataContainer = new DOM('[data-js="estado"]');
-   var $dataContainer = new DOM('[data-js="cep"]');
+   var $dataContainerLogradouro = new DOM('[data-js="logradouro"]');
+   var $dataContainerBairro = new DOM('[data-js="bairro"]');
+   var $dataContainerCidade = new DOM('[data-js="cidade"]');
+   var $dataContainerEstado = new DOM('[data-js="estado"]');
+   var $dataContainerCep = new DOM('[data-js="cep"]');
 
    $form.on('submit', consultaCEP);
 
@@ -69,7 +69,7 @@
      var response = '';
      var valorCEP = $campoCEP.get()[0].value;
      //https://regex101.com/r/4pNxbj/1
-     valorCEP = valorCEP.replace(/[\s\D]/g,'');
+     valorCEP = valorCEP.replace(/[\s\D]/g, '');
 
 
      var ajax = new XMLHttpRequest();
@@ -77,7 +77,10 @@
 
      ajax.open('GET', 'https://viacep.com.br/ws/' + valorCEP + '/json/');
      console.log(ajax.readyState);
-     if (valorCEP.length == 8) {
+     if (valorCEP == 0 || valorCEP == '' || valorCEP == undefined || valorCEP == null ){
+       $boxStatus.get()[0].textContent = 'Preencha o CEP';
+     }
+     else if (valorCEP.length == 8) {
        ajax.send();
        console.log('Carregando...');
        $boxStatus.get()[0].textContent = 'Buscando informações para o CEP ' + valorCEP + ' ...';
@@ -88,9 +91,14 @@
            //console.log('requisição:\n ', data.logradouro);
 
            try {
-             $boxStatus.get()[0].textContent = 'Informações sobre o CEP: ' + valorCEP;
              var data = JSON.parse(ajax.responseText);
              response = data;
+             $boxStatus.get()[0].textContent = 'Informações sobre o CEP: ' + data.cep;
+             $dataContainerLogradouro.get()[0].textContent = data.logradouro;
+             $dataContainerBairro.get()[0].textContent = data.bairro;
+             $dataContainerCidade.get()[0].textContent = data.localidade;
+             $dataContainerEstado.get()[0].textContent = data.unidade;
+             $dataContainerCep.get()[0].textContent = data.cep;
            }
            catch (e) {
              console.log('erroor');
@@ -104,7 +112,13 @@
          console.log('Terminou requisição.', ajax.readyState, ajax.status)
        }, false);
      }
-    $boxStatus.get()[0].textContent = 'CEP incorreto ou incompleto, verifique. ';  
+     $boxStatus.get()[0].textContent = 'Não encontramos o endereço para o CEP: ' + valorCEP;
+     $dataContainerLogradouro.get()[0].textContent = '';
+     $dataContainerBairro.get()[0].textContent = '';
+     $dataContainerCidade.get()[0].textContent = '';
+     $dataContainerEstado.get()[0].textContent = '';
+     $dataContainerCep.get()[0].textContent ='' ;
+
      function isRequestOk() {
        return ajax.readyState === 4 && ajax.status === 200;
      }
