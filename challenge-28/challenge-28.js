@@ -77,7 +77,7 @@
 
      ajax.send();
      console.log('Carregando...');
-     $boxStatus.get()[0].textContent = 'Carregando...';
+     $boxStatus.get()[0].textContent = 'Buscando informações para o CEP '+ valorCEP +' ...';
 
      ajax.addEventListener('readystatechange', function() {
        if (isRequestOk()) {
@@ -85,6 +85,7 @@
          //console.log('requisição:\n ', data.logradouro);
 
          try {
+          $boxStatus.get()[0].textContent = 'Informações sobre o CEP: '+ valorCEP;
            var data = JSON.parse(ajax.responseText);
            response = data;
          }
