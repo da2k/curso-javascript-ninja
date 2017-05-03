@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <title>Cronômetro Javascript Ninja</title>
+  <style>
+    body{
+      font-family: sans-serif;
+      text-align: center;
+      transition: all 1s ease-in-out;
+    }
+
+    h1{
+      text-transform: uppercase;
+    }
+
+    input{
+      padding: .5em 0;
+      font-size: 4em;
+      text-align: center;
+      border:  none;
+    }
+
+    button{
+      width: 100px;
+      height: 50px;
+      color: #fff;
+      font-size: 1em;
+      font-weight: bold;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: background .3s ease-in-out;
+    }
+
+    .start{ background-color: #2ECC71; }
+    .start:hover{ background-color: #27AE60; }
+
+    .stop{ background-color: #E74C3C; }
+    .stop:hover{ background-color: #C0392B; }
+
+    .reset{ background-color: #3498DB; }
+    .reset:hover{ background-color: #2980B9; }
+
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Cronômetro</h1>
+  </header>
+
+  <main>
+    <section>
+      <p>Cronômetro feito para o curso JS Ninja do Fernando Daciuk</p>
+
+      <input type="text" data-js="stopWatch" name="stopWatch" value="0" size="1">
+
+      <div data-buttons="buttons">
+        <button data-js="start" class="start">Start</button>
+        <button data-js="stop" class="stop">Stop</button>
+        <button data-js="reset" class="reset">Reset</button>
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="challenge-21.js"></script>
+</body>
+</html>
