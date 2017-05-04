@@ -52,7 +52,7 @@ function foo(a, b, c) {
 foo(2, 5);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-// Preencha todos os valores corretamente
+// Preencha todos os valores corretamente!
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 foo(2, 5, 8);
@@ -69,14 +69,31 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
+
+/* Função alternativa
 function bar(x, y, z) {
   if (x && !y && !z) {
     return x;
   } else if (x && y && !z) {
     return x + y;
   } else if (x && y && z) {
-    return (x * y) / z;
+    return (x + y) / z;
   } else if (!x && !y && !z) {
+    return false;
+  } else {
+    return null;
+  }
+}
+*/
+
+function bar (x, y, z) {
+  if (x !== undefined && y === undefined && z === undefined) {
+    return x;
+  } else if (x !== undefined && y !== undefined && z === undefined) {
+    return x + y;
+  } else if (x !== undefined && y !== undefined && z !== undefined) {
+    return (x + y) / z;
+  } else if (x === undefined && y === undefined && z === undefined) {
     return false;
   } else {
     return null;
