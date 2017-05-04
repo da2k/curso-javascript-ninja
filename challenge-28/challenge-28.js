@@ -73,10 +73,11 @@
 
 
      var ajax = new XMLHttpRequest();
-     console.log(ajax.readyState);
+     //console.log(ajax.readyState);
 
      ajax.open('GET', 'https://viacep.com.br/ws/' + valorCEP + '/json/');
-     console.log(ajax.readyState);
+     //console.log(ajax.readyState);
+     
      if (valorCEP == 0 || valorCEP == '' || valorCEP == undefined || valorCEP == null ){
        $boxStatus.get()[0].textContent = 'Preencha o CEP';
      }
@@ -93,7 +94,7 @@
            try {
              var data = JSON.parse(ajax.responseText);
              response = data;
-             $boxStatus.get()[0].textContent = 'Informações sobre o CEP: ' + data.cep;
+             $boxStatus.get()[0].textContent = 'Endereço referente ao CEP: ' + data.cep;
              $dataContainerLogradouro.get()[0].textContent = data.logradouro;
              $dataContainerBairro.get()[0].textContent = data.bairro;
              $dataContainerCidade.get()[0].textContent = data.localidade;
@@ -112,7 +113,12 @@
          console.log('Terminou requisição.', ajax.readyState, ajax.status)
        }, false);
      }
-     $boxStatus.get()[0].textContent = 'Não encontramos o endereço para o CEP: ' + valorCEP;
+     else if(valorCEP.length <= 7){
+      $boxStatus.get()[0].textContent = 'CEP inválido: ' + valorCEP;
+     }
+     else{
+      $boxStatus.get()[0].textContent = 'Não encontramos o endereço para o CEP: ' + valorCEP;
+     }
      $dataContainerLogradouro.get()[0].textContent = '';
      $dataContainerBairro.get()[0].textContent = '';
      $dataContainerCidade.get()[0].textContent = '';
