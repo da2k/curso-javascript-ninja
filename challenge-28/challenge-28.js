@@ -125,7 +125,13 @@
          function replaceCEP(message) {
              return message.replace('[CEP]', clearCEP());
          }
+         
+         return {
+             getMessage: getMessage,
+             replaceCEP: replaceCEP
+         };
      }
+     windows.app = app();
 
      app();
 
