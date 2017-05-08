@@ -13,6 +13,7 @@
     var response = '';
 
     ajax.addEventListener('readystatechange', function () {
+        
         if (isRequestOk()) {
             //var data = JSON.parse(ajax.responseText);
             //console.log('requisição:\n ', data.message);
@@ -24,8 +25,6 @@
             }
             console.log(response);
         }
-
-
 
         console.log('Terminou requisição.', ajax.readyState, ajax.status)
     }, false);

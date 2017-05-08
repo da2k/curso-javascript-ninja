@@ -131,7 +131,7 @@
              replaceCEP: replaceCEP
          };
      }
-     windows.app = app();
+     window.app = app();
 
      app();
 
