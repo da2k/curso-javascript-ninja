@@ -3,6 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Challenge 28</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #F4F6FB;
+            padding: 50px;
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .thead{
+            font-weight: 700;
+            background-color: #323232;
+            color: #d8d8d8;
+        }
+        </style>
 </head>
 <body>
     <h1>Pesquise o CEP:</h1>
@@ -10,9 +28,9 @@
         <input data-js="campo-CEP" type="text" name="CEP"/>
         <input data-js="submit" type="submit" value="Submit"/>
     </form>
-    <div data-status="status"></div>
+    <div><p data-status="status"></p></div>
     <table width="100%" cellpadding="10" border="1" style="border-collapse: collapse;">
-        <tr>
+        <tr class="thead">
             <td>Logradouro</td>
             <td>Bairro</td>
             <td>Cidade</td>
