@@ -1,8 +1,8 @@
-(function (win, document){
+(function (win, doc){
     'use strict';
     
     function DOM(elements) {
-        this.element = document.querySelectorAll(elements);
+        this.element = doc.querySelectorAll(elements);
     }
 
     DOM.prototype.on = function on(eventType, callback) {
