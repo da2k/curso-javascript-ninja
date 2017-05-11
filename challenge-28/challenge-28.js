@@ -68,16 +68,34 @@
 
    function handleReadyStateChange() {
     if (isRequestOk()) {
-     getMessage('ok');
-     fillCEPFields();
-    }
-    else {
-     getMessage('error');
-    }
+      getMessage('ok');
+      fillCEPFields();
+      console.log('no if');
+     }
+     else if( isRequestOkSucess() ){
+      getMessage('ok');
+      fillCEPFields();
+      console.log('no else if sucesso');
+     }
+     else if( isRequestNightMare() ){
+      getMessage('error');
+      console.log('no else if erro');
+     }
+     else {
+      getMessage('error');
+      console.log('no else');
+     }
    }
 
    function isRequestOk() {
     return ajax.readyState === 4 && ajax.status === 200;
+   }
+   
+   function isRequestOkSucess() {
+    return ajax.readyState>= 200 && ajax.status <= 300;
+   }
+   function isRequestNightMare() {
+    return ajax.status >=400;
    }
 
    function fillCEPFields() {
@@ -118,7 +136,7 @@
    function getMessage(type) {
     var messages = {
      loading: replaceCEP('Buscando informações para o CEP [CEP]...'),
-     ok: replaceCEP('Endereço referente ao CEP [CEP]: '),
+     ok: replaceCEP('Endereço referente ao CEP [CEP]. '),
      error: replaceCEP('Não encontramos o endereço para o CEP [CEP]. ')
     };
 
