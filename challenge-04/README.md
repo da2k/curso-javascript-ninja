@@ -111,20 +111,22 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-carro.adicionaPessoas = function(num) {
-  var lugares = carro.assentos - carro.quantidadePessoas;
-  var pessoas = lugares === 1 ? 'pessoa' : 'pessoas';
+carro.adicionaPessoas = function(numPessoas) {
+  var totalPessoas = carro.quantidadePessoas + numPessoas;
 
-  if (carro.quantidadePessoas <= carro.assentos && num <= lugares) {
-    carro.quantidadePessoas += num;
-    return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!';
-  }
-  
-  if (lugares > 0) {
-    return 'Só cabem mais ' + lugares + ' ' + pessoas + '!'
+  if (carro.quantidadePessoas === carro.assentos && totalPessoas >= carro.assentos) {
+    return 'O carro já está lotado!';
   }
 
-  return 'O carro já está lotado!';
+  if (totalPessoas > carro.assentos) {
+    var quantasPessoasCabem = carro.assentos - carro.quantidadePessoas;
+    var pluralOuSingular = carro.quantidadePessoas === 1 ? ' pessoa' : 'pessoas';
+    return 'Só cabem mais ' + quantasPessoasCabem + pluralOuSingular + '!'
+  }
+
+  carro.quantidadePessoas += numPessoas;
+
+  return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!';
 };
 
 /*
@@ -162,30 +164,7 @@ carro.adicionaPessoas(4); // 'Só cabem mais 3 pessoas!'
 carro.adicionaPessoas(3); // 'Já temos 5 pessoas no carro!'
 
 // Tire 4 pessoas do carro.
-carro.adicionaPessoas(-4); // 'Já temos 1 pessoas no carro!'
-
-/*
-Método extra (para remover pessoas)
- */
-carro.tiraPessoas = function(num) {
-  var pessoas = num === 1 ? 'pessoa' : 'pessoas';
-
-  if (num > carro.quantidadePessoas) {
-    return 'Só temos ' + carro.quantidadePessoas + ' ' + pessoas + ' no carro!'
-  }
-
-  if (num <= carro.quantidadePessoas) {
-    carro.quantidadePessoas -= num;
-
-    return 'Removemos ' + num + ' ' + pessoas + ' do carro!'
-  }
-};
-
-// Tire 10 pessoas do carro.
-carro.tiraPessoas(10); // 'Só temos 5 pessoas no carro!'
-
-// Tire 4 pessoas do carro.
-carro.tiraPessoas(4); // 'Removemos 4 pessoas do carro!'
+carro.adicionaPessoas(-4); // 'Já temos 1 pessoa no carro!'
 
 // Adicione 10 pessoas no carro.
 carro.adicionaPessoas(10); // 'Só cabem mais 4 pessoas!'
