@@ -151,7 +151,7 @@
 		console.log( 'Existe um objeto { number: 2 } em numberObjects!' );
 	} else {
 		console.log( 'Não existe um objeto { number: 2 } em numberObjects :(' );
-	}	
+	}	 
 
 
 
