@@ -74,11 +74,7 @@ function myBooks(bookName) {
     }
   }
 
-  if (!bookName) {
-    return allBooks;
-  }
-
-  return allBooks[bookName];
+  return !bookName ? allBooks : allBooks[bookName];
 }
 
 /*
@@ -91,21 +87,21 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// console.log('O livro ' + myBooks('Mago - Aprendiz') + ' tem ' + myBooks('Mago - Aprendiz').quantidadePaginas) + ' páginas';
-console.log('O livro Mago - Aprendiz tem ' + myBooks('Mago - Aprendiz').quantidadePaginas + ' páginas');
+var bookName = 'Mago - Aprendiz';
+console.log('O livro ' + bookName + ' tem ' + myBooks(bookName).quantidadePaginas + ' páginas');
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// console.log('O autor do livro ' + myBooks('Segredos do Ninja JavaScript') + ' é ' + myBooks('Segredos do Ninja JavaScript').autor + '.');
-console.log('O autor do livro Segredos do Ninja JavaScript é ' + myBooks('Segredos do Ninja JavaScript').autor + '.');
+var bookName = 'Segredos do Ninja JavaScript';
+console.log('O autor do livro ' + bookName + ' é ' + myBooks(bookName).autor + '.');
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-// console.log('O livro ' + myBooks('Eloquent JavaScript') + ' foi publicado pela editora ' + myBooks('Eloquent JavaScript').editora + '.');
-console.log('O livro Eloquent JavaScript foi publicado pela editora ' + myBooks('Eloquent JavaScript').editora + '.');
+var bookName = 'Eloquent JavaScript';
+console.log('O livro ' + bookName + ' foi publicado pela editora ' + myBooks(bookName).editora + '.');
