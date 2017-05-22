@@ -1,3 +1,5 @@
+ (function(win, doc){
+  "use strict";
   /*
   No HTML:
   - Crie um formulário com um input de texto que receberá um CEP e um botão
@@ -25,3 +27,55 @@
   - Utilize a lib DOM criada anteriormente para facilitar a manipulação e
   adicionar as informações em tela.
   */
+
+  var $cep = doc.querySelector('[data-js="cep"]');
+  var $btnSubmit = doc.querySelector('[data-js="submit"]');
+  var $logradouro = doc.querySelector('[data-js="logradouro"]');
+  var $bairro = doc.querySelector('[data-js="bairro"]');
+  var $estado = doc.querySelector('[data-js="estado"]');
+  var $cidade = doc.querySelector('[data-js="cidade"]');
+  var $cepreturned = doc.querySelector('[data-js="cepreturned"]');
+  var $status = doc.querySelector('[data-js="status"]');
+  var ajax = new XMLHttpRequest();
+
+  function stateChanged(){
+    if(this.readyState !== 4 || this.status !== 200){
+      setStatus('Não encontramos o endereço para o CEP ' + $cep.value + '');
+    }else{
+      setStatus('Endereço referente ao CEP ' + $cep.value + '');
+      setAddress(this.responseText);
+    }
+  }
+
+  function getCep(){
+    var cepClear = clearCep($cep.value);
+    ajaxRequest(cepClear);
+  }
+
+  function ajaxRequest(cep){
+    ajax.open('get', 'https://viacep.com.br/ws/' + cep + '/json/');
+    ajax.send(null);
+    setStatus('Buscando informações para o CEP ' + cep + '...');
+  }
+
+  function setStatus(message){
+    $status.value = message;
+  }
+
+  function clearCep(cep){
+    return cep.replace(/\D+/g, '');
+  }
+
+  function setAddress(address){
+    address = JSON.parse(address);
+    $logradouro.value = address.logradouro;
+    $bairro.value = address.bairro;
+    $estado.value = address.uf;
+    $cidade.value = address.localidade;
+    $cepreturned.value = address.cep;
+  }
+
+  $btnSubmit.addEventListener('click', getCep, false);
+  ajax.addEventListener('readystatechange', stateChanged, false);
+
+})(window, document);
