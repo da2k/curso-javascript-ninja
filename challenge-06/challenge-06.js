@@ -34,7 +34,7 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 function showTeamPosition(position) {
-    if (position > teams.length) {
+    if (position < 1 position > 5) {
         return 'Não temos a informação do time que está nessa posição.';
     }
 
@@ -74,25 +74,28 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 function convertToHex(color) {
+  var hexa;
     switch (color) {
         case 'red':
-            return 'O hexadecimal para a cor ' + color + ' é #c0392b.';
+            hexa = '#c0392b';
             break;
         case 'blue':
-            return 'O hexadecimal para a cor ' + color + ' é #2980b9.';
+            hexa = '#2980b9.';
             break;
         case 'green':
-            return 'O hexadecimal para a cor ' + color + ' é #27ae60.';
+            hexa = '#27ae60.';
             break;
         case 'gray':
-            return 'O hexadecimal para a cor ' + color + ' é #95a5a6.';
+            hexa = '#95a5a6.';
             break;
         case 'orange':
-            return 'O hexadecimal para a cor ' + color + ' é #f39c12.';
+            hexa = '#f39c12.';
             break;
         default:
             return 'Não temos o equivalente hexadecimal para ' + color + '.'
     }
+  
+    return 'O hexadecimal para a cor ' + color + ' é ' + hexa + '.';
 }
 
 /*
