@@ -30,16 +30,16 @@
     this.age       = age;
 
     this.getFullName = function() {
-      return name + ' ' + lastName;
+      return this.name + ' ' + this.lastName;
     };
 
     this.getAge = function() {
-      return age;
+      return this.age;
     };
 
     this.addAge = function() {
       this.age += arguments[0];
-      return this.age;
+      return this;
     };
   }
 
@@ -74,9 +74,9 @@
   */
   console.log( '\nIdade das pessoas:' );
 
-  console.log( diogo.getFullName() + ' tem ' + diogo.getAge() + ' anos.' );
-  console.log( rogerio.getFullName() + ' tem ' + rogerio.getAge() + ' anos.' );
-  console.log( maria.getFullName() + ' tem ' + maria.getAge() + ' anos.' );
+  console.log( diogo.getFullName() + ' tem ' + diogo.getAge( 3 ) + ' anos.' );
+  console.log( rogerio.getFullName() + ' tem ' + rogerio.getAge( -5 ) + ' anos.' );
+  console.log( maria.getFullName() + ' tem ' + maria.getAge( -10 ) + ' anos.' );
   
 
 
@@ -87,8 +87,8 @@
   */
   console.log( '\nNova idade das pessoas:' );
   
-  console.log( diogo.getFullName() + ' agora tem ' + diogo.addAge( 3 ) + ' anos.' );
-  console.log( rogerio.getFullName() + ' agora tem ' + rogerio.addAge( 8 ) + ' anos.' );
-  console.log( maria.getFullName() + ' agora tem ' + maria.addAge( 4 ) + ' anos.' );
+  console.log( diogo.getFullName() + ' agora tem ' + diogo.addAge(8).getAge() + ' anos.' );
+  console.log( rogerio.getFullName() + ' agora tem ' + rogerio.addAge(-8).getAge() + ' anos.' );
+  console.log( maria.getFullName() + ' agora tem ' + maria.addAge(-4).getAge() + ' anos.' );
 
 })();
