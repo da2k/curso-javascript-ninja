@@ -1,0 +1,44 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Challenge 29</title>
+  <style type="text/css">
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <h1 data-js="companyName"></h1>
+  <form>
+    <label>Foto do veículo (URL)</label>
+    <input data-js="ipt" type="text" name="carImage" required><br>
+    <label>Marca / Modelo</label>
+    <input data-js="ipt" type="text" name="marcaModelo" required><br>
+    <label>Ano</label>
+    <input data-js="ipt" type="text" name="ano" required><br>
+    <label>Placa</label>
+    <input data-js="ipt" type="text" name="placa" required><br>
+    <label>Cor</label>
+    <input data-js="ipt" type="text" name="cor" required><br>
+    <button data-js="btnCadastrar" type="submit">Cadastrar</button>
+  </form>
+  <table data-js="carsTable">
+    <thead>Veículos </thead>
+    <tr>
+      <th>Foto</th>
+      <th>Marca/Modelo</th>
+      <th>Ano</th>
+      <th>Placa</th>
+      <th>Cor</th>
+    </tr>
+  </table>
+  <script type="text/javascript" src="dom.js"></script>
+  <script type="text/javascript" src="challenge-29.js"></script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-(function() {
+(function(DOM, doc) {
   'use strict';
 
   /*
@@ -36,4 +36,70 @@
   que será nomeado de "app".
   */
 
-})();
+  function app(){
+
+    var $companyName = new DOM('[data-js="companyName"]').element[0];
+    var $btnCadastrar = new DOM('[data-js="btnCadastrar"]').element[0];
+    var $carsTable = new DOM('[data-js="carsTable"]').element[0];
+    var $inputsForm = new DOM('[data-js="ipt"]');
+    var docFragment = doc.createDocumentFragment();
+    var ajax = new XMLHttpRequest();
+
+    function registerNewCar(event){
+      event.preventDefault();
+      if(allFieldsFilled())
+        newTableLine();
+    }
+
+    function newTableLine(){
+      var row = doc.createElement("TR");
+      var dataCells = $inputsForm.forEach(function fillRowCells(item){
+        createDataCell(row, item)
+      });
+      docFragment.appendChild(row);
+      $carsTable.appendChild(docFragment);
+    }
+
+    function createDataCell(row, item){
+      var data = doc.createElement('TD');
+      if(item.value.match(/png|jpg|gif|svg/gi)){
+          data.appendChild(createIMG(item.value));
+          row.appendChild(data);
+      }else{
+        var text = doc.createTextNode(item.value);
+        data.appendChild(text);
+        row.appendChild(data);
+      }
+    }
+
+    function allFieldsFilled(){
+      return $inputsForm.every(hasValue);
+    }
+
+    function createIMG(src){
+      var img = doc.createElement('IMG');
+      img.setAttribute('src', src);
+      img.style.width = "200px";
+      return img;
+    }
+
+    function hasValue(item){
+      return item.value !== "";
+    }
+
+    function setCompanyNamePhone(){
+      if(ajax.readyState === 4)
+         $companyName.innerText = JSON.parse(ajax.responseText).name + " - " + JSON.parse(ajax.responseText).phone;
+    }
+
+    ajax.open('get', 'http://localhost:8080/company.json');
+    ajax.send();
+    ajax.addEventListener('readystatechange', setCompanyNamePhone);
+    $btnCadastrar.addEventListener('click', registerNewCar);
+
+  }
+
+  window.appRegisterCar = app;
+  app();
+
+})(window.DOM, document);
