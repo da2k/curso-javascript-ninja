@@ -42,11 +42,14 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function resulMult(param1, param2, param3){
-  if(param1 == undefined || param2 == undefined || param3 == undefined){
+  if(param1 === undefined || param2 === undefined || param3 === undefined){
     return "Preencha todos os valores corretamente!"
-  }else{
+  }else{ /* miniha solucao com else */
     return (param1 * param2 * param3) + 2;
   }
+
+  /* mais poderia ser feito dessa forma também, por que o return ja encerra a funcao. */
+  /*return foo */
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
@@ -71,10 +74,10 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function testeArgumentos(param1, param2, param3){
-  if(param1 !== undefined && param2 == undefined && param3 == undefined){
+  if(param1 !== undefined && param2 === undefined && param3 === undefined){
     return "O valor do primeiro argumento é: " + param1;
 
-  }else if(param1 !== undefined && param2 !== undefined && param3 == undefined){
+  }else if(param1 !== undefined && param2 !== undefined && param3 === undefined){
     return "A soma dos dois argumentos são: " + (param1 + param2);
 
   }else if(param1 !== undefined && param2 !== undefined && param3 !== undefined){
@@ -84,7 +87,7 @@ function testeArgumentos(param1, param2, param3){
     return false;
 
   } else {
-    return null
+    return null;
   }
 }
 
