@@ -1,0 +1,74 @@
+body {
+    padding: 0;
+    border: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    background-color: #232323;
+}
+
+.box,
+.container {
+    width: 100%;
+}
+
+.box,
+.container:before,
+.box,
+.container:after {
+    content: " ";
+    display: table;
+}
+
+.box,
+.container:after {
+    clear: both;
+}
+
+.box,
+.container {
+    *zoom: 1;
+}
+
+input[type="text"],
+button {
+    padding: 10px;
+    border: 0;
+    border-radius: 2px;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 2s linear;
+}
+
+input[type="text"] {
+    width: 20%;
+}
+
+input[type="text"].increase {
+    width: 50%;
+}
+
+.box-for-click {
+    float: left;
+    display: table;
+    width: 250px;
+    height: 250px;
+    background-color: #0D47A1;
+}
+
+.box-for-click>span {
+    display: table-cell;
+    width: 250px;
+    height: 250px;
+    background-color: #0D47A1;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.hidden {
+    display: none;
+}
+
+.cat {
+    float: left;
+    max-width: 250px;
+    height: auto;
+}

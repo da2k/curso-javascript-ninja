@@ -1,4 +1,4 @@
-(function() {
+(function(win, doc) {
     'use strict';
     /*
     Essa semana você terá dois desafios:
@@ -16,4 +16,30 @@
     Tente aplicar na prática alguns dos eventos que estão ali e coloque nesse
     desafio os experimentos legais que você conseguir desenvolver :D
     */
-})();
+    
+    // form
+    var $form = doc.querySelector('[data-js="form-teste"]');
+    var $inputNome = doc.querySelector('[data-js="campo-nome"]');
+    
+    //click
+    var $showCat = doc.querySelector('[data-js="show-cat"]');
+    var $cat = doc.querySelector('[data-js="cat"]');
+    
+    $form.addEventListener('submit', function(event){
+        event.preventDefault();
+        alert('Tentou enviar Form.');
+    }, false);
+
+    $inputNome.addEventListener('focus', function() {
+        this.classList.add('increase');
+    }, false);
+
+    $inputNome.addEventListener('blur', function() {
+        this.classList.remove('increase');
+    }, false);
+
+    $showCat.addEventListener('click', function(){
+        $cat.classList.toggle('hidden');
+    }, false);
+    
+})(window, document);
