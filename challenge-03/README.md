@@ -342,73 +342,97 @@ var pessoa = {
     },
     apresentacao: function(){
 
-      if(pessoa.sexo === 'Masculino'){
-        var texto = 'Olá, ' + 'eu sou o ' + pessoa.nome + ' ' + pessoa.sobrenome + ' tenho '
-                  + pessoa.idade + ' anos, ' + pessoa.altura + ' de altura ' +
-                  ', meu peso é ' + pessoa.peso + 'kg ' + 'e só hoje, eu já caminhei '
-                  + pessoa.caminhouQuantosMetros + ' metros !';
+      // Minha proposta
 
-        if(pessoa.idade <= 1) {
-          texto = 'Olá, ' + 'eu sou o ' + pessoa.nome + ' ' + pessoa.sobrenome + ' tenho '
-                      + pessoa.idade + ' ano, ' + pessoa.altura + ' de altura ' +
-                      ', meu peso é ' + pessoa.peso + 'kg ' + 'e só hoje, eu já caminhei '
-                      + pessoa.caminhouQuantosMetros + ' metros !';
-          if(pessoa.caminhouQuantosMetros <= 1){
-            texto = 'Olá, ' + 'eu sou o ' + pessoa.nome + ' ' + pessoa.sobrenome + ' tenho '
-                        + pessoa.idade + ' ano, ' + pessoa.altura + ' de altura ' +
-                        ', meu peso é ' + pessoa.peso + 'kg ' + 'e só hoje, eu já caminhei '
-                        + pessoa.caminhouQuantosMetros + ' metro !';
-            return texto;
-          }
+      // if(pessoa.sexo === 'Masculino'){
+      //   var texto = 'Olá, ' + 'eu sou o ' + pessoa.nome + ' ' + pessoa.sobrenome + ' tenho '
+      //             + pessoa.idade + ' anos, ' + pessoa.altura + ' de altura ' +
+      //             ', meu peso é ' + pessoa.peso + 'kg ' + 'e só hoje, eu já caminhei '
+      //             + pessoa.caminhouQuantosMetros + ' metros !';
+      //
+      //   if(pessoa.idade <= 1) {
+      //     texto = 'Olá, ' + 'eu sou o ' + pessoa.nome + ' ' + pessoa.sobrenome + ' tenho '
+      //                 + pessoa.idade + ' ano, ' + pessoa.altura + ' de altura ' +
+      //                 ', meu peso é ' + pessoa.peso + 'kg ' + 'e só hoje, eu já caminhei '
+      //                 + pessoa.caminhouQuantosMetros + ' metros !';
+      //     if(pessoa.caminhouQuantosMetros <= 1){
+      //       texto = 'Olá, ' + 'eu sou o ' + pessoa.nome + ' ' + pessoa.sobrenome + ' tenho '
+      //                   + pessoa.idade + ' ano, ' + pessoa.altura + ' de altura ' +
+      //                   ', meu peso é ' + pessoa.peso + 'kg ' + 'e só hoje, eu já caminhei '
+      //                   + pessoa.caminhouQuantosMetros + ' metro !';
+      //       return texto;
+      //     }
+      //
+      //     return texto;
+      //
+      //   }
+      //
+      //   if(pessoa.caminhouQuantosMetros <= 1){
+      //       texto = 'Olá, ' + 'eu sou o ' + pessoa.nome + ' ' + pessoa.sobrenome + ' tenho '
+      //                   + pessoa.idade + ' anos, ' + pessoa.altura + ' de altura ' +
+      //                   ', meu peso é ' + pessoa.peso + 'kg ' + 'e só hoje, eu já caminhei '
+      //                   + pessoa.caminhouQuantosMetros + ' metro !';
+      //       return texto;
+      //   }
+      //
+      //   return texto;
+      // }
+      //
+      // if(pessoa.sexo === 'Feminino'){
+      //   var texto = 'Olá, ' + 'eu sou a ' + pessoa.nome + ' ' + pessoa.sobrenome + ' tenho '
+      //             + pessoa.idade + ' anos, ' + pessoa.altura + ' de altura ' +
+      //             ', meu peso é ' + pessoa.peso + 'kg ' + 'e só hoje, eu já caminhei '
+      //             + pessoa.caminhouQuantosMetros + ' metros !';
+      //
+      //   if(pessoa.idade <= 1) {
+      //     texto = 'Olá, ' + 'eu sou a ' + pessoa.nome + ' ' + pessoa.sobrenome + ' tenho '
+      //                 + pessoa.idade + ' ano, ' + pessoa.altura + ' de altura ' +
+      //                 ', meu peso é ' + pessoa.peso + 'kg ' + 'e só hoje, eu já caminhei '
+      //                 + pessoa.caminhouQuantosMetros + ' metros !';
+      //     if(pessoa.caminhouQuantosMetros <= 1){
+      //       texto = 'Olá, ' + 'eu sou a ' + pessoa.nome + ' ' + pessoa.sobrenome + ' tenho '
+      //                   + pessoa.idade + ' ano, ' + pessoa.altura + ' de altura ' +
+      //                   ', meu peso é ' + pessoa.peso + 'kg ' + 'e só hoje, eu já caminhei '
+      //                   + pessoa.caminhouQuantosMetros + ' metro !';
+      //       return texto;
+      //     }
+      //
+      //     return texto;
+      //
+      //   }
+      //
+      //   if(pessoa.caminhouQuantosMetros <= 1){
+      //       texto = 'Olá, ' + 'eu sou a ' + pessoa.nome + ' ' + pessoa.sobrenome + ' tenho '
+      //                   + pessoa.idade + ' anos, ' + pessoa.altura + ' de altura ' +
+      //                   ', meu peso é ' + pessoa.peso + 'kg ' + 'e só hoje, eu já caminhei '
+      //                   + pessoa.caminhouQuantosMetros + ' metro !';
+      //       return texto;
+      //   }
+      //
+      //   return texto;
+      // }
 
-          return texto;
+      // Resposta do video.
 
-        }
+      var sexo = 'o';
+      var idadeAnos = 'anos' ;
+      var metrosCaminhados = 'metros';
 
-        if(pessoa.caminhouQuantosMetros <= 1){
-            texto = 'Olá, ' + 'eu sou o ' + pessoa.nome + ' ' + pessoa.sobrenome + ' tenho '
-                        + pessoa.idade + ' anos, ' + pessoa.altura + ' de altura ' +
-                        ', meu peso é ' + pessoa.peso + 'kg ' + 'e só hoje, eu já caminhei '
-                        + pessoa.caminhouQuantosMetros + ' metro !';
-            return texto;
-        }
-
-        return texto;
+      if (pessoa.sexo === 'Feminio') {
+        sexo = 'a';
       }
 
-      if(pessoa.sexo === 'Feminino'){
-        var texto = 'Olá, ' + 'eu sou a ' + pessoa.nome + ' ' + pessoa.sobrenome + ' tenho '
-                  + pessoa.idade + ' anos, ' + pessoa.altura + ' de altura ' +
-                  ', meu peso é ' + pessoa.peso + 'kg ' + 'e só hoje, eu já caminhei '
-                  + pessoa.caminhouQuantosMetros + ' metros !';
-
-        if(pessoa.idade <= 1) {
-          texto = 'Olá, ' + 'eu sou a ' + pessoa.nome + ' ' + pessoa.sobrenome + ' tenho '
-                      + pessoa.idade + ' ano, ' + pessoa.altura + ' de altura ' +
-                      ', meu peso é ' + pessoa.peso + 'kg ' + 'e só hoje, eu já caminhei '
-                      + pessoa.caminhouQuantosMetros + ' metros !';
-          if(pessoa.caminhouQuantosMetros <= 1){
-            texto = 'Olá, ' + 'eu sou a ' + pessoa.nome + ' ' + pessoa.sobrenome + ' tenho '
-                        + pessoa.idade + ' ano, ' + pessoa.altura + ' de altura ' +
-                        ', meu peso é ' + pessoa.peso + 'kg ' + 'e só hoje, eu já caminhei '
-                        + pessoa.caminhouQuantosMetros + ' metro !';
-            return texto;
-          }
-
-          return texto;
-
-        }
-
-        if(pessoa.caminhouQuantosMetros <= 1){
-            texto = 'Olá, ' + 'eu sou a ' + pessoa.nome + ' ' + pessoa.sobrenome + ' tenho '
-                        + pessoa.idade + ' anos, ' + pessoa.altura + ' de altura ' +
-                        ', meu peso é ' + pessoa.peso + 'kg ' + 'e só hoje, eu já caminhei '
-                        + pessoa.caminhouQuantosMetros + ' metro !';
-            return texto;
-        }
-
-        return texto;
+      if(pessoa.idade === 1){
+        idadeAnos = 'ano'
       }
+
+      if(pessoa.caminhouQuantosMetros === 1){
+        metrosCaminhados = 'metro';
+      }
+
+      return 'Olá, eu sou ' + sexo + ' ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho '
+                   + pessoa.idade + ', ' + idadeAnos + ', ' + pessoa.altura + ', meu peso é ' + pessoa.peso + 
+                   + 'e só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' ' + metrosCaminhados + '!';
 
     }
 
