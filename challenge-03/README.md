@@ -110,16 +110,16 @@ mostrarAltura(); //MInha altura é 1.68m
 /*
 Faça a `pessoa` fazer 3 aniversários.
 */
-fazerAniversario();
-fazerAniversario();
-fazerAniversario();
+pessoa.fazerAniversario();
+pessoa.fazerAniversario();
+pessoa.fazerAniversario();
 
 /*
 Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
 comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
-mostrarIdade(); //32
+mostrarIdade(); //'Olá, eu tenho 32 anos!'
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
@@ -171,8 +171,27 @@ correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao = function(){
   
+  if(pessoa.sexo == 'feminino'){
+    var fraseSexo = "Olá, eu sou a "
+  }else{
+    var fraseSexo = "Olá, eu sou o "
+  }
+  
+  if(pessoa.idade >1){
+    var fraseIdade = " anos, ";
+  }else{
+    var fraseIdade = " ano,  ";
+  }
+  
+  if(pessoa.caminhouQuantosMetros>1){
+    var fraseCaminhada = " metros!";
+  }else{
+    var fraseCaminhada = " metro!";
+  }
+  
+  return fraseSexo + pessoa.nome + ' '+ pessoa.sobrenome + ' tenho ' + pessoa.idade + fraseIdade + pessoa.altura +'m , meu peso é '+ pessoa.peso + 'kg e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + fraseCaminhada;
 }
 
 // Agora, apresente-se ;)
-?
+pessoa.apresentacao();
 ```
