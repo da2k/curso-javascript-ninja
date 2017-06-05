@@ -1,4 +1,4 @@
-/*
+﻿/*
 A loja de carros será nosso desafio final. Na aula anterior, você fez a parte
 do cadastro dos carros. Agora nós vamos começar a deixar ele com cara de
 projeto mesmo.
@@ -29,4 +29,4 @@ nesse arquivo, dentro do `console.log`, o link para o pull request no seu
 projeto.
 */
 
-console.log('Link do pull request do seu projeto');
+console.log('https://github.com/JoaoPauloDev/GTCars/pull/1');
