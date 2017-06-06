@@ -36,8 +36,9 @@
   que será nomeado de "app".
   */
 
-  function app(){
+  var app = (function app(){
 
+    var $companyPhone = new DOM('[data-js="companyPhone"]').element[0];
     var $companyName = new DOM('[data-js="companyName"]').element[0];
     var $btnCadastrar = new DOM('[data-js="btnCadastrar"]').element[0];
     var $carsTable = new DOM('[data-js="carsTable"]').element[0];
@@ -45,13 +46,13 @@
     var docFragment = doc.createDocumentFragment();
     var ajax = new XMLHttpRequest();
 
-    function registerNewCar(event){
+    var registerNewCar = function registerNewCar(event){
       event.preventDefault();
       if(allFieldsFilled())
         newTableLine();
     }
 
-    function newTableLine(){
+    var newTableLine = function newTableLine(){
       var row = doc.createElement("TR");
       var dataCells = $inputsForm.forEach(function fillRowCells(item){
         createDataCell(row, item)
@@ -60,7 +61,7 @@
       $carsTable.appendChild(docFragment);
     }
 
-    function createDataCell(row, item){
+    var createDataCell = function createDataCell(row, item){
       var data = doc.createElement('TD');
       if(item.value.match(/png|jpg|gif|svg/gi)){
           data.appendChild(createIMG(item.value));
@@ -72,24 +73,26 @@
       }
     }
 
-    function allFieldsFilled(){
+    var allFieldsFilled = function allFieldsFilled(){
       return $inputsForm.every(hasValue);
     }
 
-    function createIMG(src){
+    var createIMG = function createIMG(src){
       var img = doc.createElement('IMG');
       img.setAttribute('src', src);
       img.style.width = "200px";
       return img;
     }
 
-    function hasValue(item){
+    var hasValue = function hasValue(item){
       return item.value !== "";
     }
 
-    function setCompanyNamePhone(){
-      if(ajax.readyState === 4)
-         $companyName.innerText = JSON.parse(ajax.responseText).name + " - " + JSON.parse(ajax.responseText).phone;
+    var setCompanyNamePhone = function setCompanyNamePhone(){
+      if(ajax.readyState === 4 && ajax.status === 200){
+        $companyName.textContent = JSON.parse(ajax.responseText).name;
+        $companyPhone.textContent = JSON.parse(ajax.responseText).phone;
+      }
     }
 
     ajax.open('get', 'http://localhost:8080/company.json');
@@ -97,9 +100,19 @@
     ajax.addEventListener('readystatechange', setCompanyNamePhone);
     $btnCadastrar.addEventListener('click', registerNewCar);
 
-  }
+    return{
+      'registerNewCar' : registerNewCar,
+      'newTableLine' : newTableLine,
+      'createDataCell' : createDataCell,
+      'allFieldsFilled' : allFieldsFilled,
+      'createIMG' : createIMG,
+      'hasValue' : hasValue,
+      'setCompanyNamePhone' : setCompanyNamePhone
+    };
+
+  })();
 
   window.appRegisterCar = app;
-  app();
+
 
 })(window.DOM, document);

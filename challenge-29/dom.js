@@ -3,6 +3,35 @@
 
   function DOM(attribute){
     this.element = doc.querySelectorAll(attribute);
+
+    this.isArray = function isArray(arg){
+    return Object.prototype.toString.call(arg) === '[object Array]';
+    };
+
+    this.isObject = function isObject(arg){
+      return Object.prototype.toString.call(arg) === '[object Object]';
+    };
+
+    this.isFunction = function isFunction(arg){
+      return Object.prototype.toString.call(arg) === '[object Function]';
+    };
+
+    this.isNumber = function isNumber(arg){
+      return Object.prototype.toString.call(arg) === '[object Number]';
+    };
+
+    this.isString = function isString(arg){
+      return Object.prototype.toString.call(arg) === '[object String]';
+    };
+
+    this.isBoolean = function isBoolean(arg){
+      return Object.prototype.toString.call(arg) === '[object Boolean]';
+    };
+
+    this.isNull = function isNull(arg){
+      var argType = Object.prototype.toString.call(arg);
+      return argType === '[object Null]' || argType === '[object Undefined]';
+    };
   }
 
   DOM.prototype.on = function on(event, callback){
@@ -47,35 +76,6 @@
 
   DOM.prototype.some = function some(callback){
     return Array.prototype.some.call(this.element, callback);
-  };
-
-  DOM.prototype.isArray = function isArray(arg){
-    return Object.prototype.toString.call(arg) === '[object Array]';
-  };
-
-  DOM.prototype.isObject = function isObject(arg){
-    return Object.prototype.toString.call(arg) === '[object Object]';
-  };
-
-  DOM.prototype.isFunction = function isFunction(arg){
-    return Object.prototype.toString.call(arg) === '[object Function]';
-  };
-
-  DOM.prototype.isNumber = function isNumber(arg){
-    return Object.prototype.toString.call(arg) === '[object Number]';
-  };
-
-  DOM.prototype.isString = function isString(arg){
-    return Object.prototype.toString.call(arg) === '[object String]';
-  };
-
-  DOM.prototype.isBoolean = function isBoolean(arg){
-    return Object.prototype.toString.call(arg) === '[object Boolean]';
-  };
-
-  DOM.prototype.isNull = function isNull(arg){
-    var argType = Object.prototype.toString.call(arg);
-    return argType === '[object Null]' || argType === '[object Undefined]';
   };
 
   win.DOM = DOM;
