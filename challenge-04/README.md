@@ -168,5 +168,5 @@ carro.addPeople(-4); "Já temos 1 pessoas no carro!"
 carro.addPeople(10); "Só cabem mais 4 pessoas!"
 
 // Quantas pessoas temos no carro?
-?
+carros.quantidadePessoas;
 ```
