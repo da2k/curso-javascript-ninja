@@ -74,21 +74,13 @@ Crie uma função com as seguintes características:
 function teste(x, y, z){
 	if(x === undefined && y === undefined && z === undefined){
 		return false;
-	}else if(x !== undefined && y === undefined && z === undefined){
+	} else if(x !== undefined && y === undefined && z === undefined){
 		return x;
-	}else if(x === undefined && y !== undefined && z === undefined){
-		return y;
-	}else if (x === undefined && y === undefined && z !== undefined) {
-		return z;
-	}else if(x !== undefined && y !== undefined && z !== undefined){
+	} else if(x !== undefined && y !== undefined && z !== undefined){
 		return (x + y) / z;
 	} else if(x !== undefined && y !== undefined && z === undefined){
 		return x + y;
-	}else if (x !== undefined && y === undefined && z !== undefined) {
-		return x + z;
-	}else if (x === undefined && y !== undefined && z !== undefined) {
-		return y + z;
-	}	else {
+	} else {
 		return null;
 	}
 }
