@@ -43,12 +43,6 @@ var showTeamPosition = function(num){
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
-// ?
-
-/*
-Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
-repetição "while".
-*/
 
 showTeamPosition(6)
 //"Não temos a informação do time que está nessa posição."
@@ -60,6 +54,17 @@ showTeamPosition(2)
 // "O time que está em 2º lugar é o Corinthians."
 showTeamPosition(1)
 // "O time que está em 1º lugar é o Chapecoense."
+
+/*
+Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
+repetição "while".
+*/
+var num = 20;
+
+while(num >= 20 && num <= 30 ){
+	console.log(num);
+	num++;
+}
 
 /*
 Crie uma função chamada `convertToHex`, com as seguintes características:
@@ -94,7 +99,7 @@ var convertToHex = function(cor){
 	case 'pink':
 		return 'O hexadecimal para a cor ' + cor + ' é #ff00ff.';
 		break;
-		
+
 	default:
 		return 'Não temos o equivalente hexadecimal para ' + cor + '.'
 	}
