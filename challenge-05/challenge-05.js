@@ -98,7 +98,7 @@ Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log('O livro Crime e castigo' + ' tem ' + book()["Crime e castigo"].autor);
+console.log('O livro Crime e castigo' + ' tem ' + book()['Crime e castigo'].autor);
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
