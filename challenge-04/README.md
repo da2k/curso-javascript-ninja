@@ -116,31 +116,23 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 citado acima, no lugar de "pessoas".
 */
 
-carro.addPessoasCarro = function(nPessoas){
-  var pessoasAddNoCarro = nPessoas;
-  var limitePessoas = carro.assentos;
-  var lugaresNoCarro = carro.assentos -  nPessoas;
-  var textoPessoas = 'pessoas';
-  var msg = 'Já temos ' + pessoasAddNoCarro + ' ' + textoPessoas + ' no carro!';
+carro.adicionarPessoas = function(numeroPessoas){
+  var totalPessoas = carro.quantidadePessoas + numeroPessoas;
+  var quantasPessoasCabem = carro.assentos - carro.quantidadePessoas;
+  var plurarlOuSingular = quantasPessoasCabem === 1 ? ' pessoa '  : ' pessoas ';
 
-  if(pessoasAddNoCarro > limitePessoas){
-
-    pessoasAddNoCarro = limitePessoas; // Pq não consigo colocar a qtd de assentos para gerar a resposta aqui
-
-    console.log(pessoasAddNoCarro) // Entra o valor certo mais não cospe na variável
-
-    return msg + '. O carro já está lotado!';
+  if(carro.quantidadePessoas === carro.assentos && totalPessoas >= carro.assentos) {
+    return 'O carro ja está lotado'
   }
 
-  if(lugaresNoCarro <= limitePessoas) {
-
-    if(lugaresNoCarro === 1){
-      textoPessoas = 'pessoa';
-    }
-
-    return msg + '. Só cabem mais ' + lugaresNoCarro + ' ' + textoPessoas + '!';
+  if(totalPessoas > carro.assentos) {
+    return 'Só cabem mais ' + quantasPessoasCabem + plurarlOuSingular + 'no carro!';
   }
 
+  carro.quantidadePessoas += numeroPessoas;
+
+
+  return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!';
 }
 
 /*
@@ -169,20 +161,20 @@ carro.obterCor(); // 'Verde musgo'
 carro.obterMarcaModelo(); // "Esse carro é um: Wolkswagen Fusca"
 
 // Adicione 2 pessoas no carro.
-carro.addPessoasCarro(2); // "Já temos 2 pessoas no carro!. Só cabem mais 3 pessoas!"
+carro.addPessoasCarro(2); // "Já temos 2 pessoas no carro!"
 
 // Adicione mais 4 pessoas no carro.
-carro.addPessoasCarro(4); // "Já temos 4 pessoas no carro!".
+carro.addPessoasCarro(4); // "Só cabem mais 3 pessoas no carro!".
 
 // Faça o carro encher.
-carro.addPessoasCarro(45); // "O carro já está lotado".
+carro.addPessoasCarro(3); // "Já temos 5 pessoas no carro!"
 
 // Tire 4 pessoas do carro.
 carro.addPessoasCarro(-4); // "Já temos 1 pessoa no carro!".
 
-// Adicione 0 pessoas no carro.
-carro.addPessoasCarro(0); // "Já temos 10 pessoa no carro!".
+// Adicione 10 pessoas no carro.
+carro.addPessoasCarro(0); // "Só cabem mais 4 pessoas no carro!".
 
 // Quantas pessoas temos no carro?
-carro.quantidadePessoas // 0
+carro.quantidadePessoas // 1
 ```

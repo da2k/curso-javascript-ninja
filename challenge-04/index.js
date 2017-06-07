@@ -1,21 +1,21 @@
 
-var isTruthy = function(param){
+// var isTruthy = function(param){
 
-  return !!param;
+//   return !!param;
 
 
-};
+// };
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
-isTruthy(false);
-isTruthy(null);
-isTruthy(undefined);
-isTruthy('');
-isTruthy('');
-isTruthy(-0);
-isTruthy(NaN);
+// isTruthy(false);
+// isTruthy(null);
+// isTruthy(undefined);
+// isTruthy('');
+// isTruthy('');
+// isTruthy(-0);
+// isTruthy(NaN);
 
-// function isTruthy(arg1){
+function isTruthy(arg1){
 
 
 //   if (arg1 === undefined){
@@ -25,15 +25,13 @@ isTruthy(NaN);
 //   }
 
 
-//   // if (arg1 !== undefined || arg1 !== null ||
-//   //     arg1 !== null || arg1 !== NaN ||
-//   //     arg1 !== 0 || arg1 !== -0 ||
-//   //     ar1 !== "" || arg1 !== ''
-//   //   ){
-//   //   return teste;
-//   // }
+  if ( arg1 === null){
+    return 'xuxa';
+  }
 
-// }
+}
+
+
 
 
 /*
@@ -101,8 +99,11 @@ carro.obterMarcaModelo = function(){
   return 'Esse carro é um: ' + carro.marca + ' ' + carro.modelo;
 }
 
-
+  // Antes do video
+  /*
 carro.addPessoasCarro = function(nPessoas){
+
+
   // carro.quantidadePessoas += nPessoas
 
   // var qtdPessoasNoCarro = carro.quantidadePessoas;
@@ -141,14 +142,27 @@ carro.addPessoasCarro = function(nPessoas){
   //     return 'O carro já está lotado!';
   //   }
 
-
-
-
-
-
-
   // return msg;
 
 
 
+}
+*/
+carro.adicionarPessoas = function(numeroPessoas){
+  var totalPessoas = carro.quantidadePessoas + numeroPessoas;
+  var quantasPessoasCabem = carro.assentos - carro.quantidadePessoas;
+  var plurarlOuSingular = quantasPessoasCabem === 1 ? ' pessoa '  : ' pessoas ';
+
+  if(carro.quantidadePessoas === carro.assentos && totalPessoas >= carro.assentos) {
+    return 'O carro ja está lotado'
+  }
+
+  if(totalPessoas > carro.assentos) {
+    return 'Só cabem mais ' + quantasPessoasCabem + plurarlOuSingular + 'no carro!';
+  }
+
+  carro.quantidadePessoas += numeroPessoas;
+
+
+  return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!';
 }
