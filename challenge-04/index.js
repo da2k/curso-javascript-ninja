@@ -1,10 +1,10 @@
 
-// var isTruthy = function(param){
+var isTruthy = function(param){
 
-//   return !!param;
+  return !!param;
 
 
-// };
+};
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 // isTruthy(false);
@@ -14,24 +14,6 @@
 // isTruthy('');
 // isTruthy(-0);
 // isTruthy(NaN);
-
-function isTruthy(arg1){
-
-
-//   if (arg1 === undefined){
-//     return true;
-//   } else {
-//     return false;
-//   }
-
-
-  if ( arg1 === null){
-    return 'xuxa';
-  }
-
-}
-
-
 
 
 /*
