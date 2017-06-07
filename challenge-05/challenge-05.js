@@ -77,8 +77,7 @@ function book(livro) {
         }
     };
 
-    !livro ?
-        return obj: return obj[livro];
+    return !livro ? obj : obj[livro];
 }
 
 /*
@@ -91,7 +90,7 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-console.log('O livro Crime e castigo' + ' tem ' + book()["Crime e castigo"].quantidadePaginas);
+console.log('O livro Crime e castigo' + ' tem ' + book()['Crime e castigo'].quantidadePaginas);
 
 
 /*
