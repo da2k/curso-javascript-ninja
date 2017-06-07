@@ -77,11 +77,8 @@ function book(livro) {
         }
     };
 
-    if (livro === undefined) {
-        return obj;
-    }
-
-    return obj[livro];
+    !livro ?
+        return obj: return obj[livro];
 }
 
 /*
