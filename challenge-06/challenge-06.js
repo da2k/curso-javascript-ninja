@@ -37,10 +37,10 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
 function showTeamPosition(posicao) {
 
     if (!teams[posicao - 1]) {
-        return console.log('Não temos a informação do time que está nessa posição.');
+        return 'Não temos a informação do time que está nessa posição.';
     }
 
-    return 'O time que está em ' + posicao + 'º lugar é o ' + teams[--posicao]
+    return 'O time que está em ' + posicao + 'º lugar é o ' + teams[posicao - 1]
 }
 
 /*
@@ -60,8 +60,7 @@ repetição "while".
 var numero = 20;
 
 while (numero <= 30) {
-    console.log(numero);
-    ++numero;
+    console.log(numero++);
 }
 
 /*
