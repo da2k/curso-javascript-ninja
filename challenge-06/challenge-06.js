@@ -80,19 +80,14 @@ function convertToHex(cor) {
     switch (cor) {
         case 'red':
             return fraseDeRetorno + 0x123;
-            break;
         case 'blue':
             return fraseDeRetorno + 0x124;
-            break;
         case 'green':
             return fraseDeRetorno + 0x125;
-            break;
         case 'sea-green':
             return fraseDeRetorno + 0x126;
-            break;
         case 'brown':
             return fraseDeRetorno + 0x127;
-            break;
         default:
             return 'Não temos o equivalente hexadecimal para ' + cor;
     }
