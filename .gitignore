@@ -1,2 +1,4 @@
 node_modules
 *.swp
+/Curso JS/nbproject/private/
+/nbproject/private/
