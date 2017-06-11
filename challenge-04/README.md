@@ -46,7 +46,7 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `assentos` - Number - cinco por padrão
 - `quantidadePessoas` - Number - zero por padrão
 */
-car carro = {
+var carro = {
    marca: 'Citroen',
    modelo: 'C3',
    placa: 'ABC1234',
@@ -92,7 +92,7 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 carro.obterMarcaModelo = function(){
-    "Esse carro é um " + carro.obterMarca() + carro.obterModelo()
+    return "Esse carro é um " + carro.obterMarca() + carro.obterModelo()
 }
 
 /*
@@ -111,14 +111,27 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-var addPessoas = function(){
-    quantidadePessoas++;
-    if(carro.quantidadePessoas <= 4){
-        return 'Já temos '+ carro.quantidadePessoas + ' pessoas no carro!';
+
+carro.addPessoas = function(numeroPessoasEntrando){
+    var qtosVaoTer = carro.quantidadePessoas + numeroPessoasEntrando;
+    var qtosCabem = carro.assentos - carro.quantidadePessoas;
+    if(qtosVaoTer < 0){
+        return 'O total do número de pessoas não pode ser menor que 0';
     }
-    return 'O carro já está lotado!';
-    if(carro.quantidadePessoas > 5){
-        Só cabem mais carro.quantidadePessoas pessoas!    
+    if(qtosVaoTer <= carro.assentos){
+        if(numeroPessoasEntrando <= qtosCabem){
+            carro.quantidadePessoas += numeroPessoasEntrando;
+            var totalPessoas = carro.quantidadePessoas;
+            var pluralSingularTer = totalPessoas > 1 ? 'temos' : 'tem';
+            var pluralSingularPessoa = totalPessoas > 1 ? 'Pessoas' : 'Pessoa';
+            return 'Já '+ pluralSingularTer +' '+ totalPessoas +' '+ pluralSingularPessoa +' no carro!';
+        }
+    }else if(carro.quantidadePessoas === carro.assentos){
+        return "O carro já está lotado!";
+    }else if(numeroPessoasEntrando > qtosCabem){
+        var pluralSingularCaber = qtosCabem > 1 ? 'Cabem' : 'Cabe';
+        var pluralSingularPessoa = qtosCabem > 1 ? 'Pessoas' : 'Pessoa';
+        return 'Só '+ pluralSingularCaber +' mais ' + qtosCabem + ' ' + pluralSingularPessoa;
     }
 }
 
@@ -133,13 +146,13 @@ Qual a cor atual do carro?
 carro.obterCor(); // Prata
 
 // Mude a cor do carro para vermelho.
-carro.obterCor('vermelho');
+carro.mudaCor('vermelho');
 
 // E agora, qual a cor do carro?
-Vermelho
+carro.obterCor(); // Vermelho
 
 // Mude a cor do carro para verde musgo.
-carro.mudaCor('Verde musgo');
+carro.mudaCor('verde musgo');
 
 // E agora, qual a cor do carro?
 carro.obterCor() // Verde musgo
@@ -148,34 +161,20 @@ carro.obterCor() // Verde musgo
 carro.obterMarcaModelo();
 
 // Adicione 2 pessoas no carro.
-addPessoas();
-addPessoas();
+carro.addPessoas(2);
 
 // Adicione mais 4 pessoas no carro.
-addPessoas();
-addPessoas();
-addPessoas();
-addPessoas();
+carro.addPessoas(4);
 
 // Faça o carro encher.
-var addPessoas();
+carro.addPessoas(3);
 
 // Tire 4 pessoas do carro.
-?
+carro.addPessoas(-4);
 
 // Adicione 10 pessoas no carro.
-addPessoas();
-addPessoas();
-addPessoas();
-addPessoas();
-addPessoas();
-addPessoas();
-addPessoas();
-addPessoas();
-addPessoas();
-addPessoas();
-
+carro.addPessoas(10);
 
 // Quantas pessoas temos no carro?
-?
+carro.quantidadePessoas; // 1
 ```
