@@ -112,20 +112,19 @@ correto da variável ou função chamada.
     console.log('O resultado da subtração é: ' + subtraction(function (numero_1, numero_2) {
         return numero_1 - numero_2;
     }));
-    // ?
+
 
     console.log('O resultado da multiplicação é: ' + multiplication(function (numero_1, numero_2) {
         return numero_1 * numero_2;
     }));
-    // ?
 
     console.log('O resultado da divisão é: ' + division(function (numero_1, numero_2) {
         return numero_1 / numero_2;
     }));
-    // ?
+
 
     console.log('O resto do mod é: ' + mod(function (numero_1, numero_2) {
         return numero_1 % numero_2;
     }));
-    // ?
+
 })();
