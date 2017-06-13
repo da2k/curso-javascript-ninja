@@ -149,15 +149,17 @@
     - "[ESTADO] pertence ao Brasil."
     Atribua o novo array a uma variável chamada `map`.
     */
-    newBrasil.map(function (item, indice) {
-        item.id++;
-        item.estado += ' pertence ao Brasil';
+    var map = newBrasil.map(function (item, indice) {
+        return {
+            id: ++item.id,
+            estado: item.estado += ' pertence ao Brasil'
+        };
     });
 
     /*
     Mostre no console o array criado acima:
     */
-    console.log('\nnewBrasil agora com mais informações: ', newBrasil);
+    console.log('\nnewBrasil agora com mais informações: ', map);
 
 
     /*
