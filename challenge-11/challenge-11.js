@@ -40,7 +40,7 @@
     */
 
     var counter = 0;
-    for (propriedade in person) {
+    for (var propriedade in person) {
         console.log('The ' + propriedade + ' of person is ' + person[propriedade]);
         ++counter;
     }
@@ -53,7 +53,7 @@
     'The person has more than 25 years old? [TRUE/FALSE]'
     */
     function moreThan(idade) {
-        return person.age > idade ? true : false;
+        return person.age > idade;
     }
 
     console.log('The person has more than 25 years old? ' + moreThan(25));
@@ -68,7 +68,7 @@
         if (i > 10) {
             break;
         }
-        numbers[i] = i;
+        numbers.push(i);
     }
     console.log('De 0 a 10: ' + numbers);
 
@@ -84,7 +84,7 @@
         if (i % 2 !== 0) {
             continue;
         }
-        numbers[i] = i;
+        numbers.push(i);
     }
     console.log('Pares de 0 a 20: ' + numbers);
 

@@ -1,9 +1,8 @@
-/*
-Crie uma IIFE que envolva todo esse arquivo (inclusive esse comentário),
-e faça a indentação correta.
-*/
 (function () {
-
+    /*
+    Crie uma IIFE que envolva todo esse arquivo (inclusive esse comentário),
+    e faça a indentação correta.
+    */
 
     /*
     Sem alterar os códigos nos `console.log` abaixo, faça com que o retorno
@@ -11,8 +10,8 @@ e faça a indentação correta.
     das variáveis. Analise o que está sendo impresso no console para saber como
     resolver o problema corretamente.
     */
-    var five = '5';
-    five = Number(five);
+    var five = Number('5');
+    //    five = Number(five);
     console.log(five + ' é número?', typeof five === 'number');
 
     var concat = String(10) + String(10);
