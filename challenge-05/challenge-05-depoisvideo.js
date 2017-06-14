@@ -56,57 +56,67 @@ propriedades:
 os livros.
 */
 
-var book = function(paramlivro){
+function book(bookName){
 
-  var objBook =
-  {
-    aventura1: {
-      quantidadePaginas: 100,
-      autor: 'Juarez',
-      editora: 'Editora um'
-    },
-    aventura2: {
-      quantidadePaginas: 200,
-      autor: 'Epaminondas',
-      editora: 'Editora dois'
-    },
-    aventura3: {
-      quantidadePaginas: 400,
-      autor: 'Maria',
-      editora: 'Editora tres'
-    },
-  }
+  var allBook = {
+    'Segredos do Ninja Javascript': {
+      quantidadePaginas: 488,
+      author: 'John Resing & Bear Bibeault',
+      editora: 'Novatec'
 
-  if(paramlivro === undefined){
-    return objBook;
-  }
+    },
+    'Introdução ao HTML5': {
+      quantidadePaginas: 220,
+      author: 'Bruce Lawson & Remy Sharp',
+      editora: 'Alta Books'
 
-  return objBook[paramlivro];
+    },
+    'Smashing CSS': {
+      quantidadePaginas: 283,
+      author: 'Erick A. Meyer',
+      editora: 'Bookman'
+
+    }
+  };
+
+  // Versao verbosa
+  // if(!bookName) {
+  //   return allBook;
+  // }
+
+  // return allBook[bookName];
+
+  return !bookName ? allBook : allBook[bookName];
 
 }
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-book();
 
+console.log( book() );
+
+var bookName =  'Introdução ao HTML5';
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-console.log('O livro aventura2 ' + book('aventura2').quantidadePaginas + ' páginas!');
 
+console.log( "O livro " + bookName + ' tem' + ' ' + book(bookName).quantidadePaginas + ' páginas.' );
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log('O autor do livro aventura1 é ' + book('aventura1').autor);
+
+console.log( "O autor livro " + bookName + ' é' + ' ' + book(bookName).author + '.' );
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log('O livro aventura3 foi publicado pela editora ' + book('aventura3').editora);
+
+console.log( "O livro " + bookName + ' foi publicado pela editora ' + book(bookName).editora + '.' );
+
