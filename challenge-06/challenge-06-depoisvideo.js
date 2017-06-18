@@ -36,23 +36,13 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
 */
 
 
+
 function showTeamPosition(posicaoTime, teams) {
-
-var qtdTimes = 5;
-var index = 0;
-
-  if(posicaoTime > qtdTimes || posicaoTime < 1){
-    return 'Não temos a informação do time que está nessa posição.';
+  if( position < 1 || position > 5 ) {
+    return "Não temos a informação do time que está nessa posição.";
   }
 
-  while(index <= posicaoTime) {
-
-    if(posicaoTime == index){
-      return 'O time que está em ' + posicaoTime +'º lugar é o ' + teams[index - 1] +'.';
-    }
-
-    index++;
-  }
+  return "O time que está em " + position + "º lugar é o" + teams[position - 1] + ".";
 
 }
 
@@ -76,14 +66,7 @@ repetição "while".
 */
 
 function showNumbers(startCount, limitCount){
-  var numberStart = startCount;
-  var numberLimit = limitCount;
 
-  var count = numberStart;
-
-  while(numberStart <= numberLimit) {
-    console.log(numberStart++);
-  }
 }
 
 showNumbers(20, 30);
