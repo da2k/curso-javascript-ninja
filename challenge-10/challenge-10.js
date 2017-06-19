@@ -1,8 +1,8 @@
-/*
-Crie uma IIFE que envolva todo esse arquivo (inclusive esse comentário),
-e faça a indentação correta.
-*/
 (function() {
+  /*
+  Crie uma IIFE que envolva todo esse arquivo (inclusive esse comentário),
+  e faça a indentação correta.
+  */
   
   /*
   Sem alterar os códigos nos `console.log` abaixo, faça com que o retorno
