@@ -78,7 +78,7 @@
     faz a busca do final para o início da string.
     */
     console.log('\nParte de uma string:');
-    console.log('Fernando'.substring('Fernando'.lastIndexOf('nando'), 10));
+    console.log('Fernando'.substring(8, 3));
 
     /*
     Declare uma variável chamada `myName`, que receba o seu primeiro nome,
@@ -90,6 +90,11 @@
     Ex.: Nomes que deveriam funcionar: "Fernando", "RoBertO", "gabriEla", etc.
     */
     console.log('\nNome com letras intercaladas entre caixa alta e baixa:');
-    var myName = 'Renan';
+    var myName = 'Thais';
+    var novoNome = [];
+    for (var i = 0; i < myName.length; i++) {
+        novoNome.push(i % 2 === 0 ? myName[i].toLowerCase() : myName[i].toUpperCase());
+    }
+    console.log(novoNome.toString());
 
 }());
