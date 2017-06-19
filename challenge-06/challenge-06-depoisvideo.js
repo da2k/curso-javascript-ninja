@@ -65,11 +65,12 @@ Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
 repetição "while".
 */
 
-function showNumbers(startCount, limitCount){
+var num = 20;
 
+while(num <= 30){
+  console.log(num);
+  num++;
 }
-
-showNumbers(20, 30);
 
 /*
 Crie uma função chamada `convertToHex`, com as seguintes características:
@@ -83,51 +84,36 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     a frase:
     "Não temos o equivalente hexadecimal para [COR]."
 */
-function convertToHex(convertCor){
-  switch (convertCor) {
+function convertToHex(color){
+  var hexa;
+
+  switch (color) {
     case "red":
-      console.log('O hexadecimal para a cor ' +  convertCor + ' é ' + '' + '#FF0000.');
+      hexa = '#FF0000';
       break;
-
     case "blue":
-      console.log('O hexadecimal para a cor ' +  convertCor + ' é ' + '' + '#0000FF.');
+      hexa = '#0000FF';
       break;
-
     case "yellow":
-      console.log('O hexadecimal para a cor ' +  convertCor + ' é ' + '' + '#FFFF00.');
+      hexa = '#FFFF00';
       break;
-
     case "silver":
-     console.log('O hexadecimal para a cor ' +  convertCor + ' é ' + '' + '#C0C0C0.');
-     break;
-
+      hexa = '#C0C0C0';
+      break;
     case "gray":
-      console.log('O hexadecimal para a cor ' +  convertCor + ' é ' + '' + '#808080.');
+      hexa = '#808080';
       break;
-
-    case "marron":
-      console.log('O hexadecimal para a cor ' +  convertCor + ' é ' + '' + '#800000.');
-      break;
-
-    case "lime":
-      console.log('O hexadecimal para a cor ' +  convertCor + ' é ' + '' + '#00FF00.');
-      break;
-
-    case "aqua":
-      console.log('O hexadecimal para a cor ' +  convertCor + ' é ' + '' + '#00FFFF.');
-      break;
-
     default:
-      console.log('Não temos o equivalente hexadecimal para ' + convertCor + '.');
-      break;
+      return 'Não temos o equivalente hexadecimal para ' + color + '.';
   }
+  return 'O hexadecimal para a cor ' + color + ' é: ' + hexa + '.';
 
 }
 
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-// convertToHex('red');
+convertToHex('red');
 // convertToHex('blue');
 // convertToHex('yellow');
 // convertToHex('silver');
