@@ -12,7 +12,7 @@
 	variável chamada `text`:
 	"Manuel Marques de Sousa, Conde de Porto Alegre (Rio Grande, 13 de junho de 1804 – Rio de Janeiro, 18 de julho de 1875), apelidado de "O Centauro de Luvas", foi um militar, político, abolicionista e monarquista brasileiro."
 	*/
-	var texto = 'Manuel Marques de Sousa, Conde de Porto Alegre (Rio Grande, 13 de junho de 1804 – Rio de Janeiro, 18 de julho de 1875), apelidado de "O Centauro de Luvas", foi um militar, político, abolicionista e monarquista brasileiro.'
+	var texto = 'Manuel Marques de Sousa, Conde de Porto Alegre (Rio Grande, 13 de junho de 1804 – Rio de Janeiro, 18 de julho de 1875), apelidado de "O Centauro de Luvas", foi um militar, político, abolicionista e monarquista brasileiro.';
 
 	/*
 	Vamos começar com umas brincadeiras fáceis :D
@@ -37,7 +37,7 @@
 	ser um traço. Mostre o resultado no console:
 	*/
 	console.log('\nTrocando números por -:');
-	//    texto = texto.replace(/\d/g, '-');
+	texto = texto.replace(/\d/g, '-');
 	console.log(texto);
 
 	/*
@@ -45,7 +45,7 @@
 	minúsculo por "0" (número zero). Mostre o resultado no console:
 	*/
 	console.log('\nTrocando de "D" a "h" por "0":');
-	//    texto = texto.replace(/[D-h]/g, '0');
+	texto = texto.replace(/[D-Hd-h]/g, '0');
 	console.log(texto);
 
 	/*
@@ -54,6 +54,7 @@
 	*/
 	console.log('\nTrocando "A" e "a" por "4":');
 	//    texto = texto.replace(/[A | a]/g, '4');
+	texto = texto.replace(/a/gi, '4');
 	console.log(texto);
 
 	/*
@@ -61,7 +62,10 @@
 	o método `toUpperCase()`. Mostre o resultado no console:
 	*/
 	console.log('\n"O Centauro de Luvas" em caixa alta:');
-	texto = texto.replace(/O Centauro de Luvas/g, 'O CENTAURO DE LUVAS');
+	//	texto = texto.replace(/O Centauro de Luvas/g, 'O CENTAURO DE LUVAS');
+	texto = texto.replace(/O Centauro de Luvas/g, function (frase) {
+		frase.toUpperCase();
+	});
 	console.log(texto);
 
 	/*
@@ -123,12 +127,13 @@
 	*/
 	console.log('\nReplace de datas:');
 
-	function replaceDate(data) {
-		return data.replace(regexDate, function (captura, dia, mes, ano) {
+	function replaceDate(texto) {
+		return texto.replace(regexDate, function (captura, dia, mes, ano) {
 			return dia + '/' + getMonthNumber(mes) + '/' + ano;
 		});
 	}
 
 	console.log(replaceDate(texto));
+	console.log(texto.replace(regexDate, replaceDate(texto)))
 
 }());
