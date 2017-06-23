@@ -12,12 +12,26 @@ var isTruthy = function(a) {
 }
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
-isTruthy(0, null, undefined, -0, "", '');
+isTruthy(0);
+isTruthy(null);
+isTruthy(undefined);
+isTruthy(-0);
+isTruthy("");
+isTruthy('');
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
-isTruthy(10, 9, 8, 7, 6, 5, 4, 3, 2, 1);
+isTruthy(10);
+isTruthy(9);
+isTruthy(8);
+isTruthy(7);
+isTruthy(6);
+isTruthy(5);
+isTruthy(4);
+isTruthy(3);
+isTruthy(2);
+isTruthy(1);
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
