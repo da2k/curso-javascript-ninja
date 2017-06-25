@@ -17,7 +17,7 @@ addItem = function (arr) {
 Adicione um novo array ao array criado no início do desafio, com ao menos 3
 itens de tipos diferentes, mostrando o resultado no console.
 */
-mixArray = [12, 'jonathan', {a: 2, b: 4}, ['Ýan', 'Tiersen'], true, [2, 'a', false]];
+addItem([2, 'a', false]);
 console.log(mixArray); //(6) [12, "jonathan", Object, Array(2), true, Array(3)]
 console.log(mixArray[5]); //(3) [2, "a", false]
 
