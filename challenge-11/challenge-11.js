@@ -36,7 +36,7 @@
   'The person has [COUNTER] properties'
   */
   var counter = 0;
-  for (prop in person) {
+  for (var prop in person) {
     console.log('The ' + prop + ' of the person is ' + person[prop] + '.');
     counter++;
   }
@@ -55,11 +55,7 @@
   'The person has more than 25 years old? [TRUE/FALSE]'
   */
   function moreThan(age) {
-    if (person.age > age) {
-      return true;
-    }
-
-    return false;
+    return person.age > age;
   }
   console.log('The person has more than 25 years old? ' + moreThan(25));
 
@@ -70,11 +66,11 @@
   */
   console.log( 'De 0 a 10:' );
   var numbers = [];
-  for (var i = 0; i <= 20; i++) {
-    numbers.push(i);
-    if (i >= 10) {
+  for (var i = 0; i < 20; i++) {
+    if (i > 10) {
       break;
     }
+    numbers.push(i);
   }
   console.log(numbers);
   // [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
