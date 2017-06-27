@@ -74,16 +74,16 @@ Só vamos mudar o range:
 - No segundo "for", mostre os números ímpares entre 111 e 125, inclusive eles.
 */
 var par;
+console.log('Números pares entre 100 e 120: ');
 for(par = 100; par <= 120; par++){
-	console.log('Números pares entre 100 e 120: ');
   if(par % 2 === 0){
     console.log(par);
   }
 }
 
 var impar;
-for(impar = 110; impar <= 125; impar++){
-	console.log('Números impares entre 111 e 125: ');
+console.log('Números impares entre 111 e 125: ');
+for(impar = 111; impar <= 125; impar++){
   if(impar % 2 !== 0){
     console.log( impar);
   }
