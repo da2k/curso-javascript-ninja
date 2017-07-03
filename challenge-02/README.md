@@ -4,29 +4,35 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-?
+function soma(a, b){
+	return a + b;	
+}
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-?
+var aplicarSoma = soma(2,4) + 5;
 
 // Qual o valor atualizado dessa variável?
-?
+11
 
 // Declare uma nova variável, sem valor.
-?
+var leandro;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-?
+function adicionaValor(){
+	leandro = 30;
+	texto = 'O valor da variável agora é: '
+	return texto + leandro;
+}
 
 // Invoque a função criada acima.
-?
+adicionaValor();
 
 // Qual o retorno da função? (Use comentários de bloco).
-?
+/* "O valor da variável agora é: 30" */
 
 /*
 Crie uma função com as seguintes características:
@@ -35,19 +41,25 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-?
+function preencheValores(v1, v2, v3){
+	if (v1 === undefined || v2 === undefined || v3 === undefined){
+		return	'Preencha todos os valores corretamente';
+    } else {
+		return (v1 * v2 * v3) +2;
+    }
+}
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+preencheValores (4, 8);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+//"Preencha todos os valores corretamente"
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+preencheValores(4, 8, 7);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+//226
 
 /*
 Crie uma função com as seguintes características:
@@ -58,8 +70,22 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+function recebeValores(a, b, c){
+    if (a !== undefined && b === undefined && c === undefined){
+        return	a;
+    } else if (a !== undefined && b !== undefined && c === undefined){
+		return a + b;
+    } else if (a !== undefined && b !== undefined && c !== undefined){
+		return (a + b)/c;
+    } else if (a === undefined && b === undefined && c === undefined){
+		return false;
+    } else {
+		return null;
+    }
+}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+recebeValores(10); //retorna o valor do argumento.
+recebeValores(10,20); //retorna a soma dos dois argumentos.
+recebeValores(10,20,2); //retorna a soma do primeiro com o segundo, e o resultado, dividido pelo terceiro.
 ```
