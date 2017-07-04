@@ -11,18 +11,10 @@
     Mostre esse array no console.
     */
     console.log( 'Number Objects Array:' );
-    var numberObjects = [
-        { number: 1 },
-        { number: 2 },
-        { number: 3 },
-        { number: 4 },
-        { number: 5 },
-        { number: 6 },
-        { number: 7 },
-        { number: 8 },
-        { number: 9 },
-        { number: 10 },
-    ];
+    var numberObjects = [];
+    for (var i = 1; i <= 10; i++) {
+      numberObjects.push({ number: i });
+    }
     console.log(numberObjects);
 
     /*
@@ -56,8 +48,7 @@
     */
     console.log( '\nOperation:' );
     var operation = justMod2Or3.reduce(function(sum, value) {
-        sum++;
-        return sum * value;
+        return (sum + 1) * value;
     }, 0);
     console.log(operation);
 
@@ -68,8 +59,7 @@
     */
     console.log( '\nOperation 2:' );
     var operation2 = justMod2Or3.reduceRight(function(sum, value) {
-        sum++;
-        return sum * value;
+        return (sum + 1) * value;
     }, 0);
     console.log(operation2);
 
@@ -116,8 +106,8 @@
     console.log( '\nExiste um { number: 2 } em numberObjects?' );
     var index = numberObjects.indexOf({ number: 2 } > -1);
     console.log(
-        index 
-        ? 'Existe um objeto { number: 2 } em numberObjects!' 
+        index
+        ? 'Existe um objeto { number: 2 } em numberObjects!'
         : 'Não existe um objeto { number: 2 } em numberObjects :('
     );
 
@@ -129,7 +119,7 @@
     var lastIndex = numberObjects.lastIndexOf(({ number: 2 }, 2) > -1);
     console.log(
         lastIndex
-        ? 'Existe um objeto { number: 2 } em numberObjects!' 
+        ? 'Existe um objeto { number: 2 } em numberObjects!'
         : 'Não existe um objeto { number: 2 } em numberObjects :('
     );
 
