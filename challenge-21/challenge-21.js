@@ -1,3 +1,6 @@
+(function(win, doc){
+ 
+ 'user strict';
 /*
 O desafio de hoje será um pequeno projeto: um cronômetro!
 As regras para criação do cronômetro são as seguintes:
@@ -14,4 +17,36 @@ Utilize o atributo data-js para nomear o campo e os botões. Você pode
 usar o nome que achar melhor, desde que ele seja semântico, ou seja, o nome
 dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
 */
-// ?
+
+var $cronometro = doc.querySelector('[data-js="timer"]')
+var $buttonStart = doc.querySelector('[data-js="button-start"]');
+var $buttonStop = doc.querySelector('[data-js="button-stop"]');
+var $buttonReset = doc.querySelector('[data-js="button-reset"]');
+
+var temp;
+
+
+$buttonStart.addEventListener('click', start,false);
+
+$buttonStop.addEventListener('click',stop,false)
+
+$buttonReset.addEventListener('click',reset,false);
+
+
+function start(){
+	$cronometro.value = +$cronometro.value + 1;
+
+	temp = setTimeout(start,1000);
+}
+
+function stop(){
+	clearTimeout(temp);
+}
+
+function reset(){
+	$cronometro.textContent = $cronometro.value = 0; 
+	stop();
+}
+
+
+})(window, document);
