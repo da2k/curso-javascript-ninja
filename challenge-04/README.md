@@ -16,8 +16,8 @@ isTruthy(0);
 isTruthy(-0);
 isTruthy(NaN);
 isTruthy('');
-isTruthy("");
 isTruthy(false);
+isTruthy(null);
 isTruthy(undefined);
 
 
