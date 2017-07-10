@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>Challenge 25 | JavaScript Ninja</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 18px;
+    }
+
+    .title {
+      font-weight: 300;
+      color: #acacac;
+      margin: 0 1rem 0 0;
+    }
+
+    .event {
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .event-description {
+      position: absolute;
+      font-size: .9rem;
+      margin: 1rem 0;
+    }
+
+    .event-code {
+      padding: 3px 6px;
+      font-family: 'Open Sans', sans-serif;
+      border-radius: 5px;
+      box-shadow: 0 2px 0 #d5d5d5;
+      background-color: #f5f5f5;
+    }
+
+    .hover {
+      width: 50px;
+      height: 50px;
+      background: tomato;
+      color: #fff;
+    }
+
+    .click {
+      width: 50px;
+      height: 50px;
+      background-color: #03ac15;
+      color: #fff;
+    }
+
+    .keydown {
+      width: 100px;
+      height: 100px;
+      overflow: hidden;
+      border: 2px solid #000;
+    }
+
+    .square {
+      width: 10px;
+      height: 10px;
+      background-color: #000;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="event">
+    <h3 class="title">Hover</h3>
+    <div class="event-box">
+      <div class="hover"></div>
+      <p class="event-description"></p>
+    </div>
+  </div>
+
+  <div class="event">
+    <h3 class="title">Click</h3>
+    <div class="event-box">
+      <div class="click"></div>
+      <p class="event-description"></p>
+    </div>
+  </div>
+
+  <div class="event">
+    <h3 class="title">Dragstart</h3>
+    <div class="event-box">
+      <div class="dragstart"></div>
+      <p class="event-description"></p>
+    </div>
+  </div>
+
+  <div class="event">
+    <h3 class="title">Keydown</h3>
+    <div class="event-box">
+      <div class="keydown">
+        <div class="square"></div>
+      </div>
+      <p class="event-description">Press <code class="event-code">←</code>, <code class="event-code">↑</code>, <code class="event-code">→</code> or <code class="event-code">↓</code>.</p>
+    </div>
+  </div>
+
+
+  <script src="js/challenge-25.js"></script>
+</body>
+</html>
