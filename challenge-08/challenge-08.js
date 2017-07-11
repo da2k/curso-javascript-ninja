@@ -33,14 +33,15 @@ function showName(){
 /*
 Declare uma variável chamada `varShowName` que recebe a função criada acima.
 */
-var ShowName = showName();
+/* var varShowName = showName(); errei aqui pois estava pegando somente o retorno */
+var varShowName = showName; /* solucao correta */
 
 /*
 Usando a variável criada acima, mostre no console o nome e o retorno da função
 atribuída a ela, com a seguinte frase:
 "A função [NOME DA FUNÇÃO] retorna [RETORNO DA FUNÇÃO]."
 */
-console.log('A função ' + showName.name + ' retorna ' + ShowName + '.');
+console.log('A função ' + varShowName.name + ' retorna ' + varShowName() + '.');
 
 /*
 Crie uma função literal chamada `calculator`, que funcione assim:
@@ -55,19 +56,33 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
   "Operação inválida."
 */
 function calculator(operator) {
-  return function(operator1, operator2){
+  return function(number1, number2){
+    var result;
     switch(operator){
       case '+':
-        return operator1 + operator2;
+        result = number1 + number2;
+        break;
+
       case '-':
-        return operator1 - operator2;
+        result = number1 - number2;
+        break;
+
       case '*':
-        return operator1 * operator2;
+        result = number1 * number2;
+        break;
+
       case '/':
-        return operator1 / operator2;
+        result = number1 / number2;
+        break;
+
       case '%':
-        return operator1 % operator2;
+        result = number1 % number2;
+        break;
+
+      default:
+        return 'Operação inválida';
       }
+    return 'Resultado da operação: ' + number1 + ' ' + operator + ' ' + number2 + ' = ' + result + '.';
   };
 }
 
