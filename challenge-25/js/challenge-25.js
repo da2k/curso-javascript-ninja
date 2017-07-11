@@ -23,7 +23,6 @@
   function init() {
     eventHover();
     eventClick();
-    eventDragstart();
     eventKeydown();
   }
 
@@ -32,23 +31,17 @@
   }
 
   function eventHover() {
-
+    var squareHover = doc.querySelector('.hover');
+    squareHover.addEventListener('mouseover', function(e) {
+      this.classList.toggle('active');
+    }, false);
   }
 
   function eventClick() {
     var squareClick = doc.querySelector('.click');
-    var colors = [
-      '#03ac15',
-      '#034eac',
-      '#ac0370',
-    ];
-    colors.forEach(function(item, index, array) {
-      squareClick.addEventListener('click', function(e) {}, false);
-    });
-  }
-
-  function eventDragstart() {
-
+    squareClick.addEventListener('click', function(e) {
+      this.classList.toggle('active');
+    }, false);
   }
 
   function eventKeydown() {
@@ -69,7 +62,7 @@
         }
 
         if (e.keyCode === 40) {
-          square.style.marginTop = ++numKey + 'px';
+          squareKeydown.style.marginTop = ++numKey + 'px';
         }
       }, 'false');
     }

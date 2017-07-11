@@ -45,6 +45,13 @@
       height: 50px;
       background: tomato;
       color: #fff;
+      transition: .2s all ease;
+    }
+
+    .hover.active {
+      width: 30px;
+      height: 30px;
+      border-radius: 100%;
     }
 
     .click {
@@ -52,6 +59,10 @@
       height: 50px;
       background-color: #03ac15;
       color: #fff;
+    }
+
+    .click.active {
+      background-color: #ac0370
     }
 
     .keydown {
@@ -83,14 +94,6 @@
     <h3 class="title">Click</h3>
     <div class="event-box">
       <div class="click"></div>
-      <p class="event-description"></p>
-    </div>
-  </div>
-
-  <div class="event">
-    <h3 class="title">Dragstart</h3>
-    <div class="event-box">
-      <div class="dragstart"></div>
       <p class="event-description"></p>
     </div>
   </div>
