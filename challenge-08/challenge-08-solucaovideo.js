@@ -33,8 +33,7 @@ function showName(){
 /*
 Declare uma variável chamada `varShowName` que recebe a função criada acima.
 */
-/* var varShowName = showName(); errei aqui pois estava pegando somente o retorno */
-var varShowName = showName; /* solucao correta */
+var varShowName = showName;
 
 /*
 Usando a variável criada acima, mostre no console o nome e o retorno da função
@@ -81,7 +80,7 @@ function calculator(operator) {
 
       default:
         return 'Operação inválida';
-    }
+      }
     return 'Resultado da operação: ' + number1 + ' ' + operator + ' ' + number2 + ' = ' + result + '.';
   };
 }
