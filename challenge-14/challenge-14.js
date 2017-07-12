@@ -92,13 +92,16 @@
     e atribuirá o seu nome invertido (usando o array criado acima).
     */
     console.log( '\nInversed Name:' );
-    // ?
+    var inversdName = name.reduceRight( function (acumulado, atual) {
+        return acumulado + atual;
+    });
+    console.log(inversdName);
 
     /*
     Mostre no console o array `numberObjects`.
     */
     console.log( '\nNumber objects' );
-    // ?
+    console.log(numberObjects);
 
     /*
     Verifique se existem em algum índice de numberObjects um objeto ìgual a
@@ -110,20 +113,27 @@
     o que acontece ;)
     */
     console.log( '\nExiste um { number: 2 } em numberObjects?' );
-    // ?
-
+    console.log( numberObjects.indexOf({number: 2}) ? 
+                'Existe um objeto { number: 2 } em numberObjects!' : 
+                'Não existe um objeto { number: 2 } em numberObjects :(' );
+   
     /*
     Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
     será que obtemos um resultado diferente? Faça a busca a partir do índice 2.
     */
     console.log( '\nE buscando a partir do último índice, o { number: 2 } existe?' );
-    // ?
+    console.log ( numberObjects.lastIndexOf({number: 2}) ? 
+                    'Existe um objeto { number: 2 } em numberObjects!' : 
+                    'Não existe um objeto { number: 2 } em numberObjects :(' );
 
     /*
     Verifique se `justMod2Or3` é um array. Se for, mostre-o no console, no
     formato de String.
     */
     console.log( '\njustMod2Or3 é um array? Se for, a representação dele em String é:' );
-    // ?
+    console.log(Array.isArray(justMod2Or3));
+
+    console.log(justMod2Or3.toString());
+    console.log(justMod2Or3.join(''));
 
 })();
