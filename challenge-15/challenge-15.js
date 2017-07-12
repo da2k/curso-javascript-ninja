@@ -33,7 +33,6 @@
       };
       this.getAge = function getAge () {
         return this.age;
-
       };
       this.addAge = function addAge () {
         return this.age += arguments[0];
@@ -48,9 +47,9 @@
   Mostre as 3 novas pessoas criadas no console (Um console.log por pessoa).
   */
   console.log( 'Novas pessoas criadas à partir de Person:' );
-  var virginia = new Person ('Virginia', 'Rodrigues', 35);
-  var fernando = new Person ('Fernando', 'Daciuk',30);
-  var jean = new Person ('Jean', 'Alberto', 15);
+  var virginia = new Person('Virginia', 'Rodrigues', 35);
+  var fernando = new Person('Fernando', 'Daciuk', 20);
+  var jean = new Person('Jean', 'Alberto', 15);
 
   console.log(virginia);
   console.log(fernando);
@@ -70,8 +69,8 @@
   */
   console.log( '\nIdade das pessoas:' );
   console.log(virginia.getFullName() + ' tem ' + virginia.getAge() + ' anos.');
-  console.log(fernando.getFullName() + ' tem ' + virginia.getAge() + ' anos.');
-  console.log(jean.getFullName() + ' tem ' + virginia.getAge() + ' anos.');
+  console.log(fernando.getFullName() + ' tem ' + fernando.getAge() + ' anos.');
+  console.log(jean.getFullName() + ' tem ' + jean.getAge() + ' anos.');
 
   /*
   Adicione alguns anos à cada pessoa, e mostre no console a nova idade de
@@ -79,6 +78,8 @@
   - "[NOME COMPLETO] agora tem [NOVA IDADE] anos."
   */
   console.log( '\nNova idade das pessoas:' );
-  console.log(virginia.getFullName() + ' agora tem ' + virginia.addAge(8) + ' anos.');
+  console.log(virginia.getFullName() + ' agora tem ' + virginia.addAge(2) + ' anos.');
+  console.log(fernando.getFullName() + ' agora tem ' + fernando.addAge(12) + ' anos.');
+  console.log(jean.getFullName() + ' agora tem ' + jean.addAge(-2) + ' anos.');
 
 })();
