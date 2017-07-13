@@ -11,10 +11,19 @@ e faça a indentação correta.
   das variáveis. Analise o que está sendo impresso no console para saber como
   resolver o problema corretamente.
   */
+<<<<<<< HEAD
   var five = Number('5');
   console.log( five + ' é número?', typeof five === 'number' );
 
   var concat = String(10) + 10;
+=======
+  var five = '5';
+  five = 5;
+  console.log( five + ' é número?', typeof five === 'number' );
+
+  var concat = 10 + 10;
+  concat = "1010"
+>>>>>>> 4b845fecd5299d503db0053684c5f9e120b55c58
   console.log( '"' + concat + '" é uma string? E é igual a "1010"?', typeof concat === 'string' );
 
   /*
@@ -27,6 +36,7 @@ e faça a indentação correta.
   propriedade, usando os valores passados por parâmetro.
   */
   var operation = {
+<<<<<<< HEAD
     '+' : function( number1, number2 ){
       return number1 + number2;
     },
@@ -40,6 +50,21 @@ e faça a indentação correta.
       return number1 / number2;
     },
     '%' : function( number1, number2 ){
+=======
+    '+': function( number1, number2 ){
+      return number1 + number2;
+    },
+    '-': function( number1, number2 ){
+      return number1 - number2;
+    },
+    '*': function( number1, number2 ){
+      return number1 * number2;
+    },
+    '/': function( number1, number2 ){
+      return number1 / number2;
+    },
+    '%': function( number1, number2 ){
+>>>>>>> 4b845fecd5299d503db0053684c5f9e120b55c58
       return number1 % number2;
     }
   };
