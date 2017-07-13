@@ -56,7 +56,8 @@ e faça a indentação correta.
   */
   function isOperatorValid( operator ){
    /* return typeof operation[operator] !== undefined;  pode ser feito assim */
-   return !!operator; /* ou retornar o equivalente booleano, assim vc escreve menos código mais perde legibilidade talvez */
+   /* return !!operator; ou retornar o equivalente booleano, assim vc escreve menos código mais perde legibilidade talvez */
+   return !!operator;
   }
 
 
@@ -73,7 +74,6 @@ e faça a indentação correta.
   os dois parâmetros da função de retorno de "calculator".
   */
   function calculator( operator ) {
-
     if( !isOperatorValid( operator ) ) {
       return false;
     }
@@ -82,32 +82,9 @@ e faça a indentação correta.
       if( typeof x !== 'number' && typeof y !== 'number') {
         return false;
       }
-      return operation[ operator ]( x, y );
+      return operation[operator]( x, y );
     };
 
-
-
-
-
-
-    // if(isOperatorValid( operation[operator] )) {
-
-    //   return function ( param1, param2 ){
-
-    //     if ( typeof param1 === 'number' && typeof param2 === 'number' ) {
-
-    //       return operation[operator](param1, param2);
-
-    //     }
-
-    //     console.log(showErrorMessage(operator));
-
-    //     return false;
-
-    //   }
-
-    // }
-    // console.log(showErrorMessage(operator));
   }
 
   /*
@@ -174,10 +151,6 @@ e faça a indentação correta.
     console.log( showErrorMessage( operationSignal ) );
   }
 
-
-
-
-
   /*
   Repita desde o "PASSO 2" com as operações de subtração, multiplicação,
   divisão e resto. Crie variáveis com os nomes "subtraction",
@@ -198,9 +171,6 @@ e faça a indentação correta.
   else {
     console.log( showErrorMessage( operationSignal ) );
   }
-
-
-
 
   /* divisao */
 
@@ -251,12 +221,12 @@ e faça a indentação correta.
   */
 
   operationSignal = 'dadeada';
-  var erro = calculator(operationSignal);
+  var invalid = calculator( operationSignal );
 
-  if(erro){
+  if(invalid){
     number1 = 10;
     number2 = 20;
-    console.log( showOperationMessage( operationSignal, number1, number2), erro(number1,number2) );
+    console.log( showOperationMessage( operationSignal, number1, number2), invalid(number1,number2) );
   }
   else {
     console.log( showErrorMessage( operationSignal ) );
