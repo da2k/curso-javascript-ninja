@@ -17,8 +17,8 @@
   */
   console.log( 'As letras do seu nome:' );
   var name = 'Adeonir';
-  for (var i = 0; i < name.length; i++) {
-    console.log(name[i] + ' é a ' + (name.indexOf(name[i]) + 1) + 'ª letra do meu nome.');
+  for (var i = 0, len = name.length; i < len; i++) {
+    console.log(name.charAt(i) + ' é a ' + (i + 1) + 'ª letra do meu nome.');
   }
 
   /*
@@ -52,11 +52,11 @@
   */
   console.log( '\nMeus amigos:' );
   var friends = ['Gustavo', 'Eduardo', 'Marcelo', 'Vanderlei', 'Adierson', 'Itamar'];
-  var newFriends = friends.reduce(function(prev, curr, index) {
-    var sep = index === friends.length - 1 ? ' e ' : ', ';
-    return prev + sep + curr;
+  var phrase = friends.reduce(function(prev, curr, index) {
+    var separator = friends.length === index - 1 ? ' e ' : ', ';
+    return prev + separator + curr;
   }).concat(' são meus amigos.');
-  console.log(newFriends);
+  console.log(phrase);
 
   /*
   Usando o replace(), faça a string "Roberto" virar "Roberta".
@@ -73,7 +73,7 @@
   */
   console.log( '\nParte de uma string:' );
   var fer = 'Fernando';
-  console.log(fer.substring(3));
+  console.log(fer.substring(8, 3));
 
   /*
   Declare uma variável chamada `myName`, que receba o seu primeiro nome,
@@ -87,7 +87,7 @@
   console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
   var myName = 'Murdock';
   var newName = '';
-  for (var i = 0; i < myName.length; i++) {
+  for (var i = 0, len = myName.length; i < len; i++) {
     newName += (i % 2 === 0) ? myName[i].toUpperCase() : myName[i].toLowerCase();
   }
   console.log(newName);
