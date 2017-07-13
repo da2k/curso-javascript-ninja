@@ -1,6 +1,6 @@
 ( function (){
 
-    'use strict'
+    'use strict';
 
     /*
     1. Envolva todo o conteúdo desse desafio em uma IIFE.
@@ -19,7 +19,11 @@
     */
     console.log( 'As letras do seu nome:' );
     var name = 'Virginia';
-    console.log( name.charAt(0) + ' é a ' + name.indexOf('V')+=1 + 'ª letra do meu nome.');
+
+    for (var i = 0; i < name.length; i++) {
+        var indice = i + 1;
+        console.log( name.charAt(i) + ' é a ' + indice + 'ª letra do meu nome.');
+    }
 
     /*
     - Declare uma variável chamada `fullName`, que receba seu nome completo,
@@ -34,7 +38,17 @@
     console.log para cada formato.
     */
     console.log( '\nNome convertido à partir de um slug:' );
-    // ?
+    var fullName = 'virginia-rodrigues-cruz';
+    var newFullName = fullName.split('-').map( function(name){
+        return name.charAt(0).toUpperCase() + name.slice(1);
+    });
+    console.log(fullName);
+    console.log(newFullName.join(' '));
+
+    // for (var i = 0, len = newFullName.length; i < len; i++) {
+    //     var nameFull =  newFullName[i].charAt(0).toUpperCase() + newFullName[i].slice(1);
+    //     console.log(fullName + ' = ' +  nameFull);
+    // }
 
     /*
     - Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
@@ -46,7 +60,16 @@
     5 nomes foi somente uma sugestão ;)
     */
     console.log( '\nMeus amigos:' );
-    // ?
+    var amigos = ['virginia', 'shed', 'liana', 'perla', 'jay'];
+    var frase2 = ' são meus amigos.';
+
+    var frase = amigos.reduce( function (acumulado, atual, index) {
+        var separador = amigos.length -1 === index ? ' e ' : ', ';
+        return acumulado + separador + atual;
+    });
+
+    console.log(frase.concat(frase2));
+    
 
     /*
     Usando o replace(), faça a string "Roberto" virar "Roberta".
