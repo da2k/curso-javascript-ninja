@@ -11,10 +11,10 @@ e faça a indentação correta.
   das variáveis. Analise o que está sendo impresso no console para saber como
   resolver o problema corretamente.
   */
-  var five = Number('5');
+  var five = new Number('5');
   console.log( five + ' é número?', typeof five === 'number' );
 
-  var concat = String(10) + 10;
+  var concat = new String(10) + 10;
   console.log( '"' + concat + '" é uma string? E é igual a "1010"?', typeof concat === 'string' );
 
   /*
@@ -55,7 +55,8 @@ e faça a indentação correta.
   - O desafio é fazer o retorno sem usar "if" ou "switch".
   */
   function isOperatorValid( operator ){
-    return typeof operator === 'function' ? true : false;
+   /* return typeof operation[operator] !== undefined;  pode ser feito assim */
+   return !!operator; /* ou retornar o equivalente booleano, assim vc escreve menos código mais perde legibilidade talvez */
   }
 
 
@@ -73,24 +74,40 @@ e faça a indentação correta.
   */
   function calculator( operator ) {
 
-    if(isOperatorValid( operation[operator] )) {
-
-      return function ( param1, param2 ){
-
-        if ( typeof param1 === 'number' && typeof param2 === 'number' ) {
-
-          return operation[operator](param1, param2);
-
-        }
-
-        console.log(showErrorMessage(operator));
-
-        return false;
-
-      }
-
+    if( !isOperatorValid( operator ) ) {
+      return false;
     }
-    console.log(showErrorMessage(operator));
+
+    return function( x, y ){
+      if( typeof x !== 'number' && typeof y !== 'number') {
+        return false;
+      }
+      return operation[ operator ]( x, y );
+    };
+
+
+
+
+
+
+    // if(isOperatorValid( operation[operator] )) {
+
+    //   return function ( param1, param2 ){
+
+    //     if ( typeof param1 === 'number' && typeof param2 === 'number' ) {
+
+    //       return operation[operator](param1, param2);
+
+    //     }
+
+    //     console.log(showErrorMessage(operator));
+
+    //     return false;
+
+    //   }
+
+    // }
+    // console.log(showErrorMessage(operator));
   }
 
   /*
@@ -102,7 +119,7 @@ e faça a indentação correta.
   */
 
   function showOperationMessage(operator, number1, number2){
-    return 'A operação ' + number1 + ' ' + operator + ' ' + number2 + ' ' + '=';
+    return 'A operação ' + number1 + ' ' + operator + ' ' + number2 + ' =';
   }
 
   /*
@@ -147,12 +164,19 @@ e faça a indentação correta.
   - Se "sum" for "false", mostrar no console a mensagem de erro.
   */
 
-  number1 = 10;
-  number2 = 20;
+  if(sum){
+    number1 = 10;
+    number2 = 20;
+    console.log( showOperationMessage( operationSignal, number1, number2 ), sum( number1,number2 ) );
 
-  sum(number1,number2);
+  }
+  else {
+    console.log( showErrorMessage( operationSignal ) );
+  }
 
-  console.log( showOperationMessage(operationSignal, number1, number2), sum(number1,number2) );
+
+
+
 
   /*
   Repita desde o "PASSO 2" com as operações de subtração, multiplicação,
@@ -163,42 +187,62 @@ e faça a indentação correta.
    /* divisao */
 
   operationSignal = '-';
-
   var subtract = calculator(operationSignal);
 
-  subtract(number1,number2);
+  if(subtract){
+    number1 = 10;
+    number2 = 20;
+    console.log( showOperationMessage( operationSignal, number1, number2), subtract(number1,number2) );
 
-  console.log( showOperationMessage(operationSignal, number1, number2), subtract(number1,number2) );
+  }
+  else {
+    console.log( showErrorMessage( operationSignal ) );
+  }
+
+
+
 
   /* divisao */
 
   operationSignal = '/';
-
   var divide = calculator(operationSignal);
 
-  divide(number1,number2);
-
-  console.log( showOperationMessage(operationSignal, number1, number2), divide(number1,number2) );
+  if(divide){
+    number1 = 10;
+    number2 = 20;
+    console.log( showOperationMessage( operationSignal, number1, number2), divide(number1,number2) );
+  }
+  else {
+    console.log( showErrorMessage( operationSignal ) );
+  }
 
   /* multiplicacao */
 
   operationSignal = '*';
-
   var multplication = calculator(operationSignal);
 
-  multplication(number1,number2);
-
-  console.log( showOperationMessage(operationSignal, number1, number2), multplication(number1,number2) );
+  if(multplication){
+    number1 = 10;
+    number2 = 20;
+    console.log( showOperationMessage( operationSignal, number1, number2), multplication(number1,number2) );
+  }
+  else {
+    console.log( showErrorMessage( operationSignal ) );
+  }
 
   /* rest */
 
   operationSignal = '%';
-
   var rest = calculator(operationSignal);
 
-  rest(number1,number2);
-
-  console.log( showOperationMessage(operationSignal, number1, number2), rest(number1,number2) );
+  if(rest){
+    number1 = 10;
+    number2 = 20;
+    console.log( showOperationMessage( operationSignal, number1, number2), rest(number1,number2) );
+  }
+  else {
+    console.log( showErrorMessage( operationSignal ) );
+  }
 
 
   /*
@@ -207,12 +251,16 @@ e faça a indentação correta.
   */
 
   operationSignal = 'dadeada';
+  var erro = calculator(operationSignal);
 
-  var rest = calculator(operationSignal);
-
-  rest(number1,number2);
-
-  console.log( showOperationMessage(operationSignal, number1, number2), rest(number1,number2) );
+  if(erro){
+    number1 = 10;
+    number2 = 20;
+    console.log( showOperationMessage( operationSignal, number1, number2), erro(number1,number2) );
+  }
+  else {
+    console.log( showErrorMessage( operationSignal ) );
+  }
 
 
 })();
