@@ -45,7 +45,7 @@
 
   function handleClickNumber() {
     if ($screen.value === '0')
-      return $screen.value =+ this.value
+      return $screen.value =+ this.value;
     return $screen.value += this.value;
   }
 
@@ -74,21 +74,21 @@
 
   function handleClickEqual() {
     $screen.value = removeLastItemIfItIsOperator($screen.value);
-    var allValues = $screen.value.match(/\d+[+×÷-]?/g)
+    var allValues = $screen.value.match(/\d+[+×÷-]?/g);
     $screen.value = allValues.reduce(function(accumulated, actual) {
-      var firstValue = accumulated.slice(0, -1);
+      var firstValue = Number(accumulated.slice(0, -1));
       var operator = accumulated.split('').pop();
-      var lastValue = removeLastItemIfItIsOperator(actual);
+      var lastValue = Number(removeLastItemIfItIsOperator(actual));
       var lastOperator = isLastItemAnOperation(actual) ? actual.split('').pop() : '';
       switch(operator) {
         case '+':
-          return ( +firstValue + +lastValue ) + lastOperator;
+          return (firstValue + lastValue) + lastOperator;
         case '-':
-          return ( +firstValue - +lastValue ) + lastOperator;
+          return (firstValue - lastValue) + lastOperator;
         case '×':
-          return ( +firstValue * +lastValue ) + lastOperator;
+          return (firstValue * lastValue) + lastOperator;
         case '÷':
-          return ( +firstValue / +lastValue ) + lastOperator;
+          return (firstValue / lastValue) + lastOperator;
       }
     });
   }
