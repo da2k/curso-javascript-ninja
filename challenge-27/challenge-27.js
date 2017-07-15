@@ -27,69 +27,49 @@
     this.element = doc.querySelectorAll(elements);
   }
 
-  DOM.prototype.forEachDOM = function forEachDOM(callback) {
-    Array.prototype.forEach.call(this.element, callback);
+  DOM.prototype.onOffListener = function onOffListener(mode, eventType, callback) {
+    Array.prototype.forEach.call(this.element, function(item, index) {
+      if (mode === 'on')
+        return item.addEventListener(eventType, callback, 'false');
+      return item.removeEventListener(eventType, callback, 'false');
+    });
+  }
+
+  DOM.prototype.get = function get() {
+    return this.element;
   };
 
-  DOM.prototype.mapDOM = function mapDOM(callback) {
-    Array.prototype.map.call(this.element, callback);
+  DOM.prototype.forEach = function forEach() {
+    return Array.prototype.forEach.apply(this.element, arguments);
   };
 
-  DOM.prototype.reduceDOM = function reduceDOM(callback) {
-    Array.prototype.reduce.call(this.element, callback);
+  DOM.prototype.map = function map() {
+    return Array.prototype.map.apply(this.element, arguments);
   };
 
-  DOM.prototype.reduceRightDOM = function reduceRightDOM(callback) {
-    Array.prototype.reduceRight.call(this.element, callback);
+  DOM.prototype.filter = function filter() {
+    return Array.prototype.filter.apply(this.element, arguments);
   };
 
-  DOM.prototype.everyDOM = function everyDOM(callback) {
-    Array.prototype.every.call(this.element, callback);
+  DOM.prototype.reduce = function reduce() {
+    return Array.prototype.reduce.apply(this.element, arguments);
   };
 
-  DOM.prototype.someDOM = function someDOM(callback) {
-    Array.prototype.some.call(this.element, callback);
+  DOM.prototype.reduceRight = function reduceRight() {
+    return Array.prototype.reduceRight.apply(this.element, arguments);
   };
 
-  function isArray(el) {
-    if (Object.prototype.toString.call(el) === '[object Array]')
-      return true;
-    return false;
+  DOM.prototype.every = function every() {
+    return Array.prototype.every.apply(this.element, arguments);
+  };
+
+  DOM.prototype.some = function some() {
+    return Array.prototype.some.apply(this.element, arguments);
+  };
+
+  DOM.prototype.objectType = function objectType(type, param) {
+    return Object.prototype.toString.call(param) === '[object ' + type + ']';
   }
 
-  function isObject(el) {
-    if (Object.prototype.toString.call(el) === '[object Object]')
-      return true;
-    return false;
-  }
-
-  function isFunction(el) {
-    if (Object.prototype.toString.call(el) === '[object Function]')
-      return true;
-    return false;
-  }
-
-  function isNumber(el) {
-    if (Object.prototype.toString.call(el) === '[object Number]')
-      return true;
-    return false;
-  }
-
-  function isString(el) {
-    if (Object.prototype.toString.call(el) === '[object String]')
-      return true;
-    return false;
-  }
-
-  function isBoolean(el) {
-    if (Object.prototype.toString.call(el) === '[object Boolean]')
-      return true;
-    return false;
-  }
-
-  function isNull(el) {
-    if (Object.prototype.toString.call(el) === '[object Null]' || '[object Undefined]')
-      return true;
-    return false;
-  }
+  var dom = new DOM();
 })(window, document);
