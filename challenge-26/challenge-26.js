@@ -22,25 +22,25 @@
   Dica: olhe os erros que acontecem no console, e vá resolvendo um a um.
   Só passe para o próximo problema quando tiver resolvido o anterior :)
   */
-  var DOM = function(str) {
-    this.element = doc.querySelectorAll(str);
-  };
-
-  DOM.prototype.on = function(event, func) {
-    return this.element.forEach(function(item, index) {
-      return item.addEventListener(event, func, 'false');
-    });
-  };
-
-  DOM.prototype.off = function(event, func) {
-    return this.element.forEach(function(item, index) {
-      return item.removeEventListener(event, func, 'false');
-    });
-  };
-
-  DOM.prototype.get = function() {
-    return this.element;
+  function DOM(elements) {
+    this.element = doc.querySelectorAll(elements);
   }
+
+  DOM.prototype.on = function on(eventType, callback) {
+    Array.prototype.forEach.call(this.element, function(item, index) {
+      item.addEventListener(eventType, callback, 'false');
+    });
+  };
+
+  DOM.prototype.off = function off(eventType, callback) {
+    Array.prototype.forEach.call(this.element, function(item, index) {
+      item.removeEventListener(eventType, callback, 'false');
+    });
+  };
+
+  DOM.prototype.get = function get() {
+    return this.element;
+  };
 
   var $a = new DOM('[data-js="link"]');
   $a.on('click', function(e) {
