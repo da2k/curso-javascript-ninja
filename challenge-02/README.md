@@ -42,6 +42,7 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
+
 function operacao(a, b, c) {
   if(a === undefined || b === undefined ||  c === undefined) {
     return 'Preencha todos os valores corretamente!';
