@@ -30,7 +30,7 @@
     Ex: Se você for da São Paulo, substitua por "paulista".
     */
     console.log( '\nTrocando naturalidade:' );
-    console.log(text.replace(/de Porto Alegre/, 'brasileiro'));
+    console.log(text.replace(/brasileiro/g, 'cearense'));
 
     /*
     Substitua todos os números por um traço `-`. Cada caractere de número deve
@@ -44,7 +44,7 @@
     minúsculo por "0" (número zero). Mostre o resultado no console:
     */
     console.log( '\nTrocando de "D" a "h" por "0":' );
-    console.log(text.replace(/[D-h]/g, 0))
+    console.log(text.replace(/[D-Za-h]/g, 0));
 
     /*
     Substitua todos os "A" (maiúsculos ou minúsculos) por "4".
@@ -76,25 +76,45 @@
     "O mês de [NOME DO MÊS] é representado pelo número [NÚMERO DO MÊS]."
     */
     console.log( '\nMeses representados por números:' );
-    // var meses = {
-    //     marco: 03,
-    //     junho: 06,
-    //     setembro: 09,
-    //     dezembro: 12
+    
+    // antes da resolução
+
+    // function getMonthNumber(mes) {
+    //     if (mes === 'marco' || mes === 'março') {
+    //         console.log('O mês de ' + mes + ' é representado pelo número ' + 3 + '.');
+    //     } 
+    //     if (mes === 'setembro') {
+    //         console.log('O mês de ' + mes + ' é representado pelo número ' + 9 + '.');
+    //     } if ( mes === 'dezembro') {
+    //         console.log('O mês de ' + mes + ' é representado pelo número ' + 12 + '.');
+    //     }
     // }
 
-    function getMonthNumber(mes) {
-        if (mes === 'marco' || mes === 'março') {
-            console.log('O mês de ' + mes + ' é representado pelo número ' + 3 + '.');
-        } 
-        if (mes === 'setembro') {
-            console.log('O mês de ' + mes + ' é representado pelo número ' + 9 + '.');
-        } if ( mes === 'dezembro') {
-            console.log('O mês de ' + mes + ' é representado pelo número ' + 12 + '.');
+    // getMonthNumber('março');
+
+
+    // após a resolução
+
+    function getMonthNumber (monthName) {
+        var months = {
+            janeiro: '01',
+            'março': '03',
+            abril: '04',
+            maio: '05',
+            junho: '06',
+            julho: '07',
+            agosto: '08',
+            setembro: '09',
+            outubro: '10',
+            novembro: '11',
+            dezembro: '12'
         }
+        return months [monthName];
     }
 
-    getMonthNumber('março');
+    console.log('O mês de março é representado pelo número ' + getMonthNumber('março') + '.');
+    console.log('O mês de setembro é representado pelo número ' + getMonthNumber('setembro') + '.');
+    console.log('O mês de dezembro é representado pelo número ' + getMonthNumber('dezembro') + '.');
 
 
     /*
@@ -106,13 +126,18 @@
     Mostre a regex no console.
     */
     console.log( '\nRegex que vai fazer o match com as datas do texto:' );
-    console.log(text);
-    var regexDate = text.replace(/(de junho de)|(de julho de)/g, function(regexDate, x, y) {
-        return x = '/06/';
-        return y = '/07/';
-    });
+    //antes da resolução
+    // var regexDate = text.replace(/(de junho de)|(de julho de)/g, function(regexDate, x, y) {
+    //     return x = '/06/';
+    //     return y = '/07/';
+    // });
 
+    // console.log(regexDate);
+
+    // depois da resolução
+    var regexDate = /(\d\d) de (junho|julho) de (\d\d\d\d)/g;
     console.log(regexDate);
+
 
     /*
     Agora crie a função que irá fazer o replace dos dados. A função será chamada
@@ -122,6 +147,11 @@
     console o resultado.
     */
     console.log( '\nReplace de datas:' );
-    // ?
+    function replaceDate(regex, dia, mes, ano) {
+        return dia + '/' + getMonthNumber(mes) + '/' + ano;
+    }
+
+    console.log( text.replace(regexDate, replaceDate) );
+
 
 })();
