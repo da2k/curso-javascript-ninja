@@ -54,10 +54,10 @@ e faça a indentação correta.
   Caso contrário, "false".
   - O desafio é fazer o retorno sem usar "if" ou "switch".
   */
-  function isOperatorValid( operator ){
+    function isOperatorValid( operator ){
    /* return typeof operation[operator] !== undefined;  pode ser feito assim */
-   /* return !!operator; ou retornar o equivalente booleano, assim vc escreve menos código mais perde legibilidade talvez */
-   return !!operator;
+   /* return !!operation[operator]; ou retornar o equivalente booleano, assim vc escreve menos código mais perde legibilidade talvez */
+   return !!operation[operator];
   }
 
 
@@ -79,7 +79,7 @@ e faça a indentação correta.
     }
 
     return function( x, y ){
-      if( typeof x !== 'number' && typeof y !== 'number') {
+      if( typeof x !== 'number' || typeof y !== 'number') {
         return false;
       }
       return operation[operator]( x, y );
