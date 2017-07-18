@@ -30,12 +30,11 @@
         return cpf.replace(/[^\d]/g, '');
     }
 
-    console.log( cleanCPF(cpf[0]));
-    console.log( cleanCPF(cpf[1]));
-    console.log( cleanCPF(cpf[2]));
-    console.log( cleanCPF(cpf[3]));
+    var newCPF = cpf.map( function (elem) {
+            return elem.replace (/[^\d]/g, '');
+    });
 
-
+    console.log(newCPF);
 
     /*
     Usando os CPFs limpos acima, deixe-os com a formatação correta de CPF.
@@ -43,15 +42,15 @@
     Mostre o resultado no console.
     */
     console.log( '\nFormatando CPFs corretamente:' );
-    var cpfMask = /\d{3}\.\d{3}\.\d{3}\-\d{2}/;
+    var busca = /[^\d]/g;
+    var cpfRegex = /\d{3}\.\d{3}\.\d{3}\-\d{2}/;
 
-    var newCPF = cpf.map( function (elem, i){
-        var cpfItem = cleanCPF(elem);
-        return cpfItem.replace(elem, cpfMask);
+    var cpfMask = newCPF.map( function (elem, i){
+            return elem.replace(/(\d{3})(\d{3})(\d{3})/g, '$1\.$2\.$3\-');
     });
-   
-    console.log(newCPF);
 
+    console.log(cpfMask);
+   
 
     /*
     Crie uma expressão regular que faça match com as palavras "junho" ou "julho",
