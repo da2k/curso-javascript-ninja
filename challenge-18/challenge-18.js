@@ -126,12 +126,8 @@
     console.log( '\nFazer replace dos textos das tags:' );
 
     var textoHTML =  "<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>";
-    var expReg = /<\/\w+>/g;
-    var subst = /\n/;
+    var tag1 = /<(\w+)>([^<]+)(<\/\w+>)/g;
 
-    
-
-    console.log(textoHTML.match(expReg));
-    
+        console.log(textoHTML.replace(tag1, '<$1> "O texto dentro da tag" "$1" é "$2"$3\n'));
 
 })();
