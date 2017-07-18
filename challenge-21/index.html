@@ -3,13 +3,61 @@
 	<head>
 		<meta charset="utf-8" />
 		<title> Challenge 21 </title>
+
+		<style>
+			html {
+				font: 62.5%;
+			}
+
+			body {
+				background: #2c312e;
+				color: #a0a2ae;
+				font-family: Arial, sans-serif
+			}
+
+			.control {
+				display: block;
+				width: 80%;
+				margin: 50px auto;
+				padding: 0 1em 0.15em 0;
+				box-sizing: border-box;
+				font-family: inherit;
+				font-size: 5em;	
+				color: #ffefb9;
+				border: none;
+				border-bottom: 4px solid #ffefb9;
+				background: none;
+			}
+
+			.btns-group {
+				text-align: center;
+			}
+
+			.btn {
+				text-align: center;
+				min-width: 150px;
+				padding: 20px;
+				text-transform: uppercase;
+				border: none;
+				font-weight: bold;
+				color: #fff;
+				cursor: pointer;
+			}
+
+			.btn-success { background: #4bce7b; }
+			.btn-danger { background: #e85454; }
+			.btn-warning { background: #fdc863; }
+
+		</style>
 	</head>
 	<body>
 		
-		<input type="text" value="0" />
-		<button type="button" data-js="btn-start"> Start </button>
-		<button type="button" data-js="btn-stop"> Stop </button>
-		<button type="button" data-js="btn-reset"> Reset </button>
+		<input type="text" value="0" class="control" />
+		<div class="btns-group">
+			<button type="button" data-js="btn-start" class="btn btn-success"> Start </button>
+			<button type="button" data-js="btn-stop" class="btn btn-danger"> Stop </button>
+			<button type="button" data-js="btn-reset" class="btn btn-warning"> Reset </button>
+		</div>
 
 		<script src="challenge-21.js"></script>
 	</body>
