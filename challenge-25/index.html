@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Challenge 25</title>
+  <style>
+  body {
+    font-family: sans-serif
+  }
+
+  label {
+    display: block
+  }
+
+  input {
+    margin-bottom: 10px;
+    width: 15%;
+  }
+
+  button{
+    width: 82px;
+    float: left;
+    margin: 0 2px;
+  }
+
+  .error{
+    font-size: 12px;
+    color:red;
+  }
+
+  </style>
+</head>
+
+<body>
+  <form action="." method="get">
+    <div>
+      <input type="text" data-js="area">
+      <select data-js="select">
+        <option>Select area</option>
+        <option>Java script programmer</option>
+        <option>Front end PL</option>
+        <option>Front end Sr</option>
+        <option>Front end Jr</option>
+      </select>
+    </div>
+    <div>
+      <input type="password" placeholder="type your password" data-js="password"> 
+    </div>
+    <div>
+      <button type="button" data-js="button-send">send</button>
+    </div>
+    <div>
+      <button type="button" data-js="button-clear">clear field</button>
+    </div>
+  </form>
+  <script src="challenge-25.js"></script>
+</body>
+
+</html>
