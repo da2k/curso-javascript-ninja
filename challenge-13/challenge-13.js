@@ -2,37 +2,56 @@
 Envolva todo o código desse desafio em uma IIFE.
 */
 
+(function(){
+
 /*
 Crie um array e mostre no console a representação em String desse array,
 usando o método visto na aula 13.
 */
 console.log( 'O array em formato de string é:' );
-// ?
+
+var arrString = [ 'luciano', 'barauna', 'lourenco' ];
+
+console.log( arrString.join(' ') );
+
 
 /*
 Crie 2 arrays `sul` e `sudeste`, que serão as regiões do Brasil.
 Cada array deve conter os estados dessa região.
 */
-// ?
+
+var sul = [ 'Santa Cataria', 'Paraná', 'Rio Grande do Sul' ];
+var sudeste = [ 'Rio de Janeiro', 'São Paulo', 'Minas Gerais', 'Espírito Snato' ];
 
 /*
 Crie uma variável chamada `brasil`, que irá receber as duas regiões
 concatenadas. Mostre o `brasil` no console.
 */
 console.log( '\nAlguns Estados do Brasil:' );
-// ?
+
+var brasil;
+
+brasil = sudeste.concat( sul );
+
+console.log( brasil );
 
 /*
 Adicione 3 novos estados da região Norte no início do array e mostre no console.
 */
 console.log( '\nMais estados adicionados:' );
-// ?
+
+brasil.unshift( 'Amazonas', 'Acre', 'Roraima', 'Amapá', 'Pará', 'Tocantins', 'Rondônia' );
+
+console.log( brasil )
 
 /*
 Remova o primeiro estado do array `brasil` e mostre-o no console.
 */
 console.log( '\nEstado removido:' );
-// ?
+
+var firstState = brasil.shift();
+
+console.log( firstState );
 
 /*
 Crie um novo array chamado `newSul`, que receba somente os estados do sul,
@@ -148,3 +167,5 @@ Mostre o array filtrado acima no console.
 */
 console.log( '\nEstados com ID par:' );
 // ?
+
+})();
