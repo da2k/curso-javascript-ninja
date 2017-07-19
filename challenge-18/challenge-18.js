@@ -31,14 +31,15 @@
   Mostre o resultado no console.
   */
   console.log( '\nFormatando CPFs corretamente:' );
-  var regexCPF = /(\d{3})(\d{3})(\d{3})(\d{2})/g;
-  function formatCPF (regex, $1, $2, $3, $4) {
-    return $1 + '.' + $2 + '.' + $3 + '-' + $4;
-  }
-  console.log('04921434211'.replace(regexCPF, formatCPF));
-  console.log('21045852205'.replace(regexCPF, formatCPF));
-  console.log('73550079422'.replace(regexCPF, formatCPF));
-  console.log('10112313132'.replace(regexCPF, formatCPF));
+  console.log('04921434211'.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4'));
+  // var regexCPF = /(\d{3})(\d{3})(\d{3})(\d{2})/g;
+  // function formatCPF (regex, $1, $2, $3, $4) {
+  //   return $1 + '.' + $2 + '.' + $3 + '-' + $4;
+  // }
+  // console.log('04921434211'.replace(regexCPF, formatCPF));
+  // console.log('21045852205'.replace(regexCPF, formatCPF));
+  // console.log('73550079422'.replace(regexCPF, formatCPF));
+  // console.log('10112313132'.replace(regexCPF, formatCPF));
 
   /*
   Crie uma expressão regular que faça match com as palavras "junho" ou "julho",
@@ -52,7 +53,7 @@
   ["junho", "julho"]
   */
   console.log( '\nMatch com as palavras "junho" ou "julho" para a frase "Os meses de janeiro, junho e julho começam com a letra j.":' );
-  var text = 'Match com as palavras "junho" ou "julho" para a frase "Os meses de janeiro, junho e julho começam com a letra j.';
+  var text = 'Os meses de janeiro, junho e julho começam com a letra j.';
   console.log(text.match(/ju\w+/g));
 
   /*
@@ -65,8 +66,8 @@
   ["<div>", "<section>", "<blockquote>"]
   */
   console.log( '\nMatch com a abertura de uma tag HTML:' );
-  var openTag = '<div><section><blockquote>Texto <img /></blockquote></section></div>';
-  console.log(openTag.match(/<\w+>/g));
+  var openTags = '<div><section><blockquote>Texto <img /></blockquote></section></div>';
+  console.log(openTags.match(/<\w+>/g));
 
   /*
   Crie uma expressão regular que faça o match com uma tag HTML vazia, casando
@@ -78,8 +79,8 @@
   ["<li></li>", "<li></li>", "<span></span>"]
   */
   console.log( '\nMatch com tags HTML vazias (abertura e fechamento da tag):' );
-  var openCloseTags = '<div><ul><li></li><li></li><li><span></span></li></ul></div>';
-  console.log(openCloseTags.match(/<\w+><\/\w+>/g));
+  var emptyTags = '<div><ul><li></li><li></li><li><span></span></li></ul></div>';
+  console.log(emptyTags.match(/<\w+><\/\w+>/g));
 
   /*
   Vamos complicar um pouco agora :D
@@ -105,8 +106,9 @@
   */
   console.log( '\nFazer replace dos textos das tags:' );
   var html = '<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>';
-  var regexHtml = /<(\w+)>([^<]+)<\/\w+>/g;
-  console.log(html.replace(regexHtml, function(regex, tag, content) {
-    return '<' + tag + '>O texto dentro da tag "' + tag + '" é "' + content + '"</' + tag + '>\n';
-  }));
+  console.log(html.replace(/<(\w+)>([^<]+)<\/\w+>/g, '<$1>O texto dentro da tag "$1" é "$2"</$1>\n'));
+  // var regexHtml = /<(\w+)>([^<]+)<\/\w+>/g;
+  // console.log(html.replace(regexHtml, function(regex, tag, content) {
+  //   return '<' + tag + '>O texto dentro da tag "' + tag + '" é "' + content + '"</' + tag + '>\n';
+  // }));
 })();
