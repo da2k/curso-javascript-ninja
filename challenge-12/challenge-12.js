@@ -13,11 +13,19 @@ de valor para cada propriedade.
 */
 
 var person = {
+<<<<<<< HEAD
     name: 'Luciano',
     lastname: 'Barauna',
     age: 29
 }
 console.log( 'Propriedades de "person": ');
+=======
+    'name': 'Luciano',
+    'lastname': 'Barauna',
+    'age': 29
+}
+console.log( 'Propriedades de "person": ', person );
+>>>>>>> 7ffdcddedabfc3e43eceabf18d944d24dccbf900
 
 /*
 Mostre no console, em um array, todas as propriedades do objeto acima.
@@ -38,9 +46,15 @@ seguintes propriedades:
 `pages`: Number
 */
 
+<<<<<<< HEAD
 books.push({ name: 'Livro HTML', pages: 50 });
 books.push({ name: 'Livro CSS', pages: 150 });
 books.push({ name: 'Livro JS', pages: 250 });
+=======
+books[0] = { 'name': 'Livro HTML', 'pages': 50 };
+books[1] = { 'name': 'Livro CSS', 'pages': 150 };
+books[2] = { 'name': 'Livro JS', 'pages': 250 };
+>>>>>>> 7ffdcddedabfc3e43eceabf18d944d24dccbf900
 console.log( '\nLista de livros:');
 
 /*
@@ -92,6 +106,7 @@ Mostre no console todas as propriedades e valores de todos os livros,
 no formato abaixo:
     "[PROPRIEDADE]: [VALOR]"
 */
+<<<<<<< HEAD
 
 console.log('\nMostrando propriedades do objeto:');
 
@@ -101,6 +116,11 @@ for( var i = 0; i < books.length; i++ ) {
   }
 }
 
+=======
+for (var prop in books) {
+  console.log( books[prop] );
+}
+>>>>>>> 7ffdcddedabfc3e43eceabf18d944d24dccbf900
 
 /*
 Crie um array chamado `myName`. Cada item desse array deve ser uma letra do
