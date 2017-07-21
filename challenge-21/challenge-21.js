@@ -31,9 +31,7 @@
         temporizador = setTimeout(cronometro, 1000);
     }
 
-    $buttonStart.addEventListener('click', function(){
-        cronometro();
-    }, false);
+    $buttonStart.addEventListener('click', cronometro, false);
 
     $buttonStop.addEventListener('click', function(){
         clearTimeout(temporizador);
