@@ -91,11 +91,10 @@
     var markup = '<main>\n  <div class="container">\n    <span class="text date"></span>\n    <p class=\'excerpt\'></p>\n  </div>\n</main>';
     console.log( '\nQuais classes CSS existem na marcação abaixo?\n\n', markup, '\n' );
    
-
     var regex = /<\w*\s*class=.(\w*)\s*?(\w*).>/g;
 
     function hasClass(markup, cssClass) {
-        var reg = new RegExp('class=.' + cssClass + '\\s*?\\w*.');
+        var reg = new RegExp("(class=.'?)(\\w*\\s?\\w*)?" + cssClass + ".'?");
         return reg.test(markup);
     }
 
