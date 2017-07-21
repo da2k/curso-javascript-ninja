@@ -57,13 +57,18 @@ console.log( firstState );
 Crie um novo array chamado `newSul`, que receba somente os estados do sul,
 pegando do array `brasil`. Não remova esses itens de `brasil`.
 */
-// ?
+var newSul = brasil.filter( function (item, index, array){
+  console.log('item', item);
+  console.log('index', index);
+  console.log('array', array);
+  return sul[index];
+})
 
 /*
 Mostre no console os estados que estão em `newSul`.
 */
 console.log( '\nEstados do Sul do Brasil:' );
-// ?
+console.log( 'opa sul', newSul );
 
 /*
 Mostre no console todos os estados que estão em `brasil`.
@@ -74,20 +79,21 @@ console.log( '\nAlguns Estados do Brasil:' );
 /*
 Crie um novo array chamado `nordeste`, que tenha os estados do nordeste.
 */
-// ?
+var nordeste = ['Alagoas', 'Bahia', 'Ceára', 'Maranhão', 'Paraíba', 'Pernambuco', 'Piauí',  'Sergipe'];
 
 /*
 Mostre no console os estados do nordeste.
 */
 console.log( '\nEstados do Nordeste:' );
-// ?
+console.log(nordeste);
 
 /*
 Remova de `brasil` os estados do `sudeste`, colocando-os em uma variável
 chamada `newSudeste`.
 */
-// ?
+var newSudeste = sudeste;
 
+console.log('teste', newSudeste);
 /*
 Adicione os estados do `nordeste` ao array `brasil`. Esses estados devem
 ficar no mesmo nível que os estados já existentes, não em um array separado.
