@@ -27,20 +27,22 @@
     var temporizador;
 
     function cronometro (){
-        $inputCounter.value++;
+        $inputCounter.value = +$inputCounter.value +1;
         temporizador = setTimeout(cronometro, 1000);
     }
 
+    function stopCronometro() {
+        clearTimeout(temporizador);
+    }
+
+    function resetCronometro() {
+       $inputCounter.value = 0;
+       clearTimeout(temporizador);
+    }
+
     $buttonStart.addEventListener('click', cronometro, false);
-
-    $buttonStop.addEventListener('click', function(){
-        clearTimeout(temporizador);
-    }, false);
-
-    $buttonReset.addEventListener('click', function(){
-        $inputCounter.value = 0;
-        clearTimeout(temporizador);
-    }, false);
+    $buttonStop.addEventListener('click', stopCronometro, false);
+    $buttonReset.addEventListener('click', resetCronometro, false);
 
 
 })(window, document);
