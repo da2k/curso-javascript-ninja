@@ -57,26 +57,13 @@ console.log( firstState );
 Crie um novo array chamado `newSul`, que receba somente os estados do sul,
 pegando do array `brasil`. Não remova esses itens de `brasil`.
 */
-<<<<<<< HEAD
 var newSul = brasil.slice(10,13);
-=======
-var newSul = brasil.filter( function (item, index, array){
-  console.log('item', item);
-  console.log('index', index);
-  console.log('array', array);
-  return sul[index];
-})
->>>>>>> df1d7617c63c95891a063bc5eec52839a44326df
 
 /*
 Mostre no console os estados que estão em `newSul`.
 */
 console.log( '\nEstados do Sul do Brasil:' );
-<<<<<<< HEAD
 console.log(newSul);
-=======
-console.log( 'opa sul', newSul );
->>>>>>> df1d7617c63c95891a063bc5eec52839a44326df
 
 /*
 Mostre no console todos os estados que estão em `brasil`.
@@ -87,11 +74,7 @@ console.log(brasil);
 /*
 Crie um novo array chamado `nordeste`, que tenha os estados do nordeste.
 */
-<<<<<<< HEAD
 var nordeste = ['Alagoas', 'Bahia', 'Ceara', 'Maranhão', 'Paraíba', 'Pernambuco', 'Pauí', 'Rio Grande do Norte', 'Sergipe'];
-=======
-var nordeste = ['Alagoas', 'Bahia', 'Ceára', 'Maranhão', 'Paraíba', 'Pernambuco', 'Piauí',  'Sergipe'];
->>>>>>> df1d7617c63c95891a063bc5eec52839a44326df
 
 /*
 Mostre no console os estados do nordeste.
@@ -103,11 +86,7 @@ console.log(nordeste);
 Remova de `brasil` os estados do `sudeste`, colocando-os em uma variável
 chamada `newSudeste`.
 */
-<<<<<<< HEAD
 var newSudeste = brasil.splice(6,4);
-=======
-var newSudeste = sudeste;
->>>>>>> df1d7617c63c95891a063bc5eec52839a44326df
 
 console.log('teste', newSudeste);
 /*
