@@ -32,8 +32,8 @@
     function getFullName() {
         return this.name + ' ' + this.lastName;
     }
-      console.log(getFullName.apply(people1));
-      console.log(getFullName.apply(people2));
+      console.log(getFullName.call(people1));
+      console.log(getFullName.call(people2));
 
 
     /*
@@ -46,14 +46,11 @@
 
 
     function sum (){
-      console.log(arguments.length);
-      var result = Array.prototype.reduce.call( arguments, function(acumulado, atual ,index){
-        return acumulado + atual;
+      console.log(arguments);
+        return Array.prototype.reduce.call( arguments, function(acumulado, atual ,index){
+          return +acumulado + +atual;
       });
-      console.log(result);
     }
-
-    console.log(sum(2,3,10,30));
 
     /*
     Mostre no console que a função acima funciona, invocando-a em 3 console.log
@@ -63,7 +60,6 @@
     console.log(sum(5.0,6.8,70,6,7,8));
     console.log(sum(50,100,200,13));
     console.log(sum(110,500,500));
-
 
     /*
     Declare uma variável chamada `userEntry`, que irá receber alguns valores
@@ -86,7 +82,7 @@
     */
     console.log( '\nFunção que limpa entrada do usuário (somente números):' );
     function justNumbers( stringName ){
-      return stringName.match(/\d/g).map(Number);
+      return stringName.match(/\d/g);
     };
     console.log(justNumbers.toString());
 
@@ -96,7 +92,7 @@
     */
     console.log( '\nEntrada do usuário limpa. Somente números:' );
 
-    var numbers = justNumbers('42V32irgin19');
+    var numbers = justNumbers(userEntry);
 
     console.log(numbers);
 
@@ -108,7 +104,7 @@
     */
     console.log( '\nSomar números entrados pelo usuário:' );
 
-    console.log(sum(numbers));
+    console.log(sum.apply(sum, numbers));
 
 
   })(window, document);
