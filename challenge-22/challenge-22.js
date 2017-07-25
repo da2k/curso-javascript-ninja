@@ -46,7 +46,7 @@
 
 
     function sum (){
-      console.log(sum.length);
+      console.log(arguments.length);
       var result = Array.prototype.reduce.call( arguments, function(acumulado, atual ,index){
         return acumulado + atual;
       });
@@ -60,8 +60,8 @@
     diferentes, com quantidades variáveis de parâmetros passados.
     */
     console.log( '\nSomar alguns números:' );
-    console.log(sum(5.0,6.8,70));
-    console.log(sum(50,100,200));
+    console.log(sum(5.0,6.8,70,6,7,8));
+    console.log(sum(50,100,200,13));
     console.log(sum(110,500,500));
 
 
@@ -86,10 +86,8 @@
     */
     console.log( '\nFunção que limpa entrada do usuário (somente números):' );
     function justNumbers( stringName ){
-      return stringName.match(/\d/g);
+      return stringName.match(/\d/g).map(Number);
     };
-
-    console.log(justNumbers('42V32irgin19'));
     console.log(justNumbers.toString());
 
     /*
@@ -98,7 +96,9 @@
     */
     console.log( '\nEntrada do usuário limpa. Somente números:' );
 
-   var numbers = justNumbers('42V32irgin19');
+    var numbers = justNumbers('42V32irgin19');
+
+    console.log(numbers);
 
 
 
@@ -107,9 +107,6 @@
     números desse array e mostre o resultado no console.
     */
     console.log( '\nSomar números entrados pelo usuário:' );
-
-
-    console.log(typeof(numbers));
 
     console.log(sum(numbers));
 
