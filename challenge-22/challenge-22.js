@@ -47,7 +47,7 @@
   function sum() {
     console.log( arguments );
     return Array.prototype.reduce.call( arguments, function( acumulated, actual, index ) {
-      return parseInt(acumulated) + parseInt(actual);
+      return Number(acumulated) + Number(actual);
     });
   }
 
