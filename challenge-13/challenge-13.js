@@ -74,7 +74,7 @@ console.log(brasil);
 /*
 Crie um novo array chamado `nordeste`, que tenha os estados do nordeste.
 */
-var nordeste = ['Alagoas', 'Bahia', 'Ceara', 'Maranhão', 'Paraíba', 'Pernambuco', 'Pauí', 'Rio Grande do Norte', 'Sergipe'];
+var nordeste = ['Alagoas', 'Bahia', 'Ceará', 'Maranhão', 'Paraíba', 'Pernambuco', 'Pauí', 'Rio Grande do Norte', 'Sergipe'];
 
 /*
 Mostre no console os estados do nordeste.
@@ -138,21 +138,17 @@ Senão, mostre no console:
 - "Nem todos os estados tem mais de 7 letras!"
 */
 
-function checkSizeWords(item, index, value){
-  console.log(item.length);
-  if(item.length > 7 ) {
-    console.log("Sim, todos os estados tem mais de 7 letras!");
-    return;
-  }
-    console.log("Nem todos os estados tem mais de 7 letras!");
-  return;
-
-}
+var checkSizeWords = brasil.every(function( item, index ){
+  return item.length > 7;
+});
 
 console.log( '\nTodos os estados de `brasil` tem mais de 7 letras?' );
 
-
-console.log( ['Sergipe'].every(checkSizeWords) );
+if(checkSizeWords){
+  console.log("Sim, todos os estados tem mais de 7 letras!");
+} else {
+  console.log("Nem todos os estados tem mais de 7 letras!");
+}
 
 /*
 Percorra o array `brasil` e verifique se o Ceará está incluído, atribuindo o
@@ -162,8 +158,19 @@ console:
 Senão, mostrar a frase:
 - "Ceará não foi incluído :("
 */
+
+var checkCeara = brasil.some(function( item ){
+  return item === 'Ceará';
+});
+
 console.log( '\nCeará está incluído em `brasil`?' );
-// ?
+
+if(checkCeara){
+  console.log("Ceará está incluído!")
+} else {
+  console.log("Ceará não foi incluído :(")
+}
+
 
 /*
 Percorra o array `newBrasil` e crie um novo array que some 1 no ID de cada
