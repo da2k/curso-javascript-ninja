@@ -1,4 +1,5 @@
 (function () {
+  'use strict'
   /*
    Vamos desenvolver mais um projeto. A ideia é fazer uma mini-calculadora.
    As regras são:
@@ -26,15 +27,15 @@
    */
   var regexLastOperator = /(?:\+|-|÷|x)$/g;
 
-  $display = document.querySelector('input[type="text"]');
+  var $display = document.querySelector('input[type="text"]');
 
-  $buttonReset = document.querySelector('button[data-js="reset"]');
+  var $buttonReset = document.querySelector('button[data-js="reset"]');
   $buttonReset.addEventListener('click', resetDisplay, false);
 
-  $buttonEqual = document.querySelector('button[data-js="equal"]');
+  var $buttonEqual = document.querySelector('button[data-js="equal"]');
   $buttonEqual.addEventListener('click', calculateExpression, false);
 
-  $numberButtons = document.querySelectorAll('button[data-js*="number"]');
+  var $numberButtons = document.querySelectorAll('button[data-js*="number"]');
 
   Array.prototype.forEach.call($numberButtons, function (item) {
     item.addEventListener('click', function () {
@@ -42,7 +43,7 @@
     }, false);
   });
 
-  $operationButtons = document.querySelectorAll('button[data-js*="operator"]');
+  var $operationButtons = document.querySelectorAll('button[data-js*="operator"]');
 
   Array.prototype.forEach.call($operationButtons, function (item) {
     item.addEventListener('click', function () {
