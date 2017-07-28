@@ -11,25 +11,19 @@ Os números devem ser de 1 a 10.
 Mostre esse array no console.
 */
 console.log( 'Number Objects Array:' );
-var numberObjects = [
-  {number: 1},
-  {number: 2},
-  {number: 3},
-  {number: 4},
-  {number: 5},
-  {number: 6},
-  {number: 7},
-  {number: 8},
-  {number: 9},
-  {number: 10},
-]
+var numberObjects = []
+for ( var i = 1; i <= 10; i++ ) {
+  numberObjects.push({ number: i});
+
+}
+console.log(numberObjects);
 
 /*
 Crie um array chamado `justNumbers`, que terá como elementos somente os
 números do array criado acima. Mostre esse novo array no console.
 */
 console.log( '\nJust Numbers:' );
-var justNumbers = numberObjects.map(function(item, value){
+var justNumbers = numberObjects.map(function(item){
   return item.number;
 })
 
@@ -41,16 +35,12 @@ somente os números que forem divisíveis por 2 ou 3. Mostre esse novo array
 no console.
 */
 console.log( '\nJust module of division by 2 or 3:' );
-var justMod2Or3 = [];
 
-justNumbers.forEach(function( value, index){
-  // if( value % 2 === 0 || value % 3 === 0 ) {
-  //   justMod2Or3.push( value );
-  // }
-  value % 2 === 0 || value % 3 === 0 ? justMod2Or3.push( value ) : '';
+var justMod2Or3 = justNumbers.filter(function(item){
+  return item % 2 === 0 || item % 3 === 0;
 })
-  console.log(justMod2Or3);
 
+console.log(justMod2Or3);
 /*
 Declare uma variável chamada operation que receba, do array criado acima,
 um valor reduzido pela seguinte operação:
@@ -61,22 +51,8 @@ Mostre o resultado no console.
 */
 console.log( '\nOperation:' );
 
-// var operation = function operation (){
-//   var valor = justMod2Or3.reduce(function( total, atual){
-//     return total + atual;
-//   }, 0)
-
-//   return (valor + 1) * valor;
-// }
-
-
-// console.log(operation());
-
-var conta;
-
-var operation = justMod2Or3.reduce(function( total, atual){
-  conta = total + atual;
-  return conta + 1;
+var operation = justMod2Or3.reduce(function( acumulado, atual){
+  return (acumulado + 1) * atual;
 }, 0)
 
 console.log(operation);
@@ -87,7 +63,12 @@ primeiro. O nome da variável deve ser operation2. Mostre o resultado no
 console.
 */
 console.log( '\nOperation 2:' );
-// ?
+
+var operation2 = justMod2Or3.reduceRight(function( acumulado, atual){
+  return (acumulado + 1) * atual;
+}, 0)
+
+console.log(operation2);
 
 /*
 Crie um array chamado `name`. Cada elemento desse array deve ser uma sílaba
@@ -98,13 +79,13 @@ infantil, onde você coloca a letra "P" antes de cada sílaba de uma palavra
 falada, como se você estivesse falando em código xD
 */
 console.log( '\nSeu nome na língua do "P":' );
-var name = ['l', 'u', 'c', 'i', 'a', 'n', 'o'];
+var name = ['lu', 'ci', 'a', 'no'];
 
-var nameJoin = name.reduce(function(valuetotal, itemtotal){
-  return valuetotal + 'p' + itemtotal;
-});
+var reduceP = name.reduce(function(acumulado, atual){
+  return acumulado + 'p' + atual;
+}, '');
 
-console.log(nameJoin);
+console.log(reduceP);
 
 /*
 Crie uma variável chamada `inversedName`, que reduzirá o array em uma string
