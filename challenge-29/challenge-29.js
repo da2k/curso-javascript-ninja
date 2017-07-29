@@ -1,4 +1,4 @@
-(function() {
+(function($) {
   'use strict';
 
   /*
@@ -36,4 +36,80 @@
   que será nomeado de "app".
   */
 
-})();
+  var app = (function() {
+    return {
+      init: function() {
+        this.companyInfo();
+        this.initEvents();
+      },
+
+      initEvents: function initEvents() {
+        $('[data-js="data-register"]').on('submit', this.handleSubmit);
+      },
+
+      handleSubmit: function handleSubmit(e) {
+        event.preventDefault();
+        var $tableCar = $('[data-js="table-car"]').get();
+        $tableCar.appendChild(app.createNewCar());
+      },
+
+      createNewCar: function createNewCar() {
+        var $fragment = document.createDocumentFragment();
+        var $tr = document.createElement('tr');
+        var $tdImage = document.createElement('td');
+        var $image = document.createElement('img');
+        var $tdBrand = document.createElement('td');
+        var $tdYear = document.createElement('td');
+        var $tdPlate = document.createElement('td');
+        var $tdColor = document.createElement('td');
+
+        $image.setAttribute('src', $('[data-js="data-image"]').get().value);
+        $tdImage.appendChild($image); 
+        $tdBrand.textContent = $('[data-js="data-model"]').get().value;
+        $tdYear.textContent = $('[data-js="data-year"]').get().value;
+        $tdPlate.textContent = $('[data-js="data-pane"]').get().value;
+        $tdColor.textContent = $('[data-js="data-cor"]').get().value;
+
+        $tr.appendChild($tdImage);
+        $tr.appendChild($tdBrand);
+        $tr.appendChild($tdYear);
+        $tr.appendChild($tdPlate);
+        $tr.appendChild($tdColor); 
+
+        return $fragment.appendChild($tr);
+
+      },
+
+      companyInfo: function() {
+        var ajax = new XMLHttpRequest();
+        ajax.open('GET', 'company.json', true);
+        ajax.send();
+        ajax.addEventListener('readystatechange', this.handleStateChange, false);
+      },
+
+      handleStateChange: function handleStateChange() {
+        if (!app.isReady.call(this))
+          return;
+
+        app.fillFieldDocument.call(this);
+      },
+
+      isReady: function isReady() {
+        return this.readyState === 4 && this.status === 200;
+      },
+
+      fillFieldDocument: function fillFieldDocument() {
+        var data = JSON.parse(this.responseText);
+        var $companyName = $('[data-js="company-name"]').get();
+        var $companyPhone = $('[data-js="company-phone"]').get();
+
+        $companyName.textContent = data.name;
+        $companyPhone.textContent = data.phone;
+      }
+
+    };
+  })();
+
+  app.init();
+
+})(window.DOM);

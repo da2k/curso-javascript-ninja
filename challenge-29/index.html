@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Challenge-29</title>
+  <style>
+  ul {
+    margin: 0;
+    list-style: none;
+  }
+
+  li {
+    width: 50%;
+    padding: 10px 0;
+    color: #229471;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 13px;
+  }
+
+  li input {
+    margin-top: 5px;
+  }
+
+  img{
+  	max-width: 200px;
+  	height: auto;
+  }
+
+  form,
+  table {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  table th{
+	font-weight: bold;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #229471;
+    border:1px solid #d0d0d0;
+    padding: 5px 40px;
+  }
+
+  tbody tr td{
+  	padding: 5px 40px;
+  	border:1px solid #d0d0d0;
+  }
+
+  h1,h2 {
+    color: #0fa71d;
+    display: inline-block;
+    font-family: arial;
+  }
+
+  button {
+    width: 150px;
+    text-transform: uppercase;
+    height: 30px;
+  }
+
+   ::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: gray;
+    font-style: italic;
+    font-size: 12px;
+    opacity: 0.5;
+  }
+
+  ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: gray;
+    font-style: italic;
+    font-size: 12px;
+    opacity: 0.5;
+  }
+
+  :-ms-input-placeholder {
+    /* IE 10+ */
+    color: gray;
+    font-style: italic;
+    font-size: 12px;
+    opacity: 0.5;
+  }
+
+  :-moz-placeholder {
+    /* Firefox 18- */
+    color: gray;
+    font-style: italic;
+    font-size: 12px;
+    opacity: 0.5;
+  }
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 data-js="company-name"></h1>
+    <h2 data-js="company-phone"></h2>
+  </header>
+  <form data-js="data-register">
+    <ul>
+      <li>
+        <label>Url car:</label>
+        <input type="url" data-js="data-image" placeholder="ex:http://path">
+      </li>
+      <li>
+        <label>Model car:</label>
+        <input type="text" data-js="data-model" placeholder="ex:model/car">
+      </li>
+      <li>
+        <label>Year car:</label>
+        <input type="text" data-js="data-year" placeholder="ex:1970">
+      </li>
+      <li>
+        <label>Pane car:</label>
+        <input type="text" data-js="data-pane" placeholder="ex:AXZ45678">
+      </li>
+      <li>
+        <label>Color car:</label>
+        <input type="text" data-js="data-cor" placeholder="ex:blue">
+      </li>
+      <li>
+        <button type="submit">Register car</button>
+      </li>
+    </ul>
+  </form>
+  <table data-js="data-table">
+    <thead>
+    	<tr>
+    		<th>Image car</th>
+    		<th>Model car</th>
+    		<th>Year car</th>
+    		<th>Pane car</th>
+    		<th>Color car</th>
+    	</tr>
+    </thead>
+    <tbody data-js="table-car"></tbody>
+  </table>
+  <script src="DOM.js"></script>
+  <script src="challenge-29.js"></script>
+</body>
+
+</html>
