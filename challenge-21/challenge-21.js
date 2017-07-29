@@ -30,12 +30,10 @@ dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
     $input.value = counter
     idTimer = setTimeout(start, 1000)
     $start.disabled = true
-    $start.classList.add('disabled')
   }
   function stop () {
     clearTimeout(idTimer)
     $start.disabled = false
-    $start.classList.remove('disabled')
   }
   function reset () {
     counter = 0
