@@ -31,25 +31,49 @@
   var $inputData = doc.querySelector('[data-js="calcData"]');
   var $inputNumbers = doc.querySelectorAll('[data-js="calcNumber"]');
   var $operadores = doc.querySelectorAll('[data-js="operador"]');
+  var $result = doc.querySelector('[data-js="result"]');
   var $clear = doc.querySelector('[data-js="calcReset"]');
 
   $inputData.value = 0;
   var inputVal = $inputData.value;
 
 
-// Trocar os valores do input
-  function numberInput() {
-    for (var i = 0; i < $inputNumbers.length; i++) {
-        $inputNumbers[i].addEventListener('click', function(event) {
-          var item = this.value;
+    Array.prototype.forEach.call($inputNumbers, function(button) {
+        button.addEventListener('click', numberInput, false);
+    });
+
+    Array.prototype.forEach.call($operadores, function(button) {
+        button.addEventListener('click', operacao, false);
+    });
+
+    function numberInput() {
           if ($inputData.value == 0)
-            return $inputData.value = item;
+           $inputData.value = this.value;
           else
-            return $inputData.value = $inputData.value + item;
-        }, false);
+           $inputData.value += this.value;
     }
+
+    function operacao() {
+        $inputData.value = removeLastItem($inputData.value);
+        $inputData.value += this.value;
+
+    }
+
+    function lastItem(number) {
+      var symbols = ['+', '-', '/', 'x'];
+      var lastItem = number.split('').pop();
+
+      return symbols.some(function(operator) {
+          return operator === lastItem;
+      });
   }
-  numberInput();
+
+    function removeLastItem(number) {
+        if (lastItem(number)) {
+            return number.slice(0, -1);
+        }
+        return number;
+    }
 
 
 // Botão CE - zerar input
@@ -57,33 +81,39 @@
       return $inputData.value = 0;
   }
 
-  function operacao () {
-      var operadoresArr = [].map.call($operadores, function(item) {
-        item.addEventListener('click', function(event){
-          var symbol = this.value;
-          // var lastItem = inputVal.match(/([\-\+\%\*]){1}(\1)$/gm);
-          if (symbol === '+' ) {
-              return $inputData.value = $inputData.value + symbol;
-              if ($inputData.value = $inputData.value.match(/([\-\+\%\*]){1}(\1)$/gm)) {
-                console.log('teste');
-              }
-          } else if  ( symbol === '-'){
-              return $inputData.value = $inputData.value + symbol;
-          } else if ( symbol === 'x') {
-              return $inputData.value = $inputData.value + symbol;
-          } else if ( symbol === '%') {
-              return $inputData.value = $inputData.value + symbol;
-          } else if ( symbol === '=') {
-              return $inputData.value = $inputData.value;
-          }
-        }, false);
-      });
+
+  function resultOperation () {
+    $inputData.value = removeLastItem($inputData.value);
+    var inputAll = $inputData.value.match(/(\d+)([+x%-])?/g);
+    var map = inputAll.map( function (item, id){
+      var signal = /[+x%-]?/.test(item);
+      if (signal) {
+        var oper = item.split('').pop();
+        var removeOp = item.slice(0, -1);
+        var resultOper = inputAll.reduce( function(acumulado, atual, index, array) {
+            acumulado = +removeOp;
+            atual = +removeOp;
+            return acumulado + oper + atual;
+            console.log('acum: ' + acumulado + ' operacao: ' + oper + ' atual: ' + atual);
+        },0);
+
+        console.log(resultOper);
+      }
+
+    })
+
+    // console.log(inputAll);
+
+
   }
-  operacao();
 
-
+  $result.addEventListener('click', resultOperation, false);
 
   $clear.addEventListener('click', clearCalc, false);
 
 
 })(window, document);
+
+
+
+
