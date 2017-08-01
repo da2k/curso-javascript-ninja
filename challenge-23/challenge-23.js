@@ -60,9 +60,8 @@
     }
 
     function lastItem(number) {
-      var symbols = ['+', '-', '/', 'x'];
+      var symbols = ['+', '-', '%', 'x'];
       var lastItem = number.split('').pop();
-
       return symbols.some(function(operator) {
           return operator === lastItem;
       });
@@ -85,27 +84,57 @@
   function resultOperation () {
     $inputData.value = removeLastItem($inputData.value);
     var inputAll = $inputData.value.match(/(\d+)([+x%-])?/g);
-    var map = inputAll.map( function (item, id){
-      var signal = /[+x%-]?/.test(item);
-      if (signal) {
-        var oper = item.split('').pop();
-        var removeOp = item.slice(0, -1);
-        var resultOper = inputAll.reduce( function(acumulado, atual, index, array) {
-            acumulado = +removeOp;
-            atual = +removeOp;
-            return acumulado + oper + atual;
-            console.log('acum: ' + acumulado + ' operacao: ' + oper + ' atual: ' + atual);
-        },0);
-
-        console.log(resultOper);
+    $inputData.value = inputAll.reduce (function (acum, atual){
+      var firstVal = acum.slice(0, -1); // pega o primeiro número
+      var oper = acum.split('').pop();  // transforma em array e pega o último número
+      var lastVal = removeLastItem(atual);
+      var lastOper = lastItem(atual) ? atual.split('').pop() : '';
+      switch (oper){
+        case '+':
+          return (Number(firstVal) + Number(lastVal)) + lastOper;
+        case '-':
+          return (Number(firstVal) - Number(lastVal)) + lastOper;
+        case 'x':
+          return (Number(firstVal) * Number(lastVal)) + lastOper;
+        case '%':
+          return (Number(firstVal) / Number(lastVal)) + lastOper;
       }
-
-    })
-
-    // console.log(inputAll);
-
-
+    });
   }
+
+
+  function resultSum() {
+        $visor.value = removeLastItem($visor.value);
+        var allValues = $visor.value.match(/\d+[+x/-]?/g);
+        $visor.value = allValues.reduce(function(prev, curr) {
+
+            var firstValue = prev.slice(0, -1);
+            var operator = prev.split('').pop();
+            var lastValue = removeLastItem(curr);
+            var lastOperator = isLastItemAnOperation(curr) ? curr.split('').pop() : '';
+
+            console.log('soy jo', firstValue)
+            console.log('soy ope', operator);
+            console.log('soy actual', lastValue);
+
+
+            switch (operator) {
+                case '+':
+                    console.log(item);
+                    // return ( Number(firstValue) + Number(lastValue) ) + lastOperator;
+
+                case '-':
+                    return ( Number(firstValue) - Number(lastValue) ) + lastOperator;
+
+                case '/':
+                    return ( Number(firstValue) / Number(lastValue) ) + lastOperator;
+
+                case 'x':
+                    return ( Number(firstValue) * Number(lastValue) ) + lastOperator;
+            }
+        });
+
+    }
 
   $result.addEventListener('click', resultOperation, false);
 
