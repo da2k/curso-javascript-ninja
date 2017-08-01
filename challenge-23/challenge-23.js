@@ -35,8 +35,6 @@
   var $clear = doc.querySelector('[data-js="calcReset"]');
 
   $inputData.value = 0;
-  var inputVal = $inputData.value;
-
 
     Array.prototype.forEach.call($inputNumbers, function(button) {
         button.addEventListener('click', numberInput, false);
@@ -101,40 +99,6 @@
       }
     });
   }
-
-
-  function resultSum() {
-        $visor.value = removeLastItem($visor.value);
-        var allValues = $visor.value.match(/\d+[+x/-]?/g);
-        $visor.value = allValues.reduce(function(prev, curr) {
-
-            var firstValue = prev.slice(0, -1);
-            var operator = prev.split('').pop();
-            var lastValue = removeLastItem(curr);
-            var lastOperator = isLastItemAnOperation(curr) ? curr.split('').pop() : '';
-
-            console.log('soy jo', firstValue)
-            console.log('soy ope', operator);
-            console.log('soy actual', lastValue);
-
-
-            switch (operator) {
-                case '+':
-                    console.log(item);
-                    // return ( Number(firstValue) + Number(lastValue) ) + lastOperator;
-
-                case '-':
-                    return ( Number(firstValue) - Number(lastValue) ) + lastOperator;
-
-                case '/':
-                    return ( Number(firstValue) / Number(lastValue) ) + lastOperator;
-
-                case 'x':
-                    return ( Number(firstValue) * Number(lastValue) ) + lastOperator;
-            }
-        });
-
-    }
 
   $result.addEventListener('click', resultOperation, false);
 
