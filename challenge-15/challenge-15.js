@@ -36,8 +36,8 @@ var Person = function Person (name, lastName, age){
     return this.age;
   }
 
-  this.addAge = function addAge( valuePlusAge ){
-    this.age += valuePlusAge;
+  this.addAge = function addAge(){
+    this.age += arguments[0];
     return this;
   }
 
@@ -53,6 +53,11 @@ console.log( 'Novas pessoas criadas à partir de Person:' );
 var pessoa1 = new Person('Luciano', 'Barauna', 29);
 var pessoa2 = new Person('Rosane', 'Barauna', 59);
 var pessoa3 = new Person('Adriana', 'Barauna', 34);
+
+
+console.log(pessoa1)
+console.log(pessoa2)
+console.log(pessoa3)
 
 /*
 Mostre no console o nome completo de cada pessoa.
