@@ -114,21 +114,25 @@ Consegue prever o resultado? Deixe uma mensagem no console tentando explicar
 o que acontece ;)
 */
 console.log( '\nExiste um { number: 2 } em numberObjects?' );
-var checkObj = numberObjects.reduce(function(valuetotal, itemtotal, array){
-  return itemtotal.number === 2;
-},0);
 
+if ( numberObjects.indexOf( {number: 2} ) > -1){
+  console.log("Existe um objeto { number: 2 } em numberObjects!" );
+} else {
+  console.log( "Não existe um objeto { number: 2 } em numberObjects :(" );
+}
 
-console.log(checkObj);
-
-console.log (checkObj === true ? "Existe um objeto { number: 2 } em numberObjects!" : "Não existe um objeto { number: 2 } em numberObjects :(")
+console.log(' Não existe por conta de ser um alocamento na memória diferente.Você só consegue dizer se um obj é igual ao outro se criarmos uma refêrencia para ele mesmo.')
 
 /*
 Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
 será que obtemos um resultado diferente? Faça a busca a partir do índice 2.
 */
 console.log( '\nE buscando a partir do último índice, o { number: 2 } existe?' );
-// ?
+  if (numberObjects.lastIndexOf({ number: 2 }) > -2) {
+    console.log("Existe um objeto { number: 2 } em numberObjects!");
+  } else {
+    console.log("Não existe um objeto { number: 2 } em numberObjects :(");
+  }
 
 /*
 Verifique se `justMod2Or3` é um array. Se for, mostre-o no console, no
