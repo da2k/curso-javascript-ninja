@@ -55,11 +55,39 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
   "Operação inválida."
 */
 function calculator(oper){
-	return function(val1, val2){
-		return 'Resultado da operação: ' + val1  + oper + val2 + ' =  ' + val1 + oper + val2 + '.';
-	}
-}
+  var val1;
+  var val2;
+  var result;
 
+  return function(val1, val2){
+    switch(oper){
+      case '+':
+        result = parseInt(val1 + val2);
+        break;
+
+      case '-':
+        result = parseInt(val1 - val2);
+        break;
+
+       case '*':
+        result = parseInt(val1 * val2);
+        break;
+        
+       case '/':
+        result = parseInt(val1 / val2);
+        break;  
+
+      case '%':
+        result = parseInt(val1 % val2);
+        break; 
+
+      default:
+        return 'Operação Inválida'
+    }
+
+    return 'Resultado da operação: ' + val1  + oper + val2 + ' = ' + result + '.';
+  };
+}
 /*
 Declare uma variável chamada `sum`, que receberá a função acima, passando como
 parâmetro o operador de soma.
@@ -69,21 +97,24 @@ var sum = calculator('+')
 /*
 Agora `sum` é uma função. Mostre no console a soma de dois números, usando ela.
 */
-sum(2,3) // "Resultado da operação: 2+3 =  2NaN3."
+sum(2,3) // "Resultado da operação: 2+3 =  5."
 
 /*
 Agora, declare algumas variáveis com os nomes `subtraction`, `multiplication`,
 `division` e `mod`, e atribua a elas a função `calculator`, passando o operador
 correto por parâmetro para cada uma delas.
 */
-var subtraction = calculator('-')
-var multiplication = calculator('*')
-var division = calculator('/')
+var subtraction = calculator('-');
+var multiplication = calculator('*');
+var division = calculator('/');
+var module = calculator('%');
 
 /*
 Faça uma operação com cada uma das funções criadas acima, mostrando o resultado
 no console.
 */
-subtraction(2,3) // "Resultado da operação: 2-3 =  2NaN3."
-multiplication(2,3) // "Resultado da operação: 2*3 =  2NaN3."
-division(2,3) // "Resultado da operação: 2/3 =  2NaN3."
+subtraction(2,3) // "Resultado da operação: 2-3 =  -1."
+multiplication(2,3) // "Resultado da operação: 2*3 =  6."
+division(6,3) // "Resultado da operação: 6/3 =  2."
+module(6,3) // "Resultado da operação: 6%3 = 0."
+
