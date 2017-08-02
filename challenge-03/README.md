@@ -62,85 +62,95 @@ pessoa.nomeCompleto = function(){
 Crie um método chamado `mostrarIdade`, que retorne a frase:
 - "Olá, eu tenho [IDADE] anos!"
 */
-?
+pessoa.mostrarIdade = function(){
+    return 'Olá, eu tenho '+ pessoa.idade + ' anos!';
+}
 
 /*
 Crie um método chamado `mostrarPeso`, que retorne a frase:
 - "Eu peso [PESO]Kg."
 */
-?
+pessoa.mostrarPeso = function(){
+    return 'Eu peso '+ pessoa.peso + ' kg.';
+}
 
 /*
 Crie um método chamado `mostrarAltura` que retorne a frase:
 - "Minha altura é [ALTURA]m."
 */
-?
+pessoa.mostrarAltura = function(){
+    return 'Minha altura é '+ pessoa.altura + ' m.';
+}
 
 /*
 Agora vamos brincar um pouco com o objeto criado:
 Qual o nome completo da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+pessoa.nomeCompleto(); //"Olá! Meu nome é Wallace Costa !"
 
 /*
 Qual a idade da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+pessoa.mostrarIdade(); //"Olá, eu tenho 27 anos!"
 
 /*
 Qual o peso da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+pessoa.mostrarPeso(); //"Eu peso 67 kg."
 
 /*
 Qual a altura da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+pessoa.mostrarAltura();//"Minha altura é 1.74 m."
 
 /*
 Faça a `pessoa` fazer 3 aniversários.
 */
-?
+pessoa.fazerAniversario();
+pessoa.fazerAniversario();
+pessoa.fazerAniversario();
 
 /*
 Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
 comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
-?
+pessoa.mostrarIdade(); //"Olá, eu tenho 30 anos!" 
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
 com metragens diferentes passadas por parâmetro.
 */
-?
+pessoa.andar(100);
+pessoa.andar(200);
+pessoa.andar(300);
 
 /*
 A pessoa ainda está andando? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+pessoa.andando; //true
 
 /*
 Se a pessoa ainda está andando, faça-a parar.
 */
-?
+pessoa.parar();
 
 /*
 E agora: a pessoa ainda está andando? (Use uma instrução para responder e
 comentários inline ao lado da instrução para mostrar a resposta retornada)
 */
-?
+pessoa.andando;//false
 
 /*
 Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
 inline ao lado da instrução para mostrar a resposta retornada)
 */
-?
+pessoa.caminhouQuantosMetros;//600
 
 /*
 Agora vamos deixar a brincadeira um pouco mais divertida! :D
@@ -159,8 +169,34 @@ deve conter no retorno da frase acima é "metro" no lugar de "metros".
 método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
-?
+pessoa.apresentacao = function(){
+	if(pessoa.sexo === 'feminino'){
+		var tipoSexo = 'a ';
+        if(pessoa.idade === 1){
+            var tipoIdade = ' ano, ';
+        }else{
+            var tipoIdade = ' anos, ';
+        }
+        if(pessoa.caminhouQuantosMetros === 1 ){
+            var tipoMetro = ' metro!';            
+        }else{
+            var tipoMetro = ' metros!';
+        }
+    }else{
+		var tipoSexo = 'o ';
+        if(pessoa.idade === 1){
+            var tipoIdade = ' ano, ';
+        }else{
+            var tipoIdade = ' anos, '
+        }
+        if(pessoa.caminhouQuantosMetros === 1 ){
+            var tipoMetro = ' metro!';            
+        }else{
+            var tipoMetro = ' metros!';
+        }
+    }return 'Olá, eu sou '+ tipoSexo + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho '+ pessoa.idade + tipoIdade + pessoa.altura + ', meu peso é '+ pessoa.peso +' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + tipoMetro;
+}
 
 // Agora, apresente-se ;)
-?
+pessoa.apresentacao(); // "Olá, eu sou o Wallace Costa, tenho 33 anos, 1.74, meu peso é 67 e, só hoje, eu já caminhei 600 metros!"
 ```
