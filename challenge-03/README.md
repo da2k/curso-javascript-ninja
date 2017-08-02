@@ -194,7 +194,7 @@ pessoa.apresentacao = function(){
         }else{
             var tipoMetro = ' metros!';
         }
-    }return 'Olá, eu sou '+ tipoSexo + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho '+ pessoa.idade + tipoIdade + pessoa.altura + ', meu peso é '+ pessoa.peso +' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + tipoMetro;
+    }return 'Olá, eu sou '+ tipoSexo + pessoa.nomeCompleto() + ', tenho '+ pessoa.idade + tipoIdade + pessoa.altura + ', meu peso é '+ pessoa.peso +' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + tipoMetro;
 }
 
 // Agora, apresente-se ;)
