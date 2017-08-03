@@ -169,32 +169,25 @@ deve conter no retorno da frase acima é "metro" no lugar de "metros".
 método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
+
 pessoa.apresentacao = function(){
-	if(pessoa.sexo === 'feminino'){
-		var tipoSexo = 'a ';
-        if(pessoa.idade === 1){
-            var tipoIdade = ' ano, ';
-        }else{
-            var tipoIdade = ' anos, ';
-        }
-        if(pessoa.caminhouQuantosMetros === 1 ){
-            var tipoMetro = ' metro!';            
-        }else{
-            var tipoMetro = ' metros!';
-        }
-    }else{
-		var tipoSexo = 'o ';
-        if(pessoa.idade === 1){
-            var tipoIdade = ' ano, ';
-        }else{
-            var tipoIdade = ' anos, '
-        }
-        if(pessoa.caminhouQuantosMetros === 1 ){
-            var tipoMetro = ' metro!';            
-        }else{
-            var tipoMetro = ' metros!';
-        }
-    }return 'Olá, eu sou '+ tipoSexo + pessoa.nomeCompleto() + ', tenho '+ pessoa.idade + tipoIdade + pessoa.altura + ', meu peso é '+ pessoa.peso +' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + tipoMetro;
+    var tipoSexo = 'o ';
+    var tipoIdade = ' anos, ';
+    var tipoMetro = ' metros!';
+
+    if(pessoa.sexo === 'feminino'){
+        tipoSexo = 'a ';
+    }
+
+    if(pessoa.idade === 1){
+        tipoIdade = ' ano, ';
+    }
+
+    if(pessoa.caminhouQuantosMetros === 1){
+        tipoMetro = ' metro!';
+    }
+
+    return 'Olá, eu sou '+ tipoSexo + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho '+ pessoa.idade + tipoIdade + pessoa.altura + ', meu peso é '+ pessoa.peso +' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' m ' + tipoMetro;
 }
 
 // Agora, apresente-se ;)
