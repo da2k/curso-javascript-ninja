@@ -3,6 +3,8 @@
 2. Adicione a diretiva 'use strict';
 3. Crie um arquivo index.html e adicione esse script à ele.
 */
+ (function (){
+  'use strict'
 
 /*
 Declare uma variável chamada `name` que receba seu primeiro nome.
@@ -68,3 +70,4 @@ Ex.: Nomes que deveriam funcionar: "Fernando", "RoBertO", "gabriEla", etc.
 */
 console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
 // ?
+ })()
