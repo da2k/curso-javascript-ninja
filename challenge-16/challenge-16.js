@@ -17,7 +17,6 @@ E assim por diante, até a última.
 */
 console.log( 'As letras do seu nome:' );
 var name = 'luciano';
-// var arrayLetter = name.split('');
 
 name.split('').forEach(function (item, value){
   console.log(value);
@@ -38,9 +37,20 @@ curso para fazer isso funcionar corretamente :)
 console.log para cada formato.
 */
 console.log( '\nNome convertido à partir de um slug:' );
+
 var fullName = 'luciano-barauna-lourenco';
 
-console.log(fullName.indexOf(1));
+function compileSlugToNormal(value){
+
+  var arrayName = value.split('-').map(function(item, index){
+    return item.charAt(0).toUpperCase() + item.slice(1);
+  });
+
+  return arrayName.join(' ');
+}
+
+console.log( compileSlugToNormal(fullName) )
+console.log( compileSlugToNormal('epaminondas-bragantino-da-silva') );
 
 /*
 - Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
@@ -53,19 +63,27 @@ O resultado final deve ficar mais ou menos assim:
 */
 console.log( '\nMeus amigos:' );
 
-// var listNames = ['joao', 'jose', 'arlindo', 'epaminondas', 'juarez'];
+var listNames = ['gabriel', 'rafael', 'arlindo', 'epaminondas', 'juarez', 'pedro', 'victor'];
 
-// console.log(listNames.splice(listNames.length - 1, 0, 'e'));
 
-// console.log(listNames.join(','));
-// console.log(listNames.replace(',', 'da'));
+
+function formatNames(value) {
+  var arraylistNames = value.join(' , ').split(' ');
+  var indexChangeItem = arraylistNames.length;
+
+  arraylistNames.splice(indexChangeItem - 2, 1, 'e');
+
+  return arraylistNames.join(' ');
+}
+
+console.log( formatNames(listNames) );
 
 /*
 Usando o replace(), faça a string "Roberto" virar "Roberta".
 Mostre o resultado no console.
 */
 console.log( '\nEra "Roberto", agora é:' );
-// ?
+console.log('Roberto'.lastIndexOf().replace('o', 'a'))
 
 /*
 Mostre no console a parte "nando" da string "Fernando". Use o método que
