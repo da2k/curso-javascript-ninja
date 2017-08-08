@@ -65,10 +65,8 @@ console.log( '\nMeus amigos:' );
 
 var listNames = ['gabriel', 'rafael', 'arlindo', 'epaminondas', 'juarez', 'pedro', 'victor'];
 
-
-
 function formatNames(value) {
-  var arraylistNames = value.join(' , ').split(' ');
+  var arraylistNames = value.join(', ').split(' ');
   var indexChangeItem = arraylistNames.length;
 
   arraylistNames.splice(indexChangeItem - 2, 1, 'e');
@@ -83,14 +81,20 @@ Usando o replace(), faça a string "Roberto" virar "Roberta".
 Mostre o resultado no console.
 */
 console.log( '\nEra "Roberto", agora é:' );
-console.log('Roberto'.lastIndexOf().replace('o', 'a'))
+
+var nomeR = 'Roberto';
+
+console.log(nomeR.lastIndexOf('o'));
+console.log(nomeR.replace('o', 'a', function(){
+  return 'ola';
+}));
 
 /*
 Mostre no console a parte "nando" da string "Fernando". Use o método que
 faz a busca do final para o início da string.
 */
 console.log( '\nParte de uma string:' );
-// ?
+console.log('Fernando'.slice(3, 8))
 
 /*
 Declare uma variável chamada `myName`, que receba o seu primeiro nome,
@@ -102,5 +106,26 @@ de qualquer tamanho, escrito de qualquer forma.
 Ex.: Nomes que deveriam funcionar: "Fernando", "RoBertO", "gabriEla", etc.
 */
 console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
-// ?
- })()
+
+var myName = 'Luciano Baraúna Lourenço';
+var lowerUpperCase= [];
+
+function alternateCase(words){
+  var chars = words.toUpperCase();
+  var result;
+
+  result = chars.split('').map(function(value, index){
+    if (index % 2 == 1) {
+      return value.toLowerCase();
+    }
+    return value;
+  })
+
+  return result.join('');
+}
+
+console.log( alternateCase(myName) );
+
+
+
+})()
