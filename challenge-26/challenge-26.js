@@ -25,31 +25,33 @@
     */
     // ?
 
-    var $link = document.querySelector('[data-js="link"]');
-
     function DOM( tagName ) {
-      this.tagName = doc.querySelectorAll(tagName);
-
-      this.on = function on(event){
-        return doc.querySelectorAll(tagName).addEventListener('click', function(){
-            event.preventDefault();
-            console.log('clicou');
-        }, false);
-      };
-
-      this.off = function off(event){
-        return doc.querySelectorAll( tagName ).removeEventListener('click', function(){
-            event.preventDefault();
-            console.log('apagou');
-        }, false);
-      };
-
-      this.get = function get(event) {
-        return this.tagName;
-      };
+      this.element = doc.querySelectorAll(tagName);
     }
 
+    DOM.prototype.on = function on(eventType, callback) {
+      Array.prototype.forEach.call(this.element, function (element){
+          element.addEventListener(eventType, callback, false);
+      });
+    };
+
+    DOM.prototype.off = function off(eventType, callback) {
+      Array.prototype.forEach.call(this.element, function (element){
+          element.removeEventListener(eventType, callback, false);
+      });
+    };
+
+    DOM.prototype.get = function get() {
+      return this.element;
+    };
+
     var $a = new DOM('[data-js="link"]');
+
+    $a.on('click', function handleClick(e) {
+      e.preventDefault();
+      console.log('clicou');
+      $a.off('click', handleClick);
+    });
 
     console.log('Elementos selecionados:', $a.get());
     console.log('$a é filho de body?', $a.get()[0].parentNode === document.body);
