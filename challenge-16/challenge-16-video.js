@@ -16,12 +16,14 @@ Ex: no caso do nome ser "Fernando", deve mostrar as frases:
 E assim por diante, até a última.
 */
 console.log( 'As letras do seu nome:' );
-var name = 'luciano';
 
-name.split('').forEach(function (item, value){
-  console.log(value);
-  console.log(item + " é a " + (value + 1) + " ª" + "letra do meu nome.");
-});
+var name = 'Luciano';
+
+for (var i = 0, len = name.length; i < len; i++){
+  /* Primeira vez que vejo alguém guardar o length
+  em uma variável dentro do for*/
+  console.log( name.charAt(i) + ' é a ' + (i + 1) + 'ª letra do meu nome.')
+}
 
 
 /*
@@ -40,17 +42,14 @@ console.log( '\nNome convertido à partir de um slug:' );
 
 var fullName = 'luciano-barauna-lourenco';
 
-function compileSlugToNormal(value){
+var newFullName = fullName.split('-').map(function (name) {
 
-  var arrayName = value.split('-').map(function(item, index){
-    return item.charAt(0).toUpperCase() + item.slice(1);
-  });
+  return name.charAt(0).toUpperCase() + name.slice(1);
 
-  return arrayName.join(' ');
-}
+}).join(' ');
 
 console.log(fullName)
-console.log( compileSlugToNormal(fullName) )
+console.log(newFullName)
 
 
 /*
@@ -64,25 +63,17 @@ O resultado final deve ficar mais ou menos assim:
 */
 console.log( '\nMeus amigos:' );
 
-var listNames = ['gabriel', 'rafael', 'arlindo', 'epaminondas', 'juarez', 'pedro', 'victor'];
+var friends = ['gabriel', 'rafael', 'arlindo', 'epaminondas', 'juarez', 'pedro', 'victor'];
 
-function resultListF(list) {
+var phrase = friends.reduce(function(acumulado, atual, index){
 
- var result = list.reduce(function (item1, item2, index) {
+  var separator = friends.length - 1 === index ? ' e ' : ' , ';
 
-   if (index === listNames.length - 1) {
-      return item1 + ' e ' + item2;
-    }
+  return acumulado + separator + atual;
 
-    return item1 + ', ' + item2;
+}).concat(' são meus amigos');
 
-  });
-
- return result;
-
-}
-
-console.log(resultListF(listNames));
+console.log( phrase );
 
 /*
 Usando o replace(), faça a string "Roberto" virar "Roberta".
@@ -90,9 +81,7 @@ Mostre o resultado no console.
 */
 console.log( '\nEra "Roberto", agora é:' );
 
-var nomeR = 'Roberto';
-
-// Não consegui achar uma solução legal e esperei o vídeo.
+console.log('Roberto'.replace('to', 'ta'));
 
 
 /*
@@ -100,7 +89,7 @@ Mostre no console a parte "nando" da string "Fernando". Use o método que
 faz a busca do final para o início da string.
 */
 console.log( '\nParte de uma string:' );
-console.log('Fernando'.slice(3, 8))
+console.log('Fernando'.substring(8, 3))
 
 /*
 Declare uma variável chamada `myName`, que receba o seu primeiro nome,
@@ -113,25 +102,15 @@ Ex.: Nomes que deveriam funcionar: "Fernando", "RoBertO", "gabriEla", etc.
 */
 console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
 
-var myName = 'Luciano Baraúna Lourenço';
-var lowerUpperCase= [];
+var myName = 'Roberto'
+var myNewName = [];
 
-function alternateCase(words){
-  var chars = words.toUpperCase();
-  var result;
+for( var i = 0, len = myName.length; i < len; i++){
+  myNewName.push( i % 2 === 0 ? myName[i].toLowerCase() : myName[i].toUpperCase() );
 
-  result = chars.split('').map(function(value, index){
-    if (index % 2 == 1) {
-      return value.toLowerCase();
-    }
-    return value;
-  })
-
-  return result.join('');
 }
 
-console.log( alternateCase(myName) );
-
+console.log(myNewName.join( '' ) );
 
 
 })()
