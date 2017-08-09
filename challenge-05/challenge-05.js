@@ -69,16 +69,8 @@ function book(nomeLivro){
         terceiro: {quantidadePaginas: 300,
                     autor: 'Silvio',
                     editora: 'Atual'}}
-    if(nomeLivro === 'primeiro'){
-        return obj.primeiro;
-    }
-    if(nomeLivro === 'segundo'){
-        return obj.segundo;
-    }
-    if(nomeLivro === 'terceiro'){
-        return obj.terceiro;
-    }
-    return obj;
+    
+    return !nomeLivro ? obj : obj[nomeLivro];
 };
 
 console.log('=======Teste=======');
