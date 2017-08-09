@@ -56,7 +56,7 @@ Mostre o resultado no console:
 */
 console.log( '\nTrocando "A" e "a" por "4":' );
 
-console.log(text.replace(/A|a/g, '4'));
+console.log(text.replace(/a/gi, '4'));
 
 /*
 Substitua a frase "O Centauro de Luvas", deixando-a em caixa alta, usando
@@ -64,10 +64,9 @@ o método `toUpperCase()`. Mostre o resultado no console:
 */
 console.log( '\n"O Centauro de Luvas" em caixa alta:' );
 
-
-console.log(text.replace(/O Centauro de Luvas/g, function (phrase) {
+  console.log(text.replace(/O Centauro de Luvas/g, function (phrase) {
     return phrase.toUpperCase();
-}));
+  }));
 
 /*
 Agora iremos substituir as datas no formato "13 de junho de 1804" para
@@ -83,9 +82,9 @@ Use um console.log para cada mês, usando a frase:
 */
 console.log( '\nMeses representados por números:' );
 
-function getMonthNumber( nameMonth ) {
+function getMonthNumber( monthName ) {
 
-  var month = {
+  var months = {
     'janeiro': '01',
     'fevereiro': '02',
     'março': '03',
@@ -100,13 +99,7 @@ function getMonthNumber( nameMonth ) {
     'dezembro': '12'
   };
 
-  for( var value in month ) {
-
-    if (value === nameMonth ) {  return month[value]; }
-
-  }
-
-  return 'Ops!!! '
+  return months[ monthName ];
 
 }
 
@@ -145,16 +138,14 @@ console o resultado.
 */
 console.log( '\nReplace de datas:' );
 
-function replaceDate(regex, day, month, year) {
+function replaceDate (regex, day, month, year ) {
 
-  return day + '/' + getMonthNumber(month) + '/' + year;
+  return day + '/' + getMonthNumber( month ) + '/' + year;
 
 }
 
-console.log(text.replace(regexDate, replaceDate))
 
-
-
+console.log( text.replace(regexDate, replaceDate) )
 
 
 })()
