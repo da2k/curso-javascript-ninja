@@ -71,6 +71,7 @@ function book(nomeLivro){
                     editora: 'Atual'}}
     
     return !nomeLivro ? obj : obj[nomeLivro];
+
 };
 
 /*
