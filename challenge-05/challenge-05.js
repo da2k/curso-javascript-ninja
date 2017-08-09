@@ -73,16 +73,6 @@ function book(nomeLivro){
     return !nomeLivro ? obj : obj[nomeLivro];
 };
 
-console.log('=======Teste=======');
-console.log(book());
-console.log('===================');
-console.log(book('primeiro'));
-console.log('===================');
-console.log(book('segundo'));
-console.log('===================');
-console.log(book('terceiro'));
-console.log('======Fim=========');
-
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
