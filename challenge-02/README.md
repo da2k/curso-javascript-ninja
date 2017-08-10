@@ -22,12 +22,13 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function addValor(x) {
-  return "O valor da variável agora é " + x;
+function addValor() {
+  semValor = 5;
+  return "O valor da variável agora é " + 5;
 }
 
 // Invoque a função criada acima.
-addValor(5);
+addValor();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /* "O valor da variável agora é 5" */
@@ -75,8 +76,10 @@ function ninja(x, y, z) {
     return x + y;
   }else if(x !== undefined && y !== undefined && z !== undefined) {
     return (x + y) / z;
-  }else{
+  }else if(x === undefined && y === undefined && z === undefined){
     return false;
+  }else{
+    return null;
   }
 }
 
