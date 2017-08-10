@@ -3,6 +3,8 @@
 2. Adicione a diretiva 'use strict';
 3. Crie um arquivo index.html e adicione esse script à ele.
 */
+(function(){
+  'use strict';
 
 /*
 Crie uma função chamada `cleanCPF`, que receba um CPF por parâmetro, e
@@ -15,7 +17,30 @@ eles! Use um console.log para cada CPF.
 - "101.123-131x32"
 */
 console.log( 'Limpando CPFs:' );
-// ?
+
+  var regexCPF = /(\d{3})[\s?.?-](\d{3})[\s?.?-](\d{0,4})[\w\s-](\d{0,2})/g;
+
+function cleanCPF(regex, $1, $2, $3, $4){
+  return $1 + $2 + $3 + $4;
+}
+
+
+var cpf1 = "049-214 3421-1".replace(regexCPF, cleanCPF);
+
+var cpf2 = "210.458.522-05".replace(regexCPF, cleanCPF);
+
+var cpf3 = "735 500 794 - 22".replace(regexCPF, cleanCPF); /* Não consegui resovler */
+
+var cpf4 = "101.123-131x32".replace(regexCPF, cleanCPF);
+
+
+console.log(cpf1);
+
+console.log(cpf2);
+
+console.log(cpf3);
+
+console.log(cpf4);
 
 /*
 Usando os CPFs limpos acima, deixe-os com a formatação correta de CPF.
@@ -23,7 +48,15 @@ Ex.: "999.999.999-99"
 Mostre o resultado no console.
 */
 console.log( '\nFormatando CPFs corretamente:' );
-// ?
+
+var regexFormatCPF = /(\d{0,3})(\d{0,3})(\d{0,3})(\d{0,2})/g;
+
+function formatCPF(regex, $1, $2, $3, $4) {
+  console.log(arguments);
+  return [$4].join('-');
+}
+
+  console.log(cpf1.replace(regexFormatCPF, formatCPF) );
 
 /*
 Crie uma expressão regular que faça match com as palavras "junho" ou "julho",
@@ -87,3 +120,5 @@ corretas, para depois aplicar no código ;)
 */
 console.log( '\nFazer replace dos textos das tags:' );
 // ?
+
+})();
