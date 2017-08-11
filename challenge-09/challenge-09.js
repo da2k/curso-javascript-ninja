@@ -63,7 +63,7 @@
     */
     function calculator(num1, num2){
         return function(callback){
-           return callback(number1, number2);     
+           return callback(num1, num2);     
         };
     }
 
@@ -84,8 +84,8 @@
     */
    
    console.log('O resultado da soma é:' );
-   console.log(sum(function(number1, number2){
-        return  number1 + number2;
+   console.log(sum(function(num1, num2){
+        return num1 + num2;
    }) ); 
 
     /*
@@ -106,23 +106,23 @@
     chamada.
     */
     console.log( 'O resultado da subtração é:' );
-    console.log(subtraction(function(x, y){
-        return x - y;
-    }));
+    console.log(subtraction(function(num1, num2){
+        return num1 - num2;
+    }) );
 
     console.log( 'O resultado da multiplicação é:' );
-    console.log(multiplication(function(x,y){
-        return x * y;
-    }));
+    console.log(multiplication(function(num1, num2){
+        return num1 * num2;
+    }) );
 
     console.log( 'O resultado da divisão é:' );
-    console.log(division(function(x, y){
-        return x / y;
-    }));
+    console.log(division(function(num1, num2){
+        return num1 / num2;
+    }) );
 
     console.log( 'O resto da divisão é:' );
-    console.log(mod(function(x, y){
-        return x % y;
-    }));
+    console.log(mod(function(num1, num2){
+        return num1 % num2;
+    }) );
 
 })();
