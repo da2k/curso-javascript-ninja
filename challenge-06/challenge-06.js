@@ -15,7 +15,7 @@ estar na ordem em que eles aparecem na tabela no momento da solução desse
 desafio.
 */
 
-var teams = ['Vasco','Botafogo','Fluminense','Flamengo','Madureira','América','Portuguesa','Nova Iguaçu'];
+var teams = ['Vasco','Botafogo','Fluminense','Flamengo','Madureira'];
 console.log( 'Times que estão participando do campeonato:', teams );
 
 /*
@@ -91,26 +91,25 @@ function convertToHex (corEscolhida){
         case 'red':
             hexa = '#FF0000';
             resposta(cor,hexa);
-        break;
+            break;
         case 'orange':
             hexa = '#FFA500';
             resposta(cor,hexa);
-        break;
+            break;
         case 'blue':
             hexa = '#0000FF';
             resposta(cor,hexa);
-        break;
+            break;
         case 'yellow':
             hexa = '#FFFF00';
             resposta(cor,hexa);
-        break;
+            break;
         case 'black':
             hexa = '#000000';
             resposta(cor,hexa);
-        break;
+            break;
         default :
-            console.log('Não temos o equivalente hexadecimal para '+ cor +'.');
-        break;    
+            console.log('Não temos o equivalente hexadecimal para '+ cor +'.');   
     }
 }
 
