@@ -18,29 +18,24 @@ eles! Use um console.log para cada CPF.
 */
 console.log( 'Limpando CPFs:' );
 
-  var regexCPF = /(\d{3})[\s?.?-](\d{3})[\s?.?-](\d{0,4})[\w\s-](\d{0,2})/g;
 
-function cleanCPF(regex, $1, $2, $3, $4){
-  return $1 + $2 + $3 + $4;
+function cleanCPF(cpf){
+  return cpf.replace( /\D/g, '' );
 }
 
+var cpfs = ['049-214 3421-1',
+            '210.458.522-05',
+            '735 500 794 - 22',
+            '101.123-131x32'
+          ];
 
-var cpf1 = "049-214 3421-1".replace(regexCPF, cleanCPF);
+cpfs.forEach(function( cpf ) {
 
-var cpf2 = "210.458.522-05".replace(regexCPF, cleanCPF);
+  console.log( cleanCPF(cpf) )
 
-var cpf3 = "735 500 794 - 22".replace(regexCPF, cleanCPF); /* Não consegui resovler */
-
-var cpf4 = "101.123-131x32".replace(regexCPF, cleanCPF);
+});
 
 
-console.log(cpf1);
-
-console.log(cpf2);
-
-console.log(cpf3);
-
-console.log(cpf4);
 
 /*
 Usando os CPFs limpos acima, deixe-os com a formatação correta de CPF.
@@ -49,14 +44,18 @@ Mostre o resultado no console.
 */
 console.log( '\nFormatando CPFs corretamente:' );
 
-var regexFormatCPF = /(\d{1,3})(\d{1,3})(\d{1,3})(\d{1,2})/g;
+cpfs.forEach(function( cpf ){
 
-function formatCPF(regex, arg1, arg2, arg3, arg4) {
-  return arg1 + '.' + arg2 + '.' + arg3 + '-' + arg4;
+  // Versão não verbosa
+  // console.log( cleanCPF(cpf).replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4') );
 
-}
+  console.log( cleanCPF(cpf).replace( /(\d{3})(\d{3})(\d{3})(\d{2})/,
+    function( regex, arg1, arg2, arg3, arg4 ){
+      return arg1 + '.' + arg2 + '.' + arg3 + '-' + arg4;
+    }))
+});
 
-console.log(cpf1.replace(regexFormatCPF, formatCPF) );
+
 
 /*
 Crie uma expressão regular que faça match com as palavras "junho" ou "julho",
@@ -122,8 +121,8 @@ corretas, para depois aplicar no código ;)
 */
 console.log( '\nFazer replace dos textos das tags:' );
 
-  console.log('<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>'
-    .replace(/<(\w+)>([^<]+)<\/\w+>/g, '<$1>O texto dentro da tag "$1" é "$2</<$1>\n'))
+console.log('<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>'
+  .replace(/<(\w+)>([^<]+)<\/\w+>/g, '<$1>O texto dentro da tag "$1" é "$2</<$1>\n'))
 
 
 })();
