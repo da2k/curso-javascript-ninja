@@ -4,6 +4,10 @@
 3. Crie um arquivo index.html e adicione esse script à ele.
 */
 
+(function(){
+  'use strict';
+
+
 /*
 Alguns detalhes importantes que faltou falar na aula:
 1. O objeto RegExp() pode receber um segundo parâmetro, que são as flags:
@@ -24,7 +28,11 @@ linha, independente de quantos caracteres de número estiverem juntos.
 no console:
 */
 console.log( 'Regex para números usando o construtor:' );
-// ?
+
+var justNumbersRegex = new RegExp(/\/d+/, 'g');
+
+console.log(justNumbersRegex);
+
 
 /*
 Verifique se a regex acima casa com o texto na variável `text`, mostrando o
@@ -33,7 +41,8 @@ resultado no console. O resultado deve ser:
 */
 var text = '10 anos.\n50 discos vendidos.\nE nem 10% dos meus amigos o conhece.';
 console.log( '\nNúmeros no início da linha do texto:\n' + text, '\n' );
-// ?
+
+console.log( text.match(/\d+/g));
 
 /*
 - Crie uma regex que case com números no final de uma string. Atribua a
@@ -82,3 +91,5 @@ para exemplificar.
 var markup = '<main>\n  <div class="container">\n    <span class="text date"></span>\n    <p class=\'excerpt\'></p>\n  </div>\n</main>';
 console.log( '\nQuais classes CSS existem na marcação abaixo?\n\n', markup, '\n' );
 // ?
+
+})()
