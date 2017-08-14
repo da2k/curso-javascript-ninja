@@ -29,7 +29,7 @@ no console:
 */
 console.log( 'Regex para números usando o construtor:' );
 
-var justNumbersRegex = new RegExp('\\d+', 'g');
+var justNumbersRegex = new RegExp('^\\d+', 'gm');
 
 console.log(justNumbersRegex);
 
@@ -54,7 +54,7 @@ Mostre a regex no console:
 */
 console.log( '\nRegex para números somente no final das linhas:' );
 
-var numbersAtTheEnd = /\d+\n/g;
+var numbersAtTheEnd = /\d+$/gm;
 
 console.log( numbersAtTheEnd );
 
@@ -97,18 +97,20 @@ console.log( '\nQuais classes CSS existem na marcação abaixo?\n\n', markup, '\
 
 function hasClass ( markup, cssClass ) {
 
-  var regex = new RegExp('class=' + '\\W' + cssClass + '\\W', 'g');
-  var result = regex.test(markup) + ' para a classe: ' + cssClass;
-
-  return regex.test(markup) === true || false ? result : result;
+  var regex = new RegExp('class=["\'](?:[\\w\\s]+)?' + cssClass + '(?:[\\w\\s]+)?["\']');
+  // ?:() => significa que não está agrupando o conteúdo no match
+  return regex.test(markup);
 
 }
 
- console.log( hasClass(markup, 'container' ) );
- console.log( hasClass(markup, 'text' ) );
- console.log( hasClass(markup, 'date' ) ); // não consegui tratar o valor então esperei a video aula para tirar a dúvida.
- console.log( hasClass(markup, 'excerpt' ) );
- console.log( hasClass(markup, 'main' ) );
+var classes = ['container', 'text', 'date', 'excerpt', 'main'];
+
+classes.forEach( function(cssClass){
+
+  console.log( hasClass(markup, cssClass) + ' para a class ' + cssClass );
+
+});
+
 
 
 
