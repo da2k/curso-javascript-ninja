@@ -34,7 +34,7 @@ for chamado.
 */
 pessoa.fazerAniversario = function() {
   pessoa.idade++;
-}
+};
 
 /*
 Adicione um método ao objeto `pessoa` chamado `andar`, que terá as seguintes
@@ -49,7 +49,7 @@ booleano que representa "verdadeiro";
 pessoa.andar = function(metros) {
   pessoa.caminhouQuantosMetros += metros;
   pessoa.andando = true;
-}
+};
 
 /*
 Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o valor
@@ -57,15 +57,15 @@ da propriedade `andando` para o valor booleano que representa "falso".
 */
 pessoa.parar = function() {
   pessoa.andando = false;
-}
+};
 
 /*
 Crie um método chamado `nomeCompleto`, que retorne a frase:
 - "Olá! Meu nome é [NOME] [SOBRENOME]!"
 */
 pessoa.nomeCompleto = function() {
-  return 'Olá! Meu nome é ' + pessoa.nome + ' ' + pesso.sobrenome;
-}
+  return 'Olá! Meu nome é ' + pessoa.nome + ' ' + pessoa.sobrenome + '!';
+};
 
 /*
 Crie um método chamado `mostrarIdade`, que retorne a frase:
@@ -126,7 +126,7 @@ Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
 comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
-pessoa.idade; // 32
+pessoa.mostrarIdade; // 'Olá, eu tenho 32 anos!'
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
@@ -180,16 +180,17 @@ pessoa.apresentacao = function() {
   var artigo = ' o ';
   var palavraIdade = ' anos, ';
   var palavraCaminhou = ' metros!';
+
   if (pessoa.sexo === 'Feminino') {
     artigo = ' a ';
   }
   if (pessoa.idade === 1) {
     palavraIdade = ' ano, ';
   }
-  if (pessoa.caminhouQuantosMetros <= 1) {
+  if (pessoa.caminhouQuantosMetros === 1) {
     palavraCaminhou = ' metro!';
   }
-  return 'Olá, eu sou ' + artigo + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + .pessoa.idade + palavraIdade + pessoa.altura + ', meu peso é ' + pessoa.peso + 'Kg e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + palavraCaminhou;
+  return 'Olá, eu sou ' + artigo + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + .pessoa.idade + palavraIdade + pessoa.altura + 'm, meu peso é ' + pessoa.peso + 'Kg e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + palavraCaminhou;
 }
 
 // Agora, apresente-se ;)
