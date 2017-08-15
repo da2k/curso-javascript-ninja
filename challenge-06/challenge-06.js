@@ -45,11 +45,11 @@ function showTeamPosition(x) {
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
-showTeamPosition(1); //"O time que está em 1º lugar é o Corinthians."
-showTeamPosition(2); //"O time que está em 2º lugar é o Ponte Preta."
-showTeamPosition(3); //"O time que está em 3º lugar é o Palemiras."
-showTeamPosition(4); //"O time que está em 4º lugar é o São Paulo."
-showTeamPosition(8); //"Não temos a informação do time que está nessa posição."
+console.log (showTeamPosition(1));
+console.log (showTeamPosition(2));
+console.log (showTeamPosition(3));
+console.log (showTeamPosition(4));
+console.log (showTeamPosition(8));
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
@@ -75,33 +75,34 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
 function convertToHex (color){
     switch(color) {
         case 'red':
-        return 'O hexadecimal para a cor '+color+' é #FF0000.';
-        break;
+            var hexa = '#FF0000';
+            break;
         case 'green':
-        return 'O hexadecimal para a cor '+color+' é #00FF00.';
-        break;
+            var hexa = '#00FF00';
+            break;
         case 'blue':
-        return 'O hexadecimal para a cor '+color+' é #0000FF.';
-        break;
+            var hexa = '#0000FF';
+            break;
         case 'white':
-        return 'O hexadecimal para a cor '+color+' é #FFFFFF.';
-        break;
+            var hexa = '#FFFFFF';
+            break;
         case 'black':
-        return 'O hexadecimal para a cor '+color+' é #000000.';
-        break;
+            var hexa = '#000000';
+            break;
         default:
-        return 'Não temos o equivalente hexadecimal para '+color+'.';  
+            return 'Não temos o equivalente hexadecimal para '+color+'.';  
                 }
+    return 'O hexadecimal para a cor '+color+' é '+hexa+'.';
 }
 
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-convertToHex('red'); //"O hexadecimal para a cor red é #FF0000."
-convertToHex('blue'); //"O hexadecimal para a cor blue é #0000FF."
-convertToHex('green'); //"O hexadecimal para a cor green é #00FF00."
-convertToHex('white'); //"O hexadecimal para a cor white é #FFFFFF."
-convertToHex('black'); //"O hexadecimal para a cor black é #000000."
-convertToHex('lime'); //"Não temos o equivalente hexadecimal para lime."
-convertToHex('orange'); //"Não temos o equivalente hexadecimal para orange."
-convertToHex('purple'); //"Não temos o equivalente hexadecimal para purple."
+console.log (convertToHex('red'));
+console.log (convertToHex('blue'));
+console.log (convertToHex('green'));
+console.log (convertToHex('white'));
+console.log (convertToHex('black'));
+console.log (convertToHex('lime'));
+console.log (convertToHex('orange'));
+console.log (convertToHex('purple'));
