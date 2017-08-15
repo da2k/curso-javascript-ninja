@@ -15,6 +15,7 @@ As propriedades e tipos de valores para cada propriedade desse objeto devem ser:
 - `peso` - Number
 - `andando` - Boolean - recebe "falso" por padrão
 - `caminhouQuantosMetros` - Number - recebe "zero" por padrão
+*/
 var pessoa = {
     nome: 'Gabriel',
     sobrenome: 'Pereira',
@@ -46,7 +47,7 @@ valor dessa propriedade a quantidade passada por parâmetro;
 booleano que representa "verdadeiro";
 */
 pessoa.andar = function(metrosCaminhados) {
-    pessoa.caminhouQuantosMetros = metrosCaminhados;
+    pessoa.caminhouQuantosMetros += metrosCaminhados;
     pessoa.andando = true;
 }
 
@@ -95,25 +96,25 @@ Agora vamos brincar um pouco com o objeto criado:
 Qual o nome completo da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.nomeCompleto(); // A instrução retorna a string: 'Olá! Meu nome é Gabriel Pereira!'
+pessoa.nomeCompleto(); // 'Olá! Meu nome é Gabriel Pereira!'
 
 /*
 Qual a idade da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.mostrarIdade(); // A instrução retorna a string: 'Olá, eu tenho 23 anos!'
+pessoa.mostrarIdade(); // 'Olá, eu tenho 23 anos!'
 
 /*
 Qual o peso da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.mostrarPeso(); // A instrução retorna a string: 'Eu peso 74kg'
+pessoa.mostrarPeso(); // 'Eu peso 74kg'
 
 /*
 Qual a altura da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.mostrarAltura(); // A instrução retorna a string: 'Minha altura é 1.79m'
+pessoa.mostrarAltura(); // 'Minha altura é 1.79m'
 
 /*
 Faça a `pessoa` fazer 3 aniversários.
@@ -127,7 +128,7 @@ Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
 comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
-pessoa.mostrarIdade(); // A instrução retorna a string: 'Olá, eu tenho 25 anos!'
+pessoa.mostrarIdade(); // 'Olá, eu tenho 25 anos!'
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
@@ -141,7 +142,7 @@ pessoa.andar(20);
 A pessoa ainda está andando? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.andando; // A instrução retorna o valor true, ou seja, a pessoa está andando
+pessoa.andando; // true
 
 /*
 Se a pessoa ainda está andando, faça-a parar.
@@ -152,13 +153,13 @@ pessoa.parar();
 E agora: a pessoa ainda está andando? (Use uma instrução para responder e
 comentários inline ao lado da instrução para mostrar a resposta retornada)
 */
-pessoa.andando; // A instrução retorna o valor false, ou seja, a pessoa parou de andar
+pessoa.andando; // false
 
 /*
 Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
 inline ao lado da instrução para mostrar a resposta retornada)
 */
-pessoa.caminhouQuantosMetros; // A instrução retorna o valor 20, ou seja, a pessoa andou 20 metros
+pessoa.caminhouQuantosMetros; // 45
 
 /*
 Agora vamos deixar a brincadeira um pouco mais divertida! :D
@@ -178,9 +179,25 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao = function() {
-    
+    var sexo = 'o';
+    var idade = 'anos';
+    var metrosCaminhados = 'metros';
+
+    if (pessoa.sexo === 'Feminino') {
+        sexo = 'a';
+    }
+
+    if (pessoa.idade === 1) {
+        idade = 'ano';
+    }
+
+    if (pessoa.caminhouQuantosMetros === 1) {
+        metrosCaminhados = 'metro';
+    }
+
+    return 'Olá, eu sou ' + sexo + ' ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + ' ' + idade + ', ' + pessoa.altura + 'm, meu peso é ' + pessoa.peso + 'Kg e, só hoje, eu já caminhei '  + pessoa.caminhouQuantosMetros +' ' + metrosCaminhados + '!';
 }
 
 // Agora, apresente-se ;)
-?
+pessoa.apresentacao(); // 'Olá, eu sou o Gabriel Pereira, tenho 25 anos, 1.79m, meu peso é 74Kg e, só hoje, eu já caminhei 45 metros!'
 ```
