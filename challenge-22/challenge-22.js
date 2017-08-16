@@ -1,8 +1,26 @@
+
+(function(){
+  'use strict';
+
   /*
   Crie dois objetos, que serão duas pessoas. Cada um deve ter as propriedades
   `name` e `lastName`, preenchidos com o nome e sobrenome da pessoa.
   */
-  // ?
+  var pessoa1 = {
+    'name': 'Epaminondas',
+    'lastName': 'Bragantino'
+  }
+  var pessoa2 = {
+    'name': 'Arlindo',
+    'lastName': 'Costinha'
+  }
+
+  var pessoa3 = {
+    'name': 'Xuxa',
+    'lastName': 'Costinha'
+  }
+
+  console.log('pessoas', pessoa1, pessoa2);
 
   /*
   Agora crie uma função chamada `getFullName` que retorne as propriedades
@@ -16,7 +34,22 @@
   contexto da função. Use um console.log por pessoa.
   */
   console.log( 'O nome das pessoas é:' );
-  // ?
+
+  function getFullName() {
+
+    var result = Array.prototype.reduce.call(arguments, function(acumulated, item, index){
+      acumulated += item.name + ' ' + item.lastName
+      return acumulated
+    },"")
+
+    return result;
+
+  }
+
+  console.log(getFullName(pessoa1, pessoa2, pessoa3) );
+  console.log(getFullName(pessoa1) );
+  console.log(getFullName(pessoa2) );
+  console.log(getFullName(pessoa3) );
 
   /*
   Crie uma função chamada `sum`. Essa função pode receber uma lista de
@@ -25,7 +58,7 @@
   Na primeira linha, dentro da função, deixe um console.log para mostrar todos
   os parâmetros passados para essa função.
   */
-  // ?
+  function sum()
 
   /*
   Mostre no console que a função acima funciona, invocando-a em 3 console.log
@@ -68,3 +101,10 @@
   */
   console.log( '\nSomar números entrados pelo usuário:' );
   // ?
+
+
+})();
+
+
+
+
