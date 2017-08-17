@@ -6,21 +6,23 @@
   Crie dois objetos, que serão duas pessoas. Cada um deve ter as propriedades
   `name` e `lastName`, preenchidos com o nome e sobrenome da pessoa.
   */
-  var pessoa1 = {
-    'name': 'Epaminondas',
-    'lastName': 'Bragantino'
-  }
-  var pessoa2 = {
-    'name': 'Arlindo',
-    'lastName': 'Costinha'
+
+
+  var pessoas = [
+    {
+      'name': 'Epaminondas',
+      'lastName': 'Bragantino'
+    },
+    {
+      'name': 'Arlindo',
+      'lastName': 'Costinha'
+    }
+  ]
+
+  for(var key in pessoas){
+    console.log('pessoas obj ' + key, pessoas[key])
   }
 
-  var pessoa3 = {
-    'name': 'Xuxa',
-    'lastName': 'Costinha'
-  }
-
-  console.log('pessoas', pessoa1, pessoa2);
 
   /*
   Agora crie uma função chamada `getFullName` que retorne as propriedades
@@ -46,10 +48,11 @@
 
   }
 
-  console.log(getFullName(pessoa1, pessoa2, pessoa3) );
-  console.log(getFullName(pessoa1) );
-  console.log(getFullName(pessoa2) );
-  console.log(getFullName(pessoa3) );
+  pessoas.push( { 'name': 'Luciano', lastName: 'Barauna' }, { 'name': 'Carlos', lastName: 'Silva' } );
+
+  for(var key in pessoas){
+    console.log( getFullName( pessoas[key] ) );
+  }
 
   /*
   Crie uma função chamada `sum`. Essa função pode receber uma lista de
@@ -58,14 +61,28 @@
   Na primeira linha, dentro da função, deixe um console.log para mostrar todos
   os parâmetros passados para essa função.
   */
-  function sum()
+  function sum(){
+
+    console.log(arguments);
+
+    var result = Array.prototype.reduce.call(arguments, function (acumulated, item, index) {
+      return acumulated + item;
+    })
+
+    return result;
+  }
+
+  console.log( 'resultado', sum( 1, 2, 3, 4, 5, 6 ) );
+
+
 
   /*
   Mostre no console que a função acima funciona, invocando-a em 3 console.log
   diferentes, com quantidades variáveis de parâmetros passados.
   */
   console.log( '\nSomar alguns números:' );
-  // ?
+
+  function resultSoma()
 
   /*
   Declare uma variável chamada `userEntry`, que irá receber alguns valores
@@ -104,7 +121,4 @@
 
 
 })();
-
-
-
 
