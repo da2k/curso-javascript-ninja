@@ -58,12 +58,19 @@
     */
     console.log( '\nMeus amigos:' );
     var friends = ['Batman', 'Spider Man', 'Groot', 'Jon', 'Rick', 'Luke'];
-    friends = friends.join(', ');
-    var virgula = friends.lastIndexOf(',');
-    var friendsA = friends.slice(0, virgula);
-    var friendsB = friends.slice(virgula + 2);
-    var friendsFinal = friendsA + ' e ' + friendsB + ' são meus amigos.';
-    console.log(friendsFinal);
+    //Primeira resolução
+    // friends = friends.join(', ');
+    // var virgula = friends.lastIndexOf(',');
+    // var friendsA = friends.slice(0, virgula);
+    // var friendsB = friends.slice(virgula + 2);
+    // var friendsFinal = friendsA + ' e ' + friendsB + ' são meus amigos.';
+    // console.log(friendsFinal);
+
+    //Segunda resolução após assistir revisão
+    friends = friends.reduce(function(acumulado, atual, index){
+        return acumulado + (index === friends.length - 1 ? ' e ' : ', ') + atual;
+    });
+    console.log(friends + ' são meus amigos.');
 
     /*
     Usando o replace(), faça a string "Roberto" virar "Roberta".
