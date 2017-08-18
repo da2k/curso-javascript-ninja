@@ -23,3 +23,85 @@ multiplicação (x), então no input deve aparecer "1+2x".
 input;
 - Ao pressionar o botão "CE", o input deve ficar zerado.
 */
+
+
+(function(win, doc){
+  'use strict';
+
+  var $inputVisor = doc.querySelector('[data-js="visor"]');
+  var $buttonsNumbers = doc.querySelectorAll('[data-js="button-number"]');
+  var $buttonCE = doc.querySelector('[data-js="button-ce"]');
+  var $buttonsOperations = doc.querySelectorAll('[data-js="button-operation"]');
+
+  $buttonsNumbers.forEach(function( item, index ){
+
+    item.addEventListener('click', function(){
+      handleGetValues(this.value);
+    }, false);
+
+  });
+
+  $buttonsOperations.forEach(function( item, index ){
+
+    item.addEventListener('click', function(){
+      console.log('retorno handleSetOperator: ', handleClickOperator(item) );
+    }, false);
+
+  });
+
+  $buttonCE.addEventListener('click', clearVisor, false);
+
+
+  function handleGetValues( valueButton ) {
+    $inputVisor.value += valueButton;
+  }
+
+  function clearVisor( valueButton ) {
+    $inputVisor.value = 0;
+  }
+
+  function handleClickOperator( valueButton ) {
+    console.log(removeLastOperator( valueButton.value ));
+    $inputVisor.value += valueButton.value;
+
+
+  }
+
+  function removeLastOperator(buttonvalueOpetator){
+    if (isLastOperator(buttonvalueOpetator) ){
+      console.log('retorno', buttonvalueOpetator);
+    }
+
+  }
+
+  function isLastOperator( buttonClickOperator ){
+
+    var listOperators = ['+', '-', 'x', '÷'];
+    var numbersInput = $inputVisor.value.split('');
+
+    return listOperators.some(function(element, index){
+      return element === numbersInput.pop();
+    });
+
+  }
+
+
+
+
+  // function valiOperator(){
+
+  //   if(handleSetOperator){
+  //     console.log('clicou igual')
+  //   }
+  //   console.log('ficou fora do if')
+
+
+  // }
+
+
+
+
+
+
+})(window, document)
+
