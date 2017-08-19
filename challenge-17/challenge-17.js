@@ -138,10 +138,8 @@
     console o resultado.
     */
     console.log( '\nReplace de datas:' );
-    function replaceDate(dia, mes, ano){
+    function replaceDate(dataCompleta, dia, mes, ano){
         return dia + '/' + getMonthNumber(mes) + '/' + ano;
     }
-    console.log(text.replace(regexDate, function(dataCompleta, dia, mes, ano){
-        return replaceDate(dia, mes, ano);
-    }));
+    console.log(text.replace(regexDate, replaceDate));
 })();
