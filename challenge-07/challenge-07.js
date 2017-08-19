@@ -16,8 +16,7 @@ function addItem(newArrayitem) {
 Adicione um novo array ao array criado no início do desafio, com ao menos 3
 itens de tipos diferentes, mostrando o resultado no console.
 */
-addItem( [function(){}, ['banana','laranja','maça'], false ] );
-console.log(arr1);
+console.log( addItem( [function(){}, ['banana','laranja','maça'], false ] ) );
 
 /*
 Mostre no console o segundo elemento desse último array, criado acima, com a
