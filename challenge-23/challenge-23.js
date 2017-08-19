@@ -32,6 +32,7 @@ input;
   var $buttonsNumbers = doc.querySelectorAll('[data-js="button-number"]');
   var $buttonCE = doc.querySelector('[data-js="button-ce"]');
   var $buttonsOperations = doc.querySelectorAll('[data-js="button-operation"]');
+  var $buttonEqual = doc.querySelector('[data-js="button-equal"]');
 
   $buttonsNumbers.forEach(function( item, index ){
 
@@ -44,13 +45,14 @@ input;
   $buttonsOperations.forEach(function( item, index ){
 
     item.addEventListener('click', function(){
-      console.log('retorno handleSetOperator: ', handleClickOperator(item) );
+      handleClickOperator(item);
     }, false);
 
   });
 
   $buttonCE.addEventListener('click', clearVisor, false);
 
+  $buttonEqual.addEventListener('click', handleResultEqual, false);
 
   function handleGetValues( valueButton ) {
     $inputVisor.value += valueButton;
@@ -60,47 +62,48 @@ input;
     $inputVisor.value = 0;
   }
 
-  function handleClickOperator( valueButton ) {
-    console.log(removeLastOperator( valueButton.value ));
-    $inputVisor.value += valueButton.value;
-
-
+  function handleClickOperator (button){
+    $inputVisor.value = removeLastOperator( $inputVisor.value );
+    $inputVisor.value += button.value;
   }
 
-  function removeLastOperator(buttonvalueOpetator){
-    if (isLastOperator(buttonvalueOpetator) ){
-      console.log('retorno', buttonvalueOpetator);
+  function removeLastOperator( number ){
+    if (isChecklastOperator(number) ){
+      return number.split('').slice(0, -1).join('');
     }
-
+    return number;
   }
 
-  function isLastOperator( buttonClickOperator ){
-
+  function isChecklastOperator( number ){
     var listOperators = ['+', '-', 'x', '÷'];
-    var numbersInput = $inputVisor.value.split('');
-
+    var numbersInput = number.split('').pop();
     return listOperators.some(function(element, index){
-      return element === numbersInput.pop();
-    });
+      return element === numbersInput;
+    })
+  }
 
+  function handleResultEqual( ){
+    console.log('tetes');
+    $inputVisor.value = removeLastOperator($inputVisor.value);
+    var allValues = $inputVisor.value.match(/\d+[+x÷-]?/g);
+    $inputVisor.value = allValues.reduce(function (accumulated, actual) {
+      var firstValue = accumulated.slice(0, -1);
+      console.log( accumulated )
+      console.log( actual )
+      console.log(firstValue )
+
+    })
   }
 
 
 
+// @fdaciuk Eu fiz da seguinte forma o exercio fui montando do meu jeito e nas dúvidas eu tentava dar uma olhada no seu código para tentar fazer parecido.
 
-  // function valiOperator(){
+// Minhas dificuldades começaram quando passei tentar bolar a logica do operador e sua validação, chegou num momento que tive que dar uma colada no seu codigo para entender, fui fazendo funcão por funcão e assim fui vendo o fluxo e aprendendo como se faz.
 
-  //   if(handleSetOperator){
-  //     console.log('clicou igual')
-  //   }
-  //   console.log('ficou fora do if')
+// Outra coisa eu fiz de uma forma diferente da sua usei o forEach e funciou mais teve em alguns momentos que meu código ficou diferente do seu e talvez tenha sido por não utilizar o prototype, estou certo ?
 
-
-  // }
-
-
-
-
+// Como disse a maioria fiz sozinho só mesmo o mais hard que tive que olhar só para ter uma noção. Será que é ruim para meu aprendizado ?
 
 
 })(window, document)
