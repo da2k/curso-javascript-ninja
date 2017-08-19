@@ -68,9 +68,9 @@ Só vamos mudar o range:
 console.log( 'Números pares entre 100 e 120:' );
 for (var counterto120 = 100; counterto120 <=120; counterto120++){
     counterto120 % 2 === 0 ? console.log(counterto120) : '';
-}
+};
 
 console.log( 'Números ímpares entre 111 e 125:' );
 for (var counterto125 = 111; counterto125 <=125; counterto125++){
     counterto125 % 2 !== 0 ? console.log(counterto125) : '';
-}
+};
