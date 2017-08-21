@@ -105,14 +105,5 @@ input;
   }
 
 
-// @fdaciuk Eu fiz da seguinte forma o exercio fui montando do meu jeito e nas dúvidas eu tentava dar uma olhada no seu código para tentar fazer parecido.
-
-// Minhas dificuldades começaram quando passei tentar bolar a logica do operador e sua validação, chegou num momento que tive que dar uma colada no seu codigo para entender, fui fazendo funcão por funcão e assim fui vendo o fluxo e aprendendo como se faz.
-
-// Outra coisa eu fiz de uma forma diferente da sua usei o forEach e funciou mais teve em alguns momentos que meu código ficou diferente do seu e talvez tenha sido por não utilizar o prototype, estou certo ?
-
-// Como disse a maioria fiz sozinho só mesmo o mais hard que tive que olhar só para ter uma noção. Será que é ruim para meu aprendizado ?
-
-
 })(window, document)
 

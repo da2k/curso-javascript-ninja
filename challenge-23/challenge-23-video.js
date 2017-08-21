@@ -50,7 +50,7 @@ input;
   }
 
   function handClickOperation(){
-    removeLastItemIfItAnOperator();
+    $visor.value = removeLastItemIfItAnOperator($visor.value);
     $visor.value += this.value;
   }
 
@@ -58,9 +58,9 @@ input;
     $visor.value = 0;
   }
 
-  function islastItemAnOperations(){
+  function islastItemAnOperation(number){
     var operations = ['+', '-', 'x', '÷'];
-    var lastItem = $visor.value.split('').pop();
+    var lastItem = number.split('').pop();
 
     return operations.some(function(operator){
       return operator === lastItem;
@@ -68,21 +68,34 @@ input;
 
   }
 
-  function removeLastItemIfItAnOperator() {
-    if (islastItemAnOperations()) {
-      $visor.value = $visor.value.slice(0, -1);
+  function removeLastItemIfItAnOperator( number ) {
+    if (islastItemAnOperation( number )) {
+      return number.value.slice(0, -1);
     }
+    return number;
   }
 
   function handleClickEqual(){
-    removeLastItemIfItAnOperator();
+    $visor.value = removeLastItemIfItAnOperator($visor.value);
     var allValues = $visor.value.match(/\d+[+x÷\-]?/g);
+    $visor.value = allValues.reduce(function(accumulated, actual){
+      var firstValue = accumulated.slice(0, -1);
+      var operator = accumulated.split('').pop();
+      var lastValue = removeLastItemIfItAnOperator(actual);
+      var lastOperator = islastItemAnOperation(actual) ? actual.split('').pop() : '';
+      switch (operator) {
+        case '+':
+          return ( Number(firstValue) + Number(lastValue) ) + lastOperator;
+        case '-':
+          return ( Number(firstValue) - Number(lastValue) ) + lastOperator;
+        case 'x':
+          return ( Number(firstValue) * Number(lastValue) ) + lastOperator;
+        case '÷':
+          return ( Number(firstValue) / Number(lastValue) ) + lastOperator;
+      }
+    })
 
   }
-
-
-
-
 
 
 })(window, document)
