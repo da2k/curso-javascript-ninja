@@ -34,9 +34,7 @@
     */
     console.log( '\nFormatando CPFs corretamente:' );
     function formatCPF(cpf){
-        return cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, function(regex, g1, g2, g3, g4){
-            return g1 + '.' + g2 + '.' + g3 + '-' + g4;
-        });
+        return cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, '$1.$2.$3-$4');
     }
     console.log(formatCPF('04921434211'));
     console.log(formatCPF('21045852205'));
@@ -55,7 +53,7 @@
     ["junho", "julho"]
     */
     console.log( '\nMatch com as palavras "junho" ou "julho" para a frase "Os meses de janeiro, junho e julho começam com a letra j.":' );
-    console.log('Os meses de janeiro, junho e julho começam com a letra j.'.match(/ju.ho/g));
+    console.log('Os meses de janeiro, junho e julho começam com a letra j.'.match(/ju[nl]ho/g));
 
     /*
     Crie uma expressão regular que faça o match com a abertura de uma tag
@@ -105,9 +103,6 @@
     */
     console.log( '\nFazer replace dos textos das tags:' );
     var texto = '<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>';
-    var regex = /(<)(\w+)(>)([\wáéíóú\s]+)(<\/\w+>)/g;
-    function tagHtml(rgx, g1, g2, g3, g4, g5){
-        return g1 + g2 + g3 + 'O texto dentro da tag "' + g2 + '" é "' + g4 + '"' + g5 + '\n';
-    }
-    console.log(texto.replace(regex, tagHtml));
+    var regex = /<(\w+)>([^<]+)<\/\w+>/g;
+    console.log(texto.replace(regex, '<$1>O texto dentro da tag "$1" é "$2"</$1>\n'));
 })();
