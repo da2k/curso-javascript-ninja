@@ -83,18 +83,26 @@ input;
   }
 
   function handleResultEqual( ){
-    console.log('tetes');
     $inputVisor.value = removeLastOperator($inputVisor.value);
     var allValues = $inputVisor.value.match(/\d+[+x÷-]?/g);
     $inputVisor.value = allValues.reduce(function (accumulated, actual) {
       var firstValue = accumulated.slice(0, -1);
-      console.log( accumulated )
-      console.log( actual )
-      console.log(firstValue )
+      var operator = accumulated.split('').pop();
+      var lastValue = removeLastOperator(actual);
+      var lastOperator = isChecklastOperator(actual) ? actual.split('').pop() : '';
+      switch (operator) {
+        case '+':
+          return (Number(firstValue) + Number(lastValue)) + lastOperator;
+        case '-':
+          return (Number(firstValue) - Number(lastValue)) + lastOperator;
+        case 'x':
+          return (Number(firstValue) * Number(lastValue)) + lastOperator;
+        case '÷':
+          return (Number(firstValue) / Number(lastValue)) + lastOperator;
+      }
 
     })
   }
-
 
 
 // @fdaciuk Eu fiz da seguinte forma o exercio fui montando do meu jeito e nas dúvidas eu tentava dar uma olhada no seu código para tentar fazer parecido.
