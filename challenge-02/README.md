@@ -9,10 +9,10 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
  }
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-var resultado = soma(10, 5) + '5';
+var resultado = soma(10, 5) + 5;
 
 // Qual o valor atualizado dessa variável?
-155
+20
 
 // Declare uma nova variável, sem valor.
 var x;
@@ -23,7 +23,7 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 function novo() {
-    var x = 'VALOR';
+    var x = 40;
     return 'O valor da Variavel agora é ' + x;
 }
 
@@ -33,7 +33,7 @@ function novo() {
 novo()
 
 // Qual o retorno da função? (Use comentários de bloco).
-/*'O valor da Variavel agora é VALOR' */
+/*'O valor da Variavel agora é' 40 */
 
 /*
 Crie uma função com as seguintes características:
@@ -47,7 +47,7 @@ function verificação( x, y, z ) {
         return 'Preencha todos os valores corretamente!'
     }
     else{
-        return ( x * y * z ) + '2';
+        return ( x * y * z ) + 2;
     }
 }
 
@@ -61,7 +61,7 @@ verificação( 1,2 )
 verificação( 1,2,3 )
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-'62'
+8
 
 /*
 Crie uma função com as seguintes características:
