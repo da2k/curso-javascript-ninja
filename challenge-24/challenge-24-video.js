@@ -21,7 +21,6 @@ mesma funcionalidade.
 
   function initialize(){
     initEvents();
-
   }
 
   function initEvents(){
@@ -57,52 +56,60 @@ mesma funcionalidade.
   }
 
   function isLastItemAnOperation(number) {
-    var operations = getOperators();
+    var operations = getOperations();
     var lastItem = number.split('').pop();
     return operations.some(function(operator) {
       return operator === lastItem;
     });
   }
 
-  function getOperators (){
-    return Array.prototype.map.call($buttonsOperations, function(item, index){
-      return item.value;
+  function getOperations (){
+    return Array.prototype.map.call($buttonsOperations, function(button){
+      return button.value;
     })
   }
 
-  function removeLastItemIfItIsAnOperator(number) {
-    if(isLastItemAnOperation(number)) {
-      return number.slice(0, -1);
+  function removeLastItemIfItIsAnOperator(string) {
+    if(isLastItemAnOperation(string)) {
+      return string.slice(0, -1);
     }
-    return number;
+    return string;
   }
 
   function handleClickEqual() {
     $visor.value = removeLastItemIfItIsAnOperator($visor.value);
-    var allValues = $visor.value.match(/\d+[+x÷-]?/g);
-    $visor.value = allValues.reduce(function(accumulated, actual) {
-      calculate(accumulated, actual);
-    });
+    var allValues = $visor.value.match(getRegexOperations());
+    $visor.value = allValues.reduce(calculateAllValues);
+  }
+
+  function getRegexOperations(){
+    return new RegExp('\\d+[' + getOperations().join('') + ']?', 'g');
   }
 
 
-  function calculate(accumulated, actual){
+  function calculateAllValues(accumulated, actual){
     var firstValue = accumulated.slice(0, -1);
     var operator = accumulated.split('').pop();
     var lastValue = removeLastItemIfItIsAnOperator(actual);
-    var lastOperator = isLastItemAnOperation(actual) ? actual.split('').pop() : '';
+    var lastOperator = getLastOperator(actual);
+    return doOperation(operator, firstValue, lastValue) + lastOperator;
+  }
 
+  function getLastOperator(value) {
+    return isLastItemAnOperation(value) ? actual.split('').pop() : '';
+  }
+
+  function doOperation(operator, firstValue, lastValue){
     switch (operator) {
       case '+':
-        return (Number(firstValue) + Number(lastValue)) + lastOperator;
+        return Number(firstValue) + Number(lastValue);
       case '-':
-        return (Number(firstValue) - Number(lastValue)) + lastOperator;
+        return Number(firstValue) - Number(lastValue);
       case 'x':
-        return (Number(firstValue) * Number(lastValue)) + lastOperator;
+        return Number(firstValue) * Number(lastValue);
       case '÷':
-        return (Number(firstValue) / Number(lastValue)) + lastOperator;
+        return Number(firstValue) / Number(lastValue);
     }
-
   }
 
   initialize();
