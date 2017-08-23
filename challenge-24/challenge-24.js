@@ -28,17 +28,15 @@ function getSelector( typeSelector, targetElement ) {
   return document.querySelector(targetElement);
 }
 
-function initialize(){
-  Array.prototype.forEach.call($buttonsNumbers, function (button) {
-    button.addEventListener('click', handleClickNumber, false);
-  });
-  Array.prototype.forEach.call($buttonsOperations, function (button) {
-    button.addEventListener('click', handleClickOperation, false);
-  });
-  $buttonCE.addEventListener('click', handleClickCE, false);
-  $buttonEqual.addEventListener('click', handleClickEqual, false);
-}
 
+Array.prototype.forEach.call($buttonsNumbers, function (button) {
+  button.addEventListener('click', handleClickNumber, false);
+});
+Array.prototype.forEach.call($buttonsOperations, function (button) {
+  button.addEventListener('click', handleClickOperation, false);
+});
+$buttonCE.addEventListener('click', handleClickCE, false);
+$buttonEqual.addEventListener('click', handleClickEqual, false);
 
 
 function handleClickNumber() {
@@ -79,33 +77,29 @@ function handleClickEqual() {
   $visor.value = removeLastItemIfItIsAnOperator($visor.value);
   var allValues = $visor.value.match(/\d+[+x÷-]?/g);
   $visor.value = allValues.reduce(function(accumulated, actual) {
-    var firstValue = accumulated.slice(0, -1);
-    var operator = accumulated.split('').pop();
-    var lastValue = removeLastItemIfItIsAnOperator(actual);
-    var lastOperator = isLastItemAnOperation(actual) ? actual.split('').pop() : '';
-    switch(operator) {
-      case '+':
-        return ( Number(firstValue) + Number(lastValue) ) + lastOperator;
-      case '-':
-        return ( Number(firstValue) - Number(lastValue) ) + lastOperator;
-      case 'x':
-        return ( Number(firstValue) * Number(lastValue) ) + lastOperator;
-      case '÷':
-        return ( Number(firstValue) / Number(lastValue) ) + lastOperator;
-    }
+    calculate(accumulated, actual);
   });
 }
 
 
+function calculate(accumulated, actual){
+  var firstValue = accumulated.slice(0, -1);
+  var operator = accumulated.split('').pop();
+  var lastValue = removeLastItemIfItIsAnOperator(actual);
+  var lastOperator = isLastItemAnOperation(actual) ? actual.split('').pop() : '';
 
+  switch (operator) {
+    case '+':
+      return (Number(firstValue) + Number(lastValue)) + lastOperator;
+    case '-':
+      return (Number(firstValue) - Number(lastValue)) + lastOperator;
+    case 'x':
+      return (Number(firstValue) * Number(lastValue)) + lastOperator;
+    case '÷':
+      return (Number(firstValue) / Number(lastValue)) + lastOperator;
+  }
 
-teste.apply(this, [], function(){
-  console.log('opa')
-});
-
-  teste();
-
-initialize();
+}
 
 
 })(window, document);
