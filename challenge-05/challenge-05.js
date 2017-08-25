@@ -29,7 +29,7 @@ function returnIndex( valueArray, index ) {
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
-var array5 = [ "JavaScript Ninja", 1, true, false, { prop1: "Matheus", prop2: "JS" } ];
+var array5 = [ "JavaScript Ninja", 1, true, null, { prop1: "Matheus", prop2: "JS" } ];
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
