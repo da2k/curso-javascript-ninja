@@ -82,35 +82,24 @@
     */
     $button.addEventListener('click', function(event){
         event.preventDefault();
-        var $name = document.querySelector('[type="text"]');
-        var $mail = document.querySelector('[type="email"]');
-        var $textarea = document.querySelector('textarea');
         var error = false;
 
-        if(!$name.value){
-            window.alert('Preencha o nome do usuário!');
-            error = true;
-        }
-        if(!$mail.value){
-            window.alert('Preencha o e-mail!');
-            error = true;
-        }else if(!isValidEmail($mail.value)){
-            window.alert('Entre com um e-mail válido!');
-            error = true;
-        }
-        if(!$textarea.value){
-            window.alert('Preencha a mensagem!');
-            error = true;
-        }
+        if(!$inputUsername.value)
+            return alert('Preencha o nome do usuário!');
 
-        if(!error){
-            var resp = window.confirm('Tem certeza que deseja enviar o formulário?');
-            if(resp){
-                alert('Enviado com sucesso!');
-            }else{
-                alert('Não enviado.');
-            }            
-        }
+        if(!$inputEmail.value)
+            return window.alert('Preencha o e-mail!');
+
+        if(!isValidEmail($inputEmail.value))
+            return window.alert('Entre com um e-mail válido!');
+            
+        if(!$message.value)
+            return window.alert('Preencha a mensagem!');
+
+        if(window.confirm('Tem certeza que deseja enviar o formulário?'))
+            return alert('Enviado com sucesso!');
+
+        return alert('Não enviado.');
 
     }, false);
 
@@ -141,7 +130,7 @@
         - "agua_@evida.br.com"
     */
     function isValidEmail(mail){
-        var regex = /^[\w\+\.]+@[\w]+.\w{2,}(.\w{1,2})?$/;
+        var regex = /^[\w\+\.]+@\w+\.\w{2,}(?:\.\w{2})?$/;
         if(mail.match(regex)){
             return true;
         }
