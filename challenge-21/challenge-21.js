@@ -1,4 +1,4 @@
-(function(){
+(function(window, document){
     'use strict';
     /*
     O desafio de hoje será um pequeno projeto: um cronômetro!
@@ -31,10 +31,7 @@
     }
     
     // ação para iniciar cronômetro
-    $buttonStart.addEventListener('click', function(event){
-        event.preventDefault();
-        start();
-    }, false);
+    $buttonStart.addEventListener('click', start, false);
 
     // ação para parar cronômetro
     $buttonStop.addEventListener('click', function(event){
@@ -45,7 +42,8 @@
     // ação para zerar cronômetro
     $buttonReset.addEventListener('click', function(event){
         event.preventDefault();
+        clearTimeout(temporizadorId);
         $inputCron.value = 0;
     }, false);
 
-})();
+})(window, document);
