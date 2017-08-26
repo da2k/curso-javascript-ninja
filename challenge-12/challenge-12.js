@@ -16,7 +16,9 @@
         lastname: 'Aguirre',
         age: 36,
     };
-    console.log( 'Propriedades de "person":', JSON.stringify(person) );
+    console.log( 'Propriedades de "person":' );
+    // minha alteração
+    // console.log( 'Propriedades de "person":', JSON.stringify(person) );
 
     /*
     Mostre no console, em um array, todas as propriedades do objeto acima.
@@ -43,8 +45,10 @@
     /*
     Mostre no console todos os livros.
     */
+    console.log(books);
+    // minha resolução
     for (var i = 0; i < books.length; i++){
-        console.log('-', books[i].name);
+        console.log('-', books[i].name,',',books[i].pages+' páginas');
     }
     
 
@@ -52,12 +56,16 @@
     /*
     Remova o último livro, e mostre-o no console.
     */
+    console.log(books.pop());
+    // minha resolução
     console.log('-', books.pop().name);
 
     console.log( '\nAgora sobraram somente os livros:' );
     /*
     Mostre no console os livros restantes.
     */
+    console.log(books);
+    //minha resolução
     for (var i = 0; i < books.length; i++){
         console.log('-', books[i].name);
     }
@@ -65,6 +73,8 @@
     /*
     Converta os objetos que ficaram em `books` para strings.
     */
+    var booksString = JSON.stringify (books);
+    //minha resolução
     var books1 = JSON.stringify(books[0]);
     var books2 = JSON.stringify(books[1]);
     console.log( '\nLivros em formato string:' );
@@ -72,11 +82,15 @@
     /*
     Mostre os livros nesse formato no console:
     */
+    console.log(booksString);
+    //minha resolução
     console.log(books1,'e', books2);
 
     /*
     Converta os livros novamente para objeto.
     */
+    booksString = JSON.parse(booksString);
+    //minha resolução
     var books1 = JSON.parse(books1);
     var books2 = JSON.parse(books2);
     console.log( '\nAgora os livros são objetos novamente:', books1,'e', books2 );
@@ -86,8 +100,10 @@
     no formato abaixo:
         "[PROPRIEDADE]: [VALOR]"
     */
-    for (var props in books){
-        console.log(books[props]);
+    for (var i=0; i < books.length; i++){
+        for (var prop in books[i]){
+            console.log(prop+': '+books[i][prop]);
+        }
     }
 
     /*
