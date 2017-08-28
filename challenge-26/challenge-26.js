@@ -19,13 +19,61 @@ selecionados.
 Dica: olhe os erros que acontecem no console, e vá resolvendo um a um.
 Só passe para o próximo problema quando tiver resolvido o anterior :)
 */
-// ?
 
-var $a = new DOM('[data-js="link"]');
-$a.on('click', function(e) {
+(function(win, doc){
+  'use strict';
+
+  function DOM( elementTarget ){
+    this.element = elementTarget;
+
+    this.on = function methodDomOn(typeEvent, callback){
+      var $elementsOnEvent = doc.querySelectorAll(this.element);
+
+      Array.prototype.forEach.call($elementsOnEvent, function(elementOn){
+        elementOn.addEventListener(typeEvent, callback, false);
+      })
+
+    };
+
+    this.off = function methodDomOff(typeEvent, callback){
+      // - O método `off` irá remover o listener de evento de todos os elementos
+      // selecionados.
+      var $elementsOffEvent = doc.querySelectorAll(this.element);
+
+      Array.prototype.forEach.call($elementsOffEvent, function (elementOff) {
+        elementOff.removeEventListener(typeEvent, callback, false);
+      })
+
+    }
+
+    this.get = function methodDomGet(params) {
+
+    }
+  }
+
+  var $a = new DOM('[data-js="link"]');
+
+  console.log($a);
+
+  $a.on('click', function(e) {
+    e.preventDefault();
+    console.log('clicou');
+  });
+
+  // console.log('Elementos selecionados:', $a.get());
+  // console.log('$a é filho de body?', $a.get()[0].parentNode === document.body);
+
+})(window, document);
+
+var teste = document.querySelector('[data-js="teste"]');
+
+function teste(e){
   e.preventDefault();
-  console.log('clicou');
-});
+  console.log('teste');
+}
 
-console.log('Elementos selecionados:', $a.get());
-console.log('$a é filho de body?', $a.get()[0].parentNode === document.body);
+teste.addEventListener('click', teste , false);
+
+teste.removeEventListener('click', teste, false);
+
+
