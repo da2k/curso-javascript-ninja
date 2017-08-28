@@ -23,50 +23,43 @@ Só passe para o próximo problema quando tiver resolvido o anterior :)
 (function(win, doc){
   'use strict';
 
-  function DOM( elementTarget ){
-    var teste;
-
-    this.element = doc.querySelectorAll(elementTarget);
-
-    this.on = function methodDomOn(typeEvent, callback){
-      var $elementsOnEvent = this.element;
-
-      Array.prototype.forEach.call($elementsOnEvent, function(elementOn){
-        elementOn.addEventListener(typeEvent, callback, false);
-      })
-
-    };
-
-    this.off = function methodDomOff(typeEvent, callback){
-      var $elementsOffEvent = this.element;
-
-      Array.prototype.forEach.call($elementsOffEvent, function (elementOff) {
-        elementOff.removeEventListener(typeEvent, callback, false);
-      })
-
-    }
-
-    this.get = function methodDomGet(params) {
-     return this.element;
-    }
-
+  function DOM(elements){
+    this.element = doc.querySelectorAll(elements);
   }
+
+  DOM.prototype.on = function methodDomOn(eventType, callback){
+    Array.prototype.forEach.call(this.element, function(element){
+      element.addEventListener(eventType, callback, false);
+    })
+  };
+
+  DOM.prototype.off = function methodDomOff(eventType, callback){
+    Array.prototype.forEach.call(this.element, function (element) {
+      element.removeEventListener(eventType, callback, false);
+    })
+  }
+
+  DOM.prototype.get = function methodDomGet(params) {
+   return this.element;
+  }
+
+
 
   var $a = new DOM('[data-js="link"]');
 
-  console.log($a);
-
-  $a.on('click', function clickEvent(e) {
+  $a.on('click', function handeClick(e) {
     e.preventDefault();
     console.log('clicou');
 
-    $a.off('click', clickEvent);
-  });
+    $a.off('click', handeClick);
 
+  });
 
   console.log('Elementos selecionados:', $a.get());
   console.log('$a é filho de body?', $a.get()[0].parentNode === document.body);
 
 })(window, document);
+
+
 
 
