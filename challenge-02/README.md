@@ -23,7 +23,8 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 function B(){
-    b = 'O valor da variável agora é VALOR.';
+    b =  25
+    b = 'O valor da variável agora é ' + b;
     return b;
 }
 
@@ -40,12 +41,11 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-function C(a,b,c){
-    if(a == undefined || b == undefined || c == undefined){   
-        console.log('Preencha todos os valores corretamente!');
-    }else{
-        return (a * b * c) + 2;
+function C(a, b, c){
+    if(a === undefined || b === undefined || c === undefined){   
+        return 'Preencha todos os valores corretamente!';
     }
+    return ( a * b * c ) + 2;
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
@@ -69,17 +69,18 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-function D(a,b,c){
-    if(a == undefined && b == undefined && c == undefined){
-        return false;
-    }else if(b == undefined && c == undefined){
+function D(a, b, c){
+    if(a !== undefined && b === undefined && c === undefined){
         return a;
-    }else if(c == undefined){
+    }else if(a !== undefined && b !== undefined && c === undefined){
         return a + b;
-    }else{
+    }else if(a !== undefined && b !== undefined && c !== undefined){
         return (a + b) / c;
+    }else if(a === undefined && b === undefined && c === undefined){
+        return false
+    }else{
+        return null;
     }
-    return null;
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
