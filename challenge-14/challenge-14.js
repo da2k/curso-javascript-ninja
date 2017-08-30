@@ -123,7 +123,7 @@
     será que obtemos um resultado diferente? Faça a busca a partir do índice 2.
     */
     console.log( '\nE buscando a partir do último índice, o { number: 2 } existe?' );
-    console.log( numberObjects.lastIndexOf({ number: 2 }) > -1 ? 'Existe um objeto { number: 2 } em numberObjects!' : 'Não existe um objeto { number: 2 } em numberObjects :(' );
+    console.log( numberObjects.lastIndexOf({ number: 2 },2) > -1 ? 'Existe um objeto { number: 2 } em numberObjects!' : 'Não existe um objeto { number: 2 } em numberObjects :(' );
     console.log('continua não retornando');
 
     /*
