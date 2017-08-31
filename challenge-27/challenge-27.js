@@ -24,23 +24,21 @@ O método isNull deve retornar `true` se o valor for null ou undefined.
 
   function DOM(elements) {
     this.element = doc.querySelectorAll(elements);
+
+    this.isArray = function isArray(){
+      return 'olá';
+    }
+
   }
 
-  DOM.prototype.on = function methodDomOn(eventType, callback) {
-    Array.prototype.forEach.call(this.element, function (element) {
-      element.addEventListener(eventType, callback, false);
-    })
-  };
+  var DOM = new DOM();
 
-  DOM.prototype.off = function methodDomOff(eventType, callback) {
-    Array.prototype.forEach.call(this.element, function (element) {
-      element.removeEventListener(eventType, callback, false);
-    })
-  }
 
-  DOM.prototype.get = function methodDomGet(params) {
-    return this.element;
-  }
+
+  console.log( 'elementos',  DOM.element );
+  console.log(  DOM.isArray() );
+
+
 
 
 })(window, document)
