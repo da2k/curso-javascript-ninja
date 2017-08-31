@@ -7,14 +7,14 @@ um único parâmetro como argumento. Essa função deve retornar `true` se o
 equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
-var isTruthy = function(myValue) {
-    return !!myValue;
+var isTruthy = function(meuValor) {
+    return !!meuValor;
 };
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 isTruthy(undefined);
 isTruthy(null);
-isTruthy(Nan);
+isTruthy(NaN);
 isTruthy(0);
 isTruthy(-0);
 isTruthy('');
@@ -51,7 +51,7 @@ var carro = {
     modelo: 'Renegade',
     placa: 'GAB1234',
     ano: 2017,
-    cor: 'Vermelho',
+    cor: 'Preto',
     quantasPortas: 4,
     assentos: 5,
     quantidadePessoas: 0
@@ -61,8 +61,8 @@ var carro = {
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
-carro.mudarCor = function(newColor) {
-    carro.cor = newColor;
+carro.mudarCor = function(novaCor) {
+    carro.cor = novaCor;
 };
 
 /*
@@ -111,7 +111,22 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-?
+carro.adicionarPassageiros = function(pessoasEntrandoCarro) {
+    var totalPessoas = carro.quantidadePessoas + pessoasEntrandoCarro;
+    var assentosVagos = carro.assentos - carro.quantidadePessoas;
+    var pessoasPlural = assentosVagos > 1 ? 's' : '';
+
+    if (totalPessoas >= carro.assentos && carro.quantidadePessoas === carro.assentos) {
+        return 'O carro já está lotado!';
+    }
+
+    if (totalPessoas > carro.assentos) {
+        return 'Só cabem mais ' + assentosVagos + ' pessoa' + pessoasPlural + '!';
+    }
+
+    carro.quantidadePessoas += pessoasEntrandoCarro;
+    return 'Já temos ' + totalPessoas + ' pessoa' + pessoasPlural + ' no carro!';
+};
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -121,38 +136,38 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-?
+carro.obterCor(); // Preto
 
 // Mude a cor do carro para vermelho.
-?
+carro.mudarCor('Vermelho');
 
 // E agora, qual a cor do carro?
-?
+carro.obterCor(); // Vermelho
 
 // Mude a cor do carro para verde musgo.
-?
+carro.mudarCor('Verde musgo');
 
 // E agora, qual a cor do carro?
-?
+carro.obterCor(); // Verde musgo
 
 // Qual a marca e modelo do carro?
-?
+carro.obterMarcaModelo(); // Esse carro é um Jeep Renegade
 
 // Adicione 2 pessoas no carro.
-?
+carro.adicionarPassageiros(2); // Já temos 2 pessoas no carro!
 
 // Adicione mais 4 pessoas no carro.
-?
+carro.adicionarPassageiros(4); // Só cabem mais 3 pessoas!
 
 // Faça o carro encher.
-?
+carro.adicionarPassageiros(3); // Já temos 5 pessoas no carro!
 
 // Tire 4 pessoas do carro.
-?
+carro.adicionarPassageiros(-4); // Já temos 1 pessoa no carro!
 
 // Adicione 10 pessoas no carro.
-?
+carro.adicionarPassageiros(10); // Só cabem mais 4 pessoas!
 
 // Quantas pessoas temos no carro?
-?
+carro.quantidadePessoas; // 1
 ```
