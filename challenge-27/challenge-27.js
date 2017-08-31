@@ -42,6 +42,27 @@ O método isNull deve retornar `true` se o valor for null ou undefined.
     return this.element;
   }
 
+  DOM.prototype.forEach = function forEach(){
+    return Array.prototype.forEach.call(this.element, arguments);
+  }
+
+
+
+  var $a = new DOM('[data-js="link"]');
+
+  $a.on('click', function (e) {
+    e.preventDefault();
+    console.log('clicou');
+  });
+
+  $a.forEach(function(element, index){
+    console.log('implementando o forEach', element, index);
+    console.log(element.firstElement);
+  });
+
+  console.log('Elementos selecionados:', $a.get());
+  console.log('$a é filho de body?', $a.get()[0].parentNode === document.body);
+
 
 })(window, document)
 
