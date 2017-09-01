@@ -24,7 +24,7 @@ Onde VALOR é o novo valor da variável.
 */
 function getValue() {
 	number = 98;
-	return "O valor da variável agora é " + number;
+	return 'O valor da variável agora é ' + number;
 }
 
 // Invoque a função criada acima.
@@ -45,7 +45,7 @@ Crie uma função com as seguintes características:
 */
 function myFunction(a, b, c) {
 	if(a === undefined || b === undefined || c === undefined) {
-		return "Preencha todos os valores corretamente!";
+		return 'Preencha todos os valores corretamente!';
 	}
 
 	return (a * b * c) + 2;
