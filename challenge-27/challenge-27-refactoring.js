@@ -22,127 +22,64 @@ O método isNull deve retornar `true` se o valor for null ou undefined.
 (function(win, doc){
   'use strict';
 
+  // Class test Object
+  function createTestObj() {
+    this.createObj = function createObjectProto(objectTarget) {
+      return Object.prototype.toString.call(objectTarget)
+    };
+
+    this.valueObj = function valueObject(stringNameObject) {
+      var listType = ['Array', 'Object', 'Function', 'Number', 'String', 'Boolean', 'Null', 'Undefined'];
+      var letterIntial = stringNameObject.split('').slice(0, 1).join().toUpperCase();
+      var remainingValue = stringNameObject.slice(1).split('').join('');
+      var valueParam = letterIntial + remainingValue;
+      var resultList;
+
+      listType.forEach(function (item, index) {
+        if (valueParam === item) { resultList = item }
+      })
+
+      return '[' + 'object' + ' ' + resultList + ']';
+    };
+
+  }
+
+  var testObject = new createTestObj();
+
   function DOM(elements) {
     this.element = doc.querySelectorAll(elements);
   }
 
-
-  DOM.prototype.forEach = function forEach(){
-    return Array.prototype.forEach.apply(this.element, arguments);
-  }
-
-  DOM.prototype.map = function map() {
-    return Array.prototype.map.apply(this.element, arguments);
-  }
-
-  DOM.prototype.filter = function filter() {
-    return Array.prototype.filter.apply(this.element, arguments);
-  }
-
-  DOM.prototype.reduce = function reduce() {
-    return Array.prototype.reduce.apply(this.element, arguments);
-  }
-
-  DOM.prototype.reduceRight = function reduceRight() {
-    return Array.prototype.reduceRight.apply(this.element, arguments);
-  }
-
-  DOM.prototype.every = function every() {
-    return Array.prototype.every.apply(this.element, arguments);
-  }
-
-  DOM.prototype.some = function some() {
-    return Array.prototype.some.apply(this.element, arguments);
-  }
-
   DOM.prototype.isArray = function isArray( param ){
-    return Object.prototype.toString.call( param ) === '[object Array]';
+    return testObject.createObj(param) === testObject.valueObj('Array');
   }
 
   DOM.prototype.isObject = function isObject( param ){
-    return Object.prototype.toString.call( param ) === '[object Object]';
+    return testObject.createObj(param) === testObject.valueObj('object');
   }
 
   DOM.prototype.isFunction = function isFunction( param ){
-    return Object.prototype.toString.call( param ) === '[object Function]';
+    return testObject.createObj(param) === testObject.valueObj('function');
   }
 
   DOM.prototype.isNumber = function isNumber( param ){
-    return Object.prototype.toString.call( param ) === '[object Number]';
+    return testObject.createObj(param) === testObject.valueObj('number');
   }
 
   DOM.prototype.isString = function isString( param ){
-    return Object.prototype.toString.call( param ) === '[object String]';
+    return testObject.createObj(param) === testObject.valueObj('string');
   }
 
   DOM.prototype.isBoolean = function isBoolean( param ){
-    return Object.prototype.toString.call( param ) === '[object Boolean]';
+    return testObject.createObj(param) === testObject.valueObj('boolean');
   }
 
   DOM.prototype.isNull = function isNull( param ){
-    return Object.prototype.toString.call(param) === '[object Null]' ||
-      Object.prototype.toString.call(param) === '[object Undefined]';
+    return testObject.createObj(param) === testObject.valueObj('null') ||
+    testObject.createObj(param) === testObject.valueObj('undefined');
   }
-
-
-  function checkValueObject( param ){
-    var listType = ['Array', 'Object', 'Function', 'Number', 'String', 'Boolean', 'Null', 'Undefined'];
-
-
-    var letterIntial = param.split('').slice(0,1).join().toUpperCase();
-    var remainingValue = param.slice(1).split('').join('');
-    var valueParam = letterIntial + remainingValue;
-
-    function findValueObject(){
-      var casa;
-
-      listType.forEach(function (item, index) {
-        if (valueParam === item){
-          casa = item
-        }
-      })
-
-      return casa;
-    }
-
-    var teste = findValueObject();
-
-    console.log(teste)
-
-
-
-
-
-
-
-
-
-
-
-
-
-  }
-
-  checkValueObject('array');
-
-
 
   var dom = new DOM();
-
-  var $a = new DOM('[data-js="link"]');
-
-
-  console.log($a);
-
-  // $a.forEach(function(item){
-  //   console.log('exemplo foreach ', item.firstChild.nodeValue);
-  // });
-
-  // var dataJs = $a.reduce(function (acc, item, index) {
-  //   return acc + ' ' + item.getAttribute('data-js') + index;
-  // },0);
-
-  // console.log(dataJs);
 
   console.log( dom.isArray([1,2,3]) );
   console.log(dom.isObject( { prop: [1,2,3], prop2: 'casa'} ) );
@@ -158,9 +95,5 @@ O método isNull deve retornar `true` se o valor for null ou undefined.
 
 
 })(window, document)
-
-
-
-
 
 

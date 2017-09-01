@@ -85,15 +85,9 @@ O método isNull deve retornar `true` se o valor for null ou undefined.
   }
 
 
-  //  isBoolean, isNull.
-  // O método isNull deve retornar `true` se o valor for null ou undefined.
-
 
   var dom = new DOM();
-
   var $a = new DOM('[data-js="link"]');
-
-
   console.log($a);
 
   // $a.forEach(function(item){
@@ -114,9 +108,6 @@ O método isNull deve retornar `true` se o valor for null ou undefined.
   console.log(dom.isString( '12' ) );
   console.log(dom.isBoolean( false ) );
   console.log(dom.isNull(null) );
-
-
-
 
 
 })(window, document)
