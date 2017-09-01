@@ -22,13 +22,13 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function addValue() {
+function getValue() {
 	number = 98;
 	return "O valor da variável agora é " + number;
 }
 
 // Invoque a função criada acima.
-addValue();
+getValue();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /* O resultado da função
