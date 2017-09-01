@@ -1,0 +1,274 @@
+[33mcommit 293893331110c9272d374fcca677e686b70cbd07[m[33m ([m[1;36mHEAD -> [m[1;32mchallenge-04[m[33m, [m[1;31morigin/challenge-03[m[33m, [m[1;32mchallenge-03[m[33m)[m
+Author: Lucas Barbosa <barbosa.lucash@gmail.com>
+Date:   Fri Sep 1 19:41:11 2017 -0300
+
+    Update Challenge 03 - Add Sobrenome to Pessoa.Apresentacao
+
+[33mcommit 7dd8c52d5072702a54b98a9f50ce612c396d60f4[m[33m ([m[1;32mchallenge-02[m[33m)[m
+Author: Lucas Barbosa <barbosa.lucash@gmail.com>
+Date:   Fri Sep 1 19:27:36 2017 -0300
+
+    Update Challenge 02
+
+[33mcommit d7fbccd64832308980579b2085348b1fdbd95855[m[33m ([m[1;31mupstream/challenge-02[m[33m, [m[1;31morigin/challenge-02[m[33m)[m
+Author: Lucas Barbosa <barbosa.lucash@gmail.com>
+Date:   Fri Sep 1 00:50:50 2017 -0300
+
+    Challenge 02 - mod
+
+[33mcommit 22ec4d6f38b6173d7624256d530972c9a30789bf[m
+Author: Lucas Barbosa <barbosa.lucash@gmail.com>
+Date:   Fri Sep 1 00:48:49 2017 -0300
+
+    Challenge 02
+
+[33mcommit 3173a7fae6df4a203b8f81cb2a45e8d0987323e7[m[33m ([m[1;31mupstream/master[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Merge: ed057e5 056ca41
+Author: Lucas Barbosa <barbosa.lucash@gmail.com>
+Date:   Fri Sep 1 00:19:40 2017 -0300
+
+    Merge pull request #1 from lucabarbosa/challenge-01
+    
+    Add Challenge 01
+
+[33mcommit 056ca4186ba8237c9cdd520131f7bed5c029bf5c[m[33m ([m[1;31mupstream/challenge-01[m[33m, [m[1;31morigin/challenge-01[m[33m)[m
+Author: Lucas Barbosa <barbosa.lucash@gmail.com>
+Date:   Thu Aug 31 23:49:30 2017 -0300
+
+    Update README.md
+
+[33mcommit 2bd0bfba3251f02c893c30341c106f1a38ac6587[m
+Author: Lucas Barbosa <barbosa.lucash@gmail.com>
+Date:   Thu Aug 31 23:47:37 2017 -0300
+
+    Update Readme.md
+
+[33mcommit 51c4351a168dd17b1e349c0dbd2274cf8fae00e8[m
+Author: Lucas Barbosa <barbosa.lucash@gmail.com>
+Date:   Thu Aug 31 22:57:02 2017 -0300
+
+    Update README.md
+
+[33mcommit ed057e52451cdf71fa8f635219c4862f77f83655[m
+Author: Fernando Daciuk <f.daciuk@gmail.com>
+Date:   Sun Jun 4 23:35:10 2017 -0300
+
+    Fix course link
+
+[33mcommit 179319235af6fa3be53cc4cf886ad8e9fa048f35[m
+Author: Fernando Daciuk <f.daciuk@gmail.com>
+Date:   Tue Mar 21 00:55:32 2017 -0300
+
+    Update README
+
+[33mcommit b7a56b5dcbf97792132f894c9ec6409e35ac7037[m
+Author: Fernando Daciuk <f.daciuk@gmail.com>
+Date:   Mon Oct 10 09:49:21 2016 -0300
+
+    Add .github issue template
+
+[33mcommit abf2cd7fc8da76e70c886f570ba549d9d534c86e[m
+Author: Fernando Daciuk <fdaciuk@users.noreply.github.com>
+Date:   Tue May 3 11:56:44 2016 -0300
+
+    Update challenge-28.js
+
+[33mcommit e023abe1a4ba66d531f0d3a1a1fa90b5bbc403b5[m
+Merge: 42ceadc 7d21afa
+Author: Fernando Daciuk <fdaciuk@users.noreply.github.com>
+Date:   Tue May 3 11:55:59 2016 -0300
+
+    Merge pull request #719 from hevertoncastro/patch-1
+    
+    Fixing CEP API
+
+[33mcommit 7d21afa746819302adef92b2a33348020777ba3d[m
+Author: Heverton Castro <heverton@hotmail.com.br>
+Date:   Tue May 3 11:35:28 2016 -0300
+
+    Fixing CEP API
+    
+    Updating the API that was offline to the new one.
+
+[33mcommit 42ceadc4e0312aba926fb6605c7c4f840cc24b66[m
+Author: Fernando Daciuk <f.daciuk@gmail.com>
+Date:   Sun Mar 20 17:10:46 2016 -0300
+
+    Add instructions to create .gitignore
+
+[33mcommit be8a96a13faa227e73275dd163c2b7bb61212843[m
+Author: Fernando Daciuk <f.daciuk@gmail.com>
+Date:   Sat Mar 5 18:31:08 2016 -0300
+
+    Add challenge 33
+
+[33mcommit ae0f8b3ab42f3a4ce0822ed1cd26c6129e981538[m
+Author: Fernando Daciuk <f.daciuk@gmail.com>
+Date:   Tue Jan 12 23:10:25 2016 -0200
+
+    Change project name
+
+[33mcommit feae0deec862c0bf3c38d8e9ebf77dee9a1de9a5[m
+Author: Fernando Daciuk <f.daciuk@gmail.com>
+Date:   Tue Dec 29 09:15:15 2015 -0200
+
+    Summary completed
+
+[33mcommit a25289374cd2e73652768b0b78bf85efd19fbd6f[m
+Author: Fernando Daciuk <f.daciuk@gmail.com>
+Date:   Mon Dec 28 09:11:26 2015 -0200
+
+    Update summary
+
+[33mcommit a2a56f438a02376f40445f314945fe55520339ae[m
+Author: Fernando Daciuk <f.daciuk@gmail.com>
+Date:   Fri Dec 25 23:15:44 2015 -0200
+
+    Remove unused code
+
+[33mcommit 5b68898410c2b63d4724efdb52be810389107dc7[m
+Author: Fernando Daciuk <f.daciuk@gmail.com>
+Date:   Fri Dec 25 23:12:59 2015 -0200
+
+    Fix column size
+
+[33mcommit 0c1c07b2021344b0c29a2abd5781725cca1f76bc[m
+Author: Fernando Daciuk <f.daciuk@gmail.com>
+Date:   Fri Dec 25 23:11:51 2015 -0200
+
+    Add challenge-32
+
+[33mcommit d5ff14fe013041d6b43a150fd240b5a6555ac7d8[m
+Author: Fernando Daciuk <f.daciuk@gmail.com>
+Date:   Fri Dec 25 22:44:29 2015 -0200
+
+    Add router
+
+[33mcommit 46f3b1457ac2a2b26a64402e38bab33ef387870d[m
+Author: Fernando Daciuk <f.daciuk@gmail.com>
+Date:   Fri Dec 25 22:44:23 2015 -0200
+
+    Add initial files to server
+
+[33mcommit 14f57000f08064e24045508d663a6ef367a74e42[m
+Author: Fernando Daciuk <f.daciuk@gmail.com>
+Date:   Thu Dec 24 20:51:19 2015 -0200
+
+    Simple server started
+
+[33mcommit 79ae3d03f44e1bd2df10ab38bea87f39e5efebc4[m
+Author: Fernando Daciuk <f.daciuk@gmail.com>
+Date:   Thu Dec 24 20:26:58 2015 -0200
+
+    Add challenge-32 file
+
+[33mcommit c08365ef5808c505a50f64f39bc2315c7f2d844f[m
+Author: Fernando Daciuk <f.daciuk@gmail.com>
+Date:   Thu Dec 24 20:26:08 2015 -0200
+
+    Add .gitignore
+
+[33mcommit 5bc3b7ef0710a871577faeed51a1f5c1d0d5806f[m
+Author: Fernando Daciuk <f.daciuk@gmail.com>
+Date:   Mon Nov 16 09:05:38 2015 -0200
+
+    Fix challenge 12
+
+[33mcommit c9b282fcfcb0767dce461ec86c7f6e061a437cd4[m
+Author: Fernando Daciuk <f.daciuk@gmail.com>
+Date:   Sat Nov 14 17:48:39 2015 -0200
+
+    Add challenge 31
+
+[33mcommit 6c63918755f17440f4ff39a5db15d2c6cb1f7ffc[m
+Author: Fernando Daciuk <f.daciuk@gmail.com>
+Date:   Mon Oct 26 09:05:29 2015 -0200
+
+    Challenge 30
+
+[33mcommit 00ad26944e435d66b90684ef26601e16fd60d577[m
+Author: Fernando Daciuk <f.daciuk@gmail.com>
+Date:   Wed Oct 14 08:11:35 2015 -0300
+
+    Add company.json
+
+[33mcommit cb130c28c4d8f348bfedd6f82553cb5939eb12f9[m
+Author: Fernando Daciuk <f.daciuk@gmail.com>
+Date:   Wed Oct 14 08:11:18 2015 -0300
+
+    Instructions for challenge 29
+
+[33mcommit d961c75fc33c8de97f966dc81506cf6918205076[m
+Author: Fernando Daciuk <f.daciuk@gmail.com>
+Date:   Tue Oct 13 23:33:30 2015 -0300
+
+    Add challenge 29
+
+[33mcommit 9719070e3eaa0a9015728ce09454291547d20ae6[m
+Author: Fernando Daciuk <f.daciuk@gmail.com>
+Date:   Sun Oct 4 23:11:40 2015 -0300
+
+    Add challenge 28
+
+[33mcommit e796f7bbc2c76018de02fe9fabbf33d733f8ca43[m
+Merge: 860e8ea 33368c4
+Author: Fernando Daciuk <f.daciuk@gmail.com>
+Date:   Sun Sep 27 23:08:38 2015 -0300
+
+    Merge branch 'master' of github.com:da2k/curso-javascript-ninja
+
+[33mcommit 860e8ea1b8763736a9048ddb28900acacd902e54[m
+Author: Fernando Daciuk <f.daciuk@gmail.com>
+Date:   Sun Sep 27 23:08:22 2015 -0300
+
+    Add challenge 27
+
+[33mcommit 33368c43834bcc634b0812b6b31ba016ddfa9f6c[m
+Merge: 892886d c5e2096
+Author: Fernando Daciuk <fdaciuk@users.noreply.github.com>
+Date:   Fri Sep 25 07:28:10 2015 -0300
+
+    Merge pull request #352 from DaniloAgostinho/patch-1
+    
+    Correção acento circunflexo
+
+[33mcommit c5e209649c217b202ffa41d920fa57bc020e74dc[m
+Author: Danilo Agostinho <daniloagostinhosilva@gmail.com>
+Date:   Fri Sep 25 04:13:46 2015 -0300
+
+    Correção acento circunflexo
+    
+    Simples correção circunflexo
+
+[33mcommit 892886d97088a07f5fda17851b1a21e1617e35ad[m
+Author: Fernando Daciuk <f.daciuk@gmail.com>
+Date:   Wed Sep 23 08:05:42 2015 -0300
+
+    Fix challenge 26
+
+[33mcommit 8028d2c90f2bfd5b2997f2949e812642c7bd474a[m
+Author: Fernando Daciuk <f.daciuk@gmail.com>
+Date:   Wed Sep 23 08:04:30 2015 -0300
+
+    Add challenge 26
+
+[33mcommit deb9d28209252b2777370933a2cf7c8b79cc3287[m
+Author: Fernando Daciuk <f.daciuk@gmail.com>
+Date:   Sat Sep 19 14:51:31 2015 -0300
+
+    Fix typo
+
+[33mcommit aa7dcf2f682931262d6f45e79e5fcf178438dc3c[m
+Author: Fernando Daciuk <f.daciuk@gmail.com>
+Date:   Sat Sep 19 12:01:13 2015 -0300
+
+    Fix summary
+
+[33mcommit c8ae935146dfd60012dde94a26bcb30f17f7c24a[m
+Merge: e06beaa 99b94f5
+Author: Fernando Daciuk <fdaciuk@users.noreply.github.com>
+Date:   Sat Sep 19 11:59:08 2015 -0300
+
+    Merge pull request #337 from andersonweb/master
+    
+    Sumário do
