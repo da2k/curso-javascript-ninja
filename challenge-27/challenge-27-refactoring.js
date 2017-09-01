@@ -91,9 +91,6 @@ O método isNull deve retornar `true` se o valor for null ou undefined.
   console.log(dom.isNull(null) );
 
 
-
-
-
 })(window, document)
 
 
