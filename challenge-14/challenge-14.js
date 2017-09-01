@@ -11,7 +11,8 @@
     Mostre esse array no console.
     */
     console.log( 'Number Objects Array:' );
-    var numberObjects = [
+  /* como eu tinha feito  
+  var numberObjects = [
         { number: 1 },
         { number: 2 },
         { number: 3 },
@@ -22,7 +23,11 @@
         { number: 8 },
         { number: 9 },
         { number: 10 }
-    ];
+    ];*/
+    var numberObjects = [];
+      for (var i = 1; i <= 10; i++){
+          numberObjects.push({ number: i });
+      }
     console.log(numberObjects);
 
     /*
@@ -30,9 +35,13 @@
     números do array criado acima. Mostre esse novo array no console.
     */
     console.log( '\nJust Numbers:' );
+    /* como eu tinha feito
     var justNumbers = [];
     numberObjects.forEach(function(item, index){
         justNumbers.push(item.number);
+    });*/
+    var justNumbers = numberObjects.map(function(item){
+        return item.number;
     });
     console.log(justNumbers);
 
@@ -42,11 +51,15 @@
     no console.
     */
     console.log( '\nJust module of division by 2 or 3:' );
+    /* como eu tinha feito
     var justMod2Or3 = [];
     justNumbers.forEach(function(item, index){
         if (item % 2 === 0 || item % 3 === 0){
             justMod2Or3.push(item);
         }
+    });*/
+    var justMod2Or3 = justNumbers.filter(function(item){
+        return item % 2 === 0 || item % 3 === 0;
     });
     console.log(justMod2Or3);
 
@@ -59,7 +72,7 @@
     Mostre o resultado no console.
     */
     console.log( '\nOperation:' );
-    var operation = justMod2Or3.reduce(function(acumulado, atual, index, array){
+    var operation = justMod2Or3.reduce(function(acumulado, atual){ // , index, array não são necessários nesta operação
         return (acumulado + 1) * atual;
     },0);
     console.log(operation);
@@ -70,7 +83,7 @@
     console.
     */
     console.log( '\nOperation 2:' );
-    var operation2 = justMod2Or3.reduceRight(function(acumulado, atual, index, array){
+    var operation2 = justMod2Or3.reduceRight(function(acumulado, atual){// , index, array não são necessários nesta operação
         return (acumulado + 1) * atual;
     },0);
     console.log(operation2);
@@ -84,8 +97,8 @@
     falada, como se você estivesse falando em código xD
     */
     console.log( '\nSeu nome na língua do "P":' );
-    var myName = ['F','a','b','i','o'];
-    var myNameP = myName.reduce(function(acumulado, atual, index, array){
+    var myName = ['Fa','bi','o']; // fiz errado da primeira vez, colocando por letras
+    var myNameP = myName.reduce(function(acumulado, atual){ // não precisa de , index, array aqui
         return acumulado + 'P'+ atual;
     },'');
     console.log(myNameP);
@@ -95,9 +108,9 @@
     e atribuirá o seu nome invertido (usando o array criado acima).
     */
     console.log( '\nInversed Name:' );
-    var myNameInversed = myName.reduceRight(function(acumulado, atual, index, array){
+    var myNameInversed = myName.reduceRight(function(acumulado, atual){// não precisa de , index, array aqui
         return acumulado + atual;
-    },'');
+    });// não necessita do ''
     console.log(myNameInversed);
 
     /*
@@ -116,7 +129,14 @@
     */
     console.log( '\nExiste um { number: 2 } em numberObjects?' );
     console.log( numberObjects.indexOf({ number: 2 }) > -1 ? 'Existe um objeto { number: 2 } em numberObjects!' : 'Não existe um objeto { number: 2 } em numberObjects :(' );
-    console.log('apesar de existir no array, o indexOf parece não retornar objetos.');
+    /*o que eu achava
+    console.log('apesar de existir no array, o indexOf parece não retornar objetos.');*/
+    console.log('objetos quando criados são únicos na memória, por isso não encontrou, é um outro objeto');
+    /*para funcionar*/
+    console.log('\nFuncionado corretamente:');
+    var obj = numberObjects[1];
+    console.log( numberObjects.indexOf(obj) > -1 ? 'Existe um objeto { number: 2 } em numberObjects!' : 'Não existe um objeto { number: 2 } em numberObjects :(' );
+    console.log('neste caso foi criado um apontador obj que tem o valor correto referenciado para ser verificado');
 
     /*
     Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
