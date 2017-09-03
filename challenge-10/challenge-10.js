@@ -30,28 +30,29 @@
 
         '+': function(num1, num2) {
 
-                return num1 + num2;
-            },
+            return num1 + num2;
+        },
 
         '-': function(num1, num2) {
 
-                return num1 - num2;
-            },
+            return num1 - num2;
+        },
 
         '*': function(num1, num2) {
 
-                return num1 * num2;
-            },
+            return num1 * num2;
+        },
 
         '/': function(num1, num2) {
 
-                return num1 / num2;
-            },
+            return num1 / num2;
+        },
 
         '%': function(num1, num2) {
 
-                return num1 % num2;
-            }
+            return num1 % num2;
+        }
+
     };
 
     /*
@@ -67,7 +68,7 @@
     function isOperatorValid(operator) {
 
         return !!operation[operator];
-    }
+    };
 
     /*
     Agora vamos criar a calculadora.
@@ -88,14 +89,14 @@
             return false;
         }
 
-        return function(param1, param2) {
+        return function(num1, num2) {
 
-            if (typeof param1 !== 'number' || typeof param2 !== 'number') {
+            if (typeof num1 !== 'number' || typeof num2 !== 'number') {
 
                 return false;
             }
 
-            return operation[operator](param1, param2);
+            return operation[operator](num1, num2);
         };
     }
 
@@ -119,7 +120,7 @@
     */
     function showErrorMessage(operator) {
 
-        return 'Operação ' + operator + ' não permitida!';
+        return 'Operação "' + operator + '" não permitida!';
     }
 
     /*
@@ -140,7 +141,6 @@
     */
     operationSignal = '+';
 
-
     var sum = calculator(operationSignal);
 
     /*
@@ -158,20 +158,16 @@
 
     if (sum) {
 
-        number1 = 8;
-        number2 = 2;
+        number1 = 9;
+        number2 = 1;
 
         console.log(showOperationMessage(operationSignal, number1, number2), sum(number1, number2));
     }
 
     else {
+
         console.log(showErrorMessage(operationSignal));
     }
-
-
-
-
-
 
     /*
     Repita desde o "PASSO 2" com as operações de subtração, multiplicação,
@@ -179,61 +175,82 @@
     "multiplication", "division" e "mod".
     */
     operationSignal = '-';
+
     var subtraction = calculator(operationSignal);
+
+    number1 = 10;
+    number2 = 5;
+
     if (subtraction) {
 
-        number1 = 8;
-        number2 = 2;
+        number1 = 9;
+        number2 = 1;
 
         console.log(showOperationMessage(operationSignal, number1, number2), subtraction(number1, number2));
     }
 
     else {
+
         console.log(showErrorMessage(operationSignal));
     }
 
 
+
+
     operationSignal = '*';
+
     var multiplication = calculator(operationSignal);
+
     if (multiplication) {
 
-        number1 = 9;
-        number2 = 5;
+        number1 = 8;
+        number2 = 7;
 
         console.log(showOperationMessage(operationSignal, number1, number2), multiplication(number1, number2));
     }
 
     else {
+
         console.log(showErrorMessage(operationSignal));
     }
 
 
+
+
     operationSignal = '/';
+
     var division = calculator(operationSignal);
+
     if (division) {
 
-        number1 = 5;
-        number2 = 2;
+        number1 = 8;
+        number2 = 4;
 
         console.log(showOperationMessage(operationSignal, number1, number2), division(number1, number2));
     }
 
     else {
+
         console.log(showErrorMessage(operationSignal));
     }
 
 
+
+
     operationSignal = '%';
+
     var mod = calculator(operationSignal);
+
     if (mod) {
 
-        number1 = 5;
-        number2 = 2;
+        number1 = 8;
+        number2 = 4;
 
         console.log(showOperationMessage(operationSignal, number1, number2), mod(number1, number2));
     }
 
     else {
+
         console.log(showErrorMessage(operationSignal));
     }
 
@@ -241,18 +258,20 @@
     Repita o PASSO 2 novamente, mas passando um operador inválido, para ver se
     a mensagem de erro será mostrada no console.
     */
+    operationSignal = 'lala';
 
-    operationSignal = 'x';
     var invalid = calculator(operationSignal);
+
     if (invalid) {
 
-        number1 = 5;
-        number2 = 2;
+        number1 = 8;
+        number2 = 4;
 
         console.log(showOperationMessage(operationSignal, number1, number2), invalid(number1, number2));
     }
 
     else {
+
         console.log(showErrorMessage(operationSignal));
     }
 
