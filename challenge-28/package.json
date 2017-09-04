@@ -1,0 +1,17 @@
+{
+  "name": "jsninja",
+  "version": "1.0.0",
+  "description": "Curso jsNinja",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "gulp",
+    "server": "npm run gulp server"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.17.6",
+    "gulp": "^3.9.1"
+  }
+}
