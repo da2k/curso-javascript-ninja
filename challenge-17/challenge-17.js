@@ -20,7 +20,11 @@
 	no console:
 	*/
 	console.log( 'Adicionando seu nome no texto:' );
+	/* antes da revisão, não precisa dos (), g é opcional neste caso
 	console.log(text.replace(/(Manuel Marques de Sousa)/, 'Fabio Aguirre'));
+  */
+  console.log(text.replace(/Manuel Marques de Sousa/g, 'Fabio Aguirre'));
+
 
 	/*
 	Agora, substitua a palavra "brasileiro" por sua cidade natal e mostre no
@@ -28,7 +32,7 @@
 	Ex: Se você for da São Paulo, substitua por "paulista".
 	*/
 	console.log( '\nTrocando naturalidade:' );
-	console.log(text.replace(/(brasileiro)/, 'paulista'));
+	console.log(text.replace(/brasileiro/g, 'paulista')); // mesmo de cima, não precisa dos () e g é opcional
 
 	/*
 	Substitua todos os números por um traço `-`. Cada caractere de número deve
@@ -49,14 +53,14 @@
 	Mostre o resultado no console:
 	*/
 	console.log( '\nTrocando "A" e "a" por "4":' );
-	console.log(text.replace(/[Aa]/g, '4'));
+	console.log(text.replace(/[Aa]/g, '4'));// outras formas válidas: /A|a/g ; /a/gi (esta última é a preferida por ser menor)
 
 	/*
 	Substitua a frase "O Centauro de Luvas", deixando-a em caixa alta, usando
 	o método `toUpperCase()`. Mostre o resultado no console:
 	*/
 	console.log( '\n"O Centauro de Luvas" em caixa alta:' );
-	console.log(text.replace(/(O Centauro de Luvas)/g, function(capturaTotal){
+	console.log(text.replace(/O Centauro de Luvas/g, function(capturaTotal){//não precisa de ()
 		return capturaTotal.toUpperCase();
 	}));
 
@@ -73,7 +77,8 @@
 	"O mês de [NOME DO MÊS] é representado pelo número [NÚMERO DO MÊS]."
 	*/
 	console.log( '\nMeses representados por números:' );
-	function getMonthNumber(monthName){
+	/* antes revisão usando switch
+    function getMonthNumber(monthName){
 		switch(monthName) {
 	        case 'janeiro':
 	            var convertedMonth = '01';
@@ -116,6 +121,24 @@
 	                }
 	        return convertedMonth;
 	}
+  */
+  function getMonthNumber(monthName){
+      var months = {
+        janeiro: '01',
+	      fevereiro: '02',
+	      março: '03',
+	      abril: '04',
+	      maio: '05',
+	      junho: '06',
+	      julho: '07',
+	      agosto: '08',
+	      setembro: '09',
+	      outubro: '10',
+	      novembro: '11',
+	      dezembro: '12'
+      }
+      return months[ monthName ];
+	}
 	var month1 = 'março';
 	var month2 = 'setembro';
 	var month3 = 'dezembro';
@@ -132,7 +155,10 @@
 	Mostre a regex no console.
 	*/
 	console.log( '\nRegex que vai fazer o match com as datas do texto:' );
-	var regexDate = /(\d\d de )(junho|julho)( de \d\d\d\d)/g;
+	/* antes revisão:
+  var regexDate = /(\d\d de )(junho|julho)( de \d\d\d\d)/g;
+  */
+  var regexDate = /(\d\d) de (junho|julho) de (\d\d\d\d)/g;
 	console.log(regexDate);
 
 	/*
@@ -143,10 +169,16 @@
 	console o resultado.
 	*/
 	console.log( '\nReplace de datas:' );
-	function replaceDate (){
+	/* Antes revisão:
+  function replaceDate (){
 		return text.replace(regexDate, function(total, dia, mes, ano){
-			return dia.slice(0,2)+'/'+getMonthNumber(mes)+'/'+ano.substring(8,4);
-		});
+          return dia.slice(0,2)+'/'+getMonthNumber(mes)+'/'+ano.substring(8,4);
+	});
 	}
-	console.log(replaceDate());
+  console.log(replaceDate());
+  */
+  function replaceDate (regex, day, month, year){
+          return day+'/'+getMonthNumber(month)+'/'+year;
+	}
+	console.log(text.replace(regexDate, replaceDate));
 })();
