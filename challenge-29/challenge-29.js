@@ -36,4 +36,12 @@
   que será nomeado de "app".
   */
 
+  function App (){
+
+    return {
+
+    };
+
+  }
+
 })();
