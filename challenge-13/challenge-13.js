@@ -41,7 +41,8 @@ console.log(brasil.shift());
 Crie um novo array chamado `newSul`, que receba somente os estados do sul,
 pegando do array `brasil`. Não remova esses itens de `brasil`.
 */
-var newSul = ['Parana', 'Santa Catarina', 'Rio Grande do Sul'];
+var newSul = brasil.slice(0,3)
+//var newSul = ['Parana', 'Santa Catarina', 'Rio Grande do Sul'];
 
 /*
 Mostre no console os estados que estão em `newSul`.
@@ -171,9 +172,10 @@ Filtre o array criado acima, retornando somente os estados que tiverem
 ID par. Atribua o valor à uma variável chamada `filter`.
 */
 var filter = map.filter(function(item, index, array){
-	if (index % 2 !== 0) {
-		return item.estado;
-	}
+	return item.id % === 0;
+//	if (index % 2 !== 0) {
+//		return item.estado;
+//	}
 });
 
 /*
