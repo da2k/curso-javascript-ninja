@@ -22,16 +22,17 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function AdicionaValor(x, y){
-	retrun soma(x,y);
+function AdicionaValor(){
+	valor = 10;
+	return "O valor da variavel e "+ valor;
 }
 
 // Invoque a função criada acima.
-Adiciona(3,2)
+Adiciona()
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
-	eh o valor da funcao passada por parametro
+	O valor da variavel e 10
 */
 
 /*
@@ -42,11 +43,11 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function retorno(x,y,z){
-	if(x == null || y == null || z == null){
+	if(x === undefined || y === undefined || z === undefined){
 		return " Preencha todos os valores corretamente!";
 	}
 	else{
-		return (x*y*z)+2;
+		return (x * y * z)+2;
 	}
 }
 
@@ -79,37 +80,22 @@ Crie uma função com as seguintes características:
 */
 
 function myFunction(x,y,z){
-	if(x == null || y == null || z == null){
-		if(x != null && y == null && z == null){
+		if(x != null && y == undefined && z == undefined){
 			return x;
 		}
-		else if(y != null && x == null && z == null){
-			return y;
+		else if(x != undefined && y !== null && z == undefined){
+			return x+y;
 		}
-		else if(z != null && y == null && x == null){
-			return z;
+		else if(x != null && y != null && z != null){
+			return (x+y)/z;
 		}
-		else if(y != null && x != null && z == null){
-			return y + x;
-		}
-		else if(x != null && z != null && y == null){
-			return x + z;
-		}
-		else if(y != null && z != null && x == null){
-			return y + z;
-		}
-	}
 
-	else if(x != null && y != null && z != null){
-		return (x+y)/z;
-	}
-
-	else if(x == null && y == null && z == null){
-		return false;
-	}
-	else{
-		return null;
-	}
+		else if(x === null && y === null && z === null){
+			return false;
+		}
+		else{
+			return null;
+		}
 
 	
 }
