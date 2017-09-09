@@ -26,23 +26,38 @@
 	var counting;
 
 	function timer(){
-		$counter.value++;
+		//$counter.value ++; // tinha feito dessa forma e funcionou sem problemas na primeira vez
+		//abaixo segue modelo utilzado na revisão
+		$counter.value = +$counter.value + 1;
 		counting = setTimeout(timer, 1000);
 	}
 
+	/* revisão - como chamo duas vezes a parada do timer, o melhor é ter uma função pra isso
+	*/
+	function stopTimer(){
+		clearTimeout(counting);
+	}
+
 	// evento do start
+	/* antes revisão - chamada da função dentro da outra função, mas pode chamar direto a outra função
 	$startCounter.addEventListener('click', function(){
 		timer();
 	}, false);
+	*/
+	$startCounter.addEventListener('click', timer , false);
 
 	// evento do stop
+	/* como agora tenho uma função de parada separada posso chamá-la direto
 	$stopCounter.addEventListener('click', function(){
 		clearTimeout(counting);
 	}, false);
+	*/
+	$stopCounter.addEventListener('click', stopTimer , false)
 
 	// evento do reset
 	$resetCounter.addEventListener('click', function(){
-		clearTimeout(counting);
+		// clearTimeout(counting); // já tenho uma função pra isso, é só chamá-la abaixo
+		stopTimer();
 		$counter.value = 0;
 	}, false);
 
