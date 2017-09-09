@@ -16,28 +16,31 @@
     nome, `username` deve receber "Desconhecido".
     Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
     */
-    var username = win.prompt('Qual o seu nome?');
+    /* antes da revisão - está coreto! mas abaixo segue uma nova maneira de fazer - curto circuito
+    var username = prompt('Qual o seu nome?'); // não precisar usar o win. na frente do prompt
     if (!username)
         username = 'Desconhecido';
-    win.alert('Bem vindo '+username);
-
+    */ //abaixo a tática nova de curto circuito, onde se a primeira condição for false pega a 2ª
+    var username = prompt('Qual o seu nome?') || 'Desconhecido' ;
+    alert('Bem vindo '+username); // não precisa do win.
+    
     /*
     Agora, pergunte ao usuário "Qual o seu e-mail?", atribuindo o resultado à
     uma variável chamada `email`.
     */
-    var email = win.prompt('Qual o seu e-mail?');
+    var email = prompt('Qual o seu e-mail?'); // não precisar usar o win.
 
     /*
     - Selecione o input de "Nome", atribuindo-o à uma variável chamada
     `$inputUsername`.
     */
-    var $inputUsername = doc.querySelector('[type="text"]');
+    var $inputUsername = doc.querySelector('input[type="text"]');//adcionado input, opcional mas deixa mas especifico
 
     /*
     - Selecione o input de "Email", atribuindo-o à uma variável chamada
     `$inputEmail`.
     */
-    var $inputEmail = doc.querySelector('[type="email"]');
+    var $inputEmail = doc.querySelector('input[type="email"]');//faltou input
 
     /*
     - Selecione o campo de "Mensagem", atribuindo-o à uma variável chamada
@@ -49,7 +52,7 @@
     - Selecione o botão de envio do formulário, atribuindo-o à uma variável
     chamada `$button`.
     */
-    var $button = doc.querySelector('[type="submit"]');
+    var $button = doc.querySelector('[type="submit"]');// poderia usar o `button` também
 
     /*
     Preencha os campos de "Nome" e "Email" que estão no documento com os valores
@@ -82,6 +85,7 @@
     Caso contrário, mostre um alerta com a mensagem:
         - "Não enviado."
     */
+    /* antes da revisão - funciona, porém longo e confuso
     $button.addEventListener('click', function(evt){
         evt.preventDefault();
         var isNameEmpty = $inputUsername.value === '' ;
@@ -104,6 +108,21 @@
             else
                 win.alert('Não enviado.');
         }        
+    }, false);
+    */
+    $button.addEventListener('click', function(evt){
+        evt.preventDefault();
+        if (!$inputUsername.value)
+            return alert('Preencha o nome do usuário!');
+        if (!$inputEmail.value)
+            return alert('Preencha o e-mail!');
+        if (!isValidEmail($inputEmail.value))
+            return alert('Entre com um e-mail válido!');
+        if (!$message.value)
+            return alert('Preencha a mensagem!');
+        if (!confirm('Tem certeza que deseja enviar o formulário?'))
+            return alert('Não enviado.');
+        return alert('Enviado com sucesso!');
     }, false);
 
     /*
