@@ -12,6 +12,10 @@
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.17.6",
+    "cors": "^2.8.4",
     "gulp": "^3.9.1"
+  },
+  "dependencies": {
+    "cors": "^2.8.4"
   }
 }

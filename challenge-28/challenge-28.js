@@ -114,37 +114,39 @@
 
   $formCEP.on('submit', handleSubmitFormCEP);
 
+
   function handleSubmitFormCEP(event){
     event.preventDefault();
-
     var url = getUrl();
-
     ajax.open('GET', url);
     ajax.send();
-    ajax.addEventListener('readystatechange', handleReadyStateChange);
+    getMessage('loading');
+    ajax.addEventListener('readystatechange', handleReadyStateChange)
+  }
+
+  function getUrl(params) {
+    return 'https://viacep.com.br/ws/[CEP]/json/'.replace(
+      '[CEP]',
+      clearCEP()
+    );
+  }
+
+  function clearCEP(params) {
+    return $inputCEP.get()[0].value.replace(/\D/g, '');
   }
 
   function handleReadyStateChange(){
-    if( isRequestOk() ){
+    if ( isRequestOk() ){
       getMessage('ok');
       fillCEPFields();
     }
-  }
-
-  function getUrl(){
-    return replaceCEP('https://viacep.com.br/ws/[CEP]/json/');
-  }
-
-
-  function clearCEP(){
-    return $inputCEP.get()[0].value.replace(/\D/g, '');
   }
 
   function isRequestOk(){
     return ajax.readyState === 4 && ajax.status === 200;
   }
 
-  function fillCEPFields(){
+  function fillCEPFields() {
     var data = parseData();
     if(!data){
       getMessage('error');
@@ -155,30 +157,25 @@
     $estado.get()[0].textContent = data.uf;
     $cidade.get()[0].textContent = data.localidade;
     $cep.get()[0].textContent = data.cep;
-
   }
 
   function clearData(){
     return {
-      logradouro: '-',
-      bairro: '-',
-      uf: '-',
-      localidade: '-',
-      cep: '-'
+    logradouro: '-',
+    bairro: '-',
+    uf: '-',
+    localidade: '-',
+    cep: '-'
     }
-
   }
 
   function parseData(){
     var result;
-
     try {
       result = JSON.parse(ajax.responseText);
-
     } catch (error) {
       result = null;
     }
-
     return result;
   }
 
@@ -193,10 +190,8 @@
   }
 
   function replaceCEP(message){
-    return message.replace('[CEP]', clearCEP())
+    return message.replace('[CEP]', clearCEP());
   }
-
-
 
 })(window, document);
 
