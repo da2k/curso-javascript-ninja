@@ -1,4 +1,4 @@
-(function() {
+(function(win, doc) {
   'use strict';
 
   /*
@@ -37,11 +37,75 @@
   */
 
   function App (){
+    var $formRegisterCar = new DOM('[data-js="form-cadastro"]');
+    var $carImgUrl = new DOM('[data-js="url-img"]');
+    var $carModel = new DOM('[data-js="carro-model"]');
+    var $carYear = new DOM('[data-js="carro-year"]');
+    var $carBoard = new DOM('[data-js="carro-board"]');
+    var $carColor = new DOM('[data-js="carro-color"]');
+    var $bodyTableShowCars = new DOM('[data-js="table-cars-registers-body"]');
+
+    function getValue(item){
+      return item.get()[0].value;
+    }
+
+    function getRegisterCar(){
+      var carObject = {
+        img: getValue($carImgUrl),
+        model: getValue($carModel),
+        year: getValue($carYear),
+        board: getValue($carBoard),
+        color: getValue($carColor)
+      }
+      return carObject;
+    }
+
+
+    function createRegister(){
+      var car = getRegisterCar();
+      console.log(car);
+
+      var $tbodyCars = $bodyTableShowCars.get()[0];
+      var newTr = doc.createElement("tr");
+      var newTd = doc.createElement("td");
+
+      console.log($tbodyCars.lastChild)
+
+
+
+
+    }
+
+
+
+
+
+
+
+    function handleCreateRegisterCar(event){
+      event.preventDefault();
+      createRegister();
+
+
+
+
+
+
+    }
+
+
+
+    function Init(){
+
+      $formRegisterCar.on('submit', handleCreateRegisterCar)
+    }
 
     return {
-
+      init: Init
     };
 
   }
 
-})();
+  App().init();
+
+})(window, document);
