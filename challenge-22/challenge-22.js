@@ -1,5 +1,5 @@
 (function(){
-  'use strict';  
+  'use strict';
   /*
   Crie dois objetos, que serão duas pessoas. Cada um deve ter as propriedades
   `name` e `lastName`, preenchidos com o nome e sobrenome da pessoa.
@@ -24,6 +24,13 @@
   }
   getFullName.call(person1);
   getFullName.call(person2);
+  /* abaixo segue método usado na revisão
+  function getFullName (){
+    return this.name + ' ' + this.lastName;
+  }
+  console.log (getFullName.call(person1));
+  console.log (getFullName.call(person2));
+  */
 
   /*
   Crie uma função chamada `sum`. Essa função pode receber uma lista de
@@ -32,6 +39,7 @@
   Na primeira linha, dentro da função, deixe um console.log para mostrar todos
   os parâmetros passados para essa função.
   */
+  /* antes da revisão
   function sum(){
     console.log( 'Os parâmetros passados foram: '+ Array.prototype.reduce.call(arguments, function(acumulated, actual){
       return acumulated +', '+ actual;
@@ -41,14 +49,29 @@
     });
     console.log('Resultado da soma é: '+sumResult);
   }
+  */
+  function sum(){
+    console.log(arguments);
+    return Array.prototype.reduce.call(arguments,
+        function(acumulated, actual){
+          return +acumulated + +actual; // sinal de + antes das variáveis para mudar para número, pode também usar Number(variavel)
+      }
+    );
+  }
+
   /*
   Mostre no console que a função acima funciona, invocando-a em 3 console.log
   diferentes, com quantidades variáveis de parâmetros passados.
   */
   console.log( '\nSomar alguns números:' );
+  /*antes da revisão
   sum(10,2,8,9);
   sum(456,127);
-  sum(1,45,78,400,12,2000)
+  sum(1,45,78,400,12,2000);
+  */
+  console.log (sum(10,2,8,9));
+  console.log (sum(456,127));
+  console.log (sum(1,45,78,400,12,2000));
 
   /*
   Declare uma variável chamada `userEntry`, que irá receber alguns valores
@@ -69,10 +92,15 @@
   da string. Mostre a representação em string dessa função no console.
   */
   console.log( '\nFunção que limpa entrada do usuário (somente números):' );
+  /* antes da revisão
   function justNumbers(originaltext){
     return (originaltext.match(/\d+/g)).map(Number);
   }
   console.log(justNumbers.toString());
+  */
+  function justNumbers( entry ){
+    return entry.replace(/\D+/g, ',').split(',');
+  }
 
   /*
   Usando a função acima, faça a limpeza dos valores entrados pelo usuário,
@@ -87,5 +115,8 @@
   números desse array e mostre o resultado no console.
   */
   console.log( '\nSomar números entrados pelo usuário:' );
+  /* antes da revisão
   sum.apply(sum, numbers);
+  */
+  console.log (sum.apply(sum, numbers));
 })();
