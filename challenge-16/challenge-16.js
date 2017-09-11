@@ -57,7 +57,7 @@ console.log(amigos.join(', ').replace(amigos[amigos.length - 1], 'e ' + amigos[a
 
 /*
 Usando o replace(), faça a string "Roberto" virar "Roberta".
-Mostre o resultado no console.
+Mostre o resultado no console. 
 */
 console.log( '\nEra "Roberto", agora é:' );
 console.log('Roberto'.replace('Roberto', 'Roberta'));
