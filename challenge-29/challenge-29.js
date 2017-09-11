@@ -37,7 +37,7 @@
   */
 
   function App (){
-    var $formRegisterCar = new DOM('[data-js="form-cadastro"]');
+    var $formRegisterCar = new DOM('[data-js="form-register"]');
     var $carImgUrl = new DOM('[data-js="url-img"]');
     var $carModel = new DOM('[data-js="carro-model"]');
     var $carYear = new DOM('[data-js="carro-year"]');
@@ -50,6 +50,9 @@
     }
 
     function getRegisterCar(){
+      var valor = getValue($carImgUrl);
+      console.log('valor', valor === "");
+
       var carObject = {
         img: getValue($carImgUrl),
         model: getValue($carModel),
@@ -68,8 +71,6 @@
       var $tbodyCars = $bodyTableShowCars.get()[0];
       var newTr = doc.createElement("tr");
       var newTd = doc.createElement("td");
-
-      console.log($tbodyCars.lastChild)
 
 
 
