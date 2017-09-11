@@ -1,4 +1,4 @@
-(function(){
+5(function(){
 /*
 Envolva todo o código desse desafio em uma IIFE.
 Crie um arquivo chamado index.html e adicione esse script ao HTML.
@@ -31,10 +31,10 @@ as seguintes características:
     };
     this.getAge = function(){
       return this.age;
-    }
+    };
     this.addAge = function (){
       return arguments[0] + this.age;
-    }
+    };
   }
 
 /*
