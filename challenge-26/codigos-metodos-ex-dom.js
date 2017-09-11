@@ -2,6 +2,9 @@
   'use strict';
 
   var $main = doc.querySelector('.main');
+  var $mainContent = doc.querySelector('.main-content');
+  var $mainHeader = doc.querySelector('.main-header');
+  var $firstText = $mainContent.firstChild;
 
   // Lembrar que espacamento de texto conta como item dom.
   // No firstChild ele está pegando o header por n ter diferença de espaço entre a tag main e ele.
@@ -30,6 +33,16 @@
 
   //Metodos dom
   console.log('hasAttribute(class)', $main.hasAttribute('class'))
+  console.log('hasAttribute(id)', $main.hasAttribute('id'))
+  console.log('hasAttributes()', $mainContent.firstElementChild.firstElementChild.hasAttributes())
+
+  // console.log('appendChild()', $mainContent.appendChild($mainHeader)); //Coloca o header dentro do $mainContent como último no
+  console.log('insertBefore()', $mainContent.insertBefore($mainHeader, $firstText));
+  // Clonando elemento
+  var $cloneMainHeader = $mainHeader.cloneNode(true);
+  console.log('cloneNode()', $mainContent.appendChild($cloneMainHeader));
+
+  console.log('hasChildNodes - se tem algum nó dentro do elemento', $main.hasChildNodes());
 
 
 
