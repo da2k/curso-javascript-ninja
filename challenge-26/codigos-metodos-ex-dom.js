@@ -4,6 +4,7 @@
   var $main = doc.querySelector('.main');
   var $mainContent = doc.querySelector('.main-content');
   var $mainHeader = doc.querySelector('.main-header');
+  var $mainFooter = doc.querySelector('.main-footer');
   var $firstText = $mainContent.firstChild;
 
   // Lembrar que espacamento de texto conta como item dom.
@@ -39,12 +40,24 @@
   // console.log('appendChild()', $mainContent.appendChild($mainHeader)); //Coloca o header dentro do $mainContent como último no
   console.log('insertBefore()', $mainContent.insertBefore($mainHeader, $firstText));
   // Clonando elemento
-  var $cloneMainHeader = $mainHeader.cloneNode(true);
+  var $cloneMainHeader = $mainHeader.cloneNode(true); // true é para pegar todo conteúdo
   console.log('cloneNode()', $mainContent.appendChild($cloneMainHeader));
 
   console.log('hasChildNodes - se tem algum nó dentro do elemento', $main.hasChildNodes());
 
+  var $lastChildMainHeader = $mainContent.lastElementChild;
+  console.log('removeChild', $mainContent.removeChild($lastChildMainHeader));
 
+  var newTextNode = doc.createTextNode('Opa isso foi criado no JS!');
+
+  var $newP = doc.createElement('p');
+  $newP.appendChild(newTextNode);
+  $main.appendChild($newP);
+
+  console.log('set className', $main.className = 'arroz')
+  console.log('get id', $main.id)
+  console.log('getAttribute', $main.getAttribute('data-js'))
+  console.log('setAttribute', $main.setAttribute('data-js', 'main-data-js'))
 
 
 
