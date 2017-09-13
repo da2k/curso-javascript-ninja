@@ -41,12 +41,13 @@
     })
   }
 
+  // Precisei passar o prototype aqui para o metodo funcionar no data
   DOM.get = function methodDomGet() {
     return this.element;
   }
 
 
-  DOM.isArray = function isArray(param) {
+  DOM.prototype.isArray = function isArray(testObject, param) {
     return testObject.createObj(param) === testObject.valueObj('Array');
   }
 
@@ -75,5 +76,6 @@
       testObject.createObj(param) === testObject.valueObj('undefined');
   }
 
-  window.DOM = DOM;
+  win.DOM = DOM;
 })(window, document)
+
