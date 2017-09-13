@@ -36,7 +36,7 @@
   que será nomeado de "app".
   */
 
-  function App (){
+  function app (){
     var $formRegisterCar = new DOM('[data-js="form-register"]');
     var $carImgUrl = new DOM('[data-js="url-img"]');
     var $carModel = new DOM('[data-js="carro-model"]');
@@ -45,54 +45,6 @@
     var $carColor = new DOM('[data-js="carro-color"]');
     var $bodyTableShowCars = new DOM('[data-js="table-cars-registers-body"]');
 
-    function getValue(item){
-      return item.get()[0].value;
-    }
-
-    function getRegisterCar(){
-      var valor = getValue($carImgUrl);
-      console.log('valor', valor === "");
-
-      var carObject = {
-        img: getValue($carImgUrl),
-        model: getValue($carModel),
-        year: getValue($carYear),
-        board: getValue($carBoard),
-        color: getValue($carColor)
-      }
-      return carObject;
-    }
-
-
-    function createRegister(){
-      var car = getRegisterCar();
-      console.log(car);
-
-      var $tbodyCars = $bodyTableShowCars.get()[0];
-      var newTr = doc.createElement("tr");
-      var newTd = doc.createElement("td");
-
-
-
-
-    }
-
-
-
-
-
-
-
-    function handleCreateRegisterCar(event){
-      event.preventDefault();
-      createRegister();
-
-
-
-
-
-
-    }
 
 
 
@@ -103,12 +55,45 @@
 
     return {
       init: function init(){
+        console.log('app init');
+        this.companyInfo();
+      },
 
+      companyInfo: function companyInfo() {
+        var ajax = new XMLHttpRequest();
+        ajax.open('GET', '/company.json', 'true'); //true forma assincrona
+        ajax.send();
+        ajax.addEventListener('readystatechange', this.getCompanyInfo, false);
+        console.log(this);
+      },
+
+      getCompanyInfo: function getCompanyInfo() {
+        if(!app().isReady.call(this))
+          return;
+
+        var data = JSON.parse(this.responseText);
+        var $companyName = new DOM('[data-js="company-name"]');
+        var $companyPhone = new DOM('[data-js="company-phone"]');
+
+        $companyName.get()[0].textContent = data.name;
+        $companyPhone.get()[0].textContent = data.phone;
+
+
+
+
+      },
+
+      isReady: function isReady(){
+        return this.readyState === 4 && this.status === 200;
       }
+
     };
 
   }
 
-  App().init();
+  app().init();
+
 
 })(window.DOM, document);
+
+

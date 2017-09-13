@@ -4,22 +4,71 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Challenge 29</title>
+  <title>Challenge-29</title>
+  <style>
+    input[type="text"] {
+      display: block;
+    }
+    button {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>
+      <span data-js="company-name"></span>
+      <span data-js="company-phone"></span>
+    </h1>
+  </header>
 
   <div>
-    <h2>Informações da empresa</h2>
-    <p>Nome da empresa: <span></span></p>
-    <p>Telefone da empresa: <span></span></p>
+    <h2 data-js="nome-empresa"></h2>
+    <p data-js="tel-empresa"></p>
+
+    <form action="" data-js="form-register">
+
+      <label for="">Imagem do carro</label>
+      <input type="url" data-js="url-img">
+
+      <label for="">Marca / Modelo</label>
+      <input type="text" data-js="carro-model">
+
+      <label for="">Ano</label>
+      <input type="text" data-js="carro-year">
+
+      <label for="">Placa</label>
+      <input type="text" data-js="carro-board">
+
+      <label for="">Cor</label>
+      <input type="text" data-js="carro-color">
+
+      <button>Cadastrar</button>
+    </form>
+
+    <div>
+      <h2>Carros cadastrados</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Imagem</th>
+            <th>Marca / Modelo</th>
+            <th>Ano</th>
+            <th>Placa</th>
+            <th>Cor</th>
+          </tr>
+        </thead>
+        <tbody data-js="table-cars-registers-body"></tbody>
+      </table>
+    </div>
+
+
+
   </div>
 
-  <form action="">
-    <label for="">Imagem do carro</label>
-    <input type="text" data-js="img-carro">
 
-  </form>
-
-<script type="text/javascript" src="challenge-29.js"></script>
+<script type="text/javascript" src="dom.js"></script>
+<script type="text/javascript" src="challenge-29-video.js"></script>
 </body>
 </html>
