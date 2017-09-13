@@ -3,6 +3,9 @@
 
   function DOM(elements) {
     this.element = doc.querySelectorAll(elements);
+    if(this.element.length === 1)
+      return this.get();
+
   }
 
   // test object
@@ -44,8 +47,10 @@
   }
 
   // Precisei passar o prototype aqui para o metodo funcionar no data
-  DOM.prototype.get = function methodDomGet() {
-    return this.element;
+  DOM.prototype.get = function methodDomGet(index) {
+    if(!index)
+      return this.element[0];
+    return this.element[index];
   }
 
 

@@ -1,4 +1,4 @@
-(function(dom, doc) {
+(function(win) {
   'use strict';
 
   /*
@@ -48,12 +48,8 @@
 
 
 
-    function init(){
-
-      $formRegisterCar.on('submit', handleCreateRegisterCar)
-    }
-
     return {
+
       init: function init(){
         console.log('app init');
         this.companyInfo();
@@ -61,23 +57,23 @@
 
       companyInfo: function companyInfo() {
         var ajax = new XMLHttpRequest();
-        ajax.open('GET', '/company.json', 'true'); //true forma assincrona
+        ajax.open('GET', '/company.json', 'true'); //true habilita forma assincrona
         ajax.send();
         ajax.addEventListener('readystatechange', this.getCompanyInfo, false);
         console.log(this);
       },
 
       getCompanyInfo: function getCompanyInfo() {
-        if(!app().isReady.call(this))
+        if(!app().isReady.call(this)){
           return;
+        }
 
         var data = JSON.parse(this.responseText);
         var $companyName = new DOM('[data-js="company-name"]');
         var $companyPhone = new DOM('[data-js="company-phone"]');
 
-        $companyName.get()[0].textContent = data.name;
-        $companyPhone.get()[0].textContent = data.phone;
-
+        $companyName.textContent = data.name;
+        $companyPhone.textContent = data.phone;
 
 
 
@@ -94,6 +90,6 @@
   app().init();
 
 
-})(window.DOM, document);
+})(window.DOM);
 
 
