@@ -139,9 +139,8 @@ carro.addPessoas = function(numPessoas){
 	if(numPessoas > cabe){
 		return 'Só cabem mais ' + cabe + ' ' + palavraPes +'!';
 	}
-	if(numPessoas <= cabe){
-		carro.quantidadePessoas += numPessoas;
-	}
+	
+	carro.quantidadePessoas += numPessoas;
 
 	return 'Já temos '+ carro.quantidadePessoas +' pessoas no carro!';
 }
