@@ -73,7 +73,7 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 "Esse carro é um [MARCA] [MODELO]"
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
-carro.obterMarcaModelo = function(){return "Esse carro é um " + carro.marca + " " + carro.modelo};
+carro.obterMarcaModelo = function(){return "Esse carro é um " + carro.obterMarca() + " " + carro.obterModelo()};
 
 /*
 Crie um método que irá adicionar pessoas no carro. Esse método terá as
@@ -114,19 +114,19 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-carro.cor;//"azul"
+carro.obterCor;//"azul"
 
 // Mude a cor do carro para vermelho.
 carro.mudarCor("vermelho");//undefined
 
 // E agora, qual a cor do carro?
-carro.cor;//'vermelho'
+carro.obterCor;//'vermelho'
 
 // Mude a cor do carro para verde musgo.
 carro.mudarCor("verde musgo");//undefined
 
 // E agora, qual a cor do carro?
-carro.cor;//'verde musgo'
+carro.obterCor;//'verde musgo'
 
 // Qual a marca e modelo do carro?
 carro.obterMarcaModelo();//'Esse carro é um Fiat Palio'
