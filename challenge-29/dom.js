@@ -6,7 +6,7 @@
   }
 
   // test object
-  function createTestObj() {
+  function CreateTestObj() {
     this.createObj = function createObjectProto(objectTarget) {
       return Object.prototype.toString.call(objectTarget)
     };
@@ -27,51 +27,53 @@
 
   }
 
+  var testeObject = new CreateTestObj();
+
   // Array nodeliss
 
-  DOM.on = function methodDomOn(eventType, callback) {
+  DOM.prototype.on = function methodDomOn(eventType, callback) {
     Array.prototype.forEach.call(this.element, function (element) {
       element.addEventListener(eventType, callback, false);
     })
   };
 
-  DOM.off = function methodDomOff(eventType, callback) {
+  DOM.prototype.off = function methodDomOff(eventType, callback) {
     Array.prototype.forEach.call(this.element, function (element) {
       element.removeEventListener(eventType, callback, false);
     })
   }
 
   // Precisei passar o prototype aqui para o metodo funcionar no data
-  DOM.get = function methodDomGet() {
+  DOM.prototype.get = function methodDomGet() {
     return this.element;
   }
 
 
-  DOM.prototype.isArray = function isArray(testObject, param) {
-    return testObject.createObj(param) === testObject.valueObj('Array');
+  DOM.prototype.isArray = function isArray(object, param) {
+    return testeObject.createObj(object) === '[object Array]';
   }
 
-  DOM.isObject = function isObject(param) {
+  DOM.prototype.isObject = function isObject(param) {
     return testObject.createObj(param) === testObject.valueObj('object');
   }
 
-  DOM.isFunction = function isFunction(param) {
+  DOM.prototype.isFunction = function isFunction(param) {
     return testObject.createObj(param) === testObject.valueObj('function');
   }
 
-  DOM.isNumber = function isNumber(param) {
+  DOM.prototype.isNumber = function isNumber(param) {
     return testObject.createObj(param) === testObject.valueObj('number');
   }
 
-  DOM.isString = function isString(param) {
+  DOM.prototype.isString = function isString(param) {
     return testObject.createObj(param) === testObject.valueObj('string');
   }
 
-  DOM.isBoolean = function isBoolean(param) {
+  DOM.prototype.isBoolean = function isBoolean(param) {
     return testObject.createObj(param) === testObject.valueObj('boolean');
   }
 
-  DOM.isNull = function isNull(param) {
+  DOM.prototype.isNull = function isNull(param) {
     return testObject.createObj(param) === testObject.valueObj('null') ||
       testObject.createObj(param) === testObject.valueObj('undefined');
   }
