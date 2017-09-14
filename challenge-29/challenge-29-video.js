@@ -38,15 +38,6 @@
 
   var app = (function(){
     var $formRegisterCar = $('[data-js="form-register"]');
-    // var $carImgUrl = new DOM('[data-js="url-img"]');
-    // var $carModel = new DOM('[data-js="carro-model"]');
-    // var $carYear = new DOM('[data-js="carro-year"]');
-    // var $carBoard = new DOM('[data-js="carro-board"]');
-    // var $carColor = new DOM('[data-js="carro-color"]');
-    // var $bodyTableShowCars = new DOM('[data-js="table-cars-registers-body"]');
-
-
-
 
     return {
 
@@ -127,9 +118,7 @@
 
   })()
 
-
   app.init();
-
 
 })(window.DOM);
 

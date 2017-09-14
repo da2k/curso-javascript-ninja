@@ -6,8 +6,6 @@
       return new DOM(elements);
 
     this.element = doc.querySelectorAll(elements);
-    // if(this.element.length === 1)
-    //   return this.get();
 
   }
 
