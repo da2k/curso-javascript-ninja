@@ -1,4 +1,4 @@
-(function(win) {
+(function($) {
   'use strict';
 
   /*
@@ -36,14 +36,14 @@
   que será nomeado de "app".
   */
 
-  function app (){
-    var $formRegisterCar = new DOM('[data-js="form-register"]');
-    var $carImgUrl = new DOM('[data-js="url-img"]');
-    var $carModel = new DOM('[data-js="carro-model"]');
-    var $carYear = new DOM('[data-js="carro-year"]');
-    var $carBoard = new DOM('[data-js="carro-board"]');
-    var $carColor = new DOM('[data-js="carro-color"]');
-    var $bodyTableShowCars = new DOM('[data-js="table-cars-registers-body"]');
+  var app = (function(){
+    var $formRegisterCar = $('[data-js="form-register"]');
+    // var $carImgUrl = new DOM('[data-js="url-img"]');
+    // var $carModel = new DOM('[data-js="carro-model"]');
+    // var $carYear = new DOM('[data-js="carro-year"]');
+    // var $carBoard = new DOM('[data-js="carro-board"]');
+    // var $carColor = new DOM('[data-js="carro-color"]');
+    // var $bodyTableShowCars = new DOM('[data-js="table-cars-registers-body"]');
 
 
 
@@ -53,6 +53,46 @@
       init: function init(){
         console.log('app init');
         this.companyInfo();
+        this.initEvents()
+      },
+
+      initEvents: function initEvents(){
+        $('[data-js=form-register]').on('submit', this.handleSubmit);
+      },
+
+      handleSubmit: function handleSubmit(event){
+        event.preventDefault();
+        console.log('submit');
+        var $tableCar = $('[data-js="table-car"]').get();
+
+        $tableCar.appendChild(app.createNewCar());
+      },
+
+      createNewCar: function createNewCar(){
+        var $fragment = document.createDocumentFragment();
+        var $tr = document.createElement('tr');
+        var $tdImage = document.createElement('td');
+        var $image = document.createElement('img');
+        var $tdBrand = document.createElement('td');
+        var $tdYear = document.createElement('td');
+        var $tdPlate = document.createElement('td');
+        var $tdColor = document.createElement('td');
+
+        $tdImage.appendChild($image);
+        $image.setAttribute('src', $('[data-js="image"]').get().value);
+
+        $tdBrand.textContent = $('[data-js="brand-model"]').get().value;
+        $tdYear.textContent = $('[data-js="year"]').get().value;
+        $tdPlate.textContent = $('[data-js="plate"]').get().value;
+        $tdColor.textContent = $('[data-js="color"]').get().value;
+
+        $tr.appendChild($tdImage);
+        $tr.appendChild($tdBrand);
+        $tr.appendChild($tdYear);
+        $tr.appendChild($tdPlate);
+        $tr.appendChild($tdColor);
+
+        return $fragment.appendChild($tr);
       },
 
       companyInfo: function companyInfo() {
@@ -64,13 +104,13 @@
       },
 
       getCompanyInfo: function getCompanyInfo() {
-        if(!app().isReady.call(this)){
+        if(!app.isReady.call(this)){
           return;
         }
 
         var data = JSON.parse(this.responseText);
-        var $companyName = new DOM('[data-js="company-name"]');
-        var $companyPhone = new DOM('[data-js="company-phone"]');
+        var $companyName = $('[data-js="company-name"]').get();
+        var $companyPhone = $('[data-js="company-phone"]').get();
 
         $companyName.textContent = data.name;
         $companyPhone.textContent = data.phone;
@@ -85,9 +125,10 @@
 
     };
 
-  }
+  })()
 
-  app().init();
+
+  app.init();
 
 
 })(window.DOM);

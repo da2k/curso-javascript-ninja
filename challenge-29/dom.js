@@ -2,9 +2,12 @@
   'use strict';
 
   function DOM(elements) {
+    if(!(this instanceof DOM))
+      return new DOM(elements);
+
     this.element = doc.querySelectorAll(elements);
-    if(this.element.length === 1)
-      return this.get();
+    // if(this.element.length === 1)
+    //   return this.get();
 
   }
 
@@ -54,31 +57,31 @@
   }
 
 
-  DOM.prototype.isArray = function isArray(object, param) {
+  DOM.isArray = function isArray(object, param) {
     return testeObject.createObj(object) === '[object Array]';
   }
 
-  DOM.prototype.isObject = function isObject(param) {
+  DOM.isObject = function isObject(param) {
     return testObject.createObj(param) === testObject.valueObj('object');
   }
 
-  DOM.prototype.isFunction = function isFunction(param) {
+  DOM.isFunction = function isFunction(param) {
     return testObject.createObj(param) === testObject.valueObj('function');
   }
 
-  DOM.prototype.isNumber = function isNumber(param) {
+  DOM.isNumber = function isNumber(param) {
     return testObject.createObj(param) === testObject.valueObj('number');
   }
 
-  DOM.prototype.isString = function isString(param) {
+  DOM.isString = function isString(param) {
     return testObject.createObj(param) === testObject.valueObj('string');
   }
 
-  DOM.prototype.isBoolean = function isBoolean(param) {
+  DOM.isBoolean = function isBoolean(param) {
     return testObject.createObj(param) === testObject.valueObj('boolean');
   }
 
-  DOM.prototype.isNull = function isNull(param) {
+  DOM.isNull = function isNull(param) {
     return testObject.createObj(param) === testObject.valueObj('null') ||
       testObject.createObj(param) === testObject.valueObj('undefined');
   }
