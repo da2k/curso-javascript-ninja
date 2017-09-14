@@ -198,4 +198,4 @@
     console.log( showErrorMessage( operationSignal) );
   }
   
-});
+})();
