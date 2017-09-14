@@ -30,3 +30,4 @@ projeto.
 */
 
 console.log('Link do pull request do seu projeto');
+console.log('https://github.com/lucianoMeusCursos/jsninja-projeto-lojacarros/tree/challenge-30');
