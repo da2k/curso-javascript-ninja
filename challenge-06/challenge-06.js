@@ -15,8 +15,6 @@ desafio.
 */
 var teams = ['Palmeiras', 'São Paulo', 'Vasco', 'Flamengo', 'Botafogo'];
 
-console.log( 'Times que estão participando do campeonato:', teams );
-
 /*
 Crie uma função chamada `showTeamPosition` com as seguintes características:
     - A função deve receber um número por parâmetro;
@@ -90,16 +88,16 @@ function convertToHex(color){
       console.log('O hexadecimal para a cor ' + color + ' é ' + redHex + '.');
       break;
     case 'blue':
-      console.log('O hexadecimal para a cor ' + color + ' é ' + redHex + '.');
+      console.log('O hexadecimal para a cor ' + color + ' é ' + blueHex + '.');
       break;
     case 'black':
-      console.log('O hexadecimal para a cor ' + color + ' é ' + redHex + '.');
+      console.log('O hexadecimal para a cor ' + color + ' é ' + blackHex + '.');
       break;
     case 'yellow':
-      console.log('O hexadecimal para a cor ' + color + ' é ' + redHex + '.');
+      console.log('O hexadecimal para a cor ' + color + ' é ' + yellowHex + '.');
       break;
     case 'gray':
-      console.log('O hexadecimal para a cor ' + color + ' é ' + redHex + '.');
+      console.log('O hexadecimal para a cor ' + color + ' é ' + grayHex + '.');
       break;
     default:
       console.log('Não temos o equivalente hexadecimal para ' + color + '.');
@@ -109,4 +107,11 @@ function convertToHex(color){
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-// ?
+convertToHex('red');    // O hexadecimal para a cor red é #ff0000.
+convertToHex('blue');   // O hexadecimal para a cor blue é #0000ff.
+convertToHex('black');  // O hexadecimal para a cor black é #000000.
+convertToHex('yellow'); // O hexadecimal para a cor yellow é #ffff00.
+convertToHex('gray');   // O hexadecimal para a cor gray é #808080.
+convertToHex('green');  // Não temos o equivalente hexadecimal para green.
+convertToHex('white');  // Não temos o equivalente hexadecimal para white.
+convertToHex('purple'); // Não temos o equivalente hexadecimal para purple.
