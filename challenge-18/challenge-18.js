@@ -113,15 +113,13 @@ corretas, para depois aplicar no código ;)
 console.log( '\nFazer replace dos textos das tags:' );
 var tag = '<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>';
 var retorno = '';
-console.log(tag.replace(/(<\w*>)(\D*)(<\/\w*>)/g, function(texto, grupo1, grupo2, grupo3){
-	console.log('textoooooooo ', texto);
+console.log(tag.replace(/(<\w*>)([^<]+)(<\/\w*>)/g, function(texto, grupo1, grupo2, grupo3){
 	if (grupo1.substring(1,3) === 'h1' ) {
-		retorno += grupo1 + 'O texto dentro da tag h1' + ' é ' + grupo2 + grupo3 + '\n';
+		return grupo1 + 'O texto dentro da tag h1' + ' é ' + grupo2 + grupo3 + '\n';
 	} else if (grupo1.substring(1,2) === 'p') {
-		retorno += grupo1 + 'O texto dentro da tag p' + ' é ' + grupo2 + grupo3 + '\n';
+		return grupo1 + 'O texto dentro da tag p' + ' é ' + grupo2 + grupo3 + '\n';
 	} else {
-		retorno += grupo1 + 'O texto dentro da tag footer' + ' é ' + grupo2 + grupo3 + '\n';
+		return grupo1 + 'O texto dentro da tag footer' + ' é ' + grupo2 + grupo3 + '\n';
 	}
-    return retorno
 }));
 })();
