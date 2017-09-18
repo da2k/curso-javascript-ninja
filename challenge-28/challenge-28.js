@@ -109,11 +109,7 @@
   var btn = new DOM('[data-js="btnSubmit"]');
   var alerta = new DOM('[data-js="alerta"]');
   var endereco = new DOM('[data-js="endereco"]');
-  var logradouro = new DOM('[data-js="logradouro"]');
-  var bairro = new DOM('[data-js="bairro"]');
-  var cidade = new DOM('[data-js="cidade"]');
-  var estado = new DOM('[data-js="estado"]');
-  var cep = new DOM('[data-js="cep"]');
+
 
   btn.on('click', function(event){
     event.preventDefault();
@@ -146,7 +142,6 @@
           return;
         }
         msgAlerta('Endereço referente ao CEP ' + cepLimpo + ':', 'success');
-        console.log(endereco);
         alimentaEndereco(endereco);
         mostraEndereco();
       }
@@ -160,12 +155,7 @@
   function alimentaEndereco(end){
     Array.prototype.forEach.call(endereco.get()[0].children, function(item){
       if(item.hasAttribute('data-js')){
-        if(item.firstChild !== null)
-          item.removeChild(item.firstChild);
-        
-        if(end[item.getAttribute('data-js')] !== '')
-          item.appendChild(document.createTextNode(end[item.getAttribute('data-js')]));
-          
+        item.textContent = end[item.getAttribute('data-js')];
       }
     });
   }
