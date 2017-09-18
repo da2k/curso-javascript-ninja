@@ -83,3 +83,4 @@ withArguments(); // false
 withArguments(2); // 2
 withArguments(2,3); // 5
 withArguments(2,3, 2); // 2.5
+
