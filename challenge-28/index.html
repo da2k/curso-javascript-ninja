@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Challenge 28</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="mb-4">Busca por CEP</h1>
+            
+            <form class="form-inline mb-4">
+                <div class="form-group mr-3">
+                    <input type="text" class="form-control" data-js="cep" placeholder="Informe seu CEP">
+                </div>
+                <button type="submit" class="btn btn-success" data-js="btnSubmit">BUSCAR</button>
+            </form>
+
+            <div class="" role="alert" data-js="alerta"><span></span></div>
+            
+            <p class="d-none" data-js="endereco">
+                Logradouro: <span data-js="logradouro" class="font-weight-bold"></span><br>
+                Bairro: <span data-js="bairro" class="font-weight-bold"></span><br>
+                Cidade: <span data-js="localidade" class="font-weight-bold"></span><br>
+                Estado: <span data-js="uf" class="font-weight-bold"></span><br>
+                CEP: <span data-js="cep" class="font-weight-bold"></span><br>  
+            </p>
+        </div>
+
+        <script src="challenge-28.js"></script>
+    </body>
+</html>
