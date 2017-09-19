@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "gulp",
+    "server": "npm run gulp server"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.17.6",
+    "cors": "^2.8.4",
+    "gulp": "^3.9.1"
+  }
+}
