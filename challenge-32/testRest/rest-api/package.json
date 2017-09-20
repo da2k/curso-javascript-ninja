@@ -3,6 +3,7 @@
     "nodemon": "nodemon"
   },
   "dependencies": {
+    "body-parser": "^1.18.1",
     "cors": "^2.8.4",
     "express": "^4.15.4",
     "nodemon": "^1.12.1"

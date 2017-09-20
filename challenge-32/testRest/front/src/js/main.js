@@ -3,24 +3,28 @@
 
   var ajax = new XMLHttpRequest();
 
-  // ajax.open('GET', 'http://localhost:4000/user/jose', false); o ultimo parâmetro significa que n é assincrono
-  ajax.open('GET', 'http://localhost:4000/user/jose');
-  ajax.send();
-  // ajax.addEventListener('readystatechange', function(e){
-  //   if (ajax.readyState === 4){
-  //     console.log(ajax.responseText, ajax.status);
-  //   }
-  // },false)
-  // O construtor ajax pode ser utilizado sem o addEventListener pois ele possui um metódo proprio para retornar a resposta
-  ajax.onreadystatechange = function (e) {
-    // if( ajax.readyState === 2){
-    //   console.log('headers OK!');
-    //   ajax.abort(); // Finaliza a requisição
-    // }
+  ajax.open('POST', 'http://localhost:4000/user');
+  ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  ajax.send('username=roberto&user=Roberto&age=32');
 
-    if (ajax.readyState === 4){
-      console.log(ajax.responseText, ajax.status);
+  console.log('Cadastrando usuario...');
+
+  ajax.onreadystatechange = function(){
+    if(ajax.readyState === 4 ){
+      console.log('Usuario cadastrado', ajax.responseText)
     }
   }
+
+
+  var get = new XMLHttpRequest();
+  get.open('GET', 'http://localhost:4000/user/joao');
+  get.send();
+
+  get.onreadystatechange = function(){
+    if (get.readyState === 4) {
+      console.log('Get do server', get.responseText)
+    }
+  }
+
 
 })()
