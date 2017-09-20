@@ -9,7 +9,8 @@ Crie uma função chamada `addItem`, que irá adicionar itens no array criado.
 A função deverá retornar o array atualizado.
 */
 function addItem(arg){
-    return arr.push(arg);
+    arr.push(arg);
+    return arr;
 }
 
 /*
@@ -24,7 +25,7 @@ frase:
 "O segundo elemento do segundo array é [ELEMENTO]."
 */
 var last = arr.length - 1;
-console.log("O segundo elemento do segundo array é " + arr[last][1]);
+console.log("O segundo elemento do segundo array é " + arr[last][1] + ".");
 
 /*
 Mostre no console quantos itens tem o primeiro array criado, com a frase:
@@ -74,14 +75,14 @@ Só vamos mudar o range:
 - No segundo "for", mostre os números ímpares entre 111 e 125, inclusive eles.
 */
 console.log( 'Números pares entre 100 e 120:' );
-for(num = 10; num<=20;num++){
+for(num = 100; num<=120;num++){
      if(num%2==0){
         console.log(num);
     }
 }
 
 console.log( 'Números ímpares entre 111 e 125:' );
-for(num = 10; num<=20;num++){
+for(num = 111; num<=125;num++){
      if(num%2==1){
         console.log(num);
     }
