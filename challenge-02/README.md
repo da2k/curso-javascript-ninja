@@ -23,8 +23,8 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 function myFunction(){
-  myvar = 'VALOR';
-  return myvar;  
+  myvar = 30;
+  return 'O valor da variável agora é ' + 30;  
 }
 
 // Invoque a função criada acima.
@@ -70,7 +70,7 @@ Crie uma função com as seguintes características:
 function test2(x, y, z){
   if (x !== undefined && y === undefined && z === undefined) return x;
   else if (x !== undefined && y !== undefined && z === undefined) return x + y;
-  else if (x !== undefined && y !== undefined && z !== undefined) return x + y + z;
+  else if (x !== undefined && y !== undefined && z !== undefined) return (x + y) / z;
   else if (x === undefined && y === undefined && z === undefined) return false;
   else return null;
 }1
