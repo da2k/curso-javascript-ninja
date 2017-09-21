@@ -1,10 +1,12 @@
+(function(){
+
 /*
 Crie uma IIFE que envolva todo o código desse arquivo. Faça também a
 indentação correta do código, para ficar dentro da IIFE.
 */
-(function(){
-  console.log('I am a javascript developer!');
-}());
+
+
+
 /*
 Analise as funções abaixo (`myFunction`, `myFunction2` e `myFunction3`, e
 ajuste o posicionamento das variáveis e funções internas, para que os códigos
@@ -118,3 +120,5 @@ console.log( 'O resultado da divisão é: ' + division(function(n1,n2){return n1
 
 
 console.log( 'O resto da divisão é: ' + division(function(n1,n2){return n1 % n2;}));
+
+}());
