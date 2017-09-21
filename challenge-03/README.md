@@ -192,7 +192,7 @@ people.presentation = function(){
     article = 'a ';
   }
 
-  if (people.tall === 1) {
+  if (people.walkerHowManyMeters === 1) {
     meter = ' metro!'
   }
 
