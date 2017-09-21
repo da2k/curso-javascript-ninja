@@ -59,6 +59,7 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
 */
 function calculator(operation){
     return function(n1, n2){
+      var result;
         switch(operation){
             case '+':
                 result = n1 + n2;
@@ -80,7 +81,7 @@ function calculator(operation){
                 break;
             }
         return "Resultado da operação: " + n1 + operation + n2 + " = " + result;
-    }
+    };
 }
 
 
