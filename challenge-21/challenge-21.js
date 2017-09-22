@@ -43,7 +43,7 @@ $buttonReset.addEventListener('click', function(envet){
 }, false);
 
 function timer(){
-	if(retorno) 
+	if(retorno)
 		return;
 	$valorCampo.value++;
 	temporizdor = setTimeout(timer, 1000);
