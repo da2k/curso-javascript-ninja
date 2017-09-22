@@ -17,7 +17,7 @@ var soma = 15 + 8;
 soma *=3;
 
 // Qual é o valor da variável `soma` até aqui?
-78;
+72;
 
 // Declare uma variável chamada `souninja`, atribuindo à ela o valor booleano que representa `verdadeiro`.
 var souninja = true;
