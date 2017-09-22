@@ -26,11 +26,11 @@
 	propriedade, usando os valores passados por parâmetro.
 	*/
 	var operation = {
-		'+': function( num1, num2 ) { return Number( num1 + num2 ) },
-		'-': function( num1, num2 ) { return Number( num1 - num2 ) },
-		'*': function( num1, num2 ) { return Number( num1 * num2 ) },
-		'/': function( num1, num2 ) { return Number( num1 / num2 ) },
-		'%': function( num1, num2 ) { return Number( num1 % num2 ) }
+		'+': function( num1, num2 ) { return num1 + num2 },
+		'-': function( num1, num2 ) { return num1 - num2 },
+		'*': function( num1, num2 ) { return num1 * num2 },
+		'/': function( num1, num2 ) { return num1 / num2 },
+		'%': function( num1, num2 ) { return num1 % num2 }
 	}
 
 	/*
@@ -127,7 +127,7 @@
 	if ( sum ) {
 		number1 = 10;
 		number2 = 20;
-		console.log( showOperationMessage( operationSignal, number1, number2 ) + sum( number1, number2 ) );
+		console.log( showOperationMessage( operationSignal, number1, number2 ), sum( number1, number2 ) );
 	} else {
 		console.log( showErrorMessage( operationSignal ) );
 	}
@@ -186,12 +186,12 @@
 	a mensagem de erro será mostrada no console.
 	*/
 	operationSignal = 'daciuk';
-	var mod = calculator( operationSignal );
+	var invalid = calculator( operationSignal );
 
-	if ( mod ) {
+	if ( invalid ) {
 		number1 = 10;
 		number2 = 20;
-		console.log( showOperationMessage( operationSignal, number1, number2 ) + mod( number1, number2 ) );
+		console.log( showOperationMessage( operationSignal, number1, number2 ) + invalid( number1, number2 ) );
 	} else {
 		console.log( showErrorMessage( operationSignal ) );
 	}
