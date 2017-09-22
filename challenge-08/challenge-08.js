@@ -32,14 +32,14 @@ seu nome.
 */
 
 function showName(){
-	return showName.name;
+	return 'Jhones Goncalves';
 }
 
 /*
 Declare uma variável chamada `varShowName` que recebe a função criada acima.
 */
 
-var varShowName = showName();
+var varShowName = showName;
 
 /*
 Usando a variável criada acima, mostre no console o nome e o retorno da função
@@ -47,7 +47,7 @@ atribuída a ela, com a seguinte frase:
 "A função [NOME DA FUNÇÃO] retorna [RETORNO DA FUNÇÃO]."
 */
 
-console.log('A função ' + showName.name + ' retorna ' + varShowName + '.')
+console.log('A função ' + showName.name + ' retorna ' + varShowName() + '.')
 
 /*
 Crie uma função literal chamada `calculator`, que funcione assim:
@@ -64,29 +64,28 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
 
 function calculator(operator){
 	return function(op1, op2){
-		var calculator ;
-		var valida;
-		operator === '+' || operator === '-' || operator === '*' || operator === '/' || operator === '%'? valida = true : valida = false; 
-		if(operator === '+'){
-			calculator = op1  +  op2;
+		var result;
+		switch(operator){
+			case '+':
+				result = op1 + op2;
+				break;
+			case '-':
+				result = op1 - op2;
+				break;
+			case '*':
+				result = op1 * op2;
+				break;
+			case '/':
+				result = op1 / op2;
+				break;
+			case '%':
+				result = op1 % op2;
+				break;
+			default:
+				return 'Operação inválida.';
 		}
-		if(operator === '-'){
-			calculator = op1  -  op2;
-		}
-		if(operator === '/'){
-			calculator = op1  /  op2;
-		}
-		if(operator === '*'){
-			calculator = op1  *  op2;
-		}
-		if(operator === '%'){
-			calculator = op1  %  op2;
-		}
-		if(valida){
-			return 'Resultado da operação: ' + op1 + ' '+ operator +' ' + op2 + ' = ' + calculator + '.';
-		}
-		return 'Operação inválida.';
-	}
+		return 'Resultado da operação: ' + op1 + ' '+ operator +' ' + op2 + ' = ' + result + '.';
+	};
 }
 
 /*
@@ -109,6 +108,7 @@ var subtraction = calculator('-');
 var multiplication = calculator('*'); 
 var division = calculator('/'); 
 var mod = calculator('%'); 
+var invalida = calculator('x');
 
 /*
 Faça uma operação com cada uma das funções criadas acima, mostrando o resultado
@@ -118,3 +118,4 @@ console.log(subtraction(5,2));
 console.log(multiplication(5,2));
 console.log(division(10,2));
 console.log(mod(5,2));
+console.log(invalida(3,2));
