@@ -4,7 +4,8 @@ para começar o desafio.
 Declare uma variável chamada `championship` que receberá o nome do campeonato,
 e imprima o nome desse campeonato no console.
 */
-// ?
+var championship = 'Campeonato Francês';
+console.log(championship);
 
 /*
 Declare uma variável chamada `teams`, que receberá um array com 5 elementos.
@@ -13,7 +14,7 @@ estar na ordem em que eles aparecem na tabela no momento da solução desse
 desafio.
 */
 // ?
-
+var teams = ['PSG', 'Monaco', 'Lyon', 'Metz', 'Angers'];
 console.log( 'Times que estão participando do campeonato:', teams );
 
 /*
@@ -32,19 +33,29 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     - Se não houver time para a posição passada, deve retornar a mensagem:
     "Não temos a informação do time que está nessa posição."
 */
-// ?
+function showTeamPosition(position) {
+  if (position > 5 || position < 1) return 'Não temos a informação do time que está nessa posição.';
+  return 'O time que está na ' + position + 'º lugar é o ' + teams[position-1] + '.';
+}
 
 /*
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
-// ?
+console.log(showTeamPosition(1));
+console.log(showTeamPosition(2));
+console.log(showTeamPosition(3));
+console.log(showTeamPosition(10));
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
 repetição "while".
 */
-// ?
+var counter = 20;
+while(counter <= 30) {
+  console.log(counter);
+  counter++;
+}
 
 /*
 Crie uma função chamada `convertToHex`, com as seguintes características:
@@ -58,9 +69,36 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     a frase:
     "Não temos o equivalente hexadecimal para [COR]."
 */
-// ?
+function convertToHex(color){
+  switch(color){
+    case 'selago': {
+      console.log('O hexadecimal para a cor selago é #F8F7F8.');
+      break;
+    }
+    case 'snuff':{
+      console.log('O hexadecimal para a cor snuff é #E5D5E6.');
+      break;
+    }
+    case 'perano':{
+      console.log('O hexadecimal para a cor perano é #A599FE.');
+      break;
+    }
+    case 'romantic':{
+      console.log('O hexadecimal para a cor romantic é #F7C6A2.');
+      break;
+    }
+    case 'rose-bud':{
+      console.log('O hexadecimal para a cor rose-bud é #FA9F9D.');
+      break;
+    }
+  }
+}
 
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-// ?
+convertToHex('selago');
+convertToHex('snuff');
+convertToHex('perano');
+convertToHex('romantic');
+convertToHex('rose-bud');
