@@ -125,7 +125,7 @@ carro.adicionarPassageiros = function(pessoasEntrandoCarro) {
     }
 
     carro.quantidadePessoas += pessoasEntrandoCarro;
-    return 'Já temos ' + totalPessoas + ' pessoa' + pessoasPlural + ' no carro!';
+    return 'Já temos ' + carro.quantidadePessoas + ' pessoa' + pessoasPlural + ' no carro!';
 };
 
 /*
