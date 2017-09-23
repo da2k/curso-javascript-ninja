@@ -51,12 +51,14 @@
 	'The person has more than 25 years old? [TRUE/FALSE]'
 	*/
 	function moreThan( age ) {
-		if ( person.age > age ) {
-			return true;
-		}
-		return false;
+		// if ( person.age > age ) {
+		// 	return true;
+		// }
+		// return false;
+		// Aqui eu já faço a verificação e evito o use de condicionais
+		return person.age > age;
 	}
-	console.log( 'The person has more than 25 years old? ' + moreThan(person.age) );
+	console.log( 'The person has more than 25 years old? ' + moreThan(25) );
 
 	/*
 	Faça um loop de 0 a 20, que adicione cada número como um item de um
