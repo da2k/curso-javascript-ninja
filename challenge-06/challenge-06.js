@@ -91,6 +91,10 @@ function convertToHex(color){
       console.log('O hexadecimal para a cor rose-bud é #FA9F9D.');
       break;
     }
+    default: {
+      console.log('Não temos o equivalente hexadecimal para ' + color +'.');
+      break;
+    }
   }
 }
 
@@ -102,3 +106,6 @@ convertToHex('snuff');
 convertToHex('perano');
 convertToHex('romantic');
 convertToHex('rose-bud');
+convertToHex('red');
+convertToHex('green');
+convertToHex('blue');
