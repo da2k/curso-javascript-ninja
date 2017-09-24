@@ -12,9 +12,9 @@
 	de valor para cada propriedade.
 	*/
 	var person = {
-		'name': 'Matheus',
-		'lastname': 'Martins',
-		'age': 19
+		name: 'Matheus',
+		lastname: 'Martins',
+		age: 19
 	}
 	console.log( 'Propriedades de "person":' );
 
@@ -35,20 +35,10 @@
 	`name`: String
 	`pages`: Number
 	*/
-	books = [
-		{
-			'name': 'Líder Empreendedor',
-			'pages': 431
-		},
-		{
-			'name': 'A Arte da Guerra',
-			'pages': 98
-		},
-		{
-			'name': 'Capitalismo e Liberdade',
-			'pages': 100
-		}
-	]
+	books.push( { name: 'Líder Empreendedor', pages: 431 } );
+	books.push( { name: 'A Arte da Guerra', pages: 98 } );
+	books.push( { name: 'Capitalismo e Liberdade', pages: 100 } );
+
 	console.log( '\nLista de livros:' );
 
 	/*
@@ -71,20 +61,20 @@
 	/*
 	Converta os objetos que ficaram em `books` para strings.
 	*/
-	var booksToString = JSON.stringify( books );
+	var books = JSON.stringify( books );
 	console.log( '\nLivros em formato string:' );
 
 	/*
 	Mostre os livros nesse formato no console:
 	*/
-	console.log( booksToString );
+	console.log( books );
 
 	/*
 	Converta os livros novamente para objeto.
 	*/
-	parsedBooks = JSON.parse( booksToString );
+	books = JSON.parse( books );
 	console.log( '\nAgora os livros são objetos novamente:' );
-	console.log( parsedBooks );
+	console.log( books );
 
 	/*
 	Mostre no console todas as propriedades e valores de todos os livros,
@@ -92,16 +82,16 @@
 	    "[PROPRIEDADE]: [VALOR]"
 	*/
 	for( var i = 0; i < books.length; i++ ) {
-		var bookName = books[i].name;
-		var bookPages = books[i].pages;
-		console.log( bookName + ': ' + bookPages );
+		for( var prop in books[i] ) {
+			console.log( prop + ': ' + books[i][prop] );
+		}
 	}
 
 	/*
 	Crie um array chamado `myName`. Cada item desse array deve ser uma letra do
 	seu nome. Adicione seu nome completo no array.
 	*/
-	var myName = [ 'M', 'a', 't', 'h', 'e', 'u', 's', 'd', 'e', 'A', 'l', 'm', 'e', 'i', 'd', 'a', 'M', 'a', 'r', 't', 'i', 'n', 's' ];
+	var myName = [ 'M', 'a', 't', 'h', 'e', 'u', 's'];
 	console.log( '\nMeu nome é:' );
 
 	/*
