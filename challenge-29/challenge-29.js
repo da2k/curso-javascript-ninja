@@ -1,4 +1,4 @@
-(function() {
+(function($) {
   'use strict';
 
   /*
@@ -36,4 +36,93 @@
   que será nomeado de "app".
   */
 
-})();
+  var app = (function application(){
+    var $erro = new $('[data-js="erro"]');
+    var $dadosCarro = new $('input');
+    var $tabelaCarros = new $('[data-js="tabelaCarros"]');
+    var newCarro;
+
+    return {
+      init: function init(){
+        this.dadosEmpresa();
+        this.iniciaEventos();
+      },
+
+      iniciaEventos: function iniciaEventos(){
+        $('[data-js="submit"]').get(0).addEventListener('click', this.handleBtnClick, false);
+      },
+
+      handleBtnClick: function handleBtnClick(event){
+        event.preventDefault();
+        app.escondeErro();
+        if(app.checaDadosCarro()){
+          app.setNewCarro();
+        }else{
+          app.msgErro();
+        }
+
+      },
+
+      setNewCarro: function setNewCarro(){
+        var tableRow = document.createElement('tr');
+        Array.prototype.forEach.call($dadosCarro.get(), function(item){
+          var tableData = null;
+          tableData = document.createElement('td');
+          if(item.getAttribute('type') !== 'url'){
+            tableData.appendChild(document.createTextNode(item.value));
+          }else{
+            var img = document.createElement('img');
+            img.src = item.value;
+            img.width = 200;
+            tableData.appendChild(img);
+          }
+
+          tableRow.appendChild(tableData);
+          item.value = '';
+        });
+        $tabelaCarros.get(0).appendChild(tableRow);
+      },
+
+      checaDadosCarro: function checaDadosCarro(){
+        return Array.prototype.every.call($dadosCarro.get(), function(item){
+          return item.value !== '';
+        })
+      },
+
+      msgErro: function msgErro(){
+        this.mostraErro();
+        $erro.get(0).firstElementChild.textContent = 'Preencha todos os campos do Veículo!';
+      },
+
+      mostraErro: function mostraErro(){
+          $erro.get(0).setAttribute('class', '');
+      },
+
+      escondeErro: function escondeErro(){
+          $erro.get(0).setAttribute('class', 'd-none');
+      },
+
+      dadosEmpresa: function dadosEmpresa(){
+        var ajax = new XMLHttpRequest();
+        ajax.open('GET', 'company.json', true);
+        ajax.send();
+        ajax.addEventListener('readystatechange', this.getDadosEmpresa, false);
+      },
+
+      getDadosEmpresa: function getDadosEmpresa(){
+        if(this.readyState === 4 && this.status === 200){
+          var textCompany = JSON.parse(this.responseText);
+          var $nomeEmpresa = $('[data-js="nomeEmpresa"]');
+          var $foneEmpresa = $('[data-js="foneEmpresa"]');
+          $nomeEmpresa.get(0).textContent = textCompany.name;
+          $foneEmpresa.get(0).textContent = textCompany.phone;
+        }
+      }
+    };
+
+
+  })();
+
+  app.init();
+
+})(window.DOM);
