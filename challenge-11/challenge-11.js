@@ -24,10 +24,10 @@
     */
 
     var person = {
-        'name': 'Jessica Lewinter',
-        'age': '23',
-        'weight': '70',
-        'birthday': '08/08/1994'
+        name: 'Jessica Lewinter',
+        age: '23',
+        weight: '70',
+        birthday: '08/08/1994'
     }
 
     /*
@@ -40,7 +40,7 @@
     'The person has [COUNTER] properties'
     */
     var counter = 0;
-    for(prop in person){
+    for(var prop in person){
         console.log('The ' + prop + ' of person is ' + person[prop]);
         counter ++;
     }
@@ -54,8 +54,8 @@
     'The person has more than 25 years old? [TRUE/FALSE]'
     */
 
-    function moreThan(age){
-        if(person[age]>age){
+    function moreThan(idade){
+        if(person.age > idade){
           return true;
         }else{
           return false;
