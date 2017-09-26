@@ -70,19 +70,19 @@
   /*
   Converta os objetos que ficaram em `books` para strings.
   */
-  var str = JSON.stringify(books);
+  books = JSON.stringify(books);
   console.log( '\nLivros em formato string:' );
 
   /*
   Mostre os livros nesse formato no console:
   */
 
-  console.log(str);
+  console.log(books);
 
   /*
   Converta os livros novamente para objeto.
   */
-  var obj = JSON.parse(str);
+  books = JSON.parse(books);
   console.log( '\nAgora os livros são objetos novamente:' );
 
   /*
@@ -90,10 +90,10 @@
   no formato abaixo:
       "[PROPRIEDADE]: [VALOR]"
   */
-  for(var i = 0; i < books.length;i++ ){
-    var booksName = books[i].name;
-    var booksPages = books[i].pages;
-    console.log(booksName + ": " + booksPages);
+  for(var i = 0; i < books.length; i++ ){
+    for (prop in books[i]) {
+      console.log(prop + ': ' +books[i][prop] );
+    }
   }
   /*
   Crie um array chamado `myName`. Cada item desse array deve ser uma letra do
