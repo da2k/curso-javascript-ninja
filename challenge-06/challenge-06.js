@@ -73,19 +73,19 @@ function convertedToHex(color) {
   var hexadecimal;
   switch (color) {
     case 'white':
-      hexadecimal = #ffffff;
+      hexadecimal = '#ffffff';
       break;
     case 'black':
-      hexadecimal = #000000;
+      hexadecimal = '#000000';
       break;
     case 'green':
-      hexadecimal = #009900;
+      hexadecimal = '#009900';
       break;
     case 'blue':
-      hexadecimal = #000099;
+      hexadecimal = '#000099';
       break;
     case 'gray':
-      hexadecimal = #cccccc;
+      hexadecimal = '#cccccc';
       break;
     default:
       return 'Não temos o equivalente hexadecimal para ' + color + '.';
