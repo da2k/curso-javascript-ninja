@@ -47,7 +47,7 @@ valor dessa propriedade a quantidade passada por parâmetro;
 booleano que representa "verdadeiro";
 */
 pessoa.andar = function(metros) {
-    pessoa.caminhouQuantosMetros = metros;
+    pessoa.caminhouQuantosMetros += metros;
     pessoa.andando = true;
 }
 
@@ -167,7 +167,7 @@ Quantos metros a pessoa andou? (Use uma instrução para responder e comentário
 inline ao lado da instrução para mostrar a resposta retornada)
 */
 pessoa.caminhouQuantosMetros
-//3
+//18
 
 /*
 Agora vamos deixar a brincadeira um pouco mais divertida! :D
@@ -212,5 +212,5 @@ pessoa.apresentacao = function() {
 
 // Agora, apresente-se ;)
 pessoa.apresentacao();
-// Olá, eu sou o Rafael Nogueira, tenho 31 anos, 1.72m, meu peso é 80 e só hoje, eu já caminhei 3 metros!'
+// Olá, eu sou o Rafael Nogueira, tenho 31 anos, 1.72m, meu peso é 80 e só hoje, eu já caminhei 18 metros!'
 ```
