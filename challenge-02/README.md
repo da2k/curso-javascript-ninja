@@ -31,7 +31,7 @@ function str () {
 str()
 
 // Qual o retorno da função? (Use comentários de bloco).
-/* 'VALOR' */
+/* O valor da variável agora é 25 */
 
 /*
 Crie uma função com as seguintes características:
