@@ -58,7 +58,7 @@ repetição "while".
 */
 i = 20;
 while ( i <= 30) {
-  console.log('value is ' + i;)
+  console.log('value is ' + i);
   i ++;
 }
 
