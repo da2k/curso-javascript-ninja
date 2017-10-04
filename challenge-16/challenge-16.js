@@ -5,8 +5,6 @@
 	3. Crie um arquivo index.html e adicione esse script à ele.
 	*/
 
-	'use strict';
-
 	/*
 	Declare uma variável chamada `name` que receba seu primeiro nome.
 	Mostre no console todas as letras do seu nome separadas, com a frase:
@@ -19,7 +17,7 @@
 	console.log( 'As letras do seu nome:' );
 	var name = 'Matheus';
 	for( var i = 0; i < name.length; i++ ) {
-		console.log( name.charAt( i ) + ' é a ' + ( i + 1 ) + 'ª letra do meu nome.' )
+		console.log( name.charAt( i ) + ' é a ' + ( i + 1 ) + 'ª letra do seu nome.' );
 	}
 
 	/*
@@ -36,13 +34,13 @@
 	*/
 	console.log( '\nNome convertido à partir de um slug:' );
 	var fullName = 'matheus-de-almeida-martins';
-	var newFullName = fullName.split( '-' ).map( function( name ) {
-		return name.charAt(0).toUpperCase() + name.slice( 1 );
+	var newFullName = fullName.split( '-' ).map( function( item ) {
+		return item.charAt( 0 ).toUpperCase() + item.slice( 1 );
 	} );
-	
-	console.log( 'Nome Slug', fullName );
-	console.log( 'Nome Correto', newFullName.join( ' ' )  );
-	
+
+	console.log( fullName );
+	console.log( newFullName.join( ' ' ) );
+
 	/*
 	- Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
 	cada nome por vírgula. Entre o penúltimo e o último nome, o separador deve
@@ -52,14 +50,15 @@
 	- Detalhe: o código abaixo deve funcionar com um array de qualquer tamanho.
 	5 nomes foi somente uma sugestão ;)
 	*/
-	console.log( '\nMeus amigos:' )
-	var friends = [ 'Paulo', 'Joao', 'Marcia', 'Marcella', 'Flavia' ];
-	var phrase = friends.reduce( function( acumulado, atual, index ) {
+	console.log( '\nMeus amigos:' );
+	var friends = [ 'Matheus', 'Maria', 'Joana', 'Marcela', 'Josefina' ];
+	var phrase = friends.reduce( function( acumulado, total, index ) {
 		var separator = friends.length - 1 === index ? ' e ' : ', ';
-		return acumulado + separator + atual;
-	} ).concat( ' são meus amigos.' );
+		return acumulado + separator + total;
+	} );
 
 	console.log( phrase );
+
 	/*
 	Usando o replace(), faça a string "Roberto" virar "Roberta".
 	Mostre o resultado no console.
@@ -84,14 +83,13 @@
 	Ex.: Nomes que deveriam funcionar: "Fernando", "RoBertO", "gabriEla", etc.
 	*/
 	console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
-
 	var myName = 'Matheus';
-	var myNewName = [];
+	var newName = [];
 
 	for( var i = 0; i < myName.length; i++ ) {
-		myNewName.push( i % 2 === 0 ? myName[i].toUpperCase() : myName[i].toLowerCase() )
+		newName.push( i % 2 === 0 ? name.charAt( i ).toUpperCase() : name.charAt( i ).toLowerCase() );
 	}
 
-	console.log( myNewName.join( '' ) );
+	console.log( newName.join( '' ) );
 
 } )();
