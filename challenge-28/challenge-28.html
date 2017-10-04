@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Challenge 28</title>
+</head>
+<body>
+  <form method="get">
+    <input type="text" data-js="cep">
+    <input type="submit" name="sendform" data-js="sendform">
+  </form>
+
+  <div>
+
+    <br><br>
+    Status da requisição:<br>
+    <input type="text" value="Entre com CEP acima" readonly data-js="status" style="width:315px;">
+    <br><br>
+
+    <table>
+      <tr>
+        <td>Logradouro:</td>
+        <td><input type="text" data-js="logradouro"></td>
+      </tr>
+      <tr>
+        <td>Bairro:</td>
+        <td><input type="text" data-js="bairro"></td>
+      </tr>
+      <tr>
+        <td>Estado:</td>
+        <td><input type="text" data-js="estado"></td>
+      </tr>
+      <tr>
+        <td>Cidade:</td>
+        <td><input type="text" data-js="cidade"></td>
+      </tr>
+      <tr>
+        <td>CEP</td>
+        <td><input type="text" data-js="cepReturn"></td>
+      </tr>
+    </table>
+  </div>
+
+
+  <script src="challenge-28.js"></script>
+</body>
+</html>
