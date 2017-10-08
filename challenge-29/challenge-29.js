@@ -1,4 +1,4 @@
-(function() {
+(function(DOM) {
   'use strict';
 
   /*
@@ -36,4 +36,60 @@
   que será nomeado de "app".
   */
 
-})();
+  function allCarsApp() {
+    var $companyName = new DOM('[data-js="company-name"]');
+    var $companyPhone = new DOM('[data-js="company-phone"]');
+    var $formCar = new DOM('[data-js="form-insert"]');
+    var $carImage = new DOM('[data-js="carImage"]');
+    var $carBrandModel = new DOM('[data-js="carBrandModel"]');
+    var $carYear = new DOM('[data-js="carYear"]');
+    var $carPlate = new DOM('[data-js="carPlate"]');
+    var $carColor = new DOM('[data-js="carColor"]');
+    var $carsTable = new DOM('[data-js="carsTable"]');
+    var ajax = new XMLHttpRequest();
+    $formCar.on('submit', handleSubmitFormCar);
+
+    function handleSubmitFormCar(event) {
+      event.preventDefault();
+      var carFieldsValues = [ $carImage.get()[0].value, $carBrandModel.get()[0].value, $carYear.get()[0].value, $carPlate.get()[0].value, $carColor.get()[0].value ];
+      var newTR = document.createElement('tr');
+      for (var i = 1; i <= 5; i++) {
+        var newTD = document.createElement('td');
+        var textForTD = document.createTextNode(carFieldsValues[i-1]);
+        newTD.appendChild(textForTD);
+        newTR.appendChild(newTD);
+      }
+      $carsTable.get()[0].appendChild(newTR);
+      clearInputs();
+    }
+
+    function clearInputs() {
+      $carImage.get()[0].value = '';
+      $carBrandModel.get()[0].value = '';
+      $carYear.get()[0].value = '';
+      $carPlate.get()[0].value = '';
+      $carColor.get()[0].value = '';
+    }
+
+    function isRequestOk() {
+      return ajax.readyState === 4 && ajax.status === 200;
+    }
+
+    function showCompanyData() {
+      ajax.open('GET', '/company.json');
+      ajax.send();
+      ajax.addEventListener('readystatechange', function() {
+        if ( isRequestOk() ) {
+          var dataCompany = JSON.parse(ajax.responseText);
+          $companyName.get()[0].textContent = dataCompany.name;
+          $companyPhone.get()[0].textContent = dataCompany.phone;
+        }
+      }, false);
+    }
+    showCompanyData();
+
+  }
+
+  allCarsApp();
+
+})(window.DOM);
