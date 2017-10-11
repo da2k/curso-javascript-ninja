@@ -33,7 +33,7 @@ soma === myvar;
 
 // Digite o código que verifica se a variável `myvar` é menor ou igual à variável `soma`.
 function divisao(a,b){
-   return a / b;
+   return a / b
  }
   
 
