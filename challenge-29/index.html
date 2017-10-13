@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <title>MSN CARROS</title>
+    <style>
+    thead {color:red;}
+    tbody {color:blue;}
+    tfoot {color:red;}
+
+    table, tr, th, td {
+        border: 0.5px solid black;
+        width: 500px;
+    }
+    input{
+      padding: 5px;
+      width: 300px;
+    }
+    button{
+      background: orange;
+      color: black
+    }
+    img{
+      max-width: 200px;
+      height: auto;
+    }
+
+</style>
+</head>
+<body>
+    <header data-js="header">
+      <h1>
+        <span data-js="nome"><strong></strong></span>
+        <span data-js="telefone"><strong></strong></span>
+      </h1>
+    </header>
+    <form action="/" data-js="registra-carro">
+        <li>
+          <label>Imagem do Carro: </label>
+          <input data-js="inputImagem" type="url" />
+        </li>
+        <li>
+          <label>Marca / Modelo:</label>
+          <input data-js="inputMarca" type="input" />
+        </li>
+        <li>
+          <label>Ano:</label>
+          <input data-js="inputAno" type="input" />
+        </li>
+        <li>
+          <label>Placa:</label>
+          <input data-js="inputPlaca" type="input" />
+        </li>
+        <li>
+          <label>Cor:</label>
+          <input data-js="inputCor" type="input" />
+        </li>
+        <li>
+          <button data-js="submit" type="submit">Cadastrar</button>
+        </li>
+    </form>
+    <table data-js="tabela">
+      <thead>
+        <tr>
+          <td>Imagem do Carro</td>
+          <td>Marca / Modelo</td>
+          <td>Ano</td>
+          <td>Placa</td>
+          <td>Cor</td>
+        </tr>
+      </thead>
+      <tbody data-js="tbody">
+        <tr data-js="linha">
+          <td><img src="" /></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <script src="dom.js"></script>
+    <script src="challenge-29.js"></script>
+</body>
+</html>
