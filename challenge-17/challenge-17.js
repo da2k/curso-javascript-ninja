@@ -128,6 +128,5 @@
     function replaceDate(regex, day, month, year) {
         return day + '/' + getMonthNumber(month) + '/' + year;
     }
-
     console.log(text.replace(regexDate, replaceDate));
 })();
