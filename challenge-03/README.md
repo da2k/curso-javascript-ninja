@@ -47,6 +47,7 @@ booleano que representa "verdadeiro";
 */
 pessoa.andar = function ( metros ) {
     pessoa.caminhouQuantosMetros += metros;
+    
     pessoa.andando = true;
 }
 
