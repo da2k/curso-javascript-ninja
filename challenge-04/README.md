@@ -110,7 +110,21 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-?
+carro.adicionaPessoa = function(n) {
+  var total = carro.quantidadePessoas + n;
+  if (carro.quantidadePessoas === carro.assentos && total >= carro.assentos) {
+    return 'O carro já está lotado!';
+  }
+
+  if (total > carro.assentos) {
+    var vagas = carro.assentos - carro.quantidadePessoas;
+    var plusin = vagas === 1 ? ' pessoa' : ' pessoas';
+    return 'Só cabem mais ' + vagas + plusin + '!';
+  }
+
+  carro.quantidadePessoas += n;
+    return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!';
+}
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -138,20 +152,20 @@ verde musgo
 carro.obterMarcaModelo()
 
 // Adicione 2 pessoas no carro.
-?
+carro.adicionaPessoa(2)
 
 // Adicione mais 4 pessoas no carro.
-?
+carro.adicionaPessoa(4)
 
 // Faça o carro encher.
-?
+carro.adicionaPessoa(3)
 
 // Tire 4 pessoas do carro.
-?
+carro.adicionaPessoa(-4)
 
 // Adicione 10 pessoas no carro.
-?
+carro.adicionaPessoa(10)
 
 // Quantas pessoas temos no carro?
-?
+carro.quantidadePessoas // 1
 ```
