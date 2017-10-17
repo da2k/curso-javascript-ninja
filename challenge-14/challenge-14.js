@@ -86,7 +86,7 @@
 
     var pName = name.reduce(function(total, current) {
         return total += ('P' + current);
-    });
+    }, '');
 
     console.log(pName);
 
@@ -144,8 +144,6 @@
     */
     console.log( '\njustMod2Or3 é um array? Se for, a representação dele em String é:' );
 
-    console.log(Array.isArray(justMod2Or3)
-        ? JSON.stringify(justMod2Or3)
-        : 'justMod2Or3 não é um Array :('
-    );
+    if (Array.isArray(justMod2Or3))
+        console.log(justMod2Or3.toString());
 })();
