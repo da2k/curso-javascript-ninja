@@ -19,7 +19,7 @@
 
     var name = 'Filipe';
 
-    for (var counter = 0; counter < name.length; counter++) {
+    for (var counter = 0, length = name.length; counter < length; counter++) {
         console.log(name.charAt(counter) + ' é a ' + (counter + 1) + 'ª letra do meu nome.');
     }
 
@@ -95,7 +95,7 @@
     var myName = 'Filipe';
     var myNewName = []
 
-    for (var counter = 0; counter < myName.length; counter++) {
+    for (var counter = 0, length = myName.length; counter < length; counter++) {
         myNewName.push(counter % 2 === 0 ? myName[counter].toUpperCase() : myName[counter].toLowerCase());
     }
 
