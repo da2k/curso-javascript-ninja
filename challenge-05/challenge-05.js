@@ -39,6 +39,10 @@ var arr = [1, 'Diogenes', true, [1, 2, 3], { a: 10, b: 20, c: 30 }];
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
+console.log(myFunction(arr, 0));
+console.log(myFunction(arr, 1));
+console.log(myFunction(arr, 2));
+console.log(myFunction(arr, 3));
 console.log(myFunction(arr, 4));
 
 /*
