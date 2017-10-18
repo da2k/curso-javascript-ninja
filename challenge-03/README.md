@@ -196,7 +196,7 @@ pessoa.apresentacao = function(){
     distancia = "metro";
   }
 
-  return "Olá, eu sou "+genero+" "+pessoa.nome+" "+pessoa.sobrenome+", tenho "+pessoa.idade+" "+idade+", meu peso é "+pessoa.peso+"kg e, só hoje, eu já caminhei "+pessoa.caminhouQuantosMetros+" "+distancia+"!"
+  return "Olá, eu sou "+genero+" "+pessoa.nome+" "+pessoa.sobrenome+", tenho "+pessoa.idade+" "+idade+", " +pessoa.altura+ "m, meu peso é "+pessoa.peso+"kg e, só hoje, eu já caminhei "+pessoa.caminhouQuantosMetros+" "+distancia+"!"
 
 };
 
