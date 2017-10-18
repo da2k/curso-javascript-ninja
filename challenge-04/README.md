@@ -142,7 +142,8 @@ Qual a cor atual do carro?
 carro.obterCor(); //white
 
 // Mude a cor do carro para vermelho.
-carro.mudarCor('red'); 
+carro.mudarCor('red');
+
 
 // E agora, qual a cor do carro?
 carro.obterCor(); // red
