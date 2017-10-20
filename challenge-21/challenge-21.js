@@ -14,32 +14,30 @@ Utilize o atributo data-js para nomear o campo e os botões. Você pode
 usar o nome que achar melhor, desde que ele seja semântico, ou seja, o nome
 dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
 */
-(function(window, document) {
-  'use strict';
+(function(win, doc) {
+    'use strict';
 
-  var buttonReset = document.querySelector('[data-js="resetTimer"]')
-    , buttonStart = document.querySelector('[data-js="startTimer"]')
-    , buttonStop  = document.querySelector('[data-js="stopTimer"]')
-    , timer       = document.querySelector('[data-js="timer"]')
-    , timerID
-  ;
+    var chronometer;
+    var resetButton = doc.querySelector('[data-js="reset"]');
+    var startButton = doc.querySelector('[data-js="start"]');
+    var stopButton = doc.querySelector('[data-js="stop"]');
+    var timerInput = doc.querySelector('[data-js="timer"]');
 
-  function resetTimer() {
-    stopTimer();
-    timer.value = 0;
-  }
+    function resetTimer() {
+        timerInput.value = 0;
+        stopTimer();
+    }
 
-  function startTimer() {
-    timer.value++;
-    timerID = setTimeout(startTimer, 1000);
-  }
+    function startTimer() {
+        timerInput.value++;
+        chronometer = setTimeout(startTimer, 1000);
+    }
 
-  function stopTimer() {
-    clearTimeout(timerID);
-  }
+    function stopTimer() {
+        clearTimeout(chronometer);
+    }
 
-  buttonReset.addEventListener('click', resetTimer, false);
-  buttonStart.addEventListener('click', startTimer, false);
-  buttonStop.addEventListener('click', stopTimer, false);
-
+    resetButton.addEventListener('click', resetTimer, false);
+    startButton.addEventListener('click', startTimer, false);
+    stopButton.addEventListener('click', stopTimer, false);
 })(window, document);
