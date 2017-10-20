@@ -1,7 +1,8 @@
 
-( function(){
+(function (){
 
 'use strict';
+
 
     /*
     1. Envolva todo o conteúdo desse desafio em uma IIFE.
@@ -19,38 +20,40 @@
     - "735 500 794 - 22"
     - "101.123-131x32"
     */
+
+
     console.log( 'Limpando CPFs:' );
-    var cpf = [
-        "049-214 3421-1",
-        "210.458.522-05",
-        "735 500 794 - 22",
-        "101.123-131x32",
-    ]
+
+    var cpfs = [
+                "049-214 3421-1",
+                "210.458.522-05",
+                "735 500 794 2",
+                "101.123-131x32"
+            ];
+
+
     function cleanCPF(cpf) {
-        return cpf.replace(/[^\d]/g, '');
-    }
+        return cpf.replace(/\D/g, '');
+    };
 
-    var newCPF = cpf.map( function (elem) {
-            return elem.replace (/[^\d]/g, '');
-    });
-
-    console.log(newCPF);
+    cpfs.forEach(function(cpf){
+        console.log(cleanCPF(cpf));
+    })
+        
 
     /*
     Usando os CPFs limpos acima, deixe-os com a formatação correta de CPF.
     Ex.: "999.999.999-99"
     Mostre o resultado no console.
     */
-    console.log( '\nFormatando CPFs corretamente:' );
-    var busca = /[^\d]/g;
-    var cpfRegex = /\d{3}\.\d{3}\.\d{3}\-\d{2}/;
 
-    var cpfMask = newCPF.map( function (elem, i){
-            return elem.replace(/(\d{3})(\d{3})(\d{3})/g, '$1\.$2\.$3\-');
+    console.log( '\nFormatando CPFs corretamente:' );
+
+    cpfs.forEach( function (cpf){
+        console.log(cleanCPF(cpf).replace( /(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4'));
     });
 
-    console.log(cpfMask);
-   
+
 
     /*
     Crie uma expressão regular que faça match com as palavras "junho" ou "julho",
@@ -65,12 +68,10 @@
     */
     console.log( '\nMatch com as palavras "junho" ou "julho" para a frase "Os meses de janeiro, junho e julho começam com a letra j.":' );
 
-    var text = "Os meses de janeiro, junho e julho começam com a letra j.";
+    console.log('Os meses de janeiro, junho e julho começam com a letra j.'.match(
+            /ju[nl]ho/g
+    ));
 
-    console.log(text.match(/j\w{3}o/g));
-
-
-    
 
     /*
     Crie uma expressão regular que faça o match com a abertura de uma tag
@@ -82,9 +83,11 @@
     ["<div>", "<section>", "<blockquote>"]
     */
     console.log( '\nMatch com a abertura de uma tag HTML:' );
-    var marcacao = "<div><section><blockquote>Texto <img /></blockquote></section></div>";
 
-    console.log( marcacao.match(/<\w+>/g) );
+    console.log("<div><section><blockquote>Texto <img /></blockquote></section></div>".match(
+        /<\w+>/g
+    ));
+
 
     /*
     Crie uma expressão regular que faça o match com uma tag HTML vazia, casando
@@ -98,8 +101,11 @@
 
     var marcacao2 = "<div><ul><li></li><li></li><li><span></span></li></ul></div>";
     console.log( '\nMatch com tags HTML vazias (abertura e fechamento da tag):' );
-    console.log(marcacao2.match(/<\w+>+<\/\w+>/g));
-    
+
+    console.log(marcacao2.mach(
+        /<\w+> /g
+    ));
+
 
     /*
     Vamos complicar um pouco agora :D
@@ -125,9 +131,8 @@
     */
     console.log( '\nFazer replace dos textos das tags:' );
 
-    var textoHTML =  "<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>";
-    var tag1 = /<(\w+)>([^<]+)(<\/\w+>)/g;
 
-        console.log(textoHTML.replace(tag1, '<$1> "O texto dentro da tag" "$1" é "$2"$3\n'));
+
+//revisao
 
 })();
