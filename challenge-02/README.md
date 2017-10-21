@@ -24,14 +24,16 @@ Onde VALOR é o novo valor da variável.
 */
 function valorVariavel() {
 	variavel = 24;
-	return variavel;
+	return 'O valor da variável agora é ' + variavel;
 }
 
 // Invoque a função criada acima.
 valorVariavel()
 
 // Qual o retorno da função? (Use comentários de bloco).
-24
+/*
+ * 'O valor da variável agora é 24'
+ */
 
 /*
 Crie uma função com as seguintes características:
@@ -41,11 +43,10 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function multiplica(a, b, c) {
-	if (!(a && b && c)) {
+	if (a === undefined || b === undefined || c === undefined) {
 		return 'Preencha todos os valores corretamente!';
-	} else {
-		return a * b * c;
 	}
+	return (a * b * c) + 2;
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
@@ -58,7 +59,7 @@ multiplica(1, 2);
 multiplica(1, 2, 3);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-/* 6 */
+// 8
 
 /*
 Crie uma função com as seguintes características:
@@ -70,13 +71,13 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function argumentos(a, b, c) {
-	if (a && !b && !c) {
+	if (a !== undefined && b === undefined && c === undefined) {
 		return a;
-	} else if (a && b && !c) {
+	} else if (a !== undefined && b !== undefined && c === undefined) {
 		return a + b;
-	} else if (a && b && c) {
+	} else if (a !== undefined && b !== undefined && c !== undefined) {
 		return (a + b) / c;
-	} else if (!a && !b && !c) {
+	} else if (a === undefined && b === undefined && c === undefined) {
 		return false;
 	} else {
 		return null;
