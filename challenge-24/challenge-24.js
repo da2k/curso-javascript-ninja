@@ -1,75 +1,108 @@
-/*
-Nossa calculadora agora está funcional! A ideia desse desafio é modularizar
-o código, conforme vimos na aula anterior. Quebrar as responsabilidades
-em funções, onde cada função faça somente uma única coisa, e faça bem feito.
+(function(win, doc) {
+    'use strict';
+    /*
+    Nossa calculadora agora está funcional! A ideia desse desafio é modularizar
+    o código, conforme vimos na aula anterior. Quebrar as responsabilidades
+    em funções, onde cada função faça somente uma única coisa, e faça bem feito.
 
-- Remova as duplicações de código;
-- agrupe os códigos que estão soltos em funções (declarações de variáveis,
-listeners de eventos, etc);
-- faça refactories para melhorar esse código, mas de forma que o mantenha com a
-mesma funcionalidade.
-*/
+    - Remova as duplicações de código;
+    - agrupe os códigos que estão soltos em funções (declarações de variáveis,
+    listeners de eventos, etc);
+    - faça refactories para melhorar esse código, mas de forma que o mantenha com a
+    mesma funcionalidade.
+    */
 
-var $visor = document.querySelector('[data-js="visor"]');
-var $buttonsNumbers = document.querySelectorAll('[data-js="button-number"]');
-var $buttonsOperations = document.querySelectorAll('[data-js="button-operation"]');
-var $buttonCE = document.querySelector('[data-js="button-ce"]');
-var $buttonEqual = document.querySelector('[data-js="button-equal"]');
+    var $visor = doc.querySelector('[data-js="visor"]');
+    var $numberButtons = doc.querySelectorAll('[data-js="button-number"]');
+    var $operationButtons = doc.querySelectorAll('[data-js="button-operation"]');
+    var $equalButton = doc.querySelector('[data-js="button-equal"]');
+    var $ceButton = doc.querySelector('[data-js="button-ce"]');
 
-Array.prototype.forEach.call($buttonsNumbers, function(button) {
-  button.addEventListener('click', handleClickNumber, false);
-});
-Array.prototype.forEach.call($buttonsOperations, function(button) {
-  button.addEventListener('click', handleClickOperation, false);
-});
-$buttonCE.addEventListener('click', handleClickCE, false);
-$buttonEqual.addEventListener('click', handleClickEqual, false);
-
-function handleClickNumber() {
-  $visor.value += this.value;
-}
-
-function handleClickOperation() {
-  $visor.value = removeLastItemIfItIsAnOperator($visor.value);
-  $visor.value += this.value;
-}
-
-function handleClickCE() {
-  $visor.value = 0;
-}
-
-function isLastItemAnOperation(number) {
-  var operations = ['+', '-', 'x', '÷'];
-  var lastItem = number.split('').pop();
-  return operations.some(function(operator) {
-    return operator === lastItem;
-  });
-}
-
-function removeLastItemIfItIsAnOperator(number) {
-  if(isLastItemAnOperation(number)) {
-    return number.slice(0, -1);
-  }
-  return number;
-}
-
-function handleClickEqual() {
-  $visor.value = removeLastItemIfItIsAnOperator($visor.value);
-  var allValues = $visor.value.match(/\d+[+x÷-]?/g);
-  $visor.value = allValues.reduce(function(accumulated, actual) {
-    var firstValue = accumulated.slice(0, -1);
-    var operator = accumulated.split('').pop();
-    var lastValue = removeLastItemIfItIsAnOperator(actual);
-    var lastOperator = isLastItemAnOperation(actual) ? actual.split('').pop() : '';
-    switch(operator) {
-      case '+':
-        return ( Number(firstValue) + Number(lastValue) ) + lastOperator;
-      case '-':
-        return ( Number(firstValue) - Number(lastValue) ) + lastOperator;
-      case 'x':
-        return ( Number(firstValue) * Number(lastValue) ) + lastOperator;
-      case '÷':
-        return ( Number(firstValue) / Number(lastValue) ) + lastOperator;
+    function initialize() {
+        initEvents();
     }
-  });
-}
+
+    function initEvents() {
+        $numberButtons.forEach(function(button) {
+            button.addEventListener('click', handleClickNumbers, false);
+        });
+        $operationButtons.forEach(function(button) {
+            button.addEventListener('click', handleClickOperations, false);
+        });
+        $equalButton.addEventListener('click', handleClickEqual, false);
+        $ceButton.addEventListener('click', handleClickCe, false);
+    }
+
+    function handleClickNumbers() {
+        if($visor.value === '0')
+            return $visor.value = this.value;
+        return $visor.value += this.value;
+    }
+
+    function handleClickOperations() {
+        $visor.value = removeLastItemIfItIsAnOperation($visor.value);
+        $visor.value += this.value;
+    }
+
+    function handleClickEqual() {
+        $visor.value = removeLastItemIfItIsAnOperation($visor.value);
+        var allValues = $visor.value.match(getRegexOperations());
+        $visor.value = allValues.reduce(calculateAllValues);
+    }
+
+    function getRegexOperations() {
+        return new RegExp('\\d+[' + getAllOperators().join('') + ']?', 'g');
+    }
+
+    function getAllOperators() {
+        return Array.prototype.map.call($operationButtons, function(button) {
+            return button.value;
+        });
+    }
+
+    function calculateAllValues(accumulated, actual) {
+        var firstValue = removeLastItemIfItIsAnOperation(accumulated);
+        var operator = accumulated.split('').pop();
+        var lastValue = removeLastItemIfItIsAnOperation(actual);
+        var lastOperator = getLastOperator(actual);
+        return makeOperation(operator, firstValue, lastValue) + lastOperator;
+    }
+
+    function getLastOperator(string) {
+        return isLastItemAnOperation(string) ? string.split('').pop() : '';
+    }
+
+    function makeOperation(operator, firstValue, lastValue) {
+        switch(operator) {
+            case '+':
+                return Number(firstValue) + Number(lastValue);
+            case '-':
+                return Number(firstValue) - Number(lastValue);
+            case 'x':
+                return Number(firstValue) * Number(lastValue);
+            case '÷':
+                return Number(firstValue) / Number(lastValue);
+        }
+    }
+
+    function isLastItemAnOperation(string) {
+        var operators = getAllOperators();
+        var lastItem = string.split('').pop();
+        return operators.some(function(operator) {
+            return operator === lastItem;
+        });
+    }
+
+    function removeLastItemIfItIsAnOperation(string) {
+        if(isLastItemAnOperation(string))
+            return string.slice(0, -1);
+        return string;
+    }
+
+    function handleClickCe() {
+        $visor.value = 0;
+    }
+
+    initialize();
+
+})(window, document);
