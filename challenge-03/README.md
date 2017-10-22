@@ -138,9 +138,7 @@ pessoa.andando; //true
 /*
 Se a pessoa ainda está andando, faça-a parar.
 */
-if (pessoa.andando) {
-  pessoa.parar();
-}
+pessoa.parar();
 
 /*
 E agora: a pessoa ainda está andando? (Use uma instrução para responder e
@@ -172,31 +170,23 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao = function() {
-  var resultado = 'Olá, eu sou ';
+  var sexo = 'o';
+  var idade = 'anos';
+  var metrosCaminhados = 'metros';
 
-  if (pessoa.sexo === 'feminino') {
-    resultado += 'a ';
-  } else {
-    resultado += 'o ';
+  if(pessoa.sexo = 'feminino') {
+    sexo = 'a';
   }
 
-  resultado += pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade;
-
-  if (pessoa.idade === 1) {
-    resultado += ' ano';
-  } else {
-    resultado += ' anos';
+  if(pessoa.idade === 1) {
+    idade = 'ano';
   }
 
-  resultado += ', ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros;
-
-  if (pessoa.caminhouQuantosMetros === 1) {
-    resultado += ' metro!';
-  } else {
-    resultado += ' metros!';
+  if(pessoa.caminhouQuantosMetros === 1) {
+    metrosCaminhados = 'metro';
   }
 
-  return resultado;
+  return 'Olá, eu sou ' + sexo + ' ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + ' ' + idade + ', ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' ' + metrosCaminhados + '!';
 }
 
 // Agora, apresente-se ;)
