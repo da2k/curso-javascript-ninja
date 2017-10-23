@@ -24,79 +24,75 @@ input;
 - Ao pressionar o botão "CE", o input deve ficar zerado.
 */
 
-(function(window, document) {
-  'use strict';
+(function(win, doc) {
+    'use strict';
 
-  var $buttonCE        = document.querySelector('[data-button="btnCE"]')
-    , $buttonEqual     = document.querySelector('[data-button="btnEqual"]')
-    , $input           = document.querySelector('[data-input="inputCalculus"]')
-    , $buttonNumber    = document.querySelectorAll('[data-button="btnNumber"]')
-    , $buttonOperation = document.querySelectorAll('[data-button="btnOperation"]')
-  ;
+    var textInput = doc.querySelector('[data-js="text-input"]');
+    var buttonsNumber = doc.querySelectorAll('[data-js="button-number"');
+    var buttonsOperation = doc.querySelectorAll('[data-js="button-operation"]');
+    var buttonCE = doc.querySelector('[data-js="button-ce"]');
+    var buttonEqual = doc.querySelector('[data-js="button-equal"]');
 
-  Array.prototype.forEach.call($buttonNumber, function(button) {
-    button.addEventListener('click', clickNumbers, false);
-  });
+    function isLastItemAnOperator(number) {
+        var operators = ['+', '-', 'x', '÷'];
+        var lastItem = number.split('').pop();
 
-  Array.prototype.forEach.call($buttonOperation, function(button) {
-    button.addEventListener('click', clickOperations, false);
-  });
-
-  $buttonCE.addEventListener('click', resetInput, false );
-  
-  $buttonEqual.addEventListener('click', calculate, false);
-
-  function clickNumbers() {
-    $input.value += this.value;
-  }
-
-  function clickOperations() {
-    $input.value = removeLastCharacterIfIsOperator($input.value);
-    $input.value += this.value;
-  }
-
-  function resetInput() {
-    $input.value = 0;
-  }
-
-  function lastOperationCharacter(number) {
-    var lastItem   = number.split('').pop();
-    var operations = ['+', '-', 'x', '÷'];
-
-    return operations.some(function(operator) {
-      return operator === lastItem;
-    });
-  }
-
-  function removeLastCharacterIfIsOperator(number) {
-    if (lastOperationCharacter(number)) {
-      return number.slice(0, -1);
+        return operators.some(function(operator) {
+            return operator === lastItem;
+        });
     }
-    return number;
-  }
 
-  function calculate() {
-    $input.value = removeLastCharacterIfIsOperator($input.value);
-    var values = $input.value.match(/\d+[+x÷-]?/g);
+    function removeLastItemIfIsAnOperator(number) {
+        if (isLastItemAnOperator(number))
+            return number.slice(0, -1);
 
-    $input.value = values.reduce(function(accumulated, current) {
-      var firstValue   = accumulated.slice(0, -1)
-        , lastOperator = lastOperationCharacter(current) ? current.split('').pop() : ''
-        , lastValue    = removeLastCharacterIfIsOperator(current)
-        , operator     = accumulated.split('').pop()
-      ;
+        return number;
+    }
 
-      switch(operator) {
-        case '+':
-          return ( Number(firstValue) + Number(lastValue) ) + lastOperator;
-        case '-':
-          return ( Number(firstValue) - Number(lastValue) ) + lastOperator;
-        case 'x':
-          return ( Number(firstValue) * Number(lastValue) ) + lastOperator;
-        case '÷':
-          return ( Number(firstValue) / Number(lastValue) ) + lastOperator;
-      }
+    function clickNumber(inputData) {
+        textInput.value += this.value;
+    }
+
+    function clickOperation(inputData) {
+        textInput.value = removeLastItemIfIsAnOperator(textInput.value);
+        textInput.value += this.value;
+    }
+
+    function clickCE(inputData) {
+        textInput.value = 0;
+    }
+
+    function clickEqual() {
+        removeLastItemIfIsAnOperator(textInput.value);
+        var allValues = textInput.value.match(/\d+[+-x÷]?/g);
+        textInput.value = allValues.reduce(function(total, current) {
+            var firstValue = total.slice(0, -1);
+            var operator = total.split('').pop();
+            var lastValue = removeLastItemIfIsAnOperator(current);
+            var lastOperator = isLastItemAnOperator(current) ? current.split('').pop() : '';
+
+            switch (operator) {
+                case '+':
+                    return (Number(firstValue) + Number(lastValue)) + lastOperator;
+                case '-':
+                    return (Number(firstValue) - Number(lastValue)) + lastOperator;
+                case 'x':
+                    return (Number(firstValue) * Number(lastValue)) + lastOperator;
+                case '÷':
+                    return (Number(firstValue) / Number(lastValue)) + lastOperator;
+            }
+        });
+    }
+
+    Array.prototype.forEach.call(buttonsNumber, function(button) {
+        button.addEventListener('click', clickNumber, false);
     });
-  }
+
+    Array.prototype.forEach.call(buttonsOperation, function(button) {
+        button.addEventListener('click', clickOperation, false);
+    });
+
+    buttonCE.addEventListener('click', clickCE, false);
+    buttonEqual.addEventListener('click', clickEqual, false);
 
 })(window, document);
