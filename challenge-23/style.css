@@ -1,0 +1,44 @@
+.body {
+    background: #303030;
+    min-height: 100vh;
+}
+
+.body,
+.container {
+    align-content: center;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    flex-wrap: wrap;
+    padding: 10px;
+    width: 50%;
+}
+
+.button,
+.input-text {
+    background: #606060;
+    border: 0;
+    border-radius: 0;
+    font: bold 1.5em sans-serif;
+    height: 50px;
+    margin: 3px;
+}
+
+.button-operation,
+.input-text {
+    color:#44a5f5 !important;
+}
+
+.button {
+    color: #fff;
+    cursor: pointer;
+    width: 24%;
+}
+
+.input-text {
+    padding-right: 20px;
+    text-align: right;
+    width: 100%;
+}
