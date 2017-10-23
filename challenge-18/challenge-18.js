@@ -39,7 +39,7 @@
     cpfs.forEach(function(cpf){
         console.log(cleanCPF(cpf));
     })
-        
+
 
     /*
     Usando os CPFs limpos acima, deixe-os com a formatação correta de CPF.
@@ -102,9 +102,7 @@
     var marcacao2 = "<div><ul><li></li><li></li><li><span></span></li></ul></div>";
     console.log( '\nMatch com tags HTML vazias (abertura e fechamento da tag):' );
 
-    console.log(marcacao2.mach(
-        /<\w+> /g
-    ));
+    console.log(marcacao2.match( /<\w+><\/\w+>/g));
 
 
     /*
@@ -129,9 +127,12 @@
     https://regex101.com/#javascript e verifique se as capturas estão
     corretas, para depois aplicar no código ;)
     */
-    console.log( '\nFazer replace dos textos das tags:' );
+    console.log('\nFazer replace dos textos das tags:');
 
+    var textoHTML = '<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>';
+    var regexTags = /(<\w+>)([^<]+)(<\/\w+>)/g;
 
+    console.log(textoHTML.replace(regexTags, '$1 "O texto dentro da tag" "$1" é "$2"$3\n'));
 
 //revisao
 
