@@ -1,6 +1,6 @@
-( function (win, doc){
+(function (win, doc) {
 
-    'use strict';
+  'use strict';
 
     /*
     O desafio de hoje será um pequeno projeto: um cronômetro!
@@ -19,30 +19,34 @@
     dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
     */
 
-    var $inputCounter = doc.querySelector('[data-js="input-counter"]'); 
-    var $buttonStart = doc.querySelector('[data-js="button-start"]');
-    var $buttonStop = doc.querySelector('[data-js="button-stop"]');
-    var $buttonReset = doc.querySelector('[data-js="button-reset"]');
+  var $buttonStart = doc.querySelector('[data-js="button-start"]');
+  var $buttonStop = doc.querySelector('[data-js="button-stop"]');
+  var $buttonReset = doc.querySelector('[data-js="button-reset"]');
+  var $inputCounter = doc.querySelector('[data-js="input-counter"]');
+  var interval;
 
-    var temporizador;
+  function cronometro (){
+    $inputCounter.value = +$inputCounter.value +1;
+    interval = setTimeout(cronometro, 1000);
+  }
 
-    function cronometro (){
-        $inputCounter.value = +$inputCounter.value +1;
-        temporizador = setTimeout(cronometro, 1000);
-    }
+  function parar () {
+    clearTimeout(interval);
+  }
 
-    function stopCronometro() {
-        clearTimeout(temporizador);
-    }
+  function reset() {
+    $inputCounter.value = 0;
+    parar();
+  }
 
-    function resetCronometro() {
-       $inputCounter.value = 0;
-       clearTimeout(temporizador);
-    }
+  $buttonStart.addEventListener('click', cronometro, false);
+  $buttonStop.addEventListener('click', parar, false);
+  $buttonReset.addEventListener('click', reset, false);
 
-    $buttonStart.addEventListener('click', cronometro, false);
-    $buttonStop.addEventListener('click', stopCronometro, false);
-    $buttonReset.addEventListener('click', resetCronometro, false);
 
+//quando chamo uma função sem invocar com os (), estou dizendo para que no momento do clique ela seja executada
+// se passo o + na frente de uma string que é numérica ela se transforma em número
+
+// revisao
 
 })(window, document);
