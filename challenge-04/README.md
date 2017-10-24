@@ -17,7 +17,7 @@ isTruthy(undefined);
 isTruthy(null);
 isTruthy(NaN);
 isTruthy(0);
-isTruthy(-0)
+isTruthy(-0);
 isTruthy('');
 isTruthy("");
 
@@ -34,6 +34,7 @@ isTruthy(1.56);
 isTruthy(-3684324);
 isTruthy({propriedade: 'valor'});
 isTruthy(['casa', 'lar', 'computador']);
+isTruthy(function() {});
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
@@ -50,7 +51,7 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 var carro = {
   marca: 'Volkswagen',
   modelo: 'Jetta',
-  placa: 'ABC1234',
+  placa: 'ABC-1234',
   ano: 2015,
   cor: 'Prata',
   quantasPortas: 5,
@@ -62,7 +63,7 @@ var carro = {
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
-carro.mudaCor = function(novaCor) {
+carro.mudarCor = function(novaCor) {
   carro.cor = novaCor;
 };
 
@@ -76,7 +77,7 @@ carro.obterCor = function() {
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
-carro.obterModelo = new function() {
+carro.obterModelo = function() {
   return carro.modelo;
 };
 
@@ -93,7 +94,7 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 carro.obterMarcaModelo = function() {
-  return 'Esse carro é um ' + carro.marca + ' ' + carro.modelo;
+  return 'Esse carro é um ' + carro.obterMarca() + ' ' + carro.obterModelo();
 };
 
 /*
@@ -112,17 +113,21 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-carro.entrar = function(pessoas) {
-  if (pessoas + carro.quantidadePessoas <= carro.assentos && carro.quantidadePessoas <= carro.assentos) {
-    carro.quantidadePessoas += pessoas;
-    return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!';
-  } else if (pessoas > (carro.assentos - carro.quantidadePessoas) &&
-             carro.quantidadePessoas < carro.assentos) {
-    var pessoa = carro.quantidadePessoas < carro.assentos === 1 ? 'pessoa' : 'pessoas';
-    return 'Só cabem mais ' + (carro.assentos - carro.quantidadePessoas) + ' ' + pessoa + '!';
-  } else if (carro.quantidadePessoas >= carro.assentos) {
+carro.adicionarPessoas = function(pessoas) {
+  var totalPessoas = carro.quantidadePessoas + pessoas;
+
+  if (carro.quantidadePessoas === carro.assentos && totalPessoas >= carro.assentos) {
     return 'O carro já está lotado!';
   }
+
+  if (totalPessoas > carro.assentos) {
+    var quantasPessoasCabem = carro.assentos - carro.quantidadePessoas;
+    var pluralOuSingular = quantasPessoasCabem === 1 ? 'pessoa' : 'pessoas';
+    return 'Só cabem mais ' + quantasPessoasCabem + ' ' + pluralOuSingular + '!';
+  }
+
+  carro.quantidadePessoas += pessoas;
+  return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!';
 };
 
 /*
@@ -136,13 +141,13 @@ Qual a cor atual do carro?
 carro.obterCor(); // Prata
 
 // Mude a cor do carro para vermelho.
-carro.mudaCor('Vermelho');
+carro.mudarCor('Vermelho');
 
 // E agora, qual a cor do carro?
 carro.obterCor(); // Vermelho
 
 // Mude a cor do carro para verde musgo.
-carro.mudaCor('Verde Musgo');
+carro.mudarCor('Verde Musgo');
 
 // E agora, qual a cor do carro?
 carro.obterCor(); // Verde Musgo
@@ -151,19 +156,19 @@ carro.obterCor(); // Verde Musgo
 carro.obterMarca(); // Volkswagen
 
 // Adicione 2 pessoas no carro.
-carro.entrar(2); // Já temos 2 pessoas no carro!
+carro.adicionarPessoas(2); // Já temos 2 pessoas no carro!
 
 // Adicione mais 4 pessoas no carro.
-carro.entrar(4); // Só cabem mais 3 pessoas!
+carro.adicionarPessoas(4); // Só cabem mais 3 pessoas!
 
 // Faça o carro encher.
-carro.entrar(3); // Já temos 5 pessoas no carro!
+carro.adicionarPessoas(3); // Já temos 5 pessoas no carro!
 
 // Tire 4 pessoas do carro.
-carro.quantidadePessoas -= 4;
+carro.adicionarPessoas(-4); // Já temos 1 pessoas no carro!
 
 // Adicione 10 pessoas no carro.
-carro.entrar(10); //Só cabem mais 4 pessoas!
+carro.adicionarPessoas(10); //Só cabem mais 4 pessoas!
 
 // Quantas pessoas temos no carro?
 carro.quantidadePessoas; // 1
