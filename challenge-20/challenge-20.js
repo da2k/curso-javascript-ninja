@@ -1,7 +1,9 @@
-( function (win, doc){
-    'use strict';
 
-    /*
+(function (win,doc) {
+
+  'use strict';
+
+/*
     1. Envolva todo o conteúdo desse desafio em uma IIFE.
     2. Adicione a diretiva 'use strict';
     3. Passe por parâmetro para a IIFE os objetos window e document.
@@ -17,49 +19,59 @@
     nome, `username` deve receber "Desconhecido".
     Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
     */
-    var username = prompt('Qual o seu nome?');
-        if ( username )
-            alert('Bem vindo ' + username + '!')
-        else
-            username = 'Desconhecido';
+
+  var username = prompt('Qual o seu nome?');
+  if (username)
+    alert('Bem vindo ' + username)
+  else
+    alert('Desconhecido');
+
     /*
     Agora, pergunte ao usuário "Qual o seu e-mail?", atribuindo o resultado à
     uma variável chamada `email`.
     */
-    var email = prompt('Qual o seu e-mail?');
+
+  var email = prompt('Qual o seu email?');
+
 
     /*
     - Selecione o input de "Nome", atribuindo-o à uma variável chamada
     `$inputUsername`.
     */
-    var $inputUsername = doc.querySelector('[type = text]');
 
-    /*
-    - Selecione o input de "Email", atribuindo-o à uma variável chamada
-    `$inputEmail`.
-    */
-    var $inputEmail = doc.querySelector('[type = email]');
+  var $inputUsername = document.querySelector('[type=text]');
+
+
+
+  /*
+  - Selecione o input de "Email", atribuindo-o à uma variável chamada
+  `$inputEmail`.
+  */
+
+  var $inputEmail = document.querySelector('[type=email]');
 
     /*
     - Selecione o campo de "Mensagem", atribuindo-o à uma variável chamada
     `$message`.
     */
-    var $message = doc.querySelector('textarea');
+
+  var $message = document.querySelector('textarea');
 
     /*
     - Selecione o botão de envio do formulário, atribuindo-o à uma variável
     chamada `$button`.
     */
-    var $button = doc.querySelector('[type = submit]');
+
+  var $button = document.querySelector('[type=submit]');
+
 
     /*
     Preencha os campos de "Nome" e "Email" que estão no documento com os valores
     entrados pelo usuário.
     */
-    $inputUsername.value = username;
-    $inputEmail.value = email;
 
-
+  $inputUsername.value = username;
+  $inputEmail.value = email;
 
     /*
     Adicione um listener de evento de click ao botão que faça o seguinte:
@@ -88,7 +100,7 @@
 
     //Nome, Email, Mensagem
 
-    $button.addEventListener( 'click', function (event){
+  $button.addEventListener( 'click', function (event){
             if ($inputUsername.value === 'Desconhecido')
                 alert('Preencha o nome do usuário!');
             else if ($inputEmail.value === '')
@@ -99,10 +111,9 @@
                 alert('Entre com um e-mail válido!');
             else
                 alert('Tem certeza que deseja enviar o formulário?');
-        
+
             alert('Enviado com sucesso!');
-    },false);
-    
+  }, false);
 
     /*
     Crie uma função chamada `isValidEmail`, que será usada na validação do
@@ -131,14 +142,17 @@
         - "agua_@evida.br.com"
     */
 
-    function isValidEmail(email){
-        var reg = new RegExp('(.+)@(\\w+).(\\w{2,})(.\\w{2})?');
-        var valido = reg.test(email);
+    // var reg = new RegExp('(.+)@(\\w+).(\\w{2,})(.\\w{2})?'); // regexp do fernando
 
-        if(valido)
-            return true;
-        else 
-            return false;
-    }
-    
-})(window, document);
+  function isValidEmail(email) {
+    var regexEmail = new RegExp('[\\w+._+]+@[\\w+_]+(.\\w{2,})(?:.\\w+)');
+    var valido = regexEmail.test(email);
+      if(valido)
+          return true;
+      else
+          return false;
+  };
+
+  //REVISAO
+
+  })(window,document);
