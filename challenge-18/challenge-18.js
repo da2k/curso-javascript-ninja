@@ -66,7 +66,7 @@
     O resultado deve ser:
     ["<div>", "<section>", "<blockquote>"]
     */
-    var tags = '<div><section><blockquote>Texto <img /></blockquote></section></div>'.match(/(<div>|<section>|<blockquote>)/g);
+    var tags = '<div><section><blockquote>Texto <img /></blockquote></section></div>'.match(/<\w+>/g);
     console.log( '\nMatch com a abertura de uma tag HTML:', tags );
     // ?
     
@@ -79,7 +79,7 @@
     O resultado deve ser:
     ["<li></li>", "<li></li>", "<span></span>"]
     */
-    var tags2 = '<div><ul><li></li><li></li><li><span></span></li></ul></div>'.match(/(<li><\/li>|<span><\/span>)/g);
+    var tags2 = '<div><ul><li></li><li></li><li><span></span></li></ul></div>'.match(/<\w+><\/\w+>/g);
     console.log( '\nMatch com tags HTML vazias (abertura e fechamento da tag):', tags2 );
     // ?
     
@@ -107,16 +107,6 @@
     */
 
     var text = '<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>';
-
-    text = text.replace(/<h1>(.*)<\/h1>/g, function (all, text) {
-        return '<h1>O texto dentro da tag "h1" é "' + text + '"</h1>'
-    })
-    text = text.replace(/<p>(.*)<\/p>/g, function (all, text) {
-        return '<p>O texto dentro da tag "p" é "' + text + '"</p>'
-    })
-    text = text.replace(/<footer>(.*)<\/footer>/g, function (all, text) {
-        return '<footer>O texto dentro da tag "footer" é "' + text + '"</footer>'
-    })
     
-    console.log( '\nFazer replace dos textos das tags:', text );
-    })();
+    console.log( '\nFazer replace dos textos das tags:', text.replace(/<(\w+)>([^<]+)<\/\w+>/g, '<$1>O texto dentro da tag "$1" é "$2"</$1>') );
+    })();   
