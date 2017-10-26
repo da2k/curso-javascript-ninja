@@ -7,9 +7,9 @@ var myVar = [13, 24, 67, 45, 60, 89, 45, 9, 89];
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
-function myFunction(a) {
-  return a;
-};
+function myFunction(arr) {
+  return arr;
+}
 
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
@@ -22,14 +22,14 @@ segundo, um número. A função deve retornar um índice do array que foi passad
 no primeiro parâmetro. O índice a ser retornado, deve ser o número passado no
 segundo parâmetro.
 */
-function myFunction2(a, b) {
-  return a[b];
+function myFunction2(arr, index) {
+  return arr[index];
 }
 
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
-var myVar2 = [1, 'two', true, [1,2,3], {prop: 'value'}];
+var myVar2 = [1, 'two', true, [1, 2, 3], { prop: 'value' }];
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
