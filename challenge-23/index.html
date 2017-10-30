@@ -14,30 +14,36 @@
 </head>
 
 <body>
-  <h1>Challenge 23 - Calculadora</h1>
+  <!-- <h1>Challenge 23 - Calculadora</h1> -->
 
-    <input class="calcData" data-js="calcData" style="display: block; margin-bottom: 20px;" type="text" />
+  <input type="text" id="calcOperation" readonly>
+<div>
+  <button data-js="calcNumber" value="0">0</button>
+  <button data-js="calcNumber" value="1">1</button>
+  <button data-js="calcNumber" value="2">2</button>
+  <button data-js="calcNumber" value="3">3</button>
+  <button data-js="calcNumber" value="4">4</button>
+  <button data-js="calcNumber" value="5">5</button>
+  <button data-js="calcNumber" value="6">6</button>
+  <button data-js="calcNumber" value="7">7</button>
+  <button data-js="calcNumber" value="8">8</button>
+  <button data-js="calcNumber" value="9">9</button>
+</div>
 
-    <button data-js="calcNumber" class="calcNumber" value='0'>0</button>
-    <button data-js="calcNumber" class="calcNumber" value='1'>1</button>
-    <button data-js="calcNumber" class="calcNumber" value='2'>2</button>
-    <button data-js="calcNumber" class="calcNumber" value='3'>3</button>
-    <button data-js="calcNumber" class="calcNumber" value='4'>4</button>
-    <br>
-    <button data-js="calcNumber" class="calcNumber" value='5'>5</button>
-    <button data-js="calcNumber" class="calcNumber" value='6'>6</button>
-    <button data-js="calcNumber" class="calcNumber" value='7'>7</button>
-    <button data-js="calcNumber" class="calcNumber" value='8'>8</button>
-    <button data-js="calcNumber" class="calcNumber" value='9'>9</button>
-    <br>
+<div>
+  <button data-js="calcOperator" value="+">+</button>
+  <button data-js="calcOperator" value="-">-</button>
+  <button data-js="calcOperator" value="x">x</button>
+  <button data-js="calcOperator" value="÷">÷</button>
+</div>
 
-    <button data-js="operador" class="calcOper" value="+">+</button>
-    <button data-js="operador" class="calcOper" value="-">-</button>
-    <button data-js="operador" class="calcOper" value="x">x</button>
-    <button data-js="operador" class="calcOper" value="%">%</button>
-    <br>
-    <button data-js="result" class="calcOper" value='='>=</button>
-    <button data-js="calcReset" class="calcOper">CE</button>
+<div>
+  <button data-js="equal">=</button>
+  <button data-js="clear">CE</button>
+</div>
+
+
+
 
 
 </body>

@@ -1,6 +1,6 @@
-( function(win, doc){
-  'user strict';
+(function (win,doc) {
 
+  'use strict';
 
   /*
   Vamos desenvolver mais um projeto. A ideia é fazer uma mini-calculadora.
@@ -9,12 +9,12 @@
   - Deve ter somente 1 input, mas não deve ser possível entrar dados nesse input
   diretamente;
   - O input deve iniciar com valor zero;
+
   - Deve haver 10 botões para os números de 0 a 9. Cada botão deve ser um número;
   - Deve haver 4 botões para as operações principais: soma (+), subtração(-),
   multiplicação(x) e divisão(÷);
   - Deve haver um botão de "igual" (=) que irá calcular os valores e um botão "CE"
   que irá limpar o input, deixando-o com valor 0;
-
   - A cada número pressionado, o input deve atualizar concatenando cada valor
   digitado, como em uma calculadora real;
   - Ao pressionar um botão com uma das 4 operações, deve aparecer o símbolo da
@@ -28,85 +28,111 @@
   - Ao pressionar o botão "CE", o input deve ficar zerado.
   */
 
-  var $inputData = doc.querySelector('[data-js="calcData"]');
-  var $inputNumbers = doc.querySelectorAll('[data-js="calcNumber"]');
-  var $operadores = doc.querySelectorAll('[data-js="operador"]');
-  var $result = doc.querySelector('[data-js="result"]');
-  var $clear = doc.querySelector('[data-js="calcReset"]');
 
-  $inputData.value = 0;
+//REVISAO
 
-    Array.prototype.forEach.call($inputNumbers, function(button) {
-        button.addEventListener('click', numberInput, false);
+  var $visor = doc.querySelector('#calcOperation');
+  var $numbers = doc.querySelectorAll('[data-js="calcNumber"]');
+  var $operations = doc.querySelectorAll('[data-js="calcOperator"]');
+  var $result = doc.querySelector('[data-js="equal"]');
+  var $clear = doc.querySelector('[data-js="clear"]');
+
+  $visor.value = 0;
+
+  function insertNumber() {
+    if ($visor.value == 0)
+      $visor.value = this.value
+    else
+      $visor.value +=this.value; // concatena tudo o que já tem com o valor digitado
+  };
+
+
+  function insertOperation() {
+    removeLastItem();
+    $visor.value += this.value;
+  }
+  function isLastItem() {
+    var symbols = ['+', '-', 'x', '÷'];
+    var lastItem = $visor.value.split('').pop(); // transforma em array e o pop pega o último e retorna o último item para a variável.
+    return symbols.some(function (symbol) {
+      return symbol === lastItem; //  some - verifica se algum dos operadores é igual ao lastitem
     });
-
-    Array.prototype.forEach.call($operadores, function(button) {
-        button.addEventListener('click', operacao, false);
-    });
-
-    function numberInput() {
-          if ($inputData.value == 0)
-           $inputData.value = this.value;
-          else
-           $inputData.value += this.value;
-    }
-
-    function operacao() {
-        $inputData.value = removeLastItem($inputData.value);
-        $inputData.value += this.value;
-
-    }
-
-    function lastItem(number) {
-      var symbols = ['+', '-', '%', 'x'];
-      var lastItem = number.split('').pop();
-      return symbols.some(function(operator) {
-          return operator === lastItem;
-      });
   }
 
-    function removeLastItem(number) {
-        if (lastItem(number)) {
-            return number.slice(0, -1);
-        }
-        return number;
+  function removeLastItem() {
+    if (isLastItem()) {
+      $visor.value = $visor.value.slice(0, -1); // se o último item do visor for uma operacao
     }
-
-
-// Botão CE - zerar input
-  function clearCalc() {
-      return $inputData.value = 0;
   }
 
+  function resultOperation() {
+    removeLastItem();
 
-  function resultOperation () {
-    $inputData.value = removeLastItem($inputData.value);
-    var inputAll = $inputData.value.match(/(\d+)([+x%-])?/g);
-    $inputData.value = inputAll.reduce (function (acum, atual){
-      var firstVal = acum.slice(0, -1); // pega o primeiro número
-      var oper = acum.split('').pop();  // transforma em array e pega o último número
-      var lastVal = removeLastItem(atual);
-      var lastOper = lastItem(atual) ? atual.split('').pop() : '';
-      switch (oper){
+    var resultVisor= $visor.value;
+    var allVisor = resultVisor.match(/\d+[+x÷-]?/g);
+
+    var result =  Array.prototype.reduce.call(allVisor, function (acc, value) {
+      var firstValue = acc.slice(0, -1); // pega o primeiro numero do primeiro item do array
+      var operator = acc.split('').pop(); // pega o primeiro operador
+      var lastValue = value.replace(/\D/g, ''); // segundo numero
+      var lastOperator = value.replace(/\d+/g, ''); // segundo operador
+      switch (operator) {
         case '+':
-          return (Number(firstVal) + Number(lastVal)) + lastOper;
+          return (Number(firstValue) + Number(lastValue)) + lastOperator;
         case '-':
-          return (Number(firstVal) - Number(lastVal)) + lastOper;
+          return (Number(firstValue) - Number(lastValue)) + lastOperator;
         case 'x':
-          return (Number(firstVal) * Number(lastVal)) + lastOper;
-        case '%':
-          return (Number(firstVal) / Number(lastVal)) + lastOper;
+          return (Number(firstValue) * Number(lastValue)) + lastOperator;
+        case '÷':
+          return (Number(firstValue) / Number(lastValue)) + lastOperator;
       }
     });
+
+    $visor.value = result;
   }
 
+  function inputClear() {
+    $visor.value = 0;
+  }
+
+
+  // numbers é um array então precisa utilizar o Array.prototype.forEachr.call - onde number será cada botao de número
+  Array.prototype.forEach.call($numbers, function (number) {
+    number.addEventListener('click', insertNumber, false);
+  });
+
+  Array.prototype.forEach.call($operations, function (operation) {
+    operation.addEventListener('click', insertOperation, false);
+  });
+
+  $clear.addEventListener('click', inputClear, false);
   $result.addEventListener('click', resultOperation, false);
 
-  $clear.addEventListener('click', clearCalc, false);
-
-
-})(window, document);
 
 
 
 
+
+  // function insertOperation() {
+  //   $visor.value = removeLastItem($visor.value);
+  //   $visor.value += this.value;
+  // }
+
+  // function isLastItem(number) {
+  //   var symbols = ['+', '-', 'x', '%'];
+  //   var lastItem = number.split('').pop(''); // retorna o último item
+  //   return symbols.some(function (operator) {
+  //     return operator === lastItem;
+  //   });
+  // }
+
+  // function removeLastItem(number) {
+  //   if (isLastItem(number)) {
+  //     return number.slice(0, -1); //remove o ultimo item
+  //   }
+  //   return number;
+  // }
+
+
+
+})(window,document);
