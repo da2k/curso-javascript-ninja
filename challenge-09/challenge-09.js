@@ -115,4 +115,4 @@ var sum = calculator(45, 9);
   console.log( 'O resto da divisão é:' +
   mod( function(num1, num2) { return num1 % num2; } ));
 
-});
+})();
