@@ -1,0 +1,22 @@
+body {
+    background: #bbd7e2;
+    font-family: sans-serif;
+}
+
+.container {
+    align-items: center;
+    background: yellow;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 50%;
+}
+
+.cep-data {
+    text-align: right;
+}
+
+.status-row {
+    color: #a1171e;
+    font-weight: bold;
+}

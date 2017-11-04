@@ -25,3 +25,6 @@
   - Utilize a lib DOM criada anteriormente para facilitar a manipulação e
   adicionar as informações em tela.
   */
+(function(win, doc) {
+    'use strict';
+})(window, document);

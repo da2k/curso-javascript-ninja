@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Curso JavaScript Ninja - Desafio 28</title>
+</head>
+<body>
+    <div class="container">
+        <h2 class="title">Informações do CEP</h2>
+
+        <form class="cep-search">
+            <input type="text" class="text-field" data-js="cep" placeholder="Digite o CEP">
+            <input type="submit" class="button" data-js="button" value="Pesquisar"></input>
+        </form>
+
+        <table class="cep-information">
+            <tr class="row status-row">
+                <td class="cep-data-title">Status:</td>
+                <td class="cep-data" data-js="cep-status">abc</td>
+            </tr>
+            <tr class="row">
+                <td class="cep-data-title">Logradouro:</td>
+                <td class="cep-data" data-js="cep-street">abc</td>
+            </tr>
+            <tr class="row">
+                <td class="cep-data-title">Bairro:</td>
+                <td class="cep-data" data-js="cep-district">xpto</td>
+            </tr>
+            <tr class="row">
+                <td class="cep-data-title">Estado:</td>
+                <td class="cep-data" data-js="cep-state"></td>
+            </tr>
+            <tr class="row">
+                <td class="cep-data-title">Cidade:</td>
+                <td class="cep-data" data-js="cep-city"></td>
+            </tr>
+            <tr class="row">
+                <td class="cep-data-title">CEP:</td>
+                <td class="cep-data" data-js="cep-cep"></td>
+            </tr>
+        </table>
+    </div>
+    <script src="challenge-28.js"></script>
+</body>
+</html>
