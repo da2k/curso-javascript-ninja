@@ -1,4 +1,4 @@
-(function(win, doc){
+(function (win, doc) {
 
   'use strict';
 
@@ -25,33 +25,36 @@
     */
     // ?
 
-    function DOM( tagName ) {
-      this.element = doc.querySelectorAll(tagName);
-    }
-
-    DOM.prototype.on = function on(eventType, callback) {
-      Array.prototype.forEach.call(this.element, function (element){
-          element.addEventListener(eventType, callback, false);
-      });
+    function DOM(elements) {
+      this.element = doc.querySelectorAll(elements); // seleciona todos os itens da tela.
     };
+    // funcao construtora do DOM
 
+    // criando os métodos
+    DOM.prototype.on = function on(eventType, callback) { // o this.element é um arrayLike
+      Array.prototype.forEach.call(this.element, function (element) { // cada vez que entrar aqui vai atribuir um valor a element
+        element.addEventListener(eventType, callback, false);
+      });
+
+    };
     DOM.prototype.off = function off(eventType, callback) {
-      Array.prototype.forEach.call(this.element, function (element){
-          element.removeEventListener(eventType, callback, false);
+      Array.prototype.forEach.call(this.element, function (element) {
+        element.removeEventListener(eventType, callback, false);
       });
     };
 
     DOM.prototype.get = function get() {
-      return this.element;
+      return this.element
     };
 
     var $a = new DOM('[data-js="link"]');
+    console.log($a);
 
     $a.on('click', function handleClick(e) {
-      e.preventDefault();
-      console.log('clicou');
-      $a.off('click', handleClick);
-    });
+        e.preventDefault();
+        console.log('clicou');
+        $a.off('click', handleClick);
+      });
 
     console.log('Elementos selecionados:', $a.get());
     console.log('$a é filho de body?', $a.get()[0].parentNode === document.body);
