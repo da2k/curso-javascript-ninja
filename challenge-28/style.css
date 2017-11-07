@@ -3,20 +3,12 @@ body {
     font-family: sans-serif;
 }
 
+.title {
+    color: red;
+    width: 100%;
+}
+
 .container {
-    align-items: center;
-    background: yellow;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    background: #cbdce2;
     width: 50%;
-}
-
-.cep-data {
-    text-align: right;
-}
-
-.status-row {
-    color: #a1171e;
-    font-weight: bold;
 }

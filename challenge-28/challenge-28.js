@@ -27,4 +27,13 @@
   */
 (function(win, doc) {
     'use strict';
+
+    var submitButton = doc.querySelector('data-js=["submit-button"]');
+
+    submitButton.addEventListener('click', function() {
+        var ajax = new XMLHttpRequest();
+
+        ajax.open('https://viacep.com.br/ws/[CEP]/json/', 'GET');
+        ajax.send();
+    }, false);
 })(window, document);

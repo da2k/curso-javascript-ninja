@@ -13,35 +13,18 @@
 
         <form class="cep-search">
             <input type="text" class="text-field" data-js="cep" placeholder="Digite o CEP">
-            <input type="submit" class="button" data-js="button" value="Pesquisar"></input>
+            <button type="submit" class="button" data-js="submit-button">Pesquisar CEP</button>
         </form>
 
-        <table class="cep-information">
-            <tr class="row status-row">
-                <td class="cep-data-title">Status:</td>
-                <td class="cep-data" data-js="cep-status">abc</td>
-            </tr>
-            <tr class="row">
-                <td class="cep-data-title">Logradouro:</td>
-                <td class="cep-data" data-js="cep-street">abc</td>
-            </tr>
-            <tr class="row">
-                <td class="cep-data-title">Bairro:</td>
-                <td class="cep-data" data-js="cep-district">xpto</td>
-            </tr>
-            <tr class="row">
-                <td class="cep-data-title">Estado:</td>
-                <td class="cep-data" data-js="cep-state"></td>
-            </tr>
-            <tr class="row">
-                <td class="cep-data-title">Cidade:</td>
-                <td class="cep-data" data-js="cep-city"></td>
-            </tr>
-            <tr class="row">
-                <td class="cep-data-title">CEP:</td>
-                <td class="cep-data" data-js="cep-cep"></td>
-            </tr>
-        </table>
+        <div data-js="status"></div>
+
+        <div data-js="cep-information">
+            <p>Logradouro: <span data-js="street"></span></p>
+            <p>Bairro: <span data-js="district"></span></p>
+            <p>Estado: <span data-js="state"></span></p>
+            <p>Cidade: <span data-js="city"></span></p>
+            <p>CEP: <span data-js="cep"></span></p>
+        </div>
     </div>
     <script src="challenge-28.js"></script>
 </body>
