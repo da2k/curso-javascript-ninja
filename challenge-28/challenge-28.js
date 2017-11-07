@@ -25,15 +25,147 @@
   - Utilize a lib DOM criada anteriormente para facilitar a manipulação e
   adicionar as informações em tela.
   */
-(function(win, doc) {
+  (function() {
     'use strict';
 
-    var submitButton = doc.querySelector('data-js=["submit-button"]');
+    function DOM(element) {
+        this.element = document.querySelectorAll(element);
+    }
 
-    submitButton.addEventListener('click', function() {
-        var ajax = new XMLHttpRequest();
+    // DOM Methods
+    DOM.prototype.on = function on(event, callback) {
+        Array.prototype.forEach.call(this.element, function(element) {
+            element.addEventListener(event, callback, false);
+        });
+    };
 
-        ajax.open('https://viacep.com.br/ws/[CEP]/json/', 'GET');
+    DOM.prototype.off = function off(event, callback) {
+        Array.prototype.forEach.call(this.element, function(element) {
+            element.removeEventListener(event, callback, false);
+        });
+    };
+
+    DOM.prototype.get = function get() {
+        return this.element;
+    };
+
+    // Array Methods
+    DOM.prototype.forEach = function forEach() {
+        return Array.prototype.forEach.apply(this.element, arguments);
+    };
+
+    DOM.prototype.map = function map() {
+        return Array.prototype.map.apply(this.element, arguments);
+    };
+
+    DOM.prototype.reduce = function reduce() {
+        return Array.prototype.reduce.apply(this.element, arguments);
+    };
+
+    DOM.prototype.reduceRight = function reduceRight() {
+        return Array.prototype.reduceRight.apply(this.element, arguments);
+    };
+
+    DOM.prototype.every = function every() {
+        return Array.prototype.every.apply(this.element, arguments);
+    };
+
+    DOM.prototype.some = function some() {
+        return Array.prototype.some.apply(this.element, arguments);
+    };
+
+    // Type Checking Methods
+    DOM.prototype.isArray = function isArray(element) {
+        return Object.prototype.toString.call(element) === '[object Array]';
+    };
+
+    DOM.prototype.isObject = function isObject(element) {
+        return Object.prototype.toString.call(element) === '[object Object]';
+    };
+
+    DOM.prototype.isFunction = function isFunction(element) {
+        return Object.prototype.toString.call(element) === '[object Function]';
+    };
+
+    DOM.prototype.isNumber = function isNumber(element) {
+        return Object.prototype.toString.call(element) === '[object Number]';
+    };
+
+    DOM.prototype.isString = function isString(element) {
+        return Object.prototype.toString.call(element) === '[object String]';
+    };
+
+    DOM.prototype.isBoolean = function isBoolean(element) {
+        return Object.prototype.toString.call(element) === '[object Boolean]';
+    };
+
+    DOM.prototype.isNull = function isNull(element) {
+        return Object.prototype.toString.call(element) === '[object Null]'
+        || Object.prototype.toString.call(element) === '[object Undefined]';
+    };
+
+    var ajax = new XMLHttpRequest();
+    var cep = new DOM('[data-js="cep"]');
+    var cepSearch = new DOM('[data-js="cep-search"]');
+
+    cepSearch.on('submit', submitForm);
+
+    function fillCEPFields() {
+        var cepData = parseCEPData();
+        var cepField = new DOM('[data-js="cep-field"]');
+        var cityField = new DOM('[data-js="city-field"]');
+        var districtField = new DOM('[data-js="district-field"]');
+        var stateField = new DOM('[data-js="state-field"]');
+        var streetField = new DOM('[data-js="street-field"]');
+
+        if (!cepData)
+            return console.log('DATA ERROR', cepData);
+
+        cepField.get()[0].textContent = cepData.cep;
+        cityField.get()[0].textContent = cepData.localidade;
+        districtField.get()[0].textContent = cepData.bairro;
+        stateField.get()[0].textContent = cepData.uf;
+        streetField.get()[0].textContent = cepData.logradouro;
+    }
+
+    function getMessage(messageType) {
+        return {
+            error: 'CEP não encontrado!',
+            loading: 'Buscando informações...',
+            ok: 'Busca finalizada com sucesso!'
+        }[messageType];
+    }
+
+    function getURL() {
+        return 'https://viacep.com.br/ws/[CEP]/json/'.replace('[CEP]', cep.get()[0].value.replace(/\D/g, ''));
+    }
+
+    function handleStateChange() {
+        if (isRequestOK())
+            fillCEPFields();
+    }
+
+    function isRequestOK() {
+        return ajax.readyState === 4 && ajax.status === 200;
+    }
+
+    function parseCEPData() {
+        var result;
+
+        try {
+            result = JSON.parse(ajax.responseText);
+        } catch (error) {
+            result = null;
+        }
+
+        return result;
+    }
+
+    function submitForm(event) {
+        event.preventDefault();
+        var url = getURL();
+        ajax.open('GET', url);
         ajax.send();
-    }, false);
-})(window, document);
+        ajax.addEventListener('readystatechange', handleStateChange);
+    }
+})();
