@@ -15,24 +15,24 @@ var numSum = sum(5, 3) + 5;
 13
 
 // Declare uma nova variável, sem valor.
-var text;
+var number;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function insertText() {
-  text = 'VALOR';
-  return 'O valor da variável agora é ' + text + '.';
+function insertNumber() {
+  number = 29;
+  return 'O valor da variável agora é ' + number + '.';
 }
 
 // Invoque a função criada acima.
-insertText();
+insertNumber();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
-  O valor da variável agora é VALOR.
+  O valor da variável agora é 29.
 */
 
 /*
