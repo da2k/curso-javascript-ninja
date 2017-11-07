@@ -82,10 +82,13 @@ function newEquation(x,y,z) {
     return arguments[0] + arguments[1];
   } else if(arguments.length === 3) {
   	return (arguments[0] + arguments[1]) / arguments[2];
+  } else {
+  	return false;
   }
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
+newEquation() //False
 newEquation(5) //5
 newEquation(5,10) //15
 newEquation(5,10,3) //5
