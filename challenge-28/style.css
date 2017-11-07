@@ -3,12 +3,18 @@ body {
     font-family: sans-serif;
 }
 
+.status,
 .title {
-    color: red;
+    color: #a11414;
+}
+
+.title,
+.cep-search {
     width: 100%;
 }
 
 .container {
     background: #cbdce2;
+    padding: 10px;
     width: 50%;
 }
