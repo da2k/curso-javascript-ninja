@@ -82,8 +82,10 @@ function newEquation(x,y,z) {
     return arguments[0] + arguments[1];
   } else if(arguments.length === 3) {
   	return (arguments[0] + arguments[1]) / arguments[2];
-  } else {
+  } else if(arguments.length === 0){
   	return false;
+  } else {
+    return null;
   }
 }
 
