@@ -33,7 +33,7 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 function showTeamPosition(position) {
-  if (position < 0 || position > 5) {
+  if (position < 1 || position > 5) {
     return 'Não temos a informação do time que está nessa posição.';
   }
   return 'O time que está em ' + position + 'º lugar é o "' + teams[position - 1] + '".';;
@@ -43,8 +43,8 @@ function showTeamPosition(position) {
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
-console.log(showTeamPosition(2));
-console.log(showTeamPosition(4));
+console.log(showTeamPosition(1));
+console.log(showTeamPosition(5));
 console.log(showTeamPosition(3));
 console.log(showTeamPosition(6));
 
@@ -70,28 +70,27 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 function convertToHex(color) {
-  var ret = 'O hexadecimal para a cor ' + color + ' é ';
+  var hexa;
   switch (color) {
     case 'red':
-      ret += '#ff0000';
+      hexa = '#ff0000';
       break;
     case 'blue':
-      ret += '#0000ff';
+      hexa = '#0000ff';
       break;
     case 'green':
-      ret += '#00ff00';
+      hexa = '#00ff00';
       break;
     case 'yellow':
-      ret += '#ffff00';
+      hexa = '#ffff00';
       break;
     case 'black':
-      ret += '#000000';
+      hexa = '#000000';
       break;
     default:
       return 'Não temos o equivalente hexadecimal para ' + color + '.';
-      break;
   }
-  return ret;
+  return 'O hexadecimal para a cor ' + color + ' é ' + hexa + '.';
 }
 
 /*
