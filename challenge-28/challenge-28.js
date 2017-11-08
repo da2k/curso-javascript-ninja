@@ -108,18 +108,38 @@
     var cep = new DOM('[data-js="cep"]');
     var cepSearch = new DOM('[data-js="cep-search"]');
 
+    var cepField = new DOM('[data-js="cep-field"]');
+    var cityField = new DOM('[data-js="city-field"]');
+    var districtField = new DOM('[data-js="district-field"]');
+    var stateField = new DOM('[data-js="state-field"]');
+    var streetField = new DOM('[data-js="street-field"]');
+
+    var status = new DOM('[data-js="status"');
+
     cepSearch.on('submit', submitForm);
+
+    function clearCEP() {
+        return cep.get()[0].value.replace(/\D/g, '');
+    }
+
+    function clearData() {
+        return {
+            cep: '-',
+            localidade: '-',
+            bairro: '-',
+            uf: '-',
+            logradouro: '-'
+        };
+    }
 
     function fillCEPFields() {
         var cepData = parseCEPData();
-        var cepField = new DOM('[data-js="cep-field"]');
-        var cityField = new DOM('[data-js="city-field"]');
-        var districtField = new DOM('[data-js="district-field"]');
-        var stateField = new DOM('[data-js="state-field"]');
-        var streetField = new DOM('[data-js="street-field"]');
 
-        if (!cepData)
-            return console.log('DATA ERROR', cepData);
+        if (!cepData) {
+            getMessage('error');
+            cepData = clearData();
+            return;
+        }
 
         cepField.get()[0].textContent = cepData.cep;
         cityField.get()[0].textContent = cepData.localidade;
@@ -129,20 +149,23 @@
     }
 
     function getMessage(messageType) {
-        return {
-            error: 'CEP não encontrado!',
-            loading: 'Buscando informações...',
-            ok: 'Busca finalizada com sucesso!'
-        }[messageType];
+        var messages = {
+            error: replaceCEP('CEP [CEP] não encontrado!'),
+            loading: replaceCEP('Buscando CEP [CEP]...'),
+            ok: replaceCEP('Busca do CEP [CEP] finalizada!')
+        };
+        status.get()[0].textContent = messages[messageType];
     }
 
     function getURL() {
-        return 'https://viacep.com.br/ws/[CEP]/json/'.replace('[CEP]', cep.get()[0].value.replace(/\D/g, ''));
+        return replaceCEP('https://viacep.com.br/ws/[CEP]/json/');
     }
 
     function handleStateChange() {
-        if (isRequestOK())
+        if (isRequestOK()) {
+            getMessage('ok');
             fillCEPFields();
+        }
     }
 
     function isRequestOK() {
@@ -161,11 +184,16 @@
         return result;
     }
 
+    function replaceCEP(message) {
+        return message.replace('[CEP]', clearCEP());
+    }
+
     function submitForm(event) {
         event.preventDefault();
         var url = getURL();
         ajax.open('GET', url);
         ajax.send();
+        getMessage('loading');
         ajax.addEventListener('readystatechange', handleStateChange);
     }
 })();
