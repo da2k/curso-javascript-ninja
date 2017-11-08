@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Challenge 28</title>
+</head>
+<body>
+  <main>
+    <form data-js="ajaxForm" action="">
+      <fieldset>
+        <label>CEP</label>
+        <input data-js="inputCEP" type="text" placeholder="Digite o CEP">
+      </fieldset>
+      <fieldset>
+        <input data-js="submit" type="submit" value="Consultar CEP">
+      </fieldset>
+    </form>
+
+    <br><br>
+    <div data-js="status" class="requisicoes">
+
+    </div>
+    <br><br>
+
+    <div data-js="cepInfo">
+      <p>Logradouro: <span data-js="logradouro"></span></p>
+      <p>Bairro: <span data-js="bairro"></span></p>
+      <p>Estado: <span data-js="estado"></span></p>
+      <p>Cidade: <span data-js="cidade"></span></p>
+      <p>CEP: <span data-js="cep"></span></p>
+    </div>
+
+  </main>
+
+
+  <script src="challenge-28.js"></script>
+</body>
+</html>
