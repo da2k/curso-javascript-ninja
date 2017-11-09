@@ -135,10 +135,9 @@
     function fillCEPFields() {
         var cepData = parseCEPData();
 
-        if (!cepData) {
+        if (cepData.cep === undefined) {
             getMessage('error');
             cepData = clearData();
-            return;
         }
 
         cepField.get()[0].textContent = cepData.cep;
