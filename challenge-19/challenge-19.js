@@ -1,7 +1,8 @@
+(function () {
 
-(function(){
+  'use strict'
 
-    'use strict';
+
 
     /*
     1. Envolva todo o conteúdo desse desafio em uma IIFE.
@@ -33,7 +34,7 @@
 
     var justNumbersRegex = new RegExp ('^\\d+', 'gm');
     console.log(justNumbersRegex);
-   
+
 
     /*
     Verifique se a regex acima casa com o texto na variável `text`, mostrando o
@@ -44,7 +45,7 @@
     console.log( '\nNúmeros no início da linha do texto:\n' + text, '\n' );
 
     console.log(text.match(justNumbersRegex));
-    
+
 
     /*
     - Crie uma regex que case com números no final de uma string. Atribua a
@@ -58,7 +59,7 @@
 
     var numbersAtTheEnd = new RegExp ('\\d+$', 'gm');
     console.log(numbersAtTheEnd);
-  
+
 
     /*
     Verifique se a regex acima casa com o texto na variável `otherText`,
@@ -70,7 +71,7 @@
     console.log( '\nNúmeros no final da linha:\n\n', otherText, '\n' );
 
     console.log(otherText.match(numbersAtTheEnd));
-    
+
 
     /*
     Vamos criar um método que vai testar se uma classe CSS existe em uma
@@ -97,6 +98,7 @@
     */
     var markup = '<main>\n  <div class="container">\n    <span class="text date"></span>\n    <p class=\'excerpt\'></p>\n  </div>\n</main>';
 
+<<<<<<< HEAD
     var cssClass = /^c+\"/g;
     var result;
 
@@ -105,9 +107,30 @@
     function hasClass (markup, cssClass){
             
 
+=======
+  //  var regex = /<\w*\s*class=.(\w*)\s*?(\w*).>/g
+
+    console.log( '\nQuais classes CSS existem na marcação abaixo?\n\n', markup, '\n' );
+
+    function hasClass(markup, cssClass) {
+      var regex = new RegExp('class=["\'].*' + cssClass + '.*["\']');
+      return regex.test(markup);
+>>>>>>> d6eb581de574a828f618b1591892fca9fa9f9fe1
     };
-   
+
+
+
+  // vou utilizar o forEach para passar por todas as classes e não precisa repetir o console.log
+
+    var classes = ['container', 'text', 'date', 'excerpt', 'main']
+
+    classes.forEach(function (cssClass) {
+      console.log(hasClass(markup, cssClass) + ' para a classse ' + cssClass);
+    });
+
 // revisao
 
+//
+
 })();
-    
+
