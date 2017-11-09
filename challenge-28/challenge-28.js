@@ -31,11 +31,11 @@
 
 
   function DOM(elements) {
-    this.element = doc.querySelectorAll(elements); // seleciona todos os itens da tela.
+    this.element = doc.querySelectorAll(elements);
   };
 
-  DOM.prototype.on = function on(eventType, callback) { // o this.element é um arrayLike
-    Array.prototype.forEach.call(this.element, function (element) { // cada vez que entrar aqui vai atribuir um valor a element
+  DOM.prototype.on = function on(eventType, callback) {
+    Array.prototype.forEach.call(this.element, function (element) {
       element.addEventListener(eventType, callback, false);
     });
 
@@ -50,8 +50,7 @@
     return this.element
   };
 
-
-  DOM.prototype.forEach = function forEach() {
+    DOM.prototype.forEach = function forEach() {
     return Array.prototype.forEach.apply(this.element, arguments);
   }
 
@@ -98,7 +97,6 @@
     Object.prototype.toString.call(param) === '[object Undefined]';
   }
 
-
   var $form = new DOM('[data-js="ajaxForm"]');
   var $inputCEP = new DOM('[data-js="inputCEP"]');
   var ajax = new XMLHttpRequest();
@@ -131,8 +129,8 @@
 
   function handleReadyStateChange() {
     if (isRequestOk()) {
-      fillCEPFields();
       getMessage('ok');
+      fillCEPFields();
     }
   }
 
@@ -186,5 +184,6 @@
   function replaceCEP(message) {
     return message.replace('[CEP]', clearCEP());
   }
+
 
 })(window,document);
