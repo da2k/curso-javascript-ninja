@@ -116,11 +116,12 @@ carro.adicionarPessoas = function(pessoas) {
   var pessoasAdicionadas = carro.quantidadePessoas += pessoas;
   var assentosRestantes = carro.assentos - pessoasAdicionadas;
   var pessoa = assentosRestantes === 1 ? 'pessoa' : 'pessoas';
+  var caber = assentosRestantes === 1 ? 'cabe' : 'cabem';
   
   if(pessoasAdicionadas >= carro.assentos) {
     return "O carro já está lotado!";
   } else if(pessoasAdicionadas <= carro.assentos) {
-    return "Só cabem mais " + assentosRestantes + " " + pessoa + "!";; 
+    return "Só " + caber + " mais " + assentosRestantes + " " + pessoa + "!";; 
   } else if(arguments.length === 0) {
   	return "Ainda não temos ninguém no carro!";
   } else {
