@@ -2,6 +2,20 @@ body {
     font-family: sans-serif;
 }
 
+.cars-list {
+    border: 1px solid #999999;
+    width: 100%;
+}
+
+.cars-list th {
+    font-weight: bold;
+    padding: 15px;
+}
+
+.cars-register {
+    margin-bottom: 50px;
+}
+
 .cars-register button,
 .cars-register input {
     border-radius: 6px;
