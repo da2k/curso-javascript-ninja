@@ -32,7 +32,38 @@ um arquivo DOM.js.
 E aqui nesse arquivo, faça a lógica para cadastrar os carros, em um módulo
 que será nomeado de "app".
 */
-(function() {
+
+(function(DOM) {
     'use strict';
 
-})();
+    function app() {
+        return {
+            getCompanyInfo: function getCompanyInfo() {
+                var ajax = new XMLHttpRequest();
+
+                ajax.open('GET', '/company.json', true);
+                ajax.send();
+                ajax.addEventListener('readystatechange', function() {
+                    if (!app().isRequestReady.call(this))
+                        return;
+
+                    var companyData = JSON.parse(this.responseText);
+                    var companyName = DOM('[data-js="company-name]"');
+                    var companyPhone = DOM('[data-js="company-phone"]');
+
+                    companyName.textContent = companyData.name;
+                    companyPhone.textContent = companyData.phone;
+                }, false);
+            },
+            init: function init() {
+                this.getCompanyInfo();
+            },
+            isRequestReady: function isRequestReady() {
+                return this.readyState === 4 && this.status === 200;
+            },
+        };
+    }
+
+    app().init();
+
+})(window.DOM);

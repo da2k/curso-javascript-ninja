@@ -2,7 +2,13 @@
     'use strict';
 
     function DOM(element) {
+        if (!(this instanceof DOM))
+            return new DOM(element);
+
         this.element = document.querySelectorAll(element);
+
+        if (this.element.length === 1)
+            return this.get();
     }
 
     // DOM Methods
@@ -18,8 +24,11 @@
         });
     };
 
-    DOM.prototype.get = function get() {
-        return this.element;
+    DOM.prototype.get = function get(index) {
+        if (!index)
+            return this.element[0];
+
+        return index;
     };
 
     // Array Methods
@@ -48,34 +57,33 @@
     };
 
     // Type Checking Methods
-    DOM.prototype.isArray = function isArray(element) {
+    DOM.isArray = function isArray(element) {
         return Object.prototype.toString.call(element) === '[object Array]';
     };
 
-    DOM.prototype.isObject = function isObject(element) {
+    DOM.isObject = function isObject(element) {
         return Object.prototype.toString.call(element) === '[object Object]';
     };
 
-    DOM.prototype.isFunction = function isFunction(element) {
+    DOM.isFunction = function isFunction(element) {
         return Object.prototype.toString.call(element) === '[object Function]';
     };
 
-    DOM.prototype.isNumber = function isNumber(element) {
+    DOM.isNumber = function isNumber(element) {
         return Object.prototype.toString.call(element) === '[object Number]';
     };
 
-    DOM.prototype.isString = function isString(element) {
+    DOM.isString = function isString(element) {
         return Object.prototype.toString.call(element) === '[object String]';
     };
 
-    DOM.prototype.isBoolean = function isBoolean(element) {
+    DOM.isBoolean = function isBoolean(element) {
         return Object.prototype.toString.call(element) === '[object Boolean]';
     };
 
-    DOM.prototype.isNull = function isNull(element) {
+    DOM.isNull = function isNull(element) {
         return Object.prototype.toString.call(element) === '[object Null]'
         || Object.prototype.toString.call(element) === '[object Undefined]';
     };
-
     window.DOM = DOM;
 })();
