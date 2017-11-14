@@ -8,21 +8,15 @@
 
 <body>
   <main>
-    <form data-js="dados-empresa" action="">
-      <fieldset>
-        <label>Nome da Empresa:</label>
-        <p data-js="nomeEmpresa"></p>
-      </fieldset>
-      <fieldset>
-        <label>Telefone:</label>
-        <p data-js="telefoneEmpresa"></p>
-      </fieldset>
-    </form>
+    <h1>
+      <span data-js="companyName"></span> -
+      <span data-js="companyPhone"></span>
+    </h1>
 
     <form data-js="cadastro" action="">
       <fieldset>
         <label>Imagem do carro:</label>
-        link
+        <input data-js="imagem" type="url">
       </fieldset>
       <fieldset>
         <label>Marca / Modelo:</label>
@@ -30,18 +24,18 @@
       </fieldset>
       <fieldset>
         <label>Ano:</label>
-        <input data-js="marcaModelo" type="number">
+        <input data-js="ano" type="number">
       </fieldset>
       <fieldset>
         <label>Placa:</label>
-        <input data-js="marcaModelo" type="number">
+        <input data-js="placa" type="number">
       </fieldset>
       <fieldset>
         <label>Cor:</label>
-        <input data-js="marcaModelo" type="text">
+        <input data-js="cor" type="text">
       </fieldset>
 
-      <input type="submit" value="CADASTRAR">
+      <input data-js="submit" type="submit" value="CADASTRAR">
     </form>
 
 
@@ -49,7 +43,19 @@
     <br>
     <div data-js="carrosCadastrados">
      <h2>Todos os carros cadastrados</h2>
+     <table>
+       <thead>
+          <th>Imagem</th>
+          <th>Marca</th>
+          <th>Ano</th>
+          <th>Placa</th>
+          <th>Cor</th>
+       </thead>
+       <tbody data-js="tableCadatro">
 
+         </tr>
+       </tbody>
+     </table>
     </div>
     <br>
     <br>
