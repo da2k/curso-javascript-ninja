@@ -53,17 +53,17 @@ os livros.
 */
 function book(nome) {
   var obj = {
-    javascriptOGuiaDefinitivo: {
+    'Javascript O Guia Definitivo': {
       quantidadePaginas: 325,
       autor: 'David Flanagan',
       editora: 'OReilly'
     },
-    oMelhorDoJavascript: {
+    'O Melhor do Javascript': {
       quantidadePaginas: 456,
       autor: 'Douglas Crockford',
       editora: 'OReilly'
     },
-    useACabecaJavascript: {
+    'Use a Cabeça: Javascript': {
       quantidadePaginas: 159,
       autor: 'Michael Morrison',
       editora: 'OReilly'
@@ -72,7 +72,7 @@ function book(nome) {
   if(nome === undefined) {
     return obj;
   } else {
-    return obj.nome
+  	return obj[ nome ]
   }
 }
 
@@ -86,18 +86,18 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-"O livro " + Object.keys(book())[0] + " tem " + book('javascriptOGuiaDefinitivo').quantidadePaginas + " páginas!";
+"O livro " + Object.keys(book())[0] + " tem " + book('Javascript O Guia Definitivo').quantidadePaginas + " páginas!";
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-"O autor do livro " + Object.keys(book())[1] + " é " + book('javascriptOGuiaDefinitivo').autor + ".";
+"O autor do livro " + Object.keys(book())[1] + " é " + book('O Melhor do Javascript').autor + ".";
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-"O livro " + Object.keys(book())[2] + " foi publicado pela editora " + book('javascriptOGuiaDefinitivo').editora + ".";
+"O livro " + Object.keys(book())[2] + " foi publicado pela editora " + book('Use a Cabeça: Javascript').editora + ".";
