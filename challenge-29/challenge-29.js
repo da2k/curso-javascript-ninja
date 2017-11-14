@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 (function (DOM) {
+=======
+(function(DOM) {
+>>>>>>> 77ea0505f09d1015dab7a141282d0380c22ca201
   'use strict';
 
   /*
@@ -36,6 +40,7 @@
   que será nomeado de "app".
   */
 
+<<<<<<< HEAD
   function app() {
 
 
@@ -85,3 +90,47 @@
 
 })(window.DOM);
 
+=======
+
+  function app() {
+    return {
+      init: function (){
+
+      }
+    };
+  }
+
+  var $form = new DOM('[data-js="cadastro"]');
+  var $img = new DOM('[data-js="imagem"]');
+  var $marca = new DOM('[data-js="marcaModelo"]');
+  var $ano = new DOM('[data-js="ano"]');
+  var $placa = new DOM('[data-js="placa"]');
+  var $cor = new DOM('[data-js="cor"]');
+  var $submit = new DOM('[data-js="submit"]');
+  var $carro = new DOM('[data-js="dataCarro"]');
+
+
+  $form.on('submit', handleSubmitForm);
+
+  function handleSubmitForm(event) {
+    event.preventDefault();
+    carData();
+  }
+
+  function carData() {
+    var carro = {
+      marca : $marca.get()[0].value,
+      ano : $ano.get()[0].value,
+      placa : $placa.get()[0].value,
+      cor : $cor.get()[0].value
+    }
+    $carro.get()[0].textContent = carro.marca + ' - ' + carro.ano + ' - ' + carro.placa + ' ' + carro.cor;
+  }
+
+  app().init();
+
+
+
+
+})(window.DOM);
+>>>>>>> 77ea0505f09d1015dab7a141282d0380c22ca201
