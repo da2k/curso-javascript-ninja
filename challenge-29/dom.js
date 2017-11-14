@@ -1,4 +1,5 @@
-(function (win,doc) {
+(function (win, doc) {
+
   'use strict';
 
   function DOM(elements) {

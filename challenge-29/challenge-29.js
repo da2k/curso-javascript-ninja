@@ -1,4 +1,4 @@
-(function() {
+(function (DOM) {
   'use strict';
 
   /*
@@ -36,4 +36,52 @@
   que será nomeado de "app".
   */
 
-})();
+  function app() {
+
+
+    var $dados = new DOM('[data-js="dadosEmpresa"]');
+    var $form = new DOM('[data-js="cadastro"]');
+    var $marcaModelo = new DOM('[data-js="marcaModelo"]');
+    var $ano = new DOM('[data-js="ano"]');
+    var $placa = new DOM('[data-js="placa"]');
+    var $cor = new DOM('[data-js="cor"]');
+    var $carro = new DOM('[data-js="carroItem"]');
+    var $cadastrar = new DOM('[data-js="submit"]');
+    $form.on('submit', handleCadastrar);
+
+    function handleCadastrar(event) {
+      event.preventDefault();
+      $carro.get()[0].textContent = getDataCadastro();
+    }
+
+    function getDataCadastro() {
+      var carro = {
+        marca : $marcaModelo.get()[0].value,
+        ano : $ano.get()[0].value,
+        placa : $placa.get()[0].value,
+        cor : $cor.get()[0].value
+      }
+
+      var dom = new DOM();
+      // return dom.isObject(carro);
+
+
+
+      // var $a = new DOM('[data-js="link"]');
+
+      //   console.log($a);
+      //   var dataJS = $a.map(function (item) {
+      //     return item.getAttribute('data-js');
+      //   });
+
+      //   console.log(dataJS);
+
+
+    }
+
+  }
+  app();
+
+
+})(window.DOM);
+

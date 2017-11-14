@@ -8,7 +8,7 @@
 
 <body>
   <main>
-    <form data-js="dados-empresa" action="">
+    <form data-js="dadosEmpresa" action="">
       <fieldset>
         <label>Nome da Empresa:</label>
         <p data-js="nomeEmpresa"></p>
@@ -30,18 +30,18 @@
       </fieldset>
       <fieldset>
         <label>Ano:</label>
-        <input data-js="marcaModelo" type="number">
+        <input data-js="ano" type="number">
       </fieldset>
       <fieldset>
         <label>Placa:</label>
-        <input data-js="marcaModelo" type="number">
+        <input data-js="placa" type="number">
       </fieldset>
       <fieldset>
         <label>Cor:</label>
-        <input data-js="marcaModelo" type="text">
+        <input data-js="cor" type="text">
       </fieldset>
 
-      <input type="submit" value="CADASTRAR">
+      <input data-js="submit" type="submit" value="CADASTRAR">
     </form>
 
 
@@ -49,13 +49,15 @@
     <br>
     <div data-js="carrosCadastrados">
      <h2>Todos os carros cadastrados</h2>
+     <ul data-js="carrosLista">
+       <li data-js="carroItem"></li>
+     </ul>
 
     </div>
     <br>
     <br>
 
   </main>
-
 
   <script src="dom.js"></script>
   <script src="challenge-29.js"></script>
