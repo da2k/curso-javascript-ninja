@@ -97,9 +97,9 @@ Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima
 */
 convertToHex('red'); // O hexadecimal para a cor red é #FF0000
 convertToHex('blue'); // O hexadecimal para a cor blue é #0000FF
-convertToHex('green'); // O hexadecimal para a cor red é #00FF00
-convertToHex('black'); // O hexadecimal para a cor red é #000000
-convertToHex('white'); // O hexadecimal para a cor red é #FFFFFF
+convertToHex('green'); // O hexadecimal para a cor green é #00FF00
+convertToHex('black'); // O hexadecimal para a cor black é #000000
+convertToHex('white'); // O hexadecimal para a cor white é #FFFFFF
 convertToHex('purple'); // Não temos o equivalente hexadecimal para purple
 convertToHex('orange'); // Não temos o equivalente hexadecimal para orange
 convertToHex('pink'); // Não temos o equivalente hexadecimal para pink
