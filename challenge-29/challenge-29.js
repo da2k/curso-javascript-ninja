@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-(function (DOM) {
-=======
-(function(DOM) {
->>>>>>> 77ea0505f09d1015dab7a141282d0380c22ca201
+(function($) {
   'use strict';
 
   /*
@@ -40,97 +36,95 @@
   que será nomeado de "app".
   */
 
-<<<<<<< HEAD
-  function app() {
 
-
-    var $dados = new DOM('[data-js="dadosEmpresa"]');
-    var $form = new DOM('[data-js="cadastro"]');
-    var $marcaModelo = new DOM('[data-js="marcaModelo"]');
-    var $ano = new DOM('[data-js="ano"]');
-    var $placa = new DOM('[data-js="placa"]');
-    var $cor = new DOM('[data-js="cor"]');
-    var $carro = new DOM('[data-js="carroItem"]');
-    var $cadastrar = new DOM('[data-js="submit"]');
-    $form.on('submit', handleCadastrar);
-
-    function handleCadastrar(event) {
-      event.preventDefault();
-      $carro.get()[0].textContent = getDataCadastro();
-    }
-
-    function getDataCadastro() {
-      var carro = {
-        marca : $marcaModelo.get()[0].value,
-        ano : $ano.get()[0].value,
-        placa : $placa.get()[0].value,
-        cor : $cor.get()[0].value
-      }
-
-      var dom = new DOM();
-      // return dom.isObject(carro);
-
-
-
-      // var $a = new DOM('[data-js="link"]');
-
-      //   console.log($a);
-      //   var dataJS = $a.map(function (item) {
-      //     return item.getAttribute('data-js');
-      //   });
-
-      //   console.log(dataJS);
-
-
-    }
-
-  }
-  app();
-
-
-})(window.DOM);
-
-=======
-
-  function app() {
+  var app = (function appController() {
     return {
-      init: function (){
+      init: function () {
+        console.log('app init');
+        this.companyInfo();
+        this.initEvents();
 
+      },
+
+      initEvents: function initEvents() {
+        $('[data-js="cadastro"]').on('submit', this.handleSubmit);
+      },
+
+      handleSubmit: function handleSubmit(e) {
+        e.preventDefault();
+        var $tableCar = $('[data-js="table-cadastro"]').get();
+        $tableCar.appendChild(app.createNewCar());
+      },
+
+      createNewCar: function createNewCar() {
+
+        // cria o fragmento a tr e a td
+        var $fragment = document.createDocumentFragment();
+        var $tr = document.createElement('tr');
+        var $tdImage = document.createElement('td');
+        var $image = document.createElement('img');
+        var $tdMarca = document.createElement('td');
+        var $tdAno = document.createElement('td');
+        var $tdPlaca = document.createElement('td');
+        var $tdCor = document.createElement('td');
+
+        // em cada td coloca o valor dos inputs
+        $tdImage.textContent = $('[data-js="imagem"]').get().value;
+        $tdMarca.textContent = $('[data-js="marcaModelo"]').get().value;
+        $tdAno.textContent = $('[data-js="ano"]').get().value;
+        $tdPlaca.textContent = $('[data-js="placa"]').get().value;
+        $tdCor.textContent = $('[data-js="cor"]').get().value;
+
+        $image.setAttribute('src', $('[data-js="imagem"]').get().value);
+        $tdImage.appendChild($image);
+
+        // adiciona cada td dentro da tr
+        $tr.appendChild($tdImage);
+        $tr.appendChild($tdMarca);
+        $tr.appendChild($tdAno);
+        $tr.appendChild($tdPlaca);
+        $tr.appendChild($tdCor);
+
+        return $fragment.appendChild($tr);
+      },
+
+      companyInfo: function companyInfo() {
+        var ajax = new XMLHttpRequest();
+        ajax.open('GET', 'company.json', true); // true chama de forma assincrona
+        ajax.send();
+        ajax.addEventListener('readystatechange', this.getCompanyInfo, false);
+      },
+
+      getCompanyInfo: function getCompanyInfo() {
+        if (app.isReady.call(this)) //  o this dentro dele é o ajax
+          return;
+        var data = JSON.parse(this.responseText); // converte para um objeto JS
+        var $companyName = $('[data-js="company-name"]').get();
+        var $companyPhone = $('[data-js="company-phone"]').get();
+        $companyName.textContent = data.name;
+        $companyPhone.textContent = data.phone;
+      },
+
+      isReady: function isReady() {
+        return this.readyState === 4 && this.status === 200;
       }
     };
-  }
-
-  var $form = new DOM('[data-js="cadastro"]');
-  var $img = new DOM('[data-js="imagem"]');
-  var $marca = new DOM('[data-js="marcaModelo"]');
-  var $ano = new DOM('[data-js="ano"]');
-  var $placa = new DOM('[data-js="placa"]');
-  var $cor = new DOM('[data-js="cor"]');
-  var $submit = new DOM('[data-js="submit"]');
-  var $carro = new DOM('[data-js="dataCarro"]');
+  })();
 
 
-  $form.on('submit', handleSubmitForm);
+  // function carData() {
+  //   var carro = {
+  //     marca : $marca.value,
+  //     ano : $ano.value,
+  //     placa : $placa.value,
+  //     cor : $cor.value
+  //   }
+  //   $carro.textContent = carro.marca + ' - ' + carro.ano + ' - ' + carro.placa + ' ' + carro.cor;
+  // }
 
-  function handleSubmitForm(event) {
-    event.preventDefault();
-    carData();
-  }
-
-  function carData() {
-    var carro = {
-      marca : $marca.get()[0].value,
-      ano : $ano.get()[0].value,
-      placa : $placa.get()[0].value,
-      cor : $cor.get()[0].value
-    }
-    $carro.get()[0].textContent = carro.marca + ' - ' + carro.ano + ' - ' + carro.placa + ' ' + carro.cor;
-  }
-
-  app().init();
+  app.init();
 
 
 
 
 })(window.DOM);
->>>>>>> 77ea0505f09d1015dab7a141282d0380c22ca201
