@@ -96,13 +96,10 @@
   }
 
   function isOperator(operator) {
-    var op = {
-      '+' : true,
-      '-' : true,
-      '*' : true,
-      '/' : true
-    };
-    return !!op[operator];
+    var op = ['+', '-', '*', '/'];
+    return op.some(function (op) {
+      return op === operator;
+    })
   }
 
   function populater(index) {
@@ -115,9 +112,7 @@
   }
 
   function removeLastIndex() {
-    var index = $input.value.length - 1;
-    console.log(index);
-    populater(index);
+    $input.value = $input.value.slice(0, -1);
     if(!$input.value){
       $input.value = 0;
     }
