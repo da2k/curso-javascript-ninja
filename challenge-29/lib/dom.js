@@ -6,9 +6,6 @@
             return new DOM(element);
 
         this.element = document.querySelectorAll(element);
-
-        if (this.element.length === 1)
-            return this.get();
     }
 
     // DOM Methods

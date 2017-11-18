@@ -43,24 +43,33 @@ que será nomeado de "app".
 
                 ajax.open('GET', '/company.json', true);
                 ajax.send();
-                ajax.addEventListener('readystatechange', function() {
-                    if (!app().isRequestReady.call(this))
-                        return;
-
-                    var companyData = JSON.parse(this.responseText);
-                    var companyName = DOM('[data-js="company-name]"');
-                    var companyPhone = DOM('[data-js="company-phone"]');
-
-                    companyName.textContent = companyData.name;
-                    companyPhone.textContent = companyData.phone;
-                }, false);
+                ajax.addEventListener('readystatechange', this.printCompanyInfo, false);
             },
             init: function init() {
                 this.getCompanyInfo();
+                this.initEvents();
+            },
+            initEvents: function initEvents() {
+                DOM('[data-js="cars-register"]').on('submit', this.submitForm);
             },
             isRequestReady: function isRequestReady() {
                 return this.readyState === 4 && this.status === 200;
             },
+            printCompanyInfo: function printCompanyInfo() {
+                if (!app().isRequestReady.call(this))
+                    return;
+
+                var companyData = JSON.parse(this.responseText);
+                var companyName = DOM('[data-js="company-name]"').get();
+                var companyPhone = DOM('[data-js="company-phone"]').get();
+
+                companyName.textContent = companyData.name;
+                companyPhone.textContent = companyData.phone;
+            },
+            submitForm: function submitForm(event) {
+                event.preventDefault();
+                console.log('submit');
+            }
         };
     }
 
