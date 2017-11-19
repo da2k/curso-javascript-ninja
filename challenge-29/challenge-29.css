@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+img {
+  max-width: 200px;
+  height: auto;
+}
+
+ul {
+  list-style-type: none;
+}
+
+input {
+  display: block;
+  margin-bottom: 10px;
+  width: 40%;
+  padding: 5px;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+}
+
+header {
+  text-align: center;
+}
+
+form,
+table {
+  width: 50%;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid lightgray;
+  padding: 10px;
+}
+
+button {
+  padding: 10px 30px;
+  color: white;
+  background-color: green;
+  border: none;
+  cursor: pointer;
+}

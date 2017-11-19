@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Melo's Cars</title>
+  <link rel="stylesheet" href="challenge-29.css">
+</head>
+<body>
+
+  <header>
+    <h1>
+      <span data-js="company-name"></span> -
+      <span data-js="company-phone"></span>
+    </h1>
+  </header>
+
+  <div class="container">
+    <form data-js="form-register" action="/">
+      <label>Imagem do carro</label>
+      <input data-js="image" type="url" autofocus value="https://i.pinimg.com/736x/7e/aa/a0/7eaaa018bca7e4ef0ea26bcc942267a9--cd-design-design-layouts.jpg">
+      <label>Marca / Modelo</label>
+      <input data-js="brand-model" type="text">
+      <label>Ano</label>
+      <input data-js="year" type="text">
+      <label>Placa</label>
+      <input data-js="plate" type="text">
+      <label>Cor</label>
+      <input data-js="color" type="text">
+      <button type="submit">Cadastrar</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <td>Imagem do Carro</td>
+          <td>Marca / Modelo</td>
+          <td>Ano</td>
+          <td>Placa</td>
+          <td>Cor</td>
+        </tr>
+      </thead>
+      <tbody data-js="car-table">
+
+      </tbody>
+    </table>
+  </div>
+
+  <script src="dom.js"></script>
+  <script src="challenge-29.js"></script>
+
+</body>
+</html>
