@@ -56,15 +56,27 @@ que será nomeado de "app".
                 return this.readyState === 4 && this.status === 200;
             },
             printCompanyInfo: function printCompanyInfo() {
+                // if (!app().isRequestReady.call(this))
+                //     return;
+
+                // var companyData = JSON.parse(this.responseText);
+                // var companyName = DOM('[data-js="company-name]"').get();
+                // var companyPhone = DOM('[data-js="company-phone"]').get();
+
+                // companyName.textContent = companyData.name;
+                // companyPhone.textContent = companyData.phone;
                 if (!app().isRequestReady.call(this))
                     return;
 
                 var companyData = JSON.parse(this.responseText);
-                var companyName = DOM('[data-js="company-name]"').get();
-                var companyPhone = DOM('[data-js="company-phone"]').get();
+                console.log(companyData);
 
-                companyName.textContent = companyData.name;
-                companyPhone.textContent = companyData.phone;
+                var companyName = new DOM('[data-js="company-name"]');
+                var companyPhone = new DOM('[data-js="company-phone"]');
+                companyName.get()[0].textContent = companyData.name;
+                companyPhone.get()[0].textContent = companyData.phone;
+                console.log(companyName);
+                console.log(companyPhone);
             },
             submitForm: function submitForm(event) {
                 event.preventDefault();
