@@ -81,11 +81,18 @@ cada um. A frase deverá ser no formato:
 - "[NOME COMPLETO] agora tem [NOVA IDADE] anos."
 */
 console.log( '\nNova idade das pessoas:' );
-person1.addAge(1);
-person2.addAge(4);
-person3.addAge(5);
-console.log(person1.getFullName()+' agora tem '+person1.getAge()+ ' anos.');
-console.log(person2.getFullName()+' agora tem '+person2.getAge()+ ' anos.');
-console.log(person3.getFullName()+' agora tem '+person3.getAge()+ ' anos.');
+// person1.addAge(1);
+// person2.addAge(4);
+// person3.addAge(5);
+// console.log(person1.getFullName()+' agora tem '+person1.getAge()+ ' anos.');
+// console.log(person2.getFullName()+' agora tem '+person2.getAge()+ ' anos.');
+// console.log(person3.getFullName()+' agora tem '+person3.getAge()+ ' anos.');
+
+//Como o metodo addAge retorna o objeto é possivel encadear os metodos.
+console.log(person1.getFullName()+' agora tem '+person1.addAge(1).getAge()+ ' anos.');
+console.log(person2.getFullName()+' agora tem '+person2.addAge(4).getAge()+ ' anos.');
+console.log(person3.getFullName()+' agora tem '+person3.addAge(5).getAge()+ ' anos.');
+
+
 
 })()
