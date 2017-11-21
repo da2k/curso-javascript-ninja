@@ -27,6 +27,12 @@ body {
     border: 2px solid #187a18;
     color: #187a18;
     cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.cars-register button:hover {
+    background: #187a18;
+    color: #ffffff;
 }
 
 .cars-register input {
@@ -50,4 +56,10 @@ body {
 .container {
     padding: 20px;
     width: 50%;
+}
+
+.header {
+    color: #bd1c44;
+    font-size: 1.25em;
+    text-align: center;
 }

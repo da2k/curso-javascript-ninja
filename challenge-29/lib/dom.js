@@ -1,11 +1,11 @@
 (function() {
     'use strict';
 
-    function DOM(element) {
+    function DOM(elements) {
         if (!(this instanceof DOM))
-            return new DOM(element);
+            return new DOM(elements);
 
-        this.element = document.querySelectorAll(element);
+        this.element = document.querySelectorAll(elements);
     }
 
     // DOM Methods
@@ -25,7 +25,7 @@
         if (!index)
             return this.element[0];
 
-        return index;
+        return this.element[index];
     };
 
     // Array Methods

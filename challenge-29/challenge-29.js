@@ -33,10 +33,10 @@ E aqui nesse arquivo, faça a lógica para cadastrar os carros, em um módulo
 que será nomeado de "app".
 */
 
-(function(DOM) {
+(function($) {
     'use strict';
 
-    function app() {
+    var app = (function() {
         return {
             getCompanyInfo: function getCompanyInfo() {
                 var ajax = new XMLHttpRequest();
@@ -45,46 +45,49 @@ que será nomeado de "app".
                 ajax.send();
                 ajax.addEventListener('readystatechange', this.printCompanyInfo, false);
             },
+
             init: function init() {
                 this.getCompanyInfo();
                 this.initEvents();
             },
+
             initEvents: function initEvents() {
-                DOM('[data-js="cars-register"]').on('submit', this.submitForm);
+                $('[data-js="cars-register"]').on('submit', this.submitForm);
             },
+
+            insertCar: function insertCar() {
+                var fragment = document.createDocumentFragment();
+                var row = document.createElement('tr');
+                var rowData = document.createElement('td');
+
+                row.appendChild();
+            },
+
             isRequestReady: function isRequestReady() {
                 return this.readyState === 4 && this.status === 200;
             },
+
             printCompanyInfo: function printCompanyInfo() {
-                // if (!app().isRequestReady.call(this))
-                //     return;
-
-                // var companyData = JSON.parse(this.responseText);
-                // var companyName = DOM('[data-js="company-name]"').get();
-                // var companyPhone = DOM('[data-js="company-phone"]').get();
-
-                // companyName.textContent = companyData.name;
-                // companyPhone.textContent = companyData.phone;
-                if (!app().isRequestReady.call(this))
+                if (!app.isRequestReady.call(this))
                     return;
 
                 var companyData = JSON.parse(this.responseText);
-                console.log(companyData);
+                var companyName = $('[data-js="company-name"]').get();
+                var companyPhone = $('[data-js="company-phone"]').get();
 
-                var companyName = new DOM('[data-js="company-name"]');
-                var companyPhone = new DOM('[data-js="company-phone"]');
-                companyName.get()[0].textContent = companyData.name;
-                companyPhone.get()[0].textContent = companyData.phone;
-                console.log(companyName);
-                console.log(companyPhone);
+                companyName.textContent = companyData.name;
+                companyPhone.textContent = companyData.phone;
             },
+
             submitForm: function submitForm(event) {
                 event.preventDefault();
-                console.log('submit');
+
+                var carsTable = $('[data-js="cars-table"]').get();
+                carsTable.appendChild(app.insertCar());
             }
         };
-    }
+    })();
 
-    app().init();
+    app.init();
 
 })(window.DOM);
