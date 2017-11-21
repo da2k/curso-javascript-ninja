@@ -43,7 +43,6 @@
         console.log('app init');
         this.companyInfo();
         this.initEvents();
-
       },
 
       initEvents: function initEvents() {
@@ -111,20 +110,6 @@
     };
   })();
 
-
-  // function carData() {
-  //   var carro = {
-  //     marca : $marca.value,
-  //     ano : $ano.value,
-  //     placa : $placa.value,
-  //     cor : $cor.value
-  //   }
-  //   $carro.textContent = carro.marca + ' - ' + carro.ano + ' - ' + carro.placa + ' ' + carro.cor;
-  // }
-
   app.init();
-
-
-
 
 })(window.DOM);
