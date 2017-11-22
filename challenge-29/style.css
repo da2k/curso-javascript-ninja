@@ -53,6 +53,11 @@ body {
     padding-left: 0;
 }
 
+.cars-table img {
+    height: auto;
+    max-width: 120px;
+}
+
 .container {
     padding: 20px;
     width: 50%;

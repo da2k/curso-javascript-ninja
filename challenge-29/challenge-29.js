@@ -57,10 +57,30 @@ que será nomeado de "app".
 
             insertCar: function insertCar() {
                 var fragment = document.createDocumentFragment();
-                var row = document.createElement('tr');
-                var rowData = document.createElement('td');
 
-                row.appendChild();
+                var carRow = document.createElement('tr');
+                var carImage = document.createElement('td');
+                var carModel = document.createElement('td');
+                var carYear = document.createElement('td');
+                var carPlate = document.createElement('td');
+                var carColor = document.createElement('td');
+
+                var image = document.createElement('img');
+                image.src = $('[data-js="image"]').get().value;
+                carImage.appendChild(image);
+
+                carModel.textContent = $('[data-js="mark-model"]').get().value;
+                carYear.textContent = $('[data-js="year"]').get().value;
+                carPlate.textContent = $('[data-js="license-plate"]').get().value;
+                carColor.textContent = $('[data-js="color"]').get().value;
+
+                carRow.appendChild(carImage);
+                carRow.appendChild(carModel);
+                carRow.appendChild(carYear);
+                carRow.appendChild(carPlate);
+                carRow.appendChild(carColor);
+
+                return fragment.appendChild(carRow);
             },
 
             isRequestReady: function isRequestReady() {
