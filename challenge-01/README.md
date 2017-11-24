@@ -42,8 +42,5 @@ return r;
 }
 
 // Invoque a função criada acima, passando os parâmetros 10 e 2.
-function divisao() {
-r = 10 / 2;
-return r;
-}
+function divisao(10,2);
 ```
