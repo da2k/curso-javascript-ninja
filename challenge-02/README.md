@@ -49,7 +49,7 @@ Crie uma função com as seguintes características:
 */
 
 function multi ( x, y ,z){
-    if( x == null || y == null || z == null){
+    if( x == undefined || y == undefined || z == undefined){
         return ("Preencha todos os valores corretamente");
     }
     return (x * y * z) + 2;
