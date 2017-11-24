@@ -86,7 +86,7 @@ function condicoes(x , y ,z){
     }else if(x !== undefined && y !== undefined && z == undefined){
         return x + y;
     }else if(x !== undefined && y !== undefined && z !== undefined){
-        return x + y + z;
+        return (x + y) / z;
     }else if(x === undefined && y === undefined && z === undefined){
         return false;
     }else return null;
