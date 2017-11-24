@@ -17,7 +17,7 @@ soma++;
 soma *= 3
 
 // Qual é o valor da variável `soma` até aqui?
-console.log(soma); // 72
+soma; // 72
 
 // Declare uma variável chamada `souninja`, atribuindo à ela o valor booleano que representa `verdadeiro`.
 var souninja = true;
@@ -26,7 +26,7 @@ var souninja = true;
 var comida = ['arroz', 'feijão', 'ovo'];
 
 // Digite a instrução que imprime o valor de 'feijao', que está na variável `comida`.
-console.log(comida[1]);
+comida[1];
 
 // Digite o código que verifica se a variável `soma' é igual a variável `myvar` (testando também o tipo).
 soma === myvar
