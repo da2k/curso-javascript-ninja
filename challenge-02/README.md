@@ -81,21 +81,15 @@ Crie uma função com as seguintes características:
 */
 
 function condicoes(x , y ,z){
-    if(x !== null && y==null && z==null){
+    if(x !== undefined && y === undefined && z == undefined){
         return x;
-    }else if(x == null && y!=null && z==null){
-        return y;
-    }else if (x == null && y==null && z!=null){
-        return z;
-    }else if(x !== null && y!=null && z==null){
+    }else if(x !== undefined && y !== undefined && z == undefined){
         return x + y;
-    }else if(x !== null && y==null && z!=null){
-        return x + z;
-    }else if(x == null && y!=null && z!=null){
-        return y + z;
-    }else{
-        return x + y +z;
-    }
+    }else if(x !== undefined && y !== undefined && z !== undefined){
+        return x + y + z;
+    }else if(x === undefined && y === undefined && z === undefined){
+        return false;
+    }else return null;
  }
       
     
