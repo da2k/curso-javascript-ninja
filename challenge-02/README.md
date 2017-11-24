@@ -22,16 +22,17 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function renomearN(valor) {
-   return n = valor;
+function renomearN() {
+   n = 'Mateus'
+   return 'O Valor da variavél agora é '+ n;
 }
 
 // Invoque a função criada acima.
-renomearN('Mateus');
+renomearN();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
-  O retorno da função é uma string chamada Mateus.
+  O retorno da função é O Valor da variavél agora é Mateus
 */  
 
 
