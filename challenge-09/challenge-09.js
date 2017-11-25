@@ -37,14 +37,14 @@ indentação correta do código, para ficar dentro da IIFE.
       myFunction3();
   */
   function myFunction3() {
+    function sum() {
+      return number1 + number2;
+    }
     var number1 = 40;
     var number2 = 50;
     console.log('A soma de 40 e 50 é igual a', sum());
     console.log('Na função myFunction3, number1 é igual a', number1);
     return sum();
-    function sum() {
-      return number1 + number2;
-    };
   }
   myFunction3();
 
@@ -82,7 +82,10 @@ var sum = calculator(1, 10);
   uma função anônima que irá retornar a soma dos dois números que essa função
   anônima tem como seus argumentos.
   */
-  console.log('O resultado da soma é:', sum(function(number1, number2) { return number1 + number2 }));
+  console.log('O resultado da soma é:');
+  console.log(sum(function(number1, number2) {
+    return number1 + number2
+  }));
 
   /*
   Agora declare outra variáveis chamadas `subtraction`, `multiplication`,
@@ -101,12 +104,24 @@ var sum = calculator(1, 10);
   As suas respostas devem estar abaixo dos `console.log` referentes à cada
   chamada.
   */
-  console.log('O resultado da subtração é:', subtraction(function(number1, number2) { return number1 - number2; }));
+  console.log('O resultado da subtração é:');
+  console.log(subtraction(function(number1, number2) {
+    return number1 - number2;
+  }));
 
-  console.log('O resultado da multiplicação é:', multiplication(function(number1, number2) { return number1 * number2; }));
+  console.log('O resultado da multiplicação é:');
+  console.log(multiplication(function(number1, number2) {
+    return number1 * number2;
+  }));
 
-  console.log('O resultado da divisão é:', division(function(number1, number2) { return number1 / number2; }));
+  console.log('O resultado da divisão é:');
+  console.log(division(function(number1, number2) {
+    return number1 / number2;
+  }));
 
-  console.log('O resto da divisão é:', mod(function(number1, number2) { return number1 % number2; }));
+  console.log('O resto da divisão é:');
+  console.log(mod(function(number1, number2) {
+    return number1 % number2;
+  }));
 
-}())
+})();
