@@ -70,8 +70,11 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-function challenge(x,y,z) {
-	if(x === undefined && y === undefined && z === undefined) {
+	if(x !== undefined && y === undefined && z === undefined) {
+		return x;
+	} else if (x !== undefined && y !== undefined && z === undefined) {
+		return x + y;
+	} else if(x === undefined && y === undefined && z === undefined) {
 		return false;
 	} else if (x !== undefined && y !== undefined && z !== undefined) {
 		return (x + y) / z;
@@ -80,10 +83,9 @@ function challenge(x,y,z) {
 	}
 }
 
-// Não consegui descobrir como faz o item 2 e o 3.
-
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-challenge(); false
+challenge(1); 1
+challenge(1,2); 3
 challenge(1,2,3); 1
-challenge(1,2); null
+challenge(); false
 ```
