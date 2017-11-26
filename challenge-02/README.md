@@ -15,23 +15,25 @@ var soma5e10mais5 = soma(5,10) + 5;
 20
 
 // Declare uma nova variável, sem valor.
-var semnome;
+var semValor;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function nomear (x) {
-    semnome = x;
-    return 'O valor da variável agora é '+semnome+'.';
+function passarValor() {
+    semValor = 'Valorosa';
+    return 'O valor da variável agora é '+semValor+'.';
 }
 
 // Invoque a função criada acima.
-nomear("VarFeliz");
+passarValor();
 
 // Qual o retorno da função? (Use comentários de bloco).
-"O valor da variável agora é VarFeliz."
+/* 
+"O valor da variável agora é Valorosa."
+ */
 
 /*
 Crie uma função com as seguintes características:
@@ -52,13 +54,13 @@ function marota (x,y,z) {
 marota(2,1);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-"Preencha todos os valores corretamente!"
+// "Preencha todos os valores corretamente!"
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 marota(3,5,3);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-47
+//47
 
 /*
 Crie uma função com as seguintes características:
@@ -69,17 +71,16 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
 
 function maisMarota (x,y,z) {
     if (!x && !y && !z) {
         return false;
-    } else if (!y && !z) {
+    } else if (x && !y && !z) {
         return x;
-    } else if (!z) {
+    } else if (x && y && !z) {
         return x+y;
     } else if (x && y && z) {
-        return (x+y)*z
+        return (x+y)/z
     } else {
         return null;
     }
@@ -90,6 +91,6 @@ function maisMarota (x,y,z) {
 maisMarota();       //false
 maisMarota(10);     //10
 maisMarota(10,8);   //18
-maisMarota(10,8,2); //36
+maisMarota(10,8,2); //9
 
 ```
