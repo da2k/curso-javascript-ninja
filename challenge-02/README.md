@@ -31,7 +31,7 @@ function alteraValor() {
 alteraValor();
 
 // Qual o retorno da função? (Use comentários de bloco).
-/* O retorno foi: O valor da variável é NaN */
+/* O retorno foi: O valor da variável é 10 */
 
 /*
 Crie uma função com as seguintes características:
