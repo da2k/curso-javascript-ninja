@@ -104,18 +104,21 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-console.log("O livro Quem mexeu no meu queijo tem " + book('Quem mexeu no meu queijo').quantidadePaginas + " paginas");
+
+bookName = 'Quem mexeu no meu queijo';
+
+console.log("O livro Quem mexeu no meu queijo tem " + book( bookName ).quantidadePaginas + " paginas");
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log("O autor do livro Quem mexeu no meu queijo é " + book('Quem mexeu no meu queijo').autor);
+console.log("O autor do livro Quem mexeu no meu queijo é " + book(bookName).autor);
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log("O livro Quem mexeu no meu queijo foi publicado pela editora " + book('Quem mexeu no meu queijo').editora);
+console.log("O livro Quem mexeu no meu queijo foi publicado pela editora " + book(bookName).editora);
