@@ -124,7 +124,8 @@ carro.adicionarPessoas = function(numeroPessoas) {
 	}
 
 	carro.quantidadePessoas += numeroPessoas;
-	return "Já temos " + carro.quantidadePessoas + " pessoas no carro!";	
+	return "Já temos " + carro.quantidadePessoas + " pessoas no carro!";
+  
 }
 
 /*
