@@ -4,29 +4,34 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-?
+function soma (a,b) {
+    return a+b;
+}
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-?
+var soma5e10mais5 = soma(5,10) + 5;
 
 // Qual o valor atualizado dessa variável?
-?
+20
 
 // Declare uma nova variável, sem valor.
-?
+var semnome;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-?
+function nomear (x) {
+    semnome = x;
+    return 'O valor da variável agora é '+semnome+'.';
+}
 
 // Invoque a função criada acima.
-?
+nomear("VarFeliz");
 
 // Qual o retorno da função? (Use comentários de bloco).
-?
+"O valor da variável agora é VarFeliz."
 
 /*
 Crie uma função com as seguintes características:
@@ -35,19 +40,25 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-?
+function marota (x,y,z) {
+    if (!x || !y || !z) {
+        return 'Preencha todos os valores corretamente!';
+    } else {
+        return x*y*z+2;
+    }
+}
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+marota(2,1);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+"Preencha todos os valores corretamente!"
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+marota(3,5,3);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+47
 
 /*
 Crie uma função com as seguintes características:
@@ -60,6 +71,25 @@ Crie uma função com as seguintes características:
 */
 ?
 
+function maisMarota (x,y,z) {
+    if (!x && !y && !z) {
+        return false;
+    } else if (!y && !z) {
+        return x;
+    } else if (!z) {
+        return x+y;
+    } else if (x && y && z) {
+        return (x+y)*z
+    } else {
+        return null;
+    }
+}
+
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+
+maisMarota();       //false
+maisMarota(10);     //10
+maisMarota(10,8);   //18
+maisMarota(10,8,2); //36
+
 ```
