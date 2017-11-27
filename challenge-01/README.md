@@ -26,7 +26,7 @@ var souninja = true;
 var comida = ['arroz', 'feijão', 'ovo'];
 
 // Digite a instrução que imprime o valor de 'feijao', que está na variável `comida`.
-comida[2];
+comida[1];
 
 // Digite o código que verifica se a variável `soma' é igual a variável `myvar` (testando também o tipo).
 soma === myvar;
@@ -40,5 +40,5 @@ function divisao( x, y ) {
 }
 
 // Invoque a função criada acima, passando os parâmetros 10 e 2.
-divisao( 10, 2 );
+divisao(10, 2);
 ```
