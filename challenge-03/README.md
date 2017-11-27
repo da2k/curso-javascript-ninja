@@ -21,8 +21,8 @@ var pessoa = {
 	sobrenome: 'Cabral',
 	sexo: 'masculino',
 	idade: 40,
-	altura: '1.93',
-	peso: '77',
+	altura: 1.93,
+	peso: 77,
 	andando: false,
 	caminhouQuantosMetros: 0
 }
