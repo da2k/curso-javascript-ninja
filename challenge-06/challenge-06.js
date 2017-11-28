@@ -40,7 +40,7 @@ function showTeamPosition(number){
   if(teams[number] === undefined){
     return('Não temos a informação do time que está nessa posição');
   }
-    return ('O time que está em ' + (number + 1) + 'º lugar é o ' + teams[number]);
+    return ('O time que está em ' + (number) + 'º lugar é o ' + teams[number - 1]);
 }  
 
 /*
