@@ -23,13 +23,13 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function atribuirValor(valor){
-    nova = valor;
-    return nova;
+function atribuirValor(){
+    nova = 25;
+    return 'O Valor da variável agora é ' + nova;
 };
 
 // Invoque a função criada acima.
-atribuirValor('O valor da variável agora é VALOR. Onde VALOR é o novo valor da variável.')
+atribuirValor()
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
@@ -44,7 +44,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function caracteristicas(n1, n2, n3){
-    if(n1 === '' || n2 === '' || n3 === ''){
+    if(n1 === undefined || n2 === undefined || n3 === undefined){
         return 'Preencha todos os valores corretamente!'
     }
     else{
@@ -75,31 +75,31 @@ Crie uma função com as seguintes características:
 */
 function verificaArgumentos(a1, a2, a3){
     
-    if((a1 !== null) && (a2 === null) && (a3 === null)){
+    if((a1 !== undefined) && (a2 === undefined) && (a3 === undefined)){
         return a1;
     }
-    else if((a1 === null) && (a2 !== null) && (a3 === null)){
+    else if((a1 === undefined) && (a2 !== undefined) && (a3 === undefined)){
         return a2;
     }
-    else if((a1 === null) && (a2 === null) && (a3 !== null)){
+    else if((a1 === undefined) && (a2 === undefined) && (a3 !== undefined)){
         return a3;
     }
-    else if((a1 !== null) && (a2 !== null) && (a3 === null)){
+    else if((a1 !== undefined) && (a2 !== undefined) && (a3 === undefined)){
         return a1 + a2;
     }
-    else if((a1 !== null) && (a2 === null) && (a3 !== null)){
+    else if((a1 !== undefined) && (a2 === undefined) && (a3 !== undefined)){
         return a1 + a3;
     }
-    else if((a1 === null) && (a2 !== null) && (a3 !== null)){
+    else if((a1 === undefined) && (a2 !== undefined) && (a3 !== undefined)){
         return a2 + a3;
     }
-    else if((a1 === null) && (a2 !== null) && (a3 !== null)){
+    else if((a1 === undefined) && (a2 !== undefined) && (a3 !== undefined)){
         return a2 + a3;
     }
-    else if((a1 !== null) && (a2 !== null) && (a3 !== null)){
+    else if((a1 !== undefined) && (a2 !== undefined) && (a3 !== undefined)){
         return (a1 + a2)/a3;
     }
-    else if((a1 === null) && (a2 === null) && (a3 === null)){
+    else if((a1 === undefined) && (a2 === null) && (a3 === undefined)){
         return false;
     }
     else{
@@ -112,6 +112,6 @@ function verificaArgumentos(a1, a2, a3){
 verificaArgumentos(3, null, null); //3
 verificaArgumentos(3, 2, null); //5
 verificaArgumentos(3, 2, 2);//2.5
-verificaArgumentos(null, null, null) // false;
+verificaArgumentos() // false;
 
 ```
