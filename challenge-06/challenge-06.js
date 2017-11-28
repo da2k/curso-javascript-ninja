@@ -48,9 +48,9 @@ Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
 
-showTeamPosition(0); //'O time que está em 1º lugar é o Fortaleza'
-showTeamPosition(1); //'O time que está em 2º lugar é o Ceará'
-showTeamPosition(2); //'O time que está em 3º lugar é o Quixadá'
+showTeamPosition(1); //'O time que está em 1º lugar é o Fortaleza'
+showTeamPosition(2); //'O time que está em 2º lugar é o Ceará'
+showTeamPosition(3); //'O time que está em 3º lugar é o Quixadá'
 showTeamPosition(10); //'Não temos a informação do time que está nessa posição'
 
 /*
