@@ -33,7 +33,7 @@ valor()
 // Qual o retorno da função? (Use comentários de bloco).
 /* 
 O retorno da função foi:
-	O valor da variável agora é
+	'O valor da variável agora é 8.'
 */
 
 /*
