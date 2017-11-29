@@ -93,5 +93,8 @@ function validator(a, b, c){
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+validator();
+validator(51);
+validator(2,2);
+validator(5,5,2);
 ```
