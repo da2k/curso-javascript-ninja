@@ -182,15 +182,15 @@ pessoa.apresentacao = function () {
   var resposta;
 
   if (pessoa.sexo === 'feminino') {
-    resposta = `Olá, eu sou a ${pessoa.nome},`;
+    resposta = `Olá, eu sou a ${pessoa.nome} ${pessoa.sobrenome}, `;
   } else {
-    resposta = `Olá, eu sou o ${pessoa.nome},`;
+    resposta = `Olá, eu sou o ${pessoa.nome} ${pessoa.sobrenome}, `;
   }
 
   if (pessoa.idade === 1) {
-     resposta += `tenho ${pessoa.idade} ano, ${pessoa.altura}, meu peso é ${pessoa.peso} e, só hoje, `
+     resposta += `tenho ${pessoa.idade} ano, ${pessoa.altura}M, meu peso é ${pessoa.peso}Kg e, só hoje, `
   } else {
-    resposta += `tenho ${pessoa.idade} anos, ${pessoa.altura}, meu peso é ${pessoa.peso} e, só hoje, `
+    resposta += `tenho ${pessoa.idade} anos, ${pessoa.altura}M, meu peso é ${pessoa.peso}Kg e, só hoje, `
   }
 
   if (pessoa.caminhouQuantosMetros === 1) {
