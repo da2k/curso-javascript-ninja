@@ -2,10 +2,10 @@
 
 ```js
 // Declarar uma variável chamada `myvar`, sem valor.
-?
+var myvar;
 
 // Após declarada, atribua o valor 10 à variável `myvar`.
-?
+myvar = 10;
 
 // Declare uma nova variável chamada `soma`, e adicione uma instrução somando os valores 15 e 8.
 ?
