@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Challenge-28</title>
+</head>
+<body>
+
+  <p id="apresentacao"></p>
+
+  <p>STATUS:<span data-js="status"></span></p>
+
+  <form action="challenge-28.js" method="GET">
+    <label for="cep">CEP:</label><br>
+    <input type="text" id="cep" name="cep" data-js="cep">
+    <input type="submit" name="enviar" value="Consultar CEP"><br><br>
+  </form>
+
+  <div class="cep-info">
+
+    <label for="logradouro">Logradouro</label><br>
+    <input type="text" name="logradouro" data-js="logradouro"><br><br>
+
+    <label for="bairro">Bairro</label><br>
+    <input type="text" name="bairro" data-js="bairro"><br><br>
+
+    <label for="estado">Estado</label><br>
+    <input type="text" name="estado" data-js="estado"><br><br>
+
+    <label for="cidade">Cidade</label><br>
+    <input type="text" name="cidade" data-js="cidade"><br><br>
+  </div>
+
+  <script src="challenge-28.js"></script>
+</body>
+</html>
