@@ -2,17 +2,19 @@
 Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
-// ?
+var myArray = [ 1, true, 'André', null, {email : 'andreguimaster@gmail.com', celular : '21992534991'}, 1987, false];
 
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
-// ?
+function function1(array){
+	return array;
+};
 
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-// ?
+console.log(function1(myArray)[1]);
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -20,18 +22,24 @@ segundo, um número. A função deve retornar um índice do array que foi passad
 no primeiro parâmetro. O índice a ser retornado, deve ser o número passado no
 segundo parâmetro.
 */
-// ?
+function function2(array, indice){
+	return array[indice];
+}	
 
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
-// ?
+var myArray2 = [ 1, true, 'string', [1, 2, 3], {valor1 : 1, valor2 : 2} ];
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-// ?
+console.log(function2(myArray2, 0));
+console.log(function2(myArray2, 1));
+console.log(function2(myArray2, 2));
+console.log(function2(myArray2, 3));
+console.log(function2(myArray2, 4));
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -47,30 +55,60 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-// ?
+function book(name){
+	var book1 = {
+		quantidadePaginas : 500,
+		autor : 'Tolkien',
+		editora : 'várias'
+	};
+	
+	var book2 = {
+		quantidadePaginas : 450,
+		autor : 'Rowling',
+		editora : 'várias'
+	};
+	
+	var book3 = {
+		quantidadePaginas : 300,
+		autor : 'Palahniuk',
+		editora : 'várias'
+	};
+	
+	var books = {
+		'O Senhor Dos Aneis' : book1, 
+		'Harry Potter' : book2, 
+		'Clube Da Luta' : book3
+	};
+	
+	if(!name){
+		return books[name];
+	}
+	
+	return books;
+}
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-// ?
+console.log(book());
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// ?
+console.log('O livro ' + 'O Senhor Dos Aneis' + ' tem ' + book('O Senhor Dos Aneis').quantidadePaginas + ' páginas!');
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
+console.log('O autor do livro ' + 'O Senhor Dos Aneis' + ' é ' + book('O Senhor Dos Aneis').autor + '.');
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-// ?
+console.log('O livro ' + 'O Senhor Dos Aneis' + ' foi publicado pela editora ' + book('O Senhor Dos Aneis').editora + '.');
