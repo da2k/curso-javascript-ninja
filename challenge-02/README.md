@@ -41,21 +41,22 @@ Crie uma função com as seguintes características:
 */
 
 function tres(x, y, z) {
-  if (x || y || z == "");
-    return "Preencha todos os valores corretamente!";
-    }
+  if( x == null || y == null || z == null) {
+    return ("Preencha todos os campos corretamente");
+  }
+  return (x*y*z) + 2;
 
 // Invoque a função criada acima, passando só dois números como argumento.
 tres(1,2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+"Preencha todos os campos corretamente"
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+tres(1,2,3);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+8
 
 /*
 Crie uma função com as seguintes características:
@@ -66,8 +67,28 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+
+function novaFuncao(a, b, c){
+     if ( a && !b && !c ) {
+         return a;
+     } else if ( a && b && !c ) {
+         return a + b;
+     } else if (a && b && c) {
+         return (a + b)/c
+     } else if (!a || !b || !c ) {
+          return false;
+     } else {
+         return null;
+     }
+ }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+
+
+  novaFuncao();  // false
+  novaFuncao(1); // 1
+  novaFuncao(1,2); // 3
+  novaFuncao(1,2,3); // 1
+  
+  
 ```
