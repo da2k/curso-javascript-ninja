@@ -129,7 +129,7 @@
         number2 = 2;
         console.log(showOperationMessage(operationSignal, number1, number2), sum(number1, number2));
     } else {
-        console.log(showErrorMessage(operador));
+        console.log(showErrorMessage(operationSignal));
     }
 
     /*
