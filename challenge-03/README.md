@@ -182,9 +182,16 @@ correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao = function() {
 	var mensagem = "";
-	mensagem = "Olá, eu sou o " + pessoa.nomeCompleto() + ", tenho " + pessoa.idade + " anos, " + pessoa.altura + 
-	", meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " metros!";
+	pessoa.sexo === "Masculino" ? ( mensagem += "Olá, eu sou o " ) : ( mensagem += "Olá, eu sou a " );
+	mensagem += pessoa.nome + " " + pessoa.sobrenome + ", tenho " + pessoa.idade; 
+	pessoa.idade <= 1 ? ( mensagem += " ano, " ) : ( mensagem += " anos, " );
+	mensagem += pessoa.altura + " m" + ", meu peso é " + pessoa.peso + " kg e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros;
+	pessoa.caminhouQuantosMetros == 1 ? ( mensagem += "metro" ) : ( mensagem += " metros!" );
+	return mensagem;
+};
 
 // Agora, apresente-se ;)
-?
+/*
+	'Olá, eu sou o Alexandre Ferreira, tenho 30 anos, 1.83 m, meu peso é 85 kg e, só hoje, eu já caminhei 30 metros!'
+*/
 ```
