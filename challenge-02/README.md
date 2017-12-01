@@ -22,16 +22,17 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function addValue(value) {
-  return 'O valor da variável agora é ' + value;
+function addValue() {
+  newVariable = 25;
+  return 'O valor da variável agora é ' + newVariable;
 }
 
 // Invoque a função criada acima.
-addValue(1);
+addValue();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
-'O valor da variável agora é 1'
+'O valor da variável agora é 25'
 */
 
 /*
@@ -42,7 +43,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function multiplier(a, b, c) {
-  if (!(a && b && c)) {
+  if (a === undefined || b === undefined || c ==== undefined) {
     return 'Preencha todos os valores corretamente!';
   }
 
@@ -71,23 +72,17 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function three(a, b, c) {
-  if (a && !b && !c) {
+  if (a !== undefined && b === undefined && c === undefined) {
     return a;
-  }
-
-  if (a && b && !c) {
+  } else if (a !== undefined && b !== undefined && c === undefined) {
     return a + b;
-  }
-
-  if (a && b && c) {
+  } else if (a !== undefined && b !== undefined && c !== undefined) {
     return (a + b) / c;
-  }
-
-  if (!(a && b && c)) {
+  } else if (a === undefined && b === undefined && c === undefined) {
     return false;
+  } else {
+    return null;
   }
-
-  return null;
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
