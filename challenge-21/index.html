@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" id="timer" value="0">
+  <button data-js="start">Start</button>
+  <button data-js="stop">Stop</button>
+  <button data-js="reset">Reset</button>
+
+  <script>
+    (function (doc) {
+      var $buttonStart = doc.querySelector('[data-js="start"]');
+      var $buttonStop = doc.querySelector('[data-js=stop]');
+      var $buttonReset = doc.querySelector('[data-js=reset]');
+      var $input = doc.querySelector('#timer');
+      var contTimer = 0;
+      var interval;
+
+      $buttonStart.addEventListener('click', function (e) {
+        e.preventDefault();
+        interval = setInterval(function () {
+          $input.value = contTimer++;
+        }, 1000);
+      }, false);
+
+      $buttonStop.addEventListener('click', function (e) {
+        e.preventDefault();
+        clearInterval(interval);
+      }, false)
+
+      $buttonReset.addEventListener('click', function (e) {
+        e.preventDefault();
+        contTimer = 0;
+      }, false);
+
+    })(document);
+  </script>
+</body>
+</html>
