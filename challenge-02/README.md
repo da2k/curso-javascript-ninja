@@ -43,7 +43,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function multpl( x, y, z ) {
-  if ( x == null || y == null || z == null ) {
+  if ( x == undefined || y == undefined || z == undefined ) {
     return 'Preencha todos os valores corretamente!';
     }
   return x * y * z + 2;
@@ -73,15 +73,30 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function final( x, y, z ) {
-  if ( x == null && y == null ) {
-    return z;
-    } else if ( x == null && z == null ) {
-      return y;
-      } else if ( y == null && z == null ) {
-        return x;
-        }
+  if ( x == undefined && y == undefined && z != undefined ) {
+		return z;
+  } else if ( x == undefined && y != undefined && z == undefined ) {
+		return y;
+  } else if ( x != undefined && y == undefined && z == undefined ) {
+		return x;
+  } else if ( x != undefined && y != undefined && z == undefined ) {
+		return x + y;
+  } else if ( x != undefined && y == undefined && z != undefined ) {
+		return x + z;
+  } else if ( x == undefined && y != undefined && z != undefined ) {
+		return y + z;
+  } else if ( x != undefined && y != undefined && z != undefined ) {
+		return ( x + y ) / z;
+  } else if ( x == undefined && y == undefined && z == undefined ) {
+		return false;
+  } else {
+		return null;
+  }
   
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+final() // false
+final(7) // 7
+final(5,7) // 12
+final(2,5,7) // 1
 ```
