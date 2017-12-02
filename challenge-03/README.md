@@ -198,5 +198,5 @@ pessoa.apresentacao = function(){
 }
 
 // Agora, apresente-se ;)
-pessoa.apresentacao() // 'Olá! Meu nome é Rick Sanchez, tenho 85 anos, 1.78, meu peso é 65 e, só hoje, eu já caminhei 130 metros!'
+pessoa.apresentacao() // 'Olá, eu sou o Rick Sanchez, tenho 88 anos, 1.78, meu peso é 65 m e, só hoje, eu já caminhei 130 metros!'
 ```
