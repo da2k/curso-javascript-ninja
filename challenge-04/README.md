@@ -51,10 +51,10 @@ var carro = {
                 'marca'  : 'Ford',
                 'modelo' : 'Fusion',
                 'placa'  : 'ABC 2507',
-                'ano'    : '2015',
+                'ano'    : 2015,
                 'cor'    : 'branco',
-                'quantasPortas'     : '4',
-                'assentos'          : '5',
+                'quantasPortas'     : 4,
+                'assentos'          : 5,
                 'quantidadePessoas' : 0
             }
 
@@ -105,25 +105,25 @@ Crie um método que irá adicionar pessoas no carro. Esse método terá as segui
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno citado acima, no lugar de "pessoas".
 */
 
-carro.addPessoas = function(num) {
-    
-    var vagas   = carro.assentos - carro.quantidadePessoas;
-    var pluralS = (vagas>1) ? 's' : '';
-    var pluralM = (vagas>1) ? 'm' : '';
-    var mais    = (num>5)   ? ''  : 'mais ';
-    
-    if (vagas===0) {
-        return "O carro já está lotado!";
+carro.addPessoas = function( numeroPessoas ){
 
-    } else if (num>vagas) {        
-        return "Só cabe"+pluralM+" "+mais+vagas+" pessoa"+pluralS+"!";
-    
-    } else {
-        carro.quantidadePessoas+=num;
-        pluralS = (carro.quantidadePessoas>1)? 's':'';
-        return "Já temos "+carro.quantidadePessoas+" pessoa"+pluralS+" no carro!";
-    }
-}
+        var totalPessoas = carro.quantidadePessoas + numeroPessoas;
+
+        if ( carro.quantidadePessoas === carro.assentos && totalPessoas >= carro.assentos ) {
+            return 'O carro já está lotado!';
+        }
+
+        if( totalPessoas > carro.assentos ) {
+            var quantasPessoasCabem = carro.assentos - carro.quantidadePessoas;
+            var pluralOuSingular = quantasPessoasCabem === 1 ? 'pessoa' : 'pessoas';
+            var pluralCaber = quantasPessoasCabem === 1 ? 'cabe' : 'cabem';
+            var mais = quantasPessoasCabem === 1 ? '' : 'mais';
+            return 'Só ' + pluralCaber +' '+ mais +' '+ quantasPessoasCabem + ' ' + pluralOuSingular + '!';
+        }
+
+        carro.quantidadePessoas += numeroPessoas;
+        return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!';
+    };
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -160,10 +160,10 @@ carro.addPessoas(4);    //"Só cabem mais 3 pessoas!"
 carro.addPessoas(3);    //"Já temos 5 pessoas no carro!"
 
 // Tire 4 pessoas do carro.
-carro.quantidadePessoas-=4;  //1
+carro.addPessoas(-4);   //"Já temos 1 pessoas no carro!"
 
 // Adicione 10 pessoas no carro.
-carro.addPessoas(10);   //"O carro já está lotado!"
+carro.addPessoas(10);   //"Só cabem mais 4 pessoas!"
 
 // Quantas pessoas temos no carro?
 carro.quantidadePessoas;    //1
