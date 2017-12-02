@@ -41,7 +41,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function calcular(x, y, z){
-  if ( x == undefined || x == null || y == undefined || y == null || z == undefined || z == null)
+  if ( x === undefined || y === undefined || z === undefined)
   {
     return 'Preencha todos os valores corretamente!';
   }else{
