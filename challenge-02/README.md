@@ -25,7 +25,7 @@ Onde VALOR é o novo valor da variável.
 */
 function insereValor(){
 	semValor = 'VALOR';
-	return semValor;
+	return "O valor da variável agora é VALOR.";
 }
 
 // Invoque a função criada acima.
