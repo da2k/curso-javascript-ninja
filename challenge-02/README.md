@@ -44,9 +44,9 @@ function calcular(x, y, z){
   if ( x === undefined || y === undefined || z === undefined)
   {
     return 'Preencha todos os valores corretamente!';
-  }else{
-    return (x * y * z) + 2
   }
+  
+  return (x * y * z) + 2
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
@@ -72,13 +72,13 @@ Crie uma função com as seguintes características:
 */
 function calcDinamico(x, y, z)
 {
-  if ( x != undefined && x != null && y != undefined && y != null && z != undefined && z != null ){
-    return (x + y) / z;
-  } else if ( x != undefined && x != null && y != undefined && y != null ){
-    return x + y;
-  } else if ( x != undefined && x != null){
+  if ( x !== undefined && y === undefined && z === undefined ){
     return x;
-  } else {
+  } else if ( x !== undefined && y !== undefined && z === undefined ){
+    return x + y;
+  } else if ( x !== undefined && y !== undefined && z !== undefined ){
+    return (x + y) / z;
+  } else if ( x === undefined && y === undefined && z === undefined ){
     return false;
   }
   return null;
