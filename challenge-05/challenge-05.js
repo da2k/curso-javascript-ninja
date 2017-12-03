@@ -14,7 +14,7 @@ function returnArray(arr) {
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-returnArray([5,10,15,20,25])[1];
+console.log( returnArray([5,10,15,20,25])[1] ); //10
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -35,11 +35,11 @@ var arr = ['Melissa','Moreira', 28, true, 1989];
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-arrayNum(arr,0);        //"Melissa"
-arrayNum(arr,1);        //"Moreira"
-arrayNum(arr,2);        //28
-arrayNum(arr,3);        //true
-arrayNum(arr,4);        //1989
+console.log( arrayNum(arr,0));        //"Melissa"
+console.log( arrayNum(arr,1));        //"Moreira"
+console.log( arrayNum(arr,2));        //28
+console.log( arrayNum(arr,3));        //true
+console.log( arrayNum(arr,4));        //1989
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -75,12 +75,8 @@ function book(nomeLivro) {
                       "editora" : "Harper"
         }
     }
-
-    if (!nomeLivro) {
-        return livros;
-    }
-
-    return livros[nomeLivro];
+    
+    return !nomeLivro ? livros : livros[nomeLivro];
 }
 
 /*
@@ -107,18 +103,19 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-'O livro "The Demon-Haunted World" tem '+book('The Demon-Haunted World')['quantidadePaginas']+' páginas!';
+var bookName = "The Demon-Haunted World";
+console.log('O livro '+bookName+' tem '+book(bookName).quantidadePaginas +' páginas!');
 
-//'O livro "The Demon-Haunted World" tem 457 páginas!'
+//O livro The Demon-Haunted World tem 457 páginas!
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-'O autor do livro "The Demon-Haunted World" é '+ book('The Demon-Haunted World')['autor']+'.';
+console.log('O autor do livro '+bookName+' é '+ book(bookName).autor+'.');
 
-//'O autor do livro "The Demon-Haunted World" é Carl Sagan.'
+//O autor do livro The Demon-Haunted World é Carl Sagan.
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
@@ -126,6 +123,6 @@ a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
 
-'O livro "The Demon-Haunted World" foi publicado pela editora '+ book('The Demon-Haunted World')['editora']+'.';
+console.log('O livro '+bookName+' foi publicado pela editora '+ book(bookName).editora +'.');
 
-//'O livro "The Demon-Haunted World" foi publicado pela editora Random House.'
+//O livro The Demon-Haunted World foi publicado pela editora Random House.s
