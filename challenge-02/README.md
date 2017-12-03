@@ -72,10 +72,14 @@ function testes(arg1, arg2, arg3){
   if(arg1 != null && arg2 == null && arg3 == null) return arg1;
   else if(arg1 != null && arg2 != null && arg3 == null) return arg1 + arg2;
   else if(arg1 != null && arg2 != null && arg3 != null) return (arg1 + arg2) / arg3;
-  else if(arg1 == null && arg2 == null && arg3 == null) return 'false';
-  else return 'null';
+  else if(arg1 == null && arg2 == null && arg3 == null) return false;
+  else return null;
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+testes(1); // 1
+testes(2, 3); // 5
+testes(2,3,4) // 1.25
+testes(); // false
+// Não consegui achar um caso onde nehuma das condições será atendida
 ```
