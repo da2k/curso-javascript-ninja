@@ -87,7 +87,7 @@ function tresArgumentosV2(x, y, z) {
     } else if (semArgumentos) {
         return false;
     } else {
-        return 'null';
+        return null;
     }
 }
 
