@@ -12,7 +12,7 @@ function soma (x, y){
 var somar = soma(1,2) + 5;
 
 // Qual o valor atualizado dessa variável?
-8
+//8
 
 // Declare uma nova variável, sem valor.
 var nota;
