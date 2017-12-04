@@ -72,6 +72,7 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
+
 function area(x,y,z){
 	console.log('chamou', x, y, z);
 	if(x != null && y != null && z != null){
