@@ -9,7 +9,7 @@ function soma(x,y){
 }
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-soma(10,5) + 5;
+var mysum = soma(10,5) + 5;
 
 // Qual o valor atualizado dessa variável?
 20
@@ -22,13 +22,13 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function fun01(x){
-	rios = 'O valor da variável agora é: ' + x;
+function fun01(){
+	rios = 'O valor da variável agora é: ' + 4;
 	return rios;
 }
 
 // Invoque a função criada acima.
-fun01(4);
+fun01();
 
 // Qual o retorno da função? (Use comentários de bloco).
 // 'O valor da variável agora é: 4'
@@ -42,12 +42,11 @@ Crie uma função com as seguintes características:
 */
 function multipla(x,y,z){
 	var mult;
-	if(x != null && y != null && z != null){
+	if(x === undefined || y === undefined || z ==== undefined){
+		return 'Preencha todos os valores corretamente!';
+	} else {
 		mult = (x * y * z) + 2;
 		return mult;
-	} else {
-		var frase = 'Preencha todos os valores corretamente!';
-		return frase;
 	}
 }
 
@@ -74,25 +73,17 @@ Crie uma função com as seguintes características:
 */
 
 function area(x,y,z){
-	console.log('chamou', x, y, z);
-	if(x != null && y != null && z != null){
-		return (x + y) / z;
-	}else if(x != null && y != null){
-		return x + y;
-	}else if(x != null && z != null){
-		return x + z;
-	}else if(y != null && z != null){
-		return y + z;
-	}else if(x != null ){
+	if(x !== undefined && y === undefined && z === undefined){
 		return x;
-	}else if(y != null){
-		return y;
-	}else if(z != null){
-		return z;
-	}else {
+	}else if(x !== null && y !== null && z === undefined){
+		return x + y;
+	}else if(x !== undefined && y !== undefined && z !== undefined){
+		return (x + y) / z;
+	}else if(x === undefined && y === undefined && z === undefined){
 		return false;
-	}
-	return null;
+	}else{
+		return null;
+	}	
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
