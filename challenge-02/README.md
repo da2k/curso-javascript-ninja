@@ -33,7 +33,7 @@ soma2(10);
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
-O retorno do função soma2(10) será o número 10.
+O retorno do função será a string: O valor da variável agora é 10
 */
 
 /*
