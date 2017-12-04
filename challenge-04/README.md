@@ -100,7 +100,28 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-?
+function adicionarPessoas(quantidade){
+  if(carro.quantidadePessoas == carro.assentos){
+    return "O carro já está lotado!";
+  }
+  else if(carro.assentos < (carro.quantidadePessoas + quantidade)){
+    var str;
+    if(carro.assentos -  carro.quantidadePessoas == 1){
+      str = "pessoa"
+    }
+    else{
+      str = "pessoas"
+    }
+    return "Só cabem mais " + (carro.assentos - carro.quantidadePessoas) + " " + str + "!";
+  }
+ 
+ else{
+  carro.quantidadePessoas += quantidade;
+  return "Já temos " + carro.quantidadePessoas + " pessoas no carro!";
+ }
+}
+
+
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -110,38 +131,41 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-?
+
+obterCor(); //''
+
 
 // Mude a cor do carro para vermelho.
-?
+mudarCor("Vermelho");
 
 // E agora, qual a cor do carro?
-?
+obterCor(); // Vermelho
 
 // Mude a cor do carro para verde musgo.
-?
+mudarCor("Verde musgo"); 
 
 // E agora, qual a cor do carro?
-?
+obterCor("Verde musgo");
 
 // Qual a marca e modelo do carro?
-?
+obterMarca(); // ''
+obterModelo(); // ''
 
 // Adicione 2 pessoas no carro.
-?
+adicionarPessoas(2); // Já temos 2 pessoas no acrro
 
 // Adicione mais 4 pessoas no carro.
-?
+adicionarPessoas(4); //Só cabem mais 3 pessoas 
 
 // Faça o carro encher.
-?
+adicionarPessoas(3);
 
 // Tire 4 pessoas do carro.
-?
+carro.quantidadePessoas -= 4;
 
 // Adicione 10 pessoas no carro.
-?
+carro.adicionarPessoas(10); //Só cabem mais 4 pessoas
 
 // Quantas pessoas temos no carro?
-?
+// Uma pessoa
 ```
