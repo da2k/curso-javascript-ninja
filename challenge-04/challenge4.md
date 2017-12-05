@@ -120,7 +120,7 @@ carro.pessoasEntrando = function(x){
 		var cabe = pessoasQueCabem === 1 ? ' cabe' : ' cabem';
 		return 'Só' + cabe + ' mais ' + pessoasQueCabem + pessoa;
 	}
-	else if (carro.quantidadePessoas >= carro.assentos) { 
+	else if (carro.quantidadePessoas >= carro.assentos && x >= 0) { 
 		return 'O carro já está lotado'
 	}
 	else {
