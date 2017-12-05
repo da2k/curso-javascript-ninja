@@ -1,6 +1,3 @@
-# Desafio da semana #4
-
-```js
 /*
 Declare uma variável chamada `isTruthy`, e atribua a ela uma função que recebe
 um único parâmetro como argumento. Essa função deve retornar `true` se o
@@ -10,7 +7,7 @@ para o contrário.
 
 var isTruthy = function(x) {
 	return x ? true : false;
-}
+};
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 
@@ -25,7 +22,7 @@ isTruthy('');
 isTruthy("");
 
 
-Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
+//Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 
 isTruthy(1);
 isTruthy('igor');
@@ -53,7 +50,7 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `quantidadePessoas` - Number - zero por padrão
 */
 
-var carro = {marca: 'Ford', modelo: 'Ka', placa: 'IDC 3088', ano: 2017, cor: 'Preto', quantasPortas: 4, assentos: 5, quantidadePessoas: 0}
+var carro = {marca: 'Ford', modelo: 'Ka', placa: 'IDC 3088', ano: 2017, cor: 'Preto', quantasPortas: 4, assentos: 5, quantidadePessoas: 0};
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
@@ -62,7 +59,7 @@ passado por parâmetro.
 
 carro.mudarCor = function(x){
 	carro.cor = x;
-}
+};
 
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
@@ -70,7 +67,7 @@ Crie um método chamado `obterCor`, que retorne a cor do carro.
 
 carro.obterCor = function(){
 	return carro.cor;
-}
+};
 
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
@@ -78,7 +75,7 @@ Crie um método chamado `obterModelo` que retorne o modelo do carro.
 
 carro.obterModelo = function(){
 	return carro.modelo;
-}
+};
 
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
@@ -86,7 +83,7 @@ Crie um método chamado `obterMarca` que retorne a marca do carro.
 
 carro.obterMarca = function(){
 	return carro.marca;
-}
+};
 
 /*
 Crie um método chamado `obterMarcaModelo`, que retorne:
@@ -96,7 +93,7 @@ Para retornar os valores de marca e modelo, utilize os métodos criados.
 
 carro.obterMarcaModelo = function(){
 	return 'Este carro é um ' + carro.obterMarca() + ' ' + carro.obterModelo()
-}
+};
 
 /*
 Crie um método que irá adicionar pessoas no carro. Esse método terá as
@@ -117,21 +114,21 @@ citado acima, no lugar de "pessoas".
 
 
 carro.pessoasEntrando = function(x){
-	if (carro.quantidadePessoas <= 4 && (x + carro.quantidadePessoas) > 5) {
-		var pessoasQueCabem = (5 - carro.quantidadePessoas);
+	if (carro.quantidadePessoas <= 4 && (x + carro.quantidadePessoas) > carro.assentos) {
+		var pessoasQueCabem = (carro.assentos - carro.quantidadePessoas);
 		var pessoa = pessoasQueCabem === 1 ? ' pessoa' : ' pessoas';
 		var cabe = pessoasQueCabem === 1 ? ' cabe' : ' cabem';
 		return 'Só' + cabe + ' mais ' + pessoasQueCabem + pessoa;
-	} 
-	else if (carro.quantidadePessoas >= 5) { 
+	}; 
+	else if (carro.quantidadePessoas >= carro.assentos) { 
 		return 'O carro já está lotado'
-	}
+	};
 	else {
 		carro.quantidadePessoas += x;
 		var pessoa = carro.quantidadePessoas === 1 ? 'pessoa' : 'pessoas';
 		return 'Já temos ' + carro.quantidadePessoas + ' ' + pessoa + ' no carro!';
-	}
-}
+	};
+};
 
 
 /*
@@ -188,5 +185,3 @@ carro.pessoasEntrando(10) // "Só cabe mais 1 pessoa"
 // Quantas pessoas temos no carro?
 
 carro.quantidadePessoas // 4
-
-```
