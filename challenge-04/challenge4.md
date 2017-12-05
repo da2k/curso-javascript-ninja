@@ -114,7 +114,7 @@ citado acima, no lugar de "pessoas".
 
 
 carro.pessoasEntrando = function(x){
-	if (carro.quantidadePessoas <= 4 && (x + carro.quantidadePessoas) > carro.assentos) {
+	if (carro.quantidadePessoas <= (carro.assentos-1) && (x + carro.quantidadePessoas) > carro.assentos) {
 		var pessoasQueCabem = (carro.assentos - carro.quantidadePessoas);
 		var pessoa = pessoasQueCabem === 1 ? ' pessoa' : ' pessoas';
 		var cabe = pessoasQueCabem === 1 ? ' cabe' : ' cabem';
