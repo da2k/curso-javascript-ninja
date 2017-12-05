@@ -9,10 +9,10 @@ function somar(a, b) {
 }
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-var somarFunction = somar(3 + 2);
+var somarFunction = somar(3 + 2) + 5;
 
 // Qual o valor atualizado dessa variável?
-5
+12
 
 // Declare uma nova variável, sem valor.
 var emptyVar;
@@ -23,8 +23,8 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 function stringVar() {
-    emptyVar = 'VALOR';
-    return 'O valor da variável agora é VALOR.';
+    emptyVar = 13;
+    return 'O valor da variável agora é ' + emptyVar + '.';
 }
 
 // Invoque a função criada acima.
@@ -32,7 +32,7 @@ stringVar();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
-    O valor da variável agora é VALOR.
+    O valor da variável agora é 13.
 */
 
 /*
@@ -50,10 +50,10 @@ function validateInfo(a, b, c) {
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
-validateInfo(1, 2, 'a');
+validateInfo(1, 2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-// Retornou valor NaN
+// Retornou valor 'Preencha todos os valores corretamente!'
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 validateInfo(1, 2, 3);
@@ -70,7 +70,7 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-function validateArg(x, y, z) {
+function validateArgs(x, y, z) {
     if (x && y && z) {
         return (x + y) / z;
     } else if (x && y) {
@@ -84,9 +84,9 @@ function validateArg(x, y, z) {
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-validateArg(); // Retorna valor false
-validateArg(7); // Retorna valor 7
-validateArg(4, 3); // Retorna valor 7
-validateArg(4, 4, 2); // Retorna valor 4
+validateArgs(); // Retorna valor false
+validateArgs(7); // Retorna valor 7
+validateArgs(4, 3); // Retorna valor 7
+validateArgs(4, 4, 2); // Retorna valor 4
 
 ```
