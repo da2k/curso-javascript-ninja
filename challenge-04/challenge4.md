@@ -119,15 +119,15 @@ carro.pessoasEntrando = function(x){
 		var pessoa = pessoasQueCabem === 1 ? ' pessoa' : ' pessoas';
 		var cabe = pessoasQueCabem === 1 ? ' cabe' : ' cabem';
 		return 'Só' + cabe + ' mais ' + pessoasQueCabem + pessoa;
-	}; 
+	}
 	else if (carro.quantidadePessoas >= carro.assentos) { 
 		return 'O carro já está lotado'
-	};
+	}
 	else {
 		carro.quantidadePessoas += x;
 		var pessoa = carro.quantidadePessoas === 1 ? 'pessoa' : 'pessoas';
 		return 'Já temos ' + carro.quantidadePessoas + ' ' + pessoa + ' no carro!';
-	};
+	}
 };
 
 
