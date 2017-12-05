@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Challenge-29</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h2>
+    <span data-js="company-name"></span> -
+    <span data-js="company-phone"></span>
+  </h2>
+
+  <form action="challenge-29.js" method="post" data-js="form-car">
+    <label for="image">Imagem:</label><br>
+    <input type="url" data-js="image"><br><br>
+    <label for="marca">Marca/Modelo:</label><br>
+    <input type="text" data-js="brand"><br><br>
+    <label for="ano">Ano:</label><br>
+    <input type="number" data-js="year"><br><br>
+    <label for="placa">Placa:</label><br>
+    <input type="text" data-js="plate"><br><br>
+    <label for="cor">Cor:</label><br>
+    <input type="text" data-js="color"><br><br>
+    <button data-js="register" type="submit">Cadastrar</button><br><br>
+  </form>
+
+  <table width="50%">
+    <tr>
+      <th>Imagem</th>
+      <th>Marca</th>
+      <th>Ano</th>
+      <th>Placa</th>
+      <th>Cor</th>
+    </tr>
+    <tbody data-js="table-car">
+
+    </tbody>
+  </table>
+
+  <script src="dom.js"></script>
+  <script src="challenge-29.js"></script>
+</body>
+</html>
