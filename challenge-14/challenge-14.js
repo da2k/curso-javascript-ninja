@@ -126,7 +126,7 @@
     formato de String.
     */
     console.log('\njustMod2Or3 é um array? Se for, a representação dele em String é:');
-    if(Array.isArray(justMod2Or3){
+    if(Array.isArray(justMod2Or3)){
         console.log(justMod2Or3.toString());
     }
 
