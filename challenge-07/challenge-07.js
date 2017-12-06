@@ -9,6 +9,7 @@ A função deverá retornar o array atualizado.
 */
 function addItem(value){
   arr.push(value);
+  return arr;
 }
 
 /*
