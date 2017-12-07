@@ -22,13 +22,13 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function setValue(newValue) {
-	noValue = newValue;
+function setValue() {
+	noValue = "Ninja";
 	return ("O valor da variável agora é " + noValue);
 }
 
 // Invoque a função criada acima.
-setValue("Ninja");
+setValue();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
@@ -43,7 +43,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function FooValues(x, y, z) {
-	if (arguments.length < 3) {
+	if (x === undefined || y === undefined || z === undefined) {
 		return "Preencha todos os valores corretamente!";
 	}
 	return (x * y * z) + 2;
@@ -71,14 +71,13 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function BarFunction(x, y, z) {
-	var sum = arguments;
-	if (sum.length === 1) {
-		return sum[0];
-	} else if (sum.length === 2) {
-		return sum[0] + sum[1];
-	} else if (sum.length >= 3) {
-		return (sum[0] + sum[1]) / sum[2];
-	} else if (sum.length < 1) {
+	if (x !== undefined && y === undefined && z === undefined) {
+		return x;
+	} else if (x !== undefined && y !== undefined && z === undefined) {
+		return x + y;
+	} else if (x !== undefined && y !== undefined && z !== undefined) {
+		return (x + y) / z;
+	} else if (x === undefined && y === undefined && z === undefined) {
 		return false;
 	} else {
 		return null;
