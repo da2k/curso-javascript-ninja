@@ -75,7 +75,7 @@ carro.obterCor = function () {
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
-carro.obterMarcaModelo = function () {
+carro.obterModelo = function () {
   return this.modelo;
 };
 
@@ -92,7 +92,7 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 carro.obterMarcaModelo = function () {
-  return 'Esse carro é um ' + this.marca + ' ' + this.modelo;
+  return 'Esse carro é um ' + this.obterMarca() + ' ' + this.obterModelo();
 };
 
 /*
