@@ -47,7 +47,7 @@
   Mostre a regex no console:
   */
   console.log( '\nRegex para números somente no final das linhas:' );
-  var numbersAtTheEnd = new RegExp('\\d+$', 'gm');
+  var numbersAtTheEnd = /\d+$/g;
   console.log(numbersAtTheEnd);
 
   /*
@@ -87,8 +87,12 @@
   console.log( '\nQuais classes CSS existem na marcação abaixo?\n\n', markup, '\n' );
   
   function hasClass(markup, cssClass){
-    return markup.test(/container|text|date|excerpt|main/) ? `true para a classe ${cssClass}` : `false para a classe ${cssClass}`;
+    return new RegExp(`class=["'](?:[\\w\\s]+)?(${cssClass})(?:[\\w\\s]+)?["']`, 'gm').test(markup);
   }
 
-  console.log()
+  var classes = ['container', 'text', 'date', 'excerpt', 'main'];
+  classes.forEach(function(item){
+    console.log(`${hasClass(markup, item)} para a classe ${item}`);
+  });
+
 })();
