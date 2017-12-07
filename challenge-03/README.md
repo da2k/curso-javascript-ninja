@@ -179,19 +179,20 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao = function() {
-    var sexoTexto = (pessoa.sexo == "Masculino") ? 'o ' : 'a ';
+    var sexoTexto = (pessoa.sexo == 'Masculino') ? 'o ' : 'a ';
     var formataIdade = (pessoa.idade == 1) ? ' ano' : ' anos';
     var mensagem = 'Olá, eu sou ';
+    var formataMetros = (pessoa.caminhouQuantosMetros == 1) ? 'metro' : 'metros';
 
-    mensagem += sexoTexto + pessoa.nome + " " + pessoa.sobrenome;
-    mensagem += ", tenho " + pessoa.idade + formataIdade + ". ";
+    mensagem += sexoTexto + pessoa.nome + ' ' + pessoa.sobrenome;
+    mensagem += ', tenho ' + pessoa.idade + formataIdade + '. ';
     mensagem += pessoa.mostrarAltura();
-    mensagem += " " + pessoa.mostrarPeso();
-    mensagem += " E, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " metros!";
+    mensagem += ' ' + pessoa.mostrarPeso();
+    mensagem += ' E, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' ' + formataMetros + '!';
 
     return mensagem;
 }
 
 // Agora, apresente-se ;)
-pessoa.apresentacao();
+pessoa.apresentacao(); // 'Olá, eu sou o Anderson Pires Brantes, tenho 41 anos. Minha altura é 1.8. Eu peso 70Kg. E, só hoje, eu já caminhei 67 metros!'
 ```
