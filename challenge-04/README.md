@@ -120,19 +120,19 @@ citado acima, no lugar de "pessoas".
 */
 carro.adicionarPessoas = function(ocuparAssento) {
 
-	var assentosSobrando = (carro.assentos - carro.quantidadePessoas);
-	var pessoas = assentosSobrando === 1 ? 'pessoa' : 'pessoas';
-	
-	if(carro.assentos === carro.quantidadePessoas) {
-		return "O carro já está lotado!";
-	} 
-	
-	if (ocuparAssento > assentosSobrando) {
-		return "Só cabem mais " + assentosSobrando + " " + pessoas;
-	}
-	
-	carro.quantidadePessoas += ocuparAssento;
+	var totalPessoas = carro.quantidadePessoas + ocuparAssento;
 
+	if ( carro.quantidadePessoas === carro.assentos && totalPessoas >= carro.assentos ) {
+		return "O carro já está cheio!";
+	}
+
+	if ( totalPessoas > carro.assentos) {
+		var quantasPessoasCabem = carro.assentos - carro.quantidadePessoas;
+		var pluralOuSingular = quantasPessoasCabem === 1 ? ' pessoa' : ' pessoas';
+		return "Só cabem mais " + quantasPessoasCabem + pluralOuSingular + "!";
+	}
+
+	carro.quantidadePessoas += ocuparAssento;
 	return "Já temos " + carro.quantidadePessoas + " pessoas no carro!";
 
 }
