@@ -82,7 +82,7 @@ Crie um método chamado `mostrarPeso`, que retorne a frase:
 - "Eu peso [PESO]Kg."
 */
 pessoa.mostrarPeso = function () {
-    var displayWeight = 'Eu peso ' + this.peso + ' Kg.';
+    var displayWeight = 'Eu peso ' + this.peso + 'Kg.';
     return displayWeight;
 };
 
@@ -100,7 +100,7 @@ Agora vamos brincar um pouco com o objeto criado:
 Qual o nome completo da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.nomeCompleto(); // Olá! Meu nome é Marcelo Pinto
+pessoa.nomeCompleto(); // Olá! Meu nome é Marcelo Pinto!
 
 /*
 Qual a idade da pessoa? (Use a instrução para responder e comentários
@@ -132,7 +132,7 @@ Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
 comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
-pessoa.mostrarIdade(); //  Olá, eu tenho 37 anos!
+pessoa.mostrarIdade(); // Olá, eu tenho 37 anos!
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
