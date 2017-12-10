@@ -34,31 +34,11 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 function showTeamPosition(position) {
-    switch (position) {
-        case 0:
-            return `O time que está em 1º lugar é o ${teams[position]}.`;
-            break;
-        
-        case 1:
-            return `O time que está em 2º lugar é o ${teams[position]}.`;
-            break;
-        
-        case 2:
-            return `O time que está em 3º lugar é o ${teams[position]}.`;
-            break;
-        
-        case 3:
-            return `O time que está em 4º lugar é o ${teams[position]}.`;
-            break;
-
-        case 4:
-            return `O time que está em 5º lugar é o ${teams[position]}.`;
-            break;
-    
-        default:
-            return 'Não temos a informação do time que está nessa posição.'
-            break;
+    if (position < 1 || position > 5) {
+        return 'Não temos a informação do time que está nessa posição.';
     }
+
+    return `O time que está em ${position}º lugar é o ${teams[position - 1]}.`;
 }
 
 /*
@@ -66,8 +46,8 @@ Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
 console.log(showTeamPosition(1));
-console.log(showTeamPosition(3));
 console.log(showTeamPosition(4));
+console.log(showTeamPosition(5));
 console.log(showTeamPosition(7));
 
 /*
@@ -92,31 +72,34 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 function convertToHex(color) {
+    var hexa;
     switch (color) {
         case 'Black':
-            return `O hexadecimal para a cor ${color} é #000000.`
+            hexa = '#000000';
             break;
 
         case 'Silver':
-            return `O hexadecimal para a cor ${color} é #C0C0C0.`
+            hexa = '#C0C0C0';
             break;
 
         case 'Blue':
-            return `O hexadecimal para a cor ${color} é #0000FF.`
+            hexa = '#0000FF';
             break;
 
         case 'Orange':
-            return `O hexadecimal para a cor ${color} é #FFA500.`
+            hexa = '#FFA500';
             break;
 
         case 'Yellow':
-            return `O hexadecimal para a cor ${color} é #FFFF00.`
+            hexa = '#FFFF00';
             break;
 
         default:
             return `Não temos o equivalente hexadecimal para ${color}.`
             break;
     }
+
+    return `O hexadecimal para a cor ${color} é ${hexa}.`;
 }
 
 /*
