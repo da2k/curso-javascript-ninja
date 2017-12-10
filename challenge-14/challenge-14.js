@@ -79,8 +79,8 @@
   falada, como se você estivesse falando em código xD
   */
   console.log( '\nSeu nome na língua do "P":' );
-  var name = ['Ju', 'li', 'o', 'A', 'ki', 'ya', 'ma'];
-  var reducedName = name.reduce(function(total, value) {
+  var myName = ['Ju', 'li', 'o', 'A', 'ki', 'ya', 'ma'];
+  var reducedName = myName.reduce(function(total, value) {
     return total + 'P' + value;
   }, '');
 
@@ -91,7 +91,7 @@
   e atribuirá o seu nome invertido (usando o array criado acima).
   */
   console.log( '\nInversed Name:' );
-  var inversedName = name.reduceRigth(function(total, value) {
+  var inversedName = myName.reduceRight(function(total, value) {
     return total + value;
   });
 
