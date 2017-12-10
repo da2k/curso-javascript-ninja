@@ -1,32 +1,39 @@
 # Desafio da semana #2
 
 Nesse exercício, você está livre para escolher os nomes para suas variáveis e funções! :smile:
-
-```js
+js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
 ?
-
+function resultado(a,b){
+    return a+b;
+}
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
 ?
-
+var teste = resultado (100,6) + 5
 // Qual o valor atualizado dessa variável?
 ?
-
+teste;
 // Declare uma nova variável, sem valor.
 ?
-
+var valor;
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
 ?
+function adiciona() {
+  valor = 200;
+  return ' O valor da variável agora é ' + valor;
+}
+
 
 // Invoque a função criada acima.
 ?
-
+adiciona();
 // Qual o retorno da função? (Use comentários de bloco).
 ?
+/* O valor da variável agora é 200 */
 
 /*
 Crie uma função com as seguintes características:
@@ -36,19 +43,27 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 ?
+function nova(x,y,z){
+if(x === underfined || y === underfined || z === underfined){
+  return 'Prencha todos os valores Corretamente'; 
+ }
+ else{
+  return a * b * C + 2;
+ }
+}
 
 // Invoque a função criada acima, passando só dois números como argumento.
 ?
-
+nova(5,4) + 2;
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 ?
-
+/* O Valor é 22 */
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 ?
-
+nova(10,30,24);
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 ?
-
+//resultado 7202
 /*
 Crie uma função com as seguintes características:
 1. A função deve receber 3 argumentos.
@@ -59,7 +74,27 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 ?
+function total(x,y,z){
+if(x !== underfined && y === underfined && z === underfined){
+  return x; 
+ }
+ else if(x !== underfined && y !== underfined && z === underfined){
+  return (x + y) / z;
+ }
+ else if(x === underfined && y === underfined && z === underfined){
+  return false;
+ }
+ else{
+ return null
+ }
+}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 ?
+total(); //false
+total(1); // 1
+total(2,4); // 6
+total(2,3,4); // 1.25
+
 ```
+

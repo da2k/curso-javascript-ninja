@@ -1,5 +1,5 @@
-# Desafio Semana #1
 
+<<<<<<< HEAD
 ```js
 // Declarar uma variável chamada `myvar`, sem valor.
 ?
@@ -51,3 +51,6 @@ function divisao(a,b) {
 // Invoque a função criada acima, passando os parâmetros 10 e 2.
 ?
 function divisao (10,2);
+=======
+
+>>>>>>> 2a424a3ce0626e73ddc2fb85767fb5b3c6a15d35
