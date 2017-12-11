@@ -1,3 +1,5 @@
+(function(win, doc){
+  'use strict';
 /*
 Vamos desenvolver mais um projeto. A ideia é fazer uma mini-calculadora.
 As regras são:
@@ -23,3 +25,74 @@ multiplicação (x), então no input deve aparecer "1+2x".
 input;
 - Ao pressionar o botão "CE", o input deve ficar zerado.
 */
+
+var $visor      = doc.querySelector('[data-js="visor"]');
+var $tecNum     = doc.querySelectorAll('[data-js="tecNum"]');
+var $operator   = doc.querySelectorAll('[data-js="operators"');
+var $result     = doc.querySelector('[data-js="result"');
+var $reset      = doc.querySelector('[data-js="reset"]');
+
+$tecNum.forEach(function(item){
+  item.addEventListener('click', function(){
+    var num = this.value;
+    concNum(num);
+  }, false);
+});
+
+$operator.forEach(function(item){
+  item.addEventListener('click', function(){
+    var regex = new RegExp(`(\\d)\\s[-+x÷]\\s\\s[-+x÷]\\s$`, 'g');
+    var preValue = `${$visor.value} ${this.value} `;
+    return $visor.value = preValue.replace(regex, `$1 ${this.value} `);
+  }, false);
+});
+
+function concNum(num){
+  if(+$visor.value === 0)
+  return $visor.value = num;
+  return $visor.value = $visor.value + num;
+}
+
+$result.addEventListener('click', function(){
+
+  var mul = RegExp('(\\d+)\\s[x]\\s(\\d+)', 'g');
+  var div = RegExp('(\\d+)\\s[÷]\\s(\\d+)', 'g');
+  var som = RegExp('(\\d+)\\s[+]\\s(\\d+)', 'g');
+  var sub = RegExp('(\\d+)\\s[-]\\s(\\d+)', 'g');
+
+  function multiplication(numbers){
+    showOperation(numbers.replace(mul, function(regex, num1, num2){
+      return (+num1 * +num2);
+    }));
+  }
+  function divition(numbers){
+    showOperation(numbers.replace(div, function(regex, num1, num2){
+      return Number(num1) / Number(num2);
+    }));
+  }
+  function sum(numbers){
+    showOperation(numbers.replace(som, function(regex, num1, num2){
+      return +num1 + +num2;
+    }));
+  }
+  function subtraction(numbers){
+    showOperation(numbers.replace(sub, function(regex, num1, num2){
+      return (+num1 - +num2);
+    }));
+  }
+  function showOperation(operation){
+    $visor.value = operation;
+  }
+
+  while(mul.test($visor.value)){multiplication($visor.value);}
+  while(div.test($visor.value)){divition($visor.value);}
+  while(som.test($visor.value)){sum($visor.value);}
+  while(sub.test($visor.value)){subtraction($visor.value);}
+
+}, false);
+
+$reset.addEventListener('click', function(){
+  return $visor.value = 0;
+}, false);
+
+})(window, document);
