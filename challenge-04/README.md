@@ -8,12 +8,7 @@ equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
 var isTruthy = function (parameter) {
-    if (parameter) {
-        return true;
-    }
-    else {
-        return false;
-    }
+    return parameter ? true : false;
 };
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
@@ -123,13 +118,14 @@ carro.adicionarPessoas = function (pessoas) {
 
     var numInicial = this.quantidadePessoas;
     var numFinal = numInicial + pessoas;
+    var numMax = this.assentos;
     var singularOuPlural = 'pessoas';
 
-    if (numInicial === 5 && pessoas >= 1) {
+    if (numInicial === numMax && pessoas >= 1) {
         return 'O carro já está lotado!';
     }
-    else if (numFinal > 5) {
-        var quantidadeMax = 5 - numInicial;
+    else if (numFinal > numMax) {
+        var quantidadeMax = numMax - numInicial;
         if (quantidadeMax === 1) {
             singularOuPlural = 'pessoa';
         }
@@ -137,9 +133,9 @@ carro.adicionarPessoas = function (pessoas) {
     }
     else {
         this.quantidadePessoas = numFinal;
+        return 'Já temos ' + numFinal + ' pessoas no carro!';
     }
-    return 'Já temos ' + numFinal + ' pessoas no carro!';
-    
+
 };
 
 /*
