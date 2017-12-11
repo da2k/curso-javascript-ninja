@@ -11,7 +11,14 @@ myvar = 10;
 var soma = 15 + 8;
 
 // Atribua à variável `soma` todo o valor dela, somando 1, usando o operador de soma abreviado.
-`soma++;` (pós soma) ou `++soma;` (pré soma)
+
+//Podemos fazer isso de duas formas.
+
+// Pós soma
+soma++;
+
+// Pré soma
+++soma;
 
 // Atribua à variável `soma` todo o valor dela, multiplicando por 3, usando o operador de multiplicação abreviado.
 soma *= 3;
@@ -35,11 +42,11 @@ soma === myvar
 myvar <= soma
 
 // Crie uma função chamada `divisao` que receba como parâmetro dois números, e retorne o resultado da divisão entre eles.
-```javascript
+
 function divisao(x,y) {
   return x / y;
 }
-```
+
 
 // Invoque a função criada acima, passando os parâmetros 10 e 2.
 divisao(10,2);
