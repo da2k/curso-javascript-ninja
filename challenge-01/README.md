@@ -12,7 +12,7 @@ var soma = 15 + 8;
 
 // Atribua à variável `soma` todo o valor dela, somando 1, usando o operador de soma abreviado.
 
-//Podemos fazer isso de duas formas.
+// Podemos fazer isso de duas formas.
 
 // Pós soma
 soma++;
