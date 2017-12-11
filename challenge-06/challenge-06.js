@@ -4,6 +4,7 @@ para começar o desafio.
 Declare uma variável chamada `championship` que receberá o nome do campeonato,
 e imprima o nome desse campeonato no console.
 */
+
 var championship = 'Brasileirão 2018';
 console.log(championship);
 
@@ -89,7 +90,6 @@ function convertToHex(cor) {
         break;
       default:
         return 'Não temos o equivalente hexadecimal para ' + cor + '.';
-        break;
     }
     return 'O hexadecimal para a cor ' + cor + ' é ' + hexa + '.';
 }
