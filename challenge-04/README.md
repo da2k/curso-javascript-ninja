@@ -119,22 +119,19 @@ carro.adicionarPessoas = function (pessoas) {
     var numInicial = this.quantidadePessoas;
     var numFinal = numInicial + pessoas;
     var numMax = this.assentos;
-    var singularOuPlural = 'pessoas';
 
     if (numInicial === numMax && pessoas >= 1) {
         return 'O carro já está lotado!';
     }
-    else if (numFinal > numMax) {
+
+    if (numFinal > numMax) {
         var quantidadeMax = numMax - numInicial;
-        if (quantidadeMax === 1) {
-            singularOuPlural = 'pessoa';
-        }
+        var singularOuPlural = quantidadeMax === 1 ? 'pessoa' : 'pessoas';        
         return 'Só cabem mais ' + quantidadeMax + ' ' + singularOuPlural + '!';
     }
-    else {
-        this.quantidadePessoas = numFinal;
-        return 'Já temos ' + numFinal + ' pessoas no carro!';
-    }
+
+    this.quantidadePessoas = numFinal;
+    return 'Já temos ' + numFinal + ' pessoas no carro!';
 
 };
 
