@@ -28,7 +28,7 @@ function h() {
 };
 
 // Invoque a função criada acima.
-h()
+h();
 
 // Qual o retorno da função? (Use comentários de bloco).
 // O valor da variável é OLÁ MUNDO
