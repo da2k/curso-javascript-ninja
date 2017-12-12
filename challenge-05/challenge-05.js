@@ -55,49 +55,50 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-function book(nome) {
-  var obj = {
-    harry_potter: {
-      quantidadePaginas: 620,
-      autor: 'J.K Rowling',
-      editora: 'Bloomsbury'
+function book(book_name) {
+  var all_books = {
+    'Segredos do Ninja Javascript': {
+      quantidadePaginas: 488,
+      autor: 'John Resig & Bear Bibeault',
+      editora: 'Novatec'
     },
-    as_cronicas_de_narnia: {
-      quantidadePaginas: 340,
-      autor: 'C.S Lewis',
-      editora: 'Martins Fontes'
+    'Introdução ao HTML5': {
+      quantidadePaginas: 220,
+      autor: 'Bruce Lawson & Remy Sharp',
+      editora: 'Alta Books'
     },
-    o_guia_do_mochileiro_das_galáxias: {
-      quantidadePaginas: 625,
-      autor: 'Douglas Adams',
-      editora: 'Pan Books'
+    'Smashing CSS': {
+      quantidadePaginas: 283,
+      autor: 'Erick A. Meyer',
+      editora: 'Bookman'
     }
   };
-  return obj[nome] ? obj[nome] : obj;
+  return all_books[book_name] ? all_books[book_name] : all_books;
 }
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-book();
+console.log(book());
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-console.log('O livro harry_potter tem '+book('harry_potter').quantidadePaginas)+' páginas!';
+var book_name = 'Introdução ao HTML5';
+console.log('O livro '+book_name+' tem '+book(book_name).quantidadePaginas)+' páginas!';
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log('O autor do livro harry_potter é '+book('harry_potter').autor+'.');
+console.log('O autor do livro '+book_name+' é '+book(book_name).autor+'.');
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log('O livro harry_potter foi publicado pela editora '+book('harry_potter').editora+'.');
+console.log('O livro '+book_name+' foi publicado pela editora '+book(book_name).editora+'.');
