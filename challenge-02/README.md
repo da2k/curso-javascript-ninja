@@ -15,23 +15,23 @@ var somar = soma(1,2) + 5;
 //8
 
 // Declare uma nova variável, sem valor.
-var nota;
+var semvalor;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function setnota(){
-nota = 'VALOR';
-return nota;
+function setvalor(){
+semvalor = 25;
+return 'O valor da variável agora é' + semvalor;
 }
 
 // Invoque a função criada acima.
-setnota();
+setvalor();
 
 // Qual o retorno da função? (Use comentários de bloco).
-//'VALOR'
+//'O valor da variável agora é' + semvalor;
 
 /*
 Crie uma função com as seguintes características:
@@ -41,7 +41,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function arg(x, y, z){
-  if ( x== null || y == null || z == null){
+  if ( x === undefined || y === undefined || z === undefined ){
   return 'Preencha todos os valores corretamente!';
   }else{
   return ( x * y * z ) + 2;
@@ -49,7 +49,7 @@ function arg(x, y, z){
 }  
 
 // Invoque a função criada acima, passando só dois números como argumento.
-arg(10,20);
+arg(1,2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 // 'Preencha todos os valores corretamente!';
@@ -71,19 +71,19 @@ Crie uma função com as seguintes características:
 */
 function arg2 (x, y, z) {
    if ( x !== undefined && y === undefined && z === undefined) {
-   return x;
+     return x;
    }
-   if ( x !== undefined && y !== undefined && z === undefined) {
-   return ( x + y );
+   else if ( x !== undefined && y !== undefined && z === undefined) {
+     return ( x + y );
    }
-   if ( x !== undefined && y !== undefined && z !== undefined) {
-   return ( x + y ) / z;
+   else if ( x !== undefined && y !== undefined && z !== undefined) {
+     return ( x + y ) / z;
    }
-   if ( x === undefined && y === undefined && z === undefined) {
-   return false;
+   else if ( x === undefined && y === undefined && z === undefined) {
+     return false;
    }
    else {
-   return null;
+     return null;
   }
 }
 
