@@ -33,11 +33,10 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 var showTeamPosition = function ( posicao ) {
-  posicao--;
-  if (!teams[posicao]) {
+  if (!teams[posicao - 1]) {
     return 'Não temos a informação do time que está nessa posição.';
   }
-  return 'O time que está em ' + (posicao + 1) + 'º lugar é o ' + teams[posicao] + '.';
+  return 'O time que está em ' + posicao + 'º lugar é o ' + teams[posicao - 1] + '.';
 };
 
 /*
@@ -94,14 +93,12 @@ var convertToHex = function (cor) {
     case 'yellow':
       hexadecimal = '#ffff00';
       break;
+
+    default:
+      return 'Não temos o equivalente hexadecimal para '  + cor + '.';
   }
 
-  if (hexadecimal) {
     return 'O hexadecimal para a cor '  + cor + ' é '  + hexadecimal + '.';
-  }
-
-  return 'Não temos o equivalente hexadecimal para '  + cor + '.';
-
 }
 
 /*
