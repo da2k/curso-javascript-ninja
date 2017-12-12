@@ -19,9 +19,7 @@ Imprima o segundo índice do array retornado pela função criada acima.
 */
 // ?
 
-function getArray(arr[1]) {
-	return arr;
-}
+console.log(myFunction(arr)[2]);
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -30,11 +28,9 @@ no primeiro parâmetro. O índice a ser retornado, deve ser o número passado no
 segundo parâmetro.
 */
 // ?
-var arr1 = ['gustavo','rodrigues','araujo'];
-var arr2 = [1,2,3,4];
 
-function dois (arr1, arr2){
-	return arr2[0];
+function dois (arr1 [index]){
+	return arr1;
 }
 
 /*
@@ -42,7 +38,7 @@ Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
 // ?
 
-var arr3 = ['Gustavo', 1 , true, 0.1, NaN];
+var arr3 = ['Gustavo', [1,2,'fusca'] ,{Ab:3}, 0.1, NaN];
 
 
 /*
@@ -51,7 +47,12 @@ array criado.
 */
 // ?
 
-dois(arr3);
+console.log(myFunction(arr3, 0));
+console.log(myFunction(arr3, 1));
+console.log(myFunction(arr3, 2));
+console.log(myFunction(arr3, 3));
+console.log(myFunction(arr3, 4));
+console.log(myFunction(arr3, 5));
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -68,14 +69,24 @@ propriedades:
 os livros.
 */
 // ?
-var nome = 'harry Potter';
-function book (nome){
+function book (bookNome){
 	var livros = {
-		quantidadePaginas: 10,
-		autor: 'Fulano',
-		editora: 'ática'
+		'Harry Potter':{
+			quantidadePaginas: 300,
+			autor: 'JK Rowling',
+			editora: 'Rocco'
+		},
+		'Eloquent Javascript':{
+			quantidadePaginas: 200,
+			autor: 'Marjin Haverbeke',
+			editora: 'não tem'
+		},
+		'Javascript Guia Definitivo': {
+			quantidadePaginas: 1000,
+			autor: 'David Flanagan',
+			editora: 'O' Reilly'
+		}
 	}
-	return livros;
 }
 
 /*
