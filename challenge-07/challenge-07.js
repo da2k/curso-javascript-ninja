@@ -52,7 +52,7 @@ while (num < 21 ) {
 Na mesma ideia do exercício acima: mostre agora os números ímpares.
 */
 console.log( 'Números ímpares entre 10 e 20:' );
-var num = 11;
+num = 11;
 while (num < 21 ) {
   console.log( num );
   num += 2;
@@ -71,6 +71,7 @@ for (var num = 100; num < max; num += 2) {
 }
 
 console.log( 'Números ímpares entre 111 e 125:' );
-for (var num = 101; num < max; num += 2) {
+max = 125;
+for (var num = 111; num <= max; num += 2) {
   console.log(num);
 }
