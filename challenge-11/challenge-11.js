@@ -49,7 +49,7 @@
   'The person has more than 25 years old? [TRUE/FALSE]'
   */
   function moreThan(year){
-    return year > person.age ? true : false;
+    return year > person.age;
   }
   console.log("The person has more " + person.age + " years old?", moreThan(30));
 
