@@ -94,6 +94,6 @@ false
 > verifica(1,2);
 3
 > verifica(1,2,3);
-1
+1 
 */
 ```
