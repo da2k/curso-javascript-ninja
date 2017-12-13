@@ -59,6 +59,9 @@
     return (operator === '+' || operator === '-' || operator === '*' || operator === '/' || operator === '%') ? true : false
   }
 
+  // return operation[operator] !== undefined
+  // return !!operation[operator]
+
   /*
   Agora vamos criar a calculadora.
   - Crie uma função chamada `calculator`, que receberá como parâmetro um
