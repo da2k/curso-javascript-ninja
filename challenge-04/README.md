@@ -8,8 +8,7 @@ equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
 var isThruthy = function(a) {
-	var y = a?true:false;
-	return y;
+	return !!a;
 }
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
@@ -48,7 +47,16 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `assentos` - Number - cinco por padrão
 - `quantidadePessoas` - Number - zero por padrão
 */
-var carro = {marca: 'Honda', modelo: 'Civic', placa: 'aaa-1234', ano: 2017, cor: 'branco', quantasPortas: 4, assentos: 5, quantidadePessoas: 0}
+var carro = {
+	marca: 'Honda',
+	 modelo: 'Civic',
+	 placa: 'aaa-1234',
+	 ano: 2017,
+	 cor: 'branco',
+	 quantasPortas: 4,
+	 assentos: 5,
+	 quantidadePessoas: 0
+	}
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
@@ -111,11 +119,11 @@ carro.adicionaPessoas = function(x) {
 	var cab = "cabem";
 	if(carro.assentos-carro.quantidadePessoas==1){uma="pessoa";};
 	if(carro.assentos-carro.quantidadePessoas==1){cab="cabe";};
-	if(crl&&carro.quantidadePessoas+x>=carro.assentos){return "O carro já está lotado!"} 
-		else if(carro.quantidadePessoas+x>carro.assentos){
+	if(crl&&carro.quantidadePessoas+x>=carro.assentos){return "O carro já está lotado!"	
+	} else if(carro.quantidadePessoas+x>carro.assentos){
 		return "Só "+cab+" mais "+(carro.assentos-carro.quantidadePessoas)+" "+uma+"!"
 	} else {
-		carro.quantidadePessoas=carro.quantidadePessoas+x;
+		carro.quantidadePessoas+=x;
 		var uma2 = "pessoa";
 		if(carro.quantidadePessoas>=2){uma2="pessoas";};
 		return "Já temos "+carro.quantidadePessoas+" "+uma2+" no carro!"
