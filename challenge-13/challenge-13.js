@@ -169,6 +169,7 @@
     return item.id % 2 === 0 ;
   });
 
+
   /*
   Mostre o array filtrado acima no console.
   */
