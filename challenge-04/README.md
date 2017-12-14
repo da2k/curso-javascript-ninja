@@ -16,6 +16,7 @@ isTruthy(false);
 isTruthy(null);
 isTruthy(undefined);
 isTruthy(0);
+isTruthy(-0);
 isTruthy('');
 isTruthy(NaN);
 
@@ -25,13 +26,13 @@ Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 isTruthy(true);
 isTruthy(1);
 isTruthy(2);
-isTruthy(3);
 isTruthy(-1);
 isTruthy('Bla');
 isTruthy('Test');
 isTruthy('Foo');
 isTruthy([]);
 isTruthy({});
+isTruthy(function() {});
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
@@ -111,15 +112,15 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 citado acima, no lugar de "pessoas".
 */
 carro.adicionarPessoas = function(numeroPessoas) {
-  var quantidadeDisponível = carro.assentos - carro.quantidadePessoas;
-  var pessoas = quantidadeDisponível === 1 ? 'pessoa' : 'pessoas';
+  var quantidadeDisponivel = carro.assentos - carro.quantidadePessoas;
+  var pessoas = quantidadeDisponivel === 1 ? 'pessoa' : 'pessoas';
 
   if (carro.quantidadePessoas === carro.assentos) {
     return 'O carro já está lotado!';
   }
 
-  if (numeroPessoas > quantidadeDisponível) {
-    return 'Só cabem mais ' + quantidadeDisponível + ' ' + pessoas + '!';
+  if (numeroPessoas > quantidadeDisponivel) {
+    return 'Só cabem mais ' + quantidadeDisponivel + ' ' + pessoas + '!';
   }
 
   carro.quantidadePessoas += numeroPessoas;
