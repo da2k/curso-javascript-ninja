@@ -15,12 +15,27 @@ var isTruthy = function(x){
 }
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
-?
+isTruthy(NaN);
+isTruthy(0);
+isTruthy(null);
+isTruthy('');
+isTruthy("");
+isTruthy(undefined);
+isTruthy(false);
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
-?
+isTruthy('oi');
+isTruthy(true);
+isTruthy(1);
+isTruthy(!false);
+isTruthy(!!true);
+isTruthy(!null);
+isTruthy({});
+isTruthy(-1);
+isTruthy(!0);
+isTruthy([]);
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
@@ -34,23 +49,36 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `assentos` - Number - cinco por padrão
 - `quantidadePessoas` - Number - zero por padrão
 */
-?
+var carro = {
+	marca: '',
+	modelo: '',
+	placa: '',
+	ano: 0,
+	cor: '',
+	quantasPortas: 0,
+	assentos: 5,
+	quantidadePessoas: 0
+};
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
-?
+carro.mudarCor = function(x){
+    carro.cor = x;
+}
 
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
-?
+carro.obterCor = function(){
+    return carro.cor;}
 
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
-?
+carro.obterModelo = function(){
+    return carro.modelo;}
 
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
