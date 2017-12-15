@@ -54,7 +54,7 @@
   var names = ['João', 'Maria', 'Roberto', 'Marcos', 'Felipe'];
   var last = names.slice(-1)[0].replace(names.slice(-1)[0], " e " + names.slice(-1)[0])
   names.pop();
-  names = names.join(", ").concat(last)
+  names = names.join(", ").concat(last, ' são meus amigos.')
   console.log(names);
   /*
   Usando o replace(), faça a string "Roberto" virar "Roberta".
