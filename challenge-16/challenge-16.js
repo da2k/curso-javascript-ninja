@@ -56,6 +56,15 @@
   names.pop();
   names = names.join(", ").concat(last, ' são meus amigos.')
   console.log(names);
+
+  // Resposta do professor
+  /*
+  var phrase = names.reduce(function(acumulator, current, index){
+    var separator = names.length -1 === index ? ' e ' : ', ';
+    return acumulator + separator + current;
+  }).concat( ' são meus amigos.' );
+  console.log(phrase);
+  */
   /*
   Usando o replace(), faça a string "Roberto" virar "Roberta".
   Mostre o resultado no console.
@@ -63,6 +72,9 @@
   console.log( '\nEra "Roberto", agora é:' );
   var roberto = 'Roberto';
   console.log(roberto.substring(0,2) + roberto.substring(2).replace('o', 'a'));
+
+  // Resposta do Professor
+  // console.log('Roberto'.replace('to', 'ta'));
 
   /*
   Mostre no console a parte "nando" da string "Fernando". Use o método que
