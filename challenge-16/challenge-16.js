@@ -1,91 +1,132 @@
 (function() {
-    'use strict';
     /*
     1. Envolva todo o conteúdo desse desafio em uma IIFE.
     2. Adicione a diretiva 'use strict';
     3. Crie um arquivo index.html e adicione esse script à ele.
     */
+    'use strict';
+    /*
+    Em todos os exercícios desse desafio, nós vamos utilizar expressões
+    regulares! Para isso, iremos usar o texto abaixo. Coloque-o em uma
+    variável chamada `text`:
+    "Manuel Marques de Sousa, Conde de Porto Alegre (Rio Grande, 13 de junho de 1804 – Rio de Janeiro, 18 de julho de 1875), apelidado de "O Centauro de Luvas", foi um militar, político, abolicionista e monarquista brasileiro."
+    */
+    var text = 'Manuel Marques de Sousa, Conde de Porto Alegre (Rio Grande, 13 de junho de 1804 – Rio de Janeiro, 18 de julho de 1875), apelidado de "O Centauro de Luvas", foi um militar, político, abolicionista e monarquista brasileiro.';
 
     /*
-    Declare uma variável chamada `name` que receba seu primeiro nome.
-    Mostre no console todas as letras do seu nome separadas, com a frase:
-    - "[LETRA] é a [POSIÇÃO]ª letra do meu nome."
-    Ex: no caso do nome ser "Fernando", deve mostrar as frases:
-    - "F é a 1ª letra do meu nome."
-    - "e é a 2ª letra do meu nome."
-    E assim por diante, até a última.
+    Vamos começar com umas brincadeiras fáceis :D
+    Troque o nome "Manuel Marques de Souza" pelo seu nome, e mostre o resultado
+    no console:
     */
-    console.log('As letras do seu nome:');
-    var name = 'Alexandre';
-    for (var i = 0; i < name.length; i++) {
-        console.log(name[i] + ' é a ' + (i + 1) + 'ª letra do meu nome.');
+    console.log('Adicionando seu nome no texto:');
+    console.log(text.replace(/Manuel Marques de Sousa/, 'Alexandre Tiago'));
+
+    /*
+    Agora, substitua a palavra "brasileiro" por sua cidade natal e mostre no
+    console.
+    Ex: Se você for da São Paulo, substitua por "paulista".
+    */
+    console.log('\nTrocando naturalidade:');
+    console.log(text.replace(/brasileiro/, 'paulista'));
+
+    /*
+    Substitua todos os números por um traço `-`. Cada caractere de número deve
+    ser um traço. Mostre o resultado no console:
+    */
+    console.log('\nTrocando números por -:');
+    console.log(text.replace(/\d/g, '-'));
+
+    /*
+    Substitua todas as letras (somente letras) de "D" maiúsculo até "h"
+    minúsculo por "0" (número zero). Mostre o resultado no console:
+    */
+    console.log('\nTrocando de "D" a "h" por "0":');
+    console.log(text.replace(/[D-Hd-h]/g, '0'));
+
+    /*
+    Substitua todos os "A" (maiúsculos ou minúsculos) por "4".
+    Mostre o resultado no console:
+    */
+    console.log('\nTrocando "A" e "a" por "4":');
+    console.log(text.replace(/a/gi, '4'));
+
+    /*
+    Substitua a frase "O Centauro de Luvas", deixando-a em caixa alta, usando
+    o método `toUpperCase()`. Mostre o resultado no console:
+    */
+    console.log('\n"O Centauro de Luvas" em caixa alta:');
+    console.log(text.replace(/(O Centauro de Luvas)/g, function(conj) {
+        return conj.toUpperCase();
+    }));
+
+    /*
+    Agora iremos substituir as datas no formato "13 de junho de 1804" para
+    "13/06/1804". A primeira coisa a fazer é criar uma função chamada
+    `getMonthNumber`, que irá receber um parâmetro (será o nome do mês) e deverá
+    retornar o número correspondente a esse mês.
+    Ex: Se o usuário entrar com "março", deve retornar "03" (em string mesmo).
+    Números com menos de dois dígitos devem ter um zero na frente.
+    Crie então a função e mostre no console os retornos para os meses de março,
+    setembro e dezembro.
+    Use um console.log para cada mês, usando a frase:
+    "O mês de [NOME DO MÊS] é representado pelo número [NÚMERO DO MÊS]."
+    */
+    console.log('\nMeses representados por números:');
+
+    function getMonthNumber(mes) {
+        switch (mes) {
+            case 'janeiro':
+                return '01';
+            case 'fevereiro':
+                return '02';
+            case 'março':
+                return '03';
+            case 'abril':
+                return '04';
+            case 'maio':
+                return '05';
+            case 'junho':
+                return '06';
+            case 'julho':
+                return '07';
+            case 'agosto':
+                return '08';
+            case 'setembro':
+                return '09';
+            case 'outubro':
+                return '10';
+            case 'novembro':
+                return '11';
+            case 'dezembro':
+                return '12';
+        }
     }
+    var meses = ['março', 'setembro', 'dezembro'];
+    meses.forEach(function(item) {
+        console.log('O mês de ' + item + ' é representado pelo número ' + getMonthNumber(item) + '.');
+    })
 
     /*
-    - Declare uma variável chamada `fullName`, que receba seu nome completo,
-    escrito no formato de slug (caixa baixa e palavras separadas por um traço).
-    Ex: o nome "Fernando Daciuk" ficaria "fernando-daciuk"
-    - Faça a primeira letra de cada nome ficar em caixa alta, e troque o traço
-    por um espaço.
-    - Detalhe: o código que você escrever abaixo deve funcionar para qualquer
-    nome, então fique à vontade para usar as artimanhas que já viu até agora no
-    curso para fazer isso funcionar corretamente :)
-    - Mostre no console o nome no formato slug, e o resultado final. Use um
-    console.log para cada formato.
+    Agora, declare uma variável chamada `regexDate` que irá receber a expressão
+    regular que irá fazer o match com as datas. Crie grupos de captura para o
+    dia, o mês e o ano. Para os meses, você pode fazer o match somente com os
+    meses que estão no texto, não precisa adicionar todos.
+    Com o que vimos até agora, você consegue fazer :D
+    Mostre a regex no console.
     */
-    console.log('\nNome convertido à partir de um slug:');
-    var fullName = 'alexandre-tiago';
-    var newFullName = fullName.split('-').map(function(name) {
-        return name[0].toUpperCase() + name.slice(1);
-    }).join(' ');
-    console.log(fullName);
-    console.log(newFullName);
+    console.log('\nRegex que vai fazer o match com as datas do texto:');
+    var regexDate = /(\d\d) de (junho|julho) de (\d\d\d\d)/g;
+    console.log(regexDate);
 
     /*
-    - Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
-    cada nome por vírgula. Entre o penúltimo e o último nome, o separador deve
-    ser um "e". No final, concatene com a frase: " são meus amigos.".
-    O resultado final deve ficar mais ou menos assim:
-    - "João, Maria, Roberto, Pedro e Marcos são meus amigos."
-    - Detalhe: o código abaixo deve funcionar com um array de qualquer tamanho.
-    5 nomes foi somente uma sugestão ;)
+    Agora crie a função que irá fazer o replace dos dados. A função será chamada
+    de `replaceDate`. Ela deve retornar a data no formato:
+    "[DIA]/[MÊS]/[ANO]"
+    Após criar a função, faça o replace das datas no texto, mostrando no
+    console o resultado.
     */
-    console.log('\nMeus amigos:');
-    var nome = ['João', 'Maria', 'José', 'Mateus', 'Tobias', 'Alexandre'];
-    var frase = nome.reduce(function(anterior, item, index) {
-        return index == nome.length - 1 ? anterior + ' e ' + item + ' são meus amigos.' :
-            anterior + ', ' + item;
-    });
-    console.log(frase);
-
-    /*
-    Usando o replace(), faça a string "Roberto" virar "Roberta".
-    Mostre o resultado no console.
-    */
-    console.log('\nEra "Roberto", agora é:');
-    console.log('Roberto'.replace('to', 'ta'));
-
-    /*
-    Mostre no console a parte "nando" da string "Fernando". Use o método que
-    faz a busca do final para o início da string.
-    */
-    console.log('\nParte de uma string:');
-    console.log('Fernando'.substring(8, 3));
-
-    /*
-    Declare uma variável chamada `myName`, que receba o seu primeiro nome,
-    escrito de forma natural.
-    Mostre no console esse nome, mas com as letras intercalando entre maiúsculas
-    e minúsculas.
-    - Detalhe: o código abaixo deve funcionar da mesma forma para qualquer nome,
-    de qualquer tamanho, escrito de qualquer forma.
-    Ex.: Nomes que deveriam funcionar: "Fernando", "RoBertO", "gabriEla", etc.
-    */
-    console.log('\nNome com letras intercaladas entre caixa alta e baixa:');
-    var myName = 'Alexandre';
-    var nameIntercalado = '';
-    for (var i = 0; i < myName.length; i++) {
-        nameIntercalado += (i % 2 === 0) ? myName.charAt(i).toUpperCase() : myName.charAt(i).toLowerCase();
-    }
-    console.log(nameIntercalado);
+    console.log('\nReplace de datas:');
+    console.log(text.replace(regexDate, function(regex, dia, mes, ano) {
+        return dia + '/' + getMonthNumber(mes) + '/' + ano;
+    }));
 })()
