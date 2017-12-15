@@ -126,7 +126,9 @@
     console o resultado.
     */
     console.log('\nReplace de datas:');
-    console.log(text.replace(regexDate, function(regex, dia, mes, ano) {
-        return dia + '/' + getMonthNumber(mes) + '/' + ano;
-    }));
+
+    function replaceDate(regex, day, month, year) {
+        return day + '/' + getMonthNumber(month) + '/' + year;
+    }
+    console.log(text.replace(regexDate, replaceDate));
 })()
