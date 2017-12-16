@@ -138,6 +138,20 @@ utilize sempre o formato de invocação do método (ou chamada da propriedade),
 adicionando comentários _inline_ ao lado com o valor retornado, se o método
 retornar algum valor.
 
+carro.adicionarPessoas = function (numeroPessoas){
+	var totalPessoas = carro.quantidadePessoas + numeroPessoas
+	if( carro.quantidadePessoas === carro.assentos && totalPessoas >= carro.assentos){
+		return 'carro já está Lotado !';
+	}
+	if(totalPessoas > carro.assentos){
+		var quantasPessoasCabem = carro.assentos - carro.quantidadePessoas;
+		var pluralOuSingular = quantasPessoasCabem === 1 ? 'pessoas' : 'pessoas';
+		return "Só Cabem mais"+ "" + quantasPessoasCabem + "pessoas no carro !";
+	}
+	carro.quantidadePessoas += numeroPessoas;
+	return 'Já temos' + totalPessoas + 'pessoas no carro!';
+}
+
 Qual a cor atual do carro?
 */
 ?
@@ -168,19 +182,24 @@ carro.ObterMarcaModelo();
 
 // Adicione 2 pessoas no carro.
 ?
+carro.adicionarPessoas(2);
 
 // Adicione mais 4 pessoas no carro.
 ?
+carro.adicionarPessoas(4);
 
 // Faça o carro encher.
 ?
+carro.adicionarPessoas(3);
 
 // Tire 4 pessoas do carro.
 ?
-
+carro.adicionarPessoas(-4);
 // Adicione 10 pessoas no carro.
 ?
-
+carro.adicionarPessoas(10);
 // Quantas pessoas temos no carro?
 ?
+carro.quantidadePessoas;
+
 ```
