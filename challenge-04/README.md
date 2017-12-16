@@ -137,7 +137,7 @@ Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
 utilize sempre o formato de invocação do método (ou chamada da propriedade),
 adicionando comentários _inline_ ao lado com o valor retornado, se o método
 retornar algum valor.
-
+*/
 carro.adicionarPessoas = function (numeroPessoas){
 	var totalPessoas = carro.quantidadePessoas + numeroPessoas
 	if( carro.quantidadePessoas === carro.assentos && totalPessoas >= carro.assentos){
