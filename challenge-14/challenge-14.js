@@ -11,18 +11,10 @@
   Mostre esse array no console.
   */
   console.log( 'Number Objects Array:' );
-  var numberObjects = [
-    {number: 1},
-    {number: 2},
-    {number: 3},
-    {number: 4},
-    {number: 5},
-    {number: 6},
-    {number: 7},
-    {number: 8},
-    {number: 9},
-    {number: 10}
-  ];
+  var numberObjects = [];
+  for (var i = 0; i <= 10; i++) {
+    numberObjects.push({number: i});
+  }
   console.log(numberObjects);
 
   /*
@@ -80,10 +72,10 @@
   falada, como se você estivesse falando em código xD
   */
   console.log( '\nSeu nome na língua do "P":' );
-  var name = ['I', 'v', 'a', 'n'];
+  var name = ['I', 'van'];
   console.log(name.reduce(function(previousValue, currentValue) {
-    return previousValue + currentValue + 'P';
-  }));
+    return previousValue + 'P' + currentValue;
+  }, ''));
 
   /*
   Crie uma variável chamada `inversedName`, que reduzirá o array em uma string
