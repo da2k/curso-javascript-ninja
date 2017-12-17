@@ -1,5 +1,5 @@
 (function(){
-  'use strick';
+  'use strict';
   /*
   1. Envolva todo o conteúdo desse desafio em uma IIFE.
   2. Adicione a diretiva 'use strict';
