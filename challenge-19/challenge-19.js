@@ -26,7 +26,7 @@
   no console:
   */
   console.log( 'Regex para números usando o construtor:' );
-  var justNumbersRegex = /^\d\d/gm;
+  var justNumbersRegex = /^\d+/gm;
 
   /*
   Verifique se a regex acima casa com o texto na variável `text`, mostrando o
@@ -46,7 +46,7 @@
   Mostre a regex no console:
   */
   console.log( '\nRegex para números somente no final das linhas:' );
-  var numbersAtTheEnd = /\d{1,2}$/gm;
+  var numbersAtTheEnd = /\d+$/gm;
 
   /*
   Verifique se a regex acima casa com o texto na variável `otherText`,
