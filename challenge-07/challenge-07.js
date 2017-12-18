@@ -15,6 +15,7 @@ A função deverá retornar o array atualizado.
 */
 function addItem(item) {
     items.push(item);
+    return items;
 }
 
 /*
