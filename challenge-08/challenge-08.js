@@ -12,21 +12,23 @@ Invoque a função criada acima, passando dois números que serão somados, e mo
 o resultado no console, com a frase:
 "A soma de [VALOR 1] e [VALOR2] é igual a [RESULTADO]."
 */
-console.log( 'A soma de 2 e 5 é igual a ' + sum(2, 5) + '.' ); // A soma de 2 e 5 é igual a 7.
+var val1 = 2;
+var val2 = 5;
+console.log( 'A soma de ' + val1 + ' e ' + val2 + ' é igual a ' + sum(val1, val2) + '.' ); // A soma de 2 e 5 é igual a 7.
 
 /*
 Mostre no console o nome da função criada acima, com a frase:
 "O nome da função que faz a soma é [NOME DA FUNÇÃO]."
 */
-console.log( sum.name ); // calculateSum
+console.log( 'O nome da função que faz a soma é ' + sum.name );
 
 /*
 Crie uma função literal chamada `showName`. Essa função deve retornar o
 seu nome.
 */
-var showName = function showName() {
-  return showName.name;
-};
+function showName() {
+  return 'Wellington Silva da Mota';
+}
 
 /*
 Declare uma variável chamada `varShowName` que recebe a função criada acima.
@@ -52,7 +54,7 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
   - Se o operador não for válido, retornar a frase:
   "Operação inválida."
 */
-var calculator = function calculator(operator) {
+function calculator(operator) {
   return function(valueA, valueB) {
     var result;
 
@@ -78,8 +80,8 @@ var calculator = function calculator(operator) {
     }
 
     return 'Resultado da operação: ' + valueA + operator + valueB + ' = ' + result + '.';
-  }
-};
+  };
+}
 
 /*
 Declare uma variável chamada `sum`, que receberá a função acima, passando como
