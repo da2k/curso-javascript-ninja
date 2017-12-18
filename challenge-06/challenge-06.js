@@ -5,6 +5,7 @@ Declare uma variável chamada `championship` que receberá o nome do campeonato,
 e imprima o nome desse campeonato no console.
 */
 var championship = 'Campeonato Paulista de Futebol'
+console.log( championship );
 
 /*
 Declare uma variável chamada `teams`, que receberá um array com 5 elementos.
@@ -34,7 +35,7 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 function showTeamPosition(index) {
-    if (index > 5) {
+    if (index < 1 || index > 5) {
         return 'Não temos a informação do time que está nessa posição.';
     }
     return 'O time que está em ' + index + 'º lugar é o ' + teams[index-1] + '.';
@@ -45,22 +46,23 @@ Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
 showTeamPosition(1);
-// 'O time que está em 1º lugar é o Palmeiras.'
+// O time que está em 1º lugar é o Palmeiras.
 showTeamPosition(2);
-// 'O time que está em 2º lugar é o Corinthians.'
+// O time que está em 2º lugar é o Corinthians.
 showTeamPosition(3);
-// 'O time que está em 3º lugar é o Santos.'
+// O time que está em 3º lugar é o Santos.
 showTeamPosition(4);
-// 'O time que está em 4º lugar é o Ponte Preta.'
-teams.push('Linense');
+// O time que está em 4º lugar é o Ponte Preta.
+showTeamPosition(0);
+// Não temos a informação do time que está nessa posição.
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
 repetição "while".
 */
-var xx = 20;
-while (xx <= 30) {
-    console.log(xx++);
+var number = 20;
+while (number <= 30) {
+    console.log(number++);
 }
 
 /*
