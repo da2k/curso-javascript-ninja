@@ -114,15 +114,21 @@ citado acima, no lugar de "pessoas".
 */
 carro.addPessoas = function(numPessoas){
     var pessoasCabem;
+    var pluralPessoas;
+    
     if(carro.quantidadePessoas === carro.assentos){
         return 'O carro já está lotado!';
-    }else if(carro.quantidadePessoas + numPessoas > carro.assentos ){
+    }
+    
+    if(carro.quantidadePessoas + numPessoas > carro.assentos ){
         pessoasCabem = carro.assentos - carro.quantidadePessoas;
-        var pluralPessoas = pessoasCabem > 1 ? 'pessoas' : 'pessoa';
+        pluralPessoas = pessoasCabem > 1 ? 'pessoas' : 'pessoa';
         return 'Só cabem mais '+ pessoasCabem + ' ' + pluralPessoas + '!';
     }
+
     carro.quantidadePessoas += numPessoas;
-    return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!'; 
+    pluralPessoas = carro.quantidadePessoas > 1 ? 'pessoas' : 'pessoa';
+    return 'Já temos ' + carro.quantidadePessoas + ' ' + pluralPessoas +' no carro!'; 
 }
 
 /*
@@ -160,21 +166,21 @@ carro.obterMarcaModelo();
 
 // Adicione mais 4 pessoas no carro.
 carro.addPessoas(4);
-'Só cabem mais 3 pessoas!'
+//'Só cabem mais 3 pessoas!'
 
 // Faça o carro encher.
-carro.addPessoas(2);
-//'Já temos 2 pessoas no carro!
+carro.addPessoas(3);
+//'Já temos 5 pessoas no carro!
 
 // Tire 4 pessoas do carro.
  carro.quantidadePessoas-= 4;
-//0
+//1
 
 // Adicione 10 pessoas no carro.
 carro.addPessoas(10);
-//'Só cabem mais 5 pessoas!'
+//'Só cabem mais 4 pessoas!'
 
 // Quantas pessoas temos no carro?
 carro.quantidadePessoas;
-//0
+//1
 ```
