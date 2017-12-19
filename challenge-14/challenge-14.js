@@ -10,18 +10,11 @@
 	Os números devem ser de 1 a 10.
 	Mostre esse array no console.
 	*/
-	var numberObjects = [
-		{ number : 1 },
-		{ number : 2 },
-		{ number : 3 },
-		{ number : 4 },
-		{ number : 5 },
-		{ number : 6 },
-		{ number : 7 },
-		{ number : 8 },
-		{ number : 9 },
-		{ number : 10 }
-	];
+	var numberObjects = [];
+	
+	for(var i = 1; i <= 10; i++){
+		numberObjects.push({ number : i });
+	}
 	
 	console.log( 'Number Objects Array:' );
 	console.log(numberObjects);
@@ -32,10 +25,8 @@
 	*/
 	console.log( '\nJust Numbers:' );
 	
-	var justNumbers = []; 
-	
-	numberObjects.forEach(function(item){
-		justNumbers.push(item.number);
+	var justNumbers = numberObjects.map(function(item){
+		return item.number;
 	});
 	
 	console.log(justNumbers);
@@ -134,7 +125,7 @@
 	
 	var index = numberObjects.indexOf({ number: 2 });
 	
-	if(index < 0){
+	if(index < -1){
 		console.log('Existe um objeto { number: 2 } em numberObjects!');
 	}else{
 		console.log('Não existe um objeto { number: 2 } em numberObjects :(');
@@ -148,7 +139,7 @@
 	
 	index = numberObjects.lastIndexOf({ number: 2 });
 
-	if(index < 0){
+	if(index > -1){
 		console.log('Existe um objeto { number: 2 } em numberObjects!');
 	}else{
 		console.log('Não existe um objeto { number: 2 } em numberObjects :(');
