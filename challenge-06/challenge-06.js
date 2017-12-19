@@ -35,10 +35,10 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
 */
 function showTeamPosition(x){
 
-    if(x>4) {
+    if(x>5 || x<1) {
         return "Não temos a informação do time que está nessa posição."
     } else {
-        return "O time que está em "+(x+1)+"º lugar é o "+teams[x]+"."
+        return "O time que está em "+x+"º lugar é o "+teams[x-1]+"."
     }
 }
 
@@ -72,45 +72,28 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 function convertToHex(red){
-    var color = {
-        'azul': '#0080ff',
-        'vermelho': '#ff0000',
-        'preto': '#000000',
-        'branco': '#ffffff',
-        'amarelo': '#ffff00',
-        'verde': '#00ff00',
-        'rosa': '#ff00ff',
-        'roxo': '#8000ff'
-    };
-    if(color[red] == undefined){
-        return "Não temos o equivalente hexadecimal para "+red+"."
-    }
+    var hexa;
     switch(red){
         case 'azul':
-        return "O hexadecimal para a cor "+red+" é #0080ff.";
-        break;
+            hexa = "#0080ff"; break;
         case 'vermelho':
-        return "O hexadecimal para a cor "+red+" é #ff0000.";
-        break;
+            hexa = "#ff0000"; break;
         case 'preto':
-        return "O hexadecimal para a cor "+red+" é #000000.";
-        break;
+            hexa = "#000000"; break;
         case 'branco':
-        return "O hexadecimal para a cor "+red+" é #ffffff.";
-        break;
+            hexa = "#ffffff"; break;
         case 'amarelo':
-        return "O hexadecimal para a cor "+red+" é #ffff00.";
-        break;
+            hexa = "#ffff00"; break;
         case 'verde':
-        return "O hexadecimal para a cor "+red+" é #00ff00.";
-        break;
+            hexa = "#00ff00"; break;
         case 'rosa':
-        return "O hexadecimal para a cor "+red+" é #ff00ff.";
-        break;
+            hexa = "#ff00ff"; break;
         case 'roxo':
-        return "O hexadecimal para a cor "+red+" é #8000ff.";
-        break;
+            hexa = "#8000ff"; break;
+        default:
+            return "Não temos o equivalente hexadecimal para "+red+"."
     }
+    return "O hexadecimal para a cor "+red+" é "+hexa+".";
 }
 
 /*
