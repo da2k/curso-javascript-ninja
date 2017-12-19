@@ -40,7 +40,7 @@ indentação correta do código, para ficar dentro da IIFE.
     var number2 = 50;
     function sum() {
       return number1 + number2;
-    };
+    }
     console.log( 'A soma de 40 e 50 é igual a', sum() );
     console.log( 'Na função myFunction3, number1 é igual a', number1 );
     return sum();
@@ -63,7 +63,7 @@ indentação correta do código, para ficar dentro da IIFE.
   function calculator( n1, n2 ) {
     return function( callback ) {
       return callback( n1, n2 );
-    }
+    };
   }
 
   /*
@@ -81,10 +81,9 @@ indentação correta do código, para ficar dentro da IIFE.
   uma função anônima que irá retornar a soma dos dois números que essa função
   anônima tem como seus argumentos.
   */
-  function sumBetweenTwoNumbers( n1, n2 ) {
+  console.log( 'O resultado da soma é:', sum( function( n1, n2 ) {
     return n1 + n2;
-  }
-  console.log( 'O resultado da soma é:', sum( sumBetweenTwoNumbers ) );
+  } ) );
 
   /*
   Agora declare outra variáveis chamadas `subtraction`, `multiplication`,
@@ -103,23 +102,19 @@ indentação correta do código, para ficar dentro da IIFE.
   As suas respostas devem estar abaixo dos `console.log` referentes à cada
   chamada.
   */
-  function subtractionBetweenTwoNumbers( n1, n2 ) {
+  console.log( 'O resultado da subtração é:', subtraction( function( n1, n2 ) {
     return n1 - n2;
-  }
-  console.log( 'O resultado da subtração é:', subtraction( subtractionBetweenTwoNumbers ) );
+  } ) );
 
-  function multiplicationBetweenTwoNumbers( n1, n2 ) {
+  console.log( 'O resultado da multiplicação é:', multiplication( function( n1, n2 ) {
     return n1 * n2;
-  }
-  console.log( 'O resultado da multiplicação é:', multiplication( multiplicationBetweenTwoNumbers ) );
+  } ) );
 
-  function divisionBetweenTwoNumbers( n1, n2 ) {
+  console.log( 'O resultado da divisão é:', division( function( n1, n2 ) {
     return n1 / n2;
-  }
-  console.log( 'O resultado da divisão é:', division( divisionBetweenTwoNumbers ) );
+  } ) );
 
-  function modBetweenTwoNumbers( n1, n2 ) {
+  console.log( 'O resto da divisão é:', mod( function( n1, n2 ) {
     return n1 % n2;
-  }
-  console.log( 'O resto da divisão é:', mod( modBetweenTwoNumbers ) );
+  } ) );
 }() );
