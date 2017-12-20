@@ -78,7 +78,7 @@ function mynewfunction(x, y, z) {
     return x + y;
   } else if(x !== undefined && y !== undefined && z !== undefined) {
     return (x + y) / z;
-  } else if(x === undefined || y === undefined || z === undefined) {
+  } else if(x === undefined && y === undefined && z === undefined) {
     return false;
   } else {
     return null;
