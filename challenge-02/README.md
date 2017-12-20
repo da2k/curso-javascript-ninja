@@ -87,8 +87,8 @@ function mynewfunction(x, y, z) {
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 
-mynewfunction(10, 10, 2); // 10
-mynewfunction(10, 10); // 20
 mynewfunction(15); // 15
-myfunction(); // false
+mynewfunction(10, 10); // 20
+mynewfunction(10, 10, 2); // 10
+mynewfunction(); // false
 ```
