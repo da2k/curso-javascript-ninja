@@ -42,7 +42,7 @@ Crie uma função com as seguintes características:
 */
 function myfunction(x, y, z) {
   
-  if(x === +x || y === +y || z === +z) {
+  if(x !== +x || y !== +y || z !== +z) {
     return 'Preencha todos os valores corretamente';
   } else {
     return (x * y * z) + 2;
