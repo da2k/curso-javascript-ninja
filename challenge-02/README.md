@@ -42,10 +42,10 @@ Crie uma função com as seguintes características:
 */
 function myfunction(x, y, z) {
   
-  if(x === +x && y === +y && z === +z) {
-    return (x * y * z) + 2;
+  if(x === undefined || y === undefined || z === undefined) {
+    return 'Preencha todos os valores corretamente';
   } else {
-    return 'Preencha todos os valores corretamente';
+    return (x * y * z) + 2;
   }
 }
 
