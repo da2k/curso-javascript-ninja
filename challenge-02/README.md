@@ -72,13 +72,13 @@ Crie uma função com as seguintes características:
 */
 function mynewfunction(x, y, z) {
   
-  if(x === +x && y === +y && z === +z) {
-    return (x + y) / z;
-  } else if(x === +x && y === +y) {
-    return x + y;
-  } else if(x === +x) {
+  if(x !== undefined && y === undefined && z === undefined) {
     return x;
-  } else if((x === '' && x === undefined) || (y === '' || y === undefined) || (z === '' || z === undefined)) {
+  } else if(x !== undefined && y !== undefined && z === undefined) {
+    return x + y;
+  } else if(x !== undefined && y !== undefined && z !== undefined) {
+    return (x + y) / z;
+  } else if(x === undefined || y === undefined || z === undefined) {
     return false;
   } else {
     return null;
