@@ -10,10 +10,10 @@
   das variáveis. Analise o que está sendo impresso no console para saber como
   resolver o problema corretamente.
   */
-  var five = new Number('5').valueOf();
+  var five = Number('5');
   console.log( five + ' é número?', typeof five === 'number' );
 
-  var concat = new String(10 + 10).valueOf();
+  var concat = String(10) + '10';
   console.log( '"' + concat + '" é uma string? E é igual a "1010"?', typeof concat === 'string' );
 
   /*
