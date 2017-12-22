@@ -27,7 +27,7 @@ Crie uma função literal chamada `showName`. Essa função deve retornar o
 seu nome.
 */
 function showName() {
-    return 'Fabrício';
+    return 'Fabrício Silva';
 }
 
 /*
@@ -55,30 +55,30 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
   "Operação inválida."
 */
 function calculator(operator) {
-    return function(x, y) {
+    return function(number1, nember2) {
         var result;
 
         switch(operator) {
             case '+':
-                result = x + y;
+                result = number1 + nember2;
                 break;
             case '-':
-                result = x - y;
+                result = number1 - nember2;
                 break;
             case '*':
-                result = x * y;
+                result = number1 * nember2;
                 break;
             case '/':
-                result = x / y;
+                result = number1 / nember2;
                 break;
             case '%':
-                result = x % y;
+                result = number1 % nember2;
                 break;
             default:
                 return 'Operação inválida.';
         }
 
-        return 'Resultado da operação: ' + x + ' ' + operator + ' ' + y + ' = ' + result + '.';
+        return 'Resultado da operação: ' + number1 + ' ' + operator + ' ' + nember2 + ' = ' + result + '.';
     };
 }
 
