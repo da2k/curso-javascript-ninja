@@ -26,12 +26,12 @@ $buttonCE.addEventListener('click', handleClickCE, false);
 $buttonEqual.addEventListener('click', handleClickEqual, false);
 
 function handleClickNumber() {
-  $visor.value += this.value;
+  $visor.value = addValueToVisor(this.value);
 }
 
 function handleClickOperation() {
   $visor.value = removeLastItemIfItIsAnOperator($visor.value);
-  $visor.value += this.value;
+  $visor.value = addValueToVisor(this.value);
 }
 
 function handleClickCE() {
@@ -40,7 +40,7 @@ function handleClickCE() {
 
 function isLastItemAnOperation(number) {
   var operations = ['+', '-', 'x', '÷'];
-  var lastItem = number.split('').pop();
+  var lastItem = getLastItem(number);
   return operations.some(function(operator) {
     return operator === lastItem;
   });
@@ -56,20 +56,36 @@ function removeLastItemIfItIsAnOperator(number) {
 function handleClickEqual() {
   $visor.value = removeLastItemIfItIsAnOperator($visor.value);
   var allValues = $visor.value.match(/\d+[+x÷-]?/g);
-  $visor.value = allValues.reduce(function(accumulated, actual) {
+  $visor.value = reduceAllValues(allValues);
+}
+
+function getLastItem(item){
+  return item.split('').pop();
+}
+
+function addValueToVisor(value){
+  return $visor.value += value;
+}
+
+function reduceAllValues(allValues){
+  return allValues.reduce(function(accumulated, actual) {
     var firstValue = accumulated.slice(0, -1);
-    var operator = accumulated.split('').pop();
+    var operator = getLastItem(accumulated);
     var lastValue = removeLastItemIfItIsAnOperator(actual);
-    var lastOperator = isLastItemAnOperation(actual) ? actual.split('').pop() : '';
-    switch(operator) {
-      case '+':
-        return ( Number(firstValue) + Number(lastValue) ) + lastOperator;
-      case '-':
-        return ( Number(firstValue) - Number(lastValue) ) + lastOperator;
-      case 'x':
-        return ( Number(firstValue) * Number(lastValue) ) + lastOperator;
-      case '÷':
-        return ( Number(firstValue) / Number(lastValue) ) + lastOperator;
-    }
+    var lastOperator = isLastItemAnOperation(actual) ? getLastItem(actual) : '';
+    return calculate(operator, firstValue, lastValue, lastOperator);
   });
+}
+
+function calculate(operator, firstValue, lastValue, lastOperator){
+  switch(operator) {
+    case '+':
+      return ( Number(firstValue) + Number(lastValue) ) + lastOperator;
+    case '-':
+      return ( Number(firstValue) - Number(lastValue) ) + lastOperator;
+    case 'x':
+      return ( Number(firstValue) * Number(lastValue) ) + lastOperator;
+    case '÷':
+      return ( Number(firstValue) / Number(lastValue) ) + lastOperator;
+  }
 }
