@@ -58,17 +58,18 @@
     'Jhon',
     'Bruna'
   ];
-  var myFriends = myFriends.join(', ');
-  var lastComma = myFriends.lastIndexOf(',');
-  var myFriends = myFriends.slice(0, lastComma) + ' e ' + myFriends.slice(lastComma+2);
-  console.log(myFriends);
+  var phrase = myFriends.reduce(function(previousValue, actualValue, index) {
+    var separator = myFriends.length - 1 === index ? ' e ' : ', ';
+    return previousValue + separator + actualValue;
+  }).concat(' são meus amigos.');
+  console.log(phrase);
 
   /*
   Usando o replace(), faça a string "Roberto" virar "Roberta".
   Mostre o resultado no console.
   */
   console.log( '\nEra "Roberto", agora é:' );
-  console.log('Roberto'.replace('o', '-').replace('o','a').replace('-','o'));
+  console.log('Roberto'.replace('to', 'ta'));
 
   /*
   Mostre no console a parte "nando" da string "Fernando". Use o método que
@@ -91,9 +92,9 @@
   var myNewName = '';
   for(var i = 0; i < myName.length; i++) {
     if (i % 2 === 0) {
-      myNewName = myNewName.concat(myName.charAt(i).toUpperCase());
+      myNewName += myName.charAt(i).toUpperCase();
     } else {
-      myNewName = myNewName.concat(myName.charAt(i).toLowerCase());
+      myNewName += myName.charAt(i).toLowerCase();
     }
   }
   console.log(myNewName);
