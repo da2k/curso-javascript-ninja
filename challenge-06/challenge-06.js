@@ -84,28 +84,46 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
 */
 function convertToHex (color) {
     var hexValue;
-    switch(color) {
+    var msg;
+    switch (color) {
         case 'red':
         hexValue = '#F44336';
+        msg = 'O hexadecimal para a cor ' + color + ' é ' + hexValue + '.';
+        console.log(msg);
         break;
         case 'purple':
         hexValue = '#9C27B0';
+        msg = 'O hexadecimal para a cor ' + color + ' é ' + hexValue + '.';
+        console.log(msg);
         break;
         case 'blue':
         hexValue = '#2196F3';
+        msg = 'O hexadecimal para a cor ' + color + ' é ' + hexValue + '.';
+        console.log(msg);
         break;
         case 'green':
         hexValue = '#4CAF50';
+        msg = 'O hexadecimal para a cor ' + color + ' é ' + hexValue + '.';
+        console.log(msg);
         break;
         case 'yellow':
         hexValue = '#FFEB3B';
+        msg = 'O hexadecimal para a cor ' + color + ' é ' + hexValue + '.';
+        console.log(msg);
         break;
         default:
-        console.log('Não temos o equivalente hexadecimal para ' +  + '.');
+        console.log('Não temos o equivalente hexadecimal para ' + color + '.');
     }
 }
 
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-// ?
+convertToHex('blue');
+convertToHex('teal');
+convertToHex('red');
+convertToHex('green');
+convertToHex('orange');
+convertToHex('yellow');
+convertToHex('purple');
+convertToHex('indigo');
