@@ -52,9 +52,7 @@
   /*
   Mostre no console todos os livros.
   */
-  for( var i = 0; i < books.length; i++ ) {
-    console.log( books[ i ] );
-  }
+  console.log( books );
 
   console.log( '\nLivro que está sendo removido:' );
   /*
@@ -66,7 +64,7 @@
   /*
   Mostre no console os livros restantes.
   */
-  console.log( books.length );
+  console.log( books );
 
   /*
   Converta os objetos que ficaram em `books` para strings.
@@ -92,7 +90,7 @@
   */
   for( var i = 0; i < books.length; i++ ) {
     for( prop in books[ i ] ) {
-      console.log( prop +': '+ books[ i ][ prop ] );
+      console.log( prop, ':', books[ i ][ prop ] );
     }
   }
 
