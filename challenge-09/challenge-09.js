@@ -46,7 +46,7 @@
 
     function sum() {
       return number1 + number2;
-    };
+    }
 
     console.log( 'A soma de 40 e 50 é igual a', sum() );
     console.log( 'Na função myFunction3, number1 é igual a', number1 );
@@ -89,10 +89,10 @@
   uma função anônima que irá retornar a soma dos dois números que essa função
   anônima tem como seus argumentos.
   */
-  var result = sum(function(number1, number2) {
+  console.log( 'O resultado da soma é:');
+  console.log(sum(function(number1, number2) {
     return number1 + number2;
-  });
-  console.log( 'O resultado da soma é:', result);
+  }));
 
   /*
   Agora declare outra variáveis chamadas `subtraction`, `multiplication`,
@@ -111,23 +111,23 @@
   As suas respostas devem estar abaixo dos `console.log` referentes à cada
   chamada.
   */
-  var resultSub = subtraction(function(number1, number2) {
+  console.log( 'O resultado da subtração é:' );
+  console.log(subtraction(function(number1, number2) {
     return number1 - number2;
-  });
-  console.log( 'O resultado da subtração é:', resultSub );
+  }));
 
-  var resultMul = multiplication(function(number1, number2) {
+  console.log( 'O resultado da multiplicação é:' );
+  console.log(multiplication(function(number1, number2) {
     return number1 * number2;
-  });
-  console.log( 'O resultado da multiplicação é:', resultMul );
+  }));
 
-  var resultDiv = division(function(number1, number2) {
+  console.log( 'O resultado da divisão é:' );
+  console.log(division(function(number1, number2) {
     return number1 / number2;
-  });
-  console.log( 'O resultado da divisão é:', resultDiv );
+  }));
 
-  var resultMod = mod(function(number1, number2) {
+  console.log( 'O resto da divisão é:' );
+  console.log(mod(function(number1, number2) {
     return number1 % number2;
-  });
-  console.log( 'O resto da divisão é:', resultMod );
+  }));
 })();
