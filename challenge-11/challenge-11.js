@@ -48,8 +48,8 @@
   Após a função, mostrar a mensagem no console:
   'The person has more than 25 years old? [TRUE/FALSE]'
   */
-  function moreThan( years ) {
-    return person.age > years;
+  function moreThan( age ) {
+    return person.age > age;
   }
   console.log( 'The person has more than 25 years old?', moreThan( 25 ) );
 
@@ -60,13 +60,11 @@
   */
   console.log( 'De 0 a 10:' );
   var numbers = [];
-  for(var i = 0; i <= 20; i++ ) {
+  for( var i = 0; i <= 20; i++ ) {
     if( i > 10 ) break;
     numbers.push( i );
   }
-  for( var i = 0; i < numbers.length; i++ ) {
-    console.log( numbers[ i ] );
-  }
+  console.log( numbers );
 
   /*
   Faça outro loop de 0 a 20, que adicione a um array chamado `numbers` (já
@@ -76,11 +74,9 @@
   */
   console.log( 'Pares de 0 a 20:' );
   numbers = [];
-  for(var i = 0; i <= 20; i++ ) {
-    if( i % 2 === 1 ) continue;
+  for( var i = 0; i <= 20; i++ ) {
+    if( i % 2 !== 0 ) continue;
     numbers.push( i );
   }
-  for( var i = 0; i < numbers.length; i++ ) {
-    console.log( numbers[ i ] );
-  }
+  console.log( numbers );
 }() );
