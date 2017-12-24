@@ -1,9 +1,9 @@
 <html>
 <script>
 
-Desafio da semana #2
+//Desafio da semana #2
 
-Nesse exercício, você está livre para escolher os nomes para suas variáveis e funções! :smile:
+//Nesse exercício, você está livre para escolher os nomes para suas variáveis e funções! :smile:
 
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
 function tricampeao(x, y) {
@@ -33,7 +33,7 @@ valor();
 /////////
 // Qual o retorno da função? (Use comentários de bloco).
 /*
-undefined
+'O valor da variável agora é 25'
 
 /*
 Crie uma função com as seguintes características:
@@ -44,10 +44,12 @@ Crie uma função com as seguintes características:
 */
 /////////
 function tres(x, y, z) {
-  if( x == null || y == null || z == null) {
+  if( x === undefined || y == undefined || z == undefined) {
     return ("Preencha todos os campos corretamente");
   }
   return (x*y*z) + 2;
+}
+
 /////////
 // Invoque a função criada acima, passando só dois números como argumento.
 tres(1,2);
@@ -70,24 +72,28 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-function novaFuncao(a, b, c){
-     if ( a && !b && !c ) {
-         return a;
-     } else if ( a && b && !c ) {
-         return a + b;
-     } else if (a && b && c) {
-         return (a + b)/c
-     } else if (!a || !b || !c ) {
-          return false;
-     } else {
-         return null;
-     }
- }
+function tresArgumentos(a, b, c) {
+  if (a !== undefined && b === undefined && c === undefined) {
+    return a;
+  }
+  else if (a !== undefined && b !== undefined && c === undefined) {
+    return a + b;
+  }
+  else if (a !== undefined && b !== undefined && c !== undefined) {
+    return (a + b) / c;
+  }
+  else if (a === undefined && b === undefined && c === undefined) {
+    return false;
+  }
+  else {
+    return null;
+  }
+}
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-  novaFuncao();  // false
-  novaFuncao(1); // 1
-  novaFuncao(1,2); // 3
-  novaFuncao(1,2,3); // 1 
+tresArgumentos();  // false
+tresArgumentos(1); // 1
+tresArgumentos(1,2); // 3
+tresArgumentos(1,2,3); // 1 
 
 </script>
 </html>
