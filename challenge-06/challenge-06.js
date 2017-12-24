@@ -80,8 +80,8 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
 */
 // ?
 function convertToHex(color) {
+    var hexa;
     switch(color){
-        var hexa;
         case 'red':
               hexa = '#FF0000';
               break;
@@ -101,7 +101,7 @@ function convertToHex(color) {
             return 'Não temos o equivalente hexadecimal para cor';
 
     }
-    return 'O hexadecimal para a cor' + color + 'é' + hexa + '.';
+    return 'O hexadecimal para a cor' + '' + color + 'é' + '' + hexa + '.';
 }
 
 /*
