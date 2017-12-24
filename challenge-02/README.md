@@ -22,16 +22,16 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function acrescenta(valor){
-... myvar = valor;
+function acrescenta(){
+... myvar = 128;
 ... return 'O valor da variável agora é: ' + myvar
 ... }
 
 // Invoque a função criada acima.
-acrescenta(5)
+acrescenta()
 
 // Qual o retorno da função? (Use comentários de bloco).
-'O valor da variável agora é: 5 '
+/* O valor da variável agora é: 128 */
 
 /*
 Crie uma função com as seguintes características:
@@ -41,19 +41,18 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 
-function trimult(a,b,c){
-... if (a == undefined || b == undefined || c == undefined){
-..... return 'Preencha todos os valores corretamente'
-..... } else {
-..... return (a * b * c) + 2
+function trimult(a,b,c) {
+... if (a === undefined || b === undefined || c === undefined) {
+..... return 'Preencha todos os valores corretamente';
 ..... }
+..... return (a * b * c) + 2
 ...}
 
 // Invoque a função criada acima, passando só dois números como argumento.
 trimult(2,2)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-trimult(2,2) // 'Preencha todos os valores corretamente'
+ /* Preencha todos os valores corretamente */
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 trimult(2,2,2)
@@ -71,7 +70,7 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 
-function escolha(a,b,c){
+function escolhe(a,b,c){
 ... if(a !== undefined && b !== undefined && c !== undefined){
 ..... return (a + b)/c
 ..... } else if(a !== undefined || b !== undefined || c !== undefined){
@@ -86,8 +85,8 @@ function escolha(a,b,c){
 ... }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-escolha() // false
-escolha(1) // 1
-escolha(1,2) // 3
-escolha(1,2,3) // 1
+escolhe() // false
+escolhe(1) // 1
+escolhe(1,2) // 3
+escolhe(1,2,3) // 1
 ```
