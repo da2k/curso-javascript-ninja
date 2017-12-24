@@ -29,4 +29,4 @@ nesse arquivo, dentro do `console.log`, o link para o pull request no seu
 projeto.
 */
 
-console.log('https://github.com/frankyston/franky-cars');
+console.log('https://github.com/frankyston/franky-cars/pull/1');
