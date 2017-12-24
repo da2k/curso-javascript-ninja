@@ -5,12 +5,17 @@ desses parâmetros.
 */
 // ?
 
+var sum = function calculateSum ( a + b ) {
+	return a + b;
+}
+
 /*
 Invoque a função criada acima, passando dois números que serão somados, e mostre
 o resultado no console, com a frase:
 "A soma de [VALOR 1] e [VALOR2] é igual a [RESULTADO]."
 */
 // ?
+console.log('A soma de' + calculateSum(1) + 'é igual a' + calculateSum(2));
 
 /*
 Mostre no console o nome da função criada acima, com a frase:
@@ -18,24 +23,30 @@ Mostre no console o nome da função criada acima, com a frase:
 */
 // ?
 
+console.log('O nome da função que faz a soma é' + calculateSum(1));
+
 /*
 Crie uma função literal chamada `showName`. Essa função deve retornar o
 seu nome.
 */
 // ?
 
+function showName(name){
+   return name;
+};
+
 /*
 Declare uma variável chamada `varShowName` que recebe a função criada acima.
 */
 // ?
-
+var showName = function showName(name);
 /*
 Usando a variável criada acima, mostre no console o nome e o retorno da função
 atribuída a ela, com a seguinte frase:
 "A função [NOME DA FUNÇÃO] retorna [RETORNO DA FUNÇÃO]."
 */
 // ?
-
+console.log();
 /*
 Crie uma função literal chamada `calculator`, que funcione assim:
 - A função deve receber um parâmetro que dirá qual operação matemática ela
