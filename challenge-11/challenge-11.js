@@ -53,7 +53,8 @@
         var howOld = person['age'] > age; 
         return howOld ? true : false;
     }
-    console.log('The person has more than 25 years old? ' + moreThan(40) );
+    var moreThanAge = 25;
+    console.log('The person has more than ' + moreThanAge + ' years old? ' + moreThan(moreThanAge) );
 
     /*
     Faça um loop de 0 a 20, que adicione cada número como um item de um
