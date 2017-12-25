@@ -15,6 +15,7 @@
   for( var i = 1; i <= 10; i++ ) {
     numberObjects.push( { number: i } );
   }
+  console.log( numberObjects );
 
   /*
   Crie um array chamado `justNumbers`, que terá como elementos somente os
@@ -83,8 +84,8 @@
   e atribuirá o seu nome invertido (usando o array criado acima).
   */
   console.log( '\nInversed Name:' );
-  var inversedName = name.reduceRight( function( total, letter ) {
-    return total + letter
+  var inversedName = name.reduceRight( function( total, atual ) {
+    return total + atual
   } );
   console.log( inversedName );
 
