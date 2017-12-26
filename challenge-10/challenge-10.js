@@ -25,7 +25,7 @@
   função receberá dois parâmetros e retornará a operação referente à sua
   propriedade, usando os valores passados por parâmetro.
   */
-  var operator = {
+  var operation = {
     '+': function(number1, number2) {
       return number1 + number2;
     },
@@ -53,8 +53,14 @@
   Caso contrário, "false".
   - O desafio é fazer o retorno sem usar "if" ou "switch".
   */
+  // function isOperatorValid(operator) {
+  //   return operator === '+' || operator === '-' || operator === '*' || operator === '/' || operator === '%';
+  // }
+  // function isOperatorValid(operator) {
+  //   return operation[operator] !== undefined;
+  // }
   function isOperatorValid(operator) {
-    return operator === '+' || operator === '-' || operator === '*' || operator === '/' || operator === '%';
+    return !!operation[operator];
   }
 
   /*
@@ -69,8 +75,8 @@
   operador passado para a função "calculator", e passando para esse método
   os dois parâmetros da função de retorno de "calculator".
   */
-  function calculator(operationSignal) {
-    if (!isOperatorValid(operationSignal)) {
+  function calculator(operator) {
+    if (!isOperatorValid(operator)) {
       return false;
     }
 
@@ -79,7 +85,7 @@
         return false;
       }
 
-      return operator[operationSignal](number1, number2);
+      return operation[operator](number1, number2);
     };
   }
 
@@ -198,12 +204,12 @@
   a mensagem de erro será mostrada no console.
   */
   operationSignal = 'x';
-  var mod = calculator(operationSignal);
-  if (mod) {
+  var invalid = calculator(operationSignal);
+  if (invalid) {
     number1 = 3;
     number2 = 2;
 
-    console.log(showOperationMessage(operationSignal, number1, number2), mod(number1, number2));
+    console.log(showOperationMessage(operationSignal, number1, number2), invalid(number1, number2));
   } else {
     console.log(showErrorMessage(operationSignal));
   }
