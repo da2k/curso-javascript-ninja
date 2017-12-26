@@ -3,13 +3,9 @@ Declare uma variável chamada `sum` e atribua a ela uma função chamada
 `calculateSum`. A função deve receber dois parâmetros e retornar a soma
 desses parâmetros.
 */
-<<<<<<< HEAD
 var sum = function calculeSum(a, b){
     return a + b;
-=======
-let sum = function calculateSum(x, y){
-  return x + y
->>>>>>> a67a4b71a088faeccb9a5f389b4f68b8f2559ba9
+
 };
 
 /*
@@ -17,13 +13,12 @@ Invoque a função criada acima, passando dois números que serão somados, e mo
 o resultado no console, com a frase:
 "A soma de [VALOR 1] e [VALOR2] é igual a [RESULTADO]."
 */
-<<<<<<< HEAD
+
 var a = 1;
 var b = 2
 console.log("A soma de " + a + " e "  + b + " é igual a " + sum(a,b));
-=======
 calculateSum(10, 20)
->>>>>>> a67a4b71a088faeccb9a5f389b4f68b8f2559ba9
+
 
 /*
 Mostre no console o nome da função criada acima, com a frase:
