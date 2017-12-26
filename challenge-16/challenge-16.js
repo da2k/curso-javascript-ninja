@@ -17,7 +17,7 @@
   */
   console.log( 'As letras do seu nome:' );
   var name = 'André';
-  for( var i = 0; i < name.length; i++ ) {
+  for( var i = 0, len = name.length; i < len; i++ ) {
     console.log( name.charAt( i ), 'é a '+ ( i + 1 ) +'º letra do meu nome' );
   }
 
@@ -35,8 +35,7 @@
   */
   console.log( '\nNome convertido à partir de um slug:' );
   function convert_from_slug_to_normal( phrase ) {
-    var words = phrase.split( '-' );
-    return words.map( function( word ) {
+    return phrase.split( '-' ).map( function( word ) {
       return word.charAt( 0 ).toUpperCase() + word.slice( 1 );
     } ).join( ' ' );
   }
@@ -56,10 +55,8 @@
   console.log( '\nMeus amigos:' );
   var names = [ 'André', 'Gabriel', 'Daniela', 'Denise', 'Mauricio' ];
   var names_reduce = names.reduce( function( total, name, index, names ) {
-    if( index === names.length - 1 ) {
-      return total + ' e ' + name;
-    }
-    return total + ', ' + name;
+    var separator = names.length - 1 === index ? ' e ' : ', ';
+    return total + separator + name;
   } ).concat( ' são meus amigos.' );
   console.log( names_reduce );
 
@@ -68,15 +65,14 @@
   Mostre o resultado no console.
   */
   console.log( '\nEra "Roberto", agora é:' );
-  var name = 'Roberto';
-  console.log( name.slice( 0, 2 ) + name.slice( 2 ).replace( 'o', 'a' ) );
+  console.log( 'Roberto'.replace( 'to', 'ta' ) );
 
   /*
   Mostre no console a parte "nando" da string "Fernando". Use o método que
   faz a busca do final para o início da string.
   */
   console.log( '\nParte de uma string:' );
-  console.log( 'Fernando'.slice( -5 ) );
+  console.log( 'Fernando'.substring( 8, 3 ) );
 
   /*
   Declare uma variável chamada `myName`, que receba o seu primeiro nome,
@@ -89,11 +85,9 @@
   */
   console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
   function interleave_letters( word ) {
-    var letters = word.toLowerCase().split( '' );
-    return letters.reduce( function( total, item, index ) {
-      item = index % 2 === 0 ? item.toLowerCase() : item.toUpperCase();
-      return total + item;
-    } );
+    return word.split( '' ).map( function( letter, index ) {
+      return index % 2 === 0 ? letter.toUpperCase() : letter.toLowerCase();
+    } ).join( '' );
   }
   var myName = 'André';
   console.log( interleave_letters( myName ) );
