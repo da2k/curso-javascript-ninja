@@ -155,16 +155,27 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao = function(){
+  var opSexo;
+  var opIdade;
+  var opMetro;
   if(pessoa.sexo == 'feminino'){
-    return "Olá, eu sou a "+pessoa.nomeCompleto()+", tenho "+pessoa.idade+" anos, "+pessoa.altura+", meu peso é "+pessoa.peso+" e, só hoje, eu já caminhei "+pessoa.caminhouQuantosMetros+" metros!";
-  }else if(pessoa.idade == 1){
-    return "Olá, eu sou a "+pessoa.nomeCompleto()+", tenho "+pessoa.idade+" ano, "+pessoa.altura+", meu peso é "+pessoa.peso+" e, só hoje, eu já caminhei "+pessoa.caminhouQuantosMetros+" metros!";
-  }else if(pessoa.caminhouQuantosMetros == 1){
-    return "Olá, eu sou a "+pessoa.nomeCompleto()+", tenho "+pessoa.idade+" ano, "+pessoa.altura+", meu peso é "+pessoa.peso+" e, só hoje, eu já caminhei "+pessoa.caminhouQuantosMetros+" metro!";
+    opSexo = "a";
+  }else{
+    opSexo = "o";
   }
-  return "Olá, eu sou o "+pessoa.nomeCompleto()+", tenho "+pessoa.idade+" anos, "+pessoa.altura+", meu peso é "+pessoa.peso+" e, só hoje, eu já caminhei "+pessoa.caminhouQuantosMetros+" metros!";
+  if(pessoa.idade == 1){
+    opIdade = "ano";
+  }else{
+    opIdade = "anos";
+  }
+  if(pessoa.caminhouQuantosMetros == 1){
+    opMetro = "metro";
+  }else{
+    opMetro = "metros";
+  }
+  return "Olá, eu sou "+opSexo+" "+pessoa.nome+" "+pessoa.sobrenome+", tenho "+pessoa.idade+" anos, "+"tenho "+pessoa.altura+" "+opMetro+", meu peso é "+pessoa.peso+" quilos e, só hoje, eu já caminhei "+pessoa.caminhouQuantosMetros+" "+opMetro+"!";
 }
 
 // Agora, apresente-se ;)
-?
+"Olá, eu sou o Chico Silva, tenho 29 anos, tenho 1.8 metros, meu peso é 85.5quilos e, só hoje, eu já caminhei 9 metros!"
 ```
