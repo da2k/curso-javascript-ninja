@@ -3,7 +3,7 @@ Crie uma IIFE que envolva todo o código desse arquivo. Faça também a
 indentação correta do código, para ficar dentro da IIFE.
 */
 
-function(){
+(function(){
 
     /*
     Analise as funções abaixo (`myFunction`, `myFunction2` e `myFunction3`, e
@@ -42,10 +42,10 @@ function(){
     function myFunction3() {
         var number2 = 50;
         var number1 = 40;
+        return sum();
         function sum() {
             return number1 + number2;
         };
-        return sum();
         console.log( 'A soma de 40 e 50 é igual a', sum() );
         console.log( 'Na função myFunction3, number1 é igual a', number1 );
     }
@@ -64,12 +64,11 @@ function(){
     por parâmetro, INVOCADA, e passando a ela por parâmetro os dois valores
     que foram passadas para a primeira função `calculator`.
     */
-    // ?
     function calculator(number1,number2){
         var number1 = 10;
         var number2 = 20;
         function(callback){
-            return calculator(callback, number1,number2);
+            return callback(number1,number2);
         }
     }
 
@@ -77,9 +76,8 @@ function(){
     Declare uma variável chamada `sum`, e atribua a ela a função `calculator`,
     passando dois números por parâmetro.
     */
-    // ?
 
-    var sum = calculator(number1, number2);
+    var sum = calculator(10, 5);
 
     /*
     Sabemos que `sum` agora tem uma função atribuída a ela, que é o retorno de
@@ -90,20 +88,20 @@ function(){
     uma função anônima que irá retornar a soma dos dois números que essa função
     anônima tem como seus argumentos.
     */
-    console.log( 'O resultado da soma é:' sum(function(number1,number2){}));
-    // ?
+    console.log( 'O resultado da soma é:' sum(function(number1,number2){
+        return number1 + number2;
+    }));
 
     /*
     Agora declare outra variáveis chamadas `subtraction`, `multiplication`,
     `division` e `mod`, e atribua à elas `calculator`, passando números
     diferentes para cada chamada.
     */
-    // ?
 
-    var subtraction = 3 - 2;
-    var multiplication = 20 * 4;
-    var division = 50 / 5;
-    var mod = 8 % 4;
+    var subtraction = calculator(2,10);
+    var multiplication = calculator(20,4);
+    var division = calculator(20,4);
+    var mod = calculator(15,4);
 
 
     /*
@@ -115,15 +113,23 @@ function(){
     */
 
     console.log( 'O resultado da subtração é:' + subtraction);
-    // ?
+    console.log(subtraction(function(number1,number2){
+        return number1 - number2;
+    }));
 
     console.log( 'O resultado da multiplicação é:' + multiplication);
-    // ?
+    console.log(multiplication(function(number1,number2){
+        return number1 * number2;
+    }));
 
     console.log( 'O resultado da divisão é:' + division );
-    // ?
+    console.log(division(function(number1,number2){
+        return number1 / number2;
+    }));
 
     console.log( 'O resto da divisão é:' +  mod );
-    // ?
+    console.log(mod(function(number1,number2){
+        return number1 % number2;
+    }));
 
-}();
+})();
