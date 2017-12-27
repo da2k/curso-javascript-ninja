@@ -47,15 +47,15 @@ Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
 
-showTeamPosition(1)
+showTeamPosition(1);
 //'O time que está em 1º lugar é o Avaí.'
-showTeamPosition(2)
+showTeamPosition(2);
 //'O time que está em 2º lugar é o Chapecoense.'
-showTeamPosition(5)
+showTeamPosition(5);
 //'O time que está em 5º lugar é o Joinville.'
-showTeamPosition(3)
+showTeamPosition(3);
 //'O time que está em 3º lugar é o Criciuma.'
-showTeamPosition(0)
+showTeamPosition(0);
 //'Não temos a informação do time que está nessa posição.'
 
 /*
@@ -113,19 +113,19 @@ function convertToHex(color){
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
- convertToHex('red')
+ convertToHex('red');
 //'O hexadecimal para a cor red é #ff0000'
- convertToHex('green')
+ convertToHex('green');
 //'O hexadecimal para a cor green é #00ff00'
- convertToHex('pink')
+ convertToHex('pink');
 //'Não temos o equivalente hexadecimal para pink'
- convertToHex('orange')
+ convertToHex('orange');
 //'Não temos o equivalente hexadecimal para orange'
- convertToHex('black')
+ convertToHex('black');
 //'O hexadecimal para a cor black é #000000'
- convertToHex('white')
+ convertToHex('white');
 //'O hexadecimal para a cor white é #ffffff'
- convertToHex('yellow')
+ convertToHex('yellow');
 //'Não temos o equivalente hexadecimal para yellow'
- convertToHex('blue')
+ convertToHex('blue');
 //'O hexadecimal para a cor blue é #0000ff'
