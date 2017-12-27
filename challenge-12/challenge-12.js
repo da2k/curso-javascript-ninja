@@ -73,18 +73,18 @@
   /*
   Converta os objetos que ficaram em `books` para strings.
   */
-  var bookJson = JSON.stringify(books);
+  var books = JSON.stringify(books);
   console.log( '\nLivros em formato string:' );
 
   /*
   Mostre os livros nesse formato no console:
   */
-  console.log(bookJson);
+  console.log(books);
 
   /*
   Converta os livros novamente para objeto.
   */
-  console.log(books);
+  books = JSON.parse(books);
   console.log( '\nAgora os livros são objetos novamente:' );
 
   /*
