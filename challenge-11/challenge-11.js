@@ -71,7 +71,7 @@
             break;
         }
         numbers.push(count);
-        console.log(count++);
+        count++;
     } while(count <= 20);
     console.log(numbers);
 
@@ -88,7 +88,6 @@
 
     do {
         if (count % 2 === 0) {
-            console.log(count);
             numbers.push(count);
         }
         count++
