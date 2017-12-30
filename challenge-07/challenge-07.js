@@ -1,7 +1,7 @@
 /*
 Crie um array com 5 items (tipos variados).
 */
-var arrOne = [
+var arr = [
     'marcelo',
     35,
     true,
@@ -22,27 +22,26 @@ function addItem(arr, item) {
 Adicione um novo array ao array criado no início do desafio, com ao menos 3
 itens de tipos diferentes, mostrando o resultado no console.
 */
-var arrTwo = addItem(arrOne, ['javascript', 2017, { desafio: 'challenge-07' }]);
-console.log( arrTwo );
+console.log( addItem(arr, ['javascript', 2017, { desafio: 'challenge-07' }]) );
 
 /*
 Mostre no console o segundo elemento desse último array, criado acima, com a
 frase:
 "O segundo elemento do segundo array é [ELEMENTO]."
 */
-console.log( 'O segundo elemento do segundo array é ' + arrTwo[1] + '.' );
+console.log( 'O segundo elemento do segundo array é ' + arr[5][1] + '.' );
 
 /*
 Mostre no console quantos itens tem o primeiro array criado, com a frase:
 "O primeiro array tem [QUANTIDADE DE ITENS] itens."
 */
-console.log( 'O primeiro array tem ' + arrOne.length + ' itens.' );
+console.log( 'O primeiro array tem ' + arr.length + ' itens.' );
 
 /*
 Agora mostre no console quantos itens tem o segundo array criado, com a frase:
 "O segundo array tem [QUANTIDADE DE ITENS] itens."
 */
-console.log( 'O segundo array tem ' + arrTwo.length + ' itens.' );
+console.log( 'O segundo array tem ' + arr[5].length + ' itens.' );
 
 /*
 Utilizando a estrutura de repetição `while`, mostre no console todos os números
@@ -52,7 +51,7 @@ console.log( 'Números pares entre 10 e 20:' );
 var evenNum = 10;
 while(evenNum <= 20) {
     evenNum % 2 === 0 ? console.log(evenNum) : '';
-    evenNum += 2;
+    evenNum ++;
 }
 
 /*
@@ -62,7 +61,7 @@ console.log( 'Números ímpares entre 10 e 20:' );
 var oddNum = 10;
 while(oddNum <= 20) {
     oddNum % 2 !== 0 ? console.log(oddNum) : '';
-    oddNum += 1;
+    oddNum ++;
 }
 
 /*
