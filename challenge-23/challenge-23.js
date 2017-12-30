@@ -24,6 +24,7 @@
   input;
   - Ao pressionar o botão "CE", o input deve ficar zerado.
   */
+  'use strict';
 
   $inputCalc = doc.querySelector('[data-js="inputCalc"]');
   $numbers = doc.querySelectorAll('[data-js="number"]');
