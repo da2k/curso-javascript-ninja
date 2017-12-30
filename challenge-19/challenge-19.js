@@ -86,8 +86,8 @@
   var markup = '<main>\n  <div class="container">\n    <span class="text date"></span>\n    <p class=\'excerpt\'></p>\n  </div>\n</main>';
   console.log( '\nQuais classes CSS existem na marcação abaixo?\n\n', markup, '\n' );
   function hasClass( markup, cssClass ) {
-    var regex = new RegExp( '<.+?class=["\']?.+?'+cssClass+'?.+?["\']?.+?>', 'i' );
-    return markup.match( regex ) ? true : false;
+    var regex = new RegExp( 'class=["\'][\\w\\s]*'+cssClass+'[\\w\\s]*["\']', 'i' );
+    return regex.test( markup );
   }
   var all_css_class = [ 'container', 'text', 'date', 'excerpt', 'main' ];
   all_css_class.forEach( function( css_class ) {
