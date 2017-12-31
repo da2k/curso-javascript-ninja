@@ -73,13 +73,13 @@
     Remova de `brasil` os estados do `sudeste`, colocando-os em uma variável
     chamada `newSudeste`.
     */
-    var newSudeste = brasil.splice(5);
+    var newSudeste = brasil.splice(5, 4);
 
     /*
     Adicione os estados do `nordeste` ao array `brasil`. Esses estados devem
     ficar no mesmo nível que os estados já existentes, não em um array separado.
     */
-    brasil.concat(nordeste);
+    brasil = brasil.concat(nordeste);
 
     /*
     Mostre no console os estados em `newSudeste`.
@@ -136,13 +136,11 @@
     - "Ceará não foi incluído :("
     */
     console.log( '\nCeará está incluído em `brasil`?' );
-    var isHasCeara = brasil.every(function( item ){
-        if (item  === 'Ceará') { 
-            console.log('Ceará está incluído!') 
-        }
-        console.log('Ceará não foi incluído :(');
+    var HasCeara = brasil.some(function( item, index ){
+        return item === 'Ceará';
     });
 
+    console.log( HasCeara ? 'Ceará está incluído!' : 'Ceará não foi incluído :(' );
 
     /*
     Percorra o array `newBrasil` e crie um novo array que some 1 no ID de cada
