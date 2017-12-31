@@ -32,7 +32,7 @@ function result() {
 }
 
 // Invoque a função criada acima.
-result()
+result();
 
 // Qual o retorno da função? (Use comentários de bloco).
 15
