@@ -26,18 +26,13 @@
   var id_timeout;
 
   // Criando os eventos
-  $start.addEventListener( 'click', start );
-  $stop.addEventListener( 'click', stop );
-  $reset.addEventListener( 'click', reset );
-
-  // Iniciando cronômetro com os valores default
-  reset();
+  $start.addEventListener( 'click', start, false );
+  $stop.addEventListener( 'click', stop, false );
+  $reset.addEventListener( 'click', reset, false );
 
   function start() {
-    id_timeout = win.setTimeout( function() {
-      $stopwatch.value++;
-      start();
-    }, 1000 );
+    $stopwatch.value++;
+    id_timeout = win.setTimeout( start, 1000 );
   }
   function stop() {
     win.clearTimeout( id_timeout );
