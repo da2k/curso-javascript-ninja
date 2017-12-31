@@ -12,11 +12,11 @@
   */
   'use strict';
 
-  var $visor = document.querySelector('[data-js="visor"]');
-  var $buttonsNumbers = document.querySelectorAll('[data-js="button-number"]');
-  var $buttonsOperations = document.querySelectorAll('[data-js="button-operation"]');
-  var $buttonCE = document.querySelector('[data-js="button-ce"]');
-  var $buttonEqual = document.querySelector('[data-js="button-equal"]');
+  var $visor = doc.querySelector('[data-js="visor"]');
+  var $buttonsNumbers = doc.querySelectorAll('[data-js="button-number"]');
+  var $buttonsOperations = doc.querySelectorAll('[data-js="button-operation"]');
+  var $buttonCE = doc.querySelector('[data-js="button-ce"]');
+  var $buttonEqual = doc.querySelector('[data-js="button-equal"]');
 
   function start() {
     startEvents();
