@@ -12,18 +12,10 @@
     Mostre esse array no console.
     */
     console.log( 'Number Objects Array:' );
-    var numberObjects = [
-        { number: 1 },
-        { number: 2 },
-        { number: 3 },
-        { number: 4 },
-        { number: 5 },
-        { number: 6 },
-        { number: 7 },
-        { number: 8 },
-        { number: 9 },
-        { number: 10 }
-    ];
+    var numberObjects = [];
+    for(var i =1 ; i <= 10;  i++){
+        numberObjects.push( { number: i } );
+    }
     console.log( numberObjects );
 
     /*
@@ -44,9 +36,7 @@
     */
     console.log( '\nJust module of division by 2 or 3:' );
     var justMod2Or3 = justNumbers.filter(function( item ){
-        if( item % 2 === 0 || item % 3 === 0) {
-            return item;
-        }
+        return item % 2 === 0 || item % 3 === 0;
     });
     console.log( justMod2Or3 );
 
@@ -88,7 +78,7 @@
     var name = ['Mi','le','na'];
     var linguaDoP = name.reduce(function(v1, v2){
         return (v1 + 'p') + v2 ;
-    });
+    }, '');
     console.log( linguaDoP ); 
 
     /*
@@ -117,7 +107,7 @@
     o que acontece ;)
     */
     console.log( '\nExiste um { number: 2 } em numberObjects?' );
-    var number2 = numberObjects.indexOf( {number: 2} );
+    var number2 = numberObjects.indexOf( {number: 2} ) ;
     console.log( number2 ? 'Existe um objeto { number: 2 } em numberObjects!' : 'Não existe um objeto { number: 2 } em numberObjects :(' );
     console.log( 
         'indexOf vai passar pelos itens do array,' +
@@ -129,7 +119,7 @@
     será que obtemos um resultado diferente? Faça a busca a partir do índice 2.
     */
     console.log( '\nE buscando a partir do último índice, o { number: 2 } existe?' );
-    var lastNumber2 = numberObjects.lastIndexOf( {number: 2} );
+    var lastNumber2 = numberObjects.lastIndexOf( {number: 2}, 2 ) > -1;
     console.log( lastNumber2 ? 'Existe um objeto { number: 2 } em numberObjects!' : 'Não existe um objeto { number: 2 } em numberObjects :(' );
     
 
