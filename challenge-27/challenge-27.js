@@ -100,15 +100,5 @@
   DOM.prototype.some = function some(){
     return Array.prototype.some.apply(this.element, arguments);
   }
-
-  var $a = new DOM('p');
-  console.log($a.isNull(null));
-  console.log($a.get());
-  $a.forEach(function(element){
-    console.log(element.firstChild.nodeValue);
-  });
-  $a.map(function(item){
-    console.log(item.firstChild.nodeValue);
-  });
-
+  
 })(window, document)
