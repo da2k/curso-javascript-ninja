@@ -100,6 +100,7 @@ var subtraction = calculator('-');
 var multiplication = calculator('*');
 var division = calculator('/');
 var mod = calculator('%');
+var invalid = calculator('#');
 
 /*
 Faça uma operação com cada uma das funções criadas acima, mostrando o resultado
@@ -109,3 +110,4 @@ console.log( subtraction(18, 3) );
 console.log( multiplication(12, 4) );
 console.log( division(54, 9) );
 console.log( mod(5, 2) );
+console.log( invalid(2, 3) );
