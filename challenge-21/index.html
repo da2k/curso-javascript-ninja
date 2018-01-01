@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Cronômetro</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main>
-    <input type="text" data-js="stopwatch" value="0">
-    <button data-js="start">Start</button>
-    <button data-js="stop">Stop</button>
-    <button data-js="reset">Reset</button>
+  <main class="stopwatch">
+    <input class="stopwatch__timer" type="text" data-js="stopwatch" value="0" disabled>
+    <div class="stopwatch__buttons-group">
+      <button class="stopwatch__button stopwatch__button--play" data-js="start">Start</button>
+      <button class="stopwatch__button stopwatch__button--stop" data-js="stop">Stop</button>
+      <button class="stopwatch__button stopwatch__button--reset" data-js="reset">Reset</button>
+    </div>
   </main>
   <script src="challenge-21.js"></script>
 </body>

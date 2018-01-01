@@ -1,0 +1,58 @@
+body {
+  padding: 10% 30%;
+}
+
+.stopwatch {
+  box-shadow: 0 5px 5px 0 #ccc;
+}
+
+.stopwatch__timer {
+  background-color: #fff;
+  border: 1px solid #333;
+  border-bottom: none;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  box-sizing: border-box;
+  color: #333;
+  display: block;
+  font-size: 100pt;
+  max-width: 100%;
+  padding: 30px 0;
+  text-align: center;
+}
+
+.stopwatch__buttons-group {
+  display: flex;
+}
+
+.stopwatch__button {
+  background: none;
+  border: none;
+  color: #fff;
+  flex: 1;
+  font-size: 20pt;
+  margin: 0 auto;
+  padding: 30px;
+  text-transform: uppercase;
+}
+
+.stopwatch__button:hover {
+  cursor: pointer;
+  opacity: .9;
+}
+
+.stopwatch__button--play {
+  background-color: #5bb493;
+  outline-color: #5bb493;
+}
+
+.stopwatch__button--stop {
+  background-color: #ef823f;
+  outline-color: #ef823f;
+}
+
+.stopwatch__button--reset {
+  background-color: #f5c852;
+  outline-color: #f5c852;
+}
+
