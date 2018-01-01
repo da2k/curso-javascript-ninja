@@ -1,0 +1,74 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: #141E30;
+  background: -webkit-linear-gradient(to right, #243B55, #141E30);
+  background: linear-gradient(to right, #243B55, #141E30);
+  font-family: 'Nunito', sans-serif;
+}
+
+h1 {
+  color: #FFF;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.keyboard {
+  width: 600px;
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+  border-radius: 6px;
+}
+
+.keyboard-key {
+  flex: 1 0 auto;
+  background: #fff;
+  border: 1px solid #eee;
+  height: 300px;
+  position: relative;
+}
+
+.keyboard-key:focus {
+  background: linear-gradient(#ffffff , #f7f7f7);;
+  outline: 0;
+}
+
+.keyboard-key::before {
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 50%;
+  background: #222;
+  content: '';
+}
+
+.keyboard-key__letter {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 900;
+}

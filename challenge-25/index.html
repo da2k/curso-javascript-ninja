@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,700,900" rel="stylesheet">
+</head>
+<body>
+  <div class="content">
+    <h1>Piano ou batera?</h1>
+
+    <div class="keyboard">
+      <button class="keyboard-key" data-sound="tom" data-key="65">
+        <div class="keyboard-key__letter">A</div>
+      </button>
+      <button class="keyboard-key" data-sound="hihat" data-key="83">
+        <div class="keyboard-key__letter">S</div>
+      </button>
+      <button class="keyboard-key" data-sound="kick" data-key="68">
+        <div class="keyboard-key__letter">D</div>
+      </button>
+      <button class="keyboard-key" data-sound="openhat" data-key="70">
+        <div class="keyboard-key__letter">F</div>
+      </button>
+      <button class="keyboard-key" data-sound="ride" data-key="71">
+        <div class="keyboard-key__letter">G</div>
+      </button>
+      <button class="keyboard-key" data-sound="snare" data-key="72">
+        <div class="keyboard-key__letter">H</div>
+      </button>
+      <button class="keyboard-key" data-sound="tink" data-key="74">
+        <div class="keyboard-key__letter">J</div>
+      </button>
+      <button class="keyboard-key" data-sound="boom" data-key="75">
+        <div class="keyboard-key__letter">K</div>
+      </button>
+      <button class="keyboard-key" data-sound="clap" data-key="76">
+        <div class="keyboard-key__letter">L</div>
+      </button>
+    </div>
+  </div>
+
+  <audio src="sounds/boom.wav" data-js="audioEl"></audio>
+
+  <script src="challenge-25.js" charset="utf-8"></script>
+</body>
+</html>
