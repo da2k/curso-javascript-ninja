@@ -2,7 +2,7 @@
 
 ```js
 // Declarar uma variável qualquer, que receba um objeto vazio.
-var myVar;
+var myVar = {};
 
 /*
 Declarar uma variável `pessoa`, que receba suas informações pessoais.
@@ -20,6 +20,7 @@ As propriedades e tipos de valores para cada propriedade desse objeto devem ser:
 var pessoa = { 
     nome: 'Rafaela',
     sobrenome: 'Miranda',
+    sexo: 'Feminino',
     idade: 20,
     altura: 1.65,
     peso: 60,
@@ -52,7 +53,6 @@ pessoa.andar = function(metros) {
     pessoa.caminhouQuantosMetros += metros;
     pessoa.andando = true;
 }
-
 
 /*
 Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o valor
@@ -148,30 +148,39 @@ pessoa.idade //23
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
 com metragens diferentes passadas por parâmetro.
 */
-?
+
+pessoa.andar(3);
+pessoa.andar(10);
+pessoa.andar(20);
+
 
 /*
 A pessoa ainda está andando? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+
+pessoa.andando; //True
+
 
 /*
 Se a pessoa ainda está andando, faça-a parar.
 */
-?
+
+pessoa.andando = false;
 
 /*
 E agora: a pessoa ainda está andando? (Use uma instrução para responder e
 comentários inline ao lado da instrução para mostrar a resposta retornada)
 */
-?
+
+pessoa.andando; //False
 
 /*
 Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
 inline ao lado da instrução para mostrar a resposta retornada)
 */
-?
+
+pessoa.caminhouQuantosMetros; //33
 
 /*
 Agora vamos deixar a brincadeira um pouco mais divertida! :D
@@ -190,8 +199,17 @@ deve conter no retorno da frase acima é "metro" no lugar de "metros".
 método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
-?
+
+pessoa.apresentacao = function() {
+    var sexo = (pessoa.sexo === 'Feminino') ? 'a' : 'o';
+    var idade = (pessoa.idade > 1) ? 'anos' : 'ano';
+    var caminhados = (pessoa.caminhouQuantosMetros > 1) ? 'metros' : 'metro';
+    return 'Olá, eu sou ' + sexo + ' ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + ' ' + idade + ', ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' ' + caminhados + '!'; 
+}
+
 
 // Agora, apresente-se ;)
-?
-```
+
+pessoa.apresentacao();
+
+
