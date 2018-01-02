@@ -82,7 +82,7 @@ Essa função mostrará a mensagem da operação que criaremos mais abaixo.
 */
 
 function showOperationMessage(operator, number1,number2){
-	return console.log('A operação + '' + [NUMBER1] + '' + [OPERATOR] + '' + '' + [NUMBER2] = '')
+	return console.log('A operação + '' + [NUMBER1] + '' + [OPERATOR] + '' + '' + [NUMBER2] = '');
 }
 
 /*
