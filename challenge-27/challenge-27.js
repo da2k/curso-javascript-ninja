@@ -43,7 +43,7 @@
   };
 
   DOM.prototype.forEach = function forEach() {
-    return Array.prototype.forEach.apply(this.element, arguments);
+    Array.prototype.forEach.apply(this.element, arguments);
   };
 
   DOM.prototype.map = function map() {
