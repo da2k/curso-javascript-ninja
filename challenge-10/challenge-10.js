@@ -98,7 +98,7 @@ e faça a indentação correta.
 	*/
 
 	function showOperationMessage(operator, number1,number2){
-		return console.log('A operação + '' + number1 + '' + operator + '' + '' + number2 = '');
+		return console.log('A operação + '' + number1 + '' + operator + '' + '' + number2 = ');
 	}
 
 	/*
