@@ -2,6 +2,7 @@
 Crie uma IIFE que envolva todo esse arquivo (inclusive esse comentário),
 e faça a indentação correta.
 */
+(function (){
 
 /*
 Sem alterar os códigos nos `console.log` abaixo, faça com que o retorno
@@ -10,9 +11,11 @@ das variáveis. Analise o que está sendo impresso no console para saber como
 resolver o problema corretamente.
 */
 var five = '5';
+new Number(five);
 console.log( five + ' é número?', typeof five === 'number' );
 
-var concat = 10 + 10;
+var concat = 1010;
+new string(concat);
 console.log( '"' + concat + '" é uma string? E é igual a "1010"?', typeof concat === 'string' );
 
 /*
@@ -25,6 +28,20 @@ função receberá dois parâmetros e retornará a operação referente à sua
 propriedade, usando os valores passados por parâmetro.
 */
 // ?
+var operation{
+	+ : function(number1,number2){
+		number1 + number2;
+	},
+	- : function(number1,number2){
+		number1 - number2;
+	},
+	/ : function(number1,number2){
+		number1 / number2;
+	},
+	% : function(number1,number2){
+		number1 % number2;
+	}
+}
 
 /*
 Crie uma função chamada `isOperatorValid`, que receberá um operador por
@@ -36,7 +53,9 @@ parâmetro a ela é válido, ou seja, se ele é igual a '+', '-', '*', '/' ou
 Caso contrário, "false".
 - O desafio é fazer o retorno sem usar "if" ou "switch".
 */
-// ?
+
+function isOperatorValid(operation){
+}
 
 /*
 Agora vamos criar a calculadora.
@@ -50,7 +69,9 @@ parâmetros;
 operador passado para a função "calculator", e passando para esse método
 os dois parâmetros da função de retorno de "calculator".
 */
-// ?
+
+function calculator(){ 
+};
 
 /*
 Crie uma função chamada "showOperationMessage" que recebe três parâmetros:
@@ -59,7 +80,10 @@ deve ser a frase:
 'A operação [NUMBER1] [OPERATOR] [NUMBER2] =';
 Essa função mostrará a mensagem da operação que criaremos mais abaixo.
 */
-// ?
+
+function showOperationMessage(operator, number1,number2){
+	return console.log('A operação + '' + [NUMBER1] + '' + [OPERATOR] + '' + '' + [NUMBER2] = '')
+}
 
 /*
 Crie uma função chamada "showErrorMessage" que recebe um parâmetro: o
@@ -68,6 +92,10 @@ Essa função deverá retornar a frase:
 'Operação "[OPERATOR]" não permitida!'
 */
 // ?
+
+function showErrorMessage(operator){
+	return console.log('Operação "[OPERATOR]" não permitida!');
+}
 
 /*
 Nossa calculadora está pronta! Agora vamos testá-la:
@@ -111,3 +139,5 @@ Repita o PASSO 2 novamente, mas passando um operador inválido, para ver se
 a mensagem de erro será mostrada no console.
 */
 // ?
+
+}());

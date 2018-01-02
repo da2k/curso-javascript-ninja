@@ -86,7 +86,7 @@ function book (bookNome){
 			autor: 'David Flanagan',
 			editora: 'O' Reilly'
 		}
-	}
+	};
 }
 
 /*
