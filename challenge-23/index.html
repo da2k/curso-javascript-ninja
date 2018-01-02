@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Calculadora</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="calculator">
+    <input class="calculator__visor" type="text" value="0" data-js="visor" readonly>
+    <section class="calculator__buttons-group">
+      <button class="calculator__button calculator__button--small" data-js="button-number" value="0">0</button>
+      <button class="calculator__button calculator__button--small" data-js="button-number" value="1">1</button>
+      <button class="calculator__button calculator__button--small" data-js="button-number" value="2">2</button>
+      <button class="calculator__button calculator__button--small" data-js="button-number" value="3">3</button>
+      <button class="calculator__button calculator__button--small" data-js="button-number" value="4">4</button>
+      <button class="calculator__button calculator__button--small" data-js="button-number" value="5">5</button>
+      <button class="calculator__button calculator__button--small" data-js="button-number" value="6">6</button>
+      <button class="calculator__button calculator__button--small" data-js="button-number" value="7">7</button>
+      <button class="calculator__button calculator__button--small" data-js="button-number" value="8">8</button>
+      <button class="calculator__button calculator__button--small" data-js="button-number" value="9">9</button>
+    </section>
+    <section class="calculator__buttons-group">
+      <button class="calculator__button calculator__button--medium" value="+" data-js="button-operation">+</button>
+      <button class="calculator__button calculator__button--medium" value="-" data-js="button-operation">-</button>
+      <button class="calculator__button calculator__button--medium" value="x" data-js="button-operation">x</button>
+      <button class="calculator__button calculator__button--medium" value="÷" data-js="button-operation">÷</button>
+      <button class="calculator__button calculator__button--big" data-js="button-ce" value="CE">CE</button>
+      <button class="calculator__button calculator__button--big" data-js="button-equal" value="=">=</button>
+    </section>
+  </main>
+  <script src="challenge-23.js"></script>
+</body>
+</html>
