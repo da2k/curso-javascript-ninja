@@ -107,7 +107,6 @@ e faça a indentação correta.
 	Essa função deverá retornar a frase:
 	'Operação "[OPERATOR]" não permitida!'
 	*/
-	// ?
 
 	function showErrorMessage(operator){
 		return console.log('Operação + operator + não permitida!');
@@ -135,16 +134,16 @@ e faça a indentação correta.
 	var sum = calculator(operationSignal);
 
 	/*
-	PASSO 3:
-	"sum" agora é uma função, e, se o sinal correto não foi passado para a
-	função "calculator", "sum" será false. Certifique-se de que "sum" não é
-	"false", e então atribua às variáveis "number1" e "number2", dois números
-	que serão os operandos da operação de soma.
-	Após isso, mostre no console o resultado da operação, passando dois
-	parâmetros para o método "log" de "console":
-	- O primeiro será a mensagem da operação (usando a função criada acima);
-	- O segundo, a função de soma, passando os dois operandos.
-	- Se "sum" for "false", mostrar no console a mensagem de erro.
+    PASSO 3:
+    "sum" agora é uma função, e, se o sinal correto não foi passado para a
+    função "calculator", "sum" será false. Certifique-se de que "sum" não é
+    "false", e então atribua às variáveis "number1" e "number2", dois números
+    que serão os operandos da operação de soma.
+    Após isso, mostre no console o resultado da operação, passando dois
+    parâmetros para o método "log" de "console":
+    - O primeiro será a mensagem da operação (usando a função criada acima);
+    - O segundo, a função de soma, passando os dois operandos.
+    - Se "sum" for "false", mostrar no console a mensagem de erro.
 	*/
 
 	if(sum !== false){
