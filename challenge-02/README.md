@@ -75,8 +75,23 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+function md (x,y,z){
+  if (x==null && y==null && z==null) {
+    return 'false';
+  } else if (y==null && z==null) {
+    return x;
+  }else if (z==null) {
+    var soma = x+y;
+    return soma;
+  }else{
+    var div = (x+y)/z;
+    return div;
+  }
+}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+md() //"false"
+md(5) //5
+md(5,3) //8
+md(5,3,15) //0.5333333333333333
 ```
