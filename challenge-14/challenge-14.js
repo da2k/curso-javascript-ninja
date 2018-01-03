@@ -11,18 +11,10 @@
   Mostre esse array no console.
   */
   console.log( 'Number Objects Array:' );
-  var numberObjects = [
-    { number: 1},
-    { number: 2},
-    { number: 3},
-    { number: 4},
-    { number: 5},
-    { number: 6},
-    { number: 7},
-    { number: 8},
-    { number: 9},
-    { number: 10}
-  ];
+  var numberObjects = [];
+  for (var i = 1; i < 11; i++) {
+    numberObjects.push({number: i});
+  }
   console.log(numberObjects);
 
   /*
@@ -56,10 +48,8 @@
   */
   console.log( '\nOperation:' );
   var size = justMod2Or3.length -1;
-  var operation = justMod2Or3.reduce(function (acumulador, next, index) {
-    if (next === justMod2Or3[size]){
-      return (next + 1) * next;
-    }
+  var operation = justMod2Or3.reduce(function (accumulator, current, index) {
+      return (accumulator + 1) * current;
   }, 0);
   console.log(operation);
 
@@ -70,10 +60,8 @@
   console.
   */
   console.log( '\nOperation 2:' );
-  var operation2 = justMod2Or3.reduceRight(function (acumulador, next, index) {
-    if (next === justMod2Or3[0]){
-      return (next + 1) * next;
-    }
+  var operation2 = justMod2Or3.reduceRight(function (accumulator, current, index) {
+      return (accumulator + 1) * current;
   }, 0);
   console.log(operation2);
 
@@ -98,9 +86,9 @@
   */
   console.log( '\nInversed Name:' );
   var inversedName = name.reduceRight( function (accumulator, current) {
-    return accumulator += current;
+    return accumulator + current;
   } );
-  console.log(inversedName);
+  console.log(inversedName, name.reverse().join());
 
   /*
   Mostre no console o array `numberObjects`.
@@ -118,14 +106,11 @@
   o que acontece ;)
   */
   console.log( '\nExiste um { number: 2 } em numberObjects?' );
-  var hasObject = numberObjects.reduce(function (accumulator, objNumber, index) {
-    return accumulator ===  { number: 2 };
-  });
-  console.log(
-    hasObject
-    ? 'Existe um objeto { number: 2 } em numberObjects!'
-    : 'Não existe um objeto { number: 2 } em numberObjects :('
-  );
+  if (numberObjects.indexOf({ number: 2}) > -1) {
+    console.log('Existe um objeto { number: 2 } em numberObjects!');
+  } else {
+    console.log('Não existe um objeto { number: 2 } em numberObjects :(');
+  }
   console.log('Não retorna true porque os objetos estão alocados em espaços diferentes na memória, portanto, não são iguais');
 
   /*
@@ -133,14 +118,11 @@
   será que obtemos um resultado diferente? Faça a busca a partir do índice 2.
   */
   console.log( '\nE buscando a partir do último índice, o { number: 2 } existe?' );
-  hasObject = numberObjects.reduceRight(function (accumulator, objNumber, index) {
-    return accumulator ===  { number: 2 };
-  });
-  console.log(
-    hasObject
-    ? 'Existe um objeto { number: 2 } em numberObjects!'
-    : 'Não existe um objeto { number: 2 } em numberObjects :('
-  );
+  if (numberObjects.lastIndexOf({ number: 2}) > -1) {
+    console.log('Existe um objeto { number: 2 } em numberObjects!');
+  } else {
+    console.log('Não existe um objeto { number: 2 } em numberObjects :(');
+  }
 
   /*
   Verifique se `justMod2Or3` é um array. Se for, mostre-o no console, no
