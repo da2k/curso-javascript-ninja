@@ -91,4 +91,4 @@ Ex.: Nomes que deveriam funcionar: "Fernando", "RoBertO", "gabriEla", etc.
 	}
 	console.log(myNewName.join(''));
 	console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' + myNewName );
-}());
+})();
