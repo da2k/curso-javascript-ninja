@@ -15,17 +15,29 @@ eles! Use um console.log para cada CPF.
 - "210.458.522-05"
 - "735 500 794 - 22"
 - "101.123-131x32"
-*/
-console.log( 'Limpando CPFs:' );
-// ?
+*/	
+	function cleanCPF(cpflimpo){
+		console.log( cpflimpo.replace(/[^\d]+/g,'') );
+	};
+	console.log( 'Limpando CPFs:');
+
+	console.log(cleanCPF("049-214 3421-1"));
+	console.log(cleanCPF("210.458.522-05"));
+	console.log(cleanCPF("735 500 794 - 22"));
+	console.log(cleanCPF("101.123-131x32"));
 
 /*
 Usando os CPFs limpos acima, deixe-os com a formatação correta de CPF.
 Ex.: "999.999.999-99"
 Mostre o resultado no console.
-*/
-console.log( '\nFormatando CPFs corretamente:' );
-// ?
+*/	
+	function formatCpf(cpf){
+		cpf = cpf.match(/(\d{2,3})/g).reduce(function(acumulator, current, index){
+	    	var separator = index === 3 ? '-' : '.';
+	      	return acumulator + separator + current;
+	   	});
+	    return cpf;
+	}
 
 /*
 Crie uma expressão regular que faça match com as palavras "junho" ou "julho",
@@ -38,7 +50,7 @@ Mostre no console o resultado do match para a frase:
 O resultado deve ser:
 ["junho", "julho"]
 */
-console.log( '\nMatch com as palavras "junho" ou "julho" para a frase "Os meses de janeiro, junho e julho começam com a letra j.":' );
+	console.log( '\nMatch com as palavras "junho" ou "julho" para a frase "Os meses de janeiro, junho e julho começam com a letra j.":' );
 // ?
 
 /*
@@ -50,7 +62,7 @@ Use o método match e faça o teste com a marcação abaixo:
 O resultado deve ser:
 ["<div>", "<section>", "<blockquote>"]
 */
-console.log( '\nMatch com a abertura de uma tag HTML:' );
+	console.log( '\nMatch com a abertura de uma tag HTML:' );
 // ?
 
 /*
@@ -62,7 +74,7 @@ Use o método match e faça o teste com a marcação abaixo:
 O resultado deve ser:
 ["<li></li>", "<li></li>", "<span></span>"]
 */
-console.log( '\nMatch com tags HTML vazias (abertura e fechamento da tag):' );
+	console.log( '\nMatch com tags HTML vazias (abertura e fechamento da tag):' );
 // ?
 
 /*
@@ -87,7 +99,7 @@ Uma dica: faça o match aos poucos. Para facilitar o teste, use o site
 https://regex101.com/#javascript e verifique se as capturas estão
 corretas, para depois aplicar no código ;)
 */
-console.log( '\nFazer replace dos textos das tags:' );
+	console.log( '\nFazer replace dos textos das tags:' );
 // ?
 
 })();
