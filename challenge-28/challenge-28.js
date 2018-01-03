@@ -1,3 +1,4 @@
+(function(doc) {
   /*
   No HTML:
   - Crie um formulário com um input de texto que receberá um CEP e um botão
@@ -25,3 +26,163 @@
   - Utilize a lib DOM criada anteriormente para facilitar a manipulação e
   adicionar as informações em tela.
   */
+  'use strict';
+
+  var DOM = function(selector) {
+    this.element = document.querySelectorAll(selector);
+  };
+
+  DOM.prototype.on = function on(event, callback) {
+    Array.prototype.forEach.call(this.element, function($el) {
+      $el.addEventListener(event, callback, false);
+    });
+  };
+
+  DOM.prototype.off = function off(event, callback) {
+    Array.prototype.forEach.call(this.element, function($el) {
+      $el.removeEventListener(event, callback, false);
+    });
+  };
+
+  DOM.prototype.get = function get() {
+    return this.element;
+  };
+
+  DOM.prototype.forEach = function forEach() {
+    Array.prototype.forEach.apply(this.element, arguments);
+  };
+
+  DOM.prototype.map = function map() {
+    return Array.prototype.map.apply(this.element, arguments);
+  };
+
+  DOM.prototype.filter = function filter() {
+    return Array.prototype.filter.apply(this.element, arguments);
+  };
+
+  DOM.prototype.reduce = function reduce() {
+    return Array.prototype.reduce.apply(this.element, arguments);
+  };
+
+  DOM.prototype.reduceRight = function reduceRight() {
+    return Array.prototype.reduceRight.apply(this.element, arguments);
+  };
+
+  DOM.prototype.every = function every() {
+    return Array.prototype.every.apply(this.element, arguments);
+  };
+
+  DOM.prototype.some = function some() {
+    return Array.prototype.some.apply(this.element, arguments);
+  };
+
+  DOM.getParamType = function(param) {
+    return Object.prototype.toString.call(param);
+  };
+
+  DOM.isArray = function(param) {
+    return this.getParamType(param) === '[object Array]';
+  };
+
+  DOM.isObject = function(param) {
+    return this.getParamType(param) === '[object Object]';
+  };
+
+  DOM.isFunction = function(param) {
+    return this.getParamType(param) === '[object Function]';
+  };
+
+  DOM.isNumber = function(param) {
+    return this.getParamType(param) === '[object Number]';
+  };
+
+  DOM.isString = function(param) {
+    return this.getParamType(param) === '[object String]';
+  };
+
+  DOM.isBoolean = function(param) {
+    return this.getParamType(param) === '[object Boolean]';
+  };
+
+  DOM.isNull = function(param) {
+    return this.getParamType(param) === '[object Null]' || this.getParamType(param) === '[object Undefined]';
+  };
+
+  DOM.newElement = function(element) {
+    return doc.createElement(element);
+  };
+
+  var $form = new DOM('[data-js="formFindAddress"]');
+  var $status = new DOM('[data-js="ajaxStatus"]');
+  var $cepUserInput = new DOM('[data-js="cepUserInput"]');
+  var $logradouro = new DOM('[data-js="logradouro"]');
+  var $bairro = new DOM('[data-js="bairro"]');
+  var $estado = new DOM('[data-js="estado"]');
+  var $cidade = new DOM('[data-js="cidade"]');
+  var $cep = new DOM('[data-js="cep"]');
+  var req = new XMLHttpRequest();
+  var cep;
+
+  var sanitizeCEP = function sanitizeCEP(string) {
+    return string.replace(/\D/, '');
+  };
+
+  var flashStatus = function flashStatus(string) {
+    var $newStatusEl = DOM.newElement('li');
+    $newStatusEl.textContent = string;
+    $status.get()[0].appendChild($newStatusEl);
+  };
+
+  var clearStatus = function cleanStatus() {
+    while($status.get()[0].firstChild) {
+      $status.get()[0].removeChild($status.get()[0].firstChild);
+    }
+  };
+
+  var isRequestSuccessful = function isRequestSuccessful(request) {
+    return request.readyState === 4 && request.status === 200;
+  };
+
+  var makeAjaxRequest = function makeAjaxRequest() {
+    XMLHttpRequest.prototype.open.apply(req, arguments);
+    req.send();
+    req.addEventListener('readystatechange', handleReadyStateChange);
+  };
+
+  var handleReadyStateChange = function(request) {
+    if(req.readyState === 4) {
+      if(isRequestSuccessful(req)) {
+        var data;
+
+        try {
+          fillAddressData(JSON.parse(req.response));
+        }catch(e) {
+          data = req.responseXML;
+        }
+
+        flashStatus('Endereço referente ao CEP ' + cep + '.');
+      }else {
+        flashStatus('Não encontramos o endereço para o CEP ' + cep);
+      }
+    }
+  };
+
+  var fillAddressData = function fillAddressData(data) {
+    $logradouro.get()[0].textContent = data.logradouro;
+    $bairro.get()[0].textContent = data.bairro;
+    $estado.get()[0].textContent = data.uf;
+    $cidade.get()[0].textContent = data.localidade;
+    $cep.get()[0].textContent = data.cep;
+  };
+
+  var handleSubmitCEP = function handleSubmitCEP(event) {
+    event.preventDefault();
+    cep = sanitizeCEP($cepUserInput.get()[0].value);
+
+    clearStatus();
+    flashStatus('Buscando informações para o CEP ' + cep + '...');
+    makeAjaxRequest('GET', 'https://viacep.com.br/ws/' + cep + '/json/');
+  };
+
+  $form.on('submit', handleSubmitCEP);
+})(document);

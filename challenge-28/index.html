@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <form action="." data-js="formFindAddress">
+    <label for="cep-user-input">CEP:</label>
+    <input type="text" name="cep-user-input" id="cep-user-input" data-js="cepUserInput">
+    <button type="submit">Buscar</button>
+  </form>
+
+  <br /><br />
+
+  <div>
+    <label for="logradouro">Logradouro:</label>
+    <p data-js="logradouro">-</p><br />
+
+    <label for="bairro">Bairro:</label>
+    <p data-js="bairro">-</p><br />
+
+    <label for="estado">Estado:</label>
+    <p data-js="estado">-</p><br />
+
+    <label for="cidade">Cidade:</label>
+    <p data-js="cidade">-</p><br />
+
+    <label for="cep">CEP:</label>
+    <p data-js="cep">-</p>
+  </div>
+
+  <div style="background: #eee">
+    <h2>Status da Requisição</h2>
+
+    <ul data-js="ajaxStatus"></ul>
+  </div>
+
+  <script src="challenge-28.js" charset="utf-8"></script>
+</body>
+</html>
