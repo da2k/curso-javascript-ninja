@@ -36,7 +36,7 @@ comida[1];
 ? myvar <= soma;
 
 // Crie uma função chamada `divisao` que receba como parâmetro dois números, e retorne o resultado da divisão entre eles.
-function(a, b){
+function divisao(a, b){
   return a / b;
 }
 
