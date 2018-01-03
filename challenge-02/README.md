@@ -4,29 +4,38 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-?
+function soma(a, b) {
+  return a + b;
+}
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-?
+var a = soma(4,4)+5;
 
 // Qual o valor atualizado dessa variável?
-?
+13
 
 // Declare uma nova variável, sem valor.
-?
+var js;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
-Onde VALOR é o novo valor da variável.
-*/
-?
+Onde VALOR é o novo valor da variável.*/
+
+mostrar(){
+... js = 13;
+... return ("O valor da variável agora é "+ js);
+... }
+
 
 // Invoque a função criada acima.
-?
+mostrar();
 
 // Qual o retorno da função? (Use comentários de bloco).
-?
+/*
+'O valor da variável agora é 13'
+*/
+
 
 /*
 Crie uma função com as seguintes características:
@@ -35,19 +44,27 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-?
+
+function mult(x, y, z) {
+  if(x == null || y == null || z == null) {
+    return 'Preencha todos os valores corretamente!';
+  } else {
+    var rt = (a * b * c) + 2;
+    return rt;
+   }
+ }
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+mult(12,3);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+// "Preencha todos os valores corretamente!"
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+mult(12,3,8)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+290
 
 /*
 Crie uma função com as seguintes características:
