@@ -15,8 +15,10 @@ Ex: no caso do nome ser "Fernando", deve mostrar as frases:
 - "e é a 2ª letra do meu nome."
 E assim por diante, até a última.
 */
-	console.log( 'As letras do seu nome:' );
-// ?
+	var name = 'Gustavo';
+	for(var i = 0, name.length; i < name.length;i++){
+         console.log(name.charAt([i]) + ' é a ' + (name.indexOf(name.charAt([i]))+1) + 'ª letra do meu nome.');
+    }
 
 /*
 - Declare uma variável chamada `fullName`, que receba seu nome completo,
@@ -30,6 +32,12 @@ curso para fazer isso funcionar corretamente :)
 - Mostre no console o nome no formato slug, e o resultado final. Use um
 console.log para cada formato.
 */
+	var fullName = 'Gustavo Rodrigues';
+    var newFullName = fullName.split('-').map(function(name){
+        return name[0].toUpperCase() + name.slice(1);
+    });
+    console.log(fullName);
+    console.log(newFullName.join(' '));
 	console.log( '\nNome convertido à partir de um slug:' );
 // ?
 
@@ -41,22 +49,30 @@ O resultado final deve ficar mais ou menos assim:
 - "João, Maria, Roberto, Pedro e Marcos são meus amigos."
 - Detalhe: o código abaixo deve funcionar com um array de qualquer tamanho.
 5 nomes foi somente uma sugestão ;)
-*/
-	console.log( '\nMeus amigos:' );
-// ?
+*/	
+ 	var amigos = ['Elaine', 'Roberto', 'Paulo', 'João', 'Thiago'];
+    	var frase = amigos.reduce(function(acum, atual, index){
+        var hifen = amigos.length - 1 === index ? ' e ' : ', ';
+        return acum + hifen + atual; 
+    });
 
+	console.log( '\nMeus amigos:' + '' + frase + '' + 'são meus amigos');
 /*
 Usando o replace(), faça a string "Roberto" virar "Roberta".
-Mostre o resultado no console.
-*/
-	console.log( '\nEra "Roberto", agora é:' );
-// ?
+Mostre o resultado no console.*/
+	
+	var name = 'roberto';
+	newName = name.charAt(6);
+	name = name.slice(0,6) + newName.replace('o','a');
+	console.log( '\nEra "Roberto", agora é:' + name );
 
 /*
 Mostre no console a parte "nando" da string "Fernando". Use o método que
 faz a busca do final para o início da string.
 */
-	console.log( '\nParte de uma string:' );
+	var name = 'fernando';
+	console.log(name.substring(8,3));
+	console.log( '\nParte de uma string:' + name );
 // ?
 
 /*
@@ -67,7 +83,12 @@ e minúsculas.
 - Detalhe: o código abaixo deve funcionar da mesma forma para qualquer nome,
 de qualquer tamanho, escrito de qualquer forma.
 Ex.: Nomes que deveriam funcionar: "Fernando", "RoBertO", "gabriEla", etc.
-*/
-	console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
-// ?
+*/	
+	var myName = 'Gustavo';
+	var myNewName = [];		 
+	for(var i = 0, i <= myName.length, i++){
+		myNewName.push(i % 2 === 0 ? myName[i].toLowerCase() : myName[i].toUpperCase());
+	}
+	console.log(myNewName.join(''));
+	console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' + myNewName );
 }());
