@@ -23,20 +23,18 @@
     que será instanciado.
   */
   function Person(name, lastName, age) {
-    return {
-      name: name,
-      lastName: lastName,
-      age: age,
-      getFullName: function getFullName() {
-        return this.name + ' ' + this.lastName
-      },
-      getAge: function getAge() {
-        return this.age;
-      },
-      addAge: function addAge() {
-        this.age += arguments[0];
-        return this;
-      }
+    this.name = name,
+    this.lastName = lastName,
+    this.age = age,
+    this.getFullName = function getFullName() {
+      return this.name + ' ' + this.lastName;
+    };
+    this.getAge = function getAge() {
+      return this.age;
+    };
+    this.addAge = function addAge() {
+      this.age += arguments[0];
+      return this;
     };
   }
 
