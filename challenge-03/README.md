@@ -111,7 +111,7 @@ pessoa.idade; // 35
 Qual o peso da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.peso; // 90
+pessoa.mostrarPeso; // 'Eu peso 90kg.'
 
 /*
 Qual a altura da pessoa? (Use a instrução para responder e comentários
