@@ -2,7 +2,7 @@
 
 ```js
 // Declarar uma variável qualquer, que receba um objeto vazio.
-var qualquer ={};
+ var qualquer = {};
 
 /*
 Declarar uma variável `pessoa`, que receba suas informações pessoais.
@@ -16,8 +16,8 @@ As propriedades e tipos de valores para cada propriedade desse objeto devem ser:
 - `andando` - Boolean - recebe "falso" por padrão
 - `caminhouQuantosMetros` - Number - recebe "zero" por padrão
 */
-var pessoa={nome:'Isabel', sobrenome:'Alliprandini', sexo:'Feminino', idade:19
-, altura:1.65, peso:65, andando:false, caminhouquantosmetros:0};
+var pessoa= {nome:'Isabel', sobrenome:'Alliprandini', sexo:' Feminino', idade:
+19, altura:1.65, peso:65, andando: false, caminhouQuantosMetros:0};
 
 
 /*
@@ -203,8 +203,24 @@ deve conter no retorno da frase acima é "metro" no lugar de "metros".
 método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
-?
+?> pessoa.apresentacao= function(){
+... var sexo = 'o';
+... var idade = 'anos';
+... var metro= 'metros';
+... if (pessoa.sexo='Feminino'){
+..... sexo = 'a';
+..... }
+... if (pessoa.idade===1){
+..... idade='ano'
+..... }
+... if (pessoa.caminhouQuantosMetros=1) {
+..... metro='metro';
+..... }
+... return 'Olá, eu sou ' + pessoa.nome + ' '+ pessoa.sobrenome + ' tenho ' + pessoa.idade + ' ' + idade + ' ' + pessoa.altura + ' metros, meu peso é: ' + pessoa.peso + ' e só hoje, eu já cami
+nhei' + pessoa.caminhouQuantosMetros + ' ' + metro;
+
 
 // Agora, apresente-se ;)
-?
+'Olá, eu sou Isabel Alliprandini tenho 22 anos 1.65 metros, meu peso é: 65 e só hoje, eu já caminhei 24 metros'
+
 ```
