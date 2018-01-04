@@ -117,32 +117,36 @@ poucos.
 - O método deve retornar a frase: "Já temos [X] pessoas no carro!"
 - Se o carro já estiver cheio, com todos os assentos já preenchidos, o método
 deve retornar a frase: "O carro já está lotado!"
+
 - Se ainda houverem lugares no carro, mas a quantidade de pessoas passadas por
 parâmetro for ultrapassar o limite de assentos do carro, então você deve
 mostrar quantos assentos ainda podem ser ocupados, com a frase:
 "Só cabem mais [QUANTIDADE_DE_PESSOAS_QUE_CABEM] pessoas!"
+
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
 
 carro.adicionar = function(qntPessoas){
-	var cabem = 5 - carro.quantidadePessoas;
-	if(carro.quantidadePessoas < 5){
-		if(qntPessoas <= 5 && carro.quantidadePessoas < qntPessoas){
-			carro.quantidadePessoas += qntPessoas;
-		} else {
-			return 'Carro já lotado!';
-		} 
-		
-	} 
-	else if(cabem == 1){			
-					return "Só cabe mais " + cabem + ' pessoa!';
-				} else {
-					return 'Só cabem mais '+ cabem + ' pessoas!';
-				}
-		return 'Já temos ' + carro.quantidadePessoas + " pessoas no carro!";
+
+	var totalPessoas = carro.quantidadePessoas + qntPessoas;
+	if(carro.quantidadePessoas == carro.assentos){
+		return 'Carro já está lotado!'
+	}
+
+	if(totalPessoas >= carro.assentos){
+		var cabem = carro.assentos - carro.quantidadePessoas;
+		var pluralOuSingular = cabem == 1 ? ' pessoa' : ' pessoas';
+		return 'Só cabem mais '+ cabem + pluralOuSingular + '!'
+
+	}
+	
+	carro.quantidadePessoas += qntPessoas;
+	return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!';
+
 
 }
+
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
 utilize sempre o formato de invocação do método (ou chamada da propriedade),
