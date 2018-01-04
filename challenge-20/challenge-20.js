@@ -1,3 +1,5 @@
+(function(){
+  "use strict";
 /*
 1. Envolva todo o conteúdo desse desafio em uma IIFE.
 2. Adicione a diretiva 'use strict';
@@ -14,6 +16,13 @@ resultado à uma variável chamada `username`. Se o usuário não digitar um
 nome, `username` deve receber "Desconhecido".
 Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
 */
+      var username = prompt("Qual é o seu nome ?");
+    if(!username){
+        username = "Desconhecido";
+    }
+
+    alert("Bem vindo " + username + "!");
+
 // ?
 
 /*
@@ -21,10 +30,13 @@ Agora, pergunte ao usuário "Qual o seu e-mail?", atribuindo o resultado à
 uma variável chamada `email`.
 */
 // ?
+  var email = prompt("Qual é o seu email ? ");
 
 /*
 - Selecione o input de "Nome", atribuindo-o à uma variável chamada
 `$inputUsername`.
+
+var $inputUsername = document.querySelector("[type=text]");
 */
 // ?
 
@@ -32,6 +44,7 @@ uma variável chamada `email`.
 - Selecione o input de "Email", atribuindo-o à uma variável chamada
 `$inputEmail`.
 */
+  var $inputEmail = document.querySelector("[type=email]");
 // ?
 
 /*
@@ -39,18 +52,23 @@ uma variável chamada `email`.
 `$message`.
 */
 // ?
+  
+  var $message = document.querySelector("textarea");
 
 /*
 - Selecione o botão de envio do formulário, atribuindo-o à uma variável
 chamada `$button`.
 */
 // ?
+  var $button = document.querySelector("button");
 
 /*
 Preencha os campos de "Nome" e "Email" que estão no documento com os valores
 entrados pelo usuário.
 */
 // ?
+    $inputUsername.value = username;
+    $inputEmail.value = email;
 
 /*
 Adicione um listener de evento de click ao botão que faça o seguinte:
@@ -105,3 +123,62 @@ Alguns e-mails inválidos:
     - "agua_@evida.br.com"
 */
 // ?
+  
+      var $inputUsername = document.querySelector("[type=text]");
+    var $inputEmail = document.querySelector("[type=email]");
+    var $message = document.querySelector("textarea");
+    console.log($message);
+    console.log($inputUsername);
+    console.log($inputEmail);
+
+    var $button = document.querySelector("button");
+
+    $inputUsername.value = username;
+    $inputEmail.value = email;
+
+
+    $button.addEventListener("click", function(event){
+        event.preventDefault();
+        var contador = 0;
+    
+        if(!$inputUsername){
+            alert("Preencha o nome do usúario!");
+      
+            contador++;
+        }
+        if(!$inputEmail){
+            alert("Preencha o e-mail! ");
+
+            contador++;
+        }
+        if(!$message.value){
+            alert("Preencha a mensagem!");
+            contador++;
+        }
+
+        if(!(isEmailValid($inputEmail.value))){
+            alert("Entre com um email válido!");
+            contador++;
+        }
+
+        if(contador == 0){
+            var confirm = win.confirm("Tem certeza que quer enviar o formulário ?");
+            if(!confirm){
+
+                alert("Formulario não enviado");
+                return;
+            }
+            alert("Formulario enviado com sucesso!");
+
+        }
+
+    }, false);
+
+    function isEmailValid(email){
+        var regex = new RegExp("^([\\w\\_\\.\\+]+)*\\@\\w+\\.\\w+(\\.\\w{2})?$", "gi");
+         
+        return regex.test(email);
+    }
+  
+  
+  })()
