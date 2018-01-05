@@ -2,7 +2,7 @@
 
 Nesse exercício, você está livre para escolher os nomes para suas variáveis e funções! :smile:
 
-```js
+```javascript
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
 function soma(a, b) {
   return a + b;
@@ -39,10 +39,10 @@ mostrar();
 
 /*
 Crie uma função com as seguintes características:
-1. A função deve receber 3 argumentos;
-2. Se qualquer um dos três argumentos não estiverem preenchidos, a função deve retornar a string:
+1\. A função deve receber 3 argumentos;
+2\. Se qualquer um dos três argumentos não estiverem preenchidos, a função deve retornar a string:
     Preencha todos os valores corretamente!
-3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
+3\. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 
 function mult(x, y, z) {
@@ -68,24 +68,24 @@ mult(12,3,8)
 
 /*
 Crie uma função com as seguintes características:
-1. A função deve receber 3 argumentos.
-2. Se somente um argumento for passado, retorne o valor do argumento.
-3. Se dois argumentos forem passados, retorne a soma dos dois argumentos.
-4. Se todos os argumentos forem passados, retorne a soma do primeiro com o segundo, e o resultado, dividido pelo terceiro.
-5. Se nenhum argumento for passado, retorne o valor booleano `false`.
-6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
+1\. A função deve receber 3 argumentos.
+2\. Se somente um argumento for passado, retorne o valor do argumento.
+3\. Se dois argumentos forem passados, retorne a soma dos dois argumentos.
+4\. Se todos os argumentos forem passados, retorne a soma do primeiro com o segundo, e o resultado, dividido pelo terceiro.
+5\. Se nenhum argumento for passado, retorne o valor booleano `false`.
+6\. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function md (x,y,z){
-  if (x==null && y==null && z==null) {
-    return 'false';
-  } else if (y==null && z==null) {
+  if (x !==undefined && y===undefined && z===undefined) {
     return x;
-  }else if (z==null) {
-    var soma = x+y;
-    return soma;
-  }else{
-    var div = (x+y)/z;
-    return div;
+  } else if (x !==undefined && y!==undefined && z===undefined) {
+    return x+y;
+  } else if (x !==undefined && y!==undefined && z!==undefined) {
+    return (x+y)/z;
+  } else if (x ===undefined && y===undefined && z===undefined) {
+    return false;
+  } else{
+    return null;
   }
 }
 
