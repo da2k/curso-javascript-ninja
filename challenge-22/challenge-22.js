@@ -1,9 +1,18 @@
+(function(win, doc){
+    'user strict';
+
   /*
   Crie dois objetos, que serão duas pessoas. Cada um deve ter as propriedades
   `name` e `lastName`, preenchidos com o nome e sobrenome da pessoa.
   */
-  // ?
-
+  var daciuk = {
+    name: 'Fernando',
+    lastName: 'Daciuk'
+   };
+   var rodrigues = {
+    name: 'gustavo',
+    lastName: 'henrique'
+   };
   /*
   Agora crie uma função chamada `getFullName` que retorne as propriedades
   `name` e `lastName` dos objetos acima, formando um nome completo.
@@ -15,8 +24,16 @@
   pessoas que foram criadas anteriormente, passando as pessoas acima como
   contexto da função. Use um console.log por pessoa.
   */
-  console.log( 'O nome das pessoas é:' );
-  // ?
+  // function getFullName(name,lastName){
+  //      return this.name + ' ' + this.lastName;    
+  // }
+
+  function getFullName(name,lastName){
+        return this.name + ' ' + this.lastName;    
+  }
+
+  console.log( 'O nome das pessoas é:' + getFullName.call( daciuk ));
+  console.log( 'O nome das pessoas é:' + getFullName.call( rodrigues ));
 
   /*
   Crie uma função chamada `sum`. Essa função pode receber uma lista de
@@ -68,3 +85,5 @@
   */
   console.log( '\nSomar números entrados pelo usuário:' );
   // ?
+
+})(window, document);
