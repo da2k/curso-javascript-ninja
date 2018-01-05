@@ -42,27 +42,33 @@
   Na primeira linha, dentro da função, deixe um console.log para mostrar todos
   os parâmetros passados para essa função.
   */
-  // ?
+
+  function sum(){
+      console.log(arguments);
+      return Array.prototype.reduce.call(arguments,function(a,b){
+      return a + b;
+    });
+  }
 
   /*
   Mostre no console que a função acima funciona, invocando-a em 3 console.log
   diferentes, com quantidades variáveis de parâmetros passados.
   */
-  console.log( '\nSomar alguns números:' );
-  // ?
+  console.log( '\nSomar alguns números:' + '' + sum(100,2000,30000,4,8900) );
+
 
   /*
   Declare uma variável chamada `userEntry`, que irá receber alguns valores
   entrados pelo usuário. Mostre para o usuário a seguinte frase:
   "Entre com alguns números que serão somados:"
   */
-  // ?
+  var userEntry = prompt('Entre com alguns números que serão somados:');
 
   /*
   Mostre no console o valor entrado pelo usuário:
   */
   console.log( '\nEntrada do usuário:' );
-  // ?
+  console.log(userEntry);
 
   /*
   Crie uma função chamada `justNumbers`, que recebe por parâmetro uma string
