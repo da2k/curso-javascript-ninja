@@ -1,0 +1,31 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.content {
+  display: flex;
+  max-width: 900px;
+  width: 90%;
+  margin: 100px auto 0;
+}
+
+.register-wrap,
+.records-wrap {
+  width: 50%;
+}
+
+.records-wrap table {
+  width: 100%;
+}
+
+.register-form div {
+  margin-bottom: 10px;
+}

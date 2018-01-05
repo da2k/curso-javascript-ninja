@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <h1><span data-js="companyName"></span> - <span data-js="companyPhone"></span></h1>
+
+  <div class="content">
+    <div class="register-wrap">
+      <form action="." class="register-form" data-js="formRegisterCar">
+        <div>
+          <label for="">Imagem do carro</label>
+          <input type="text" data-js="imgInput">
+        </div>
+
+        <div>
+          <label for="">Marca/Modelo</label>
+          <input type="text" data-js="modeloInput">
+        </div>
+
+        <div>
+          <label for="">Ano</label>
+          <input type="text" data-js="anoInput">
+        </div>
+
+        <div>
+          <label for="">Placa</label>
+          <input type="text" data-js="placaInput">
+        </div>
+
+        <div>
+          <label for="">Cor</label>
+          <input type="text" data-js="corInput">
+        </div>
+
+        <button type="submit">Cadastrar</button>
+      </form>
+    </div>
+
+    <div class="records-wrap">
+      <table border="1" data-js="recordsTable">
+        <thead>
+          <th>Imagem do carro</th>
+          <th>Marca/Modelo</th>
+          <th>Ano</th>
+          <th>Placa</th>
+          <th>Cor</th>
+        </thead>
+
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="dom.js" charset="utf-8"></script>
+  <script src="challenge-29.js" charset="utf-8"></script>
+</body>
+</html>
