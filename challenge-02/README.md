@@ -4,13 +4,14 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-?
+
+functionD, S){
+
+}
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
 
-function(A, B, C){
 
-}
 
 // Qual o valor atualizado dessa variável?
 ?
