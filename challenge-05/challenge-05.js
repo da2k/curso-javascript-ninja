@@ -65,7 +65,27 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-// ?
+//function book(NomeLivro) {
+... var todoslivros = {
+..... 'Lendo os Salmos' : {
+....... quantidadePaginas:156,
+....... autor: 'C.S Lewis',
+....... editora: 'ultimato'
+....... },
+..... '49 dias de encontro com o pai' : {
+....... quantidadePaginas: 199,
+....... autor: 'Eddy Leo',
+....... editora: 'Ministerio igreja em celulas'
+....... },
+..... 'Firmando os passos' : {
+....... quantidadePaginas: 56,
+....... autor: 'desconhecido',
+....... editora: 'Editora cultura cristã'
+....... }
+..... };
+... return !NomeLivro ? todoslivros : todoslivros[NomeLivro];
+... }
+
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
