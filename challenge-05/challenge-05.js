@@ -98,14 +98,14 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// ?
+//  console.log ('O livro Lendo os Salmos tem ' + book('Lendo os Salmos').quantidadePaginas + ' paginas!');
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
+// console.log(' O autor do livro' +book
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
