@@ -31,6 +31,7 @@
   console.log(getFullName.call(leandro));
   console.log(getFullName.call(maria));
 
+
   /*
   Crie uma função chamada `sum`. Essa função pode receber uma lista de
   parâmetros variável, e deverá retornar a soma de todos eles.
