@@ -2,11 +2,7 @@
 
 ```js
 // Declarar uma variável chamada `myvar`, sem valor.
-<<<<<<< HEAD
 var myVarLeo;
-=======
-var ma =10;
->>>>>>> 113a8303c49925a0db0c7dc21c37cef5f1022ccb
 
 // Após declarada, atribua o valor 10 à variável `myvar`.
 ?
