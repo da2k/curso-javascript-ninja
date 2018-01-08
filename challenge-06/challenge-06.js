@@ -107,5 +107,14 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-// console.log(converToHex( 'azul' ) ); 
+//console.log(converToHex( 'azul' ) ); //O hexadecimal para a cor azul é #191970.
+console.log(converToHex( 'preto' ) ); //O hexadecimal para a cor preto é #000000.
+console.log(converToHex( 'cinza' ) ); //Não temos o equivalente hexadecimal para cinza.
+console.log(converToHex ( 'marrom' ) ); //Não temos o equivalente hexadecimal para marrom.
+console.log(converToHex ( 'roxo' ) ); //O hexadecimal para a cor roxo é #7B68EE.
+console.log(converToHex ( 'branco' ) );//O hexadecimal para a cor branco é #FFFFFF.
+console.log(converToHex ( 'verde' ) ); //O hexadecimal para a cor verde é #00FA9A.
+console.log(converToHex ( 'amarelo' ) ); //Não temos o equivalente hexadecimal para amarelo.
+
+
 
