@@ -159,6 +159,7 @@ inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
 pessoa.andando;
 //true
+//
 
 /*
 Se a pessoa ainda está andando, faça-a parar.
