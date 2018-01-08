@@ -109,16 +109,15 @@ console.log( 'Números pares entre 100 e 120:' );
 
 
 console.log( 'Números ímpares entre 111 e 125:' );
-// for( var num = 100; num<120; num++) {
-...  num % 2 !== 0 ? console.log(num) : '';
+//  for( var num = 111; num <= 125; num++) {
+... num % 2 !== 0 ? console.log(num) : '';
 ... }
-101
-103
-105
-107
-109
 111
 113
 115
 117
 119
+121
+123
+125
+
