@@ -102,6 +102,30 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
 ... }
 
 
+ou 
+ function converToHex ( cor ) {
+... var hexa;
+... switch( cor ) {
+..... case 'verde':
+..... hexa = '#00FA9A.';
+..... break
+..... case 'azul':
+..... hexa = '#191970.';
+..... break
+..... case 'preto':
+..... hexa = '#000000.';
+..... break
+..... case 'branco':
+..... hexa = '#FFFFFF.';
+..... break
+..... case 'roxo':
+..... hexa = '#7B68EE.';
+..... break;
+..... default:
+..... return 'Não temos o equivalente hexadecimal para ' + cor + '.' ;
+..... }
+... return 'O hexadecimal para a cor ' + cor + 'é ' + hexa + '.' ;
+... }
 
 
 /*
