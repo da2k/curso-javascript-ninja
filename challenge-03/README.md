@@ -207,5 +207,5 @@ pessoa.apresentacao = function() {
 }
 
 // Agora, apresente-se ;)
-pessoa.apresentacao() // Olá, eu sou a Nico Madeira, 23 anos, 1.58, meu peso é 61 e, só hoje, eu caminhei undefined metros!
+pessoa.apresentacao() // Olá, eu sou a Nico Madeira, 23 anos, 1.58, meu peso é 61 e, só hoje, eu caminhei 160 metros!
 ```
