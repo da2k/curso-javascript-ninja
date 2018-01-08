@@ -13,7 +13,7 @@ var isTruthy = function(param){
     }
 
     return false;
-}
+};
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 isTruthy(undefined);
@@ -63,7 +63,7 @@ var carro = {
     'quantasPortas': 4,
     'assentos': 5,
     'quantidadePessoas': 0
-}
+};
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
@@ -71,28 +71,28 @@ passado por parâmetro.
 */
 carro.mudarCor = function(cor){
     carro.cor = cor;
-}
+};
 
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
 carro.obterCor = function(){
     return carro.cor;
-}
+};
 
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
 carro.obterModelo = function(){
     return carro.modelo;
-}
+};
 
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
 */
 carro.obterMarca = function(){
     return carro.marca;
-}
+};
 
 /*
 Crie um método chamado `obterMarcaModelo`, que retorne:
@@ -100,8 +100,8 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 carro.obterMarcaModelo = function(){
-    return 'Esse carro é um ' + carro.marca + ' ' + carro.modelo;
-}
+    return 'Esse carro é um ' + carro.obterMarca() + ' ' + carro.obterModelo();
+};
 
 /*
 Crie um método que irá adicionar pessoas no carro. Esse método terá as
@@ -123,26 +123,26 @@ carro.adicionarPessoas = function(quantidade){
     var assentosRestantes = carro.assentos - carro.quantidadePessoas;
     var pluralPessoa = 'pessoas';
     var pluralCaber = 'cabem';
+    var totalPessoas = carro.quantidadePessoas + quantidade;
 
     if (assentosRestantes == 1){
-
         pluralPessoa = 'pessoa';
         pluralCaber = 'cabe';
     }
-    if (carro.assentos == carro.quantidadePessoas){
- 
+    if (carro.assentos == carro.quantidadePessoas &&  totalPessoas >= carro.assentos ){
         return 'O carro já está lotado';
+    }
 
-    }else if(quantidade + carro.quantidadePessoas > 5 ){
+    if(quantidade + carro.quantidadePessoas > 5 ){
 
         return 'Só ' +pluralCaber + ' mais ' + assentosRestantes + ' ' + pluralPessoa;   
 
-    }else{
-        carro.quantidadePessoas += quantidade;
-        return 'Já temos ' + carro.quantidadePessoas + ' no carro';
     }
+    carro.quantidadePessoas += quantidade;
+    return 'Já temos ' + totalPessoas + ' pessoas no carro';
 
-}
+
+};
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -152,7 +152,7 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-preto
+carro.obterCor(); // vermelho
 
 // Mude a cor do carro para vermelho.
 carro.mudarCor('vermelho');
@@ -183,10 +183,12 @@ carro.adicionarPessoas(4);
 
 // Faça o carro encher.
 carro.adicionarPessoas(3);
+//"Já temos 5 no carro"
 
 // Tire 4 pessoas do carro.
 carro.quantidadePessoas -= 4;
 //1
+
 // Adicione 10 pessoas no carro.
 carro.adicionarPessoas(10);
 //"Só cabem mais 4 pessoas"
