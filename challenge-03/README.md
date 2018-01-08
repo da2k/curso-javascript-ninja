@@ -57,8 +57,8 @@ valor dessa propriedade a quantidade passada por parâmetro;
 booleano que representa "verdadeiro";
 */
 pessoa.andar = function (distancia){
-    caminhouQuantosMetros += distancia;
-    andando = true;
+    this.caminhouQuantosMetros += distancia;
+    this.andando = true;
 }
 
 /*
@@ -66,7 +66,7 @@ Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o val
 da propriedade `andando` para o valor booleano que representa "falso".
 */
 pessoa.parar = function(){
-    andando = false;
+    this.andando = false;
 }
 
 /*
