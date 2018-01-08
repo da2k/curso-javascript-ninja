@@ -1,6 +1,7 @@
 # Desafio da semana #3
 
-
+```js
+// Declarar uma variável qualquer, que receba um objeto vazio.
 var qualquer = {};
 
 /*
@@ -161,4 +162,4 @@ correta, de acordo com os dados inseridos no objeto.
 
 // Agora, apresente-se ;)
 ?
-
+```
