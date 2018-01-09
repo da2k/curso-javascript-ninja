@@ -17,15 +17,15 @@
     Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
     */
     
-    //var username = win.prompt('Qual seu nome? ') || 'desconhecido';
-    //win.alert('bem vindo ' + username);
+    var username = win.prompt('Qual seu nome? ') || 'desconhecido';
+    win.alert('bem vindo ' + username);
     
     /*
     Agora, pergunte ao usuário "Qual o seu e-mail?", atribuindo o resultado à
     uma variável chamada `email`.
     */
     
-    //var email = win.prompt('qual seu e-mail? ');
+    var email = win.prompt('qual seu e-mail? ');
 
     /*
     - Selecione o input de "Nome", atribuindo-o à uma variável chamada
