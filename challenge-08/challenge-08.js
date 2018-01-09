@@ -27,7 +27,7 @@ Crie uma função literal chamada `showName`. Essa função deve retornar o
 seu nome.
 */
 function showName(){
-    return showName.name;
+    return 'Ricardo Gosch';
 }
 
 /*
