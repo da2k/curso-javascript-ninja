@@ -37,7 +37,7 @@ Crie uma função com as seguintes características:
 */
 
 function ninja(a,b,c){
-	if (a == null || b == null || c == null){
+	if (a === undefined || b === undefined || c === undefined){
 		return 'Preencha todos os valores';
 	} else {
 		return (a * b * c) + 2;
