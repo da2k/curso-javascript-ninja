@@ -66,22 +66,24 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function ninja2(a,b,c){
-	
-	if(a != null && b == null){
+
+	if( a == null){
+		return false
+	} else if (a != null && b == null){
 		return a;
 	} else if (c == null){
 		return a+b;
 	} else if (a != null && b != null & c !== null){
 		return ((a + b) / c );
-	} else if (a == null ){
-		return false;
 	} else {
 		return null;		
 	}
 
-
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+ninja2() // false
+ninja2(1) // 1
+ninja2(1,2) // 3
+ninja2(1,2,3) // 1
 ```
