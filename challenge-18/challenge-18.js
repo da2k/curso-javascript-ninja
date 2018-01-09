@@ -19,7 +19,7 @@
 	console.log( 'Limpando CPFs:' );
 	
 	function clearCPF(cpf){
-		return cpf.match(/\d/g).join('');
+		return cpf.replace(/\D/g,'');
 	}
 
 	console.log('049-214 3421-1 ->', clearCPF('049-214 3421-1'));
@@ -35,9 +35,7 @@
 	console.log( '\nFormatando CPFs corretamente:' );
 	
 	function formatCPF(cpf){
-		var captura = cpf.match(/(\d{3})(\d{3})(\d{3})(\d{2})/);
-		
-		return captura[1] + '.' + captura[2] + '.' + captura[3] + '-' + captura[4];
+		return cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/,'$1.$2.$3-$4');
 	}
 
 	console.log(formatCPF('10784329702'));
