@@ -42,7 +42,7 @@ var pessoa = {
     andando: false,
     caminhouQuantosMetros: 0,
     fazerAniversario: function(){
-        idade++;
+        this.idade++;
     }
 }
 
