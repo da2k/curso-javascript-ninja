@@ -66,17 +66,31 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function ninja2(a,b,c){
+	
+	/*
+		if( a == null){
+			return false
+		} else if (a != null && b == null){
+			return a;
+		} else if (c == null){
+			return a+b;
+		} else if (a != null && b != null & c !== null){
+			return ((a + b) / c );
+		} else {
+			return null;		
+		}
+	*/
 
-	if( a == null){
-		return false
-	} else if (a != null && b == null){
+	if ( a !== undefined && b === undefined && c === undefined){
 		return a;
-	} else if (c == null){
-		return a+b;
-	} else if (a != null && b != null & c !== null){
-		return ((a + b) / c );
+	} else if ( a !== undefined && b !== undefined && c === undefined){
+		return a + b;
+	} else if ( a !== undefined && b !== undefined && c !== undefined){
+		return ( a + b) / c;
+	} else if (a === undefined && b === undefined && c === undefined){
+		return false;
 	} else {
-		return null;		
+		return null;
 	}
 
 }
