@@ -1,7 +1,7 @@
 /*
 Crie uma IIFE que envolva todo esse arquivo (inclusive esse comentário),
 e faça a indentação correta.
-*/
+*//(function() { 
 
 /*
 Sem alterar os códigos nos `console.log` abaixo, faça com que o retorno
@@ -11,10 +11,14 @@ resolver o problema corretamente.
 */
 var five = '5';
 console.log( five + ' é número?', typeof five === 'number' );
+// var five = Number('5') ;
+//console.log( five + ' é número?', typeof five === 'number' );
+//5 é número? true
 
 var concat = 10 + 10;
 console.log( '"' + concat + '" é uma string? E é igual a "1010"?', typeof concat === 'string' );
-
+// var concat = String('10 + 10');
+//console.log( '"' + concat + '" é uma string? E é igual a "1010"?', typeof concat === 'string' );
 /*
 Voltando ao exemplo da calculadora, vamos utilizar mais uma abordagem
 funcional, mas dessa vez, separando algumas responsabilidades.
@@ -24,7 +28,24 @@ funcional, mas dessa vez, separando algumas responsabilidades.
 função receberá dois parâmetros e retornará a operação referente à sua
 propriedade, usando os valores passados por parâmetro.
 */
-// ?
+// var operation = {
+... '+' : function( n1, n2) {
+..... return n1 + n2;
+..... },
+... '-' : function( n1, n2) {
+..... return n1 - n2;
+..... },
+...'*' : function( n1, n2) {
+..... return n1 * n2;
+..... },
+... '/' : function( n1, n2) {
+..... return n1 / n2;
+..... },
+... '%' : function( n1, n2) {
+..... return n1 / n2;
+..... }
+};
+
 
 /*
 Crie uma função chamada `isOperatorValid`, que receberá um operador por
@@ -36,7 +57,11 @@ parâmetro a ela é válido, ou seja, se ele é igual a '+', '-', '*', '/' ou
 Caso contrário, "false".
 - O desafio é fazer o retorno sem usar "if" ou "switch".
 */
-// ?
+
+//function isOperatorValid(operador) {
+... return operation[operador] !== undefined;
+... }
+
 
 /*
 Agora vamos criar a calculadora.
