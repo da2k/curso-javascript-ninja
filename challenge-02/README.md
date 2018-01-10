@@ -7,8 +7,7 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 function somar(numero1, numero2) {return numero1 + numero2;}
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-var resultado = somar(10, 20);
-resultado += 5;
+var resultado = somar(10, 20) + 5;
 
 // Qual o valor atualizado dessa variável?
 35
@@ -38,13 +37,12 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-function tres_argumentos (argumento1, argumento2, argumento3) {
-    if(argumento1 != '' && argumento2 != '' && argumento3 != '') {
-        return (argumento1 * argumento2 * argumento3) + 2;
-    } else {
-        return 'Preencha todos os valores corretamente!';
-    }
-}
+function tres_argumentos(argumento1, argumento2, argumento3) {
+		if(argumento1 === undefined || argumento2 === undefined || argumento3 === undefined) {
+			return 'Preencha todos os valores corretamente!';
+		}
+		return (argumento1 * argumento2 * argumento3) + 2;
+	}
 
 // Invoque a função criada acima, passando só dois números como argumento.
 
@@ -52,7 +50,7 @@ tres_argumentos (1, 2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 /*
-NaN
+Preencha todos os valores corretamente!
 */
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
