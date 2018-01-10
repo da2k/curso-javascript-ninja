@@ -73,47 +73,22 @@
   "O mês de [NOME DO MÊS] é representado pelo número [NÚMERO DO MÊS]."
   */
   console.log( '\nMeses representados por números:' );
-  function getMonthNumber(month) {
-    switch (month) {
-      case 'janeiro':
-        return '01';
-        break;
-      case 'fevereiro':
-        return '02';
-        break;
-      case 'março':
-        return '03';
-        break;
-      case 'abril':
-        return '04';
-        break;
-      case 'maio':
-        return '05';
-        break;
-      case 'junho':
-        return '06';
-        break;
-      case 'julho':
-        return '07';
-        break;
-      case 'agosto':
-        return '08';
-        break;
-      case 'setembro':
-        return '09';
-        break;
-      case 'outubro':
-        return '10';
-        break;
-      case 'novembro':
-        return '11';
-        break;
-      case 'dezembro':
-        return '12';
-        break;
-      default:
-        return 'Não encontrado';
+  function getMonthNumber(monthName) {
+    var months = {
+      janeiro: '01',
+      fevereiro: '02',
+      'março': '03',
+      abril: '04',
+      maio: '05',
+      junho: '06',
+      julho: '07',
+      agosto: '08',
+      setembro: '09',
+      outubro: '10',
+      novembro: '11',
+      dezembro: '12'
     }
+    return months[monthName];
   }
 
   console.log('O mês de março é representado pelo número ' + getMonthNumber('março') + '.');
