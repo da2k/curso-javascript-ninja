@@ -71,8 +71,23 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+	function arg_tres(arg1, arg2, arg3) {
+		if(arg1 !== undefined && arg2 === undefined && arg3 === undefined) {
+			return arg1;
+		} else if(arg1 !== undefined && arg2 !== undefined && arg3 === undefined) {
+			return arg1 + arg2;
+		} else if(arg1 !== undefined && arg2 !== undefined && arg3 !== undefined) {
+			return (arg1 + arg2) / arg3;
+		} else if(arg1 === undefined && arg2 === undefined && arg3 === undefined) {
+			return false;
+		} else {
+			return null;
+		}
+	}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+arg_tres(); // false
+arg_tres(10); // 10
+arg_tres(10, 20) // 30
+arg_tres(15, 30, 5); // 9
 ```
