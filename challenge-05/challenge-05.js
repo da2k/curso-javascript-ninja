@@ -9,7 +9,7 @@ Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
 function receiveArray(args) {
 	return args;
-};
+}
 
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
@@ -24,12 +24,12 @@ segundo parâmetro.
 */
 function returnArrayParameter(args, index) {
 	return args[index];
-};
+}
 
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
-var anotherArray = ['Henrique', 10, false, NaN, 'Uma string mais longa'];
+var anotherArray = ['Henrique', 10, false, NaN, {}];
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
@@ -88,18 +88,20 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-console.log('O livro Harry Potter tem ' + book('Harry Potter').quantidadePaginas + ' páginas!');
+var bookname = 'Harry Potter';
+
+console.log('O livro '+ bookname +' tem ' + book(bookname).quantidadePaginas + ' páginas!');
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log('O autor do livro O Senhor dos Anéis é ' + book('O Senhor dos Anéis').autor);
+console.log('O autor do livro '+ bookname +' é ' + book(bookname).autor);
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log('O livro Alta Fidelidade foi publicado pela editora '+ book('Alta Fidelidade').editora + '.');
+console.log('O livro '+ bookname +' foi publicado pela editora '+ book(bookname).editora + '.');
