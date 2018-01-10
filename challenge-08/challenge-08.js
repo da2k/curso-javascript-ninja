@@ -106,3 +106,6 @@ Faça uma operação com cada uma das funções criadas acima, mostrando o resul
 no console.
 */
 console.log(subtraction(30, 15));
+console.log(multiplication(30, 15));
+console.log(division(30, 15));
+console.log(mod(30, 15));
