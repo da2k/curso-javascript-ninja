@@ -414,3 +414,51 @@ Porém, se a função estiver atribuída a uma variável, ele não fará hoistin
 >     };
 > };
 > console.log( myFunction() ); // retorna um erro
+
+// Vídeo 53
+IIFE: função autoexecutável.
+> (function() {
+>     return 1 + 2;
+> })();
+
+
+
+/* 
+Seção 10
+*/
+
+// Vídeo 58
+Wrapper objects (construtores): criam novos objetos.
+Valores primitivos não tem propriedades. Pra isso, usar os construtores para introduzir características de objetos neles.
+
+> var name = new String('Daciuk');
+> var age = new Number(30);
+> var ninja new Boolean(false);
+
+> name;
+>> [String: 'Daciuk'];
+> name.valueOf();
+>> 'Daciuk';
+
+Conversores (sem o new): convertem o tipo.
+> var name = String(30);
+> var age = Number('150');
+> var ninja = Boolean(0);
+
+// Vídeo 59
+typeof: operador unário e retorna o tipo desse operando. Somente pra valores primitivos.
+
+> typeof undefined; // 'undefined'
+> typeof function() {}; // 'function'
+> typeof true; // 'boolean'
+> typeof 10; // 'number'
+> typeof NaN; // 'number'
+> typeof 'JS Ninja' // 'string'
+Qualquer outro object que não seja function são object
+> typeof {}; // 'object'
+> typeof []; // 'object'
+> typeof null; // 'object'
+
+Pra testar null, usar:
+> var num === null
+
