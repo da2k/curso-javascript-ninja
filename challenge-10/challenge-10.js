@@ -28,23 +28,24 @@ funcional, mas dessa vez, separando algumas responsabilidades.
 função receberá dois parâmetros e retornará a operação referente à sua
 propriedade, usando os valores passados por parâmetro.
 */
-// var operation = {
-... '+' : function( n1, n2) {
-..... return n1 + n2;
+//> var operation = {
+...  '+' : function( number1, number2) {
+..... return number1 + number2;
 ..... },
-... '-' : function( n1, n2) {
-..... return n1 - n2;
+... '-' : function( number1, number2) {
+.....  return number1 - number2;
 ..... },
-...'*' : function( n1, n2) {
-..... return n1 * n2;
+... '*' :  function( number1, number2) {
+.....  return number1 * number2;
 ..... },
-... '/' : function( n1, n2) {
-..... return n1 / n2;
-..... },
-... '%' : function( n1, n2) {
-..... return n1 / n2;
-..... }
-};
+...  '/' : function( number1, number2) {
+... return number1 / number2;
+... },
+...  '%' : function( number1, number2) {
+... return number1 / number2;
+... }
+... };
+
 
 
 /*
@@ -75,7 +76,18 @@ parâmetros;
 operador passado para a função "calculator", e passando para esse método
 os dois parâmetros da função de retorno de "calculator".
 */
-// ?
+// function calculator(operador) {
+... if( !isOperatorValid(operador) ) {
+.....  return false;
+..... }
+...  return function(number1, number2) {
+..... if (typeof number1 !== 'number' && typeof number2 !== 'number') {
+.......  return false;
+....... }
+.....  return operation[operador](number1, number2);
+..... };
+... }
+
 
 /*
 Crie uma função chamada "showOperationMessage" que recebe três parâmetros:
@@ -84,7 +96,10 @@ deve ser a frase:
 'A operação [NUMBER1] [OPERATOR] [NUMBER2] =';
 Essa função mostrará a mensagem da operação que criaremos mais abaixo.
 */
-// ?
+// function showOperationMessage(operator, n1, n2) {
+... return 'A operação' +  number1 + ' ' + operator + ' ' +  number2 + ' = ' ;
+... }
+
 
 /*
 Crie uma função chamada "showErrorMessage" que recebe um parâmetro: o
@@ -92,7 +107,9 @@ operador da operação cálculo, quando a operação não for válida.
 Essa função deverá retornar a frase:
 'Operação "[OPERATOR]" não permitida!'
 */
-// ?
+// function showErrorMessage(operador) {
+... return 'Operação ' + operador +  ' não permitida!'
+... }
 
 /*
 Nossa calculadora está pronta! Agora vamos testá-la:
@@ -100,15 +117,18 @@ PASSO 1:
 - Declare 3 variáveis: "number1" e "number2", iniciando com valor zero, e
 "operationSignal", sem valor por enquanto.
 */
-// ?
-
+// var number1= 0;
+var number2 = 0;
+var operationSignal;
+ 
 /*
 PASSO 2:
 Atribua à variável operationSignal o operador de soma, e declare uma
 variável chamada "sum", que receba a função "calculator", passando por
 parâmetro a variável que recebeu o sinal da operação.
 */
-// ?
+// operationSignal = '+' ;
+var sum = calculator(operationSignal);
 
 /*
 PASSO 3:
@@ -122,7 +142,12 @@ parâmetros para o método "log" de "console":
 - O segundo, a função de soma, passando os dois operandos.
 - Se "sum" for "false", mostrar no console a mensagem de erro.
 */
-// ?
+// 
+> if (sum) {
+... number1 = 20;
+... number2 = 10;
+... }
+
 
 /*
 Repita desde o "PASSO 2" com as operações de subtração, multiplicação,
