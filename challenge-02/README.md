@@ -55,7 +55,7 @@ Crie uma função com as seguintes características:
 
 
 function soma3(x, y, z){
-	if (x && y && z != undefined){
+	if (x === undefined || y === undefined || z === undefined){
 		return (x*y*z) + 2;
 		
 	}else {
@@ -98,21 +98,24 @@ Crie uma função com as seguintes características:
  function fancaoArgumento3(x, y, z){
 
  	
- 	if (y == undefined){
+ 	if (x !== undefined && y === undefined && z === undefined){
  		return x;
 
- 	}else if (z == undefined){
+ 	}
+ 	else if (x !== undefined && y !== undefined && z === undefined){
  		return x+y;
 
- 	}else if (x && y && z != undefined){
+ 	}
+ 	else if (x !== undefined && y !== undefined && z !== undefined){
  		return (x+y) / z; 
  	}
 
- 	else if (x && y && z == undefined){
+ 	else if (x === undefined && y === undefined && z === undefined){
  		return false;
 
- 	}else {
- 		null;
+ 	}
+ 	else {
+ 		return null;
  	}
 
  }
