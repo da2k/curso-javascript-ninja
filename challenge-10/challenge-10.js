@@ -84,7 +84,7 @@ os dois parâmetros da função de retorno de "calculator".
 ..... if (typeof number1 !== 'number' && typeof number2 !== 'number') {
 .......  return false;
 ....... }
-.....  return operation[operador](number1, number2);
+.....  return operation[operation](number1, number2);
 ..... };
 ... }
 
@@ -96,8 +96,8 @@ deve ser a frase:
 'A operação [NUMBER1] [OPERATOR] [NUMBER2] =';
 Essa função mostrará a mensagem da operação que criaremos mais abaixo.
 */
-// function showOperationMessage(operator, n1, n2) {
-... return 'A operação' +  number1 + ' ' + operator + ' ' +  number2 + ' = ' ;
+// function showOperationMessage(operation, n1, n2) {
+... return 'A operação' +  number1 + ' ' + operation + ' ' +  number2 + ' = ' ;
 ... }
 
 
@@ -107,8 +107,8 @@ operador da operação cálculo, quando a operação não for válida.
 Essa função deverá retornar a frase:
 'Operação "[OPERATOR]" não permitida!'
 */
-// function showErrorMessage(operador) {
-... return 'Operação ' + operador +  ' não permitida!'
+// function showErrorMessage(operation) {
+... return 'Operação ' + operation+  ' não permitida!'
 ... }
 
 /*
@@ -146,8 +146,12 @@ parâmetros para o método "log" de "console":
 > if (sum) {
 ... number1 = 20;
 ... number2 = 10;
-... }
-
+... console.log(showOperationMessage(operationSignal,number1, number2 ), sum(number1,number2) );
+  else{
+    console.log( showErrorMessage(operationSignal) );
+  }
+}
+  
 
 /*
 Repita desde o "PASSO 2" com as operações de subtração, multiplicação,
