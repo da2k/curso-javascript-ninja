@@ -121,6 +121,10 @@ Crie uma função com as seguintes características:
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 
-fancaoArgumento3();
+fancaoArgumento3(); //false
+fancaoArgumento3(10); // 10
+fancaoArgumento3(10, 20); // 30
+fancaoArgumento3(10, 20, 3); // 10
+
 
 ```
