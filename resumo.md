@@ -462,3 +462,37 @@ Qualquer outro object que não seja function são object
 Pra testar null, usar:
 > var num === null
 
+
+
+/* 
+Seção 11
+*/
+
+// Vídeo 65
+Laços/loops: do while. A primeira instrução sempre é feita, independente se a condição é cumprida.
+> var counter = 1;
+> do {
+>    console.log( counter++ );
+> } while( counter < 10 );
+
+For/in: percorre as propriedades de um objeto ou verifica se há propriedade dentro do objeto.
+> var car = {
+>     brand: 'VW',
+>     model: 'Gol',
+>     year: 2013
+> };
+> for ( var prop in car ) {
+>     console.log( prop ); // retorna 'brand, model, year'
+> }
+> for ( var prop in car ) {
+>     console.log( car[prop] ); // retorna 'VW, Gol, 2013'
+> }
+
+> console.log( 'brand' in car ); // retorna 'true'
+
+
+// Vídeo 66
+Saltos: return, por exemplo pode ser usado em qualquer lugar na função. Ele pula instruções depois do return, se certa condição é encontrada.
+Return, break.
+Continue, por sua vez, dá continuidade, ignorando o resto da expressão.
+
