@@ -24,7 +24,7 @@ Onde VALOR é o novo valor da variável.
 */
 function mensagem() {
     myvar = 10;
-    return "O valor da variavel agora é " + myvar + "."; 
+    return "O valor da variavel agora é " + myvar + "."; 
 }
 
 // Invoque a função criada acima.
@@ -32,7 +32,7 @@ mensagem();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
-    O valor da variavel agora é 10.
+    O valor da variavel agora é 10.
 /* 
 
 /*
@@ -43,22 +43,22 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function multi(x, y, z) {
-    if (x === null || y === null || z === null) {
+    if (x === undefined || y === undefined || z === undefined) {
         return "Preencha todos os valores corretamente";
-    } else {
-        return x * y * z + 2;
-    }
+    } 
+    
+    return x * y * z + 2;
 }
 
 
 // Invoque a função criada acima, passando só dois números como argumento.
-multi(2, 3);
+console.log(multi(2, 3));
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 // NaN
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-multi(2, 2, 2)
+console.log(multi(2, 2, 2));
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 // 10
@@ -73,13 +73,13 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function tres(x, y, z) {
-    if (x !== null) {
+    if (x !== undefined && y === undefined && z === undefined) {
         return x;
-    } else if (x !== null && y !== null) {
+    } else if (x !== undefined && y !== undefined && z === undefined) {
         return x + y;
-    } else if (x !== null && y !== null && z !== null) {
+    } else if (x !== undefined && y !== undefined && z !== undefined) {
         return (x + y) / z;
-    } else if (x === null && y === null && z === null) {
+    } else if (x === undefined && y === undefined && z === undefined) {
         return false;
     } else {
         return null;
@@ -87,8 +87,8 @@ function tres(x, y, z) {
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-tres(); // false
-tres(1); // 1
-tres(1, 1); // 2
-tres(5, 5, 2); // 5
+console.log(tres()); // false
+console.log(tres(1)); // 1
+console.log(tres(1, 1)); // 2
+console.log(tres(5, 5, 2)); // 5
 ```
