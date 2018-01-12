@@ -80,11 +80,11 @@ os dois parâmetros da função de retorno de "calculator".
 ... if( !isOperatorValid(operator) ) {
 .....  return false;
 ..... }
-...  return function(number1, number2) {
-..... if (typeof number1 !== 'number' && typeof number2 !== 'number') {
+...  return function(x, y) {
+..... if (typeof x !== 'number' && typeof y !== 'number') {
 .......  return false;
 ....... }
-.....  return operation[operator](number1, number2);
+.....  return operation[operator](x, y);
 ..... };
 ... }
 
