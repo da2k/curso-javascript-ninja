@@ -162,8 +162,16 @@ divisão e resto. Crie variáveis com os nomes "subtraction",
 */
 // operationSingal = '-';
 '-'
-var subtraction = calculator( operationSingal);
-  
+var subtraction = calculator( operationSignal);
+if( subtraction) {
+...  number1 = 5;
+... number2 = 3;
+... console.log( showOperationMessage( operationSignal, number1, number2), subtraction( number1, number2) );
+...  } else {
+...  console.log( showErrorMessage(operationSignal) );
+... }
+A operação 5 - 3 =  2
+
 
 
 /*
