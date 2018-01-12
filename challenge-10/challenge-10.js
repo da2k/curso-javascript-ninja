@@ -108,8 +108,8 @@ Essa função deverá retornar a frase:
 'Operação "[OPERATOR]" não permitida!'
 */
 // function showErrorMessage(operator) {
-... return 'Operação ' + operation +  ' não permitida!';
-... }
+...  return 'Operação ' + operator +  ' não permitida!';
+}
 
 
 /*
@@ -208,12 +208,16 @@ A operação 10 % 3 =  3.3333333333333335
 Repita o PASSO 2 novamente, mas passando um operador inválido, para ver se
 a mensagem de erro será mostrada no console.
 */
-// if( naovalido) {
+//  operationSignal = ' ';
+' '
+ var naovalido = calculator( operationSignal);
+  
+ 
+if( naovalido) {
 ... number1 = 10;
 ... number2 = 5;
 ... console.log( showOperationMessage( operationSignal, number1, number2), naovalido( number1, number2) );
-... } else {
-... console.log( showErrorMessage(operationSignal) );
+...  } else {
+...  console.log( showErrorMessage(operationSignal) );
 ... }
-Operação [object Object] não permitida!
-
+Operação   não permitida!
