@@ -180,7 +180,17 @@ A operação 5 - 3 =  2
 ...  console.log( showErrorMessage(operationSignal) );
 ... }
 A operação 5 * 3 =  15
-//
+// operationSignal = '/';
+ var divisao = calculator( operationSignal);
+ if( divisao) {
+...  number1 = 10;
+...  number2 = 5;
+...  console.log( showOperationMessage( operationSignal, number1, number2), divisao( number1, number2) );
+...  } else {
+... console.log( showErrorMessage(operationSignal) );
+...  }
+A operação 10 / 5 =  2
+
 
 
 /*
