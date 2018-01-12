@@ -37,7 +37,7 @@ alterar o valor da propriedade `idade` dessa pessoa, somando `1` a cada vez que
 for chamado.
 */
 
-pessoa.aniversario = function(){
+pessoa.Fazeraniversario = function(){
 	pessoa.idade++;
 }
 
