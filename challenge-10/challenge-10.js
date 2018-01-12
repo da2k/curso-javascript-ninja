@@ -96,7 +96,7 @@ deve ser a frase:
 'A operação [NUMBER1] [OPERATOR] [NUMBER2] =';
 Essa função mostrará a mensagem da operação que criaremos mais abaixo.
 */
-// function showOperationMessage(operation, n1, n2) {
+// function showOperationMessage(operator, number1, number2) {
 ... return 'A operação' +  number1 + ' ' + operation + ' ' +  number2 + ' = ' ;
 ... }
 
