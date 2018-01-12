@@ -171,7 +171,16 @@ if( subtraction) {
 ...  console.log( showErrorMessage(operationSignal) );
 ... }
 A operação 5 - 3 =  2
-
+// operationSignal = '*';
+ var multiplicaçao = calculator( operationSignal);
+   if( multiplicaçao) {
+... number1 = 5;
+...  console.log( showOperationMessage( operationSignal, number1, number2), multiplicaçao( number1, number2) );
+... } else {
+...  console.log( showErrorMessage(operationSignal) );
+... }
+A operação 5 * 3 =  15
+//
 
 
 /*
