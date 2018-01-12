@@ -146,7 +146,7 @@ parâmetros para o método "log" de "console":
 > if ( sum ) {
 ... number1 = 20;
 ... number2 = 10;
-... console.log(showOperationMessage(operationSignal,number1, number2 ), sum(number1,number2) );
+... console.log(showOperationMessage(operationSignal,number1, number2 ), sum(number1, number2) );
   else{
     console.log( showErrorMessage(operationSignal) );
   }
