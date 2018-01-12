@@ -29,20 +29,20 @@ função receberá dois parâmetros e retornará a operação referente à sua
 propriedade, usando os valores passados por parâmetro.
 */
 //> var operation = {
-...  '+' : function( number1, number2) {
-..... return number1 + number2;
+...  '+' : function( x, y) {
+..... return x + y;
 ..... },
-... '-' : function( number1, number2) {
-.....  return number1 - number2;
+... '-' : function( x, y) {
+.....  return x - y;
 ..... },
-... '*' :  function( number1, number2) {
-.....  return number1 * number2;
+... '*' :  function( x, y) {
+.....  return x * y;
 ..... },
-...  '/' : function( number1, number2) {
-... return number1 / number2;
+...  '/' : function( x, y) {
+... return x / y;
 ... },
-...  '%' : function( number1, number2) {
-... return number1 / number2;
+...  '%' : function( x, y) {
+... return x / y;
 ... }
 ... };
 
