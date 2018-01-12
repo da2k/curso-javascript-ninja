@@ -17,7 +17,7 @@ console.log( five + ' é número?', typeof five === 'number' );
 
 var concat = 10 + 10;
 console.log( '"' + concat + '" é uma string? E é igual a "1010"?', typeof concat === 'string' );
-// var concat = String('10 + 10');
+// var concat = String('10 ') + 10;
 //console.log( '"' + concat + '" é uma string? E é igual a "1010"?', typeof concat === 'string' );
 /*
 Voltando ao exemplo da calculadora, vamos utilizar mais uma abordagem
