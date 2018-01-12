@@ -143,11 +143,12 @@ parâmetros para o método "log" de "console":
 - Se "sum" for "false", mostrar no console a mensagem de erro.
 */
 // 
-> if( sum ) {
-    number1 = 20;
-    number2 = 10;
-    console.log(showOperationMessage(operationSignal, number1, number2), sum(number1, number2) );
-}
+>if( sum) {
+...  number1 = 10;
+... number2 = 20;
+... console.log( showOperationMessage( operationSignal, number1, number2), sum( number1, number2) );
+... }
+
   else {
     console.log( showErrorMessage(operationSignal) );
   }
