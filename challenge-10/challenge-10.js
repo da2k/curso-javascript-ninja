@@ -60,7 +60,7 @@ Caso contrário, "false".
 */
 
 //function isOperatorValid( operator ) {
-... return !!operation[operator] 
+... return operation[operator] !== undefined
 ... }
 
 
