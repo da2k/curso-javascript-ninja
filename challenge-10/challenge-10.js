@@ -107,7 +107,7 @@ operador da operação cálculo, quando a operação não for válida.
 Essa função deverá retornar a frase:
 'Operação "[OPERATOR]" não permitida!'
 */
-// function showErrorMessage(operation) {
+// function showErrorMessage(operator) {
 ... return 'Operação ' + operation+  ' não permitida!'
 ... }
 
@@ -143,7 +143,7 @@ parâmetros para o método "log" de "console":
 - Se "sum" for "false", mostrar no console a mensagem de erro.
 */
 // 
-> if (sum) {
+> if ( sum ) {
 ... number1 = 20;
 ... number2 = 10;
 ... console.log(showOperationMessage(operationSignal,number1, number2 ), sum(number1,number2) );
