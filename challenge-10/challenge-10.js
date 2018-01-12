@@ -190,6 +190,17 @@ A operação 5 * 3 =  15
 ... console.log( showErrorMessage(operationSignal) );
 ...  }
 A operação 10 / 5 =  2
+// operationSignal = '%';
+'%'
+var modulo = calculator( operationSignal);
+if( modulo ) {
+...  number1 = 10;
+... number2 = 3;
+...  console.log( showOperationMessage( operationSignal, number1, number2), modulo( number1, number2) );
+...  } else {
+...   console.log( showErrorMessage(operationSignal) );
+... }
+A operação 10 % 3 =  3.3333333333333335
 
 
 
@@ -197,4 +208,12 @@ A operação 10 / 5 =  2
 Repita o PASSO 2 novamente, mas passando um operador inválido, para ver se
 a mensagem de erro será mostrada no console.
 */
-// ?
+// if( naovalido) {
+... number1 = 10;
+... number2 = 5;
+... console.log( showOperationMessage( operationSignal, number1, number2), naovalido( number1, number2) );
+... } else {
+... console.log( showErrorMessage(operationSignal) );
+... }
+Operação [object Object] não permitida!
+
