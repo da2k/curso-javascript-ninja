@@ -30,8 +30,9 @@
   Adicione 3 novos estados da região Norte no início do array e mostre no console.
   */
   console.log( '\nMais estados adicionados:' );
-  brasil.splice(0, 0, 'Acre', 'Amapá', 'Amazonas');
+  brasil.unshift('Acre', 'Amapá', 'Amazonas');
   console.log(brasil);
+
   /*
   Remova o primeiro estado do array `brasil` e mostre-o no console.
   */
@@ -59,7 +60,17 @@
   /*
   Crie um novo array chamado `nordeste`, que tenha os estados do nordeste.
   */
-  var nordeste = ['Alagoas', 'Bahia', 'Ceará', 'Maranhão', 'Paraíba', 'Piauí', 'Pernambuco', 'Rio Grande do Norte', 'Sergipe'];
+  var nordeste = [
+    'Alagoas',
+    'Bahia',
+    'Ceará',
+    'Maranhão',
+    'Paraíba',
+    'Pernambuco',
+    'Piauí',
+    'Rio Grande do Norte',
+    'Sergipe'
+  ];
 
   /*
   Mostre no console os estados do nordeste.
@@ -120,10 +131,14 @@
   - "Nem todos os estados tem mais de 7 letras!"
   */
   console.log( '\nTodos os estados de `brasil` tem mais de 7 letras?' );
-  var sevenLetters = brasil.every(function(state) {
+  var allStatesHasSevenLetters = brasil.every(function(state) {
     return state.length > 7;
   });
-  console.log(sevenLetters ? 'Sim, todos os estados tem mais de 7 letras!' : 'Nem todos os estados tem mais de 7 letras!');
+  console.log(
+    allStatesHasSevenLetters
+      ? 'Sim, todos os estados tem mais de 7 letras!'
+      : 'Nem todos os estados tem mais de 7 letras!'
+  );
 
   /*
   Percorra o array `brasil` e verifique se o Ceará está incluído, atribuindo o
@@ -137,7 +152,11 @@
   var cearaExists = brasil.some(function(state) {
     return state === 'Ceará';
   });
-  console.log(cearaExists ? 'Ceará está incluído!' : 'Ceará não foi incluído :(');
+  console.log(
+    cearaExists
+      ? 'Ceará está incluído!'
+      : 'Ceará não foi incluído :('
+  );
 
   /*
   Percorra o array `newBrasil` e crie um novo array que some 1 no ID de cada
@@ -146,9 +165,10 @@
   Atribua o novo array a uma variável chamada `map`.
   */
   var map = newBrasil.map(function(state) {
-    state.id = ++state.id;
-    state.estado = state.estado + ' pertence ao Brasil.';
-    return state;
+    return {
+      id: state.id + 1,
+      estado: state.estado + ' pertence ao Brasil.'
+    };
   });
 
   /*
