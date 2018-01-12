@@ -160,7 +160,11 @@ Repita desde o "PASSO 2" com as operações de subtração, multiplicação,
 divisão e resto. Crie variáveis com os nomes "subtraction",
 "multiplication", "division" e "mod".
 */
-// ?
+// operationSingal = '-';
+'-'
+var subtraction = calculator( operationSingal);
+  
+
 
 /*
 Repita o PASSO 2 novamente, mas passando um operador inválido, para ver se
