@@ -97,7 +97,7 @@ deve ser a frase:
 Essa função mostrará a mensagem da operação que criaremos mais abaixo.
 */
 // function showOperationMessage(operator, number1, number2) {
-... return 'A operação' +  number1 + ' ' + operator + ' ' +  number2 + ' = ' ;
+... return 'A operação ' +  number1 + ' ' + operator + ' ' +  number2 + ' = ' ;
 ... }
 
 
@@ -108,8 +108,9 @@ Essa função deverá retornar a frase:
 'Operação "[OPERATOR]" não permitida!'
 */
 // function showErrorMessage(operator) {
-... return 'Operação ' + operation+  ' não permitida!'
+... return 'Operação ' + operation +  ' não permitida!';
 ... }
+
 
 /*
 Nossa calculadora está pronta! Agora vamos testá-la:
