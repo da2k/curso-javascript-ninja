@@ -235,8 +235,45 @@ deve conter no retorno da frase acima é "metro" no lugar de "metros".
 método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
-?
+
+
+pessoa.apresentacao = function(){
+
+	var nomecompleto = function(){
+		return pessoa.nome+ ' '+ pessoa.sobrenome;
+	}
+
+	var sexo, idade, metros;
+
+	if(pessoa.sexo === 'Feminino' || pessoa.sexo === 'feminino' || pessoa.sexo === 'F' || pessoa.sexo === 'f'){
+		sexo = 'a';
+	}else{
+		sexo = 'o';
+	}
+
+	if(pessoa.idade === 1){
+		idade = 'ano';
+	}else {
+		idade = 'anos';
+	}
+
+	if(pessoa.caminhouQuantosMetros === 1){
+		metros = 'metro';
+	}else {
+		metros = 'metros';
+	}
+
+
+	return 'Olá, eu sou '+ sexo + ' '+ pessoa.nomecompleto() + ', tenho '+ pessoa.idade + ' '+idade +  ', ' + pessoa.altura + ', meu peso é '+ pessoa.peso + ' e, só hoje, eu já caminhei '+ pessoa.caminhouQuantosMetros + ' '+metros + '!';
+
+	}
+
+
+
+
 
 // Agora, apresente-se ;)
-?
+
+pessoa.apresentacao();
+
 ```
