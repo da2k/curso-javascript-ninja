@@ -4,29 +4,39 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-?
+> function somando (a,b) {
+... return a + b }
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-?
+
+var n = somando(9,3)
 
 // Qual o valor atualizado dessa variável?
-?
+17;
 
 // Declare uma nova variável, sem valor.
-?
+
+var semvalor;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-?
+
+> function add (semvalor) {
+... semvalor = "VALOR";
+... return "o retorno é "+ semvalor
+... }
+
 
 // Invoque a função criada acima.
-?
+add();
+
 
 // Qual o retorno da função? (Use comentários de bloco).
-?
+
+valor;
 
 /*
 Crie uma função com as seguintes características:
@@ -35,19 +45,24 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-?
+function arguments(a,b,c) {
+... if (a == null || b == null || c == null){
+..... return "preencha todos os campos!"}
+... return a * b * c + 2 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+arguments(1,2)
+
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+'preencha todos os campos!'
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+arguments(1,2,3)
+
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+8 
 
 /*
 Crie uma função com as seguintes características:
@@ -58,8 +73,16 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+> function nova(a,b,c) {
+... if (b == null && c == null){ return a}
+... else if (c == null){ return a + b  }
+... else if (a == null && b == null && c == null){return false }
+... else return (a + b) / c}
+
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
-```
+
+nova();
+nova(3);
+nova(3,3);
+nova(3,3,3);
