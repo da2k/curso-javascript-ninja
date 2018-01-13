@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Challenge 28</title>
+
+	<style>
+		.address-container {
+			display: none;
+		}
+
+		.request-status {
+			font-size: 18px;			
+		}
+
+		.request-status strong {
+			text-decoration: underline;
+		}
+
+		.success {
+			color: green;
+		}
+
+		.warning {
+			color: #e8b600;
+		}
+
+		.error {
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<form action="" data-js="form">
+		<input type="text" data-js="cep">
+		<input type="submit" value="Consultar CEP" data-js="btn">
+	</form>
+
+	<p data-js="status" class="request-status"></p>
+
+	<div data-js="fullAddress" class="address-container">
+		<p><strong>Logradouro:</strong> <span data-js="aLogradouro"> </span></p>
+		<p><strong>Bairro:</strong> <span data-js="aBairro"></span></p>
+		<p><strong>Estado:</strong> <span data-js="aEstado"></span></p>
+		<p><strong>Cidade:</strong> <span data-js="aCidade"></span></p>
+		<p><strong>CEP:</strong> <span data-js="aCEP"></span></p>
+	</div>	
+
+	<script src="challenge-28.js"></script>	
+	
+</body>
+</html>
