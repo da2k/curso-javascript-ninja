@@ -110,6 +110,7 @@
       ? 'Existe um objeto { number: 2 } em numberObjects!'
       : 'Não existe um objeto { number: 2 } em numberObjects :('
   );
+  console.log('Não retorna o valor que existe pois objetos precisam ser testados por referência na memória e o objeto no array não é a mesma referência que o objeto testado');
 
   /*
   Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
@@ -128,5 +129,7 @@
   formato de String.
   */
   console.log( '\njustMod2Or3 é um array? Se for, a representação dele em String é:' );
-  console.log(Array.isArray(justMod2Or3));
+  if (Array.isArray(justMod2Or3)) {
+    console.log(justMod2Or3.toString());
+  }
 })();
