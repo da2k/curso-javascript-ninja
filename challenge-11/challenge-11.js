@@ -18,7 +18,13 @@ Crie um objeto chamado `person`, que receba as seguintes propriedades:
 - 'name', 'age', 'weight' e 'birthday'. Preencha com os valores corretos
 para o nome, idade, peso e data de nascimento dessa pessoa.
 */
-// ?
+// var person = {
+... name: 'Isabel',
+... age: 19,
+... weight: 65,
+... birthday: '20/11'
+... }
+
 
 /*
 Use um loop para percorrer o objeto criado acima, mostrando no console
