@@ -6,7 +6,7 @@ Crie um loop que execute enquanto essa variável for verdadeira. Dentro do
 loop, mostre no console a mensagem:
 'Entrou ao menos uma vez!'
 Qual loop você deve usar para que essa mensagem seja mostrada no console?
-*/
+*/ var once = false;
 // 
 
 /*
