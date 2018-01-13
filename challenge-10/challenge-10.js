@@ -54,12 +54,7 @@
     - O desafio é fazer o retorno sem usar "if" ou "switch".
     */
     function isOperatorValid(operator) {
-		var validOper = ['+', '-', '*', '/', '%'];
-		var isValid = false;
-		for (var i=0; i<validOper.length; i++) {
-			validOper[i] === operator ? isValid = true : '';
-		}
-		return isValid ? true : false;
+		return !!operation[operator];
 	}
 
     /*
