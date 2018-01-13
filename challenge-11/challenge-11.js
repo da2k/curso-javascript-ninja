@@ -38,6 +38,7 @@ Após o loop, mostre a frase:
 // for( var prop in person ) {
 ...  console.log('The ' + prop + ' of person is ' + person[prop] + '.');
 ... }
+var counter = 0;
 
 
 /*
