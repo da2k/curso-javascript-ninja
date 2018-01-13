@@ -9,8 +9,7 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
   }
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-var somar = soma(3, 8);
-somar + 5;
+var somar = soma(3, 8) + 5;
 
 // Qual o valor atualizado dessa variável?
 16
@@ -30,9 +29,7 @@ function valor(x){
 myVar = valor(10);
 
 // Qual o retorno da função? (Use comentários de bloco).
-/*
-"O valor da variável agora é: 10"
-*/
+/* "O valor da variável agora é: 10" */
 
 /*
 Crie uma função com as seguintes características:
@@ -42,7 +39,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function multiplicacao(x, y, z){
-	if (x == null || y == null || z == null) {
+	if (x == undefined || y == undefined || z == undefined) {
 		return "Preencha todos os valores corretamente!";
 	} else {
 		return x * y * z + 2;
@@ -71,15 +68,15 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function validacao(x, y, z){
-	if (isNaN(x) || isNaN(y) == null || isNaN(z) == null) {
+	if (isNaN(x) || isNaN(y) || isNaN(z)) {
 		return null;
-    }else if (x != null && y == null && z == null){
+    }else if (x != undefined && y == undefined && z == undefined){
 		return x;
-	} else if (x != null && y != null && z == null){
+	} else if (x != undefined && y != undefined && z == undefined){
 		return x + y;
-    } else if (x != null && y != null && z != null){
+    } else if (x != undefined && y != undefined && z != undefined){
 		return (x + y) / z;
-    } else if (x == null && y == null && z == null) {
+    } else if (x == undefined && y == undefined && z == undefined) {
 		return false;
 	}  
 }
