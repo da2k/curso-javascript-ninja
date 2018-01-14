@@ -1,4 +1,4 @@
-( function( win, doc, DOM ) {
+( function( win, doc, $ ) {
   'use strict';
 
   /*
@@ -36,75 +36,85 @@
   que será nomeado de "app".
   */
 
-  function app() {
-    var ajax = new XMLHttpRequest();
-    var $companyName = new DOM( '[data-js="company-name"]' );
-    var $companyPhone = new DOM( '[data-js="company-phone"]' );
-    var $carInputs = new DOM( '[data-js="car-input"]' );
-    var $carForm = new DOM( '[data-js="car-form"]' );
-    var $tableBody = new DOM( '[data-js="table-body"]' );
+  var app = ( function appController() {
+    return {
+      init: function init() {
+        this.loadCompanyData();
+        this.initEvents();
+      },
 
-    function initialize() {
-      loadCompanyData();
-      $carForm.on( 'submit', handleSubmitCarForm );
+      loadCompanyData: function loadCompanyData() {
+        var ajax = new XMLHttpRequest();
+        ajax.open( 'GET', '/company.json', true );
+        ajax.send();
+        ajax.addEventListener( 'readystatechange', this.handleReadyStateChange );
+      },
+
+      initEvents: function initEvents() {
+        $( '[data-js="car-form"]' ).on( 'submit', this.handleSubmitCarForm );
+      },
+
+      handleReadyStateChange: function handleReadyStateChange() {
+        if( app.isRequestOk( this ) ) app.fillCompanyData( this );
+      },
+
+      isRequestOk: function isRequestOk( ajax ) {
+        return ajax.readyState === 4 && ajax.status === 200;
+      },
+
+      fillCompanyData: function fillCompanyData( ajax ) {
+        var data = JSON.parse( ajax.responseText );
+        var $companyName = $( '[data-js="company-name"]' ).get();
+        var $companyPhone = $( '[data-js="company-phone"]' ).get();
+        $companyName.textContent = data.name;
+        $companyPhone.textContent = data.phone;
+      },
+
+      handleSubmitCarForm: function handleSubmitCarForm( event ) {
+        event.preventDefault();
+        var $carInputs = $( '[data-js="car-input"]' );
+        app.insertCarInTable( $carInputs );
+        app.clearForm( $carInputs );
+      },
+
+      insertCarInTable: function insertCarInTable( $carInputs ) {
+        var $fragment = doc.createDocumentFragment();
+        $fragment.append( this.createTableRow( $carInputs ) );
+        $( '[data-js="table-body"]' ).get().append( $fragment );
+      },
+
+      createTableRow: function createTableRow( $carInputs ) {
+        var $tr = doc.createElement( 'tr' );
+        $carInputs.forEach( function( $input, index ) {
+          if( index === 0 ) $tr.append( app.createTableDataWithImage( $input.value ) );
+          else $tr.append( app.createTableData( $input.value ) );
+        } );
+        return $tr;
+      },
+
+      createTableData: function createTableData( value ) {
+        var $td = doc.createElement( 'td' );
+        $td.textContent = value;
+        return $td;
+      },
+
+      createTableDataWithImage: function createTableDataWithImage( url ) {
+        var $img = doc.createElement( 'img' );
+        var $td = doc.createElement( 'td' );
+        $img.setAttribute( 'src', url );
+        $td.append( $img );
+        return $td
+      },
+
+      clearForm: function clearForm( $carInputs ) {
+        $carInputs.forEach( function( $input ) {
+          $input.value = '';
+        } );
+      }
     }
+  } )();
 
-    function loadCompanyData() {
-      ajax.open( 'GET', 'company.json' );
-      ajax.send();
-      ajax.addEventListener( 'readystatechange', handleReadyStateChange );
-    }
-
-    function handleReadyStateChange() {
-      if( isRequestOk() ) fillCompanyData();
-    }
-
-    function isRequestOk() {
-      return ajax.readyState === 4 && ajax.status === 200;
-    }
-
-    function fillCompanyData() {
-      var data = JSON.parse( ajax.responseText );
-      $companyName.get()[ 0 ].textContent = data.name;
-      $companyPhone.get()[ 0 ].textContent = data.phone;
-    }
-
-    function handleSubmitCarForm( event ) {
-      event.preventDefault();
-      insertCarInTable();
-      clearForm();
-    }
-
-    function insertCarInTable() {
-      var $fragment = doc.createDocumentFragment();
-      $fragment.appendChild( createTableRow() );
-      $tableBody.get()[ 0 ].appendChild( $fragment );
-    }
-
-    function createTableRow() {
-      var $tr = doc.createElement( 'tr' );
-      $carInputs.forEach( function( $input ) {
-        $tr.append( createTableData( $input.value ) );
-      } );
-      return $tr;
-    }
-
-    function createTableData( value ) {
-      var $td = doc.createElement( 'td' );
-      $td.textContent = value;
-      return $td;
-    }
-
-    function clearForm() {
-      $carInputs.forEach( function( $input ) {
-        $input.value = '';
-      } );
-    }
-
-    initialize();
-  }
-
-  app();
+  app.init();
   win.app = app;
 
 } )( window, document, window.DOM );

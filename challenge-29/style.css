@@ -32,4 +32,6 @@ table {
 th,
 td { padding: 5px }
 
+img { max-width: 150px; }
+
 

@@ -2,7 +2,34 @@
   'use strict';
 
   function DOM( query ) {
+    if( !( this instanceof DOM ) ) return new DOM( query );
     this.element = doc.querySelectorAll( query );
+  }
+
+  DOM.isArray = function isArray( object ) {
+    return Object.prototype.toString.call( object ) === '[object Array]';
+  }
+
+  DOM.isFunction = function isFunction( object ) {
+    return Object.prototype.toString.call( object ) === '[object Function]';
+  }
+
+  DOM.isNumber = function isNumber( object ) {
+    return Object.prototype.toString.call( object ) === '[object Number]';
+  }
+
+  DOM.isString = function isString( object ) {
+    return Object.prototype.toString.call( object ) === '[object String]';
+  }
+
+  DOM.isBoolean = function isBoolean( object ) {
+    return Object.prototype.toString.call( object ) === '[object Boolean]';
+  }
+
+  DOM.isNull = function isNull( object ) {
+    return
+      Object.prototype.toString( object ) === '[object Null]' ||
+      Object.prototype.toString( object ) === '[object Undefined]';
   }
 
   DOM.prototype.on = function on( eventName, callback ) {
@@ -17,8 +44,9 @@
     } );
   }
 
-  DOM.prototype.get = function get() {
-    return this.element;
+  DOM.prototype.get = function get( index ) {
+    if( !index ) return this.element[ 0 ];
+    return this.element[ index ];
   }
 
   DOM.prototype.forEach = function forEach() {
@@ -47,32 +75,6 @@
 
   DOM.prototype.some = function some() {
     return Array.prototype.some.call( this.element, arguments );
-  }
-
-  DOM.prototype.isArray = function isArray( object ) {
-    return Object.prototype.toString.call( object ) === '[object Array]';
-  }
-
-  DOM.prototype.isFunction = function isFunction( object ) {
-    return Object.prototype.toString.call( object ) === '[object Function]';
-  }
-
-  DOM.prototype.isNumber = function isNumber( object ) {
-    return Object.prototype.toString.call( object ) === '[object Number]';
-  }
-
-  DOM.prototype.isString = function isString( object ) {
-    return Object.prototype.toString.call( object ) === '[object String]';
-  }
-
-  DOM.prototype.isBoolean = function isBoolean( object ) {
-    return Object.prototype.toString.call( object ) === '[object Boolean]';
-  }
-
-  DOM.prototype.isNull = function isNull( object ) {
-    return
-      Object.prototype.toString( object ) === '[object Null]' ||
-      Object.prototype.toString( object ) === '[object Undefined]';
   }
 
   win.DOM = DOM;
