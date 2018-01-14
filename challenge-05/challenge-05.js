@@ -57,24 +57,24 @@ os livros.
 */
 function book(name) {
   var books = {
-    livro1: {
+    'Livro 1': {
       quantidadePaginas: 200,
       autor: 'Autor 1',
       editora: 'Editora 1'
     },
-    livro2: {
+    'Livro 2': {
       quantidadePaginas: 400,
       autor: 'Autor 2',
       editora: 'Editora 2'
     },
-    livro3: {
+    'Livro 3': {
       quantidadePaginas: 300,
       autor: 'Autor 2',
       editora: 'Editora 1'
     }
   };
 
-  return books[name] ? books[name] : books;
+  return name ? books[name] : books;
 }
 
 /*
@@ -87,7 +87,7 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-var bookName = 'livro1';
+var bookName = 'Livro 1';
 var bookInfos = book(bookName);
 console.log(`O livro ${bookName} tem ${bookInfos.quantidadePaginas} páginas!`);
 
@@ -96,7 +96,7 @@ Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-var bookName2 = 'livro2';
+var bookName2 = 'Livro 2';
 var bookInfos2 = book(bookName2);
 console.log(`O autor do livro ${bookName2} é ${bookInfos2.autor}.`);
 
@@ -105,6 +105,6 @@ Ainda com a função acima, imprima o nome da editora de um livro qualquer, usan
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-var bookName3 = 'livro3';
+var bookName3 = 'Livro 3';
 var bookInfos3 = book(bookName3);
 console.log(`O livro ${bookName3} foi publicado pela editora ${bookInfos3.editora}.`);
