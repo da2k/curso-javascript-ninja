@@ -21,6 +21,10 @@
     console.log(letter + ' é a ' + (index + 1) + 'ª letra do meu nome.');
   });
 
+  // for (var i = 0, len = name.length; i < len; i++) {
+  //   console.log(name.charAt(i) + ' é a ' + (i + 1) + 'ª letra do meu nome.');
+  // }
+
   /*
   - Declare uma variável chamada `fullName`, que receba seu nome completo,
   escrito no formato de slug (caixa baixa e palavras separadas por um traço).
@@ -35,11 +39,11 @@
   */
   console.log( '\nNome convertido à partir de um slug:' );
   var fullName = 'fabrício-silva';
-  var fullNameHuman = fullName.split('-').map(function(name) {
+  var newFullName = fullName.split('-').map(function(name) {
     return name.charAt(0).toUpperCase() + name.substring(1);
   }).join(' ');
   console.log(fullName);
-  console.log(fullNameHuman);
+  console.log(newFullName);
 
   /*
   - Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
@@ -51,20 +55,14 @@
   5 nomes foi somente uma sugestão ;)
   */
   console.log( '\nMeus amigos:' );
-  var names = ['Lars', 'Ozzy', 'James', 'Tommy', 'Kirk'];
-  var sayFriends = names.reduce(function(accumulator, name, index, arr) {
-    if (index === arr.length - 1) {
-      return accumulator + name;
-    }
+  var friends = ['Lars', 'Ozzy', 'James', 'Tommy', 'Kirk'];
+  var sayFriends = friends.reduce(function(accumulator, friend, index, arr) {
+    var separator = arr.length - 1 === index ? ' e ' : ', ';
 
-    if (index === arr.length - 2) {
-      return accumulator + name + ' e ';
-    }
+    return accumulator + separator + friend;
+  }).concat(' são meus amigos.');
 
-    return accumulator + name + ', ' ;
-  }, '').concat(' são meus amigos.');
-
-  console.log(names);
+  console.log(friends);
   console.log(sayFriends);
 
   /*
