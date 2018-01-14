@@ -1,33 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <title>Challenge 28</title>
 </head>
 <body>
-  <form>
-    <input type="text" placeholder="CEP" data-js="cep">
-    <button type="submit" data-js="submit">Pesquisar</button>
+  <main>
+    <form data-js="form-cep">
+      <input type="text" placeholder="CEP" data-js="input-cep">
+      <button type="submit">Pesquisar</button>
+    </form>
     <section>
-      <div>
-        <label for="logradouro">Logradouro</label>
-        <input type="text" id="logradouro" data-js="logradouro" readonly>
-      </div>
-      <div>
-        <label for="bairro">Bairro</label>
-        <input type="text" id="bairro" data-js="bairro" readonly>
-      </div>
-      <div>
-        <label for="estado">Estado</label>
-        <input type="text" id="estado" data-js="estado" readonly>
-      </div>
-      <div>
-        <label for="cidade">Cidade</label>
-        <input type="text" id="cidade" data-js="cidade" readonly>
-      </div>
-      <p>Estatus da requisição: <span data-js="state"></span></p>
+      <h2 data-js="status"></h2>
+      <p>
+        <strong>Logradouro:</strong>
+        <span data-js="logradouro">-</span>
+      </p>
+      <p>
+        <strong>Bairro:</strong>
+        <span data-js="bairro">-</span>
+      </p>
+      <p>
+        <strong>Estado:</strong>
+        <span data-js="estado">-</span>
+      </p>
+      <p>
+        <strong>Cidade:</strong>
+        <span data-js="cidade">-</span>
+      </p>
+      <p>
+        <strong>CEP:</strong>
+        <span data-js="cep">-</span>
+      </p>
     </section>
-  </form>
+  </main>
   <script src="challenge-28.js"></script>
 </body>
 </html>
