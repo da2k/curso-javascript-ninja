@@ -128,7 +128,7 @@ Qual o nome completo da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
 
-pessoa.nomeCompleto(); //'Olá, meu nome é Dnilo Souza!'
+pessoa.nomeCompleto(); //'Olá, meu nome é Danilo Souza!'
 
 
 
