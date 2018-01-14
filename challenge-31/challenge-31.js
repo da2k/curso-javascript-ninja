@@ -11,4 +11,4 @@ Faça um pull request, também com a branch `challenge-31`, mas no repositório
 do curso, para colar o link do pull request do seu repo.
 */
 
-console.log('Link do pull request do seu projeto');
+console.log('Link do pull request do seu projeto', 'https://github.com/lorrandavid/fcc-jsninja/pull/2');
