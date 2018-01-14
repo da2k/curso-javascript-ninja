@@ -49,15 +49,15 @@
   Mostre o resultado no console:
   */
   console.log( '\nTrocando "A" e "a" por "4":' );
-  console.log(text.replace(/[Aa]/g, '4'));
+  console.log(text.replace(/[A]/gi, '4'));
 
   /*
   Substitua a frase "O Centauro de Luvas", deixando-a em caixa alta, usando
   o método `toUpperCase()`. Mostre o resultado no console:
   */
   console.log( '\n"O Centauro de Luvas" em caixa alta:' );
-  console.log(text.replace(/O Centauro de Luvas/g, function(text) {
-    return text.toUpperCase();
+  console.log(text.replace(/O Centauro de Luvas/g, function(phrase) {
+    return phrase.toUpperCase();
   }));
 
   /*
@@ -73,10 +73,23 @@
   "O mês de [NOME DO MÊS] é representado pelo número [NÚMERO DO MÊS]."
   */
   console.log( '\nMeses representados por números:' );
-  var months = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
-  function getMonthNumber(month) {
-    var monthNumber = '' + (months.indexOf(month.toLowerCase()) + 1);
-    return monthNumber.length < 2 ? '0' + monthNumber : monthNumber;
+  function getMonthNumber(monthName) {
+    var months = {
+      'janeiro': '01',
+      'fevereiro': '02',
+      'março': '03',
+      'abril': '04',
+      'maio': '05',
+      'junho': '06',
+      'julho': '07',
+      'agosto': '08',
+      'setembro': '09',
+      'outubro': '10',
+      'novembro': '11',
+      'dezembro': '12'
+    };
+
+    return months[monthName];
   }
   ['março', 'setembro', 'dezembro'].forEach(function(month) {
     console.log('O mês de ' + month + ' é representado pelo número ' + getMonthNumber(month) + '.');
@@ -102,10 +115,8 @@
   console o resultado.
   */
   console.log( '\nReplace de datas:' );
-  function replateData(day, month, year) {
-    return day + '/' + month + '/' + year;
+  function replateDate(regex, day, month, year) {
+    return day + '/' + getMonthNumber(month) + '/' + year;
   }
-  console.log(text.replace(regexDate, function(value, day, month, year) {
-    return replateData(day, getMonthNumber(month), year);
-  }));
+  console.log(text.replace(regexDate, replateDate));
 })();
