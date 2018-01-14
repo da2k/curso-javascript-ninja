@@ -1,4 +1,4 @@
-(function() {
+( function( win, doc, DOM ) {
   'use strict';
 
   /*
@@ -36,4 +36,75 @@
   que será nomeado de "app".
   */
 
-})();
+  function app() {
+    var ajax = new XMLHttpRequest();
+    var $companyName = new DOM( '[data-js="company-name"]' );
+    var $companyPhone = new DOM( '[data-js="company-phone"]' );
+    var $carInputs = new DOM( '[data-js="car-input"]' );
+    var $carForm = new DOM( '[data-js="car-form"]' );
+    var $tableBody = new DOM( '[data-js="table-body"]' );
+
+    function initialize() {
+      loadCompanyData();
+      $carForm.on( 'submit', handleSubmitCarForm );
+    }
+
+    function loadCompanyData() {
+      ajax.open( 'GET', 'company.json' );
+      ajax.send();
+      ajax.addEventListener( 'readystatechange', handleReadyStateChange );
+    }
+
+    function handleReadyStateChange() {
+      if( isRequestOk() ) fillCompanyData();
+    }
+
+    function isRequestOk() {
+      return ajax.readyState === 4 && ajax.status === 200;
+    }
+
+    function fillCompanyData() {
+      var data = JSON.parse( ajax.responseText );
+      $companyName.get()[ 0 ].textContent = data.name;
+      $companyPhone.get()[ 0 ].textContent = data.phone;
+    }
+
+    function handleSubmitCarForm( event ) {
+      event.preventDefault();
+      insertCarInTable();
+      clearForm();
+    }
+
+    function insertCarInTable() {
+      var $fragment = doc.createDocumentFragment();
+      $fragment.appendChild( createTableRow() );
+      $tableBody.get()[ 0 ].appendChild( $fragment );
+    }
+
+    function createTableRow() {
+      var $tr = doc.createElement( 'tr' );
+      $carInputs.forEach( function( $input ) {
+        $tr.append( createTableData( $input.value ) );
+      } );
+      return $tr;
+    }
+
+    function createTableData( value ) {
+      var $td = doc.createElement( 'td' );
+      $td.textContent = value;
+      return $td;
+    }
+
+    function clearForm() {
+      $carInputs.forEach( function( $input ) {
+        $input.value = '';
+      } );
+    }
+
+    initialize();
+  }
+
+  app();
+  win.app = app;
+
+} )( window, document, window.DOM );

@@ -1,0 +1,35 @@
+* { box-sizing: border-box }
+
+body { font-family: arial, sans-serif }
+
+main {
+  margin: 0 auto;
+  max-width: 500px }
+
+h1 { text-align: center }
+
+span {
+  display: block;
+  text-align: right }
+
+input,
+button { padding: 5px }
+
+input {
+  margin: 5px 0;
+  width: 100% }
+
+button { width: 100% }
+
+table,
+th,
+td { border: 1px solid #ccc }
+
+table {
+  margin: 10px 0;
+  width: 100% }
+
+th,
+td { padding: 5px }
+
+
