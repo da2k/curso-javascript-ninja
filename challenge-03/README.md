@@ -239,10 +239,6 @@ correta, de acordo com os dados inseridos no objeto.
 
 pessoa.apresentacao = function(){
 
-	var nomecompleto = function(){
-		return pessoa.nome+ ' '+ pessoa.sobrenome;
-	}
-
 	var sexo, idade, metros;
 
 	if(pessoa.sexo === 'Feminino' || pessoa.sexo === 'feminino' || pessoa.sexo === 'F' || pessoa.sexo === 'f'){
@@ -264,7 +260,7 @@ pessoa.apresentacao = function(){
 	}
 
 
-	return 'Olá, eu sou '+ sexo + ' '+ pessoa.nomecompleto() + ', tenho '+ pessoa.idade + ' '+idade +  ', ' + pessoa.altura + ', meu peso é '+ pessoa.peso + ' e, só hoje, eu já caminhei '+ pessoa.caminhouQuantosMetros + ' '+metros + '!';
+	return 'Olá, eu sou '+ sexo + ' '+ pessoa.nome + ' ' + pessoa.sobrenome + ', tenho '+ pessoa.idade + ' '+idade +  ', ' + pessoa.altura + ', meu peso é '+ pessoa.peso + ' e, só hoje, eu já caminhei '+ pessoa.caminhouQuantosMetros + ' '+ metros + '!';
 
 	}
 
