@@ -34,12 +34,17 @@ Aproveite e crie uma variável `counter` que vai contar quantas propriedades
 esse objeto tem.
 Após o loop, mostre a frase:
 'The person has [COUNTER] properties'
-*/
-// for( var prop in person ) {
-...  console.log('The ' + prop + ' of person is ' + person[prop] + '.');
-... }
-var counter = 0;
+*/var counter = 0;
 
+for( var prop in person ) {
+...  console.log('The ' + prop + ' of person is ' + person[prop] + '.');
+... counter++;
+... }
+The name of person is Isabel.
+The age of person is 19.
+The weight of person is 65.
+The birthday of person is 20/11.
+ console.log('The person has ' + counter + ' properties');
 
 /*
 Crie uma função chamada `moreThan`, que vai verificar se a pessoa (objeto
