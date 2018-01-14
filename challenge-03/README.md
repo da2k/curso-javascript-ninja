@@ -174,7 +174,7 @@ comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
  
-34
+pessoa.idade(); // 34
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
@@ -192,7 +192,7 @@ A pessoa ainda está andando? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
 
-sim
+pessoa.andando(); // true
 
 
 /*
@@ -207,7 +207,7 @@ E agora: a pessoa ainda está andando? (Use uma instrução para responder e
 comentários inline ao lado da instrução para mostrar a resposta retornada)
 */
 
-Não
+pessoa.andando(); // false
 
 
 /*
@@ -215,7 +215,7 @@ Quantos metros a pessoa andou? (Use uma instrução para responder e comentário
 inline ao lado da instrução para mostrar a resposta retornada)
 */
 
-10
+pessoa.caminhouQuantosMetros(); // 10
 
 
 /*
