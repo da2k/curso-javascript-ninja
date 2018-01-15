@@ -33,9 +33,17 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     - Se não houver time para a posição passada, deve retornar a mensagem:
     "Não temos a informação do time que está nessa posição."
 */
-function showTeamPosition(num){
-    var pos = num - 1;
-    return pos < 5 ? 'O time que está em ' + num + 'º lugar é o ' + teams[pos] + '.' : 'Não temos a informação do time que está nessa posição.';
+function showTeamPosition(position){
+
+    if(position < 1 || position > 5){
+        return 'Não temos a informação do time que está nessa posição.';
+
+    }
+    
+    return ' O time que está em ' + position + 'º lugar é o ' + teams[position -
+      1] + '.';
+
+
 
 }
 
@@ -54,7 +62,7 @@ Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
 repetição "while".
 */
 var counter = 20;
-while (counter < 31){
+while (counter <= 30){
     console.log(counter);
     counter++;
 }
@@ -93,10 +101,11 @@ function convertToHex(cor ){
             hexa = "#ffffff";
             break;
         default:
+            return 'Não temos o equivalente hexadecimal para ' + cor + '.'
             break;
     }
 
-    return hexa != '' ? 'O hexadecimal para a cor ' + cor + ' é ' + hexa + '.' : 'Não temos o equivalente hexadecimal para ' + cor + '.'
+    return 'O hexadecimal para a cor ' + cor + ' é ' + hexa + '.';
 
 
 }
