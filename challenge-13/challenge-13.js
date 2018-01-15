@@ -62,13 +62,13 @@ console.log( '\nAlguns Estados do Brasil:' );
 /*
 Crie um novo array chamado `nordeste`, que tenha os estados do nordeste.
 */
-// ?
+// var nordeste = ['Alagoas', 'Bahia', 'Ceara', 'Maranhão', 'Paraiba', 'Pernambuco', 'Piaui', 'Rio Grande Do norte', 'Sergipe']
 
 /*
 Mostre no console os estados do nordeste.
 */
 console.log( '\nEstados do Nordeste:' );
-// ?
+// ? console.log(nordeste);
 
 /*
 Remova de `brasil` os estados do `sudeste`, colocando-os em uma variável
