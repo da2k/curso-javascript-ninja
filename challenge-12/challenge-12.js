@@ -1,6 +1,7 @@
 /*
 Envolva todo o conteúdo desse arquivo em uma IIFE.
-*/
+*/(function() {
+
 
 /*
 Crie um objeto chamado `person`, com as propriedades:
@@ -98,3 +99,5 @@ console.log( '\nAgora em ordem alfabética:' );
 Mostre todos os itens do array acima, odenados alfabéticamente.
 */
 // ?
+   }) ();
+  
