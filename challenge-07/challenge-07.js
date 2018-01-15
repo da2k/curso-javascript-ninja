@@ -8,16 +8,16 @@ Crie uma função chamada `addItem`, que irá adicionar itens no array criado.
 A função deverá retornar o array atualizado.
 */
 function addItem(item){
-    return  arr.push(item);
+    arr.push(item);
+    return arr;
 }
 
 /*
 Adicione um novo array ao array criado no início do desafio, com ao menos 3
 itens de tipos diferentes, mostrando o resultado no console.
 */
-var array2 = ['Dani', 3, null]
-addItem(array2);
-console.log(arr);
+addItem(['Dani', 3, null]);
+
 
 /*
 Mostre no console o segundo elemento desse último array, criado acima, com a
@@ -37,18 +37,17 @@ console.log('O primeiro array tem ' + arr.length + ' itens.');
 Agora mostre no console quantos itens tem o segundo array criado, com a frase:
 "O segundo array tem [QUANTIDADE DE ITENS] itens."
 */
-console.log('O segundo array tem ' + array2.length + ' itens.');
+console.log('O segundo array tem ' + arr[5].length + ' itens.');
 
 /*
 Utilizando a estrutura de repetição `while`, mostre no console todos os números
 pares entre 10 e 20, inclusive esses 2.
 */
-var counter = 20;
+var counter = 10;
 
-while(counter <= 40){
-    if( counter % 2 == 0){
-        console.log( 'Números pares entre 10 e 20:' + counter);
-    }
+while(counter <= 20){
+
+    counter % 2 === 0 ? console.log('Números pares entre 10 e 20:' + counter) : '';
     counter++;
 }
 // ?
@@ -56,14 +55,14 @@ while(counter <= 40){
 /*
 Na mesma ideia do exercício acima: mostre agora os números ímpares.
 */
-var counter = 20;
+var counter = 10;
 
-while (counter <= 40) {
-  if (counter % 2 != 0) {
-    console.log('Números impares entre 10 e 20:' + counter);
-  }
+while (counter <= 20) {
+
+  counter % 2 !== 0 ? console.log('Números impares entre 10 e 20:' + counter) : '';
   counter++;
 }
+
 
 // ?
 
@@ -75,17 +74,11 @@ Só vamos mudar o range:
 */
 
 for (var counter = 100; counter <= 120; counter++){
-    if (counter % 2 == 0){
-        console.log('Números pares entre 10 e 20:' + counter);
-
-    }
+  counter % 2 === 0 ? console.log('Números pares entre 100 e 120:' + counter) : '';
 }
 
 for (var counter = 111; counter <= 125; counter++){
-    if (counter % 2 != 0){
-        console.log('Números impares entre 10 e 20:' + counter);
-
-    }
+  counter % 2 !== 0 ? console.log('Números impares entre 111 e 125:' + counter) : '';
 }
 
 // ?
