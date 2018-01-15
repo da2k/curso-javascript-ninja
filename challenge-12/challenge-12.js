@@ -23,7 +23,8 @@ console.log( 'Propriedades de "person":' );
 Mostre no console, em um array, todas as propriedades do objeto acima.
 Não use nenhuma estrutura de repetição, nem crie o array manualmente.
 */
-// ?
+//  console.log( Object.keys(person));
+
 
 /*
 Crie um array vazio chamado `books`.
