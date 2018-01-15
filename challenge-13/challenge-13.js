@@ -8,7 +8,8 @@ Crie um array e mostre no console a representação em String desse array,
 usando o método visto na aula 13.
 */
 console.log( 'O array em formato de string é:' );
-// ?
+//  console.log([1,2,3,4,5].toString());
+
 
 /*
 Crie 2 arrays `sul` e `sudeste`, que serão as regiões do Brasil.
