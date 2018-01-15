@@ -44,19 +44,20 @@ console.log( '\nEstado removido:' );
 Crie um novo array chamado `newSul`, que receba somente os estados do sul,
 pegando do array `brasil`. Não remova esses itens de `brasil`.
 */
-// ?
+// var newSul = brasil.slice(2,5);
 
 /*
 Mostre no console os estados que estão em `newSul`.
 */
 console.log( '\nEstados do Sul do Brasil:' );
-// ?
+// console.log(newSul);
+
 
 /*
 Mostre no console todos os estados que estão em `brasil`.
 */
 console.log( '\nAlguns Estados do Brasil:' );
-// ?
+//  console.log(brasil);
 
 /*
 Crie um novo array chamado `nordeste`, que tenha os estados do nordeste.
