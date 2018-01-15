@@ -5,6 +5,7 @@ Declare uma variável chamada `championship` que receberá o nome do campeonato,
 e imprima o nome desse campeonato no console.
 */
 var championship = 'Campeonato ABCD';
+console.log(championship);
 
 /*
 Declare uma variável chamada `teams`, que receberá um array com 5 elementos.
@@ -34,7 +35,7 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
 */
 function showTeamPosition(position) {
   var team = teams[position - 1];
-  if(team)
+  if(position >= 1 && position <= 5)
     return `O time que está em ${position}º lugar é o ${teams[position - 1]}.`;
   return 'Não temos a informação do time que está nessa posição.';
 }
@@ -70,36 +71,40 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 function convertToHex(color) {
+  var hex;
+  
   switch (color) {
     case 'white':
-      console.log(`O hexadecimal para a cor ${color} é #FFF.`);
+      hex = 'FFF';
       break;
     case 'red':
-      console.log(`O hexadecimal para a cor ${color} é #FF0.`);
+      hex = 'FF0';
       break;
     case 'yellow':
-      console.log(`O hexadecimal para a cor ${color} é #F00.`);
+      hex = 'F00';
       break;
     case 'black':
-      console.log(`O hexadecimal para a cor ${color} é #000.`);
+      hex = '000';
       break;
     case 'cyan':
-      console.log(`O hexadecimal para a cor ${color} é #0FF.`);
+      hex = '0FF';
       break;
     default:
-      console.log(`Não temos o equivalente hexadecimal para ${color}.`);
+      return `Não temos o equivalente hexadecimal para ${color}.`;
       break;
   }
+
+  return `O hexadecimal para a cor ${color} é #${hex}.`;
 }
 
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-convertToHex('red');
-convertToHex('yellow');
-convertToHex('blue');
-convertToHex('green');
-convertToHex('turquoise');
-convertToHex('cyan');
-convertToHex('white');
-convertToHex('purple');
+console.log(convertToHex('red'));
+console.log(convertToHex('yellow'));
+console.log(convertToHex('blue'));
+console.log(convertToHex('green'));
+console.log(convertToHex('turquoise'));
+console.log(convertToHex('cyan'));
+console.log(convertToHex('white'));
+console.log(convertToHex('purple'));
