@@ -1,6 +1,7 @@
 /*
 Envolva todo o código desse desafio em uma IIFE.
-*/
+*/(function() {
+
 
 /*
 Crie um array e mostre no console a representação em String desse array,
@@ -148,3 +149,4 @@ Mostre o array filtrado acima no console.
 */
 console.log( '\nEstados com ID par:' );
 // ?
+   });
