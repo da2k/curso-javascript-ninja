@@ -15,7 +15,8 @@ console.log( 'O array em formato de string é:' );
 Crie 2 arrays `sul` e `sudeste`, que serão as regiões do Brasil.
 Cada array deve conter os estados dessa região.
 */
-// ?
+// var sul = ['Paraná', 'Santa Catarina', 'Rio Grande Do sul'];
+  var suldeste = ['Minas Gerais', 'Espirito Santo', 'Rio de Janeiro', 'São Paulo'];
 
 /*
 Crie uma variável chamada `brasil`, que irá receber as duas regiões
