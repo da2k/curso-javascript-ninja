@@ -22,13 +22,13 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function imprimir(numero) {
-  valor = numero;
+function imprimir() {
+  valor = 100;
   return "O valor da variável agora é " + valor;
 }
 
 // Invoque a função criada acima.
-imprimir(100);
+imprimir();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
@@ -43,7 +43,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function calcula(x, y, z) {
-  if(x == undefined || y == undefined || z == undefined) {
+  if(x === undefined || y === undefined || z === undefined) {
     return "Preencha todos os valores corretamente";
   }
   return x * y * z + 2;
@@ -73,13 +73,13 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function verifica(a, b, c) {
-  if(a != undefined && b == undefined && c == undefined) {
+  if(a !== undefined && b === undefined && c === undefined) {
     return a;
-  } else if(a != undefined && b != undefined && c == undefined) {
+  } else if(a !== undefined && b !== undefined && c === undefined) {
     return a + b;
-  } else if(a != undefined && b != undefined && c != undefined) {
+  } else if(a !== undefined && b !== undefined && c !== undefined) {
     return (a + b) / c;
-  } else if(a == undefined && b == undefined && c == undefined) {
+  } else if(a === undefined && b === undefined && c === undefined) {
     return false;
   }
 
@@ -87,8 +87,8 @@ function verifica(a, b, c) {
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-verifica() // false
-verifica(2) // 2
-verifica(5, 10) // 15
-verifica(5, 10, 5) // 3
+verifica(); // false
+verifica(2); // 2
+verifica(5, 10); // 15
+verifica(5, 10, 5); // 3
 ```
