@@ -74,7 +74,7 @@ console.log( '\nEstados do Nordeste:' );
 Remova de `brasil` os estados do `sudeste`, colocando-os em uma variável
 chamada `newSudeste`.
 */
-// ?
+//  var newSudeste= brasil.splice(5,4);
 
 /*
 Adicione os estados do `nordeste` ao array `brasil`. Esses estados devem
