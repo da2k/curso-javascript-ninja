@@ -103,7 +103,7 @@ no formato abaixo:
 /*
 Crie um array chamado `myName`. Cada item desse array deve ser uma letra do
 seu nome. Adicione seu nome completo no array.
-*/
+* var myName = [ 'I', 's', 'a', 'b', 'e', 'l', ' ', 'A', 'l', 'l', 'i', 'p', 'r', 'a', 'n', 'd', 'i', 'n', 'i', ' ', 'G', 'o', 'm', 'e', 's' ];
 // ?
 console.log( '\nMeu nome é:' );
 
