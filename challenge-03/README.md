@@ -192,7 +192,6 @@ correta, de acordo com os dados inseridos no objeto.
 */
 
 pessoa.apresentacao = function() {
-  nome_completo = pessoa.nome + ' ' + pessoa.sobrenome;
   varSexo = 'o';
   varIdade = 'anos';
   varMetros = 'metros';
