@@ -16,12 +16,14 @@ Crie 2 arrays `sul` e `sudeste`, que serão as regiões do Brasil.
 Cada array deve conter os estados dessa região.
 */
 // var sul = ['Paraná', 'Santa Catarina', 'Rio Grande Do sul'];
-  var suldeste = ['Minas Gerais', 'Espirito Santo', 'Rio de Janeiro', 'São Paulo'];
+  var sudeste = ['Minas Gerais', 'Espirito Santo', 'Rio de Janeiro', 'São Paulo'];
 
 /*
 Crie uma variável chamada `brasil`, que irá receber as duas regiões
 concatenadas. Mostre o `brasil` no console.
-*/
+*/ var brasil = sul.concat(sudeste);
+ console.log(brasil);
+
 console.log( '\nAlguns Estados do Brasil:' );
 // ?
 
