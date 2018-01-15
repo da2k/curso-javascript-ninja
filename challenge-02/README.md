@@ -9,8 +9,12 @@ function soma (x, y){
 }
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
+/*-------- Forma que eu fiz a primeira vez --------*/
 var resultado = soma (1, 2);
 resultado += 5;
+
+/*-------- Solução mais concisa --------*/
+var resultado = sum (1, 2) + 5;
 
 // Qual o valor atualizado dessa variável?
 resultado; //deverá retornar 8
@@ -41,16 +45,27 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
+/*-------- Forma que eu fiz --------*/
 function fn (x, y, z){
-    if (x == undefined || y == undefined || z = undefined) {
+    if (x === undefined || y === undefined || z === undefined) {
         return 'Preencha todos os valores corretamente';
     } else {
         return x*y*z + 2;
     }
 }
 
+/*-------- Outra forma de se fazer --------*/
+function fn (x, y, z){
+    if (x === undefined || y === undefined || z === undefined) {
+        return 'Preencha todos os valores corretamente';
+        //quando utilizamos return, o resto da função é ignorado, logo, não precisamos do else
+    } 
+    //como o if deu false, o return dentro do if não será ativado, por isso, pulará direto para o próximo reuturn
+    return x*y*z + 2;
+}
+
 // Invoque a função criada acima, passando só dois números como argumento.
-funcao_qualquer (1, 2);
+fn (1, 2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 // 'Preenche os valores corretamente'
@@ -70,6 +85,9 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
+
+/*-------- Forma que eu fiz --------*/
+//Não necessita testar casos em que somente o Y ou o Z são passados, pois se o X não for passado, não tem como passar o Y e/ou o Z
 function fn (x, y, z){
 
     if (x != undefined && y == undefined  && z == undefined) {
@@ -94,6 +112,24 @@ function fn (x, y, z){
     
 }
 
+/*-------- Forma Correta --------*/
+function fn (x, y, z){
+    if (x != undefined && y == undefined && z == undefined){
+        return x;
+    } else if (x != undefined && y != undefined && z == undefined){
+        return x + y;
+    } else if (x != undefined && y != undefined && z != undefined){
+        return (x + y) / z;
+    } else if (x == undefined && y == undefined && z == undefined){
+        return false;
+    } else {
+        return null;
+    }
+}
+
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+fn (); //false
+fn(1); //1
+fn(1, 2); //3
+fn(1, 2, 3); //1
 ```
