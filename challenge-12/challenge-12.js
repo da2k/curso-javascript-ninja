@@ -10,7 +10,12 @@ Crie um objeto chamado `person`, com as propriedades:
     `age`: Number
 Preencha cada propriedade com os seus dados pessoais, respeitando o tipo
 de valor para cada propriedade.
-*/
+*/ var person = {
+... name: 'Isabel',
+... lastname: 'Gomes',
+... age: 19
+... }
+
 // ?
 console.log( 'Propriedades de "person":' );
 
