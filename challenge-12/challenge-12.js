@@ -38,6 +38,15 @@ seguintes propriedades:
 `pages`: Number
 */
 // ?
+  books.push({ name: 'Livro1', pages:250});
+1
+ books.push({ name: 'Livro2', pages:350});
+2
+books.push({ name: 'Livro3', pages:500});
+3
+
+  
+
 console.log( '\nLista de livros:' );
 
 /*
