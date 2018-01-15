@@ -52,7 +52,8 @@ console.log( '\nLista de livros:' );
 /*
 Mostre no console todos os livros.
 */
-// ?
+//  console.log(books);
+
 
 console.log( '\nLivro que está sendo removido:' );
 /*
