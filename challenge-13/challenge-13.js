@@ -104,13 +104,21 @@ propriedades:
 - `id`: que será o índice do array `brasil`,
 - `estado`: que será o estado do array `brasil`.
 */
-// ?
+//  var newBrasil = [];
+  brasil.forEach(function(item, index) {
+... newBrasil.push({
+..... id: index,
+..... estado: item
+..... })
+... });
+
 
 /*
 Mostre o array `newBrasil` no console
 */
 console.log( '\nnewBrasil:' );
-// ?
+//  console.log(newBrasil);
+
 
 /*
 Percorra o array `brasil` e verifique se os estados tem mais de 7 letras cada,
