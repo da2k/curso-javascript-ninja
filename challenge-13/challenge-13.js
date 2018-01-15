@@ -38,7 +38,7 @@ console.log( '\nMais estados adicionados:' );
 Remova o primeiro estado do array `brasil` e mostre-o no console.
 */
 console.log( '\nEstado removido:' );
-// ?
+//  console.log(brasil.shift(0));
 
 /*
 Crie um novo array chamado `newSul`, que receba somente os estados do sul,
