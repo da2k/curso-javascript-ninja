@@ -7,8 +7,9 @@ um único parâmetro como argumento. Essa função deve retornar `true` se o
 equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
-var isTruthy = function (bolleano) {
-	return bolleano ? true : false;
+var isTruthy = function(param){
+	return !!param;
+	//return bolleano ? true : false;
 };
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
@@ -26,14 +27,14 @@ Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
 isTruthy(true);
 isTruthy('Felipe');
-isTruthy('0');
+isTruthy(function() {});
 isTruthy(5);
 isTruthy('Ninja');
-isTruthy(10);
-isTruthy(1);
-isTruthy('Programar');
-isTruthy('3');
-isTruthy('-3');
+isTruthy([]);
+isTruthy({});
+isTruthy([1, 2, 3]);
+isTruthy({a: 3 , b: 'big'});
+isTruthy(20 + 3);
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
@@ -48,8 +49,8 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `quantidadePessoas` - Number - zero por padrão
 */
 var carro = {
-	marca: 'Audi',
-	modelo: 'A3',
+	marca: 'Fiat',
+	modelo: 'Bravo',
 	placa: 'JSN-2018',
 	ano: 2018,
 	cor: 'Preto',
@@ -80,6 +81,7 @@ carro.obterModelo = function() {
 	return carro.modelo;
 };
 
+
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
 */
@@ -87,13 +89,14 @@ carro.obterMarca = function () {
 	return carro.marca;
 };
 
+
 /*
 Crie um método chamado `obterMarcaModelo`, que retorne:
 "Esse carro é um [MARCA] [MODELO]"
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 carro.obterMarcaModelo = function () {
-	return carro.obterMarca() + ' ' + carro.obterModelo();
+	return 'Esse carro é um ' + carro.obterMarca() + ' ' + carro.obterModelo();
 };
 
 /*
@@ -112,25 +115,23 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-carro.pessoasCarro = function(quantidade) {
-	carro.quantidadePessoas += quantidade;
-	var pessoa1 = 'pessoas' 
+carro.adicionarPessoas = function(numeroPessoas) {
+	var totalPessoas = carro.quantidadePessoas + numeroPessoas;
+	var quantasPessoasCabem = carro.assentos - carro.quantidadePessoas;
+	var pluralOuSingular = quantasPessoasCabem === 1 ? ' pessoa' : ' pessoas';
 
-	if(carro.quantidadePessoas === carro.assentos) {
-		return "O carro já está lotado!";
+	if (carro.quantidadePessoas === carro.assentos && totalPessoas >= carro.assentos) {
+		return 'O carro já está lotado';
 	}
 
-	 else if (carro.quantidadePessoas < carro.assentos && quantidade > carro.assentos) {
-		return 'Só cabem mais ' + (carro.assentos - carro.quantidadePessoas) + pessoa1 + '!'; 
+	if (totalPessoas > carro.assentos) {
+		return 'Só cabem mais ' + quantasPessoasCabem + ' pessoas!';
 	}
 
-	 else if (carro.assentos - carro.quantidadePessoas === 1) {
-		pessoa1 = ' pessoa ';	
-		return 'Só cabem mais ' + (carro.assentos - quantidade) + pessoa1 + '!';
-	}
+	carro.quantidadePessoas += numeroPessoas;
+	return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!';
 
-	return 'Já temos ' + carro.quantidadePessoas + ' ' + pessoa1 + ' no carro!';
-	
+
 };
 
 /*
@@ -156,23 +157,23 @@ carro.mudarCor('Verde Musgo');
 carro.obterCor(); //Verde Musgo
 
 // Qual a marca e modelo do carro?
-carro.obterMarcaModelo() //"Audi A3"
+carro.obterMarcaModelo() //"Esse carro é um Fiat Bravo"
 
 // Adicione 2 pessoas no carro.
-carro.pessoasCarro(2);
+carro.adicionarPessoas(2); //"Já temos 2 pessoas no carro"
 
 // Adicione mais 4 pessoas no carro.
-carro.pessoasCarro(4);
+carro.adicionarPessoas(4); // "Só cabem mais 3 pessoas"
 
 // Faça o carro encher.
-carro.pessoasCarro(-1);
+carro.adicionarPessoas(3); //"Já temos 5 pessoas no carro"
 
 // Tire 4 pessoas do carro.
-carro.pessoasCarro(-4);
+carro.adicionarPessoas(-4); //"Já temos 1 pessoas no carro"
 
 // Adicione 10 pessoas no carro.
-carro.pessoasCarro(10);
+carro.adicionarPessoas(10); // "Só cabem mais 4 pessoas"
 
 // Quantas pessoas temos no carro?
-quantidadePessoas; // "Já temos 11 pessoas no carro!"
-
+carro.quantidadePessoas; //1
+```
