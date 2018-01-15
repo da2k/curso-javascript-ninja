@@ -88,3 +88,29 @@ function y(a,b,c) {
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 
+> y()
+undefined
+> y();
+undefined
+> y(1)
+1
+> y(1,2)
+3
+> (1,2,3)
+3
+> y();
+undefined
+> y(a,b,c,d)
+ReferenceError: a is not defined
+    at repl:1:3
+    at ContextifyScript.Script.runInThisContext (vm.js:44:33)
+    at REPLServer.defaultEval (repl.js:239:29)
+    at bound (domain.js:301:14)
+    at REPLServer.runBound [as eval] (domain.js:314:12)
+    at REPLServer.onLine (repl.js:440:10)
+    at emitOne (events.js:120:20)
+    at REPLServer.emit (events.js:210:7)
+    at REPLServer.Interface._onLine (readline.js:279:10)
+    at REPLServer.Interface._line (readline.js:626:8)
+> y(1,2,3,4)
+1
