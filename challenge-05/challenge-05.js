@@ -2,21 +2,23 @@
 Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
-// ?
 var list = [ 2, 4, "dani", true, 10 ];
 
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
-// ?
+
 function myFunction(arg){
+
     return arg;
 }
+
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-// ?
-myFunction(list)[1]; //4
+
+console.log(myFunction(list)[1]); 
+
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -25,7 +27,7 @@ no primeiro parâmetro. O índice a ser retornado, deve ser o número passado no
 segundo parâmetro.
 */
 // ?
-function myFunction(arr, index){
+function myFunction2(arr, index){
     return arr[index];
 }
 
@@ -39,9 +41,11 @@ var list2 = [1, true, "dani", [2,3], {a:1, b:2}];
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-myFunction(list2);
-//[ 1, true, 'dani', [ 2, 3 ], { a: 1, b: 2 } ]
-
+console.log(myFunction2(list2, 0));
+console.log(myFunction2(list2, 1));
+console.log(myFunction2(list2, 2));
+console.log(myFunction2(list2, 3));
+console.log(myFunction2(list2, 4));
 
 
 /*
@@ -61,66 +65,43 @@ os livros.
 // ?
 function book(nome){
     var books = {
-        livro1:{
+        "Livro 1":{
             quantidadePaginas: 100,
             autor: "Dani",
             editora: "seilabooks"
         },
-        livro2:{
+        "Livro 2":{
             quantidadePaginas: 200,
             autor: "Daniaagag",
             editora: "seilabooksaaa"
         },
-        livro3:{
+        "Livro 3":{
             quantidadePaginas: 345,
             autor: "Daniaoijsd",
             editora: "seilabooksaios"
         }
     };
 
-    if(nome != undefined){
-        return books[nome];
-    }
-    return books;
+    return !nome ? books : books[nome];
 }   
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-book();
-// {
-//   livro1: {
-//     quantidadePaginas: 100,
-//     autor: 'Dani',
-//     editora: 'seilabooks'
-//   },
-//   livro2: {
-//     quantidadePaginas: 200,
-//     autor: 'Daniaagag',
-//     editora: 'seilabooksaaa'
-//   },
-//   livro3: {
-//     quantidadePaginas: 345,
-//     autor: 'Daniaoijsd',
-//     editora: 'seilabooksaios'
-//   }
-// }
-
+console.log(book());
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-"O livro book1 tem " + book("livro1").quantidadePaginas+" páginas."
-//'O livro book1 tem 100 páginas.'
+console.log("O livro book1 tem " + book("livro1").quantidadePaginas+" páginas.");
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-"o autor do livro1 é " + book("livro1").autor + "."
-//'o autor do livro1 é Dani.'
+console.log("o autor do livro1 é " + book("livro1").autor + ".");
 
 
 /*
@@ -128,5 +109,4 @@ Ainda com a função acima, imprima o nome da editora de um livro qualquer, usan
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-"O livro book1 foi publicado pela editora " + book("livro1").editora + "."
-//'O livro book1 foi publicado pela editora seilabooks.'
+console.log("O livro book1 foi publicado pela editora " + book("livro1").editora + ".");
