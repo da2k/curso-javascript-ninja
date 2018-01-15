@@ -83,7 +83,17 @@ Faça outro loop de 0 a 20, que adicione a um array chamado `numbers` (já
 criado acima, só precisa ser reiniciado) números de 0 a 20, inclusive
 esses. Se o número for ímpar, pular para o próximo número.
 Mostrar no console os números do array.
-*/
+*/> number = [];
+[]
+> for( var i = 0; i <= 20; i++) {
+... if( i % 2 === 0) {
+..... continue;
+..... }
+... number.push(i);
+... }
+> console.log(number);
+[ 1, 3, 5, 7, 9, 11, 13, 15, 17, 19 ]
+
 console.log( 'Pares de 0 a 20:' );
 // ?
 }) ();
