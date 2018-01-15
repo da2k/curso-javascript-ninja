@@ -21,7 +21,7 @@
         'name': 'Mellina Yonashiro',
         'age': 25,
         'weight': 68,
-        'data de nascimento': '22/05/1992'
+        'birthday': '22/05/1992'
     }
 
     /*
@@ -50,9 +50,9 @@
     */
     
     function moreThan( idade ) {
-        return idade > person.age ? true : false;
+        return idade > person.age;
     }
-    console.log( 'The person has more than 25 years old? ' + moreThan(25) );
+    console.log( 'The person has more than 25 years old? ' + moreThan( 25 ) );
 
     /*
     Faça um loop de 0 a 20, que adicione cada número como um item de um
