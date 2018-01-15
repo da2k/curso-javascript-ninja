@@ -29,7 +29,7 @@ Não use nenhuma estrutura de repetição, nem crie o array manualmente.
 /*
 Crie um array vazio chamado `books`.
 */
-// ?
+//  var books = [];
 
 /*
 Adicione nesse array 3 objetos, que serão 3 livros. Cada livro deve ter a
