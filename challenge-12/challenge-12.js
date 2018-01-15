@@ -72,6 +72,7 @@ Mostre no console os livros restantes.
 Converta os objetos que ficaram em `books` para strings.
 */
 // ?
+  books =  JSON.stringify(books);
 console.log( '\nLivros em formato string:' );
 
 /*
