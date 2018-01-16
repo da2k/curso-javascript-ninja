@@ -8,27 +8,32 @@ equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
 var isTruthy = function ( a ) {
-            if ( a ) {
-                return true;
-            } else {
-                return false;
-            }
+            return !!a;
         }
 
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 isTruthy('');
-isTruthy("");
+isTruthy(-0);
 isTruthy(0);
 isTruthy(null);
 isTruthy(undefined);
 isTruthy(false);
-isTruthy();
+isTruthy(NaN);
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
-isTruthy(10);
+isTruthy( 10 );
+isTruthy( 'Marcelo' );
+isTruthy( function () {} );
+isTruthy( 10 * 10 );
+isTruthy( [] );
+isTruthy( {} );
+isTruthy( "JS ninja" );
+isTruthy( 10 + 10 );
+isTruthy( "Js" );
+isTruthy( 2018 );
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
@@ -57,7 +62,7 @@ var carro = {
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
-carro.mudaCor = function (cor) {
+carro.mudarCor = function ( cor ) {
    carro.cor = cor;
 }
 
@@ -128,6 +133,7 @@ carro.adicionaPessoas = function (numeroPessoas) {
     
     return 'Já temos ' + carro.quantidadePessoas + ' ' + pessoa + ' no carro!'
         }
+}
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -140,20 +146,19 @@ Qual a cor atual do carro?
 carro.obterCor();
 
 // Mude a cor do carro para vermelho.
-carro.mudaCor('vermelho');
+carro.mudarCor( 'vermelho' );
 
 // E agora, qual a cor do carro?
 carro.obterCor();
 
 // Mude a cor do carro para verde musgo.
-carro.mudaCor('verde musgo');
+carro.mudarCor( 'verde musgo' );
 
 // E agora, qual a cor do carro?
 carro.obterCor();
 
 // Qual a marca e modelo do carro?
-carro.obterMarca();
-carro.obterModelo();
+carro.obterMarcaModelo();
 
 // Adicione 2 pessoas no carro.
 carro.adicionaPessoas(2);
