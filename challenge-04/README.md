@@ -14,45 +14,45 @@ var isTruthy = function(x) {
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 
-isTruthy(0) // false
+isTruthy(0); // false
 
-isTruthy(-0) // false
+isTruthy(-0); // false
 
-isTruthy('') // false
+isTruthy(''); // false
 
-isTruthy("") // false
+isTruthy(""); // false
 
-isTruthy(undefined) // false
+isTruthy(undefined); // false
 
-isTruthy(NaN) // false
+isTruthy(NaN); // false
 
-isTruthy(false) // false
+isTruthy(false); // false
 
-isTruthy(null) // false
+isTruthy(null); // false
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
 
-isTruthy('0') // true
+isTruthy('0'); // true
 
-isTruthy(1) // true
+isTruthy(1); // true
 
-isTruthy('abc') // true
+isTruthy('abc'); // true
 
-isTruthy(true) // true
+isTruthy(true); // true
 
-isTruthy(function() {}) // true
+isTruthy(function() {}); // true
 
-isTruthy([]) // true
+isTruthy([]); // true
 
-isTruthy({}) // true
+isTruthy({}); // true
 
-isTruthy(-25) // true
+isTruthy(-25); // true
 
-isTruthy(25 * 30) // true
+isTruthy(25 * 30); // true
 
-isTruthy({a:1, b:2}) // true
+isTruthy({a:1, b:2}); // true
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
@@ -139,20 +139,28 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 citado acima, no lugar de "pessoas".
 */
 
-> carro.adicionarPessoas = function(num) {
-... carro.quantidadePessoas += num;
-... if(carro.quantidadePessoas == carro.assentos) {
-..... return 'O carro já está lotado!'
-..... } else if(carro.quantidadePessoas < carro.assentos) {
-..... var vaga = carro.assentos - carro.quantidadePessoas;
-..... if(vaga == 1) {
-....... return 'Só cabe mais ' + vaga + ' pessoa!'
-....... }
-..... else {
-....... return 'Só cabem mais ' + vaga + ' pessoas!'
-....... }
-..... }
-... }
+carro.adicionarPessoas = function(num) {
+  carro.quantidadePessoas += num;
+  if(carro.quantidadePessoas == carro.assentos) {
+    return 'O carro já está lotado!'
+    } else if(carro.quantidadePessoas < carro.assentos) {
+    var vaga = carro.assentos - carro.quantidadePessoas;
+    if(vaga == 1) {
+      return 'Só cabe mais ' + vaga + ' pessoa!'
+    }
+    else {
+    return 'Só cabem mais ' + vaga + ' pessoas!'
+    }
+   } else if(carro.assentos < carro.quantidadePessoas) {
+      var sobra = carro.quantidadePessoas - carro.assentos;
+      if(sobra == 1) {
+      return 'Sobrou ' + sobra + ' pessoa!'
+      }
+      else {
+      return 'Estão sobrando ' + sobra + ' pessoas!'
+    }
+   }
+  };
       
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -183,27 +191,27 @@ carro.obterCor(); // 'Cor do carro: verde musgo'
 
 // Qual a marca e modelo do carro?
 
-carro.obterMarcaModelo() // 'Esse carro é um GM, modelo Agile'
+carro.obterMarcaModelo(); // 'Esse carro é um GM, modelo Agile'
 
 // Adicione 2 pessoas no carro.
 
-carro.adicionarPessoas(2)
+carro.adicionarPessoas(2); // 'Só cabem mais 3 pessoas!'
 
 // Adicione mais 4 pessoas no carro.
 
-carro.adicionarPessoas(4)
+carro.adicionarPessoas(4); 'Sobrou 1 pessoa!'
 
 // Faça o carro encher.
 
-carro.adicionarPessoas(-1) // 'O carro já está lotado!'
+carro.adicionarPessoas(-1); // 'O carro já está lotado!'
 
 // Tire 4 pessoas do carro.
 
-carro.adicionarPessoas(-4) // 'Só cabem mais 4 pessoas!'
+carro.adicionarPessoas(-4); // 'Só cabem mais 4 pessoas!'
 
 // Adicione 10 pessoas no carro.
 
-carro.adicionarPessoas(10)
+carro.adicionarPessoas(10); // 'Estão sobrando 6 pessoas!'
 
 // Quantas pessoas temos no carro?
 
