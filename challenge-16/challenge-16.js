@@ -58,9 +58,8 @@
     var lastFriend = listOfFriends.pop();
     var reduce = listOfFriends.reduce(function(total, cur){
         return (total + ', ') + cur  ;
-    });
-    var friends = reduce + ' e ' + lastFriend + ' são meus amigos.';
-    console.log( friends );
+    }).concat(' e ' + lastFriend + ' são meus amigos.');
+    console.log( reduce );
 
 
     /*
