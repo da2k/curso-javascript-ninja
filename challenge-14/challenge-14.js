@@ -49,7 +49,11 @@ O cálculo deve começar com zero.
 Mostre o resultado no console.
 */
 console.log( '\nOperation:' );
-// ?
+// var operation = justMod2Or3.reduce(function(acumulado, atual) {
+... return (acumulado + 1) * atual;
+... }, 0);
+ console.log(operation);
+
 
 /*
 Faça o mesmo cálculo passado acima, mas começando do último item para o
