@@ -76,7 +76,8 @@ infantil, onde você coloca a letra "P" antes de cada sílaba de uma palavra
 falada, como se você estivesse falando em código xD
 */
 console.log( '\nSeu nome na língua do "P":' );
-// ?
+//  var name = ['Pi',  'psa',  'pbel'];
+
 
 /*
 Crie uma variável chamada `inversedName`, que reduzirá o array em uma string
