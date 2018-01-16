@@ -47,7 +47,8 @@ valor dessa propriedade a quantidade passada por parâmetro;
 booleano que representa "verdadeiro";
 */
 pessoa.andar = function(x) {
-  caminhouQuantosMetros += x;
+  pessoa.caminhouQuantosMetros += x;
+  
   return pessoa.andando = true;
 }
 
@@ -142,24 +143,24 @@ pessoa.andar(80);
 A pessoa ainda está andando? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+pessoa.andando; // true
 
 /*
-Se a pessoa ainda está andando, faça-a parar.
+Se a pessoa ainda está andando, faça-a .
 */
-?
+pessoa.parar();
 
 /*
 E agora: a pessoa ainda está andando? (Use uma instrução para responder e
 comentários inline ao lado da instrução para mostrar a resposta retornada)
 */
-? 
+pessoa.andando; // false
 
 /*
 Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
 inline ao lado da instrução para mostrar a resposta retornada)
 */
-?
+pessoa.caminhouQuantosMetros; // 160
 
 /*
 Agora vamos deixar a brincadeira um pouco mais divertida! :D
@@ -178,8 +179,16 @@ deve conter no retorno da frase acima é "metro" no lugar de "metros".
 método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
-?
+pessoa.apresentacao = function() {
+  let name  = `${pessoa.nome} ${pessoa.sobrenome}`;
+  let genre = ( pessoa.sexo === 'Feminino' ) ? 'a' : 'o';
+  let age   = ( pessoa.idade === 1) ? 'ano'  : 'anos'; 
+  let km    = ( pessoa.caminhouQuantosMetros === 1 ) ? 'metro' : 'metros';
+
+  return `Olá, eu sou ${genre} ${ name }, tenho ${pessoa.idade} ${age}, 
+            ${pessoa.altura}, meu peso é ${pessoa.peso} e, só hoje, eu já caminhei ${pessoa.caminhouQuantosMetros} ${km}!`;
+}
 
 // Agora, apresente-se ;)
-?
+// Olá, eu sou o Bruno Pulis, tenho 29 anos,  1.76, meu peso é 76 e, só hoje, eu já caminhei 160 metros!
 ```
