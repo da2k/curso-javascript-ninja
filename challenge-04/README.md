@@ -126,15 +126,21 @@ citado acima, no lugar de "pessoas".
 carro.addPessoas = function(x){
     carro.quantidadePessoas += x;
 
-    if(carro.quantidadePessoas <= 3 && carro.quantidadePessoas > 0){
+    if(carro.quantidadePessoas <= 3){
+        if(carro.quantidadePessoas === 1){
+            return 'Já temos '+ carro.quantidadePessoas +' pessoa no carro!' ;
+
+        }else if(carro.quantidadePessoas === 0){
+            return 'O carro esta vazio!';
+        }
         return 'Já temos '+ carro.quantidadePessoas +' pessoas no carro!' ;
 
     } else if(carro.quantidadePessoas === 4){
         
-        return 'Já temos '+ carro.quantidadePessoas +' no carro. Só cabe mais '+ (carro.assentos - carro.quantidadePessoas); 
+        return 'Já temos '+ carro.quantidadePessoas +' pessoas no carro. Só cabe mais '+ (carro.assentos - carro.quantidadePessoas); 
 
     }else if(carro.quantidadePessoas === 5){
-        return 'Agora o carro ficou lotado!'
+        return 'Já temos '+ carro.quantidadePessoas +' pessoas no carro. Agora o carro ficou lotado!'
 
     }else{
         carro.quantidadePessoas = carro.assentos;
