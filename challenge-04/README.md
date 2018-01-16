@@ -75,7 +75,7 @@ var carro = {
   cor: 'laranja', 
   quantasPortas: 5,
   assentos: 5,
-  quantidadePessoas: 0,
+  quantidadePessoas: 0
   };
 
 
@@ -86,7 +86,7 @@ passado por parâmetro.
 
 carro.mudarCor = function(x) {
       carro.cor = x;
-      }
+      };
 
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
@@ -94,7 +94,7 @@ Crie um método chamado `obterCor`, que retorne a cor do carro.
 
 carro.obterCor = function() {
       return 'Cor do carro: ' + carro.cor
-      }
+      };
 
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
@@ -102,7 +102,7 @@ Crie um método chamado `obterModelo` que retorne o modelo do carro.
 
 carro.obterModelo = function() {
       return 'Modelo do carro: ' + carro.modelo
-      }
+      };
 
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
@@ -110,7 +110,7 @@ Crie um método chamado `obterMarca` que retorne a marca do carro.
 
 carro.obterMarca = function() {
       return 'Marca do carro: ' + carro.marca
-      }
+      };
 
 /*
 Crie um método chamado `obterMarcaModelo`, que retorne:
@@ -119,8 +119,8 @@ Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 
 carro.obterMarcaModelo = function() {
-      return 'Esse carro é um ' + carr.marca + ', modelo ' + marca.modelo'
-      }
+      return 'Esse carro é um ' + carro.obterMarca(), + ', modelo ' + carro.obterModelo()
+      };
 
 /*
 Crie um método que irá adicionar pessoas no carro. Esse método terá as
@@ -163,23 +163,23 @@ retornar algum valor.
 Qual a cor atual do carro?
 */
 
-carro.obterCor() // 'Cor do carro: laranja'
+carro.obterCor(); // 'Cor do carro: laranja'
 
 // Mude a cor do carro para vermelho.
 
-carro.mudarCor('vermelho')
+carro.mudarCor('vermelho');
 
 // E agora, qual a cor do carro?
 
-carro.obterCor() // 'Cor do carro: vermelho'
+carro.obterCor(); // 'Cor do carro: vermelho'
 
 // Mude a cor do carro para verde musgo.
 
-carro.mudarCor('verde musgo')
+carro.mudarCor('verde musgo');
 
 // E agora, qual a cor do carro?
 
-carro.obterCor() // 'Cor do carro: verde musgo'
+carro.obterCor(); // 'Cor do carro: verde musgo'
 
 // Qual a marca e modelo do carro?
 
