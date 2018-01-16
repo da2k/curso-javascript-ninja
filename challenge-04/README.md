@@ -139,7 +139,7 @@ carro.addPessoas = function(x){
         
         return 'Já temos '+ carro.quantidadePessoas +' pessoas no carro. Só cabe mais '+ (carro.assentos - carro.quantidadePessoas); 
 
-    }else if(carro.quantidadePessoas === 5){
+    }else if(carro.quantidadePessoas === carro.assentos){
         return 'Já temos '+ carro.quantidadePessoas +' pessoas no carro. Agora o carro ficou lotado!'
 
     }else{
