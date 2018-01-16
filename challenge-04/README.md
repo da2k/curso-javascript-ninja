@@ -29,7 +29,7 @@ isTruthy(true);
 isTruthy('Felipe');
 isTruthy(function() {});
 isTruthy(5);
-isTruthy('Ninja');
+isTruthy('NinjaJS');
 isTruthy([]);
 isTruthy({});
 isTruthy([1, 2, 3]);
