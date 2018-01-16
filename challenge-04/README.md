@@ -9,8 +9,8 @@ para o contrário.
 */
 
 var isTruthy = function(x) { 
-      return x ? true : false;
-       }
+      return x ? true : false
+       };
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 
@@ -42,7 +42,7 @@ isTruthy('abc') // true
 
 isTruthy(true) // true
 
-isTruthy('0') // true
+isTruthy(function() {}) // true
 
 isTruthy([]) // true
 
@@ -50,9 +50,9 @@ isTruthy({}) // true
 
 isTruthy(-25) // true
 
-isTruthy(25) // true
+isTruthy(25 * 30) // true
 
-isTruthy("Viva") // true
+isTruthy({a:1, b:2}) // true
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
