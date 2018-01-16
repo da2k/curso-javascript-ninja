@@ -66,8 +66,8 @@ var carro = {
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
-carro.mudarCor = function(x){
-    carro.cor = 'x';
+carro.mudarCor = function(cor){
+    carro.cor = cor;
 };
 
 
