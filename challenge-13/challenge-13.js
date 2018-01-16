@@ -147,7 +147,8 @@ console.log( '\nCeará está incluído em `brasil`?' );
 ... return item === 'Ceara';
 ... });
 
-//  console.log(some ? 'Ceaŕá esta incluido.' : Ceará não foi incluido.);
+// console.log( some ? 'Ceara esta incluido!' : 'Ceara não esta incluido' );
+
 
 /*
 Percorra o array `newBrasil` e crie um novo array que some 1 no ID de cada
