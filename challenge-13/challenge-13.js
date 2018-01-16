@@ -143,6 +143,10 @@ Senão, mostrar a frase:
 - "Ceará não foi incluído :("
 */
 console.log( '\nCeará está incluído em `brasil`?' );
+     var some = brasil.some(function(item) {
+... return item === 'Ceara';
+... });
+
 //  console.log(some ? 'Ceaŕá esta incluido.' : Ceará não foi incluido.);
 
 /*
