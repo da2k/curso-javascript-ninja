@@ -26,7 +26,7 @@ isTruthy(-0);
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
-isTruthy('thiago);
+isTruthy('thiago');
 isTruthy(2);
 isTruthy(1.6);
 isTruthy(256);
