@@ -143,7 +143,7 @@ Senão, mostrar a frase:
 - "Ceará não foi incluído :("
 */
 console.log( '\nCeará está incluído em `brasil`?' );
-// ?
+//  console.log(some ? 'Ceaŕá esta incluido.' : Ceará não foi incluido.);
 
 /*
 Percorra o array `newBrasil` e crie um novo array que some 1 no ID de cada
