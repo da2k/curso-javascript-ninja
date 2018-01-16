@@ -61,7 +61,11 @@ primeiro. O nome da variável deve ser operation2. Mostre o resultado no
 console.
 */
 console.log( '\nOperation 2:' );
-// ?
+//  var operation2 =  justMod2Or3.reduce.Right(function(acumulado, atual) {
+...  return (acumulado + 1) * atual;
+...  }, 0);
+ console.log(operation2);
+
 
 /*
 Crie um array chamado `name`. Cada elemento desse array deve ser uma sílaba
