@@ -14,21 +14,28 @@ var isTruthy = function(x){
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 
-isTruthy(1);
+isTruthy(false);
+isTruthy(0);
+isTruthy(-0);
+isTruthy('');
+isTruthy(null);
+isTruthy(NaN);
+isTruthy(undefined);
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
 isTruthy(1);
-isTruthy('1');
+isTruthy(function() {});
 isTruthy('0');
 isTruthy('Danilo');
 isTruthy(true);
-isTruthy("Souza");
-isTruthy(10);
+isTruthy({});
+isTruthy([]);
 isTruthy(20);
-isTruthy(30);
-isTruthy(40);
+isTruthy({a:1, b:2});
+isTruthy([1, 2, 3, 4]);
+isTruthy(40 * 5);
 
 
 /*
@@ -53,9 +60,7 @@ var carro = {
     quantasPortas: 4,
     assentos: 5,
     quantidadePessoas: 0
-}
-
-
+};
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
