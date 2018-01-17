@@ -96,7 +96,7 @@ Agora vamos brincar um pouco com o objeto criado:
 Qual o nome completo da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.nomeCompleto(); // Chico Bioca
+pessoa.nomeCompleto(); // 'Olá! Meu nome é Chico Bioca'
 
 /*
 Qual a idade da pessoa? (Use a instrução para responder e comentários
@@ -134,15 +134,15 @@ pessoa.idade; // 33
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
 com metragens diferentes passadas por parâmetro.
 */
-?
+pessoa.andar(2);
+pessoa.andar(4);
+pessoa.andar(6);
 
 /*
 A pessoa ainda está andando? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.andar(2);
-pessoa.andar(4);
-pessoa.andar(6);
+pessoa.andando; // true
 
 /*
 Se a pessoa ainda está andando, faça-a parar.
