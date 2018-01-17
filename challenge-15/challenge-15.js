@@ -21,7 +21,22 @@ as seguintes características:
   adicionados à idade original (age). Esse método deverá retornar o objeto
   que será instanciado.
 */
-// ?
+// function Person( name, lastName, age ) {
+... this.name = name;
+... this.lastName = lastName;
+... this.age = age;
+... this.getFullName = function getFullName() {
+..... return this.name + ' ' + this.lastName;
+..... };
+... this.getAge = function getAge() {
+..... return this.age;
+..... };
+... this.addAge = function addAge() {
+..... this.age += arguments[0];
+..... return this;
+..... };
+... }
+
 
 /*
 Crie 3 novos objetos usando o construtor acima. Os objetos serão novas
