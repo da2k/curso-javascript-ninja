@@ -45,7 +45,8 @@ parâmetros corretamente para o construtor para criar as novas pessoas.
 Mostre as 3 novas pessoas criadas no console (Um console.log por pessoa).
 */
 console.log( 'Novas pessoas criadas à partir de Person:' );
-// ?
+//  var Isabel = new Person('Isabel', 'Gomes', 19);
+
 
 /*
 Mostre no console o nome completo de cada pessoa.
