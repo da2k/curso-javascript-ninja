@@ -47,6 +47,7 @@ Mostre as 3 novas pessoas criadas no console (Um console.log por pessoa).
 console.log( 'Novas pessoas criadas à partir de Person:' );
 //  var Isabel = new Person('Isabel', 'Gomes', 19);
 var Fernando = new Person('Fernando', 'Daciuk', 35);
+var Lucas = new Person('Lucas', 'Souza', 22);
 
 
 /*
