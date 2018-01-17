@@ -1,8 +1,3 @@
-# Desafio da semana #2
-
-Nesse exercício, você está livre para escolher os nomes para suas variáveis e funções! :smile:
-
-```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
 function somar(a, b) {
     return a + b;
@@ -23,7 +18,7 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 function novoValor() {
-    nova += 12;
+    nova = 12;
     return 'O valor da variável agora é ' + nova;
 }
 
@@ -32,7 +27,7 @@ novoValor();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
-NaN
+// O valor da variável agora é 20
 */
 
 /*
@@ -89,4 +84,3 @@ ultima();           //false
 ultima(3);          //3
 ultima(3, 5);       //8
 ultima(3, 5, 2);    //4
-```
