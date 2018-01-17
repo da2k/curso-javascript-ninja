@@ -57,7 +57,10 @@ var Lucas = new Person('Lucas', 'Souza', 22);
 Mostre no console o nome completo de cada pessoa.
 */
 console.log( '\nNomes das pessoas:' );
-// ?
+//  console.log(Isabel.name + ' ' + Isabel.lastName);
+console.log(Fernando.name + ' ' + Fernando.lastName);
+console.log(Lucas.getFullName() );
+
 
 /*
 Mostre no console as idades de cada pessoa, com a frase:
