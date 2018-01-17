@@ -110,7 +110,12 @@ Consegue prever o resultado? Deixe uma mensagem no console tentando explicar
 o que acontece ;)
 */
 console.log( '\nExiste um { number: 2 } em numberObjects?' );
-// ?
+// if(numberObjects.indexOf({ number: 2 }) > -1 ) {
+... console.log('Existe um objeto {number: 2 } em numerObjects!');
+... } else {
+...  console.log('Não existe um objeto {number: 2 } em numerObjects!');
+... }
+
 
 /*
 Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
