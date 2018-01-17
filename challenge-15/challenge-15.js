@@ -68,6 +68,8 @@ Mostre no console as idades de cada pessoa, com a frase:
 */
 console.log( '\nIdade das pessoas:' );
 // console.log( Isabel.getFullName() + ' tem ' + Isabel.getAge() + ' anos.');
+console.log( Fernando.getFullName() + ' tem ' + Fernando.getAge() + ' anos.' );
+console.log( Lucas.getFullName() + ' tem ' + Lucas.getAge() + ' anos.' );
 
 
 /*
