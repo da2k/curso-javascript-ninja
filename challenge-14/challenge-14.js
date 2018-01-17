@@ -133,5 +133,7 @@ Verifique se `justMod2Or3` é um array. Se for, mostre-o no console, no
 formato de String.
 */
 console.log( '\njustMod2Or3 é um array? Se for, a representação dele em String é:' );
-// ?
+// if(Array.isArray( justMod2or3 ) ){
+  console.log(justMod2or3.toString);
+}
  });
