@@ -140,24 +140,26 @@ com metragens diferentes passadas por parâmetro.
 A pessoa ainda está andando? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+pessoa.andar(2);
+pessoa.andar(4);
+pessoa.andar(6);
 
 /*
 Se a pessoa ainda está andando, faça-a parar.
 */
-?
+if(pessoa.andando) pessoa.parar();
 
 /*
 E agora: a pessoa ainda está andando? (Use uma instrução para responder e
 comentários inline ao lado da instrução para mostrar a resposta retornada)
 */
-?
+pessoa.andando; // false
 
 /*
 Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
 inline ao lado da instrução para mostrar a resposta retornada)
 */
-?
+pessoa.caminhouQuantosMetros; // 12
 
 /*
 Agora vamos deixar a brincadeira um pouco mais divertida! :D
@@ -176,8 +178,15 @@ deve conter no retorno da frase acima é "metro" no lugar de "metros".
 método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
-?
+pessoa.apresentacao = function() {
+
+  var sexoArtigo = pessoa.sexo === 'feminino' ? 'a' : 'o',
+    flexaoGramaticalAno = pessoa.idade === 1 ? 'ano' : 'anos',
+    flexaoGramaticalMetro = pessoa.caminhouQuantosMetros === 1 ? 'metro' : 'metros';
+
+  return 'Olá, eu sou ' + sexoArtigo + ' ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + ' ' + flexaoGramaticalAno + ', ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' ' + flexaoGramaticalMetro + '!';
+}
 
 // Agora, apresente-se ;)
-?
+pessoa.apresentacao(); // Olá, eu sou o Chico Bioca, tenho 30 anos, 1.85, meu peso é 100 e, só hoje, eu já caminhei 12 metros!
 ```
