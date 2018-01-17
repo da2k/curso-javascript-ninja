@@ -14,7 +14,7 @@
     var five = Number('5');
     console.log( five + ' é número?', typeof five === 'number' );
 
-    var concat = String(10) + String(10);
+    var concat = String(10) + 10;
     console.log( '"' + concat + '" é uma string? E é igual a "1010"?', typeof concat === 'string' );
 
     /*
@@ -47,7 +47,7 @@
     */
     function isOperatorValid (operador) {
 
-        return (typeof operation[String(operador)] === `function` );
+        return !!operation[operador];
     }
 
     /*
@@ -64,16 +64,17 @@
     */
     function calculadora (operador) {
 
-       if (isOperatorValid(operador)) {
+       if (!isOperatorValid(operador)) {
+           
+            return false;
+       }
 
-            return function (a, b) {
+        return function (a, b) {
 
-                return (typeof a === 'number' && typeof b === 'number') 
-                    ?   operation[String(operador)](a, b)
-                    :   false;
-            }
-       } 
-       return false;
+            return (typeof a !== 'number' || typeof b !== 'number') 
+                ? false
+                : operation[ operador ](a, b);
+        }
     }
 
     /*
@@ -95,7 +96,7 @@
     */
     function showErrorMessage(operador) {
         if (!isOperatorValid(operador)){
-            console.log('Operação '+operador+' não permitida!');
+            return 'Operação '+operador+' não permitida!';
         }           
     }
 
@@ -134,8 +135,10 @@
         if (operador) {
 
             console.log(showOperationMessage(operationSignal, num1, num2), operador(num1, num2));
+        
         } else {
-            showErrorMessage(operationSignal);
+
+            console.log(showErrorMessage(operationSignal));
         }
     }
 
