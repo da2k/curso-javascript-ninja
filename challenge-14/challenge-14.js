@@ -9,7 +9,8 @@ elemento será um objeto no formato:
 { number: [NUMBER] }
 Os números devem ser de 1 a 10.
 Mostre esse array no console.
-*/ var numberObject = [];
+*/  var numberObjects = [];
+
 
 console.log( 'Number Objects Array:' );
 //   for( var i =1; i <= 10; i++){
