@@ -97,7 +97,8 @@ console.log( '\nInversed Name:' );
 Mostre no console o array `numberObjects`.
 */
 console.log( '\nNumber objects' );
-// ?
+//  console.log(numberObjects);
+
 
 /*
 Verifique se existem em algum índice de numberObjects um objeto ìgual a
