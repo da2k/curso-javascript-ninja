@@ -48,8 +48,11 @@ console.log( 'Novas pessoas criadas à partir de Person:' );
 //  var Isabel = new Person('Isabel', 'Gomes', 19);
 var Fernando = new Person('Fernando', 'Daciuk', 35);
 var Lucas = new Person('Lucas', 'Souza', 22);
+ console.log(Isabel);
+ console.log(Fernando)
+  console.log(Lucas)
 
-
+  
 /*
 Mostre no console o nome completo de cada pessoa.
 */
