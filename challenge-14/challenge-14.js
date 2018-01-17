@@ -87,7 +87,10 @@ Crie uma variável chamada `inversedName`, que reduzirá o array em uma string
 e atribuirá o seu nome invertido (usando o array criado acima).
 */
 console.log( '\nInversed Name:' );
-// ?
+//  var inversedName = name.reduceRight(function( acumulado, atual ) {
+...  return acumulado + atual;
+...  });
+
 
 /*
 Mostre no console o array `numberObjects`.
