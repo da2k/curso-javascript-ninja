@@ -122,7 +122,11 @@ Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
 será que obtemos um resultado diferente? Faça a busca a partir do índice 2.
 */
 console.log( '\nE buscando a partir do último índice, o { number: 2 } existe?' );
-// ?
+//  if(numberObjects.lastIndexOf({ number: 2 }) > -1 ) {
+... console.log('Existe um objeto {number: 2 } em numerObjects!');
+...   console.log('Não existe um objeto {number: 2 } em numerObjects!');
+...  }
+
 
 /*
 Verifique se `justMod2Or3` é um array. Se for, mostre-o no console, no
