@@ -18,12 +18,17 @@
   */
   console.log( 'Limpando CPFs:' );
   function cleanCPF(cpf) {
-    return cpf.replace(/[^\d]/g, '');
+    return cpf.replace(/\D/g, '');
   }
-  console.log(cleanCPF('049-214 3421-1'));
-  console.log(cleanCPF('210.458.522-05'));
-  console.log(cleanCPF('735 500 794 - 22'));
-  console.log(cleanCPF('101.123-131x32'));
+  var cpfs = [
+    '049-214 3421-1',
+    '210.458.522-05',
+    '735 500 794 - 22',
+    '101.123-131x32'
+  ];
+  cpfs.forEach(function(cpf) {
+    console.log(cleanCPF(cpf));
+  });
 
   /*
   Usando os CPFs limpos acima, deixe-os com a formatação correta de CPF.
@@ -32,14 +37,17 @@
   */
   console.log( '\nFormatando CPFs corretamente:' );
   function formatCPF(cpf) {
-    return cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, function(regex, param1, param2, param3, param4) {
-      return param1 + '.' + param2 + '.' + param3 + '-' + param4;
-    });
+    return cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
   }
-  console.log(formatCPF('04921434211'));
-  console.log(formatCPF('21045852205'));
-  console.log(formatCPF('73550079422'));
-  console.log(formatCPF('10112313132'));
+  var cpfs = [
+    '04921434211',
+    '21045852205',
+    '73550079422',
+    '10112313132'
+  ];
+  cpfs.forEach(function(cpf) {
+    console.log(formatCPF(cpf));
+  });
 
   /*
   Crie uma expressão regular que faça match com as palavras "junho" ou "julho",
@@ -54,7 +62,7 @@
   */
   console.log( '\nMatch com as palavras "junho" ou "julho" para a frase "Os meses de janeiro, junho e julho começam com a letra j.":' );
   var phrase = 'Os meses de janeiro, junho e julho começam com a letra j.';
-  var matchPhrase = phrase.match(/j\w{3}o/g);
+  var matchPhrase = phrase.match(/ju[ln]ho/g);
   console.log(matchPhrase);
 
   /*
@@ -109,8 +117,9 @@
   */
   console.log( '\nFazer replace dos textos das tags:' );
   var markup3 = '<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>';
-  var matchMarkup3 = markup3.replace(/(<\w+>)(.+)(<\/\w+>)/g, function(regex, openTag, text, closeTag) {
-    return openTag + 'O texto dentro da tag "' + openTag.replace(/[<>]/g, '') + '" é "' + text + '"' + closeTag + '\n';
-  });
+  var matchMarkup3 = markup3.replace(
+    /<(\w+)>([^<]+)<\/\w+>/g,
+    '<$1>O texto dentro da tag "$1" é "$2"</$1>\n'
+  );
   console.log(matchMarkup3);
 })();
