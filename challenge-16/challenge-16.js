@@ -16,6 +16,9 @@ E assim por diante, até a última.
 */
 console.log( 'As letras do seu nome:' );
 //  var name = 'Isabel';
+ for( var i = 0, len = name.length; i < len; i++ ) {
+... console.log( name.charAt(i) + ' é a ' + (i + 1) + 'letra do meu nome.' );
+... }
 
 
 /*
