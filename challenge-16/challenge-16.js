@@ -15,7 +15,8 @@ Ex: no caso do nome ser "Fernando", deve mostrar as frases:
 E assim por diante, até a última.
 */
 console.log( 'As letras do seu nome:' );
-// ?
+//  var name = 'Isabel';
+
 
 /*
 - Declare uma variável chamada `fullName`, que receba seu nome completo,
