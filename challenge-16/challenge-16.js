@@ -34,7 +34,7 @@ curso para fazer isso funcionar corretamente :)
 console.log para cada formato.
 */
 console.log( '\nNome convertido à partir de um slug:' );
-// ?
+// var fullName = 'isabel-alliprandini-gomes';
 
 /*
 - Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
