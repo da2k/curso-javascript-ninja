@@ -51,7 +51,13 @@ O resultado final deve ficar mais ou menos assim:
 5 nomes foi somente uma sugestão ;)
 */
 console.log( '\nMeus amigos:' );
-// ?
+//  names = ['Ester', 'Isabel', 'Lucas', 'Barbara', 'Larrisa'];
+ var phrase = names.reduce(function( acumulado, atual, index ) {
+...  var separator = names.length - 1 === index ? 'e' : ',';
+...  return acumulado + separator + atual;
+...  }).concat(' são meus amigos.');
+ console.log(phrase);
+
 
 /*
 Usando o replace(), faça a string "Roberto" virar "Roberta".
