@@ -86,41 +86,33 @@
         - "Não enviado."
     */
     $button.addEventListener('click', function(event){
+        event.preventDefault();
+
         if($inputUsername.value === null || $inputUsername.value === ''){
-            win.alert('Preencha o nome do usuário!');
-            event.preventDefault();
-            return;
+            return win.alert('Preencha o nome do usuário!');
         }
 
         if($inputEmail.value === null || $inputEmail.value === ''){
-            win.alert('Preencha o e-mail!');
-            event.preventDefault();
-            return;
+            return win.alert('Preencha o e-mail!');
+        }
+
+
+        if(!isValidEmail($inputEmail.value)){
+            return win.alert('Entre com um e-mail válido!');
         }
 
         if($message.value === null || $message.value === ''){
-            win.alert('Preencha a mensagem!');
-            event.preventDefault();
-            return;
+            return win.alert('Preencha a mensagem!');
         }
-
-        if(!isValidEmail($inputEmail.value)){
-            win.alert('Entre com um e-mail válido!');
-            event.preventDefault();
-            return;
-        }
-
 
         var confirmacao = win.confirm('Tem certeza que deseja enviar o formulário?');
 
         if(!confirmacao){
-            win.alert('Não enviado.');
-            event.preventDefault();
-            return;
-        }else{
-            win.alert('Enviado com sucesso!');
+            return win.alert('Não enviado.');
         }
 
+        win.alert('Enviado com sucesso!');
+        
     }, false);
 
     /*
@@ -154,5 +146,5 @@
 
         return regex.test(email);
     }
-    
+
 })(window, document);
