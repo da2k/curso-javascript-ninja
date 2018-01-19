@@ -40,7 +40,7 @@ console.
 Ex: Se você for da São Paulo, substitua por "paulista".
 */
 console.log( '\nTrocando naturalidade:' );
-// ?
+//  console.log( text.replace( /brasileiro/, 'uberlandense' ) );
 
 /*
 Substitua todos os números por um traço `-`. Cada caractere de número deve
