@@ -5,7 +5,7 @@ desses parâmetros.
 */
 var sum = function calculateSum(a, b) {
   return a + b;
-}
+}; 
 
 /*
 Invoque a função criada acima, passando dois números que serão somados, e mostre
@@ -55,25 +55,31 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
   "Operação inválida."
 */
 function calculator(op) {
-  var phrase = 'Resultado da operação:';
-  var options = {
-    '+': function(a, b) {
-      return `${phrase} ${a} ${op} ${b} = ${a + b}`;
-    },
-    '-': function(a, b) {
-      return `${phrase} ${a} ${op} ${b} = ${a - b}`;
-    },
-    '*': function(a, b) {
-      return `${phrase} ${a} ${op} ${b} = ${a * b}`;
-    },
-    '/': function(a, b) {
-      return `${phrase} ${a} ${op} ${b} = ${a / b}`;
-    },
-    '%': function(a, b) {
-      return `${phrase} ${a} ${op} ${b} = ${a % b}`;
+  return function(a, b) {
+    var result = '';
+
+    switch (op) {
+      case '+':
+        result = a + b;
+        break;
+      case '-':
+        result = a - b;
+        break;
+      case '*':
+        result = a * b;
+        break;
+      case '/':
+        result = a / b;
+        break;
+      case '%':
+        result = a % b;
+        break;
+      default:
+        return 'Operação inválida.';
     }
+
+    return `Resultado da operação: ${a} ${op} ${b} = ${result}.`;
   };
-  return options[op] ? options[op] : 'Operação inválida.';
 }
 
 /*
