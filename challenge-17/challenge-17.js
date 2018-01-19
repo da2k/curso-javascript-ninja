@@ -71,7 +71,10 @@ Substitua a frase "O Centauro de Luvas", deixando-a em caixa alta, usando
 o método `toUpperCase()`. Mostre o resultado no console:
 */
 console.log( '\n"O Centauro de Luvas" em caixa alta:' );
-// ?
+// console.log(text.replace( /O Centauro de Luvas/g, function(phrase) {
+...  return phrase.toUpperCase();
+... }) );
+
 
 /*
 Agora iremos substituir as datas no formato "13 de junho de 1804" para
