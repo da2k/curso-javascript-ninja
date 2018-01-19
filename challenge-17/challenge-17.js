@@ -133,5 +133,9 @@ Após criar a função, faça o replace das datas no texto, mostrando no
 console o resultado.
 */
 console.log( '\nReplace de datas:' );
-// ?
+// function replaceDate(regex, day, month, year) {
+...  return day + '/' + getMonthNumber( month )+ '/' + year;
+... }
+ console.log(text.replace(regexDate, replaceDate ) );
+
   }) ();
