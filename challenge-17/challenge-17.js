@@ -47,7 +47,8 @@ Substitua todos os números por um traço `-`. Cada caractere de número deve
 ser um traço. Mostre o resultado no console:
 */
 console.log( '\nTrocando números por -:' );
-// ?
+// console.log(text.replace( /\d/g, '-'));
+
 
 /*
 Substitua todas as letras (somente letras) de "D" maiúsculo até "h"
