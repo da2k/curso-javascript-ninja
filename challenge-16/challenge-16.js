@@ -73,7 +73,8 @@ Mostre no console a parte "nando" da string "Fernando". Use o método que
 faz a busca do final para o início da string.
 */
 console.log( '\nParte de uma string:' );
-// ?
+// console.log('Fernando'.substring( 8, 3) );
+
 
 /*
 Declare uma variável chamada `myName`, que receba o seu primeiro nome,
