@@ -3,7 +3,19 @@
 2. Adicione a diretiva 'use strict';
 3. Crie um arquivo index.html e adicione esse script à ele.
 */(function()  {
+<!DOCTYPE Html>
+<html lang="en">
+<head>
+ <meta charset='utf-8'/>
+ <title> Challenge 17 </title>
+ 
+</head>
+<body>
+  <script> src = "challenge-17.js"</script>  
+</body>
 
+
+</html>
 
 /*
 Em todos os exercícios desse desafio, nós vamos utilizar expressões
