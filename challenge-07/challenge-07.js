@@ -1,7 +1,7 @@
 /*
 Crie um array com 5 items (tipos variados).
 */
-var arr = [1, 2, 3, 4, 5];
+var arr = [1, {}, [], 'JSNINJA', true];
 
 /*
 Crie uma função chamada `addItem`, que irá adicionar itens no array criado.
