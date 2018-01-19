@@ -35,7 +35,7 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
 */
 function showTeamPosition (n){
 
-    return n <= 4 ? "O time que está em " + (1 + n) +"º lugar é o " + teams[n] : "Não temos a informação do time que está nessa posição.";
+    return n <= 5 || n === 1 ? "O time que está em " + n +"º lugar é o " + teams[n - 1] : "Não temos a informação do time que está nessa posição.";
 }
 
 /*
@@ -44,8 +44,9 @@ função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
 console.log(showTeamPosition(0));
 console.log(showTeamPosition(1));
+console.log(showTeamPosition(2));
 console.log(showTeamPosition(3));
-console.log(showTeamPosition(10));
+console.log(showTeamPosition(4));
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
@@ -72,22 +73,22 @@ function convertToHex(cor){
 //darkBlue : #00008B, Green: #008000, Sienna: #A0522D, Red: #FF0000, Purple: #800080
     switch(cor) {
         case 'blue':
-            console.log("O hexadecimal para a cor " + cor + " é #00008B");
+            return "O hexadecimal para a cor " + cor + " é #00008B";
             break;
         case 'green':
-            console.log("O hexadecimal para a cor " + cor + " é #008000");
+             return "O hexadecimal para a cor " + cor + " é #008000";
             break;
         case 'sienna':
-            console.log("O hexadecimal para a cor " + cor + " é #A0522D");
+            return "O hexadecimal para a cor " + cor + " é #A0522D";
             break;
         case 'red':
-            console.log("O hexadecimal para a cor " + cor + " é #FF0000");
+            return "O hexadecimal para a cor " + cor + " é #FF0000";
             break;
         case 'purple':
-            console.log("O hexadecimal para a cor " + cor + " é #800080");
+            return "O hexadecimal para a cor " + cor + " é #800080";
             break;
         default:
-            console.log("Não temos o equivalente hexadecimal para " + cor );
+            return "Não temos o equivalente hexadecimal para " + cor ;
     }
 }
 
