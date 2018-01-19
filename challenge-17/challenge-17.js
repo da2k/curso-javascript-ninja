@@ -106,7 +106,7 @@ function getMonthNumber( mes ) {
 .....  };
 ... return months[ mes];
 ... }
-
+ console.log('O mês de março é representado pelo número ' + getMonthNumber('março') + '.');
 
 
 /*
