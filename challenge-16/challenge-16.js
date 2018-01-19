@@ -35,7 +35,8 @@ console.log para cada formato.
 */
 console.log( '\nNome convertido à partir de um slug:' );
 // var fullName = 'isabel-alliprandini-gomes';
-
+var newFullName = fullName.split('-');
+   
 /*
 - Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
 cada nome por vírgula. Entre o penúltimo e o último nome, o separador deve
