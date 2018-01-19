@@ -38,6 +38,7 @@ console.log( '\nNome convertido à partir de um slug:' );
 var newFullName = fullName.split('-').map(function( name ) {
 ...  return name[0].toUpperCase() + name.slice(1);
 ... });
+console.log( newFullName.join(' ') );
 
    
 /*
