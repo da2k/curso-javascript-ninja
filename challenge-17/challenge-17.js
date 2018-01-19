@@ -63,7 +63,8 @@ Substitua todos os "A" (maiúsculos ou minúsculos) por "4".
 Mostre o resultado no console:
 */
 console.log( '\nTrocando "A" e "a" por "4":' );
-// ?
+// console.log(text.replace(/[A|a]/g,4) );
+
 
 /*
 Substitua a frase "O Centauro de Luvas", deixando-a em caixa alta, usando
