@@ -23,7 +23,7 @@ regulares! Para isso, iremos usar o texto abaixo. Coloque-o em uma
 variável chamada `text`:
 "Manuel Marques de Sousa, Conde de Porto Alegre (Rio Grande, 13 de junho de 1804 – Rio de Janeiro, 18 de julho de 1875), apelidado de "O Centauro de Luvas", foi um militar, político, abolicionista e monarquista brasileiro."
 */
-// ?
+//  var text = 'Manuel Marques de Sousa, Conde de Porto Alegre (Rio Grande, 13 de junho de 1804 – Rio de Janeiro, 18 de julho de 1875), apelidado de "O Centauro de Luvas", foi um militar, político, abolicionista e monarquista brasileiro.';
 
 /*
 Vamos começar com umas brincadeiras fáceis :D
