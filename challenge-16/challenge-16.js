@@ -64,7 +64,9 @@ Usando o replace(), faça a string "Roberto" virar "Roberta".
 Mostre o resultado no console.
 */
 console.log( '\nEra "Roberto", agora é:' );
-// ?
+// console.log('Roberto'.replace('to', 'ta') );
+Roberta
+
 
 /*
 Mostre no console a parte "nando" da string "Fernando". Use o método que
