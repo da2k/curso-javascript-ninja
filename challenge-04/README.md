@@ -118,10 +118,11 @@ citado acima, no lugar de "pessoas".
 
     var validaPessoa = (carro.assentos - carro.quantidadePessoas) === 1 ? "pessoa" : "pessoas";
 
-    if(carro.quantidadePessoas === carro.assentos) return "O carro já está lotado!";
+    if(carro.quantidadePessoas === carro.assentos && (carro.quantidadePessoas + numPessoas) >=carro.assentos) return "O carro já está lotado!";
     
-    if((carro.quantidadePessoas + numPessoas) > carro.assentos) return "Só cabem mais "+ (carro.assentos - carro.quantidadePessoas) + " " + validaPessoa + "!";
-
+    if((carro.quantidadePessoas + numPessoas) > carro.assentos) {
+        return "Só cabem mais "+ (carro.assentos - carro.quantidadePessoas) + " " + validaPessoa + "!";
+    }
     carro.quantidadePessoas += numPessoas;
 
     return "Já temos " + carro.quantidadePessoas + " pessoas no carro!";
@@ -165,12 +166,12 @@ Qual a cor atual do carro?
 
 
 // Tire 4 pessoas do carro.
-? 
+? carro.adicionarPessoas(-4) //'Já temos 1 pessoas no carro!'
 
 // Adicione 10 pessoas no carro.
-? carro.adicionarPessoas(10) //'O carro já está lotado!'
+? carro.adicionarPessoas(10) //'Só cabem mais 4 pessoas!'
 
 // Quantas pessoas temos no carro?
-? carro.quantidadePessoas //5
+? carro.quantidadePessoas //1
 
 ```
