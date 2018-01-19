@@ -12,6 +12,8 @@ Invoque a função criada acima, passando dois números que serão somados, e mo
 o resultado no console, com a frase:
 "A soma de [VALOR 1] e [VALOR2] é igual a [RESULTADO]."
 */
+var a = 5;
+var b = 10;
 console.log('A soma de ' + a + ' e ' + b + ' é igual a ' + sum(a, b) + '.');
 
 /*
