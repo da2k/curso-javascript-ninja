@@ -31,7 +31,8 @@ Troque o nome "Manuel Marques de Souza" pelo seu nome, e mostre o resultado
 no console:
 */
 console.log( 'Adicionando seu nome no texto:' );
-// ?
+//  console.log(text.replace(/Manuel Marques de Sousa/, 'Isabel Alliprandini') );
+
 
 /*
 Agora, substitua a palavra "brasileiro" por sua cidade natal e mostre no
