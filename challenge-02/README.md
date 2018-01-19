@@ -15,7 +15,7 @@ var x = soma(2,4)+5;
 11
 
 // Declare uma nova variável, sem valor.
-var y 
+var y;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
@@ -24,7 +24,7 @@ Onde VALOR é o novo valor da variável.
 */
 function adicao(){
 	y = 6;
-	return('O valor da variável agora é ', VALOR);
+	return 'O valor da variável agora é ' + y;
 }
 
 // Invoque a função criada acima.
@@ -40,13 +40,21 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-?
+
+function multiplicacao(x,y,z){
+	if ((x||y||z)==null){
+		return "Preencha todos os valores corretamente!"
+	} else{
+		return (x*y*z)+2 
+	}
+}
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+
+multiplicacao(x,y)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 ?
