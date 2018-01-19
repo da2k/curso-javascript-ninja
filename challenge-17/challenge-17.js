@@ -89,23 +89,24 @@ Use um console.log para cada mês, usando a frase:
 "O mês de [NOME DO MÊS] é representado pelo número [NÚMERO DO MÊS]."
 */
 console.log( '\nMeses representados por números:' );
-// function getMonthNumber( mes ) {
-... var months = {
+function getMonthNumber( mes ) {
+...  var months = {
 .....  janeiro: '01',
-.....  fevereiro: '02',
-..... 'março': 03,
+..... fevereiro: '02',
+.....  'março': 03,
 .....  abril: '04',
 .....  maio: '05',
-.....  junho: '06',
-..... julho: '07',
+..... junho: '06',
+.....  julho: '07',
 ..... agosto: '08',
 ..... setembro: '09',
 ..... outubro: '10',
 .....  novembro: '11',
 ..... dezembro: '12'
-..... };
-... return months[ monthName];
+.....  };
+... return months[ mes];
 ... }
+
 
 
 /*
