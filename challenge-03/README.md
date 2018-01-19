@@ -135,6 +135,8 @@ Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
 com metragens diferentes passadas por parâmetro.
 */
 pessoa.andar(150);
+pessoa.andar(855);
+pessoa.andar(12);
 
 /*
 A pessoa ainda está andando? (Use a instrução para responder e comentários
@@ -159,7 +161,7 @@ pessoa.andando; //false
 Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
 inline ao lado da instrução para mostrar a resposta retornada)
 */
-pessoa.caminhouQuantosMetros; //150
+pessoa.caminhouQuantosMetros; //1017
 
 /*
 Agora vamos deixar a brincadeira um pouco mais divertida! :D
