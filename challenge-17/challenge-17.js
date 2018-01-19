@@ -121,6 +121,8 @@ Mostre a regex no console.
 */
 console.log( '\nRegex que vai fazer o match com as datas do texto:' );
 //  var regexDate = /(\d\d) de (junho|julho) de (\d\d\d\d)/;
+  console.log(regexDate);
+
 
 
 /*
