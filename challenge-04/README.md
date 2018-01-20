@@ -111,7 +111,33 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-?
+carro.pessoasEntrandoNoCarro = function (pessoas) {
+  this.assentos -= pessoas;
+  this.quantidadePessoas += pessoas;
+
+  if (this.quantidadePessoas > 5){
+    this.quantidadePessoas = 5;
+  }
+
+  switch (this.assentos) {
+    case 0:
+      return "Já temos 5 pessoas no carro! O carro já está lotado!";
+    case 1:
+      return "Já temos 4 pessoa no carro! Só cabe mais 1 pessoa!";
+    case 2:
+      return "Já temos 3 pessoas no carro! Cabem mais 2 pessoas!"
+    case 3:
+      return "Já temos 2 pessoas no carro! Cabem mais 3 pessoas!";
+    case 4:
+      return "Já temos 1 pessoas no carro! Cabem mais 4 pessoas!";
+    case 5:
+      return "Não temos ninguém no carro! Ainda cabem 5 pessoas!";
+    case -1:
+      return "O carro já está lotado! Sobrou " + (-1 * this.assentos) + " pessoa!"
+    default:
+      return "O carro já está lotado! Sobraram " + (-1 * this.assentos) + " pessoas!"
+  }
+}
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -121,38 +147,39 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-?
+carro.cor; //Preto
 
 // Mude a cor do carro para vermelho.
-?
+carro.cor = 'Vermelho';
 
 // E agora, qual a cor do carro?
-?
+carro.cor; //Vermelho
 
 // Mude a cor do carro para verde musgo.
-?
+carro.cor = 'Verde Musgo';
 
 // E agora, qual a cor do carro?
-?
+carro.cor; //Verde Musgo
 
 // Qual a marca e modelo do carro?
-?
+carro.marca; //Ford
+carro.modelo; //GT
 
 // Adicione 2 pessoas no carro.
-?
+carro.pessoasEntrandoNoCarro(2);
 
 // Adicione mais 4 pessoas no carro.
-?
+carro.pessoasEntrandoNoCarro(4);
 
 // Faça o carro encher.
-?
+"O carro já está lotado! Sobrou 1 pessoa!"
 
 // Tire 4 pessoas do carro.
-?
+carro.pessoasEntrandoNoCarro(-4);
 
 // Adicione 10 pessoas no carro.
-?
+carro.pessoasEntrandoNoCarro(10);
 
 // Quantas pessoas temos no carro?
-?
+carro.quantidadePessoas; //"Já temos 5 pessoas no carro! O carro já está lotado!"
 ```
