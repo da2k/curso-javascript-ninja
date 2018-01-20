@@ -42,8 +42,8 @@ Crie uma função com as seguintes características:
 */
 
 function multiplicacao(x,y,z){
-	if ((x||y||z)==null){
-		return "Preencha todos os valores corretamente!"
+	if (x===undefined||y===undefined||z===undefined){
+		return('Preencha todos os valores corretamente!")
 	} else{
 		return (x*y*z)+2 
 	}
@@ -51,16 +51,18 @@ function multiplicacao(x,y,z){
 
 // Invoque a função criada acima, passando só dois números como argumento.
 
-multiplicacao(x,y)
+multiplicacao(x,y);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 
-
+/*'Preencha todos os valores corretamente!'*/
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+
+multiplicacao(3,4,6);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+
+74
 
 /*
 Crie uma função com as seguintes características:
@@ -71,8 +73,25 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+
+function arg(x,y,z){
+	if(x!==undefined && y==undefined && z===undefined)
+	return(x);
+} else if(x!==undefined && y!==undefined && z===undefined){
+	retun(x+y);
+} else if(x!==undefined && y!==undefined && z!==undefined){
+	return((x+y)/z);
+} else if(x===undefined && y===undefined && z===undefined){
+	return false;
+} else{
+	return null;
+}	
+}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+
+ arg(); // false
+ arg(3); // 3
+ arg(3,5); // 8
+ arg(3,5,2); // 4
 ```
