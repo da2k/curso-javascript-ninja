@@ -112,7 +112,8 @@
         }
 
         win.alert('Enviado com sucesso!');
-        
+
+        return true;        
     }, false);
 
     /*
