@@ -43,7 +43,7 @@ Crie uma função com as seguintes características:
 
 function multiplicacao(x,y,z){
 	if (x===undefined||y===undefined||z===undefined){
-		return('Preencha todos os valores corretamente!")
+		return('Preencha todos os valores corretamente!')
 	} else{
 		return (x*y*z)+2 
 	}
@@ -55,7 +55,8 @@ multiplicacao(x,y);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 
-/*'Preencha todos os valores corretamente!'*/
+//'Preencha todos os valores corretamente!'
+
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 
 multiplicacao(3,4,6);
