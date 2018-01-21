@@ -14,7 +14,7 @@ function myFunction(arr){
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-myFunction(myVar)[1]; //2
+console.log( myFunction(myVar)[1] );
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -55,62 +55,51 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-function book(titulo){
+function book(bookName){
 	var books = {
-            JavaScript: {
+      'JavaScript': {
                 quantidadePaginas: 400,
                 autor: 'João',
                 editora: 'Casa do Código'
             },
-			AspNet: {
+			'AspNet': {
                 quantidadePaginas: 500,
                 autor: 'Fernando',
                 editora: 'Casa do Código'
             },
-			PHP: {
+			'PHP': {
                 quantidadePaginas: 600,
                 autor: 'Rogério',
                 editora: 'Casa do Código'
             }
 	};
 
-	if (titulo === 'JavaScript'){
-		return books.JavaScript;
-	}
-
-	if (titulo === 'AspNet'){
-		return books.AspNet;
-	}
-
-	if (titulo === 'PHP'){
-		return books.PHP;
-	}
-
-	return books;
+	return !bookName ? books : books[bookName];
 }
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-book();
+console.log( book() );
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-console.log("O livro JavaScript tem " + book().JavaScript.quantidadePaginas + " páginas!");
+var bookName = 'JavaScript';
+console.log("O livro " + bookName + " tem " + book(bookName).quantidadePaginas + " páginas!");
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log("O autor do livro JavaScript é " + book().JavaScript.autor);
+console.log("O autor do livro " + bookName + " é " + book(bookName).autor);
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log("O livro JavaScript foi publicado pela editora " + book().JavaScript.editora);
+console.log("O livro " + bookName + " foi publicado pela editora " + book(bookName).editora);
