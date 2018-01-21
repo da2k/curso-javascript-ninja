@@ -3,7 +3,8 @@
 2. Adicione a diretiva 'use strict';
 3. Crie um arquivo index.html e adicione esse script à ele.
 */ (function() {
-
+  <script>(function() {
+   'use strict';
 
 /*
 Crie uma função chamada `cleanCPF`, que receba um CPF por parâmetro, e
@@ -16,7 +17,10 @@ eles! Use um console.log para cada CPF.
 - "101.123-131x32"
 */
 console.log( 'Limpando CPFs:' );
-// ?
+//   function cleanCPF(cpf) {
+... return cpf.replace(/D/g, '');
+... }
+
 
 /*
 Usando os CPFs limpos acima, deixe-os com a formatação correta de CPF.
