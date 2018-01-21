@@ -32,7 +32,11 @@ Ex.: "999.999.999-99"
 Mostre o resultado no console.
 */
 console.log( '\nFormatando CPFs corretamente:' );
-// ?
+// cpf.forEach( function(cpf) {
+... console.log(cleanCPF( cpf ).replace(/(\d\d\d)(\d\d\d)(\d\d\d)(\d\d)/,'$1.$2.$3-$4' )
+.....  );
+...  });
+
 
 /*
 Crie uma expressão regular que faça match com as palavras "junho" ou "julho",
