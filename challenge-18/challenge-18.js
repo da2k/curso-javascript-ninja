@@ -20,7 +20,10 @@ console.log( 'Limpando CPFs:' );
 // function cleanCPF(cpf) {
 ... return cpf.replace(/\D/g, '');
 ... }
-
+ console.log( cleanCPF('049-214 3421-1') );
+ console.log( cleanCPF('210.458.522-05') );
+ console.log( cleanCPF('735 500 794 - 22') );
+  console.log( cleanCPF('101.123-131x32') );
 
 
 /*
