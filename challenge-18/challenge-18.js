@@ -17,9 +17,10 @@ eles! Use um console.log para cada CPF.
 - "101.123-131x32"
 */
 console.log( 'Limpando CPFs:' );
-//   function cleanCPF(cpf) {
-... return cpf.replace(/D/g, '');
+// function cleanCPF(cpf) {
+... return cpf.replace(/\D/g, '');
 ... }
+
 
 
 /*
