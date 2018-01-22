@@ -47,7 +47,9 @@ linha, independente de quantos caracteres de número estiverem juntos.
 Mostre a regex no console:
 */
 console.log( '\nRegex para números somente no final das linhas:' );
-// ?
+//  var numbersAtTheEnd = /\d+&$/gm;
+ console.log( numbersAtTheEnd);
+
 
 /*
 Verifique se a regex acima casa com o texto na variável `otherText`,
