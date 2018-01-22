@@ -25,32 +25,6 @@
   função receberá dois parâmetros e retornará a operação referente à sua
   propriedade, usando os valores passados por parâmetro.
   */
-  // ?
-
-  /*
-  Crie uma função chamada `isOperatorValid`, que receberá um operador por
-  parâmetro.
-  - Essa função será responsável por verificar se o operador passado por
-  parâmetro a ela é válido, ou seja, se ele é igual a '+', '-', '*', '/' ou
-  '%'.
-  - Se for igual a qualquer um desses, ela deverá retornar "true".
-  Caso contrário, "false".
-  - O desafio é fazer o retorno sem usar "if" ou "switch".
-  */
-  // ?
-
-  /*
-  Agora vamos criar a calculadora.
-  - Crie uma função chamada `calculator`, que receberá como parâmetro um
-  operador;
-  - Se o operador não for válido, a função deve retornar "false";
-  - Se o operador for válido, retornar uma segunda função que receberá dois
-  parâmetros;
-  - Se algum dos parâmetros não for um número, retornar "false";
-  - Senão, retornar o método do objeto "operation" criado acima, baseado no
-  operador passado para a função "calculator", e passando para esse método
-  os dois parâmetros da função de retorno de "calculator".
-  */
   var operation = {
     '+': function(a, b) {
       return a + b;
@@ -68,11 +42,33 @@
       return a % b;
     }
   };
-  
+
+  /*
+  Crie uma função chamada `isOperatorValid`, que receberá um operador por
+  parâmetro.
+  - Essa função será responsável por verificar se o operador passado por
+  parâmetro a ela é válido, ou seja, se ele é igual a '+', '-', '*', '/' ou
+  '%'.
+  - Se for igual a qualquer um desses, ela deverá retornar "true".
+  Caso contrário, "false".
+  - O desafio é fazer o retorno sem usar "if" ou "switch".
+  */
   function isOperatorValid(operator) {
     return !!operation[operator];
   }
-  
+
+  /*
+  Agora vamos criar a calculadora.
+  - Crie uma função chamada `calculator`, que receberá como parâmetro um
+  operador;
+  - Se o operador não for válido, a função deve retornar "false";
+  - Se o operador for válido, retornar uma segunda função que receberá dois
+  parâmetros;
+  - Se algum dos parâmetros não for um número, retornar "false";
+  - Senão, retornar o método do objeto "operation" criado acima, baseado no
+  operador passado para a função "calculator", e passando para esse método
+  os dois parâmetros da função de retorno de "calculator".
+  */
   function calculator(operator) {
 
     if(!isOperatorValid(operator)) return false;
