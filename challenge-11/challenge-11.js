@@ -23,7 +23,7 @@
     name: 'Jailson Mendes',
     age: 50,
     weight: 80,
-    birthday: '01/01/2014'
+    birthday: '01/01'
   };
 
   /*
@@ -64,7 +64,7 @@
   */
   console.log( 'De 0 a 10:' );
   var numbers = [];
-  for(var i = 0; i <= 20; i++) {
+  for(var i = 0; i < 20; i++) {
     if(i > 10) {
       break;
     }
