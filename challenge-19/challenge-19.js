@@ -86,14 +86,17 @@ para exemplificar.
 */
 var markup = '<main>\n  <div class="container">\n    <span class="text date"></span>\n    <p class=\'excerpt\'></p>\n  </div>\n</main>';
 console.log( '\nQuais classes CSS existem na marcação abaixo?\n\n', markup, '\n' );
-// function hassClass(markup, cssClass) {
-... return true;
+ function hasClass(markup, cssClass) {
+... var regex = new RegExp( 'class=["\'].*' + cssClass + '.*\']') );
+... return regex.test( markup );
 ... }
-var classes = ['container', 'text', 'date', 'excerpet', 'main'];
- classes.forEach(function(cssClass) {
-... console.log(hasClass( markup, cssClass ) 'para a classe' + cssClass);
+... var classes = [ 'container', 'text, 'date', 'excepert', 'main'];
+... classes.forEach(function(cssClass) {
+... console.log( hasClass(markup, cssClass) + 'para a classe' + cssClass);
 ... });
+... }) ();
 ...
+
 
    });
 
