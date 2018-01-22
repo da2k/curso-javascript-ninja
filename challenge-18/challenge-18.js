@@ -66,7 +66,9 @@ O resultado deve ser:
 ["<div>", "<section>", "<blockquote>"]
 */
 console.log( '\nMatch com a abertura de uma tag HTML:' );
-// ?
+// console.log( '\nMatch com tags HTML vazias (abertura e fechamento da tag):' );
+// console.log('<div><section><blockquote>Texto <img /></blockquote></section></div>'
+... .match(/< w+ >/ ) );
 
 /*
 Crie uma expressão regular que faça o match com uma tag HTML vazia, casando
@@ -77,9 +79,7 @@ Use o método match e faça o teste com a marcação abaixo:
 O resultado deve ser:
 ["<li></li>", "<li></li>", "<span></span>"]
 */
-console.log( '\nMatch com tags HTML vazias (abertura e fechamento da tag):' );
-// console.log('<div><section><blockquote>Texto <img /></blockquote></section></div>'
-... .match(/< w+ >/ ) );
+
 
 
 /*
