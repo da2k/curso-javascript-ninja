@@ -107,12 +107,11 @@ https://regex101.com/#javascript e verifique se as capturas estão
 corretas, para depois aplicar no código ;)
 */
 console.log( '\nFazer replace dos textos das tags:' );
-//  console.log('<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>'
+ console.log('<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>'
 ... .replace(
 ..... /<(\w+)>([^<].+)<\/\w+>/g,
-..... 'O texto dentro da tag "[NOME DA TAG]" é "[TEXTO]" '
+..... '<$1>O texto dentro da tag "$1" é "$2"</$1>\n '
 ..... )
 ... );
-O texto dentro da tag "[NOME DA TAG]" é "[TEXTO]"
 
    }) ();
