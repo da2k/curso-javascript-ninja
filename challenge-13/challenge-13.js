@@ -72,7 +72,7 @@
   Remova de `brasil` os estados do `sudeste`, colocando-os em uma variável
   chamada `newSudeste`.
   */
-  var newSudeste = brasil.splice(5, 4);
+  var newSudeste = brasil.splice(5);
 
   /*
   Adicione os estados do `nordeste` ao array `brasil`. Esses estados devem
@@ -150,6 +150,7 @@
   Atribua o novo array a uma variável chamada `map`.
   */
   var map = newBrasil.map(function(item) {
+    
     return {
       id: ++item.id,
       estado: item.estado + ' pertence ao Brasil.'
@@ -167,7 +168,7 @@
   ID par. Atribua o valor à uma variável chamada `filter`.
   */
   var filter = newBrasil.filter(function(item) {
-    return item.id % 2;
+    return !(item.id % 2);
   });
 
   /*
