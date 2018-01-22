@@ -3,6 +3,7 @@
 2. Adicione a diretiva 'use strict';
 3. Crie um arquivo index.html e adicione esse script à ele.
 */(function() {
+'use strict';
 
 
 /*
