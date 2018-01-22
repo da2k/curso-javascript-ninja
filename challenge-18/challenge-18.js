@@ -79,6 +79,8 @@ Use o método match e faça o teste com a marcação abaixo:
 O resultado deve ser:
 ["<li></li>", "<li></li>", "<span></span>"]
 */
+//console.log('<div><ul><li></li><li></li><li><span></span></li></ul></div>'
+... .match( / <\w+><\/\w+>/g ) ) ;
 
 
 
