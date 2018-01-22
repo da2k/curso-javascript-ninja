@@ -89,6 +89,11 @@ console.log( '\nQuais classes CSS existem na marcação abaixo?\n\n', markup, '\
 // function hassClass(markup, cssClass) {
 ... return true;
 ... }
+var classes = ['container', 'text', 'date', 'excerpet', 'main'];
+ classes.forEach(function(cssClass) {
+... console.log(hasClass( markup, cssClass ) 'para a classe' + cssClass);
+... });
+...
 
    });
 
