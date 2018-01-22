@@ -14,7 +14,7 @@ Alguns detalhes importantes que faltou falar na aula:
 ela pode ser concatenada para gerar uma regex em tempo de execução,
 diferente da regex literal, onde toda a regex precisa estar pronta antes
 da utilização.
-*/ var justNumbersRegex = newExp( '^\\d', 'gm' );
+*/ var justNumbersRegex = newExp( '^\\d+', 'gm' );
   
 
 /*
