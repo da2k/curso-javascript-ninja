@@ -82,7 +82,10 @@
     uma função anônima que irá retornar a soma dos dois números que essa função
     anônima tem como seus argumentos.
     */
-    console.log( 'O resultado da soma é:', sum(function(a, b) {return a + b}));
+    console.log( 'O resultado da soma é:' );
+    console.log(sum(function(a, b) {
+        return a + b;
+    }));
 
     /*
     Agora declare outra variáveis chamadas `subtraction`, `multiplication`,
@@ -101,11 +104,23 @@
     As suas respostas devem estar abaixo dos `console.log` referentes à cada
     chamada.
     */
-    console.log( 'O resultado da subtração é:', subtraction(function(a, b) {return a - b}));
+    console.log( 'O resultado da subtração é:' );
+    console.log(subtraction(function(a, b) {
+        return a - b;
+    }));
 
-    console.log( 'O resultado da multiplicação é:', multiplication(function(a, b) {return a * b}));
+    console.log( 'O resultado da multiplicação é:' );
+    console.log(multiplication(function(a, b) {
+        return a * b;
+    }));
 
-    console.log( 'O resultado da divisão é:', division(function(a, b) {return a / b}));
+    console.log( 'O resultado da divisão é:' );
+    console.log(division(function(a, b) {
+        return a / b;
+    }));
 
-    console.log( 'O resto da divisão é:', mod(function(a, b) {return a % b}));
-})()
+    console.log( 'O resto da divisão é:' );
+    console.log(mod(function(a, b) {
+        return a % b;
+    }));
+})();
