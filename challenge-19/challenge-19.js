@@ -59,7 +59,7 @@ O resultado deve ser:
 */
 var otherText = 'Silvio Santos, nome artístico de Senor Abravanel (Rio de Janeiro, 12\n de dezembro de 1930), é um apresentador de televisão e empresário brasileiro.\n Proprietário do Grupo Silvio Santos, que inclui empresas como a Liderança\n Capitalização (administradora da loteria Tele Sena), a Jequiti Cosméticos e o\n Sistema Brasileiro de Televisão (mais conhecido como SBT), Silvio Santos possui\n um patrimônio avaliado em aproximadamente 6\n bilhões de reais.';
 console.log( '\nNúmeros no final da linha:\n\n', otherText, '\n' );
-// ?
+// console.log( otherText.match( numbersAtTheEnd) );
 
 /*
 Vamos criar um método que vai testar se uma classe CSS existe em uma
