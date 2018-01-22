@@ -1,2 +1,6 @@
 node_modules
 *.swp
+.idea/vcs.xml
+.idea/curso-javascript-ninja.iml
+.idea/modules.xml
+.idea/workspace.xml
