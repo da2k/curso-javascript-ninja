@@ -35,8 +35,6 @@
   `name`: String
   `pages`: Number
   */
-  var books = [];
-
   books.push({
     name: 'Livro JavaScript',
     pages: 1000
@@ -120,7 +118,7 @@
   /*
   Ainda usando o objeto acima, mostre no console seu nome invertido.
   */
-  console.log(myName.reverse(''));
+  console.log(myName.reverse().join(''));
 
   console.log( '\nAgora em ordem alfabética:' );
   /*
