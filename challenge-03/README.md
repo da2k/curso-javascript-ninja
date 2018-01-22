@@ -236,6 +236,17 @@ pessoa.apresentacao = function() {
     pessoa.caminhouQuantosMetros + " " + palavra_metragem + "!";
 };
 
+//COM CONDICIONAL TERNÁRIO
+pessoa.apresentacao = function() {
+    var palavra_sexo = pessoa.sexo === 'masculino' ? 'o' : 'a';
+    var palavra_idade = pessoa.idade === 1 ? 'ano' : 'anos';
+    var palavra_metragem = pessoa.caminhouQuantosMetros === 1 ? 'metro' : 'metros';
+    
+    return "Olá, eu sou "+ palavra_sexo + " " + pessoa.nomeCompleto + 
+    ", tenho "+ pessoa.idade + " " + palavra_idade + ", " + pessoa.altura + 
+    " metros, meu peso é "+ pessoa.peso + " Kg e, só hoje, eu já caminhei " +
+    pessoa.caminhouQuantosMetros + " " + palavra_metragem + "!";
+};
 
 // Agora, apresente-se ;)
 pessoa.apresentacao(); // 'Olá, eu sou o Fulano da Silva, tenho 1 ano, 1.80 ms, meu peso é 75 Kgs e, só hoje, eu já caminhei 1 metro!'
