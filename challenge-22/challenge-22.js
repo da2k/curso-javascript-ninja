@@ -43,7 +43,7 @@
     function sum () {
         console.log('Todos parâmetros passados foram: ', arguments);
         Array.prototype.reduce.call(arguments, (acumulado, atual, index) => {
-            console.log(+acumulado + +atual);
+            console.log(Number(acumulado) + Number(atual));
         });
     }
 
