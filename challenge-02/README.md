@@ -1,8 +1,7 @@
-# Desafio da semana #2
 
+Desafio da semana #2
 Nesse exercício, você está livre para escolher os nomes para suas variáveis e funções! :smile:
-
-
+```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
 function soma(x,y) {
   return x + y;
@@ -23,24 +22,15 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 function comvalor() {
-  semvalor = 'VALOR'
-  return 'O valor da variável agora é VALOR'
-}
-
-// CORREÇÃO:
-function comvalor() {
   semvalor = 25;
   return 'O valor da variável agora é ' + semvalor;
 }
-
 // Invoque a função criada acima.
-comvalor()
-
+comvalor();
 // Qual o retorno da função? (Use comentários de bloco).
 /*
-O valor da variável agora é VALOR.
+O valor da variável agora é 25.
 */
-
 /*
 Crie uma função com as seguintes características:
 1. A função deve receber 3 argumentos;
@@ -54,20 +44,15 @@ function newFunction( a, b, c ) {
   } else {
     return ( a * b * c ) + 2;
   }
-}
-
+};
 // Invoque a função criada acima, passando só dois números como argumento.
-newFunction( 1, 2)
-
+newFunction( 1, 2);
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 // Preencha todos os argumentos corretamente!
-
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-newFunction( 1, 2, 3 )
-
+newFunction( 1, 2, 3 );
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 // 8
-
 /*
 Crie uma função com as seguintes características:
 1. A função deve receber 3 argumentos.
@@ -89,11 +74,10 @@ function args( x, y, z ) {
   } else {
     return null;
   }
-}
-
+};
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 args()        // false
 args(1)       // 1
 args(2,5)     // 7
-args(2,5,2)   // 3.5
+args(2,5,2)   // 3.5
 ```
