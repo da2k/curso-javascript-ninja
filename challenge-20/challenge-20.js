@@ -39,13 +39,14 @@ uma variável chamada `email`.
 - Selecione o input de "Email", atribuindo-o à uma variável chamada
 `$inputEmail`.
 */
-// ?
+// var $inputEmail = document.querySelector( 'input[type="email"]' );
 
 /*
 - Selecione o campo de "Mensagem", atribuindo-o à uma variável chamada
 `$message`.
 */
-// ?
+//  var $message = document.querySelector( 'textarea');
+
 
 /*
 - Selecione o botão de envio do formulário, atribuindo-o à uma variável
