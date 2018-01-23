@@ -23,8 +23,8 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 function valor(){
-  valor = 'VALOR';
-  return valor;
+  valor = 30;
+  return 'o valor da variável agora é ' + valor;
 }
 
 // Invoque a função criada acima.
@@ -32,7 +32,7 @@ valor()
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
-'VALOR'
+"o valor da variável agora é 30"
  */
 
 /*
@@ -74,18 +74,32 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function args(a, b, c){
-  if (!a && !b && !c){
-    return false;
-  } else if (a && b && c){
+  if(a && !b && !c){
+    return a;
+  } else if(a && b && !c) {
+    return a + b;
+  } else if(a && b && c){
     return (a + b) / c;
-  } else if ( (a && b) || (a && c) || (c && b) ){
-    return (a + b) || (a + c) || (c + b);
-  } else if ( (!a && !b) || (!a && !c) || (!c && !b) ){
-    return a || b || c;
+  } else if(!a && !b && !c){
+    return false
   } else {
     return null;
   }
 }
+
+// function args(a, b, c){
+//   if (!a && !b && !c){
+//     return false;
+//   } else if (a && b && c){
+//     return (a + b) / c;
+//   } else if ( (a && b) || (a && c) || (c && b) ){
+//     return (a + b) || (a + c) || (c + b);
+//   } else if ( (!a && !b) || (!a && !c) || (!c && !b) ){
+//     return a || b || c;
+//   } else {
+//     return null;
+//   }
+// }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 args() //false
