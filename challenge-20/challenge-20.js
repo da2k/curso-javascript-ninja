@@ -58,7 +58,7 @@ chamada `$button`.
 Preencha os campos de "Nome" e "Email" que estão no documento com os valores
 entrados pelo usuário.
 */
-// ?
+// $imputUsername.value = username;
 
 /*
 Adicione um listener de evento de click ao botão que faça o seguinte:
