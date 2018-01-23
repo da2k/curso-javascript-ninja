@@ -16,13 +16,9 @@
   nome, `username` deve receber "Desconhecido".
   Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
   */
-  var username = win.prompt('Qual o seu nome?');
+  var username = win.prompt('Qual o seu nome?') || 'Desconhecido';
 
-  if (!username) {
-    username = 'Desconhecido';
-  }
-
-  win.alert('Bem-vindo ' + username);
+  win.alert('Bem-vindo ' + username + '!');
 
   /*
   Agora, pergunte ao usuário "Qual o seu e-mail?", atribuindo o resultado à
@@ -34,13 +30,13 @@
   - Selecione o input de "Nome", atribuindo-o à uma variável chamada
   `$inputUsername`.
   */
-  var $inputUsername = doc.querySelector('[type="text"]');
+  var $inputUsername = doc.querySelector('input[type="text"]');
 
   /*
   - Selecione o input de "Email", atribuindo-o à uma variável chamada
   `$inputEmail`.
   */
-  var $inputEmail = doc.querySelector('[type="email"]');
+  var $inputEmail = doc.querySelector('input[type="email"]');
 
   /*
   - Selecione o campo de "Mensagem", atribuindo-o à uma variável chamada
@@ -89,30 +85,26 @@
     event.preventDefault();
 
     if ($inputUsername.value === '') {
-      win.alert('Preencha o nome do usuário!');
-      return null;
+      return win.alert('Preencha o nome do usuário!');
     }
 
     if ($inputEmail.value === '') {
-      win.alert('Preencha o e-mail!');
-      return null;
-    }
-
-    if ($message.value === '') {
-      win.alert('Preencha a mensagem!');
-      return null;
+      return win.alert('Preencha o e-mail!');
     }
 
     if (!isValidEmail($inputEmail.value)) {
-      win.alert('Entre com um e-mail válido!');
-      return null;
+      return win.alert('Entre com um e-mail válido!');
+    }
+
+    if ($message.value === '') {
+      return win.alert('Preencha a mensagem!');
     }
 
     if (win.confirm('Tem certeza que deseja enviar o formulário?')) {
-      win.alert('Enviado com sucesso!');
-    } else {
-      win.alert('Não enviado.');
+      return win.alert('Enviado com sucesso!');
     }
+
+    win.alert('Não enviado.');
   }, false);
 
   /*
@@ -142,8 +134,7 @@
       - "agua_@evida.br.com"
   */
   function isValidEmail(email) {
-    var regexp = /^[\w+.]+@[\w]+.[\w]{2,}.?([\w]{1,2})?$/i;
-    return regexp.test(email);
+    return /^[\w+.]+@\w+\.[\w]{2,}(?:\.[\w]{1,2})?$/.test(email);
   }
 
   var emails = [
