@@ -52,7 +52,7 @@ uma variável chamada `email`.
 - Selecione o botão de envio do formulário, atribuindo-o à uma variável
 chamada `$button`.
 */
-// ?
+//  var $buttom = document.querySelector('button');
 
 /*
 Preencha os campos de "Nome" e "Email" que estão no documento com os valores
