@@ -22,16 +22,16 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function retornaValor (c) {
-  c + 5;
-  return 'O valor da variável agora é ' + c;
+function retornaValor () {
+   nova = 5;
+  return 'O valor da variável agora é ' + nova;
 }
 
 // Invoque a função criada acima.
 retornaValor(nova);
 
 // Qual o retorno da função? (Use comentários de bloco).
-/* 'O valor da variável agora é undefined' */
+/* 'O valor da variável agora é 5' */
 
 /*
 Crie uma função com as seguintes características:
@@ -41,11 +41,11 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function somaTres(d, e, f) {
-  if (d !== undefined && e !== undefined && f !== undefined) {
-    return (d * e * f) + 2;
-  } else {
+  if (d === undefined || e === undefined || f === undefined) {
     return 'Preencha todos os valores corretamente!';
   }
+
+  return (d * e * f) + 2;
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
