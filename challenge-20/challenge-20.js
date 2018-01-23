@@ -21,21 +21,20 @@ Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
  if( !username )
  username = 'Desconhecido';
  alert( 'Bem vindo' + username );
-var email = prompt( 'Qual o seu e-mail? ');
+
 
 
 /*
 Agora, pergunte ao usuário "Qual o seu e-mail?", atribuindo o resultado à
 uma variável chamada `email`.
 */
-// ?
+// var email = prompt( 'Qual o seu e-mail? ');
 
 /*
 - Selecione o input de "Nome", atribuindo-o à uma variável chamada
 `$inputUsername`.
 */
-// ?
-
+// ?var $inputUsername = document.querySelector( 'input[type="text"'] );
 /*
 - Selecione o input de "Email", atribuindo-o à uma variável chamada
 `$inputEmail`.
