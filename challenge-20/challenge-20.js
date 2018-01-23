@@ -6,7 +6,8 @@
 a marcação criada nele para fazer nosso desafio ;)
 
 O HTML NÃO PODE ser alterado!
-*/ (function() {
+*/ (function(win,doc) {
+
 'use strict';
 
 
