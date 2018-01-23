@@ -6,7 +6,8 @@
 a marcação criada nele para fazer nosso desafio ;)
 
 O HTML NÃO PODE ser alterado!
-*/
+*/ (function() {
+
 
 /*
 Ao carregar a página, pergunte ao usuário "Qual o seu nome?". Atribua o
@@ -105,3 +106,4 @@ Alguns e-mails inválidos:
     - "agua_@evida.br.com"
 */
 // ?
+   });
