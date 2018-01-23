@@ -127,5 +127,7 @@ Alguns e-mails inválidos:
     - "rita-marica@titica.a.b"
     - "agua_@evida.br.com"
 */
-// ?
+// function isValidEmail(email) {
+return /^[\w+.]+@\w+\.\w{2,}(?:\.\w{2})?$
+}
    });
