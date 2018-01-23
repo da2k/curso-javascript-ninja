@@ -34,7 +34,7 @@ uma variável chamada `email`.
 - Selecione o input de "Nome", atribuindo-o à uma variável chamada
 `$inputUsername`.
 */
-// ?var $inputUsername = document.querySelector( 'input[type="text"'] );
+// var $inputUsername = document.querySelector( 'input[type="text"]' );
 /*
 - Selecione o input de "Email", atribuindo-o à uma variável chamada
 `$inputEmail`.
