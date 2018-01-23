@@ -7,6 +7,7 @@ a marcação criada nele para fazer nosso desafio ;)
 
 O HTML NÃO PODE ser alterado!
 */ (function() {
+'use strict';
 
 
 /*
