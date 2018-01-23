@@ -85,7 +85,15 @@ Se for confirmado, mostre um alerta com a mensagem:
 Caso contrário, mostre um alerta com a mensagem:
     - "Não enviado."
 */
-// ?
+// > $button.addEventListener('click', function() {
+... if( !$imputUsername.value)
+... return alert( 'Preencha o nome de usuario' );
+... if( !&imputEmail.value)
+... return alert('Preencha o e=mail!')
+... if( !$message)
+... return alert( 'Preencha a mensagem!' );
+... if(isValidEmail( $imputEmail.value ) )
+
 
 /*
 Crie uma função chamada `isValidEmail`, que será usada na validação do
