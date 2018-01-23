@@ -11,38 +11,12 @@
   Mostre esse array no console.
   */
   console.log( 'Number Objects Array:' );
-  var numberObjects = [
-    {
-      number: 1
-    },
-    {
-      number: 2
-    },
-    {
-      number: 3
-    },
-    {
-      number: 4
-    },
-    {
-      number: 5
-    },
-    {
-      number: 6
-    },
-    {
-      number: 7
-    },
-    {
-      number: 8
-    },
-    {
-      number: 9
-    },
-    {
-      number: 10
-    }
-  ];
+  var numberObjects = [];
+  
+  for(var i = 0; i <= 10; i++) {
+    numberObjects.push({number: i});
+  }
+  
   console.log(numberObjects);
 
   /*
@@ -101,18 +75,16 @@
   */
   console.log( '\nSeu nome na língua do "P":' );
   var name = ['Bi', 'o', 'ca'];
+  var nameP = name.reduce(function(accumulator, current) {
+    return accumulator + 'P' + current;
+  }, '');
 
   /*
   Crie uma variável chamada `inversedName`, que reduzirá o array em uma string
   e atribuirá o seu nome invertido (usando o array criado acima).
   */
   console.log( '\nInversed Name:' );
-  var inversedName = name
-  .reverse()
-  .reduce(function(accumulator, current) {
-    return accumulator + current;
-  });
-
+  var inversedName = name.reverse().join('');
   console.log(inversedName);
 
   /*
