@@ -94,6 +94,10 @@ Caso contrário, mostre um alerta com a mensagem:
 ... return alert( 'Preencha a mensagem!' );
 ... if(!isValidEmail( $imputEmail.value ) )
   return alert(' Entre com um email valido!');
+  if(!confirm('Tem certeza que deseja enviar o formulario?') )
+    return alert('Enviado com sucesso!');
+  alert('Não enviado');
+}, false);
   
 
 
