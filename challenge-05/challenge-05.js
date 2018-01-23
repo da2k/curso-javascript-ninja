@@ -57,17 +57,17 @@ os livros.
 */
 function book( bookName ) {
   var myBooks = {
-    "Cangaceiro JavaScript": {
+    'Cangaceiro JavaScript': {
       quantidadePaginas: 502,
       autor: 'Flávio Almeida',
       editora: 'Série Caelum'
     },
-    "Guia Front-End": {
+    'Guia Front-End': {
       quantidadePaginas: 211,
       autor: 'Diego Eis',
       editora: 'Casa Do Código'
     },
-    "Orientação a Objetos e SOLID para Ninjas": {
+    'Orientação a Objetos e SOLID para Ninjas': {
       quantidadePaginas: 166,
       autor: 'Mauricio Aniche',
       editora: 'Série Caelum'
@@ -87,18 +87,20 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-console.log('O livro Orientação a Objetos e SOLID para Ninjas tem ' + book("Orientação a Objetos e SOLID para Ninjas").quantidadePaginas + ' páginas!' );
+var bookName = 'Guia Front-End';
+
+console.log('O livro ' + bookName + ' tem ' + book(bookName).quantidadePaginas + ' páginas!' );
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log('O autor do livro Orientação a Objetos e SOLID para Ninjas é ' + book('Orientação a Objetos e SOLID para Ninjas').autor + '.');
+console.log('O autor do livro ' + bookName + ' é ' + book(bookName).autor + '.');
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log('O livro Orientação a Objetos e SOLID para Ninjas foi publicado pela editora ' + book('Orientação a Objetos e SOLID para Ninjas').editora + '.');
+console.log('O livro ' + bookName + ' foi publicado pela editora ' + book(bookName).editora + '.');
