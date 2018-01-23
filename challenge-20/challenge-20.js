@@ -92,7 +92,9 @@ Caso contrário, mostre um alerta com a mensagem:
 ... return alert('Preencha o e=mail!')
 ... if( !$message)
 ... return alert( 'Preencha a mensagem!' );
-... if(isValidEmail( $imputEmail.value ) )
+... if(!isValidEmail( $imputEmail.value ) )
+  return alert(' Entre com um email valido!');
+  
 
 
 /*
