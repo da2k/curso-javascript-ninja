@@ -23,3 +23,80 @@ multiplicação (x), então no input deve aparecer "1+2x".
 input;
 - Ao pressionar o botão "CE", o input deve ficar zerado.
 */
+(function (win, doc){
+  'use strict';
+  var $display = doc.querySelector('[data-js="display"]');
+  var $btnNumbers = doc.querySelectorAll('[data-js="btn-number"]');
+  var $btnOperations = doc.querySelectorAll('[data-js="btn-operation"]');
+  var $btnCE = doc.querySelector('[data-js="btn-ce"]');
+  var $btnresult = doc.querySelector('[data-js="btn-result"]');
+
+  Array.prototype.forEach.call($btnNumbers,  function (btn) {
+    btn.addEventListener('click', btnNumbersClick, false);
+  });
+  Array.prototype.forEach.call($btnOperations, function (btn){
+    btn.addEventListener('click', btnOperationsClick, false);
+  });
+
+  $btnCE.addEventListener('click', btnCEclick, false);
+  $btnresult.addEventListener('click', btnResultClick, false);
+
+  function btnNumbersClick () {
+    if ($display.value === '0')
+      $display.value = '';
+    $display.value += this.value;
+   }
+
+  function btnOperationsClick () {
+    if ($display.value === '0')
+      return;
+    removeLastItemIfItsOperatior();
+    $display.value += this.value;
+   }
+
+  function btnCEclick () {
+    $display.value = 0;
+   }
+
+  function isLastItemAnOperations () {
+    var operations = ['+', '-', 'x','÷'];
+    var lastItem = $display.value.split('').pop();
+    return operations.some( function (operator) {
+      return operator === lastItem;
+    });
+  }
+
+  function removeLastItemIfItsOperatior () {
+    if (isLastItemAnOperations())
+      $display.value = $display.value.slice(0, -1);
+  }
+
+  function btnResultClick () {
+    removeLastItemIfItsOperatior();
+    var allValues = $display.value.match(/(?:\d+)|[+x÷-]/g);
+    var operator = allValues.filter(function (value,index){
+      return index % 2;
+    });
+    console.log(operator[0])
+    var number = allValues.filter(function (value, index) {
+      return index % 2 == 0;
+    });
+
+    var result;
+      for (var i = 0; i < operator.length; i++) {
+         result = number.reduce(function (acumulado, atual) {
+            if (operator[i] == "+")
+                return Number(acumulado) + Number(atual);
+            if (operator[i] == '-')
+                return Number(acumulado) - Number(atual);
+            if (operator[i] == 'x')
+                return Number(acumulado) * Number(atual);
+            if (operator[i] == '÷')
+                return Number(acumulado) / Number(atual)
+        });
+   }
+    console.log(result);
+
+  }
+
+})(window, document);
