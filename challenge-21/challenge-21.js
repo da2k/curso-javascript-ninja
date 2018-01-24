@@ -17,6 +17,9 @@ dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
 // (funciton(win,doc) {
 ... 'use strict';
  <input type="text" value="0">
-    <button> Start</button>
-    <button> Stop </button>
-    <butoon> Reset </butoon>
+   <input type="text" value="0">
+    <input type="text" value="0">
+    <button data-js="start"> Start</button>
+    <button data-js="stop"> Stop </button>
+    <butoon data-js="reset"> Reset </butoon>
+    <script src="challenge-21.js"> </script>
