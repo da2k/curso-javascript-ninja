@@ -28,4 +28,5 @@ dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
     var $stop = doc.querySelector('[data-js="stop"]');
     var $reset = doc.querySelector('[data-js="reset"]');
     var interval;
+$start.addEventListener('click',starTimer(),false)
 </script>
