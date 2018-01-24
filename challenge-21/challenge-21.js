@@ -16,3 +16,4 @@ dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
 */
 // (funciton(win,doc) {
 ... 'use strict';
+ input type="text" value="0"
