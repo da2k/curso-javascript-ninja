@@ -14,39 +14,31 @@ Utilize o atributo data-js para nomear o campo e os botões. Você pode
 usar o nome que achar melhor, desde que ele seja semântico, ou seja, o nome
 dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
 */
-(function(){
+(function(win, doc){
   'strict mode';
-  var $cronometro = document.querySelector('[data-js=cronometro]')
-  var $btnStart = document.querySelector('[data-js=btnStart]');
-  var $btnStop = document.querySelector('[data-js=btnStop]');
-  var $btnReset = document.querySelector('[data-js=btnReset]');
-  var counter = 0;
-  var temporizador = 0;
+  var $timer = doc.querySelector('[data-js=timer]')
+  var $start = doc.querySelector('[data-js=start]');
+  var $stop = doc.querySelector('[data-js=stop]');
+  var $reset = doc.querySelector('[data-js=reset]');
+  var interval;
 
-  function timer() {
-    counter++;
-    $cronometro.value = counter;
-    temporizador = setTimeout(timer, 1000);
+  $start.addEventListener('click', startTimer, false);
+  $stop.addEventListener('click', stopTimer, false);
+  $reset.addEventListener('click', resetTimer, false);
+
+
+  function startTimer() {
+    $timer.value = +$timer.value + 1;
+    interval = setTimeout(startTimer, 1000);
   }
 
-  $btnStart.addEventListener('click', function (event) {
-    event.preventDefault();
-    timer();
-  });
+  function stopTimer() {
+    clearTimeout(interval);
+  }
 
+  function resetTimer() {
+    $timer.value = 0;
+    stopTimer();
+  }
 
-  $btnStop.addEventListener('click', function (event) {
-    event.preventDefault();
-    clearTimeout(temporizador);
-  });
-
-
-  $btnReset.addEventListener('click', function (event) {
-    event.preventDefault();
-    counter = 0;
-    $cronometro.value = counter;
-    clearTimeout(temporizador);
-  });
-
-
-})();
+})(window, document);
