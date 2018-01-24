@@ -64,10 +64,25 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-funcao = (x, y, z) => {
-    if (y === undefined || z === undefined) return 
+const funcao = (x, y, z) => {
+  if (z === undefined) {
+    if (y === undefined) {
+      if (x === undefined) {
+        return false
+      }
+      return x
+    }
+    return x + y
+  } else if (z !== undefined) {
+    return ((x + y) / z)
+  } else {
+    return null
+  }
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+funcao(1,2,3) // 1
+funcao(1,2)  // 3
+funcao(1)   // 1
+funcao()   // false
 ```
