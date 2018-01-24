@@ -70,10 +70,12 @@
     os dois parâmetros da função de retorno de "calculator".
     */
     function calculator(operator) {
-        var operatorExists = isOperatorValid(operator)
-        if(!operatorExists) return false;
+        var operatorExists = isOperatorValid(operator);
+        if(!operatorExists) 
+            return false;
         return function(num1, num2) {
-            if(typeof num1 !== 'number' || typeof num2 !== 'number') return false;
+            if(typeof num1 !== 'number' || typeof num2 !== 'number') 
+                return false;
             return operation[operator](num1, num2);
         };
     }
@@ -107,7 +109,7 @@
     */
     var number1 = 0;
     var number2 = 0;
-    var operationSignal = '';
+    var operationSignal;
 
     /*
     PASSO 2:
@@ -133,8 +135,7 @@
     if(sum) {
         number1 = 2;
         number2 = 3;
-        var result = sum(number1, number2);
-        console.log(showOperationMessage(operationSignal, number1, number2), result);
+        console.log(showOperationMessage(operationSignal, number1, number2), sum(number1, number2));
     }
     else
         console.log(showErrorMessage(operationSignal));
@@ -147,8 +148,9 @@
     operationSignal = '-';
     var subtraction = calculator(operationSignal);
     if(subtraction) {
-        var result = subtraction(number1, number2);
-        console.log(showOperationMessage(operationSignal, number1, number2), result);
+        number1 = 4;
+        number2 = 1;
+        console.log(showOperationMessage(operationSignal, number1, number2), subtraction(number1, number2));
     }
     else
         console.log(showErrorMessage(operationSignal));
@@ -156,8 +158,9 @@
     operationSignal = '*';
     var multiplication = calculator(operationSignal);
     if(multiplication) {
-        var result = multiplication(number1, number2);
-        console.log(showOperationMessage(operationSignal, number1, number2), result);
+        number1 = 12;
+        number2 = 6;
+        console.log(showOperationMessage(operationSignal, number1, number2), multiplication(number1, number2));
     }
     else
         console.log(showErrorMessage(operationSignal));
@@ -165,8 +168,9 @@
     operationSignal = '/';
     var division = calculator(operationSignal);
     if(division) {
-        var result = division(number1, number2);
-        console.log(showOperationMessage(operationSignal, number1, number2), result);
+        number1 = 33;
+        number2 = 3;
+        console.log(showOperationMessage(operationSignal, number1, number2), division(number1, number2));
     }
     else
         console.log(showErrorMessage(operationSignal));
@@ -174,8 +178,9 @@
     operationSignal = '%';
     var mod = calculator(operationSignal);
     if(mod) {
-        var result = mod(number1, number2);
-        console.log(showOperationMessage(operationSignal, number1, number2), result);
+        number1 = 9;
+        number2 = 2;
+        console.log(showOperationMessage(operationSignal, number1, number2), mod(number1, number2));
     }
     else
         console.log(showErrorMessage(operationSignal));
@@ -187,8 +192,9 @@
     operationSignal = '.';
     var invalid = calculator(operationSignal);
     if(invalid) {
-        var result = invalid(number1, number2);
-        console.log(showOperationMessage(operationSignal, number1, number2), result);
+        number1 = 1;
+        number2 = 0;
+        console.log(showOperationMessage(operationSignal, number1, number2), invalid(number1, number2));
     }
     else
         console.log(showErrorMessage(operationSignal));
