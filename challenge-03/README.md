@@ -20,7 +20,7 @@ var pessoa = {
   nome: 'Felipe',
   sobrenome: 'Uliana',
   sexo: 'masculino',
-  idade: '32',
+  idade: 32,
   altura: 1.67,
   peso: 88,
   andando: false,
