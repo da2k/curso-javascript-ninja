@@ -22,4 +22,9 @@ dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
     <button data-js="start"> Start</button>
     <button data-js="stop"> Stop </button>
     <butoon data-js="reset"> Reset </butoon>
-    <script src="challenge-21.js"> </script>
+    <script src="challenge-21.js">  
+      var $timer= doc.querySelector('[data-js="timer"]');
+    var $start = doc.querySelector('[data-js="start"]');
+    var $stop = doc.querySelector('[data-js="stop"]');
+    var $reset = doc.querySelector('[data-js="reset"]');
+</script>
