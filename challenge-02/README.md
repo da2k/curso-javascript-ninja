@@ -69,7 +69,7 @@ function tweakedSoma(a,b,c){
    else if( a !== undefined && b !== undefined && c === undefined)
      return a + b
    else if( a !== undefined && b !== undefined && c !== undefined)
-     return (a + b) / 2;
+     return (a + b) / c;
    else if( a === undefined && b === undefined && c === undefined)
      return false
    else 
