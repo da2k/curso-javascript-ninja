@@ -32,7 +32,7 @@ Adicione um método ao objeto `pessoa` chamado `fazerAniversario`. O método dev
 alterar o valor da propriedade `idade` dessa pessoa, somando `1` a cada vez que
 for chamado.
 */
-pessoa.fazerAniversario = function(){return pessoa.idade++ };
+pessoa.fazerAniversario = function(){pessoa.idade++ };
 
 /*
 Adicione um método ao objeto `pessoa` chamado `andar`, que terá as seguintes
