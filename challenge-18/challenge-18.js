@@ -91,12 +91,12 @@
   O resultado deve ser esse:
   <h1>O texto dentro da tag "h1" é "Título da página"</h1>
   <p>O texto dentro da tag "p" é "Este é um parágrafo"</p>
-  <footer>O texto dentro da tag "footer" é "Rodapé"</footer>
+  <footer>O texto dentro da tag "footer" é "Rodapé"</ooter>
 
   Uma dica: faça o match aos poucos. Para facilitar o teste, use o site
   https://regex101.com/#javascript e verifique se as capturas estão
   corretas, para depois aplicar no código ;)
   */
   console.log( '\nFazer replace dos textos das tags:' );
-  console.log('<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>'.replace(/<(\w+)>([^<]+)<\/\w+>/g,'O texto dentro da tag $1 é $2\n'));
+  console.log('<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>'.replace(/<(\w+)>([^<]+)<\/\w+>/g,'<$1>O texto dentro da tag "$1" é "$2"</$1>\n'));
 })();
