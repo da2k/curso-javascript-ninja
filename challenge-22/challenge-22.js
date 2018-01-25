@@ -2,7 +2,8 @@
   Crie dois objetos, que serão duas pessoas. Cada um deve ter as propriedades
   `name` e `lastName`, preenchidos com o nome e sobrenome da pessoa.
   */
-  // ?
+  //  (function() {
+
 
   /*
   Agora crie uma função chamada `getFullName` que retorne as propriedades
@@ -68,3 +69,4 @@
   */
   console.log( '\nSomar números entrados pelo usuário:' );
   // ?
+ }) ();
