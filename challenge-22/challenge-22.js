@@ -38,14 +38,21 @@
   Na primeira linha, dentro da função, deixe um console.log para mostrar todos
   os parâmetros passados para essa função.
   */
-  // ?
+  // function sum() {
+...  Array.protoype.reduce.call(arguments, function(accumulated, actualItem) {
+.....  return accumulated + actualItem;
+..... });
+... }
+
 
   /*
   Mostre no console que a função acima funciona, invocando-a em 3 console.log
   diferentes, com quantidades variáveis de parâmetros passados.
   */
   console.log( '\nSomar alguns números:' );
-  // ?
+  // console.log(sum(1,2,3));
+console.log(4,5,6);
+console.log(7,8,9);
 
   /*
   Declare uma variável chamada `userEntry`, que irá receber alguns valores
