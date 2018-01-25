@@ -105,7 +105,7 @@ console.log('O autor do livro ' + nomeLivro + ' é ' + book(nomeLivro).autor);
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
-"O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
+"O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]. p" 
 */
 console.log('O livro ' + nomeLivro + ' foi publicado pela editora ' + book(nomeLivro).editora);
 // ?
