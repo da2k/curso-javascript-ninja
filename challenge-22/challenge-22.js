@@ -85,6 +85,7 @@ console.log(7,8,9);
   */
   console.log( '\nEntrada do usuário limpa. Somente números:' );
   // console.log( justNumbers('10fa') );
+var numbers = justNumbers(userEntry);
 
 
   /*
