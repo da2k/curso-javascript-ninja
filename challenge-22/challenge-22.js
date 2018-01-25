@@ -74,14 +74,18 @@ console.log(7,8,9);
   da string. Mostre a representação em string dessa função no console.
   */
   console.log( '\nFunção que limpa entrada do usuário (somente números):' );
-  // ?
+  //  function justNumbers( entry ) {
+... return entry.replace(/\D+/g,',');
+... }
+
 
   /*
   Usando a função acima, faça a limpeza dos valores entrados pelo usuário,
   atribuindo o resultado à uma variável `numbers`.
   */
   console.log( '\nEntrada do usuário limpa. Somente números:' );
-  // ?
+  // console.log( justNumbers('10fa') );
+
 
   /*
   Agora com o array de números, utilize a função `sum` para somar todos os
