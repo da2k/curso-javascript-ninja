@@ -23,3 +23,33 @@ multiplicação (x), então no input deve aparecer "1+2x".
 input;
 - Ao pressionar o botão "CE", o input deve ficar zerado.
 */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Challenge 21</title>
+</head>
+<body>
+    <input type="text" value = 0 readonly>
+    <div class="buttons">
+        <button> 0</button>
+        <button> 1</button>
+        <button> 2</button>
+        <button> </button>
+        <button> 4</button>
+        <button> 5</button>
+        <button> 6</button>
+        <button> 7</button>
+        <button> 8</button>
+        <button> 9</button>
+     </div>
+    <div class="operations">
+    <button> + </button>
+    <button> - </button>
+    <button> * </button>
+    <button> / </button>
+    <button> CE </button>    
+    </div>
+</body>
+
+</html>
