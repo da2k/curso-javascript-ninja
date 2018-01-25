@@ -28,6 +28,7 @@
   // function getFullName() {
 ... return this.name + ' ' + this.lastName;
 ... }
+ console.log(getFullName.call(fernando));
 
 
   /*
