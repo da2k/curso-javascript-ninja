@@ -3,6 +3,14 @@
   `name` e `lastName`, preenchidos com o nome e sobrenome da pessoa.
   */
   //  (function() {
+ var fernando = {
+... name: 'Fernando',
+... lastName:'Daciuk'
+... };
+ var maria = {
+... name: 'Maria',
+... lastName: 'Alliprandini'
+... };
 
 
   /*
