@@ -75,7 +75,7 @@ console.log(7,8,9);
   */
   console.log( '\nFunção que limpa entrada do usuário (somente números):' );
   //  function justNumbers( entry ) {
-... return entry.replace(/\D+/g,',');
+...  return entry.replace(/\D+/g,',').split(',');
 ... }
 
 
