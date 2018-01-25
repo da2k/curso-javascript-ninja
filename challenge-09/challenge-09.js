@@ -39,11 +39,11 @@
     function myFunction3() {
         var number1 = 40;
         var number2 = 50;
-        console.log('Na função myFunction3, number1 é igual a', number1);
 
         function sum() {
             return number1 + number2;
-        };
+        }
+        console.log('Na função myFunction3, number1 é igual a', number1);
         console.log('A soma de 40 e 50 é igual a', sum());
         return sum();
     }
@@ -83,7 +83,8 @@
     uma função anônima que irá retornar a soma dos dois números que essa função
     anônima tem como seus argumentos.
     */
-    console.log('O resultado da soma é: ' + sum(function (x, y) {
+    console.log('O resultado da soma é:');
+    console.log(sum(function (x, y) {
         return x + y;
     }));
 
@@ -104,19 +105,23 @@
     As suas respostas devem estar abaixo dos `console.log` referentes à cada
     chamada.
     */
-    console.log('O resultado da subtração é: ' + subtraction(function (x, y) {
+    console.log('O resultado da subtração é:');
+    console.log(subtraction(function (x, y) {
         return x - y;
     }));
 
-    console.log('O resultado da multiplicação é: ' + multiplication(function (x, y) {
+    console.log('O resultado da multiplicação é:');
+    console.log(multiplication(function (x, y) {
         return x * y;
     }));
 
-    console.log('O resultado da divisão é: ' + division(function (x, y) {
+    console.log('O resultado da divisão é:');
+    console.log(division(function (x, y) {
         return x / y;
     }));
 
-    console.log('O resto da divisão é: ' + mod(function (x, y) {
+    console.log('O resto da divisão é:');
+    console.log(mod(function (x, y) {
         return x % y;
     }));
 })();
