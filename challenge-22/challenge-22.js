@@ -65,7 +65,8 @@ console.log(7,8,9);
   Mostre no console o valor entrado pelo usuário:
   */
   console.log( '\nEntrada do usuário:' );
-  // ?
+  //  console.log( userEntry );
+
 
   /*
   Crie uma função chamada `justNumbers`, que recebe por parâmetro uma string
