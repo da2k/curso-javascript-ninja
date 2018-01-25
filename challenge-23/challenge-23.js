@@ -23,8 +23,7 @@ multiplicação (x), então no input deve aparecer "1+2x".
 input;
 - Ao pressionar o botão "CE", o input deve ficar zerado.
 */
-    const h1 = document.getElementsByTagName('h1')[0];
-
+    const h1 = document.querySelector('.result-child');
     const buttonNumbers = document.querySelectorAll('.numbers');
     const buttonOperations = document.querySelectorAll('.button-operation');
     const clearButton = document.querySelector('.clear-child');
@@ -42,27 +41,27 @@ input;
     });
 
     function handleClickNumber() {
-        h1.textContent += ' ' + this.value;
+        h1.innerHTML += ' ' + this.value;
     }
 
     function handleClickOperation() {
-        if(isLastItemAnOperator()) {
-            h1.textContent = h1.textContent.slice(0, -1);
-        }
-        h1.textContent += ' ' + this.value;
+        h1.innerHTML = removeLastItemIfItIsOperator(h1.innerHTML);
+        h1.innerHTML += ' ' + this.value;
     }
 
     function handleClickClear() {
-        h1.textContent = 0;
+        h1.innerHTML = 0;
     }
 
     function handleClickEqual() {
-        let allValues = h1.textContent.match(/\d+[x+*/]?/g);
+        h1.innerHTML = removeLastItemIfItIsOperator(h1.innerHTML);
+        let allValues = h1.innerHTML.match(/\d+[x+*/]?/g);
 
-        h1.textContent = allValues.reduce((accumulated, actual) => {
+        let result = allValues.reduce((accumulated, actual) => {
             var firstValue = accumulated.slice(0, -1);
             var operator = accumulated.split('').pop();
-            var lastValue = actual;
+            var lastValue = removeLastItemIfItIsOperator(actual);
+            var lastOperator = isLastItemAnOperator(actual) ? actual.split('').pop() : false;
 
             switch(operator) {
                 case '+':
@@ -75,13 +74,19 @@ input;
                     return Number(firstValue) / Number(lastValue);
             }
         });
+        h1.innerHTML = result;
     }
 
-    function isLastItemAnOperator() {
+    function isLastItemAnOperator(number) {
         let operations = ['+', '-', '*', '/'];
-        let lastItem = h1.textContent.split('').pop();
+        let lastItem = number.split('').pop();
 
-        return operations.some((operator) => {
-            return operator == lastItem;
-        });
+        return operations.some((operator) => operator == lastItem);
+    }
+
+    function removeLastItemIfItIsOperator(number) {
+        if(isLastItemAnOperator(number)) {
+            return number.slice(0, -1);
+        }
+        return number;
     }
