@@ -59,7 +59,7 @@ console.log(7,8,9);
   entrados pelo usuário. Mostre para o usuário a seguinte frase:
   "Entre com alguns números que serão somados:"
   */
-  // ?
+  // var userEntry = prompt( 'Entre com alguns números que serão somados.' );
 
   /*
   Mostre no console o valor entrado pelo usuário:
