@@ -38,11 +38,15 @@
   Na primeira linha, dentro da função, deixe um console.log para mostrar todos
   os parâmetros passados para essa função.
   */
-  // function sum() {
-...  Array.protoype.reduce.call(arguments, function(accumulated, actualItem) {
-.....  return accumulated + actualItem;
-..... });
+  //  function sum() {
+... console.log( arguments );
+... return Array.prototype.reduce.call(arguments,
+..... function(accumulated, actualItem){
+....... return acumulated + + actualItem;
+....... }
+..... );
 ... }
+
 
 
   /*
