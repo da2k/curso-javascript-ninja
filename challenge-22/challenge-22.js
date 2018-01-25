@@ -77,15 +77,14 @@ console.log(7,8,9);
   //  function justNumbers( entry ) {
 ...  return entry.replace(/\D+/g,',').split(',');
 ... }
-
+console.log( justNumbers('10fa') );
 
   /*
   Usando a função acima, faça a limpeza dos valores entrados pelo usuário,
   atribuindo o resultado à uma variável `numbers`.
   */
   console.log( '\nEntrada do usuário limpa. Somente números:' );
-  // console.log( justNumbers('10fa') );
-var numbers = justNumbers(userEntry);
+  // var numbers = justNumbers(userEntry);
 
 
   /*
