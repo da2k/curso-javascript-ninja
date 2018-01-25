@@ -5,7 +5,7 @@ desses parâmetros.
 */
 var sum = function calculateSum (x, y) {
 	return x + y;
-}
+};
 
 /*
 Invoque a função criada acima, passando dois números que serão somados, e mostre
@@ -25,20 +25,20 @@ Crie uma função literal chamada `showName`. Essa função deve retornar o
 seu nome.
 */
 function showName(){
-	return showName.name;
+	return 'Johnson Mauro';
 }
 
 /*
 Declare uma variável chamada `varShowName` que recebe a função criada acima.
 */
-var varShowName = showName();
+var varShowName = showName;
 
 /*
 Usando a variável criada acima, mostre no console o nome e o retorno da função
 atribuída a ela, com a seguinte frase:
 "A função [NOME DA FUNÇÃO] retorna [RETORNO DA FUNÇÃO]."
 */
-console.log('A função ' + varShowName + ' retorna ' + showName() + '.');
+console.log('A função ' + varShowName.name + ' retorna ' + showName() + '.');
 
 /*
 Crie uma função literal chamada `calculator`, que funcione assim:
@@ -58,19 +58,19 @@ function calculator(mathOperator) {
 
 		switch(mathOperator){
             case '+':
-				return descriptonOperator + x + ' + ' + y + ' = ' + (x + y) + '.'
+				      return descriptonOperator + x + ' + ' + y + ' = ' + (x + y) + '.';
             case '-':
-				return descriptonOperator + x + ' - ' + y + ' = ' + (x - y) + '.'
+				      return descriptonOperator + x + ' - ' + y + ' = ' + (x - y) + '.';
             case '*':
-				return descriptonOperator + x + ' * ' + y + ' = ' + (x * y) + '.'
+				      return descriptonOperator + x + ' * ' + y + ' = ' + (x * y) + '.';
             case '/':
-				return descriptonOperator + x + ' / ' + y + ' = ' + (x / y) + '.'
+				      return descriptonOperator + x + ' / ' + y + ' = ' + (x / y) + '.';
             case '%':
-				return descriptonOperator + x + ' % ' + y + ' = ' + (x % y) + '.'
+				      return descriptonOperator + x + ' % ' + y + ' = ' + (x % y) + '.';
             default:
-				return 'Operação inválida.'
+				      return 'Operação inválida.';
 		}
-	}
+	};
 }
 
 /*
