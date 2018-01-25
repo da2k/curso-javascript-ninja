@@ -30,25 +30,26 @@ input;
     <title>Challenge 21</title>
 </head>
 <body>
-    <input type="text" value = 0 readonly>
+    <input type="text" value = 0 readonly data-js="visor">
     <div class="buttons">
-        <button> 0</button>
-        <button> 1</button>
-        <button> 2</button>
-        <button> </button>
-        <button> 4</button>
-        <button> 5</button>
-        <button> 6</button>
-        <button> 7</button>
-        <button> 8</button>
-        <button> 9</button>
+        <button data-js="button-number" data-id="button-number0"> 0</button>
+        <button  data-js="button-number"  data-id="button-number1"> 1</button>
+        <button  data-js="button-number"  data-id="button-number2"> 2</button>
+        <button  data-js="button-number"  data-id="button-number3"> 3 </button>
+        <button  data-js="button-number"  data-id="button-number4"> 4</button>
+        <button  data-js="button-number"  data-id="button-number5"> 5</button>
+        <button  data-js="button-number"  data-id="button-number6"> 6</button>
+        <button  data-js="button-number"  data-id="button-number7"> 7</button>
+        <button  data-js="button-number"  data-id="button-number8"> 8</button>
+        <button  data-js="button-number"  data-id="button-number9"> 9</button>
      </div>
     <div class="operations">
-    <button> + </button>
-    <button> - </button>
-    <button> * </button>
-    <button> / </button>
-    <button> CE </button>    
+    <button data-js="button-operation" data-id="button-operation-plus"> + </button>
+    <button data-js="button-operation" data-id="button-operation-minus"> - </button>
+    <button data-js="button-operation" data-id="button-operation-mult"> * </button>
+    <button data-js="button-operation" data-id="button-operation-div"> / </button>
+        <button data-js="button-operation" data-id="button-operation-equal"> = </button>    
+    <button data-js="button-operation" data-id="button-operation-ce"> CE </button>    
     </div>
 </body>
 
