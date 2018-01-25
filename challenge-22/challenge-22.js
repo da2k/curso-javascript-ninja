@@ -29,7 +29,7 @@
 ... return this.name + ' ' + this.lastName;
 ... }
  console.log(getFullName.call(fernando));
-
+ console.log(getFullName.call(maria));
 
   /*
   Crie uma função chamada `sum`. Essa função pode receber uma lista de
