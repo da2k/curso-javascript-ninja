@@ -87,26 +87,17 @@
 
     event.preventDefault();
 
-    var formValidOnSubmitMessage = '';
-
-    if(!$inputUsername.value || !$inputEmail.value || !$message.value || !isValidEmail($inputEmail.value)) {
-
-      $inputUsername.value || alert('Preencha o nome do usuário!');
-      $inputEmail.value || alert('Preencha o e-mail!');
-      isValidEmail($inputEmail.value) || alert('Entre com um e-mail válido!');
-      $message.value || alert('Preencha a mensagem!');
-
-    }
-
-    else {
-
-      confirm('Tem certeza que deseja enviar o formulário?') ?
-      formValidOnSubmitMessage = 'Enviado com sucesso!' :
-      formValidOnSubmitMessage = 'Não enviado.';
-
-      alert(formValidOnSubmitMessage);
-
-    } 
+    if(!$inputUsername.value)
+      return alert('Preencha o nome do usuário!');
+    if(!$inputEmail.value)
+      return alert('Preencha o e-mail!');
+    if(!isValidEmail($inputEmail.value))
+      return alert('Entre com um e-mail válido!');
+    if(!$message.value)
+      return alert('Preencha a mensagem!');
+    if(!confirm('Tem certeza que deseja enviar o formulário?'))
+      return alert('Não enviado.');
+    return alert('Enviado com sucesso!');
 
   });
 
@@ -138,8 +129,7 @@
   */
   
   function isValidEmail(email) {
-    var regex = new RegExp('^[\\w+.]+?[a-zA-Z\\d]@\\w+?\\.[a-zA-Z\\d]+?(?:(?:\\.[a-zA-Z\\d]{2,})+)?$', 'g');
-    return regex.test(email);
+    return /^[\w+.]+[a-zA-Z\d]@\w+\.\w{2,}(?:\.\w{2})?$/.test(email);
   }
 
 })(window, document);
