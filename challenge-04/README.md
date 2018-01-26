@@ -8,8 +8,8 @@ equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
 var isTruthy = function (x) {
-  return x ? true : false;
-}
+  return !!x;
+};
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 isTruthy(0);
@@ -52,7 +52,7 @@ var carro = {
   placa: 'PXD-3890', // String
   ano: 0, // Number
   cor: 'Branco', // String
-  quantasPortas: 0, // Number
+  quantasPortas: 4, // Number
   assentos: 5,
   quantidadePessoas: 0
 };
@@ -62,7 +62,7 @@ Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
 carro.mudarCor = function (cor) {
-  return carro.cor = cor;
+  carro.cor = cor;
 };
 
 /*
@@ -92,7 +92,7 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 carro.obterMarcaModelo = function () {
-  return 'Esse carro é um ' + carro.marca + ' ' + carro.modelo + '.';
+  return 'Esse carro é um ' + carro.obterMarca() + ' ' + carro.obterModelo() + '.';
 };
 
 /*
@@ -112,28 +112,23 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 citado acima, no lugar de "pessoas".
 */
 carro.adicionarPassageiros = function (numeroPessoas) {
+  var totalPessoas = carro.quantidadePessoas + numeroPessoas;
+  var totalAssentos = carro.assentos - carro.quantidadePessoas;
+  var pluralOuSingular = totalPessoas === 1 ?
+    ['cabe', 'pessoa'] :
+    ['cabem', 'pessoas'];
 
-  carro.passageiros = carro.passageiros || 0;
-
-  if (carro.assentos - numeroPessoas >= 0) {
-    carro.assentos -= numeroPessoas;
-  }
-
-  if (carro.passageiros + numeroPessoas <= 5) {
-    carro.passageiros += numeroPessoas;
-  }
-
-  if (!carro.assentos) {
+  if (carro.quantidadePessoas === carro.assentos && totalPessoas>=carro.assentos) {
     return 'O carro já está lotado!';
   }
 
-  var pessoaOuPessoas = (carro.passageiros > 1) ? 'pessoas' : 'pessoa';
-
-  if (numeroPessoas > carro.assentos) {
-    return 'Só cabem mais ' + carro.assentos + ' ' + pessoaOuPessoas + '!';
+  if (totalPessoas > carro.assentos) {
+    return 'Só ' + pluralOuSingular[0] + ' mais ' + totalAssentos + ' ' + pluralOuSingular[1] + '!';
   }
 
-  return 'Já temos ' + carro.passageiros + ' ' + pessoaOuPessoas + ' no carro!';
+  carro.quantidadePessoas += numeroPessoas;
+
+  return 'Já temos ' + carro.quantidadePessoas + ' ' + pluralOuSingular[1] + ' no carro!';
 };
 
 /*
@@ -168,7 +163,7 @@ carro.adicionarPassageiros(2); // 'Já temos 2 pessoas no carro!'
 carro.adicionarPassageiros(4); // 'Só cabem mais 3 pessoas !'
 
 // Faça o carro encher.
-carro.adicionarPassageiros(3); // 'O carro já está lotado!'
+carro.adicionarPassageiros(3); // 'Já temos 5 pessoas no carro!'
 
 // Tire 4 pessoas do carro.
 carro.adicionarPassageiros(-4); // 'Já temos 1 pessoas no carro!'
@@ -177,5 +172,5 @@ carro.adicionarPassageiros(-4); // 'Já temos 1 pessoas no carro!'
 carro.adicionarPassageiros(10); // 'Só cabem mais 4 pessoas!'
 
 // Quantas pessoas temos no carro?
-carro.passageiros; // 1
+carro.quantidadePessoas; // 1
 ```
