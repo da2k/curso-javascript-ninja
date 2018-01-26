@@ -114,9 +114,9 @@ citado acima, no lugar de "pessoas".
 carro.adicionarPassageiros = function (numeroPessoas) {
   var totalPessoas = carro.quantidadePessoas + numeroPessoas;
   var totalAssentos = carro.assentos - carro.quantidadePessoas;
-  var pluralOuSingular = totalPessoas === 1 ?
-    ['cabe', 'pessoa'] :
-    ['cabem', 'pessoas'];
+  var pluralOuSingular = totalAssentos !== 1 ?
+    ['cabem', 'pessoas'] :
+    ['cabe', 'pessoa'];
 
   if (carro.quantidadePessoas === carro.assentos && totalPessoas>=carro.assentos) {
     return 'O carro já está lotado!';
