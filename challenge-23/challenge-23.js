@@ -74,29 +74,35 @@ input;
   function btnResultClick () {
     removeLastItemIfItsOperatior();
     var allValues = $display.value.match(/(?:\d+)|[+x÷-]/g);
+
     var operator = allValues.filter(function (value,index){
       return index % 2;
     });
-    console.log(operator[0])
+
     var number = allValues.filter(function (value, index) {
       return index % 2 == 0;
     });
 
-    var result;
-      for (var i = 0; i < operator.length; i++) {
-         result = number.reduce(function (acumulado, atual) {
-            if (operator[i] == "+")
-                return Number(acumulado) + Number(atual);
-            if (operator[i] == '-')
-                return Number(acumulado) - Number(atual);
-            if (operator[i] == 'x')
-                return Number(acumulado) * Number(atual);
-            if (operator[i] == '÷')
-                return Number(acumulado) / Number(atual)
-        });
-   }
-    console.log(result);
 
-  }
+    var result = number.reduce( function (acumulado, atual) {
+      var operator = allValues.filter(function (value, index) {
+        return index % 2;
+      });
+      for (const i in operator) {
+        if (operator[i] == "+")
+          return Number(acumulado) + Number(atual);
+        if (operator[i] == '-')
+          return Number(acumulado) - Number(atual);
+        if (operator[i] == 'x')
+          return Number(acumulado) * Number(atual);
+        if (operator[i] == '÷')
+          return Number(acumulado) / Number(atual)
+      }
+
+    });
+
+    console.log(result)
+
+    }
 
 })(window, document);
