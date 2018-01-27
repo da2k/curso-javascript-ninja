@@ -186,9 +186,13 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 ?pessoa.aprensetacao = function(){
-    
+    var genero = pessoa.sexo === 'Feminino' ? 'a '+pessoa.nome+' '+pessoa.sobrenome :  'o '+pessoa.nome+' '+pessoa.sobrenome;
+    var idade = pessoa.idade == 1 ?  pessoa.idade+' ano': pessoa.idade+' anos';
+    var metros = pessoa.caminhouQuantosMetros == 1 ? pessoa.caminhouQuantosMetros+' metro' : pessoa.caminhouQuantosMetros+' metros';
+   
+    return 'Olá eu sou '+genero+', tenho '+idade+', '+pessoa.altura+', meu peso é '+pessoa.peso+' e so hoje eu já caminhei '+metros;
 }
 
 // Agora, apresente-se ;)
-?
+?//'Olá eu sou o Lucas Ferreira, tenho 24 anos, 1.85 metros, meu peso é 114 e so hoje eu já caminhei 30 metros'
 ```
