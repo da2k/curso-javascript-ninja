@@ -20,7 +20,8 @@ Dica: olhe os erros que acontecem no console, e vá resolvendo um a um.
 Só passe para o próximo problema quando tiver resolvido o anterior :)
 */
 // ?
-
+ (function(){
+  'use strict'
 var $a = new DOM('[data-js="link"]');
 $a.on('click', function(e) {
   e.preventDefault();
@@ -29,3 +30,5 @@ $a.on('click', function(e) {
 
 console.log('Elementos selecionados:', $a.get());
 console.log('$a é filho de body?', $a.get()[0].parentNode === document.body);
+ }) ();
+
