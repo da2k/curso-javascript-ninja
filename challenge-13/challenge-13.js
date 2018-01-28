@@ -33,14 +33,14 @@
     concatenadas. Mostre o `brasil` no console.
     */
     console.log( '\nAlguns Estados do Brasil:' );
-    var brasil = [].concat(sul, sudeste);
+    var brasil = sul.concat(sudeste);
     console.log( brasil );
 
     /*
     Adicione 3 novos estados da região Norte no início do array e mostre no console.
     */
     console.log( '\nMais estados adicionados:' );
-    brasil.splice(0, 0, 'Amazonas', 'Pará', 'Roraima')
+    brasil.unshift('Amazonas', 'Pará', 'Roraima')
     console.log( brasil );
 
     /*
@@ -92,7 +92,7 @@
     Remova de `brasil` os estados do `sudeste`, colocando-os em uma variável
     chamada `newSudeste`.
     */
-    var newSudeste = brasil.splice(2);
+    var newSudeste = brasil.splice(5);
 
     /*
     Adicione os estados do `nordeste` ao array `brasil`. Esses estados devem
@@ -163,11 +163,11 @@
     - "[ESTADO] pertence ao Brasil."
     Atribua o novo array a uma variável chamada `map`.
     */
-    var map = newBrasil.map( function ( item, index ) {
-        var newItem = {};
-        newItem.id = item.id + 1;
-        newItem.estado = item.estado + ' pertence ao Brasil.';
-        return newItem;
+    var map = newBrasil.map( function ( item ) {
+        return {
+            id: item.id + 1,
+            estado: item.estado + ' pertence ao Brasil.'
+        };
     } );
 
     /*
@@ -180,7 +180,7 @@
     Filtre o array criado acima, retornando somente os estados que tiverem
     ID par. Atribua o valor à uma variável chamada `filter`.
     */
-    var filter = map.filter( function ( item, index ) {
+    var filter = map.filter( function ( item ) {
         return item.id % 2 === 0;
     } );
 
