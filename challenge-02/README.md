@@ -32,7 +32,7 @@ novoValor(novaVariavel);
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
-'O valor da variável agora é 51'
+'O valor da variável agora é Ninja'
 */
 
 /*
@@ -62,9 +62,7 @@ tresArgumentos(2, 4);
 tresArgumentos(2,4,6);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-/* 
-50 
-*/
+/* 50 */
 
 /*
 Crie uma função com as seguintes características:
