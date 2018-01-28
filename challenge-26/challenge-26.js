@@ -21,6 +21,9 @@ Só passe para o próximo problema quando tiver resolvido o anterior :)
 */
 // ?
  (function(){
+    function DOM(){
+      
+    }
   'use strict'
 var $a = new DOM('[data-js="link"]');
 $a.on('click', function(e) {
