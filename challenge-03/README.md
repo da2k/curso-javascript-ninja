@@ -197,5 +197,5 @@ pessoa.apresentacao = function() {
 }
 
 // Agora, apresente-se ;)
-pessoa.apresentacao()
+pessoa.apresentacao();
 ```
