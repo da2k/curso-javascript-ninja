@@ -41,11 +41,12 @@
   */
   function sum() {
     console.log(arguments);
-    var result = Array.prototype.reduce.call(arguments, function(accumulator, currentValue) {
-      return accumulator + currentValue;
-    }, 0);
-
-    return result;
+    return Array.prototype.reduce.call(
+      arguments,
+      function(accumulator, currentValue) {
+        return +accumulator + +currentValue;
+      }, 0
+    );
   }
 
   /*
@@ -77,9 +78,7 @@
   */
   console.log( '\nFunção que limpa entrada do usuário (somente números):' );
   function justNumbers(stringNumbers) {
-    return stringNumbers.match(/\d+/g).map(function(number) {
-      return +number;
-    });
+    return stringNumbers.match(/\d+/g);
   }
   console.log(justNumbers.toString());
 
