@@ -21,11 +21,16 @@ Só passe para o próximo problema quando tiver resolvido o anterior :)
 */
 // ?
  (function(){
+   
+  'use strict'
     function DOM(){
       this.element = elements;
 
     }
-  'use strict'
+    DOM.prototype.on= function on() {};
+    DOM.prototype.off= function off() {};
+   DOM.prototype.get= function get() {};
+
 var $a = new DOM('[data-js="link"]');
 $a.on('click', function(e) {
   e.preventDefault();
