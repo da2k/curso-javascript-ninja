@@ -35,7 +35,7 @@ Só passe para o próximo problema quando tiver resolvido o anterior :)
       })
     
     };
-    DOM.prototype.off= function off() {};
+    DOM.prototype.off= function off(eventType, callback) {};
    DOM.prototype.get= function get() {};
 
 var $a = new DOM('[data-js="link"]');
