@@ -25,8 +25,10 @@ Só passe para o próximo problema quando tiver resolvido o anterior :)
   'use strict'
     function DOM(){
       this.element = elements;
-
-    }
+      return document.queryeSelectorAll(elements);
+      };
+   this.element = this.getDOMElements(elements) {
+     
     DOM.prototype.on= function on() {};
     DOM.prototype.off= function off() {};
    DOM.prototype.get= function get() {};
