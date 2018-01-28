@@ -43,7 +43,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function tresArgumentos(arg1, arg2, arg3) {
-  if (arg1 || arg2 || arg3 ) {
+  if (!arg1 || !arg2 || !arg3) {
     return 'Preencha todos os valores corretamente!';
   } else {
     return (arg1 * arg2 * arg3) + 2;
@@ -62,7 +62,9 @@ tresArgumentos(2, 4);
 tresArgumentos(2,4,6);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-/* 50 */
+/* 
+50 
+*/
 
 /*
 Crie uma função com as seguintes características:
