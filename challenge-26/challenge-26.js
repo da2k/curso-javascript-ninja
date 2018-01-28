@@ -42,6 +42,7 @@ var $a = new DOM('[data-js="link"]');
 $a.on('click', function(e) {
   e.preventDefault();
   console.log('clicou');
+  $a.off('click', handleclick)
 });
 
 console.log('Elementos selecionados:', $a.get());
