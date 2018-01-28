@@ -24,10 +24,10 @@ Só passe para o próximo problema quando tiver resolvido o anterior :)
    
   'use strict'
     function DOM(){
-      this.element = elements;
+      this.element = document.gerySelectorrAll(elements);
       return document.queryeSelectorAll(elements);
       };
-   this.element = this.getDOMElements(elements) {
+    
      
     DOM.prototype.on= function on() {};
     DOM.prototype.off= function off() {};
