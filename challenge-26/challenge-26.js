@@ -29,7 +29,12 @@ Só passe para o próximo problema quando tiver resolvido o anterior :)
       };
     
      
-    DOM.prototype.on= function on() {};
+    DOM.prototype.on= function on(eventType, callback) {
+      Array.prototype.forEach.call(this.element,function(){
+      this.element.addEventListener(eventType, callback, false) 
+      })
+    
+    };
     DOM.prototype.off= function off() {};
    DOM.prototype.get= function get() {};
 
