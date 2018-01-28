@@ -66,13 +66,13 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function someFunc(arg1,arg2,arg3){	
-    if (arg1 && arg2 === undefined && arg3 === undefined)
+    if (arg1 1 !== undefined && arg2 === undefined && arg3 === undefined)
 		return arg1;
-    else if (arg1 && arg2 && arg3 === undefined)
+    else if (arg1 !== undefined && arg2 !== undefined && arg3 === undefined)
 		return arg1+arg2;
     else if (arg1 === undefined && arg2 === undefined && arg3 === undefined)
 		return false;
-	else if (arg1,arg2,arg3)
+	else if (arg1 !== undefined, arg2 !== undefined ,arg3 !== undefined)
 		return (arg1 + arg2) / arg3;
 	return null;
 }
