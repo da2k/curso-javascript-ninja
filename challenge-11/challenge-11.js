@@ -78,7 +78,7 @@
     */
     console.log('Pares de 0 a 20:');
     numbers = [];
-    for (var i = 0; i < 20; i++) {
+    for (var i = 0; i <= 20; i++) {
         if (i % 2 !== 0) {
             continue;
         }
