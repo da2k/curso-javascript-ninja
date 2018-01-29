@@ -24,6 +24,9 @@ O método isNull deve retornar `true` se o valor for null ou undefined.
 (function () {
   'use strict';
 
+  var $a;
+  var dataJs;
+
   function DOM(elements) {
     this.element = document.querySelectorAll(elements);
   }
@@ -45,31 +48,31 @@ O método isNull deve retornar `true` se o valor for null ou undefined.
   };
 
   DOM.prototype.forEach = function () {
-    Array.prototype.forEach.apply(this.element, arguments);
+    return Array.prototype.forEach.apply(this.element, arguments);
   };
 
   DOM.prototype.map = function () {
-    Array.prototype.map.apply(this.element, arguments);
+    return Array.prototype.map.apply(this.element, arguments);
   };
 
   DOM.prototype.filter = function () {
-    Array.prototype.filter.apply(this.element, arguments);
+    return Array.prototype.filter.apply(this.element, arguments);
   };
 
   DOM.prototype.reduce = function () {
-    Array.prototype.reduce.apply(this.element, arguments);
+    return Array.prototype.reduce.apply(this.element, arguments);
   };
 
   DOM.prototype.reduceRight = function () {
-    Array.prototype.reduceRight.apply(this.element, arguments);
+    return Array.prototype.reduceRight.apply(this.element, arguments);
   };
 
   DOM.prototype.every = function () {
-    Array.prototype.every.apply(this.element, arguments);
+    return Array.prototype.every.apply(this.element, arguments);
   };
 
   DOM.prototype.some = function () {
-    Array.prototype.some.apply(this.element, arguments);
+    return Array.prototype.some.apply(this.element, arguments);
   };
 
   function is(obj) {
@@ -103,6 +106,23 @@ O método isNull deve retornar `true` se o valor for null ou undefined.
   DOM.isNull = function (obj) {
     return is(obj) === '[object Null]' || is(obj) === '[object Undefined]';
   };
+
+  // Testando os métodos
+
+  $a = new DOM('[data-js="link"]');
+  $a.forEach(function (item) {
+    console.log(item.firstChild.nodeValue);
+  });
+
+  dataJs = $a.map(function (item) {
+    return item.getAttribute('data-js');
+  });
+  console.log(dataJs);
+
+  dataJs = $a.reduce(function (acc, item, index) {
+    return acc + ' ' + item.getAttribute('data-js') + index;
+  }, 0);
+  console.log(dataJs);
 
   console.log(DOM.isArray([1, 2, 3]));
   console.log(DOM.isFunction(function () { }));
