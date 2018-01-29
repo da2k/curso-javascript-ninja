@@ -82,17 +82,21 @@ Envolva todo o conteúdo desse arquivo em uma IIFE.
     /*
     Converta os livros novamente para objeto.
     */
-    //console.log(JSON.parse(booksString));
+    books = JSON.stringify(books);
+    books = JSON.parse(books);
+    
     console.log( '\nAgora os livros são objetos novamente:' );
+    console.log(books);
 
     /*
     Mostre no console todas as propriedades e valores de todos os livros,
     no formato abaixo:
         "[PROPRIEDADE]: [VALOR]"
     */
-
-    for ( var prop in books ){
-        console.log( prop + ' : ' + books[prop] );
+    for ( var i = 0; i < books.length; i++){
+        for (var prop in books[i] ){
+            console.log( prop + ': ' + books[i][prop] );
+        }
     }
 
     /*
