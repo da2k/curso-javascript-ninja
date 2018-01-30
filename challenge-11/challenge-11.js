@@ -11,9 +11,8 @@ Qual loop você deve usar para que essa mensagem seja mostrada no console?
 var once = false;
 do {
   console.log('Entrou ao menos uma vez!');
-	once = true;
 }
-while (once === false);
+while (once);
   
 /*
 Crie um objeto chamado `person`, que receba as seguintes propriedades:
@@ -38,7 +37,7 @@ Após o loop, mostre a frase:
 */
 var counter = 0;
 
-for (prop in person){
+for (var prop in person){
 	console.log('The ' + prop + ' of person is ' + person[prop]);
 
 	counter++;
@@ -54,11 +53,7 @@ Após a função, mostrar a mensagem no console:
 'The person has more than 25 years old? [TRUE/FALSE]'
 */
 function moreThan (age){
-	if (person.age > age){
-		return true;
-	}
-
-	return false;
+	return person.age > age;
 }
 
 console.log('The person has more than 25 years old? ' + moreThan(25));
@@ -76,8 +71,8 @@ for (i = 0; i <= 20; i++){
 	}
 
 	numbers.push(i);
-	console.log(numbers[i]);
 }
+console.log(numbers);
 
 /*
 Faça outro loop de 0 a 20, que adicione a um array chamado `numbers` (já
@@ -94,7 +89,7 @@ for (i = 0; i <= 20; i++){
 	}
 
 	numbers.push(i);
-	console.log(numbers[i]);
 }
+console.log(numbers);
 
 })();
