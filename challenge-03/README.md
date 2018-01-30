@@ -45,7 +45,10 @@ valor dessa propriedade a quantidade passada por parâmetro;
 booleano que representa "verdadeiro";
 */
 pessoa.andar = ( metros ) => {
-  pessoa.caminhouQuantosMetros += metros
+  if ( metros < 0 ) {
+    return 'O valor tem que ser positivo'
+  }
+  pessoa.caminhouQuantosMetros += metros,
   pessoa.andando = true
 }
 
@@ -168,19 +171,18 @@ correta, de acordo com os dados inseridos no objeto.
 */
 
 pessoa.apresentacao = () => {
-  let artigo = ''
-  let ano = ''
-  let metro = ''
-  
-  if ( pessoa.sexo === 'Feminino' ) { artigo = 'a'} else { artigo = 'o' }
-  if ( pessoa.idade === 1 ){ ano = 'ano' } else { ano = 'anos' }
-  if (pessoa.caminhouQuantosMetros === 1) { metro = 'metro'} else { metro = 'metros'}
+  let artigo = pessoa.sexo === 'Feminino' ? 'a' : 'o'
+  let ano = pessoa.idade === 1 ? 'ano' : 'anos'
+  let metro = pessoa.caminhouQuantosMetros === 1 ? 'metro' : 'metros'
   
   return ( 
-    'Olá, eu sou ' + artigo + ' ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + ' ' + ano + ', ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' ' + metro + '!'
+    'Olá, eu sou ' + artigo + ' ' + pessoa.nome + ' ' + pessoa.sobrenome
+    + ', tenho ' + pessoa.idade + ' ' + ano + ', ' 
+    + pessoa.altura + ', meu peso é ' + pessoa.peso 
+    + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' ' + metro + '!'
   )
 }
 
 // Agora, apresente-se ;)
-pessoa.apresentacao() // 'Olá, eu sou o Douglas Santos, tenho 30 anos, 1.75, meu peso é 100 e, só hoje, eu já caminhei 8 metros!'
+pessoa.apresentacao() // 'Olá, eu sou o Douglas Santos, tenho 30 anos, 1.75, meu peso é 100 e, só hoje, eu já caminhei 16 metros!'
 ```
