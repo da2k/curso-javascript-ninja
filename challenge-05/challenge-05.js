@@ -14,7 +14,9 @@ function getArr(arr) {
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-getArr(randomArr)[1];
+console.log(
+  getArr(randomArr)[1]
+);
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
