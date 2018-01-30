@@ -147,7 +147,7 @@ Envolva todo o código desse desafio em uma IIFE.
     var map = newBrasil.map( function(item){
         var id = ++item.id;
         item.estado = item.estado + ' pertence ao Brasil';
-        return { id: id, estado: item.estado };
+        return item;
     });
 
     /*
