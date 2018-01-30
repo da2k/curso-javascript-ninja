@@ -649,4 +649,4 @@ console.log( arr.indexOf( 3, 1 ) ); // retorna 2
 
 lastIndexOf(): faz a mesma coisa que o indexOf(), porém ele começa a verificar de trás pra frente.
 
-isArray(): um método que retorna true ou false, verificando se o objeto é um array ou não.
+Array.isArray(obj): um método que retorna true ou false, verificando se o objeto é um array ou não.
