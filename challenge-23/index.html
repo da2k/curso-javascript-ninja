@@ -1,39 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Challenge 23</title>
+  <meta charset="utf-8">
+  <title>Challenge 24 - Calculator</title>
 </head>
 <body>
-
-  <input type="text" value="0" data-js="visor" disabled>
-
-  <div>
-    <button value="0" data-js="number-0">0</button>
-    <button value="1" data-js="number-1">1</button>
-    <button value="2" data-js="number-2">2</button>
-    <button value="3" data-js="number-3">3</button>
-    <button value="4" data-js="number-4">4</button>
-    <button value="5" data-js="number-5">5</button>
-    <button value="6" data-js="number-6">6</button>
-    <button value="7" data-js="number-7">7</button>
-    <button value="8" data-js="number-8">8</button>
-    <button value="9" data-js="number-9">9</button>
+  <input type="text" value="0" readonly data-js="visor">
+  <div class="buttons-numbers">
+    <button data-js="button-number" value="0">0</button>
+    <button data-js="button-number" value="1">1</button>
+    <button data-js="button-number" value="2">2</button>
+    <button data-js="button-number" value="3">3</button>
+    <button data-js="button-number" value="4">4</button>
+    <button data-js="button-number" value="5">5</button>
+    <button data-js="button-number" value="6">6</button>
+    <button data-js="button-number" value="7">7</button>
+    <button data-js="button-number" value="8">8</button>
+    <button data-js="button-number" value="9">9</button>
   </div>
 
-  <div>
-    <button value="+" data-js="operator-addition">+</button>
-    <button value="-" data-js="operator-subtraction">-</button>
-    <button value="x" data-js="operator-multiplication">x</button>
-    <button value="÷" data-js="operator-division">÷</button>
+  <div class="operations">
+    <button data-js="button-operation" value="+">+</button>
+    <button data-js="button-operation" value="-">-</button>
+    <button data-js="button-operation" value="x">x</button>
+    <button data-js="button-operation" value="÷">÷</button>
+    <button data-js="button-equal" value="=">=</button>
+    <button data-js="button-ce" value="ce">CE</button>
   </div>
 
-  <div>
-    <button data-js="result">=</button>
-    <button data-js="clear">CE</button>
-  </div>
-  
-  <script src="challenge-23.js"></script>
-
+  <script src="challenge-24.js"></script>
 </body>
 </html>
