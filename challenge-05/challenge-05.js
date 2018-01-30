@@ -22,8 +22,8 @@ console.log(myFunction(list)[1]);
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
-segundo, um número. A função deve retornar um índice do array que foi passado
-no primeiro parâmetro. O índice a ser retornado, deve ser o número passado no
+segundo, um número. A função deve retornar o valor de um índice do array que foi passado
+no primeiro parâmetro. O índice usado para retornar o valor, deve ser o número passado no
 segundo parâmetro.
 */
 // ?
@@ -112,8 +112,6 @@ Ainda com a função acima, imprima o nome da editora de um livro qualquer, usan
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log("O livro " + nomeBook + " foi publicado pela editora " + book(
-      nomeBook).editora +
 
-  ".");
+console.log("O livro " + nomeBook + " foi publicado pela editora " + book(nomeBook).editora +  ".");
 
