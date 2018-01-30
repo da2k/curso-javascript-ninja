@@ -623,3 +623,30 @@ filter(): ele filtra de acordo com alguma condição.
 var filter = arr. filter(function(item){
     return item > 2;
 });
+
+
+
+
+/* 
+Seção 14
+*/
+
+//Vídeo 83
+reduce(): varre todo o array e faz uma ação pré-determinada em cada etapa.
+var arr = [ 1, 2, 3, 4, 5 ];
+arr.reduce(function( acumulado, atual, index, array ) {
+    return acumulado + atual;
+});
+Acumulado é o valor somado na etapa anterior.
+
+reduceRight(): faz a mesma coisa do reduce(), porém da direita pra esquerda.
+
+
+//Vídeo 84
+indexOf(): procura o valor dentro de um array e retorna o índice desse item. Se não houver o item, ele retorna -1.
+O segundo parâmetro determina a partir de qual índice ele deve procurar.
+console.log( arr.indexOf( 3, 1 ) ); // retorna 2
+
+lastIndexOf(): faz a mesma coisa que o indexOf(), porém ele começa a verificar de trás pra frente.
+
+isArray(): um método que retorna true ou false, verificando se o objeto é um array ou não.
