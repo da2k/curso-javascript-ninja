@@ -31,7 +31,7 @@ const showName = () => 'Douglas'
 /*
 Declare uma variável chamada `varShowName` que recebe a função criada acima.
 */
-let varShowName = showName()
+let varShowName = showName
 
 /*
 Usando a variável criada acima, mostre no console o nome e o retorno da função
@@ -58,27 +58,12 @@ const calculator = (operator) => (number1, number2) => {
     '-': number1 - number2,
     '*': number1 * number2,
     '/': number1 / number2,
-    '%': number1 % number2,
+    '%': number1 % number2
   }
   const result = 'Resultado da operação: ' + number1 + ' ' + operator + ' ' + number2 + ' = ' + calculate[operator]
   return calculate[operator] ? result : 'Operação inválida'
 }
 
-const calculator = (operator) => (number1, number2) => {
-  const calculate = {
-    '+': number1 + number2,
-    '-': number1 - number2,
-    '*': number1 * number2,
-    '/': number1 / number2,
-    '%': number1 % number2,
-  }
-  const result = 'Resultado da operação: ' + number1 + ' ' + operator + ' ' + number2 + ' = ' + calculate[operator]
-  return calculate[operator] ? result : 'Operação inválida'
-}
-const calculator = (operator) => (number1, number2) => (
-  operator === '+' || 
-  'Resultado da operação: ' + number1 + ' ' + operator + ' ' + number2 + ' = ' + eval(number1 + operator + number2)
-)
 /*
 Declare uma variável chamada `sum`, que receberá a função acima, passando como
 parâmetro o operador de soma.
