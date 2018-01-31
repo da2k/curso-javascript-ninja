@@ -41,7 +41,7 @@ Envolva todo o código desse desafio em uma IIFE.
     Crie um novo array chamado `newSul`, que receba somente os estados do sul,
     pegando do array `brasil`. Não remova esses itens de `brasil`.
     */
-    var newSul = brasil.slice(0, 2);
+    var newSul = brasil.slice(2, 5);
 
     /*
     Mostre no console os estados que estão em `newSul`.
