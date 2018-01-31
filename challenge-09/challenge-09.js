@@ -3,8 +3,6 @@ Crie uma IIFE que envolva todo o código desse arquivo. Faça também a
 indentação correta do código, para ficar dentro da IIFE.
 */
 ( function () {
-    console.log('IIFE')
-})()
 
 /*
 Analise as funções abaixo (`myFunction`, `myFunction2` e `myFunction3`, e
@@ -41,12 +39,12 @@ myFunction2();
 function myFunction3() {
     var number1 = 40;
     var number2 = 50;
-    console.log( 'Na função myFunction3, number1 é igual a', number1 );
-    console.log( 'A soma de 40 e 50 é igual a', sum() );
-    return sum();
     function sum() {
         return number1 + number2;
     };
+    console.log( 'Na função myFunction3, number1 é igual a', number1 );
+    console.log( 'A soma de 40 e 50 é igual a', sum() );
+    return sum();
 }
 myFunction3();
 
@@ -84,8 +82,7 @@ para a chamada à `calculator` acima.
 uma função anônima que irá retornar a soma dos dois números que essa função
 anônima tem como seus argumentos.
 */
-console.log( 'O resultado da soma é:' );
-//
+//console.log( 'O resultado da soma é:' );
 sum(function(number1, number2){
 	console.log( 'O resultado da soma é:', number1 + number2 );
 })
@@ -127,3 +124,5 @@ division(function( n1, n2 ) {
 mod(function( n1, n2 ) {
     console.log( 'O resto da divisão é:', n1 % n2 );
 }) // O resto da divisão é: 1
+
+})()
