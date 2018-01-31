@@ -29,7 +29,7 @@ Envolva todo o código desse desafio em uma IIFE.
     Adicione 3 novos estados da região Norte no início do array e mostre no console.
     */
     console.log('\nMais estados adicionados:');
-    brasil.push("Acre", "Amapá", "Amazonas");
+    brasil.unshift("Acre", "Amapá", "Amazonas");
 
     /*
     Remova o primeiro estado do array `brasil` e mostre-o no console.
