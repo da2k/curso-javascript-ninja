@@ -23,7 +23,7 @@ no primeiro parâmetro. O índice usado para retornar o valor, deve ser o númer
 segundo parâmetro.
 */
 var customReturn = function(arr, ind){
-    return ind? arr[ind]: arr;
+    return arr[ind];
 }
 
 /*
@@ -35,7 +35,11 @@ var arr5val = [1, 'show', true, NaN, 6.7]
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-customReturn(arr5val);
+customReturn(arr5val, 0);
+customReturn(arr5val, 1);
+customReturn(arr5val, 2);
+customReturn(arr5val, 3);
+customReturn(arr5val, 4);
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -75,7 +79,7 @@ var book = function(name){
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-console.log(book('Helo Kittie'));
+console.log(book());
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
