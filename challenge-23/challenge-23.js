@@ -25,27 +25,71 @@
   input;
   - Ao pressionar o botão "CE", o input deve ficar zerado.
   */
-  var $calculator = doc.querySelector('[data-js="calculator"]');
   var $output = doc.querySelector('[data-js="output"]');
+  var $buttonCE = doc.querySelector('[data-js="operation-clear"]');
+  var $buttonEqual = doc.querySelector('[data-js="operation-equal"]');
+  var $buttonNumbers = doc.querySelectorAll('[data-js="number"]');
+  var $buttonOperations = doc.querySelectorAll('[data-js="operation"]');
 
-  $calculator.addEventListener('click', function(event) {
-    var value = event.target.dataset.value;
+  function handleClickNumber() {
+    $output.value += this.value;
+  }
 
-    if (isNaN(parseInt(value, 10))) {
-      if (value === 'clear') {
-        $output.value = 0;
-        return;
+  function handleClickCE() {
+    $output.value = 0;
+  }
+
+  function handleClickEqual() {
+    $output.value = removeLastItemIfItIsAnOperator($output.value);
+    var allValues = $output.value.match(/\d+[+-x÷]?/g);
+    var result = allValues.reduce(function(accumulated, actual) {
+      var firstValue = accumulated.slice(0, -1);
+      var operator = accumulated.split('').pop();
+      var lastValue = removeLastItemIfItIsAnOperator(actual);
+      var lastOperator = isLastItemAnOperation(actual) ? actual.split('').pop() : '';
+
+      switch (operator) {
+        case '+':
+          return (Number(firstValue) + Number(lastValue)) + lastOperator;
+        case '-':
+          return (Number(firstValue) - Number(lastValue)) + lastOperator;
+        case 'x':
+          return (Number(firstValue) * Number(lastValue)) + lastOperator;
+        case '÷':
+          return (Number(firstValue) / Number(lastValue)) + lastOperator;
       }
+    });
+    $output.value = result;
+  }
 
-      return;
+  function handleClickOperation() {
+    $output.value = removeLastItemIfItIsAnOperator($output.value);
+    $output.value += this.value;
+  }
+
+  function isLastItemAnOperation(number) {
+    var operations = ['+', '-', 'x', '÷'];
+    var lastItem = number.split('').pop();
+    return operations.some(function(operator) {
+      return operator === lastItem;
+    });
+  }
+
+  function removeLastItemIfItIsAnOperator(number) {
+    if (isLastItemAnOperation(number)) {
+      return number.slice(0, -1);
     }
 
-    if ($output.value === '0') {
-      $output.value = value;
-      return;
-    }
+    return number;
+  }
 
-    $output.value += value;
-  }, false);
+  $buttonCE.addEventListener('click', handleClickCE, false);
+  $buttonEqual.addEventListener('click', handleClickEqual, false);
+  Array.prototype.forEach.call($buttonNumbers, function(button) {
+    button.addEventListener('click', handleClickNumber, false);
+  });
+  Array.prototype.forEach.call($buttonOperations, function(button) {
+    button.addEventListener('click', handleClickOperation, false);
+  });
 
 })(window, document);

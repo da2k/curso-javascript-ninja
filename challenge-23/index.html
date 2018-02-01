@@ -5,25 +5,28 @@
     <title>Challenge 23</title>
   </head>
   <body>
-    <input type="text" value="0" data-js="output" disabled>
+    <input type="text" value="0" readonly data-js="output">
 
-    <div class="calculator" data-js="calculator">
-      <button data-value="0">0</button>
-      <button data-value="1">1</button>
-      <button data-value="2">2</button>
-      <button data-value="3">3</button>
-      <button data-value="4">4</button>
-      <button data-value="5">5</button>
-      <button data-value="6">6</button>
-      <button data-value="7">7</button>
-      <button data-value="8">8</button>
-      <button data-value="9">9</button>
-      <button data-value="sum">+</button>
-      <button data-value="subtract">-</button>
-      <button data-value="multiply">x</button>
-      <button data-value="divider">÷</button>
-      <button data-value="equal">=</button>
-      <button data-value="clear">CE</button>
+    <div class="numbers">
+      <button data-js="number" value="0">0</button>
+      <button data-js="number" value="1">1</button>
+      <button data-js="number" value="2">2</button>
+      <button data-js="number" value="3">3</button>
+      <button data-js="number" value="4">4</button>
+      <button data-js="number" value="5">5</button>
+      <button data-js="number" value="6">6</button>
+      <button data-js="number" value="7">7</button>
+      <button data-js="number" value="8">8</button>
+      <button data-js="number" value="9">9</button>
+    </div>
+
+    <div class="operations">
+      <button data-js="operation" value="+">+</button>
+      <button data-js="operation" value="-">-</button>
+      <button data-js="operation" value="x">x</button>
+      <button data-js="operation" value="÷">÷</button>
+      <button data-js="operation-equal" value="=">=</button>
+      <button data-js="operation-clear" value="ce">CE</button>
     </div>
 
     <script src="challenge-23.js"></script>
