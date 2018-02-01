@@ -79,12 +79,9 @@
     no formato abaixo:
         "[PROPRIEDADE]: [VALOR]"
     */
-    for (var number = 0; number < books.length; number++) {
-        var book = Object.keys(books[number])
-        var quantityOfProps = book.length - 1
-        for (var prop = 0; prop <= quantityOfProps; prop++) {
-            var propValue = book[prop]
-            console.log(book[prop] + ': ' + books[number][propValue])
+    for (var bookNumber = 0; bookNumber < books.length; bookNumber++) {
+        for (var prop in books[bookNumber]) {
+            console.log(prop + ': ' + books[bookNumber][prop])
         }
     }
 
