@@ -75,10 +75,7 @@
   - "[NOME COMPLETO] agora tem [NOVA IDADE] anos."
   */
   console.log('\nNova idade das pessoas:');
-  fabio.addAge(-5);
-  maria.addAge(10);
-  taduro.addAge(-50);
-  console.log(fabio.getFullName() , 'agora tem' , fabio.getAge() , 'anos.');
-  console.log(maria.getFullName() , 'agora tem' , maria.getAge() , 'anos.');
-  console.log(taduro.getFullName() , 'agora tem' , taduro.getAge() , 'anos.');
+  console.log(fabio.getFullName(), 'agora tem', fabio.addAge(2).getAge(), 'anos.');
+  console.log(maria.getFullName(), 'agora tem', maria.addAge(-5).getAge(), 'anos.');
+  console.log(taduro.getFullName(), 'agora tem', taduro.addAge(-33).getAge(), 'anos.');
 })();
