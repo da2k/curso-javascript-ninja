@@ -1,0 +1,45 @@
+<!DOCTYPE>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<input type="text" name="cronometro" value="0">
+		<button data-js="start">Start</button>
+		<button data-js="stop">Stop</button>
+		<button data-js="reset">Reset</button>
+	<script>
+		
+		(function(win, doc){
+
+			'use strict';
+
+			var $cronometro = doc.querySelector('input[type="text"]');
+			var $start = doc.querySelector('[data-js="start"]');
+			var $stop = doc.querySelector('[data-js="stop"]');
+			var $reset = doc.querySelector('[data-js="reset"]');
+			var funcionar;
+
+			function comecar() {
+				$cronometro.value++;
+				funcionar = setTimeout(comecar, 1000);
+			}
+
+			function parar() {
+				clearTimeout(funcionar);
+			}
+
+			$start.addEventListener('click', comecar, false);
+
+			$stop.addEventListener('click', parar, false);
+
+			$reset.addEventListener('click', function(){
+				parar();
+				$cronometro.value = 0;
+			}, false);
+
+		})(window, document);
+
+	</script>
+	</body>
+</html>
