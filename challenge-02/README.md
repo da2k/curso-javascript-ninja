@@ -41,7 +41,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function multiplicaSoma2(a, b, c) {
-  if(typeof(a) !== "number" || typeof(b) !== "number" || typeof(c) !== "number") {
+  if(typeof(a) === "number" || typeof(b) !== "number" || typeof(c) !== "number") {
     return 'Preencha todos os valores corretamente!';
   }
   return (a * b * c) +2;
@@ -68,9 +68,33 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
+function tresArgumentos(a, b,c) {
+  if (a === undefined && b === undefined && c === undefined ) {
+    return false;
+  }
+  
+  if (a !== undefined && b === undefined && c === undefined ) {
+    return a;
+  }
 
+  if (a !== undefined && b !== undefined && c === undefined ) {
+    return a + b;
+  }
+
+  if (a !== undefined && b !== undefined && c !== undefined ) {
+    return (a + b) / c;
+  }
+
+  return null;
+}
 
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+
+tresArgumentos();
+tresArgumentos(1);
+tresArgumentos(1,2);
+tresArgumentos(1,2,3);
+
+
 ```
