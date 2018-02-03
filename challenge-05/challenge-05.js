@@ -62,26 +62,45 @@ os livros.
 function book( name ) {
     
     var acervo = {
-        livro1: {
+        LivroA: {
             quantidadePaginas: 343,
             autor: 'Autor A',
             editora: 'Editora A'
         },
         
-        livro2: {
+        LivroB: {
             quantidadePaginas: 454,
             autor: 'Autor B',
             editora: 'Editora B'
         },
         
-        livro3: {
+        LivroC: {
             quantidadePaginas: 656,
             autor: 'Autor C',
             editora: 'Editora C'
+        },
+        
+        getPages: function( name ) {
+            
+            return 'O ' + [name] + ' tem ' + acervo[name].quantidadePaginas + ' páginas!'
+            
+        },
+        
+        getAuthor: function( name ) {
+            
+            return 'O autor do ' + [name] + ' é ' + acervo[name].autor + '.';
+            
+        },
+        
+        getEditor: function( name ) {
+            
+            return 'O ' + [name] + ' foi publicado pela ' + acervo[name].editora + '.';
+            
         }
+        
     };
     
-    name === undefined ? 
+    return name === undefined ? acervo : acervo[name];
     
 };
 
@@ -96,6 +115,7 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
+book().getPages('A');
 
 
 /*
@@ -103,7 +123,7 @@ Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
+book().getAuthor('A');
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
