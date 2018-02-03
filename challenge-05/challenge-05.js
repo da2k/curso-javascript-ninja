@@ -58,46 +58,33 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
+
 function book( name ) {
     
-    if( name == undefined ) {
+    var acervo = {
+        livro1: {
+            quantidadePaginas: 343,
+            autor: 'Autor A',
+            editora: 'Editora A'
+        },
         
-        return {
+        livro2: {
+            quantidadePaginas: 454,
+            autor: 'Autor B',
+            editora: 'Editora B'
+        },
         
-            livro1: {
-                quantidadePaginas: 343,
-                autor: 'Autor A',
-                editor: 'editora A',
-            },
-            
-            livro2: {
-                quantidadePaginas: 454,
-                autor: 'Autor B',
-                editora: 'editora B'
-            },
-            
-            livro3: {
-                quantidadePaginas: 565,
-                autor: 'Autor C',
-                editora: 'editora C'
-            }
-        
+        livro3: {
+            quantidadePaginas: 656,
+            autor: 'Autor C',
+            editora: 'Editora C'
         }
-        
-    } else if (name === 'livro1') {
-        
-        return book().livro1;
-        
-    } else if (name === 'livro2') {
-        
-        return book().livro2;
-        
-    } else {
-        
-        return book().livro3;
-        
-    }
+    };
+    
+    name === undefined ? 
+    
 };
+
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
@@ -109,7 +96,7 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// ?
+
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
