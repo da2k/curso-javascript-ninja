@@ -23,8 +23,8 @@ retorna_array( arr[2] );
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
-segundo, um número. A função deve retornar um índice do array que foi passado
-no primeiro parâmetro. O índice a ser retornado, deve ser o número passado no
+segundo, um número. A função deve retornar o valor de um índice do array que foi passado
+no primeiro parâmetro. O índice usado para retornar o valor, deve ser o número passado no
 segundo parâmetro.
 */
 function retorna_indice ( arr, num ) {
@@ -131,3 +131,4 @@ a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
 book().getEditor('Livro C');
+
