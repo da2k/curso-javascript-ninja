@@ -130,4 +130,4 @@ Ainda com a função acima, imprima o nome da editora de um livro qualquer, usan
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-book().getEditor('Livro C')
+book().getEditor('Livro C');
