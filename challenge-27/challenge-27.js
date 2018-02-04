@@ -64,4 +64,6 @@
 
     var a = new DOM['data-js="link"'];
 
+    var a = new DOM['data-js="link"'];
+
 })();
