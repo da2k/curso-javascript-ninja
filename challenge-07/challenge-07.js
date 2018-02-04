@@ -17,10 +17,7 @@ function addArrayItem(newItem) {
 Adicione um novo array ao array criado no início do desafio, com ao menos 3
 itens de tipos diferentes, mostrando o resultado no console.
 */
-addArrayItem([ undefined, { lapis: 'preto' }, function(x, y) { return x + y; } ]);
-
-console.log('myArray[5][0]', myArray[5][0]);
-console.log('myArray[5][2]', myArray[5][2]);
+console.log( addArrayItem([ undefined, { lapis: 'preto' }, function(x, y) { return x + y; } ]) );
 
 /*
 Mostre no console o segundo elemento desse último array, criado acima, com a
@@ -59,11 +56,11 @@ Na mesma ideia do exercício acima: mostre agora os números ímpares.
 */
 console.log( 'Números ímpares entre 10 e 20:' );
 
-var num = 10;
+counter = 10;
 
-while (num <= 20) {
-  num % 2 !== 0 ? console.log(num) : '';
-  num++;
+while (counter < 20) {
+  counter % 2 !== 0 ? console.log(counter) : '';
+  counter++;
 }
 
 /*
@@ -74,12 +71,12 @@ Só vamos mudar o range:
 */
 console.log( 'Números pares entre 100 e 120:' );
 
-for (var counter = 100; counter <= 200; counter++) {
+for (var counter = 100; counter <= 120; counter++) {
   counter % 2 === 0 ? console.log(counter) : '';
 }
 
 console.log( 'Números ímpares entre 111 e 125:' );
 
-for (var counter = 100; counter <= 200; counter++) {
+for (var counter = 111; counter <= 125; counter++) {
   counter % 2 !== 0 ? console.log(counter) : '';
 }
