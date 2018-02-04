@@ -62,19 +62,19 @@ os livros.
 function book( name ) {
     
     var acervo = {
-        LivroA: {
+        'Livro A': {
             quantidadePaginas: 343,
             autor: 'Autor A',
             editora: 'Editora A'
         },
         
-        LivroB: {
+        'Livro B': {
             quantidadePaginas: 454,
             autor: 'Autor B',
             editora: 'Editora B'
         },
         
-        LivroC: {
+        'Livro C': {
             quantidadePaginas: 656,
             autor: 'Autor C',
             editora: 'Editora C'
@@ -82,25 +82,25 @@ function book( name ) {
         
         getPages: function( name ) {
             
-            return 'O ' + [name] + ' tem ' + acervo[name].quantidadePaginas + ' páginas!'
+            return 'O ' + [ name ] + ' tem ' + acervo[ name ].quantidadePaginas + ' páginas!'
             
         },
         
         getAuthor: function( name ) {
             
-            return 'O autor do ' + [name] + ' é ' + acervo[name].autor + '.';
+            return 'O autor do ' + [ name ] + ' é ' + acervo[ name ].autor + '.';
             
         },
         
         getEditor: function( name ) {
             
-            return 'O ' + [name] + ' foi publicado pela ' + acervo[name].editora + '.';
+            return 'O ' + [ name ] + ' foi publicado pela ' + acervo[ name ].editora + '.';
             
         }
         
     };
     
-    return name === undefined ? acervo : acervo[name];
+    return !name ? acervo : acervo[ name ];
     
 };
 
@@ -115,7 +115,7 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-book().getPages('A');
+book().getPages('Livro A');
 
 
 /*
@@ -123,11 +123,11 @@ Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-book().getAuthor('A');
+book().getAuthor('Livro B');
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-// ?
+book().getEditor('Livro C')
