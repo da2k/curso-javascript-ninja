@@ -16,20 +16,18 @@ var person = {
   lastname: 'Lima',
   age: 31
 }
-console.log( 'Propriedades de "person":', person );
+console.log( 'Propriedades de "person":');
 
 /*
 Mostre no console, em um array, todas as propriedades do objeto acima.
 Não use nenhuma estrutura de repetição, nem crie o array manualmente.
 */
-var myArray = [];
-myArray.push(person);
-console.log(myArray);
+console.log(Object.keys(person));
 
 /*
 Crie um array vazio chamado `books`.
 */
-var books = []
+var books = [];
 
 /*
 Adicione nesse array 3 objetos, que serão 3 livros. Cada livro deve ter a
@@ -50,69 +48,73 @@ books.push({
 	pages: 200
 }
 );
-console.log( '\nLista de livros:', books );
 
 /*
 Mostre no console todos os livros.
 */
-console.log( 'Lista de livros:', books[0] );
-console.log( 'Lista de livros:', books[1] );
-console.log( 'Lista de livros:', books[2] );
-
-console.log( '\nLivro que está sendo removido:' );
-
+console.log( 'Lista de livros:' );
+console.log( books );
+  
 /*
 Remova o último livro, e mostre-o no console.
 */
-console.log( '\nLivro que está sendo removido:', books.pop() );
-
+console.log( '\nLivro que está sendo removido:' );
+console.log( books.pop() );
+  
 /*
 Mostre no console os livros restantes.
 */
-console.log( 'Agora sobraram somente os livros: ', books );
+console.log( 'Agora sobraram somente os livros: ' );
+console.log( books );  
 
 /*
 Converta os objetos que ficaram em `books` para strings.
 */
-// ?
-var stringBooks = JSON.stringify(books);
+books = JSON.stringify(books);
 
 /*
 Mostre os livros nesse formato no console:
 */
-console.log( '\nLivros em formato string: ', stringBooks );
+console.log( '\nLivros em formato string: ' );
+console.log( books );
 
 /*
 Converta os livros novamente para objeto.
 */
-// ?
-console.log( '\nAgora os livros são objetos novamente: ', JSON.parse(stringBooks) );
+books = JSON.parse(books)
+console.log( '\nAgora os livros são objetos novamente: ' );
 
 /*
 Mostre no console todas as propriedades e valores de todos os livros,
 no formato abaixo:
 */
-console.log(books[0], books[1])
+for(var i = 0; i < books.length; i++){
+  for(var prop in books[i]){
+    console.log(prop + ': ' + books[i][prop]);
+  }
+}
 
 /*
 Crie um array chamado `myName`. Cada item desse array deve ser uma letra do
 seu nome. Adicione seu nome completo no array.
 */
 var myName = ['J', 'o', 'h', 'n', 's', 'o', 'n'];
-console.log( '\nMeu nome é: ', myName );
+console.log( '\nMeu nome é: ' );
 
 /*
 Juntando todos os itens do array, mostre no console seu nome.
 */
-console.log( '\nMeu nome invertido é: ', myName.join(''));
+console.log(myName.join(''));
 
 /*
 Ainda usando o objeto acima, mostre no console seu nome invertido.
 */
-console.log( 'Invertido fica: ', myName.reverse());
+console.log( '\nMeu nome invertido é: ' );
+console.log( myName.reverse().join(''));
 
 /*
 Mostre todos os itens do array acima, odenados alfabéticamente.
 */
-console.log( '\nAgora em ordem alfabética: ', myName.sort());
+console.log( '\nAgora em ordem alfabética: ' );
+console.log( myName.sort() );
 })();
