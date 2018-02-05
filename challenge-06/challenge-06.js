@@ -77,11 +77,11 @@ function convertToHex(color) {
       return 'O hexadecimal para a cor ' + color + ' é #FFFFFF.';
     case 'preto':
       return 'O hexadecimal para a cor ' + color + ' é #000000.';
-    case 'amarelo'
+    case 'amarelo':
       return 'O hexadecimal para a cor ' + color + ' é #FFFF00.';
-    case 'vermelho'
+    case 'vermelho':
       return 'O hexadecimal para a cor ' + color + ' é #FF0000.';
-    case 'azul'
+    case 'azul':
       return 'O hexadecimal para a cor ' + color + ' é #0000FF.';
     default:
       return 'Não temos o equivalente hexadecimal para ' + color + '.'
