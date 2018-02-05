@@ -73,10 +73,16 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
 */
 function convertToHex(color) {
   switch (color) {
-    case 'preto':
-      return 'O hexadecimal para a cor ' + color + ' é #FFF.';
     case 'branco':
-      return 'O hexadecimal para a cor ' + color + ' é #000.';
+      return 'O hexadecimal para a cor ' + color + ' é #FFFFFF.';
+    case 'preto':
+      return 'O hexadecimal para a cor ' + color + ' é #000000.';
+    case 'amarelo'
+      return 'O hexadecimal para a cor ' + color + ' é #FFFF00.';
+    case 'vermelho'
+      return 'O hexadecimal para a cor ' + color + ' é #FF0000.';
+    case 'azul'
+      return 'O hexadecimal para a cor ' + color + ' é #0000FF.';
     default:
       return 'Não temos o equivalente hexadecimal para ' + color + '.'
   }
