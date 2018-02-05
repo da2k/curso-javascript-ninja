@@ -120,13 +120,11 @@ console.log(multiplication(function(
 }));
 
 console.log( 'O resultado da divisão é:' );
-console.log('O resultado da divisão é:');
 console.log(division(function(value1, value2) {
   return value1 / value2;
 }));
 
 console.log( 'O resto da divisão é:' );
-console.log('O resto da divisão é:');
 console.log(mod(function(value1, value2) {
   return value1 % value2;
 }));
