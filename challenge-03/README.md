@@ -171,7 +171,28 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao = function() {
-  return 'Olá, eu sou ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + ' anos, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metros!';
+  var sexo;
+  var idade;
+  var quantidade;
+  
+  if(pessoa.sexo == 'feminino') {
+    sexo = 'a';
+  } else {
+    sexo = 'o';
+  }
+  
+  if(pessoa.idade == 1) {
+    idade = 'ano';
+  } else {
+    idade = 'anos';
+  }
+  
+  if(pessoa.caminhouQuantosMetros == 1) {
+    quantidade = 'metro';
+  } else {
+    quantidade = 'metros';
+  }
+  return 'Olá, eu sou ' + sexo + ' ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + ' ' + idade + ', ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' ' + quantidade + '!';
 }
 
 // Agora, apresente-se ;)
