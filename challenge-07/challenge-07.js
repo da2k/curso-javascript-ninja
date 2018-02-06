@@ -10,14 +10,14 @@ A função deverá retornar o array atualizado.
 function addItem(item) {
   randomArr.push(item);
 
-  console.log(randomArr);
+  return randomArr;
 }
 
 /*
 Adicione um novo array ao array criado no início do desafio, com ao menos 3
 itens de tipos diferentes, mostrando o resultado no console.
 */
-addItem([6, 'seven', { eight: 8 }]);
+console.log(addItem([6, 'seven', { eight: 8 }]));
 
 /*
 Mostre no console o segundo elemento desse último array, criado acima, com a
@@ -57,6 +57,7 @@ while (even <= 20) {
 Na mesma ideia do exercício acima: mostre agora os números ímpares.
 */
 console.log( 'Números ímpares entre 10 e 20:' );
+
 var odd = 10;
 
 while (odd <= 20) {
