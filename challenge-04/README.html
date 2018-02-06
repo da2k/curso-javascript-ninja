@@ -1,0 +1,180 @@
+<html>
+
+<script>
+//1
+	var isTruthy = function(x) {
+		if (x) {
+			return true;
+		} else {
+			return false;
+		}
+	};	
+// return x ? true : false;  ou return !!x
+
+//2
+
+isTruthy(false)
+isTruthy(undefined)
+isTruthy(null)
+isTruthy('')
+isTruthy(0)
+isTruthy(-0)
+isTruthy(NaN)
+
+//3
+
+isTruthy(1);
+isTruthy('Leo');
+isTruthy([]);
+isTruthy({});
+isTruthy(function(){});
+isTruthy('Curso JS Ninja');
+isTruthy(20*30);
+isTruthy(10+10);
+isTruthy([1,2,3])
+isTruthy({a: 1, b: 2})
+
+//4
+
+var carro = {
+	marca: 'Fiat',
+	modelo: 'Uno',
+	placa: 'IVC5202',
+	ano: 2015,
+	cor: 'red',
+	quantasPortas: 5,
+	assentos: 5,
+	quantidadePessoas: 0
+
+};
+
+//5
+
+carro.mudaCor = function(cor) {
+	carro.cor = cor;
+};
+
+//6
+
+carro.obterCor = function() {
+	return carro.cor;
+};
+
+//7
+
+carro.obterModelo = function() {
+	return carro.modelo;
+};
+
+//8
+
+carro.obterMarca = function() {
+	return carro.marca;
+};
+ 
+//9
+
+carro.obterMarcaModelo = function () {
+	return 'Esse carro é um' + ' ' + carro.obterMarca() + ' ' + carro.obterModelo();
+};
+
+//11
+
+carro.obterCor(); 
+
+//12
+
+carro.mudaCor('vermelho');
+
+//13
+
+carro.obterCor();
+
+//14
+
+carro.mudaCor('verde-musgo');
+
+//15
+
+carro.obterCor();
+
+//16
+
+carro.obterMarcaModelo(); //"Esse carro é um Fiat Uno"
+
+//10 (O Maior)
+
+carro.adicionarPessoas = function( numeropessoas) {
+	var totalPessoas = carro.quantidadePessoas + numeropessoas;
+	if(carro.quantidadePessoas === carro.assentos && totalPessoas >= carro.assentos) {
+		return 'O carro já está lotado!';
+
+	}
+
+	if(totalPessoas > carro.assentos) {
+		var quantasPessoasCabem = carro.assentos - carro.quantidadePessoas;
+		var pluralOuSingular = quantasPessoasCabem === 1 ? 'pessoa' : 'pessoas';
+		return 'Só cabem mais' +" "+ quantasPessoasCabem +' '+ pluralOuSingular + '!';
+
+	}
+
+	carro.quantidadePessoas += numeropessoas;
+
+	return 'Já temos '+carro.quantidadePessoas +' '+'pessoas no carro !'
+};
+
+
+//17
+
+	carro.adicionarPessoas(2);
+
+//18
+
+	carro.adicionarPessoas(4); // '	Só cabem mais 3 pessoas!'
+
+//19
+
+	carro.adicionarPessoas(3); // 'Já temos 5 pessoas no carro'
+
+//20
+
+	carro.adicionarPessoas(-4); // 'Já temos 1 pessoas no carro''
+
+//21 
+
+	carro.adicionarPessoas(10); // 'Só cabem mais 4 pessoas no carro'
+
+//22
+
+	carro.quantidadePessoas; // 1
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
