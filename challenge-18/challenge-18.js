@@ -88,10 +88,7 @@
     ["<li></li>", "<li></li>", "<span></span>"]
     */
     console.log('\nMatch com tags HTML vazias (abertura e fechamento da tag):');
-    var r = '<div><ul><li></li><li></li><li><span></span></li></ul></div>'.match(/(<\/?li>){2}|<\/?span>/g);
-    var reg = [];
-    reg.push(r[0], r[1], r[2] + r[3]);
-    console.log(reg);
+    console.log('<div><ul><li></li><li></li><li><span></span></li></ul></div>'.match(/<\w+><\/\w+>/g));
 
     /*
     Vamos complicar um pouco agora :D
