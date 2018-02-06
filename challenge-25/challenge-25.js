@@ -14,3 +14,24 @@ https://developer.mozilla.org/en-US/docs/Web/Events#Categories
 Tente aplicar na prática alguns dos eventos que estão ali e coloque nesse
 desafio os experimentos legais que você conseguir desenvolver :D
 */
+
+(function(win, doc){
+  $form = doc.querySelector('form');
+  $name = doc.querySelector('[data-js=name]');
+
+  on($name, 'blur', function (e) {
+    var $msg = e.target.nextElementSibling;
+    if (!this.value)
+    return $msg.innerHTML = 'Preencha o campo name';
+    return $msg.innerHTML = 'OK';
+  });
+
+  on($form, 'reset', function () {
+    alert('The reset button has been pressed')
+  });
+
+  function on(element, event, handle) {
+    element.addEventListener(event, handle);
+  }
+
+}(window, document));
