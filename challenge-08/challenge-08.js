@@ -28,9 +28,7 @@ console.log('O nome da função que faz a soma é ' + sum.name + '.');
 Crie uma função literal chamada `showName`. Essa função deve retornar o
 seu nome.
 */
-function showName(firstName, lastName) { return firstName + ' ' + lastName; }
-
-console.log(showName('Felipe', 'Uliana'));
+function showName() { return 'Felipe Uliana'; }
 
 /*
 Declare uma variável chamada `varShowName` que recebe a função criada acima.
@@ -42,7 +40,7 @@ Usando a variável criada acima, mostre no console o nome e o retorno da funçã
 atribuída a ela, com a seguinte frase:
 "A função [NOME DA FUNÇÃO] retorna [RETORNO DA FUNÇÃO]."
 */
-console.log('A função ' + varShowName.name + ' retorna ' + varShowName('Felipe', 'Uliana') + '.');
+console.log('A função ' + varShowName.name + ' retorna ' + varShowName() + '.');
 
 /*
 Crie uma função literal chamada `calculator`, que funcione assim:
@@ -57,30 +55,31 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
   "Operação inválida."
 */
 function calculator(operation) {
-  switch (operation) {
-    case '+':
-      return function sum(a, b) {
-        return 'Resultado da operação: ' + a + ' ' + operation + ' ' + b + ' = ' + (a + b);
-      };
-    case '-':
-      return function difference(a, b) {
-        return 'Resultado da operação: ' + a + ' ' + operation + ' ' + b + ' = ' + (a - b);
-      };
-    case '*':
-      return function multiplication(a, b) {
-        return 'Resultado da operação: ' + a + ' ' + operation + ' ' + b + ' = ' + (a * b);
-      };
-    case '/':
-      return function division(a, b) {
-        return 'Resultado da operação: ' + a + ' ' + operation + ' ' + b + ' = ' + (a / b);
-      };
-    case '%':
-      return function modulus(a, b) {
-        return 'Resultado da operação: ' + a + ' ' + operation + ' ' + b + ' = ' + (a % b);
-      };
-    default:
-      return 'Operação inválida.';
-  }
+  return function(a, b) {
+    var result;
+
+    switch (operation) {
+      case '+':
+        result = a + b;
+        break;
+      case '-':
+        result = a - b;
+        break;
+      case '*':
+        result = a * b;
+        break;
+      case '/':
+        result = a / b;
+        break;
+      case '%':
+        result = a % b;
+        break;
+      default:
+        return 'Operação inválida.';
+    }
+
+    return 'Resultado da operação: ' + a + ' ' + operation + ' ' + b + ' = ' + result;
+  };
 }
 
 /*
