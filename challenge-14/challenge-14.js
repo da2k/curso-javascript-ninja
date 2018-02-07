@@ -12,18 +12,10 @@
     Mostre esse array no console.
     */
     console.log( 'Number Objects Array:' );
-    var numberObjects = [
-        { number: 1},
-        { number: 2},
-        { number: 3},
-        { number: 4},
-        { number: 5},
-        { number: 6},
-        { number: 7},
-        { number: 8},
-        { number: 9},
-        { number: 10}
-    ];
+    var numberObjects = [];
+    for (var i = 0; i <= 10; i++) {
+        numberObjects.push( { number: i } );
+    }
     console.log( numberObjects );
 
     /*
@@ -42,11 +34,8 @@
     no console.
     */
     console.log( '\nJust module of division by 2 or 3:' );
-    var justMod2Or3 = [];
-    justNumbers.forEach( function( item ) {
-        if ( item % 2 === 0 || item % 3 === 0 ) {
-            justMod2Or3.push(item);
-        }
+    var justMod2Or3 = justNumbers.filter( function( item ) {
+        return item % 2 === 0 || item % 3 === 0;
     } );
     console.log( justMod2Or3 );
 
@@ -60,7 +49,7 @@
     */
     console.log( '\nOperation:' );
     var operation = justMod2Or3.reduce( function( accumulator, item ) {
-        return (accumulator + 1) * item;
+        return ( accumulator + 1 ) * item;
     }, 0 );
     console.log( operation );
 
@@ -71,7 +60,7 @@
     */
     console.log( '\nOperation 2:' );
     var operation2 = justMod2Or3.reduceRight( function( accumulator, item ) {
-        return (accumulator + 1) * item;
+        return ( accumulator + 1 ) * item;
     }, 0 );
     console.log( operation2 );
 
@@ -90,7 +79,7 @@
         'lo'
     ];
     var nameP = name.reduce( function( accumulator, item ) {
-        return accumulator + item + 'P';
+        return accumulator + 'P' + item;
     }, '' );
     console.log( nameP );
 
