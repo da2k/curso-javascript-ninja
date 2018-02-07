@@ -26,8 +26,8 @@
     no console:
     */
     console.log('Regex para números usando o construtor:');
-    var regex = new RegExp('^\\d{2}', 'gm');
-    console.log(regex);
+    var justNumbersRegex = new RegExp('^\\d+', 'gm');
+    console.log(justNumbersRegex);
 
     /*
     Verifique se a regex acima casa com o texto na variável `text`, mostrando o
@@ -36,7 +36,7 @@
     */
     var text = '10 anos.\n50 discos vendidos.\nE nem 10% dos meus amigos o conhece.';
     console.log('\nNúmeros no início da linha do texto:\n' + text, '\n');
-    console.log(text.match(regex));
+    console.log(text.match(justNumbersRegex));
 
     /*
     - Crie uma regex que case com números no final de uma string. Atribua a
@@ -48,6 +48,7 @@
     */
     console.log('\nRegex para números somente no final das linhas:');
     var numbersAtTheEnd = new RegExp('\\d+$', 'gm');
+    console.log(numbersAtTheEnd);
 
     /*
     Verifique se a regex acima casa com o texto na variável `otherText`,
