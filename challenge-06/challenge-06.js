@@ -5,7 +5,7 @@ Declare uma variável chamada `championship` que receberá o nome do campeonato,
 e imprima o nome desse campeonato no console.
 */
 var championship = 'Torneio dos Pernas de Pau 2018';
-console.log(championship);
+console.log(championship); //Torneio dos Pernas de Pau 2018
 
 /*
 Declare uma variável chamada `teams`, que receberá um array com 5 elementos.
@@ -14,8 +14,7 @@ estar na ordem em que eles aparecem na tabela no momento da solução desse
 desafio.
 */
 var teams = ['Corinthians', 'Palmeiras', 'Santos', 'São Paulo', 'Vasco'];
-
-console.log( 'Times que estão participando do campeonato:', teams );
+console.log( 'Times que estão participando do campeonato:', teams ); //Times que estão participando do campeonato: [ 'Corinthians', 'Palmeiras', 'Santos', 'São Paulo', 'Vasco' ]
 
 /*
 Crie uma função chamada `showTeamPosition` com as seguintes características:
@@ -100,11 +99,19 @@ function convertToHex (cor) {
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-convertToHex("preto");
-convertToHex("roxo");
-convertToHex("amarelo");
-convertToHex("verde");
-convertToHex("rosa");
-convertToHex("branco");
-convertToHex("azul");
-convertToHex("laranja");
+convertToHex("preto");      //Cor inválida, escolha uma entre estas: (rosa,azul,roxo,verde,laranja).
+convertToHex("roxo");       //#8B008B
+convertToHex("amarelo");    //Cor inválida, escolha uma entre estas: (rosa,azul,roxo,verde,laranja).
+convertToHex("verde");      //#7FFFD4
+convertToHex("rosa");       //#FF69B4
+convertToHex("branco");     //Cor inválida, escolha uma entre estas: (rosa,azul,roxo,verde,laranja).
+convertToHex("azul");       //#00BFFF
+convertToHex("laranja");    //#FF8C00
+
+
+
+
+
+
+
+
