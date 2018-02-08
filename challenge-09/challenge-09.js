@@ -96,10 +96,10 @@ indentação correta do código, para ficar dentro da IIFE.
   anônima tem como seus argumentos.
   */
   console.log(
-    'O resultado da soma é: ' +
-      sum(function(a, b) {
-        return a + b;
-      })
+    'O resultado da soma é:',
+    sum(function(a, b) {
+      return a + b;
+    })
   );
   // O resultado da soma é: 3
 
@@ -121,34 +121,34 @@ indentação correta do código, para ficar dentro da IIFE.
   chamada.
   */
   console.log(
-    'O resultado da subtração é: ' +
-      subtraction(function(a, b) {
-        return a - b;
-      })
+    'O resultado da subtração é:',
+    subtraction(function(a, b) {
+      return a - b;
+    })
   );
   // O resultado da subtração é: 1
 
   console.log(
-    'O resultado da multiplicação é: ' +
-      multiplication(function(a, b) {
-        return a * b;
-      })
+    'O resultado da multiplicação é:',
+    multiplication(function(a, b) {
+      return a * b;
+    })
   );
   // O resultado da multiplicação é: 56
 
   console.log(
-    'O resultado da divisão é: ' +
-      division(function(a, b) {
-        return a / b;
-      })
+    'O resultado da divisão é:',
+    division(function(a, b) {
+      return a / b;
+    })
   );
   // O resultado da divisão é: 1.3333333333333333
 
   console.log(
-    'O resto da divisão é: ' +
-      mod(function(a, b) {
-        return a % b;
-      })
+    'O resto da divisão é:',
+    mod(function(a, b) {
+      return a % b;
+    })
   );
   // O resto da divisão é: 1
 })();
