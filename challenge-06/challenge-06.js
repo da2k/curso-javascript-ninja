@@ -75,22 +75,22 @@ function convertToHex (cor) {
     var cores = ['rosa', 'azul', 'roxo', 'verde', 'laranja'];
     switch(cor) {
         case cores[0]:
-            console.log(hexa[0]);
+            console.log("O hexadecimal para a cor "+ cor +" é "+ hexa[0] +".");
             break;
         case cores[1]: 
-            console.log(hexa[1]);
+            console.log("O hexadecimal para a cor "+ cor +" é "+ hexa[1] +".");
             break;
         case cores[2]:
-            console.log(hexa[2]);
+            console.log("O hexadecimal para a cor "+ cor +" é "+ hexa[2] +".");
             break;
         case cores[3]:
-            console.log(hexa[3]);
+            console.log("O hexadecimal para a cor "+ cor +" é "+ hexa[3] +".");
             break;
         case cores[4]:
-            console.log(hexa[4]);
+            console.log("O hexadecimal para a cor "+ cor +" é "+ hexa[4] +".");
             break;
         default:
-            console.log("Cor inválida, escolha uma entre estas: (" + cores + ").");
+            console.log("Não temos o equivalente hexadecimal para "+ cor +". Escolha uma entre estas: (" + cores + ").");
     }
 }
 
@@ -99,19 +99,11 @@ function convertToHex (cor) {
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-convertToHex("preto");      //Cor inválida, escolha uma entre estas: (rosa,azul,roxo,verde,laranja).
-convertToHex("roxo");       //#8B008B
-convertToHex("amarelo");    //Cor inválida, escolha uma entre estas: (rosa,azul,roxo,verde,laranja).
-convertToHex("verde");      //#7FFFD4
-convertToHex("rosa");       //#FF69B4
-convertToHex("branco");     //Cor inválida, escolha uma entre estas: (rosa,azul,roxo,verde,laranja).
-convertToHex("azul");       //#00BFFF
-convertToHex("laranja");    //#FF8C00
-
-
-
-
-
-
-
-
+convertToHex("preto");  //Não temos o equivalente hexadecimal para preto. Escolha uma entre estas: (rosa,azul,roxo,verde,laranja).
+convertToHex("roxo");   //O hexadecimal para a cor roxo é #8B008B.
+convertToHex("amarelo");//Não temos o equivalente hexadecimal para amarelo. Escolha uma entre estas: (rosa,azul,roxo,verde,laranja).
+convertToHex("verde");  //O hexadecimal para a cor verde é #7FFFD4.
+convertToHex("rosa");   //O hexadecimal para a cor rosa é #FF69B4.
+convertToHex("branco"); //Não temos o equivalente hexadecimal para branco. Escolha uma entre estas: (rosa,azul,roxo,verde,laranja).
+convertToHex("azul");   //O hexadecimal para a cor azul é #00BFFF.
+convertToHex("laranja");//O hexadecimal para a cor laranja é #FF8C00.
