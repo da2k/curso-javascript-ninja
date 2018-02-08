@@ -32,4 +32,4 @@ Após enviar o POST, faça um GET no `server` e atualize a tabela para mostrar o
 Crie uma branch `challenge-32` no seu projeto, envie um pull request lá e cole nesse arquivo a URL
 do pull request.
 */
-console.log('Link do pull request do seu projeto', 'https://github.com/lorrandavid/fcc-jsninja/pull/3');
+console.log('Link do pull request do seu projeto', 'https://github.com/lorrandavid/mdm-jsninja/pull/3');
