@@ -48,9 +48,7 @@
     */
     console.log( '\nOperation:' );
     var operation = justMod2Or3.reduce(function(result, item, index) {
-        var now = ++result;
-        now *= item;
-        return now;
+        return ++result * item;
     }, 0);
     console.log(operation);
 
@@ -61,9 +59,7 @@
     */
     console.log( '\nOperation 2:' );
     var operation2 = justMod2Or3.reduceRight(function(result, item, index) {
-        var now = ++result;
-        now *= item;
-        return now;
+        return ++result * item;
     }, 0);
     console.log(operation2);
 
@@ -89,7 +85,7 @@
     console.log( '\nInversed Name:' );
     var inversedName = name.reduceRight(function(result, item) {
         return result += item;
-    }, '');
+    });
     console.log(inversedName);
 
     /*
@@ -109,7 +105,7 @@
     */
     console.log( '\nExiste um { number: 2 } em numberObjects?' );
     var indexOf = numberObjects.indexOf({number: 2});
-    console.log(indexOf ? 'Existe um objeto { number: 2 } em numberObjects!' : 'Não existe um objeto { number: 2 } em numberObjects :(');
+    console.log(indexOf > -1 ? 'Existe um objeto { number: 2 } em numberObjects!' : 'Não existe um objeto { number: 2 } em numberObjects :(');
 
     /*
     Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
@@ -117,14 +113,13 @@
     */
     console.log( '\nE buscando a partir do último índice, o { number: 2 } existe?' );
     var lastIndexOf = numberObjects.indexOf({number: 2}, 2);
-    console.log(lastIndexOf ? 'Existe um objeto { number: 2 } em numberObjects!' : 'Não existe um objeto { number: 2 } em numberObjects :(');
+    console.log(lastIndexOf > -1 ? 'Existe um objeto { number: 2 } em numberObjects!' : 'Não existe um objeto { number: 2 } em numberObjects :(');
 
     /*
     Verifique se `justMod2Or3` é um array. Se for, mostre-o no console, no
     formato de String.
     */
     console.log( '\njustMod2Or3 é um array? Se for, a representação dele em String é:' );
-    var isArray = Array.isArray(justMod2Or3);
-    if(isArray)
+    if(Array.isArray(justMod2Or3))
         console.log(justMod2Or3.toString());
 })();
