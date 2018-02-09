@@ -31,10 +31,11 @@
     };
     this.getAge = function getAge() {
       return this.age;
-    }
-    this.addAge = function addAge(addYears) {
-      this.age += addYears;
-    }
+    };
+    this.addAge = function addAge() {
+      this.age += arguments[0];
+      return this
+    };
   }
 
   /*
@@ -64,9 +65,9 @@
   - "[NOME COMPLETO] tem [IDADE] anos."
   */
   console.log( '\nIdade das pessoas:' );
-  console.log(mary.getAge());
-  console.log(gary.getAge());
-  console.log(enzo.getAge());
+  console.log(`${mary.getFullName()} tem ${mary.getAge()} anos.`);
+  console.log(`${gary.getFullName()} tem ${gary.getAge()} anos.`);
+  console.log(`${enzo.getFullName()} tem ${enzo.getAge()} anos.`);
 
   /*
   Adicione alguns anos à cada pessoa, e mostre no console a nova idade de
@@ -74,10 +75,7 @@
   - "[NOME COMPLETO] agora tem [NOVA IDADE] anos."
   */
   console.log( '\nNova idade das pessoas:' );
-  mary.addAge(2);
-  gary.addAge(4);
-  enzo.addAge(8);
-  console.log(`${mary.getFullName()} tem ${mary.getAge()} anos.`);
-  console.log(`${gary.getFullName()} tem ${gary.getAge()} anos.`);
-  console.log(`${enzo.getFullName()} tem ${enzo.getAge()} anos.`);
+  console.log(`${mary.getFullName()} tem ${mary.addAge(2).getAge()} anos.`);
+  console.log(`${gary.getFullName()} tem ${gary.addAge(4).getAge()} anos.`);
+  console.log(`${enzo.getFullName()} tem ${enzo.addAge(8).getAge()} anos.`);
 })();
