@@ -15,15 +15,15 @@ var resultado = soma(10, 15) + 5;
 30
 
 // Declare uma nova variável, sem valor.
-var x = 0;
+var x;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function adiciona_valor(valor) {
-	x = 'O valor da variável agora é ' + valor + '. Onde ' + valor + ' é o novo valor da variável';
+function adiciona_valor() {
+	x = 'O valor da variável agora é ' + valor + '.';
 }
 
 // Invoque a função criada acima.
@@ -40,10 +40,10 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function calcula (x, y, z) {
-	if (!x || !y || !z) {
+	if (x === undefined || y === undefined || z === undefined) {
 		return 'Preencha todos os valores corretamente!';
 	} else {
-		return x * y * z + 2;
+		return (x * y * z) + 2;
 	}
 }
 
@@ -57,7 +57,7 @@ calcula(2, 2);
 calcula(2, 2, 2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-10
+//10
 
 /*
 Crie uma função com as seguintes características:
@@ -69,13 +69,13 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function calcula2(x, y, z) {
-	if (x && !y && !z) {
+	if (x !== undefined && y === undefined && z === undefined) {
 		return x;
-	} else if (x && y && !z) {
+	} else if (x !== undefined && y !== undefined && z === undefined) {
 		return x + y;
-	} else if (x && y && z) {
+	} else if (x !== undefined && y !== undefined && z !== undefined) {
 		return (x + y) / z;
-	} else if (!x && !y && !z) {
+	} else if (x === undefined && y === undefined && z === undefined) {
 		return false;
 	} else {
 		return null;
