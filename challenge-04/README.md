@@ -23,6 +23,15 @@ isTruthy(""); // false
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
 isTruthy(10); // true
+isTruthy('String'); // true
+isTruthy("Outra String"); // true
+isTruthy(true); // true
+isTruthy({}); // true
+isTruthy(function(){}); // true
+isTruthy([]); // true
+isTruthy(2+1); // true
+isTruthy('Outra string'); // true
+isTruthy(1); // true
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
