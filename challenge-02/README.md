@@ -42,7 +42,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function testa(a, b, c){
- if(a == null || b == null || c == null){
+ if(a === undefined || b === undefined || c === undefined){
   return 'Preencha todos os valores corretamente';
  }else{
   return a * b * c + 2;
@@ -71,14 +71,14 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function teste(a, b, c){
-  if(b == null && c == null){
+  if(a !== undefined && b === undefined && c === undefined){
     return a;
-  }else if(c == null){
-    return a + b;
-  }else if(a != null && b != null && c != null){
+  }else if(a !== undefined && b !== undefined && c !== undefined){
     return (a + b) / c;
-  }else if(a == null && b == null && c == null){
+  }else if(a === undefined && b === undefined && c === undefined){
     return false;
+  }else if(c === undefined){
+    return a + b;
   }else{
     return null;
   }
@@ -86,7 +86,7 @@ function teste(a, b, c){
 
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-teste(); //retorna 'undefined'
+teste(); //retorna false
 teste(2); //retorna 2
 teste(2, 2); //retorn 4
 teste(2, 3, 4); //retorna 1.25
