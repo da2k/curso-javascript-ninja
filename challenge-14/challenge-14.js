@@ -11,18 +11,11 @@
   Mostre esse array no console.
   */
   console.log('Number Objects Array:');
-  var numberObjects = [
-    { number: 1 },
-    { number: 2 },
-    { number: 3 },
-    { number: 4 },
-    { number: 5 },
-    { number: 6 },
-    { number: 7 },
-    { number: 8 },
-    { number: 9 },
-    { number: 10 }
-  ];
+  var numberObjects = [];
+  var index = 1;
+  while (index <= 10) {
+    numberObjects.push({ number: index++ });
+  }
   console.log(numberObjects);
 
   /*
@@ -140,5 +133,5 @@
   formato de String.
   */
   console.log('\njustMod2Or3 é um array? Se for, a representação dele em String é:');
-  console.log( Array.isArray(justMod2Or3) ? justMod2Or3.toString() : '')
+  console.log(Array.isArray(justMod2Or3) ? justMod2Or3.toString() : '')
 })();
