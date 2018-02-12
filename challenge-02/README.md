@@ -89,5 +89,5 @@ function teste(a, b, c){
 teste(); //retorna 'undefined'
 teste(2); //retorna 2
 teste(2, 2); //retorn 4
-teste(2, 3, 4); retorna 1.25
+teste(2, 3, 4); //retorna 1.25
 ```
