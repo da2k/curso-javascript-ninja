@@ -55,7 +55,6 @@
 
     function calculate() {
         var expression = $visor.value.valueOf();
-
         expression = expression.replace(/[\+|\-|\÷|x]/g, ',$&,');
         expression = expression.split(',');
 
@@ -76,32 +75,31 @@
         }
         $visor.value = result;
         return
+    }
 
-        function binaryOperation(operandOne, operator, operandTwo) {
-            var result;
-            operandOne = Number(operandOne);
-            operandTwo = Number(operandTwo);
+    function binaryOperation(operandOne, operator, operandTwo) {
+        var result;
+        operandOne = Number(operandOne);
+        operandTwo = Number(operandTwo);
 
-            switch (operator) {
-                case '+':
-                    result = operandOne + operandTwo;
-                    break;
+        switch (operator) {
+            case '+':
+                result = operandOne + operandTwo;
+                break;
 
-                case '-':
-                    result = operandOne - operandTwo;
-                    break;
+            case '-':
+                result = operandOne - operandTwo;
+                break;
 
-                case '÷':
-                    result = operandOne / operandTwo;
-                    break;
+            case '÷':
+                result = operandOne / operandTwo;
+                break;
 
-                case 'x':
-                    result = operandOne * operandTwo;
-                    break;
-            }
-            return result;
+            case 'x':
+                result = operandOne * operandTwo;
+                break;
         }
-
+        return result;
     }
 
     function lastChar(str) {
