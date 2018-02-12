@@ -77,10 +77,11 @@
   falada, como se você estivesse falando em código xD
   */
   console.log('\nSeu nome na língua do "P":');
-  var name = ['PSA', 'PMU', 'PEL'];
-  console.log(name.reduce(function (acc, actual) {
-    return acc + actual;
-  }, ''));
+  var name = ['SA', 'MU', 'EL'];
+  var nameP = name.reduce(function (acc, actual) {
+    return acc + 'R' + actual;
+  }, '');
+  console.log(nameP);
 
   /*
   Crie uma variável chamada `inversedName`, que reduzirá o array em uma string
