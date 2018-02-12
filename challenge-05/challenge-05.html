@@ -1,0 +1,86 @@
+<html>
+
+<script>
+	
+//1
+
+var arr = [1 , 3, 2, 5 , 6];
+
+//2
+
+function myFunction(arr) {
+	return arr;
+}
+
+//3
+
+console.log( myFunction(arr[1]));
+//4
+
+function myFunction2(arr, index) {
+	return arr [index];
+}
+
+//5
+
+var array2 = ['ninja', 8.9, true, [1,2,3], {b:2}];
+
+//6
+
+console.log(myFunction2(array2, 0));
+console.log(myFunction2(array2, 1));
+console.log(myFunction2(array2, 2));
+console.log(myFunction2(array2, 3));
+console.log(myFunction2(array2, 4));
+
+//7
+
+function book( bookname) {
+	var allBooks= {
+		'Segredos do Ninja ': {
+			quantidadePaginas: 300,
+			autor: 'Leonardo da Vinci',
+			editora: 'Abril'
+		},
+			
+		'Titanic': {
+			quantidadePaginas: 220,
+			autor: 'Brucy Willis',
+			editora: 'Alta Books '
+		},
+		'A Era do Gelo': {
+			quantidadePaginas: 300,
+			autor: 'Erick Mayer',
+			editora: 'Novatec'
+		}
+
+
+
+	};
+
+	return !bookname ? allBooks : allBooks[bookname];
+}
+
+//8
+
+console.log(book());
+
+//9
+var bookname = "Titanic"
+ console.log ("O livro " + bookname + "tem " + book('Titanic').quantidadePaginas + ' páginas!');
+
+ //10
+
+ console.log ("O autor do livro " +  bookname + " é " + book(bookname).autor +" .");
+
+//11
+
+console.log ("O livro "+ bookname + ' foi publicado pela editora ' + book(bookname).editora + '.');
+
+
+
+</script>
+
+
+
+</html>
