@@ -1,0 +1,90 @@
+<html>
+<script>
+
+//1
+
+var championship = 'Campeonato Gaucho';
+console.log(championship);
+
+
+//2
+
+var teams = ['gremio', 'inter', 'SP', 'Flamengo', 'Palmeiras'];
+
+console.log( 'Times que estão participando do campeonato:', teams );
+
+//3
+
+function showTeamPosition(position) {
+	if (position < 1 || position > 5) {
+
+		return 'Não temos informação de time que está nessa posição';
+	}
+
+	return 'O time que está em '+ position +'º lugar é o ' + teams[position -1] + '.';
+
+}
+
+
+//4
+
+var num = 20;
+while (num <= 30) {
+	console.log( num++ );
+}
+
+//5
+
+function convertToHex( color ) {
+	var hexa;
+	switch( color ) {
+		case 'red':
+			hexa = '#ff0000';
+			break;
+		case 'blue':
+			hexa = '#000ff00'
+			break
+		case 'grenn':
+			hexa = '#000ff08'
+			break
+		case 'black':
+			hexa = '#000ff08'
+			break
+		case 'white':
+			hexa = '#000ff08'
+			break
+		default:
+			return ' Não temos o equivalente hexadecimal para' + color + '.';
+
+	}
+
+	return 'O hexadecimal para cor ' + color + ' é ' + hexa + '.';
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>
