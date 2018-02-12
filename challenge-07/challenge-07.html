@@ -1,0 +1,92 @@
+<html>
+<script>
+	
+//1
+
+var arr = [1, 'true', {bola:'verde'}, function () {}, null]
+
+//2
+
+function addItem(item) {
+	arr.push(item);
+	return arr;
+}
+
+//3
+
+console.log (addItem([3, true, 'Ninja']));
+
+//4
+
+console.log('O segundo array tem '+ arr[5][1] +  ' itens.');
+
+//5
+
+console.log("O primeiro array tem " + arr.length + ' itens.');
+
+//6
+
+console.log("O segundo array tem " + arr[5].length + " itens.");
+
+//7
+
+var counter = 10;
+while(counter <= 20 ) {
+	counter % 2 === 0 ? console.log(counter) : '';
+	counter++;
+}
+
+//8
+
+counter = 10;
+while(counter <= 20 ) {
+	counter % 2 !== 0 ? console.log(counter) : '';
+	counter++;
+}
+
+//9
+
+for(counter = 100; counter <= 120; counter++) {
+	counter % 2 === 0 ? console.log(counter) : '';
+}
+
+//10
+
+for(counter = 111; counter <= 125; counter++) {
+	if(counter % 2 !== 0) {
+		console.log(counter);
+	}
+}
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>
