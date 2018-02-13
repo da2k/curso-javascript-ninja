@@ -47,14 +47,19 @@ var counter = 10;
 
 while(counter <= 20) {
     counter % 2 === 0 ? console.log( counter ) : '';
-    counter ++;
+    counter++;
 }
 
 /*
 Na mesma ideia do exercício acima: mostre agora os números ímpares.
 */
 console.log( 'Números ímpares entre 10 e 20:' );
-// ?
+var counter = 10;
+
+while(counter <= 20) {
+    counter % 2 !== 0 ? console.log(counter) : '';
+    counter++;
+}
 
 /*
 Repita os mesmos exercícios feitos acima, mas agora usando o loop "for".
