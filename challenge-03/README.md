@@ -2,7 +2,7 @@
 
 ```js
 // Declarar uma variável qualquer, que receba um objeto vazio.
-?
+myvar = { };
 
 /*
 Declarar uma variável `pessoa`, que receba suas informações pessoais.
@@ -16,7 +16,8 @@ As propriedades e tipos de valores para cada propriedade desse objeto devem ser:
 - `andando` - Boolean - recebe "falso" por padrão
 - `caminhouQuantosMetros` - Number - recebe "zero" por padrão
 */
-?
+pessoa ={ nome:' Marcio', sobrenome:' Santos', sexo: 'masculino', idade: 31, altura: 1.71, peso: 79,
+		andando: function(){return false;}, caminhouQuantosMetros: function(){return 0;} };
 
 /*
 Adicione um método ao objeto `pessoa` chamado `fazerAniversario`. O método deve
