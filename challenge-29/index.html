@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>AK Car Store</title>
+
+  <style>
+    html {
+      font-family: sans-serif;
+    }
+    h1 {
+      font-size: 36px;
+    }
+    h1 small {
+      font-size: 18px;
+      color: #999;
+    }
+    input, button {
+      border: 1px solid black;
+      padding: 5px;
+    }
+    table, th, td {
+      border: 1px solid black;
+      border-spacing: 0;
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    th, td {
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>
+      <span data-js="title"></span>
+      <small>
+        <span data-js="phone"></span>
+      </small>
+    </h1>
+  </header>
+
+  <form action="" data-js="form">
+    <p>
+      <label>Imagem:</label>
+      <input type="url" data-js="image" placeholder="Insira a URL da imagem">
+    </p>
+    <p>
+      <label>Marca/Modelo:</label>
+      <input type="text" data-js="brand" placeholder="Insira a marca e o modelo">
+    </p>
+    <p>
+      <label>Ano:</label>
+      <input type="text" data-js="year" placeholder="Insira o ano">
+    </p>
+    <p>
+      <label>Placa:</label>
+      <input type="text" data-js="plate" placeholder="Insira a placa">
+    </p>
+    <p>
+      <label>Cor:</label>
+      <input type="text" data-js="color" placeholder="Insira a cor">
+    </p>
+    <p>
+      <button>Cadastrar</button>
+    </p>
+  </form>
+
+  <table>
+    <thead>
+      <tr>
+        <th width="100">Imagem</th>
+        <th width="180">Marca/Modelo</th>
+        <th width="70">Ano</th>
+        <th width="100">Placa</th>
+        <th width="70">Cor</th>
+      </tr>
+    </thead>
+    <tbody data-js="table"></tbody>
+  </table>
+
+  <script src="dom.js"></script>
+  <script src="challenge-29.js"></script>
+</body>
+</html>
