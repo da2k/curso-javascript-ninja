@@ -2,6 +2,7 @@
 
 ```js
 // Declarar uma variável qualquer, que receba um objeto vazio.
+
 myvar = { };
 
 /*
@@ -16,6 +17,7 @@ As propriedades e tipos de valores para cada propriedade desse objeto devem ser:
 - `andando` - Boolean - recebe "falso" por padrão
 - `caminhouQuantosMetros` - Number - recebe "zero" por padrão
 */
+
 pessoa ={ nome:' Marcio', sobrenome:' Santos', sexo: 'masculino', idade: 31, altura: 1.71, peso: 79,
 		andando: function(){return false;}, caminhouQuantosMetros: function(){return 0;} };
 
@@ -24,7 +26,8 @@ Adicione um método ao objeto `pessoa` chamado `fazerAniversario`. O método dev
 alterar o valor da propriedade `idade` dessa pessoa, somando `1` a cada vez que
 for chamado.
 */
-?
+
+pessoa.fazerAniversario = function(){pessoa.idade++;}
 
 /*
 Adicione um método ao objeto `pessoa` chamado `andar`, que terá as seguintes
@@ -36,7 +39,10 @@ valor dessa propriedade a quantidade passada por parâmetro;
 - Ele deverá modificar o valor da propriedade `andando` para o valor
 booleano que representa "verdadeiro";
 */
-?
+
+pessoa.andar = function(x){pessoa.caminhouQuantosMetros() += x;
+... pessoa.andando = function(){return true;}}
+
 
 /*
 Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o valor
