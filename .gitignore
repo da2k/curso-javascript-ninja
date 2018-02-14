@@ -1,4 +1,4 @@
 node_modules
 *.swp
 ninja.js
-index.html
+/index.html
