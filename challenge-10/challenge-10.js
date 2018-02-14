@@ -120,6 +120,9 @@ parâmetro a variável que recebeu o sinal da operação.
     operationSignal = '+';
     var sum = calculator(operationSignal);
 
+
+
+
 /*
 PASSO 3:
 "sum" agora é uma função, e, se o sinal correto não foi passado para a
@@ -132,7 +135,14 @@ parâmetros para o método "log" de "console":
 - O segundo, a função de soma, passando os dois operandos.
 - Se "sum" for "false", mostrar no console a mensagem de erro.
 */
-// ?
+
+if(sum){
+    var number1 =10;
+    var number2 = 5;
+    console.log(showOperationMessage(operationSignal,number1,number2),sum(number1,number2));
+}else{
+    console.log(showErrorMessage(operationSignal));
+}
     
 
 /*
@@ -140,11 +150,54 @@ Repita desde o "PASSO 2" com as operações de subtração, multiplicação,
 divisão e resto. Crie variáveis com os nomes "subtraction",
 "multiplication", "division" e "mod".
 */
-// ?
+operationSignal = '-';
+var subtraction = calculator(operationSignal);
+if(subtraction){
+    var number1 =10;
+    var number2 = 5;
+    console.log(showOperationMessage(operationSignal,number1,number2),subtraction(number1,number2));
+}else{
+    console.log(showErrorMessage(operationSignal));
+}
+operationSignal = '*';
+var multiplication = calculator(operationSignal);
+if(multiplication){
+    var number1 =8;
+    var number2 = 5;
+    console.log(showOperationMessage(operationSignal,number1,number2),multiplication(number1,number2));
+}else{
+    console.log(showErrorMessage(operationSignal));
+}
+operationSignal = '/';
+var division = calculator(operationSignal);
+if(division){
+    var number1 =10;
+    var number2 = 5;
+    console.log(showOperationMessage(operationSignal,number1,number2),division(number1,number2));
+}else{
+    console.log(showErrorMessage(operationSignal));
+}
+operationSignal = '%';
+var mod = calculator(operationSignal);
+if(mod){
+    var number1 = 9;
+    var number2 = 5;
+    console.log(showOperationMessage(operationSignal,number1,number2),mod(number1,number2));
+}else{
+    console.log(showErrorMessage(operationSignal));
+}
 
 /*
 Repita o PASSO 2 novamente, mas passando um operador inválido, para ver se
 a mensagem de erro será mostrada no console.
 */
-// ?
+operationSignal = 'x';
+var invalid = calculator(operationSignal);
+if(invalid){
+    var number1 = 9;
+    var number2 = 5;
+    console.log(showOperationMessage(operationSignal,number1,number2),invalid(number1,number2));
+}else{
+    console.log(showErrorMessage(operationSignal));
+}
 })();
