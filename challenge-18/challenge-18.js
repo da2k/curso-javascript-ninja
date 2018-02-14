@@ -1,3 +1,5 @@
+(function(){
+'use strict';
 /*
 1. Envolva todo o conteúdo desse desafio em uma IIFE.
 2. Adicione a diretiva 'use strict';
@@ -15,7 +17,20 @@ eles! Use um console.log para cada CPF.
 - "101.123-131x32"
 */
 console.log( 'Limpando CPFs:' );
-// ?
+function cleanCPF(cpf) {
+	return cpf.replace(/\D/g, '');
+}
+
+var cpfs = [
+"049-214 3421-1",
+"210.458.522-05",
+"735 500 794 - 22",
+"101.123-131x32"
+];
+
+cpfs.forEach(function(cpf) {
+	console.log(cleanCPF(cpf));
+});
 
 /*
 Usando os CPFs limpos acima, deixe-os com a formatação correta de CPF.
@@ -23,7 +38,10 @@ Ex.: "999.999.999-99"
 Mostre o resultado no console.
 */
 console.log( '\nFormatando CPFs corretamente:' );
-// ?
+
+cpfs.forEach(function(cpf) {
+	console.log(cleanCPF(cpf).replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, '$1.$2.$3-$4'));
+});
 
 /*
 Crie uma expressão regular que faça match com as palavras "junho" ou "julho",
@@ -37,7 +55,7 @@ O resultado deve ser:
 ["junho", "julho"]
 */
 console.log( '\nMatch com as palavras "junho" ou "julho" para a frase "Os meses de janeiro, junho e julho começam com a letra j.":' );
-// ?
+console.log("Os meses de janeiro, junho e julho começam com a letra j.".match(/(ju[n|l]ho)/g))
 
 /*
 Crie uma expressão regular que faça o match com a abertura de uma tag
@@ -49,7 +67,7 @@ O resultado deve ser:
 ["<div>", "<section>", "<blockquote>"]
 */
 console.log( '\nMatch com a abertura de uma tag HTML:' );
-// ?
+console.log("<div><section><blockquote>Texto <img /></blockquote></section></div>".match(/<\w+>/g));
 
 /*
 Crie uma expressão regular que faça o match com uma tag HTML vazia, casando
@@ -61,7 +79,7 @@ O resultado deve ser:
 ["<li></li>", "<li></li>", "<span></span>"]
 */
 console.log( '\nMatch com tags HTML vazias (abertura e fechamento da tag):' );
-// ?
+console.log("<div><ul><li></li><li></li><li><span></span></li></ul></div>".match(/<\w+><\/\w+>/g));
 
 /*
 Vamos complicar um pouco agora :D
@@ -86,4 +104,11 @@ https://regex101.com/#javascript e verifique se as capturas estão
 corretas, para depois aplicar no código ;)
 */
 console.log( '\nFazer replace dos textos das tags:' );
-// ?
+console.log(
+	"<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>"
+	.replace(
+	/<(\w+)>([^<]+)<\/\w+>/g, 
+	'<$1> O texto dentro da tag "$1" é "$2" </$1>\n'
+	)
+);
+}());
