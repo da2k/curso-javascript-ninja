@@ -43,7 +43,7 @@ Crie uma função com as seguintes características:
 */
 function myFun (x , y , z) {
   if (x !== undefined || y === undefined || z !== Undefined){
-  return 'Preencha todos os valores corretamente!
+  return 'Preencha todos os valores corretamente!';
   }{
   else if ( x * y * z) + 2;
 }
