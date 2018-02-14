@@ -51,7 +51,7 @@ function divisao() {
 // Invoque a função criada acima, passando os parâmetros 10 e 2.
 function divs() {
   var x = 2;
-  var y = 8;
+  var y = 10;
   return y/x;
  };
   
