@@ -25,22 +25,22 @@
   // ?
   function DOM(selector) {
     this.elements = document.querySelectorAll(selector);
+  }
 
-    this.on = function(event, callback) {
-      this.elements.forEach(function(element) {
-        element.addEventListener(event, callback, false);
-      });
-    }
+  DOM.prototype.on = function(eventType, callback) {
+    Array.prototype.forEach.call(this.elements, function(element) {
+      element.addEventListener(eventType, callback, false);
+    });
+  }
 
-    this.off = function(event, callback) {
-      this.elements.forEach(function(element) {
-        element.removeEventListener(event, callback, false);
-      });
-    }
+  DOM.prototype.off = function(eventType, callback) {
+    Array.prototype.forEach.call(this.elements, function(element) {
+      element.removeEventListener(eventType, callback, false);
+    });
+  }
 
-    this.get = function() {
-      return this.elements;
-    }
+  DOM.prototype.get = function() {
+    return this.elements;
   }
 
   var $a = new DOM('[data-js="link"]');
