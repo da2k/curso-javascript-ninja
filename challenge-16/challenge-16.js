@@ -66,14 +66,9 @@
         'Fernando'
     ];
     var friendsStr = friendsArr.reduce( function( accumulator, item, index ) {
-        if ( index < ( friendsArr.length - 2 ) ) {
-            return accumulator + item + ', ';
-        }
-        else if ( index === ( friendsArr.length - 2 ) ) {
-            return accumulator + item;
-        }
-        return accumulator + ' e ' + item + ' são meus amigos.';
-    },'' );
+        var separator = index === ( friendsArr.length -1 ) ? ' e ' : ', ';
+        return accumulator + separator + item;
+    } ).concat( ' são meus amigos.' );
     console.log( friendsStr );
 
     /*
