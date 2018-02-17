@@ -57,10 +57,9 @@ console.log(team4);
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
 repetição "while".
 */
-var num = 20, lastNum = false;
-while (!lastNum) {
+var num = 20;
+while (num <= 30) {
     console.log(num++);
-    lastNum = num > 30 ? true : false;
 }
 
 /*
@@ -78,17 +77,22 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
 function convertToHex(color) {
     switch(color) {
         case 'red':
-            return 'O hexadecimal para a cor '+ color +' é #F00.';
+            console.log('O hexadecimal para a cor '+ color +' é #F00.');
+            break;
         case 'green':
-            return 'O hexadecimal para a cor '+ color +' é #0F0.';
+            console.log('O hexadecimal para a cor '+ color +' é #0F0.');
+            break;
         case 'blue':
-            return 'O hexadecimal para a cor '+ color +' é #00F.';
+            console.log('O hexadecimal para a cor '+ color +' é #00F.');
+            break;
         case 'yellow':
-            return 'O hexadecimal para a cor '+ color +' é #ff0.';
+            console.log('O hexadecimal para a cor '+ color +' é #ff0.');
+            break;
         case 'white':
-            return 'O hexadecimal para a cor '+ color +' é #fff.';
+            console.log('O hexadecimal para a cor '+ color +' é #fff.');
+            break;
         default:
-            return 'Não temos o equivalente hexadecimal para '+ color +'.';
+            console.log('Não temos o equivalente hexadecimal para '+ color +'.');
     }
 }
 
@@ -96,26 +100,11 @@ function convertToHex(color) {
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
 
-var yellow = convertToHex('yellow');
-console.log(yellow);
-
-var green = convertToHex('green');
-console.log(green);
-
-var blue = convertToHex('blue');
-console.log(blue);
-
-var red = convertToHex('red');
-console.log(red);
-
-var black = convertToHex('black');
-console.log(black);
-
-var white = convertToHex('white');
-console.log(white);
-
-var red = convertToHex('red');
-console.log(red);
-
-var gray = convertToHex('gray');
-console.log(gray);
+convertToHex('yellow');
+convertToHex('green');
+convertToHex('blue');
+convertToHex('red');
+convertToHex('black');
+convertToHex('white');
+convertToHex('red');
+convertToHex('gray');
