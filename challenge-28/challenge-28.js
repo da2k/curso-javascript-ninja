@@ -106,6 +106,62 @@
   };
 
   // codigo inicial
-  
+  var ajax = new XMLHttpRequest();
+  var $formCep = new DOM('[data-js-id="form-cep"]');
+  var $inputCep = new DOM('[data-js-id="input-cep"]');
+
+  $formCep.on('submit', formSubmit);
+
+  function formSubmit(evt) {
+    evt.preventDefault();
+    ajax.addEventListener('readystatechange', handleReadyStateChange);
+    ajax.open('GET', getUrl());
+    ajax.send();
+  }
+  function getUrl() {
+    return 'https://viacep.com.br/ws/' + getCep() + '/json/';
+  }
+  function getCep() {
+    return $inputCep.get()[0].value.match(/\d/g).join('');
+  }
+  function handleReadyStateChange() {
+    if (ajax.readyState === 4 && ajax.status === 200) {
+      preencherCampos(parseResponse(ajax.responseText));
+    }
+  };
+
+  function parseResponse(str) {
+    var result;
+    try {
+      result = JSON.parse(str)
+    } catch (e) {
+      result = {
+        logradouro: ' - ',
+        bairro: ' - ',
+        uf: ' - ',
+        localidade: ' - ',
+        cep: ' - ',
+      }
+    }
+    return result;
+  };
+
+  function preencherCampos(objValores) {
+    setCampo('logradouro', objValores.logradouro);
+    setCampo('bairro', objValores.bairro);
+    setCampo('estado', objValores.uf);
+    setCampo('cidade', objValores.localidade);
+    setCampo('cep', objValores.cep);
+  }
+  function setCampo(campo, valor) {
+    var seletor = '[data-js-id="' + campo + '"]'
+    console.log(seletor);
+
+    var $campo = new DOM(seletor);
+    $campo.get()[0].value = valor;
+    console.log($campo.get()[0]);
+  }
+
+
 
 })(window, document);
