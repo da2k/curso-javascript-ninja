@@ -53,14 +53,27 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
   "Operação inválida."
 */
 function calculator(operation){
-  if (operation == '+' || operation == '-' || operation == '*' || operation =='/' || operation == '%') {
     return function(a, b) {
-      var result = a + operation + b;
-      return 'Resultado da operação: '+ a +' '+ operation + ' '+ b +' = ' + eval(result) +'.';
+      var result = 0;
+      switch (operation) {
+        case '+':
+          result = a + b;
+          break;
+        case '*':
+        case '-':
+          result = a - b;
+          break;
+        case '/':
+          result = a / b;
+          break;
+        case '%':
+          result = a % b;
+          break;
+        default:
+          return 'Operação inválida';
+      }
+      return 'Resultado da operação: '+ a +' '+ operation + ' '+ b +' = ' + result +'.';
     };
-  } else {
-    return 'Operação inválida';
-  }
 }
 
 /*
