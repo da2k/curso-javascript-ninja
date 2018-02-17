@@ -114,36 +114,80 @@
 
   function formSubmit(evt) {
     evt.preventDefault();
+
+    preencherCampos(responseVazia());
+    mensagemStatus('buscando');
+    var cep = getCep();
+    if (cep.length == 8) {
+      doAjax(getUrl(cep));
+    } else {
+      mensagemStatus('naoencontrado');
+    }
+  };
+
+  function mensagemStatus(tipo) {
+    setCampo('status', textoMensagem(tipo));
+  }
+  function textoMensagem(tipo) {
+    return {
+      buscando: "Buscando informações para o CEP",
+      encontrado: "Endereço referente ao CEP",
+      naoencontrado: "Não encontramos o endereço para o CEP",
+    }[tipo] + ': ' + getCep();
+  }
+
+  function getUrl(strCep) {
+    return 'https://viacep.com.br/ws/' + strCep + '/json/';
+  };
+
+  function doAjax(url) {
     ajax.addEventListener('readystatechange', handleReadyStateChange);
-    ajax.open('GET', getUrl());
-    ajax.send();
-  }
-  function getUrl() {
-    return 'https://viacep.com.br/ws/' + getCep() + '/json/';
-  }
+    ajax.open('GET', url);
+    try {
+      ajax.send();
+    } catch (error) {
+      //console.log(error);
+    }
+  };
+
   function getCep() {
     return $inputCep.get()[0].value.match(/\d/g).join('');
-  }
+  };
+
   function handleReadyStateChange() {
     if (ajax.readyState === 4 && ajax.status === 200) {
-      preencherCampos(parseResponse(ajax.responseText));
+      var resposta = trataResposta(parseResponse(ajax.responseText));
+      preencherCampos(resposta);
     }
   };
 
   function parseResponse(str) {
     var result;
     try {
-      result = JSON.parse(str)
+      result = JSON.parse(str);
     } catch (e) {
-      result = {
-        logradouro: ' - ',
-        bairro: ' - ',
-        uf: ' - ',
-        localidade: ' - ',
-        cep: ' - ',
-      }
+      result = { erro: true };
     }
     return result;
+  };
+  function trataResposta(respostaJSON) {
+    if (respostaJSON.erro) {
+      Object.assign(respostaJSON, responseVazia())
+      mensagemStatus('naoencontrado');
+      return respostaJSON;
+    }
+    mensagemStatus('encontrado');
+    return respostaJSON
+  }
+
+  function responseVazia() {
+    return {
+      logradouro: '',
+      bairro: '',
+      uf: '',
+      localidade: '',
+      cep: '',
+    };
   };
 
   function preencherCampos(objValores) {
@@ -152,16 +196,10 @@
     setCampo('estado', objValores.uf);
     setCampo('cidade', objValores.localidade);
     setCampo('cep', objValores.cep);
-  }
+  };
+
   function setCampo(campo, valor) {
-    var seletor = '[data-js-id="' + campo + '"]'
-    console.log(seletor);
-
-    var $campo = new DOM(seletor);
-    $campo.get()[0].value = valor;
-    console.log($campo.get()[0]);
-  }
-
-
+    new DOM('[data-js-id="' + campo + '"]').get()[0].value = valor;
+  };
 
 })(window, document);
