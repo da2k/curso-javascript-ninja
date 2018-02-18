@@ -107,6 +107,7 @@
     */
     console.log( '\nRegex que vai fazer o match com as datas do texto:' );
     var regexDate = /(\d\d)( \w\w \w\w\w\w\w \w\w )(\d\d\d\d)/g;
+    console.log( regexDate );
 
     /*
     Agora crie a função que irá fazer o replace dos dados. A função será chamada
