@@ -26,7 +26,7 @@ function adicionaValor(){val = 'VALOR'; return 'O valor da variável agora é VA
 adicionaValor();
 
 // Qual o retorno da função? (Use comentários de bloco).
-'O valor da variável agora é VALOR'
+/*'O valor da variável agora é VALOR'*/
 
 /*
 Crie uma função com as seguintes características:
