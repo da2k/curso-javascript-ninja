@@ -156,7 +156,7 @@ carro.adicionaPessoa(4); // 'Só cabem mais 3 pessoas!'
 carro.adicionaPessoa(3); // 'Já temos 5 pessoas no carro!'
 
 // Tire 4 pessoas do carro.
-carro.quantidadePessoas = 1;
+carro.adicionaPessoa(-4); // 'Já temos 1 pessoa no carro!'
 
 // Adicione 10 pessoas no carro.
 carro.adicionaPessoa(10); // 'Só cabem mais 4 pessoas!'
