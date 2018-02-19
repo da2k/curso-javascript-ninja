@@ -36,4 +36,39 @@
   que será nomeado de "app".
   */
 
+  // codigo inicial
+  var ajax = new XMLHttpRequest();
+  var $formCarros = new DOM('[data-js-id="form-carros"]');
+
+  $formCarros.on('submit', formSubmit);
+
+  function formSubmit(evt) {
+    evt.preventDefault();
+
+    var cep = getCep();
+    if (cep.length == 8) {
+      doAjax(getUrl(cep));
+    } else {
+      mensagemStatus('naoencontrado');
+    }
+  };
+
+  function setCampo(campo, valor) {
+    new DOM('[data-js-id="' + campo + '"]').get()[0].value = valor;
+  };
+
+  function getUrl(strCep) {
+    return 'https://viacep.com.br/ws/' + strCep + '/json/';
+  };
+
+  function doAjax(url) {
+    ajax.addEventListener('readystatechange', handleReadyStateChange);
+    ajax.open('GET', url);
+    try {
+      ajax.send();
+    } catch (error) {
+      //console.log(error);
+    }
+  };
+
 })();

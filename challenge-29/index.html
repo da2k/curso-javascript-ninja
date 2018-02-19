@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <title>Challenge-29</title>
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-5">
+                <span data-js-id="empresa-nome">Empresa Nome</span>&nbsp;
+                <span data-js-id="empresa-telefone">(27) 3333-2222</span>
+            </h1>
+            <p class="lead">Challenge-29</p>
+        </div>
+    </div>
+    <div class="container">
+        <form data-js-id="form-carros">
+            <div class="form-group">
+                <label for="imgcarro">Imagem do Carro</label>
+                <input type="url" class="form-control" id="imgcarro" placeholder="Entre com uma url para foto do carro">
+            </div>
+            <div class="form-group">
+                <label for="marca-modelo">Marca e Modelo</label>
+                <input type="text" class="form-control" id="marca-modelo" placeholder="Marca e modelo do carro">
+            </div>
+            <div class="row">
+                <div class="form-group col-4">
+                    <label for="ano">Ano de Fabricação</label>
+                    <input type="number" class="form-control" id="exampleCheck1">
+                </div>
+                <div class="form-group col-4">
+                    <label for="placa">Placa</label>
+                    <input type="text" class="form-control" id="placa" placeholder="Placa do carro">
+                </div>
+                <div class="form-group col-4">
+                    <label for="cor">Cor</label>
+                    <input type="text" class="form-control" id="cor" placeholder="Cor do carro">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </form>
+    </div>
+    <script src="DOM.js"></script>
+    <script src="challenge-29.js"></script>
+</body>
+
+</html>
