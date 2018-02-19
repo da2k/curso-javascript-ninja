@@ -173,6 +173,5 @@
     var equals = calculator(operationSignal);
     number1 = 57;
     number2 = 88;
-    console.log(imprimir(equals), equals ? equals(number1, number2) : '');
-    //#endregion
+    console.log(imprimir(equals), equals ? equals(number1, number2) : '');    
 }());
