@@ -187,5 +187,5 @@ pessoa.apresentacao = function() {
 }
 
 // Agora, apresente-se ;)
-pessoa.apresentacao();
+pessoa.apresentacao(); // Olá, eu sou o Lucas Gomes, tenho 25 anos, 1.7, meu peso é 60 e, só hoje, eu já caminhei 400 metros!
 ```
