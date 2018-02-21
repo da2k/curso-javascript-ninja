@@ -2,7 +2,7 @@
 Crie uma IIFE que envolva todo esse arquivo (inclusive esse comentário),
 e faça a indentação correta.
 */
-
+(function() {
 /*
 Sem alterar os códigos nos `console.log` abaixo, faça com que o retorno
 deles seja "true", usando os Wrapper Objects como "conversores" nos valores
@@ -111,3 +111,6 @@ Repita o PASSO 2 novamente, mas passando um operador inválido, para ver se
 a mensagem de erro será mostrada no console.
 */
 // ?
+
+
+})();
