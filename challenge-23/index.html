@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Challenge 23</title>
+</head>
+
+<body>
+  <h1>Challenge 23</h1>
+
+  <p>
+    <input type="text" value="0" disabled name="display" style="width: 150px;">
+  </p>
+  <div>
+    <button style="width: 50px; height:40px" onclick="setDisplay('1')">1</button>
+    <button style="width: 50px; height:40px" onclick="setDisplay('2')">2</button>
+    <button style="width: 50px; height:40px" onclick="setDisplay('3')">3</button>
+  </div>
+  <div>
+    <button style="width: 50px; height:40px" onclick="setDisplay('4')">4</button>
+    <button style="width: 50px; height:40px" onclick="setDisplay('5')">5</button>
+    <button style="width: 50px; height:40px" onclick="setDisplay('6')">6</button>
+  </div>
+  <div>
+    <button style="width: 50px; height:40px" onclick="setDisplay('7')">7</button>
+    <button style="width: 50px; height:40px" onclick="setDisplay('8')">8</button>
+    <button style="width: 50px; height:40px" onclick="setDisplay('9')">9</button>
+  </div>
+  <div>
+    <button disabled style="width: 50px; height:40px">0</button>
+    <button style="width: 50px; height:40px" onclick="setDisplay('0')">0</button>
+    <button disabled style="width: 50px; height:40px">0</button>
+  </div>
+  <div>
+    <p>
+      <button style="width: 36px; height:40px" onclick="setDisplay('+')">+</button>
+      <button style="width: 36px; height:40px" onclick="setDisplay('-')">-</button>
+      <button style="width: 36px; height:40px" onclick="setDisplay('*')">*</button>
+      <button style="width: 36px; height:40px" onclick="setDisplay('/')">/</button>
+    </p>
+  </div>
+  <div>
+    <p>
+      <button type="button" style="width: 50px; height:40px" onclick="clearDisplay()">CE</button>
+      <button style="width: 105px; height:40px" onclick="calculate()">=</button>
+    </p>
+  </div>
+
+  <script src="challenge-23.js"></script>
+</body>
+
+</html>
