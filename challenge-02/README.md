@@ -7,10 +7,10 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 function soma(x,y){return x+y;}
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-var valor = soma(3,2) + '5'; 
+var valor = soma(3,2) + 5; 
 
 // Qual o valor atualizado dessa variável?
-'55'
+10
 
 // Declare uma nova variável, sem valor.
 var val;
@@ -39,7 +39,7 @@ function minhaFuncao(a,b,c){
   if(!a || !b || !c){
     return 'Preencha todos os valores corretamente!';
   }else {
-    return a*b*c + '2';
+    return a*b*c + 2;
    }
 }
 
@@ -53,7 +53,7 @@ minhaFuncao(2,3);
 minhaFuncao(2,3,3);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-//'182'
+//20
 
 /*
 Crie uma função com as seguintes características:
