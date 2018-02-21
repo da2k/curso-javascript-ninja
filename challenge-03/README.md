@@ -46,7 +46,7 @@ valor dessa propriedade a quantidade passada por parâmetro;
 - Ele deverá modificar o valor da propriedade `andando` para o valor
 booleano que representa "verdadeiro";
 */
-pessoa.andar = function (metros) {
+pessoa.andar = function(metros) {
 	pessoa.caminhouQuantosMetros += metros;
 	pessoa.andando = true; 
 };
@@ -55,7 +55,7 @@ pessoa.andar = function (metros) {
 Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o valor
 da propriedade `andando` para o valor booleano que representa "falso".
 */
-pessoa.parar = function () {
+pessoa.parar = function() {
 	pessoa.andando = false;	
 };
 
@@ -63,7 +63,7 @@ pessoa.parar = function () {
 Crie um método chamado `nomeCompleto`, que retorne a frase:
 - "Olá! Meu nome é [NOME] [SOBRENOME]!"
 */
-pessoa.nomeCompleto = function () {
+pessoa.nomeCompleto = function() {
 	return 'Olá! Meu nome é ' + pessoa.nome + ' ' + pessoa.sobrenome + '!';
 };
 
@@ -71,7 +71,7 @@ pessoa.nomeCompleto = function () {
 Crie um método chamado `mostrarIdade`, que retorne a frase:
 - "Olá, eu tenho [IDADE] anos!"
 */
-pessoa.mostrarIdade = function () {
+pessoa.mostrarIdade = function() {
 	return 'Olá, eu tenho ' + pessoa.idade + ' anos!';		
 };
 
@@ -79,7 +79,7 @@ pessoa.mostrarIdade = function () {
 Crie um método chamado `mostrarPeso`, que retorne a frase:
 - "Eu peso [PESO]Kg."
 */
-pessoa.mostrarPeso = function () {
+pessoa.mostrarPeso = function() {
 	return 'Eu peso ' + pessoa.peso + 'Kg.';
 };
 
@@ -87,7 +87,7 @@ pessoa.mostrarPeso = function () {
 Crie um método chamado `mostrarAltura` que retorne a frase:
 - "Minha altura é [ALTURA]m."
 */
-pessoa.mostrarAltura = function () {
+pessoa.mostrarAltura = function() {
 	return 'Minha altura é ' + pessoa.altura + 'm.';
 };
 
@@ -178,16 +178,16 @@ deve conter no retorno da frase acima é "metro" no lugar de "metros".
 método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
-pessoa.apresentacao = function () {
+pessoa.apresentacao = function() {
 	var artigo = 'o'
+	var compl_idade = 'anos';
+	var compl_metros = 'metros';
 	if (pessoa.sexo === 'Feminino') {
 		artigo = 'a';
 	}
-	var compl_idade = 'anos';
 	if (pessoa.idade === 1) {
 		compl_idade = 'ano';
 	}
-	var compl_metros = 'metros';
 	if (pessoa.caminhouQuantosMetros === 1) {
 		compl_metros = 'metro';
 	}
