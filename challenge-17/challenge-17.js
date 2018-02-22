@@ -118,7 +118,6 @@
     */
     console.log( '\nReplace de datas:' );
     function replaceDate(complete, day, ofMonth, month, ofYear, year) {
-        console.log(arguments)
         var monthNumber = getMonthNumber(month);
         return `${day}/${monthNumber}/${year}`;
     }
