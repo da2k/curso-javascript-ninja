@@ -43,6 +43,7 @@ Crie uma função com as seguintes características:
 2. Se qualquer um dos três argumentos não estiverem preenchidos, a função deve retornar a string:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
+*/
 function multiSoma(valor1, valor2, valor3) {
     if (valor2 == null || valor3 == null) {
         return "Preencha todos os valores corretamente!";
