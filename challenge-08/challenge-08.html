@@ -1,0 +1,128 @@
+<html>
+
+<script>
+
+//1
+
+var sum = function calculateSum(x,y) {
+	return x + y ;
+};
+
+
+//2
+
+var x = 5;
+var y = 50;
+
+console.log("A soma de " + x + ' e ' + y + " é igual a " + sum(x,y) +'.');
+
+//3
+
+
+console.log("O nome da função que faz a soma é " + sum.name + " .");
+
+//4
+
+function showName () {
+	return 'Leonardo Nunes Carvalho';
+}
+
+//5
+
+var varShowName = showName;
+
+//6
+
+
+console.log ("A função " + varShowName.name + ' retorna '  + varShowName() + '.');
+
+//7
+
+function calculator( operator ) {
+	return function (number1, number2) {
+		var result;
+		switch( operator ) {
+			case '+':
+				result = number1 + number2;
+				break
+			case '-':
+				result = number1 - number2;
+				break
+			case '*':
+				result = number1 * number2;
+				break
+			case '/':
+				result = number1 / number2;
+				break
+			case '%':
+				result = number1 % number2;
+				break
+			default:
+				return 'Operação inválida.';
+	}
+
+
+	return 'Resultado da Operação: ' + number1 + '' + operator + '' + number2 +'='+ result + '.';
+
+
+	};
+}
+
+//8
+
+var sum = calculator('+');
+
+//9
+
+console.log( sum(1,2));
+
+//10
+
+var subtraction = calculator('-');
+var multiplication = calculator('*');
+var division = calculator('/');
+var mod = calculator('%');
+
+//11
+
+console.log (subtraction(5,2));
+console.log (multiplication(5,2));
+console.log (division(5,2));
+console.log (mod(5,2));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
