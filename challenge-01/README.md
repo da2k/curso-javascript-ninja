@@ -40,5 +40,5 @@ function divisao (v1,v2){
 }
 
 // Invoque a função criada acima, passando os parâmetros 10 e 2.
-divisao(10/5);
+divisao(10,5);
 ```
