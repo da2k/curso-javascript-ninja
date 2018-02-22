@@ -16,13 +16,12 @@ function myArray(n) {
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-
 console.log(myArray(colors)[1]);
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
-segundo, um número. A função deve retornar um índice do array que foi passado
-no primeiro parâmetro. O índice a ser retornado, deve ser o número passado no
+segundo, um número. A função deve retornar o valor de um índice do array que foi passado
+no primeiro parâmetro. O índice usado para retornar o valor, deve ser o número passado no
 segundo parâmetro.
 */
 
@@ -96,6 +95,7 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
+
 name = 'A Seleção'
 console.log('O livro ' + name + ' tem ' + book(name).quantidadePaginas + ' páginas!')
 
@@ -105,15 +105,11 @@ a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
 
-name = 'A Seleção'
 console.log('O autor do livro ' + name + ' é ' + book(name).autor + '.');
-
-
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
 
-name = 'A Seleção'
 console.log('O livro ' + name + ' foi publicado pela editora ' + book(name).editora + '.')
