@@ -75,16 +75,8 @@ function myFunc(x, y, z) {
     return (x + y) / z;
   } else if (x !== undefined && y === undefined && z === undefined) {
     return x;
-  } else if (x === undefined && y !== undefined && z === undefined) {
-    return y;
-  } else if (x === undefined && y === undefined && z !== undefined) {
-    return z;
   } else if (x !== undefined && y !== undefined && z === undefined) {
     return x + y;
-  } else if (x !== undefined && y === undefined && z !== undefined) {
-    return x + z;
-  } else if (x === undefined && y !== undefined && z !== undefined) {
-    return y + z;
   } else if (x === undefined && y === undefined && z === undefined) {
     return false;
   } else {
