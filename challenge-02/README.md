@@ -46,16 +46,12 @@ Crie uma função com as seguintes características:
 */
 
 function multiplica(x,y,z){
-    var x = 10;
-    var y = 20;
-    var z = 30;
-    var resultado = x*y*z;
-    
+   
     if(x === undefined || y === undefined || z === undefined ){
      console.log("Preencha todos os valores corretamente!"); 
      alert("Preencha todos os valores corretamente!"); 
     }else{
-        return resultado+2;
+        return (x+y+z)+2;
     }
 }
 
@@ -82,12 +78,38 @@ Crie uma função com as seguintes características:
 */
 function desafioFinal(x1,y1,z1){
 
-    if(x1 !== && y1 === undefined && z1 === undefined  ){
-           
-           return a;
+    if(x1 !== && undefined  y1 === undefined && z1 === undefined  ){
+           return x1;
     } 
-}
+    else if(x1 === && undefined  y1 !== undefined && z1 === undefined  ){
+           return y1;
+    } 
+     
+    else if(x1 === && undefined  y1 === undefined && z1 !== undefined  ){
+           return z1;
+    } 
+    else if(x1 !== && undefined  y1 !== undefined && z1 === undefined )
+        return x1+y1;
+    }
+    else if(x1 === && undefined  y1 !== undefined && z1 !== undefined )
+        return y1+z1;
+    }
+    else if(x1 !== && undefined  y1 === undefined && z1 !== undefined )
+        return x1+z1;
+    }
+    else if(x1 !== && undefined  y1 !== undefined && z1 !== undefined ) {
+        return (x1+y2)/z1;
+    }
+    else if(x1 === && undefined  y1 === undefined && z1 === undefined ){
+        return false;
+    }else{
+        return null;
+    }
+
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+desafioFinal(); //false
+desafioFinal(10); // 10
+desafioFinal(10,20); //30
+desafioFinal(40,20,30); //2
 ```
