@@ -43,14 +43,14 @@
     minúsculo por "0" (número zero). Mostre o resultado no console:
     */
     console.log( '\nTrocando de "D" a "h" por "0":' );
-    console.log(text.replace(/[D-Za-h]/g, '0'));
+    console.log(text.replace(/[D-Za-h]/g, 0));
 
     /*
     Substitua todos os "A" (maiúsculos ou minúsculos) por "4".
     Mostre o resultado no console:
     */
     console.log( '\nTrocando "A" e "a" por "4":' );
-    console.log(text.replace(/A|a/g, '4'));
+    console.log(text.replace(/a/gi, 4));
 
     /*
     Substitua a frase "O Centauro de Luvas", deixando-a em caixa alta, usando
@@ -89,7 +89,7 @@
             'outubro': '10',
             'novembro': '11',
             'dezembro': '12'
-        }
+        };
         
         return months[month];
     }
@@ -106,7 +106,7 @@
     Mostre a regex no console.
     */
     console.log( '\nRegex que vai fazer o match com as datas do texto:' );
-    var regexDate = /(\d\d)( de )(junho|julho)( de )(\d\d\d\d)/g;
+    var regexDate = /(\d\d) de (junho|julho) de (\d\d\d\d)/g;
     console.log(regexDate);
 
     /*
@@ -117,7 +117,7 @@
     console o resultado.
     */
     console.log( '\nReplace de datas:' );
-    function replaceDate(complete, day, ofMonth, month, ofYear, year) {
+    function replaceDate(complete, day, month, year) {
         var monthNumber = getMonthNumber(month);
         return `${day}/${monthNumber}/${year}`;
     }
