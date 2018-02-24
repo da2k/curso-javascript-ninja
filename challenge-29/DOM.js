@@ -1,6 +1,9 @@
 (function (win, doc) {
     'use strict';
     function DOM(seletorCSS) {
+        if (!(this instanceof DOM))
+            return new DOM(seletorCSS);
+
         this.elements = doc.querySelectorAll(seletorCSS);
     };
 
@@ -20,6 +23,11 @@
         return this.elements;
     };
 
+    DOM.prototype.getFirst = function getFirst() {
+        return this.elements[0];
+    };
+
+    // metodos array like
     DOM.prototype.forEach = function forEach() {
         return Array.prototype.forEach.apply(this.elements, arguments);
     };
@@ -48,33 +56,42 @@
         return Array.prototype.some.apply(this.elements, arguments);
     };
 
-    DOM.prototype.isArray = function isArray(obj) {
+    // metodos estáticos, não dependem de "new DOM()"
+    DOM.isArray = function isArray(obj) {
         return Object.prototype.toString.call(obj) === '[object Array]';
     };
 
-    DOM.prototype.isObject = function isObject(obj) {
+    DOM.isObject = function isObject(obj) {
         return Object.prototype.toString.call(obj) === '[object Object]';
     };
 
-    DOM.prototype.isFunction = function isFunction(obj) {
+    DOM.isFunction = function isFunction(obj) {
         return Object.prototype.toString.call(obj) === '[object Function]';
     };
 
-    DOM.prototype.isNumber = function isNumber(obj) {
+    DOM.isNumber = function isNumber(obj) {
         return Object.prototype.toString.call(obj) === '[object Number]';
     };
 
-    DOM.prototype.isString = function isString(obj) {
+    DOM.isString = function isString(obj) {
         return Object.prototype.toString.call(obj) === '[object String]';
     };
 
-    DOM.prototype.isBoolean = function isBoolean(obj) {
+    DOM.isBoolean = function isBoolean(obj) {
         return Object.prototype.toString.call(obj) === '[object Boolean]';
     };
 
-    DOM.prototype.isNull = function isNull(obj) {
+    DOM.isNull = function isNull(obj) {
         return Object.prototype.toString.call(obj) === '[object Null]'
             || Object.prototype.toString.call(obj) === '[object Undefined]';
+    };
+
+    DOM.setValue = function setValue(seletorCSS, valor) {
+        new DOM(seletorCSS).getFirst().value = valor;
+    };
+
+    DOM.setTextContent = function setTextContent(seletorCSS, valor) {
+        new DOM(seletorCSS).getFirst().textContent = valor;
     };
 
     //export DOM

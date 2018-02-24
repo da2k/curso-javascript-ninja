@@ -1,6 +1,5 @@
-(function() {
+(function (win, doc, DOM) {
   'use strict';
-
   /*
   Vamos estruturar um pequeno app utilizando módulos.
   Nosso APP vai ser um cadastro de carros. Vamos fazê-lo por partes.
@@ -36,39 +35,92 @@
   que será nomeado de "app".
   */
 
+  var app = (function appController() {
+    return {
+      linhas: 0,
+
+      init: function init() {
+        this.companyInfo();
+        this.initEvents();
+
+        this.valorInicial();
+      },
+
+      valorInicial: function valorInicial() {
+        DOM('[data-js-id="carro-imagem"]').getFirst().value = 'http://carros.ninja/wp-content/uploads/2015/07/Celta-Vermelho.png';
+        DOM('[data-js-id="carro-marca-modelo"]').getFirst().value = 'Chevrolet Celta LTS';
+        DOM('[data-js-id="carro-ano"]').getFirst().value = '2010';
+        DOM('[data-js-id="carro-placa"]').getFirst().value = 'ABC-1234';
+        DOM('[data-js-id="carro-cor"]').getFirst().value = 'Vermelho';
+      },
+
+      companyInfo: function companyInfo() {
+        var ajax = new XMLHttpRequest();
+        ajax.open('GET', '/company.json', true);
+        ajax.send();
+        ajax.addEventListener('readystatechange', this.getCompanyInfo, false);
+      },
+
+      getCompanyInfo: function getCompanyInfo() {
+        if (!app.isReady(this)) {
+          return;
+        };
+        var data = JSON.parse(this.responseText);
+        DOM.setTextContent('[data-js-id="empresa-nome"]', data.name)
+        DOM.setTextContent('[data-js-id="empresa-telefone"]', data.phone)
+      },
+
+      isReady: function isReady(context) {
+        return context.readyState === 4 && context.status === 200;
+      },
+      initEvents: function initEvents() {
+        DOM('[data-js-id="form-carros"]').on('submit', this.handleSubmit);
+      },
+      handleSubmit: function handleSubmit(evt) {
+        evt.preventDefault();
+        DOM('[data-js-id="carro-tbody"]').getFirst().appendChild(app.createNewCar());
+      },
+
+      createNewCar: function createNewCar() {
+        var $fragmento = doc.createDocumentFragment();
+        var $tr = doc.createElement('tr');
+
+        var $thNumber = doc.createElement('th');
+        $thNumber.setAttribute('scope', 'row');
+        $thNumber.textContent = ++app.linhas;
+
+        var $tdImagem = doc.createElement('td');
+        var $img = doc.createElement('img');
+        $img.setAttribute('src', DOM('[data-js-id="carro-imagem"]').getFirst().value);
+        $img.setAttribute( 'class', 'carroimage');
+        $tdImagem.appendChild($img);
+
+        var $tdMarcaModelo = doc.createElement('td');
+        $tdMarcaModelo.textContent = DOM('[data-js-id="carro-marca-modelo"]').getFirst().value;
+
+        var $tdAno = doc.createElement('td');
+        $tdAno.textContent = DOM('[data-js-id="carro-ano"]').getFirst().value;
+
+        var $tdPlaca = doc.createElement('td');
+        $tdPlaca.textContent = DOM('[data-js-id="carro-placa"]').getFirst().value;
+
+        var $tdCor = doc.createElement('td');
+        $tdCor.textContent = DOM('[data-js-id="carro-cor"]').getFirst().value;
+
+        $tr.appendChild($thNumber);
+        $tr.appendChild($tdImagem);
+        $tr.appendChild($tdMarcaModelo);
+        $tr.appendChild($tdAno);
+        $tr.appendChild($tdPlaca);
+        $tr.appendChild($tdCor);
+
+        return $fragmento.appendChild($tr);
+      }
+
+    };
+  })();
   // codigo inicial
-  var ajax = new XMLHttpRequest();
-  var $formCarros = new DOM('[data-js-id="form-carros"]');
+  app.init();
 
-  $formCarros.on('submit', formSubmit);
 
-  function formSubmit(evt) {
-    evt.preventDefault();
-
-    var cep = getCep();
-    if (cep.length == 8) {
-      doAjax(getUrl(cep));
-    } else {
-      mensagemStatus('naoencontrado');
-    }
-  };
-
-  function setCampo(campo, valor) {
-    new DOM('[data-js-id="' + campo + '"]').get()[0].value = valor;
-  };
-
-  function getUrl(strCep) {
-    return 'https://viacep.com.br/ws/' + strCep + '/json/';
-  };
-
-  function doAjax(url) {
-    ajax.addEventListener('readystatechange', handleReadyStateChange);
-    ajax.open('GET', url);
-    try {
-      ajax.send();
-    } catch (error) {
-      //console.log(error);
-    }
-  };
-
-})();
+})(window, document, window.DOM);
