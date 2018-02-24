@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Challenger 28</title>
+</head>
+<body>
+  <main class="container">
+    <section data-js="cep-message"></section>
+    <section class="cep-search">
+      <form action="" method="get" data-js="cep-form">
+        <input type="text" name="cep" value="11950-000" data-js="cep-number" autofocus>
+        <button type="submit" data-js="cep-button">Pesquisar</button>
+      </form>
+    </section>
+    <section class="cep-address">
+      <div class="row">
+        <label for="">Logradouro:</label>
+        <input type="text" data-js="logradouro" disabled>
+      </div>
+      <div class="row">
+        <label for="">Bairro:</label>
+        <input type="text" data-js="bairro" disabled>
+      </div>
+      <div class="row">
+          <label for="">Estado:</label>
+          <input type="text" data-js="estado" disabled>
+      </div>
+      <div class="row">
+          <label for="">Cidade:</label>
+          <input type="text" data-js="cidade" disabled>
+      </div>
+      <div class="row">
+          <label for="">CEP:</label>
+          <input type="text" data-js="cep" disabled>
+      </div>
+    </section>
+  </main>
+  <script src="./challenge-28.js"></script>
+</body>
+</html>
