@@ -45,11 +45,10 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function multiSoma(valor1, valor2, valor3) {
-    if (valor2 == null || valor3 == null) {
+    if (valor1 === undefined valor2 === undefined || valor3 === undefined) {
         return "Preencha todos os valores corretamente!";
-    } else {
-        return (valor1 * valor2 * valor3) + 2;
     }
+    return (valor1 * valor2 * valor3) + 2;
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
