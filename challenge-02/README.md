@@ -6,11 +6,11 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
 function soma (x, y) 
 {
-    return (x + y) + 5;
+    return x + y;
 }
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-var resultadoSoma = soma (33, 49);
+var resultadoSoma = soma (33, 49) + 5;
 
 // Qual o valor atualizado dessa variável?
 87;
