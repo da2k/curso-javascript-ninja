@@ -30,3 +30,4 @@ projeto.
 */
 
 console.log('Link do pull request do seu projeto');
+console.log('https://github.com/alexandreflach/automaisvendafacil/pull/1');
