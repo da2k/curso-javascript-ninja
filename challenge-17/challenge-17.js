@@ -58,8 +58,8 @@
     o método `toUpperCase()`. Mostre o resultado no console:
     */
     console.log( '\n"O Centauro de Luvas" em caixa alta:' );
-    console.log( '"O Centauro de Luvas" em caixa alta:'.replace( /(\w)/g, function( word ) {
-        return word.toUpperCase();
+    console.log( text.replace( /O Centauro de Luvas/g, function( match ) {
+        return match.toUpperCase();
     }) );
 
     /*
@@ -76,7 +76,6 @@
     */
     console.log( '\nMeses representados por números:' );
     function getMonthNumber( monthName ) {
-        var monthStr = monthName.toLowerCase();
         var monthNumbers = {
             janeiro: '01',
             fevereiro: '02',
@@ -91,7 +90,7 @@
             novembro: '11',
             dezembro: '12'
         };
-        return monthNumbers[monthStr];
+        return monthNumbers[ monthName.toLowerCase() ];
     }
     console.log( 'O mês de Março é representado pelo número ' + getMonthNumber( 'Março' ) + '.' );
     console.log( 'O mês de Setembro é representado pelo número ' + getMonthNumber( 'Setembro' ) + '.' );
@@ -106,7 +105,7 @@
     Mostre a regex no console.
     */
     console.log( '\nRegex que vai fazer o match com as datas do texto:' );
-    var regexDate = /(\d\d)( \w\w \w\w\w\w\w \w\w )(\d\d\d\d)/g;
+    var regexDate = /(\d\d) de (\w\w\w\w\w) de (\d\d\d\d)/g;
     console.log( regexDate );
 
     /*
@@ -117,8 +116,8 @@
     console o resultado.
     */
     console.log( '\nReplace de datas:' );
-    function replaceDate( fullDate, day, monthStr, year ) {
-        return day + '/' + getMonthNumber( monthStr.substring( 4, 9 ) ) + '/' + year;
+    function replaceDate( fullDate, day, month, year ) {
+        return day + '/' + getMonthNumber( month ) + '/' + year;
     }
     console.log( text.replace( regexDate, replaceDate ) );
 
