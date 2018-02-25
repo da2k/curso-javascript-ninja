@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Challenge 28</title>
+
+
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    img {
+      max-width: 200px;
+      height: auto;
+    }
+
+    header {
+      text-align: center;
+    }
+
+    form,
+    table {
+      float: left;
+      width: 50%;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+    }
+
+    input {
+      padding: 5px;
+      width: 300px;
+    }
+
+    button {
+      background: darkgreen;
+      border: 0;
+      color: #fff;
+      padding: 10px 20px;
+    }
+
+    button:hover,
+    button:focus {
+      background: darkgreen;
+      cursor: pointer;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    td,
+    th {
+      padding: 5px 15px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1 data-js="company-name">COMPANY</h1>
+    <h2 data-js="company-fone">FONE</h2>
+  </header>
+  <form data-js="form-carro">
+    <ul>
+      <li>
+        <label>Imagem do carro:</label>
+        <input type="url" data-js="url-imagem-carro" placeholder="informe url da imagem" minlength="10" required /> </li>
+      <li>
+        <label>Marca/Modelo:</label>
+        <input type="text" data-js="marca-modelo-carro" required/> </li>
+      <li>
+        <label>Ano:</label>
+        <input type="number" data-js="ano-carro" pattern="[0-9]{4}" required /> </li>
+      <li>
+        <label>Placa:</label>
+        <input type="text" data-js="placa-carro" pattern="[A-Z]{3}[0-9]{4}" placeholder="AAA0000" required/> </li>
+      <li>
+        <label>Cor:</label>
+        <input type="color" data-js="cor-carro" /> </li>
+      <li>
+        <button type="submit" data-js="submit">Cadastrar</button>
+      </li>
+    </ul>
+  </form>
+  </br>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Imagem</th>
+        <th>Marca/Modelo</th>
+        <th>Ano</th>
+        <th>Placa</th>
+        <th>Cor</th>
+      </tr>
+    </thead>
+    <tbody data-js="lista-carro">
+    </tbody>
+  </table>
+
+  <script src="dom.js"></script>
+  <script src="challenge-29.js"></script>
+</body>
+
+</html>
