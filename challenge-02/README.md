@@ -69,31 +69,28 @@ Crie uma função com as seguintes características:
 5\. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6\. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-function aleatoria(a,b,c){
-  if (a==undefined && b==undefined && c==undefined) {
-  return false;
-}else{
-  if(a==undefined){
-    if (b==undefined) {
-    return c;  
-  }else if (c==undefined) {
-    return b;
-  }else{
-    return b + c;
-  }  
-  }
-  }else if (b==undefined) {
-    if (c==undefined) {
-      return a;
-    }else{
-      return a + c;
+function aleatoria(a, b, c) {
+  if (a == undefined) {
+    return false;
+  } else {
+    if (a != undefined) {
+      if (b != undefined) {
+        if (c != undefined) {
+          return a * b / c;
+        } else {
+          return a + b;
+        }
+      } else {
+        return a;
+      }
     }
-  }else if (c==undefined) {
-    return a + b;
   }
 }
 
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+aleatoria()// false
+aleatoria(2)// 2
+aleatoria(2,2)// 4
+aleatoria(2,3,2)// 3
 ```
