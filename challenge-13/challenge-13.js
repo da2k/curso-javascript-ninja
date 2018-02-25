@@ -35,7 +35,7 @@
     console.log( '\nMais estados adicionados:' );
     // ?
     brasil.unshift('Amazonas','Rondonia','Roraima');
-    console.log(brasil.toString());
+    console.log(brasil.toString(0,3));
     /*
     Remova o primeiro estado do array `brasil` e mostre-o no console.
     */
@@ -53,6 +53,10 @@
                 newSul.push(estado);
             }
         });
+    /**
+     * outra opção
+     * var newSul = brasil.slice()
+     */
     /*
     Mostre no console os estados que estão em `newSul`.
     */
@@ -89,9 +93,7 @@
     ficar no mesmo nível que os estados já existentes, não em um array separado.
     */
     // ?
-       nordeste.forEach(function(estado){
-           brasil.push(estado);
-       });
+     brasil = brasil.concat(nordeste)
     /*
     Mostre no console os estados em `newSudeste`.
     */
@@ -160,7 +162,7 @@
     */
     // ?
     var map = newBrasil.map(function(item){
-        return {'id':item['id']+1,'estado':item['estado']+" pertence ao Brasil."};
+        return {'id':item.id+1,'estado':item.estado+" pertence ao Brasil."};
     });
     /*
     Mostre no console o array criado acima:
