@@ -16,6 +16,8 @@ function myFunction( arr ){
 Imprima o segundo índice do array retornado pela função criada acima.
 */
 
+console.log('-------------------------------------');
+
 console.log(myFunction(group)[1]);
 
 
@@ -41,11 +43,13 @@ Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
 
-console.log( myFunction(group1)[0] );
-console.log( myFunction(group1)[1] );
-console.log( myFunction(group1)[2] );
-console.log( myFunction(group1)[3] );
-console.log( myFunction(group1)[4] );
+console.log('-------------------------------------');
+
+console.log( receiver(group1, 0) );
+console.log( receiver(group1, 1) );
+console.log( receiver(group1, 2) );
+console.log( receiver(group1, 3) );
+console.log( receiver(group1, 4) );
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -61,8 +65,8 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-function book(name){
-    var prateleira = {
+function book(bookname){
+    var shelf = {
         'Camel - A Case' : {
             quantidadePaginas : 200,
             autor : 'John B',
@@ -80,13 +84,21 @@ function book(name){
         },
     };
 
-    return !name ? prateleira : prateleira[name];
+    return !bookname ? shelf : shelf[bookname];
 }
+/*
+return !bookname ? shelf : shelf[bookname]; --> isso é ternário
 
+if (!bookname){
+    return shelf;
+}
+return shelf[bookname];
+*/
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
+console.log('-------------------------------------');
 
 console.log(book());
 
@@ -95,8 +107,11 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-var bookName = 'Oriented by an Object';
-console.log('O livro ' + bookName + ' tem ' + book(bookName).quantidadePaginas + ' páginas!!');
+console.log('-------------------------------------');
+
+var bookname = 'Oriented by an Object';
+
+console.log('O livro '+ bookname + ' tem ' + book(bookname).quantidadePaginas + ' páginas!!');
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
@@ -104,8 +119,8 @@ a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
 
-var bookName = 'Camel - A Case';
-console.log('O autor do livro ' + bookName + ' é ' + book(bookName).autor + '!');
+var bookname = 'Camel - A Case';
+console.log('O autor do livro ' + bookname + ' é ' + book(bookname).autor + '!');
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
@@ -114,4 +129,4 @@ a frase:
 */
 
 var bookName = 'Function, myFunction';
-console.log('O livro ' + bookName + ' foi publicado pela editora ' + book(bookName).editora + '!');
+console.log('O livro ' + bookname + ' foi publicado pela editora ' + book(bookname).editora + '!');
