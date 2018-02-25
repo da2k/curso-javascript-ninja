@@ -74,23 +74,23 @@ Crie uma função com as seguintes características:
 */
 function superFunction(x, y, z)
 {
-	if (x != null && y != null && z != null) 
-	{
-		return (x + y) / z;
-	}
-	if (x != null && y != null) 
-	{
-		return x + y;
-	}
-	if (x != null)
-	{
-		return x;
-	}
-	if (x == null || y == null || z == null) 
+    if (x != null && y != null && z != null) 
+    {
+        return (x + y) / z;
+    }
+    if (x != null && y != null) 
+    {
+        return x + y;
+    }
+    if (x != null)
+    {
+        return x;
+    }
+    if (x == null || y == null || z == null) 
     {
         return false;
     }
-	return null;
+    return null;
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
