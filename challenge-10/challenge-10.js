@@ -10,10 +10,10 @@ das variáveis. Analise o que está sendo impresso no console para saber como
 resolver o problema corretamente.
 */
 var five = '5';
-console.log( five + ' é número?', typeof five === 'number' );
+console.log( five + ' é número?', typeof Number(five) === 'number' );
 
 var concat = 10 + 10;
-console.log( '"' + concat + '" é uma string? E é igual a "1010"?', typeof concat === 'string' );
+console.log( '"' + concat + '" é uma string? E é igual a "1010"?', typeof String(concat) === 'string' );
 
 /*
 Voltando ao exemplo da calculadora, vamos utilizar mais uma abordagem
@@ -24,7 +24,14 @@ funcional, mas dessa vez, separando algumas responsabilidades.
 função receberá dois parâmetros e retornará a operação referente à sua
 propriedade, usando os valores passados por parâmetro.
 */
-// ?
+var operation = {
+  '+': function (value1, value2) { return value1 + value2 },
+  '-': function (value1, value2) { return value1 - value2 },
+  '*': function (value1, value2) { return value1 * value2 },
+  '/': function (value1, value2) { return value1 / value2 },
+  '%': function (value1, value2) { return value1 % value2 },
+};
+
 
 /*
 Crie uma função chamada `isOperatorValid`, que receberá um operador por
@@ -36,7 +43,10 @@ parâmetro a ela é válido, ou seja, se ele é igual a '+', '-', '*', '/' ou
 Caso contrário, "false".
 - O desafio é fazer o retorno sem usar "if" ou "switch".
 */
-// ?
+
+function isOperatorValid(operador) {
+  return operation[operador] !== undefined; //se dentro do operation tiver o valor do operador, ele retorna true
+}
 
 /*
 Agora vamos criar a calculadora.
@@ -50,7 +60,19 @@ parâmetros;
 operador passado para a função "calculator", e passando para esse método
 os dois parâmetros da função de retorno de "calculator".
 */
-// ?
+function calculator(operador) {
+  if (!isOperatorValid(operador)) {
+    return false;
+  }
+  return function(number1, number2) {
+    if (typeof number1 !== 'number' || typeof number2 !== 'number') {
+      return false;
+    } else {
+      return operation[operador](number1, number2);
+    }
+  }
+}
+//calculator('+')(2, 5);
 
 /*
 Crie uma função chamada "showOperationMessage" que recebe três parâmetros:
