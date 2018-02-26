@@ -71,7 +71,7 @@ Crie um método chamado `mostrarPeso`, que retorne a frase:
 - "Eu peso [PESO]Kg."
 */
 pessoa.mostrarPeso = function () {
-return ' Eu peso ' + pessoa.peso + ' Kg.;
+return ' Eu peso ' + pessoa.peso + ' Kg.';
 }
 
 
@@ -109,8 +109,7 @@ pessoa.peso
 Qual a altura da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.altura
-1.85m
+pessoa.altura //1.85m
 
 /*
 Faça a `pessoa` fazer 3 aniversários.
