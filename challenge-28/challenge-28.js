@@ -1,4 +1,4 @@
-(function(win, doc){
+(function(win, doc, DOM){
   'use strict';
  /*
   No HTML:
@@ -27,66 +27,109 @@
   adicionar as informações em tela.
   */
 
+  function app() {
 
-  var $cepForm = doc.querySelector('[data-js=cep-form]')
-  var $message = doc.querySelector('[data-js=cep-message]');
-  var $cepNumber = doc.querySelector('[data-js=cep-number]');
-  var $cepButton = doc.querySelector('[data-js=cep-button]');
-  var $logradouro = doc.querySelector('[data-js=logradouro]');
-  var $bairro = doc.querySelector('[data-js=bairro]');
-  var $estado = doc.querySelector('[data-js=estado]');
-  var $cidade = doc.querySelector('[data-js=cidade]');
-  var $cep = doc.querySelector('[data-js=cep]');
-  var $logradouro = doc.querySelector('[data-js=logradouro]');
+    var $cepForm =new DOM('[data-js=cep-form]');
+    var $message = new DOM('[data-js=cep-message]');
+    var $cepNumber = new DOM('[data-js=cep-number]');
+    var $cepButton = new DOM('[data-js=cep-button]');
+    var $logradouro = new DOM('[data-js=logradouro]');
+    var $bairro = new DOM('[data-js=bairro]');
+    var $estado = new DOM('[data-js=estado]');
+    var $cidade = new DOM('[data-js=cidade]');
+    var $cep = new DOM('[data-js=cep]');
+    var $logradouro = new DOM('[data-js=logradouro]');
 
-  $cepForm.addEventListener('submit', function (event) {
-    event.preventDefault();
-    var myCep = $cepNumber.value.match(/\d/g).join('');
-    var ajax = new XMLHttpRequest();
-    var cep = 'https://viacep.com.br/ws/'+ myCep +'/json/';
-    $message.innerText = 'Buscando informações para o CEP '+ myCep +' ...'
+    var ajax;
 
-    ajax.open('GET', cep);
-    ajax.send();
-    ajax.addEventListener('readystatechange', function () {
-      try {
-        if (isRequestReady()) {
-          var data = JSON.parse(ajax.responseText);
-          clearFields(data);
-          if (data.erro) {
-            $message.innerText = 'Não encontramos o endereço para o CEP ' + myCep + '.';
-            return false;
-          }
-          fillFields(data);
-          $message.innerText = 'Endereço referente ao CEP ' + myCep;
-        } else {
-          $message.innerText = 'Não encontramos o endereço para o CEP ' + myCep + '.';
-        }
-      } catch (error) {
-        console.log(error);
+    $cepForm.on('submit', handleSubmitForm);
+
+    function handleSubmitForm (event) {
+      event.preventDefault();
+      ajax = new XMLHttpRequest();
+      getMessage('loading');
+      if (isInvalidCPF()) {
+        getMessage('invalid');
+        fillFields();
+        return;
       }
-    });
+      var url = getUrl();
+      ajax.open('GET', url);
+      ajax.send();
+      ajax.addEventListener('readystatechange', handleReadyStateChange, false);
+    }
 
-    function isRequestReady() {
+    function isInvalidCPF() {
+      return getCEP().length < 8;
+    }
+
+    function getCEP() {
+      return $cepNumber.get()[0].value.match(/\d/g).join('').slice(0,8);
+    }
+
+    function getUrl() {
+      return 'https://viacep.com.br/ws/'+ getCEP() +'/json/';
+    }
+
+    function handleReadyStateChange() {
+      if (isRequestOK()) {
+        getMessage('success');
+        fillFields();
+        return;
+      }
+      getMessage('error');
+      fillFields();
+    }
+
+    function isRequestOK() {
       return ajax.status === 200 && ajax.readyState === 4;
     }
 
-    function clearFields(data) {
-      $logradouro.value = '';
-      $bairro.value = '';
-      $estado.value = '';
-      $cidade.value = '';
-      $cep.value = '';
+    function clearData() {
+      var fields = {
+        logradouro: '-',
+            bairro: '-',
+                uf: '-',
+        localidade: '-',
+               cep: '-'
+      };
+      return fields;
     }
 
-    function fillFields(data) {
-      $logradouro.value = data.logradouro;
-      $bairro.value = data.bairro;
-      $estado.value = data.uf;
-      $cidade.value = data.localidade;
-      $cep.value = data.cep;
+    function fillFields() {
+      var data = parseData();
+      if (!data || data.erro) {
+        getMessage('error');
+        data = clearData();
+      }
+
+      $logradouro.get()[0].value = data.logradouro;
+      $bairro.get()[0].value = data.bairro;
+      $estado.get()[0].value = data.uf;
+      $cidade.get()[0].value = data.localidade;
+      $cep.get()[0].value = data.cep;
     }
 
-  });
+    function parseData() {
+      var response;
+      try {
+        response = JSON.parse(ajax.responseText);
+      } catch (error) {
+        response = null;
+      }
+      return response;
+    }
 
-})(window, document);
+    function getMessage(type) {
+      var message =  {
+        loading: 'Não encontramos o endereço para o CEP ' + getCEP() + '.',
+        success: 'Endereço referente ao CEP ' + getCEP(),
+        error: 'Não encontramos o endereço para o CEP ' + getCEP() + '.',
+        invalid: 'CEP inválido. Digite um CEP válido. Ex: 11950-000'
+      }
+      $message.get()[0].textContent = message[type];
+    }
+  }
+  app();
+
+})(window, document, DOM);
