@@ -28,7 +28,7 @@
     this.age = age;
     this.getFullName = function getFullName() {return this.name + ' ' + this.lastName};
     this.getAge = function getAge() {return this.age};
-    this.addAge = function addAge() {return this.age += arguments[0]};
+    this.addAge = function addAge() { this.age += arguments[0]; return this};
   };
 
 
@@ -70,7 +70,7 @@
   - "[NOME COMPLETO] agora tem [NOVA IDADE] anos."
   */
   console.log( '\nNova idade das pessoas:' );
-  console.log( maria.getFullName() + ' agora tem ' + maria.addAge(3) + ' anos' );
-  console.log( robert.getFullName() + ' agora tem ' + robert.addAge(2) + ' anos' );
-  console.log( afonso.getFullName() + ' agora tem ' + afonso.addAge(-5) + ' anos' );
+  console.log( maria.getFullName() + ' agora tem ' + maria.addAge(3).getAge() + ' anos' );
+  console.log( robert.getFullName() + ' agora tem ' + robert.addAge(2).getAge() + ' anos' );
+  console.log( afonso.getFullName() + ' agora tem ' + afonso.addAge(-5).getAge() + ' anos' );
 })();
