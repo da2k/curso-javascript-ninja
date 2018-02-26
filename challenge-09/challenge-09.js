@@ -124,3 +124,5 @@ console.log( 'O resto da divisão é:' );
 console.log(mod(function(numero1, numero2){
   return numero1 % numero2;
 }));
+
+})();
