@@ -37,7 +37,7 @@
     'The person has [COUNTER] properties'
     */
     var counter = 0;
-    for ( var prop in person){
+    for ( var prop in person ){
         console.log('The ' + prop +' of person is '+ person[prop])
         counter++;
     }
@@ -51,10 +51,7 @@
     'The person has more than 25 years old? [TRUE/FALSE]'
     */
     function moreThan( age ){
-        if( person.age > age){
-            return true
-        }
-        return false
+        return person.age > age;
     }   
     console.log( 'The person has more than 25 years old? ', moreThan(25))
 
@@ -71,7 +68,7 @@
         }
         numbers.push(i);
     }
-    console.log(numbers );
+    console.log( numbers );
 
     /*
     Faça outro loop de 0 a 20, que adicione a um array chamado `numbers` (já
