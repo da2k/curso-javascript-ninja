@@ -2,7 +2,7 @@
 
 ```js
 // Declarar uma variável qualquer, que receba um objeto vazio.
-?
+var meuObjeto = {};
 
 /*
 Declarar uma variável `pessoa`, que receba suas informações pessoais.
@@ -16,14 +16,25 @@ As propriedades e tipos de valores para cada propriedade desse objeto devem ser:
 - `andando` - Boolean - recebe "falso" por padrão
 - `caminhouQuantosMetros` - Number - recebe "zero" por padrão
 */
-?
+var pessoa = {
+    nome: "Rafael",
+    sobrenome: "Dantas",
+    sexo: "Masculino",
+    idade: 28,
+    altura: 1.76,
+    peso: 65,
+    andando: false,
+    caminhouQuantosMetros: 0,
+}
 
 /*
 Adicione um método ao objeto `pessoa` chamado `fazerAniversario`. O método deve
 alterar o valor da propriedade `idade` dessa pessoa, somando `1` a cada vez que
 for chamado.
 */
-?
+pessoa.fazerAniversario = function() {
+    return this.idade++;
+}
 
 /*
 Adicione um método ao objeto `pessoa` chamado `andar`, que terá as seguintes
@@ -35,103 +46,122 @@ valor dessa propriedade a quantidade passada por parâmetro;
 - Ele deverá modificar o valor da propriedade `andando` para o valor
 booleano que representa "verdadeiro";
 */
-?
+
+pessoa.andar = function(metros) {
+    this.caminhouQuantosMetros += metros;
+    this.andando = true;
+}
+
 
 /*
 Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o valor
 da propriedade `andando` para o valor booleano que representa "falso".
 */
-?
+pessoa.parar = function() {
+    this.andando = false;
+}
 
 /*
 Crie um método chamado `nomeCompleto`, que retorne a frase:
 - "Olá! Meu nome é [NOME] [SOBRENOME]!"
 */
-?
+pessoa.nomeCompleto = function() {
+    return "Olá! Meu nome é " + this.nome + " " + this.sobrenome;
+}
 
 /*
 Crie um método chamado `mostrarIdade`, que retorne a frase:
 - "Olá, eu tenho [IDADE] anos!"
 */
-?
+pessoa.mostrarIdade = function() {
+    return "Olá, eu tenho " + this.idade + " anos!";
+}
 
 /*
 Crie um método chamado `mostrarPeso`, que retorne a frase:
 - "Eu peso [PESO]Kg."
 */
-?
+pessoa.mostrarPeso = function() {
+    return "Eu peso " + this.peso + " Kg";
+}
 
 /*
 Crie um método chamado `mostrarAltura` que retorne a frase:
 - "Minha altura é [ALTURA]m."
 */
-?
+pessoa.mostrarAltura = function() {
+    return "Minha altura é " + this.altura + "m.";
+}
 
 /*
 Agora vamos brincar um pouco com o objeto criado:
 Qual o nome completo da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+pessoa.nomeCompleto(); //Olá! Meu nome é Rafael Dantas
 
 /*
 Qual a idade da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+pessoa.mostrarIdade(); //Olá, eu tenho 28 anos!
 
 /*
 Qual o peso da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+pessoa.mostrarPeso(); //Eu peso 65 Kg
 
 /*
 Qual a altura da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+pessoa.mostrarAltura(); //Minha altura é 1.76m.
 
 /*
 Faça a `pessoa` fazer 3 aniversários.
 */
-?
+for (var i = 1; i <= 3; i++) {
+    pessoa.fazerAniversario();
+}
 
 /*
 Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
 comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
-?
+//31
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
 com metragens diferentes passadas por parâmetro.
 */
-?
+pessoa.andar(20);
+pessoa.andar(40);
+pessoa.andar(10);
 
 /*
 A pessoa ainda está andando? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+pessoa.andando; //true;
 
 /*
 Se a pessoa ainda está andando, faça-a parar.
 */
-?
+pessoa.parar();
 
 /*
 E agora: a pessoa ainda está andando? (Use uma instrução para responder e
 comentários inline ao lado da instrução para mostrar a resposta retornada)
 */
-?
+pessoa.andando; //false
 
 /*
 Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
 inline ao lado da instrução para mostrar a resposta retornada)
 */
-?
+pessoa.caminhouQuantosMetros; //70
 
 /*
 Agora vamos deixar a brincadeira um pouco mais divertida! :D
@@ -153,5 +183,29 @@ correta, de acordo com os dados inseridos no objeto.
 ?
 
 // Agora, apresente-se ;)
-?
+pessoa.apresentacao = function() {
+    var stringInicioFrase;
+    var stringAnos;
+    var stringMetros;
+
+    if(pessoa.sexo === 'Feminino') {
+        stringInicioFrase = "Olá, eu sou a ";
+    } else if(pessoa.sexo === 'Masculino') {
+        stringInicioFrase = "Olá, eu sou o ";
+    };
+
+    if(pessoa.idade === 1) {
+        stringAnos = " ano,";
+    } else {
+        stringAnos = " anos,";
+    };
+
+    if(pessoa.caminhouQuantosMetros === 1) {
+        stringMetros = " metro";
+    } else {
+        stringMetros = " metros";
+    };
+
+    return stringInicioFrase + pessoa.nome + " " + pessoa.sobrenome + " tenho " + pessoa.idade + stringAnos + pessoa.altura + ", " + "meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + stringMetros;
+};
 ```
