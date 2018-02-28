@@ -86,9 +86,11 @@
 
   var name = [ 'Fe', 'li', 'pe' ];
 
-  console.log(name.reduce(function (a, b) {
-    return a + ('P' + b);
-  }, ''));
+  console.log(
+    name.reduce(function (a, b) {
+      return a + ('P' + b);
+    }, '')
+  );
 
   /*
   Crie uma variável chamada `inversedName`, que reduzirá o array em uma string
@@ -96,7 +98,11 @@
   */
   console.log('\nInversed Name:');
 
-  console.log(name.reduceRight(function (a, b) { return a + b; }, ''));
+  console.log(
+    name.reduceRight(function (a, b) {
+      return a + b;
+    }, '')
+  );
 
   /*
   Mostre no console o array `numberObjects`.
@@ -116,10 +122,10 @@
   */
   console.log('\nExiste um { number: 2 } em numberObjects?');
 
-  var hasNumber2 = numberObjects.indexOf({ number: 2 });
+  var number2 = numberObjects[1];
 
   console.log(
-    hasNumber2 > -1 ?
+    numberObjects.indexOf(number2) > -1 ?
       'Existe um objeto { number: 2 } em numberObjects!' :
       'Não existe um objeto { number: 2 } em numberObjects :('
   );
@@ -132,10 +138,8 @@
     '\nE buscando a partir do último índice, o { number: 2 } existe?'
   );
 
-  hasNumber2 = numberObjects.lastIndexOf({ number: 2 }, 2);
-
   console.log(
-    hasNumber2 > -1 ?
+    numberObjects.lastIndexOf(number2, 2) > -1 ?
       'Existe um objeto { number: 2 } em numberObjects!' :
       'Não existe um objeto { number: 2 } em numberObjects :('
   );
