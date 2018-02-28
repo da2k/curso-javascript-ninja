@@ -22,16 +22,17 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function showVarValue(valueToAdd, currentNumber) {
-    return "O valor da variável agora é " + (currentNumber + valueToAdd);
+function showVarValue() {
+    newVariable = 15;
+    return "O valor da variável agora é " + newVariable;
 }
 
 // Invoque a função criada acima.
-showVarValue(10, newVariable);
+showVarValue();
 
 // Qual o retorno da função? (Use comentários de bloco).
-//A função retornará "O valor da variável agora é NaN".
-//Já que newVariable não teve um valor especificado, a soma de um valor undefined com um inteiro não pode retornar um inteiro.
+//A função retornará "O valor da variável agora é 15".
+
 
 /*
 Crie uma função com as seguintes características:
