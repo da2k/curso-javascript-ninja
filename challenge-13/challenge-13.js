@@ -38,7 +38,7 @@
   */
   console.log('\nMais estados adicionados:');
 
-  brasil.unshift('Acre', 'Amazonas', 'Pará');
+  brasil.unshift('Acre', 'Amapá', 'Amazonas');
 
   console.log(brasil);
 
@@ -47,17 +47,13 @@
   */
   console.log('\nEstado removido:');
 
-  console.log(brasil.shift(brasil[0]));
+  console.log(brasil.shift());
 
   /*
   Crie um novo array chamado `newSul`, que receba somente os estados do sul,
   pegando do array `brasil`. Não remova esses itens de `brasil`.
   */
-  var newSul = brasil.filter(function(item) {
-    return sul.some(function(sulItem) {
-      return sulItem === item;
-    });
-  });
+  var newSul = brasil.slice(6, 9);
 
   /*
   Mostre no console os estados que estão em `newSul`.
@@ -99,15 +95,7 @@
   Remova de `brasil` os estados do `sudeste`, colocando-os em uma variável
   chamada `newSudeste`.
   */
-  var newSudeste = [];
-
-  sudeste.forEach(function(sudItem) {
-    brasil.forEach(function(item, index) {
-      if (sudItem === item) {
-        newSudeste.push(brasil.splice(index, 1));
-      }
-    });
-  });
+  var newSudeste = brasil.splice(2, 4);
 
   /*
   Adicione os estados do `nordeste` ao array `brasil`. Esses estados devem
