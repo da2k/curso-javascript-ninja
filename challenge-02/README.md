@@ -70,21 +70,21 @@ Crie uma função com as seguintes características:
 6\. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function aleatoria(a, b, c) {
-  if (a === undefined) {
-    return false;
-  } else {
-    if (a !== undefined) {
-      if (b !== undefined) {
-        if (c !== undefined) {
-          return (a + b) / c;
-        } else {
-          return a + b;
-        }
-      } else {
-        return a;
-      }
-    }
+  if (a !=== undefined) {
+   return a;
   }
+  else if (a!== undefined && b!==undefined){
+  return a+b;
+  }
+  else if (a!==undefinde && b!==undefined &&c!==undefined){
+  return (a+b)/c;
+  }
+  else if(a===undefined && b===undefined && c===undefined){
+  return false;
+  } 
+  else{
+  return null;
+  } 
 }
 
 
