@@ -70,13 +70,13 @@ Crie uma função com as seguintes características:
 6\. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function aleatoria(a, b, c) {
-  if (a == undefined) {
+  if (a === undefined) {
     return false;
   } else {
-    if (a != undefined) {
-      if (b != undefined) {
-        if (c != undefined) {
-          return a * b / c;
+    if (a !== undefined) {
+      if (b !== undefined) {
+        if (c !== undefined) {
+          return (a + b) / c;
         } else {
           return a + b;
         }
