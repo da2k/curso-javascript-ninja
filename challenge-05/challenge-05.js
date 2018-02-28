@@ -29,14 +29,14 @@ function escolheArray(arr, num) {
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
-var arrMista = ['Maurício', 16, [a, b], {a: 1, b:2}, true]
+var arrMista = ['Maurício', 16, ['a', 'b'], {a: 1, b:2}, true]
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-for (var i = 0; index < arrMista.length; i++) {
-    console.log(array[i])
+for (var i = 0; i < arrMista.length; i++) {
+    console.log(arrMista[i])
 }
 
 /*
@@ -54,29 +54,25 @@ propriedades:
 os livros.
 */
 function book(nomeDoLivro) {
-    var livros = {
-        'sapiens': {
-            quantidadePaginas: 400,
-            autor: 'Yuval Noah',
-            editora: 'LPM'
+    var todosLivros = {
+        'Sapiens': {
+            quantidadePaginas: 459,
+            autor: 'Yuval Noah Harari',
+            editora: 'L&PM'
         },
-        'segredos': {
-            quantidadePaginas: 200,
-            autor: 'Harv',
+        'Os segredos da mente milionária': {
+            quantidadePaginas: 175,
+            autor: 'T. Harv Eker',
             editora: 'Sextante'
         },
-        'monge': {
-            quantidadePaginas: 150,
-            autor: 'James',
+        'O monge e o executivo': {
+            quantidadePaginas: 127,
+            autor: 'James C. Hunter',
             editora: 'Sextante'
         }
     }
 
-    if (nomeDoLivro === undefined) {
-        return livros
-    }
-    
-    return info.nomeDoLivro
+    return !nomeDoLivro ? todosLivros : todosLivros[nomeDoLivro]
 }
 
 /*
@@ -89,18 +85,19 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-console.log('O livro Sapiens tem ' + book(sapiens).quantidadePaginas + ' páginas!')
+var nomeDoLivro = 'Sapiens'
+console.log('O livro ' + nomeDoLivro + ' tem ' + book(nomeDoLivro).quantidadePaginas + ' páginas!')
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log('O autor do livro Monge é ' + book(monge).quantidadePaginas + '.')
+console.log('O autor do livro ' + nomeDoLivro + ' é ' + book(nomeDoLivro).autor + '.')
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log('O livro Segredos foi publicado pela editora ' + book(monge).editora + '.')
+console.log('O livro ' + nomeDoLivro + ' foi publicado pela editora ' + book(nomeDoLivro).editora + '.')
