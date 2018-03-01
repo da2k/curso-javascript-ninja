@@ -50,6 +50,7 @@ showTeamPosition(1)
 showTeamPosition(2)
 showTeamPosition(3)
 showTeamPosition(4)
+showTeamPosition(7)
 showTeamPosition(6)
 
 /*
