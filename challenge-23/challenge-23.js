@@ -1,3 +1,7 @@
+(function(win,doc){
+
+	'user strict';
+
 /*
 Vamos desenvolver mais um projeto. A ideia é fazer uma mini-calculadora.
 As regras são:
@@ -23,3 +27,99 @@ multiplicação (x), então no input deve aparecer "1+2x".
 input;
 - Ao pressionar o botão "CE", o input deve ficar zerado.
 */
+var $visor = doc.querySelector('[data-js="visor"]');
+var $button = doc.querySelectorAll('[data-js="button-number"]');
+var $buttonCe = doc.querySelector('[data-js="button-ce"]');
+var $buttonIgual = doc.querySelector('[data-js="button-igual"]');
+var $buttonOp = doc.querySelectorAll('[data-js="button-operacao"]');
+
+
+// <<----- transforma linha button em array ---->>>
+Array.prototype.forEach.call($button, function(button){
+	button.addEventListener('click',aparaceVisor,false);
+} );
+Array.prototype.forEach.call($buttonOp,function(button){
+	button.addEventListener('click',operacoes,false)
+});
+$buttonCe.addEventListener('click',limpar,false);
+$buttonIgual.addEventListener('click',resultado,false);
+
+function aparaceVisor(){
+	($visor.value === "0") ? $visor.value = this.value : $visor.value += this.value;
+};
+
+function limpar(){
+	$visor.value = 0;
+};
+
+function operacoes() {
+	removeOperacao()
+	$visor.value += this.value;
+}
+
+function isUltimoOp(){
+	var operacoes = ['+', '-', '+', '/'];
+	var lastItem = $visor.value.split('').pop();
+	return operacoes.some(function(operacoes){
+		return operacoes === lastItem;
+	});
+}
+
+function removeOperacao(){
+	if(isUltimoOp())
+		$visor.value = $visor.value.slice(0,-1);	
+}
+
+function calculos(){
+	removeOperacao();
+	var allNumeros = $visor.value.split(/\D/);
+	var allOperadores = $visor.value.match(/[+/*\-]/g);
+
+
+	var resultado = allNumeros.reduce( function( acumulados,atual ){
+			var valorAcumulado = acumulados
+			var valorAtual = atual;
+			
+			for( var i = 0 ; i < allOperadores.length; i++){
+				switch(allOperadores[i]){
+					case '+': return +valorAcumulado + +valorAtual;
+					break;
+					case '-': return +valorAcumulado - +valorAtual;
+					break;
+					case '*': return +valorAcumulado * +valorAtual;
+					break;
+					case '/': return +valorAcumulado / +valorAtual;
+					break;
+				};
+			};
+		
+	});
+	return resultado;
+}
+
+
+
+function resultado(){
+	
+	console.log( calculos( ) );
+	$visor.value = calculos( );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+})(window,document);
