@@ -14,7 +14,7 @@ function myArr(arg){
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-myArr(myVar)[1];
+console.log(myArr(myVar)[1]);
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -35,11 +35,11 @@ var misc =[1,'Banana',true,function(){return'Função';},{prop1:'Roxo',prop2:tru
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-myVarWithIdx(misc,0); //1
-myVarWithIdx(misc,1); //'Banana'
-myVarWithIdx(misc,2); //true
-myVarWithIdx(misc,3); //[Function]
-myVarWithIdx(misc,4); //{prop1:'Roxo',prop2:true,prop3:234}
+console.log(myVarWithIdx(misc,0)); //1
+console.log(myVarWithIdx(misc,1)); //'Banana'
+console.log(myVarWithIdx(misc,2)); //true
+console.log(myVarWithIdx(misc,3)); //[Function]
+console.log(myVarWithIdx(misc,4)); //{prop1:'Roxo',prop2:true,prop3:234}
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
