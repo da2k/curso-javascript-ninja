@@ -58,7 +58,7 @@ function operacoes() {
 }
 
 function isUltimoOp(){
-	var operacoes = ['+', '-', '+', '/'];
+	var operacoes = ['+', '-', '*', '/'];
 	var lastItem = $visor.value.split('').pop();
 	return operacoes.some(function(operacoes){
 		return operacoes === lastItem;
@@ -74,7 +74,6 @@ function calculos(){
 	removeOperacao();
 	var allNumeros = $visor.value.split(/\D/);
 	var allOperadores = $visor.value.match(/[+/*\-]/g);
-
 
 	var resultado = allNumeros.reduce( function( acumulados,atual ){
 			var valorAcumulado = acumulados
@@ -96,7 +95,6 @@ function calculos(){
 	});
 	return resultado;
 }
-
 
 
 function resultado(){
