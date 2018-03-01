@@ -74,24 +74,32 @@ function calculos(){
 	removeOperacao();
 	var allNumeros = $visor.value.split(/\D/);
 	var allOperadores = $visor.value.match(/[+/*\-]/g);
-
+	var i = 0 ;
 	var resultado = allNumeros.reduce( function( acumulados,atual ){
 			var valorAcumulado = acumulados
 			var valorAtual = atual;
-			
-			for( var i = 0 ; i < allOperadores.length; i++){
+			while( i < allOperadores.length){
 				switch(allOperadores[i]){
-					case '+': return +valorAcumulado + +valorAtual;
+					case '+': 
+						i++ 
+						return +valorAcumulado + +valorAtual;
 					break;
-					case '-': return +valorAcumulado - +valorAtual;
+					case '-': 
+						i++ 
+						return +valorAcumulado - +valorAtual;
 					break;
-					case '*': return +valorAcumulado * +valorAtual;
+					case '*': 
+						i++ 
+						return +valorAcumulado * +valorAtual;
 					break;
-					case '/': return +valorAcumulado / +valorAtual;
+					case '/': 
+						i++ 
+						return +valorAcumulado / +valorAtual;
 					break;
 				};
+				
 			};
-		
+			 
 	});
 	return resultado;
 }
