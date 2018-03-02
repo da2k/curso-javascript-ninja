@@ -19,10 +19,6 @@
     };
     console.log( 'Propriedades de "person":');
 
-    for( var prop in person ){
-
-        console.log( prop )
-    }
 
     
     /*
@@ -42,20 +38,9 @@
     `name`: String
     `pages`: Number
     */
-    books = [        
-        {
-        'name': 'livro 1', 
-        'pages': 100
-        },
-        {
-            'name': 'livro 2',
-            'pages': 200
-        },
-        {
-            'name': 'livro 3',
-            'pages': 300
-        }
-    ]
+    books.push({nome: 'livro1', pages: 100})
+    books.push({nome: 'livro2', pages: 200})
+    books.push({nome: 'livro3', pages: 300})
     console.log( '\nLista de livros:' );
 
     /*
@@ -99,7 +84,9 @@
         "[PROPRIEDADE]: [VALOR]"
     */
     for (var i = 0; i < books.length; i++){
-        console.log(books[i].name + ': ' + books[i].pages)
+        for(var prop in books[i]){
+            console.log(prop + ': ' + books[i][prop])
+        }
     }
     
     /*
@@ -125,6 +112,6 @@
     /*
     Mostre todos os itens do array acima, odenados alfabéticamente.
     */
-   console.log( myName.sort().join(''))
+   console.log( myName.sort())
     
 })();
