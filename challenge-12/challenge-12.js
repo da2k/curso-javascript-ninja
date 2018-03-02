@@ -44,7 +44,7 @@
     */
     books = [        
         {
-        'name': 'livro1', 
+        'name': 'livro 1', 
         'pages': 100
         },
         {
@@ -98,33 +98,33 @@
     no formato abaixo:
         "[PROPRIEDADE]: [VALOR]"
     */
-    for(var i = 0; i < books.length; i++){
-        console.log()
+    for (var i = 0; i < books.length; i++){
+        console.log(books[i].name + ': ' + books[i].pages)
     }
     
     /*
     Crie um array chamado `myName`. Cada item desse array deve ser uma letra do
     seu nome. Adicione seu nome completo no array.
     */
-    // ?
+    var myName = ['d', 'a', 'n', 'i', 'e', 'l', 'e']
     console.log( '\nMeu nome é:' );
     
     /*
     Juntando todos os itens do array, mostre no console seu nome.
     */
-    // ?
+    console.log( myName.join(''))
     
     console.log( '\nMeu nome invertido é:' );
     
     /*
     Ainda usando o objeto acima, mostre no console seu nome invertido.
     */
-    // ?
+   console.log( myName.reverse().join(''))
     
     console.log( '\nAgora em ordem alfabética:' );
     /*
     Mostre todos os itens do array acima, odenados alfabéticamente.
     */
-    // ?
+   console.log( myName.sort().join(''))
     
 })();
