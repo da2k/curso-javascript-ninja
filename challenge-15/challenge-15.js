@@ -27,17 +27,17 @@
     this.lastName = lastName;
     this.name = name;
 
-    this.addAge = function () {
+    this.addAge = function addAge() {
       this.age += arguments[0];
 
       return this;
     };
 
-    this.getAge = function () {
+    this.getAge = function getAge() {
       return this.age;
     };
 
-    this.getFullName = function () {
+    this.getFullName = function getFullName() {
       return this.name + ' ' + this.lastName;
     };
   }
