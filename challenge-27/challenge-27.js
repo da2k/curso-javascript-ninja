@@ -71,8 +71,6 @@
     return Object.prototype.toString.call(param) === '[object ' + type + ']';
   }
 
-  // - isArray, isObject, isFunction, isNumber, isString, isBoolean, isNull
-
   DOM.prototype.isArray = function isArray( param ) {
     return Object.prototype.toString.call( param ) === '[object Array]';
   };
