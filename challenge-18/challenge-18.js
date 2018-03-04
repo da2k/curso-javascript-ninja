@@ -19,14 +19,18 @@
     - "101.123-131x32"
     */
     console.log( 'Limpando CPFs:' );
+    var cpfsArr = [
+        "049-214 3421-1",
+        "210.458.522-05",
+        "735 500 794 - 22",
+        "101.123-131x32"
+    ];
     function cleanCPF( cpf ) {
         return cpf.replace( /\D/g, '' );
     }
-
-    console.log( cleanCPF( "049-214 3421-1" ) );
-    console.log( cleanCPF( "210.458.522-05" ) );
-    console.log( cleanCPF( "735 500 794 - 22" ) );
-    console.log( cleanCPF( "101.123-131x32" ) );
+    cpfsArr.forEach( function( cpf ) { 
+        console.log( cleanCPF( cpf ) );
+    } );
 
     /*
     Usando os CPFs limpos acima, deixe-os com a formatação correta de CPF.
@@ -34,14 +38,9 @@
     Mostre o resultado no console.
     */
     console.log( '\nFormatando CPFs corretamente:' );
-    var cpfRegex = /(\d{3})(\d{3})(\d{3})(\d{2})/g;
-    function cpfFormat( all, first, second, third, digits ) {
-        return first + '.' + second + '.' + third + '-' + digits;
-    }
-    console.log( cleanCPF( "049-214 3421-1" ).replace( cpfRegex, cpfFormat ) );
-    console.log( cleanCPF( "210.458.522-05" ).replace( cpfRegex, cpfFormat ) );
-    console.log( cleanCPF( "735 500 794 - 22" ).replace( cpfRegex, cpfFormat ) );
-    console.log( cleanCPF( "101.123-131x32" ).replace( cpfRegex, cpfFormat ) );
+    cpfsArr.forEach( function( cpf ){
+        console.log( cleanCPF( cpf ).replace( /(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4' ) );
+    } );
 
     /*
     Crie uma expressão regular que faça match com as palavras "junho" ou "julho",
@@ -55,7 +54,7 @@
     ["junho", "julho"]
     */
     console.log( '\nMatch com as palavras "junho" ou "julho" para a frase "Os meses de janeiro, junho e julho começam com a letra j.":' );
-    console.log( "Os meses de janeiro, junho e julho começam com a letra j.".match( /[h-u]{5}/g ) );
+    console.log( "Os meses de janeiro, junho e julho começam com a letra j.".match( /ju[nl]ho/g ) );
 
     /*
     Crie uma expressão regular que faça o match com a abertura de uma tag
@@ -104,10 +103,12 @@
     corretas, para depois aplicar no código ;)
     */
     console.log( '\nFazer replace dos textos das tags:' );
-    var tagRegex = /(<\w+>)([^<>]+)(<\/\w+>)/g;
-    function replaceTxt( fullMatch, openTag, text, closeTag ) {
-        return openTag + 'O texto dentro da tag "' + openTag.replace( /[<>]/g, '' ) + '" é "' + text + '"' + closeTag + '\n';
-    }
-    console.log( "<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>".replace( tagRegex, replaceTxt ) );
+    console.log(
+        "<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>"
+        .replace(
+            /(<(\w+)>)([^<]+)(<\/\w+>)/g,
+            '$1O texto dentro da tag "$2" é "$3"$4\n'
+        )
+    );
 
 })();
