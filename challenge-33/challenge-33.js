@@ -27,3 +27,4 @@ Depois, envie um pull request no repositório do curso, colocando no console.log
 abaixo a URL do pull request no seu repositório.
 */
 console.log('Link do pull request do seu projeto');
+console.log('https://github.com/alexandreflach/automaisvendafacil/pull/4');
