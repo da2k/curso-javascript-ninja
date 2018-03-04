@@ -191,7 +191,7 @@ pessoa.apresentacao(){
   if(pessoa.caminhouQuantosMetros === 1){
     met = "metro";
   }
-  return "Olá, eu sou "+ artigo +" "+ pessoa.nomeCompleto() + ", tenho " +pessoa.idade "+ age + ","+ pessoa.altura+", meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei "+ pessoa.caminhouQuantosMetros +" "+ met+"!"
+  return "Olá, eu sou "+ artigo +" "+ pessoa.nomeCompleto() + ", tenho " +pessoa.idade "+ age + ","+ pessoa.altura+", meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei "+ pessoa.caminhouQuantosMetros +" "+ met+"!";
 }
 
 // Agora, apresente-se ;)
