@@ -6,8 +6,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Challenger 29</title>
-</head>
+  <style>
 
+    form {
+      width: 500px;
+      margin-bottom: 20px;
+    }
+
+    .row {
+      display: block;
+      padding: 5px;
+    }
+
+    .row label {
+      font-weight: bold;
+    }
+
+    .row input {
+      border: 1px solid #ccc;
+      width: 100%;
+      padding: 5px;
+    }
+
+    table {
+      min-width: 500px;
+    }
+
+    table thead tr th {
+      border: 1px solid #ccc;
+    }
+
+    tbody tr td {
+      border: 1px solid #ccc;
+    }
+    tr td image {
+      border: 1px solid #000;
+      max-width: 50px;
+    }
+
+    img {
+      max-width: 200px;
+      height: auto;
+    }
+  </style>
+</head>
 <body>
   <main class="container">
     <section class="dealership">
@@ -41,17 +83,23 @@
       </section>
       <section class="dealership__table">
         <table>
-          <theader>
+          <thead>
             <tr>
-              <th>Lista de Carros</th>
+              <th colspan="5">Lista de Carros</th>
             </tr>
-          </theader>
+            <tr>
+              <th>Imagem</th>
+              <th>Marca / Modelo</th>
+              <th>Ano</th>
+              <th>Placa</th>
+              <th>Cor</th>
+            </tr>
+          </thead>
           <tbody data-js="dealership-table">
           </tbody>
         </table>
       </section>
     </section>
-
   </main>
   <script src="./DOM.js"></script>
   <script src="./challenge-29.js"></script>

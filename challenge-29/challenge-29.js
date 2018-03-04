@@ -1,4 +1,4 @@
-(function() {
+(function($) {
   'use strict';
 
   /*
@@ -36,102 +36,129 @@
   que será nomeado de "app".
   */
 
-  function dealership() {
-    var $form = new DOM('[data-js=form]');
-    var $imagem = new DOM('[data-js=car-imagem]');
-    var $marcaModelo = new DOM('[data-js=car-marcamodelo]');
-    var $ano = new DOM('[data-js=car-ano]');
-    var $placa = new DOM('[data-js=car-placa]');
-    var $cor = new DOM('[data-js=car-cor]');
-    var $table = new DOM('[data-js=dealership-table]');
-    var $title = new DOM('[data-js=dealership-title]');
-    var carsList = [];
+  var app = (function appController(win, doc) {
     var ajax;
-    $form.on('submit', handleSubmitForm);
+    var getInput = getInputs();
 
-    function handleSubmitForm(event) {
-      event.preventDefault();
-      var newCar = addCar();
-      carsList.push(newCar);
-      renderCarList();
-      clearForm();
-    }
-
-    function addCar() {
-      return {
-        img: $imagem.get()[0].value,
-        modelo: $marcaModelo.get()[0].value,
-        ano: $ano.get()[0].value,
-        placa: $placa.get()[0].value,
-        cor: $cor.get()[0].value
-      }
-    }
-
-    function renderCarList() {
-      $table.get()[0].innerHTML = carsList.map(makeMarkup).join('');
-    }
-
-    function makeMarkup(car) {
-      return  '<tr>' +
-                '<th>Imagem do carro:</th>' +
-                '<td>' + car.img + '</td>' +
-              '</tr>' +
-              '<tr>' +
-                '<th>Marca / Modelo:</th>' +
-                '<td>' + car.modelo + '</td>' +
-              '</tr>' +
-              '<tr>' +
-                '<th>Ano:</th>' +
-                '<td>' + car.ano + '</td>' +
-              '</tr>' +
-              '<tr>' +
-                '<th>Placa:</th>' +
-                '<td>' + car.placa + '</td>' +
-              '</tr>' +
-              '<tr>' +
-                '<th>Cor:</th>' +
-                '<td>' + car.cor + '</td>' +
-              '</tr>';
+    function getInputs() {
+      var inputs = {
+        imagem: $('[data-js=car-imagem]').get(),
+        marcaModelo: $('[data-js=car-marcamodelo]').get(),
+        ano: $('[data-js=car-ano]').get(),
+        placa: $('[data-js=car-placa]').get(),
+        cor: $('[data-js=car-cor]').get()
+      };
+      return inputs;
     }
 
     function clearForm() {
-      $imagem.get()[0].value = "";
-      $marcaModelo.get()[0].value = "";
-      $ano.get()[0].value = "";
-      $placa.get()[0].value = "";
-      $cor.get()[0].value = "";
+      getInput['imagem'].value = "";
+      getInput['marcaModelo'].value = "";
+      getInput['ano'].value = "";
+      getInput['placa'].value = "";
+      getInput['cor'].value = "";
     }
 
-    function setTitle() {
-      ajax = new XMLHttpRequest();
-      ajax.open('GET', '/company.json');
-      ajax.send();
-      ajax.addEventListener('readystatechange', handleReadyStateChange, false);
+    function initValues() {
+      getInput['imagem'].value = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLd2U9PSVTK2s5LV7_J2SPiWmI97lt1WaYciV1l_selrvM2lg0IQ";
+      getInput['marcaModelo'].value = "VW Gol";
+      getInput['ano'].value = "2019";
+      getInput['placa'].value = "CCC-0000";
+      getInput['cor'].value = "Azul";
     }
 
-    function handleReadyStateChange() {
-      if (isRequestOK()) {
-        var data = parseData();
-        $title.get()[0].textContent = data.name + ' ' + data.phone;
+    return {
+      init: function init() {
+        this.initCompanyInformation();
+        this.initEvents();
+        initValues();
+      },
+
+      initCompanyInformation: function initCompanyInformation() {
+        app.showCompanyInfo();
+      },
+
+      showCompanyInfo: function showCompanyInfo() {
+        ajax = new XMLHttpRequest();
+        ajax.open('GET', '/company.json');
+        ajax.send();
+        ajax.addEventListener('readystatechange', app.handleReadyStateChange, false);
+      },
+
+      handleReadyStateChange: function handleReadyStateChange() {
+        if (app.isRequestOK()) {
+          var data = app.parseData();
+          var $title = $('[data-js=dealership-title]');
+          $title.get().textContent = data.name + ' ' + data.phone;
+        }
+      },
+
+      isRequestOK: function isRequestOK() {
+        return ajax.readyState === 4 && ajax.status === 200;
+      },
+
+      parseData: function parseData() {
+        var data;
+        try {
+          data = JSON.parse(ajax.responseText)
+        } catch (error) {
+          console.log('Erro:',error);
+          data = null;
+        }
+        return data;
+      },
+
+      initEvents: function initEvents() {
+        var $form = $('[data-js=form]');
+        $form.on('submit', app.handleSubmitForm);
+      },
+
+      handleSubmitForm: function handleSubmitForm(event) {
+        event.preventDefault();
+        var $dealershipTable = $('[data-js=dealership-table]');
+        var newCar = app.getCar();
+        $dealershipTable.get().appendChild(app.addNewCar());
+        clearForm();
+      },
+
+      addNewCar: function addNewCar() {
+        var fragment = doc.createDocumentFragment();
+        var tr = doc.createElement('tr');
+        var img = doc.createElement('img');
+        var tdImage =doc.createElement('td');
+        var tdMarcaModelo = doc.createElement('td');
+        var tdAno = doc.createElement('td');
+        var tdPlaca = doc.createElement('td');
+        var tdCor = doc.createElement('td');
+
+        img.setAttribute('src', getInput['imagem'].value );
+        tdImage.appendChild(img);
+        tdMarcaModelo.textContent = getInput['marcaModelo'].value;
+        tdAno.textContent = getInput['ano'].value;
+        tdPlaca.textContent = getInput['placa'].value;
+        tdCor.textContent = getInput['cor'].value;
+
+        tr.appendChild(tdImage);
+        tr.appendChild(tdMarcaModelo);
+        tr.appendChild(tdAno);
+        tr.appendChild(tdPlaca);
+        tr.appendChild(tdCor);
+
+        return fragment.appendChild(tr);
+      },
+
+      getCar: function getCar() {
+        return {
+          img: getInput['imagem'].value,
+          modelo: getInput['marcaModelo'].value,
+          ano: getInput['ano'].value,
+          placa: getInput['placa'].value,
+          cor: getInput['cor'].value
+        }
       }
     }
+  })(window, document);
 
-    function isRequestOK() {
-      return ajax.readyState === 4 && ajax.status === 200;
-    }
+  app.init();
 
-    function parseData() {
-      var data;
-      try {
-        data = JSON.parse(ajax.responseText)
-      } catch (error) {
-        console.log('Erro:',error);
-        data = null;
-      }
-      return data;
-    }
-    setTitle();
-  }
-
-  dealership();
-})();
+})(window.DOM);

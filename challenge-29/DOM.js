@@ -2,6 +2,9 @@
   'use strict';
 
   function DOM(node) {
+    if (!(this instanceof DOM)) {
+      return new DOM(node);
+    }
     this.element = doc.querySelectorAll(node);
   }
 
@@ -17,8 +20,10 @@
     });
   }
 
-  DOM.prototype.get = function () {
-    return this.element;
+  DOM.prototype.get = function (index) {
+    if(!index)
+      return this.element[0];
+    return this.element[0];
   }
 
   DOM.prototype.forEach = function forEach() {
