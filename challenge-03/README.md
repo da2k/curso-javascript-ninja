@@ -18,7 +18,7 @@ As propriedades e tipos de valores para cada propriedade desse objeto devem ser:
 */
 var pessoa = {
   nome:'maria',
-  sobrenome: 'de'
+  sobrenome: 'demócrito'
   sexo:'feminino',
   idade:12,
   altura:1.65,
@@ -33,7 +33,7 @@ alterar o valor da propriedade `idade` dessa pessoa, somando `1` a cada vez que
 for chamado.
 */
 pessoa.fazerAniversario = function(){
-  ++idade;
+  idade++;
 }
 
 /*
@@ -64,92 +64,102 @@ Crie um método chamado `nomeCompleto`, que retorne a frase:
 - "Olá! Meu nome é [NOME] [SOBRENOME]!"
 */
 pessoa.nomeCompleto = function(){
-  return "Olá! Meu nome é "+ nome + " " + sobrenome + "!"
+  return "Olá! Meu nome é "+ pessoa.nome + " " + pessoa.sobrenome + "!";
 }
 
 /*
 Crie um método chamado `mostrarIdade`, que retorne a frase:
 - "Olá, eu tenho [IDADE] anos!"
 */
-?
+pessoa.mostrarIdade = function(){
+  return "Olá, eu tenho "+ pessoa.idade + " anos!";
+}
 
 /*
 Crie um método chamado `mostrarPeso`, que retorne a frase:
 - "Eu peso [PESO]Kg."
 */
-?
+pessoa.mostrarPeso = function(){
+  return "Eu peso "+ pessoa.peso + "Kg.";
+}
 
 /*
 Crie um método chamado `mostrarAltura` que retorne a frase:
 - "Minha altura é [ALTURA]m."
 */
-?
+pessoa.mostrarAltura = function(){
+  return "Minha altura é "+ pessoa.altura+"m.";
+}
 
 /*
 Agora vamos brincar um pouco com o objeto criado:
 Qual o nome completo da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+pessoa.nomeCompleto(); //"Olá! Meu nome é maria demócrito!"
 
 /*
 Qual a idade da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+pessoa.mostrarIdade(); //"Olá, eu tenho 12 anos!"
 
 /*
 Qual o peso da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+pessoa.peso(); //"Eu peso 70.5Kg." 
 
 /*
 Qual a altura da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+pessoa.altura(); //"Minha altura é 1.65m."
 
 /*
 Faça a `pessoa` fazer 3 aniversários.
 */
-?
+pessoa.fazerAniversario();
+pessoa.fazerAniversario();
+pessoa.fazerAniversario();
 
 /*
 Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
 comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
-?
+pessoa.mostrarIdade();//15
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
 com metragens diferentes passadas por parâmetro.
 */
-?
+pessoa.andar(1);
+pessoa.andar(2);
+pessoa.andar(3);
 
 /*
 A pessoa ainda está andando? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+pessoa.andando(); //true
 
 /*
 Se a pessoa ainda está andando, faça-a parar.
 */
-?
+pessoa.parar();
 
 /*
 E agora: a pessoa ainda está andando? (Use uma instrução para responder e
 comentários inline ao lado da instrução para mostrar a resposta retornada)
 */
-?
+pessoa.andando(); //false
 
 /*
 Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
 inline ao lado da instrução para mostrar a resposta retornada)
 */
-?
+pessoa.caminhouQuantosMetros //6
 
 /*
 Agora vamos deixar a brincadeira um pouco mais divertida! :D
@@ -168,8 +178,22 @@ deve conter no retorno da frase acima é "metro" no lugar de "metros".
 método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
-?
+pessoa.apresentacao(){ 
+  var artigo ="o";
+  var age = "anos";
+  var met = "metros";
+  if(pessoa.sexo === 'feminino'){
+    artigo = a;
+  }
+  if(pessoa.idade === 1){
+    age = ano;
+  }
+  if(pessoa.caminhouQuantosMetros === 1){
+    met = "metro";
+  }
+  return "Olá, eu sou "+ artigo +" "+ pessoa.nomeCompleto() + ", tenho " +pessoa.idade "+ age + ","+ pessoa.altura+", meu peso é "+pessoa.peso " + "e, só hoje, eu já caminhei "+ pessoa.caminhouQuantosMetros +" "+ met+"!"
+}
 
 // Agora, apresente-se ;)
-?
+pessoa.apresentacao();//"Olá, eu sou a maria demócrito, tenho 12anos, 1.65, meu peso é 70.5Kg e, só hoje, eu já caminhei 6 metros!"
 ```
