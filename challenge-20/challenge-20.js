@@ -57,7 +57,7 @@
   entrados pelo usuário.
   */
   $inputUsername.value = username;
-  $inputEmail.value = email;
+  $inputEmail.value = email
 
   /*
   Adicione um listener de evento de click ao botão que faça o seguinte:
@@ -127,6 +127,6 @@
       - "agua_@evida.br.com"
   */
   function isValidEmail(email) {
-    return /^(\w|+|.)+@\w+\.{2,}(?:\.\w{2})?$/.test(email);
+    return /^(\w|+|.)+@\w+\.\w{2,}(?:\.\w{2})?$/.test(email);
   }
 })(window, document);
