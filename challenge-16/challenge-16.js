@@ -71,10 +71,11 @@
 
   console.log(
     myFriends.reduce(function (friends, friend, index) {
-      return index !== myFriends.length - 1 ?
-        friends = friends + ', ' + friend :
-        friends = friends + ' e ' + friend + ' são meus amigos.';
-    })
+      var separator = index !== myFriends.length - 1 ?
+        ', ' :
+        ' e ';
+      return friends = friends + separator + friend;
+    }).concat(' são meus amigos.')
   );
 
   /*
@@ -83,11 +84,7 @@
   */
   console.log('\nEra "Roberto", agora é:');
 
-  function transformGender(str) {
-    return str = str.substring(0, str.length - 1) + 'a';
-  }
-
-  console.log(transformGender('Roberto'));
+  console.log('Roberto'.replace('to', 'ta'));
 
   /*
   Mostre no console a parte "nando" da string "Fernando". Use o método que
@@ -113,13 +110,15 @@
   var myName = 'jonh';
 
   function alternateChar(str) {
-    return str.split('').reduce(function (chars, char, index) {
-      (index - 1) % 2 === 0 ?
-        chars = chars + char.toLowerCase() :
-        chars = chars + char.toUpperCase();
+    var newStr = [];
 
-      return chars.charAt(0).toUpperCase() + chars.substring(1);
+    str.split('').forEach(function (char, index) {
+      return index % 2 === 0 ?
+        newStr.push(char.toLowerCase()) :
+        newStr.push(char.toUpperCase());
     });
+
+    return newStr.join('');
   }
 
   console.log(alternateChar(myName));
