@@ -14,12 +14,12 @@
         }
       }
       var carro = {
-        marca:" ",
-        modelo:" ",
-        placa:" ",
-        ano: ,
-        cor:" ",
-        quantasPortas: ,
+        marca:"bmw",
+        modelo:"i500",
+        placa:"pag4900",
+        ano: 2016,
+        cor:"branco",
+        quantasPortas: 5,
         assentos: 5,
         quantidadePessoas:0
       }
@@ -28,6 +28,12 @@
       }
       carro.obterCor = function(){
         return carro.cor;
+      }
+      carro.obterMarca = function () {
+        return carro.marca;
+      }
+      carro.obterMarcaModelo = function(){
+        return "Esse carro é um "+carro.marca+carro.modelo;
       }
     </script>
   </body>
