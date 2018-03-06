@@ -14,12 +14,12 @@
         }
       }
       var carro = {
-        marca:" ",
-        modelo:" ",
-        placa:" ",
-        ano: ,
-        cor:" ",
-        quantasPortas: ,
+        marca:"bmw",
+        modelo:"i500",
+        placa:"mec1998",
+        ano: 2017,
+        cor:"branca",
+        quantasPortas: 5,
         assentos: 5,
         quantidadePessoas:0
       }
@@ -28,6 +28,18 @@
       }
       carro.obterCor = function(){
         return carro.cor;
+      }
+      carro.obterMarcaModelo=function(){
+        return "Esse carro é um "+carro.marca+" "+carro.modelo;
+      }
+      carro.adiconaPessoa = function(numPessoa){
+        var lotacao = carro.quantidadePessoas;
+        var assentoLivre = carro.assentos - lotacao;
+        if(lotacao==5){
+          return "O carro já está lotado!";
+        }else if(lotacao == 4 ){
+          return ""
+        }
       }
     </script>
   </body>
