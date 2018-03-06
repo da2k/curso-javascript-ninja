@@ -29,11 +29,17 @@
       carro.obterCor = function(){
         return carro.cor;
       }
-      carro.obterMarca = function () {
-        return carro.marca;
+      carro.obterMarcaModelo=function(){
+        return "Esse carro é um "+carro.marca+" "+carro.modelo;
       }
-      carro.obterMarcaModelo = function(){
-        return "Esse carro é um "+carro.marca+carro.modelo;
+      carro.adiconaPessoa = function(numPessoa){
+        var lotacao = carro.quantidadePessoas;
+        var assentoLivre = carro.assentos - lotacao;
+        if(lotacao==5){
+          return "O carro já está lotado!";
+        }else if(lotacao == 4 ){
+          return ""
+        }
       }
     </script>
   </body>
