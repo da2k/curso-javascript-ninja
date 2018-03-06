@@ -1,46 +1,56 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Desafio 4</title>
-  </head>
-  <body>
-    <script type="text/javascript">
-      var isTruthy = function(argumentoBooleano){
-        if(argumentoBooleano){
-          return true;
-        }else{
-          return false;
-        }
-      }
-      var carro = {
-        marca:"bmw",
-        modelo:"i500",
-        placa:"pag4900",
-        ano: 2016,
-        cor:"branco",
-        quantasPortas: 5,
-        assentos: 5,
-        quantidadePessoas:0
-      }
-      carro.mudarCor = function(cor){
-        carro.cor = cor;
-      }
-      carro.obterCor = function(){
-        return carro.cor;
-      }
-      carro.obterMarcaModelo=function(){
-        return "Esse carro é um "+carro.marca+" "+carro.modelo;
-      }
-      carro.adiconaPessoa = function(numPessoa){
-        var lotacao = carro.quantidadePessoas;
-        var assentoLivre = carro.assentos - lotacao;
-        if(lotacao==5){
-          return "O carro já está lotado!";
-        }else if(lotacao == 4 ){
-          return ""
-        }
-      }
-    </script>
+
+<head>
+  <meta charset="utf-8">
+  <title>Desafio 4</title>
+</head>
+<<body>
+
   </body>
+  <script type="text/javascript">
+    var isTruthy = function(argumentoBooleano) {
+      if (argumentoBooleano) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+    var carro = {
+      marca: "bmw",
+      modelo: "i500",
+      placa: "top4956",
+      ano: 2016,
+      cor: "branco",
+      quantasPortas: 5,
+      assentos: 5,
+      quantidadePessoas: 0
+    }
+    carro.mudarCor = function(cor) {
+      carro.cor = cor;
+    }
+    carro.obterCor = function() {
+      return carro.cor;
+    }
+    carro.obterMarca = function() {
+      return carro.marca;
+    }
+    carro.obterMarcaModelo = function() {
+      return "Esse carro é um " + carro.marca + " " + carro.modelo;
+    }
+    carro.adicionaPessoa = function(numPessoa) {
+      var assentoLivre = carro.assentos - (carro.quantidadePessoas+numPessoa);
+      console.log(assentoLivre)
+      carro.quantidadePessoas += numPessoa;
+      if (assentoLivre == 0 || assentoLivre<0) {
+        return "O carro já está lotado! "+(-assentoLivre)+ " não entraram no carro.";
+      } else if (assentoLivre == 1) {
+        return "Só cabem mais " + assentoLivre + " pessoa";
+      } else if (assentoLivre > 1 && assentoLivre <= carro.assentos) {
+        return "Ainda cabem " + assentoLivre + " pessoas";
+      }
+    }
+  </script>
+  </body>
+
 </html>
