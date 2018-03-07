@@ -83,32 +83,30 @@
   */
   console.log('\nMeses representados por números:');
 
-  var months = [
-    'janeiro',
-    'fevereiro',
-    'março',
-    'abril',
-    'maio',
-    'junho',
-    'julho',
-    'agosto',
-    'setembro',
-    'outubro',
-    'novembro',
-    'dezembro'
-  ];
+  var months = {
+    janeiro: '01',
+    fevereiro: '02',
+    março: '03',
+    abril: '04',
+    maio: '05',
+    junho: '06',
+    julho: '07',
+    agosto: '08',
+    setembro: '09',
+    outubro: '10',
+    novembro: '11',
+    dezembro: '12'
+  };
 
-  function getMonthNumber(month) {
-    var monthNumber = months.indexOf(month) + 1;
-
-    if (monthNumber >= 10) { return String(monthNumber); }
-
-    return '0' + String(monthNumber);
+  function getMonthNumber(monthName) {
+    return months[monthName];
   }
 
-  months.forEach(function(month) {
-    console.log('O mês de ' + month + ' é representado pelo número ' + getMonthNumber(month) + '.');
-  });
+  for (var month in months) {
+    console.log(
+      'O mês de ' + month + ' é representado pelo número ' + getMonthNumber(month) + '.'
+    );
+  }
 
   /*
   Agora, declare uma variável chamada `regexDate` que irá receber a expressão
@@ -133,11 +131,9 @@
   */
   console.log('\nReplace de datas:');
 
-  function replaceDate(str) {
-    return str.replace(regexDate, function(date, day, month, year) {
-      return day + '/' + getMonthNumber(month) + '/' + year;
-    });
+  function replaceDate(date, day, month, year) {
+    return day + '/' + getMonthNumber(month) + '/' + year;
   }
 
-  console.log(replaceDate(text));
+  console.log(text.replace(regexDate, replaceDate));
 })();
