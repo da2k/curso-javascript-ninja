@@ -39,11 +39,11 @@
       return "Esse carro é um " + carro.marca + " " + carro.modelo;
     }
     carro.adicionaPessoa = function(numPessoa) {
-      var assentoLivre = carro.assentos - (carro.quantidadePessoas+numPessoa);
+      var assentoLivre = carro.assentos - (carro.quantidadePessoas + numPessoa);
       console.log(assentoLivre)
       carro.quantidadePessoas += numPessoa;
-      if (assentoLivre == 0 || assentoLivre<0) {
-        return "O carro já está lotado! "+(-assentoLivre)+ " não entraram no carro.";
+      if (assentoLivre == 0 || assentoLivre < 0) {
+        return "O carro já está lotado! " + (-assentoLivre) + " não entraram no carro.";
       } else if (assentoLivre == 1) {
         return "Só cabem mais " + assentoLivre + " pessoa";
       } else if (assentoLivre > 1 && assentoLivre <= carro.assentos) {
