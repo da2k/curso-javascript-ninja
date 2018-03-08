@@ -65,7 +65,7 @@ Adicione um listener de evento de click ao botão que faça o seguinte:
 - Se o campo de "Email" for inválido, mostrar:
     - "Entre com um e-mail válido!"
 
-2. Para verificar se o e-mail é válido use a função `isValidEmail`, passando
+    2. Para verificar se o e-mail é válido use a função `isValidEmail`, passando
 o e-mail que foi entrado no campo de "Email" por parâmetro. (A função
 `isValidEmail` será criada logo abaixo).
 
@@ -93,13 +93,13 @@ As regras para validação são:
     - O final do domínio é opcional, mas se existir, deve começar com um
     ponto, seguido de no máximo 2 caracteres alfanuméricos.
 
-Alguns e-mails válidos que podem ser usados para testar:
+    Alguns e-mails válidos que podem ser usados para testar:
     - "meu.email+categoria@gmail.com"
     - "juca_malandro@bol.com.br"
     - "pedrobala@hotmail.uy"
     - "sandro@culinaria.dahora"
 
-Alguns e-mails inválidos:
+    Alguns e-mails inválidos:
     - "walter-da-silva@maraca.br"
     - "rita-marica@titica.a.b"
     - "agua_@evida.br.com"
