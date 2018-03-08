@@ -21,32 +21,32 @@ myFunction();
 
 /*
     myFunction2();
-*/
-function myFunction2() {
-    var number1 = 10;
-    var number2 = 20;
-    var sum = function sum() {
-    return number1 + number2;
-    };
-    console.log( 'A soma de 10 e 20 é igual a', sum ? sum() : undefined );
-    return sum();
-}
-myFunction2();
+    */
+    function myFunction2() {
+        var number1 = 10;
+        var number2 = 20;
+        var sum = function sum() {
+            return number1 + number2;
+        };
+        console.log( 'A soma de 10 e 20 é igual a', sum ? sum() : undefined );
+        return sum();
+    }
+    myFunction2();
 
 /*
     myFunction3();
-*/
-function myFunction3() {
-    var number1 = 40;
-    var number2 = 50;
-    console.log( 'A soma de 40 e 50 é igual a', sum() );
-    console.log( 'Na função myFunction3, number1 é igual a', number1 );
-    return sum();
-    function sum() {
-        return number1 + number2;
-    };
-}
-myFunction3();
+    */
+    function myFunction3() {
+        var number1 = 40;
+        var number2 = 50;
+        console.log( 'A soma de 40 e 50 é igual a', sum() );
+        console.log( 'Na função myFunction3, number1 é igual a', number1 );
+        return sum();
+        function sum() {
+            return number1 + number2;
+        };
+    }
+    myFunction3();
 
 /*
 No desafio anterior criamos uma calculadora, usando uma estrutura funcional.
