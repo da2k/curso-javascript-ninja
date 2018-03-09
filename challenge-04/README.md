@@ -155,19 +155,19 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-carro.obterCarro(); // Cinza Escuro
+carro.obterCor(); // Cinza Escuro
 
 // Mude a cor do carro para vermelho.
 carro.mudarCor('Cinza Claro');
 
 // E agora, qual a cor do carro?
-carro.obterCarro(); // Cinza Escuro
+carro.obterCor(); // Cinza Escuro
 
 // Mude a cor do carro para verde musgo.
 carro.mudarCor('Verde Musgo');
 
 // E agora, qual a cor do carro?
-carro.obterCarro(); // Verde Musgo
+carro.obterCor(); // Verde Musgo
 
 // Qual a marca e modelo do carro?
 carro.obterMarcaModelo(); // Esse carro é um VW Gol Quadrado
