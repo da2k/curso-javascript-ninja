@@ -74,12 +74,6 @@ function book(name) {
     }
   };
 
-  // if(!name) {
-  //   return obj;
-  // }
-  //
-  // return obj[name];
-
   return !name ? obj : obj[name];
 }
 
