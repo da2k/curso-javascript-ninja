@@ -1,19 +1,22 @@
 /*
 Crie um array com 5 items (tipos variados).
 */
-// ?
+ var arr = ['teste',22, NaN, {Carro: 'vermelho'},undefined ];
 
 /*
 Crie uma função chamada `addItem`, que irá adicionar itens no array criado.
 A função deverá retornar o array atualizado.
 */
-// ?
+ function addItem(arg){ 
+ arr.push(arg); 
+ return 'O array possui '+ arr.length + ' elementos e os seus elementos são'+arr;   
+}
 
 /*
 Adicione um novo array ao array criado no início do desafio, com ao menos 3
 itens de tipos diferentes, mostrando o resultado no console.
 */
-// ?
+'O array inserido possui 11 elementos e os seus elementos sãoteste,22,NaN,[object Object],,23,teste,30,30,Teste,teste,40,'
 
 /*
 Mostre no console o segundo elemento desse último array, criado acima, com a
