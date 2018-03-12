@@ -9,7 +9,25 @@
         
     </head>
     <body>
-           
+        <!-- <a href="" class="my-link">My text</a>
+        <a href="" class="my-link">My text</a>
+        <a href="" class="my-link">My text</a>
+        <a href="" class="my-link">My text</a> -->
+        
+        <!-- 
+            O Método GET significa que quando eu enviar o meu formulário ele irá passar os parâmetros 
+            através da URL (Formato chamado query String) que é Ex.: ?username=nomeDoUsuario&password=senha
+        -->
+
+
+        <form action="/" method="get">
+            <input type="text" name="username" class="input" id="username" />
+            <input type="password" name="password" class="input" id="password" />
+            <button type="submit" class="button" id="button">Enviar</button>
+        </form>
+
+        <button data-js="button">Parar Cronometro</button>
+
         <script src="ninja.js"></script>
     </body>
 </html>

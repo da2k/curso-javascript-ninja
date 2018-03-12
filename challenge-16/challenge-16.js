@@ -1,5 +1,5 @@
-//(function() {
-
+(function() {
+	'use strict';
 
 	/*
 	1. Envolva todo o conteúdo desse desafio em uma IIFE.
@@ -36,21 +36,26 @@
 	console.log para cada formato.
 	*/
 	console.log( '\nNome convertido à partir de um slug:' );
-	var fullName = 'valdir-pereira';	
+	var fullName = 'luiz-alfredoo-macedo';
 
-	//var newName = fullName.charAt(0).toUpperCase() + fullName.slice(1);
+	var newName = fullName.split( '-' ).map(function(name){
+		return name[0].toUpperCase() + name.slice(1);
+	}).join(' ');
 
-	var firstName = fullName.charAt(0).toUpperCase() + fullName.slice(1, fullName.indexOf('-'))
+	console.log(fullName);
+	console.log(newName);
 
-	var indexLastName = fullName.indexOf('-')+1;
+	// var firstName = fullName.charAt(0).toUpperCase() + fullName.slice(1, fullName.indexOf('-'))
 
-	var lastName = fullName.charAt(indexLastName).toUpperCase() + fullName.slice(indexLastName+1);
+	// var indexLastName = fullName.indexOf('-')+1;
 
-	var newName = firstName + ' ' + lastName;
+	// var lastName = fullName.charAt(indexLastName).toUpperCase() + fullName.slice(indexLastName+1);
 
-	var newfullName = newName.replace('-', ' ');
+	// var newName = firstName + ' ' + lastName;
 
-	console.log(newfullName);
+	// var newfullName = newName.replace('-', ' ');
+
+	//console.log(newfullName);
 
 	/*
 	- Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
@@ -78,7 +83,7 @@
 	Mostre o resultado no console.
 	*/
 	console.log( '\nEra "Roberto", agora é:' );
-	test = 'Roberto';
+	var test = 'Roberto';
 	var resultName =  test.slice(0 , test.lastIndexOf('o')) + test.slice(test.lastIndexOf('o')).replace('o', 'a')
 	console.log(resultName);
 	/*
@@ -116,4 +121,4 @@
 
 	console.log(mix.join(''));
 
-//})()
+})()
