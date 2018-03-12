@@ -47,7 +47,9 @@
     ["junho", "julho"]
     */
     console.log('\nMatch com as palavras "junho" ou "julho" para a frase "Os meses de janeiro, junho e julho começam com a letra j.":');
-    // ?
+    var junhoJulho = 'Os meses de janeiro, junho e julho começam com a letra j.';
+    var regexJunhoJulho = /ju[n|l]ho/gi;
+    console.log(junhoJulho.match(regexJunhoJulho));
 
     /*
     Crie uma expressão regular que faça o match com a abertura de uma tag
@@ -59,7 +61,9 @@
     ["<div>", "<section>", "<blockquote>"]
     */
     console.log('\nMatch com a abertura de uma tag HTML:');
-    // ?
+    var testeMatchTag = '<div><section><blockquote>Texto <img /></blockquote></section></div>';
+    var regexMatchTags = /<\w+>/g;
+    console.log(testeMatchTag.match(regexMatchTags));
 
     /*
     Crie uma expressão regular que faça o match com uma tag HTML vazia, casando
@@ -71,7 +75,9 @@
     ["<li></li>", "<li></li>", "<span></span>"]
     */
     console.log('\nMatch com tags HTML vazias (abertura e fechamento da tag):');
-    // ?
+    var testeMatchTag2 = '<div><ul><li></li><li></li><li><span></span></li></ul></div>';
+    var regexMatchTags2 = /<\w+><\/\w+>/g;
+    console.log(testeMatchTag2.match(regexMatchTags2));
 
     /*
     Vamos complicar um pouco agora :D
@@ -95,7 +101,8 @@
     https://regex101.com/#javascript e verifique se as capturas estão
     corretas, para depois aplicar no código ;)
     */
-    console.log('\nFazer replace dos textos das tags:');
-    // ?
-
+    console.log('\nFazer replace dos textos das tags:'); 
+    var testeMatchTag2 = '<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>';
+    var regexMatchTags2 = /<(\w+)>([^<]+)<\/\w+>/g;
+    console.log(testeMatchTag2.replace(regexMatchTags2, '<$1>O texto dentro da tag "$1" é "$2"</$1>\n'));
 })();
