@@ -29,8 +29,9 @@
   /*
   Adicione 3 novos estados da região Norte no início do array e mostre no console.
   */
- console.log( '\nMais estados adicionados:');
- console.log(brasil.unshift('Acre','Amazonas','Pará'));
+  console.log( '\nMais estados adicionados:');
+  brasil.unshift('Acre','Amazonas','Pará');
+  console.log(brasil);
 
   /*
   Remova o primeiro estado do array `brasil` e mostre-o no console.
@@ -77,9 +78,7 @@
   Adicione os estados do `nordeste` ao array `brasil`. Esses estados devem
   ficar no mesmo nível que os estados já existentes, não em um array separado.
   */
-  nordeste.map(function(estado){
-    brasil.push(estado);
-  });
+  brasil = brasil.concat(nordeste);
 
   /*
   Mostre no console os estados em `newSudeste`.
@@ -120,9 +119,9 @@
   */
   console.log( '\nTodos os estados de `brasil` tem mais de 7 letras?');
   var result = brasil.every(function(item){
-    return item.toString().length < 7;
+    return item.length < 7;
   });
-  result ? console.log('Sim, todos os estados tem mais de 7 letras!') : console.log('nem todos os estados tem mais de 7 letras!');
+  console.log(result ? 'Sim, todos os estados tem mais de 7 letras!' : 'Nem todos os estados tem mais de 7 letras!');
 
   /*
   Percorra o array `brasil` e verifique se o Ceará está incluído, atribuindo o
@@ -144,9 +143,9 @@
   - "[ESTADO] pertence ao Brasil."
   Atribua o novo array a uma variável chamada `map`.
   */
-  var map = [];
-  newBrasil.map(function(item,index){
-    return map.push({id: index+1, estado: item.estado + ' pertence ao Brasil.'});
+
+  var map = newBrasil.map(function(item,index){
+    return {id: index+1, estado: item.estado + ' pertence ao Brasil.'};
   });
 
   /*
