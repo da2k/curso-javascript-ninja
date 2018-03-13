@@ -1,0 +1,66 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+* {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.stopwatch {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to right, blue, violet);
+}
+
+.stopwatch__numbers {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;  
+    height: 50vh;  
+}
+
+.stopwatch__numbers input {
+    font-size: 2rem;
+    padding: 10px;
+    color: #555;
+}
+
+.stopwatch__action {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+button {
+    position: relative;
+    padding: 12px 25px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    margin: 0 20px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+button:hover { 
+    background: linear-gradient(to right, #fff, orange);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-color: #fff;
+    transition: all ease 1s;
+}
