@@ -96,18 +96,21 @@ usando a frase:
 // Serei um pouco ousado agora professor Fernando, usarei o recurso para literals para  inserir o conteúdo
 // das variáveis diretamente nas strings melhorando a leitura sem concatenação usando o sinal de +.
 // Espero que não seja um empecilho.
-console.log(`O livro Senhor Dos Anéis: A Sociedade do Anel tem ${book("Senhor Dos Anéis: A Sociedade do Anel").quantidadePaginas} páginas!`);
+const book1 = "Senhor Dos Anéis: A Sociedade do Anel";
+console.log(`O livro ${book1} tem ${book(book1).quantidadePaginas} páginas!`);
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log(`O autor do livro Game of Thrones é ${book("Game Of Thrones").autor}.`);
+const book2 = "Game Of Thrones";
+console.log(`O autor do livro ${book2} é ${book(book2).autor}.`);
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log(`O livro Harry Potter e a Pedra Filosofal foi publicado pela editora ${book("Harry Potter e a Pedra Filosofal").editora}.`);
+const book3 = "Harry Potter e a Pedra Filosofal";
+console.log(`O livro ${book3} foi publicado pela editora ${book(book3).editora}.`);
