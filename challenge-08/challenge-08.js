@@ -58,50 +58,64 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
 function calculator(arg){
     switch(arg){
       case '+':
-        return 'Você irá realizar uma adição';
+        return function(x,y){
+            return " O resultado da operação: "+ x + arg + y +" = "+ (x+y);
+        }
       break;
       case '-':
-        return 'Você irá realizar uma subtração';
+        return function(x,y){
+            return " O resultado da operação: "+ x + arg + y +" = "+ (x-y);
+        }
       break;
       case '*':
-        return 'Você irá realizar uma Mutiplicação';
+        return function(x,y){
+            return " O resultado da operação: "+ x + arg + y +" = "+ (x*y);
+        }
       break;
       case '/':
-        return 'Você irá realizar uma Divisão';
+        return function(x,y){
+            return " O resultado da operação: "+ x + arg + y +" = "+ (x/y);
+        }
       break;
       case '%':
-        return 'Você irá realizar o resto da Divisão';
+        return function(x,y){
+            return " O resultado da operação: "+ x + arg + y +" = "+ (x%y);
+        }
       break;
       default: 
-        return '"Operação inválida.';
+        return "Operação inválida.";
       break;
     }
-    return function(x,y){
-      return arg(x,y);
-    };
+  
 }
 
-console.log(calculator('/',10,5));
+console.log(calculator('+')(3,5));
 /*
 Declare uma variável chamada `sum`, que receberá a função acima, passando como
 parâmetro o operador de soma.
 */
-// ?
+var sum = calculator('+');
 
 /*
 Agora `sum` é uma função. Mostre no console a soma de dois números, usando ela.
 */
-// ?
+console.log(sum(3,4));
 
 /*
 Agora, declare algumas variáveis com os nomes `subtraction`, `multiplication`,
 `division` e `mod`, e atribua a elas a função `calculator`, passando o operador
 correto por parâmetro para cada uma delas.
 */
-// ?
+var subtraction = calculator('-');
+var multiplication = calculator('*');
+var division = calculator('/');
+var mod = calculator('%');
 
 /*
 Faça uma operação com cada uma das funções criadas acima, mostrando o resultado
 no console.
 */
-// ?
+console.log(subtraction(10,9));
+console.log(multiplication(99,9));
+console.log(division(1000,100));
+console.log(mod(30,12));
