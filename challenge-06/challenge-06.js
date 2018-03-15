@@ -4,7 +4,7 @@ para começar o desafio.
 Declare uma variável chamada `championship` que receberá o nome do campeonato,
 e imprima o nome desse campeonato no console.
 */
-// var championship = 'Nordeste'; Nordeste 
+var championship = 'Nordeste'; //Nordeste 
 
 /*
 Declare uma variável chamada `teams`, que receberá um array com 5 elementos.
@@ -12,7 +12,7 @@ Os elementos serão nomes de times do campeonato escolhido, e os nomes devem
 estar na ordem em que eles aparecem na tabela no momento da solução desse
 desafio.
 */
-// var teams = ['Time1','Time2','Time3','Time4','Time5'];
+var teams = ['Time1','Time2','Time3','Time4','Time5'];
 
 console.log( 'Times que estão participando do campeonato:', teams );
 
@@ -35,7 +35,7 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
 // 
 
 function showTeamPosition(numero){
-    if(numero > 0 && numero <= 5){   
+    if(numero < 1 || numero > 5){   
         console.log("O time que está em " + numero +" º lugar é o " + teams[numero -1] + ".");
     }else{
         return  'Não temos a informação do time que está nessa posição.';
@@ -59,8 +59,7 @@ repetição "while".
 */
 var counter = 20;
 while(counter <= 30){
-    console.log(counter);
-    counter++;
+    console.log(counter++);
 }
 
 /*
@@ -76,24 +75,24 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 function convertToHex(cor){
+    var hexa;
     var hexCode = {
-         black: '#000000',
          blue: '#0000ff',
-         green: '#00ff00',
-         red: '#ff0000',
+         green: '#00ff00',         
          white: '#ffffff'
      };
 
     switch(cor){
         case 'red':
-        console.log("O hexadecimal para a cor " + COR + " é " + hexCode[cor]);
+            hexa = '#ff0000';
         break;
         case 'black':
-        console.log("O hexadecimal para a cor " + COR + " é " + hexCode[cor]);
+            hexa = '#000000';
         break;
         default:
-        console.log("Não temos o equivalente hexadecimal para " + COR);
+            return "Não temos o equivalente hexadecimal para " + cor;
     }
+    return 'O hexadecimal para a cor ' + cor + ' é ' + hexa;
 }
 
 /*
