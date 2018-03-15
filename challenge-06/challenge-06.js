@@ -35,7 +35,11 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
 */
 function showTeamPosition (numeroPosicao)
 {
-    return !teams[numeroPosicao-1] ? 'Não temos a informação do time que está nessa posição' : `O time que está em ${numeroPosicao}º lugar é o ${teams[numeroPosicao-1]}.`;
+    if (!teams[numeroPosicao-1])
+    {
+        return 'Não temos a informação do time que está nessa posição';
+    }
+    return `O time que está em ${numeroPosicao}º lugar é o ${teams[numeroPosicao-1]}.`;
 }
 
 /*
