@@ -37,7 +37,7 @@ Agora mostre no console quantos itens tem o segundo array criado, com a frase:
 "O segundo array tem [QUANTIDADE DE ITENS] itens."
 */
 console.log("O segundo array tem " + arr[7].arr2.length + " itens.");
-// O segundo array tem 3 itens.
+// O segundo array tem 3 itens
 
 /*
 Utilizando a estrutura de repetição `while`, mostre no console todos os números
