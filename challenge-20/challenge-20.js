@@ -16,9 +16,7 @@
     nome, `username` deve receber "Desconhecido".
     Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
     */
-    var username = prompt('Qual o seu nome?');
-    if(!username)
-        username = 'Desconhecido';
+    var username = prompt('Qual o seu nome?') || 'Desconhecido';
     alert(`Bem vindo ${username}!`);
 
     /*
@@ -31,13 +29,13 @@
     - Selecione o input de "Nome", atribuindo-o à uma variável chamada
     `$inputUsername`.
     */
-    var $inputUsername = doc.querySelector('input');
+    var $inputUsername = doc.querySelector('input[type="text"]');
 
     /*
     - Selecione o input de "Email", atribuindo-o à uma variável chamada
     `$inputEmail`.
     */
-    var $inputEmail = doc.querySelectorAll('input')[1];
+    var $inputEmail = doc.querySelector('input[type="email"]');
 
     /*
     - Selecione o campo de "Mensagem", atribuindo-o à uma variável chamada
@@ -83,34 +81,20 @@
         - "Não enviado."
     */
     $button.addEventListener('click', function(ev) {
-        var somethingWrong = false
-
         ev.preventDefault();
 
-        if(!$inputUsername.value) {
-            alert('Preencha o nome do usuário!');
-            somethingWrong = true;
-        }
-        if(!$inputEmail.value) {
-            alert('Preencha o e-mail!');
-            somethingWrong = true;
-        }
-        if(!$message.value) {
-            alert('Preencha a mensagem!');
-            somethingWrong = true;
-        }
-        if(!isValidEmail($inputEmail.value)) {
-            alert('Entre um e-mail válido!');
-            somethingWrong = true;
-        }
-        if(!somethingWrong) {
-            var send = confirm('Tem certeza que deseja enviar o formulário?');
-            if(send)
-                alert('Enviado com sucesso!');
-            else
-                alert('Não enviado.');
-        }
-    })
+        if(!$inputUsername.value)
+            return alert('Preencha o nome do usuário!');
+        if(!$inputEmail.value)
+            return alert('Preencha o e-mail!');
+        if(!$message.value)
+            return alert('Preencha a mensagem!');
+        if(!isValidEmail($inputEmail.value))
+            return alert('Entre um e-mail válido!');
+        if(confirm('Tem certeza que deseja enviar o formulário?'))
+            return alert('Enviado com sucesso!');
+        return alert('Não enviado.');
+    }, false);
 
     /*
     Crie uma função chamada `isValidEmail`, que será usada na validação do
@@ -139,10 +123,7 @@
         - "agua_@evida.br.com"
     */
     function isValidEmail(email) {
-        var regex = /[\w_+.]+@[\w_]+(?:\.\w{2,})(?:\.\w{1,2})?/;
-        var valid = regex.exec(email);
-        if(!valid)
-            return false;
-        return email === valid[0];
+        var regex = /[\w_+.]+@[\w_]+\.\w{2,}(?:\.\w{2})?$/;
+        return regex.test(email);
     }
 })(window, document);
