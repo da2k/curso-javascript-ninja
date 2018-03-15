@@ -4,6 +4,7 @@
   2. Adicione a diretiva 'use strict';
   3. Crie um arquivo index.html e adicione esse script à ele.
   */
+  'use strict';
 
   /*
   Alguns detalhes importantes que faltou falar na aula:
