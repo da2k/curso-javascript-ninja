@@ -2,50 +2,59 @@
 Crie uma IIFE que envolva todo o código desse arquivo. Faça também a
 indentação correta do código, para ficar dentro da IIFE.
 */
-
+console.log("=============== Inicio IIFE =================");
+(function(){
+  
 /*
 Analise as funções abaixo (`myFunction`, `myFunction2` e `myFunction3`, e
 ajuste o posicionamento das variáveis e funções internas, para que os códigos
 dentro de `console.log` que estão retornando `undefined` retornem o valor
 correto da variável ou função chamada.
 */
+console.log("=========== Inicia 'myFunction' ================");
 function myFunction() {
+    var number1 = 10;
+    var number2 = 20;
     console.log( 'Na função `myFunction`, o primeiro número é', number1 );
     console.log( 'Na função `myFunction`, o segundo número é', number2 );
-    var number1 = 10;
+    
     return number1 + number2;
-    var number2 = 20;
+    
 }
 myFunction();
-
+console.log("========== Finaliza 'myFunction' ================");
 /*
     myFunction2();
 */
+
+console.log("=========== Inicia 'myFunction2' ================");
 function myFunction2() {
-    console.log( 'A soma de 10 e 20 é igual a', sum ? sum() : undefined );
     var sum = function sum() {
-        return number1 + number2;
-    };
-    var number1 = 10;
-    var number2 = 20;
-    return sum();
+         var number1 = 10;
+         var number2 = 20;
+         return number1 + number2;
+      };
+          console.log( 'A soma de 10 e 20 é igual a', sum ? sum() : undefined   );
+         return sum();
 }
 myFunction2();
-
+console.log("========== Finaliza 'myFunction2' ================");  
 /*
     myFunction3();
 */
+console.log("========== Inicia 'myFunction3' ================");
 function myFunction3() {
-    console.log( 'A soma de 40 e 50 é igual a', sum() );
-    var number2 = 50;
-    console.log( 'Na função myFunction3, number1 é igual a', number1 );
-    var number1 = 40;
-    return sum();
     function sum() {
-        return number1 + number2;
-    };
+      var number1 = 40;
+      console.log( 'Na função myFunction3, number1 é igual a', number1 );
+      var number2 = 50;        
+      return number1 + number2;
+    }
+      console.log( 'A soma de 40 e 50 é igual a', sum() );
+      return sum();
 }
 myFunction3();
+console.log("========== Finaliza 'myFunction3' ================ ");
 
 /*
 No desafio anterior criamos uma calculadora, usando uma estrutura funcional.
@@ -60,13 +69,18 @@ o retorno de `calculator`.
 por parâmetro, INVOCADA, e passando a ela por parâmetro os dois valores
 que foram passadas para a primeira função `calculator`.
 */
-// ?
+console.log("=========== Inicio do Desafio ============");
+function calculator(x,y){
+    return function (callback){
+      return callback(x,y);
+      };
+}
 
 /*
 Declare uma variável chamada `sum`, e atribua a ela a função `calculator`,
 passando dois números por parâmetro.
 */
-// ?
+var sum = calculator(2,4);
 
 /*
 Sabemos que `sum` agora tem uma função atribuída a ela, que é o retorno de
@@ -77,7 +91,9 @@ para a chamada à `calculator` acima.
 uma função anônima que irá retornar a soma dos dois números que essa função
 anônima tem como seus argumentos.
 */
-console.log( 'O resultado da soma é:' );
+console.log( 'O resultado da soma é: '+ sum(function(x,y){
+    return (x + y);
+  }) );
 // ?
 
 /*
@@ -85,7 +101,10 @@ Agora declare outra variáveis chamadas `subtraction`, `multiplication`,
 `division` e `mod`, e atribua à elas `calculator`, passando números
 diferentes para cada chamada.
 */
-// ?
+var subtraction = calculator(10,4);
+var multiplication = calculator (44,4);
+var division = calculator(100,50);
+var mod = calculator(300,24);
 
 /*
 Mostre as variáveis acima no `console` (uma chamada de console por variável),
@@ -94,14 +113,26 @@ divisão e módulo (resto de divisão), conforme a função utilizada.
 As suas respostas devem estar abaixo dos `console.log` referentes à cada
 chamada.
 */
-console.log( 'O resultado da subtração é:' );
-// ?
+console.log( 'O resultado da subtração é: '+ subtraction(function(x,y){
+    return (x - y);
+  }) );
 
-console.log( 'O resultado da multiplicação é:' );
-// ?
 
-console.log( 'O resultado da divisão é:' );
-// ?
+console.log( 'O resultado da multiplicação é: '+ multiplication(function(x,y){
+    return (x * y);
+  }) );
 
-console.log( 'O resto da divisão é:' );
-// ?
+
+console.log( 'O resultado da divisão é: '+ division(function(x,y){
+    return (x / y);
+  }) ); 
+
+
+console.log( 'O resto da divisão é: '+ mod(function(x,y){
+    return (x % y);
+  }) ); 
+console.log("=========== Finaliza do Desafio ============");
+
+  
+})();
+console.log("========== Finaliza IIFE =================");
