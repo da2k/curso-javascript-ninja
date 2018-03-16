@@ -20,7 +20,7 @@ As propriedades e tipos de valores para cada propriedade desse objeto devem ser:
 var pessoa = {
 nome: 'Raul',
 sobrenome: 'Cavalcanti',
-sexo: 'M',
+sexo: 'Masculino',
 idade: 25,
 altura: 1.72,
 peso: 70,
@@ -203,8 +203,28 @@ deve conter no retorno da frase acima é "metro" no lugar de "metros".
 método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
-?
+
+pessoa.apresentacao = function(){
+	var ao;
+	var singular;
+	var singular2;
+	if (pessoa.sexo === 'Feminino' ) {
+		ao = 'a';
+	}if(pessoa.sexo === 'Masculino'){
+		ao = 'o';
+	}if (pessoa.idade === 1) {
+		singular = 'ano';
+	}if (pessoa.idade !== 1){
+		singular = 'anos';
+	}if (pessoa.caminhouQuantosMetros === 1) {
+		singular2 = 'metro';
+	}if (pessoa.caminhouQuantosMetros !== 1){
+		singular2 = 'metros';
+	}
+
+	return 'Olá, eu sou ' + ao + ' '+pessoa.nome +' '+pessoa.sobrenome+', tenho ' + pessoa.idade +' '+singular +', '+ pessoa.mostrarAltura()+','+' meu peso é '+ pessoa.peso+ ' kg'+' e, so hoje, eu caminhei '+ pessoa.caminhouQuantosMetros+' '+singular2+'!'
+};
 
 // Agora, apresente-se ;)
-?
-```
+
+pessoa.apresentacao(); // 'Olá, eu sou o Raul Cavalcanti, tenho 25 anos, Minha altura é 1.72 m, meu peso é 70 kg e, so hoje, eu caminhei 0 metros!'
