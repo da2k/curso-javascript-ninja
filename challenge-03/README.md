@@ -183,7 +183,7 @@ Quantos metros a pessoa andou? (Use uma instrução para responder e comentário
 inline ao lado da instrução para mostrar a resposta retornada)
 */
 
-pessoa.caminhouQuantosMetros; // 12
+pessoa.caminhouQuantosMetros;  // 12
 
 
 /*
