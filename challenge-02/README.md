@@ -24,7 +24,7 @@ Onde VALOR é o novo valor da variável.
 */
 function funcao1() {
     myVar = 30;
-    return `O valor da variável agora é ${myVar}. Onde ${myVar} é o novo valor da variável.`
+    return `O valor da variável agora é ${myVar}.`
 }
 
 // Invoque a função criada acima.
