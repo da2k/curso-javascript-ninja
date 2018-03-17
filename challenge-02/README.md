@@ -71,12 +71,8 @@ Crie uma função com as seguintes características:
 function funcao3(arg1, arg2, arg3) {
     // 2
     if (arg1 && !arg2 && !arg3) return arg1;
-    if (!arg1 && arg2 && !arg3) return arg2;
-    if (!arg1 && !arg2 && arg3) return arg3;
     // 3
     if (arg1 && arg2 && !arg3) return arg1 + arg2;
-    if (arg1 && !arg2 && arg3) return arg1 + arg3;
-    if (!arg1 && arg2 && arg3) return arg2 + arg3;
     // 4
     if (arg1 && arg2 && arg3) return (arg1 + arg2) / arg3;
     // 5
