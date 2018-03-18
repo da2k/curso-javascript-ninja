@@ -84,19 +84,27 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// ?
-log( `O livro Fullstack React tem ${ book( 'Fullstack React' ).quantidadeDePaginas } páginas!` );
+const selectedBook = 'Fullstack React';
+log(
+  `O livro ${ selectedBook } tem ${ book( 'Fullstack React' ).quantidadeDePaginas } páginas!`
+);
+
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-log( `O autor do livro Fullstack React tem ${ book( 'Fullstack React' ).autor }.` );
+log(
+  `O autor do livro ${ selectedBook } tem ${ book( 'Fullstack React' ).autor }.`
+);
+
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-log( `O livro Fullstack React foi publicado pela editora ${ book( 'Fullstack React' ).editora }.` );
+log(
+  `O livro ${ selectedBook } foi publicado pela editora ${ book( 'Fullstack React' ).editora }.`
+);
