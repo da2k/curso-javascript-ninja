@@ -9,7 +9,7 @@ A função deverá retornar o array atualizado.
 */
 function addItem(novoItem){
     novoArray.push(novoItem);
-    console.log(novoArray);
+    return novoArray;
 }
 
 /*
@@ -17,7 +17,7 @@ Adicione um novo array ao array criado no início do desafio, com ao menos 3
 itens de tipos diferentes, mostrando o resultado no console.
 */
 addItem(["sobrenome", 50, undefined]);
-console.log(novoArray.length);
+console.log(novoArray);
 
 /*
 Mostre no console o segundo elemento desse último array, criado acima, com a
@@ -77,7 +77,7 @@ for (i = 100; i <= 120; i++) {
 }
 
 console.log( 'Números ímpares entre 111 e 125:' );
-for (i = 100; i <= 125; i++) {
+for (i = 111; i <= 125; i++) {
     if (i%2 !== 0) {
         console.log(i);
     }
