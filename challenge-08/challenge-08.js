@@ -28,20 +28,20 @@ seu nome.
 */
 function showName () 
 {
-  return showName.name;
+  return "Diogo Queiroz";
 }
 
 /*
 Declare uma variável chamada `varShowName` que recebe a função criada acima.
 */
-const varShowName = showName();
+const varShowName = showName;
 
 /*
 Usando a variável criada acima, mostre no console o nome e o retorno da função
 atribuída a ela, com a seguinte frase:
 "A função [NOME DA FUNÇÃO] retorna [RETORNO DA FUNÇÃO]."
 */
-console.log(`A função ${showName.name} retorna ${showName()}.`);
+console.log(`A função ${varShowName.name} retorna ${varShowName()}.`);
 
 /*
 Crie uma função literal chamada `calculator`, que funcione assim:
