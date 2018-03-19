@@ -16,9 +16,7 @@
   nome, `username` deve receber "Desconhecido".
   Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
   */
-  var username = prompt('Qual o seu nome?');
-
-  username = username || 'Desconhecido';
+  var username = prompt('Qual o seu nome?') || 'Desconhecido';
 
   alert('Bem vindo ' + username + '!');
 
@@ -90,7 +88,7 @@
       confirm('Tem certeza que deseja enviar o formulário?')
         ? alert('Enviado com sucesso!')
         : alert('Não enviado.');
-  });
+  }, false);
 
   function hasValue(field) {
     var fieldMessage = {
@@ -132,7 +130,7 @@
       - "agua_@evida.br.com"
   */
   function isValidEmail(email) {
-    var regexEmail = /^([\w\+\.]+)@([\w]+)\.([a-zA-Z]{2,})\.?([a-zA-Z]{2})?$/;
+    var regexEmail = /^[\w\+\.]+@\w+\.[\w]{2,}(?:\.[a-zA-Z]{2})?$/;
 
     if (!regexEmail.test(email))
       alert('Entre com um e-mail válido!');
