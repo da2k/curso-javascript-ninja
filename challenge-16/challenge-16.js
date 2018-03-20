@@ -38,11 +38,12 @@
     */
     console.log( '\nNome convertido à partir de um slug:' );
     // ?
-    var fullName = 'lucas-ferreira';
+    var fullName = 'teresinha-maria';
 
-    var newFullName = (fullName.charAt(0).toUpperCase()+fullName.slice(1,fullName.indexOf('-')+1)).replace('-',' ') + (fullName.charAt(fullName.indexOf('-')+1).toUpperCase()+fullName.slice(fullName.indexOf('-')+2));
-    var teste = (fullName.charAt(0).toUpperCase()+fullName.slice(1).replace('-',' ').normalize());
-    console.log(teste);
+    var newFullName = fullName.split('-').map(function(letra,index,sei){
+                     return letra.charAt(0).toUpperCase()+letra.slice(1);
+    }).join(' ');
+    console.log(newFullName);
     /*
     - Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
     cada nome por vírgula. Entre o penúltimo e o último nome, o separador deve
@@ -56,7 +57,12 @@
     // ?
     var amigos  = ['Marcelo','Manoel','Douglas','Jonatas','Claudinei'];
 
-    var newAmigos = amigos.join(';');
+    var newAmigos =  amigos.reduce(function (friends, friend, index) {
+              var separator = index !== amigos.length - 1 ?
+                ', ' :
+                ' e ';
+              return friends = friends + separator + friend;
+            }).concat(' são meus amigos.');
 
     console.log(newAmigos);
     /*
@@ -65,14 +71,17 @@
     */
     console.log( '\nEra "Roberto", agora é:' );
     // ?
+        var nome = 'Roberto'.replace('to','ta');
 
+        console.log(nome);
     /*
     Mostre no console a parte "nando" da string "Fernando". Use o método que
     faz a busca do final para o início da string.
     */
     console.log( '\nParte de uma string:' );
     // ?
-
+        var name = "Fernando".substring(8,3);
+        console.log(name);
     /*
     Declare uma variável chamada `myName`, que receba o seu primeiro nome,
     escrito de forma natural.
@@ -84,4 +93,20 @@
     */
     console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
     // ?
+     var myName = 'lucas';
+
+     function alternateChar(str) {
+            var newStr = [];
+        
+            str.split('').forEach(function (char, index) {
+              return index % 2 === 1 ?
+                newStr.push(char.toLowerCase()) :
+                newStr.push(char.toUpperCase());
+            });
+        
+            return newStr.join('');
+          }
+    console.log(alternateChar(myName));
+    console.log(alternateChar('Fernando'));
+
 })();
