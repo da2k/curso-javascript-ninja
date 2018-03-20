@@ -40,9 +40,11 @@
   os parâmetros passados para essa função.
   */
   function sum() {
-    return Array.prototype.reduce.call(arguments, function(total, actual) {
-      return total + actual;
-    });
+    console.log(arguments);
+
+    return Array.prototype.reduce.call(arguments,
+      function(total, actual) { return total + actual; }
+    );
   }
 
   /*
