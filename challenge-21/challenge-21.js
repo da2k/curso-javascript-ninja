@@ -1,4 +1,5 @@
 (function(window, document) {
+ 'use strict';
   /*
   O desafio de hoje será um pequeno projeto: um cronômetro!
   As regras para criação do cronômetro são as seguintes:
@@ -15,6 +16,7 @@
   usar o nome que achar melhor, desde que ele seja semântico, ou seja, o nome
   dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
   */
+
   var $timer = document.querySelector('[data-js="timer"]');
   var $start = document.querySelector('[data-js="start-timer"]');
   var $stop = document.querySelector('[data-js="stop-timer"]');
