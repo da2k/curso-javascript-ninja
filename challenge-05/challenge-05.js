@@ -3,16 +3,21 @@ Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
 // ?
+var array1 = [1,3,4,6,8];
 
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
 // ?
+function arrayy(a){
+  return a;
+};
 
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
 // ?
+console.log(arrayy([1,2,3,4,5])[1]);
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -21,18 +26,25 @@ no primeiro parâmetro. O índice usado para retornar o valor, deve ser o númer
 segundo parâmetro.
 */
 // ?
+function newFunction(arr,x){
+  return arr[x];
+};
 
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
 // ?
-
+var array = [1,true,4.0,"seila",[1,2]];
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
 // ?
-
+console.log(newFunction(array,0));
+console.log(newFunction(array,1));
+console.log(newFunction(array,2));
+console.log(newFunction(array,3));
+console.log(newFunction(array,4));
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
 livro. Dentro dessa função, declare uma variável que recebe um objeto com as
@@ -48,25 +60,53 @@ propriedades:
 os livros.
 */
 // ?
+function book(nomeLivro){
+  var obj = {
+    "Cracking the coding interview": {
+      quantidadePaginas: 722,
+      autor: "Gayle Laakmann McDowell",
+      editora: "CareerCup"
+    },
+    "Java: como programar Ed 10°": {
+      quantidadePaginas: 1000,
+      autor: " Paul Deitel e‎ Harvey Deitel ",
+      editora: "Pearson"
+    },
 
+    "Não sei": {
+      quantidadePaginas: 800,
+      autor: "Doug",
+      editora: "doug@editors"
+    }
+
+  }
+
+  if(obj[nomeLivro]){
+    return obj[nomeLivro];
+  }
+  return obj;
+
+  // obj[nomeLivro] ? obj[nomeLivro] : obj; <<<<< isso seria uma forma mais clean de escrever a mesma coisa
+}
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-// ?
+console.log(book());
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// ?
+console.log("O livro Cracking the coding interview tem "+book("Cracking the coding interview").quantidadePaginas+" páginas!")
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
+console.log("O autor do livro Cracking the coding interview é "+book("Cracking the coding interview").autor);
+
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
@@ -74,3 +114,6 @@ a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
 // ?
+
+
+console.log("O livro Cracking the coding interview foi publicado pela editora"+book("Cracking the coding interview").editora);
