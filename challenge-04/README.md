@@ -23,6 +23,7 @@ isThuthy(false);
 isThuthy('');
 isThuthy("");
 isThuthy(undefined);
+isThuthy(null);
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
