@@ -155,16 +155,19 @@ correta, de acordo com os dados inseridos no objeto.
 */
 
 pessoa.apresentacao = function(){ 
-	if(pessoa.sexo === 'Feminino'){
-	return 'Olá, eu sou a ' + pessoa.nome + ' ' + pessoa.sobrenome  + ', tenho' + pessoa.idade + ' anos,' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metros!'}
-	if(pessoa.idade === 1){
-		return 'Olá, eu sou a ' + pessoa.nome + ' ' + pessoa.sobrenome  + ', tenho' + pessoa.idade + ' ano,' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metros!'}
-	if(pessoa.caminhouQuantosMetros === 1){
-		return 'Olá, eu sou a ' + pessoa.nome + ' ' + pessoa.sobrenome  + ', tenho' + pessoa.idade + ' anos,' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metro!'}
-	else{
-		return 'Olá, eu sou a ' + pessoa.nome + ' ' + pessoa.sobrenome  + ', tenho' + pessoa.idade + ' anos,' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metros!'}
+	var sexo 				= 'o';
+	var idadeAnos 			= 'anos';
+	var metrosCaminhados	= 'metros';
 
-}
+	if(pessoa.sexo === 'Feminino')
+		sexo = 'a';
+	if(pessoa.idade === 1)
+		idadeAnos = 'ano';
+	if(pessoa.caminhouQuantosMetros === 1)
+		metrosCaminhados = 'metro';
+
+	return 'Olá, eu sou ' + sexo + ' ' + pessoa.nome + ' ' + pessoa.sobrenome  + ', tenho' + ' ' + pessoa.idade + ' ' + idadeAnos + ', ' + pessoa.altura + ', meu peso é ' + pessoa.peso + 'Kg e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' ' + metrosCaminhados + '!';
+};
 
 
 
