@@ -200,6 +200,9 @@ correta, de acordo com os dados inseridos no objeto.
 */
 
 pessoa.apresentacao = function(){
+
+    var s, i, m;
+
     if(pessoa.sexo === 'Feminino'){
         s = 'a';
         }else{
