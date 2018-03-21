@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Challenge-25</title>
+</head>
+<body>
+    <header>
+        <h1>Cadastro de veículos - Challenge 25</h1>
+    </header>
+    <section>
+        <form data-js="form">
+            <label>Nome</label><br>
+            <input type="text" data-js="name" placeholder="Nome do veículo" required>
+            <br><br>
+            <label>Ano</label><br>
+            <input type="number" data-js="year" placeholder="Ano do veículo" required>
+            <br><br>
+            <label>Tipo de veículo</label><br>
+            <select data-js="select" required>
+                <option disabled selected value>Selecione o tipo</option>
+                <option value="passeio">Passeio</option>
+                <option value="rally">Rally</option>
+                <option value="utilitario">Utilitário</option>
+            </select><br><br><br>
+            <button data-js="save">Salvar</button>
+        </form>
+        <br><br>
+    </section>
+    <section>
+        <h1>Detalhes do cadastro</h1>
+        <span data-js="nameCar"></span><br>
+        <span data-js="yearCar"></span><br>
+        <span data-js="typeCarSelected"></span>
+    </section>
+    <br><br><br><br><br>
+    <footer>Todos direitos reservados - Challenge-25</footer>
+    <script src="challenge-25.js"></script>
+</body>
+</html>

@@ -1,3 +1,4 @@
+(function(){
 /*
 Essa semana você terá dois desafios:
 1) Revisar todo o contéudo passado até aqui, e ver se você realmente entendeu
@@ -9,8 +10,32 @@ para que possamos prosseguir para a parte mais avançada do curso :D
 
 2) Estudar eventos!
 Acesse a página do MDN:
-https://developer.mozilla.org/en-US/docs/Web/Events#Categories
+https://developer.mozilla.org/en-US/documentumentuments/Web/Events#Categories
 
 Tente aplicar na prática alguns dos eventos que estão ali e coloque nesse
 desafio os experimentos legais que você conseguir desenvolver :D
 */
+
+function on(element, event, callback){
+    document.querySelector(element)
+    .addEventListener(event, callback, false);
+}
+
+on('[data-js="name"]', 'input', function(){
+    document.querySelector('[data-js="nameCar"]').innerHTML = "Nome do veículo: " + this.value;
+})
+
+on('[data-js="year"]', 'input', function(){
+    document.querySelector('[data-js="yearCar"]').innerHTML = "Ano: " + this.value;
+})
+
+on('[data-js="select"]', 'change', function(){
+    document.querySelector('[data-js="typeCarSelected"]').innerHTML = 'Tipo de veículo: ' +  this.value;
+})
+
+on('[data-js="form"]', 'submit', function(event){
+    alert('Cadastro realizado com sucesso!');
+})
+
+
+})();
