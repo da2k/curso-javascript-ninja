@@ -41,7 +41,7 @@ Adicione 3 novos estados da região Norte no início do array e mostre no consol
 Remova o primeiro estado do array `brasil` e mostre-o no console.
 */
   console.log("\nEstado removido:");
-  console.log(brasil.splice(0, 1));
+  console.log(brasil.shift());
 
   /*
 Crie um novo array chamado `newSul`, que receba somente os estados do sul,
@@ -90,9 +90,7 @@ chamada `newSudeste`.
 Adicione os estados do `nordeste` ao array `brasil`. Esses estados devem
 ficar no mesmo nível que os estados já existentes, não em um array separado.
 */
-  nordeste.forEach(item => {
-    brasil.push(item);
-  });
+  brasil = brasil.concat(nordeste);
 
   /*
 Mostre no console os estados em `newSudeste`.
@@ -113,12 +111,12 @@ propriedades:
 - `estado`: que será o estado do array `brasil`.
 */
   var newBrasil = [];
-  brasil.forEach((item, index) =>
+  brasil.forEach(function(item, index) {
     newBrasil.push({
       id: index,
       estado: item
-    })
-  );
+    });
+  });
 
   /*
 Mostre o array `newBrasil` no console
@@ -133,16 +131,15 @@ atribuindo o resultado à uma variável. Se tiver, mostre no console a frase:
 Senão, mostre no console:
 - "Nem todos os estados tem mais de 7 letras!"
 */
-  var maisDe7letras = [];
-  var menosDe7letras = [];
-  console.log("\nTodos os estados de `brasil` tem mais de 7 letras?");
-  brasil.forEach(
-    item =>
-      item.length > 7 ? maisDe7letras.push(item) : menosDe7letras.push(item)
+  var every = brasil.every(function(item) {
+    return item.length > 7;
+  });
+
+  console.log(
+    every
+      ? "Sim, todos os estados tem mais de 7 letras!"
+      : "Nem todos os estados tem mais de 7 letras!"
   );
-  menosDe7letras.length > 0
-    ? console.log("Nem todos os estados tem mais de 7 letras!")
-    : console.log("Sim, todos os estados tem mais de 7 letras!");
 
   /*
 Percorra o array `brasil` e verifique se o Ceará está incluído, atribuindo o
@@ -154,39 +151,36 @@ Senão, mostrar a frase:
 */
   var cearaNoBrasil = undefined;
   console.log("\nCeará está incluído em `brasil`?");
-  brasil.forEach(item => {
-    item === "Ceará" ? (cearaNoBrasil = true) : cearaNoBrasil;
+  var some = brasil.some(function(item) {
+    return item === "Ceará";
   });
-  if (cearaNoBrasil) {
-    console.log("Ceará está incluído!");
-  } else {
-    console.log("Ceará não foi incluído");
-  }
+  console.log(some ? "Ceará está incluído!" : "Ceará não foi incluído :(");
   /*
 Percorra o array `newBrasil` e crie um novo array que some 1 no ID de cada
 objeto desse array, e adicione a frase abaixo na propriedade `estado`:
 - "[ESTADO] pertence ao Brasil."
 Atribua o novo array a uma variável chamada `map`.
 */
-  var newArray = [];
-  newBrasil.forEach(item =>
-    newArray.push({
+  var map = newBrasil.map(function(item, index) {
+    return {
       id: item.id + 1,
       estado: item.estado + " pertence ao Brasil."
-    })
-  );
+    };
+  });
 
   /* 
 Mostre no console o array criado acima:
 */
   console.log("\nnewBrasil agora com mais informações:");
-  console.log(newArray);
+  console.log(map);
 
   /*
 Filtre o array criado acima, retornando somente os estados que tiverem
 ID par. Atribua o valor à uma variável chamada `filter`.
 */
-  var filter = newArray.filter(item => item.id % 2 === 0);
+  var filter = map.filter(function(item) {
+    return item.id % 2 === 0;
+  });
   /*
 Mostre o array filtrado acima no console.
 */
