@@ -112,19 +112,19 @@ propriedades:
 - `id`: que será o índice do array `brasil`,
 - `estado`: que será o estado do array `brasil`.
 */
-var newBrasil = [];
-  brasil.forEach(item => (item, index){
+  var newBrasil = [];
+  brasil.forEach((item, index) =>
     newBrasil.push({
-      'id': index,
-      'estado': item
+      id: index,
+      estado: item
     })
-  })
+  );
 
   /*
 Mostre o array `newBrasil` no console
 */
   console.log("\nnewBrasil:");
-  console.log(newBrasil)
+  console.log(newBrasil);
 
   /*
 Percorra o array `brasil` e verifique se os estados tem mais de 7 letras cada,
@@ -133,8 +133,16 @@ atribuindo o resultado à uma variável. Se tiver, mostre no console a frase:
 Senão, mostre no console:
 - "Nem todos os estados tem mais de 7 letras!"
 */
+  var maisDe7letras = [];
+  var menosDe7letras = [];
   console.log("\nTodos os estados de `brasil` tem mais de 7 letras?");
-  // ?
+  brasil.forEach(
+    item =>
+      item.length > 7 ? maisDe7letras.push(item) : menosDe7letras.push(item)
+  );
+  menosDe7letras.length > 0
+    ? console.log("Nem todos os estados tem mais de 7 letras!")
+    : console.log("Sim, todos os estados tem mais de 7 letras!");
 
   /*
 Percorra o array `brasil` e verifique se o Ceará está incluído, atribuindo o
@@ -144,32 +152,44 @@ console:
 Senão, mostrar a frase:
 - "Ceará não foi incluído :("
 */
+  var cearaNoBrasil = undefined;
   console.log("\nCeará está incluído em `brasil`?");
-  // ?
-
+  brasil.forEach(item => {
+    item === "Ceará" ? (cearaNoBrasil = true) : cearaNoBrasil;
+  });
+  if (cearaNoBrasil) {
+    console.log("Ceará está incluído!");
+  } else {
+    console.log("Ceará não foi incluído");
+  }
   /*
 Percorra o array `newBrasil` e crie um novo array que some 1 no ID de cada
 objeto desse array, e adicione a frase abaixo na propriedade `estado`:
 - "[ESTADO] pertence ao Brasil."
 Atribua o novo array a uma variável chamada `map`.
 */
-  // ?
+  var newArray = [];
+  newBrasil.forEach(item =>
+    newArray.push({
+      id: item.id + 1,
+      estado: item.estado + " pertence ao Brasil."
+    })
+  );
 
-  /*
+  /* 
 Mostre no console o array criado acima:
 */
   console.log("\nnewBrasil agora com mais informações:");
-  // ?
+  console.log(newArray);
 
   /*
 Filtre o array criado acima, retornando somente os estados que tiverem
 ID par. Atribua o valor à uma variável chamada `filter`.
 */
-  // ?
-
+  var filter = newArray.filter(item => item.id % 2 === 0);
   /*
 Mostre o array filtrado acima no console.
 */
   console.log("\nEstados com ID par:");
-  // ?
+  console.log(filter);
 })();
