@@ -34,7 +34,7 @@ concatenadas. Mostre o `brasil` no console.
 Adicione 3 novos estados da região Norte no início do array e mostre no console.
 */
   console.log("\nMais estados adicionados:");
-  brasil.splice(0, 0, "Acre", "Amapa", "Para");
+  brasil.unshift("Acre", "Amapa", "Para");
   console.log(brasil);
 
   /*
