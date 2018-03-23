@@ -1,11 +1,7 @@
 /*
 Crie um array com 5 items (tipos variados).
 */
-var arr = ['Davi', {
-  ninja: 'loading'
-}, function jogar(sim) {
-  return true
-}, '200', null];
+var arr = ['Davi', { ninja: 'loading' }, function jogar(sim) { return true; }, '200', null];
 
 /*
 Crie uma função chamada `addItem`, que irá adicionar itens no array criado.
@@ -27,7 +23,7 @@ Mostre no console o segundo elemento desse último array, criado acima, com a
 frase:
 "O segundo elemento do segundo array é [ELEMENTO]."
 */
-console.log("O segundo elemento do segundo array é " + arr[arr.length - 1][1])
+console.log('O segundo elemento do segundo array é ' + arr[arr.length - 1][1])
 
 /*
 Mostre no console quantos itens tem o primeiro array criado, com a frase:
