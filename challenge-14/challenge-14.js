@@ -21,7 +21,9 @@ Mostre esse array no console.
 Crie um array chamado `justNumbers`, que terá como elementos somente os
 números do array criado acima. Mostre esse novo array no console.
 */
-  var justNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  var justNumbers = numberObjects.map(function(item) {
+    return item.number;
+  });
   console.log("\nJust Numbers:");
   console.log(justNumbers);
 
@@ -81,7 +83,7 @@ Crie uma variável chamada `inversedName`, que reduzirá o array em uma string
 e atribuirá o seu nome invertido (usando o array criado acima).
 */
   var inversedName = name.reduceRight(function(acumulado, atual) {
-    return acumulado + "p" + atual;
+    return acumulado + atual;
   });
   console.log("\nInversed Name:");
   console.log(inversedName);
@@ -101,7 +103,11 @@ Senão, mostre a frase:
 Consegue prever o resultado? Deixe uma mensagem no console tentando explicar
 o que acontece ;)
 */
-  console.log(numberObjects.indexOf({ number: 2 }));
+  console.log(
+    numberObjects.indexOf({ number: 2 }) > -1
+      ? "Existe um objeto { number: 2 } em numberObjects!"
+      : "Não existe um objeto { number: 2 } em numberObjects :("
+  );
 
   /*
 Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
@@ -110,15 +116,19 @@ será que obtemos um resultado diferente? Faça a busca a partir do índice 2.
   console.log(
     "\nE buscando a partir do último índice, o { number: 2 } existe?"
   );
-  console.log(numberObjects.lastIndexOf({ number: 2 }));
-  /*
+  console.log(
+    numberObjects.lastIndexOf({ number: 2 }) > -1
+      ? "Existe um objeto { number: 2 } em numberObjects!"
+      : "Não existe um objeto { number: 2 } em numberObjects :("
+  ); /*
 Verifique se `justMod2Or3` é um array. Se for, mostre-o no console, no
 formato de String.
 */
   console.log(
     "\njustMod2Or3 é um array? Se for, a representação dele em String é:"
   );
-  console.log(
-    Array.isArray(justMod2Or3) ? justMod2Or3.toString() : "Nao é um array"
-  );
+
+  if (Array.isArray(justMod2Or3)) {
+    console.log(justMod2Or3.toString());
+  }
 })();
