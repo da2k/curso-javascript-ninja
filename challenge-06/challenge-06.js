@@ -4,7 +4,7 @@ para começar o desafio.
 Declare uma variável chamada `championship` que receberá o nome do campeonato,
 e imprima o nome desse campeonato no console.
 */
-var championship = 'Espanhol';
+var championship = 'Campeonato Espanhol';
 console.log(championship);
 
 /*
@@ -13,9 +13,11 @@ Os elementos serão nomes de times do campeonato escolhido, e os nomes devem
 estar na ordem em que eles aparecem na tabela no momento da solução desse
 desafio.
 */
-var teams = ['Barcelona', 'Atlético de Madrid', 'Valencia', 'Real Madrid', 'Sevilla'];
+var teams = ['Barcelona', 'Atlético de Madrid', 'Valencia', 'Real Madrid',
+  'Sevilla'
+];
 
-console.log( 'Times que estão participando do campeonato:', teams );
+console.log('Times que estão participando do campeonato:', teams);
 
 /*
 Crie uma função chamada `showTeamPosition` com as seguintes características:
@@ -33,12 +35,12 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     - Se não houver time para a posição passada, deve retornar a mensagem:
     "Não temos a informação do time que está nessa posição."
 */
-function showTeamPosition(index) {
-  if (index > 5 || index < 1) {
+function showTeamPosition(position) {
+  if (position > 5 || position < 1) {
     return 'Não temos a informação do time que está nessa posição.';
   }
-  return 'O time que está em ' + index + 'º lugar é o ' +
-    teams[index - 1] + '.';
+  return 'O time que está em ' + position + 'º lugar é o ' +
+    teams[position - 1] + '.';
 }
 
 /*
