@@ -10,19 +10,11 @@ elemento será um objeto no formato:
 Os números devem ser de 1 a 10.
 Mostre esse array no console.
 */
-  var numberObjects = [
-    { number: 1 },
-    { number: 2 },
-    { number: 3 },
-    { number: 4 },
-    { number: 4 },
-    { number: 5 },
-    { number: 6 },
-    { number: 7 },
-    { number: 8 },
-    { number: 9 },
-    { number: 10 }
-  ];
+  var numberObjects = [];
+
+  for (i = 1; i <= 10; i++) {
+    numberObjects.push({ number: i });
+  }
   console.log("Number Objects Array:");
   console.log(numberObjects);
   /*
