@@ -7,15 +7,28 @@ um único parâmetro como argumento. Essa função deve retornar `true` se o
 equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
-?
+var isTrusthy = function(x){ return x > 0 ? true : false}
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
-?
+isTrusthy();//false
+isTrusthy(1);//true
+isTrusthy(0);//false
+isTrusthy('');//false
+isTrusthy('x');//true
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
-?
+isTrusthy(true)//true
+isTrusthy({}})//false
+isTrusthy([]])//false
+isTrusthy(42)//true
+isTrusthy("test")//false
+isTrusthy(new Date())//true
+isTrusthy(-10)//false
+isTrusthy(3.14)//true
+isTrusthy(Infinity)//true
+isTrusthy(-Infinity)//false
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
@@ -29,35 +42,46 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `assentos` - Number - cinco por padrão
 - `quantidadePessoas` - Number - zero por padrão
 */
-?
+var carro = {
+	marca: 'ford',
+	modelo: 'fusca',
+	placa: 'abc1234',
+	ano: 1995,
+	cor: 'branco',
+	quantasPortas: 2,
+	assentos: 5,
+	quantidadePessoas: 0
+}
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
-?
+carro.mudarCor = function(novaCor){
+	carro.cor = novaCor;
+}
 
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
-?
+carro.obterCor = function(){return carro.cor;}
 
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
-?
+carro.obterModelo = function(){return carro.modelo;}
 
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
 */
-?
+carro.obterMarca = funtion(){return carro.marca;}
 
 /*
 Crie um método chamado `obterMarcaModelo`, que retorne:
 "Esse carro é um [MARCA] [MODELO]"
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
-?
+carro.obterMarcaModelo = function(){return 'Esse carro é um ' + carro.obterMarca() + ' ' + carro.obterModelo(); }
 
 /*
 Crie um método que irá adicionar pessoas no carro. Esse método terá as
@@ -75,7 +99,19 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-?
+carro.adicionarPessoa = function(pessoas){
+	carro.quantidadePessoas = pessoas;
+	var qta = carro.assentos - carro.quantidadePessoas;
+	if(carro.quantidadePessoas <= 5)
+	{
+		console.log('Já temos ' + carro.quantidadePessoas + ' pessoas no carro!');
+
+		carro.quantidadePessoas < 4 ? console.log('Só cabem mais ' + qta + ' pessoas!') : console.log('Só cabem mais ' + qta + ' pessoa!'); 
+	}
+
+	else(carro.quantidadePessoas === 5) 
+		console.log('O carro já está lotado!');
+}
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
