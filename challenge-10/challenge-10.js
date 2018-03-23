@@ -101,7 +101,7 @@
         
         return function (parameter1, parameter2){
             if( typeof parameter1 !== 'number' || typeof parameter2 !== 'number') {
-                return false;
+                return 'Operação inválida, use apenas números';
             }
             return operation[ operator ](parameter1, parameter2);
         };
@@ -138,7 +138,7 @@
     */
     
     var number1 = 0;
-    var number1 = 0;
+    var number2 = 0;
     var operationSignal;
 
     /*
@@ -169,7 +169,7 @@
 //    }
     
     if( sum ) {
-        number1 = 40;
+        number1 = '50';
         number2 = 5;
         
         console.log(showOperationMessage(operationSignal, number1, number2), sum(number1, number2));
