@@ -74,15 +74,6 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     a frase:
     "Não temos o equivalente hexadecimal para [COR]."
 */
-function showTeamPosition(x){
-    
-    if (teams[x - 1] != undefined) { 
-        return "O time que está em " + (x) + "º lugar é o " + teams[x - 1] + ".";
-    }
-    
-    console.log("Não temos a informação do time que está nessa posição.");
-}
-
 function convertToHex(colorName){
     
     var hexValues = {
