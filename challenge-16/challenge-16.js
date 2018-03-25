@@ -18,11 +18,10 @@
     console.log( 'As letras do seu nome:' );
     // ?
     var name = 'Lucas';
-    console.log(name.charAt(0)+" é a "+name.indexOf('L')+"ª letra do meu nome.");
-    console.log(name.charAt(1)+" é a "+name.indexOf('u')+"ª letra do meu nome.");
-    console.log(name.charAt(2)+" é a "+name.indexOf('c')+"ª letra do meu nome.");
-    console.log(name.charAt(3)+" é a "+name.indexOf('a')+"ª letra do meu nome.");
-    console.log(name.charAt(4)+" é a "+name.indexOf('s')+"ª letra do meu nome.");
+    for (var index = 0; index < name.length; index++) {
+        console.log(name.charAt(index)+" é a "+index+"ª letra do meu nome.");
+        
+    }
 
     /*
     - Declare uma variável chamada `fullName`, que receba seu nome completo,
