@@ -22,7 +22,7 @@ console.log(arr);
 Mostre no console o segundo elemento desse último array, criado acima, com a frase:
 "O segundo elemento do segundo array é [ELEMENTO]."
 */
-console.log('O segundo elemento do segundo array é "' + arr[6][1]+ '".');
+console.log('O segundo elemento do segundo array é "' + arr[5][1]+ '".');
 // O segundo elemento do segundo array é "string".
 
 
@@ -31,13 +31,13 @@ Mostre no console quantos itens tem o primeiro array criado, com a frase:
 "O primeiro array tem [QUANTIDADE DE ITENS] itens."
 */
 console.log('O primeiro array tem ' + arr.length + ' itens.');
-// O primeiro array tem 7 itens.
+// O primeiro array tem 6 itens.
 
 /*
 Agora mostre no console quantos itens tem o segundo array criado, com a frase:
 "O segundo array tem [QUANTIDADE DE ITENS] itens."
 */
-console.log('O segundo array tem ' + arr[6].length + ' itens.');
+console.log('O segundo array tem ' + arr[5].length + ' itens.');
 // O segundo array tem 3 itens.
 
 /*
