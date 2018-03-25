@@ -19,7 +19,7 @@
     // ?
     var name = 'Lucas';
     for (var index = 0; index < name.length; index++) {
-        console.log(name.charAt(index)+" é a "+index+"ª letra do meu nome.");
+        console.log(name.charAt(index)+" é a "+(index+1)+"ª letra do meu nome.");
         
     }
 
@@ -39,7 +39,7 @@
     // ?
     var fullName = 'teresinha-maria';
 
-    var newFullName = fullName.split('-').map(function(letra,index,sei){
+    var newFullName = fullName.split('-').map(function(letra){
                      return letra.charAt(0).toUpperCase()+letra.slice(1);
     }).join(' ');
     console.log(newFullName);
