@@ -13,8 +13,15 @@ Invoque a função criada acima, passando dois números que serão somados, e mo
 o resultado no console, com a frase:
 "A soma de [VALOR 1] e [VALOR2] é igual a [RESULTADO]."
 */
-console.log('A soma de 4 e 1 é igual a ' + sum(4,1) + '.');
+// EU ERREI:
+//console.log('A soma de 4 e 1 é igual a ' + sum(4,1) + '.');
 // A soma de 4 e 1 é igual a 5.
+
+// PROFESSOR CORREÇÃO:
+var value1 = 10;
+var value2 = 20;
+console.log('A soma de '+value1+' e '+value2+' é igual a ' + sum(value1,value2) + '.');
+
 
 /*
 Mostre no console o nome da função criada acima, com a frase:
@@ -25,16 +32,25 @@ console.log("O nome da função que faz a soma é " + sum.name + ".");
 Crie uma função literal chamada `showName`. Essa função deve retornar o
 seu nome.
 */
+// EU ERREI:
 function showName(){
     return showName.name;
 }
 
+// PROFESSOR CORREÇÃO:
+function showName(){
+    return 'Paulo Pamplona';
+}
 /*
 Declare uma variável chamada `varShowName` que recebe a função criada acima.
 */
-var varShowName = function showName(){
+// EU ERREI:
+/*var varShowName = function showName(){
     return showName.name;
-};
+};          
+*/
+// PROFESSOR CORREÇÃO:
+var varShowName = showName;
 
 /*
 Usando a variável criada acima, mostre no console o nome e o retorno da função
@@ -57,6 +73,7 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
 */
 function calculator(operador){
     return function(num1,num2){
+        var resultado;
         switch(operador){
             case '+':
                 resultado = num1 + num2;
@@ -77,7 +94,7 @@ function calculator(operador){
                 return 'Operação inválida.';
         }
         return "Resultado da operação: " + num1 + " " + operador + " " + num2 + " = " + resultado + ".";
-    }
+    };
 }
 calculator('+')(1,4);
 // "Resultado da operação: 1 + 4 = 5."
