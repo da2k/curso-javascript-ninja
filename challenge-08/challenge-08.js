@@ -71,6 +71,7 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
   - Se o operador não for válido, retornar a frase:
   "Operação inválida."
 */
+
 function calculator(operador){
     return function(num1,num2){
         var resultado;
