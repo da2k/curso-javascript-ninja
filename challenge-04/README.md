@@ -137,7 +137,7 @@ carro.mudarCor('verde musgo');
 carro.obterCor(); // verde musgo
 
 // Qual a marca e modelo do carro?
-carro.obterModelo(); // Onix
+carro.obterMarcaModelo(); // Esse carro é um Chevrolet Onix
 
 // Adicione 2 pessoas no carro.
 carro.adicionarPessoa(2); // 'Já temos 2 pessoas no carro!'
