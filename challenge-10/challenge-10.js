@@ -1,117 +1,95 @@
 (function () {
-    /*
-    Crie uma IIFE que envolva todo esse arquivo (inclusive esse comentário),
-    e faça a indentação correta.
-    */
+  /*
+  Crie uma IIFE que envolva todo esse arquivo (inclusive esse comentário),
+  e faça a indentação correta.
+  */
 
-    /*
-    Sem alterar os códigos nos `console.log` abaixo, faça com que o retorno
-    deles seja "true", usando os Wrapper Objects como "conversores" nos valores
-    das variáveis. Analise o que está sendo impresso no console para saber como
-    resolver o problema corretamente.
-    */
-    var five = Number('5');
-    console.log(five + ' é número?', typeof five === 'number');
+  /*
+  Sem alterar os códigos nos `console.log` abaixo, faça com que o retorno
+  deles seja "true", usando os Wrapper Objects como "conversores" nos valores
+  das variáveis. Analise o que está sendo impresso no console para saber como
+  resolver o problema corretamente.
+  */
+  var five = Number('5');
+  console.log(five + ' é número?', typeof five === 'number');
 
-    var concat = String('10' + '10');
-    console.log('"' + concat + '" é uma string? E é igual a "1010"?', typeof concat ===
-      'string');
+  var concat = String(10) + 10;
+  console.log('"' + concat + '" é uma string? E é igual a "1010"?', typeof concat ===
+    'string');
 
-    /*
-    Voltando ao exemplo da calculadora, vamos utilizar mais uma abordagem
-    funcional, mas dessa vez, separando algumas responsabilidades.
-    - Primeiro, crie um objeto chamado `operation` que terá as propriedades:
-    '+', '-', '*', '/' e '%'.
-    - Cada propriedade vai receber uma função (logo, elas serão métodos), e essa
-    função receberá dois parâmetros e retornará a operação referente à sua
-    propriedade, usando os valores passados por parâmetro.
-    */
-    var operation = {
-      sum: function (num1, num2) {
-        return num1 + num2;
-      },
-      subtraction: function (num1, num2) {
-        return num1 - num2;
-      },
-      multiplication: function (num1, num2) {
-        return num1 * num2;
-      },
-      division: function (num1, num2) {
-        return num1 / num2;
-      },
-      mod: function (num1, num2) {
-        return num1 % num2;
-      }
-    };
-    /*
-    Crie uma função chamada `isOperatorValid`, que receberá um operador por
-    parâmetro.
-    - Essa função será responsável por verificar se o operador passado por
-    parâmetro a ela é válido, ou seja, se ele é igual a '+', '-', '*', '/' ou
-    '%'.
-    - Se for igual a qualquer um desses, ela deverá retornar "true".
-    Caso contrário, "false".
-    - O desafio é fazer o retorno sem usar "if" ou "switch".
-    */
-    function isOperatorValid(operador) {
-
+  /*
+  Voltando ao exemplo da calculadora, vamos utilizar mais uma abordagem
+  funcional, mas dessa vez, separando algumas responsabilidades.
+  - Primeiro, crie um objeto chamado `operation` que terá as propriedades:
+  '+', '-', '*', '/' e '%'.
+  - Cada propriedade vai receber uma função (logo, elas serão métodos), e essa
+  função receberá dois parâmetros e retornará a operação referente à sua
+  propriedade, usando os valores passados por parâmetro.
+  */
+  var operation = {
+    '+': function (num1, num2) {
+      return num1 + num2;
+    },
+    '-': function (num1, num2) {
+      return num1 - num2;
+    },
+    '*': function (num1, num2) {
+      return num1 * num2;
+    },
+    '/': function (num1, num2) {
+      return num1 / num2;
+    },
+    '%': function (num1, num2) {
+      return num1 % num2;
     }
+  };
+  /*
+  Crie uma função chamada `isOperatorValid`, que receberá um operador por
+  parâmetro.
+  - Essa função será responsável por verificar se o operador passado por
+  parâmetro a ela é válido, ou seja, se ele é igual a '+', '-', '*', '/' ou
+  '%'.
+  - Se for igual a qualquer um desses, ela deverá retornar "true".
+  Caso contrário, "false".
+  - O desafio é fazer o retorno sem usar "if" ou "switch".
+  */
+  function isOperatorValid(operador) {
+    return !!operation[operador];
+  }
 
-    /*
-    Agora vamos criar a calculadora.
-    - Crie uma função chamada `calculator`, que receberá como parâmetro um
-    operador;
-    - Se o operador não for válido, a função deve retornar "false";
-    - Se o operador for válido, retornar uma segunda função que receberá dois
-    parâmetros;
-    - Se algum dos parâmetros não for um número, retornar "false";
-    - Senão, retornar o método do objeto "operation" criado acima, baseado no
-    operador passado para a função "calculator", e passando para esse método
-    os dois parâmetros da função de retorno de "calculator".
-    */
-    function calculator(operador) {
-      if (operador == '+' || operador == '-' || operador == '*' || operador ==
-        '/' || operador == '%') {
-        return function (num1, num2) {
-          if (typeof num1 === 'number' && typeof num2 === 'number') {
-            switch (operador) {
-              case "+":
-                return operation.sum(num1, num2);
-                break;
-              case "-":
-                return operation.subtraction(num1, num2);
-                break;
-              case "*":
-                return operation.multiplication(num1, num2);
-                break;
-              case "/":
-                return operation.division(num1, num2);
-                break;
-              case "%":
-                return operation.mod(num1, num2);
-                break;
-              default:
-                console.log(
-                  "Algo deu errado e mesmo com as condicinais o programa chegou até aqui, algo de errado não está certo!"
-                );
-            }
-          } else {
-            return false;
-          }
-        };
-      }
+  /*
+  Agora vamos criar a calculadora.
+  - Crie uma função chamada `calculator`, que receberá como parâmetro um
+  operador;
+  - Se o operador não for válido, a função deve retornar "false";
+  - Se o operador for válido, retornar uma segunda função que receberá dois
+  parâmetros;
+  - Se algum dos parâmetros não for um número, retornar "false";
+  - Senão, retornar o método do objeto "operation" criado acima, baseado no
+  operador passado para a função "calculator", e passando para esse método
+  os dois parâmetros da função de retorno de "calculator".
+  */
+  function calculator(operador) {
+    if (!isOperatorValid(operador)) {
       return false;
     }
+    return function (num1, num2) {
+      if (typeof num1 !== 'number' || typeof num2 !== 'number') {
+        return false;
+      }
+      return operation[operador](num1, num2);
+    }
+  }
 
-    /*
-    Crie uma função chamada "showOperationMessage" que recebe três parâmetros:
-    - o operador, o primeiro número e o segundo número. O retorno da função
-    deve ser a frase:
-    'A operação [NUMBER1] [OPERATOR] [NUMBER2] =';
-    Essa função mostrará a mensagem da operação que criaremos mais abaixo.
-    */
-    function showOperationMessage(operador, num1, num2) {
-      return 'A operação', num1, operador, num2, '=');
+  /*
+  Crie uma função chamada "showOperationMessage" que recebe três parâmetros:
+  - o operador, o primeiro número e o segundo número. O retorno da função
+  deve ser a frase:
+  'A operação [NUMBER1] [OPERATOR] [NUMBER2] =';
+  Essa função mostrará a mensagem da operação que criaremos mais abaixo.
+  */
+  function showOperationMessage(operador, num1, num2) {
+    return 'A operação ' + num1 + operador + num2 + '=';
   }
 
   /*
@@ -121,10 +99,7 @@
   'Operação "[OPERATOR]" não permitida!'
   */
   function showErrorMessage(operador) {
-    if (operador !== '+' || operador !== '-' || operador !== '*' || operador !==
-      '/' || operador !== '%') {
-      return console.log('Operação', operador, 'mão é permitida!');
-    }
+    return console.log('Operação"', operador, '"não é permitida!');
   }
 
   /*
@@ -143,7 +118,7 @@
   variável chamada "sum", que receba a função "calculator", passando por
   parâmetro a variável que recebeu o sinal da operação.
   */
-  operationSignal = "+";
+  operationSignal = '+';
   var sum = calculator(operationSignal);
 
   /*
@@ -158,6 +133,14 @@
   - O segundo, a função de soma, passando os dois operandos.
   - Se "sum" for "false", mostrar no console a mensagem de erro.
   */
+  if (sum) {
+    numero1 = 10;
+    numero2 = 15;
+    console.log(showOperationMessage('+', numero1, numero2) + sum(numero1,
+      numero2));
+  } else {
+    showErrorMessage('*');
+  }
 
 
   /*
@@ -165,11 +148,55 @@
   divisão e resto. Crie variáveis com os nomes "subtraction",
   "multiplication", "division" e "mod".
   */
-  // ?
+  var multiplication = calculator('*');
+  if (multiplication) {
+    numero1 = 4;
+    numero2 = 9;
+    console.log(showOperationMessage('*', numero1, numero2) + multiplication(
+      numero1, numero2));
+  } else {
+    showErrorMessage('*')
+  }
+  var subtraction = calculator('-');
+  if (subtraction) {
+    numero1 = 15;
+    numero2 = 9;
+    console.log(showOperationMessage('-', numero1, numero2) + subtraction(
+      numero1, numero2));
+  } else {
+    showErrorMessage('-')
+  }
+  var division = calculator('/');
+  if (division) {
+    numero1 = 18;
+    numero2 = 6;
+    console.log(showOperationMessage('/', numero1, numero2) + division(
+      numero1, numero2));
+  } else {
+    showErrorMessage('/')
+  }
+  var mod = calculator('%');
+  if (mod) {
+    numero1 = 8;
+    numero2 = 5;
+    console.log(showOperationMessage('%', numero1, numero2) + mod(
+      numero1, numero2));
+  } else {
+    showErrorMessage('%')
+  }
 
   /*
   Repita o PASSO 2 novamente, mas passando um operador inválido, para ver se
   a mensagem de erro será mostrada no console.
   */
-  // ?
+  var operadorInvalido = calculator("Davi");
+  if (operadorInvalido) {
+    numero1 = 6;
+    numero2 = 6;
+    console.log(showOperationMessage("Davi", numero1, numero2) +
+      operadorInvalido(numero1, numero2));
+  } else {
+    showErrorMessage("Davi");
+  }
+
 }())
