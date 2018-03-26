@@ -109,7 +109,7 @@ carro.adicionarPessoa = function(pessoas){
 		carro.quantidadePessoas < 4 ? console.log('Só cabem mais ' + qta + ' pessoas!') : console.log('Só cabem mais ' + qta + ' pessoa!'); 
 	}
 
-	else(carro.quantidadePessoas === 5) 
+	else
 		console.log('O carro já está lotado!');
 }
 
@@ -121,38 +121,34 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-?
+carro.cor//Preto
 
 // Mude a cor do carro para vermelho.
-?
+carro.mudarCor('Vermelho')
 
 // E agora, qual a cor do carro?
-?
-
+carro.cor//Vermelho
 // Mude a cor do carro para verde musgo.
-?
+carro.mudarCor('Verder Musgo')
 
 // E agora, qual a cor do carro?
-?
+carro.cor//Verde Musgo
 
 // Qual a marca e modelo do carro?
-?
-
-// Adicione 2 pessoas no carro.
-?
+carro.obterMarcaModelo()//Esse carro é um ford fusca
 
 // Adicione mais 4 pessoas no carro.
-?
+carro.adicionarPessoa(4)
 
 // Faça o carro encher.
-?
+carro.adicionarPessoa(5)
 
 // Tire 4 pessoas do carro.
-?
+carro.quantidadePessoas - 4
 
 // Adicione 10 pessoas no carro.
-?
+carro.adicionarPessoa(10)
 
 // Quantas pessoas temos no carro?
-?
+//10
 ```
