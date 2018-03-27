@@ -10,12 +10,15 @@
   </body>
   <script type="text/javascript">
     var isTruthy = function(argumentoBooleano) {
-      if (argumentoBooleano) {
-        return true;
-      } else {
-        return false;
-      }
+      return !!argumentoBooleano;
     }
+    isTruthy(false);
+    isTruthy(undefined);
+    isTruthy(0);
+    isTruthy('');
+    isTruthy(null);
+    isTruthy(-0);
+    isTruthy(NaN);
     var carro = {
       marca: "bmw",
       modelo: "i500",
@@ -35,20 +38,25 @@
     carro.obterMarca = function() {
       return carro.marca;
     }
+    carro.obterModelo = function(){
+      return carro.modelo;
+    }
     carro.obterMarcaModelo = function() {
-      return "Esse carro é um " + carro.marca + " " + carro.modelo;
+      return "Esse carro é um " + carro.obterMarca() + " " + carro.modelo;
     }
     carro.adicionaPessoa = function(numPessoa) {
-      var assentoLivre = carro.assentos - (carro.quantidadePessoas + numPessoa);
-      console.log(assentoLivre)
-      carro.quantidadePessoas += numPessoa;
-      if (assentoLivre == 0 || assentoLivre < 0) {
-        return "O carro já está lotado! " + (-assentoLivre) + " não entraram no carro.";
-      } else if (assentoLivre == 1) {
-        return "Só cabem mais " + assentoLivre + " pessoa";
-      } else if (assentoLivre > 1 && assentoLivre <= carro.assentos) {
-        return "Ainda cabem " + assentoLivre + " pessoas";
+      var pessoasNoCarro = carro.quantidadePessoas + numPessoa;
+      if (carro.quantidadePessoas === carro.assentos && pessoasNoCarro >= carro.assentos) {
+        return 'o carro já está lotado!';
       }
+      if (pessoasNoCarro > carro.assentos) {
+        var cabemAinda = carro.assentos - carro.quantidadePessoas;
+        var singularOuPluralPessoa = cabemAinda == 1 ? 'pessoa' : 'pessoas';
+        var singularOuPluralCabe = cabemAinda == 1 ? 'cabe' : 'cabem';
+        return 'Só ' + singularOuPluralCabe + ' mais ' + cabemAinda + ' ' +  singularOuPluralPessoa;
+      }
+      carro.quantidadePessoas += numPessoa;
+      return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!';
     }
   </script>
   </body>
