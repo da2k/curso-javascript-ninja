@@ -22,7 +22,7 @@
     name: 'Davi',
     age: 19,
     weight: 72,
-    birthday: '07/06/1988'
+    birthday: '07/06/1998'
   }
 
   /*
@@ -45,17 +45,30 @@
   Após a função, mostrar a mensagem no console:
   'The person has more than 25 years old? [TRUE/FALSE]'
   */
-  function moreThan() {
-
+  function moreThan(ageToCompare) {
+    if (person.age > ageToCompare) {
+      return true;
+    }
+    return false;
   }
+  console.log('The person has more than 25 years old?', person.age > 25);
+
 
   /*
   Faça um loop de 0 a 20, que adicione cada número como um item de um
   array chamado `numbers`. Se o contador for maior que 10, saia do loop.
   Mostre no console os números no array.
   */
+  var numbers = [];
   console.log('De 0 a 10:');
-  // ?
+  for (var i = 0; i <= 20; i++) {
+    if (i > 10) {
+      break;
+    }
+    numbers.push(i);
+  }
+  console.log(numbers);
+
 
   /*
   Faça outro loop de 0 a 20, que adicione a um array chamado `numbers` (já
@@ -64,5 +77,12 @@
   Mostrar no console os números do array.
   */
   console.log('Pares de 0 a 20:');
-  // ?
+  numbers = [];
+  for (var i = 0; i <= 20; i++) {
+    if (i % 2 !== 0) {
+      continue;
+    }
+    numbers.push(i);
+  }
+  console.log(numbers)
 })()
