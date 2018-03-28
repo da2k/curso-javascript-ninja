@@ -49,6 +49,9 @@
     */
     console.log( '\nTrocando de "D" a "h" por "0":' );
     // ?
+    var regex = /[D-h]/g;
+    var newText = text.replace(regex,'0');
+    console.log(newText);
     
     /*
     Substitua todos os "A" (maiúsculos ou minúsculos) por "4".
@@ -56,14 +59,20 @@
     */
     console.log( '\nTrocando "A" e "a" por "4":' );
     // ?
-
+    var regex = /[A||a]/g;
+    var newText = text.replace(regex,'4');
+    console.log(newText);
     /*
     Substitua a frase "O Centauro de Luvas", deixando-a em caixa alta, usando
     o método `toUpperCase()`. Mostre o resultado no console:
     */
     console.log( '\n"O Centauro de Luvas" em caixa alta:' );
     // ?
-
+    var regex = /O Centauro de Luvas/g;
+    var newText = text.replace(regex,function (capturaTotal,primeiraCaptura,segundaCaptura) {
+       return capturaTotal.toUpperCase();
+    });
+    console.log(newText);
     /*
     Agora iremos substituir as datas no formato "13 de junho de 1804" para
     "13/06/1804". A primeira coisa a fazer é criar uma função chamada
@@ -78,7 +87,12 @@
     */
     console.log( '\nMeses representados por números:' );
     // ?
-
+    function getMonthNumber(month){
+        var months = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto',
+        'setembro','outubro','novembro','dezebro'];
+        return  (months.indexOf(month)+1).toString();
+    }
+    console.log(getMonthNumber('março'));
     /*
     Agora, declare uma variável chamada `regexDate` que irá receber a expressão
     regular que irá fazer o match com as datas. Crie grupos de captura para o
