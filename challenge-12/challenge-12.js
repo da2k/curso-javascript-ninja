@@ -132,6 +132,5 @@
     /*
     Mostre todos os itens do array acima, odenados alfabéticamente.
     */
-    myName.sort();
-    console.log(myName.join(''));
+    console.log(myName.sort());
 })();
