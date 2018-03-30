@@ -88,9 +88,19 @@
     console.log( '\nMeses representados por números:' );
     // ?
     function getMonthNumber(month){
-        var months = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto',
-        'setembro','outubro','novembro','dezebro'];
-        return  (months.indexOf(month)+1).toString();
+        var months = {'janeiro':'01',
+                      'fevereiro':'02',
+                      'março':'03',
+                      'abril':'04',
+                      'maio':'05',
+                      'junho':'06',
+                      'julho':'07',
+                      'agosto':'08',
+                      'setembro':'09',
+                      'outubro':'10',
+                      'novembro':'11',
+                      'dezebro':'12'};
+        return  months[month];
     }
     console.log(getMonthNumber('março'));
     /*
@@ -103,7 +113,9 @@
     */
     console.log( '\nRegex que vai fazer o match com as datas do texto:' );
     // ?
+    var regexDate =/(\d\d) de (junho|julho) de (\d\d\d\d)/g;
 
+    console.log(regexDate);
     /*
     Agora crie a função que irá fazer o replace dos dados. A função será chamada
     de `replaceDate`. Ela deve retornar a data no formato:
@@ -112,5 +124,10 @@
     console o resultado.
     */
     console.log( '\nReplace de datas:' );
+
+    function replaceDate(regex ,dia , mes , ano) {
+        return dia +'/'+getMonthNumber(mes)+'/'+ano;
+    }
     // ?
+    console.log(text.replace(regexDate,replaceDate));
 })();
