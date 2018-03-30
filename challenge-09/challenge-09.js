@@ -105,6 +105,7 @@
     chamada.
     */
     
+    
     console.log( 'O resultado da subtração é:' );
     console.log( subtraction(function(n1, n2){
         return n1 - n2;
