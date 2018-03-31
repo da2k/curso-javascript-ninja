@@ -105,7 +105,7 @@
     'Operação "[OPERATOR]" não permitida!'
     */
     function showErrorMessage(op){
-        return 'Operação ' + op + ' não permitida!';
+        return 'Operação "' + op + '" não permitida!';
     }
 
     /*
@@ -139,31 +139,84 @@
     - O segundo, a função de soma, passando os dois operandos.
     - Se "sum" for "false", mostrar no console a mensagem de erro.
     */
-    // ?
-    console.log(!!sum);
     
-    number1 = 35;
-    number2 = 6;
-    console.log(sum(number1, number2));
+    if (sum) {
+        number1 = 35;
+        number2 = 6;
+        console.log(showOperationMessage(operationSignal, number1, number2), sum(number1,number2));
+    }
+    else {
+        console.log(showErrorMessage(operationSignal));
+    }
+    // ATENÇÃO: Considerar que espaços vazios no console não são descartados. Ou seja, acima poderíamos ter aproveitado para usar espaços dentro do próprio console, quando oportuno, dispensando espaços nas operações de concatenação de strings.
     
     /*
     Repita desde o "PASSO 2" com as operações de subtração, multiplicação,
     divisão e resto. Crie variáveis com os nomes "subtraction",
     "multiplication", "division" e "mod".
     */
-    var subtraction = calculator('-');
-    var multiplication = calculator('*');
-    var division = calculator('/');
-    var mod = calculator('%');
-    console.log(subtraction(number1, number2));
-    console.log(multiplication(number1, number2));
-    console.log(division(number1, number2));
-    console.log(mod(number1, number2));
+    operationSignal = '-';
+    var subtraction = calculator(operationSignal);
+    if (subtraction) {
+        number1 = 35;
+        number2 = 6;
+        console.log(showOperationMessage(operationSignal, number1, number2), subtraction(number1,number2));
+    }
+    else {
+        console.log(showErrorMessage(operationSignal));
+    }    
+    
+    // MULTIPLICATION 
+    operationSignal = '*';
+    var multiplication = calculator(operationSignal);
+    if (multiplication) {
+        number1 = 35;
+        number2 = 6;
+        console.log(showOperationMessage(operationSignal, number1, number2), multiplication(number1,number2));
+    }
+    else {
+        console.log(showErrorMessage(operationSignal));
+    }        
+    
+    // DIVISION
+    operationSignal = '/';
+    var division = calculator(operationSignal);
+    if (division) {
+        number1 = 35;
+        number2 = 6;
+        console.log(showOperationMessage(operationSignal, number1, number2), division(number1,number2));
+    }
+    else {
+        console.log(showErrorMessage(operationSignal));
+    }      
+    
+    // MODULUS 
+    operationSignal = '%';
+    var mod = calculator(operationSignal);
+    if (mod) {
+        number1 = 35;
+        number2 = 6;
+        console.log(showOperationMessage(operationSignal, number1, number2), mod(number1,number2));
+    }
+    else {
+        console.log(showErrorMessage(operationSignal));
+    }        
+
 
     /*
     Repita o PASSO 2 novamente, mas passando um operador inválido, para ver se
     a mensagem de erro será mostrada no console.
     */
-    var multiplication = calculator('wow');
-
+    
+    operationSignal = 'ALGUM ERRO AQUI';
+    var mod = calculator(operationSignal);
+    if (mod) {
+        number1 = 35;
+        number2 = 6;
+        console.log(showOperationMessage(operationSignal, number1, number2), mod(number1,number2));
+    }
+    else {
+        console.log(showErrorMessage(operationSignal));
+    }    
+    
 })();
