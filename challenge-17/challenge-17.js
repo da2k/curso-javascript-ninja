@@ -59,7 +59,7 @@
     */
     console.log( '\nTrocando "A" e "a" por "4":' );
     // ?
-    var regex = /[A||a]/g;
+    var regex = /[a]/gi;
     var newText = text.replace(regex,'4');
     console.log(newText);
     /*
