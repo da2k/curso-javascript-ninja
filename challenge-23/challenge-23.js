@@ -1,3 +1,5 @@
+(function(doc) {
+  'use strict';
 /*
 Vamos desenvolver mais um projeto. A ideia é fazer uma mini-calculadora.
 As regras são:
@@ -23,3 +25,72 @@ multiplicação (x), então no input deve aparecer "1+2x".
 input;
 - Ao pressionar o botão "CE", o input deve ficar zerado.
 */
+  var $calculator = doc.querySelector('input[type="text"]');
+  var $numbers = doc.querySelectorAll('[data-js="number"]');
+  var $operations = doc.querySelectorAll('[data-js="operation"]');
+  var $calc = doc.querySelector('[data-js="equal"]');
+  var $reset = doc.querySelector('[data-js="ce"]');
+
+  Array.prototype.forEach.call($numbers, function(button) {
+    button.addEventListener('click', addValue, false);
+  });
+
+  Array.prototype.forEach.call($operations, function(button) {
+    button.addEventListener('click', addOperation, false);
+  });
+
+  $calc.addEventListener('click', calculate, false);
+
+  $reset.addEventListener('click', resetCalculator, false);
+
+  function addValue(event) {
+    $calculator.value += this.value;
+  }
+
+  function addOperation(event) {
+    $calculator.value = removeLastItemIfItIsAnOperator($calculator.value);
+    $calculator.value += this.value;
+  }
+
+  function calculate() {
+    $calculator.value = removeLastItemIfItIsAnOperator($calculator.value);
+    var values = $calculator.value.match(/\d+[+-/*]?/g);
+    $calculator.value = values.reduce(function(accumulated, current) {
+      var initialValue = Number(accumulated.slice(0, -1));
+      var operator = accumulated.split('').pop();
+      var endValue = Number(removeLastItemIfItIsAnOperator(current));
+      var endOperator = isLastItemAnOperation(current)
+        ? current.split('').pop() : '';
+      switch (operator) {
+        case '+':
+          return (initialValue + endValue) + endOperator;
+        case '-':
+          return (initialValue - endValue) + endOperator;
+        case '/':
+          return (initialValue / endValue) + endOperator;
+        case '*':
+          return (initialValue * endValue) + endOperator;
+      }
+    });
+  }
+
+  function removeLastItemIfItIsAnOperator(number) {
+    if (isLastItemAnOperation(number)) {
+      return number.slice(0, -1);
+    }
+    return number;
+  }
+
+  function isLastItemAnOperation(number) {
+    var operations = ['+', '-', '*', '/'];
+    var lastItem = number.split('').pop();
+    return operations.some(function (operation) {
+      return operation === lastItem;
+    })
+  }
+
+  function resetCalculator() {
+    $calculator.value = 0;
+  }
+
+}) (document)
