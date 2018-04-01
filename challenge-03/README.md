@@ -204,13 +204,13 @@ pessoa.apresentacao = function(){
   var peso = pessoa.peso;
   var metrosCaminhado = pessoa.caminhouQuantosMetros;
   
-  var apresentacaoMasculino = 'Olá, eu sou o ' + pessoa.nome + ' ' + pessoa.sobrenome +', tenho ' + pessoa.idade + ' anos, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metros!01';
+  var apresentacaoMasculino = 'Olá, eu sou o ' + pessoa.nome + ' ' + pessoa.sobrenome +', tenho ' + pessoa.idade + ' anos, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metros!';
   
-  var apresentacaoMasculinoIdade = 'Olá, eu sou o ' + pessoa.nome + ' ' + pessoa.sobrenome +', tenho ' + pessoa.idade + ' ano, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metros!02';
+  var apresentacaoMasculinoIdade = 'Olá, eu sou o ' + pessoa.nome + ' ' + pessoa.sobrenome +', tenho ' + pessoa.idade + ' ano, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metros!';
   
-  var apresentacaoMasculinoMetro = 'Olá, eu sou o ' + pessoa.nome + ' ' + pessoa.sobrenome +', tenho ' + pessoa.idade + ' anos, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metro!03';
+  var apresentacaoMasculinoMetro = 'Olá, eu sou o ' + pessoa.nome + ' ' + pessoa.sobrenome +', tenho ' + pessoa.idade + ' anos, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metro!';
   
-  var apresentacaoMasculinoMetroIdade = 'Olá, eu sou a ' + pessoa.nome + ' ' + pessoa.sobrenome +', tenho ' + pessoa.idade + ' ano, ' + pessoa.altura + ', meu peso é' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metro!04';
+  var apresentacaoMasculinoMetroIdade = 'Olá, eu sou a ' + pessoa.nome + ' ' + pessoa.sobrenome +', tenho ' + pessoa.idade + ' ano, ' + pessoa.altura + ', meu peso é' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metro!';
   
   var apresentacaoFeminino = 'Olá, eu sou a ' + pessoa.nome + ' ' + pessoa.sobrenome +', tenho ' + pessoa.idade + ' anos, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metros!';
   
@@ -246,5 +246,7 @@ if(sexo === 'Feminino' && idade !== 1 && metrosCaminhado !== 1){
 }
 }
 // Agora, apresente-se ;)
-?
+
+pessoa.apresentacao(); //'Olá, eu sou o Leonardo Albuquerque, tenho 23 anos, 1.63, meu peso é 68 e, só hoje, eu já caminhei 1 metro!'
+
 ```
