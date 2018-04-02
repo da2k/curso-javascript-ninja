@@ -95,7 +95,7 @@
         'main'
     ];
     function hasClass( markup, cssClass ) {
-        var cssRegex = new RegExp( 'class=(["\'])(\\w+\\s)?' + cssClass + '(\\s\\w+)?(\\1)', 'gm' );
+        var cssRegex = new RegExp( 'class=(["\'])([\\w\\s]+)?' + cssClass + '([\\w\\s]+)?(\\1)', 'gm' );
         return cssRegex.test( markup );
     }
     classesList.forEach( function( cssClass ){
