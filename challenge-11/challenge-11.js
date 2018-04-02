@@ -29,7 +29,7 @@ Crie um objeto chamado `person`, que receba as seguintes propriedades:
 - 'name', 'age', 'weight' e 'birthday'. Preencha com os valores corretos
 para o nome, idade, peso e data de nascimento dessa pessoa.
 */
-var person = {name:'Iglan Cardeal',age:25,weight:1.90,birthday:'june 15, 1992' }
+var person = {name:'Iglan Cardeal',age:25,weight:120 ,birthday:'june 15, 1992' }
 
 /*
 Use um loop para percorrer o objeto criado acima, mostrando no console
