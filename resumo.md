@@ -649,4 +649,29 @@ console.log( arr.indexOf( 3, 1 ) ); // retorna 2
 
 lastIndexOf(): faz a mesma coisa que o indexOf(), porém ele começa a verificar de trás pra frente.
 
-Array.isArray(obj): um método que retorna true ou false, verificando se o objeto é um array ou não.
+isArray(): um método que retorna true ou false, verificando se o objeto é um array ou não.
+
+
+//Vídeo 89
+JS no Browser
+> <script src="main.js"> </script>
+Cuidado com as variáveis globais! Usar IIFE (function(){}());
+this: chama o objeto principal, podendo ser um objeto mesmo ou a window.
+>    var myObject = {
+>        myProperty: 1,
+>        init: function init(){
+>            return this;
+>            // aponta para o objeto principal
+>        }
+>    };
+>    console.log('myObject(): ', myObject.init());
+>
+>    function myFunction() {
+>        return this;
+>        // aponta para o objeto do navegador, window
+>    }
+>    console.log('myFunction(): ', myFunction());
+
+//Vídeo 90
+arguments: variável que retorna os argumentos da sua função em forma de array. 
+Não usar 'arguments' como nome de variável ou argumento.
