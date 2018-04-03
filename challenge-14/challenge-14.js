@@ -10,18 +10,10 @@ Envolva todo o código desse desafio em uma IIFE.
     Mostre esse array no console.
     */
     console.log( 'Number Objects Array:' );
-    var numberObjects = [
-        { number : 1 },
-        { number : 2 },
-        { number : 3 },
-        { number : 4 },
-        { number : 5 },
-        { number : 6 },
-        { number : 7 },
-        { number : 8 },
-        { number : 9 },
-        { number : 10 },
-    ]
+    var numberObjects = [];
+    for( var i = 1; i <= 10; i++ ) {
+        numberObjects.push( {number : i} );
+    };
     console.log(numberObjects);
 
     /*
@@ -29,7 +21,7 @@ Envolva todo o código desse desafio em uma IIFE.
     números do array criado acima. Mostre esse novo array no console.
     */
     console.log( '\nJust Numbers:' );
-    justNumbers = numberObjects.map(function( item, index, array ) {
+    justNumbers = numberObjects.map(function( item ) {
         return item.number;
     });
     console.log(justNumbers);
@@ -40,10 +32,10 @@ Envolva todo o código desse desafio em uma IIFE.
     no console.
     */
     console.log( '\nJust module of division by 2 or 3:' );
-    var justMod2Or3 = justNumbers.filter(function(item){
+    var justMod2Or3 = justNumbers.filter(function( item ){
         return item % 2 == 0 || item % 3 == 0;
     });
-    console.log(justMod2Or3);
+    console.log( justMod2Or3 );
 
     /*
     Declare uma variável chamada operation que receba, do array criado acima,
@@ -57,7 +49,7 @@ Envolva todo o código desse desafio em uma IIFE.
     var operation = justMod2Or3.reduce(function( acumulado, atual ){
         acumulado++;
         return acumulado * atual;
-    });
+    }, 0);
     console.log(operation);
 
     /*
@@ -69,7 +61,7 @@ Envolva todo o código desse desafio em uma IIFE.
     var operation2 = justMod2Or3.reduceRight(function( acumulado, atual ){
         acumulado++;
         return acumulado * atual;
-    });
+    }, 0);
     console.log(operation2);
 
     /*
@@ -84,7 +76,7 @@ Envolva todo o código desse desafio em uma IIFE.
     var name = [ 'Me', 'lli', 'na' ];
     linguadoP = name.reduce(function( acumulado, atual ){
         return acumulado + 'p' + atual;
-    });
+    }, '');
     console.log(linguadoP);
 
     /*
@@ -93,7 +85,7 @@ Envolva todo o código desse desafio em uma IIFE.
     */
     console.log( '\nInversed Name:' );
     var inversedName = name.reduceRight(function( acumulado, atual ){
-        return acumulado + 'p' + atual;
+        return acumulado + atual;
     });
     console.log(inversedName);
 
@@ -113,10 +105,12 @@ Envolva todo o código desse desafio em uma IIFE.
     o que acontece ;)
     */
     console.log( '\nExiste um { number: 2 } em numberObjects?' );
-    var verificacao = numberObjects.some(function(item){
-        return item === '{ number: 2 }';
-    });
-    console.log( verificacao ? "Existe um objeto { number: 2 } em numberObjects!" : "Não existe um objeto { number: 2 } em numberObjects :(" );
+    if ( numberObjects.indexOf({ number: 2 }) > -1 ) {
+        console.log( 'Existe um objeto { number: 2 } em numberObjects!' );
+    } else {
+        console.log( 'Não existe um objeto { number: 2 } em numberObjects :(' );
+    }
+
 
     /*
     Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
