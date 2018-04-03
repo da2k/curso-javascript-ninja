@@ -95,14 +95,13 @@
     Remova de `brasil` os estados do `sudeste`, colocando-os em uma variável
     chamada `newSudeste`.
     */
-    var newSudeste = brasil.splice(3, 4);
+    var newSudeste = brasil.splice(2, 4);
 
     /*
     Adicione os estados do `nordeste` ao array `brasil`. Esses estados devem
     ficar no mesmo nível que os estados já existentes, não em um array separado.
     */
-    nordeste.forEach(function(item, array)
-    {
+    nordeste.forEach(function (item, array) {
         brasil.push(item);
     });
 
@@ -125,12 +124,12 @@
     - `id`: que será o índice do array `brasil`,
     - `estado`: que será o estado do array `brasil`.
     */
-    var newBrasil = brasil.map(function(item, index)
-    {
-        return {
+    var newBrasil = [];
+    brasil.forEach(function(item, index) {
+        newBrasil.push({
             'id': index,
             'estado': item
-        };
+        });
     });
 
     /*
@@ -147,11 +146,9 @@
     - "Nem todos os estados tem mais de 7 letras!"
     */
     console.log( '\nTodos os estados de `brasil` tem mais de 7 letras?' );
-    console.log(brasil.every(function(item)
-        {
+    console.log(brasil.every(function (item) {
             return item.length > 7;
-        })
-    );
+    }));
 
     /*
     Percorra o array `brasil` e verifique se o Ceará está incluído, atribuindo o
@@ -162,8 +159,7 @@
     - "Ceará não foi incluído :("
     */
     console.log( '\nCeará está incluído em `brasil`?' );
-    console.log(brasil.some(function(item)
-    {
+    console.log(brasil.some(function (item) {
         return item === 'Ceará';
     }) ? 'Ceará está incluído!' : 'Ceará não foi incluído :(');
 
@@ -173,13 +169,12 @@
     - "[ESTADO] pertence ao Brasil."
     Atribua o novo array a uma variável chamada `map`.
     */
-    var map = newBrasil.map(function(item)
-    {
+    var map = newBrasil.map(function (item) {
         return {
             'id' : item.id + 1,
             'estado': item.estado + ' pertence ao Brasil'
-        }
-    })
+        };
+    });
 
     /*
     Mostre no console o array criado acima:
@@ -191,8 +186,7 @@
     Filtre o array criado acima, retornando somente os estados que tiverem
     ID par. Atribua o valor à uma variável chamada `filter`.
     */
-    var filter = map.filter(function(item)
-    {
+    var filter = map.filter(function (item) {
         return item.id % 2 === 0;
     });
 
