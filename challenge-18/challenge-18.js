@@ -56,7 +56,7 @@ function findRegex(regex,string) {
 }
 console.log( '\nMatch com as palavras "junho" ou "julho" para a frase "Os meses de janeiro, junho e julho começam com a letra j.":' );
 // ?
- var regex= /ju\w{3}/g;
+ var regex= /ju[nl]ho/g;
  var text =  "Os meses de janeiro, junho e julho começam com a letra j.";
  console.log(findRegex(regex,text));
 /*
@@ -114,7 +114,7 @@ console.log( '\nFazer replace dos textos das tags:' );
 function showTags(value, group1, group2) {
     return '<' + group1 + '>O texto dentro da tag "' + group1 + '" é "' + group2 + '" </' + group1 + '>\n';
  };
-var regex = /<(\w{1,})>(.[^<>]*)<\/\w{1,}>/g;
+var regex = /<(\w{1,})>([^<]+)<\/\w{1,}>/g;
 var text = "<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>";
 console.log(text.replace(regex, showTags));
 
