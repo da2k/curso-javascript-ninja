@@ -15,7 +15,7 @@ var resultado = soma(1, 2) + 5;
 8
 
 // Declare uma nova variável, sem valor.
-var myVar;
+var vazia;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
@@ -23,8 +23,8 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 function valor() {
-	myVar = 10;
-	return 'O valor da variável agora é ' + myVar;
+	vazia = 10;
+	return 'O valor da variável agora é ' + vazia;
 }
 
 // Invoque a função criada acima.
