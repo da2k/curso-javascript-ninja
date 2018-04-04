@@ -16,7 +16,7 @@ variável chamada `text`:
 
   /*
 Vamos começar com umas brincadeiras fáceis :D
-Troque o nome "Manuel Marques de Souza" pelo seu nome, e mostre o resultado
+Troque o nome "Manuel Marques de Sousa" pelo seu nome, e mostre o resultado
 no console:
 */
   console.log("Adicionando seu nome no texto:");
@@ -126,6 +126,7 @@ de `replaceDate`. Ela deve retornar a data no formato:
 Após criar a função, faça o replace das datas no texto, mostrando no
 console o resultado.
 */
+
 function replaceDate(regexIn, dayIn, monthIn, yearIn) {
     return dayIn +'/'+ getMonthNumber(monthIn) +'/'+ yearIn;
 }
@@ -133,4 +134,3 @@ function replaceDate(regexIn, dayIn, monthIn, yearIn) {
   // ?
 console.log(text.replace(regexDate, replaceDate));
 })();
-
