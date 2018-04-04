@@ -106,33 +106,33 @@ console.log( '\nAgora em ordem alfabética:'+myName.sort());
 
 //CÓDIGO LIMPO//
 (function(){
-var person = {name:'Iglan', lastname:'Cardeal', age:25};
-console.log( 'Propriedades de "person": '+JSON.stringify(person));
+    var person = {name:'Iglan', lastname:'Cardeal', age:25};
+    console.log( 'Propriedades de "person": '+JSON.stringify(person));
 
-var books = [];
-var livro1 = {name:'The Lord of the Rings', pages: 600};
-var livro2 = {name:'The Jedi Path', pages:268};
-var livro3 = {name:'JavaSript and JQuery', pages: 760};
-books.push(livro1, livro2, livro3);
-var lista = [];
-for(var i = 0; i < books.length; i++ ){
-	var str = JSON.stringify(books[i].name);
-	lista.push(str);
-}
-console.log( '\nLista de livros:\n'+lista.join('\n') );
-var last = lista.pop();
-console.log( 'Livro que está sendo removido:\n'+last);
-console.log( 'Agora sobraram somente os livros:\n'+lista.join('\n') );
-var stringify = JSON.stringify(books); 
-console.log( '\nLivros em formato string:\n'+stringify);
-var stringify = JSON.parse(stringify);
-console.log( '\nAgora os livros são objetos novamente:\n'+stringify);
-for(var i = 0; i < books.length; i++){
-	console.log(books[i].name+' : '+books[i].pages)
-}
+    var books = [];
+    var livro1 = {name:'The Lord of the Rings', pages: 600};
+    var livro2 = {name:'The Jedi Path', pages:268};
+    var livro3 = {name:'JavaSript and JQuery', pages: 760};
+    books.push(livro1, livro2, livro3);
+    var lista = [];
+    for(var i = 0; i < books.length; i++ ){
+      var str = JSON.stringify(books[i].name);
+      lista.push(str);
+    }
+    console.log( '\nLista de livros:\n'+lista.join('\n') );
+    var last = lista.pop();
+    console.log( 'Livro que está sendo removido:\n'+last);
+    console.log( 'Agora sobraram somente os livros:\n'+lista.join('\n') );
+    var stringify = JSON.stringify(books); 
+    console.log( '\nLivros em formato string:\n'+stringify);
+    var stringify = JSON.parse(stringify);
+    console.log( '\nAgora os livros são objetos novamente:\n'+stringify);
+    for(var i = 0; i < books.length; i++){
+      console.log(books[i].name+' : '+books[i].pages)
+    }
 
-var myName = ['I','G','L','A','N']
-console.log( '\nMeu nome é:\n'+myName.join());
-console.log( '\nMeu nome invertido é:\n'+myName.reverse());
-console.log( '\nAgora em ordem alfabética:'+myName.sort());
+    var myName = ['I','G','L','A','N']
+    console.log( '\nMeu nome é:\n'+myName.join());
+    console.log( '\nMeu nome invertido é:\n'+myName.reverse());
+    console.log( '\nAgora em ordem alfabética:'+myName.sort());
 })();
