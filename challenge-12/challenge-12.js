@@ -116,8 +116,8 @@ console.log( '\nAgora em ordem alfabética:'+myName.sort());
     books.push(livro1, livro2, livro3);
     var lista = [];
     for(var i = 0; i < books.length; i++ ){
-      var str = JSON.stringify(books[i].name);
-      lista.push(str);
+        var str = JSON.stringify(books[i].name);
+        lista.push(str);
     }
     console.log( '\nLista de livros:\n'+lista.join('\n') );
     var last = lista.pop();
