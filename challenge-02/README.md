@@ -29,7 +29,7 @@ function modificar(idade) {
 modificar(idade);
 
 // Qual o retorno da função? (Use comentários de bloco).
-'O valor agora de idade é 20.
+O valor agora de idade é 20.
 
 /*
 Crie uma função com as seguintes características:
