@@ -89,7 +89,7 @@ Mostre no console todas as propriedades e valores de todos os livros,
 no formato abaixo:
     "[PROPRIEDADE]: [VALOR]"
 */
-for(var i = 0; i < Object.keys( books ).length; i++){
+for(var i = 0; i < books.length; i++){
 	for( var prop in books[i]){
 		console.log( prop + ': ' + books[i][prop])
 	}
