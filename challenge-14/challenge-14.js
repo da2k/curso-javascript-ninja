@@ -75,9 +75,8 @@
     */
     console.log( '\nSeu nome na língua do "P":' );
     var name = ['D', 'i', 'o', 'g', 'o'];
-    console.log( name.reduce(function (total, atual) {
-        total = 'P' + atual;
-        return total;
+    console.log('P' + name.reduce(function (previous, current) {
+        return previous + 'P' + current;
     }));
 
     /*
@@ -85,13 +84,16 @@
     e atribuirá o seu nome invertido (usando o array criado acima).
     */
     console.log( '\nInversed Name:' );
-    // ?
+    var inversedName = name.reduceRight(function (previous, current) {
+        return previous + current;
+    });
+    console.log(inversedName);
 
     /*
     Mostre no console o array `numberObjects`.
     */
     console.log( '\nNumber objects' );
-    // ?
+    console.log(numberObjects);
 
     /*
     Verifique se existem em algum índice de numberObjects um objeto ìgual a
@@ -103,19 +105,26 @@
     o que acontece ;)
     */
     console.log( '\nExiste um { number: 2 } em numberObjects?' );
-    // ?
+    var search = '{ number: 2 }';
+    console.log(
+        (numberObjects.indexOf(search) 
+        ? `Existe um objeto ${ search } em numberObjects!` 
+        : `Não existe um objeto ${ search } em numberObjects :(`));
 
     /*
     Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
     será que obtemos um resultado diferente? Faça a busca a partir do índice 2.
     */
     console.log( '\nE buscando a partir do último índice, o { number: 2 } existe?' );
-    // ?
+    console.log(
+        (numberObjects.lastIndexOf(search, (numberObjects.length - 1))
+        ? `Existe um objeto ${ search } em numberObjects!` 
+        : `Não existe um objeto ${ search } em numberObjects :(`));
 
     /*
     Verifique se `justMod2Or3` é um array. Se for, mostre-o no console, no
     formato de String.
     */
     console.log( '\njustMod2Or3 é um array? Se for, a representação dele em String é:' );
-    // ?
+    Array.isArray(justMod2Or3) ? console.log(justMod2Or3.toString()) : '';
 })();
