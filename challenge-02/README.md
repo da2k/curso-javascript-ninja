@@ -29,7 +29,7 @@ function modificar(idade) {
 modificar(idade);
 
 // Qual o retorno da função? (Use comentários de bloco).
-O valor agora de idade é 20.
+/*O valor agora de idade é 20.*/
 
 /*
 Crie uma função com as seguintes características:
@@ -84,7 +84,7 @@ function calculadora2(x,y,z) {
 };
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+
 calculadora2(1); // 1
 calculadora2(1,2); //3
 calculadora2(1,2,3); //8
