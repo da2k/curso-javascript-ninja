@@ -74,9 +74,9 @@ function calculadora2(x,y,z) {
 		return x + y;}
 
 	else if( x && y && z >= 0){
-		return (x*y*z) +2; }
+		return (x+y) /z; }
 
-	else if(x && y && z === undefined){
+	else if(x  === undefined && y === undefined && z === undefined){
 		return false; }
 
 	else {
@@ -87,5 +87,6 @@ function calculadora2(x,y,z) {
 
 calculadora2(1); // 1
 calculadora2(1,2); //3
-calculadora2(1,2,3); //8
-calculadora2() //null
+calculadora2(2,4,3); //2
+calculadora2(); //false
+calculadora2(null); //null
