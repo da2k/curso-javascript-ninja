@@ -7,28 +7,28 @@ um único parâmetro como argumento. Essa função deve retornar `true` se o
 equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
-var isTrusthy = function(x){ return x > 0 ? true : false}
+var isTrusthy = function(x){ return x > 0 ? true : false} // !!x
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
-isTrusthy();//false
-isTrusthy(1);//true
-isTrusthy(0);//false
+isTrusthy(false);//false
+isTrusthy(null);//false
+isTrusthy(undefined);//false
 isTrusthy('');//false
-isTrusthy('x');//true
-
+isTrusthy(0);//tfalse
+isTrusthy(NaN);//false
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
 isTrusthy(true)//true
-isTrusthy({}})//false
-isTrusthy([]])//false
+isTrusthy({}})//true
+isTrusthy([]])//true
 isTrusthy(42)//true
-isTrusthy("test")//false
+isTrusthy("test")//ftrue
 isTrusthy(new Date())//true
-isTrusthy(-10)//false
+isTrusthy(-10)//true 
 isTrusthy(3.14)//true
 isTrusthy(Infinity)//true
-isTrusthy(-Infinity)//false
+isTrusthy(-Infinity)//true
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
@@ -99,18 +99,20 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-carro.adicionarPessoa = function(pessoas){
-	carro.quantidadePessoas = pessoas;
-	var qta = carro.assentos - carro.quantidadePessoas;
-	if(carro.quantidadePessoas <= 5)
-	{
-		console.log('Já temos ' + carro.quantidadePessoas + ' pessoas no carro!');
-
-		carro.quantidadePessoas < 4 ? console.log('Só cabem mais ' + qta + ' pessoas!') : console.log('Só cabem mais ' + qta + ' pessoa!'); 
+carro.adicionarPessoas = function(pessoas){
+	var totalPessoas = carro.quantidadePessoas + pessoas;
+	if(carro.quantidadePessoas === carro.assentos && pessoas >= carros.assentos){
+		return 'O carro já está lotado!';
 	}
 
-	else
-		console.log('O carro já está lotado!');
+	if(totalPessoas > carro.assentos){
+		var quantidadePessoasCabem = carro.assentos - carro.quantidadePessoas;
+		var pluralOuSingular = quantidadePessoasCabem === 1 ? ' pessoa' : ' pessoas';
+		return 'Só cabem mais '  + quantidadePessoasCabem + pluralOuSingular + '!';
+	}
+
+	carro.quantidadePessoas += pessoas;
+	return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!';
 }
 
 /*
@@ -137,18 +139,22 @@ carro.cor//Verde Musgo
 // Qual a marca e modelo do carro?
 carro.obterMarcaModelo()//Esse carro é um ford fusca
 
+	
+// Adicione 2 pessoas no carro.	
+carro.adicionarPessoa(2)//'Já temos 2 pessoas no carro!'
+
 // Adicione mais 4 pessoas no carro.
-carro.adicionarPessoa(4)
+carro.adicionarPessoa(4)//'Só cabem mais 3 pessoas!'
 
 // Faça o carro encher.
-carro.adicionarPessoa(5)
+carro.adicionarPessoa(3)//'Já temos 5 pessoas no carro!'
 
 // Tire 4 pessoas do carro.
-carro.quantidadePessoas - 4
+carro.adicionarPessoas(-4)//'Já temos 1 pessoas no carro!'
 
 // Adicione 10 pessoas no carro.
 carro.adicionarPessoa(10)
 
 // Quantas pessoas temos no carro?
-//10
+//carro.quantidadePessoas// 1
 ```
