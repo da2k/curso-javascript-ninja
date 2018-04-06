@@ -1,7 +1,7 @@
 /*
 Crie um array com 5 items (tipos variados).
 */
-var myArray =[ 'lucas' , { pessoa: 'idade'} , function matriz() {} , 100 , 50 ];
+var myArray =[ 'antonio' , { pessoa: 'idade'} , function matriz() {} , 100 , 50 ];
 
 /*
 Crie uma função chamada `addItem`, que irá adicionar itens no array criado.
