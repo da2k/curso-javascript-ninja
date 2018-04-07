@@ -9,10 +9,10 @@ function soma(a,b) {
 }
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-var adicao = soma(2,3) + '5';
+var adicao = soma(2,3) + 5;
 
 // Qual o valor atualizado dessa variável?
-'55'
+12
 
 // Declare uma nova variável, sem valor.
 var novaVariavel;
@@ -44,7 +44,7 @@ function multiplicar(a,b,c) {
 	if (a === undefined || b === undefined || c === undefined) {
 		return 'Preencha todos os valores corretamente!'
 	}
-	return (a*b*c)+'2';
+	return (a*b*c)+2;
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
@@ -57,7 +57,7 @@ multiplicar(2,2);
 multiplicar(2,2,2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-//'82'
+//10
 
 /*
 Crie uma função com as seguintes características:
@@ -70,9 +70,9 @@ Crie uma função com as seguintes características:
 */
 function retornoCondicional(a,b,c) {
 	var qtd = 0;
-	if (a !== undefined && a !== null) qtd++;
-	if (b !== undefined && b !== null) qtd++;
-	if (c !== undefined && c !== null) qtd++;
+	if (a !== undefined) qtd++;
+	if (b !== undefined) qtd++;
+	if (c !== undefined) qtd++;
 
 	if (qtd === 1) return a;
 	if (qtd === 2) return a + b;
