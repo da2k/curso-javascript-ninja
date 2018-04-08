@@ -225,5 +225,4 @@ console.log( '\nEstados com ID par: '+ filter );
 		}	
 	})
 	console.log( '\nEstados com ID par: ' + filter );
-
 })();
