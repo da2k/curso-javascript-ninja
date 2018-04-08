@@ -18,7 +18,7 @@ itens de tipos diferentes, mostrando o resultado no console.
 */
 var myarray = ['oi', 2, function(){return 3;}];
 
-console.log(myarray);
+console.log(myarray); 
 
 /*
 Mostre no console o segundo elemento desse último array, criado acima, com a
