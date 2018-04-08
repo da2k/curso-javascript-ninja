@@ -89,12 +89,12 @@
         var inputList = [
             { input: $inputUsername.value, message: 'Preencha o nome do usuário!' },
             { input: $inputEmail.value, message: 'Preencha o e-mail!' },
-            { input: $message.value, message: 'Preencha a mensagem!' },
-            { input: isValidEmail($inputEmail.value), message: 'Entre com um e-mail válido!' }
+            { input: isValidEmail($inputEmail.value), message: 'Entre com um e-mail válido!' },
+            { input: $message.value, message: 'Preencha a mensagem!' }
         ];
         var alerts = 0;
         inputList.forEach( function(item) {
-            if (!item.input) {
+            if (!item.input && alerts == 0) {
                 alert(item.message);
                 alerts++;
             }
@@ -132,8 +132,8 @@
         - "agua_@evida.br.com"
     */
     function isValidEmail(email) {
-        var regex = /[\w\+\.]+@\w+\.[a-zA-Z0-9]{2,}(\.[a-zA-Z0-9]{1,2})?/g;
-        return email ? regex.test(email) : 'blank';
+        var regex = /^[\w\+\.]+@\w+\.[a-zA-Z0-9]{2,}(?:\.[a-zA-Z0-9]{2})?$/g;
+            return regex.test(email);
     }
 
 })(window, document);
