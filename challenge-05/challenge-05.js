@@ -25,18 +25,24 @@ segundo, um número. A função deve retornar o valor de um índice do array que
 no primeiro parâmetro. O índice usado para retornar o valor, deve ser o número passado no
 segundo parâmetro.
 */
-
+function myFunction2(myArray,numero){
+	return myArray[numero];
+}
+console.log(myFunction2(myArray, 0))
 
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
-// ?
+var myArray2 = ['string', 2, true, undefined, false]
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-// ?
+function myFunction3(){
+	return myArray2;
+}
+console.log(myFunction3())
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -52,7 +58,6 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-// ?
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
