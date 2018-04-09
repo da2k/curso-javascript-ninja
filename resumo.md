@@ -675,3 +675,46 @@ this: chama o objeto principal, podendo ser um objeto mesmo ou a window.
 //Vídeo 90
 arguments: variável que retorna os argumentos da sua função em forma de array. 
 Não usar 'arguments' como nome de variável ou argumento.
+
+//Vídeo 93
+'use strict': não permite a criação de uma variável sem o var. Usar em toda função IIFE para não entrar em conflito com outras funções de terceiros.
+
+//Vídeo 94
+'use strict': não permite o uso de with.
+with: encurta o caminho de um objeto.
+>    var obj = {
+>        prop1: {
+>            prop2: {
+>                prop3: {
+>                    prop31: 'prop31',
+>                    prop32: 'prop32',
+>                    prop33: 'prop33'
+>                }
+>            }
+>        }
+>    };
+>
+>    with ( obj.prop1.prop2.prop3 ) {
+>        console.log( prop31, prop32, prop3 );
+>    }
+
+//Vídeo 95
+'use strict': se delete não pode ser executado, ele retorna SyntaxError. Deletar é só permitido de deletar propriedades do objeto.
+Propriedades tem que ter nomes diferentes. Argumento de funções tem que ter nomes diferentes.
+
+//Vídeo 96
+Objeto String
+.length: conta a quantidade de caracteres do string.
+.charAt(n): seleciona o caracter do índice indicado.
+.concat('string', var): adiciona à variável principal os parâmetros.
+.indexOf('string'), lastIndexOf('string'): faz o movimento contrário do charAt. É indicado a string e ele retorna o índice, número.
+.replace('string'): substitui um trecho de uma string por outra. Faz o replace somente do primeiro caracter, se houver mais de 1.
+.slice(start, end): são indicados os números para "recortar" a string principal.
+.split('string'): é indicado uma string onde será seccionado a string, para a criação de um array. O parâmetro é removido do resultado.
+**Para realizar o replace de mais de uma string repetida, usar o var.split('string').join('string2')
+
+//Vídeo 97
+.substring(n, n): faz a mesma coisa que o slice, com a diferença que se o primeiro número for maior que o segundo, ele retorna a string ao contrário.
+.toLowerCase(): retorna a string em caixa baixa.
+.toUpperCase(): returna a string em caixa alta.
+
