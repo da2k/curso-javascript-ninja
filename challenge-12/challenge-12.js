@@ -33,6 +33,8 @@ Envolva todo o conteúdo desse arquivo em uma IIFE.
     for( var array in person )
     
         console.log( array )
+  
+    console.log( Object.keys( person ) );
     
 
     /*
