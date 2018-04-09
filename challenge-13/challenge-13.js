@@ -1,3 +1,5 @@
+(function(){
+
 /*
 Envolva todo o código desse desafio em uma IIFE.
 */
@@ -6,8 +8,9 @@ Envolva todo o código desse desafio em uma IIFE.
 Crie um array e mostre no console a representação em String desse array,
 usando o método visto na aula 13.
 */
+var arr = ['v','i','c','t','o','r'];
 console.log( 'O array em formato de string é:' );
-// ?
+console.log(arr.toString());
 
 /*
 Crie 2 arrays `sul` e `sudeste`, que serão as regiões do Brasil.
@@ -148,3 +151,5 @@ Mostre o array filtrado acima no console.
 */
 console.log( '\nEstados com ID par:' );
 // ?
+
+}());
