@@ -52,9 +52,9 @@ Envolva todo o conteúdo desse arquivo em uma IIFE.
     
     // books.push()
 
-    books.push( harry = {name: 'pedra filosofal', pages: 300 })
-    books.push( pirata = {name: 'maldição do perola negra', pages: 250 })
-    books.push( senhor = {name: 'sociedade do anel', pages: 350})
+    books.push({name: 'pedra filosofal', pages: 300 })
+    books.push({name: 'maldição do perola negra', pages: 250 })
+    books.push({name: 'sociedade do anel', pages: 350})
     
 
     console.log( 'Lista de livros:', books );
