@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Challenge 21</title>
+  <style>
+    body {
+      background-color: #303f9f;
+      height: 100vh;
+      max-width: 100%;
+      overflow: hidden;
+    }
+
+    .timer {
+      background-color: #fff;
+      align-items: center;
+      box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.25098039215686274);
+      display: flex;
+      flex-direction: column;
+      height: 200px;
+      justify-content: center;
+      margin: 0 auto;
+      margin-top: 10%;
+      text-align: center;
+      width: 300px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="timer">
+    <div>
+      <input class="timer__input" type="text" value="0" data-js="value-cronometro" readonly>
+    </div>
+    <div>
+      <button class="timer__btn" type="button" data-js="btn-start">Start</button>
+      <button class="timer__btn" type="button" data-js="btn-stop">Stop</button>
+      <button class="timer__btn" type="button" data-js="btn-reset">Reset</button>
+    </div>
+  </div>
+  <script src="./challenge-21.js"></script>
+</body>
+
+</html>
