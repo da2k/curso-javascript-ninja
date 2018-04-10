@@ -58,7 +58,26 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-
+function book(nomeLivro){
+	nomeLivro = {
+		livro01 : {
+			quantidadePaginas : 100,
+			autor : 'Ciclano',
+			editora : 'Nova'
+		},
+		livro02 : {
+			quantidadePaginas : 200,
+			autor : 'Beltrano',
+			editora : 'Abril'
+		},
+		livro03 : {
+			quantidadePaginas : 300,
+			autor : 'Yoda',
+			editora : 'Sabio'
+		}
+	};
+	return nomeLivro;
+}
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
