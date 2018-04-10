@@ -102,7 +102,7 @@ pessoa.nomeCompleto(); // "Olá! Meu nome é Thiago Germano!"
 Qual a idade da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.mostrarIdade(); // "Olá, eu tenho 30 anos!"
+pessoa.mostrarIdade(); // "Olá, eu tenho 29 anos!"
 
 /*
 Qual o peso da pessoa? (Use a instrução para responder e comentários
@@ -128,7 +128,7 @@ Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
 comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
-pessoa.idade; // 33
+pessoa.idade; // 32
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
@@ -159,7 +159,7 @@ pessoa.andando; // false
 Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
 inline ao lado da instrução para mostrar a resposta retornada)
 */
-pessoa.caminhouQuantoMetros; // 130
+pessoa.caminhouQuantosMetros; // 130
 
 /*
 Agora vamos deixar a brincadeira um pouco mais divertida! :D
@@ -178,19 +178,15 @@ deve conter no retorno da frase acima é "metro" no lugar de "metros".
 método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
+var sexo = pessoa.sexo === 'Masculino' ? 'eu sou o' : 'eu sou a';
+var idade = pessoa.idade === 1 ? 'ano' : 'anos';
+var metros = pessoa.caminhouQuantosMetros === 1 ? 'metro' : 'metros';
+
 pessoa.apresentacao = function(){
-  var pessoaFeminino = 'a';
-  var pessoaIdade = 'ano';
-  var metroCaminhado = 'metro';
-  if(pessoa.sexo === 'Feminino' && pessoa.idade === 1 && pessoa.caminhouQuantosMetros === 1){
-    return 'Olá, eu sou '+pessoaFeminino+ '+pessoa.nome+' , tenho '+pessoa.idade+' '+pessoaIdade+ ', '+pessoa.altura+' ,meu peso é '+pessoa.peso+' e, só hoje, eu já caminhei '+pessoa.caminhouQuantosMetros+' metros!';
-  }
-  else if(pessoa.idade === 1){
-    return 'Olá, eu sou '+pessoaFeminino+ '+pessoa.nome+' , tenho '+pessoa.idade+' anos, '+pessoa.altura+' ,meu peso é '+pessoa.peso+' e, só hoje, eu já caminhei '+pessoa.caminhouQuantosMetros+' metros!';
-  }
-  return 'Olá, eu sou o '+pessoa.nome+' , tenho '+pessoa.idade+' anos, '+pessoa.altura+' ,meu peso é '+pessoa.peso+' e, só hoje, eu já caminhei '+pessoa.caminhouQuantosMetros+' metros!';
+  return 'Olá, '+sexo+' '+pessoa.nome+' '+pessoa.sobrenome+', tenho '+pessoa.idade+' '+idade+','+' '+pessoa.altura+', meu peso é '+pessoa.peso+' e, só hoje, eu já caminhei '+pessoa.caminhouQuantosMetros+ ' '+metros;
 }
 
+
 // Agora, apresente-se ;)
-?
+pessoa.apresentacao();
 ```
