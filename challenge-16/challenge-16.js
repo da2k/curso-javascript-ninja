@@ -54,13 +54,13 @@
   5 nomes foi somente uma sugestão ;)
   */
   console.log( '\nMeus amigos:' );
-  var nomes = ['Ernesto', 'Jairo', 'Tobias', 'Thomás', 'Tejano', 'Fábio', 'Valéria', 'Bin Laden', 'Marcos'];
+  var nomes = ['Ernesto', 'Tobias', 'Jairo', 'Thomás', 'Tejano'];
   console.log(nomes.reduce(function (previous, current, index, array) {
     if (array.length - 1 === index) {
       return previous + ' e ' + current;
     }
     return previous + ', ' + current;
-  }) + ' são meus amigos.');
+  }), (nomes.length === 1) ? 'é meu amigo.' : 'são meus amigos.');
 
   /*
   Usando o replace(), faça a string "Roberto" virar "Roberta".
