@@ -95,18 +95,21 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-console.log('O livro SEGREDOS DO NINJA JAVASCRIPT tem: ' + book('SEGREDOS DO NINJA JAVASCRIPT').quantidadePaginas + ' páginas.');
+var nomeDoLivro = 'SEGREDOS DO NINJA JAVASCRIPT';
+console.log('O livro '+ nomeDoLivro +' tem: ' + book( nomeDoLivro ).quantidadePaginas + ' páginas.');
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log('O autor do livro SEGREDOS DO NINJA JAVASCRIPT é ' + book('SEGREDOS DO NINJA JAVASCRIPT').autor );
+var nomeDoLivro = 'SEGREDOS DO NINJA JAVASCRIPT';
+console.log('O autor do livro '+ nomeDoLivro +' é ' + book( nomeDoLivro ).autor );
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log('O livro SEGREDOS DO NINJA JAVASCRIPT foi publicado pela editora ' + book('SEGREDOS DO NINJA JAVASCRIPT').editora );
+var nomeDoLivro = 'SEGREDOS DO NINJA JAVASCRIPT';
+console.log('O livro '+ nomeDoLivro +' foi publicado pela editora ' + book( nomeDoLivro ).editora );
