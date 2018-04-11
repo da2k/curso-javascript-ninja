@@ -2,17 +2,20 @@
 Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
-// ?
+var arr = [ 'Filipe', null, 2, 3.5, undefined];
 
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
-// ?
+function recebeArr (data = []){
+    return data;
+    console.log(data);
+}
 
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-// ?
+console.log(recebeArr(arr)[1]);
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -20,18 +23,28 @@ segundo, um número. A função deve retornar o valor de um índice do array que
 no primeiro parâmetro. O índice usado para retornar o valor, deve ser o número passado no
 segundo parâmetro.
 */
-// ?
+function arrValues(data = [],num){
+
+    // console.log(data);
+    num = data[num];
+    console.log(num);
+
+}
 
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
-// ?
+arrDois = [23,{nome:'jr'},'srubens', 53, 00];
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-// ?
+console.log(arrValues(arrDois, 0));
+console.log(arrValues(arrDois, 1));
+console.log(arrValues(arrDois, 2));
+console.log(arrValues(arrDois, 3));
+console.log(arrValues(arrDois, 4));
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -47,30 +60,53 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-// ?
+function book(bookName){
+
+    var livros = {
+        'SEGREDOS DO NINJA JAVASCRIPT':{
+            quantidadePaginas: 420,
+            autor:'Carlos Alberto',
+            editora:'novatec'
+        },
+        'ELOQUENT JAVASCRIPT, 3RD EDITION':{
+            quantidadePaginas: 380,
+            autor:'Cristian Rock',
+            editora:'losango'
+        },
+        'FUNDAMENTOS DE HTML5 E CSS3':{
+            quantidadePaginas: 470,
+            autor:'Ralf Rodnei',
+            editora:'abril'
+        }
+    };
+
+    return !bookName ? livros : livros[bookName];
+
+}
+
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-// ?
+console.log(book());
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// ?
+console.log('O livro SEGREDOS DO NINJA JAVASCRIPT tem: ' + book('SEGREDOS DO NINJA JAVASCRIPT').quantidadePaginas + ' páginas.');
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
+console.log('O autor do livro SEGREDOS DO NINJA JAVASCRIPT é ' + book('SEGREDOS DO NINJA JAVASCRIPT').autor );
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-// ?
+console.log('O livro SEGREDOS DO NINJA JAVASCRIPT foi publicado pela editora ' + book('SEGREDOS DO NINJA JAVASCRIPT').editora );
