@@ -2,3 +2,4 @@ node_modules
 *.swp
 logs/access_log
 logs/error_log
+.vscode/settings.json
