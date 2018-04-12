@@ -13,7 +13,7 @@ var isTruthy = function(param){
   } else {
     return false;
   }
-}
+};
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 isTruthy(NaN);
@@ -68,28 +68,28 @@ passado por parâmetro.
 */
 carro.mudaCor = function (novaCor){
   carro.cor = novaCor;
-}
+};
 
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
 carro.obterCor = function(){
   return carro.cor;
-}
+};
 
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
 carro.obterModelo = function(){
   return carro.modelo;
-}
+};
 
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
 */
 carro.obterMarca = function(){
   return carro.marca;
-}
+};
 
 /*
 Crie um método chamado `obterMarcaModelo`, que retorne:
@@ -98,7 +98,7 @@ Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 carro.obterMarcaModelo = function (){
   return 'Esse carro é um '+ carro.obterMarca() + ' ' + carro.obterModelo();
-}
+};
 
 /*
 Crie um método que irá adicionar pessoas no carro. Esse método terá as
@@ -132,7 +132,7 @@ carro.adicionarPessoas = function (numeroPessoas){
    }
   
   return 'Já temos '+ carro.quantidadePessoas +' pessoas no carro!';
-}
+};
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -157,8 +157,7 @@ carro.mudaCor('verde musgo');
 carro.obterCor(); // 'verde musgo'
 
 // Qual a marca e modelo do carro?
-carro.obterMarca(); // 'BMW'
-carro.obterModelo(); // 'XV10'
+carro.obterMarcaModelo(); // 'Esse carro é um BMW XV10';
 
 // Adicione 2 pessoas no carro.
 carro.adicionarPessoas(2); //'Já temos 2 pessoas no carro!'
