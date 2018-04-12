@@ -41,19 +41,27 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-function 
+function fumul(x, y, z){
+    if(x === null || y === null || z === null ) {
+        return "Preencha todos os valores corretamente!";
+    }
+    else {
+        return (x*y*z)+2;
+    }
+}
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+fumul(4, 5);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+'Preencha todos os valores corretamente!' /*Como não foi definido o valor do
+terceiro parametro a mensagem e escrita na tela.*/
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+fumul(2, 4, 5);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+42 //este e o valor retornado.
 
 /*
 Crie uma função com as seguintes características:
@@ -64,8 +72,28 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+function extreme ( x, y, z){
+    if( x !== undefined  && y === undefined && z === undefined) {
+      return x;
+    }
+      else if(x !== undefined && y !== undefined && z === undefined){
+        return x + y;
+      }
+        else if(x !== undefined && y !== undefined && z !== undefined){
+          return (x + y)/z;
+        }
+          else if(x === undefined || y === undefined || z === undefined){
+            return  false;
+          }
+            else{
+              null;
+            }
+}
+
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+extreme() //resultado é falso porque o como não foi passado nenhum argumeto ele entra no quarto if e retorna o false.
+extreme(5) //resultado é 5 porque ele entra no primeiro if e mostra o valor do argumento passado.
+extreme(5, 2) //resultado é 7 porque ele entra no segundo if e soma os valores dos argumentos passados.
+extreme(5, 2, 2) //resultado é 3.5 porque ele soma os valores dos dois primeiros argumentos e divide pelo terceiro. 
 ```
