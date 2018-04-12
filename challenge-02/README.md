@@ -31,8 +31,8 @@ function mesg(j){
 mesg(j)
 
 // Qual o retorno da função? (Use comentários de bloco).
-/* O retorno da função é
-O valor da variável agora é 10 */
+//O retorno da função é
+O valor da variável agora é 10
 
 /*
 Crie uma função com as seguintes características:
@@ -54,7 +54,7 @@ function fumul(x, y, z){
 fumul(4, 5);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-'Preencha todos os valores corretamente!' /*Como não foi definido o valor do
+Preencha todos os valores corretamente! /*Como não foi definido o valor do
 terceiro parametro a mensagem e escrita na tela.*/
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
