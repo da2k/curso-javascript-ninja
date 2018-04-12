@@ -21,7 +21,7 @@ console.log('A soma de '+v1+' e '+v2+' é igual a '+sum(v1,v2)+'.');
 Mostre no console o nome da função criada acima, com a frase:
 "O nome da função que faz a soma é [NOME DA FUNÇÃO]."
 */
-console.log('O nome da funcção que faz a some é ' + sum.name);
+console.log('O nome da função que faz a some é ' + sum.name);
 
 /*
 Crie uma função literal chamada `showName`. Essa função deve retornar o
