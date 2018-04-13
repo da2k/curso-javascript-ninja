@@ -2,7 +2,10 @@
 
 ```js
 // Declarar uma variável qualquer, que receba um objeto vazio.
-?
+var myObject = {
+  nome: null,
+  idade: null
+};
 
 /*
 Declarar uma variável `pessoa`, que receba suas informações pessoais.
@@ -23,7 +26,21 @@ Adicione um método ao objeto `pessoa` chamado `fazerAniversario`. O método dev
 alterar o valor da propriedade `idade` dessa pessoa, somando `1` a cada vez que
 for chamado.
 */
-?
+var pessoa = {
+  nome: 'Airton',
+  sobrenome: 'Chagas',
+  sexo: 'masculino',
+  idade: 20,
+  altura: 1.78,
+  peso: 78,
+  andando: false,
+  caminhouQuantosMetros: 0,
+  
+  fazerAniversario: function() {
+    pessoa.idade++;
+  }
+  
+};
 
 /*
 Adicione um método ao objeto `pessoa` chamado `andar`, que terá as seguintes
@@ -35,7 +52,25 @@ valor dessa propriedade a quantidade passada por parâmetro;
 - Ele deverá modificar o valor da propriedade `andando` para o valor
 booleano que representa "verdadeiro";
 */
-?
+var pessoa = {
+  nome: 'Airton',
+  sobrenome: 'Chagas',
+  sexo: 'masculino',
+  idade: 20,
+  altura: 1.78,
+  peso: 78,
+  andando: false,
+  caminhouQuantosMetros: 0,
+  
+  fazerAniversario: function() {
+    pessoa.idade++;
+  },
+  
+  andar: function(metros) {
+    
+  }
+  
+};
 
 /*
 Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o valor
