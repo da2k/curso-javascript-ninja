@@ -82,10 +82,12 @@
     }
     return numberMonth;
   }
-  console.log(getMonthNumber('janeiro'));
-  console.log(getMonthNumber('março'));
-  console.log(getMonthNumber('julho'));
-  console.log(getMonthNumber('dezembro'));
+  var mes = 'março';
+  console.log(`O mês de ${mes} é representado pelo número ${getMonthNumber(mes)}.`);
+  mes = 'setembro';
+  console.log(`O mês de ${mes} é representado pelo número ${getMonthNumber(mes)}.`);
+  mes = 'dezembro';
+  console.log(`O mês de ${mes} é representado pelo número ${getMonthNumber(mes)}.`);
 
   /*
   Agora, declare uma variável chamada `regexDate` que irá receber a expressão
