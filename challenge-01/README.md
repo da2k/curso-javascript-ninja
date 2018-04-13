@@ -2,19 +2,19 @@
 
 ```js
 // Declarar uma variável chamada `myvar`, sem valor.
-var myVar;
+var myvar;
 
 // Após declarada, atribua o valor 10 à variável `myvar`.
-myVar = 10;
+myvar = 10;
 
 // Declare uma nova variável chamada `soma`, e adicione uma instrução somando os valores 15 e 8.
 var soma = 15 + 8;
 
 // Atribua à variável `soma` todo o valor dela, somando 1, usando o operador de soma abreviado.
-some = soma + 1;
+soma++;
 
 // Atribua à variável `soma` todo o valor dela, multiplicando por 3, usando o operador de multiplicação abreviado.
-soma = soma * 3;
+soma *= 3;
 
 // Qual é o valor da variável `soma` até aqui?
 72
@@ -29,10 +29,10 @@ var comida = ['arroz', 'feijão', 'ovo'];
 comida[1];
 
 // Digite o código que verifica se a variável `soma' é igual a variável `myvar` (testando também o tipo).
-soma === myVar;
+soma === myvar;
 
 // Digite o código que verifica se a variável `myvar` é menor ou igual à variável `soma`.
-myVar <= soma;
+myvar <= soma;
 
 // Crie uma função chamada `divisao` que receba como parâmetro dois números, e retorne o resultado da divisão entre eles.
 function divisao (x, y) {
