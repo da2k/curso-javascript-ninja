@@ -97,7 +97,8 @@
   */
   console.log( '\nRegex que vai fazer o match com as datas do texto:' );
   var regexDate = /(13|18) de (junho|julho) de (1804|1875)/g;
-  console.log(text.replace(regexDate, '13/08/2015'));
+  //console.log(text.replace(regexDate, '13/08/2015'));
+  console.log(text.match(regexDate));
 
   /*
   Agora crie a função que irá fazer o replace dos dados. A função será chamada
@@ -108,7 +109,13 @@
   */
   console.log( '\nReplace de datas:' );
   function replaceDate () {
-    
-    return '[DIA]/[MES]/[ANO]';
+    var datesArray = text.match(regexDate);
+    var dates = datesArray.map(function (item, index, array) {
+      return getMonthNumber(datesArray[index].split(' ')[2]);
+    });
+    return datesArray.map(function (item, index, array) {
+      return datesArray[index].replace(/(junho|julho)/g, /&1/dates[index]/$3/);
+    });
   }
+  console.log(replaceDate());
 })();
