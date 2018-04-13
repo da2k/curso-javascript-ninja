@@ -22,19 +22,22 @@
     var timerDisplay = doc.querySelector('[data-js="display"]');
     var timerCount;
 
-    doc.querySelector('[data-js="start-button"]').addEventListener('click', function(){
-        timerCount = setInterval(function(){
+    function startTimer() {
+        timerCount = setTimeout(function(){
             timerDisplay.value++;
+            startTimer();
         }, 1000);
-    });
-
-    doc.querySelector('[data-js="stop-button"]').addEventListener('click', function(){
-        clearInterval(timerCount);
-    });
-
-    doc.querySelector('[data-js="reset-button"]').addEventListener('click', function(){
-        clearInterval(timerCount);
+    }
+    function stopTimer() {
+        clearTimeout(timerCount);
+    }
+    function resetTimer() {
+        stopTimer();
         timerDisplay.value = 0;
-    });
+    }
+
+    doc.querySelector('[data-js="start-button"]').addEventListener('click', startTimer);
+    doc.querySelector('[data-js="stop-button"]').addEventListener('click', stopTimer);
+    doc.querySelector('[data-js="reset-button"]').addEventListener('click', resetTimer);
 
 })(document);
