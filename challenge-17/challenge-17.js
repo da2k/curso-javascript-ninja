@@ -11,7 +11,7 @@
   variável chamada `text`:
   "Manuel Marques de Sousa, Conde de Porto Alegre (Rio Grande, 13 de junho de 1804 – Rio de Janeiro, 18 de julho de 1875), apelidado de "O Centauro de Luvas", foi um militar, político, abolicionista e monarquista brasileiro."
   */
-  var text = "Manuel Marques de Sousa, Conde de Porto Alegre (Rio Grande, 13 de junho de 1804 – Rio de Janeiro, 18 de julho de 1875), apelidado de 'O Centauro de Luvas', foi um militar, político, abolicionista e monarquista brasileiro. 12 de junho de 1987";
+  var text = "Manuel Marques de Sousa, Conde de Porto Alegre (Rio Grande, 13 de junho de 1804 – Rio de Janeiro, 18 de julho de 1875), apelidado de 'O Centauro de Luvas', foi um militar, político, abolicionista e monarquista brasileiro.";
 
   /*
   Vamos começar com umas brincadeiras fáceis :D
@@ -98,9 +98,8 @@
   Mostre a regex no console.
   */
   console.log( '\nRegex que vai fazer o match com as datas do texto:' );
-  var regexDate = /(\d\d) de (junho|julho) de (\d\d\d\d)/g;
-  //console.log(text.replace(regexDate, '13/08/2015'));
-  console.log(text.match(regexDate));
+  var regexDateGlobal = /(\d\d) de (junho|julho) de (\d\d\d\d)/g;
+  console.log(regexDateGlobal);
 
   /*
   Agora crie a função que irá fazer o replace dos dados. A função será chamada
@@ -111,13 +110,16 @@
   */
   console.log( '\nReplace de datas:' );
   function replaceDate () {
-    var datesArray = text.match(regexDate);
-    var dates = datesArray.map(function (item, index, array) {
-      return getMonthNumber(datesArray[index].split(' ')[2]);
-    });
-    return datesArray.map(function (item, index, array) {
-      return datesArray[index].replace(/(junho|julho)/g, dates[index]);
-    });
+    var datesArray = text.match(regexDateGlobal);
+    for (var i = 0; i < datesArray.length; i++) {
+      datesArray[i] = datesArray[i].replace(/ de /g, '/');
+      datesArray[i] = datesArray[i].replace(/(junho|julho)/g, getMonthNumber(datesArray[i].split('/')[1]));
+    }
+    var regexDate = /(\d\d) de (junho|julho) de (\d\d\d\d)/;
+    for (var i = 0; i < datesArray.length; i++) {
+      text = text.replace(regexDate, datesArray[i]);
+    };
+    return text;
   }
   console.log(replaceDate());
 })();
