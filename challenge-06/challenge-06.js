@@ -75,22 +75,22 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
 function convertToHex(color){
     switch(color){
         case 'red':
-            console.log('#ff0000');
+            return 'O hexadecimal para a cor ' +  color +  ' é #ff0000';
             break;
         case 'blue':
-            console.log('#000099');
+            return 'O hexadecimal para a cor ' +  color +  ' é #000099';
             break;
         case 'green':
-            console.log('#33cc33');
+            return 'O hexadecimal para a cor ' +  color +  ' é #33cc33';
             break;
         case 'pink':
-            console.log('#ff0066');
+            return 'O hexadecimal para a cor ' +  color +  ' é #ff0066';
             break;
         case 'black':
-            console.log('#000000');
+            return 'O hexadecimal para a cor ' +  color +  ' é #000000';
             break;
         default:
-            console.log('Não temos o equivalente hexadecimal para ' + color);
+            return 'Não temos o equivalente hexadecimal para ' + color;
             break;
 
     }
