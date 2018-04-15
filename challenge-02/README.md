@@ -90,3 +90,4 @@ blue(10); // retorna 10
 blue(10,20)// retorna 30
 blue(10,20,2)// retorna 15
 blue()//false
+//fim
