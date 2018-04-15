@@ -21,11 +21,36 @@ Só passe para o próximo problema quando tiver resolvido o anterior :)
 */
 // ?
 
-var $a = new DOM('[data-js="link"]');
-$a.on('click', function(e) {
-  e.preventDefault();
-  console.log('clicou');
-});
+(function(){
+  'use strict'
 
-console.log('Elementos selecionados:', $a.get());
-console.log('$a é filho de body?', $a.get()[0].parentNode === document.body);
+  function DOM( elements ) {
+    this.element = document.querySelectorAll(elements);
+
+    this.on = function(eventType, callback){
+      Array.prototype.forEach.call(this.element, function(element){
+        element.addEventListener(eventType, callback, false);
+      });
+    }
+
+    this.off = function(eventType, callback){
+      Array.prototype.forEach.call(this.element, function(element){
+        element.removeEventListener(eventType, callback, false);
+      });
+    }
+
+    this.get = function(){
+      return this.element;
+    }
+  }
+
+  var $a = new DOM('[data-js="link"]');
+  $a.on('click', function(e) {
+    e.preventDefault();
+    console.log('clicou');
+  });
+
+  console.log('Elementos selecionados:', $a.get());
+  console.log('$a é filho de body?', $a.get()[0].parentNode === document.body);
+
+})();
