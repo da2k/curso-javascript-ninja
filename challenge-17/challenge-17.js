@@ -99,6 +99,7 @@
   */
   console.log( '\nRegex que vai fazer o match com as datas do texto:' );
   var regexDateGlobal = /(\d\d) de (junho|julho) de (\d\d\d\d)/g;
+  var regexDate = /(\d\d) de (junho|julho) de (\d\d\d\d)/;
   console.log(regexDateGlobal);
 
   /*
@@ -112,10 +113,11 @@
   function replaceDate () {
     var datesArray = text.match(regexDateGlobal);
     for (var i = 0; i < datesArray.length; i++) {
-      datesArray[i] = datesArray[i].replace(/ de /g, '/');
-      datesArray[i] = datesArray[i].replace(/(junho|julho)/g, getMonthNumber(datesArray[i].split('/')[1]));
+      var regexDe = / de /g;
+      var regexMes = /(junho|julho)/g;
+      datesArray[i] = datesArray[i].replace(regexDe, '/');
+      datesArray[i] = datesArray[i].replace(regexMes, getMonthNumber(datesArray[i].split('/')[1]));
     }
-    var regexDate = /(\d\d) de (junho|julho) de (\d\d\d\d)/;
     for (var i = 0; i < datesArray.length; i++) {
       text = text.replace(regexDate, datesArray[i]);
     };
