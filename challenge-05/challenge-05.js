@@ -35,7 +35,11 @@ var valoresArray = ['string', true, 10, null , undefined];
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-myArrFun(valoresArray);
+console.log(mostraAlgumIndiceArray(valoresArray,0));
+console.log(mostraAlgumIndiceArray(valoresArray,1));
+console.log(mostraAlgumIndiceArray(valoresArray,2));
+console.log(mostraAlgumIndiceArray(valoresArray,3));
+console.log(mostraAlgumIndiceArray(valoresArray,4));
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
