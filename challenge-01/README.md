@@ -22,10 +22,10 @@ soma *= 3;
 // Declare uma variável chamada `souninja`, atribuindo à ela o valor booleano que representa `verdadeiro`.
 var souninja = true;
 
-// Declare uma variável chamada `comida` que recebe um array com os valores 'arroz', 'feijão' e 'ovo'.
-var comida = ['arroz', 'feijão', 'ovo'];
+// Declare uma variável chamada `comida` que recebe um array com os valores 'arroz', 'feijao' e 'ovo'.
+var comida = ['arroz', 'feijao', 'ovo'];
 
-// Digite a instrução que imprime o valor de 'feijão', que está na variável `comida`.
+// Digite a instrução que imprime o valor de 'feijao', que está na variável `comida`.
 comida[1];
 
 // Digite o código que verifica se a variável `soma' é igual a variável `myvar` (testando também o tipo).
