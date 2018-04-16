@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <title>Challenge 23</title>
+    <style>
+      input[type="text"] {
+        border: solid 1px purple;
+        margin: 0;
+        padding: 10px;
+      }
+      .buttons-numbers button,
+      .operations button {
+        border: solid 1px purple;
+        color: purple;
+        margin: 2px 0;
+        padding: 10px;
+      }
+    </style>
+</head>
+<body>
+  <input type="text" data-js="calculator" readonly>
+  <div class="buttons-numbers">
+    <button data-js="button" value="0">0</button>
+    <button data-js="button" value="1">1</button>
+    <button data-js="button" value="2">2</button>
+    <button data-js="button" value="3">3</button>
+    <button data-js="button" value="4">4</button>
+    <button data-js="button" value="5">5</button>
+    <button data-js="button" value="6">6</button>
+    <button data-js="button" value="7">7</button>
+    <button data-js="button" value="8">8</button>
+    <button data-js="button" value="9">9</button>
+  </div>
+  <div class="operations">
+    <button data-js="button-operation" value="+">+</button>
+    <button data-js="button-operation" value="-">-</button>
+    <button data-js="button-operation" value="x">x</button>
+    <button data-js="button-operation" value="÷">÷</button>
+    <button data-js="button-equal" value="=">=</button>
+    <button data-js="button-ce" value="CE">CE</button>
+  </div>
+  <script src="challenge-23.js"></script>
+</body>
+</html>
