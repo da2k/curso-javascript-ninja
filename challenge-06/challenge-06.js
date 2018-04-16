@@ -85,30 +85,63 @@ const colorHex = {
     'grey': '#808080'
 };
 
-const convertToHex = ( arg ) => {
-    let hex = ( arg ) => colorHex[arg];
-    let color = `O hexadecimal para a cor ${ arg } é ${ hex( arg ) }.`;
-    let noColor = `Não temos o equivalente hexadecimal para ${arg}.`;
+// const convertToHex = ( arg ) => {
+//     let hex = ( arg ) => colorHex[arg];
+//     let color = `O hexadecimal para a cor ${ arg } é ${ hex( arg ) }.`;
+//     let noColor = `Não temos o equivalente hexadecimal para ${arg}.`;
 
-    switch( arg ) {
-        case 'red':
-            log( color );
-            break;
-        case 'black':
-            log( color );
-            break;
-        case 'green':
-            log( color );
-            break;
-        case 'yellow':
-            log( color );
-            break;
-        case 'grey':
-            log( color );
-            break;
-        default:
-            console.log( noColor );
-    }
+//     switch( arg ) {
+//         case 'red':
+//             log( color );
+//             break;
+//         case 'black':
+//             log( color );
+//             break;
+//         case 'green':
+//             log( color );
+//             break;
+//         case 'yellow':
+//             log( color );
+//             break;
+//         case 'grey':
+//             log( color );
+//             break;
+//         default:
+//             console.log( noColor );
+//     }
+// };
+
+// Solução Daciuk (es6)
+
+const convertToHex = ( arg ) => {
+  let hexa;
+  let color = `O hexadecimal para a cor ${ arg } é ${ hexa }.`;
+  let noColor = `Não temos o equivalente hexadecimal para ${ arg }.`;
+
+  switch (arg) {
+    case 'red':
+      hexa = "#FF0000";
+      log( color );
+      break;
+    case 'black':
+      hexa = "#000000";
+      log( color );
+      break;
+    case 'green':
+      hexa = "#008000";
+      log( color );
+      break;
+    case 'yellow':
+      hexa = "#FFFF00";
+      log( color );
+      break;
+    case 'grey':
+      hexa = "#808080";
+      log( color );
+      break;
+    default:
+      console.log( noColor );
+  }
 };
 
 /*
