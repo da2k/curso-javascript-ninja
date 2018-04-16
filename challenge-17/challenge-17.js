@@ -20,7 +20,7 @@
     no console:
     */
     console.log( 'Adicionando seu nome no texto:' );
-    console.log(text.replace(/Manuel Marques de Sousa/, 'João Paulo C. M. Fricks'));
+    console.log(text.replace('Manuel Marques de Sousa', 'João Paulo C. M. Fricks'));
 
     /*
     Agora, substitua a palavra "brasileiro" por sua cidade natal e mostre no
@@ -28,7 +28,7 @@
     Ex: Se você for da São Paulo, substitua por "paulista".
     */
     console.log( '\nTrocando naturalidade:' );
-    console.log(text.replace(/brasileiro/, 'paranaense'));
+    console.log(text.replace('brasileiro', 'paranaense'));
 
     /*
     Substitua todos os números por um traço `-`. Cada caractere de número deve
@@ -56,7 +56,7 @@
     o método `toUpperCase()`. Mostre o resultado no console:
     */
     console.log( '\n"O Centauro de Luvas" em caixa alta:' );
-    console.log(text.replace(/O Centauro de Luvas/, function(phrase) {
+    console.log(text.replace('O Centauro de Luvas', function(phrase) {
         return phrase.toUpperCase();
     }));
 
