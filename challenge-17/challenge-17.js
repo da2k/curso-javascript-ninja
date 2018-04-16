@@ -1,4 +1,5 @@
 (function () {
+  'use strict';
   /*
   1. Envolva todo o conteúdo desse desafio em uma IIFE.
   2. Adicione a diretiva 'use strict';
@@ -55,8 +56,9 @@
   o método `toUpperCase()`. Mostre o resultado no console:
   */
   console.log( '\n"O Centauro de Luvas" em caixa alta:' );
-  var centauro = 'O Centauro de Luvas';
-  console.log(text.replace(/O Centauro de Luvas/, centauro.toUpperCase()));
+  console.log(text.replace(/O Centauro de Luvas/, function (phrase) {
+    return phrase.toUpperCase();
+  }));
 
   /*
   Agora iremos substituir as datas no formato "13 de junho de 1804" para
@@ -98,9 +100,8 @@
   Mostre a regex no console.
   */
   console.log( '\nRegex que vai fazer o match com as datas do texto:' );
-  var regexDateGlobal = /(\d\d) de (junho|julho) de (\d\d\d\d)/g;
-  var regexDate = /(\d\d) de (junho|julho) de (\d\d\d\d)/;
-  console.log(regexDateGlobal);
+  var regexDate = /(\d\d) de (junho|julho) de (\d\d\d\d)/g;
+  console.log(regexDate);
 
   /*
   Agora crie a função que irá fazer o replace dos dados. A função será chamada
@@ -110,18 +111,8 @@
   console o resultado.
   */
   console.log( '\nReplace de datas:' );
-  function replaceDate () {
-    var datesArray = text.match(regexDateGlobal);
-    for (var i = 0; i < datesArray.length; i++) {
-      var regexDe = / de /g;
-      var regexMes = /(junho|julho)/g;
-      datesArray[i] = datesArray[i].replace(regexDe, '/');
-      datesArray[i] = datesArray[i].replace(regexMes, getMonthNumber(datesArray[i].split('/')[1]));
-    }
-    for (var i = 0; i < datesArray.length; i++) {
-      text = text.replace(regexDate, datesArray[i]);
-    };
-    return text;
+  function replaceDate (regex, days, months, years) {
+    return days + '/' + getMonthNumber(months) + '/' + years;
   }
-  console.log(replaceDate());
+  console.log(text.replace(regexDate, replaceDate));
 })();
