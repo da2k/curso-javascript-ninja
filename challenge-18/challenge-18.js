@@ -17,8 +17,8 @@
   - "101.123-131x32"
   */
   console.log( 'Limpando CPFs:' );
-  console.log('049-214 3421-1'.replace(/?=([0-9])/g, function (regex, group) {
-    return group + '-';
+  console.log('049-214 3421-1'.replace(/(?=[0-9])\w+/g, function (regex, group) {
+    return group;
   }));
   
   /*
