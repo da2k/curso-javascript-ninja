@@ -17,9 +17,30 @@
   - "101.123-131x32"
   */
   console.log( 'Limpando CPFs:' );
-  console.log('049-214 3421-1'.replace(/(?=[0-9])\w+/g, function (regex, group) {
-    return group;
-  }));
+  
+  var CPFs = 
+  [
+    '049-214 3421-1','210.458.522-05',
+    '735 500 794 - 22','101.123-131x32'
+  ];
+  var cleanedCPFs = [];
+  
+  function cleanCPF (CPF) {
+    var regex = /(\d+)(\D+)/g;
+    return CPF.replace(regex, function (regex, numbers, nonChar) {
+      return numbers;
+    });
+  }
+  
+  cleanedCPFs[0] = cleanCPF(CPFs[0]);
+  cleanedCPFs[1] = cleanCPF(CPFs[1]);
+  cleanedCPFs[2] = cleanCPF(CPFs[2]);
+  cleanedCPFs[3] = cleanCPF(CPFs[3]);
+  
+  console.log(cleanedCPFs[0]);
+  console.log(cleanedCPFs[1]);
+  console.log(cleanedCPFs[2]);
+  console.log(cleanedCPFs[3]);
   
   /*
   Usando os CPFs limpos acima, deixe-os com a formatação correta de CPF.
@@ -27,7 +48,17 @@
   Mostre o resultado no console.
   */
   console.log( '\nFormatando CPFs corretamente:' );
-  // ?
+  
+  function correctCPF (cleanedCPF) {
+    return cleanedCPF.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, function (regex, group1, group2, group3, group4) {
+      return group1 + '.' + group2 + '.' + group3 + '-' + group4;
+    });
+  }
+  
+  console.log(correctCPF(cleanedCPFs[0]));
+  console.log(correctCPF(cleanedCPFs[1]));
+  console.log(correctCPF(cleanedCPFs[2]));
+  console.log(correctCPF(cleanedCPFs[3]));
   
   /*
   Crie uma expressão regular que faça match com as palavras "junho" ou "julho",
@@ -41,7 +72,7 @@
   ["junho", "julho"]
   */
   console.log( '\nMatch com as palavras "junho" ou "julho" para a frase "Os meses de janeiro, junho e julho começam com a letra j.":' );
-  // ?
+  console.log( 'Os meses de janeiro, junho e julho começam com a letra j.'.match(/(jun?l?ho)/g));
   
   /*
   Crie uma expressão regular que faça o match com a abertura de uma tag
@@ -53,7 +84,7 @@
   ["<div>", "<section>", "<blockquote>"]
   */
   console.log( '\nMatch com a abertura de uma tag HTML:' );
-  // ?
+  console.log( '<div><section><blockquote>Texto <img /></blockquote></section></div>'.match(/(\<\w+\>)/g) );
   
   /*
   Crie uma expressão regular que faça o match com uma tag HTML vazia, casando
@@ -65,7 +96,7 @@
   ["<li></li>", "<li></li>", "<span></span>"]
   */
   console.log( '\nMatch com tags HTML vazias (abertura e fechamento da tag):' );
-  // ?
+  console.log( '<div><ul><li></li><li></li><li><span></span></li></ul></div>'.match(/\<\w+\>\<\/\w+\>/g) );
   
   /*
   Vamos complicar um pouco agora :D
