@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Challenge-28</title>
+</head>
+
+<body>
+  <form data-js="form-cep">
+    <input data-js="input-cep" type="text" placeholder="Informe o CEP" maxlength="8">
+    <button type="submit" data-js="submit">Pesquisar CEP</button>
+  </form>
+
+  <div>
+    <h2 data-js="status"></h2>
+  </div>
+
+  <div data-js="info">
+    <p>
+      <strong>Logradouro: </strong>
+      <span data-js="logradouro"></span>
+    </p>
+    <p>
+      <strong>Bairro: </strong>
+      <span data-js="bairro"></span>
+    </p>
+    <p>
+      <strong>Estado: </strong>
+      <span data-js="estado"></span>
+    </p>
+    <p>
+      <strong>Cidade: </strong>
+      <span data-js="cidade"></span>
+    </p>
+    <p>
+      <strong>CEP: </strong>
+      <span data-js="cep"></span>
+    </p>
+  </div>
+  <script src="dom.js"></script>
+  <script src="challenge-28.js"></script>
+</body>
+
+</html>
+
