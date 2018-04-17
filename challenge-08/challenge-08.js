@@ -22,29 +22,27 @@ Mostre no console o nome da função criada acima, com a frase:
 "O nome da função que faz a soma é [NOME DA FUNÇÃO]."
 */
 
-log(sum.name);
+log(`O nome da função que faz a soma é ${sum.name}`);
 
 /*
 Crie uma função literal chamada `showName`. Essa função deve retornar o
 seu nome.
 */
 function showName() {
-  return showName.name;
+  return "Evelyn Schmitz";
 }
-
-// log(showName());
 
 /*
 Declare uma variável chamada `varShowName` que recebe a função criada acima.
 */
-const varShowName = showName();
+const varShowName = showName;
 
 /*
 Usando a variável criada acima, mostre no console o nome e o retorno da função
 atribuída a ela, com a seguinte frase:
 "A função [NOME DA FUNÇÃO] retorna [RETORNO DA FUNÇÃO]."
 */
-log(`A função ${varShowName} retorna ${showName()}.`);
+log(`A função ${varShowName.name} retorna ${varShowName()}.`);
 
 /*
 Crie uma função literal chamada `calculator`, que funcione assim:
@@ -58,10 +56,37 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
   - Se o operador não for válido, retornar a frase:
   "Operação inválida."
 */
+//Solução Daciuk:
+// function calculator(arg) {
+//   return function (x, y) {
+//     let result;
+//     switch (arg) {
+//       case '+':
+//         result = x + y;
+//         break;
+//       case '-':
+//         result = x - y;
+//         break;
+//       case '*':
+//         result = x * y;
+//         break;
+//       case '/':
+//         result = x / y;
+//         break;
+//       case '%':
+//         result = x % y;
+//         break;
+//       default:
+//         return `Operação inválida!`;
+//     }
+//     return `Resultado da operação: ${x} ${arg} ${y} = ${result}.`;
+//   };
+// }
+
+// primeira tentativa:
 // function calculator(arg) {
 //   return function( x, y ) {
 //     let result;
-//     let argu = arg;
 //     if ( arg === '+' ){
 //       result = x + y;
 //       return `Resultado da operação: ${x} ${arg} ${y} = ${result}.`;
@@ -80,7 +105,7 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
 //     }else {
 //       return `Operação inválida!`
 //     }
-//   }
+//   };
 // }
 
 // Refatorando:
