@@ -7,6 +7,13 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Challenge 21</title>
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      transition: all .5s;
+    }
+
     body {
       background-color: #303f9f;
       height: 100vh;
@@ -27,6 +34,33 @@
       text-align: center;
       width: 300px;
     }
+
+    .timer__input {
+      border: none;
+      border-bottom: 2px solid #303f9f;
+      height: 40px;
+      width: 100%;
+    }
+
+    .timer__buttons {
+      padding-top: 15px;
+      width: 100%;
+      white-space: nowrap;
+    }
+
+    .timer__btn {
+      background-color: #303f9f;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      min-height: 30px;
+      min-width: 100px;
+      outline: none;
+    }
+
+    .timer__btn:hover {
+      background-color: rgba(48, 63, 159, 0.25882352941176473);
+    }
   </style>
 </head>
 
@@ -35,7 +69,7 @@
     <div>
       <input class="timer__input" type="text" value="0" data-js="value-cronometro" readonly>
     </div>
-    <div>
+    <div class="timer__buttons">
       <button class="timer__btn" type="button" data-js="btn-start">Start</button>
       <button class="timer__btn" type="button" data-js="btn-stop">Stop</button>
       <button class="timer__btn" type="button" data-js="btn-reset">Reset</button>

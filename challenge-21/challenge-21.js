@@ -23,20 +23,23 @@ dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
   var $btnReset = doc.querySelector('[data-js="btn-reset"]');
   var idCronometro = null;
 
-  $btnStart.addEventListener('click', function () {
+  $btnStart.addEventListener('click', start, false);
+  $btnStop.addEventListener('click', stop, false);
+  $btnReset.addEventListener('click', reset, false);
+
+  function start() {
     idCronometro = setInterval(function () {
       $inputCronometro.value = parseInt($inputCronometro.value) + 1;
     }, 1000);
-  }, false);
+  }
 
-  $btnStop.addEventListener('click', function () {
+  function stop() {
     clearInterval(idCronometro);
-  }, false);
+  }
 
-  $btnReset.addEventListener('click', function () {
+  function reset() {
     $inputCronometro.value = 0;
-    clearInterval(idCronometro);
-  }, false);
-
+    stop();
+  }
 
 })(window, document);
