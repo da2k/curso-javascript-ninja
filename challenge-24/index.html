@@ -3,31 +3,114 @@
 <head>
   <meta charset="utf-8">
   <title>Challenge 24 - Calculator</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <style>
+  * {
+    box-sizing: border-box;
+  }
+
+  :root {
+    --main-bg-color: #F6F6F6;
+    --main-border-color: #111;
+    --button-bg-color: rgba(0, 0, 0, 0.5);
+    --button-text-color: #EEE;
+    --input-text-color: #333;
+    --button-clear-bg-color: #3572DB;
+    --button-equal-bg-color: #28D060;
+    --calcular-bg-color: #eee;
+  }
+
+  body {
+    background: var(--main-bg-color);
+    font-family: 'Roboto', sans-serif;
+    padding-bottom: 30px;
+    padding-top: 30px;
+  }
+
+  .calculator {
+    border-radius: 4px;
+    border: solid 2px var(--main-border-color);
+    margin: 0 auto;
+    max-width: 400px;
+  }
+
+  .calculator-buttons button {
+    background: var(--button-bg-color);
+    border-radius: 4px;
+    /* border: solid 1px var(--main-border-color); */
+    color: var(--button-text-color);
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 300;
+    padding: 20px;
+  }
+
+  .calculator input {
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eeeeee+0,eeeeee+100;Grey+Flat */
+    background: rgb(238,238,238); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(238,238,238,1) 0%, rgba(238,238,238,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(238,238,238,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(238,238,238,1) 0%,rgba(238,238,238,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#eeeeee',GradientType=0 ); /* IE6-9 */
+    border: 0;
+    box-shadow: none;
+    outline: none;
+    padding: 10px;
+    width: 100%;
+    border-bottom: solid 2px var(--main-border-color);
+    color: var(--input-text-color);
+    text-align: right;
+    font-size: 40px;
+    border-radius: 0;
+  }
+
+  .calculator-buttons {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 15px;
+  }
+
+  .calculator-buttons .btn-ce,
+  .calculator-buttons .btn-zero {
+    grid-column: span 3;
+  }
+
+  .calculator-buttons .btn-ce {
+    background-color: var(--button-clear-bg-color);
+  }
+
+  .calculator-buttons .btn-equal {
+    background-color: var(--button-equal-bg-color);
+  }
+  </style>
 </head>
 <body>
-  <input type="text" value="0" readonly data-js="visor">
-  <div class="buttons-numbers">
-    <button data-js="button-number" value="0">0</button>
-    <button data-js="button-number" value="1">1</button>
-    <button data-js="button-number" value="2">2</button>
-    <button data-js="button-number" value="3">3</button>
-    <button data-js="button-number" value="4">4</button>
-    <button data-js="button-number" value="5">5</button>
-    <button data-js="button-number" value="6">6</button>
-    <button data-js="button-number" value="7">7</button>
-    <button data-js="button-number" value="8">8</button>
-    <button data-js="button-number" value="9">9</button>
-  </div>
+  <div class="calculator">
+    <input type="text" value="" readonly data-js="visor">
+    <div class="calculator-buttons">
+      <button class="btn-ce" data-js="button-ce" value="ce">CE</button>
+      <button data-js="button-operation" value="÷">÷</button>
 
-  <div class="operations">
-    <button data-js="button-operation" value="+">+</button>
-    <button data-js="button-operation" value="-">-</button>
-    <button data-js="button-operation" value="x">x</button>
-    <button data-js="button-operation" value="÷">÷</button>
-    <button data-js="button-equal" value="=">=</button>
-    <button data-js="button-ce" value="ce">CE</button>
-  </div>
+      <button data-js="button-number" value="7">7</button>
+      <button data-js="button-number" value="8">8</button>
+      <button data-js="button-number" value="9">9</button>
+      <button data-js="button-operation" value="x">x</button>
 
+      <button data-js="button-number" value="4">4</button>
+      <button data-js="button-number" value="5">5</button>
+      <button data-js="button-number" value="6">6</button>
+      <button data-js="button-operation" value="-">-</button>
+
+      <button data-js="button-number" value="1">1</button>
+      <button data-js="button-number" value="2">2</button>
+      <button data-js="button-number" value="3">3</button>
+      <button data-js="button-operation" value="+">+</button>
+
+      <button class="btn-zero" data-js="button-number" value="0">0</button>
+      <button class="btn-equal" data-js="button-equal" value="=">=</button>
+    </div>
+  </div>
   <script src="challenge-24.js"></script>
 </body>
 </html>
