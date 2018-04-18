@@ -121,5 +121,11 @@
   corretas, para depois aplicar no código ;)
   */
   console.log( '\nFazer replace dos textos das tags:' );
-  // ?
+  var regex = /(\<)(\w+)(\>)([^\<]+)(\<\/)(\w+)(\>)/g;
+  console.log( 
+    '<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>'
+    .replace(regex, function (regex, g1, g2, g3, g4, g5, g6, g7) {
+      return 'O texto dentro da tag "' + g2 + '" é "' + g4 + '"\n';
+    }) 
+  );
 })();
