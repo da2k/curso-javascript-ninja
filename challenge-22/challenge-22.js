@@ -92,4 +92,5 @@
     */
     console.log( '\nSomar números entrados pelo usuário:' );
     console.log(sum.apply(sum, numbers));
+    
 })();
