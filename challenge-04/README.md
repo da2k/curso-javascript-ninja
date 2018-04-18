@@ -111,7 +111,8 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 citado acima, no lugar de "pessoas".
 */
 carro.addPessoas = function(qtdPessoas) {
-    var totalPessoas = carro.quantidadePessoas + qtdPessoas;           var assentosLivres = carro.assentos - carro.quantidadePessoas;
+    var totalPessoas = carro.quantidadePessoas + qtdPessoas;
+    var assentosLivres = carro.assentos - carro.quantidadePessoas;
     var pluralPessoa = "pessoas";       
                                          
     if(carro.quantidadePessoas === carro.assentos && totalPessoas >= carro.assentos) {
