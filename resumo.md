@@ -652,6 +652,11 @@ lastIndexOf(): faz a mesma coisa que o indexOf(), porém ele começa a verificar
 isArray(): um método que retorna true ou false, verificando se o objeto é um array ou não.
 
 
+
+/* 
+Seção 15
+*/
+
 //Vídeo 89
 JS no Browser
 > <script src="main.js"> </script>
@@ -676,8 +681,15 @@ this: chama o objeto principal, podendo ser um objeto mesmo ou a window.
 arguments: variável que retorna os argumentos da sua função em forma de array. 
 Não usar 'arguments' como nome de variável ou argumento.
 
+
+
+/* 
+Seção 16
+*/
+
 //Vídeo 93
 'use strict': não permite a criação de uma variável sem o var. Usar em toda função IIFE para não entrar em conflito com outras funções de terceiros.
+
 
 //Vídeo 94
 'use strict': não permite o uso de with.
@@ -698,9 +710,11 @@ with: encurta o caminho de um objeto.
 >        console.log( prop31, prop32, prop3 );
 >    }
 
+
 //Vídeo 95
 'use strict': se delete não pode ser executado, ele retorna SyntaxError. Deletar é só permitido de deletar propriedades do objeto.
 Propriedades tem que ter nomes diferentes. Argumento de funções tem que ter nomes diferentes.
+
 
 //Vídeo 96
 Objeto String
@@ -717,4 +731,57 @@ Objeto String
 .substring(n, n): faz a mesma coisa que o slice, com a diferença que se o primeiro número for maior que o segundo, ele retorna a string ao contrário.
 .toLowerCase(): retorna a string em caixa baixa.
 .toUpperCase(): returna a string em caixa alta.
+
+
+
+/* 
+Seção 17
+*/
+//Vídeo 101
+Expressões regulares (regex): servem para manipular strings. É um tipo primitivo de Javascript.
+Ferramenta para teste de regex: https://regex101.com/
+Objeto RegExp()
+> var regex = /m/;
+> var texto = "Famous Fantastic Mysteries was an American science fiction and fantasy pulp magazine published from 1939 to 1953, edited by Mary Gnaedinger. It was launched by the Munsey Company to reprint stories from their magazines, including Argosy. Frequently reprinted authors included George Allan England, A. Merritt, and Austin Hall. The artwork, including some of the best work of Virgil Finlay and Lawrence Stevens, contributed to the success of the magazine."
+> texto.match(/m/g); // retorna ['m','m','m','m'];
+
+
+//Vídeo 102
+Flags:
+g: global;
+i: ignore case;
+
+Termos
+\w: caracteres alfanuméricos e _
+\d: números (digits)
+> texto.match(/\w/g); // retorna um array com todos os caracteres do texto separados
+> texto.match(/Fernando/); // retorna null
+> texto.match(/\d/); // retorna o primeiro numero do texto;
+> texto.match(/\d\d/); // retorna os dois primeiros numeros do texto
+
+Classe de caracteres (listas)
+Ou: |
+Lista de caracteres: [abcd] - vai achar todos os a, b, c, d em separado
+> texto.match(de|da); // retorna todos os 'de' e 'da'
+> texto.match([abcd]); // retorna todos os a, b, c, d
+[1-9] // seleciona todos os numeros de 1 a 9
+[a-z] // seleciona todas as letras do alfabeto
+[A-Za-z0-9] // seleciona todos os alfanumericos tirando espaços e caracteres especiais
+Agrupamento de caracteres: ()
+
+
+//Vídeo 103
+Os intervalos são baseados na tabela unicode
+Referência: http://www.ftrain.com/unicode/
+.replace();
+> texto.replace(/de/g, 'DE'); // modifica todos os 'de' por 'DE'
+$1: captura o próprio elemento
+> texto.replace(/de/g, '$1$1'); // modifica todos os 'de' por 'dede'
+Também funciona com funções
+> texto.replace(/(d)(e)/g, function(capturaTotal, d, e) {
+>    return (d + e).toUpperCase;
+> });
+> texto.replace(/(\w)(\w)/g, function(capturaTotal, letra1, letra2) {
+>    return letra1.toUpperCase() + letra2.toLowerCase(); // returna letras intercaladas em minusculo e maiusculo
+> });
 
