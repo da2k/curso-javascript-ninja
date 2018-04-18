@@ -117,6 +117,16 @@ citado acima, no lugar de "pessoas".
 
 carro.adicionarPessoas = function(numeroPessoas){
     var totalPessoas = carro.quantidadePessoas + numeroPessoas;
+    if(carro.quantidadePessoas === carro.assentos && totalPessoas >= carro.assentos){
+        return 'O carro já está lotado!';
+    }
+    if(totalPessoas > carro.assentos){
+        var quantasPessoasCabem = carro.assentos - carro.quantidadePessoas;
+        var pluralOuSingular = quantasPessoasCabem === 1 ? ' pessoa' : ' pessoas';
+        return 'Só cabem mais ' + quantasPessoasCabem + pluralOuSingular + ' !';
+    }
+
+    carro.quantidadePessoas += numeroPessoas;
     return 'Já temos '+ totalPessoas + ' pessoas no carro!';
 };
 
@@ -153,21 +163,26 @@ carro.obterMarcaModelo();  // Fiat UNO Hatch
 
 // Adicione 2 pessoas no carro.
 
-carro.quantidadePessoas += 2;
+carro.adicionarPessoas(2); // "Já temos 2 pessoas no carro!"
 
 // Adicione mais 4 pessoas no carro.
 
-carro.quantidadePessoas += 4;
+carro.adicionarPessoas(4); //"Só cabem mais 3 pessoas!"
 
 // Faça o carro encher.
-?
+
+carro.adicionarPessoas(3); //"Já temos 5 pessoas no carro! "
 
 // Tire 4 pessoas do carro.
-?
+
+carro.adicionarPessoas(-4); //"Já temos 1 pessoas no carro!"
 
 // Adicione 10 pessoas no carro.
-?
+
+carro.adicionarPessoas(10); //"Só cabem mais 4 pessoas!"
+
 
 // Quantas pessoas temos no carro?
-?
+
+carro.quantidadePessoas; // 1
 ```
