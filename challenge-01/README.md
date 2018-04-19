@@ -26,7 +26,7 @@ var souninja  = true;
 var comidas = [arroz,feijão,ovo];
 
 // Digite a instrução que imprime o valor de 'feijao', que está na variável `comida`.
-?
+comidas = [1];
 
 // Digite o código que verifica se a variável `soma' é igual a variável `myvar` (testando também o tipo).
 ?
