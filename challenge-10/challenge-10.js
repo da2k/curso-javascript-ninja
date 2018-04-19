@@ -78,7 +78,6 @@
   os dois parâmetros da função de retorno de "calculator".
   */
   function calculator( operator ) {
-    // var isValid = isOperatorValid( operator );
     return ( !isOperatorValid( operator ) )
       ? false
       : function( x, y ) {
@@ -158,6 +157,7 @@
   divisão e resto. Crie variáveis com os nomes "subtraction",
   "multiplication", "division" e "mod".
   */
+
   // Subtraction:
   operationSignal = '-';
   var subtraction = calculator( operationSignal );
@@ -234,7 +234,7 @@
     var number2 = 10;
     console.log(
       showOperationMessage( operationSignal, number1, number2),
-      test ( number1, number2 )
+      test( number1, number2 )
     );
   }
   else {
