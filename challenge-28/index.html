@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <form data-js="formCEP">
+    <input type="text" data-js="inputCEP" autocomplete="on">
+    <button type="submit" >Consultar CEP</button>
+  </form>
+
+  <div>
+    <h3 data-js="status"></h3>
+  </div>
+
+  <div class="informations" data-js="cep-info">
+    <p>Logradouro: <span data-js="logradouro"></span></p>
+    <p>Bairro: <span data-js="bairro"></span></p>
+    <p>Estado: <span data-js="estado"></span></p>
+    <p>Cidade: <span data-js="cidade"></span></p>
+    <p>CEP: <span data-js="cep"></span></p>
+  </div>
+
+  <script src="challenge-28.js"></script>
+</body>
+</html>
