@@ -23,21 +23,33 @@ soma = 23*3
 var souninja  = true;
 
 // Declare uma variável chamada `comida` que recebe um array com os valores 'arroz', 'feijão' e 'ovo'.
-var comidas = [arroz,feijão,ovo];
+var comida = ["arroz","feijão","ovo"]
+undefined
+> comida
+[ 'arroz', 'feijão', 'ovo' ]
 
 // Digite a instrução que imprime o valor de 'feijao', que está na variável `comida`.
-comidas = [1];
+comida[1]
+'feijão'
 
 // Digite o código que verifica se a variável `soma' é igual a variável `myvar` (testando também o tipo).
-?
+var myvar = 2
+var soma = "2"
+soma = myvar 
+false
 
 // Digite o código que verifica se a variável `myvar` é menor ou igual à variável `soma`.
-?
+var myvar = 5
+var soma = 5
+myvar <= soma
+true
 
 // Crie uma função chamada `divisao` que receba como parâmetro dois números, e retorne o resultado da divisão entre eles.
-function (1,2) {
-  return;
+function divisao (x,y) {
+  return x / y;
 }
+divisao(10,2)
+5
 
 // Invoque a função criada acima, passando os parâmetros 10 e 2.
 divisão(10,2);
