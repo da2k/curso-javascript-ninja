@@ -48,8 +48,7 @@ true
 function divisao (x,y) {
   return x / y;
 }
-divisao(10,2)
-5
 
 // Invoque a função criada acima, passando os parâmetros 10 e 2.
-divisão(10,2);
+divisao(10,2)
+5
