@@ -14,7 +14,7 @@ function myFunction(param) {
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-myFunction(param[1]);
+console.log(myFunction(param)[1]);
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -22,10 +22,9 @@ segundo, um número. A função deve retornar o valor de um índice do array que
 no primeiro parâmetro. O índice usado para retornar o valor, deve ser o número passado no
 segundo parâmetro.
 */
-function myFunction(valores, xNumber) {
-    return valores;
+function myFunction(valores, index) {
+    return valores[index];
 }
-myFunction(valores[0], 0);
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
@@ -35,11 +34,11 @@ var myVar = ["javaScript", false, null, 100, "b"];
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-function myFunction(myVar) {
-    return myVar;
-}
-myFunction(myVar);
-
+console.log(myFunction(myVar, 0));
+console.log(myFunction(myVar, 1));
+console.log(myFunction(myVar, 2));
+console.log(myFunction(myVar, 3));
+console.log(myFunction(myVar, 4));
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
 livro. Dentro dessa função, declare uma variável que recebe um objeto com as
@@ -56,31 +55,27 @@ os livros.
 */
 function book(nomeLivro) {
     var obj = {
-        livroBom: {
+        'Livro Bom': {
             quantidadePaginas: 1000,
             autor: "Marcus",
             editora: "Abril",
         },
-        livroRuim: {
+        'Livro Ruim': {
             quantidadePaginas: 150,
             autor: "Maria",
             editora: "Maio",
         },
-        livroPessimo: {
+        'Livro Pessimo': {
             quantidadePaginas: 100,
             autor: "Desconhecido",
             editora: "Junho",
         }
-    }
-    if(nomeLivro === "livro bom") {
-        return obj.livroBom;
-    }else if(nomeLivro === "livro ruim") {
-        return obj.livroRuim;
-    }else if(nomeLivro === "livro pessimo") {
-        return obj.livroPessimo;
-    }else {
+    };
+    if(!nomeLivro) {
         return obj;
     }
+ 
+        return obj[nomeLivro];
 }
 
 /*
