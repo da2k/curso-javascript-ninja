@@ -22,16 +22,17 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function adicionaValor(valor) {
-    b = valor;
+function adicionaValor() {
+    b = 100;
     return 'O valor da variável agora é ' + b;
 }
 
 // Invoque a função criada acima.
-adicionaValor('VALOR :)')
+adicionaValor()
 
 // Qual o retorno da função? (Use comentários de bloco).
 /* O valor da variável agora é VALOR :) */
+100;
 
 /*
 Crie uma função com as seguintes características:
@@ -43,22 +44,21 @@ Crie uma função com as seguintes características:
 function multiplicacaoVerificada(a, b, c) {
   if(a === undefined || b === undefined || c === undefined) {
     return 'Preencha todos os valores corretamente!';
-  } else {
-    return a * b * c + 2;
   }
+  return a * b * c + 2;
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
 multiplicacaoVerificada(2,3);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-'Preencha todos os valores corretamente!'
+// 'Preencha todos os valores corretamente!'
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 multiplicacaoVerificada(2,3,2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-14
+// 14
 
 /*
 Crie uma função com as seguintes características:
