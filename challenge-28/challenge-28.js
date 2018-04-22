@@ -25,3 +25,59 @@
   - Utilize a lib DOM criada anteriormente para facilitar a manipulação e
   adicionar as informações em tela.
   */
+
+(function(doc){
+	'use strict';
+
+	var $cep = doc.querySelector('#cep'),
+		$sendButton = doc.querySelector('#enviar'),
+		$cepValue,
+		regexNumbers,
+		$inputLogradouro = doc.querySelector('#logradouro'),
+		$inputBairro = doc.querySelector('#bairro'),
+		$inputCidade = doc.querySelector('#cidade'),
+		$inputEstado = doc.querySelector('#estado'),
+		$mensagem = doc.querySelector('#mensagem');
+
+	function ajaxListener () {
+		if (this.readyState == 4 && this.status == 200) {
+			$mensagem.innerHTML = 'Endereço referente ao CEP ' + regexNumbers + ':';
+		} else {
+			$mensagem.innerHTML = 'Buscando informações para o CEP ' + regexNumbers + '...';
+		}
+	};
+
+
+	$sendButton.addEventListener("click", function(e){
+		e.preventDefault();
+		$cepValue = $cep.value;
+		regexNumbers = $cepValue.match(/\d/g).join('');
+		var url = 'https://viacep.com.br/ws/' + regexNumbers + '/json/';
+
+		var ajax = new XMLHttpRequest;
+
+		ajax.onload = ajaxListener;
+
+		ajax.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				var retorno = JSON.parse(this.responseText);
+				var bairro = retorno.bairro;
+				var cidade = retorno.localidade;
+				var logradouro = retorno.logradouro;
+				var estado = retorno.uf;
+				$inputLogradouro.value = logradouro;
+				$inputBairro.value = bairro;
+				$inputCidade.value = cidade;
+				$inputEstado.value = estado;
+			} else {
+				$mensagem.innerHTML = 'Não encontramos o endereço para o CEP ' + regexNumbers + '.';
+			}
+		};
+
+		ajax.open('GET', url, true);
+		ajax.send();
+
+	}, false);
+
+
+})(document);

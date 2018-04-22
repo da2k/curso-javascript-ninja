@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ajax</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+	  #mensagem {
+		  padding: 15px 0;
+	  }
+  </style>
+</head>
+<body>
+
+	<div id="wrapper">
+		<div class="container">
+
+     	<br>
+
+			<form>
+				<div class="form-group">
+					<label for="cep">Digite o CEP</label>
+					<input type="text" class="form-control form-control-lg" id="cep" value="" placeholder="Digite o CEP">
+				</div>
+
+				<button type="submit" class="btn btn-primary" id="enviar">Enviar</button>
+
+				<div id="mensagem">
+				</div>
+
+				<div class="row">
+					<div class="col">
+						<input class="form-control" type="text" id="logradouro" placeholder="Logradouro" readonly>
+					</div>
+					<div class="col">
+						<input class="form-control" type="text" id="bairro" placeholder="Bairro" readonly>
+					</div>
+				</div>
+
+        		 <br>
+
+				<div class="row">
+					<div class="col">
+						<input class="form-control" type="text" id="estado" placeholder="Estado" readonly>
+					</div>
+					<div class="col">
+						<input class="form-control" type="text" id="cidade" placeholder="Cidade" readonly>
+					</div>
+				</div>
+			</form>
+   		</div>
+  </div>
+
+  <script src="challenge-28.js"></script>
+</body>
+</html>
