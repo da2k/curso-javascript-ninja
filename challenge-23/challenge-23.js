@@ -63,33 +63,37 @@
   function handleClickEquals() {
     removeLastItemIfisAnOperation();
     var values = $result.value.match(/(?:\d+)[+x÷-]?/g);
-    var finalValue = values.reduce(function (acc, v2) {
+    var finalValue = values.reduce(function (acc, actual) {
 
-      const operation = acc.toString().slice(-1);
-      const operation2 = v2.toString().slice(-1);
-      let calc = 0;
+      var firstValue = onlyNumbers(acc);
+      var secondValue = onlyNumbers(actual);
+
+      var operation = acc.slice(-1);
+      var lastOperation = actual.slice(-1);
+      var calc = 0;
 
       if (operation === '+') {
-        calc = (parseInt(acc) + parseInt(v2));
+        calc = Number(firstValue) + Number(secondValue);
       }
 
       if (operation === '-') {
-        calc = parseInt(acc) - parseInt(v2);
+        calc = Number(firstValue) - Number(secondValue);
       }
 
       if (operation === 'x') {
-        calc = parseInt(acc) * parseInt(v2);
+        calc = Number(firstValue) * Number(secondValue);
       }
 
       if (operation === '÷') {
-        calc = parseInt(acc) / parseInt(v2);
+        calc = Number(firstValue) / Number(secondValue);
       }
 
-      return isOperation(operation2) ? calc.toString() + operation2 : calc.toString();
+      return isOperation(lastOperation) ?
+        calc + lastOperation :
+        calc.toString();
     });
-    console.log(finalValue);
-    $result.value = finalValue;
 
+    $result.value = finalValue;
   }
 
   function isOperation(char) {
@@ -102,6 +106,10 @@
       $result.value = $result.value
         .substring(0, $result.value.length - 1);
     }
+  }
+
+  function onlyNumbers(str) {
+    return str.replace(/\D/, '');
   }
 
 })(window, document);
