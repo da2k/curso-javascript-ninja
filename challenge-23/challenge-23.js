@@ -1,4 +1,4 @@
-(function () {
+(function (win, doc) {
   'use strict';
 
   /*
@@ -26,5 +26,82 @@
   input;
   - Ao pressionar o botão "CE", o input deve ficar zerado.
   */
+  var $result = doc.querySelector('[data-js="result"]');
+  var $btnReset = doc.querySelector('[data-js="reset"]');
+  var $btnEquals = doc.querySelector('[data-js="calc-result"]');
+  var $btnNumbers = doc.querySelectorAll('[data-js="number"]');
+  var $btnOperations = doc.querySelectorAll('[data-js="operation"]');
 
-})()
+  $btnReset.addEventListener('click', handleClickCE, false);
+  $btnEquals.addEventListener('click', handleClickEquals, false);
+
+  Array.prototype.forEach.call($btnNumbers, function ($btn) {
+    $btn.addEventListener('click', handleClickNumber, false);
+  });
+
+  Array.prototype.forEach.call($btnOperations, function ($btn) {
+    $btn.addEventListener('click', handleClickOperation, false);
+  });
+
+  function handleClickNumber() {
+    if ($result.value === '0') {
+      $result.value = this.textContent;
+      return;
+    }
+    $result.value += this.textContent;
+  }
+
+  function handleClickOperation() {
+    removeLastItemIfisAnOperation();
+    $result.value += this.textContent;
+  }
+
+  function handleClickCE() {
+    $result.value = 0;
+  }
+
+  function handleClickEquals() {
+    removeLastItemIfisAnOperation();
+    var values = $result.value.match(/(?:\d+)[+x÷-]?/g);
+    var finalValue = values.reduce(function (acc, v2) {
+
+      const operation = acc.toString().slice(-1);
+      const operation2 = v2.toString().slice(-1);
+      let calc = 0;
+
+      if (operation === '+') {
+        calc = (parseInt(acc) + parseInt(v2));
+      }
+
+      if (operation === '-') {
+        calc = parseInt(acc) - parseInt(v2);
+      }
+
+      if (operation === 'x') {
+        calc = parseInt(acc) * parseInt(v2);
+      }
+
+      if (operation === '÷') {
+        calc = parseInt(acc) / parseInt(v2);
+      }
+
+      return isOperation(operation2) ? calc.toString() + operation2 : calc.toString();
+    });
+    console.log(finalValue);
+    $result.value = finalValue;
+
+  }
+
+  function isOperation(char) {
+    return char === '+' || char === '-' || char === 'x' || char === '÷';
+  }
+
+  function removeLastItemIfisAnOperation() {
+    var lastChar = $result.value[$result.value.length - 1];
+    if (isOperation(lastChar)) {
+      $result.value = $result.value
+        .substring(0, $result.value.length - 1);
+    }
+  }
+
+})(window, document);

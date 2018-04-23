@@ -45,6 +45,7 @@ button:active {
 }
 
 .calculator__field {
+    background-color: #fff;
     border: 0;
     height: 50px;
     margin: 0 auto;
