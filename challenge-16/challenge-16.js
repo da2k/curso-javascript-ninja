@@ -1,3 +1,5 @@
+(function(){
+'use strict'
 /*
 1. Envolva todo o conteúdo desse desafio em uma IIFE.
 2. Adicione a diretiva 'use strict';
@@ -13,8 +15,11 @@ Ex: no caso do nome ser "Fernando", deve mostrar as frases:
 - "e é a 2ª letra do meu nome."
 E assim por diante, até a última.
 */
-console.log( 'As letras do seu nome:' );
-// ?
+var name = 'Victor';
+console.log('As letras do seu nome:' );
+for(var i=0; i < name.length; i++){
+    console.log(name[i]+' é a '+(i+1)+' do meu nome');
+}
 
 /*
 - Declare uma variável chamada `fullName`, que receba seu nome completo,
@@ -28,6 +33,7 @@ curso para fazer isso funcionar corretamente :)
 - Mostre no console o nome no formato slug, e o resultado final. Use um
 console.log para cada formato.
 */
+var fullName = 'Victor Nascimento Silva Barros';
 console.log( '\nNome convertido à partir de um slug:' );
 // ?
 
@@ -68,3 +74,5 @@ Ex.: Nomes que deveriam funcionar: "Fernando", "RoBertO", "gabriEla", etc.
 */
 console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
 // ?
+
+}());
