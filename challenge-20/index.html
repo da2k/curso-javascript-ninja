@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Challenge 20</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <style>
         body { font-family: sans-serif }
         label { display: block }
@@ -10,27 +11,30 @@
     </style>
 </head>
 <body>
-    <form action="." method="get">
-        <div>
-            <label>Nome:</label>
-            <input type="text" />
+    <div class="container">
+        <div class="form-group">
+            <form action="." method="get">
+                <div >
+                    <label>Nome:</label>
+                    <input id="nome" type="text" />
+                </div>
+        
+                <div>
+                    <label>E-mail:</label>
+                    <input id="email" type="email" />
+                </div>
+        
+                <div>
+                    <label>Mensagem</label>
+                    <textarea cols="30" rows="10" id="mensagem"></textarea>
+                </div>
+        
+                <div>
+                    <button id="btn" type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+            </form>
         </div>
-
-        <div>
-            <label>E-mail:</label>
-            <input type="email" />
-        </div>
-
-        <div>
-            <label>Mensagem</label>
-            <textarea cols="30" rows="10"></textarea>
-        </div>
-
-        <div>
-            <button type="submit">Enviar</button>
-        </div>
-    </form>
-
+    </div>    
     <script src="challenge-20.js"></script>
 </body>
 </html>
