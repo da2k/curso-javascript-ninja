@@ -18,6 +18,7 @@ isTruthy('');
 isTruthy(undefined);
 isTruthy(null);
 isTruthy(NaN);
+isTruthy(false);
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
@@ -27,6 +28,11 @@ isTruthy('1');
 isTruthy(true);
 isTruthy({});
 isTruthy([]);
+isTruthy(function(){});
+isTruthy([1,2,3]);
+isTruthy({nome: 'Fernando'});
+isTruthy(10 * 2);
+isTruthy(10 + 10);
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
@@ -107,20 +113,20 @@ citado acima, no lugar de "pessoas".
 */
 carro.adicionarPessoas = function(numeroPessoas) {
   var assentosLivres = carro.assentos - carro.quantidadePessoas;
-  var textoPessoas = assentosLivres === 1 ? 'pessoa' : 'pessoas';
-  var msgRetorno = '';
+  var textoPessoas;
 
-  if (assentosLivres === 0) {
-    msgRetorno = 'O carro já está lotado!';
-  }  else if (numeroPessoas > assentosLivres) {
-    msgRetorno = 'Só cabem mais ' + assentosLivres + ' ' + textoPessoas + '!';
-  } else {
-    carro.quantidadePessoas += numeroPessoas;  
-    textoPessoas = carro.quantidadePessoas === 1 ? 'pessoa' : ' pessoas';
-    msgRetorno = 'Já temos ' + carro.quantidadePessoas + ' ' + textoPessoas + ' no carro!'
+  if (assentosLivres === 0 && numeroPessoas > 0) {
+    return 'O carro já está lotado!';
   }
 
-  return msgRetorno;
+  if (numeroPessoas > assentosLivres) {
+    textoPessoas = assentosLivres === 1 ? ' pessoa' : ' pessoas';
+    return 'Só cabem mais ' + assentosLivres + ' ' + textoPessoas + '!';
+  }
+
+  carro.quantidadePessoas += numeroPessoas;  
+  textoPessoas = carro.quantidadePessoas === 1 ? 'pessoa' : ' pessoas';
+  return 'Já temos ' + carro.quantidadePessoas + textoPessoas + ' no carro!'
 };
 
 /*
@@ -158,11 +164,11 @@ carro.adicionarPessoas(4); //'Só cabem mais 3 pessoas!'
 carro.adicionarPessoas(3); //'Já temos 5  pessoas no carro!'
 
 // Tire 4 pessoas do carro.
-carro.quantidadePessoas -= 4;
+carro.adicionarPessoas(-4);
 
 // Adicione 10 pessoas no carro.
 carro.adicionarPessoas(10); //'Só cabem mais 4 pessoas!'
 
 // Quantas pessoas temos no carro?
-1
+carro.quantidadePessoas // 1
 ```
