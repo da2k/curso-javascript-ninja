@@ -46,9 +46,8 @@ Crie uma função com as seguintes características:
 function multiplicar(a,b,c){
   if(a === undefined || b === undefined || c === undefined){
     return "Preencha todos os valores";
-  }else{
-    return (a + b + c) * 2;
   }
+  return (a + b + c) * 2;
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
@@ -78,17 +77,11 @@ Crie uma função com as seguintes características:
 function calc(a,b,c){
   if(a !== undefined && b === undefined && c === undefined){
     return a;
-  }else if(b !== undefined && a === undefined && c === undefined){
-    return b;
-  }else if(c !== undefined && b === undefined && a === undefined){
-    return c;
   }else if(a !== undefined && b !== undefined && c === undefined){
     return a + b;
-  }else if(a !== undefined && c !== undefined && b === undefined){
-    return a + c;
-  }else if(c !== undefined && b !== undefined && a === undefined){
-    return c + b;
-  }else if(a === undefined && c === undefined && b === undefined){
+  }else if(a !== undefined && b!== undefined && c !== undefined){
+    return (a + b) / c;
+  }else if(a === undefined && b=== undefined && c === undefined){
     return false;
   }else{
     return null;
@@ -99,6 +92,6 @@ function calc(a,b,c){
 // calc(); = false
 // calc(1); = 1
 // calc(2,2); = 4
-// calc(2,2,2); = null
+// calc(2,2,2); = 2
 
 ```
