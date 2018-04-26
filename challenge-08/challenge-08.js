@@ -5,7 +5,7 @@ desses parâmetros.
 */
 var sum = function calculateSum(x, y) {
     return x + y;
-}
+};
 
 /*
 Invoque a função criada acima, passando dois números que serão somados, e mostre
@@ -71,7 +71,7 @@ function calculator(opMatematica) {
             return "Operação inválida.";
         }
         return "Resultado da operação: " + x + " " + opMatematica + " " + y + " = " + resultado + "."
-    }
+    };
 }
 
 /*
