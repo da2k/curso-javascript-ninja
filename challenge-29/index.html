@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Veloso Carros</title>
+ <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>
+      <span data-js="company-name"></span> -
+      <span data-js="company-phone"></span>
+    </h1>
+  </header>
+
+  <form action="/" data-js="form-register">
+    <ul>
+      <li>
+        <label>Imagem do carro</label>
+        <input data-js="image" type="url" placeholder="URL da imagem do carro">
+      </li>
+      <li>
+        <label>Marca / Modelo</label>
+        <input data-js="brand-model" type=text placeholder="Marca / Modelo" required>
+      </li>
+      <li>
+        <label>Ano</label>
+        <input data-js="year" type=text placeholder="Ano" required>
+      </li>
+      <li>
+        <label>Placa</label>
+        <input data-js="plate" type=text placeholder="Placa" required>
+      </li>
+      <li>
+        <label>Cor</label>
+        <input data-js="color" type=text placeholder="Cor" required>
+      </li>
+      <li>
+        <button type="submit">Cadastrar</button>
+      </li>
+    </ul>
+  </form>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Imagem do carro</th>
+        <th>Marca / Modelo</th>
+        <th>Ano</th>
+        <th>Placa</th>
+        <th>Cor</th>
+      </tr>
+    </thead>
+    <tbody data-js="table-car">
+    </tbody>
+  </table>
+
+  <script src="dom.js"></script>
+  <script src="challenge-29.js"></script>
+</body>
+
+</html>
+

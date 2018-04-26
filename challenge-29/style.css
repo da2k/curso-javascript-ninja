@@ -1,0 +1,59 @@
+body {
+  font-family: Verdana;
+}
+
+img {
+  max-width: 200px;
+  height: auto;
+}
+
+header {
+  text-align: center;
+}
+
+form,
+table {
+  float: left;
+  width: 50%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  margin-bottom: 16px;
+}
+
+label {
+  width: 300px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 5px;
+  width: 300px;
+}
+
+button {
+  background: blueviolet;
+  border: 0;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+button:hover,
+button:focus {
+  background: black;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td,
+th {
+  padding: 5px 15px;
+  border: 1px solid #ccc;
+}
