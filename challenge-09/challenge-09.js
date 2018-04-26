@@ -1,4 +1,5 @@
 
+(function() {
 /*
 Crie uma IIFE que envolva todo o código desse arquivo. Faça também a
 indentação correta do código, para ficar dentro da IIFE.
@@ -132,3 +133,4 @@ console.log( 'O resto da divisão é:' + modulo(function(number1, number2){
 })  );
 
 
+})();
