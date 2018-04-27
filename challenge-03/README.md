@@ -196,9 +196,6 @@ pessoa.apresentacao = function(){
 		metro = 'metros';
 	}
 
-	- "Olá, eu sou o [NOME COMPLETO], tenho [IDADE] anos, [ALTURA], meu peso é [PESO] e, só hoje, eu já caminhei [CAMINHOU QUANTOS METROS] metros!"
-
-
 	return  "Olá, eu sou " +sexo+ " " +pessoa.nome+ ", tenho " +pessoa.idade+ " " +ano+ ", " +pessoa.altura+ ", meu peso é " +pessoa.peso+ " e, só hoje, eu já caminhei " +pessoa.caminhouQuantosMetros+ " " +metro+ "!";
 }
 
