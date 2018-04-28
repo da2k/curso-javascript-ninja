@@ -67,11 +67,9 @@ Só vamos mudar o range:
 console.log( 'Números pares entre 100 e 120:' );
 for(i = 100; i <= 120; i++) {
 	if (i % 2 === 0) console.log(i);
-	i++;
 };
 
 console.log( 'Números ímpares entre 111 e 125:' );
 for(i = 111; i <= 125; i++) {
 	if (i % 2 !== 0) console.log(i);
-	i++;
 };
