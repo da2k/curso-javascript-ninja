@@ -1,7 +1,7 @@
 /*
 Crie um array com 5 items (tipos variados).
 */
-var myArray = ['abc', 1, false, null, {'nome':'jose'}];
+var myArray = ['abc', 1, false, null, {nome:'jose'}];
 
 /*
 Crie uma função chamada `addItem`, que irá adicionar itens no array criado.
