@@ -40,9 +40,9 @@
 	Na primeira linha, dentro da função, deixe um console.log para mostrar todos
 	os parâmetros passados para essa função.
 	*/
-	function sum(params) {
-		console.log(params);
-		var result = params.reduce(function(total, item) {
+	function sum() {
+		console.log(arguments);
+		var result = Array.prototype.reduce.call(arguments, function(total, item) {
 			return total + item;
 		}, 0);
 		return result;
@@ -53,9 +53,9 @@
 	diferentes, com quantidades variáveis de parâmetros passados.
 	*/
 	console.log( '\nSomar alguns números:' );
-	console.log( sum( [1, 3, 6] ) );
-	console.log( sum( [2, 4, 7, 9] ) );
-	console.log( sum( [1, 30, 6, 80] ) );
+	console.log( sum(1, 3, 6) );
+	console.log( sum(2, 4, 7, 9) );
+	console.log( sum(1, 30, 6, 80) );
 
 	/*
 	Declare uma variável chamada `userEntry`, que irá receber alguns valores
@@ -96,6 +96,6 @@
 	números desse array e mostre o resultado no console.
 	*/
 	console.log( '\nSomar números entrados pelo usuário:' );
-	console.log( sum(numbers) );
+	console.log( sum.apply(this, numbers) );
 
 })();
