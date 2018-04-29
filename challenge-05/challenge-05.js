@@ -57,36 +57,23 @@ os livros.
 */
 function book(nomeLivro) {
   var catalogo = {
-    crimeECastigo : {
+    'Crime e Castigo' : {
         quantidadePaginas: 561,
         autor: 'Fiódor Dostoiévski',
         editora: 'EDITORA 34'
     },
-    oHobbit : {
+    'O Hobbit' : {
       quantidadePaginas: 227,
       autor: 'J.R.R.Tolkien',
       editora: 'Artenova'
     },
-    oImbecilColetivo : {
+    'O Imbecil Coletivo' : {
       quantidadePaginas: 632,
       autor: 'Olavo de Carvalho',
       editora: 'E Realizações'
     }
   }
-
-  if (nomeLivro === 'Crime e Castigo') {
-    return catalogo.crimeECastigo;
-  }
-
-  if (nomeLivro === 'O Hobbit') {
-    return catalogo.oHobbit;
-  }
-
-  if (nomeLivro === 'O Imbecil Coletivo') {
-    return catalogo.oImbecilColetivo;
-  }
-
-  return catalogo;
+  return !nomeLivro ? catalogo : catalogo[nomeLivro];
 }
 
 /*
@@ -98,7 +85,7 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-console.log('O livro O Hobbit tem ' + book('O Hobbit').quantidadePaginas );
+console.log('O livro O Hobbit tem ' + book('O Hobbit').quantidadePaginas + ' paginas' );
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
