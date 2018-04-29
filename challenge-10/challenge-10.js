@@ -100,7 +100,7 @@
     'Operação "[OPERATOR]" não permitida!'
     */
     function showErrorMessage(opcalc) {
-        return "Operação " + opcalc + " não permitida!"   
+        return "Operação " + operationSignal + " não permitida!"   
     }
 
     /*
@@ -148,11 +148,66 @@
     divisão e resto. Crie variáveis com os nomes "subtraction",
     "multiplication", "division" e "mod".
     */
-    // ?
-
+    operationSignal = "-";
+    var subtraction = calculator(operationSignal);
+    
+    if(subtraction) {
+        number1 = 30;
+        number2 = 10;
+        console.log(showOperationMessage(operationSignal, number1, number2));
+        console.log(subtraction(number1, number2));
+    }else {
+        console.log(showErrorMessage());
+    };
+    
+    operationSignal = "*";
+    var multiplication = calculator(operationSignal);
+    
+    if(multiplication) {
+        number1 = 80;
+        number2 = 10;
+        console.log(showOperationMessage(operationSignal, number1, number2));
+        console.log(multiplication(number1, number2));
+    }else {
+        console.log(showErrorMessage());
+    };
+    
+    operationSignal = "/";
+    var division = calculator(operationSignal);
+    
+    if(division) {
+        number1 = 100;
+        number2 = 4;
+        console.log(showOperationMessage(operationSignal, number1, number2));
+        console.log(division(number1, number2));
+    }else {
+        console.log(showErrorMessage());
+    };
+    
+     operationSignal = "%";
+    var mod = calculator(operationSignal);
+    
+    if(mod) {
+        number1 = 1000;
+        number2 = 600;
+        console.log(showOperationMessage(operationSignal, number1, number2));
+        console.log(mod(number1, number2));
+    }else {
+        console.log(showErrorMessage());
+    };
     /*
     Repita o PASSO 2 novamente, mas passando um operador inválido, para ver se
     a mensagem de erro será mostrada no console.
     */
-    // ?
+    operationSignal = "9999";
+    var sum = calculator(operationSignal);
+    
+     if(sum) {
+        number1 = 10;
+        number2 = 20;
+        console.log(showOperationMessage(operationSignal, number1, number2));
+        console.log(sum(number1,number2));
+    }else {
+        console.log(showErrorMessage());
+    };
 }());
