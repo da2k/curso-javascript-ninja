@@ -79,7 +79,7 @@ function calculator(operacao) {
 				result = a % b;
 			break;
 
-			case default:
+			default:
 				return 'Operação inválida.'
 			break;
 		}
