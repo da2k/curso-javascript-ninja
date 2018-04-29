@@ -12,7 +12,9 @@ Invoque a função criada acima, passando dois números que serão somados, e mo
 o resultado no console, com a frase:
 "A soma de [VALOR 1] e [VALOR2] é igual a [RESULTADO]."
 */
-console.log('A soma de ' + 2 + ' e ' + 3 +' é igual a ' + sum(2,3) + '.');
+var v1 = 2;
+var v2 = 3;
+console.log('A soma de ' + v1 + ' e ' + v2 +' é igual a ' + sum(v1,v2) + '.');
 
 /*
 Mostre no console o nome da função criada acima, com a frase:
@@ -25,7 +27,7 @@ Crie uma função literal chamada `showName`. Essa função deve retornar o
 seu nome.
 */
 function showName() {
-	return showName.name;
+	return 'Thiago Araujo';
 }
 
 /*
@@ -56,7 +58,7 @@ function calculator(operacao) {
 	if (operacao !== '+' && operacao !== '-' && operacao !== '*' && operacao !== '/' && operacao !== '%') return 'Operação inválida.'
 	return function(a, b) {
 		return 'Resultado da operação: ' + a + ' ' + operacao + ' ' + b + ' = ' + eval(a + operacao + b) + '.';
-	}
+	};
 }
 
 /*
