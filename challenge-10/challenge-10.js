@@ -13,7 +13,7 @@
     var five = Number('5');
     console.log( five + ' é número?', typeof five === 'number' );
 
-    var concat = String(10 + 10);
+    var concat = String(10) + 10;
     console.log( '"' + concat + '" é uma string? E é igual a "1010"?', typeof concat === 'string' );
 
     /*
@@ -54,8 +54,7 @@
     - O desafio é fazer o retorno sem usar "if" ou "switch".
     */
     function isOperatorValid(op) {
-        var opTrue = op === "+" ? true : op === "-" ? true : op === "*" ? true : op === "/" ? true : op === "%" ? true : false;
-        return opTrue;
+        return !!operation[op];
     };
     
     /*
@@ -70,16 +69,17 @@
     operador passado para a função "calculator", e passando para esse método
     os dois parâmetros da função de retorno de "calculator".
     */
-    function calculator(opcalc) {
-        if(opcalc === "+" || opcalc === "-" || opcalc == "*" || opcalc === "/" || opcalc === "%"){
-            return function(x,y) {
-                if(typeof x !== "number" && typeof y !== "number") {
-                    return false;
-                }
-                return operation[opcalc](x,y);
-            }; 
+    function calculator(op) {
+        if(!isOperatorValid(op)){
+            return false;
         }
-        return false;
+        return function(x,y) {
+            if(typeof x !== "number" && typeof y !== "number") {
+                return false;
+            }
+            return operation[op](x,y);
+        }; 
+
     };
 
     /*
@@ -90,7 +90,7 @@
     Essa função mostrará a mensagem da operação que criaremos mais abaixo.
     */
     function showOperationMessage(op,x,y) {
-        return "A operação " + x + " " + op + " " + y + " =";
+        return "A operação " + number1 + " " + op + " " + number2 + " =";
     };
 
     /*
@@ -99,8 +99,8 @@
     Essa função deverá retornar a frase:
     'Operação "[OPERATOR]" não permitida!'
     */
-    function showErrorMessage(opcalc) {
-        return "Operação " + operationSignal + " não permitida!"   
+    function showErrorMessage(op) {
+        return "Operação " + op + " não permitida!"   
     }
 
     /*
@@ -137,10 +137,9 @@
     if(sum) {
         number1 = 10;
         number2 = 20;
-        console.log(showOperationMessage(operationSignal, number1, number2));
-        console.log(sum(number1,number2));
+        console.log(showOperationMessage(operationSignal, number1, number2), sum(number1,number2));
     }else {
-        console.log(showErrorMessage());
+        console.log(showErrorMessage(operationSignal));
     };
     
     /*
@@ -154,10 +153,9 @@
     if(subtraction) {
         number1 = 30;
         number2 = 10;
-        console.log(showOperationMessage(operationSignal, number1, number2));
-        console.log(subtraction(number1, number2));
+        console.log(showOperationMessage(operationSignal, number1, number2),subtraction(number1, number2));
     }else {
-        console.log(showErrorMessage());
+        console.log(showErrorMessage(operationSignal));
     };
     
     operationSignal = "*";
@@ -166,10 +164,9 @@
     if(multiplication) {
         number1 = 80;
         number2 = 10;
-        console.log(showOperationMessage(operationSignal, number1, number2));
-        console.log(multiplication(number1, number2));
+        console.log(showOperationMessage(operationSignal, number1, number2), multiplication(number1, number2));
     }else {
-        console.log(showErrorMessage());
+        console.log(showErrorMessage(operationSignal));
     };
     
     operationSignal = "/";
@@ -178,10 +175,9 @@
     if(division) {
         number1 = 100;
         number2 = 4;
-        console.log(showOperationMessage(operationSignal, number1, number2));
-        console.log(division(number1, number2));
+        console.log(showOperationMessage(operationSignal, number1, number2), division(number1, number2));
     }else {
-        console.log(showErrorMessage());
+        console.log(showErrorMessage(operationSignal));
     };
     
      operationSignal = "%";
@@ -190,10 +186,9 @@
     if(mod) {
         number1 = 1000;
         number2 = 600;
-        console.log(showOperationMessage(operationSignal, number1, number2));
-        console.log(mod(number1, number2));
+        console.log(showOperationMessage(operationSignal, number1, number2), mod(number1, number2));
     }else {
-        console.log(showErrorMessage());
+        console.log(showErrorMessage(operationSignal));
     };
     /*
     Repita o PASSO 2 novamente, mas passando um operador inválido, para ver se
@@ -205,9 +200,8 @@
      if(sum) {
         number1 = 10;
         number2 = 20;
-        console.log(showOperationMessage(operationSignal, number1, number2));
-        console.log(sum(number1,number2));
+        console.log(showOperationMessage(operationSignal, number1, number2), sum(number1,number2));
     }else {
-        console.log(showErrorMessage());
+        console.log(showErrorMessage(operationSignal));
     };
 }());
