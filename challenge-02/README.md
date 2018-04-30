@@ -90,4 +90,5 @@ challenge(); // false
 challenge(1); // 1
 challenge(1, 2); // 3
 challenge(1, 2, 3); // 1
+
 ```
