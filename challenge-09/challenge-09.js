@@ -61,9 +61,7 @@ por parâmetro, INVOCADA, e passando a ela por parâmetro os dois valores
 que foram passadas para a primeira função `calculator`.
 */
 function calculator(var1, var2){
-  return function(callback) {
-    return callback(var1, var2);
-  }
+  return (callback) => callback(var1, var2);
 }
 
 /*
@@ -81,7 +79,7 @@ para a chamada à `calculator` acima.
 uma função anônima que irá retornar a soma dos dois números que essa função
 anônima tem como seus argumentos.
 */
-console.log( 'O resultado da soma é:', sum( function(a, b) { return a + b;}));
+console.log( 'O resultado da soma é:', sum( (a, b) => a + b));
 
 
 /*
@@ -89,10 +87,10 @@ Agora declare outra variáveis chamadas `subtraction`, `multiplication`,
 `division` e `mod`, e atribua à elas `calculator`, passando números
 diferentes para cada chamada.
 */
-var subtraction = calculator(7, 6);
-var multiplication = calculator(5, 5);
-var division = calculator(6, 3);
-var mod = calculator(7, 6);
+var subtraction     = calculator(7, 6);
+var multiplication  = calculator(5, 5);
+var division        = calculator(6, 3);
+var mod             = calculator(7, 6);
 
 /*
 Mostre as variáveis acima no `console` (uma chamada de console por variável),
@@ -101,15 +99,15 @@ divisão e módulo (resto de divisão), conforme a função utilizada.
 As suas respostas devem estar abaixo dos `console.log` referentes à cada
 chamada.
 */
-console.log( 'O resultado da subtração é:', subtraction(function(a, b) { return  a - b; }));
+console.log( 'O resultado da subtração é:', subtraction((a, b) =>a - b ));
 // ?
 
-console.log( 'O resultado da multiplicação é:', multiplication(function(a, b) { return a * b; }));
+console.log( 'O resultado da multiplicação é:', multiplication((a, b) => a * b ));
 // ?
 
-console.log( 'O resultado da divisão é:', division(function(a, b) {return a / b; }));
+console.log( 'O resultado da divisão é:', division((a, b) => a / b ));
 // ?
 
-console.log( 'O resto da divisão é:', mod(function (a,b) { return a % b;}));
+console.log( 'O resto da divisão é:', mod((a,b) => a % b));
 // ?
 })();
