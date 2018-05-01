@@ -75,14 +75,16 @@ function v1(a1, a2, a3) {
 	var args = arguments.length
 	
 	if(args == 0) {
-		return null
+		return false
 	} else if(args == 1) {
 		return a1;
 	} else if(args == 2) {
 		return a1 + a2
 	} else if (args == 3) {
 		return (a1 + a2) / a3;
-	}
+	} else {
+    return null;
+  }
 }
 
 Function version 2
@@ -96,17 +98,19 @@ function v2(a1, a2, a3) {
 	} else if (a1 !== undefined && a2 !== undefined && a3 !== undefined) {
 		return (a1 + a2) / a3;
 	} else if (a1 === undefined && a2 === undefined && a3 === undefined) {
-		return null;
-	}
+		return false;
+	} else {
+    return null;
+   }
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-v1(); //null
+v1(); //false
 v1(1) // 1
 v1(8,2); //10
 v1(20, 40, 2); //30
 
-v2(); //null
+v2(); //false
 v2(4); //4
 v2(5, 6); //11
 v2(19, 14, 7); //4.714285714285714
