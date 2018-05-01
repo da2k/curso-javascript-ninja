@@ -11,7 +11,7 @@
     var once = false;
     do {
         console.log("Entrou ao menos uma vez!");
-    }while(once === true);
+    }while(once);
 
     /*
     Crie um objeto chamado `person`, que receba as seguintes propriedades:
@@ -23,7 +23,7 @@
         age: 20,
         weight: 45,
         birthday: "30/04/1998"
-    }
+    };
 
     /*
     Use um loop para percorrer o objeto criado acima, mostrando no console
@@ -60,7 +60,7 @@
     */
     console.log( 'De 0 a 10:' );
     var numbers = [];
-    for(var x = 0; x < 10; x++) {
+    for(var x = 0; x < 20; x++) {
         if(x > 10) {
             break;
         };
@@ -77,7 +77,7 @@
     console.log( 'Pares de 0 a 20:' );
     var numbers = [];
     for(var y = 0; y <= 20; y++) {
-        if(y % 2 !== 0) {
+        if(y % 2 === 0) {
             continue;
         }
         numbers.push(y);
