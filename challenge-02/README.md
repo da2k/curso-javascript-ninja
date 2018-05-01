@@ -42,11 +42,12 @@ Crie uma função com as seguintes características:
 */
     
 function box(a1, a2, a3) {
-	if (a1 == null || a2 == null || a3 == null) {
+	if (a1 === undefined || a2 === undefined || a3 === undefined) {
 		return "Preencha todos os valores corretamente!";
-	} else {
-		return (a1 * a2 * a3) + 2;
-	}	
+	} 
+	
+  return (a1 * a2 * a3) + 2;
+
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
@@ -70,6 +71,8 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
+
+Function version 1
 
 function v1(a1, a2, a3) {
 	var args = arguments.length
