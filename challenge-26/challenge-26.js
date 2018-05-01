@@ -30,23 +30,23 @@
     throw new Error('The element needs to be a string selector');
   }
 
-  DOM.prototype.forEach = function (callback) {
+  DOM.prototype.forEach = function forEach(callback) {
     Array.prototype.forEach.call(this.elements, callback);
   }
 
-  DOM.prototype.on = function (event, callback, useCapture) {
+  DOM.prototype.on = function on(event, callback, useCapture) {
     this.forEach(function (el) {
       el.addEventListener(event, callback, useCapture || false);
     });
   }
 
-  DOM.prototype.off = function (event, callback, useCapture) {
+  DOM.prototype.off = function off(event, callback, useCapture) {
     this.forEach(function (el) {
       el.removeEventListener(event, callback, useCapture || false);
     });
   }
 
-  DOM.prototype.get = function () {
+  DOM.prototype.get = function get() {
     return this.elements;
   }
 
