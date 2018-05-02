@@ -13,7 +13,7 @@ resolver o problema corretamente.
 var five = Number('5');
 console.log( five + ' é número?', typeof five === 'number' );
 
-var concat = String(10 + 10);
+var concat = String(10) + 10;
 console.log( '"' + concat + '" é uma string! E é igual a "1010"?', typeof concat === 'string' );
 
 /*
@@ -53,9 +53,9 @@ parâmetro a ela é válido, ou seja, se ele é igual a '+', '-', '*', '/' ou
 Caso contrário, "false".
 - O desafio é fazer o retorno sem usar "if" ou "switch".
 */
-function isOperatorValid(operation){
-	return  operation == '+' || operation == '-' || operation == '*' || operation == '/' || operation == '%' ? true : false;
-
+function isOperatorValid(operator){
+	//return  operation == '+' || operation == '-' || operation == '*' || operation == '/' || operation == '%' ? true : false;
+	return !!operation[operator];
 }
 
 /*
@@ -78,12 +78,11 @@ function calculator(ope){
 	}else{
 		return false;
 	}*///!erro
-	if(isOperatorValid(ope) == false){
+	if(!isOperatorValid(ope)){//! or == false
 		return false;
 	}
-	
 		return function twoValues( value1, value2){
-					return typeof(value1) != 'number' || typeof(value2) != 'number' ? false : operation[ope]( value1, value2);
+					return typeof(value1) != 'number' && typeof(value2) != 'number' ? false : operation[ope]( value1, value2);
 				}
 }
 
@@ -105,7 +104,8 @@ Essa função deverá retornar a frase:
 'Operação "[OPERATOR]" não permitida!'
 */
 function showErrorMessage(ope){
-	return isOperatorValid(ope) == false ?  'Operação ' + ope + ' não e permitido' : '';
+	//return isOperatorValid(ope) == false ?  'Operação ' + ope + ' não e permitido' : '';
+	return 'Operação ' + ope + ' não e permitido';
 }
 
 /*
@@ -114,8 +114,8 @@ PASSO 1:
 - Declare 3 variáveis: "number1" e "number2", iniciando com valor zero, e
 "operationSignal", sem valor por enquanto.
 */
-var number1;
-var number2;
+var number1 = 0;
+var number2 = 0;
 var operationSignal;
 
 /*
@@ -140,11 +140,10 @@ parâmetros para o método "log" de "console":
 - Se "sum" for "false", mostrar no console a mensagem de erro.
 */
 
-
-if(isOperatorValid(operationSignal) == true){
-number1 = 10;
-number2 = 5;
-console.log(showOperationMessage(operationSignal, number1, number2), sum(number1,number2));	
+if(sum){// or isOperatorValid(operationSignal) !== undefined){
+	number1 = 10;
+	number2 = 5;
+	console.log(showOperationMessage(operationSignal, number1, number2), sum(number1,number2));	
 }else{
 	console.log(showErrorMessage(operationSignal));
 }
@@ -159,8 +158,8 @@ divisão e resto. Crie variáveis com os nomes "subtraction",
 operationSignal = '-';
 var sub = calculator(operationSignal); 
 if(sub){
-number1 = 10;
-number2 = 5;
+	number1 = 10;
+	number2 = 5;
 console.log(showOperationMessage(operationSignal, number1, number2), sub(number1,number2));	
 }else{
 	console.log(showErrorMessage(operationSignal));
@@ -169,10 +168,10 @@ console.log(showOperationMessage(operationSignal, number1, number2), sub(number1
 /*---MULTIPLICAÇÃO---*/
 operationSignal = '*';
 var mult = calculator(operationSignal);  
-if(isOperatorValid(operationSignal) == true){
-number1 = 10;
-number2 = 5;
-console.log(showOperationMessage(operationSignal, number1, number2), mult(number1,number2));	
+if(mult){
+	number1 = 10;
+	number2 = 5;
+	console.log(showOperationMessage(operationSignal, number1, number2), mult(number1,number2));	
 }else{
 	console.log(showErrorMessage(operationSignal));
 }
@@ -180,10 +179,10 @@ console.log(showOperationMessage(operationSignal, number1, number2), mult(number
 /*---DIVISÃO---*/
 operationSignal = '/'; 
 var div = calculator(operationSignal)
-if(isOperatorValid(operationSignal) == true){
-number1 = 10;
-number2 = 5;
-console.log(showOperationMessage(operationSignal, number1, number2), div(number1,number2));	
+if(div){
+	number1 = 10;
+	number2 = 5;
+	console.log(showOperationMessage(operationSignal, number1, number2), div(number1,number2));	
 }else{
 	console.log(showErrorMessage(operationSignal));
 }
@@ -191,10 +190,10 @@ console.log(showOperationMessage(operationSignal, number1, number2), div(number1
 /*---MOD---*/
 operationSignal = '%'; 
 var mod = calculator(operationSignal)
-if(isOperatorValid(operationSignal) == true){
-number1 = 10;
-number2 = 5;
-console.log(showOperationMessage(operationSignal, number1, number2), mod(number1,number2));	
+if(mod){
+	number1 = 10;
+	number2 = 5;
+	console.log(showOperationMessage(operationSignal, number1, number2), mod(number1,number2));	
 }else{
 	console.log(showErrorMessage(operationSignal));
 }
@@ -205,10 +204,10 @@ a mensagem de erro será mostrada no console.
 // ?
 operationSignal = 'x'; 
 var invalid = calculator(operationSignal)
-if(isOperatorValid(operationSignal) == true){
-number1 = 10;
-number2 = 5;
-console.log(showOperationMessage(operationSignal, number1, number2), invalid(number1,number2));	
+if(invalid){
+	number1 = 10;
+	number2 = 5;
+	console.log(showOperationMessage(operationSignal, number1, number2), invalid(number1,number2));	
 }else{
 	console.log(showErrorMessage(operationSignal));
 }
