@@ -1,3 +1,4 @@
+(function(){
 // Envolva todo o código desse arquivo em uma IIFE (incluindo esse comentário).
 
 /*
@@ -8,6 +9,11 @@ loop, mostre no console a mensagem:
 Qual loop você deve usar para que essa mensagem seja mostrada no console?
 */
 // ?
+var once = false;
+do{
+	console.log('Entrou ao menos uma vez!');
+	once = true;
+}while(!once);
 
 /*
 Crie um objeto chamado `person`, que receba as seguintes propriedades:
@@ -15,6 +21,12 @@ Crie um objeto chamado `person`, que receba as seguintes propriedades:
 para o nome, idade, peso e data de nascimento dessa pessoa.
 */
 // ?
+var person = {
+	name: 'doug',
+	age: 19,
+	weight: 60,
+	birthday: '07/28'
+}
 
 /*
 Use um loop para percorrer o objeto criado acima, mostrando no console
@@ -26,6 +38,12 @@ Após o loop, mostre a frase:
 'The person has [COUNTER] properties'
 */
 // ?
+let contador = 0;
+for (var i in person) {
+	console.log('The '+ i +' of person is '+person[i]);
+	contador++;
+}
+console.log('The person has '+contador+' propreties');
 
 /*
 Crie uma função chamada `moreThan`, que vai verificar se a pessoa (objeto
@@ -35,6 +53,13 @@ Após a função, mostrar a mensagem no console:
 'The person has more than 25 years old? [TRUE/FALSE]'
 */
 // ?
+function moreThan(a){
+	if(a > person.age){
+		return true;
+	}
+	return false;
+}
+console.log('The person has more than 25 years old? '+moreThan(25));
 
 /*
 Faça um loop de 0 a 20, que adicione cada número como um item de um
@@ -43,6 +68,14 @@ Mostre no console os números no array.
 */
 console.log( 'De 0 a 10:' );
 // ?
+let array = [];
+for (let i = 0; i<20 ;i++){
+	array.push(i);
+	if(i>=10){
+		break;
+	}
+}
+console.log(array);
 
 /*
 Faça outro loop de 0 a 20, que adicione a um array chamado `numbers` (já
@@ -52,3 +85,13 @@ Mostrar no console os números do array.
 */
 console.log( 'Pares de 0 a 20:' );
 // ?
+array = [];
+for (let i = 0; i<20 ;i++){
+	
+	if(i%2 == 0){
+		array.push(i);
+	}
+}
+console.log(array);
+
+})();
