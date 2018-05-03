@@ -134,17 +134,27 @@
   - "Nem todos os estados tem mais de 7 letras!"
   */
   console.log( '\nTodos os estados de `brasil` tem mais de 7 letras?' );
-  var wordLength = brasil.every(function (item) {
-    return (item.length > 7);
+  var wordLength = brasil.every(function ( item ) {
+    return ( item.length > 7 );
   });
 
-  function check(arg) {
-    return (arg === true)
-      ? console.log('Sim, todos os estados tem mais de 7 letras!')
-      : console.log('Nem todos os estados tem mais de 7 letras!')
+  function check( arg ) {
+    return ( arg === true )
+      ? console.log( 'Sim, todos os estados tem mais de 7 letras!' )
+      : console.log( 'Nem todos os estados tem mais de 7 letras!' )
   };
 
   check(wordLength);
+
+  /*
+  Solução Daciuk:
+
+  console.log(
+    wordLength
+      ? 'Sim, todos os estados tem mais de 7 letras!'
+      : 'Nem todos os estados tem mais de 7 letras!'
+  )
+  */
 
   /*
   Percorra o array `brasil` e verifique se o Ceará está incluído, atribuindo o
@@ -168,15 +178,25 @@
   checkCeara( hasCeara );
 
   /*
+  Solução Daciuk:
+
+  console.log(
+    hasCeara
+      ? 'Ceará está incluído!'
+      : 'Ceará não foi incluído :('
+  )
+  */
+
+  /*
   Percorra o array `newBrasil` e crie um novo array que some 1 no ID de cada
   objeto desse array, e adicione a frase abaixo na propriedade `estado`:
   - "[ESTADO] pertence ao Brasil."
   Atribua o novo array a uma variável chamada `map`.
   */
-  var map = newBrasil.map(function ( item, index, array ) {
+  var map = newBrasil.map(function ( item, index ) {
     return {
-      id: index += 1,
-      estado: item.estado.concat(" pertence ao Brasil."),
+      id: item.id += 1,
+      estado: item.estado + ' pertence ao Brasil.'
     };
   });
 
