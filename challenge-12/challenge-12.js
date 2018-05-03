@@ -80,8 +80,7 @@
     for(var qtd in books) {
         //console.log(qtd);
         for(var prop in books[qtd]) {
-            var result = prop + ": " + books[qtd][prop];
-            console.log(JSON.stringify(result));
+            console.log(prop + ": " + books[qtd][prop]);
         }
     }
 
