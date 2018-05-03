@@ -1,3 +1,4 @@
+(function() {
 // Envolva todo o código desse arquivo em uma IIFE (incluindo esse comentário).
 
 /*
@@ -90,3 +91,4 @@ for(var i=0; i <=20; i++) {
     }
 }
 console.log( 'Pares de 0 a 20: ' + numbers );
+})();
