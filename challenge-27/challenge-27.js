@@ -54,6 +54,10 @@
     return DOM._verifier(value) === '[object Number]';
   }
 
+  DOM.isBoolean = function isBoolean(value) {
+    return DOM._verifier(value) === '[object Boolean]';
+  }
+
   DOM.isNull = function isNull(value) {
     return DOM._verifier(value) === '[object Null]' || DOM._verifier(value) === '[object Undefined]';
   }
@@ -66,12 +70,16 @@
     return Array.prototype.map.call(this.elements, callback);
   }
 
-  DOM.prototype.reduce = function reduce(callback) {
-    return Array.prototype.reduce.call(this.elements, callback);
+  DOM.prototype.filter = function filter(callback) {
+    return Array.prototype.filter.call(this.elements, callback);
   }
 
-  DOM.prototype.reduceRight = function reduceRight(callback) {
-    return Array.prototype.reduceRight.call(this.elements, callback);
+  DOM.prototype.reduce = function reduce() {
+    return Array.prototype.reduce.apply(this.elements, arguments);
+  }
+
+  DOM.prototype.reduceRight = function reduceRight() {
+    return Array.prototype.reduceRight.apply(this.elements, arguments);
   }
 
   DOM.prototype.every = function every(callback) {
@@ -111,6 +119,12 @@
   var textAllP = $p.map(function(p) {
     return p.textContent;
   });
+
+  var concatTextAllP = $p.reduce(function(acc, actual) {
+    return acc + actual.textContent;
+  }, 0);
+
   console.log(textAllP);
+  console.log(concatTextAllP);
 
 })(window, document);
