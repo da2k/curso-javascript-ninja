@@ -72,7 +72,7 @@ que foram passadas para a primeira função `calculator`.
     function calculator(a, b) {
         return function(callback) {
             return callback(a, b);
-        }
+        };
     }
 
 /*
