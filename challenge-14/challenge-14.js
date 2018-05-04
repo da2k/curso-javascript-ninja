@@ -58,7 +58,10 @@ primeiro. O nome da variável deve ser operation2. Mostre o resultado no
 console.
 */
 console.log( '\nOperation 2:' );
-// ?
+var operation2 = justMod2Or3.reductRight(function(x, y) {
+  return (x+ 1) * y;
+}, 0)
+console.log(operation2)
 
 /*
 Crie um array chamado `name`. Cada elemento desse array deve ser uma sílaba
@@ -69,20 +72,26 @@ infantil, onde você coloca a letra "P" antes de cada sílaba de uma palavra
 falada, como se você estivesse falando em código xD
 */
 console.log( '\nSeu nome na língua do "P":' );
-// ?
+var name = ['Pna', 'pta' ,'plia' ,'pa'];
+
+console.log(name.reduce(function(x, y){
+  return x + y;
+}));
 
 /*
 Crie uma variável chamada `inversedName`, que reduzirá o array em uma string
 e atribuirá o seu nome invertido (usando o array criado acima).
 */
 console.log( '\nInversed Name:' );
-// ?
+var inverseName = name.reduceRight(function(x, y) {
+  return x + y;
+})
 
 /*
 Mostre no console o array `numberObjects`.
 */
 console.log( '\nNumber objects' );
-// ?
+console.lo(numberObjects)
 
 /*
 Verifique se existem em algum índice de numberObjects um objeto ìgual a
@@ -108,5 +117,5 @@ Verifique se `justMod2Or3` é um array. Se for, mostre-o no console, no
 formato de String.
 */
 console.log( '\njustMod2Or3 é um array? Se for, a representação dele em String é:' );
-// ?
+justMod2Or3.isArray();
 })();
