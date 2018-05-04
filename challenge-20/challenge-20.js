@@ -80,7 +80,6 @@
     - "Não enviado."
   */
   $button.addEventListener('click', function (event) {
-    event.preventDefault();
     var form = {
       username: $inputUsername.value,
       email: $inputEmail.value,
@@ -93,7 +92,8 @@
     };
     
     if (form.username === '' || form.email === '' || form.message === '') {
-      var phrase = 'Preencha o(s) campo(s)';
+      event.preventDefault();
+      var phrase = 'Preencha o(s) campo(s):';
       for (var key in form) {
         if (form[key] === '')
           phrase = phrase + ' - ' + prop[key];
@@ -101,11 +101,12 @@
       win.alert(phrase);
       return false;
     }
-    if (isValidEmail (form.email)) {
-      win.alert('Email Correto, formulário liberado');
-    } else {
+    if (!isValidEmail (form.email)) {
+      event.preventDefault();
       win.alert('Email errado, conferir por favor.');
+      return false;
     }
+    return true;
   }, false);
   
   /*
@@ -134,8 +135,8 @@
     - "rita-marica@titica.a.b"
     - "agua_@evida.br.com"
   */
-  //var emailRegex = /([\w+.]+)(@[\w]+)\.(\w{2,})\.?(\w{2})?/gm;
-  var emailRegex = new RegExp('(^[\\w+.]+)(@[\\w]+)(\\.\\w{2,})(?:\\.[a-z]{2})?$', 'gm');
+  var emailRegex = new RegExp('^[\\w+.]+@[\\w]+\\.\\w{2,}(?:\\.[a-z]{2})?$');
+  //var emailRegex = new RegExp('(^[\\w+.]+)(@[\\w]+)(\\.\\w{2,})(?:\\.[a-z]{2})?$', 'gm');
   console.log(emailRegex);
   function isValidEmail (email) {
     var resultado = emailRegex.test(email);
