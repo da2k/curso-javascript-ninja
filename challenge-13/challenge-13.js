@@ -177,4 +177,4 @@ Envolva todo o código desse desafio em uma IIFE.
   console.log( '\nEstados com ID par:' );
   console.log(filter);
 
-})
+})();
