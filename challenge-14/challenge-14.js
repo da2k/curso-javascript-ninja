@@ -59,7 +59,7 @@ console.
 */
 console.log( '\nOperation 2:' );
 var operation2 = justMod2Or3.reductRight(function(x, y) {
-  return (x+ 1) * y;
+  return (x + 1) * y;
 }, 0)
 console.log(operation2)
 
@@ -72,18 +72,19 @@ infantil, onde você coloca a letra "P" antes de cada sílaba de uma palavra
 falada, como se você estivesse falando em código xD
 */
 console.log( '\nSeu nome na língua do "P":' );
-var name = ['Pna', 'pta' ,'plia' ,'pa'];
+var name = ['Na', 'ta' ,'lia' ,'a'];
+var reduceP = name.reduce(function (x, y) {
+  return x + 'P' + y;
+}, '');
 
-console.log(name.reduce(function(x, y){
-  return x + y;
-}));
+console.log(reduceP);
 
 /*
 Crie uma variável chamada `inversedName`, que reduzirá o array em uma string
 e atribuirá o seu nome invertido (usando o array criado acima).
 */
 console.log( '\nInversed Name:' );
-var inverseName = name.reduceRight(function(x, y) {
+var inversedName = name.reduceRight(function(x, y) {
   return x + y;
 })
 
@@ -102,8 +103,14 @@ Senão, mostre a frase:
 Consegue prever o resultado? Deixe uma mensagem no console tentando explicar
 o que acontece ;)
 */
+
+//cada objeto cria uma referência única na memória
 console.log( '\nExiste um { number: 2 } em numberObjects?' );
-// ?
+if(numberObjects.indexOf({ number: 2 }) > -1) {
+  console.log('Existe um objeto { number: 2 } em numberObjects!');
+} else {
+  console.log('Não existe um objeto { number: 2 } em numberObjects :(');
+}
 
 /*
 Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
