@@ -151,9 +151,9 @@
     console.log( '\nTodos os estados de `brasil` tem mais de 7 letras?' );
     // ?
     let maisde7 = brasil.every(function(item){
-        return item.length >= 7;
+        return item.length > 7;
     })
-    console.log(maisde7);
+    console.log(maisde7 ? 'Sim, todos os estados tem mais de 7 letras!':'Nem todos os estados tem mais de 7 letras!');
     /*
     Percorra o array `brasil` e verifique se o Ceará está incluído, atribuindo o
     resultado à uma variável. Se esse estado existir no array, mostrar a frase no
@@ -168,6 +168,13 @@
     for (let index = 0; index < brasil.length; index++) {
         if(brasil[index] === 'ceara') ceara = true;
     }
+    //outra forma de se fazer
+    /*
+        var some = brasil.some(function(item){
+            return item === 'ceara';
+        });
+    */
+
     console.log(ceara ? 'Ceará está incluído!':'Ceará não foi incluído :(');
     /*
     Percorra o array `newBrasil` e crie um novo array que some 1 no ID de cada
