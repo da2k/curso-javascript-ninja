@@ -91,18 +91,19 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-console.log( 'O livro Senhor dos Anéis tem ' +  book('Senhor dos Anéis').quantidadePaginas + ' paginas' );
+var bookName = 'Senhor dos Anéis';
+console.log( 'O livro ' + bookName + ' tem ' +  book( bookName ).quantidadePaginas + ' paginas' );
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log( 'o autor do livro Senhor dos Anéis é ' +  book('Senhor dos Anéis').autor );
+console.log( 'o autor do livro ' + bookName + ' é ' +  book( bookName ).autor );
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log( 'O livro Senhor dos Anéis foi publicado pela editora ' +  book('Senhor dos Anéis').editora );
+console.log( 'O livro ' + bookName + ' foi publicado pela editora ' +  book( bookName ).editora );
