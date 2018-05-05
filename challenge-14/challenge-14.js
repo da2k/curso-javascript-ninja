@@ -72,10 +72,10 @@
     falada, como se você estivesse falando em código xD
     */
     console.log( '\nSeu nome na língua do "P":' );
-    var name = ["M", "a", "r", "c", "u", "s"];
+    var name = ["Mar", "cus"];
     var reduce = name.reduce(function(acumulado, atual){
         return acumulado + ("P" + atual);
-    })
+    }, "")
     console.log(reduce);
 
     /*
@@ -83,10 +83,10 @@
     e atribuirá o seu nome invertido (usando o array criado acima).
     */
     console.log( '\nInversed Name:' );
-    var reduce = name.reduceRight(function(acumulado, atual){
+    var inversedName = name.reduceRight(function(acumulado, atual){
         return acumulado + atual;
     })
-    console.log(reduce);
+    console.log(inversedName);
 
     /*
     Mostre no console o array `numberObjects`.
@@ -126,6 +126,7 @@
     formato de String.
     */
     console.log( '\njustMod2Or3 é um array? Se for, a representação dele em String é:' );
-    console.log(Array.isArray(justMod2Or3));
-    console.log(justMod2Or3.toString());
+    if(Array.isArray(justMod2Or3)) {
+        console.log(justMod2Or3.toString());
+    }
 })();
