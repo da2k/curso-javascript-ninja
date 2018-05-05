@@ -177,26 +177,20 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao = function () {
-	var artigo;
-	var ano;
-	var distancia;
+	var artigo = 'o';
+	var ano = 'anos';
+	var distancia = 'metros';
 
-	if(pessoa.sexo === "Masculino" || pessoa.sexo === "M") {
-		artigo = 'o';
-	} else {
+	if(pessoa.sexo === "Feminino" || pessoa.sexo === "F") {
 		artigo = 'a';
 	}
-
-	if(pessoa.idade <= 1) {
+  
+	if(pessoa.idade === 1) {
 		ano = 'ano';
-	} else if (pessoa.idade > 1) {
-		ano = 'anos';
 	}
 
-	if(pessoa.caminhouQuantosMetros <= 1) {
+	if(pessoa.caminhouQuantosMetros === 1) {
 		distancia = 'metro';
-	} else if (pessoa.caminhouQuantosMetros > 1) {
-		distancia = 'metros';
 	}
 
 
