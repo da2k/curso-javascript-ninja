@@ -19,23 +19,23 @@
 
      	<br>
 
-			<form>
+			<form data-js="form-cep">
 				<div class="form-group">
 					<label for="cep">Digite o CEP</label>
-					<input type="text" class="form-control form-control-lg" id="cep" value="" placeholder="Digite o CEP">
+					<input type="text" class="form-control form-control-lg" data-js="cep" value="" placeholder="Digite o CEP">
 				</div>
 
-				<button type="submit" class="btn btn-primary" id="enviar">Enviar</button>
+				<button type="submit" class="btn btn-primary" >Enviar</button>
 
-				<div id="mensagem">
+				<div data-js="status" id="mensagem">
 				</div>
 
 				<div class="row">
 					<div class="col">
-						<input class="form-control" type="text" id="logradouro" placeholder="Logradouro" readonly>
+						<input class="form-control" type="text" data-js="logradouro" placeholder="Logradouro" readonly>
 					</div>
 					<div class="col">
-						<input class="form-control" type="text" id="bairro" placeholder="Bairro" readonly>
+						<input class="form-control" type="text" data-js="bairro" placeholder="Bairro" readonly>
 					</div>
 				</div>
 
@@ -43,10 +43,10 @@
 
 				<div class="row">
 					<div class="col">
-						<input class="form-control" type="text" id="estado" placeholder="Estado" readonly>
+						<input class="form-control" type="text" data-js="estado" placeholder="Estado" readonly>
 					</div>
 					<div class="col">
-						<input class="form-control" type="text" id="cidade" placeholder="Cidade" readonly>
+						<input class="form-control" type="text" data-js="cidade" placeholder="Cidade" readonly>
 					</div>
 				</div>
 			</form>

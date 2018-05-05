@@ -29,55 +29,186 @@
 (function(doc){
 	'use strict';
 
-	var $cep = doc.querySelector('#cep'),
-		$sendButton = doc.querySelector('#enviar'),
-		$cepValue,
-		regexNumbers,
-		$inputLogradouro = doc.querySelector('#logradouro'),
-		$inputBairro = doc.querySelector('#bairro'),
-		$inputCidade = doc.querySelector('#cidade'),
-		$inputEstado = doc.querySelector('#estado'),
-		$mensagem = doc.querySelector('#mensagem');
+	function DOM( elements ) {
+		this.element = doc.querySelectorAll(elements);
+	}
 
-	function ajaxListener () {
-		if (this.readyState == 4 && this.status == 200) {
-			$mensagem.innerHTML = 'Endereço referente ao CEP ' + regexNumbers + ':';
-		} else {
-			$mensagem.innerHTML = 'Buscando informações para o CEP ' + regexNumbers + '...';
-		}
-	};
+	DOM.prototype.on = function on(eventType, callback) {
+	Array.prototype.forEach.call(this.element, function(element){
+		element.addEventListener(eventType, callback, false);
+	});
+	}
 
+	DOM.prototype.off = function off(eventType, callback) {
+	Array.prototype.forEach.call(this.element, function(element){
+		element.removeEventListener(eventType, callback, false);
+	});
+	}
 
-	$sendButton.addEventListener("click", function(e){
+	DOM.prototype.get = function get() {
+	return this.element;
+	}
+
+	DOM.prototype.forEach = function forEach() {
+	return Array.prototype.forEach.apply(this.element, arguments);
+	}
+
+	DOM.prototype.map = function map() {
+	return Array.prototype.map.apply(this.element, arguments);
+	}
+
+	DOM.prototype.filter = function filter() {
+	return Array.prototype.filter.apply(this.element, arguments);
+	}
+
+	DOM.prototype.reduce = function reduce() {
+	return Array.prototype.reduce.apply(this.element, arguments)
+	}
+
+	DOM.prototype.reduce = function reduce() {
+	return Array.prototype.reduce.apply(this.element, arguments);
+	}
+
+	DOM.prototype.reduceRight = function reduceRight() {
+	return Array.prototype.reduceRight.apply(this.element, arguments);
+	}
+
+	DOM.prototype.every = function every() {
+	return Array.prototype.every.apply(this.element, arguments);
+	}
+
+	DOM.prototype.some = function some() {
+	return Array.prototype.some.apply(this.element, arguments);
+	}
+
+	DOM.prototype.isArray = function isArray( param ) {
+	return Object.prototype.toString.call(param) === '[object Array]';
+	}
+
+	DOM.prototype.isObject = function isObject( param ) {
+	return Object.prototype.toString.call(param) === '[object Object]';
+	}
+
+	DOM.prototype.isFunction = function isFunction( param ) {
+	return Object.prototype.toString.call(param) === '[object Function]';
+	}
+
+	DOM.prototype.isNumber = function isNumber( param ) {
+	return Object.prototype.toString.call(param) === '[object Number]';
+	}
+
+	DOM.prototype.isString = function isString( param ) {
+	return Object.prototype.toString.call(param) === '[object String]';
+	}
+
+	DOM.prototype.isBoolean = function isBoolean( param ) {
+	return Object.prototype.toString.call(param) === '[object Boolean]';
+	}
+
+	DOM.prototype.isNull = function isNull( param ) {
+	return Object.prototype.toString.call(param) === '[object Null]' ||
+			Object.prototype.toString.call(param) === '[object Undefined]';
+	}
+
+	var $formCep = new DOM('[data-js="form-cep"]');
+	var $cep = new DOM('[data-js="cep"]').get()[0];
+
+	var $logradouro = new DOM('[data-js="logradouro"]').get()[0];
+	var $bairro = new DOM('[data-js="bairro"]').get()[0];
+	var $estado = new DOM('[data-js="estado"]').get()[0];
+	var $cidade = new DOM('[data-js="cidade"]').get()[0];
+	var $status = new DOM('[data-js="status"]').get()[0];
+
+	var $cepValue, regex;
+
+	$formCep.on('submit', handleSumitForm);
+
+	var ajax = new XMLHttpRequest();
+
+	function handleSumitForm(e) {
 		e.preventDefault();
-		$cepValue = $cep.value;
-		regexNumbers = $cepValue.match(/\d/g).join('');
-		var url = 'https://viacep.com.br/ws/' + regexNumbers + '/json/';
 
-		var ajax = new XMLHttpRequest;
+		var url = 'https://viacep.com.br/ws/'+ getCep() + '/json/';
 
-		ajax.onload = ajaxListener;
-
-		ajax.onreadystatechange = function() {
-			if (this.readyState == 4 && this.status == 200) {
-				var retorno = JSON.parse(this.responseText);
-				var bairro = retorno.bairro;
-				var cidade = retorno.localidade;
-				var logradouro = retorno.logradouro;
-				var estado = retorno.uf;
-				$inputLogradouro.value = logradouro;
-				$inputBairro.value = bairro;
-				$inputCidade.value = cidade;
-				$inputEstado.value = estado;
-			} else {
-				$mensagem.innerHTML = 'Não encontramos o endereço para o CEP ' + regexNumbers + '.';
-			}
-		};
-
-		ajax.open('GET', url, true);
+		ajax.open("GET", url, true);
 		ajax.send();
 
-	}, false);
+		getStatus('loading');
+
+		ajax.onreadystatechange = handleReadyStateChage;
+	}
+
+	function getCep() {
+		$cepValue = $cep.value;
+		regex = $cepValue.match(/\d/g).join('');
+		return regex;
+	}
+
+	function isRequestOk() {
+		return ajax.readyState == 4 && ajax.status == 200
+	}
+
+	function parseData(){
+		var result;
+
+		try {
+			result = JSON.parse(ajax.responseText)
+		}
+		catch {
+			result = null;
+		}
+
+		return result;
+	}
+
+	function fillCepFields(){
+		var data = parseData();
+
+		if( !data ) {
+			getStatus('error');
+			data = clearData();
+		}
+
+		console.log(data);
+
+		$logradouro.value = data.logradouro;
+		$bairro.value = data.bairro;
+		$cidade.value = data.localidade;
+		$estado.value = data.uf;
+	}
+
+	function clearData() {
+		return {
+			logradouro: '-',
+			bairro: '-',
+			cidade: '-',
+			uf: '-'
+		}
+	}
+
+	function handleReadyStateChage() {
+		if ( isRequestOk() ) {
+			debugger;
+			fillCepFields();
+			getStatus('ok');
+		}
+	  };
+
+
+	function maskCep() {
+		var mask = regex.match(/(\d{5})(\d{3}$)/);
+		var result =  mask[1] + '-' + mask[2]
+		$cep.value = result;
+	}
+
+	function getStatus(type){
+		var status = {
+			loading: 'Buscando informações para o CEP: ' +  getCep() + '.',
+			ok: 'Endereço referente ao CEP: ' +  getCep() + '.',
+			error: 'Não encontramos o endereço para o CEP: ' +  getCep() + '.',
+		};
+		$status.textContent = status[type];
+	}
 
 
 })(document);
