@@ -34,7 +34,7 @@ for chamado.
 */
 pessoa.fazerAniversario = function ( aniversarios ) {
   if ( aniversarios !== undefined && aniversarios <= 1 ) {
-    pessoa.idade++
+    pessoa.idade++;
   } else if ( ! isNaN( aniversarios ) ) {
     pessoa.idade += aniversarios;
   } else {
@@ -199,9 +199,9 @@ pessoa.apresentacao = function () {
 
   // Verifica a idade
   if ( pessoa.idade === 1 ) {
-    idadePluralOuSingular = 'ano'
+    idadePluralOuSingular = 'ano';
   } else if ( pessoa.idade > 1 ) {
-    idadePluralOuSingular = 'anos'
+    idadePluralOuSingular = 'anos';
   }
   // Verifica distancia caminhada
   if ( pessoa.caminhouQuantosMetros === 1 ) {
