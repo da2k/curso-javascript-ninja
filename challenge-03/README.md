@@ -108,7 +108,7 @@ pessoa.mostrarIdade(); // "Olá, eu tenho 31 anos!"
 Qual o peso da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.mostrarPeso; // "Eu peso 80Kg."
+pessoa.mostrarPeso(); // "Eu peso 80Kg."
 
 /*
 Qual a altura da pessoa? (Use a instrução para responder e comentários
