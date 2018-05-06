@@ -7,6 +7,8 @@ um único parâmetro como argumento. Essa função deve retornar `true` se o
 equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
+// Para descobrir o equivalente booleano de um valor, usa-se duas vezes o sinal de exclamação.
+
 //Minha primeira tentativa foi assim:
 
 var isTruthy = function(a) {
@@ -25,10 +27,21 @@ var isTruthy = function(a) {
 	}
 }
 
+// ou
+
+var isTruthy = function(param) {
+	if(param) {
+		// se o valor for setado ou for qualquer valor truthy
+		return true;
+	}
+
+	return false;
+}
+
 // Minha segunda ideia de tentativa foi assim:
 
 var isTruthy = function(a) {
-	//returna o tipo da variável booleana === truthy ou falsy
+	//retorna o tipo da variável booleana === truthy ou falsy. Retorna o equivalente booleano do parametro.
 	return !!a
 }
 
@@ -60,6 +73,7 @@ isTruthy(function a() {}) //true
 isTruthy(function b() {
 	return false
 }) //true
+// js avalia o resultado de 25 * 300. Caso o resultado fosse 0, retornaria false.
 isTruthy(25 * 320) //true
 isTruthy(-1) //true
 isTruthy({ a: false, b: 5 }) //true
@@ -124,7 +138,7 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 carro.obterMarcaModelo = function() {
-	return `Esse carro é um ${carro.marca} ${carro.modelo}`
+	return `Esse carro é um ${carro.obterMarca()} ${carro.obterModelo()}`
 }
 
 /*
@@ -144,23 +158,25 @@ seguintes características:
 * Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 	citado acima, no lugar de "pessoas".
 */
-carro.addPessoas = function(num) {
-	var total = this.assentos
-	var qtdPessoasCarro = this.quantidadePessoas
-	var qtdRestante = total - qtdPessoasCarro
+carro.addPessoas = function(numPessoas) {
 
-	if (qtdPessoasCarro === total) {
-		return `O carro já está lotado! Já temos ${qtdPessoasCarro} pessoas no carro!`
-	} else if (qtdPessoasCarro < total) {
-		if (num > qtdRestante) {
-			return `Número muito grande! Só cabem mais ${qtdRestante} pessoas!`
-		} else {
-			this.quantidadePessoas += num
+	var totalPessoas = this.quantidadePessoas + numPessoas;
+	var qtdRestante = this.assentos - this.quantidadePessoas;
+	var entrarSair = numPessoas < 0 ? 'sairam' : 'entraram';
 
-			qtdRestante -= num
-			return `${num} pessoas entraram no carro. Restam apenas ${qtdRestante} lugares`
-		}
+
+	if (this.quantidadePessoas === this.assentos && totalPessoas >= this.assentos) {
+		return `O carro já está lotado! Temos ${this.quantidadePessoas} assentos ocupados!`
 	}
+
+	if(totalPessoas > this.assentos) {
+		return `Número muito grande! Só cabem mais ${qtdRestante} pessoas!`;
+	}
+
+	this.quantidadePessoas += numPessoas;
+	qtdRestante -= numPessoas;
+
+	return `${numPessoas} pessoas ${entrarSair}. Restam apenas ${qtdRestante} lugares`
 }
 
 /*
@@ -199,6 +215,8 @@ carro.addPessoas(5) //Número muito grande! Só cabem mais 3 pessoas!
 carro.addPessoas(3) // 3 pessoas entraram no carro. Restam apenas 0 lugares
 
 // Tire 4 pessoas do carro.
+
+// Primeiro criei uma função
 carro.removePessoas = function(num) {
 	if (num > carro.quantidadePessoas) {
 		return 'Quantidade retirada não pode ser maior que a existente'
@@ -212,6 +230,12 @@ carro.removePessoas = function(num) {
 }
 
 carro.removePessoas(4) //Você removeu 4 pessoas. Ainda há 1 pessoas no carro.
+
+
+
+// Após a aula de correção ajustei a lógica para que a função addPessoas pudesse remover
+carro.addPessoas(4); // -1 pessoas saíram. Restam apenas 4 lugares
+
 
 // Adicione 10 pessoas no carro.
 carro.addPessoas(10) //Número muito grande! Só cabem mais 5 pessoas!
