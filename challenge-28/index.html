@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Challenge 28</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      background-color: #fbc02d;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .cep-form {
+      align-items: center;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      height: 300px;
+      margin: 0 auto;
+      margin-top: calc(50vh - 150px);
+      width: 300px;
+    }
+
+    .cep-form__input {
+      border: none;
+      border-bottom: 2px solid #fbc02d;
+      height: 35px;
+      outline: none;
+      width: 90%;
+    }
+
+    .cep-form__btn-search {
+      background-color: #fbc02d;
+      color: #fff;
+      cursor: pointer;
+      border: none;
+      height: 35px;
+      outline: none;
+      width: 90%;
+    }
+
+    .adress-info {
+      background-color: #fff;
+      margin: 10px auto;
+      max-width: 300px;
+      opacity: 1;
+      overflow: hidden;
+      padding: 5px;
+      text-align: left;
+      transition: all .5s;
+      white-space: nowrap;
+      width: 300px;
+    }
+
+    .adress-info--hide {
+      opacity: 0;
+    }
+
+    .notification {
+      background-color: #ff7902;
+      color: #fff;
+      height: 50px;
+      opacity: 1;
+      position: fixed;
+      right: 50px;
+      top: 50px;
+      text-align: center;
+      transition: all .5s;
+      min-width: 200px;
+    }
+
+    .notification--hide {
+      opacity: 0;
+    }
+
+    .notification__text {
+      display: inline-block;
+      padding-top: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div data-js="notification" class="notification notification--hide">
+    <p data-js="notification-text" class="notification__text">Loading...</p>
+  </div>
+  <main class="container">
+    <form data-js="cep-form" class="cep-form">
+      <input data-js="cep-input" class="cep-form__input" type="text" placeholder="Type a cep to search more informations" autofocus
+        required>
+      <br>
+      <button class="cep-form__btn-search" type="submit">Search</button>
+    </form>
+
+    <table data-js="adress-info" class="adress-info adress-info--hide">
+      <tr>
+        <th>Street</th>
+        <td data-js="street" >Rua epifanio nogueira</td>
+      </tr>
+      <tr>
+        <th>Neighborhood</th>
+        <td data-js="neighborhood">Crus das almas</td>
+      </tr>
+      <tr>
+        <th>State</th>
+        <td data-js="state">Ceara</td>
+      </tr>
+      <tr>
+        <th>City</th>
+        <td data-js="city">Pacajus</td>
+      </tr>
+      <tr>
+        <th>Postal code</th>
+        <td data-js="postal-code">62870000</td>
+      </tr>
+    </table>
+
+  </main>
+  <script src="./challenge-28.js"></script>
+</body>
+
+</html>
