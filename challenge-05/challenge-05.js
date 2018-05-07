@@ -91,14 +91,15 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-console.log("O livro Ninja do C tem "+book('Ninja do C').quantidadePaginas+" páginas!");
+var bookName = 'Ninja do C';
+console.log('O livro '+bookName+' tem '+book(bookName).quantidadePaginas+' páginas!');
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log("O autor do livro Ninja do C é "+book('Ninja do C').autor+" .");
+console.log('O autor do livro '+bookName+' é '+book(bookName).autor+' .');
 
 
 /*
@@ -106,4 +107,5 @@ Ainda com a função acima, imprima o nome da editora de um livro qualquer, usan
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log("O livro Ninja do C foi publicado pela editora "+book('Ninja do C').editora+".");
+console.log('O livro '+bookName+' foi publicado pela editora '+book(bookName).editora+'.');
+
