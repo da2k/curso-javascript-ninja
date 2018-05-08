@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Challenge 21 - Timer</title>
+		<style>
+			@import url('https://fonts.googleapis.com/css?family=Kavivanar|Roboto');
+			input[type="text"] {
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+				outline: none;
+				display: block;
+				width: 100%;
+				padding: 7px;
+				border: none;
+				border-bottom: 1px solid #ddd;
+				background: transparent;
+				margin-bottom: 10px;
+				font-size: 20px;
+				font-family: 'Roboto', sans-serif;
+				height: 45px;
+			}
+			div {
+				width: 300px;
+				display: block;
+				margin: auto;
+			}
+			button {
+				font-family: 'Kavivanar', cursive;
+				width: 85px;
+				height: 30px;
+				border-radius: 17px;
+				box-shadow: 2px 2px 3px rgba(0, 0, 0, .5);
+				margin-left: 5px;
+				margin-right: 5px;
+				margin-top: 10px;
+				border: 0 solid white;
+			}
+			.btn-start {
+				background-color: green;
+			}
+			.btn-stop {
+				background-color: red;
+			}
+			.btn-reset {
+				background-color: orange;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div>
+			<input type='text'/>
+		</div>
+		<div>
+			<button	class='btn-start' data-js='startTimer'>Start</button>
+			<button class='btn-stop' data-js='stopTimer'>Stop</button>
+			<button class='btn-reset' data-js='resetTimer'>Reset</button>
+		</div>
+		
+		<script src='challenge-21.js'></script>
+	</body>
+</html>
