@@ -26,17 +26,17 @@
         this.name = name;
         this.lastName = lastName;
         this.age = age;
-        this.getFullName = function(){
-            return name + " " + lastName;
+        this.getFullName = function getFullName(){
+            return this.name + " " + this.lastName;
         };
-        this.getAge = function() {
-            return age;
+        this.getAge = function getAge() {
+            return this.age;
         };
-        this.addAge = function() {
-            return arguments;
+        this.addAge = function addAge() {
+            this.age += arguments[0];
+            return this;
         }
     }
-    console.log(new Person());
 
     /*
     Crie 3 novos objetos usando o construtor acima. Os objetos serão novas
@@ -75,7 +75,7 @@
     - "[NOME COMPLETO] agora tem [NOVA IDADE] anos."
     */
     console.log( '\nNova idade das pessoas:' );
-    console.log(maria.getFullName() + " agora tem " + (maria.addAge(2)[0] + maria.getAge()) + " anos.");
-    console.log(silvia.getFullName() + " agora tem " + (silvia.addAge(7)[0] + silvia.getAge()) + " anos.");
-    console.log(jose.getFullName() + " agora tem " + (jose.addAge(4)[0] + jose.getAge()) + " anos.");
+    console.log(maria.getFullName() + " agora tem " + (maria.addAge(2).getAge()) + " anos.");
+    console.log(silvia.getFullName() + " agora tem " + (silvia.addAge(7).getAge()) + " anos.");
+    console.log(jose.getFullName() + " agora tem " + (jose.addAge(4).getAge()) + " anos.");
 })();
