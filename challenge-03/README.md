@@ -174,5 +174,5 @@ pessoa.apresentacao = function(){
            };
 
 // Agora, apresente-se ;)
-pessoa.apresentacao();//"Olá, eu sou o Jean Santana ,tenho 26 anos, 1.7, meu peso é 60 e, só hoje, eu já caminhei 60 metros"
+pessoa.apresentacao();//"Olá, eu sou o Jean Santana ,tenho 28 anos, 1.7, meu peso é 60 e, só hoje, eu já caminhei 60 metros"
 ```
