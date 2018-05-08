@@ -106,17 +106,14 @@
     console.log(subtraction(function (numero1, numero2) {
         return numero1 - numero2;
     }));
-
     console.log('O resultado da multiplicação é:');
     console.log(multiplication(function (numero1, numero2) {
         return numero1 * numero2;
     }));
-
     console.log('O resultado da divisão é:');
     console.log(division(function (numero1, numero2) {
         return numero1 / numero2;
     }));
-
     console.log('O resto da divisão é:');
     console.log(mod(function (numero1, numero2) {
         return numero1 % numero2;
