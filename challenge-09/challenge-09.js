@@ -1,4 +1,4 @@
-(function(){
+(function () {
     /*
     Crie uma IIFE que envolva todo o código desse arquivo. Faça também a
     indentação correta do código, para ficar dentro da IIFE.
@@ -13,9 +13,9 @@
     function myFunction() {
         var number1 = 10;
         var number2 = 20;
-        console.log( 'Na função `myFunction`, o primeiro número é', number1 );
-        console.log( 'Na função `myFunction`, o segundo número é', number2 );
-       return number1 + number2;
+        console.log('Na função `myFunction`, o primeiro número é', number1);
+        console.log('Na função `myFunction`, o segundo número é', number2);
+        return number1 + number2;
     }
     myFunction();
 
@@ -39,7 +39,7 @@
     function myFunction3() {
         var number2 = 50;
         var number1 = 40;
-     
+
         console.log('A soma de 40 e 50 é igual a', sum());
         console.log('Na função myFunction3, number1 é igual a', number1);
         return sum();
@@ -63,16 +63,16 @@
     que foram passadas para a primeira função `calculator`.
     */
     // ?
-    function calculator(numero1,numero2){
-       return  function(callback){
-            return callback(numero1,numero2);
+    function calculator(numero1, numero2) {
+        return function (callback) {
+            return callback(numero1, numero2);
         }
     }
     /*
     Declare uma variável chamada `sum`, e atribua a ela a função `calculator`,
     passando dois números por parâmetro.
     */
-    var sum = calculator(22,7);
+    var sum = calculator(22, 7);
     /*
     Sabemos que `sum` agora tem uma função atribuída a ela, que é o retorno de
     `calculator`. E essa função espera um parâmetro `callback`. O `callback`
@@ -82,8 +82,8 @@
     uma função anônima que irá retornar a soma dos dois números que essa função
     anônima tem como seus argumentos.
     */
-    console.log( 'O resultado da soma é:' );
-    console.log(sum(function (numero1,numero2){
+    console.log('O resultado da soma é:');
+    console.log(sum(function (numero1, numero2) {
         return numero1 + numero2;
     }));
     /*
@@ -102,22 +102,22 @@
     As suas respostas devem estar abaixo dos `console.log` referentes à cada
     chamada.
     */
-    console.log( 'O resultado da subtração é:' );
-    console.log(subtraction(function(numero1,numero2){
+    console.log('O resultado da subtração é:');
+    console.log(subtraction(function (numero1, numero2) {
         return numero1 - numero2;
     }));
-   
-    console.log( 'O resultado da multiplicação é:' );
+
+    console.log('O resultado da multiplicação é:');
     console.log(multiplication(function (numero1, numero2) {
         return numero1 * numero2;
     }));
 
-    console.log( 'O resultado da divisão é:' );
+    console.log('O resultado da divisão é:');
     console.log(division(function (numero1, numero2) {
         return numero1 / numero2;
     }));
 
-    console.log( 'O resto da divisão é:' );
+    console.log('O resto da divisão é:');
     console.log(mod(function (numero1, numero2) {
         return numero1 % numero2;
     }));
