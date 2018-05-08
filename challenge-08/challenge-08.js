@@ -70,7 +70,7 @@ function calculator(operacao){
       default:
         return "Operacao inválida";
     }
-    return "Resultado da operação: " + number1 + " " + operacao + " " + number2 + " = " + result +".";
+    return "Resultado da operação: " + number1 + " " + operacao + " " + number2 + " = " + result +" . ";
   }
 }
 /*
@@ -98,4 +98,5 @@ no console.
 console.log("subtraction: " + subtraction(6, 2));
 console.log("multiplication: " + multiplication(3, 5));
 console.log("division: " + division(6, 4));
-console.log("mod: " + mod(10, 3));
+console.log("mod: " + mod(10, 3)); 
+
