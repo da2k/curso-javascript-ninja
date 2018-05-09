@@ -14,7 +14,7 @@
 	console.log( 'O array em formato de string é:' );
 	var arr = [ 1, 2, 3, 4, 5];
 	 console.log(arr.toString());
-	 console.log(arr.join(' '));
+	 //console.log(arr.join(' '));
 
 	/*
 	Crie 2 arrays `sul` e `sudeste`, que serão as regiões do Brasil.
@@ -38,11 +38,11 @@
 	*/
 
 	//push add por ultimo
+	//unshift add no inicio
 
 	console.log( '\nMais estados adicionados:' );
-	console.log(brasil.push('Amazonas', 'Parana', 'Acre'));
+	console.log(brasil.unshift('Amazonas', 'Parana', 'Acre'));
 	console.log(brasil);
-
 
 	/*
 	Remova o primeiro estado do array `brasil` e mostre-o no console.
@@ -50,14 +50,14 @@
 
 	//shift remove o primeiro
 	console.log( '\nEstado removido:' );
-	brasil.shift();
+	console.log(brasil.shift());
 
 	/*
 	Crie um novo array chamado `newSul`, que receba somente os estados do sul,
 	pegando do array `brasil`. Não remova esses itens de `brasil`.
 	*/
 	var newSul = [];
-	console.log(newSul = brasil.slice(0,2))
+	newSul = brasil.slice(2,5)
 
 	/*
 	Mostre no console os estados que estão em `newSul`.
@@ -141,10 +141,11 @@
 	//every todas alternativas true, returne true
 	
 	var every = brasil.every(function(item){return item.length > 7;});
-	if(every == true)
+	console.log(every ? 'Sim, todos os estados tem mais de 7 letras!' : 'Nem todos os estados tem mais de 7 letras!' );
+	/*if(every == true)
 	console.log('Sim, todos os estados tem mais de 7 letras!');
 		else
-			console.log('Nem todos os estados tem mais de 7 letras!')
+			console.log('Nem todos os estados tem mais de 7 letras!')*/
 
 	/*
 	Percorra o array `brasil` e verifique se o Ceará está incluído, atribuindo o
@@ -155,17 +156,12 @@
 	- "Ceará não foi incluído :("
 	*/
 	console.log( '\nCeará está incluído em `brasil`?' );
-	/*brasil.forEach(function(item){
-		console.log(item);
-	})*/
 
 	//some uma alternativa true, returne true
 	
 	var some = brasil.some(function(item){ return item == 'Ceará';});
-	if(some == true)
-		console.log('Ceará está incluído!');
-		else
-			console.log('Ceará não foi incluído :(');
+		console.log( some ? 'Ceará está incluído!' : 'Ceará não foi incluído :(');
+		
 		
 	/*
 	Percorra o array `newBrasil` e crie um novo array que some 1 no ID de cada
@@ -174,7 +170,7 @@
 	Atribua o novo array a uma variável chamada `map`.
 	*/
 	var map = newBrasil.map(function(item, index){
-			return {id: index + 1, estado : item + ' pertence ao Brasil.'} ;
+			return {id: item.id + 1, estado : item.estado + ' pertence ao Brasil.'} ;
 
 	});
 
@@ -189,7 +185,7 @@
 	ID par. Atribua o valor à uma variável chamada `filter`.
 	*/
 	filter = map.filter(function(item, index){
-		return index %2 != 0;
+		return item.id %2 == 0;
 	});
 
 	/*
