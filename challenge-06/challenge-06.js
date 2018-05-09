@@ -32,14 +32,12 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     - Se não houver time para a posição passada, deve retornar a mensagem:
     "Não temos a informação do time que está nessa posição."
 */
-var showTeamPosition = function(numero){
-    var posicao = numero;
-    
-    
-    if(posicao >= 5){
+var showTeamPosition = function(posicao){
+
+    if(posicao < 1 || posicao > 5){
         return 'Não temos a informação do time que está nessa posição';
     }
-    return 'O time que está em '+posicao+' lugar é o '+teams[posicao]+'.';
+    return 'O time que está em '+posicao+' lugar é o '+teams[posicao - 1]+'.';
 };
 
 /*
@@ -47,12 +45,10 @@ Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
 console.log(showTeamPosition(1));
-console.log(showTeamPosition(2));
 console.log(showTeamPosition(3));
+console.log(showTeamPosition(2));
 console.log(showTeamPosition(4));
-
-teams[5] = 'Franca';
-console.log(showTeamPosition(5));
+console.log(showTeamPosition(8));
 
 
 
@@ -62,8 +58,7 @@ repetição "while".
 */
 var contador = 20;
 while(contador <= 30){
-    console.log(contador);
-    contador++;
+    console.log(contador++);
 }
 
 /*
@@ -78,31 +73,30 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     a frase:
     "Não temos o equivalente hexadecimal para [COR]."
 */
-var convertToHex = function(corString){
-    var cor = corString;
-    var cores = ['branco', 'preto', 'cinza', 'amarelo', 'azul'];
-
+function convertToHex(cor){
+    var hexa;
     switch (cor) {
-        case cores[0]:
-            console.log('O hexadecimal para a cor '+cor+' é #FFFFFF');
+        case 'branco':
+            hexa = '#FFFFFF';
             break;
-        case cores[1]:
-            console.log('O hexadecimal para a cor '+cor+' é #000000');
+        case 'preto':
+            hexa = '#000000';
             break;
-        case cores[2]:
-            console.log('O hexadecimal para a cor '+cor+' é #CCCCCC');
+        case 'cinza':
+            hexa = '#CCCCCC';
             break;
-        case cores[3]:
-            console.log('O hexadecimal para a cor '+cor+' é #FFF000');
+        case 'amarelo':
+            hexa = '#FFF000';
             break;
-        case cores[4]:
-            console.log('O hexadecimal para a cor '+cor+' é #000FFF');
+        case 'azul':
+            hexa = '#0000FF';
             break;
     
         default:
             console.log('Não temos o equivalente hexadecimal para '+cor+'.')
             break;
     }
+    return console.log('O hexadecimal para a '+cor+' é '+hexa+'.');
 };
 
 /*
