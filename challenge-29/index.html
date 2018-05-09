@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Challenge 29</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+
+  <div data-js="notification" class="notification notification--hide">
+    <p data-js="notification-text" class="notification__text">Loading...</p>
+  </div>
+  <main class="container">
+
+    <form data-js="car-form" class="car-form">
+      <h3 data-js="company-name"></h3>
+      <h6 data-js="company-telephone"></h6>
+      <br>
+      <h4>Insert a new car</h4>
+      <br>
+      <input data-js="car-input-image" class="car-form__input" name="car-input-image" type="text" placeholder="Image" required>
+      <input data-js="car-input-brand" class="car-form__input" name="car-input-brand" type="text" placeholder="Brand" required>
+      <input data-js="car-input-year" class="car-form__input" name="car-input-year" type="number" placeholder="Year" maxlength="4"
+        required>
+      <input data-js="car-input-plate" class="car-form__input" name="car-input-plate" type="text" placeholder="Plate" required>
+      <input data-js="car-input-color" class="car-form__input" name="car-input-color" type="text" placeholder="Color" required>
+      <br>
+      <button data-js="btn-car-form" class="car-form__btn-search" type="submit">Save</button>
+    </form>
+
+    <table class="car-list">
+      <thead>
+        <th>Image</th>
+        <th>Brand</th>
+        <th>Year</th>
+        <th>Plate</th>
+        <th>Color</th>
+      </thead>
+      <tbody data-js="car-list-body">
+      </tbody>
+    </table>
+  </main>
+
+  <script src="./DOM.js"></script>
+  <script src="./ajax.js"></script>
+  <script src="./challenge-29.js"></script>
+</body>
+
+</html>

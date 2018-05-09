@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    --default-color: #2196F3;
+}
+
+.container {
+    background-color: var(--default-color);
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.car-form {
+    align-items: center;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 400px;
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 500px;
+}
+
+.car-form__input {
+    border: none;
+    border-bottom: .1px solid #c2c2c2;
+    height: 35px;
+    outline: none;
+    width: 90%;
+}
+
+.car-form__btn-search {
+    background-color: var(--default-color);
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    height: 35px;
+    outline: none;
+    width: 90%;
+}
+
+.notification {
+    background-color: #ff7902;
+    color: #fff;
+    height: 50px;
+    opacity: 1;
+    position: fixed;
+    right: 50px;
+    top: 50px;
+    text-align: center;
+    transition: all .5s;
+    min-width: 200px;
+}
+
+.notification--hide {
+    opacity: 0;
+}
+
+.notification__text {
+    display: inline-block;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.car-list {
+    background-color: #fff;
+    min-height: 100px;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+    width: 500px;
+}
