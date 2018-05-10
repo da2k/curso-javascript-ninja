@@ -37,9 +37,9 @@
     var fullName = "marcus-vinícius-pereira-santos";
     var newName = fullName.split("-").map(function(item){
         return item.charAt(0).toUpperCase() + item.slice(1);    
-    });
+    }).join(" ");
     console.log(fullName);
-    console.log(newName.join(" "));
+    console.log(newName);
     /*
     - Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
     cada nome por vírgula. Entre o penúltimo e o último nome, o separador deve
@@ -84,10 +84,10 @@
     Ex.: Nomes que deveriam funcionar: "Fernando", "RoBertO", "gabriEla", etc.
     */
     console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
-    var myName = "marcus";
+    var myName = "Marcus";
     var intercalando = [];
-    for(var x = 0; x <= myName.length; x++) {
+    for(var x = 0; x < myName.length; x++) {
             intercalando.push(x % 2 === 0 ? myName[x].toLowerCase() : myName[x].toUpperCase());
         }
-    console.log(intercalando);
+    console.log(intercalando.join(""));
 })();
