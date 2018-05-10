@@ -22,6 +22,7 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
+
 function strReturn(string) {
   ninja = string;
   return ninja;
@@ -41,6 +42,8 @@ Crie uma função com as seguintes características:
 2. Se qualquer um dos três argumentos não estiverem preenchidos, a função deve retornar a string:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
+*/
+
 function operacoes(a, b, c) {
   if (a == undefined || b == undefined || c == undefined) {
     return 'Preencha todos os valores corretamente!';
