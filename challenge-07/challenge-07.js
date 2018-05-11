@@ -26,7 +26,7 @@ Mostre no console o segundo elemento desse último array, criado acima, com a
 frase:
 "O segundo elemento do segundo array é [ELEMENTO]."
 */
-console.log('O segundo elemento do segundo array é ' + addItem()[6][1] + '.'); // O segundo elemento do segundo array é 22.
+console.log('O segundo elemento do segundo array é ' + addItem()[5][1] + '.'); // O segundo elemento do segundo array é 22.
 
 
 
@@ -62,7 +62,7 @@ Na mesma ideia do exercício acima: mostre agora os números ímpares.
 */
 console.log('Números ímpares entre 10 e 20:');
 var num = 10;
-while (num <= 20) {
+while (num < 20) {
   num % 2 === 0 ? console.log(num) : '';
   num++;
 }
@@ -79,6 +79,6 @@ for (var num = 100; num <= 120; num++) {
 }
 
 console.log('Números ímpares entre 111 e 125:');
-for (var num = 100; num <= 120; num++) {
+for (var num = 111; num <= 125; num++) {
   (num++) % 2 === 0 ? console.log(num) : '';
 }
