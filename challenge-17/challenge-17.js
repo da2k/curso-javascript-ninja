@@ -42,21 +42,21 @@
     minúsculo por "0" (número zero). Mostre o resultado no console:
     */
     console.log( '\nTrocando de "D" a "h" por "0":' );
-    console.log(text.replace(/[D-Za-h]/g, "0"));
+    console.log(text.replace(/[D-Za-h]/g, 0));
 
     /*
     Substitua todos os "A" (maiúsculos ou minúsculos) por "4".
     Mostre o resultado no console:
     */
     console.log( '\nTrocando "A" e "a" por "4":' );
-    console.log(text.replace(/A|a/g, "4"));
+    console.log(text.replace(/A|a/g, 4));
 
     /*
     Substitua a frase "O Centauro de Luvas", deixando-a em caixa alta, usando
     o método `toUpperCase()`. Mostre o resultado no console:
     */
     console.log( '\n"O Centauro de Luvas" em caixa alta:' );
-    var textUpper = text.replace(/(O Centauro de Luvas)/, function(captura, phrase){
+    var textUpper = text.replace(/(O Centauro de Luvas)/, function(phrase){
         return phrase.toUpperCase();
     });
     console.log(textUpper);
@@ -73,35 +73,23 @@
     "O mês de [NOME DO MÊS] é representado pelo número [NÚMERO DO MÊS]."
     */
     console.log( '\nMeses representados por números:' );
-    var getMonthNumber = function getMonthNumber(month) {
-        switch(month) {
-            case "janeiro": month = "01";
-                break;
-            case "fevereiro": month = "02";
-                break;
-            case "março": month = "03";
-                break;
-            case "abril": month = "04";
-                break;
-            case "maio": month = "05";
-                break;
-            case "junho": month = "06";
-                break;
-            case "julho": month = "07";
-                break;
-            case "agosto": month = "08";
-                break;
-            case "setembro": month = "09";
-                break;
-            case "outubro": month = "10";
-                break;
-            case "novembro": month = "11";
-                break;
-            case "dezembro": month = "12";
-                break;
-        }
-        return month;
-    };
+    function getMonthNumber(month) {
+        var allMonth = {
+            janeiro: "01",
+            fevereiro: "02",
+            "março": "03",
+            abril: "04",
+            maio: "05",
+            junho: "06",
+            julho: "07",
+            agosto: "08",
+            setembro: "09",
+            outubro: "10",
+            novembro: "11",
+            dezembro: "12"
+        };
+        return allMonth[month];
+    }
     console.log("O mês de Março é representado pelo número " + getMonthNumber("março") + ".");
     console.log("O mês de Setembro é representado pelo número " + getMonthNumber("setembro") + ".");
     console.log("O mês de Dezembro é representado pelo número " + getMonthNumber("dezembro") + ".");
@@ -115,7 +103,7 @@
     Mostre a regex no console.
     */
     console.log( '\nRegex que vai fazer o match com as datas do texto:' );
-    var regexDate = /(\d\d) de (julho|junho) de (\d\d\d\d)/;
+    var regexDate = /(\d\d) de (julho|junho) de (\d\d\d\d)/g;
     console.log(regexDate);
 
     /*
@@ -126,7 +114,8 @@
     console o resultado.
     */
     console.log( '\nReplace de datas:' );
-    function replaceDate() {
-        
+    function replaceDate(regex, day, month, year) {
+        return day + "/" + getMonthNumber(month) + "/" + year;   
     }
+    console.log(text.replace(regexDate, replaceDate));
 })();
