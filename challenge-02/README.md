@@ -41,10 +41,10 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function condicional(a, b, c){
-    if ( a != undefined && b != undefined && c != undefined){
-        return (a * b * c) + 2;
-} else {
-    return 'Preencha todos os valores corretamente!';
+    if ( a === undefined || b === undefined || c === undefined){
+        return 'Preencha todos os valores corretamente!';
+} else {    
+    return (a * b * c) + 2;
 }
 }
 
