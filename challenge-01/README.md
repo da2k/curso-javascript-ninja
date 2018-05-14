@@ -1,6 +1,4 @@
-# Desafio Semana #1
-
-```js
+// # Desafio Semana #1
 // Declarar uma variável chamada `myvar`, sem valor.
 var myvar;
 
@@ -41,5 +39,3 @@ return num1 / num2
 
 // Invoque a função criada acima, passando os parâmetros 10 e 2.
 divisao(10, 2);
-
-```
