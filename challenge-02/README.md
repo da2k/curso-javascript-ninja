@@ -81,9 +81,19 @@ function calculaValor(a, b, c) {
 
     if(a != null && b != null && c != null) {
         return (a + b) / c;
+
     } else if((a != null) && (b != null || c != null)) {
         return a + b || a + c;
-    } else if ()
+
+    } else if (a != null || b != null || c != null) {
+        return a || b || c;
+
+    } else if (a == null && b == null && c == null) {
+        return false;
+        
+    } else {
+        return null;
+    }
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
