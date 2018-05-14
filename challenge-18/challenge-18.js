@@ -17,13 +17,13 @@
     - "101.123-131x32"
     */
     console.log( 'Limpando CPFs:' );
+    var cpfs = ["049-214 3421-1", "210.458.522-05", "735 500 794 - 22", "101.123-131x32"]; 
     function cleanCpf(cpf) {
         return cpf.replace(/\D/g, "");
     }
-    console.log(cleanCpf("049-214 3421-1"));
-    console.log(cleanCpf("210.458.522-05"));
-    console.log(cleanCpf("735 500 794 - 22"));
-    console.log(cleanCpf("101.123-131x32"));
+    cpfs.map(function(item){
+        console.log(cleanCpf(item));
+    });
 
     /*
     Usando os CPFs limpos acima, deixe-os com a formatação correta de CPF.
@@ -31,7 +31,9 @@
     Mostre o resultado no console.
     */
     console.log( '\nFormatando CPFs corretamente:' );
-    // ?
+    cpfs.map(function(item){
+        console.log(cleanCpf(item).replace(/(\d\d\d)(\d\d\d)(\d\d\d)(\d\d)/, "$1.$2.$3-$4"));
+    });
 
     /*
     Crie uma expressão regular que faça match com as palavras "junho" ou "julho",
