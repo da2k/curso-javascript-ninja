@@ -50,6 +50,7 @@
 	
 	$btnReset.addEventListener('click', function () {
 		console.log('Reset Time');
+		clearTimeout(temporizador);
 		contador = 0;
 		$inputTime.value = contador;
 	});
