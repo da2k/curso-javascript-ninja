@@ -47,7 +47,8 @@
     ["junho", "julho"]
     */
     console.log( '\nMatch com as palavras "junho" ou "julho" para a frase "Os meses de janeiro, junho e julho começam com a letra j.":' );
-    // ?
+    var phrase = "Os meses de janeiro, junho e julho começam com a letra j.";
+    console.log(phrase.match(/ju[nl]ho/g));
 
     /*
     Crie uma expressão regular que faça o match com a abertura de uma tag
@@ -59,7 +60,8 @@
     ["<div>", "<section>", "<blockquote>"]
     */
     console.log( '\nMatch com a abertura de uma tag HTML:' );
-    // ?
+    var allTag = "<div><section><blockquote>Texto <img /></blockquote></section></div>";
+    console.log(allTag.match(/<\w+>/g));
 
     /*
     Crie uma expressão regular que faça o match com uma tag HTML vazia, casando
@@ -71,7 +73,8 @@
     ["<li></li>", "<li></li>", "<span></span>"]
     */
     console.log( '\nMatch com tags HTML vazias (abertura e fechamento da tag):' );
-    // ?
+    var allTag2 = "<div><ul><li></li><li></li><li><span></span></li></ul></div>";
+    console.log(allTag2.match(/<\w+><\/\w+>/g));
 
     /*
     Vamos complicar um pouco agora :D
