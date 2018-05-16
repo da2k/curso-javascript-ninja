@@ -83,5 +83,6 @@
         }
         numbers.push(i);
     }
+    console.log(numbers);
 
 })();
