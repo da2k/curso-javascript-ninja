@@ -99,5 +99,7 @@
     corretas, para depois aplicar no código ;)
     */
     console.log( '\nFazer replace dos textos das tags:' );
-    // ?
+    var marcacao = "<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>";
+    var subs = marcacao.replace(/<(\w+)>([^<]+)<\/\w+>/g, "<$1>O texto dentro da tag '$1' é '$2'<\$1>\n");
+    console.log(subs);   
 })();
