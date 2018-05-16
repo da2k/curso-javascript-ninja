@@ -8,10 +8,11 @@
     Qual loop você deve usar para que essa mensagem seja mostrada no console?
     */
     var once = false;
-    while(!once){
+    do{
+        
         console.log('Entrou ao menos uma vez!');
-        once = true;
-    }
+
+    }while(once);
 
     /*
     Crie um objeto chamado `person`, que receba as seguintes propriedades:
@@ -22,7 +23,7 @@
         name: 'Danilo',
         age: 22,
         weight: 60,
-        birthday: 05
+        birthday: '05 de março'
     };
     
     /*
@@ -50,12 +51,9 @@
     'The person has more than 25 years old? [TRUE/FALSE]'
     */
     function moreThan(idade){
-        if(idade > person.age){
-            return true;
-        }
-        return false;
+        return person.age > age;
     }
-    console.log('The person has more than 25 years old?', moreThan(26));
+    console.log('The person has more than 25 years old?', moreThan(25));
 
     /*
     Faça um loop de 0 a 20, que adicione cada número como um item de um
@@ -64,8 +62,8 @@
     */
     console.log( 'De 0 a 10:' );
     var numbers = [];
-    for(var i = 0; i <= 20; i++){
-        if(i === 10){
+    for(var i = 0; i < 20; i++){
+        if(i > 10){
             break;
         }
         numbers.push(i);
@@ -80,7 +78,7 @@
     console.log( 'Pares de 0 a 20:' );
     numbers = [];
     for (var i = 0; i <= 20; i++){
-        if((i + 1) % 2 === 0){
+        if(i % 2 === 0){
             continue;
         }
         numbers.push(i);
