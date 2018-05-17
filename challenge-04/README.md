@@ -140,13 +140,13 @@ carro.obterCor(); // 'Preto'
 carro.mudaCor('Vermelho');
 
 // E agora, qual a cor do carro?
-carro.cor; // 'Vermelho'
+carro.obterCor(); // 'Vermelho'
 
 // Mude a cor do carro para verde musgo.
 carro.mudaCor('Verde musgo');
 
 // E agora, qual a cor do carro?
-carro.cor; // 'Verde musgo'
+carro.obterCor(); // 'Verde musgo'
 
 // Qual a marca e modelo do carro?
 carro.obterMarcaModelo(); // 'Esse carro é um Ford Fusion!'
