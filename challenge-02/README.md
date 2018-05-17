@@ -24,14 +24,14 @@ Onde VALOR é o novo valor da variável.
 */
 function addValor (){
     msg = "VALOR";
-    return msg;
+    return "O valor da variável, agora é " + msg;
 }
 
 // Invoque a função criada acima.
 console.log(addValor());
 
 // Qual o retorno da função? (Use comentários de bloco).
-/*VALOR*/
+/*O valor da variável, agora é VALOR*/
 
 /*
 Crie uma função com as seguintes características:
@@ -42,13 +42,12 @@ Crie uma função com as seguintes características:
 */
 function multiplicar (num, num2, num3){
     
-    if (num == null || num2 == null || num3 == null){
+    if (num === undefined || num2 === undefined || num3 === undefined){
           console.log("Preencha todos os valores corretamente.");
     } else{
-        return ((num * num2 * num3) + 2);
+        return (num * num2 * num3) + 2;
     }
 }
-
 
 
 // Invoque a função criada acima, passando só dois números como argumento.
