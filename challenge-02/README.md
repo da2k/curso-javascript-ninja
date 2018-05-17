@@ -72,8 +72,28 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+function calc(numero, numero2, numero3){
+    if (numero !== undefined && numero2 === undefined && numero3 === undefined){
+        return numero;
+    
+    } else if (numero !== undefined && numero2 === undefined && numero3 === undefined){
+        return numero + numero2;
+    
+    } else if (numero !== undefined && numero2 === undefined && numero3 !== undefined){
+        return (numero + numero2) / numero3;
+    
+    } else if(numero === undefined && numero2 === undefined && numero3 === undefined){
+        return false;
+    
+    }  else{
+        return null;
+    }
+
+}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
-```
+
+console.log(calc());  //false
+console.log(calc(10)); //10
+console.log(calc(10, 20)); //30
+console.log(calc(10, 20, 30)); //1
