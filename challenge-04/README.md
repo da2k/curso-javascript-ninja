@@ -8,8 +8,7 @@ equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
 var isTruthy = function(argumento){
-    return argumento ? 'true' : 'false';
-    
+    return argumento ? 'true' : 'false';  
 };
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
@@ -115,18 +114,17 @@ citado acima, no lugar de "pessoas".
 */
 carro.addPessoas = function(numeroDePassageiros){
     var op = carro.assentos === 1 ? 'pessoa' : 'pessoas';
+    var totalPessoas = carro.quantidadePessoas + numeroDePassageiros;
 
-    if(carro.quantidadePessoas === 5){
+    if(carro.quantidadePessoas === 5 && totalPessoas >= 5){
         return 'O carro ja está lotado!';
-    }else if(numeroDePassageiros > 5 && carro.quantidadePessoas < 5 ){
-        return 'Só cabem mais ' + carro.assentos + ' ' + op + '!';       
     }else if(carro.quantidadePessoas < 5 && numeroDePassageiros <= carro.assentos){
         carro.assentos -= numeroDePassageiros;
         carro.quantidadePessoas += numeroDePassageiros;
         return 'Já temos ' + carro.quantidadePessoas + ' no carro!';
     }
     return 'Só cabem mais ' + carro.assentos + ' ' + op + '!';  
-}
+};
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -139,13 +137,13 @@ Qual a cor atual do carro?
 carro.obterCor(); // 'Preto'
 
 // Mude a cor do carro para vermelho.
-carro.cor = 'Vermelho';
+carro.mudaCor('Vermelho');
 
 // E agora, qual a cor do carro?
 carro.cor; // 'Vermelho'
 
 // Mude a cor do carro para verde musgo.
-carro.cor = 'Verde musgo';
+carro.mudaCor('Verde musgo');
 
 // E agora, qual a cor do carro?
 carro.cor; // 'Verde musgo'
@@ -163,8 +161,7 @@ carro.addPessoas(4); // 'Só cabem mais 3 pessoas'
 carro.addPessoas(3); // 'Já temos 5 no carro!'
 
 // Tire 4 pessoas do carro.
-carro.quantidadePessoas -= 4;
-carro.assentos = 4;
+carro.addPessoas(-4); // 'Já temos 1 no carro!'
 
 // Adicione 10 pessoas no carro.
 carro.addPessoas(10); // 'Só cabem mais 4 pessoas';
