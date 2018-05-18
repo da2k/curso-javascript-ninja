@@ -837,6 +837,9 @@ Exemplo:
 \w*: zero ou mais ocorrências
 
 Para filtrar URLs válias:
+http://wwww.google.com
 regex: / https?:\/\/\w+[.\w]+ /
+
+teste@gmail.com
 Para filtrar email:
 regex: / [\w+]+@\w+\.\w+([.\w]+)? /
