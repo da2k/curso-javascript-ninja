@@ -25,7 +25,7 @@ var pessoa = {
     peso: 69,
     andando: false,
     caminhouQuantosMetros: 0
-}
+};
 
 /*
 Adicione um método ao objeto `pessoa` chamado `fazerAniversario`. O método deve
@@ -34,7 +34,7 @@ for chamado.
 */
 pessoa.fazerAniversario = function(){
     pessoa.idade++;
-}
+};
 
 /*
 Adicione um método ao objeto `pessoa` chamado `andar`, que terá as seguintes
@@ -50,7 +50,7 @@ booleano que representa "verdadeiro";
 pessoa.andar = function(a){
     pessoa.caminhouQuantosMetros += a;
     pessoa.andando = true;
-} 
+} ;
 
 /*
 Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o valor
@@ -58,7 +58,7 @@ da propriedade `andando` para o valor booleano que representa "falso".
 */
 pessoa.parar = function(){
     pessoa.andando = false;
-}
+};
 
 /*
 Crie um método chamado `nomeCompleto`, que retorne a frase:
@@ -66,7 +66,7 @@ Crie um método chamado `nomeCompleto`, que retorne a frase:
 */
 pessoa.nomeCompleto = function() {
     return 'Olá! Meu nome é ' + pessoa.nome + ' ' + pessoa.sobrenome + '!';
-}
+};
 
 /*
 Crie um método chamado `mostrarIdade`, que retorne a frase:
@@ -74,7 +74,7 @@ Crie um método chamado `mostrarIdade`, que retorne a frase:
 */
 pessoa.mostrarIdade = function(){
     return 'Olá, eu tenho ' + pessoa.idade + ' anos!';
-}
+};
 
 /*
 Crie um método chamado `mostrarPeso`, que retorne a frase:
@@ -181,6 +181,10 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao = function(){
+    var y = 'o ';
+    var w = ' anos, ';
+    var z = ' metros!';
+    
     if (pessoa.sexo === 'Feminino'){
         var y = 'a ';
     } else {
@@ -195,7 +199,7 @@ pessoa.apresentacao = function(){
         var z = ' metros!';
     }
      return 'Olá, eu sou ' + y + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + w + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + z;
-}
+};
 
 // Agora, apresente-se ;)
 pessoa.apresentacao(); // Olá, eu sou o Fernando Canuto, tenho 27 anos, 1.78, meu peso é 69 e, só hoje, eu já caminhei 11 metro!
