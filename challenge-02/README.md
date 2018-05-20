@@ -4,7 +4,7 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-function(a, b) {
+function teste1(a, b) {
     return a + b;
 }
 
@@ -24,7 +24,7 @@ Onde VALOR é o novo valor da variável.
 */
 function teste2 (){
     y = 20
-    return 'O valor da variável agora é 20.'
+    return 'O valor da variável agora é ' + y;
 }
 
 // Invoque a função criada acima.
@@ -43,7 +43,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function teste3(a, b, c){
-    if (a == null || b == null || c == null){
+    if (a === undefined || b === undefined || c === undefined){
         return 'Preencha todos os valores corretamente!';
     }
     return (a * b * c) + 2
@@ -72,29 +72,21 @@ Crie uma função com as seguintes características:
 */
 
 function teste4(a, b, c){
-    if (a !== null && b == null && c == null){
+    if (a !== undefined && b === undefined && c === undefined){
         return a;
-    } else if (a == null && b !== null && c == null){
-        return b;
-    } else if (a == null && b == null && c !== null){
-        return c;
-    } else if (a && b !== null && c == null){
+    } else if (a && b !== undefined && c === undefined){
         return a + b;
-    } else if (b && c !== null && a == null){
-        return b + c;
-    } else if (a && c !== null && b == null){
-        return a + c;
-    } else if (a !== null && b !== null && c !== null){
+    } else if (a !== undefined && b !== undefined && c !== undefined){
         return (a + b) / c;
-    } else if (a == null && b == null && c == null){
+    } else if (a === undefined && b === undefined && c === undefined){
         return false;
     } else {
-        return 'null';
+        return null;
     }
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-teste4(); // undefined
+teste4(); // false
 teste4(5); // 5
 teste4(5, 7); // 12
 teste4(5, 7, 2); // 6
