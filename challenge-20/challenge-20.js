@@ -86,11 +86,16 @@
     $button.addEventListener('click', function(event) {
     event.preventDefault();
     if(!$inputUsername.value)
-        alert('Preencha o nome do usuário!');
+        return alert('Preencha o nome do usuário!');
     if(!$inputEmail.value)
-        alert('Preencha o e-mail!');
+        return alert('Preencha o e-mail!');
     if(!$message.value)
-        alert('Preencha a mensagem!');
+        return alert('Preencha a mensagem!');
+    if(!isValidEmail($inputEmail.value))
+        return alert('Entre com um e-mail válido!');
+    if(window.confirm('Tem certeza que deseja enviar o formulário?'));
+        return alert('Enviado com sucesso!');
+    return alert('Não enviado.');
         
     }, false);
 
@@ -120,5 +125,7 @@
         - "rita-marica@titica.a.b"
         - "agua_@evida.br.com"
     */
-    // ?
+    function isValidEmail(email) {
+        return /^[\w+.]+@\w+\.\w{2,}(?:\.\w{2})?$/.test(email);   
+    }
 })(window, document);
