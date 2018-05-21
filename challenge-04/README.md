@@ -136,7 +136,7 @@ carro.addPessoas = function(numPessoas) {
     var cabe = 'cabe';
     var pessoa = 'pessoa'
 
-    var quantasPessoasCabem = carro.assentos - carro.quantidadePessoas
+    var quantasPessoasCabem = carro.assentos - carro.quantidadePessoaars
 
     if (quantasPessoasCabem !== 1 ) {
       cabe = 'cabem';
