@@ -15,6 +15,17 @@ function isTruthy(value) {
   }
 }
 
+function isTruthy(value) {
+  if (!!value) {
+    return true;
+  }
+
+  return false;
+}
+
+function isTruthy(value) {
+  return !!value;
+}
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 isTruthy(false); // false
 isTruthy(undefined); // false
@@ -24,7 +35,7 @@ isTruthy(0); // false
 isTruthy(-0); // false
 isTruthy(''); // false
 isTruthy(""); // false
-
+isTruthy(20 * 0); // false - 20 * 0 = 0
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
@@ -38,7 +49,7 @@ isTruthy({}); // true
 isTruthy('test'); // true
 isTruthy(2 + 4); // true
 isTruthy(25.5); // true
-isTruthy([1, 2, 3, 4]); // true
+isTruthy(function() {}); // true
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
@@ -120,7 +131,9 @@ citado acima, no lugar de "pessoas".
 carro.adicionaPessoas = function(quantidade) {
   if (carro.quantidadePessoas === carro.assentos) {
     return 'O carro já está lotado';
-  } else if(carro.quantidadePessoas < carro.assentos) {
+  }
+  
+  if(carro.quantidadePessoas < carro.assentos) {
     var assentosVagos = carro.assentos - carro.quantidadePessoas;
 
     if (quantidade <= assentosVagos) {
