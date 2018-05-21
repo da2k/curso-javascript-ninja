@@ -1,3 +1,5 @@
+(function (){
+  'use strict';
 /*
 1. Envolva todo o conteúdo desse desafio em uma IIFE.
 2. Adicione a diretiva 'use strict';
@@ -117,3 +119,4 @@ function replaceDate(regex, day, month, year){
     return day + '/'+ getMonthNumber ( month ) + '/' + year;
 }
 console.log(text.replace(regexDate, replaceDate));
+}();
