@@ -58,7 +58,7 @@ var carro ={
     quantasPortas: 4,
     assentos: 5,
     quantidadeDePessoas: 0
-     };
+};
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
@@ -96,7 +96,7 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 carro.obterMarcaModelo = function(){
-    return 'Esse carro é um '+ carro.marca + ' modelo '+ carro.modelo;
+    return 'Esse carro é um '+ carro.obterMarca() + ' modelo '+ carro.obterModelo();
 };
 
 /*
@@ -115,39 +115,25 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
- carro.addPessoas = function(pessoas){
+    carro.addPessoas = function(numPessoas){
         
+        var TotalDePessoas = carro.quantidadeDePessoas + numPessoas;
+        var restaPessoas = carro.assentos - carro.quantidadeDePessoas;
+        var isUm = restaPessoas === 1 ? 'pessoa' : 'pessoas';
 
-        carro.addPessoas = function(pessoas){
-        
+    if(carro.quantidadeDePessoas === carro.assentos && TotalDePessoas >= carro.assentos){
+          return 'O carro já está lotado!';
+    }
 
-        var assentosRestantes = 0;
-             assentosRestantes += carro.assentos - carro.quantidadeDePessoas;
+    if(TotalDePessoas > carro.assentos){
+        return 'Só cabem mais '+ restaPessoas +' '+ isUm +' !';
+    }
 
-        var isUm = assentosRestantes === 1 ? 'pessoa!' : 'pessoas!';
+    carro.quantidadeDePessoas += numPessoas;
 
-        var temVaga = carro.assentos > carro.quantidadeDePessoas && assentosRestantes !== 0 ?
-            true : false;
+    return 'Já temos '+ carro.quantidadeDePessoas +' '+ isUm +' no carro!';
 
-        var carroLotado = carro.quantidadeDePessoas >= carro.assentos ?
-            'O carro está lotado!' : false;
-
-        var restantes = pessoas > assentosRestantes ?
-            'Só cabem mais '+ assentosRestantes +' '+ isUm : false;
-
-                
-                if(carroLotado){
-                    return carroLotado;
-                   
-                }else if(restantes){
-                    return restantes;
-
-                }else if(temVaga){
-                    carro.quantidadeDePessoas += pessoas;
-                }
-    
-                return 'Já temos '+carro.quantidadeDePessoas+ ' pessoas no carro!';
-        };
+    };
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -184,12 +170,14 @@ carro.addPessoas(4); //'Só cabem mais 3 pessoas!'
 > carro.addPessoas(3); //'Já temos 5 pessoas no carro!'
 
 // Tire 4 pessoas do carro.
-carro.addPessoas(-4); //'O carro está lotado!'
+ carro.addPessoas(-4); //'Já temos 1 pessoas no carro!'
 
 
 // Adicione 10 pessoas no carro.
-carro.addPessoas(10); //'O carro está lotado!'
+carro.addPessoas(10); //'Só cabem mais 4 pessoas !'
+
+
 
 // Quantas pessoas temos no carro?
-carro.quantidadeDePessoas; //5
+ carro.quantidadeDePessoas; //1
 ```
