@@ -16,7 +16,7 @@ var text = 'Manuel Marques de Sousa, Conde de Porto Alegre (Rio Grande, 13 de ju
 
 /*
 Vamos começar com umas brincadeiras fáceis :D
-Troque o nome "Manuel Marques de Souza" pelo seu nome, e mostre o resultado
+Troque o nome "Manuel Marques de Sousa" pelo seu nome, e mostre o resultado
 no console:
 */
 console.log( 'Adicionando seu nome no texto:' );
@@ -115,8 +115,10 @@ Após criar a função, faça o replace das datas no texto, mostrando no
 console o resultado.
 */
 console.log( '\nReplace de datas:' );
+
 function replaceDate(regex, day, month, year){
     return day + '/'+ getMonthNumber ( month ) + '/' + year;
 }
 console.log(text.replace(regexDate, replaceDate));
 }();
+
