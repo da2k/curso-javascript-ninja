@@ -1,4 +1,4 @@
-(function(){
+(function(window, document){
     'use strict';
     /*
     1. Envolva todo o conteúdo desse desafio em uma IIFE.
@@ -16,11 +16,8 @@
     nome, `username` deve receber "Desconhecido".
     Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
     */
-    var username = prompt('Qual o seu nome?');
-    if(username)
+    var username = prompt('Qual o seu nome?') || 'Desconhecido';
         alert('Bem vindo, ' + username + '!');
-    else
-        alert('Desconhecido');
 
     /*
     Agora, pergunte ao usuário "Qual o seu e-mail?", atribuindo o resultado à
@@ -32,13 +29,13 @@
     - Selecione o input de "Nome", atribuindo-o à uma variável chamada
     `$inputUsername`.
     */
-    var $inputUsername = document.querySelector('[type="text"]');
+    var $inputUsername = document.querySelector('input[type="text"]');
 
     /*
     - Selecione o input de "Email", atribuindo-o à uma variável chamada
     `$inputEmail`.
     */
-    var $inputEmail = document.querySelector('[type="email"]');
+    var $inputEmail = document.querySelector('input[type="email"]');
 
     /*
     - Selecione o campo de "Mensagem", atribuindo-o à uma variável chamada
@@ -89,11 +86,11 @@
         return alert('Preencha o nome do usuário!');
     if(!$inputEmail.value)
         return alert('Preencha o e-mail!');
-    if(!$message.value)
-        return alert('Preencha a mensagem!');
     if(!isValidEmail($inputEmail.value))
         return alert('Entre com um e-mail válido!');
-    if(window.confirm('Tem certeza que deseja enviar o formulário?'));
+    if(!$message.value)
+        return alert('Preencha a mensagem!');
+    if(window.confirm('Tem certeza que deseja enviar o formulário?'))
         return alert('Enviado com sucesso!');
     return alert('Não enviado.');
         
