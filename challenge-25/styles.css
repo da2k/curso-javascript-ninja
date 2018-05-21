@@ -1,0 +1,50 @@
+#allContent {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  text-align: center;
+}
+form {
+  width: 900px;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1em;
+  font-size:2em;
+}
+
+::placeholder {
+  font-size:1.2em;
+}
+
+.row > input {
+ padding:1em;
+ flex:2;
+}
+
+.row > label {
+  flex:1;
+}
+
+.invalid {
+  border-color: red;
+}
+
+#btnEnviar {
+  display: flex;
+  align-self: flex-end;
+  margin-top:2em;
+  font-size: 1em;
+  padding:1em;
+  width: 65%;
+  text-align: center;
+}
