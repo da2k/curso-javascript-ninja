@@ -104,4 +104,23 @@ saladaComArgumentos(1,2,3)
 saladaComArgumentos()
 //false
 
+/*
+Resolução do Professor
+
+function saladaComArgumentos(x, y, z){
+  if((x !== undefined) && (y === undefined) && (z === undefined)){
+    return a;
+  }
+  else if((x !== undefined) && (y !== undefined) && (z === undefined)){
+	return x + y;
+ }
+ else if((x !== undefined) && (y !== undefined) && (z !== undefined)){
+	return (x + y ) / z;
+}
+else if((x === undefined) && (y === undefined) && (z === undefined)){
+ 	return false;
+}else{
+	return null;
+}}
+*/
 
