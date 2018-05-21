@@ -6,7 +6,9 @@ Declare uma variável chamada `isTruthy`, e atribua a ela uma função que receb
 um único parâmetro como argumento. Essa função deve retornar `` se o
 */
 var isTruthy = function(arg) {
-  return !!arg ?  : false
+  return !!arg
+  //return arg ? true : false
+}
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 isTruthy(0) //false
@@ -53,7 +55,7 @@ var carro = {
   quantasPortas: 2,
   assentos: 5,
   quantidadePessoas: 0
-}
+};
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
@@ -131,7 +133,16 @@ carro.addPessoas = function(numPessoas) {
   }
 
   if ((carro.assentos > carro.quantidadePessoas) && (numPessoas >(carro.assentos-carro.quantidadePessoas))) {
-    return 'Só cabem mais ' +(carro.assentos - carro.quantidadePessoas) + '!'
+    var cabe = 'cabe';
+    var pessoa = 'pessoa'
+
+    var quantasPessoasCabem = carro.assentos - carro.quantidadePessoas
+
+    if (quantasPessoasCabem !== 1 ) {
+      cabe = 'cabem';
+      pessoa = 'pessoas';
+    }
+    return 'Só ' + cabe + ' mais ' + quantasPessoasCabem + ' + pessoa + '!'
   }
 
 /*
