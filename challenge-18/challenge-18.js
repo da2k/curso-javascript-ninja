@@ -35,7 +35,7 @@
     console.log( '\nFormatando CPFs corretamente:' );
 
     cpf.forEach( function( item, index ){
-        cpf[index].replace(/(\d\d\d)(\d\d\d)(\d\d\d)(\d\d)/, function( total, a, b, c, d  ){
+        cpf[index].replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, function( total, a, b, c, d  ){
             console.log (a + '.' + b + '.' + c + '-' + d);
         });
     });
@@ -54,7 +54,7 @@
     console.log( '\nMatch com as palavras "junho" ou "julho" para a frase "Os meses de janeiro, junho e julho começam com a letra j.":' );
     var text = 'Os meses de janeiro, junho e julho começam com a letra j.';
     console.log( text );
-    console.log( text.match(/ju\w{3}/g) );
+    console.log( text.match(/ju[nl]ho/g) ); //(n|l) também funciona
 
     /*
     Crie uma expressão regular que faça o match com a abertura de uma tag
@@ -106,8 +106,8 @@
     */
     console.log( '\nFazer replace dos textos das tags:' );
     var text4 = '<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>';
-    console.log ( text4.replace(/<(\w+)>(.+?)<\/\w+>/g, function( total, a, b ){
-        return  '\n<' + a + '>' + 'O texto dentro da tag "' + a + '" é "' + b + '"' + '</' + a + '>'; 
-    }));
+    console.log ( text4.replace(/<(\w+)>(.+?)<\/\w+>/g,
+        'O texto dentro da tag "$1" é "$2"\n'
+    ));
 
 })();
