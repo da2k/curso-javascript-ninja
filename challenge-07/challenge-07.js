@@ -10,7 +10,7 @@ A função deverá retornar o array atualizado.
 function addItem(item) {
   arr.push(item);
   return arr;
-}
+};
 
 /*
 Adicione um novo array ao array criado no início do desafio, com ao menos 3
