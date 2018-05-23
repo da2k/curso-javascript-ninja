@@ -47,7 +47,7 @@ function showTeamPosition(posicao) {
 
     default : return 'Não temos a informação do time que está nessa posição.'
   }
-}
+};
 
 /*
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
@@ -66,7 +66,7 @@ repetição "while".
 var i = 20;
 while (i<31){
   console.log(i++)
-}
+};
 
 /*
 Crie uma função chamada `convertToHex`, com as seguintes características:
@@ -95,16 +95,16 @@ function convertToHex(cor) {
 
     default: console.log('Não temos o equivalente hexadecimal para ' + cor + '.');
   }
-}
+};
 
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-convertToHex('red')//O hexadecimal para a cor RED é #FF0000
-convertToHex('white')//O hexadecimal para a cor WHITE é #FFFFFF
-convertToHex('brown')//Não temos o equivalente hexadecimal para brown.
-convertToHex('blue')//Não temos o equivalente hexadecimal para blue.
-convertToHex('pink')//O hexadecimal para a cor PINK é #FFC0CB
-convertToHex('gold')//Não temos o equivalente hexadecimal para gold.
-convertToHex('black')//O hexadecimal para a cor BLACK é #000000
-convertToHex('shade')//Não temos o equivalente hexadecimal para shade.
+convertToHex('red');//O hexadecimal para a cor RED é #FF0000
+convertToHex('white');//O hexadecimal para a cor WHITE é #FFFFFF
+convertToHex('brown');//Não temos o equivalente hexadecimal para brown.
+convertToHex('blue');//Não temos o equivalente hexadecimal para blue.
+convertToHex('pink');//O hexadecimal para a cor PINK é #FFC0CB
+convertToHex('gold');//Não temos o equivalente hexadecimal para gold.
+convertToHex('black');//O hexadecimal para a cor BLACK é #000000
+convertToHex('shade');//Não temos o equivalente hexadecimal para shade.
