@@ -45,7 +45,8 @@ var count = 10;
 
 console.log("Números pares entre 10 e 20:");
 while (count < 21) {
-  count % 2 === 0 ? console.log( count++ );
+  count % 2 === 0 ? console.log( count ) : '';
+  count++;
 }
 
 // ?
@@ -58,9 +59,7 @@ var count = 10;
 
 console.log("Números ímpares entre 10 e 20:");
 while (count < 21) {
-  if (count % 2 !== 0) {
-    console.log(count);
-  }
+  count % 2 !== 0 ?console.log( count ) : '';
   count++;
 }
 
