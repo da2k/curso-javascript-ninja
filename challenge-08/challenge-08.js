@@ -34,14 +34,14 @@ function showName() {
 /*
 Declare uma variável chamada `varShowName` que recebe a função criada acima.
 */
-var varShowName = showName();
+var varShowName = showName;
 
 /*
 Usando a variável criada acima, mostre no console o nome e o retorno da função
 atribuída a ela, com a seguinte frase:
 "A função [NOME DA FUNÇÃO] retorna [RETORNO DA FUNÇÃO]."
 */
-console.log( 'A função showName() retorna ' + varShowName);
+console.log( 'A função ' + varShowName.name + ' retorna ' + varShowName());
 
 /*
 Crie uma função literal chamada `calculator`, que funcione assim:
@@ -57,17 +57,18 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
 */
 function calculator(param) {
   return function(a, b) {
+    var resultado = 'Resultado da operação: ' + a + ' ' +param + ' ' + b + ' = ';
 
     switch(param){
-      case '+' : console.log ( 'Resultado da operação: ' + a + ' ' +param + ' ' + b + ' = ' + ( a + b ) );
+      case '+' : console.log ( resultado + ( a + b ) );
       break;
-      case '-' : console.log ( 'Resultado da operação: ' + a + ' ' +param + ' ' + b + ' = ' + ( a - b ) );
+      case '-' : console.log ( resultado + ( a - b ) );
       break;
-      case '*' : console.log ( 'Resultado da operação: ' + a + ' ' +param + ' ' + b + ' = ' + ( a * b ) );
+      case '*' : console.log ( resultado + ( a * b ) );
       break;
-      case '/' : console.log ( 'Resultado da operação: ' + a + ' ' +param + ' ' + b + ' = ' + ( a / b ) );
+      case '/' : console.log ( resultado + ( a / b ) );
       break;
-      case '%' : console.log ( 'Resultado da operação: ' + a + ' ' +param + ' ' + b + ' = ' + ( a % b ) );
+      case '%' : console.log ( resultado + ( a % b ) );
       break;
       default : return ( 'Operação inválida.' );
     }
@@ -100,7 +101,7 @@ var mod = calculator ( '%' );
 Faça uma operação com cada uma das funções criadas acima, mostrando o resultado
 no console.
 */
-subtraction(9,7); //Resultado da operação: 9-7 = 2
-multiplication(8,5); //Resultado da operação: 8*5 = 40
-division(30,10); //Resultado da operação: 30/10 = 3
-mod(40,5); //Resultado da operação: 40%5 = 0
+subtraction(9,7); //Resultado da operação: 9 - 7 = 2
+multiplication(8,5); //Resultado da operação: 8 * 5 = 40
+division(30,10); //Resultado da operação: 30 / 10 = 3
+mod(40,5); //Resultado da operação: 40 % 5 = 0
