@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CEP Finder</title>
+</head>
+<body>
+  <p data-js="load-area"></p>
+
+  <form action="/" method="get">
+
+    <div class="row">
+      <label>CEP</label>
+      <input type="text" data-js="input-cep" required>
+    </div>
+
+    <div class="row">
+      <label>Logradouro</label>
+      <input type="text" data-js="input-logradouro" data-class="input-field">
+    </div>
+
+    <div class="row">
+      <label>Bairro</label>
+      <input type="text" data-js="input-bairro" name="bairro" data-class="input-field">
+    </div>
+
+    <div class="row">
+      <label>Cidade</label>
+      <input type="text" data-js="input-cidade" data-class="input-field">
+    </div>
+
+    <div class="row">
+      <label>Estado</label>
+      <input type="text" data-js="input-estado" data-class="input-field">
+    </div>
+
+    <button data-js="btn-submit">Enviar</button>
+
+  </form>
+
+
+
+  <script src="challenge-28.js"></script>
+</body>
+</html>
