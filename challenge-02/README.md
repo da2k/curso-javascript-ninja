@@ -9,13 +9,11 @@ function soma (a, b) {
 } 
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-function soma (a, b) {
-    return a + b;
-} 
-soma (3, 2);
+var mysum = soma(2, 5) + 5;
+mysum
 
 // Qual o valor atualizado dessa variável?
-// 5
+// 12
 
 // Declare uma nova variável, sem valor.
 var newvar;
@@ -25,15 +23,16 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function retornaString(valor) {
-    return newvar = 'O valor da variável agora é ' + valor;
+function addValue() {
+    newvar = 25;
+    return 'O valor da variável agora é ' + newvar;
 }
 
 // Invoque a função criada acima.
-retornaString('flavz');
+addValue();
 
 // Qual o retorno da função? (Use comentários de bloco).
-// "O valor da variável agora é flavz" 
+// "O valor da variável agora é 25" 
 
 /*
 Crie uma função com as seguintes características:
@@ -43,15 +42,22 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function arguments (a, b, c) {
-    if (a != null && b != null && c != null) {
-        return (a * b * c) + 2;
-    } else {
+    if (a === undefined || b === undefined || c === undefined) {
         return 'Preencha todos os valores corretamente!';
-    }
+    } // else é opcional nesse caso
+    return (a * b * c) + 2;
 }
 
+/* function arguments (a, b, c) {
+     if (a != null && b != null && c != null) {
+         return (a * b * c) + 2;
+     } else {
+         return 'Preencha todos os valores corretamente!';
+     }
+} */
+
 // Invoque a função criada acima, passando só dois números como argumento.
-arguments (2, 3, );
+arguments (2, 3);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 // "Preencha todos os valores corretamente!"
@@ -73,6 +79,24 @@ Crie uma função com as seguintes características:
 */
 
 function arguments (x, y, z) {
+    if (x !== undefined && y === undefined && z === undefined) {
+        return x;
+    }
+    else if (x !== undefined && y !== undefined && z === undefined) {
+        return x + y;
+    }
+    else if (x !== undefined && y !== undefined && z !== undefined) {
+        return (x + y) / z;
+    }
+    else if (x === undefined && y === undefined && z === undefined) {
+        return false;
+    }
+    else {
+        return null;
+    }
+}
+
+/* function arguments (x, y, z) {
     if (x != null && y == null && z == null) {
         return (x);
     } else if (x != null && y != null && z == null) {
@@ -83,11 +107,11 @@ function arguments (x, y, z) {
         return false;
     }
     return null;
-} 
+} */
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 arguments(); // false
-arguments(8); // 8
-arguments(8, 6); // 14
-arguments(8, 6, 2); // 7
+arguments(1); // 1
+arguments(1, 2); // 3
+arguments(1, 2, 3); // 1
 ```
