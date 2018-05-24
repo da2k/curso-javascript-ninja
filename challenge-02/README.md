@@ -4,30 +4,35 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-?
+ function soma(a,b) {
+  return a + b;
+ };
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-?
+ var funcSoma = soma(10, 20) + 5;
 
 // Qual o valor atualizado dessa variável?
-?
+ 35
 
 // Declare uma nova variável, sem valor.
-?
+ var game;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-?
+  function exibeValor() {
+  game = 'World of Warcraft';
+    return 'O valor da variável agora é ' + game;
+  }
 
 // Invoque a função criada acima.
-?
+ exibeValor();
 
 // Qual o retorno da função? (Use comentários de bloco).
-?
-
+ /* 'O valor da variável agora é :World of Warcraft' */
+ 
 /*
 Crie uma função com as seguintes características:
 1. A função deve receber 3 argumentos;
@@ -36,18 +41,27 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 ?
+ function calc(a,b,c) {
+ if (a === undefined || b === undefined || c === undefined) {
+ return 'Preencha todos os valores corretamente!'
+ }
+ else {
+ return a*b*c + 2
+ }
+}
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+ calc(10,10)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+ 
+  // O resultado foi : 'Preencha todos os valores corretamente!'
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+ calc(10,10,10)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+ // 1002
 
 /*
 Crie uma função com as seguintes características:
@@ -58,8 +72,27 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+
+
+function calc(a,b,c) {
+			if(a !== undefined) {
+				if(b !== undefined) {
+					if (c !== undefined) {
+						return (a+b) / c;
+					} else {
+						return a + b;
+					}
+					} else {
+						return a;
+					}
+				} else {
+					return false;
+			}
+		}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+
+  // calc(1) retorna o valor 1;
+  // calc(1,1) retorna o valor 2;
+  // calc(1,1,2) retorna o valor 1;
 ```
