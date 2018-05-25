@@ -34,8 +34,6 @@ for chamado.
 */
 pessoa.fazerAniversario = function() {
 	pessoa.idade++;
-
-	return pessoa;
 }
 
 /*
@@ -51,8 +49,6 @@ booleano que representa "verdadeiro";
 pessoa.andar = function(metrosCaminhados) {
 	pessoa.caminhouQuantosMetros += metrosCaminhados;
 	pessoa.andando = true;
-
-	return pessoa;
 }
 
 /*
