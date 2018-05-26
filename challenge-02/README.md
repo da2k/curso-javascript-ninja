@@ -23,13 +23,13 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function novoValor(arg1) {
-  novaVariavel = arg1;
-  return 'O valor da variável agora é :' + novaVariavel;
+function novoValor(){
+    novaVariavel = 50;
+    return 'O valor da variável agora é :' + novaVariavel;
 }
 
 // Invoque a função criada acima.
-novoValor(50);
+novoValor();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /* "O valor da variável agora é 50" */
@@ -42,10 +42,10 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function with3Args(arg1, arg2, arg3){
-  if(!arg1 || !arg2 || !arg3){
+  if(arg1 === undefined || arg2 === undefined || arg3 === undefined){
     return "Preencha todos os valores corretamente!";
   }
-  return (arg1 * arg2 * arg3) + 2
+  return (arg1 * arg2 * arg3) + 2;
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
@@ -70,13 +70,21 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function otherFunction(arg1, arg2, arg3) {
-  if( arg1 || arg2 || arg3 ) {
-    if ( arg1 && arg2 && arg3 ) { return (arg1 + arg2) / arg3; }   
-    else if( arg1 && arg2 ) { return arg1 + arg2; } 
-    else { return arg1; }
-  }
-  else { return false; }
-  return null;
+  if( arg1 !== undefined && arg2 === undefined && arg3 === undefined ) {
+      return arg1;
+    } 
+    else if ( arg1 !== undefined && arg2 !== undefined && arg3 === undefined ) { 
+        return arg1 + arg2; 
+    }    
+    else if( arg1 !== undefined && arg2 !== undefined && arg3 !== undefined ) { 
+        return (arg1 + arg2) / arg3; 
+    } 
+    else if( arg1 === undefined && arg2 === undefined && arg3 === undefined ){
+        return false;
+    }
+    else {
+        return null;
+    }
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
