@@ -5,51 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>App Carro</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-  <div>
-      <p data-js="company-name"></p>
-      <p data-js="company-phone"></p>
+<div class="content">
+  <div class="header">
+      <h2 data-js="company-name"></h2>
+      <h3 data-js="company-phone"></h3>
   </div>
 
-  <form action="/" method="get">
+  <form action="/" method="get" class="form-data">
     <div class="row">
       <label for="imagem">Imagem</label>
-      <input type="text" data-js="input-imagem">
+      <input type="text" data-js="input-imagem" required>
     </div>
 
     <div class="row">
       <label for="marca">Marca</label>
-      <input type="text" data-js="input-marca">
+      <input type="text" data-js="input-marca" required>
     </div>
 
     <div class="row">
       <label for="modelo">Modelo</label>
-      <input type="text" data-js="input-modelo">
+      <input type="text" data-js="input-modelo" required>
     </div>
 
     <div class="row">
       <label for="ano">Ano</label>
-      <input type="text" data-js="input-ano">
+      <input type="text" data-js="input-ano" required>
     </div>
 
     <div class="row">
       <label for="placa">Placa</label>
-      <input type="text" data-js="input-placa">
+      <input type="text" data-js="input-placa" required>
     </div>
 
     <div class="row">
       <label for="cor">Cor</label>
-      <input type="text" data-js="input-cor">
+      <input type="text" data-js="input-cor" required>
     </div>
 
     <div class="row">
-      <button data-js="btn-cadastrar">Cadastrar</button>
+        <label for=""></label>
+      <button class="btn-cadastrar" data-js="btn-cadastrar">Cadastrar </button>
     </div>
   </form>
   <br/><br/>
-  <table border='1' data-js="tabela-carros">
+  <table class="tabela-carros" data-js="tabela-carros">
     <thead>
         <th>Imagem</th>
         <th>Marca</th>
@@ -60,7 +62,7 @@
     </thead>
     <tbody></tbody>
   </table>
-
+</div>
   <script src="dom.js"></script>
   <script src="challenge-29.js"></script>
 </body>

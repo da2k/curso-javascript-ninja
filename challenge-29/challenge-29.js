@@ -72,6 +72,7 @@
       },
       insertNewCar : function insertNewCar() {
         const $fragment = document.createDocumentFragment();
+        const $tbody = document.createElement('tbody');
         const $linha = document.createElement('tr');
         const $tdImagem = document.createElement('td');
         const $tdMarca = document.createElement('td');
@@ -99,7 +100,9 @@
         $linha.appendChild($tdAno);
         $linha.appendChild($tdCor);
 
-        return $fragment.appendChild($linha);
+        $tbody.appendChild($linha);
+        console.log('New car being inserted...');
+        return $fragment.appendChild($tbody);
       }
     };
   })();
