@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>App Carro</title>
+</head>
+<body>
+
+  <div>
+      <p data-js="company-name"></p>
+      <p data-js="company-phone"></p>
+  </div>
+
+  <form action="/" method="get">
+    <div class="row">
+      <label for="imagem">Imagem</label>
+      <input type="text" data-js="input-imagem">
+    </div>
+
+    <div class="row">
+      <label for="marca">Marca</label>
+      <input type="text" data-js="input-marca">
+    </div>
+
+    <div class="row">
+      <label for="modelo">Modelo</label>
+      <input type="text" data-js="input-modelo">
+    </div>
+
+    <div class="row">
+      <label for="ano">Ano</label>
+      <input type="text" data-js="input-ano">
+    </div>
+
+    <div class="row">
+      <label for="placa">Placa</label>
+      <input type="text" data-js="input-placa">
+    </div>
+
+    <div class="row">
+      <label for="cor">Cor</label>
+      <input type="text" data-js="input-cor">
+    </div>
+
+    <div class="row">
+      <button data-js="btn-cadastrar">Cadastrar</button>
+    </div>
+  </form>
+  <br/><br/>
+  <table border='1' data-js="tabela-carros">
+    <thead>
+        <th>Imagem</th>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Ano</th>
+        <th>Placa</th>
+        <th>Cor</th>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script src="dom.js"></script>
+  <script src="challenge-29.js"></script>
+</body>
+</html>
