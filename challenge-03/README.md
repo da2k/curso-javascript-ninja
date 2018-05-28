@@ -102,19 +102,19 @@ pessoa.nomeCompleto(); // Olá! Meu nome é Marco Ostan!
 Qual a idade da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.idade; // 27
+pessoa.mostrarIdade(); // Olá, eu tenho 27 anos!
 
 /*
 Qual o peso da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.peso; // 75
+pessoa.mostrarPeso(); // Eu peso 75Kg.
 
 /*
 Qual a altura da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.altura; // 175
+pessoa.mostrarAltura(); // Minha altura é 1.75m.
 
 /*
 Faça a `pessoa` fazer 3 aniversários.
