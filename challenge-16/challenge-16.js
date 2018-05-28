@@ -85,11 +85,9 @@
     for(var count = 0;count<myName.length;count++){
         if(count%2===0){
             newName += myName.charAt(count).toUpperCase();
-
         }else{
             newName += myName.charAt(count);
         }
     }
     console.log(newName);
-
 }());
