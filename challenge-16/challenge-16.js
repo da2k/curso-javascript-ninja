@@ -36,11 +36,8 @@
    var finalString = fullName.split('-').map(function(item){
         return item.charAt(0).toUpperCase() + item.slice(1);
    }).join(' ');
-
    console.log(fullName);
-
    console.log( '\nNome convertido à partir de um slug:' );
-
    console.log(finalString);
     /*
     - Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
