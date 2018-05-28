@@ -77,7 +77,7 @@ function valores(x, y, z){
         return x + y;
     } else if(x){
         return x;
-    } else if(x, y, z == null){
+    } else if(x, y, z === undefined){
         return false;
     } else{
         return null;
