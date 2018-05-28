@@ -36,6 +36,18 @@
   que será nomeado de "app".
   */
   var app = (function() {
+
+    let $tdImagem;
+    let $imagem;
+    let $fragment;
+    let $tbody;
+    let $linha;
+    let $tdMarca;
+    let $tdModelo;
+    let $tdPlaca;
+    let $tdAno;
+    let $tdCor;
+
     return {
       init : function() {
         console.log('App init...');
@@ -68,42 +80,68 @@
       handleFormSubmit : function handleFormSubmit(e) {
         e.preventDefault();
         let $table = $('[data-js="tabela-carros"]').get();
+        if (!app.insertNewCar())
+          return alert('Preencha corretamente todos os dados!');
         $table.appendChild(app.insertNewCar());
       },
       insertNewCar : function insertNewCar() {
-        const $fragment = document.createDocumentFragment();
-        const $tbody = document.createElement('tbody');
-        const $linha = document.createElement('tr');
-        const $tdImagem = document.createElement('td');
-        const $tdMarca = document.createElement('td');
-        const $tdModelo = document.createElement('td');
-        const $tdPlaca = document.createElement('td');
-        const $tdAno = document.createElement('td');
-        const $tdCor = document.createElement('td');
-
-        const $imagem = document.createElement('img');
-        $imagem.setAttribute('src', $('[data-js="input-imagem"]').get().value);
+        var isValid = true;
+        $fragment = document.createDocumentFragment();
+        this.initTableElements();
+        $imagem.setAttribute('src', $('[data-js="input-imagem"]').get());
         $imagem.setAttribute('height', '100px');
         $imagem.setAttribute('width', '150px');
-        $tdImagem.appendChild($imagem);
-
+        if (!this.isFieldValid($('[data-js="input-placa"]').get())
+        || !this.isFieldValid($('[data-js="input-ano"]').get())
+        || !this.isFieldValid($('[data-js="input-imagem"]').get()))
+          isValid = false;
         $tdMarca.textContent = $('[data-js="input-marca"]').get().value;
         $tdModelo.textContent = $('[data-js="input-modelo"]').get().value;
         $tdPlaca.textContent = $('[data-js="input-placa"]').get().value;
         $tdAno.textContent = $('[data-js="input-ano"]').get().value;
         $tdCor.textContent = $('[data-js="input-cor"]').get().value;
-
+        if (!isValid)
+          return false;
+        $fragment.appendChild($tbody);
+        return true;
+      },
+      getRegexOperations : function getRegexOperations(oper) {
+        switch (oper) {
+          case 'url':
+            return new RegExp('https?:\/\/.*\.(?:png|jpg)', 'gm');
+          case 'ano':
+            return new RegExp('^\\d{4}$', 'gm');
+          case 'placa':
+            return new RegExp('^\\w{3}-\\d{4}$', 'gm');
+        }
+      },
+      isFieldValid : function isFieldValid(field) {
+        return app.getRegexOperations(field.name).test(field.value);
+      },
+      initTableElements : function initTableElements() {
+        $imagem = document.createElement('img');
+        $tbody = document.createElement('tbody');
+        $linha = document.createElement('tr');
+        $tdImagem = document.createElement('td');
+        $tdMarca = document.createElement('td');
+        $tdModelo = document.createElement('td');
+        $tdPlaca = document.createElement('td');
+        $tdAno = document.createElement('td');
+        $tdCor = document.createElement('td');
+        this.appendFields();
+      },
+      appendFields : function appendFields() {
+        $tdImagem.appendChild($imagem);
         $linha.appendChild($tdImagem);
         $linha.appendChild($tdMarca);
         $linha.appendChild($tdModelo);
         $linha.appendChild($tdPlaca);
         $linha.appendChild($tdAno);
         $linha.appendChild($tdCor);
-
         $tbody.appendChild($linha);
-        console.log('New car being inserted...');
-        return $fragment.appendChild($tbody);
+        return $tbody;
       }
+
     };
   })();
 
