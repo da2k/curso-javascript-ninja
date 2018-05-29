@@ -36,18 +36,6 @@
   que será nomeado de "app".
   */
   var app = (function() {
-
-    let $tdImagem;
-    let $imagem;
-    let $fragment;
-    let $tbody;
-    let $linha;
-    let $tdMarca;
-    let $tdModelo;
-    let $tdPlaca;
-    let $tdAno;
-    let $tdCor;
-
     return {
       init : function() {
         console.log('App init...');
@@ -80,35 +68,60 @@
       handleFormSubmit : function handleFormSubmit(e) {
         e.preventDefault();
         let $table = $('[data-js="tabela-carros"]').get();
-        if (!app.insertNewCar())
+        if (app.insertNewCar() === false)
           return alert('Preencha corretamente todos os dados!');
         $table.appendChild(app.insertNewCar());
       },
+      initTableElements : function initTableElements() {
+        let $imagem = document.createElement('img');
+        let $tbody = document.createElement('tbody');
+        let $linha = document.createElement('tr');
+        let $tdImagem = document.createElement('td');
+        let $tdMarca = document.createElement('td');
+        let $tdModelo = document.createElement('td');
+        let $tdPlaca = document.createElement('td');
+        let $tdAno = document.createElement('td');
+        let $tdCor = document.createElement('td');
+        return this.appendFields($tbody, $linha, $tdImagem, $imagem, $tdMarca, $tdModelo, $tdPlaca, $tdAno, $tdCor);
+      },
+      appendFields : function appendFields(tbody, linha, tdImagem, imagem, tdMarca, tdModelo, tdPlaca, tdAno, tdCor) {
+        tdImagem.appendChild(imagem);
+        linha.appendChild(tdImagem);
+        linha.appendChild(tdMarca);
+        linha.appendChild(tdModelo);
+        linha.appendChild(tdPlaca);
+        linha.appendChild(tdAno);
+        linha.appendChild(tdCor);
+        tbody.appendChild(linha);
+        return tbody;
+      },
       insertNewCar : function insertNewCar() {
-        var isValid = true;
-        $fragment = document.createDocumentFragment();
-        this.initTableElements();
-        $imagem.setAttribute('src', $('[data-js="input-imagem"]').get());
-        $imagem.setAttribute('height', '100px');
-        $imagem.setAttribute('width', '150px');
-        if (!this.isFieldValid($('[data-js="input-placa"]').get())
-        || !this.isFieldValid($('[data-js="input-ano"]').get())
-        || !this.isFieldValid($('[data-js="input-imagem"]').get()))
-          isValid = false;
-        $tdMarca.textContent = $('[data-js="input-marca"]').get().value;
-        $tdModelo.textContent = $('[data-js="input-modelo"]').get().value;
-        $tdPlaca.textContent = $('[data-js="input-placa"]').get().value;
-        $tdAno.textContent = $('[data-js="input-ano"]').get().value;
-        $tdCor.textContent = $('[data-js="input-cor"]').get().value;
-        if (!isValid)
-          return false;
-        $fragment.appendChild($tbody);
-        return true;
+        let $fragment = document.createDocumentFragment();
+        let tbody = this.initTableElements();
+        let $image = tbody.firstElementChild.children[0].firstElementChild;
+        let $marca = tbody.firstElementChild.children[1];
+        let $modelo = tbody.firstElementChild.children[2];
+        let $ano = tbody.firstElementChild.children[3];
+        let $placa = tbody.firstElementChild.children[4];
+        let $cor = tbody.firstElementChild.children[5];
+
+        $image.setAttribute('src', eval(this.getFieldValue()["imagem"]));
+        $marca.textContent = eval(this.getFieldValue()["marca"]);
+        $modelo.textContent = eval(this.getFieldValue()["modelo"]);
+        $ano.textContent = eval(this.getFieldValue()["ano"]);
+        $placa.textContent = eval(this.getFieldValue()["placa"]);
+        $cor.textContent = eval(this.getFieldValue()["cor"]);
+
+        if (!this.isFieldValid($('[data-js=\"input-placa\"]').get())
+           || !this.isFieldValid($('[data-js=\"input-ano\"]').get())
+           || !this.isFieldValid($('[data-js=\"input-imagem\"]').get()))
+            return false;
+        return $fragment.appendChild(tbody);
       },
       getRegexOperations : function getRegexOperations(oper) {
         switch (oper) {
           case 'url':
-            return new RegExp('https?:\/\/.*\.(?:png|jpg)', 'gm');
+            return new RegExp('https?:.+', 'gm');
           case 'ano':
             return new RegExp('^\\d{4}$', 'gm');
           case 'placa':
@@ -116,36 +129,21 @@
         }
       },
       isFieldValid : function isFieldValid(field) {
-        return app.getRegexOperations(field.name).test(field.value);
+        return this.getRegexOperations(field.name).test(field.value);
       },
-      initTableElements : function initTableElements() {
-        $imagem = document.createElement('img');
-        $tbody = document.createElement('tbody');
-        $linha = document.createElement('tr');
-        $tdImagem = document.createElement('td');
-        $tdMarca = document.createElement('td');
-        $tdModelo = document.createElement('td');
-        $tdPlaca = document.createElement('td');
-        $tdAno = document.createElement('td');
-        $tdCor = document.createElement('td');
-        this.appendFields();
-      },
-      appendFields : function appendFields() {
-        $tdImagem.appendChild($imagem);
-        $linha.appendChild($tdImagem);
-        $linha.appendChild($tdMarca);
-        $linha.appendChild($tdModelo);
-        $linha.appendChild($tdPlaca);
-        $linha.appendChild($tdAno);
-        $linha.appendChild($tdCor);
-        $tbody.appendChild($linha);
-        return $tbody;
+      getFieldValue : function getFieldValue() {
+        return {
+          "imagem" : "$('[data-js=\"input-imagem\"]').get().value",
+          "marca" : "$('[data-js=\"input-marca\"]').get().value",
+          "modelo" : "$('[data-js=\"input-modelo\"]').get().value",
+          "ano" : "$('[data-js=\"input-ano\"]').get().value",
+          "placa" : "$('[data-js=\"input-placa\"]').get().value",
+          "cor" : "$('[data-js=\"input-cor\"]').get().value"
+        }
       }
-
     };
   })();
 
   app.init();
-
 
 })(window.DOM);
