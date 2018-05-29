@@ -8,10 +8,10 @@ loop, mostre no console a mensagem:
 Qual loop você deve usar para que essa mensagem seja mostrada no console?
 */
 // ?
-+var once = false;
-+do {
-+    console.log('Entrou ao menos uma vez!');
-+} while (once);
+var once = false;
+do {
+    console.log('Entrou ao menos uma vez!');
+} while (once);
 /*
 Crie um objeto chamado `person`, que receba as seguintes propriedades:
 - 'name', 'age', 'weight' e 'birthday'. Preencha com os valores corretos
