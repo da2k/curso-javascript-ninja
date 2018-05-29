@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Challenge 25</title>
+</head>
+<body>
+  <div id="allContent">
+    <form action="/" method="post">
+
+      <h1>Cadastro</h1>
+      <div class="row">
+        <label for="cpf">CPF</label>
+        <input type="text" placeholder="Informe o seu CPF..." data-class="input-text" name="cpf" id="cpf" data-js="cpf" required>
+      </div>
+
+      <div class="row">
+        <label for="nome">Nome</label>
+        <input type="text" data-class="input-text" name="nome" id="nome" data-js="nome" placeholder="Informe seu nome..." required>
+      </div>
+
+      <div class="row">
+        <label for="idade">Idade</label>
+        <input type="text" data-class="input-text" name="idade" id="idade" data-js="idade" placeholder="Informe sua idade..." required>
+      </div>
+
+      <div class="row">
+        <label for="rg">RG</label>
+        <input type="text" data-class="input-text" name="rg" id="rg" data-js="rg" placeholder="Informe seu RG..." required>
+      </div>
+    </form>
+
+    <div>
+      <h3>String Building (JSON)</h3>
+      <div data-js="created-objects"></div>
+    </div>
+</div>
+
+<script src="pessoa.js"></script>
+<script src="challenge-25.js"></script>
+</body>
+</html>

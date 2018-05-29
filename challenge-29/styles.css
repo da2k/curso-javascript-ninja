@@ -1,0 +1,69 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+
+.form-data {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.row {
+  display: flex;
+  margin-top:2em;
+}
+.row > label {
+  margin-right: 2em;
+  text-align: right;
+  flex:1;
+  font-size:1.5em;
+}
+
+.row > input {
+  padding:0.7em;
+  flex:2
+}
+
+.btn-cadastrar {
+  padding:1em;
+  width: 50%;
+  font-size: 1.3em;
+  flex:2;
+  background-color:rgb(68, 90, 40);
+  color:#fff;
+  border: 0;
+}
+
+.tabela-carros {
+  width: 80%;
+}
+
+.tabela-carros thead {
+  font-size: 1.2em;
+  line-height: 2em;
+  background-color: rgb(13, 82, 28);
+  color: #fff;
+  border:none;
+}
+
+.tabela-carros tbody tr {
+  font-size: 1.2em;
+  line-height: 2em;
+  background-color: rgb(208, 224, 212);
+  color: rgb(7, 70, 31);
+  border:none;
+}
+
+.tabela-carros tbody tr > td {
+  text-align: center;
+}

@@ -1,3 +1,4 @@
+
 /*
 Vamos desenvolver mais um projeto. A ideia é fazer uma mini-calculadora.
 As regras são:
@@ -23,3 +24,90 @@ multiplicação (x), então no input deve aparecer "1+2x".
 input;
 - Ao pressionar o botão "CE", o input deve ficar zerado.
 */
+
+(function(win, doc) {
+
+  'use strict';
+
+  var $tela = doc.querySelector('[data-js="txt"]');
+  var $btnNumeros = doc.querySelectorAll('[data-js="btn-numbers"]');
+  var $btnOperations = doc.querySelectorAll('[data-js="btn-operations"]');
+  var $btnCE = doc.querySelector('[data-id="button-operation-clear"]');
+  var $btnResult = doc.querySelector('[data-id="button-operation-equals"]');
+
+
+  Array.prototype.forEach.call($btnNumeros, function(btn) {
+    btn.addEventListener('click', handleClickNumber, false);
+  });
+
+
+  function handleClickNumber() {
+    $tela.value += this.value;
+  }
+
+  Array.prototype.forEach.call($btnOperations, function(btn) {
+    btn.addEventListener('click', handleOperation, false);
+  });
+
+  function handleOperation() {
+    $tela.value = removeLastItemIfOperator($tela.value);
+    $tela.value += this.value;
+  }
+
+  function isLastItemAnOperation(number) {
+    var operations = ['+', '-', '*', '/'];
+    var ultimoItem = number.split('').pop();
+    return operations.some(function(operation) {
+      return operation === ultimoItem;
+    });
+  }
+
+  function removeLastItemIfOperator(number) {
+    if (isLastItemAnOperation(number))
+      return number.slice(0,-1);
+    return number;
+  }
+
+  $btnResult.addEventListener('click', handleResultClick, false);
+
+  function handleResultClick() {
+    $tela.value = removeLastItemIfOperator($tela.value);
+    var valoresInput = $tela.value.match(/[\+\-\*\/]?\d+[\+\-\*\/]?/g);
+    var result = valoresInput.reduce(function(acumulado, atual) {
+    var first = acumulado.slice(0, -1);
+    var operador = acumulado.split('').pop();
+    var last = removeLastItemIfOperator(atual);
+    var lastOp = isLastItemAnOperation(atual) ? atual.split('').pop() : '';
+
+    switch (operador) {
+      case '+':
+      return ( +(first) + +(last) ) + lastOp;
+      case '-':
+      return ( +(first) - +(last) ) + lastOp;
+      case '*':
+      return ( +(first) * +(last) ) + lastOp;
+      case '/':
+      return ( +(first) / +(last) ) + lastOp;
+    }
+
+  });
+  $tela.value = result;
+}
+
+
+
+
+
+$btnCE.addEventListener('click', function() {
+  $tela.value = '0';
+});
+
+
+
+
+
+
+
+
+
+})(window, document);
