@@ -13,7 +13,7 @@ var isTruthy = function(arg1) { return arg1 ? true : false };
 isTruthy(0);
 isTruthy(null);
 isTruthy('');
-isTruthy("");
+isTruthy(undefined);
 isTruthy(false);
 isTruthy(-0);
 isTruthy(NaN);
@@ -115,13 +115,13 @@ Qual a cor atual do carro?
 carro.obterCor(); // "Preta"
 
 // Mude a cor do carro para vermelho.
-carro.cor = "Vermelho";
+carro.mudarCor("Vermelho");
 
 // E agora, qual a cor do carro?
 carro.obterCor(); // "Vermelho"
 
 // Mude a cor do carro para verde musgo.
-carro.cor = "Verde Musgo";
+carro.mudarCor("Verde Musgo");
 
 // E agora, qual a cor do carro?
 carro.obterCor(); // "Verde Musgo"
