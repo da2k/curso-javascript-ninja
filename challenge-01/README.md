@@ -22,7 +22,7 @@ soma *= 3;
 
 // Qual é o valor da variável `soma` até aqui?
 
-console.log(soma); // 24
+soma;
 
 // Declare uma variável chamada `souninja`, atribuindo à ela o valor booleano que representa `verdadeiro`.
 
