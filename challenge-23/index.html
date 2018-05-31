@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Challenge-22</title>
+    <style>
+        body { font-family: sans-serif }
+        label {
+          background-color: #008CBA;
+          color: white;
+          width: 315px;
+          display: block;
+          text-align: center;
+        }
+        input {
+          border: none;
+          border-bottom: 2px solid green;
+          font-size: 16px;
+          width: 315px;
+          text-align: right;
+        }
+        button {
+          background-color: #008CBA;
+          color: white;
+          border-radius: 5px;
+          height:45px;
+          width:75px;
+          text-align: center;
+          display: inline-block;
+          font-size: 16px;
+        }
+    </style>
+  </head>
+  <body>
+    <div>
+        <label >Calculadora</label>
+        <input readonly type="text" data-js="valor" value="0">
+    </div>
+    <div>
+        <button type="button" value="7" data-js="numero">7</button>
+        <button type="button" value="8" data-js="numero">8</button>
+        <button type="button" value="9" data-js="numero">9</button>
+        <button type="button" value="÷" data-js="operacao">÷</button>
+    </div>
+    <div>
+        <button type="button" value="4" data-js="numero">4</button>
+        <button type="button" value="5" data-js="numero">5</button>
+        <button type="button" value="6" data-js="numero">6</button>
+        <button type="button" value="x" data-js="operacao">x</button>
+    </div>
+    <div>
+        <button type="button" value="1" data-js="numero">1</button>
+        <button type="button" value="2" data-js="numero">2</button>
+        <button type="button" value="3" data-js="numero">3</button>
+        <button type="button" value="+" data-js="operacao">+</button>
+    </div>
+    <div>
+        <button type="button" data-js="limpar">CE</button>
+        <button type="button" value="0" data-js="numero">0</button>
+        <button type="button" data-js="resultado">=</button>
+        <button type="button" value="-" data-js="operacao">-</button>
+    </div>
+    <script src="challenge-23.js" charset="utf-8"></script>
+  </body>
+</html>
