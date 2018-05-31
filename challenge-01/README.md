@@ -18,7 +18,7 @@ soma += 1;
 
 // Atribua à variável `soma` todo o valor dela, multiplicando por 3, usando o operador de multiplicação abreviado.
 
-soma * 3;
+soma *= 3;
 
 // Qual é o valor da variável `soma` até aqui?
 
@@ -34,34 +34,22 @@ var comida = ['arroz', 'feijao','ovo'];
 
 // Digite a instrução que imprime o valor de 'feijao', que está na variável `comida`.
 
-console.log(comida[1]);
+comida[1];
 
 // Digite o código que verifica se a variável `soma' é igual a variável `myvar` (testando também o tipo).
 
-if(soma == myvar){
-    console.log("variaveis são iguais");
-}else{
-    console.log("variaveis diferentes");
-}
+soma === myvar;
 
 // Digite o código que verifica se a variável `myvar` é menor ou igual à variável `soma`.
 
-if(myvar <= soma){
-    console.log("a variavel myvar é menor");    
-}else{
-    console.log("variavel myvar é maior");
-}
+myvar <= soma;
 
 // Crie uma função chamada `divisao` que receba como parâmetro dois números, e retorne o resultado da divisão entre eles.
 
-var divisao = function(x,y){
-    if (y != 0){
-        return x/y
-    }else{
-        console.log("o valor de y é igual 0");
-    }   
-}
+function divisao(x,y){
+     return x/y;
+     }
 
 // Invoque a função criada acima, passando os parâmetros 10 e 2.
 
-console.log(divisao(10,2));
+divisao(10,2);
