@@ -27,7 +27,7 @@
     */
     console.log( 'Regex para números usando o construtor:' );
     var justNumbersRegex = new RegExp('^\\d+', 'gm');
-    console.log(justNumbersRegex);
+    console.log( justNumbersRegex );
 
     /*
     Verifique se a regex acima casa com o texto na variável `text`, mostrando o
@@ -48,7 +48,7 @@
     */
     console.log( '\nRegex para números somente no final das linhas:' );
     var numbersAtTheEnd = new RegExp('\\d+$', 'gm');
-    console.log(numbersAtTheEnd);
+    console.log( numbersAtTheEnd );
 
     /*
     Verifique se a regex acima casa com o texto na variável `otherText`,
@@ -86,20 +86,19 @@
     var markup = '<main>\n  <div class="container">\n    <span class="text date"></span>\n    <p class=\'excerpt\'></p>\n  </div>\n</main>';
     console.log( '\nQuais classes CSS existem na marcação abaixo?\n\n', markup, '\n' );
     
-    function hasClass( markup, cssClass ) {
+    function hasClass(markup, cssClass) {
 
-        var regex = new RegExp(cssClass, 'gm');
+        var regx = new RegExp( 'class=["\'](\\w+\\s)?' + cssClass, 'gm' );
 
-        if( markup.match(regex) === null ){
-            return false;
-        }
-
-        return true;
+        return regx.test(markup);
     }
 
-    console.log( '' + hasClass(markup, 'container') + ' para a classe container' );
-    console.log( '' + hasClass(markup, 'date') + ' para a classe date' );
-    console.log( '' + hasClass(markup, 'excerpt') + ' para a classe excerpt' );
-    console.log( '' + hasClass(markup, 'main') + ' para a classe main' );
+    var classes = [ 'container', 'text', 'date', 'excerpt' , 'main' ];
+
+    classes.forEach(function(item){
+
+        console.log( hasClass(markup, item) + ' para a classe ' + item );
+
+    });
 
 })();
