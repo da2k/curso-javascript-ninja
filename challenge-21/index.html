@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Challenge 21</title>
+  <style>
+    body {
+      font-family: sans-serif
+    }
+
+    label {
+      display: block
+    }
+
+    input {
+      margin-bottom: 10px
+    }
+  </style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>
+    Cronometer using JS
+  </h1>
+    <div>
+      <label>Cronometer:</label>
+      <input type="text" value=0 data-js="timer">
+    </div>
+    <br>
+    <button type="button" class="btn btn-success" data-js='start'>Start</button>
+    <button type="button" class="btn btn-danger" data-js="stop">Stop</button>
+    <button type="button" class="btn btn-warning" data-js="reset">Reset</button>
+  </div>
+
+  <script src="js/cronometer.js"></script>
+</body>
+
+</html>
