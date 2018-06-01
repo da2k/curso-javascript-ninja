@@ -1,8 +1,8 @@
 /*
-Já temos as funcionalidades de adicionar e remover um carro. Agora, vamos persistir esses dados, 
+Já temos as funcionalidades de adicionar e remover um carro. Agora, vamos persistir esses dados,
 salvando-os temporariamente na memória de um servidor.
 
-Nesse diretório do `challenge-32` tem uma pasta `server`. É um servidor simples, em NodeJS, para 
+Nesse diretório do `challenge-32` tem uma pasta `server`. É um servidor simples, em NodeJS, para
 que possamos utilizar para salvar as informações dos nossos carros.
 
 Para utilizá-lo, você vai precisar fazer o seguinte:
@@ -11,7 +11,7 @@ Para utilizá-lo, você vai precisar fazer o seguinte:
 - execute o comando `npm install` para instalar as dependências;
 - execute `node app.js` para iniciar o servidor.
 
-Ele irá ser executado na porta 3000, que pode ser acessada via browser no endereço: 
+Ele irá ser executado na porta 3000, que pode ser acessada via browser no endereço:
 `http://localhost:3000`
 
 O seu projeto não precisa estar rodando junto com o servidor. Ele pode estar em outra porta.
@@ -32,4 +32,4 @@ Após enviar o POST, faça um GET no `server` e atualize a tabela para mostrar o
 Crie uma branch `challenge-32` no seu projeto, envie um pull request lá e cole nesse arquivo a URL
 do pull request.
 */
-console.log('Link do pull request do seu projeto');
+console.log('Link do pull request do seu projeto: https://github.com/gabrielbahniuk/car-shop/pull/3');
