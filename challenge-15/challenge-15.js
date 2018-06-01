@@ -35,8 +35,8 @@ Crie um arquivo chamado index.html e adicione esse script ao HTML.
             return age;
         };
 
-        this.addAge = function addAge(years){
-            return age += years;
+        this.addAge = function addAge(){
+            return age += arguments[0];
         };
 
     }
