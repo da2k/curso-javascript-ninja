@@ -1,0 +1,49 @@
+body{
+  background-image: url('cep.jpg');
+  background-repeat: no-repeat;
+  background-position-x: 150px ;
+  background-color: darkolivegreen;
+}
+.content{
+  display: block;
+  border: 5px solid green;
+  border-radius: 50px;
+  border-style: solid;
+  background-color: rgba(0,0,0,0.5);
+  width: 1000px;
+  height: 400px;
+}
+.interface{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: white;
+  text-shadow: 0px 0px 5px black;
+  font-size: 20px;
+  width: 800px;
+  margin-left: 450px;
+  margin-top: 200px;
+}
+.input{
+  color: white;
+  border-style: solid;
+  border-radius: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 0px 0px 5px black;
+  font-size: 12px;
+  margin-left: 5px;
+  background-color: darkolivegreen;
+}
+.cep{
+  font-size: 22px;
+  margin-top: 50px;
+  margin-left: 250px;
+}
+.status{
+  margin-left: 235px;
+  margin-top: 15px;
+  text-align: center";
+}
+.endereco{
+  margin-top: 50px;
+  margin-left: 200px;
+}

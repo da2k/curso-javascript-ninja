@@ -1,0 +1,32 @@
+<!doctype <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <title>Challenge 28</title>
+  <link rel="stylesheet" type="text/css" href="challenge-28.css"/>
+</head>
+<body class="interface">
+  <div class="content">
+    <h1 style="text-align: center">Challenge 28</h1>
+
+        <section class="cep">
+          <label>Digite o CEP:</label>
+          <input class="input" type="text" data-js="cep" maxlength="15">
+          <button class="input" type="submit" data-js="button">Pesquisar CEP</button>
+        </section>
+        <section class="status">
+          <label>Status da busca</label>
+          <input class="input" type="text" readonly data-js="status" value="" maxlength="64" size="64">
+        </section>
+        <section class="endereco">
+          <label>Estado:&nbsp<input class="input" type="text" readonly data-js="estado" size="32px" maxlength="32"> </label>
+          <label>Cidade:&nbsp<input class="input" type="text" readonly data-js="cidade" size="25px" maxlength="32"> </label>
+          <br><br>
+          <label>Logradouro:&nbsp<input class="input" type="text" readonly data-js="logradouro" size="25px" maxlength="32"> </label>
+          <label>Bairro:&nbsp<input class="input" type="text" readonly data-js="bairro" size="27px" maxlength="32"> </label>
+        </section>
+
+  </div>
+  <script src="challenge-28.js"></script>
+</body>
+</html>
