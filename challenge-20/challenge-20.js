@@ -17,12 +17,8 @@ O HTML NÃO PODE ser alterado!
     nome, `username` deve receber "Desconhecido".
     Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
     */
-    var username = prompt( 'Qual o seu nome?' );
-
-    if ( username )
-        console.log( 'Bem vindo', username );
-    else
-        username = 'Desconhecido';
+    var username = prompt( 'Qual o seu nome?' ) || 'Desconhecido';
+    alert ( 'Bem vindo ' + username + '!');
 
     /*
     Agora, pergunte ao usuário "Qual o seu e-mail?", atribuindo o resultado à
@@ -88,20 +84,14 @@ O HTML NÃO PODE ser alterado!
     $button.addEventListener( 'click', function(event){
         event.preventDefault();
 
-        if ( $inputUsername.value === '' ) {
-            alert('Preencha o nome do usuário!');
-            return false;
-        } else if ( $inputEmail.value === '' ) {
-            alert('Preencha o email!');
-            return false;
-        } else if ( $message.value === '' ) {
-            alert('Preencha a mensagem!');
-            return false;
-        } else if ( isValidEmail ( email ) === false ) {
-            alert('Entre com um e-mail válido!');
-            console.log(isValidEmail ( email ));
-            return false;
-        }
+        if ( !$inputUsername.value )
+            return alert('Preencha o nome do usuário!');
+        if ( !$inputEmail.value ) 
+            return alert('Preencha o email!');
+        if ( !$message.value )
+            return alert('Preencha a mensagem!');
+        if ( !isValidEmail ( $inputEmail.value ) )
+            return alert('Entre com um e-mail válido!');
 
         if ( confirm('Tem certeza que deseja enviar o formulário?') )
             console.log( 'Enviado com sucesso!' );
@@ -137,7 +127,7 @@ O HTML NÃO PODE ser alterado!
         - "agua_@evida.br.com"
     */
     function isValidEmail( email ) {
-        var regex = RegExp('[\\w+\\.]+@\\w+\\.\\w+(\\.[\\w]+)?', 'g');
+        var regex = RegExp('^[\\w+\\.]+@\\w+\\.\\w{2,}(?:\\.\\w{2})?', 'g');
         return regex.test(email);
     }
     
