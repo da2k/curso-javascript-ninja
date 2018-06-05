@@ -105,10 +105,10 @@ function trick(a, b, c) {
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 
+trick();           // false
 trick(1);          // 1
 trick(1, 2);       // 3
 trick(4, 5, 3);    // 3
 trick(4, 5, 3, 4); // null
-trick();           // false
 
 ```
