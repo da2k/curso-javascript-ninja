@@ -983,3 +983,41 @@ Formulários
 >       alert('Clique no input');    
 > }, false );
 > })(window, document);
+
+
+
+/* 
+Seção 21
+*/
+//Vídeo 126
+Sync e Async: sync efetua funções em sequência e bloqueia interação com o site até que todo o script seja carregado.
+Event listener é um tipo de função async, pois é acionado apenas quando um determinado evento é acionado.
+
+
+//Vídeo 127
+setTimeout( function() {}, 1000): efetua determinada função depois de um tempo pré-estabelecido.
+setInterval( function() {}, 1000 ): efetua determinada função a cada x tempo.
+Para criar uma função com um loop não infinito:
+
+> (function(win, doc) {
+>     'use strict';
+> 
+>     var counter = 0;
+>     function timer() {
+>         console.log( 'timer', counter++ );
+>         if ( counter > 10 )
+>             return;
+>         setTimeout( timer, 1000 );
+>     }
+>     timer();
+> 
+> })(window, document);
+
+
+//Vídeo 128
+setInterval vs setTimeout: a função do Timeout somente é executada depois de executar funções anteiores. Sua função é colocada na fila de eventos.
+A função do Interval executa nos intervalos independente de existir outra função em conjunto.
+
+Funções de cancelamento de Timeout e Interval:
+clearTimeout(id)
+clearInterval(id)
