@@ -34,10 +34,8 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 function showTeamPosition(position) {
-  var index = position - 1;
-
-  if(index <= 4) {
-    return 'O time que está em ' + position + 'º lugar é o ' + teams[index] + '.';
+  if(position > 0 && position <= 5) {
+    return 'O time que está em ' + position + 'º lugar é o ' + teams[position - 1] + '.';
   } else {
     return 'Não temos a informação do time que está nessa posição.';
   }
@@ -59,8 +57,7 @@ repetição "while".
 var counter = 20;
 
 while(counter <= 30) {
-  console.log(counter);
-  counter++;
+  console.log(counter++);
 }
 
 /*
