@@ -32,9 +32,8 @@ Onde VALOR é o novo valor da variável.
 */
 
 function alteraValorVariavel() {
-    var valor = 10;
-    placeholder = valor;
-    return 'O valor da variável agora é ' + valor;
+    placeholder = 10;
+    return 'O valor da variável agora é ' + placeholder;
 }
 
 // Invoque a função criada acima.
