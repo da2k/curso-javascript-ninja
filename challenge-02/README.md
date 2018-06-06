@@ -90,16 +90,16 @@ Crie uma função com as seguintes características:
 */
 
 function trick(a, b, c) {
-    if (arguments.length > 3) {
-        return null;
+    if (a !== undefined && b === undefined && c === undefined) {
+        return a;
+    } else if (a !== undefined && b !== undefined && c === undefined) {
+        return a + b;
     } else if (a !== undefined && b !== undefined && c !== undefined) {
         return (a + b) / c;
-    } else if (b !== undefined) {
-        return a + b;
-    } else if (a !== undefined) {
-        return a;
-    } else {
+    } else if (a === undefined && b === undefined && c === undefined) {
         return false;
+    } else {
+        return null;
     }
 }
 
@@ -109,6 +109,5 @@ trick();           // false
 trick(1);          // 1
 trick(1, 2);       // 3
 trick(4, 5, 3);    // 3
-trick(4, 5, 3, 4); // null
 
 ```
