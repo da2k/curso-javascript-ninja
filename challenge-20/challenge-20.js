@@ -17,12 +17,13 @@
     Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
     */
 
-    var $username = win.prompt('Name?') || 'Desconhecido';
+    var $username = win.prompt('Name?')  || 'Undefined';
+    win.alert('Well Come ' + $username);
     /*
     Agora, pergunte ao usuário "Qual o seu e-mail?", atribuindo o resultado à
     uma variável chamada `email`.
     */
-    var $email = win.prompt('Qual o seu e-mail?');
+    var $email = win.prompt('Whats your e-mail?');
 
     /*
     - Selecione o input de "Nome", atribuindo-o à uma variável chamada
@@ -83,13 +84,13 @@
     $button.addEventListener( 'click', function(event){
         event.proventDefault();
 
-      if(!$inputUsername)alert('Preencha o nome do usuário!');
-      if(!$inputEmail)alert('Preencha o e-mail!');
-      if(!isValidEmail($inputEmail.value))return alert('Entre com um e-mail válido!');
-      if(!$message.value)return alert('Preencha a mensagem!');
-      if(!confirm('Tem certeza que deseja enviar o formulário?')) return alert('Não enviado!');
+      if(!$inputUsername)return alert('Fill user name!');
+      if(!$inputEmail)return alert('Fill e-mail!');
+      if(!isValidEmail($inputEmail.value))return alert('Enter valid email!');
+      if(!$message.value)return alert('Fill a message!');
+      if(!confirm('Are you sure want to submit the form?')) return alert('not send');
 
-      return alert('Enviado com sucesso!');
+      return alert('Send successful!');
 
     },false);
 
