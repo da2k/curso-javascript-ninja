@@ -16,15 +16,14 @@ function addItem(item) {
 Adicione um novo array ao array criado no início do desafio, com ao menos 3
 itens de tipos diferentes, mostrando o resultado no console.
 */
-randomItems.push([ undefined, NaN, 2.5]);
-console.log(randomItems);
+console.log(addItem( [undefined, NaN, 2.5] ) );
 
 /*
 Mostre no console o segundo elemento desse último array, criado acima, com a
 frase:
 "O segundo elemento do segundo array é [ELEMENTO]."
 */
-console.log(randomItems[5][1]);
+console.log("O segundo elemento do segundo array é " + randomItems[5][1] + ".");
 
 /*
 Mostre no console quantos itens tem o primeiro array criado, com a frase:
