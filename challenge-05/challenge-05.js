@@ -23,8 +23,8 @@ segundo, um número. A função deve retornar o valor de um índice do array que
 no primeiro parâmetro. O índice usado para retornar o valor, deve ser o número passado no
 segundo parâmetro.
 */
-function returnArray2(arg, num){
-    return arg[num];
+function returnArray2(arr, indice){
+    return arr[indice];
 };
 
 /*
@@ -36,11 +36,11 @@ var myArray2 = [ 'rasc', 25, true, [], {} ];
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-returnArray2(myArray2, 0);
-returnArray2(myArray2, 1);
-returnArray2(myArray2, 2);
-returnArray2(myArray2, 3);
-returnArray2(myArray2, 4);
+console.log( returnArray2(myArray2, 0) );
+console.log( returnArray2(myArray2, 1) );
+console.log( returnArray2(myArray2, 2) );
+console.log( returnArray2(myArray2, 3) );
+console.log( returnArray2(myArray2, 4) );
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -56,59 +56,64 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-function books(arg){
-    
+
+var exportBookName;
+
+function book( bookName ){
+
+    exportBookName = bookName;
 
     var nextBooks = {
 
-        cleanCode: {
+        'Clean Code': {
             quantidadePaginas: 440,
             autor: 'Robert C. Martin',
             editora: 'Alta Books'
         },
 
-        tdd: {
+        'TDD Desenvolvimento Guiado por Testes': {
             quantidadePaginas: 240,
             autor: 'Kent Beck',
             editora: 'Addison-Wesley Professional'
         },
 
-        exExplaned: {
+        'Extreme Programming Explained': {
             quantidadePaginas: 225,
             autor: 'kent Beck',
             editora: 'Addison-Wesley'
         }
     }
     
-    var theBook = arg === undefined ? nextBooks : nextBooks[arg];
+    var theBook = !bookName ? nextBooks : nextBooks[bookName];
 
 return theBook;
 
 };
 
-    
+     
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-console.log(books());
+console.log(book());
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-console.log('O livro CleanCode tem '+ books('cleanCode').quantidadePaginas +' páginas!')
+
+console.log('O livro '+ exportBookName +' tem '+ book( exportBookName ).quantidadePaginas +' páginas!')
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log('O autor do livro tdd é '+ books('tdd').autor +'.');
+console.log('O autor do livro '+ exportBookName +' é '+ book( exportBookName ).autor +'.');
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log('O livro ExExplaned foi publicado pela editora '+ books('exExplaned').editora +'.');
+console.log('O livro '+ exportBookName +' foi publicado pela editora '+ book( exportBookName ).editora +'.');
