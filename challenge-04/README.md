@@ -102,7 +102,7 @@ Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 
 carro.obterMarcaModelo = function() {
-    return 'Esse carro é um ' + carro.marca + ' ' + carro.modelo;
+    return 'Esse carro é um ' + carro.obterMarca() + ' ' + carro.obterModelo();
 };
 
 /*
@@ -125,15 +125,17 @@ citado acima, no lugar de "pessoas".
 carro.adicionarPassageiros = function(nroPassageiros) {
     var assentosVagos = carro.assentos - carro.quantidadePessoas;
 
-    if (assentosVagos === 0) {
+    if (assentosVagos === 0 && nroPassageiros + carro.quantidadePessoas >= carro.assentos) {
         return 'O carro já está lotado!';
-    } else if (nroPassageiros > assentosVagos) {
+    } 
+    
+    if (nroPassageiros > assentosVagos) {
         return 'Só cabe' + (assentosVagos !== 1 ? 'm' : '') + ' mais ' + assentosVagos + ' pessoa' + (assentosVagos !== 1 ? 's' : '') + '!';
-    } else {
-        carro.quantidadePessoas += nroPassageiros;
-        return 'Já temos ' + carro.quantidadePessoas + ' pessoa' + (carro.quantidadePessoas !== 1 ? 's' : '') + ' no carro!';
     }
-};
+
+    carro.quantidadePessoas += nroPassageiros;
+    return 'Já temos ' + carro.quantidadePessoas + ' pessoa' + (carro.quantidadePessoas !== 1 ? 's' : '') + ' no carro!';
+}
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -180,7 +182,7 @@ carro.adicionarPassageiros(3); // "Já temos 5 pessoas no carro!"
 
 // Tire 4 pessoas do carro.
 
-carro.quantidadePessoas -= 4;
+carro.adicionarPassageiros(-4); //"Já temos 1 pessoa no carro!"
 
 // Adicione 10 pessoas no carro.
 
