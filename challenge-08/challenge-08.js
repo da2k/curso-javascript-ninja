@@ -74,9 +74,9 @@ function calculator( operator ) {
        result = value1 % value2;
        break;
      default:
-       console.log("Operação inválida");
+       return "Operação inválida";
    }
-   console.log("Resultado da operação: " + value1 + ' ' + operator + ' ' + value2 + ' = ' +  result);
+   return "Resultado da operação: " + value1 + ' ' + operator + ' ' + value2 + ' = ' +  result;
  }
 }
 
