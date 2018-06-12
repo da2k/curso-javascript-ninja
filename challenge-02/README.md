@@ -22,13 +22,13 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function addvalue(x){
-	novalue = x
+function addvalue(){
+	novalue = 10;
 	return "O valor da variável agora é " + novalue	
 }
 
 // Invoque a função criada acima.
-addvalue(10);
+addvalue();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
@@ -43,11 +43,10 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function mult(a, b, c){
-	if(a == undefined || b == undefined || c == undefined){
-		return "Preencha todos os valores corretamente!"
-	}else{
-		return a * b * c + 2
+	if(a === undefined || b === undefined || c === undefined){
+		return "Preencha todos os valores corretamente!";
 	}
+  return a * b * c + 2;
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
@@ -88,7 +87,7 @@ function myfunction(a, b, c){
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 myfunction() //false
 myfunction(100) //100
-myfunction(100, 200) //200
+myfunction(100, 200) //300
 myfunction(100, 200, 2) //150
 
 ```
