@@ -53,7 +53,8 @@
 	}
 
 	function addValue(event) {
-		$txtNumero.value += this.value;
+		if ($txtNumero.value.length === 1 && $txtNumero.value.startsWith('0')) $txtNumero.value = this.value;
+		else $txtNumero.value += this.value;
 	}
 
 	function endsWithOperation(value) {
