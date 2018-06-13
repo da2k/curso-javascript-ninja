@@ -1021,3 +1021,79 @@ A função do Interval executa nos intervalos independente de existir outra fun�
 Funções de cancelamento de Timeout e Interval:
 clearTimeout(id)
 clearInterval(id)
+
+
+/* 
+Seção 22
+*/
+//Vídeo 131
+Propriedades e métodos de funções
+.name: retorna o nome da função
+.lenght: retorna o número de parâmetros que a função recebe
+.toString: converte toda a função em string
+.call(): chama/invoca a função
+.call(this): 
+> function myFunction( a, b, c, d ) {
+>     console.log( this.lastName );
+> }
+> 
+> var obj = {
+>     lastName: 'Daciuk';
+> }
+> 
+> myFunction.call(); // retorna undefined
+> myFunction.call(obj); // retorna Daciuk;
+
+
+//Vídeo 132
+call( arg1, arg2,... ):
+apply(): funciona da mesma forma que o call, porém os argumentos ficam dentro de um array
+apply( this, [arg1, arg2, ..., argN] )
+> function myFunction( a, b, c, d ) {
+>     console.log( this.lastName, a, b, c, d );
+> }
+> 
+> var obj = {
+>     lastName: 'Daciuk';
+> }
+> 
+> myFunction.call(obj, 'a', 'b', 'c', 'd'); // retorna Daciuk a b c d;
+> myFunction.apply(obj, ['a', 'b', 'c', 'd']); // retorna Daciuk a b c d;
+
+
+//Vídeo 133
+.prototype: estende um construtor
+> (function(){
+>     'use strict';
+> 
+>     function MyFunction( name, lastName ) { //construtores possuem letra maiúscula
+>         this.name = name;
+>         this.lastName = lastName;
+>     }
+> 
+>     MyFunction.prototype.fullname = function() {
+>         return this.name + ' ' + this.lastName;
+>     }
+> 
+>     var fernando = new MyFunction ( 'Fernando', 'Daciuk' );
+> 
+>      MyFunction.prototype.age = 30;
+> 
+>     console.log( fernando.fullName() ); // retorna Fernando Daciuk
+>     console.log( fernando.age ); // retorna 30. Se existisse no construtor original, o do valor do construtor se sobrepoe
+> })();
+
+
+//Vídeo 134
+Array.prototype: pode receber outros tipos de métodos.
+Array-like: elementos que se comportam como arrays, mas não o são. arguments, elementos de querySelectorAll são exemplos de array like
+> (function(){
+>     'use strict';
+> 
+>     function myFunction() {
+>         Array.prototype.forEach.call( arguments, function(item, index) {
+>             console.log( item );
+>         });
+>     }
+>     myFunction( 1, 2, 3, 4, 5 ); // retorna cada número em uma linha
+> })();
