@@ -10,10 +10,10 @@ function soma(x, y) {
 ?
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-var soma = soma(2,3);
+var soma = soma(5,5) + 5;
 
 // Qual o valor atualizado dessa variável?
-5
+15
 
 // Declare uma nova variável, sem valor.
 var myvar;
@@ -25,7 +25,7 @@ Onde VALOR é o novo valor da variável.
 */
 function addValue() {
     myvar = 5;
-    var msg = "o valor da variável é "+ myvar;
+    var msg = "o valor da variável agora é "+ myvar;
     return msg;
 }
 
@@ -33,7 +33,7 @@ function addValue() {
 addValue();
 
 // Qual o retorno da função? (Use comentários de bloco).
-'o valor da variável é 5'
+'o valor da variável agora é 5'
 
 /*
 Crie uma função com as seguintes características:
@@ -44,7 +44,7 @@ Crie uma função com as seguintes características:
 */
 function detectNullVar(x, y, z) {
     var msgError = "Preencha todos os valores corretamente!";
-    var calc = x * y * z * 2;
+    var calc = (x * y * z) + 2;
 
     if (x == null && y == null) {
         return msgError;
@@ -56,7 +56,7 @@ function detectNullVar(x, y, z) {
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
-detectNullVar(1);
+detectNullVar(1, 2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 // 'Preencha todos os valores corretamente!'
