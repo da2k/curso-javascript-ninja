@@ -43,7 +43,7 @@ Crie uma função com as seguintes características:
 */
 function multiplica(a, b, c) {
     
-    if(a != null && b != null && c != null) {
+    if(a !== undefined && b !== undefined && c !== undefined) {
         return (a * b * c) + 2;
     } else {
         return 'Preencha todos os valores corretamente!';
@@ -79,21 +79,22 @@ Crie uma função com as seguintes características:
 */
 function calculaValor(a, b, c) {
 
-    if(a != null && b != null && c != null) {
+    if(a !== undefined && b === undefined && c === undefined) {
+        return a;
+    }
+    else if(a !== undefined && b !== undefined && c === undefined) {
+        return a + b;
+    }
+    else if(a !== undefined && b !== undefined && c !== undefined) {
         return (a + b) / c;
-
-    } else if((a != null) && (b != null || c != null)) {
-        return a + b || a + c;
-
-    } else if (a != null || b != null || c != null) {
-        return a || b || c;
-
-    } else if (a == null && b == null && c == null) {
+    }
+    else if (a === undefined && b === undefined && c === undefined) {
         return false;
-        
-    } else {
+    }
+    else {
         return null;
     }
+   
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
