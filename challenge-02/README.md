@@ -85,9 +85,27 @@ function calcular(a,b,c){
         return null;
     }
 }
+
+function calcular (a,b,c){
+    var resultado1 = a;
+    var resultado2 = (a + b);
+    var resultado3 = (a + b) / c;
+
+    if (a != null && b == null && c == null){
+        return resultado1;
+    }else if (a != null && b != null){
+        return resultado2;
+    }else if (a != null && b != null && c != null){
+        return resultado3;
+    }else if (a == null && b == null && c == null){
+        return false
+    }else {
+        return null;
+    }
+}
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 
 calcular(); // false
 calcular (1); // 1
-cacular (2,2); // 4
+cacular (1,2); // 3
 calcular (1,2,3) // 3
