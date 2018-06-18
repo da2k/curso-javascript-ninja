@@ -3,13 +3,13 @@ Vamos desenvolver mais um projeto. A ideia é fazer uma mini-calculadora.
 As regras são:
 
 - Deve ter somente 1 input, mas não deve ser possível entrar dados nesse input
-diretamente;
-- O input deve iniciar com valor zero;
-- Deve haver 10 botões para os números de 0 a 9. Cada botão deve ser um número;
+diretamente; - OK 
+- O input deve iniciar com valor zero; -OK 
+- Deve haver 10 botões para os números de 0 a 9. Cada botão deve ser um número;- OK 
 - Deve haver 4 botões para as operações principais: soma (+), subtração(-),
-multiplicação(x) e divisão(÷);
+multiplicação(x) e divisão(÷); - OK 
 - Deve haver um botão de "igual" (=) que irá calcular os valores e um botão "CE"
-que irá limpar o input, deixando-o com valor 0;
+que irá limpar o input, deixando-o com valor 0; - OK 
 
 - A cada número pressionado, o input deve atualizar concatenando cada valor
 digitado, como em uma calculadora real;
@@ -23,3 +23,94 @@ multiplicação (x), então no input deve aparecer "1+2x".
 input;
 - Ao pressionar o botão "CE", o input deve ficar zerado.
 */
+(function(win, doc){
+    'use strict';
+    
+  
+  
+    
+    var $bd = doc.querySelector('[data-js="bd"]');
+    var $buttonsNumbers = doc.querySelectorAll('[data-js="button-number"]');
+    var $buttonsOperations = doc.querySelectorAll('[data-js="button-operation"]');
+    var $btnCE = doc.querySelector('[data-js="button-ce"]');
+    var $btnEqual = doc.querySelector('[data-js="button-equal"]');
+    
+    
+    
+    Array.prototype.forEach.call($buttonsNumbers, function(button){
+       button.addEventListener('click', handleClickNumber, false);
+    });
+    
+    Array.prototype.forEach.call($buttonsOperations, function(button){
+       button.addEventListener('click', handleClickOperation, false);
+    });
+    
+    $btnCE.addEventListener('click',handleClickCE,false);
+    $btnEqual.addEventListener('click',handleClickEqual,false);
+    
+    
+  
+    
+    function handleClickCE(){
+        $bd.value = 0;
+    }
+    
+    function handleClickNumber()
+    {
+        $bd.value += this.value;
+    }
+    
+    function handleClickOperation(){
+        
+       $bd.value = removeLastItemIftIsAnOperator($bd.value);
+    
+       $bd.value += this.value;
+     
+    }
+    
+    function isLastItemAnOperation(number){
+        var operations = ['+','-','x', '÷'];
+        var lastItem = number.split('').pop();
+        
+        return operations.some(function(operator){
+            return operator === lastItem;
+            
+        });
+        
+    }
+
+    function removeLastItemIftIsAnOperator(number){
+        if(isLastItemAnOperation(number)){
+             return number.slice(0,-1);
+            }
+            return number;
+    }
+
+    function handleClickEqual(){
+          $bd.value =  removeLastItemIftIsAnOperator($bd.value);
+          var allValues = $bd.value.match(/\d+[+x÷-]?/g);        
+          $bd.value  = allValues.reduce(function(accumulated, actual){
+            var firstValue = accumulated.slice(0, -1);
+            var operator = accumulated.split('').pop();
+            var lastValue = removeLastItemIftIsAnOperator(actual);
+            var lastOperator = isLastItemAnOperation(actual) ? actual.split('').pop() : '';
+            switch(operator){
+                case '+':
+                    return Number(firstValue) + Number(lastValue) + lastOperator;
+                case '-':
+                    return Number(firstValue) - Number(lastValue) + lastOperator;
+                case 'x':
+                    return Number(firstValue) * Number(lastValue) + lastOperator;
+                case '÷':
+                    return Number(firstValue) / Number(lastValue) + lastOperator;
+            }
+              
+          });
+                
+                console.log($bd.value);
+    
+        }
+    
+    
+    
+})(window, document);

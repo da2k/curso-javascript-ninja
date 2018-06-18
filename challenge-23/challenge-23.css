@@ -1,0 +1,22 @@
+.demo-card-wide.mdl-card {
+  width: 420;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+    
+}
+.demo-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 420px;
+  background: url('https://www.svgrepo.com/show/12521/calculator.svg') center / cover;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+.demo-card-wide > .mdl-card__menu {
+  color: #fff;
+      
+    
+}

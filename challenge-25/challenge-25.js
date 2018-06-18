@@ -14,3 +14,22 @@ https://developer.mozilla.org/en-US/docs/Web/Events#Categories
 Tente aplicar na prática alguns dos eventos que estão ali e coloque nesse
 desafio os experimentos legais que você conseguir desenvolver :D
 */
+(function(win,doc){
+    'use strict';
+    
+   var $btnCp = doc.querySelector('[data-js="copiar"]');
+   var $btnCv = doc.querySelector('[data-js="colar"]');
+   
+   $btnCp.addEventListener('copy',copiar,false);
+   $btnCp.addEventListener('copy',colar,false);
+   
+   function copiar(event){
+       event.preventDefault();
+       console.log('texto copiado');
+   }
+   
+    function colar(event){
+       console.log('texto colado');
+   }
+    
+})(window,document);
