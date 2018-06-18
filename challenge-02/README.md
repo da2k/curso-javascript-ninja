@@ -93,11 +93,11 @@ function calcular (a,b,c){
 
     if (a != null && b == null && c == null){
         return resultado1;
-    }else if (a != null && b != null){
+    }if (a != null && b != null && c == null){
         return resultado2;
-    }else if (a != null && b != null && c != null){
+    }if (a != null && b != null && c != null){
         return resultado3;
-    }else if (a == null && b == null && c == null){
+    }if (a == null && b == null && c == null){
         return false
     }else {
         return null;
