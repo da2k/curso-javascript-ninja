@@ -107,5 +107,5 @@ function calcular (a,b,c){
 
 calcular(); // false
 calcular (1); // 1
-cacular (1,2); // 3
-calcular (1,2,3) // 3
+cacular (10,20); // 30
+calcular (50,50,2) // 50
