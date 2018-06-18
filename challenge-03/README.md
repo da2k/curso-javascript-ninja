@@ -47,7 +47,7 @@ valor dessa propriedade a quantidade passada por parâmetro;
 booleano que representa "verdadeiro";
 */
 pessoa.andar = function(metros) {
-    return pessoa.caminhouQuantosmetros + metros;
+    pessoa.caminhouQuantosmetros += metros;
     pessoa.andando = true;
 }
 
@@ -119,9 +119,10 @@ pessoa.mostrarAltura(); // Minha altura é de 1.67m
 /*
 Faça a `pessoa` fazer 3 aniversários.
 */
-pessoa.fazerAniversario();
-pessoa.fazerAniversario();
-pessoa.fazerAniversario();
+for(i = 1; i < 3; i++) {
+    pessoa.fazerAniversario();
+    console.log('executou');
+}
 
 /*
 Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
