@@ -44,7 +44,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function multiplicacao(a,b,c){
-    if (a === null && b === null && c === null){
+    if (a === undefined && b === undefined && c === undefined){
         return 'Preencha todos os valores corretamente!';
     }else {
         return (a * b * c) + 2;
@@ -72,32 +72,19 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-function calcular(a,b,c){
-    if (a != null && b == null && c == null){
-        return a;
-    }else if (a != null && b != null){
-        return (a + b)
-    }else if (a != null && b != null && c != null){
-       return 'caiu na 3'        
-    }else if (a == null && b == null && c == null){
-        return false;
-    }else {
-        return null;
-    }
-}
 
 function calcular (a,b,c){
     var resultado1 = a;
     var resultado2 = (a + b);
     var resultado3 = (a + b) / c;
 
-    if (a != null && b == null && c == null){
+    if (a !== undefined && b === undefined && c === undefined){
         return resultado1;
-    }if (a != null && b != null && c == null){
+    }if (a !== undefined && b != undefined && c === undefined){
         return resultado2;
-    }if (a != null && b != null && c != null){
+    }if (a !== undefined && b !== undefined && c !== undefined){
         return resultado3;
-    }if (a == null && b == null && c == null){
+    }if (a === undefined && b === undefined && c === undefined){
         return false
     }else {
         return null;
