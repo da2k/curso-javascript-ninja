@@ -1,4 +1,4 @@
-# Desafio Semana #1
+# Desafio Semana #1 - Hernany Santos
 
 ```js
 // Declarar uma variável chamada `myvar`, sem valor.
