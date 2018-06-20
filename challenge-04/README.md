@@ -27,13 +27,13 @@ Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 isTruthy(12);
 isTruthy('esta string é true');
 isTruthy(true);
-isTruthy(1);
-isTruthy("esta string possui aspas duplas e também é true");
-isTruthy(23);
-isTruthy(12321);
+isTruthy([]);
+isTruthy(function() {});
+isTruthy({});
+isTruthy(20 * 30);
 isTruthy('mais uma string true, com aspas simples');
-isTruthy(34234);
-isTruthy('4543543');
+isTruthy(10 / 2);
+isTruthy(120 + 30);
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
