@@ -76,7 +76,7 @@ function maisnova(a, b, c) {
   } else if (a !== undefined && b !== undefined && c === undefined) {
     return a + b;
   } else if (a !== undefined && b !== undefined && c !== undefined) {
-    return a + b / c;
+    return (a + b) / c;
   } else {
     return "false";
   }
@@ -85,6 +85,6 @@ function maisnova(a, b, c) {
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 maisnova(2) //2
 maisnova(2, 4) //6
-maisnova(2, 4, 3) //3.333333333333333
+maisnova(2, 4, 3) //2
 maisnova() //"false"
 ```
