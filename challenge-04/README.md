@@ -108,11 +108,6 @@ citado acima, no lugar de "pessoas".
 carro.adicionarPessoas = function(qntPessoas) {
 
     var totalPessoas = carro.quantidadePessoas + qntPessoas;
-    
-    // verifica se é plural
-    var isPlural = function(obj, palavra) {
-        return obj !== 1 ? palavra + 's' : palavra;
-    }
      
     if(carro.quantidadePessoas === carro.assentos) {
         return `O carro está lotado!`
@@ -127,6 +122,11 @@ carro.adicionarPessoas = function(qntPessoas) {
 
     return `Já temos ${totalPessoas} ${isPlural(totalPessoas, 'pessoa')} no carro`;
 }
+
+// Função para verificar se é plural
+var isPlural = function(obj, palavra) {
+        return obj !== 1 ? palavra + 's' : palavra;
+    }
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -154,7 +154,7 @@ carro.obterCor(); // verde musgo
 carro.obterMarcaModelo(); //"Esse carro é um Fiat Palio"
 
 // Adicione 2 pessoas no carro.
-carro.adicionarPessoas(2); //"Já temos 2 pessoas no carro"
+carro.adicionarPessoas(2); // "Já temos 2 pessoas no carro"
 
 // Adicione mais 4 pessoas no carro.
 carro.adicionarPessoas(4); // "Só há lugar para 3 pessoas no carro!"
@@ -163,11 +163,29 @@ carro.adicionarPessoas(4); // "Só há lugar para 3 pessoas no carro!"
 carro.adicionarPessoas(3); // "Já temos 5 pessoas no carro"
 
 // Tire 4 pessoas do carro.
+carro.removerPessoas = function(qntPessoas) {
 
+    if(carro.quantidadePessoas === 0) {
+        return `O carro está vazio!`;
+    }
+
+    if(qntPessoas > carro.quantidadePessoas) {
+        return `Podemos remover somente ${carro.quantidadePessoas} ${isPlural(carro.quantidadePessoas, 'pessoa')} do carro!`;
+    }
+
+    if(qntPessoas <= carro.quantidadePessoas) {
+        carro.quantidadePessoas -= qntPessoas;
+        return `${qntPessoas} ${isPlural(qntPessoas, 'pessoa')} ${isPlural(qntPessoas, 'removida')}! Agora temos ${carro.quantidadePessoas} ${isPlural(carro.quantidadePessoas, 'pessoa')} no carro`;
+    }
+
+};
+
+carro.removerPessoas(4); // "4 pessoas removidas! Agora temos 1 pessoa no carro"
 
 // Adicione 10 pessoas no carro.
-
+carro.adicionarPessoas(10); // "Só há lugar para 4 pessoas no carro!"
 
 // Quantas pessoas temos no carro?
+carro.quantidadePessoas // 1
 
 ```
