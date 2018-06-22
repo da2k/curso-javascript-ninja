@@ -1,90 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Challenge 23</title>
-    <style>
-        .result,
-        .calculator,
-        .buttons-wrapper {
-            display: block;
-            margin: 0 auto;
-        }
-        .result {
-            text-align: center;
-            width: 100px;
-            height: 24px;
-        }
-        .calculator {
-            width: 500px;
-        }
-        .buttons-wrapper {
-            padding-top: 20px;
-            text-align: center;
-        }
-        .buttons-wrapper::after {
-            content: '';
-            display: block;
-            clear: both;
-        }
-        .numbers {
-            float: left;
-            width: 62%;
-        }
-        .numbers button,
-        .operators button,
-        .equals-clear button {
-            display: inline-block;
-            height: 30px;
-            margin: 6px 2px;
-            cursor: pointer;
-        }
-        .numbers button {
-            width: 30%;
-        }
-        .operators,
-        .equals-clear {
-            float: left;
-            width: 25%;
-        }
-        .operators button,
-        .equals-clear button {
-            width: 40%;
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Challenge 23</title>
+        <style>
+            .result,
+            .calculator,
+            .buttons-wrapper {
+                display: block;
+                margin: 0 auto;
+            }
+            .result {
+                text-align: center;
+                width: 100px;
+                height: 24px;
+            }
+            .calculator {
+                width: 500px;
+            }
+            .buttons-wrapper {
+                padding-top: 20px;
+                text-align: center;
+            }
+            .buttons-wrapper::after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+            .numbers {
+                float: left;
+                width: 62%;
+            }
+            .numbers button,
+            .operations button,
+            .equals-clear button {
+                display: inline-block;
+                height: 30px;
+                margin: 6px 2px;
+                cursor: pointer;
+            }
+            .numbers button {
+                width: 30%;
+            }
+            .operations,
+            .equals-clear {
+                float: left;
+                width: 25%;
+            }
+            .operations button,
+            .equals-clear button {
+                width: 40%;
+            }
 
-    </style>
-</head>
-<body>
-    <div class="calculator">
-        <input class="result"
-         data-js="result" readonly value="0"/>
-        <div class="buttons-wrapper">
-            <div class="numbers">
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>4</button>
-                <button>5</button>
-                <button>6</button>
-                <button>7</button>
-                <button>8</button>
-                <button>9</button>
-                <button>0</button>
-            </div>
-            <div class="operators">
-                <button>+</button>
-                <button>-</button>
-                <button>x</button>
-                <button>÷</button>
-            </div>
-            <div class="equals-clear">
-                <button data-js="equals">=</button>
-                <button data-js="clear">CE</button>
+        </style>
+    </head>
+    <body>
+        <div class="calculator">
+            <input
+                class="result"
+                data-js="result"
+                readonly
+                type="text"
+                value="0"
+            />
+            <div class="buttons-wrapper">
+                <div class="numbers">
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>4</button>
+                    <button>5</button>
+                    <button>6</button>
+                    <button>7</button>
+                    <button>8</button>
+                    <button>9</button>
+                    <button>0</button>
+                </div>
+                <div class="operations">
+                    <button>+</button>
+                    <button>-</button>
+                    <button>x</button>
+                    <button>÷</button>
+                </div>
+                <div class="equals-clear">
+                    <button data-js="equals">=</button>
+                    <button data-js="clear">CE</button>
+                </div>
             </div>
         </div>
-    </div>
-    <script src="challenge-23.js"></script>
-</body>
+        <script src="challenge-23.js"></script>
+    </body>
 </html>

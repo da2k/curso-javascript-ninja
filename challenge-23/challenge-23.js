@@ -31,68 +31,81 @@
     var resultDisplay = document.querySelector('[data-js=result]');
 	var resultValue = resultDisplay.value;
 	var operations = {
-		"+": function(x, y) {
+		"+" : function(x, y) {
 			return x + y;
 		},
-		"-": function(x, y) {
+		"-" : function(x, y) {
 			return x - y;
 		},
-		"x": function(x, y) {
+		"x" : function(x, y) {
 			return x * y;
 		},
-		"÷": function(x, y) {
+		"÷" : function(x, y) {
 			return x / y;
 		}
-	}
+	};
+
 	function calculate(operator, x, y) {
 		return operations[operator](x, y);
 	}
 
-    document.querySelector('.numbers').addEventListener(
-        'click', function(e){
-            if (resultValue.length == 1 && resultValue == '0')
-                resultValue = '';
-            resultValue += e.target.textContent;
-            resultDisplay.value = resultValue;
-        });
-    document.querySelector('[data-js=clear]').addEventListener(
-        'click', function(){
-			resultValue = '0';
-            resultDisplay.value = resultValue;
-        }
-    );
-    document.querySelector('.operators').addEventListener(
-        'click', function(e){
-			var currentChars = resultValue.split('');
-			var lastChar = currentChars[currentChars.length-1];
-			if (lastChar.match(/\d/)) {
-				resultValue += e.target.textContent;
-				resultDisplay.value = resultValue;
-			}
-			else {
-				var newChars = currentChars.join('').substring(0, (currentChars.length-1));
-				newChars += e.target.textContent;
-				resultDisplay.value = newChars;
-			}
-        }
-	);
-	document.querySelector('[data-js=equals]').addEventListener('click', function(){
-		var resultNumbers = resultDisplay.value.split(/\D/g);
-		var firstNumber = resultNumbers[0];
-		var resultOperators = resultDisplay.value.match(/\D/g);
-		var finalResult = 0;
+	function addTargetValue(e) {
+		resultValue += e.target.textContent;
+		resultDisplay.value = resultValue;
+	}
+
+	function handleClearClick() {
+		resultValue = '0';
+		resultDisplay.value = resultValue;
+	}
+
+	function handleNumbersClick(e) {
+		if (resultValue === '0')
+			resultValue = '';
+		addTargetValue(e);
+	}
+
+	function handleOperationsClick(e) {
+		var currentChars = resultValue.split('');
+		var lastChar = currentChars[currentChars.length-1];
+		if (lastChar.match(/\d/)) {
+			addTargetValue(e);
+		}
+		else {
+			resultValue = currentChars.join('').slice(0, -1) + e.target.textContent;
+			resultDisplay.value = resultValue;
+		}
+	}
+
+	function buildsResult(numbers, operations ) {
 		var currentResult;
-		resultNumbers.forEach(function(number, index){
-			if (index == 0) {
-				finalResult += +firstNumber;
+		var finalResult = 0;
+		numbers.forEach(function(number, index){
+			if (index === 0) {
+				finalResult += +numbers[index];
 			}
 			else {
-				currentResult = calculate(resultOperators[index-1], finalResult, Number(number));
+				currentResult = calculate(operations[index-1], finalResult, Number(number));
 				finalResult = currentResult;
 			}
 		});
+		return finalResult;
+	}
+
+	function handleEqualsClick() {
+		var lastChar = resultDisplay.value.split('').pop();
+		if (lastChar.match(/\D/))
+			resultDisplay.value = resultValue.slice(0, -1);
+		var displayNumbers = resultDisplay.value.split(/\D/g);
+		var displayOperations = resultDisplay.value.match(/\D/g);
+		var finalResult = buildsResult(displayNumbers, displayOperations);
 		resultValue = String(finalResult);
 		resultDisplay.value = resultValue;
-	});
+	}
+
+    document.querySelector('.numbers').addEventListener('click', handleNumbersClick);
+    document.querySelector('[data-js=clear]').addEventListener('click', handleClearClick);
+    document.querySelector('.operations').addEventListener('click', handleOperationsClick);
+	document.querySelector('[data-js=equals]').addEventListener('click', handleEqualsClick);
 
 })();
