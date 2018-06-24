@@ -45,6 +45,7 @@ function validacaoValores(valorUm, valorDois, valorTres) {
     return "Preencha todos os valores corretamente!";
   } else {
     return (valorUm * valorDois * valorTres) + 2;
+  }
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
