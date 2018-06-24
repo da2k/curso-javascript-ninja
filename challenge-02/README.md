@@ -1,3 +1,8 @@
+# Desafio da semana #2
+
+Nesse exercício, você está livre para escolher os nomes para suas variáveis e funções! :smile:
+
+```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
 function somar(x, y){
     return x + y;
@@ -82,3 +87,5 @@ manager();          // false
 manager(1);         // 1
 manager(1,2);       // 3
 manager(1,2,3);     // 1
+
+```
