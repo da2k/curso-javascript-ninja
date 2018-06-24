@@ -24,7 +24,7 @@ Onde VALOR é o novo valor da variável.
 */
 function alterar() {
     newvar = 5;
-    return "O valor da variavel agora é 5";
+    return "O valor da variavel agora é " + newvar  +".";
 }
 
 // Invoque a função criada acima.
