@@ -1097,3 +1097,32 @@ Array-like: elementos que se comportam como arrays, mas não o são. arguments, 
 >     }
 >     myFunction( 1, 2, 3, 4, 5 ); // retorna cada número em uma linha
 > })();
+
+
+
+/* 
+Seção 23
+*/
+//Vídeo 137
+Debug 1
+Breakpoint: no Developer Tools, na aba Sources, ao clicar no número da linha se cria um Breakpoint. Nesse ponto, o código para de rodar.
+Scope: verifica todas as variáveis, locais e globais chamadas até o momento
+
+
+//Vídeo 138
+Debug 2
+Breakpoint: se selecionado uma linha de código dentro de uma função que se repete, é mostrado cada valor atualizado das variáveis da função.
+Também se pode acessar variáveis na parada do breakpoint.
+
+
+//Vídeo 139
+Debug 3
+Seta com bolinhas: vai para a próxima chamada de função ou a anterior.
+console.log: usar para saber se cada função está funcionando ou sendo chamada.
+debugger; : específico do navegador. ele cria um breakpoint manualmente no código. Funciona no Chrome
+
+
+//Vídeo 140
+Debug 4
+console.time e console.timeEnd: calcula o tempo de início e final de execução de determinadas funções
+console.table: mostra em forma de tabela os itens de um array
