@@ -893,3 +893,93 @@ Caracteres especiais:
 Para usar aspas simples em um string: usar barra para escapar
 'Julio\'s bar'
 
+
+
+/* 
+Seção 20
+*/
+//Vídeo 119
+if de uma linha só: não precisa usar {}
+>	(function(win) {
+>	  if( win === window )
+>	    console.log( 'win é uma referência local à window' );
+>	})(window);
+Somente a primeira linha depois do if é considerada.
+
+Métodos do window
+window.alert( 'string' ): aparece um popup de alerta no navegador. Não é muito mais usado.
+> (function(win) {
+>     'use strict';
+>     window.alert( 'Mensagem' ); // também pode ser usado sem o 'window.'
+> })(window);
+window.prompt( 'string' ): recebe input do usuário.
+
+
+//Vídeo 120
+.prompt, exemplo:
+> (function(win){
+>    'use strict';
+>     var name = prompt( 'Qual o seu nome?' );
+>     if( name )
+>         console.log( 'Olá', name );
+>     else
+>         console.log( 'não respondeu :(' );
+> })(window);
+
+window.confirm( 'string' ): retorna true ou false.
+
+window.document: referente ao DOM (Document Object Model), ao HTML.
+> (function(win, doc){
+>    'use strict';
+>    console.log( doc.getElementById( 'my-link' ) ); // retorna o elemento cujo id é my-link
+>    console.log( doc.getElementsByClassName( 'my-link' ) ); // retorna elementos cujas classes são my-link. Retorna um HTML collection
+>    console.log( doc.getElementsByTagName( 'a' ) ); // retorna elementos de tags a. Retorna um HTML collection
+> })(window, document);
+
+
+//Vídeo 121
+getElementByTagName(), getElementByName(), querySelector(), querySelectorAll()
+
+> (function(win, doc){
+>    'use strict';
+>    var $inputs = doc.getElementsByTagName( 'input' ); // esse valor é dinâmico
+>    console.log( doc.getElementByName( 'username' ) ); // retorna o elemento cujo name (atributo) é username
+>
+>    $input = doc.querySelector( 'input' ); // seleciona a partir de um seletor CSS. Esse valor não é dinâmico
+>    $input = doc.querySelector( '[type="text"]' );
+>    $input = doc.querySelector( '.my-link' ); // seleciona o primeiro elemento de class='my-link'
+>    $input = doc.querySelectorAll( '.my-link' ); // seleciona elementos de class='my-link'
+> })(window, document);
+
+
+//Vídeo 122
+Formulários
+> (function(win, doc){
+>    'use strict';
+>
+>    var $inputUsername = doc.querySelector( '#username' );
+>    var $inputPassword = doc.querySelector( '#password' );
+>    $inputUsername.value = 'Fernando Daciuk'; // muda o atribute value dos elementos selecionados
+>    $inputPassword.value = 'minhasenha'; 
+>
+> })(window, document);
+
+Introdução a eventos
+.addEventListener('click')
+Formulários
+> (function(win, doc){
+>    'use strict';
+>
+>    var $inputUsername = doc.querySelector( '#username' );
+>    var $inputPassword = doc.querySelector( '#password' );
+>    var $button = doc.querySelector( '#button' );
+>
+>    $button.addEventListener( 'click', function(event) {
+>       event.preventDefault(); // previne a ação padrão do clique nesse elemento
+>       console.log( 'Click no botão' );    
+> }, false );
+>
+>    $inputUsername.addEventListener( 'click', function(event) {
+>       alert('Clique no input');    
+> }, false );
+> })(window, document);
