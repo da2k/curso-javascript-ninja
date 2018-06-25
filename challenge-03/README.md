@@ -24,7 +24,7 @@ var pessoa = {
               altura: 1.79,
               peso: 72,
               andando: false,
-              caminhouQuatroMetros: 0,
+              caminhouQuantosMetros: 0,
 			        }
 
 /*
@@ -45,7 +45,7 @@ valor dessa propriedade a quantidade passada por parâmetro;
 booleano que representa "verdadeiro";
 */
 pessoa.andar = function(x){	
-							  pessoa.caminhouQuatroMetros += x,
+							  pessoa.caminhouQuantosMetros += x,
 						  	pessoa.andando = true
 						  }
 
@@ -156,7 +156,7 @@ pessoa.andando //false
 Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
 inline ao lado da instrução para mostrar a resposta retornada)
 */
-pessoa.caminhouQuatroMetros //30
+pessoa.caminhouQuantosMetros //30
 
 /*
 Agora vamos deixar a brincadeira um pouco mais divertida! :D
@@ -175,8 +175,22 @@ deve conter no retorno da frase acima é "metro" no lugar de "metros".
 método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
-?
+function apresentacao(){
+	if (pessoa.sexo == 'Feminino'){
+	var orientacao = 'a'
+}else{
+	var orientacao = 'o'
+};
+if (pessoa.idade == 1){
+	var quantidade = 'ano'
+}else{
+	var quantidade = 'anos'
+}		
+
+	return "Olá, eu sou " + orientacao + " "  + pessoa.nome + " " + pessoa.sobrenome + " tenho " + pessoa.idade + " "  + quantidade + ", " + pessoa.altura + ", meu peso é " +pessoa.peso+ " e, só hoje, eu já caminhei " +pessoa.caminhouQuantosMetros+ " metros!"
+}
 
 // Agora, apresente-se ;)
-?
+apresentacao() // "Olá, eu sou o Claudemiro Neto tenho 27 anos, 1.79, meu peso é 72 e, só hoje, eu já caminhei 15 metros!"
+
 ```
