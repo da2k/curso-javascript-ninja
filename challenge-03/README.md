@@ -183,6 +183,7 @@ pessoa.apresentacao = function() {
   var sexo = 'o';
   var idade = 'anos';
   var metros = 'metros';
+  
   if( pessoa.sexo === 'Feminino') {
     var sexo = 'a';
   }
