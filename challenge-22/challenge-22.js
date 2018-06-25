@@ -26,10 +26,7 @@
   */
   console.log( 'O nome das pessoas é:' );
   function getFullName() {
-    var name = this.name;
-    var lastName = this.lastName;
-
-    return name + ' ' + lastName;
+    return this.name + ' ' + this.lastName;
   }
 
   console.log( getFullName.call( mellina ) );
@@ -43,10 +40,12 @@
   os parâmetros passados para essa função.
   */
   function sum(){
-    var result = Array.prototype.reduce.apply( arguments, [function( acumulado, atual, index ){
-      return acumulado + atual;
-    }]);
-    console.log( result );
+    console.log( arguments );
+
+    return Array.prototype.reduce.call( arguments,
+      function( acumulado, atual ){
+      return +acumulado + +atual; //o sinal de mais antes da variável transforma o array em numero
+    });
   }
 
   /*
@@ -54,9 +53,9 @@
   diferentes, com quantidades variáveis de parâmetros passados.
   */
   console.log( '\nSomar alguns números:' );
-  sum( 1, 2, 3 ); // 6
-  sum( 1, 2, 3, 6 ); // 12
-  sum( 1, 2 ); // 3
+  console.log( sum( 1, 2, 3 )); // 6
+  console.log( sum( 1, 2, 3, 6 )); // 12
+  console.log( sum( 1, 2 )); // 3
 
   /*
   Declare uma variável chamada `userEntry`, que irá receber alguns valores
@@ -78,8 +77,7 @@
   */
   console.log( '\nFunção que limpa entrada do usuário (somente números):' );
   function justNumbers( str ) {
-    var arr = str.match(/(\d+)/gm).toString();
-    return arr;
+    return str.replace( /(\D+)/gm, ',' ).split( ',' );
   }
   console.log( justNumbers );
 
@@ -90,7 +88,7 @@
   */
   console.log( '\nEntrada do usuário limpa. Somente números:' );
   var numbers = justNumbers( userEntry );
-  console.log ( typeof Object.keys(numbers) );
+  console.log ( numbers );
 
 
   /*
@@ -98,5 +96,5 @@
   números desse array e mostre o resultado no console.
   */
   console.log( '\nSomar números entrados pelo usuário:' );
-  sum( numbers );
+  console.log( sum.apply( sum, numbers ) );
 })();
