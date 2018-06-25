@@ -496,3 +496,82 @@ Saltos: return, por exemplo pode ser usado em qualquer lugar na função. Ele pu
 Return, break.
 Continue, por sua vez, dá continuidade, ignorando o resto da expressão.
 
+
+
+/* 
+Seção 12
+*/
+
+// Vídeo 70
+Objetos: são mutáveis
+> var obj = {
+>     prop1: 'prop1',
+>     prop2: 'prop2'
+> }
+> obj.prop1 = 'propriedade 1'; // obj = { prop1: 'propriedade 1', prop2: 'prop2' }
+> delete obj.prop1 // obj = { prop2: 'prop2' }
+> obj.prop1 = 'prop1' // obj = { prop2: 'prop2', prop1: 'prop1' }
+
+São manipulados por referência
+> var objCopy = obj
+> objCopy === obj // true
+> objCopy.prop1 = 'propriedade do objeto copy'
+> objCopy // { prop2: 'prop2', prop1: 'propriedade do objeto copy' }
+> obj // { prop2: 'prop2', prop1: 'propriedade do objeto copy' }
+objCopy tem como referência o obj, ou seja, toda mudança feita em um é feito no outro.
+
+Criando objetos:
+* Literais; // var obj = {}
+* Como construtor (new); // var newObj = new Object();
+* Object.create();
+
+
+// Vídeo 71
+> var obj2 = Object.create(obj);
+obj2 herda propriedades do Object.prototype
+Se algum elemento é modificado no obj2, não é modificado no obj. Porém, se há alguma propriedade modificada no obj, obj2 é atualizado de acordo.
+> obj.toString() // '[object Object]'
+> obj.hasOwnProperty('x'); // true
+> obj2.hasOwnProperty('y') // false, obj2 não é dele, é herdado do obj
+
+
+// Vídeo 72
+Métodos do objeto
+Object.keys(obj): pega as propriedades do objeto
+> Object.keys(obj); // [ 'x', 'y' ]
+> Object.keys(obj).length; // 2
+
+obj.isPrototypeOf(obj2): retorna uma booleana, pra saber se o objeto em questão é pai de outro (parâmetro)
+> obj.isPrototypeOf(obj2); // true
+> obj2.isPrototypeOf(obj); // false, obj que é pai do obj2
+
+JSON.stringify(obj): transforma objeto em string
+JSON.parse(str): transforma string em objeto
+> JSON.stringify(obj); // '{"x":1, "y":2}'
+> JSON.parse(obj); // { x: 1, y: 2 }
+
+Arrays - adicionar e remover itens
+> var arr = [];
+> arr[12] = 'doze';
+// [ , , , , , , , , , , , 'doze' ]
+> var outro = arr.pop(); // retorna e retira o último elemento 
+// [ , , , , , , , , , , , ]
+> outro
+// 'doze'
+
+
+// Vídeo 73
+Array: join(): junta elementos de um array em uma única string.
+> var arr = [ 'arroz', 'feijao', 'macarrao' ];
+> arr.join();
+// arroz feijao macarrao
+> arr.join(', ');
+// arroz, feijao, macarrao
+
+reverse(): inverte a ordem dos elementos do array. Ele modifica o array.
+> arr.reverse();
+// [ 'macarrao', 'feijao', 'arroz' ]
+
+sort(): ordena em ordem alfabética. Modifica o array principal.
+> arr.sort();
+// [ 'arroz', 'feijao', 'macarrao' ]
