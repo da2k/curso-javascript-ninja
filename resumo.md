@@ -575,3 +575,78 @@ reverse(): inverte a ordem dos elementos do array. Ele modifica o array.
 sort(): ordena em ordem alfabética. Modifica o array principal.
 > arr.sort();
 // [ 'arroz', 'feijao', 'macarrao' ]
+
+
+
+/* 
+Seção 13
+*/
+
+// Vídeo 76
+toString(): transforma os itens do array em string (junta todos os elementos, separados por uma vírgula);
+concat(): adiciona um elemento ao array, porém não modifica o objeto original. Junta todos em uma array só.
+unshift(): adiciona um elemento no começo do array.
+shift(): remove o primeiro elemento do array.
+
+
+//Vídeo 77
+slice( x, y ): retorna um intervalo do array. Se usado número negativo, ele pega o número total do array e subtrai por esse número e retorna a partir dele.
+splice( x, y ): modifica o array principal. Se usado um único parâmetro, ele retorna os números depois desse índice. O array principal fica com os elementos restantes.
+splice( x, y, z ): x - onde vai começar a inserção dos novos elementos, y - se algum deles vai ser removido, z - elementos a ser inserido.
+
+//Vídeo 78
+forEach(): 
+> var arr = [ 1, 2, 3, 4, 5, 6, 7 ];
+> arr.forEach( function( item, index, array ) {
+    console.log( item, index, array );
+});
+
+every(): passa por todos os elementos do array, testando algum tipo de verificação e retorna true ou false. Se todos forem verdeiros, ele retorna true.
+> var every = arr.every(function(item) {
+>    console.log(item);
+>    return item < 5;
+> });
+
+some(): passa por todos os elementos do array, testando algum tipo de verificação e retorna true ou false. Se pelo menos um for verdadeiro, ele retorna true.
+var some = arr.some(function(item) {
+    return item % 2 === 0;
+});
+
+//Vídeo 79
+map(): varre todo o array, modificando conforme uma certa lógica, não modificando o array original.
+> var map = arr.map(function(item, index, array) {
+>     return item + 1;
+> });
+> console.log( arr, map );
+
+filter(): ele filtra de acordo com alguma condição.
+var filter = arr. filter(function(item){
+    return item > 2;
+});
+
+
+
+
+/* 
+Seção 14
+*/
+
+//Vídeo 83
+reduce(): varre todo o array e faz uma ação pré-determinada em cada etapa.
+var arr = [ 1, 2, 3, 4, 5 ];
+arr.reduce(function( acumulado, atual, index, array ) {
+    return acumulado + atual;
+});
+Acumulado é o valor somado na etapa anterior.
+
+reduceRight(): faz a mesma coisa do reduce(), porém da direita pra esquerda.
+
+
+//Vídeo 84
+indexOf(): procura o valor dentro de um array e retorna o índice desse item. Se não houver o item, ele retorna -1.
+O segundo parâmetro determina a partir de qual índice ele deve procurar.
+console.log( arr.indexOf( 3, 1 ) ); // retorna 2
+
+lastIndexOf(): faz a mesma coisa que o indexOf(), porém ele começa a verificar de trás pra frente.
+
+isArray(): um método que retorna true ou false, verificando se o objeto é um array ou não.
