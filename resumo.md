@@ -837,6 +837,59 @@ Exemplo:
 \w*: zero ou mais ocorrências
 
 Para filtrar URLs válias:
+http://wwww.google.com
 regex: / https?:\/\/\w+[.\w]+ /
+
+teste@gmail.com
 Para filtrar email:
 regex: / [\w+]+@\w+\.\w+([.\w]+)? /
+
+
+
+/* 
+Seção 19
+*/
+//Vídeo 113
+^: início da string. Captura somente se houver match no começo da string.
+$: fim de string. Uso: >$ (caracter a ser testado tem que vir antes do $)
+?: depois de um repetidor, + por exemplo, ele faz uma captura não gulosa. Captura não gulosa: captura o mínimo de caracteres que estão dentro dessa condição.
+(?:) : faz a seleção mas não agrupa os caracteres dentro da seleção. Por exemplo: ju(n|l)ho seleciona junho, julho, n, l. Para não selecionar n nem o l, utilizamos a expressão: ju(?:n|lho).
+\1, \2: referência dentro da regex. Faz uma referência de agrupamento dentro da própria regex. Por exemplo, <(\w+)>.+?<\/(\1)> seleciona todas as tags iguais, ou seja <h1> teste </h1> (\1 repete a primeira captura).
+
+flags
+m: captura caracteres em outras linhas. Funcioa com os ^ e $.
+
+
+//Vídeo 114
+.match(regexp): retorna tudo que combina com os caracteres especificados.
+.replace(regexp, string): retorna a string com a substituição de caracteres.
+.split(regexp, string): converte a string em um array e divide a string de acordo com o caracter especificado.
+.search(regexp): retorna o índice do caracter especificado. Funciona que nem o indexOf(). Flag global não funciona.
+
+
+//Vídeo 115
+Construtor RegExp()
+> var regex = new RegExp( 'nando' );
+> 'fernando'.match ( regex );
+Na RegExp, a barra é usada pra considerar o caracter como literal. Para usar como global, usa-se a dupla barra. Por exemplo:
+> regex = new RegExp( '\\d' ); // captura digitos. Funciona como se fosse /\d/.
+
+Métodos de RegExp
+.test('string'): verifica se há o conjunto de caracter. Retorna uma boolean.
+> /\d/.test(name) // retorna true;
+> /z/.test(name) // retona false;
+
+.exec('string'): executa o search e guarda os resultados em um array.
+> var regex = /\d/g;
+> var name = 'fer123nando';
+> var result;
+> while ( result = regex.exec(name) !== null ) {
+>    console.log(result); //retorna true 3 vezes;
+> }
+
+Caracteres especiais:
+\t: tab
+\n: quebra de linha
+Para usar aspas simples em um string: usar barra para escapar
+'Julio\'s bar'
+
