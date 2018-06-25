@@ -797,3 +797,46 @@ Também funciona com funções
 >    return letra1.toUpperCase() + letra2.toLowerCase(); // returna letras intercaladas em minusculo e maiusculo
 > });
 
+
+
+/* 
+Seção 18
+*/
+//Vídeo 107
+\s: espaço em branco
+\n: quebra de linha
+\t: espaçamento tab
+.: qualquer caracter, exceto quebra de linha
+
+
+//Vídeo 108
+Negação
+[^abc]: o match é feito com qualquer item, menos com os da lista, ou seja a, b, c.
+\W: qualquer caractere, menos os alfanuméricos
+\D: qualquer caractere, menos dígitos
+\S: qualquer caractere, menos os espaços em branco
+
+Repetidores
+Intervalo
+{n,m}: intem anterior ao menos n vezes, e no máximo m vezes.
+Por exemplo
+\d{2,4} seleciona dígitos com 2, 3 ou 4 números seguidos.
+11, 111, 1111 são selecionados, ao passo que 1, 11111 não são
+
+
+//Vídeo 109
+Intervalo aberto
+\d{n,}: captura um dígito com no mínimo n números
+\d{n}: captura dígito com o número exato de n
+
+Opcional
+?: o item anterior é uma adição opcional.
+Exemplo:
+\s\d? seleciona os espaços em branco, inclusive aqueles que possuem um dígito em seguida. Ou seja, os caracteres ' 3' serão selecionados.
+\w+: uma ou mais ocorrências
+\w*: zero ou mais ocorrências
+
+Para filtrar URLs válias:
+regex: / https?:\/\/\w+[.\w]+ /
+Para filtrar email:
+regex: / [\w+]+@\w+\.\w+([.\w]+)? /
