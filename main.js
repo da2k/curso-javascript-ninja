@@ -35,3 +35,38 @@
     console.log( myFunction(1, 5) );
 
 })();
+
+
+// use strict - 93
+(function() {
+    'use strict';
+    var myName = 'Fernando Daciuk';
+    console.log(myName);
+})();
+// console.log(myName);
+
+
+// use strict, with - 94
+(function () {
+
+    var obj = {
+        prop1: {
+            prop2: {
+                prop3: {
+                    prop31: 'prop31',
+                    prop32: 'prop32',
+                    prop33: 'prop33'
+                }
+            }
+        }
+    };
+
+    console.log( obj.prop1.prop2.prop3.prop31 );
+    console.log( obj.prop1.prop2.prop3.prop32 );
+    console.log( obj.prop1.prop2.prop3.prop33 );
+
+    with ( obj.prop1.prop2.prop3 ) { // with encurta o caminho do objeto
+        console.log( prop31, prop32, prop3 );
+    }
+
+})();
