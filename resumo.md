@@ -13,6 +13,10 @@ Pra criar uma variável:
 
 Tipos de dados: number, string, boolean, null, undefined, {} object, [] array.
 
+!! Diferença entre null e undefined:
+undefined aparece quando uma variável é declarada, porém não há um valor ainda. JS automaticamente determina as variáveis como undefined.
+null é um valor por si só. Pode ser a representação de um valor nulo ou sem valor. JS nunca determina um valor como nulo, isso tem que ser feito pelo programador.
+
 Objetos:
 > var x = {};
 > var pessoa = {
@@ -53,6 +57,9 @@ Operadores de igualdade / relacionais:
 === igual a, e do mesmo tipo
 !== diferente de, mas do mesmo tipo
 
+Referência:
+https://www.codecademy.com/en/forum_questions/51392b8a3bd5292a360000eb
+
 > maior que
 < menor que
 >= maior ou igual a
@@ -87,6 +94,9 @@ Operadores lógicos: combina dois valores e retorna se é true ou false.
 // Vídeo 09
 Operadores unários: tenta converter valor para número ou concateca valores.
  + e -
+> +'3' // retorna 3
+> +'fernando' // retorna NaN (not a number)
+> '3'  + 3 // retorna '33' (concatena)
 
  //Vídeo 10
 Estrutura léxica
@@ -244,7 +254,7 @@ Operador vírgula: junta várias expressões
 > var a, b = 2, c;
 > function myFunc() {
 >   var x = 0;
->   return ( x +=1, x ); // return ++x
+>   return ( x +=1, x ); // faz a incrementação e em seguida retorna x (que é x++)
 > };
 
 Estrutura condicional
@@ -414,6 +424,7 @@ Porém, se a função estiver atribuída a uma variável, ele não fará hoistin
 >     };
 > };
 > console.log( myFunction() ); // retorna um erro
+Nesse caso, a variável deveria ser criada antes de sua chamada para não retornar undefined.
 
 // Vídeo 53
 IIFE: função autoexecutável.
@@ -523,7 +534,7 @@ objCopy tem como referência o obj, ou seja, toda mudança feita em um é feito 
 Criando objetos:
 * Literais; // var obj = {}
 * Como construtor (new); // var newObj = new Object();
-* Object.create();
+* Object.create(); // herda propriedades de um objeto
 
 
 // Vídeo 71
@@ -591,8 +602,8 @@ shift(): remove o primeiro elemento do array.
 
 //Vídeo 77
 slice( x, y ): retorna um intervalo do array. Se usado número negativo, ele pega o número total do array e subtrai por esse número e retorna a partir dele.
-splice( x, y ): modifica o array principal. Se usado um único parâmetro, ele retorna os números depois desse índice. O array principal fica com os elementos restantes.
-splice( x, y, z ): x - onde vai começar a inserção dos novos elementos, y - se algum deles vai ser removido, z - elementos a ser inserido.
+splice( x, y ): retira itens e modifica o array principal. Se usado um único parâmetro, ele retorna os números depois desse índice. O array principal fica com os elementos restantes.
+splice( x, y, z ): x - onde vai começar a inserção dos novos elementos, y - se algum deles vai ser removido, z - elemento a ser inserido.
 
 //Vídeo 78
 forEach(): 
@@ -652,6 +663,11 @@ lastIndexOf(): faz a mesma coisa que o indexOf(), porém ele começa a verificar
 isArray(): um método que retorna true ou false, verificando se o objeto é um array ou não.
 
 
+
+/* 
+Seção 15
+*/
+
 //Vídeo 89
 JS no Browser
 > <script src="main.js"> </script>
@@ -676,8 +692,15 @@ this: chama o objeto principal, podendo ser um objeto mesmo ou a window.
 arguments: variável que retorna os argumentos da sua função em forma de array. 
 Não usar 'arguments' como nome de variável ou argumento.
 
+
+
+/* 
+Seção 16
+*/
+
 //Vídeo 93
 'use strict': não permite a criação de uma variável sem o var. Usar em toda função IIFE para não entrar em conflito com outras funções de terceiros.
+
 
 //Vídeo 94
 'use strict': não permite o uso de with.
@@ -698,9 +721,11 @@ with: encurta o caminho de um objeto.
 >        console.log( prop31, prop32, prop3 );
 >    }
 
+
 //Vídeo 95
-'use strict': se delete não pode ser executado, ele retorna SyntaxError. Deletar é só permitido de deletar propriedades do objeto.
+'use strict': se delete não pode ser executado, ele retorna SyntaxError. Delete é só permitido se deletar propriedades do objeto.
 Propriedades tem que ter nomes diferentes. Argumento de funções tem que ter nomes diferentes.
+
 
 //Vídeo 96
 Objeto String
@@ -711,10 +736,64 @@ Objeto String
 .replace('string'): substitui um trecho de uma string por outra. Faz o replace somente do primeiro caracter, se houver mais de 1.
 .slice(start, end): são indicados os números para "recortar" a string principal.
 .split('string'): é indicado uma string onde será seccionado a string, para a criação de um array. O parâmetro é removido do resultado.
-**Para realizar o replace de mais de uma string repetida, usar o var.split('string').join('string2')
+**Para realizar o replace de mais de uma string repetida, usar o var.split('string').join('string2'). Por exemplo, quero substituir todos os 'n' de fernando por 'z'. Usar var.split('n').join('z')
 
 //Vídeo 97
 .substring(n, n): faz a mesma coisa que o slice, com a diferença que se o primeiro número for maior que o segundo, ele retorna a string ao contrário.
 .toLowerCase(): retorna a string em caixa baixa.
 .toUpperCase(): returna a string em caixa alta.
+
+
+
+/* 
+Seção 17
+*/
+//Vídeo 101
+Expressões regulares (regex): servem para manipular strings. É um tipo primitivo de Javascript.
+Ferramenta para teste de regex: https://regex101.com/
+Objeto RegExp()
+> var regex = /m/;
+> var texto = "Famous Fantastic Mysteries was an American science fiction and fantasy pulp magazine published from 1939 to 1953, edited by Mary Gnaedinger. It was launched by the Munsey Company to reprint stories from their magazines, including Argosy. Frequently reprinted authors included George Allan England, A. Merritt, and Austin Hall. The artwork, including some of the best work of Virgil Finlay and Lawrence Stevens, contributed to the success of the magazine."
+> texto.match(/m/g); // retorna ['m','m','m','m'];
+
+
+//Vídeo 102
+Flags:
+g: global;
+i: ignore case;
+
+Termos
+\w: caracteres alfanuméricos e _
+\d: números (digits)
+> texto.match(/\w/g); // retorna um array com todos os caracteres do texto separados
+> texto.match(/Fernando/); // retorna null
+> texto.match(/\d/); // retorna o primeiro numero do texto;
+> texto.match(/\d\d/); // retorna os dois primeiros numeros do texto
+
+Classe de caracteres (listas)
+Ou: |
+Lista de caracteres: [abcd] - vai achar todos os a, b, c, d em separado
+> texto.match(de|da); // retorna todos os 'de' e 'da'
+> texto.match([abcd]); // retorna todos os a, b, c, d
+[1-9] // seleciona todos os numeros de 1 a 9
+[a-z] // seleciona todas as letras do alfabeto
+[A-Za-z0-9] // seleciona todos os alfanumericos tirando espaços e caracteres especiais
+Agrupamento de caracteres: ()
+
+
+//Vídeo 103
+Os intervalos são baseados na tabela unicode. Se usado o [A-z], ele pegaria todos os caracteres alfanúmericos, inclusive [, \, ], ^, _, ´, porque eles estão na tabela unicode.
+Referência: http://www.ftrain.com/unicode/
+.replace();
+> texto.replace(/de/g, 'DE'); // modifica todos os 'de' por 'DE'
+$1: captura o próprio elemento
+> texto.replace(/de/g, '$1$1'); // modifica todos os 'de' por 'dede'
+> texto.replace(/(d)(e)/g, '--$2' ) // modifica todos os 'de' por '--e'. O $2 seleciona o segundo item
+Também funciona com funções
+> texto.replace(/(d)(e)/g, function(capturaTotal, d, e) {
+>    return (d + e).toUpperCase;
+> });
+> texto.replace(/(\w)(\w)/g, function(capturaTotal, letra1, letra2) {
+>    return letra1.toUpperCase() + letra2.toLowerCase(); // returna letras intercaladas em minusculo e maiusculo
+> });
 
