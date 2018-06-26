@@ -78,9 +78,7 @@
   Adicione os estados do `nordeste` ao array `brasil`. Esses estados devem
   ficar no mesmo nível que os estados já existentes, não em um array separado.
   */
-  nordeste.forEach(function( item ){
-    brasil.push(item);
-  });
+  brasil = brasil.concat( nordeste );
 
   /*
   Mostre no console os estados em `newSudeste`.
@@ -156,8 +154,8 @@
   - "[ESTADO] pertence ao Brasil."
   Atribua o novo array a uma variável chamada `map`.
   */
-  var map = newBrasil.map(function( item, index ){
-    return { id: item.id += 1, estado: item.estado += ' pertence ao Brasil'}
+  var map = newBrasil.map(function( item, index ) {
+    return { id: item.id += 1, estado: item.estado += ' pertence ao Brasil'};
   });
 
   /*
