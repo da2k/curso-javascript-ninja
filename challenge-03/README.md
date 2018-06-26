@@ -45,9 +45,9 @@ valor dessa propriedade a quantidade passada por parâmetro;
 booleano que representa "verdadeiro";
 */
 pessoa.andar = function(x){	
-							  pessoa.caminhouQuantosMetros += x,
-						  	pessoa.andando = true
-						  }
+  pessoa.caminhouQuantosMetros += x,
+  pessoa.andando = true
+}
 
 /*
 Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o valor
@@ -60,16 +60,16 @@ Crie um método chamado `nomeCompleto`, que retorne a frase:
 - "Olá! Meu nome é [NOME] [SOBRENOME]!"
 */
 function nomeCompleto(){ 
-                        return 'Olá ! Meu nome é ' + pessoa.nome + ' ' + pessoa.sobrenome + ' !' 
-                       }	
+  return 'Olá ! Meu nome é ' + pessoa.nome + ' ' + pessoa.sobrenome + ' !' 
+}	
 
 /*
 Crie um método chamado `mostrarIdade`, que retorne a frase:
 - "Olá, eu tenho [IDADE] anos!"
 */
 function mostrarIdade(){ 
-                        return 'Olá ! Eu tenho ' + pessoa.idade + ' anos!' 
-                       }	
+  return 'Olá ! Eu tenho ' + pessoa.idade + ' anos!' 
+}	
 
 /*
 Crie um método chamado `mostrarPeso`, que retorne a frase:
@@ -77,16 +77,16 @@ Crie um método chamado `mostrarPeso`, que retorne a frase:
 */
 
 function mostrarPeso(){ 
-                      return 'Eu peso ' + pessoa.peso + ' Kg.' 
-                      }
+  return 'Eu peso ' + pessoa.peso + ' Kg.' 
+}
 
 /*
 Crie um método chamado `mostrarAltura` que retorne a frase:
 - "Minha altura é [ALTURA]m."
 */
 function mostrarAltura(){ 
-                        return 'Minha altura é ' + pessoa.altura + 'm' 
-                        }	
+  return 'Minha altura é ' + pessoa.altura + 'm' 
+}	
 
 /*
 Agora vamos brincar um pouco com o objeto criado:
