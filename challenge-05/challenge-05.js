@@ -2,7 +2,7 @@
 Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
-var values = [1, 2, 3, 4, 5];
+var myArray = [1, 2, 3, 4, 5];
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
@@ -12,7 +12,7 @@ function values(arr) {
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-values()[1]; //nome2
+console.log(values(myArray)[0]); //nome2
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -33,7 +33,11 @@ var arr = ['Canada', 'Brasil', 'Espanha', 'França', 'China'];
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-myFunction(arr);
+console.log(myFunction(arr, 0));
+console.log(myFunction(arr, 1));
+console.log(myFunction(arr, 2));
+console.log(myFunction(arr, 3));
+console.log(myFunction(arr, 4));
 
 
 /*
@@ -53,31 +57,22 @@ os livros.
 function book(nomeLivro) {
     var obj = {
 
-        'livro1': {
-            autor: 'Caio santos',
+        'HTML E CSS': {
+            autor: 'Jhon Ducket',
             paginas: 362,
             editora: 'Nova Tec'
         },
-        'livro2': {
-            autor: 'Genebra Filho',
+        'Javascript': {
+            autor: 'Jhon Ducket',
             paginas: 653,
             editora: 'Abril'
         },
-        'livro3': {
+        'Segredos do Javascript Ninja': {
             autor: 'Nivaldo Pereira',
             paginas: 205,
             editora: 'Casa dos Antes'
-        },
-        retornaLivro: function(nomeLivro) {
-            return 'O livro ' + (nomeLivro).paginas + ' páginas!';
-        },
-        retornaAutor: function(nomeLivro) {
-            return 'O autor do livro ' + (nomeLivro) + ' é ' + book(nomeLivro).autor + ' .';
-        },
-        retornaEditora: function(nomeLivro) {
-            return 'O livro ' + (nomeLivro) + ' foi publicado pela editora ' + book(nomeLivro).editora + '.';
         }
-    }
+    };
 
     return !nomeLivro ? obj : obj[nomeLivro];
 }
@@ -85,7 +80,7 @@ function book(nomeLivro) {
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-book();
+console.log(book());
 /*
 
 /*
@@ -93,18 +88,20 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-book().retornaLivro('livro2');
+var bookName = 'Segredos do Javascript Ninja';
+console.log('O livro ' + bookName + ' tem ' + book(bookName).paginas + ' páginas!');
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-book().retornaAutor('livro2'); // "O autor do livro livro2 é Genebra Filho ."
+console.log('O autor do livro ' + bookName + 'é ' + book(bookName).autor + '.');
+
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-book().retornaEditora('livro2'); //"O livro livro2 foi publicado pela editora Abril."
+console.log('O livro ' + bookName + ' foi publicado pela editora ' + book(bookName).editora + ' .');
