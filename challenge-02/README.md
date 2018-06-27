@@ -74,11 +74,11 @@ Crie uma função com as seguintes características:
 function desafio(numero1, numero2, numero3) {
   if (numero1 && !numero2 && !numero3) {
     return numero1;
-  } else if (numero1 && numero2 && !numero3) {
+  } else if (numero2 && !numero3) {
     return numero1 + numero2;
-  } else if (numero1 && numero2 && numero3) {
+  } else if (numero3) {
     return (numero1 + numero2) / numero3;
-  } else if (!numero1 && !numero2 && !numero3) {
+  } else {
     return null;
   }
 }
