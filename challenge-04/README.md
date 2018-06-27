@@ -29,9 +29,9 @@ isTruthy(true);
 isTruthy(1);
 isTruthy(-1);
 isTruthy([]);
-isTruthy("1");
+isTruthy(1 / 1);
 isTruthy({});
-isTruthy("-10");
+isTruthy(function() {});
 isTruthy(1 + 1);
 
 /*
@@ -113,8 +113,8 @@ citado acima, no lugar de "pessoas".
 */
 carro.adicionaPessoas = function(numeroPessoas) {
   var total = numeroPessoas + carro.quantidadePessoas;
-  
-  if (carro.quantidadePessoas === carro.assentos) {
+
+  if (carro.quantidadePessoas === carro.assentos && total >= carro.assentos) {
     return "O carro já está lotado!";
   } 
   
@@ -125,10 +125,7 @@ carro.adicionaPessoas = function(numeroPessoas) {
     return "Só cabem mais " + soma + " " + tipoPessoas + "!"; 
   } 
   
-  if (total <= carro.assentos) {
-    caro.quantidadePessoas += numeroPessoas;
-  }
-  
+  carro.quantidadePessoas += numeroPessoas;
   return "Já temos " + carro.quantidadePessoas + " pessoas no carro!";
 }
 
@@ -140,38 +137,38 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-?
+carro.obterCor(); // "Preto"
 
 // Mude a cor do carro para vermelho.
-?
+carro.mudaCor("Vermelho");
 
 // E agora, qual a cor do carro?
-?
+carro.obterCor(); // "Vermelho"
 
 // Mude a cor do carro para verde musgo.
-?
+carro.mudaCor("Verde Musgo");
 
 // E agora, qual a cor do carro?
-?
+carro.obterCor(); // "Verde Musgo"
 
 // Qual a marca e modelo do carro?
-?
+carro.obterMarcaModelo();  // Esse carro é um Peugeot 307
 
 // Adicione 2 pessoas no carro.
-?
+carro.adicionaPessoas(2); // Já temos 2 pessoas no carro!
 
 // Adicione mais 4 pessoas no carro.
-?
+carro.adicionaPessoas(4); // Só cabem mais 3 pessoas!
 
 // Faça o carro encher.
-?
+carro.adicionaPessoas(3); // Já temos 5 pessoas no carro!
 
 // Tire 4 pessoas do carro.
-?
+carro.adicionaPessoas(-4); // Já temos 1 pessoas no carro!
 
 // Adicione 10 pessoas no carro.
-?
+carro.adicionaPessoas(10); // Só cabem mais 4 pessoas!
 
 // Quantas pessoas temos no carro?
-?
+carro.quantidadePessoas; // 1
 ```
