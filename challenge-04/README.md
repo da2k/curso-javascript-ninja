@@ -113,15 +113,14 @@ citado acima, no lugar de "pessoas".
 */
 carro.adicionaPessoas = function(numeroPessoas) {
   var total = numeroPessoas + carro.quantidadePessoas;
-
+  var soma = carro.assentos - carro.quantidadePessoas;
+  var tipoPessoas = soma === 1 ? "pessoa" : "pessoas";
+   
   if (carro.quantidadePessoas === carro.assentos && total >= carro.assentos) {
     return "O carro já está lotado!";
   } 
   
   if (total > carro.assentos) {
-    var soma = carro.assentos - carro.quantidadePessoas;
-    var tipoPessoas = soma === 1 ? "pessoa" : "pessoas";
-    
     return "Só cabem mais " + soma + " " + tipoPessoas + "!"; 
   } 
   
