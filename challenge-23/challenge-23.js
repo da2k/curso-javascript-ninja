@@ -23,3 +23,52 @@ multiplicação (x), então no input deve aparecer "1+2x".
 input;
 - Ao pressionar o botão "CE", o input deve ficar zerado.
 */
+(function(win, doc){
+  'use strict';
+
+  var $visor = doc.querySelector('[data-js="resultadoVisor"]');
+
+  var btn = doc.querySelectorAll('.number');
+  var operators = doc.querySelectorAll('.operator');
+
+  var $btnCE = doc.querySelector('[data-js="btnCE"]');
+  var $btnResultado = doc.querySelector('[data-js="btnResultado"]');
+
+
+  for (var i = 0; i < btn.length; i++) {
+    btn[i].onclick = function() {
+      var btnVal = this.innerHTML;
+
+      if ($visor.value == '0')
+        $visor.value = btnVal;
+      else
+        $visor.value += btnVal;
+    }
+  }
+
+  for (var i = 0; i < operators.length; i++) {
+    operators[i].onclick = function() {
+      var operatorVal = this.innerHTML;
+      var teste = $visor.value;
+
+      if ( $visor.value !== '0' )
+        $visor.value += operatorVal;
+      if ( /[\+\/\*\-]$/.test($visor.value) ) {
+        $visor.value = teste.replace(/[\+\/\*\-]$/, '');
+        $visor.value += operatorVal;
+      }
+    }
+  }
+
+  $btnCE.addEventListener( 'click', function(){
+    $visor.value = '0';
+  });
+
+  $btnResultado.addEventListener( 'click', function(){
+    if ( /[\+\/\*\-]$/.test($visor.value)  ) {
+      $visor.value = eval($visor.value.slice(0, -1));
+    }
+    $visor.value = eval($visor.value);
+  });
+
+})(window, document);
