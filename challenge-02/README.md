@@ -22,19 +22,18 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function adicionarValor(valor) {
-  novaVariavel += valor;
+function adicionarValor() {
+  novaVariavel = 10;
   return "O valor da varíavel agora é " + novaVariavel;
 }
 
 // Invoque a função criada acima.
-adicionarValor(10);
+adicionarValor();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
-Retorna NaN porque a variável não tem um valor definido inicialmente
+'O valor da varíavel agora é 10'
 */
-'O valor da varíavel agora é NaN'
 
 /*
 Crie uma função com as seguintes características:
@@ -55,15 +54,13 @@ function multiplicar(numero1, numero2, numero3) {
 multiplicar(2, 2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-// Retorna a string abaixo:
-'Preencha todos os valores corretamente!'
+// 'Preencha todos os valores corretamente!'
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 multiplicar(2, 2, 2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-// Retorna o valor abaixo:
-10
+// 10
 
 /*
 Crie uma função com as seguintes características:
