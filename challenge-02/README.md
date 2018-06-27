@@ -78,13 +78,15 @@ function desafio(numero1, numero2, numero3) {
     return numero1 + numero2;
   } else if (numero3) {
     return (numero1 + numero2) / numero3;
+  } else if (!numero1 && !numero2 && !numero3) {
+    return false;
   } else {
     return null;
   }
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-desafio(); // null 
+desafio(); // false 
 desafio(1); // 1
 desafio(1, 2); // 3
 desafio(1, 2, 3); // 1
