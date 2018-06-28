@@ -76,7 +76,7 @@ Crie um método chamado `mostrarPeso`, que retorne a frase:
 - "Eu peso [PESO]Kg."
 */
 
-pessoa,mostrarPeso = function(){ 
+pessoa.mostrarPeso = function(){ 
   return 'Eu peso ' + pessoa.peso + ' Kg.' 
 }
 
