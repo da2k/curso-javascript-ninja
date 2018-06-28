@@ -89,31 +89,38 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
 
 function convertToHex( color ) {
 
+  var hexa;
+
   switch( color ) {
     case 'red':
-    console.log('O hexadecimal para a cor ' + color + ' é #FF0000.');    
+    hexa = '#FF0000'
     break;
 
     case 'blue':
+    hexa = '#0000FF'
     console.log('O hexadecimal para a cor ' + color + ' é #0000FF.');    
     break;
 
     case 'navy':
+    hexa = '#000080'
     console.log('O hexadecimal para a cor ' + color + ' é #000080.');    
     break;
 
     case 'green':
-    console.log('O hexadecimal para a cor ' + color + ' é #008000.');    
+    hexa = '#008000'
     break;
 
     case 'pink':
-    console.log('O hexadecimal para a cor ' + color + ' é #FFC0CB.');    
+    hexa = '#FFC0CB'
     break;
 
     default:
     console.log('Não temos o equivalente hexadecimal para ' + color);    
     
   }
+
+  return console.log('O hexadecimal para a cor ' + color + ' é ' + hexa +'.');    
+     
 
 }
 
