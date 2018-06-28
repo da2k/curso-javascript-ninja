@@ -22,16 +22,16 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-> function soma_var(valor) {
-	myvar = myvar + valor;
+function soma_var() {
+	myvar = 25;
 	return 'O valor da variável agora é: '+ myvar;
 }
 
 // Invoque a função criada acima.
-somar_var(5);
+somar_var();
 
 // Qual o retorno da função? (Use comentários de bloco).
-// 'O valor da variável agora é:NaN'
+// 'O valor da variável agora é: 25'
 
 /*
 Crie uma função com as seguintes características:
@@ -40,7 +40,7 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-> function multiplicar (x, y, z) {
+function multiplicar (x, y, z) {
 	if (!(x != null && y != null && z != null)) {
 		return 'Preencha todos os valores corretamente!';
 	}
