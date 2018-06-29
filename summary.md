@@ -2,80 +2,80 @@
 
 Aqui você pode ver todo o conteúdo do curso disponível:
 
-- Variáveis e tipos de dados
-- Operadores aritméticos
+- Variáveis e tipos de dados - 01
+- Operadores aritméticos 
 - Operadores de igualdade e relacionais
 - Funções
-- Operadores Lógicos
+- Operadores Lógicos - 02
 - Operadores Unários
 - Estrutura Léxica
 - Instruções condicionais - IF
-- Truthy e Falsy
+- Truthy e Falsy - 04
 - Condicional Ternário
 - Escopo de variáveis e funções
-- Retorno de funções com arrays e objetos
+- Retorno de funções com arrays e objetos - 05
 - Parâmetros de Funções com arrays e objetos
-- Operador vírgula e estrutura condicional switch
+- Operador vírgula e estrutura condicional switch - 06 
 - Estrutura de repetição while
-- O operador módulo
+- O operador módulo - 07
 - Array - a propriedade length
 - Array - método "push()" e Loop "for"
-- A importância de nomear funções
+- A importância de nomear funções - 08
 - Introdução à Functional Programming
-- Escopo de funções
+- Escopo de funções - 09
 - Hoisting
 - IIFE - Immediately Invoked Function Expression
-- Wrapper Objects
+- Wrapper Objects - 10
 - typeof
-- Laços (Loops)
+- Laços (Loops) - 11
 - Saltos
-- Criação de objetos
+- Criação de objetos - 12
 - Criação de objetos - Object.create
 - Métodos de objeto
 - Array - Métodos
 - Array - toString, concat, unshift, shift
-- slice e splice
+- slice e splice - 13
 - forEach, every, some
 - map, filter
-- reduce() e reduceRight()
+- reduce() e reduceRight() - 14
 - indexOf(), lastIndexOf() e isArray()
-- JS no browser
+- JS no browser - 15
 - this
 - Objeto arguments
-- use strict - Criação de variáveis sem o "var"
+- use strict - Criação de variáveis sem o "var" - 16
 - use strict - Uso do width e global this === undefined
 - O operador delete, objetos e funções
 - Objeto String
-- Regex
+- Regex - 17 / 18
 - Regex - Negação
 - Regex - Repetidores
-- Conhecendo outros símbolos usados na Regex
+- Conhecendo outros símbolos usados na Regex - 19
 - Métodos de string onde podemos usar regex
 - o objeto RegExp()
-- Js no browser - Selecionar elementos no DOM
+- Js no browser - Selecionar elementos no DOM - 20
 - Js no browser - Formulário e eventos
-- Sync vs async
+- Sync vs async - 21
 - setTimeout
 - setTimeout vs setInterval
 - Propriedades e métodos de funções
-- Prototype
+- Prototype - 22
 - Array-like e editorconfig
-- Debug
-- Modularização de código
-- Javascript inline
+- Debug - 23
+- Modularização de código - 24
+- Javascript inline - 25
 - Eventos inline
 - Remover eventos
 - Eventos como métodos
-- DOM
+- DOM - 26
 - documentFragments
 - Dicas de performance
-- Eventos para carregamento da tela
+- Eventos para carregamento da tela - 27
 - Copiar arrays
 - Pegar tipo correto de objetos
-- Ajax - método GET
+- Ajax - método GET - 28
 - try / catch 
 - Tratamento de dados via entrada do usuário
-- Module Pattern
+- Module Pattern - 29
 - Closures
 - Exportar módulo para usar em outros módulos
 - instanceof
