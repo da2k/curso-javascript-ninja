@@ -60,7 +60,7 @@ repetição "while".
 */
 var i = 20;
 
-while(i >= 20 && i <= 30) {
+while(i <= 30) {
     console.log(i++);
 }
 
