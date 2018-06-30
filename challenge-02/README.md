@@ -22,19 +22,17 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function addValor( newvar){
-	newvar = 'VALOR';
-	retunr 'O valor da variável agora é' + newvar;
+function addValor(){
+	newvar = 30;
+	return 'O valor da variável agora é' + newvar;
 }
 
 // Invoque a função criada acima.
 addValor()
 
 // Qual o retorno da função? (Use comentários de bloco).
-/* 
-retorna uma string com a mensage: 
-'O valor da variável agora é VALOR'
-/*
+// retorna uma string  com a mensagem e concatena e transforma o valore da newcar em string. 'O valor da variável agora é 30'.
+
 
 /*
 Crie uma função com as seguintes características:
@@ -48,7 +46,7 @@ function resolve( a, b, c ){
 		return 'Preencha todos os valores corretamente';
 		}else {
 			return ( a*b*c ) + 2;
-			}
+		}
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
