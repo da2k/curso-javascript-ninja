@@ -42,7 +42,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function resolve( a, b, c ){
-	if ( a == null || b == null || c == null ){
+	if ( a == undefined || b == undefined || c == undefined ){
 		return 'Preencha todos os valores corretamente';
 		}else {
 			return ( a*b*c ) + 2;
@@ -71,14 +71,14 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function calcula( a, b, c ){
-	if ( a === undefined ){
-		return false;
-	} else if ( a && b && c !==  undefined ){
-		return ( a + b ) / c;
-	} else if ( a && b !== undefined ){
-		return a + b;
-	} else if ( a !== undefined ){
+	if ( a !== undefined && b !== undefined && c === undefined ){
 		return a;
+	} else if ( a !== undefined && b && c !==  undefined ){
+		return a + b;
+	} else if ( a !== undefined && b !== undefined && c !== undefined ){
+		return ( a + b ) / c;
+	} else if ( a === undefined && b === undefined && c === undefined ){
+		return false;
 	} else{
 		return null;
 	}
