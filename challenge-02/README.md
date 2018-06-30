@@ -31,7 +31,7 @@ function addValor(){
 addValor()
 
 // Qual o retorno da função? (Use comentários de bloco).
-// retorna uma string  com a mensagem e concatena e transforma o valore da newcar em string. 'O valor da variável agora é 30'.
+/* retorna uma string  com a mensagem e concatena e transforma o valore da newcar em string. 'O valor da variável agora é 30'. */
 
 
 /*
