@@ -108,7 +108,7 @@ var mod = calculator("%");
 Faça uma operação com cada uma das funções criadas acima, mostrando o resultado
 no console.
 */
-console.log(subtraction(10, 5));     // Resultado da operação: 10 - 5 = 5.
-console.log(multiplication(10, 8));  // Resultado da operação: 10 * 8 = 80.
-console.log(division(50, 2));        // Resultado da operação: 50 / 2 = 25.
-console.log(mod(10, 3));             // Resultado da operação: 10 % 3 = 1.
+console.log(subtraction(10, 5));      // Resultado da operação: 10 - 5 = 5.
+console.log(multiplication(10, 8));   // Resultado da operação: 10 * 8 = 80.
+console.log(division(50, 2));         // Resultado da operação: 50 / 2 = 25.
+console.log(mod(10, 3));              // Resultado da operação: 10 % 3 = 1.
