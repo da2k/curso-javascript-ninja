@@ -77,7 +77,7 @@ function calculator(operacao) {
       break;
       default:
         return "Operação inválida";
-    };
+    }
 
     return "Resultado da operação: " + valUm + " " + operacao + " " + valDois + " = " + resultado + "."; 
   };
