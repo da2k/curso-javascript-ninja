@@ -14,7 +14,7 @@ variável chamada `text`:
 
 /*
 Vamos começar com umas brincadeiras fáceis :D
-Troque o nome "Manuel Marques de Sousa" pelo seu nome, e mostre o resultado
+Troque o nome "Manuel Marques de Souza" pelo seu nome, e mostre o resultado
 no console:
 */
 console.log( 'Adicionando seu nome no texto:' );
