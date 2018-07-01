@@ -80,7 +80,7 @@ function calculator(operacao) {
     };
 
     return "Resultado da operação: " + valUm + " " + operacao + " " + valDois + " = " + resultado + "."; 
-  }
+  };
 }
 
 /*
