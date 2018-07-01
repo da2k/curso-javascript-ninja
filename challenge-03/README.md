@@ -59,10 +59,10 @@ Crie um método chamado `nomeCompleto`, que retorne a frase:
 */
 pessoa.nomeCompleto = function(){ return 'Olá! Meu nome é + pessoa.nome + ' ' + pessoa.sobrenome + '!'; }
 
-/
+/*
 Crie um método chamado `mostrarIdade`, que retorne a frase:
 - "Olá, eu tenho [IDADE] anos!"
-*/
+/*
 pessoa.mostrarIdade = function(){ return 'Olá, eu tenho ' + pessoa.idade + ' anos!'; }
 
 /*
