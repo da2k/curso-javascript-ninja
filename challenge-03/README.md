@@ -165,6 +165,28 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 
+pessoa.apresentacao = function(){ 
+  if ( pessoa.sexo = 'feminino'){
+    msg = 'Olá, eu sou a';
+  }else{
+    msg = 'Olá, eu sou o';
+  }
+    
+  if ( pessoa.idade > 1 ){
+    idade = pessoa.mostrarIdade();
+  }else{
+    pessoa.mostrarIdade = function(){
+      return 'Olá, eu tenho ' + pessoa.idade + ' ano!'; }
+      idade = pessoa.mostrarIdade();
+    }
+
+  if ( pessoa.caminhouQuantosMetros > 1 ){
+    caminhei = pessoa.caminhouQuantosMetros() + 'metros!';
+  }else{
+    caminhei = pessoa.caminhouQuantosMetros() + 'metro!';      
+    }
+  return msg + pessoa.nomeCompleto() + ', tenho ' + idade + pessoa.altura + ', meu peso é' + pessoa.peso + ' e, só hoje, eu já caminhei ' + caminhei
+  }
 
 // Agora, apresente-se ;)
 pessoa.apresentacao()
