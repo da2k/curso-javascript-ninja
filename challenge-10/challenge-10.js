@@ -142,7 +142,7 @@
 
         console.log(showOperationMessage(operationSignal, number1, number2), sum(number1, number2));
     } else {
-        console.log(false);
+        console.log(showErrorMessage(operationSignal));
     }
 
     /*
@@ -161,7 +161,7 @@
 
         console.log(showOperationMessage(operationSignal, number1, number2), subtraction(number1, number2));
     } else {
-        console.log(false);
+        console.log(showErrorMessage(operationSignal));
     }
 
     // MULTIPLICAÇÃO
@@ -175,7 +175,7 @@
 
         console.log(showOperationMessage(operationSignal, number1, number2), multiplication(number1, number2));
     } else {
-        console.log(false);
+        console.log(showErrorMessage(operationSignal));
     }
 
     // DIVISÃO
@@ -189,7 +189,7 @@
 
         console.log(showOperationMessage(operationSignal, number1, number2), division(number1, number2));
     } else {
-        console.log(false);
+        console.log(showErrorMessage(operationSignal));
     }
 
     // MOD
@@ -203,7 +203,7 @@
 
         console.log(showOperationMessage(operationSignal, number1, number2), mod(number1, number2));
     } else {
-        console.log(false);
+        console.log(showErrorMessage(operationSignal));
     }
 
     /*
@@ -221,6 +221,6 @@
 
         console.log(showOperationMessage(operationSignal, number1, number2), invalido(number1, number2));
     } else {
-        console.log(false);
+        console.log(showErrorMessage(operationSignal));
     }
 }());
