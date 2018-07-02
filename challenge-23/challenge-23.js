@@ -28,47 +28,114 @@ input;
 
   var $visor = doc.querySelector('[data-js="resultadoVisor"]');
 
-  var btn = doc.querySelectorAll('.number');
-  var operators = doc.querySelectorAll('.operator');
+  var btn = doc.querySelectorAll('[data-js="button-number"]');
+  var operators = doc.querySelectorAll('[data-js="button-operation"]');
 
   var $btnCE = doc.querySelector('[data-js="btnCE"]');
   var $btnResultado = doc.querySelector('[data-js="btnResultado"]');
 
 
-  for (var i = 0; i < btn.length; i++) {
-    btn[i].onclick = function() {
-      var btnVal = this.innerHTML;
+//criar os eventos de clique
+  Array.prototype.forEach.call(btn, function(button){
+    button.addEventListener('click', handleClickNumber, false);
+  });
 
-      if ($visor.value == '0')
-        $visor.value = btnVal;
-      else
-        $visor.value += btnVal;
-    }
+  Array.prototype.forEach.call(operators, function(button){
+    button.addEventListener('click', handleClickOperation, false);
+  });
+
+  $btnCE.addEventListener('click', handleClickCE, false);
+  $btnResultado.addEventListener('click', handleClickEqual, false);
+
+//modularizar as funções de acordo com o botão clicado
+  function handleClickNumber(event) {
+    $visor.value += this.value; // adiciona o valor do botao numero ao visor
   }
-
-  for (var i = 0; i < operators.length; i++) {
-    operators[i].onclick = function() {
-      var operatorVal = this.innerHTML;
-      var teste = $visor.value;
-
-      if ( $visor.value !== '0' )
-        $visor.value += operatorVal;
-      if ( /[\+\/\*\-]$/.test($visor.value) ) {
-        $visor.value = teste.replace(/[\+\/\*\-]$/, '');
-        $visor.value += operatorVal;
+  function handleClickCE(event) {
+    $visor.value = 0;
+  }
+  function handleClickOperation(event) {
+    $visor.value = removeLastItemIfItIsAnOperator($visor.value);
+    $visor.value += this.value;
+  }
+  function handleClickEqual(){
+    $visor.value = removeLastItemIfItIsAnOperator($visor.value);
+    var allValues = $visor.value.match(/\d+[\+\*\/\-]?/g); //captura todos os digitos até o próximo operador
+    $visor.value = allValues.reduce(function(accumulated, actual){
+      var firstValue = accumulated.slice(0, -1);
+      var operator = accumulated.split('').pop();
+      var lastValue = removeLastItemIfItIsAnOperator(actual);
+      var lastOperator = isLastItemAnOperation(actual) ? actual.split('').pop() : '';
+      switch(operator) {
+        case '+':
+          return (Number(firstValue) + Number(lastValue)) + lastOperator;
+        case '-':
+          return (Number(firstValue) - Number(lastValue)) + lastOperator;
+        case '*':
+          return (Number(firstValue) * Number(lastValue)) + lastOperator;
+        case '/':
+          return (Number(firstValue) / Number(lastValue)) + lastOperator;
       }
-    }
+    });
   }
 
-  $btnCE.addEventListener( 'click', function(){
-    $visor.value = '0';
-  });
 
-  $btnResultado.addEventListener( 'click', function(){
-    if ( /[\+\/\*\-]$/.test($visor.value)  ) {
-      $visor.value = eval($visor.value.slice(0, -1));
+  //verifica se ultimo item é uma operação
+  function isLastItemAnOperation(number){
+    var operations = ['+', '-', '*', '/'];
+    var lastItem = number.split('').pop(); //define nova variável com valor do último item do visor
+    return operations.some(function(operator) { //verifica se algum dos operadores se equipara ao valor do botão
+      return operator === lastItem;
+    });
+  }
+  //remove o último item se for operador
+  function removeLastItemIfItIsAnOperator(number) {
+    if(isLastItemAnOperation(number)) { //verifica se o último digito do visor é um operador. Se for, retira com slice.
+      return number.slice(0, -1);
     }
-    $visor.value = eval($visor.value);
-  });
+    return number;
+  }
+
+
+
+
+
+
+// OUTRA RESOLUÇÃO
+  // for (var i = 0; i < btn.length; i++) {
+  //   btn[i].onclick = function() {
+  //     var btnVal = this.innerHTML;
+
+  //     if ($visor.value == '0')
+  //       $visor.value = btnVal;
+  //     else
+  //       $visor.value += btnVal;
+  //   }
+  // }
+
+  // for (var i = 0; i < operators.length; i++) {
+  //   operators[i].onclick = function() {
+  //     var operatorVal = this.innerHTML;
+  //     var teste = $visor.value;
+
+  //     if ( $visor.value !== '0' )
+  //       $visor.value += operatorVal;
+  //     if ( /[\+\/\*\-]$/.test($visor.value) ) {
+  //       $visor.value = teste.replace(/[\+\/\*\-]$/, '');
+  //       $visor.value += operatorVal;
+  //     }
+  //   }
+  // }
+
+  // $btnCE.addEventListener( 'click', function(){
+  //   $visor.value = '0';
+  // });
+
+  // $btnResultado.addEventListener( 'click', function(){
+  //   if ( /[\+\/\*\-]$/.test($visor.value)  ) {
+  //     $visor.value = eval($visor.value.slice(0, -1));
+  //   }
+  //   $visor.value = eval($visor.value);
+  // });
 
 })(window, document);
