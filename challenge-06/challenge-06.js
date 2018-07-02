@@ -32,9 +32,9 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     - Se não houver time para a posição passada, deve retornar a mensagem:
     "Não temos a informação do time que está nessa posição."
 */
-function showTimePosition(posicao) {
-    if (teams[posicao - 1]) {
-        return 'O time que está em ' + posicao + 'º lugar é o ' + teams[posicao - 1] + '.';
+function showTimePosition(position) {
+    if (teams[position - 1]) {
+        return 'O time que está em ' + position + 'º lugar é o ' + teams[position - 1] + '.';
     }
 
     return 'Não temos a informação do time que está nessa posição.';
@@ -73,25 +73,29 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 function convertToHex(color) {
+    var hexadecimal;
+
     switch (color) {
         case 'red':
-            return '#ff0000';
+            hexadecimal = '#ff0000';
             break;
         case 'blue':
-            return '#0000ff';
+            hexadecimal = '#0000ff';
             break;
         case 'green':
-            return '#008000';
+            hexadecimal = '#008000';
             break;
         case 'yellow':
-            return '#ffff00';
+            hexadecimal = '#ffff00';
             break;
         case 'purple':
-            return '#800080';
+            hexadecimal = '#800080';
             break;
         default:
             return 'Não temos o equivalente hexadecimal para ' + color + '.';
     }
+
+    return 'O hexadecimal para a cor ' + color + ' é ' + hexadecimal + '.';
 }
 
 /*
