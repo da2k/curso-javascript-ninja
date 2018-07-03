@@ -97,9 +97,9 @@ function convertToHex(cor) {
             hexa = "#000000";
             break;
         default:
-            console.log("Não temos o equivalente hexadecimal para " + cor + ".");
+            return("Não temos o equivalente hexadecimal para " + cor + ".");
     }
-    console.log("O hexadecimal para a cor " + cor + " é " + hexa + ".");
+    return "O hexadecimal para a cor " + cor + " é " + hexa + ".";
 }
 
 /*
