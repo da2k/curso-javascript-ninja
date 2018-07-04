@@ -14,8 +14,8 @@ estar na ordem em que eles aparecem na tabela no momento da solução desse
 desafio.
 */
 var teams = [
-    'Clube Náutico Capibaribe',
     'Sport Club do Recife',
+    'Clube Náutico Capibaribe',
     'Santa Cruz Futebol Clube',
     'Salgueiro Atlético Clube',
     'Centro Limoeirense'
@@ -41,7 +41,7 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
 */
 function showTeamPosition(position) {
 
-var ifShowIsTrue = 'O time que está em ' +position+ 'º lugar é o '+ teams[position]+'.';
+var ifShowIsTrue = 'O time que está em ' +position+ 'º lugar é o '+ teams[position - 1]+'.';
 var ifShowIsFalse = 'Não temos a informação do time que está nessa posição.';
 
 var showTeamPosition = position && position < 5 ? ifShowIsTrue : ifShowIsFalse;
@@ -55,11 +55,11 @@ return showTeamPosition;
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
-showTeamPosition(1);
-showTeamPosition(2);
-showTeamPosition(3);
-showTeamPosition(4);
-showTeamPosition(5);
+console.log( showTeamPosition( 1 ) );
+console.log( showTeamPosition( 2 ) );
+console.log( showTeamPosition( 3 ) );
+console.log( showTeamPosition( 4 ) );
+console.log( showTeamPosition( 6 ) );
 
 
 /*
@@ -104,11 +104,11 @@ function convertToHex(color) {
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-convertToHex('blue');
-convertToHex('brown');
-convertToHex('yellow');
-convertToHex('red');
-convertToHex('purple');
-convertToHex('green');
-convertToHex('white');
-convertToHex('black');
+convertToHex( 'blue' );
+convertToHex( 'brown' );
+convertToHex( 'yellow' );
+convertToHex( 'red' );
+convertToHex( 'purple' );
+convertToHex( 'green' );
+convertToHex( 'white' );
+convertToHex( 'black' );
