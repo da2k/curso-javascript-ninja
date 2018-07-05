@@ -10,24 +10,31 @@ listeners de eventos, etc);
 mesma funcionalidade.
 */
 
-(function(){
+(function(win, doc){
+  'use strict';
 
   //declaração de variáveis a partir dos elementos HTML
-  var $visor = document.querySelector('[data-js="visor"]');
-  var $buttonsNumbers = document.querySelectorAll('[data-js="button-number"]');
-  var $buttonsOperations = document.querySelectorAll('[data-js="button-operation"]');
-  var $buttonCE = document.querySelector('[data-js="button-ce"]');
-  var $buttonEqual = document.querySelector('[data-js="button-equal"]');
+  var $visor = doc.querySelector('[data-js="visor"]');
+  var $buttonsNumbers = doc.querySelectorAll('[data-js="button-number"]');
+  var $buttonsOperations = doc.querySelectorAll('[data-js="button-operation"]');
+  var $buttonCE = doc.querySelector('[data-js="button-ce"]');
+  var $buttonEqual = doc.querySelector('[data-js="button-equal"]');
 
-  //evento de clique em todos os botões
-  Array.prototype.forEach.call($buttonsNumbers, function(button) {
-    button.addEventListener('click', handleClickNumber, false);
-  });
-  Array.prototype.forEach.call($buttonsOperations, function(button) {
-    button.addEventListener('click', handleClickOperation, false);
-  });
-  $buttonCE.addEventListener('click', handleClickCE, false);
-  $buttonEqual.addEventListener('click', handleClickEqual, false);
+  function initialize() {
+    initEvents();
+  }
+
+  function initEvents() { //inicia todos os eventos
+    //evento de clique em todos os botões
+    Array.prototype.forEach.call($buttonsNumbers, function(button) {
+      button.addEventListener('click', handleClickNumber, false);
+    });
+    Array.prototype.forEach.call($buttonsOperations, function(button) {
+      button.addEventListener('click', handleClickOperation, false);
+    });
+    $buttonCE.addEventListener('click', handleClickCE, false);
+    $buttonEqual.addEventListener('click', handleClickEqual, false);
+  }
 
   //ação de clique nos botões
   function handleClickNumber() {
@@ -42,23 +49,36 @@ mesma funcionalidade.
   }
   function handleClickEqual() {
     $visor.value = removeLastItemIfItIsAnOperator($visor.value);
-    var allValues = $visor.value.match(/\d+[+x÷-]?/g);
-    $visor.value = allValues.reduce(function(accumulated, actual) {
-      var firstValue = Number(removeLastItem(accumulated));
-      var lastValue = Number(removeLastItemIfItIsAnOperator(actual));
-      var operator = getLastItem(accumulated);
-      var lastOperator = isLastItemAnOperation(actual) ? getLastItem(actual) : '';
-      switch(operator) {
-        case '+':
-          return ( firstValue + lastValue ) + lastOperator;
-        case '-':
-          return ( firstValue - lastValue ) + lastOperator;
-        case 'x':
-          return ( firstValue * lastValue ) + lastOperator;
-        case '÷':
-          return ( firstValue / lastValue ) + lastOperator;
-      }
-    });
+    var allValues = $visor.value.match(getRegexOperations());
+    $visor.value = allValues.reduce(calculateAllValues);
+  }
+
+  // retorna o resultado da operação
+  function calculateAllValues(accumulated, actual) {
+    var firstValue = Number(removeLastItem(accumulated));
+    var lastValue = Number(removeLastItemIfItIsAnOperator(actual));
+    var operator = getLastItem(accumulated);
+    var lastOperator = isLastItemAnOperation(actual) ? getLastItem(actual) : '';
+    return doOperation(operator, firstValue, lastValue) + lastOperator;
+  }
+
+  // retorna todas as operações da aplicação para uma regex
+  function getRegexOperations(){
+    return new RegExp('\\d+[' + getOperations().join('') + ']?', 'g');
+  }
+
+  // realiza as operações
+  function doOperation(operator, firstValue, lastValue) {
+    switch(operator) {
+      case '+':
+        return ( firstValue + lastValue );
+      case '-':
+        return ( firstValue - lastValue );
+      case 'x':
+        return ( firstValue * lastValue );
+      case '÷':
+        return ( firstValue / lastValue );
+    }
   }
 
   function reloadVisor(btn){ //atualiza o valor no visor, input
@@ -68,20 +88,29 @@ mesma funcionalidade.
   function getLastItem(str){ //retorna somente o último digito do parametro
     return str.split('').pop();
   }
+
   function removeLastItem(str){ //retorna a string sem o último digito
     return str.slice(0, -1);
   }
-  function isLastItemAnOperation(number) {
-    var operations = ['+', '-', 'x', '÷'];
+
+  function isLastItemAnOperation(number) { // verifica se o último dígito é um operador
+    var operations = getOperations();
     return operations.some(function(operator) {
       return operator === getLastItem(number);
     });
   }
-  function removeLastItemIfItIsAnOperator(number) {
-    if(isLastItemAnOperation(number)) {
-      return removeLastItem(number);
-    }
-    return number;
+
+  function getOperations(){ // captura o valor de todas as operações da aplicação
+    return Array.prototype.map.call($buttonsOperations, function(button) {
+      return button.value;
+    });
   }
 
-})();
+  function removeLastItemIfItIsAnOperator(string) {
+    if(isLastItemAnOperation(string))
+      return removeLastItem(string);
+    return string;
+  }
+
+  initialize();
+})(window, document);
