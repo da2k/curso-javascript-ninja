@@ -205,5 +205,5 @@ pessoa.apresentacao = function() {
 }
 
 // Agora, apresente-se ;)
-pessoa.apresentacao() // Olá, eu sou o Caio Viana, tenho 31 anos, 1.78, meu peso é 76 e, só hoje, eu já caminhei 18 metros!
+pessoa.apresentacao() // Olá, eu sou o Caio Viana, tenho 33 anos, 1.78, meu peso é 76 e, só hoje, eu já caminhei 18 metros!
 ```
