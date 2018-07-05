@@ -97,39 +97,39 @@ Agora vamos brincar um pouco com o objeto criado:
 Qual o nome completo da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.nomeCompleto(); //Anderson Manhães
+pessoa.nomeCompleto; //Anderson Manhães
 
 /*
 Qual a idade da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.mostrarIdade(); //Olá, eu tenho 38 anos!
+pessoa.mostrarIdade; //Olá, eu tenho 38 anos!
 
 /*
 Qual o peso da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.mostrarPeso(); //Eu peso 111 Kg.
+pessoa.mostrarPeso; //Eu peso 111 Kg.
 
 /*
 Qual a altura da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.mostrarAltura(); //Minha altura é 1.74m.
+pessoa.mostrarAltura; //Minha altura é 1.74m.
 
 /*
 Faça a `pessoa` fazer 3 aniversários.
 */
-pessoa.fazerAniversario();
-pessoa.fazerAniversario();
-pessoa.fazerAniversario();
+pessoa.fazerAniversario;
+pessoa.fazerAniversario;
+pessoa.fazerAniversario;
 
 /*
 Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
 comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
-pessoa.mostrarIdade(); //Olá, eu tenho 41 anos!
+pessoa.mostrarIdade; //Olá, eu tenho 41 anos!
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
@@ -148,7 +148,7 @@ pessoa.andando; //True
 /*
 Se a pessoa ainda está andando, faça-a parar.
 */
-pessoa.parar();
+pessoa.parar;
 
 /*
 E agora: a pessoa ainda está andando? (Use uma instrução para responder e
@@ -179,8 +179,25 @@ deve conter no retorno da frase acima é "metro" no lugar de "metros".
 método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
-?
+pessoa.apresentacao = function() {
+  if (pessoa.sexo === 'Feminino') {
+    var genero = 'a';
+  } else {
+    var genero = 'o';
+  }
+  if (pessoa.idade === 1 {
+    var singPlural = 'ano';
+  } else {
+    var singPlural = 'anos';
+  }
+  if (pessoa.caminhouQuantosMetros === 1) {
+    var distancia = 'metro';
+  } else {
+    var distancia = 'metros';
+  }
+  retorn 'Olá, eu sou ' + genero + ' ' + pessoa.nomeCompleto + ', tenho ' + pessoa.idade + ' ' + singPlural + ', ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' ' + distancia + '!'
+}
 
 // Agora, apresente-se ;)
-?
+pessoa.apresentacao; //Olá, eu sou o Anderson Manhães, tenho 38 anos, 1.74, meu peso é 111 e, só hoje, eu já caminhei 6 metros!
 ```
