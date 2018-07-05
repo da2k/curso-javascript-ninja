@@ -35,10 +35,10 @@
     Após o loop, mostre a frase:
     'The person has [COUNTER] properties'
       */
-
+    var counter = 0;
     for (var prop in person) {
-        var counter = prop.length;
         console.log('The ' + prop + ' of person is ' + person[prop] + '');
+        counter++;
     }
     console.log('The person has ' + counter + ' properties');
 
@@ -62,15 +62,14 @@
     Mostre no console os números no array.
     */
     console.log('De 0 a 10:');
+    var numbers = [];
     for (var i = 0; i < 20; i++) {
         if (i > 10) {
             break;
         }
-        console.log(i);
-        for (var numbers = 0 in i) {
-            console.log(numbers);
-        }
+        numbers.push(i);
     }
+    console.log(numbers);
 
     /*
     Faça outro loop de 0 a 20, que adicione a um array chamado `numbers` (já
@@ -79,17 +78,14 @@
     Mostrar no console os números do array.
     */
     console.log('Pares de 0 a 20:');
+    var numbers = [];
     for (var i = 0; i <= 20; i++) {
-        if (i > 10) {
-            break;
+        if (i % 2 !== 0) {
+            continue;
         }
-        i = 20;
-        for (var numbers = 0; numbers <= i; numbers++) {
-            if (numbers % 2 === 0) {
-                console.log(numbers)
-            }
-        }
+        numbers.push(i);
 
     }
+    console.log(numbers);
 
 })();
