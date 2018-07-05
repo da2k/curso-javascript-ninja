@@ -60,7 +60,12 @@
   console.log( '\nMeus amigos:' );
     var names = ['Rafael', 'Mayse', 'Rebeca', 'Lucia', 'Karine']
 
-  console.log(names.slice(0, names.length - 1).join(', ') + ' e ' +names.slice(names.length - 1) + ' são meus amigos')
+    var phrase = names.reduce(function(acumulator, item, index){
+      var separator = names.length - 1 === index ? ' e ' : ', '
+      return acumulator + separator + item
+    })
+
+  console.log(phrase + ' são meus amigos')
 
 
 
@@ -69,6 +74,7 @@
   Mostre o resultado no console.
   */
   console.log( '\nEra "Roberto", agora é:' );
+  console.log("Roberto".replace('to', 'ta'))
 
 
   /*
