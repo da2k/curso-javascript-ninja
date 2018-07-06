@@ -70,21 +70,21 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function validar(x, y, z){
-	if(x != null && y == null && z == null) {
+	if(x !== undefined && y === undefined && z === undefined) {
 		return x;
-	} else if(x == null && y != null && z == null) {
+	} else if(x === undefined && y !== undefined && z === undefined) {
 		return y;
-	} else if (x == null && y == null && z != null) {
+	} else if (x === undefined && y === undefined && z !== undefined) {
 		return z;
-	} else if (x != null && y != null && z == null) {
+	} else if (x !== undefined && y !== undefined && z === undefined) {
 		return x + y;
-	} else if (x != null && y == null && z != null) {
+	} else if (x !== undefined && y === undefined && z !== undefined) {
 		return x + z;
-	} else if (x == null && y != null && z != null) {
+	} else if (x === undefined && y !== undefined && z !== undefined) {
 		return y + z;
-	} else if(x != null && y != null && z != null) {
+	} else if(x !== undefined && y !== undefined && z !== undefined) {
 		return (x, y) / z;
-	} else if(x == null && y == null && z == null){
+	} else if(x === undefined && y === undefined && z === undefined){
 		return false;
 	}
 
