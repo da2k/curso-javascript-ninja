@@ -148,9 +148,9 @@
     */
 
     var map = newBrasil.map(function(item, index, array) {
-        return ({ index: index + 1, item: item + 'pertence ao brasil' });
+        console.log(index + 1, item);
     });
-    console.log(newBrasil, map);
+
 
 
     /*
