@@ -43,7 +43,7 @@ Crie uma função com as seguintes características:
 function abc(a, b, c) {
     var retorno;
 
-    if (a == undefined || b == undefined || c == undefined) {
+    if (a === undefined || b === undefined || c === undefined) {
         retorno = "Preencha todos os valores corretamente!";
     }
     else {
@@ -76,16 +76,16 @@ Crie uma função com as seguintes características:
 function final(p1, p2, p3) {
     var retorno;
     
-    if (p1 != undefined && p2 == undefined && p3 == undefined) {
+    if (p1 !== undefined && p2 === undefined && p3 === undefined) {
         retorno = p1;
     }
-    else if (p1 != undefined && p2 != undefined && p3 == undefined) {
+    else if (p1 !== undefined && p2 !== undefined && p3 === undefined) {
         retorno = p1 + p2;
     }
-    else if (p1 != undefined && p2 != undefined && p3 != undefined) {
+    else if (p1 !== undefined && p2 !== undefined && p3 !== undefined) {
         retorno = (p1 + p2) / p3;
     }
-    else if (p1 == undefined && p2 == undefined && p3 == undefined) {
+    else if (p1 === undefined && p2 === undefined && p3 === undefined) {
         retorno = false;
     }
     else {
