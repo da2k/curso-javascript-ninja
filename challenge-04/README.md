@@ -47,7 +47,7 @@ marca: 'renault',
 modelo: 'Kwid',
 placa: 'efr2346'
 ano: 2016,
-cor: 'vermelho',
+cor: 'prata',
 quantasPortas: 4,
 assentos: 5,
 quantidadePessoas: 0
@@ -106,7 +106,10 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-?
+ carro.addPessoas = function (numeroPessoas){
+... return 'Já temos' + carro.quantidadePessoas + 'pessoas no carro!';
+... };
+carro.addPessoas(2)
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -116,38 +119,42 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-?
+carro.obterCor(); 
+//prata
 
 // Mude a cor do carro para vermelho.
-?
+carro.mudarCor('vermelho');
 
 // E agora, qual a cor do carro?
-?
+carro.cor(); 
+//vermelho
 
 // Mude a cor do carro para verde musgo.
-?
+carro.mudarCor('verde musgo');
 
 // E agora, qual a cor do carro?
-?
+carro.obterCor(); 
+//verde musgo
 
 // Qual a marca e modelo do carro?
-?
+carro.obterMarcaModelo();
+//renault Kwid
 
 // Adicione 2 pessoas no carro.
-?
+carro.addPessoas(2)
 
 // Adicione mais 4 pessoas no carro.
-?
+carro.addPessoas(2);
 
 // Faça o carro encher.
-?
+carro.addPessoas(1);
 
 // Tire 4 pessoas do carro.
-?
+carro.addPessoas(-4);
 
 // Adicione 10 pessoas no carro.
-?
+carro.addPessoas(10);
 
 // Quantas pessoas temos no carro?
-?
+11
 ```
