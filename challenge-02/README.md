@@ -4,29 +4,37 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-?
+function sum ( x, y ) {
+  return x + y;
+}
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-?
+var newSum = sum ( 4, 6 ) + 5;
 
 // Qual o valor atualizado dessa variável?
-?
+newSum; // 15
 
 // Declare uma nova variável, sem valor.
-?
+var newVar;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-?
+function addValue() {
+  newVar = 2;
+
+  return 'O valor da variável agora é ' + newVar;
+}
 
 // Invoque a função criada acima.
-?
+addValue();
 
 // Qual o retorno da função? (Use comentários de bloco).
-?
+/*
+ * 'O valor da variável agora é 2'
+ */
 
 /*
 Crie uma função com as seguintes características:
@@ -35,19 +43,25 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-?
+function multiplication ( a, b, c ) {
+  if ( a === undefined || b === undefined || c === undefined ) {
+    return 'Preencha todos os valores corretamente!';
+  }
+
+  return ( a * b * c ) + 2;
+}
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+multiplication ( 2, 6 );
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+// 'Preencha todos os valores corretamente!'
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+multiplication ( 4, 3, 8 );
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+// 98
 
 /*
 Crie uma função com as seguintes características:
@@ -58,8 +72,27 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+function arguments ( x, y, z ) {
+  if ( x !== undefined && y === undefined && z === undefined ) {
+    return x;
+  } else if ( x !== undefined && y !== undefined && z === undefined ) {
+    return x + y;
+  } else if ( x !== undefined && y !== undefined && z !== undefined ) {
+    return ( x + y ) / z;
+  } else if ( x === undefined && y === undefined && z === undefined ) {
+    return false;
+  } else {
+    return null;
+  }
+}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+arguments (); // false
+arguments ( 6 ); // 6
+arguments ( 3, 5 ); // 8
+arguments ( 4, 9, 3 ); // 4.333333333333333
 ```
+
+> Como você já gravou as aulas com as correções dos exercícios, estou fazendo sozinho e depois assistindo a correção. Algumas variávies/funções estão semelhantes, talvez pelo fato de usarmos o mesmo padrão com nomes em inglês \o/.
+
+> Estou utilizando uma sintaxe um pouco diferente. Se quiser dar dicas se o usto está legal ou deveria mudar, favor mandar um comentário!
