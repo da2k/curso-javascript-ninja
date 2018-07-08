@@ -24,22 +24,22 @@
     Só passe para o próximo problema quando tiver resolvido o anterior :)
     */
     function DOM (node) {
-        this.element = document.querySelectorAll(node);
-        this.on = function (event, callback) {
-            Array.prototype.forEach.call(this.element, function(element) {
-                return element.addEventListener(event, callback);
-            });
-        };
-        this.off = function (event, callback) {
-            Array.prototype.forEach.call(this.element, function(element) {
-                return element.removeEventListener(event, callback);
-            });
-        };
-        this.get = function () {
-            return this.element;
-        };
+        this.element = document.querySelectorAll(node); 
     }
-
+    DOM.prototype.on = function (event, callback) {
+        Array.prototype.forEach.call(this.element, function(element) {
+            return element.addEventListener(event, callback);
+        });
+    };
+    DOM.prototype.off = function (event, callback) {
+        Array.prototype.forEach.call(this.element, function(element) {
+            return element.removeEventListener(event, callback);
+        });
+    };
+    DOM.prototype.get = function () {
+        return this.element;
+    };
+    
     var $a = new DOM('[data-js="link"]');
     var $addClickButton = new DOM('[data-js="add-click"]');
     var $removeClickButton = new DOM('[data-js="remove-click"]');
