@@ -22,10 +22,9 @@
     números do array criado acima. Mostre esse novo array no console.
     */
     console.log('\nJust Numbers:');
-    var justNumbers = [];
-    for (var i = 1; i <= numberObjects.length; i++) {
-        justNumbers.push(i);
-    }
+    var justNumbers = numberObjects.map(function(item) {
+        return item.number;
+    });
     console.log(justNumbers);
 
 
@@ -35,10 +34,8 @@
     no console.
     */
     console.log('\nJust module of division by 2 or 3:');
-    var justMod2Or3 = justNumbers.filter(function(item, index) {
-        if (item % 2 === 0 || item % 3 === 0) {
-            return item;
-        }
+    var justMod2Or3 = justNumbers.filter(function(item) {
+        return item % 2 === 0 || item % 3 === 0;
     });
     console.log(justMod2Or3);
 
@@ -76,10 +73,10 @@
     falada, como se você estivesse falando em código xD
     */
     console.log('\nSeu nome na língua do "P":');
-    var name = ['R', 'e', 'n', 'a', 'n'];
-    var reduce = name.reduce(function(acumulado, atual, index, arr) {
+    var name = ['Re', 'na', 'n'];
+    var reduce = name.reduce(function(acumulado, atual) {
         return acumulado += ' P' + atual;
-    }, 'P');
+    }, ' ');
     console.log(reduce);
 
     /*
@@ -108,14 +105,22 @@
     o que acontece ;)
     */
     console.log('\nExiste um { number: 2 } em numberObjects?');
-    console.log(numberObjects.indexOf('{ number: 2 }'));
+    var obj = numberObjects[1];
+    console.log(numberObjects.indexOf(obj) > -1 ?
+        'Existe um objeto { number: 2 } em numberObjects!' :
+        'Não existe um objeto { number: 2 } em numberObjects :('
+    );
 
     /*
     Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
     será que obtemos um resultado diferente? Faça a busca a partir do índice 2.
     */
     console.log('\nE buscando a partir do último índice, o { number: 2 } existe?');
-    console.log(numberObjects.lastIndexOf(2));
+    var obj = numberObjects[1];
+    console.log(numberObjects.lastIndexOf(obj, 2) > -1 ?
+        'Existe um objeto { number: 2 } em numberObjects!' :
+        'Não existe um objeto { number: 2 } em numberObjects :('
+    );
 
     /*
     Verifique se `justMod2Or3` é um array. Se for, mostre-o no console, no
