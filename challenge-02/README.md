@@ -9,8 +9,11 @@ return x + y;
 };
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
+/*
 var resultadoSoma = soma(5,3);
 resultadoSoma += 5;
+*/
+var resultadoSoma = soma(5,3) + 5;
 
 // Qual o valor atualizado dessa variável?
 13;
@@ -43,11 +46,19 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
+/*
 function ifElse(a,b,c){
 if(a != undefined && b != undefined && c != undefined){
 return a * b * c + 2; } else {
 return 'Preencha todos os valores corretamente!'; }
 };
+*/
+function ifElse(a,b,c){
+  if(a === undefined || b === undefined || c === undefined){
+    return 'Preencha todos os valores corretamente!'; 
+  }
+  return (a * b * c) + 2;
+}
 
 // Invoque a função criada acima, passando só dois números como argumento.
 ifElse(2,2);
