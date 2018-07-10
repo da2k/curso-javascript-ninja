@@ -54,7 +54,7 @@ var carro = {
   placa: 'ABC123',
   ano: 2018,
   cor: 'Prata',
-  quantasPortas: null,
+  quantasPortas: 4,
   assentos: 5,
   quantidadePessoas: 0
 }
