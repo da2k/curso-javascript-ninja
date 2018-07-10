@@ -49,11 +49,11 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 */
 
 var carro = { 
-  marca: '',
-  modelo: '',
-  placa: '',
-  ano: null,
-  cor: '',
+  marca: 'Toyota',
+  modelo: 'Corolla',
+  placa: 'ABC123',
+  ano: 2018,
+  cor: 'Prata',
   quantasPortas: null,
   assentos: 5,
   quantidadePessoas: 0
@@ -124,22 +124,24 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-?
+carro.cor; //preto
 
 // Mude a cor do carro para vermelho.
-?
+carro.mudarCor('vermelho');
 
 // E agora, qual a cor do carro?
-?
+carro.cor; //vermelho
 
 // Mude a cor do carro para verde musgo.
-?
+carro.mudarCor('verde musgo');
+
 
 // E agora, qual a cor do carro?
-?
+carro.cor; //verde musgo
+
 
 // Qual a marca e modelo do carro?
-?
+carro.obterMarcaModelo(); // Esse carro é um Toyota Corolla
 
 // Adicione 2 pessoas no carro.
 ?
