@@ -102,9 +102,6 @@
         nomeIntercalado += letra;
     }
 
-
-
-
     console.log(nomeIntercalado)
 
 })();
