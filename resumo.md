@@ -1210,7 +1210,7 @@ Document: 9
 Element: 1
 Text: 3
 Comments: 8
-documentFragment: 22
+documentFragment: 11
 
 .nodeValue: retorna o conteúdo textual do nó.
 .nodeName: o nome do nó. Em elementos HTML, retorna o nome da tag.
@@ -1253,3 +1253,51 @@ São getters e setters, ou seja, podemos receber ou atribuir um valor com esses 
 
 .getAttribute(attr): retorna o atributo determinado pelo parâmetro. Retorna sempre string.
 .setAttribute(attr, value): atributos podem ser criados e determinados valores para eles.
+
+
+
+/* 
+Seção 27
+*/
+//Vídeo 161
+DOM Atributos: funciona pra qualquer atributo HTML válido.
+element.id, element.className, element.value, element.href, element.title, element.src
+
+Manipular com performance
+> document.createDocumentFragment(): melhora a performance, manipulando elementos fora do DOM. Use sempre para adição de elementos no DOM.
+>   .parentNode === null
+> 
+> var fragment = document.createDocumentFragment();
+> var childP = document.createElement('p');
+> var textChildP = document.createTextNode('Texto da tag P!');
+> 
+> childP.appendChild(textChildP);
+> fragment.appendChild(childP);
+> 
+> document.body.appendChild(fragment);
+
+
+//Vídeo 162
+Eventos
+Ordem dos scripts importa: quando o navegador lê o código, ele para em um script e aciona o que é necessário. Se o elemento chamado não foi carregado ainda, vai ocorrer um erro.
+
+Para evitar esse erro, use o evento:
+document = 'DOMContentLoaded'
+Isso significa que os elementos internos podem não ter carregados ainda, mas os elementos sim.
+
+Boa prática: colocar script no final do <body>
+
+Para carregar todos os elementos, usar evento:
+windows = load
+
+
+//Vídeo 163
+Técnicas Ninja
+Copiar array: atribuindo um array a outro, é criado uma referência do primeiro, portanto, não uma cópia
+> var arr = [ 1, 2, 3, 4, 5 ];
+> var arr2 = arr.slice(); //ele copia o primeiro array
+
+Saber de tipo de dado real: o typeof, para arrays, retorna object. Para saber o tipo real do objeto, utilizamos:
+Object.prototype.toString.call(arr); // retorna [object Array]
+Object.prototype.toString.call(myFunction); // retorna [object Function]
+Object.prototype.toString.call(arguments); // retorna [object Arguments]
