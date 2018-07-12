@@ -28,19 +28,19 @@ Só passe para o próximo problema quando tiver resolvido o anterior :)
     this.element = doc.querySelectorAll(str);
   }
 
-  DOM.prototype.on = function(event, callback) {
+  DOM.prototype.on = function on (event, callback) {
     Array.prototype.forEach.call( this.element, function(btn) {
       btn.addEventListener(event, callback, false);
     });
   }
 
-  DOM.prototype.off = function() {
+  DOM.prototype.off = function off () {
     Array.prototype.forEach.call( this.element, function(btn) {
       btn.removeEventListener(event, callback, false);
     });
   }
 
-  DOM.prototype.get = function() {
+  DOM.prototype.get = function get () {
        return this.element;
   }
 
