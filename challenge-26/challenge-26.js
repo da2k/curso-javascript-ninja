@@ -46,7 +46,6 @@
   $a.on('click', function (e) {
     e.preventDefault();
     console.log('clicou');
-    $a.off('click',handleClick);
   });
 
   console.log('Elementos selecionados:', $a.get());
