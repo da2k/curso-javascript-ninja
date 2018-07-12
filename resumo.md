@@ -1126,3 +1126,130 @@ debugger; : específico do navegador. ele cria um breakpoint manualmente no cód
 Debug 4
 console.time e console.timeEnd: calcula o tempo de início e final de execução de determinadas funções
 console.table: mostra em forma de tabela os itens de um array
+
+
+
+/* 
+Seção 25
+*/
+//Vídeo 150
+script inline: são scripts que são chamados dentro de uma tag HTML. Não é uma boa prática.
+> <a href="javascript:boom()">Boom!</a>
+void (0) retorna sempre undefined e pode ser usada como 'preventDefault'.
+
+Eventos
+Referência de eventos:
+https://developer.mozilla.org/en-US/docs/Web/Events
+
+evento inline: não é uma boa prática utilizá-los.
+> <a href="javascript:" onclick="boom()">Boom!</a>
+ele faz o evento do evento inline depois direciona para o href
+
+
+//Vídeo 151
+false nos eventos de clique
+
+no HTML:
+<div data-js="div">
+  <a href="#" data-js="link">Link no <span data-js="span">span</span></a>
+</div>
+
+> function on(element, event, callback){
+>   document.querySelector(element)
+>     .addEventListener(event, callback, false); //false
+> }
+> 
+> on('[data-js]="link"', 'click', function(event) {
+>   event.preventDefault();
+>   alert('clicou no a');
+> });
+> 
+> on('[data-js]="div"', 'click', function() {
+>   alert('clicou na div');
+> });
+> 
+> on('[data-js]="span"', 'click', function() {
+>   alert('clicou no span');
+> });
+
+>> ação do usuário: clicou no span. Se false:
+clicou no span > clicou no a > clicou na div
+Os eventos são acionados do elemento clicado para fora (child to parent)
+
+>> ação do usuário: clicou no span. Se true:
+clicou na div > clicou no a > clicou no span
+Os eventos são acionados no elemento pai para dentro (parent to child)
+
+
+//Vídeo 152
+eventos são cumulativos. Pode-se manipular eventos usando uma função. Lembrar que funções em javascript são lidadas como objetos.
+novos eventos:
+'input': quando o usuário muda algo no form
+'keyup': quando o usuário solta uma tecla
+'keydown': uma tecla é pressionada
+'change': em uma tag <select>, o valor é modificado
+
+
+
+/* 
+Seção 26
+*/
+//Vídeo 153
+API DOM: cria uma árvore de hierarquia da página do navegador. Ele cria nós que podem ser manipulados separadamentes. 
+Percorrer elementos.
+Eles contam quebras de linha:
+.parentNode: traz os nós (NodeList) parent
+.childNode: traz os nós (NodeList) child.
+.firstChild e .lastChild: trás o primeiro e últimos filhos.
+.nextSibling e .previousSibling: mostra o próximo irmão e o anterior. 
+
+
+//Vídeo 154
+.nodeType: retorna um número de acordo com o tipo de nó.
+Document: 9
+Element: 1
+Text: 3
+Comments: 8
+documentFragment: 22
+
+.nodeValue: retorna o conteúdo textual do nó.
+.nodeName: o nome do nó. Em elementos HTML, retorna o nome da tag.
+
+
+//Vídeo 155
+.child: HTMLCollection. Apesar de não ser padronizada, é bastante utilizada. Retorna os elementos filhos de um nó.
+.firstElementChild, .lastElementChild, .nextElementSibling, .previousElementSibling: retorna o filho elemento. Retorna toda a tag.
+.childElementCount: retorna um número de child de um nó. Funciona da mesma forma que elemento.length
+
+Métodos
+.hasAttribute(name): retorna uma booleana. Verifica se existe um atributo no elemento.
+.hasAttributes(): se existir qualquer atributo retorna true.
+
+
+//Vídeo 156
+.appendChild(child): adiciona ou move um elemento dentro de um nó.
+.insertBefore(node, beforeWhom): adiciona um elemento. Parâmentros: node: o que inserir; beforeWhom: antes desse elemento.
+.cloneNode(boolean): clona um elemento. Recebe como parâmetro uma booleana para definir se o conteúdo desse elemento é clonado ou não.
+.hasChildNodes(): retorna uma booleana, verificando se dentro do elemento especificado existe nós filhos.
+
+
+//Vídeo 157
+.removeChild(child): remove um filho especificado dentro do nó.
+.replaceChild(new, old): substitui ou remaneja um elemento filho por outro.
+document.createTextNode(text): cria um texto dentro do document.
+document.createElement(tagName): cria um elemento. Os dois métodos podem ser usados em conjunto. Exemplo:
+> var newTextNode = document.createTextNode('Opa!');
+> var $newP = document.createElement('p');
+> $newP.appendChild(newTextNode);
+> $main.appendChild($newP);
+// é criado um novo parágrafo com o conteúdo do newTextNode
+
+
+//Vídeo 158
+Atributos
+element.id: retorna o id do elemento.
+element.className: retorna a classe do elemento.
+São getters e setters, ou seja, podemos receber ou atribuir um valor com esses atributos.
+
+.getAttribute(attr): retorna o atributo determinado pelo parâmetro. Retorna sempre string.
+.setAttribute(attr, value): atributos podem ser criados e determinados valores para eles.
