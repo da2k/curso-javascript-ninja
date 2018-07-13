@@ -16,14 +16,9 @@
     E assim por diante, até a última.
     */
     console.log('As letras do seu nome:');
-    var name = 'renan';
-    var count = 1;
-    for (var i = 0; i <= name.length; i++) {
-        console.log(name.charAt(i), 'é a ' + (count++) + 'ª letra do meu nome.');
-        if (count === 6) {
-            break;
-        }
-
+    var name = 'Renan';
+    for (var i = 0; i < name.length; i++) {
+        console.log(name.charAt(i), 'é a ' + (i + 1) + 'ª letra do meu nome.');
     }
 
     /*
@@ -39,12 +34,13 @@
     console.log para cada formato.
     */
     console.log('\nNome convertido à partir de um slug:');
-    var fullName = function fullName(name) {
-        name = name.charAt(0).toUpperCase() + name.slice(1);
-        name = name.split('-').join(' ');
-        console.log(name);
-    }
-    fullName('renan-santos');
+    var fullName = 'renan-santos-terceiro-de-almeida-jesus';
+    var newFullName = fullName.split('-').map(function(name) {
+        return name.charAt(0).toUpperCase() + name.slice(1);
+    }).join();
+    console.log(fullName);
+    console.log(newFullName);
+
 
     /*
     - Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
@@ -57,7 +53,11 @@
     */
     console.log('\nMeus amigos:');
     var friends = ['Joao', 'Maria', 'Roberto', 'Pedro', 'Marcos'];
-    console.log(friends.slice(0, friends.length - 1).join(',') + ' e ' + friends.slice(friends.length - 1).concat(' são meus amigos'));
+    var frase = friends.reduce(function(acumulado, atual, index) {
+        var separator = friends.length - 1 === index ? ' e ' : ', ';
+        return acumulado + separator + atual;
+    }).concat(' são meus amigos');
+    console.log(frase);
 
 
     /*
@@ -65,16 +65,14 @@
     Mostre o resultado no console.
     */
     console.log('\nEra "Roberto", agora é:');
-    var roberto = friends.slice(2, 3).toString().split('o').join('a').replace('a', 'o');
-    console.log(roberto);
+    console.log('Roberto'.replace('to', 'ta'));
 
     /*
     Mostre no console a parte "nando" da string "Fernando". Use o método que
     faz a busca do final para o início da string.
     */
     console.log('\nParte de uma string:');
-    var myName = 'Fernando';
-    console.log(myName.substring(8, 3));
+    console.log('Fernado'.substring(8, 3));
 
     /*
     Declare uma variável chamada `myName`, que receba o seu primeiro nome,
@@ -87,6 +85,11 @@
     */
     console.log('\nNome com letras intercaladas entre caixa alta e baixa:');
     var myName = 'Renan';
+    var newName = [];
+    for (var i = 0; i < myName.length; i++) {
+        newName.push(i % 2 === 0 ? myName[i].toLowerCase() : myName[i].toUpperCase());
+    }
+    console.log(newName.join(''));
 
 
 })();
