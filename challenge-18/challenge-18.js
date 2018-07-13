@@ -33,7 +33,13 @@
 	console.log( '\nFormatando CPFs corretamente:' );
 	cpfs.forEach(function(item) {
 		console.log(cleanCPF(item).replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4'));
-	});	
+	});
+
+	cpfs.forEach(function(item) {
+    console.log(cleanCPF(item).replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, function (regex, arg1, arg2, arg3, arg4) {
+      return arg1 + '.' + arg2 + '.' + arg3 + '-' + arg4
+    }));
+	});
 
 	/*
 	Crie uma expressão regular que faça match com as palavras "junho" ou "julho",
@@ -47,7 +53,16 @@
 	["junho", "julho"]
 	*/
 	console.log( '\nMatch com as palavras "junho" ou "julho" para a frase "Os meses de janeiro, junho e julho começam com a letra j.":' );
-	console.log('Os meses de janeiro, junho e julho começam com a letra j.'. match(
+
+  console.log('Os meses de janeiro, junho e julho começam com a letra j.'. match(
+		/junho|julho/g
+	));
+
+  console.log('Os meses de janeiro, junho e julho começam com a letra j.'. match(
+		/ju(n|l)ho/g
+	));
+
+  console.log('Os meses de janeiro, junho e julho começam com a letra j.'. match(
 		/ju[nl]ho/g
 	));
 
@@ -105,5 +120,11 @@
 	console.log('<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>'
 		.replace(/<(\w+)>([^<]+)<\/\w+>/g, '<$1>O texto dentro da tag "$1" é "$2"</$1>\n'
 	));
-	
+
+  console.log('<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>'
+		.replace(/<(\w+)>([^<]+)<\/\w+>/g, function(regex, arg1, arg2) {
+      return '<' + arg1 + '>O texto dentro da tag "' + arg1 + '" é "' + arg2 + '"</' + arg2 + '>\n'
+    }
+  ));
+
 })();
