@@ -35,11 +35,11 @@
         this.filter = function (callback) {
             return Array.prototype.filter.call(this.nodeList, callback);
         };
-        this.reduce = function (callback) {
-            return Array.prototype.reduce.call(this.nodeList, callback, 0);
+        this.reduce = function () {
+            return Array.prototype.reduce.apply(this.nodeList, arguments);
         };
-        this.reduceRight = function (callback) {
-            return Array.prototype.reduceRight.call(this.nodeList, callback, '');
+        this.reduceRight = function () {
+            return Array.prototype.reduceRight.apply(this.nodeList, arguments);
         };
         this.every = function (callback) {
             return Array.prototype.every.call(this.nodeList, callback);
@@ -110,13 +110,13 @@
     console.log('Resultado do reduce:');
     var reducedValue = $a.reduce(function(accumulated, item) {
         return accumulated + Number(item.textContent.length);
-    });
+    }, 0);
     console.log(reducedValue);
     
     console.log('Resultado do reduceRight:');
     var reducedRight = $a.reduceRight(function(previous, current) {
         return previous + current.textContent;
-    });
+    }, '');
     console.log(reducedRight);
     
     console.log('Resultado do every:');
