@@ -1,33 +1,86 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
+
 <head>
-  <meta charset="utf-8">
-  <title>Challenge 24 - Calculator</title>
+  <meta charset="utf-8" />
+  <title>JS Ninja</title>
+  <style>
+    button {
+      width: 100%;
+    }
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+  </style>
 </head>
+
 <body>
-  <input type="text" value="0" readonly data-js="visor">
-  <div class="buttons-numbers">
-    <button data-js="button-number" value="0">0</button>
-    <button data-js="button-number" value="1">1</button>
-    <button data-js="button-number" value="2">2</button>
-    <button data-js="button-number" value="3">3</button>
-    <button data-js="button-number" value="4">4</button>
-    <button data-js="button-number" value="5">5</button>
-    <button data-js="button-number" value="6">6</button>
-    <button data-js="button-number" value="7">7</button>
-    <button data-js="button-number" value="8">8</button>
-    <button data-js="button-number" value="9">9</button>
-  </div>
+  <table border="2">
+    <tr>
+      <td colspan="4">
+        <input data-js="inputResultado" type="text" readonly value="0" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button data-js="btnCE" value="ce">CE</button>
+      </td>
+      <td>
+        <button data-js="btnOperacao" value="/">/</button>
+      </td>
+      <td>
+        <button data-js="btnOperacao" value="*">*</button>
+      </td>
+      <td>
+        <button data-js="btnOperacao" value="-">-</button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button data-js="btnNumero" value="7">7</button>
+      </td>
+      <td>
+        <button data-js="btnNumero" value="8">8</button>
+      </td>
+      <td>
+        <button data-js="btnNumero" value="9">9</button>
+      </td>
+      <td>
+        <button data-js="btnOperacao" value="+">+</button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button data-js="btnNumero" value="4">4</button>
+      </td>
+      <td>
+        <button data-js="btnNumero" value="5">5</button>
+      </td>
+      <td>
+        <button data-js="btnNumero" value="6">6</button>
+      </td>
+      <td>
+        <button data-js="btnIgual" value="=">=</button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button data-js="btnNumero" value="1">1</button>
+      </td>
+      <td>
+        <button data-js="btnNumero" value="2">2</button>
+      </td>
+      <td>
+        <button data-js="btnNumero" value="3">3</button>
+      </td>
+      <td>
+        <button data-js="btnNumero" value="0">0</button>
+      </td>
+    </tr>
 
-  <div class="operations">
-    <button data-js="button-operation" value="+">+</button>
-    <button data-js="button-operation" value="-">-</button>
-    <button data-js="button-operation" value="x">x</button>
-    <button data-js="button-operation" value="÷">÷</button>
-    <button data-js="button-equal" value="=">=</button>
-    <button data-js="button-ce" value="ce">CE</button>
-  </div>
-
+  </table>
   <script src="challenge-24.js"></script>
 </body>
+
 </html>
