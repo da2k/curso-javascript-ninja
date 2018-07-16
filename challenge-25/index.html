@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Javascript Ninja</title>
+</head>
+
+<body>
+  <div style="width:300px; margin:0 auto;">
+    <table style="width: 258px; border: solid 1px;">
+      <tr>
+        <th colspan="2">
+          Digite o nome de um jogo:
+        </th>
+      </tr>
+      <tr>
+        <td>
+          <input style="width: 98%;" type="text" data-js="inputJogo" />
+        </td>
+        <td>
+          <button style="width: 100%;" data-js="btnProcurar">Procurar</button>
+        </td>
+      </tr>
+    </table>
+
+    <br/>
+
+    <table style="border: solid 1px;">
+      <tr>
+        <th colspan="2">Jogo Encontrado:</th>
+      </tr>
+      <tr>
+        <td>
+          Nome:
+        </td>
+        <td>
+          <input type="text" data-js="inputNome" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Gênero:
+        </td>
+        <td>
+          <select style="width: 100%;" data-js="selectGenero">
+            <option default></option>
+            <option>Ação</option>
+            <option>Arcade</option>
+            <option>Aventura</option>
+            <option>Corrida</option>
+            <option>Corrida</option>
+            <option>MMO</option>
+            <option>RPG</option>
+            <option>Tiro</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Plataforma:
+        </td>
+        <td>
+          <input type="text" data-js="inputPlataforma" />
+        </td>
+      </tr>
+    </table>
+    <span data-js="save">Salvo!</span>
+  </div>
+
+  <script src="challenge-25.js"></script>
+</body>
+
+</html>
