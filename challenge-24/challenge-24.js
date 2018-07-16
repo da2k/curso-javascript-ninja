@@ -22,7 +22,24 @@
   var $btnOperacoes = doc.querySelectorAll('[data-js="btnOperacao"]');
 
 
+  //FUNÇÃO INICIALIZADORA
+  function initialize() {
+    initEvents();
+  }
+
+
   //CRIANDO AS FUNÇÕES
+  function initEvents() {
+    $btnIgual.addEventListener('click', handleClickIgual, false);
+    $btnCE.addEventListener('click', handleClickCE, false);
+    Array.prototype.forEach.call($btnNumeros, function(button) {
+      button.addEventListener('click', handleClickNumero, false);
+    })
+    Array.prototype.forEach.call($btnOperacoes, function(button) {
+      button.addEventListener('click', handleClickOperacao, false);
+    })
+  }
+
   function handleClickCE() {
     $inputResultado.value = 0;
   }
@@ -40,12 +57,17 @@
   }
 
   function isLastItemAnOperation() {
-    var operations = ['+', '-', '*', '/'];
+    var operations = getOperations();
     var lastItem = $inputResultado.value.split('').pop();
-
     return operations.some(function(op) {
       return op === lastItem;
     })
+  }
+
+  function getOperations() {
+    return Array.prototype.map.call($btnNumeros, function(button) {
+      return button.value;
+    });
   }
 
   function removeLastItemOperator() {
@@ -59,21 +81,8 @@
     $inputResultado.value = eval($inputResultado.value);
   }
 
-  function addEventListenerAll() {
-    $btnIgual.addEventListener('click', handleClickIgual, false);
-    $btnCE.addEventListener('click', handleClickCE, false);
 
-    Array.prototype.forEach.call($btnNumeros, function(button) {
-      button.addEventListener('click', handleClickNumero, false);
-    })
-
-    Array.prototype.forEach.call($btnOperacoes, function(button) {
-      button.addEventListener('click', handleClickOperacao, false);
-    })
-  }
-
-
-  //ADICIONANDO EVENTO CLICK AOS BOTÕES
-  addEventListenerAll();
+  //INICIA A CALCULADORA
+  initialize();
 
 })(window, document);
