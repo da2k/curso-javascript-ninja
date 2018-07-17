@@ -23,3 +23,34 @@ multiplicação (x), então no input deve aparecer "1+2x".
 input;
 - Ao pressionar o botão "CE", o input deve ficar zerado.
 */
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Challenge 23</title>
+</head>
+<body>
+	<input type="text" value="0" readonly data-js="visor">
+	<div class="buttons-numbers">
+		<button data-js="button-number" data-id="button-number0">0</button>
+		<buttondata-js="button-number" data-id="button-number1">1</button>
+		<button data-js="button-number" data-id="button-number2">2</button>
+		<button data-js="button-number" data-id="button-number3">3</button>
+		<button data-js="button-number" data-id="button-number4">4</button>
+		<button data-js="button-number" data-id="button-number5">5</button>
+		<button data-js="button-number" data-id="button-number6">6</button>
+		<button data-js="button-number" data-id="button-number7">7</button>
+		<button data-js="button-number" data-id="button-number8">8</button>
+		<button data-js="button-number" data-id="button-number9">9</button>
+	</div>
+
+	<div class="operations">
+		<button data-js="button-operation" data-id="button-operation-plus">+</button>
+		<button data-js="button-operation" data-id="button-operation-minus">-</button>
+		<button data-js="button-operation" data-id="button-operation-mult">*</button>
+		<button data-js="button-operation" data-id="button-operation-divi">÷</button>
+		<button data-js="button-operation" data-id="button-operation-equal">=</button>
+		<button data-js="button-operation" data-id="button-operation-ce">CE</button>
+	</div>
+
+</body>
+</html>
