@@ -20,9 +20,13 @@
     */
     console.log('Limpando CPFs:');
 
-    function format(regex, valor1, valor2, valor3, valor4) {
-        return valor1 + '.' + valor2 + '.' + valor3 + '-' + valor4;
+    function cleanCPF(cpf) {
+        return cpf.replace(/\D/g, '');
     }
+    console.log(cleanCPF('049-214 3421-1'));
+    console.log(cleanCPF('210.458.522-05'));
+    console.log(cleanCPF('735 500 794 - 22'));
+    console.log(cleanCPF('101.123-131x32'));
 
     /*
     Usando os CPFs limpos acima, deixe-os com a formatação correta de CPF.
@@ -30,7 +34,14 @@
     Mostre o resultado no console.
     */
     console.log('\nFormatando CPFs corretamente:');
-    console.log(cleanCPF('049-214 3421-1').replace(/(\d{3})(\d{3})(\d{2})/g))
+
+    function formatCPF(regex, valor1, valor2, valor3, valor4) {
+        return valor1 + '.' + valor2 + '.' + valor3 + '-' + valor4;
+    }
+    console.log(cleanCPF('049-214 3421-1').replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, formatCPF()));
+    console.log(cleanCPF('210.458.522-05').replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, formatCPF()));
+    console.log(cleanCPF('735 500 794 - 22').replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, formatCPF()));
+    console.log(cleanCPF('101.123-131x32').replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, formatCPF()));
 
 
     /*
@@ -58,7 +69,7 @@
     ["<div>", "<section>", "<blockquote>"]
     */
     console.log('\nMatch com a abertura de uma tag HTML:');
-    // ?
+    console.log('<div><section><blockquote>Texto <img /></blockquote></section></div>'.match(/(<div>{1})(<section>{1})(<blockquote>{1})/g))
 
     /*
     Crie uma expressão regular que faça o match com uma tag HTML vazia, casando
@@ -70,7 +81,7 @@
     ["<li></li>", "<li></li>", "<span></span>"]
     */
     console.log('\nMatch com tags HTML vazias (abertura e fechamento da tag):');
-    // ?
+    console.log('<div><ul><li></li><li></li><li><span></span></li></ul></div>'.match(/(<\/li>)(<li>)(<\/li>)(<li>)(<span>)(<\/span>)/g));
 
     /*
     Vamos complicar um pouco agora :D
