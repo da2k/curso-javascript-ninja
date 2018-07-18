@@ -96,7 +96,7 @@ usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
 
-book('book1).quantidadeDePaginas;
+book('book1').quantidadeDePaginas;
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
@@ -104,7 +104,7 @@ a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
 
-book('book1).autor;
+book('book1').autor;
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
@@ -112,4 +112,4 @@ a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
 
-book('book1).editora;
+book('book1').editora;
