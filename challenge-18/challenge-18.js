@@ -23,10 +23,10 @@
     function cleanCPF(cpf) {
         return cpf.replace(/\D/g, '');
     }
-    console.log(cleanCPF('049-214 3421-1'));
-    console.log(cleanCPF('210.458.522-05'));
-    console.log(cleanCPF('735 500 794 - 22'));
-    console.log(cleanCPF('101.123-131x32'));
+    var cpfs = ['049-214 3421-1', '210.458.522-05', '735 500 794 - 22', '101.123-131x32'];
+    cpfs.forEach(function(cpf) {
+        console.log(cleanCPF(cpf));
+    });
 
     /*
     Usando os CPFs limpos acima, deixe-os com a formatação correta de CPF.
@@ -35,13 +35,9 @@
     */
     console.log('\nFormatando CPFs corretamente:');
 
-    function formatCPF(regex, valor1, valor2, valor3, valor4) {
-        return valor1 + '.' + valor2 + '.' + valor3 + '-' + valor4;
-    }
-    console.log(cleanCPF('049-214 3421-1').replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, formatCPF()));
-    console.log(cleanCPF('210.458.522-05').replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, formatCPF()));
-    console.log(cleanCPF('735 500 794 - 22').replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, formatCPF()));
-    console.log(cleanCPF('101.123-131x32').replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, formatCPF()));
+    cpfs.forEach(function(cpf) {
+        console.log(cleanCPF(cpf).replace(/(\d\d\d)(\d\d\d)(\d\d\d)(\d\d)/, '$1.$2.$3-$4'));
+    })
 
 
     /*
@@ -81,7 +77,7 @@
     ["<li></li>", "<li></li>", "<span></span>"]
     */
     console.log('\nMatch com tags HTML vazias (abertura e fechamento da tag):');
-    console.log('<div><ul><li></li><li></li><li><span></span></li></ul></div>'.match(/(<\/li>)(<li>)(<\/li>)(<li>)(<span>)(<\/span>)/g));
+    console.log('<div><ul><li></li><li></li><li><span></span></li></ul></div>'.match(/(<\w+><\/\w+)/g));
 
     /*
     Vamos complicar um pouco agora :D
@@ -91,7 +87,7 @@
     'O texto dentro da tag "[NOME DA TAG]" é "[TEXTO]"'
 
     Use a marcação abaixo para fazer o replace:
-    "<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>"
+    "c"
 
     A marcação deve permanecer como está, somente o texto deve ser substituído.
     No replace, utilize quebras de linha para deixar uma tag por linha.
@@ -106,6 +102,20 @@
     corretas, para depois aplicar no código ;)
     */
     console.log('\nFazer replace dos textos das tags:');
-    // ?
+
+    var text = '<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>';
+    console.log(text.replace(/(<\w+>)([^<]+)<\/\w+>/g,
+        '$1 O texto dentro da tag "$1" é "$2 $1 \n'
+    ));
+
+
+
+
+
+
+
+
+
+
 
 })();
