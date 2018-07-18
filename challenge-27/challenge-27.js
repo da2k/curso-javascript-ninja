@@ -20,74 +20,96 @@ Crie os seguintes métodos para verificação de tipo:
 O método isNull deve retornar `true` se o valor for null ou undefined.
 */
 
-(function(){
+(function(win, doc){
   'use strict';
+
+  //funções do challenge 26
   function DOM(str){
     this.element = doc.querySelectorAll(str);
   }
 
-  DOM.forEach = function forEach( arr, func ) {
-    return Array.prototype.forEach.call( arr, func );
+  DOM.prototype.on = function on (event, callback) {
+    Array.prototype.forEach.call( this.element, function(btn) {
+      btn.addEventListener(event, callback, false);
+    });
   }
 
-  DOM.map = function map( arr, func ) {
-    return Array.prototype.map.call( arr, func );
+  DOM.prototype.off = function off () {
+    Array.prototype.forEach.call( this.element, function(btn) {
+      btn.removeEventListener(event, callback, false);
+    });
   }
 
-  DOM.filter = function filter( arr, func ) {
-    return Array.prototype.filter.call( arr, func );
+  DOM.prototype.get = function get () {
+       return this.element;
+  }
+//fim das funções do challenge 26
+
+  DOM.prototype.forEach = function forEach() {
+    return Array.prototype.forEach.apply( this.element, arguments );
   }
 
-  DOM.reduce = function reduce( arr, func ) {
-    return Array.prototype.reduce.call( arr, func );
+  DOM.prototype.map = function map() {
+    return Array.prototype.map.call( this.element, arguments );
   }
 
-  DOM.reduceRight = function reduceRight( arr, func ) {
-    return Array.prototype.reduceRight.call( arr, func );
+  DOM.prototype.filter = function filter() {
+    return Array.prototype.filter.call( this.element, arguments );
   }
 
-  DOM.every = function every( arr, func ) {
-    return Array.prototype.every.call( arr, func );
+  DOM.prototype.reduce = function reduce() {
+    return Array.prototype.reduce.call( this.element, arguments );
   }
 
-  DOM.some = function some( arr, func ) {
-    return Array.prototype.some.call( arr, func );
+  DOM.prototype.reduceRight = function reduceRight() {
+    return Array.prototype.reduceRight.call( this.element, arguments );
   }
+
+  DOM.prototype.every = function every() {
+    return Array.prototype.every.call( this.element, arguments );
+  }
+
+  DOM.prototype.some = function some() {
+    return Array.prototype.some.call( this.element, arguments );
+  }
+
 
   function transformType(a){
     return Object.prototype.toString.call(a);
   }
 
-  DOM.isArray = function isArray(obj){
+  DOM.prototype.isArray = function isArray(obj){
     return transformType(obj) === '[object Array]';
   }
 
-  DOM.isObject = function isObject(obj){
+  DOM.prototype.isObject = function isObject(obj){
     return transformType(obj) === '[object Object]';
   }
 
-  DOM.isFunction = function isFunction(obj){
+  DOM.prototype.isFunction = function isFunction(obj){
     return transformType(obj) === '[object Function]';
   }
 
-  DOM.isNumber = function isNumber(obj){
+  DOM.prototype.isNumber = function isNumber(obj){
     return transformType(obj) === '[object Number]';
   }
 
-  DOM.isString = function isString(obj){
+  DOM.prototype.isString = function isString(obj){
     return transformType(obj) === '[object String]';
   }
 
-  DOM.isBoolean = function isBoolean(obj){
+  DOM.prototype.isBoolean = function isBoolean(obj){
     return transformType(obj) === '[object Boolean]';
   }
 
-  DOM.isNull = function isNull(obj){
+  DOM.prototype.isNull = function isNull(obj){
     return transformType(obj) === '[object Null]' || '[object Undefined]';
   }
 
+
+  var DOM = new DOM();
   console.log (DOM.isArray([1, 2, 3]));
   console.log (DOM.isFunction(function() {}));
   console.log (DOM.isNumber('numero'));
 
-})();
+})(window, document);
