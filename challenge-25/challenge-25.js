@@ -14,3 +14,53 @@ https://developer.mozilla.org/en-US/docs/Web/Events#Categories
 Tente aplicar na prática alguns dos eventos que estão ali e coloque nesse
 desafio os experimentos legais que você conseguir desenvolver :D
 */
+(function (doc){
+	'use strict';
+
+	var $visor = doc.querySelector('input');
+	var $buttonOver = doc.querySelector('[data-js="buttonOver"]');
+	var $buttonOut = doc.querySelector('[data-js="buttonOut"]');
+	var $buttonDouble = doc.querySelector('[data-js="buttonDouble"]');
+	var $buttonClick = doc.querySelector('[data-js="buttonClick"]');
+	var $selector = doc. querySelector('[data-js="selectOptions"]');
+
+	
+	function initialize(){
+		initEvents();
+	}
+
+
+	function initEvents(){
+		$buttonOver.addEventListener('mouseover', buttonPassou, false);
+		$buttonOut.addEventListener('mouseout', buttonSaiu,false);
+		$buttonDouble.addEventListener('dblclick', buttonDouble, false);
+		$buttonClick.addEventListener('click', buttonClicou, false);
+		$selector.addEventListener('change', selectorChange, false);
+	}
+
+
+	function buttonPassou(){
+		alert('passou!')
+	}
+
+	function buttonSaiu() {
+		alert('saiu!');
+	}
+
+	function buttonDouble(){
+		alert('clicou 2x!')
+	}
+
+	function buttonClicou(){
+		alert('clicou 1x!');
+	}
+
+	function selectorChange(){
+		$visor.value = this.value;
+	}
+
+
+	initialize();
+
+
+})(document)
