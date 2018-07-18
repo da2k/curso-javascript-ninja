@@ -7,15 +7,39 @@ um único parâmetro como argumento. Essa função deve retornar `true` se o
 equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
-?
+
+var isTruthy = function(param) {
+  if(param) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
-?
+
+isTruthy(undefined);
+isTruthy(null);
+isTruthy(false);
+isTruthy(0);
+isTruthy(-0);
+isTruthy(NaN);
+isTruthy('');
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
-?
+
+isTruthy(1);
+isTruthy(true);
+isTruthy('0');
+isTruthy('nome');
+isTruthy({});
+isTruthy([]);
+isTruthy(2);
+isTruthy(3);
+isTruthy(4);
+isTruthy(5);
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
