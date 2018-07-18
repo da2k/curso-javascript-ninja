@@ -36,9 +36,9 @@ seguintes propriedades:
 */
 console.log( '\nLista de livros:' );
 
-books.push(livroUm = {name: 'Quem é você, Alasca?', pages: 296});
-books.push(livroDois = {name: 'A guerra dos tronos', pages: 590});
-books.push(livroTres = {name: 'O Hobbit', pages: 300});
+books.push({name: 'Quem é você, Alasca?', pages: 296});
+books.push({name: 'A guerra dos tronos', pages: 590});
+books.push({name: 'O Hobbit', pages: 300});
 
 /*
 Mostre no console todos os livros.
@@ -50,7 +50,7 @@ console.log(books);
 Remova o último livro, e mostre-o no console.
 */
 console.log( '\nLivro que está sendo removido:' );
-books.pop();
+console.log( books.pop() );
 
 /*
 Mostre no console os livros restantes.
@@ -81,7 +81,7 @@ Mostre no console todas as propriedades e valores de todos os livros,
 no formato abaixo:
     "[PROPRIEDADE]: [VALOR]"
 */
-for (var i = 0; i <= books.length; i++) {
+for (var i = 0; i < books.length; i++) {
     for (var props in books[i]) {
         console.log(props + ': ' + books[i][props]);
     }
