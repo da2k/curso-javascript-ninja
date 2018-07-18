@@ -36,7 +36,7 @@ for chamado.
 */
 
 pessoa.fazerAniversario = function() {
-	return this.idade += 1;
+	this.idade++;
 }
 
 /*
