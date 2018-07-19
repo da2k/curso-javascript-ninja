@@ -34,8 +34,8 @@
         this.getAge = function() {
             return age;
         }
-        this.addAge = function(yearsToAdd) {
-            this.age += yearsToAdd;
+        this.addAge = function() {
+            this.age += arguments[0];
             return this;
         }
     }
@@ -55,18 +55,18 @@
     Mostre no console o nome completo de cada pessoa.
     */
     console.log('\nNomes das pessoas:');
-    console.log(guilherme);
-    console.log(amanda);
-    console.log(hyldrion);
+    console.log(guilherme.getFullName());
+    console.log(amanda.getFullName());
+    console.log(hyldrion.getFullName());
 
     /*
     Mostre no console as idades de cada pessoa, com a frase:
     - "[NOME COMPLETO] tem [IDADE] anos."
     */
     console.log('\nIdade das pessoas:');
-    console.log(guilherme.getFullName() + ' tem ' + guilherme.age + ' anos.');
-    console.log(amanda.getFullName() + ' tem ' + amanda.age + ' anos.');
-    console.log(hyldrion.getFullName() + ' tem ' + hyldrion.age + ' anos.');
+    console.log(guilherme.getFullName() + ' tem ' + guilherme.getAge() + ' anos.');
+    console.log(amanda.getFullName() + ' tem ' + amanda.getAge() + ' anos.');
+    console.log(hyldrion.getFullName() + ' tem ' + hyldrion.getAge() + ' anos.');
 
     /*
     Adicione alguns anos à cada pessoa, e mostre no console a nova idade de
