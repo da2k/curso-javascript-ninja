@@ -54,12 +54,19 @@ showTeamPosition(1);
 showTeamPosition(2);
 showTeamPosition(3);
 showTeamPosition(4);
+showTeamPosition(6);
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
 repetição "while".
 */
-// ?
+
+var cont = 20;
+
+while (cont <= 30) {
+  console.log(cont);
+  cont ++;
+}
 
 /*
 Crie uma função chamada `convertToHex`, com as seguintes características:
@@ -73,9 +80,40 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     a frase:
     "Não temos o equivalente hexadecimal para [COR]."
 */
-// ?
+
+function convertToHex(cor) {
+  switch (cor) {
+    case 'azul':
+      return `O hexadecimal para a cor ${cor} é #0000FF`
+      break;
+    case 'vermelho':
+      return `O hexadecimal para a cor ${cor} é #FF0000`
+      break;
+    case 'verde':
+      return `O hexadecimal para a cor ${cor} é #008000`
+      break;
+      case 'laranja':
+      return `O hexadecimal para a cor ${cor} é #FFA500`
+      break;
+      case 'amarelo':
+      return `O hexadecimal para a cor ${cor} é #FFFF00`
+      break;
+  default:
+      return `Não temos o equivalente hexadecimal para ${cor}`;
+      break;
+  }
+}
 
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-// ?
+
+convertToHex('azul') //'O hexadecimal para a cor azul é #0000FF'
+convertToHex('verde') //'O hexadecimal para a cor verde é #008000'
+convertToHex('vermelho') //'O hexadecimal para a cor vermelho é #FF0000'
+convertToHex('amarelo') //'O hexadecimal para a cor amarelo é #FFFF00'
+convertToHex('laranja') //'O hexadecimal para a cor laranja é #FFA500'
+convertToHex('cinza') //'Não temos o equivalente hexadecimal para cinza'
+convertToHex('preto') //'Não temos o equivalente hexadecimal para preto'
+convertToHex('branco') //'Não temos o equivalente hexadecimal para branco'
+
