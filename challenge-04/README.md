@@ -8,7 +8,7 @@ equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
 var isTruthy = function(x){
-	return x ? true : false
+	return !!x
 }
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
@@ -27,31 +27,29 @@ isTruthy(null)
 
 isTruthy(NaN)
 
-isTruthy("")
-
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
 
-isTruthy("x")
+isTruthy(function() {});
 
-isTruthy('x')
+isTruthy('x');
 
-isTruthy(10)
+isTruthy(10);
 
-isTruthy(-10)
+isTruthy(-10);
 
-isTruthy(true)
+isTruthy(true);
 
-isTruthy([])
+isTruthy([]);
 
-isTruthy({})
+isTruthy({});
 
-isTruthy(10.5)
+isTruthy(10.5);
 
-isTruthy(0.5)
+isTruthy(10 * 2);
 
-isTruthy(Symbol)
+isTruthy(Symbol);
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
