@@ -26,7 +26,7 @@
     no console:
     */
     console.log('Regex para números usando o construtor:');
-    var justNumbersRegex = /(?:\d+)/g;
+    var justNumbersRegex = new RegExp('^\\d+', 'gm')
     console.log(justNumbersRegex);
     /*
     Verifique se a regex acima casa com o texto na variável `text`, mostrando o
@@ -86,7 +86,7 @@
     console.log('\nQuais classes CSS existem na marcação abaixo?\n\n', markup, '\n');
 
     function hasClass(markup, cssClass) {
-        var regex = new RegExp('class=["\'](?:[\\w\\s]+)?');
+        var regex = new RegExp('class=["\'](?:[\\w\\s]+)?' + cssClass + '(?:[\\w\\s]+)?["\']');
         return regex.test(markup);
     }
     var classes = ['container', 'text', 'date', 'excert', 'main'];
