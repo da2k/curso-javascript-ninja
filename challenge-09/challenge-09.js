@@ -10,8 +10,8 @@ dentro de `console.log` que estão retornando `undefined` retornem o valor
 correto da variável ou função chamada.
 */
 function myFunction() {
-    console.log( 'Na função `myFunction`, o primeiro número é', number1 );
-    console.log( 'Na função `myFunction`, o segundo número é', number2 );
+    console.log('Na função `myFunction`, o primeiro número é', number1);
+    console.log('Na função `myFunction`, o segundo número é', number2);
     var number1 = 10;
     return number1 + number2;
     var number2 = 20;
@@ -22,7 +22,7 @@ myFunction();
     myFunction2();
 */
 function myFunction2() {
-    console.log( 'A soma de 10 e 20 é igual a', sum ? sum() : undefined );
+    console.log('A soma de 10 e 20 é igual a', sum ? sum() : undefined);
     var sum = function sum() {
         return number1 + number2;
     };
@@ -36,9 +36,9 @@ myFunction2();
     myFunction3();
 */
 function myFunction3() {
-    console.log( 'A soma de 40 e 50 é igual a', sum() );
+    console.log('A soma de 40 e 50 é igual a', sum());
     var number2 = 50;
-    console.log( 'Na função myFunction3, number1 é igual a', number1 );
+    console.log('Na função myFunction3, number1 é igual a', number1);
     var number1 = 40;
     return sum();
     function sum() {
@@ -77,7 +77,7 @@ para a chamada à `calculator` acima.
 uma função anônima que irá retornar a soma dos dois números que essa função
 anônima tem como seus argumentos.
 */
-console.log( 'O resultado da soma é:' );
+console.log('O resultado da soma é:');
 // ?
 
 /*
@@ -94,14 +94,14 @@ divisão e módulo (resto de divisão), conforme a função utilizada.
 As suas respostas devem estar abaixo dos `console.log` referentes à cada
 chamada.
 */
-console.log( 'O resultado da subtração é:' );
+console.log('O resultado da subtração é:');
 // ?
 
-console.log( 'O resultado da multiplicação é:' );
+console.log('O resultado da multiplicação é:');
 // ?
 
-console.log( 'O resultado da divisão é:' );
+console.log('O resultado da divisão é:');
 // ?
 
-console.log( 'O resto da divisão é:' );
+console.log('O resto da divisão é:');
 // ?
