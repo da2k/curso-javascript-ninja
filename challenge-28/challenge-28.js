@@ -156,7 +156,6 @@ function clearData(){
 function parseData(){
   var result;
   try {
-    debugger;
     result = JSON.parse(ajax.responseText);
   } catch (e) {
     result = null;
