@@ -3,20 +3,28 @@ Declare uma variável chamada `sum` e atribua a ela uma função chamada
 `calculateSum`. A função deve receber dois parâmetros e retornar a soma
 desses parâmetros.
 */
-// ?
+
+var sum = function calculateSum(a, b) {
+  return a + b;
+}
 
 /*
 Invoque a função criada acima, passando dois números que serão somados, e mostre
 o resultado no console, com a frase:
 "A soma de [VALOR 1] e [VALOR2] é igual a [RESULTADO]."
 */
-// ?
+
+var value1 = 5;
+var value2 = 10;
+
+console.log(`A soma de ${value1} e ${value2} é igual a ${sum(value1, value2)}`);
 
 /*
 Mostre no console o nome da função criada acima, com a frase:
 "O nome da função que faz a soma é [NOME DA FUNÇÃO]."
 */
-// ?
+
+console.log(`O nome da função que faz a soma é ${sum.name}`);
 
 /*
 Crie uma função literal chamada `showName`. Essa função deve retornar o
