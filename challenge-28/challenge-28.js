@@ -47,41 +47,95 @@
         });
     };
 
-    var $cep = new DOM('[data-js="cep"]');
+    var $cep = new DOM('[data-js="cep"]').get()[0];
     var $submitButton = new DOM('[data-js="submit"]');
-    var onlyNumbers = /\d+/g;
     var $cepInfo = new DOM('.cep-info').get();
-    var $requestStatus = new DOM('[data-js="status"]').get();
+    var $requestStatus = new DOM('[data-js="status"]').get()[0];
+    var ajax = new XMLHttpRequest();
 
-    function assignValuesToLabels (cepInfo, cepJson) {
-        Array.prototype.forEach.call(cepInfo, function(info) {
+    function assignValuesToLabels (data) {
+        Array.prototype.forEach.call($cepInfo, function(info) {
             var cepKey = info.getAttribute('cep-label');
-            info.textContent = cepJson[cepKey] || '';
+            info.textContent = data[cepKey] || '';
         });
     }
 
-    $submitButton.on('click', function(e) {
-        e.preventDefault();
-        var cepNumber = $cep.get()[0].value.match(onlyNumbers).join('');
-        var urlAddress = "https://viacep.com.br/ws/" + cepNumber + "/json/";
-        var ajax = new XMLHttpRequest();
-        ajax.addEventListener('readystatechange', function() {
-            if (this.readyState !== 4) {
-                $requestStatus[0].textContent = "Buscando informações para o CEP " + cepNumber + "...";
-            }
-            if (this.readyState === 4 && this.status === 200) {
-                var cepJson = JSON.parse(this.responseText);
-                if (cepJson.erro) {
-                    $requestStatus[0].textContent = "Não encontramos o endereço para o CEP " + cepNumber + ".";
-                }
-                else {
-                    $requestStatus[0].textContent = "Endereço referente ao CEP " + cepNumber + ":";
-                }
-                assignValuesToLabels($cepInfo, cepJson);
-            }
+    function buildCEP () {
+        return $cep.value.replace(/\D+/g, '');
+    }
+
+    function buildURL () {
+        return replaceCEP("https://viacep.com.br/ws/[CEP]/json/");
+    }
+
+    function isResponseSuccess () {
+        return ajax.readyState === 4 && ajax.status === 200;
+    }
+
+    function parseData () {
+        var data;
+        try {
+            data = JSON.parse(ajax.responseText);
+        }
+        catch (e) {
+            data = null;
+        }
+        return data;
+    }
+
+    function replaceCEP (message) {
+        return message.replace( '[CEP]', buildCEP() );
+    }
+
+    function getMessage (type) {
+        return {
+            loading: replaceCEP("Buscando informações para o CEP [CEP]..."),
+            success: replaceCEP("Endereço referente ao CEP [CEP]:"),
+            error: replaceCEP("Não encontramos o endereço para o CEP [CEP]."),
+        }[type];
+    }
+
+    function assignMessageToStatus (type) {
+        $requestStatus.textContent = getMessage(type);
+    }
+
+    function resetFormInputs () {
+        Array.prototype.forEach.call($cepInfo, function(info) {
+            info.textContent = '';
         });
-        ajax.open('GET', urlAddress);
+    }
+
+    function handleMessagesAndData (data) {
+        if (data.erro) {
+            assignMessageToStatus('error');
+            resetFormInputs();
+        }
+        else {
+            assignMessageToStatus('success');
+            assignValuesToLabels(data);
+        }
+    }
+
+    function handleStateChange () {
+        if ( isResponseSuccess() ) {
+            var data = parseData();
+            if (data) {
+                handleMessagesAndData(data);
+            }
+            return;
+        }
+    }
+
+    function handleFormSubmission (e) {
+        e.preventDefault();
+        resetFormInputs();
+        var url = buildURL();
+        ajax.addEventListener('readystatechange', handleStateChange);
+        ajax.open('GET', url);
         ajax.send();
-    });
+        assignMessageToStatus('loading');
+    }
+
+    $submitButton.on('click', handleFormSubmission);
 
 })(document);
