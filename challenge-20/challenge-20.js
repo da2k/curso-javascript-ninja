@@ -16,11 +16,9 @@
     nome, `username` deve receber "Desconhecido".
     Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
     */
-    var username = prompt('Qual seu nome?');
-    if (username)
-        alert('Bem vindo ' + username + '!')
-    else
-        username = 'Desconhecido';
+    var username = prompt('Qual seu nome?') || 'Desconhecido';
+    alert('Bem vindo ' + username);
+
 
 
     /*
@@ -87,17 +85,23 @@
     */
     $button.addEventListener('click', function(event) {
         event.preventDefault();
-        if ($inputUsername.value === 'Desconhecido')
-            alert('Preencha o nome');
+        if (!$inputUsername.value)
+            return alert('Preencha o nome do usuário!');
 
-        if (isValidEmail)
-            if (prompt('Tem certeza que deseja enviar o formulário?'))
-                console.log('Enviado com sucesso!');
-            else
-                console.log('Não enviado.');
+        if (!$inputEmail.value)
+            return alert('Preencha o e-mail!');
 
-        if ($message === null)
-            alert('Preencha a mensagem');
+        if (!$message.value)
+            return alert('Preencha a mensagem!');
+
+        if (!isValidEmail($inputEmail.value))
+            alert('Entre com um e-mail válido!');
+
+        if (confirm('Tem certeza que deseja enviar o formulário?'))
+            return alert('Enviado com sucesso!');
+
+        alert('Não enviado');
+
     }, false);
 
     /*
@@ -126,9 +130,8 @@
         - "rita-marica@titica.a.b"
         - "agua_@evida.br.com"
     */
-    function isValidEmail($inputEmail) {
-        if ($inputEmail.match(/(\w+).+([@])\w+([\.]\w+)/g) === null)
-            console.log('Entre com um e-mail válido!');
+    function isValidEmail(email) {
+        return /^[\w+.]+@\w+\.\w{2,}(?:\.\w{2})?/.test(email);
     }
 
 })(window, document);
