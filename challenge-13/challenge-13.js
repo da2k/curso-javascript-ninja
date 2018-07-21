@@ -40,7 +40,7 @@ console.log( brasil );
 Remova o primeiro estado do array `brasil` e mostre-o no console.
 */
 console.log( '\nEstado removido:' );
-brasil.shift(0, 1);
+brasil.shift();
 
 console.log( brasil );
 
@@ -77,7 +77,7 @@ console.log( nordeste );
 Remova de `brasil` os estados do `sudeste`, colocando-os em uma variável
 chamada `newSudeste`.
 */
-var newSudeste = brasil.splice(5, 8);
+var newSudeste = brasil.splice(5, 4);
 
 /*
 Adicione os estados do `nordeste` ao array `brasil`. Esses estados devem
@@ -130,7 +130,7 @@ var every = brasil.every(function(item) {
     return item.length > 7;
 });
 
-every === true ? console.log( 'Sim, todos os estados tem mais de 7 letras!' ) : console.log( 'Nem todos os estados tem mais de 7 letras!' );
+console.log( every === true ?  'Sim, todos os estados tem mais de 7 letras!' : 'Nem todos os estados tem mais de 7 letras!' );
 
 
 /*
@@ -146,7 +146,7 @@ var some = brasil.some(function(item) {
     return item === 'Ceará';
 });
 
-some === true ? console.log( 'Ceará está incluído!' ) : console.log( 'Ceará não foi incluído :(' );
+Console.log( some === true ? 'Ceará está incluído!' : 'Ceará não foi incluído :(' );
 
 /*
 Percorra o array `newBrasil` e crie um novo array que some 1 no ID de cada
