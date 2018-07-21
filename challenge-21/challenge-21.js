@@ -48,6 +48,7 @@ dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
   }, false);
 
   $resetButton.addEventListener('click', function() {
+    clearTimeout(counterId);
     resetCounter();
     setCounter(counter);
   }, false);
