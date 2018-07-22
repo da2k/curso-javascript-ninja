@@ -20,10 +20,15 @@
   function cleanCPF(cpf) {
     return cpf.replace( /\D/g, '' );
   }
-  console.log( cleanCPF('049-214 3421-1') );
-  console.log( cleanCPF('210.458.522-05') );
-  console.log( cleanCPF('735 500 794 - 22') );
-  console.log( cleanCPF('101.123-131x32') );
+  var cpfs = [
+    '049-214 3421-1',
+    '210.458.522-05',
+    '735 500 794 - 22',
+    '101.123-131x32'
+  ];
+  cpfs.forEach(function (cpf) {
+    console.log( cleanCPF(cpf) );
+  });
 
   /*
   Usando os CPFs limpos acima, deixe-os com a formatação correta de CPF.
@@ -32,12 +37,11 @@
   */
   console.log( '\nFormatando CPFs corretamente:' );
   function cpfFormat (cpf) {
-    return cpf.replace( /(\d\d\d)(\d\d\d)(\d\d\d)(\d\d)/g, '$1.$2.$3-$4' );
+    return cpf.replace( /(\d{3})(\d{3})(\d{3})(\d{2})/g, '$1.$2.$3-$4' );
   }
-  console.log( cpfFormat( cleanCPF( '049-214 3421-1' ) ) );
-  console.log( cpfFormat( cleanCPF( '210.458.522-05' ) ) );
-  console.log( cpfFormat( cleanCPF( '735 500 794 - 22' ) ) );
-  console.log( cpfFormat( cleanCPF( '101.123-131x32' ) ) );
+  cpfs.forEach(function (cpf) {
+    console.log( cpfFormat( cleanCPF( cpf ) ) );
+  });
 
   /*
   Crie uma expressão regular que faça match com as palavras "junho" ou "julho",
@@ -100,7 +104,10 @@
   corretas, para depois aplicar no código ;)
   */
   console.log( '\nFazer replace dos textos das tags:' );
-  console.log( '<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>'.replace( /(<\w+>)|([^</])|(<\/\w+>)/g, function(regex, s1, s2, s3){
-    return (s1 ? s1 + 'O texto dentro da tag "' + s1.substring(1,s1.indexOf('>')) + '" é "' : '') + (s2 || '') + (s3 ? '"' + s3 + '\n' : '');
-  }) );
+  console.log(
+    '<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>'.replace(
+      /<(\w+)>([^<]+)<\/\w+>/g,
+      '<$1>O texto dentro da tag "$1" é "$2"</$1>'
+    )
+  );
 })();
