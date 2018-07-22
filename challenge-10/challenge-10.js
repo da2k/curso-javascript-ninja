@@ -11,7 +11,7 @@
   das variáveis. Analise o que está sendo impresso no console para saber como
   resolver o problema corretamente.
   */
-  var five = '5';
+  var five = new Number('5');
   console.log( five + ' é número?', typeof five === 'number' );
 
   var concat = 10 + 10;
