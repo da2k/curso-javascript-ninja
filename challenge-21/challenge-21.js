@@ -20,29 +20,29 @@
     var $buttonStart = document.querySelector('[data-js="startButton"]');
     var $buttonStop = document.querySelector('[data-js="stopButton"]');
     var $buttonReset = document.querySelector('[data-js="resetButton"]');
+    var interval;
 
-    var counter = 0;
-    var temporizador;
+    $buttonStart.addEventListener('click', startTimer, false);
+    $buttonStop.addEventListener('click', stopTimer, false);
+    $buttonReset.addEventListener('click', resetTimer, false);
 
-    function time() {
-        $inputTime.value = counter++;
-        temporizador = setTimeout(time, 1000);
+    function startTimer() {
+        $inputTime.value = +$inputTime.value + 1;
+        interval = setTimeout(startTimer, 1000);
     }
 
-    $buttonStart.addEventListener('click', function() {
-        time();
-    }, false);
+    function stopTimer() {
+        clearTimeout(interval);
+    }
 
-    $buttonStop.addEventListener('click', function() {
-        clearTimeout(temporizador);
-    }, false);
+    function resetTimer() {
+        $inputTime.value = 0;
+        stopTimer();
+    }
 
-    $buttonReset.addEventListener('click', function() {
-        counter = 0
-        clearTimeout(temporizador);
-        $inputTime.value = counter;
 
-    }, false);
+
+
 
 
 }(window, document));
