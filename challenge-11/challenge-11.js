@@ -68,7 +68,18 @@
   Mostre no console os números no array.
   */
   console.log( 'De 0 a 10:' );
-  // ?
+  
+  var numbers = [];
+  var cont = 0;
+
+  for (cont;  cont < 20; cont++) {
+    if (cont >10) {
+      break;
+    }
+    numbers.push(cont)
+  }
+
+  console.log(numbers);
 
   /*
   Faça outro loop de 0 a 20, que adicione a um array chamado `numbers` (já
@@ -77,6 +88,18 @@
   Mostrar no console os números do array.
   */
   console.log( 'Pares de 0 a 20:' );
-  // ?
+  
+  var numbers = [];
+
+  var cont = 0;
+
+  for (var cont = 0; cont <= 20; cont++) {
+    if (cont % 2) {
+      continue;
+    }
+    numbers.push(cont);
+  }
+
+  console.log(numbers);
 
 })();
