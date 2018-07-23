@@ -11,10 +11,10 @@
   das variáveis. Analise o que está sendo impresso no console para saber como
   resolver o problema corretamente.
   */
-  var five = '5';
+  var five = Number('5');
   console.log( five + ' é número?', typeof five === 'number' );
 
-  var concat = 10 + 10;
+  var concat = String(10) + 10;
   console.log( '"' + concat + '" é uma string? E é igual a "1010"?', typeof concat === 'string' );
 
   /*
@@ -26,7 +26,24 @@
   função receberá dois parâmetros e retornará a operação referente à sua
   propriedade, usando os valores passados por parâmetro.
   */
-  // ?
+  
+  var operation = {
+    '+': function(num1, num2) {
+      return num1 + num2;
+    },
+    '-': function(num1, num2) {
+      return num1 - num2;
+    },
+    '*': function(num1, num2) {
+      return num1 * num2;
+    },
+    '/': function(num1, num2) {
+      return num1 / num2;
+    },
+    '%': function(num1, num2) {
+      return num1 % num2;
+    },
+  }
 
   /*
   Crie uma função chamada `isOperatorValid`, que receberá um operador por
@@ -38,7 +55,10 @@
   Caso contrário, "false".
   - O desafio é fazer o retorno sem usar "if" ou "switch".
   */
-  // ?
+  
+  function isOperatorVAlid(operator) {
+    return (operation[operator] !== undefined);
+  }
 
   /*
   Agora vamos criar a calculadora.
@@ -52,7 +72,18 @@
   operador passado para a função "calculator", e passando para esse método
   os dois parâmetros da função de retorno de "calculator".
   */
-  // ?
+  
+  function calculator(operator) {
+    if (!isOperatorVAlid(operator)) {
+      return false;
+    }
+      return function(num1, num2) {
+        if (typeof num1 !== 'number' && typeof num2 !== 'number') {
+          return false;
+        }
+          return operation[operator](num1, num2);
+      };
+  }
 
   /*
   Crie uma função chamada "showOperationMessage" que recebe três parâmetros:
@@ -61,7 +92,10 @@
   'A operação [NUMBER1] [OPERATOR] [NUMBER2] =';
   Essa função mostrará a mensagem da operação que criaremos mais abaixo.
   */
-  // ?
+  
+  function showOperationMessage(operator, num1, num2) {
+    return `A operação ${num1} ${operator} ${num2} =`;
+  }
 
   /*
   Crie uma função chamada "showErrorMessage" que recebe um parâmetro: o
@@ -69,7 +103,12 @@
   Essa função deverá retornar a frase:
   'Operação "[OPERATOR]" não permitida!'
   */
-  // ?
+  
+  function showErrorMessage(operator) {
+    if (!isOperatorVAlid(operator)) {
+      return `Operação ${operator} não permitida!`
+    }
+  }
 
   /*
   Nossa calculadora está pronta! Agora vamos testá-la:
@@ -77,7 +116,10 @@
   - Declare 3 variáveis: "number1" e "number2", iniciando com valor zero, e
   "operationSignal", sem valor por enquanto.
   */
-  // ?
+  
+  var number1 = 0;
+  var number2 = 0;
+  var operationSignal;
 
   /*
   PASSO 2:
@@ -85,7 +127,10 @@
   variável chamada "sum", que receba a função "calculator", passando por
   parâmetro a variável que recebeu o sinal da operação.
   */
-  // ?
+  
+  operationSignal = '+';
+
+  var sum = calculator(operationSignal);
 
   /*
   PASSO 3:
@@ -99,19 +144,46 @@
   - O segundo, a função de soma, passando os dois operandos.
   - Se "sum" for "false", mostrar no console a mensagem de erro.
   */
-  // ?
+  
+  if (sum) {
+    number1 = 10;
+    number2 = 5;
+
+    console.log(showOperationMessage(operationSignal, number1, number2));
+    console.log(sum(number1, number2));
+  } else {
+    console.log(showErrorMessage(operationSignal));
+  }
 
   /*
   Repita desde o "PASSO 2" com as operações de subtração, multiplicação,
   divisão e resto. Crie variáveis com os nomes "subtraction",
   "multiplication", "division" e "mod".
   */
-  // ?
+  
+  operationSignal = '-';
+
+  var subtraction = calculator(operationSignal);
+  
+  operationSignal = '*';
+
+  var multiplication = calculator(operationSignal);
+  
+  operationSignal = '/';
+
+  var division = calculator(operationSignal);
+  
+  operationSignal = '%';
+
+  var mod = calculator(operationSignal);
 
   /*
   Repita o PASSO 2 novamente, mas passando um operador inválido, para ver se
   a mensagem de erro será mostrada no console.
   */
-  // ?
   
-)}();
+  var operationSignal = '9';
+
+  var teste = calculator(operationSignal);
+  
+})();
