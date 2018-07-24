@@ -1349,7 +1349,7 @@ ajax.responseXML: recebe conteúdo do tipo xml
 > function isRequestOk() {
 >   return ajax.readyState === 4 ajax.status === 200;
 > }
-> ajax.addEventListener('onreadystatechange', function(){
+> ajax.addEventListener('readystatechange', function(){
 >   if( isRequestOk() ){
 >   var data = JSON.parse(ajax.responseText); // transformar dados JSON pra objetos, para manipulação
 >   console.log('Requisição ok', data.message);

@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Challenge 28</title>
+</head>
+<body>
+
+  <form method="GET" action="." data-js="formCEP">
+    <input type="text" name="cep" data-js="inputCEP">
+    <button type="submit" data-js="submitCEP">Submit</button>
+  </form>
+
+  <div class="status" data-js="status">
+    <h2 data-js="statusText"></h2>
+  </div>
+
+  <div class="info">
+    <!-- Logradouro, Bairro, Estado, Cidade e CEP. -->
+    <div>Bairro: <span id="bairro"></span></div>
+    <div>Localidade:  <span id="localidade"></span></div>
+    <div>Logradouro:  <span id="logradouro"></span></div>
+    <div>UF:  <span id="uf"></span></div>
+  </div>
+
+  <!-- <script src="challenge-28.js"></sc> -->
+  <script src="challenge-28-resolvido.js"></script>
+</body>
+</html>
