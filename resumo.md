@@ -1368,3 +1368,11 @@ try | catch: se houver erro, ele não para o código, mas joga para o catch
 > catch(e) {
 >   console.log(e);
 > }
+
+
+
+/* 
+Seção 29
+*/
+//Vídeo 175
+Modular pattern
