@@ -23,15 +23,15 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
  function attrValue(value){
-	var a = value;
-	return "O valor da variavel a é: "+a;
+	var offValue = value;
+	return "O valor da variavel a é: "+offValue;
 }
 
 // Invoque a função criada acima.
 attrValue(10);
 
 // Qual o retorno da função? (Use comentários de bloco).
-'O valor da variavel a é: 10'
+'O valor da variavel offValue é: 10'
 
 /*
 Crie uma função com as seguintes características:
