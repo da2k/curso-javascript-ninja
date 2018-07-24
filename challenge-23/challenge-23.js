@@ -23,3 +23,78 @@ multiplicação (x), então no input deve aparecer "1+2x".
 input;
 - Ao pressionar o botão "CE", o input deve ficar zerado.
 */
+
+(function(doc){
+  'use strict'
+  var $result = doc.querySelector("[data-js='result']");
+  var $numbers = doc.querySelectorAll('[data-js="button-number"]');
+  var $buttonOperations = doc.querySelectorAll('[data-js="button-operator"]');
+  var $ceButton = doc.querySelector('[data-js="button-ce"]');
+  var $buttonEqual = doc.querySelector('[data-js="button-equal"]')
+
+  Array.prototype.forEach.call($numbers, function(button){
+    button.addEventListener('click', handleClickNumber, false);
+  });
+
+  Array.prototype.forEach.call($buttonOperations, function(button){
+    button.addEventListener('click', handleClickOpeation, false);
+  })
+
+  $ceButton.addEventListener('click', handleClickCE, false);
+  $buttonEqual.addEventListener('click', handleClickEqual, false);
+
+  function handleClickNumber() {
+    $result.value += this.value;
+  }
+
+  function handleClickOpeation() {
+    $result.value = removeLastItemIfItsAnOperator($result.value)
+    $result.value += this.value;
+  }
+
+  function handleClickCE(){
+    $result.value = 0;
+  }
+
+  $result.value = 0;
+
+  function isLastItemAnOperation(number) {
+    var operators = ['+', '-', 'x', '/'];
+    var lastItem = number.split('').pop();
+    return operators.some(function(operator){
+      return operator === lastItem;
+    });
+  }
+
+  function removeLastItemIfItsAnOperator(number){
+    if(isLastItemAnOperation(number))
+      return number.slice(0, -1);
+    return number;
+  }
+
+  function handleClickEqual(){
+    $result.value = removeLastItemIfItsAnOperator($result.value);
+    var allValues = $result.value.match(/\d+[+x/-]?/g);
+    $result.value = allValues.reduce(function(accumulated, actual){
+      var firstValue = accumulated.slice(0, -1);
+      var operator = accumulated.split('').pop();
+      var lastValue = removeLastItemIfItsAnOperator(actual);
+      var lastOperator = isLastItemAnOperation(actual) ? actual.split('').pop() : '';
+      switch (operator) {
+        case '+':
+          return Number(firstValue) + Number(lastValue) +lastOperator;
+        case '-':
+          return Number(firstValue) - Number(lastValue) +lastOperator;
+        case '/':
+          return Number(firstValue) / Number(lastValue) +lastOperator;
+        case 'x':
+          return Number(firstValue) * Number(lastValue) +lastOperator;
+        default:
+
+      }
+      return accumulated + actual;
+    })
+
+  }
+
+})(document);
