@@ -24,7 +24,7 @@ Onde VALOR é o novo valor da variável.
 */
  function attrValue(value){
 	var offValue = value;
-	return "O valor da variavel a é: "+offValue;
+	return "O valor da variavel offValue é: "+offValue;
 }
 
 // Invoque a função criada acima.
