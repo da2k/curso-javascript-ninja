@@ -2,31 +2,36 @@
 
 Nesse exercício, você está livre para escolher os nomes para suas variáveis e funções! :smile:
 
-```js
+
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-teste de ediçao
+ function sum(num1, num2){
+	return num1 + num2;
+}
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-?
+var total = sum(2, 3) + 5;
 
 // Qual o valor atualizado dessa variável?
-?
+10
 
 // Declare uma nova variável, sem valor.
-?
+var offValue = null;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-?
+ function attrValue(value){
+	var a = value;
+	return "O valor da variavel a é: "+a;
+}
 
 // Invoque a função criada acima.
-?
+attrValue(10);
 
 // Qual o retorno da função? (Use comentários de bloco).
-?
+'O valor da variavel a é: 10'
 
 /*
 Crie uma função com as seguintes características:
