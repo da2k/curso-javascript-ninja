@@ -1301,3 +1301,70 @@ Saber de tipo de dado real: o typeof, para arrays, retorna object. Para saber o 
 Object.prototype.toString.call(arr); // retorna [object Array]
 Object.prototype.toString.call(myFunction); // retorna [object Function]
 Object.prototype.toString.call(arguments); // retorna [object Arguments]
+
+
+
+/* 
+Seção 28
+*/
+//Vídeo 167
+AJAX: asynchronous Javascript and XML
+a ação ocorre de maneira paralela, assíncrona. Requisições na mesma URL e traz informações sem fazer o refresh.
+
+windows.XMLHttpRequest()
+1. Instanciar objeto:
+> var ajax = new XMLHttpRequest(); //não precisa do window. pois é um objeto global;
+2. Abrir a conexão:
+> ajax.open(<protocol>, <url>) //protocolo http, tipo post, get. Qual URL ele vai buscar essas informações
+
+> var ajax = new XMLHttpRequest();
+> ajax.open('GET', '/');
+> ajax.send();
+Na aba Network do developer tools, ele eparece como Type: xhr (xml http request).
+
+
+//Vídeo 168
+evento onreadystatechange: quando há mudança de estado
+
+ajax.readyState
+0: não enviado
+1: conexão aberta
+2: Headers recebidos //informações básicas sobre o arquivo
+3: Carregando o corpo do request
+4: Concluído
+
+ajax.status: verifica o status do http (200, 403, 404, 500 etc)
+
+> ajax.addEventListener('onreadystatechange', function(){
+>  console.log('Terminou a requisição', ajax.readyState, ajax.status);
+> });
+
+
+//Vídeo 169
+Verificando se conexão foi bem sucedida.
+
+ajax.responseText: recebe o conteúdo do objeto ajax como texto
+ajax.responseXML: recebe conteúdo do tipo xml
+
+> function isRequestOk() {
+>   return ajax.readyState === 4 ajax.status === 200;
+> }
+> ajax.addEventListener('readystatechange', function(){
+>   if( isRequestOk() ){
+>   var data = JSON.parse(ajax.responseText); // transformar dados JSON pra objetos, para manipulação
+>   console.log('Requisição ok', data.message);
+> }
+> });
+
+
+//Vídeo 170
+Tratamento de erro
+throw: cria objeto de erro
+> thow new Error('Mensagem de erro');
+try | catch: se houver erro, ele não para o código, mas joga para o catch 
+> try {
+>   throw new Error('Mensagem de erro');
+> }
+> catch(e) {
+>   console.log(e);
+> }

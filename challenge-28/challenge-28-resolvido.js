@@ -111,89 +111,91 @@
     }
 
 
-    var $formCEP = doc.querySelector('[data-js="formCEP"]');
+    var $formCEP = new DOM('[data-js="formCEP"]');
     var $inputCEP = new DOM('[data-js="inputCEP"]');
-    var $submitCEP = doc.querySelector('[data-js="submitCEP"]');
+    var $logradouro = new DOM('#logradouro');
+    var $bairro = new DOM('#bairro');
+    var $localidade = new DOM('#localidade');
+    var $uf = new DOM('#uf');
+    var $status = new DOM('[data-js="statusText"]');
+    var ajax = new XMLHttpRequest();
 
-    var $status = doc.querySelector('[data-js="status"]');
+    $formCEP.on('submit', handleSubmitFormCEP);
 
-    $submitCEP.addEventListener('click', function(e){
-      e.preventDefault();
-
-      console.log($inputCEP, $inputCEP.get() );
-      console.log($inputCEP.get()[0].value );
-
-      var cep = $inputCEP.get()[0].value;
-      cep = cep.match(/\d+/g); //cleanup de dados de cep
-      cep = cep.reduce( function(acumulado, atual)
-        {
-          return acumulado.concat(atual)
-        });
-
-      //criando nodes de texto para o status
-      var statusBuscando = document.createTextNode('Buscando informações para o CEP ' + cep + '...');
-      var statusNaoEncontrado = document.createTextNode('Não encontramos o endereço para o CEP ' + cep);
-      var statusEncontrado = document.createTextNode('Endereço referente ao CEP ' + cep + ':');
-
-      var sp1 = doc.querySelector('[data-js="statusText"]');
-      while (sp1.firstChild) {
-        sp1.removeChild(sp1.firstChild);
-      }
-      sp1.appendChild(statusBuscando);
-
-      //abrindo conexao ajax
-      var ajax = new XMLHttpRequest();
-      ajax.open('GET', 'https://viacep.com.br/ws/' + cep + '/json/' );
+    function handleSubmitFormCEP(event){
+      event.preventDefault();
+      var url = getUrl();
+      ajax.open('GET', url );
       ajax.send();
+      getMessage('loading');
+      ajax.addEventListener('readystatechange', handleReadyStateChange);
+    };
 
-      function isRequestOk() {
-        return ajax.readyState === 4 && ajax.status === 200;
+    function getUrl(){
+      return replaceCEP('https://viacep.com.br/ws/[CEP]/json/');
+    }
+
+    function clearCEP() {
+      return $inputCEP.get()[0].value.replace(/\D/g, '');
+    }
+
+
+    function handleReadyStateChange(){
+      if( isRequestOk() ) {
+        getMessage('ok');
+        fillCEPFields();
+      }
+    }
+
+    function isRequestOk(){
+      return ajax.readyState === 4 && ajax.status === 200;
+    }
+
+    function fillCEPFields(){
+      var data = parseData();
+      if(!data) {
+        getMessage('error');
+        data = clearData();
       }
 
-      ajax.addEventListener('readystatechange', function(){
-        try {
-          if( isRequestOk() ) {
-            while (sp1.firstChild) {
-              sp1.removeChild(sp1.firstChild);
-            }
-            sp1.appendChild(statusEncontrado);
+      $logradouro.get()[0].textContent = data.logradouro;
+      $bairro.get()[0].textContent = data.bairro;
+      $localidade.get()[0].textContent = data.localidade;
+      $uf.get()[0].textContent = data.uf;
+    }
 
-            var data = JSON.parse(ajax.responseText);
-            console.log(data);
+    function clearData(){
+      return {
+        logradouro: '-',
+        bairro: '-',
+        localidade: '-',
+        uf: '-'
+      }
+    }
 
-            var bairro = doc.createTextNode(data.bairro);
-            var localidade = doc.createTextNode(data.localidade);
-            var logradouro = doc.createTextNode(data.logradouro);
-            var uf = doc.createTextNode(data.uf);
+    function parseData() {
+      var result;
+      try {
+        result = JSON.parse(ajax.responseText);
+      }
+      catch(e) {
+        result = null;
+      }
+      return result;
+    }
 
-            console.log(doc.querySelector("#bairro").hasChildNodes());
+    function getMessage(type) {
+      var messages = {
+        loading: replaceCEP('Buscando informações para o CEP [CEP]...'),
+        ok: replaceCEP('Endereço referente ao CEP [CEP]:'),
+        error: replaceCEP('Não encontramos o endereço para o CEP [CEP].')
+      };
+      $status.get()[0].textContent = messages[type];
 
-            doc.querySelector("#bairro").appendChild(bairro);
-            doc.querySelector("#localidade").appendChild(localidade);
-            doc.querySelector("#logradouro").appendChild(logradouro);
-            doc.querySelector("#uf").appendChild(uf);
+    }
 
-            console.log(doc.querySelector("#bairro").hasChildNodes());
-
-            
-
-
-          } else if (ajax.status !== 200)
-            throw (ajax.status);
-        }
-
-        catch (err) {
-          while (sp1.firstChild) {
-            sp1.removeChild(sp1.firstChild);
-          }
-          sp1.appendChild(statusNaoEncontrado);
-        };
-
-
-
-
-      });
-
-    }, false);
+    function replaceCEP(message) {
+      return message.replace('[CEP]', clearCEP());
+    }
 
   })(window, document);
