@@ -1,5 +1,5 @@
 (function() {
-    'use strict'
+    'use strict';
     /*
       Crie dois objetos, que serão duas pessoas. Cada um deve ter as propriedades
       `name` e `lastName`, preenchidos com o nome e sobrenome da pessoa.
@@ -44,10 +44,9 @@
     */
     function sum() {
         console.log(arguments);
-        var reduce = Array.prototype.reduce.call(arguments, function(acumulado, atual, index) {
-            return acumulado + atual;
+        return Array.prototype.reduce.call(arguments, function(acumulado, atual) {
+            return (+acumulado) + (+atual);
         })
-        console.log(reduce);
     }
 
     /*
@@ -81,9 +80,10 @@
     console.log('\nFunção que limpa entrada do usuário (somente números):');
 
     function justNumbers(entry) {
-        return entry.replace(/\D/g, '').split('');
+        return entry.replace(/\D+/g, ',').split(',');
     }
-    console.log(justNumbers)
+    console.log(justNumbers);
+
 
     /*
     Usando a função acima, faça a limpeza dos valores entrados pelo usuário,
@@ -91,7 +91,8 @@
     */
     console.log('\nEntrada do usuário limpa. Somente números:');
     var numbers = justNumbers(userEntry);
-    console.log(numbers)
+    console.log(numbers);
+
 
 
     /*
@@ -99,6 +100,6 @@
     números desse array e mostre o resultado no console.
     */
     console.log('\nSomar números entrados pelo usuário:');
-    console.log(sum(numbers()));
+    console.log(sum.apply(sum, numbers));
 
 })();
