@@ -1,70 +1,89 @@
-/*
-1. Envolva todo o conteúdo desse desafio em uma IIFE.
-2. Adicione a diretiva 'use strict';
-3. Crie um arquivo index.html e adicione esse script à ele.
-*/
+// ========== use strict - Criação de variáveis sem o var ==========
+// https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Strict_mode
+// use strict, é uma diretiva usada a partir do ecma script 5
+// 'use strict';
+// diretiva que vai dizer que naquele escopo de funcao, vai estar em escopo restrito
+// por exemplo, se cria uma variavel sem o var, ele vai acusar o erro.
+// entao sempre no começo do método devemos por esse cara
+// use strict n permite uso de variaveis sem o var
 
-/*
-Declare uma variável chamada `name` que receba seu primeiro nome.
-Mostre no console todas as letras do seu nome separadas, com a frase:
-- "[LETRA] é a [POSIÇÃO]ª letra do meu nome."
-Ex: no caso do nome ser "Fernando", deve mostrar as frases:
-- "F é a 1ª letra do meu nome."
-- "e é a 2ª letra do meu nome."
-E assim por diante, até a última.
-*/
-console.log( 'As letras do seu nome:' );
-// ?
+// use strict - uso do with e global this === undefined
+// use strict não permite o uso do with
+// with: serve para diminuir o tamanho de um objeto
 
-/*
-- Declare uma variável chamada `fullName`, que receba seu nome completo,
-escrito no formato de slug (caixa baixa e palavras separadas por um traço).
-Ex: o nome "Fernando Daciuk" ficaria "fernando-daciuk"
-- Faça a primeira letra de cada nome ficar em caixa alta, e troque o traço
-por um espaço.
-- Detalhe: o código que você escrever abaixo deve funcionar para qualquer
-nome, então fique à vontade para usar as artimanhas que já viu até agora no
-curso para fazer isso funcionar corretamente :)
-- Mostre no console o nome no formato slug, e o resultado final. Use um
-console.log para cada formato.
-*/
-console.log( '\nNome convertido à partir de um slug:' );
-// ?
+(function () {
 
-/*
-- Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
-cada nome por vírgula. Entre o penúltimo e o último nome, o separador deve
-ser um "e". No final, concatene com a frase: " são meus amigos.".
-O resultado final deve ficar mais ou menos assim:
-- "João, Maria, Roberto, Pedro e Marcos são meus amigos."
-- Detalhe: o código abaixo deve funcionar com um array de qualquer tamanho.
-5 nomes foi somente uma sugestão ;)
-*/
-console.log( '\nMeus amigos:' );
-// ?
+    var obj = {
+        prop1: {
+            prop2: {
+                prop3: {
+                    prop31: 'prop31',
+                    prop32: 'prop32',
+                    prop33: 'prop33'
+                }
+            }
+        }
+    }
 
-/*
-Usando o replace(), faça a string "Roberto" virar "Roberta".
-Mostre o resultado no console.
-*/
-console.log( '\nEra "Roberto", agora é:' );
-// ?
+    console.log(obj.prop1.prop2.prop3.prop31);
 
-/*
-Mostre no console a parte "nando" da string "Fernando". Use o método que
-faz a busca do final para o início da string.
-*/
-console.log( '\nParte de uma string:' );
-// ?
+    // usando with (statemant)
+    // esse cara nao funciona usando strict 
+    with(obj.prop1.prop2.prop3) {
+        // nao precia ir até o objeto prop3 novamente para acessar suas variaveis
+        console.log(prop31, prop32, prop33);
+    }
+    // no escopo global dentro de funçoes o this === undefined
 
-/*
-Declare uma variável chamada `myName`, que receba o seu primeiro nome,
-escrito de forma natural.
-Mostre no console esse nome, mas com as letras intercalando entre maiúsculas
-e minúsculas.
-- Detalhe: o código abaixo deve funcionar da mesma forma para qualquer nome,
-de qualquer tamanho, escrito de qualquer forma.
-Ex.: Nomes que deveriam funcionar: "Fernando", "RoBertO", "gabriEla", etc.
-*/
-console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
-// ?
+    // dentro da iife
+    console.log(this); // escopo global, representa o objeto window
+    // usando strict
+    console.log(this); // representa o undefined ao invés de representar a window no scopo global
+
+    // use strict o operador delete, objetos e funções
+    // delete: operador lança um sintax error quando ele não pode deletar
+    var obj = {
+        prop1:'1',
+        prop2:'2',
+        prop3:'3'
+    };
+    var myvar = 'x';
+
+    console.log(delete obj.prop1); // deleta a propriedade - retorna true
+    console.log(delete myvar); // false n consegue deletar
+
+    // com o use strict
+    console.log(delete myvar); // esse cara irá lançar um erro
+    console.log(delete obj); // lança erro
+
+    // sem o modo restrito isso n da erro e o prop1 fica com o valor 2, ja com o use restrict isso gera erro
+    // nao é permitido propriedades com o mesmo nome
+    var obj = {
+        prop1:'1',
+        prop1:'2',
+        prop3:'3'
+    };
+    // argumentos e funçoes tb devem ter nomes diferentes
+    // sem o uso do use ele soma, com uso do use ele ta erro
+    function myFunction (a, a, c){
+        return a + b;
+    }
+
+    // Objeto String
+    'benhur'.length; // nesse caso ele faz um wrapper do objeto string pq ele tem acesso ao metodo length
+    var ben = new String('benhur'); // é a mesma coisa que a linha de cima
+    // charAt
+    'benhur'.charAt(0); // retorna b
+    // concat
+    ben.concat('da rosa','guimaraes'); // retorna a concatenacao mas n muda a variavel principal
+    // indexof verifica a posicao e retorna o indice
+    // lastindexof = index of de traz para frente
+    // repleace = substitui a string
+    // slice = pega partes da string
+    // split = quebra a string
+    // join = junta as posicoes do array em uma string
+    // substring = age da mesma forma que o slice
+    // toLowerCase = transforma as letras em caixa baixa
+    // toUpperCase = letras em caixa alta
+    
+})();
