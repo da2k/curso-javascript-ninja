@@ -1187,7 +1187,7 @@ novos eventos:
 'input': quando o usuário muda algo no form
 'keyup': quando o usuário solta uma tecla
 'keydown': uma tecla é pressionada
-'change': em uma tag <select>, o valor é modificado
+'change': em uma tag "select", o valor é modificado
 
 
 
@@ -1375,4 +1375,20 @@ try | catch: se houver erro, ele não para o código, mas joga para o catch
 Seção 29
 */
 //Vídeo 175
-Modular pattern
+Module pattern: criar código modular para ser usado em outras aplicações.
+
+Colocar dentro de uma função e chamá-la.
+
+> function app(){
+>   //código modular
+> }
+> app();
+> //para ser exportado:
+>  window.app = app;
+
+No documento de importação:
+1. não esquecer de chamar o arquivo .js antes do main.js
+2. no script, fazer
+> (function(DOM){
+>   //código
+> })(window.DOM);
