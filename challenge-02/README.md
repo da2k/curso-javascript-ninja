@@ -40,19 +40,26 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-?
+ function treeArg(arg1, arg2, arg3){
+	 if(arg1 == null || arg2 == null || arg3 == null){
+	 	return "Preencha todos os valores corretamente!";
+	 }else {
+	 	return (arg1 * arg2 * arg3) + 2;
+	 }
+}
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+treeArg(2, 2, );
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+/*'Preencha todos os valores corretamente!'*/
+
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+treeArg(2, 2, 2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+//10
 
 /*
 Crie uma função com as seguintes características:
