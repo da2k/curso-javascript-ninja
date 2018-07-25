@@ -1392,3 +1392,40 @@ No documento de importação:
 > (function(DOM){
 >   //código
 > })(window.DOM);
+
+
+
+/* 
+Seção 30
+*/
+//Vídeo 182
+Closure: determinar valor de uma variável através de uma IIFE, para evitar conflitos.
+> var counter = 0;
+> var increment = (function(){
+>   var counter = 0;
+>   return function(){
+>     return counter++;
+>   }
+> })();
+> 
+> function otherFunction() {
+>   counter = 150;
+> }
+> 
+> otherFunction(); // isso interfere no resultado do incremento, se não houvesse uma IIFE no var increment.
+
+
+Manipulando CSS:
+element.style.propertie = 'value';
+$div.style.width = '100px';
+$div.style.backgroundColor = 'black'; //se a propriedade tem um -, trocar para uma letra maiúscula.
+ou
+$div.setAttribute('style', 'width:100px; position: relative;' );
+
+element.classList: traz a lista de clases de um elemento
+contains
+$div.classList.contains('blue'); // retorna true ou false
+$div.classList.add('red'); // adiciona a classe 'red'
+$div.classList.toggle('blue'); // se tiver o blue, ele retira e vice-versa
+$div.classList.remove('container'); // remove a classe 'container'
+
