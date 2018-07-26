@@ -1414,7 +1414,6 @@ Closure: determinar valor de uma variável através de uma IIFE, para evitar con
 > 
 > otherFunction(); // isso interfere no resultado do incremento, se não houvesse uma IIFE no var increment.
 
-
 Manipulando CSS:
 element.style.propertie = 'value';
 $div.style.width = '100px';
@@ -1429,3 +1428,77 @@ $div.classList.add('red'); // adiciona a classe 'red'
 $div.classList.toggle('blue'); // se tiver o blue, ele retira e vice-versa
 $div.classList.remove('container'); // remove a classe 'container'
 
+
+
+/* 
+Seção 31
+*/
+//Vídeo 183
+innerHTML: getter e setter. Pega o conteúdo como string. Diferente do textContent, porque ele insere como texto mesmo, não como elementos HTML.
+
+
+//Vídeo 184
+Problemas de segurança: se aceitar o input do usuário sem tratar, o seu site fica a merce de mal uso, hacker, inserção de scripts e propagandas.
+Verificar a entrada do usuário para que não entre scripts tanto no front quanto no back.
+
+
+//Vídeo 185
+insertAdjacentHTML(pos, text-str)
+pos: position, onde vai ser inserido seu HTML
+beforebegin - afterbegin
+beforeend - afterend
+<!-- beforebegin -->
+<p>
+<!-- afterbegin -->
+foo
+<!-- beforeend -->
+</p>
+<!-- afterend -->
+
+exemplo: $form.insertAdjacentHTML('afterbegin', '<h1>Meu Formulário</h1>');
+
+console.dir(): mostra o HTML como objeto, mostrando suas propriedades e métodos.
+.outerHTML: representação em string da tag.
+
+
+//Vídeo 186
+devdocs.io: reúne a documentação de várias linguagens
+
+var date = new Date(year, month, day, hour, min, sec, milliseconds);
+console.log(date); // retorna a data e horário
+
+
+//Vídeo 187
+Date.now(): não precisa ser instanciado para ser iniciado
+vai representar o número de milisegundos que se passaram desde 1º janeiro 1970.
+É útil para saber quanto tempo se passou entre uma ação e outra.
+
+date.getDate(); // 0-31 dia do mês
+date.getDay(); // 0-6 dia da semana
+date.getFullYear(); // 2015 ano com 4 dígitos
+date.getYear(); // 115, contagem feita a partir de 1900
+date.getHours(); // 0-23 retorna a hora
+date.getMilliseconds(); // 0-999 milisegundos
+date.getMinutes(); // 0-59
+date.getMonth(); // 0-11
+date.getSeconds(); // 0-59
+date.getTime(); // retorna o tempo em ms desde 1970, como o Date.now()
+
+
+//Vídeo 188
+Math Object
+Math.PI: retorna o número pi. Útil para cálculo de circunferência.
+Math.abs(x): valor absoluto, positivo de um número.
+Math.abs(-10) // retorna 10
+Math.ceil(x): arredonda para cima
+Math.ceil(10.1) // retorna 11
+Math.floor: arredonda para baixo
+Math.floor(10.9) // retorna 10
+Math.round(x): faz o arredondamento normal
+Math.round(10.5) //retorna 11
+Math.round(10.4) //retorna 10
+Math.sqrt(x): retorna raiz quadrada
+Math.cbrt(x): retorna a raiz cúbica
+Math.max([x1, x2, xn]): retorna o maior número
+Math.min([x1, x2, xn]): retorna o menor número
+Math.random(): retorna um número aleatório entre 0 e 1
