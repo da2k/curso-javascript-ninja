@@ -188,7 +188,7 @@ pessoa.apresentacao = function(){
   }
 
   if( pessoa.idade === 1 ){
-    idade = 'ano';
+    ano = 'ano';
   }
 
   if( pessoa.caminhouQuantosMetros === 1 ){
