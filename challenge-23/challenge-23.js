@@ -26,23 +26,30 @@
     input;
     - Ao pressionar o botão "CE", o input deve ficar zerado.
     */
-    var $visor = doc.querySelector('[data-js="calcInput"]');
+
+    var $visor = doc.querySelector('[data-js="visor"]');
     var $buttonNumber = doc.querySelectorAll('[data-js="button-number"]');
     var $buttonOperation = doc.querySelectorAll('[data-js="operation"]');
     var $buttonCE = doc.querySelector('[data-id="button-ce"]');
+    var $buttonEqual = doc.querySelector('[data-id="button-equal"]');
 
-    Array.prototype.forEach.call($buttonNumber, function(button) {
-        button.addEventListener('click', hundleClickButton, false);
-    }, false);
+    Array.prototype.forEach.call($buttonNumber, function(number) {
+        number.addEventListener('click', hundleClickNumber, false);
+    });
 
     Array.prototype.forEach.call($buttonOperation, function(operation) {
         operation.addEventListener('click', hundleClickOperation, false);
     });
 
     $buttonCE.addEventListener('click', hundleClickCE, false);
+    $buttonEqual.addEventListener('click', hundleClickEqual, false);
 
-    //coloca os numeros no visor
-    function hundleClickButton() {
+    function hundleClickNumber() {
+        $visor.value += this.value;
+    }
+
+    function hundleClickOperation() {
+        removeLastItemIfItsAnOperator();
         $visor.value += this.value;
     }
 
@@ -50,14 +57,21 @@
         $visor.value = 0;
     }
 
-    //coloca os operadores no visor
-    function hundleClickOperation() {
-        $visor.value += this.value;
+    function lastItemAnOperation() {
+        var operation = ['+', '-', 'x', '÷'];
+        var lastItem = $visor.value.split('').pop();
+        return operation.some(function(operator) {
+            return operator === lastItem;
+        });
     }
 
+    function removeLastItemIfItsAnOperator() {
+        if (lastItemAnOperation())
+            $visor.value = $visor.value.slice(0, -1);
+    }
 
-
-
-
+    function hundleClickEqual() {
+        removeLastItemIfItsAnOperator()
+    }
 
 })(window, document);
