@@ -49,7 +49,7 @@
     }
 
     function hundleClickOperation() {
-        removeLastItemIfItsAnOperator();
+        $visor.value = removeLastItemIfItsAnOperator($visor.value);
         $visor.value += this.value;
     }
 
@@ -57,21 +57,44 @@
         $visor.value = 0;
     }
 
-    function lastItemAnOperation() {
+    function lastItemAnOperation(number) {
         var operation = ['+', '-', 'x', '÷'];
-        var lastItem = $visor.value.split('').pop();
+        var lastItem = number.split('').pop();
         return operation.some(function(operator) {
             return operator === lastItem;
         });
     }
 
-    function removeLastItemIfItsAnOperator() {
-        if (lastItemAnOperation())
-            $visor.value = $visor.value.slice(0, -1);
+    function removeLastItemIfItsAnOperator(number) {
+        if (lastItemAnOperation(number)) {
+            return number.slice(0, -1);
+        }
+        return number;
     }
 
+
     function hundleClickEqual() {
-        removeLastItemIfItsAnOperator()
+        $visor.value = removeLastItemIfItsAnOperator($visor.value)
+        var allValues = $visor.value.match(/\d+[+x÷-]?/g);
+        $visor.value = allValues.reduce(function(accumulated, actual) {
+            var firstValue = accumulated.slice(0, -1);
+            var operator = accumulated.split('').pop();
+            var lastValue = removeLastItemIfItsAnOperator(actual);
+            var lastOperator = lastItemAnOperation(actual) ? actual.split('').pop() : '';
+
+            switch (operator) {
+                case '+':
+                    return (Number(firstValue) + Number(lastValue)) + lastOperator;
+                case '-':
+                    return (Number(firstValue) - Number(lastValue) + lastOperator);
+                case 'x':
+                    return (Number(firstValue) * Number(lastValue) + lastOperator);
+                case '÷':
+                    return (Number(firstValue) / Number(lastValue)) + lastOperator;
+            }
+
+        });
+
     }
 
 })(window, document);
