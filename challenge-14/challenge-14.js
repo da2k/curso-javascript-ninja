@@ -11,14 +11,19 @@
   Mostre esse array no console.
   */
   console.log('Number Objects Array:');
-  // ?
-
+  var numberObjects = [];
+  for (var i = 1; i < 11; i++) {
+    numberObjects.push({
+      number: i
+    });
+  }
   /*
   Crie um array chamado `justNumbers`, que terá como elementos somente os
   números do array criado acima. Mostre esse novo array no console.
   */
   console.log('\nJust Numbers:');
-  // ?
+  var justNumbers = [];
+  justNumbers = justNumbers.map(function (item, index))
 
   /*
   Crie um novo array chamado `justMod2Or3`, que receberá do array criado acima
