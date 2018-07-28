@@ -8,7 +8,7 @@ equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
 
-/* PRIMEIRA OPÇÃO
+/* PRIMEIRA OPÇÃO (condicional if/else)
 var isTruthy = function(param) {
     if(param) {
         return true;
@@ -17,13 +17,13 @@ var isTruthy = function(param) {
 };
 */
 
-/* SEGUNDA OPÇÃO
+/* SEGUNDA OPÇÃO (condicional ternário)
 var isTruthy = function(param) {
     return param ? true : false;
 };
 */
 
-// TERCEIRA E MELHOR OPÇÃO
+// TERCEIRA E MELHOR OPÇÃO (equivalente booleano)
 var isTruthy = function(param) {
     return !!param;
 };
@@ -44,8 +44,8 @@ Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
 isTruthy(1);
 isTruthy('Flavia');
-isTruthy([]);
-isTruthy({});
+isTruthy([]); //array vazio
+isTruthy({}); //objeto vazio
 isTruthy(function() {});
 isTruthy('Curso JS Ninja');
 isTruthy(20 * 30);
@@ -91,6 +91,8 @@ carro.obterCor = function() {
     return carro.cor;
 };
 
+// A function está sem parâmetro porque só vai retornar a cor do carro.
+
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
@@ -130,17 +132,28 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
+
+// método para adicionar pessoas no carro
 carro.adicionarPessoas = function(numeroPessoas) {
+
+    // Qtde total de pessoas adicionadas no carro
     var totalPessoas = carro.quantidadePessoas + numeroPessoas;
+    // Qtde de pessoas que cabem no carro
+    var quantasPessoasCabem = carro.assentos - carro.quantidadePessoas;
+    // Verifica se a qtde de pessoas é plural ou singular
+    var pluralOuSingular = quantasPessoasCabem === 1 ? ' pessoa' : ' pessoas';
+
+    // Verifica se a qtde de pessoas é igual a qtde de assentos && se o total de pessoas é maior ou igual a qtde de assentos do carro. (as duas verificações devem ser verdadeiras)
     if(carro.quantidadePessoas === carro.assentos && totalPessoas >= carro.assentos) {
         return 'O carro já está lotado';
     }
 
+    // Verifica se o total de pessoas que está sendo adicionada é maior que a qtde de assentos no carro
     if(totalPessoas > carro.assentos) {
-        var quantasPessoasCabem = carro.assentos - carro.quantidadePessoas;
-        var pluralOuSingular = quantasPessoasCabem === 1 ? ' pessoa' : ' pessoas';
         return 'Só cabem mais ' + quantasPessoasCabem + pluralOuSingular + '!';
     }
+
+    // Incrementa a quantidade de pessoas no carro
     carro.quantidadePessoas += numeroPessoas;
     return 'Já temos ' + totalPessoas + ' pessoas no carro!';
 };
