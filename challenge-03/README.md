@@ -17,7 +17,9 @@ As propriedades e tipos de valores para cada propriedade desse objeto devem ser:
 - `andando` - Boolean - recebe "falso" por padrão
 - `caminhouQuantosMetros` - Number - recebe "zero" por padrão
 */
-?
+
+var pessoa = {nome: 'thales', sobrenome: 'alonso', sexo: 'masculino', idade: 28, altura: 1.75, peso: 66, andando: false, caminhouQuantosMetros: 0 };
+
 
 /*
 Adicione um método ao objeto `pessoa` chamado `fazerAniversario`. O método deve
@@ -25,6 +27,9 @@ alterar o valor da propriedade `idade` dessa pessoa, somando `1` a cada vez que
 for chamado.
 */
 ?
+pessoa.fazerAniversario = function(){
+  pessoa.idade++;
+}
 
 /*
 Adicione um método ao objeto `pessoa` chamado `andar`, que terá as seguintes
@@ -37,6 +42,11 @@ valor dessa propriedade a quantidade passada por parâmetro;
 booleano que representa "verdadeiro";
 */
 ?
+
+pessoa.andar = function(10){
+  pessoa.caminhouQuantosMetros + 10;
+  pessoa.andando =  true; 
+}
 
 /*
 Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o valor
