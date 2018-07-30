@@ -1,0 +1,136 @@
+* {
+      box-sizing: border-box;
+    }
+
+    .calculator {
+      border: 1px solid #ccc;
+      background: #f5f5f5;
+      padding: 1rem;
+      max-width: 15rem;
+      border-radius: 0.25rem;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, .1),
+                  4px 4px 6px rgba(0, 0, 0, .1);
+    }
+
+    .logo {
+      display: block;
+      font-size: 0.875rem;
+      font-family: sans-serif;
+      color: darkgrey;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .input {
+      display: block;
+      width: 100%;
+      padding: 0.25rem;
+      border: 1px solid #ccc;
+      margin-bottom: 0.5rem;
+      outline: none;
+    }
+
+    .number-buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas: "ce result . ."
+                           "one two three plus"
+                           "four five six minus"
+                           "seven eight nine multiplicator"
+                           ". zero . divisor";
+    }
+
+    .button:nth-child(5), .button:nth-child(9), .button:nth-child(13) {
+      margin-left: 0.25rem;
+    }
+
+    button:nth-child(even) {
+      margin-left: 0.25rem;
+    }
+
+    .buttons .button:last-child {
+      margin: 0;
+    }
+
+    .button {
+      border: none;
+      background: #ececec;
+      padding: 1rem 0.5rem;
+      margin-bottom: 0.25rem;
+      outline: none;
+      transition: all .1s ease-in-out;
+    }
+
+    .button.ce, .button.result, .button.plus, button.minus, button.multiplicator, button.divisor {
+      background: #dadada;
+    }
+
+    .button:focus-within {
+      background: darkgrey;
+      color: white;
+    }
+
+    .button.ce {
+      grid-area: ce;
+    }
+
+    .button.result {
+      grid-area: result;
+    }
+
+    .button.one {
+      grid-area: one;
+    }
+
+    .button.two {
+      grid-area: two;
+    }
+
+    .button.three {
+      grid-area: three;
+    }
+
+    .button.four {
+      grid-area: four;
+    }
+
+    .button.five {
+      grid-area: five;
+    }
+
+    .button.six {
+      grid-area: six;
+    }
+
+    .button.seven {
+      grid-area: seven;
+    }
+
+    .button.eight {
+      grid-area: eight;
+    }
+
+    .button.nine {
+      grid-area: nine;
+    }
+
+    .button.zero {
+      grid-area: zero;
+    }
+
+    .button.plus {
+      grid-area: plus;
+    }
+
+    .button.minus {
+      grid-area: minus;
+    }
+
+    .button.multiplicator {
+      grid-area: multiplicator;
+    }
+
+    .button.divisor {
+      grid-area: divisor;
+    }
