@@ -4,7 +4,10 @@ Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 */
 var myarray = ['flavz', 36, true, null, {a:1}];
 
-// var myarray = [ 10, 'flavia', null, {a:1}, function() {} ];
+/* 
+Outra possibilidade:
+var myarray = [ 10, 'flavia', null, {a:1}, function() {} ];
+*/
 
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
@@ -12,6 +15,13 @@ Crie uma função que receba um array como parâmetro, e retorne esse array.
 function myFunction(array) {
     return array;
 }
+
+/*
+Outra possibilidade:
+var myFunction = function(arr) {
+    return arr;
+};
+*/
 
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
@@ -77,8 +87,11 @@ function book(bookName) {
             editora: 'Bookman'
         }
     };
-
+    
+    // condicional ternário - bookName não foi passado? retorna allBooks. Senão, retorna o nome do livro (bookName)
     return !bookName ? allBooks : allBooks[bookName];
+
+    // Outra opção de return com condicional
 
     // if(!bookName) {
     //     return allBooks;
