@@ -74,7 +74,6 @@
     return Array.prototype.some.apply(this.elements, arguments)
   }
 
-  //isArray, isObject, isFunction, isNumber, isString, isBoolean, isNull
   DOM.prototype.isArray = function isArray(param) {
     return Object.prototype.toString.call(param) === '[object Array]'
   }
@@ -104,7 +103,6 @@
       Object.prototype.toString.call(param) === '[object Undefined]'
   }
 
-
   var $a = new DOM('[data-js="link"]')
 
   $a.forEach(function (item, index) {
@@ -122,7 +120,7 @@
   console.log(dataJs)
 
   console.log(DOM.prototype.isArray([1, 2, 3, 4, 5]))
-  console.log(DOM.prototype.isObject({prop: 'value'}))
+  console.log(DOM.prototype.isObject({ prop: 'value' }))
   console.log(DOM.prototype.isFunction(function () { }))
   console.log(DOM.prototype.isNumber(1))
   console.log(DOM.prototype.isNumber(NaN))
