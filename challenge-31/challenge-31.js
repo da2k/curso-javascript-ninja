@@ -11,4 +11,4 @@ Faça um pull request, também com a branch `challenge-31`, mas no repositório
 do curso, para colar o link do pull request do seu repo.
 */
 
-console.log('https://github.com/Ricardovasconcelos/CursoJavascriptNinja/edit/challenge-31/challenge-31/challenge-31.js');
+console.log('Ricardovasconcelos/CursoJavascriptNinja/tree/challenge-31/challenge-31');
