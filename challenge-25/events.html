@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Events JS Ninja</title>
+    <link rel="stylesheet" href="syle.css">
+</head>
+
+<body>
+    <div>
+        <input type="text" data-js="input">
+        <input type="password" data-js="input">
+
+        <select data-js="select">
+          <option value="Francisco Morato">Francisco Morato</option>
+          <option value="Baltazar Fideliz">Baltazar Fideliz</option>
+          <option value="Franco da Rocha">Franco da Rocha</option>
+          <option value="Caieiras">Caieiras</option>
+          <option value="Perus">Perus</option>
+        </select>
+    </div>
+
+    <div class="dropzone">
+        <div id="draggable" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)">
+            This is draggable
+        </div>
+    </div>
+    <div class="dropzone"></div>
+    <div class="dropzone"></div>
+    <div class="dropzone"></div>
+
+    <p>Clique em qualquer local para mover a bola</p>
+    <div class="ball" data-js="ball"></div>
+
+    <script src="challenge-25.js"></script>
+</body>
+
+</html>
