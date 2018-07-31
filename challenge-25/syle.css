@@ -12,3 +12,18 @@
     margin-bottom: 10px;
     padding: 10px;
 }
+
+p {
+    padding: left;
+}
+
+.ball {
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    background: brown;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 1s;
+}
