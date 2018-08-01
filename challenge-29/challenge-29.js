@@ -1,4 +1,4 @@
-(function(DOM) {
+(function($) {
 
     'use strict';
 
@@ -37,88 +37,85 @@
     que será nomeado de "app".
     */
 
-    function app() {
+    var app = (function () {
 
-        var $form = new DOM('form');
-        var ajax = new XMLHttpRequest();
+        var $form = $('form');
 
-        document.addEventListener('DOMContentLoaded', getCompanyInfo);
-        $form.on('submit', addsNewCar);
-
-        function clearFormInputs() {
-            var inputs = $form.get()[0].querySelectorAll('input');
-            inputs.forEach(function(input) {
-                if (input.type !== 'submit') {
-                    input.value = '';
+        return {
+            init: function init () {
+                this.getCompanyInfo();
+                $form.on('submit', this.addsNewCar);
+            },
+            clearFormInputs: function clearFormInputs() {
+                var inputs = $form.get(0).querySelectorAll('input');
+                inputs.forEach(function(input) {
+                    if (input.type !== 'submit') {
+                        input.value = '';
+                    }
+                });
+            },
+            getsInputValues: function getsInputValues(info, element) {
+                var inputVal = $('[data-js="' + info.dataJs + '"]').get(0).value;
+                if (info.elem === 'span') {
+                    element.textContent = inputVal;
                 }
-            });
-        }
-
-        function getsInputValues(info, element) {
-            var inputVal = document.getElementById(info.dataJs).value;
-            if (info.elem === 'span') {
-                element.textContent = inputVal;
+                if (info.elem === 'img') {
+                    element.setAttribute('src', inputVal);
+                }
+            },
+            addsNewCar: function addsNewCar(e) {
+                e.preventDefault();
+                var $carRow = document.createElement('tr');
+                var infoList = [
+                    {
+                        elem: 'img',
+                        dataJs: 'image',
+                    },
+                    {
+                        elem: 'span',
+                        dataJs: 'brand',
+                    },
+                    {
+                        elem: 'span',
+                        dataJs: 'year',
+                    },
+                    {
+                        elem: 'span',
+                        dataJs: 'plate',
+                    },
+                    {
+                        elem: 'span',
+                        dataJs: 'color',
+                    },
+                ];
+                infoList.forEach(function(info) {
+                    var $carCol = document.createElement('td');
+                    var elem = document.createElement(info.elem);
+                    elem.setAttribute('data-js', info.dataJs);
+                    app.getsInputValues(info, elem);
+                    $carCol.appendChild(elem);
+                    $carRow.appendChild($carCol);
+                });
+                $('[data-js="car-list"]').get(0).appendChild($carRow);
+                app.clearFormInputs();
+            },
+            handleStateChange: function handleStateChange () {
+                if (this.readyState === 4 && this.status === 200) {
+                    var companyData = JSON.parse(this.responseText);
+                    $('[data-js="name"]').get(0).textContent = companyData.name;
+                    $('[data-js="phone"]').get(0).textContent = companyData.phone;
+                }
+            },
+            getCompanyInfo: function getCompanyInfo() {
+                var ajax = new XMLHttpRequest();
+                ajax.open('GET', 'company.json');
+                ajax.send();
+                ajax.addEventListener('readystatechange', this.handleStateChange);
             }
-            if (info.elem === 'img') {
-                element.setAttribute('src', inputVal);
-            }
-        }
-
-        function addsCarInfo(car, infoList) {
-            infoList.forEach(function(info) {
-                var elem = document.createElement(info.elem);
-                elem.setAttribute('data-js', info.dataJs);
-                getsInputValues(info, elem);
-                car.appendChild(elem);
-            });
-        }
-
-        function addsNewCar(e) {
-            e.preventDefault();
-            var $car = document.createElement('li');
-            var infoList = [
-                {
-                    elem: 'img',
-                    dataJs: 'image',
-                },
-                {
-                    elem: 'span',
-                    dataJs: 'brand',
-                },
-                {
-                    elem: 'span',
-                    dataJs: 'year',
-                },
-                {
-                    elem: 'span',
-                    dataJs: 'plate',
-                },
-                {
-                    elem: 'span',
-                    dataJs: 'color',
-                },
-            ];
-            addsCarInfo($car, infoList);
-            document.querySelector('[data-js="car-list"]').appendChild($car);
-            clearFormInputs();
-        }
+        };
         
-        function handleStateChange () {
-            if (ajax.readyState === 4 && ajax.status === 200) {
-                var companyData = JSON.parse(ajax.responseText);
-                document.querySelector('[data-js="name"]').textContent = companyData.name;
-                document.querySelector('[data-js="phone"]').textContent = companyData.phone;
-            }
-        }
+    })();
 
-        function getCompanyInfo() {
-            ajax.open('GET', 'company.json');
-            ajax.send();
-            ajax.addEventListener('readystatechange', handleStateChange);
-        }
-
-    }
-
-    app();
+    app.init();
 
 })(window.DOM);

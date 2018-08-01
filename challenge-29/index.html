@@ -21,25 +21,42 @@
     </style>
 </head>
 <body>
-    <h2>Dados da empresa:</h2>
-    <p data-js="name"></p>
-    <p data-js="phone"></p>
-    <h2>Cadastre seu carro abaixo:</h2>
-    <form>
-        <label for="image">Imagem do carro</label>
-        <input type="url" id="image">
-        <label for="brand">Marca / Modelo</label>
-        <input type="text" id="brand">
-        <label for="year">Ano</label>
-        <input type="text" id="year">
-        <label for="plate">Placa</label>
-        <input type="text" id="plate">
-        <label for="color">Cor</label>
-        <input type="text" id="color">
-        <input type="submit" value="Cadastrar" />
-    </form>
-    <h2>Carros cadastrados:</h2>
-    <ul data-js="car-list"></ul>
+    <header>
+        <h2>Dados da empresa:</h2>
+        <p data-js="name"></p>
+        <p data-js="phone"></p>
+    </header>
+    <main>
+        <h2>Cadastre seu carro abaixo:</h2>
+        <form>
+            <label for="image">Imagem do carro</label>
+            <input type="url" data-js="image">
+            <label for="brand">Marca / Modelo</label>
+            <input type="text" data-js="brand">
+            <label for="year">Ano</label>
+            <input type="text" data-js="year">
+            <label for="plate">Placa</label>
+            <input type="text" data-js="plate">
+            <label for="color">Cor</label>
+            <input type="text" data-js="color">
+            <input type="submit" value="Cadastrar" />
+        </form>
+        <h2>Carros cadastrados:</h2>
+        <!-- <ul data-js="car-list"></ul> -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Imagem</th>
+                    <th>Marca / Modelo</th>
+                    <th>Ano</th>
+                    <th>Placa</th>
+                    <th>Cor</th>
+                </tr>
+            </thead>
+            <tbody data-js="car-list">
+            </tbody>
+        </table>
+    </main>
     <script src="DOM.js"></script>
     <script src="challenge-29.js"></script>
 </body>

@@ -3,6 +3,9 @@
     'use strict';
 
     function DOM (node) {
+        if ( !(this instanceof DOM) ) {
+            return new DOM(node);
+        }
         this.nodeList = doc.querySelectorAll(node);
     }
     DOM.prototype.on = function (event, callback) {
@@ -10,7 +13,10 @@
             return node.addEventListener(event, callback);
         });
     };
-    DOM.prototype.get = function () {
+    DOM.prototype.get = function (index) {
+        if (index !== -1) {
+            return this.nodeList[index];
+        }
         return this.nodeList;
     };
 
