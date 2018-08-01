@@ -35,7 +35,11 @@ var myArray2 = ['joao', 2, true, null, -10]
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
+console.log(myFunction(myArray2, 0))
+console.log(myFunction(myArray2, 1))
+console.log(myFunction(myArray2, 2))
 console.log(myFunction(myArray2, 3))
+console.log(myFunction(myArray2, 4))
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -71,18 +75,14 @@ function book (arg){
     },
   }
 
-  if(arg == undefined){
-    return myBooks
-  }
-
-  return myBooks[arg]
+  return !arg ? myBooks : myBooks[arg]
 
 }
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-console.log(book('livro3'))
+console.log(book())
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
@@ -90,18 +90,19 @@ usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
 
-console.log("O livro livro3 tem "+ book('livro3').quantidadePaginas +" páginas")
+var arg = 'livro3'
+console.log("O livro "+ arg +" tem "+ book(arg).quantidadePaginas +" páginas")
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log("O autor do livro livro3 é "+ book('livro3').autor +"")
+console.log("O autor do "+ arg +" livro3 é "+ book(arg).autor +"")
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log("O livro livro3 foi publicado pela editora "+ book('livro3').editora +" ")
+console.log("O livro "+ arg +" foi publicado pela editora "+ book(arg).editora +" ")
