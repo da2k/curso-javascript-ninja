@@ -1,4 +1,5 @@
 (function (doc, win) {
+  'use strict';
   /*
   O desafio dessa semana é criar uma mini library (biblioteca) para
   reutilizarmos nossos códigos quando fizermos manipulação de DOM!
@@ -20,16 +21,16 @@
   Dica: olhe os erros que acontecem no console, e vá resolvendo um a um.
   Só passe para o próximo problema quando tiver resolvido o anterior :)
   */
-  function DOM(node) {
-    this.element = doc.querySelectorAll(node);
-    this.on = function(event, func) {
+  function DOM(nodes) {
+    this.element = doc.querySelectorAll(nodes);
+    this.on = function(event, callback) {
       Array.prototype.forEach.call(this.get(), function(el) {
-        el.addEventListener(event, func, true);
+        el.addEventListener(event, callback, false);
       });
     };
-    this.off = function() {
+    this.off = function(event, callback) {
       Array.prototype.forEach.call(this.get(), function(el) {
-        el.removeEventListener(event, func, true);
+        el.removeEventListener(event, callback, false);
       });
     };
     this.get = function() {
@@ -38,9 +39,10 @@
   }
 
   var $a = new DOM('[data-js="link"]');
-  $a.on('click', function (e) {
+  $a.on('click', function handleClick(e) {
     e.preventDefault();
     console.log('clicou');
+    $a.off('click', handleClick);
   });
 
   console.log('Elementos selecionados:', $a.get());
