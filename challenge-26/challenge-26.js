@@ -21,7 +21,23 @@
     Dica: olhe os erros que acontecem no console, e vá resolvendo um a um.
     Só passe para o próximo problema quando tiver resolvido o anterior :)
     */
-    // ?
+
+    function DOM(element) {
+        this.element = element;
+    }
+
+    DOM.prototype.on = function(event, callback) {
+        document.addEventListener(event, callback);
+    }
+
+    DOM.prototype.off = function(event, callback) {
+        document.removeEventListener(event, callback);
+    }
+
+    DOM.prototype.get = function(element) {
+        return this.element;
+
+    }
 
     var $a = new DOM('[data-js="link"]');
     $a.on('click', function(e) {
