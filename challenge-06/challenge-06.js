@@ -37,12 +37,11 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
 */
 
 function showTeamPosition(i) {
-    if (i <= 4) {
-        var colocacao = i += 1;
-        return 'O time que está em ' + colocacao + 'º lugar é o ' + teams[i - 1] + '.';
+    if (i < 1 || i > 5) {
+        return 'Não temos a informação do time que está nessa posição.';    
     }
 
-    return 'Não temos a informação do time que está nessa posição.';
+    return 'O time que está em ' + i + 'º lugar é o ' + teams[i - 1] + '.';
 }
 
 /*
@@ -62,9 +61,8 @@ repetição "while".
 */
 
 var counter = 20;
-while (counter >= 20 && counter <= 30) {
-    console.log(counter);
-    counter++;
+while (counter <= 30) {
+    console.log(counter++);
 }
 
 /*
@@ -81,31 +79,36 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
 */
 
 function convertToHex(color) {
+    var hexa;
     switch(color) {
         case 'white':
-        console.log('O hexadecimal para a cor ' + color + ' é #ffffff.');
-        break;
-
+            hexa = '#ffffff';
+            break;
+                    
         case 'black':
-        console.log('O hexadecimal para a cor ' + color + ' é #000000.');
-        break;
-
+            hexa = '#000000';
+            break;
+                    
         case 'blue':
-        console.log('O hexadecimal para a cor ' + color + ' é #0000ff.');
-        break;
-
+            hexa = '#0000ff';
+            break;                
+                    
         case 'green':
-        console.log('O hexadecimal para a cor ' + color + ' é #00ff00.');
-        break;
-
+            hexa = '#00ff00';
+            break;
+                    
         case 'yellow':
-        console.log('O hexadecimal para a cor ' + color + ' é #ffff00.');
-        break;
+            hexa = '#ffff00';
+            break;
 
         default:
-        console.log('Não temos o equivalente hexadecimal para ' + color + '.');
+            return 'Não temos o equivalente hexadecimal para ' + color + '.';
     }
+
+    return 'O hexadecimal para a cor ' + color + ' é ' + hexa + '.';
 }
+
+// OBS: Quando o o return está sendo utilizado dentro do switch, não é necessário utilizar o break porque o return ignora o restante, ou seja, não passa pelos outros cases.
 
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
