@@ -23,21 +23,25 @@
     */
 
     function DOM(element) {
-        this.element = element;
+        this.element = this.getDOMEelements(element);
     }
 
-    DOM.prototype.on = function(event, callback) {
+    DOM.prototype.getDOMEelements = function getDOMEelements(element) {
+        return document.querySelectorAll(element);
+    };
+
+    DOM.prototype.on = function on(event, callback) {
         document.addEventListener(event, callback);
-    }
+    };
 
-    DOM.prototype.off = function(event, callback) {
+    DOM.prototype.off = function off(event, callback) {
         document.removeEventListener(event, callback);
-    }
+    };
 
-    DOM.prototype.get = function(element) {
+    DOM.prototype.get = function get(element) {
         return this.element;
 
-    }
+    };
 
     var $a = new DOM('[data-js="link"]');
     $a.on('click', function(e) {
