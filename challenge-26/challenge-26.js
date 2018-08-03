@@ -23,12 +23,8 @@
     */
 
     function DOM(element) {
-        this.element = this.getDOMEelements(element);
+        this.element = document.querySelectorAll(element);
     }
-
-    DOM.prototype.getDOMEelements = function getDOMEelements(element) {
-        return document.querySelectorAll(element);
-    };
 
     DOM.prototype.on = function on(event, callback) {
         document.addEventListener(event, callback);
