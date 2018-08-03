@@ -50,15 +50,11 @@ função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 console.log(showTeamPosition(1));
 console.log(showTeamPosition(2));
 console.log(showTeamPosition(3));
-<<<<<<< HEAD
 console.log(showTeamPosition(4));
 console.log(showTeamPosition(5));
 console.log(showTeamPosition(0));
 console.log(showTeamPosition(-10));
 console.log(showTeamPosition(300));
-=======
-console.log(showTeamPosition(0));
->>>>>>> 5b044f37f15ab9752c2fa96af72b193e62d2481c
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
@@ -67,12 +63,7 @@ repetição "while".
 var y = 20
 
 while (y <= 30) {
-<<<<<<< HEAD
   console.log(y++);
-=======
-  console.log(y);
-  y++;
->>>>>>> 5b044f37f15ab9752c2fa96af72b193e62d2481c
 }
 
 /*
