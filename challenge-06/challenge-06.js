@@ -6,6 +6,7 @@ e imprima o nome desse campeonato no console.
 */
 var championship = 'Campeonato Paulista'
 
+console.log(championship);
 /*
 Declare uma variável chamada `teams`, que receberá um array com 5 elementos.
 Os elementos serão nomes de times do campeonato escolhido, e os nomes devem
@@ -32,8 +33,7 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     - Se não houver time para a posição passada, deve retornar a mensagem:
     "Não temos a informação do time que está nessa posição."
 */
-function showTeamPosition (x){
-  var position = x
+function showTeamPosition (position){
 
   if (position < 1 || position > 5 ){
     return "Não temos a informação do time que está nessa posição."
@@ -47,10 +47,14 @@ function showTeamPosition (x){
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
-console.log(showTeamPosition(1))
-console.log(showTeamPosition(2))
-console.log(showTeamPosition(3))
-console.log(showTeamPosition(0))
+console.log(showTeamPosition(1));
+console.log(showTeamPosition(2));
+console.log(showTeamPosition(3));
+console.log(showTeamPosition(4));
+console.log(showTeamPosition(5));
+console.log(showTeamPosition(0));
+console.log(showTeamPosition(-10));
+console.log(showTeamPosition(300));
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
@@ -59,8 +63,7 @@ repetição "while".
 var y = 20
 
 while (y <= 30) {
-  console.log(y)
-  y++;
+  console.log(y++);
 }
 
 /*
@@ -75,36 +78,28 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     a frase:
     "Não temos o equivalente hexadecimal para [COR]."
 */
-function convertToHex(x){
-  var color = x;
-  switch (x) {
+function convertToHex(color){
+  switch (color) {
     case "red":
       var hexadecimal = "#FF0000"
-      return "O hexadecimal para a cor "+ color +" é "+ hexadecimal +".";
       break;
     case "white":
-      var color = "white"
+
       var hexadecimal = "#FFFFFF"
-      return "O hexadecimal para a cor "+ color +" é "+ hexadecimal +".";
       break;
     case "black":
-      var color = "black"
       var hexadecimal = "#000000"
-      return "O hexadecimal para a cor "+ color +" é "+ hexadecimal +".";
       break;
     case "yellow":
-      var color = "yellow"
       var hexadecimal = "#ffff00"
-      return "O hexadecimal para a cor "+ color +" é "+ hexadecimal +".";
       break;
     case "green":
-      var color = "green"
       var hexadecimal = "#00ff00"
-      return "O hexadecimal para a cor "+ color +" é "+ hexadecimal +".";
       break;
     default:
       return "Não temos o equivalente hexadecimal para " + color + "."
   }
+  return "O hexadecimal para a cor "+ color +" é "+ hexadecimal +".";
 }
 
 /*
