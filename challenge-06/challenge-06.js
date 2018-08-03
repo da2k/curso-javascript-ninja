@@ -47,10 +47,10 @@ function showTeamPosition (x){
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
-console.log(showTeamPosition(1))
-console.log(showTeamPosition(2))
-console.log(showTeamPosition(3))
-console.log(showTeamPosition(0))
+console.log(showTeamPosition(1));
+console.log(showTeamPosition(2));
+console.log(showTeamPosition(3));
+console.log(showTeamPosition(0));
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
@@ -59,7 +59,7 @@ repetição "while".
 var y = 20
 
 while (y <= 30) {
-  console.log(y)
+  console.log(y);
   y++;
 }
 
@@ -110,11 +110,11 @@ function convertToHex(x){
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-console.log(convertToHex("green"))
-console.log(convertToHex("red"))
-console.log(convertToHex("yellow"))
-console.log(convertToHex("white"))
-console.log(convertToHex("orange"))
-console.log(convertToHex("violet"))
-console.log(convertToHex("black"))
-console.log(convertToHex("purpure"))
+console.log(convertToHex("green"));
+console.log(convertToHex("red"));
+console.log(convertToHex("yellow"));
+console.log(convertToHex("white"));
+console.log(convertToHex("orange"));
+console.log(convertToHex("violet"));
+console.log(convertToHex("black"));
+console.log(convertToHex("purpure"));
