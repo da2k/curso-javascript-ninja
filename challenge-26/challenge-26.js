@@ -40,9 +40,10 @@
     };
 
     var $a = new DOM('[data-js="link"]');
-    $a.on('click', function(e) {
+    $a.on('click', function hundleClick(e) {
         e.preventDefault();
         console.log('clicou');
+        $a.off('click', hundleClick);
     });
 
     console.log('Elementos selecionados:', $a.get());
