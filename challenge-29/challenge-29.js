@@ -1,4 +1,4 @@
-(function() {
+(function ($) {
   'use strict';
 
   /*
@@ -7,9 +7,9 @@
   A primeira etapa vai ser o cadastro de veículos, de deverá funcionar da
   seguinte forma:
   - No início do arquivo, deverá ter as informações da sua empresa - nome e
-  telefone (já vamos ver como isso vai ser feito)
+    telefone (já vamos ver como isso vai ser feito)
   - Ao abrir a tela, ainda não teremos carros cadastrados. Então deverá ter
-  um formulário para cadastro do carro, com os seguintes campos:
+    um formulário para cadastro do carro, com os seguintes campos:
     - Imagem do carro (deverá aceitar uma URL)
     - Marca / Modelo
     - Ano
@@ -36,4 +36,75 @@
   que será nomeado de "app".
   */
 
-})();
+  var app = (function () {
+    return {
+      init: function init() {
+        this.companyInfo();
+        this.initEvents();
+      },
+
+      initEvents: function initEvents() {
+        $('[data-js="form-register"]').on('submit', this.handleSubmit);
+      },
+
+      companyInfo: function companyInfo() {
+        var ajax = new XMLHttpRequest();
+        ajax.open('GET', '/company.json', true);
+        ajax.send();
+        ajax.addEventListener('readystatechange', this.getCompanyInfo, false);
+      },
+
+      getCompanyInfo: function getCompanyInfo() {
+        if (!app.isReady.call(this)) {
+          return;
+        }
+
+        var data = JSON.parse(this.responseText);
+        var $companyName = $('[data-js="company-name"]').get();
+        var $companyPhone = $('[data-js="company-phone"]').get();
+        $companyName.textContent = data.name;
+        $companyPhone.textContent = data.phone;
+      },
+
+      isReady: function isReady() {
+        return this.readyState === 4 && this.status === 200;
+      },
+
+      handleSubmit: function handleSubmit(event) {
+        event.preventDefault();
+        var $tableCar = $('[data-js="table-car"]').get();
+        $tableCar.appendChild(app.createNewCar());
+      },
+
+      createNewCar: function createNewCar() {
+        var $fragment = document.createDocumentFragment();
+        var $tr = document.createElement('tr');
+        var $tdImage = document.createElement('td');
+        var $tdBrandModel = document.createElement('td');
+        var $tdYear = document.createElement('td');
+        var $tdPlate = document.createElement('td');
+        var $tdColor = document.createElement('td');
+        var $image = document.createElement('img');
+
+        $tdImage.src = $('[data-js="image"]').get().value;
+        $tdBrandModel.textContent = $('[data-js="brand-model"]').get().value;
+        $tdYear.textContent = $('[data-js="year"]').get().value;
+        $tdPlate.textContent = $('[data-js="plate"]').get().value;
+        $tdColor.textContent = $('[data-js="color"]').get().value;
+
+        $tdImage.appendChild($image);
+
+        $tr.appendChild($tdImage);
+        $tr.appendChild($tdBrandModel);
+        $tr.appendChild($tdYear);
+        $tr.appendChild($tdPlate);
+        $tr.appendChild($tdColor);
+
+        return $fragment.appendChild($tr);
+      }
+    };
+  })();
+
+  app.init();
+
+})(window.DOM);
