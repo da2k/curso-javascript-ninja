@@ -62,32 +62,32 @@
     };
 
     DOM.prototype.isString = function isBoolean(param) {
-        return Object.prototype.toString.call(param) === 'Object String';
+        return Object.prototype.toString.call(param) === '[Object String]';
     };
 
     DOM.prototype.isBolean = function isBoolean(param) {
-        return Object.prototype.toString.call(param) === 'Object Boolean';
+        return Object.prototype.toString.call(param) === '[Object Boolea]n';
     };
 
     DOM.prototype.isNumber = function isNumber(param) {
-        return Object.prototype.toString.call(param) === 'Object Number';
+        return Object.prototype.toString.call(param) === '[Object Number]';
     };
 
     DOM.prototype.isFunction = function isFunction(param) {
-        return Object.prototype.toString.call(param) === 'Object Function';
+        return Object.prototype.toString.call(param) === '[Object Functi]on';
     };
 
     DOM.prototype.isObject = function isFunction(param) {
-        return Object.prototype.toString.call(param) === 'Object Object';
+        return Object.prototype.toString.call(param) === '[Object Object]';
     };
 
     DOM.prototype.isArray = function isArray(param) {
-        return Object.prototype.toString.call(param) === 'Object Array';
+        return Object.prototype.toString.call(param) === '[Object Array]';
     }
 
     DOM.prototype.isNull = function isNull(param) {
-        return Object.prototype.toString.call(param) === 'Object Null' ||
-            Object.prototype.toString.call(param) === 'Object undefined';
+        return Object.prototype.toString.call(param) === '[Object Null]' ||
+            Object.prototype.toString.call(param) === '[Object undefined]';
     }
 
     var $a = new DOM('[data-js="link"]');
