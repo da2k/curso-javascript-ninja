@@ -34,7 +34,7 @@ addValor();
 // Qual o retorno da função? (Use comentários de bloco).
  
 /*
-  'O valor da variável agora é VALOR 37' 
+  'O valor da variável agora é 37' 
 */
 
 /*
@@ -44,14 +44,9 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
- function tresArgs(n1,n2,n3){
+ function tresArgs(n1,n2,n3){ 
 
-   /*
-   Esse if esta dando erro nao passa as validações .
-   Teria como pegar valor fazio ?
-*/  
-
-   if(n1 === " " || n2 ===  " " || n3 === " " ){
+   if(n1 === undefined || n2 ===  undefined || n3 === undefined ){
      return "Preencha todos os valores corretamente!" ;
    }
    return (n1 * n2 * n3) + 2;
@@ -61,14 +56,14 @@ Crie uma função com as seguintes características:
 tresArgs(1,1);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado). 
-undefined 
+// "Preencha todos os valores corretamente!"
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 tresArgs(2,2,2);
  
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-10
+// 10
 
 /*
 Crie uma função com as seguintes características:
@@ -81,24 +76,28 @@ Crie uma função com as seguintes características:
 */
 function retornaTresArgs(n1,n2,n3){
 
-     if(n1 !== " " && n2 === " " && n2 === " "){
+     if(n1 !== undefined && n2 === undefined && n3 === undefined){
          return  n1; 
-      }else if(n1 !== " " && n2 !== " " && n3 === " "){
-        return  n1 + n2; 
-      }else if(n1 !== " " && n2 !== " " && n3 !== " "){
+      }
+      else if(n1 !== undefined && n2 !== undefined && n3 === undefined){
+        return  n1 + n2;
+      }
+      else if(n1 !== undefined && n2 !== undefined && n3 !== undefined){
         return  (n1 + n2) / n3 ;
-      }else if(n1 === " " && n2 === " " && n3 === " "){
+      }
+      else if(n1 === undefined && n2 === undefined && n3 === undefined){
         return false;
-      }else{
+      }
+      else{
         return null;
       }
 
   }  
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
- retornaTresArgs(); // NaN
- retornaTresArgs(1); // NaN
- retornaTresArgs(2,2); // NaN
+ retornaTresArgs(); // false
+ retornaTresArgs(1); //  1
+ retornaTresArgs(2,2); //  4
  retornaTresArgs(1,2,4); // 0.75
 
 ```
