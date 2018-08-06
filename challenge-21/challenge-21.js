@@ -44,4 +44,4 @@
         clearTimeout(cronometro.value);
         cronometro.value = 0;
     })
-})();
+})();0
