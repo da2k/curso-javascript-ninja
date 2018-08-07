@@ -97,4 +97,27 @@
               Object.prototype.toString.call(param) === '[Object undefined]';
       }
 
+      var $formCEP = new DOM('[data-js="form-cep"]');
+      var $inputCep = new DOM('[data-js="input-cep"]');
+      var ajax = new XMLHttpRequest();
+
+      $formCEP.on('submit', hundleSubmitFormCep);
+
+      function hundleSubmitFormCep(event) {
+          event.preventDefault();
+          var url = 'http:apps.widenet.com.br/busca-cep/api/cep/<cepCode>.json'.replace(
+              '<cepCode>',
+              $inputCep.get()[0].value
+          );
+          ajax.open('GET', '');
+          ajax.send();
+          ajax.addEventListener('readystatechange', hundleReadyStateChange);
+      }
+
+      function hundleReadyStateChange() {
+          if (ajax.readyState === 4 && ajax.status === 200) {
+              console.log('Popular formulario', ajax.responseText);
+          }
+          console.log('Carregando...')
+      }
   })(Window, document);
