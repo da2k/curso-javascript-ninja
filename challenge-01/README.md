@@ -29,10 +29,10 @@ var comida = ['arroz', 'feijão', 'ovo'];
 comida[1];
 
 // Digite o código que verifica se a variável `soma' é igual a variável `myvar` (testando também o tipo).
-if (soma === myvar) { return true };
+soma === myvar;
 
 // Digite o código que verifica se a variável `myvar` é menor ou igual à variável `soma`.
-if (myvar <= soma) { return true };
+myvar <= soma;
 
 // Crie uma função chamada `divisao` que receba como parâmetro dois números, e retorne o resultado da divisão entre eles.
 function divisao ( x, y ) {
