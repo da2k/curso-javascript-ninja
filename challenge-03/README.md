@@ -34,7 +34,7 @@ for chamado.
 */
 pessoa.fazerAniversario = function(){
     pessoa.idade++;
-}
+};
 
 /*
 Adicione um método ao objeto `pessoa` chamado `andar`, que terá as seguintes
@@ -63,32 +63,32 @@ pessoa.parar = function(){
 Crie um método chamado `nomeCompleto`, que retorne a frase:
 - "Olá! Meu nome é [NOME] [SOBRENOME]!"
 */
-var nomeCompleto = function(){
-    return "Olá! Meu nome é " + pessoa.nome + " " + pessoa.sobrenome;
+pessoa.nomeCompleto = function(){
+    return "Olá! Meu nome é " + pessoa.nome + ' ' + pessoa.sobrenome + '!';
 }
 
 /*
 Crie um método chamado `mostrarIdade`, que retorne a frase:
 - "Olá, eu tenho [IDADE] anos!"
 */
-var mostrarIdade = function(){
-    return "Olá, eu tenho " + pessoa.idade + " anos";
+pessoa.mostrarIdade = function(){
+    return "Olá, eu tenho " + pessoa.idade + " anos!";
 }
 
 /*
 Crie um método chamado `mostrarPeso`, que retorne a frase:
 - "Eu peso [PESO]Kg."
 */
-var mostrarPeso = function(){
-    return "Eu peso " + pessoa.peso + "Kg";
+pessoa.mostrarPeso = function(){
+    return "Eu peso " + pessoa.peso + "Kg.";
 }
 
 /*
 Crie um método chamado `mostrarAltura` que retorne a frase:
 - "Minha altura é [ALTURA]m."
 */
-var mostrarAltura = function(){
-    return "Minha altura é " + pessoa.altura + "m";
+pessoa.mostrarAltura = function(){
+    return "Minha altura é " + pessoa.altura + "m.";
 }
 
 /*
@@ -96,25 +96,25 @@ Agora vamos brincar um pouco com o objeto criado:
 Qual o nome completo da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-nomeCompleto(); // "​​​​​Olá meu nome é Vinicius França​​​​​"
+pessoa.nomeCompleto(); // "​​​​​Olá meu nome é Vinicius França​​​​​!"
 
 /*
 Qual a idade da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-mostrarIdade(); // "Olá, eu tenho 26 anos"​​​​​
+pessoa.mostrarIdade(); // "Olá, eu tenho 26 anos!"​​​​​
 
 /*
 Qual o peso da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-mostrarPeso(); // "Eu peso 83kg"
+pessoa.mostrarPeso(); // "Eu peso 83kg."
 
 /*
 Qual a altura da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-mostrarAltura(); // "Minha altura é 1.73m"
+pessoa.mostrarAltura(); // "Minha altura é 1.73m."
 /*
 Faça a `pessoa` fazer 3 aniversários.
 */
@@ -127,7 +127,7 @@ Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
 comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
-mostrarIdade(); // "Olá, eu tenho 29 anos"​​​​​
+mostrarIdade(); // "Olá, eu tenho 29 anos!"​​​​​
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
@@ -146,9 +146,7 @@ pessoa.andando // true
 /*
 Se a pessoa ainda está andando, faça-a parar.
 */
-if (pessoa.andando){
-    pessoa.parar();
-}
+pessoa.parar();
 
 /*
 E agora: a pessoa ainda está andando? (Use uma instrução para responder e
@@ -180,19 +178,19 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao = function(){
-    var hello = "Olá eu sou o ";
+    var sexo = 'o';
     var years = " anos ";
     var meters = " metros!"
-    if (pessoa.sexo == 'f'){
-        hello = "Olá eu sou a "
+    if (pessoa.sexo === 'f'){
+        sexo = 'a'
     }
-    if(pessoa.idade == 1){
+    if(pessoa.idade === 1){
         years = " ano ";
     }
-    if(pessoa.caminhouQuantosMetros == 1){
+    if(pessoa.caminhouQuantosMetros === 1){
         meters = " metro!";
     }
-    return hello + pessoa.nome + " " + pessoa.sobrenome + ", tenho " + pessoa.idade + years +  pessoa.altura + "m, meu peso é " + pessoa.peso + "kg e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + meters;
+    return 'Olá, eu sou ' + sexo + ' ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + years + ', ' + pessoa.altura + "m, meu peso é " + pessoa.peso + "kg e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + meters;
 };
 
 // Agora, apresente-se ;)
