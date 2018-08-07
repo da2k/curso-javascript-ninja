@@ -50,7 +50,6 @@ var num = 10;
 
   }
 
-// ?
 
 /*
 Na mesma ideia do exercício acima: mostre agora os números ímpares.
