@@ -1502,3 +1502,273 @@ Math.cbrt(x): retorna a raiz cúbica
 Math.max([x1, x2, xn]): retorna o maior número
 Math.min([x1, x2, xn]): retorna o menor número
 Math.random(): retorna um número aleatório entre 0 e 1
+
+
+
+/* 
+Seção 32
+*/
+//Vídeo 189 - 190
+Como funciona o AJAX no lado do servidor?
+Fazer uma simulação  com REST API.
+
+> front
+> rest-api > index.js, package.json
+
+Para instalar o REST API
+npm install -g nodemon
+nodemon index.js
+
+/* instalar express */
+npm install --save express
+
+rest-api > index.js
+> 'use strict';
+> 
+> var express = require('express'); // ele verifica se existe uma pasta 'express' e um index.js
+> var app = express();
+> 
+> app.get('/', function(request, response){ // resquest (req) são dados que vem do front; response (res) é a resposta do servidor
+>  response.send('Home'); //o que é respondido para o cliente. Pode ser código em HTML
+> });
+> 
+> app.get('/user', function(request, response){
+>   response.send('User');
+> });
+> 
+> app.listen(3000); //porta que é enviado
+
+front > index.html
+> (function(){
+>   'use strict';
+> 
+>   var ajax = new XHttpRequest();
+>   ajax.open('GET', 'localhost:3000/user');
+>   ajax.send();
+> 
+>   ajax.addEventListener('readystatechange', function(e) {
+>     if( ajax.readyState === 4 && ajax.status === 200 ){
+>       console.log(ajax.responseText);
+>     }
+>   }, false);
+> })();
+
+
+//Vídeo 191
+Cors: corrige o erro de portas
+npm install --save cors
+
+rest-api > index.js
+> 'use strict';
+> 
+> var express = require('express');
+> var cors = require('cors');
+> var app = express();
+> var users = {
+>   joao: {
+>     nome: 'João',
+>     idade: 30
+>   },
+>   maria: {
+>     nome: 'Maria',
+>     idade: 22
+>   }
+> };
+>
+> app.use(cors());
+> 
+> app.get('/', function(req, res){
+>  res.send('Home');
+> });
+> 
+> app.get('/user/:username', function(req, res){ // :username é uma variável
+>   res.send('req.params.username'); // retorna valores dinâmicos
+>   var username = req.params.username;
+>   res.json(users[username]);
+>   if (users[username]){
+>     return res.json(users[username]);  
+> }
+> res.status(404).json({ error: 'Usuário não encontrado' });
+> });
+> 
+> app.listen(3000); //porta que é enviado
+
+
+front > index.html
+> (function(){
+>   'use strict';
+> 
+>   var ajax = new XHttpRequest();
+>   ajax.open('GET', 'http://localhost:3000/user');
+>   ajax.send();
+> 
+>   ajax.addEventListener('readystatechange', function(e) {
+>     if( ajax.readyState === 4 && ajax.status === 200 ){
+>       console.log(ajax.responseText);
+>     }
+>   }, false);
+> })();
+
+
+//Vídeo 192
+ajax.open('GET', url, async); // não usar o ajax.open('GET', url, false)
+Sendo síncrona, ele pode quebrar a sua aplicação
+
+ajax.abort(); // para a requisição
+
+Método POST
+ajax.open('POST', url);
+ajax.setRequestHeader(
+  'Content-Type',
+  'application/x-www-form-urlencoded'
+);
+ajax.send('key1=value1&key2=value2');
+
+
+//Vídeo 193
+rest-api > index.js
+> 'use strict';
+> 
+> var express = require('express');
+> var cors = require('cors');
+> var bodyParser = require('body-parser');
+> var app = express();
+> var users = [
+>   {
+>     username: 'joao',
+>     name: 'João',
+>     age: 30
+>   },
+>   {
+>     username: 'maria',
+>     name: 'Maria',
+>     age: 22
+>   }
+> ];
+>
+> app.use(bodyParser.urlencoded({ extended: false }));
+> app.use(cors());
+> 
+> app.get('/', function(req, res){
+>  res.json({ response: 'Home' });
+> });
+> 
+> app.get('/user/:username', function(req, res){ // :username é uma variável
+>   var username = req.params.username;
+>   var hasUser = users.some( function(user) {
+>   return users.username === username;
+> });
+>   if ( hasUser ){
+>     return res.json( user.filter(function(user){
+>   }));  
+> }
+> res.status(404).json({ error: 'Usuário não encontrado' });
+> });
+> 
+> app.post('/user', function(req, res) {
+>   var username = req.body.username;
+>   var age = req.body.age;
+>   res.json({ username: username, age: age });
+> });
+> 
+> app.listen(3000); //porta que é enviado
+
+>> para parsear dados, é necessário instalar o body parser
+npm install --save body-parser
+
+
+front > index.html
+> (function(){
+>   'use strict';
+> 
+>   var ajax = new XHttpRequest();
+>   ajax.open('POST', 'http://localhost:3000/user');
+>   ajax.setRequestHeader('Content-Type', 'application/x-www-form-url-urlencoded');
+>   ajax.send('username=roberto&age=32');
+> 
+>   ajax.onreadystatechange = function(){
+>     if(ajax.readyState === 4) {
+>       console.log('Usuário cadastrado!');
+>     }
+>   }
+> })();
+
+
+//Vídeo 194
+Como cadastrar o usuário
+
+rest-api > index.js
+> 'use strict';
+> 
+> var express = require('express');
+> var cors = require('cors');
+> var bodyParser = require('body-parser');
+> var app = express();
+> var users = [
+>   {
+>     username: 'joao',
+>     name: 'João',
+>     age: 30
+>   },
+>   {
+>     username: 'maria',
+>     name: 'Maria',
+>     age: 22
+>   }
+> ];
+>
+> app.use(bodyParser.urlencoded({ extended: false }));
+> app.use(cors());
+> 
+> app.get('/', function(req, res){
+>  res.json({ response: 'Home' });
+> });
+> 
+> app.get('/user/:username', function(req, res){ // :username é uma variável
+>   var username = req.params.username;
+>   var hasUser = users.some( function(user) {
+>   return user.username === username;
+> });
+>   if ( hasUser ){
+>     return res.json( user.filter(function(user){
+>        return user.username === username;
+>   }));  
+> }
+> res.status(404).json({ error: 'Usuário não encontrado' });
+> });
+> 
+> app.post('/user', function(req, res) {
+>   var username = req.body.username;
+>   var age = req.body.age;
+>   var user = req.body.user;
+>
+>   var hasUser = users.some( function(user) {
+>     return user.username === username;
+>   });
+>
+>   if( !hasUser ){
+>     users.push({
+>       username: username,
+>       age: age
+>     });
+>   }
+>   return res.json(users);
+> });
+> 
+> app.listen(3000); //porta que é enviado
+
+front > index.html
+> (function(){
+>   'use strict';
+> 
+>   var ajax = new XHttpRequest();
+>   ajax.open('POST', 'http://localhost:3000/user');
+>   ajax.setRequestHeader('Content-Type', 'application/x-www-form-url-urlencoded');
+>   ajax.send('username=roberto&user=Roberto&age=32');
+> 
+>   ajax.onreadystatechange = function(){
+>     if(ajax.readyState === 4) {
+>       console.log('Usuário cadastrado!');
+>     }
+>   }
+> })();
