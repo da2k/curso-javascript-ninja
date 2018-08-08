@@ -42,17 +42,9 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-function multiple( x, y, z ) {
-  if (x === undefined) {
+function newFuntion( x, y, z ) {
+  if (x === undefined || y === undefined || z === undefined) {
     return 'Preencha todos os valores corretamente';
-  }
-  
-  if (y === undefined) {
-	return 'Preencha todos os valores corretamente';
-  }
-  
-  if (z === undefined) {
-	return 'Preencha todos os valores corretamente';
   }
 
   return ( x * y * z) + 2;
