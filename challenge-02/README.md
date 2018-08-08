@@ -84,7 +84,7 @@ function sum( x, y, z ) {
 	}
 	
 	if ( x === '' && y === '' && z === '' ) {
-		return false;
+		return null;
 	}
 	
 	if ( x !== undefined && y === undefined && z === undefined ) {
