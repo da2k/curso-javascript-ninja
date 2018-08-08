@@ -81,7 +81,7 @@
       };
 
       DOM.prototype.isFunction = function isFunction(param) {
-          return Object.prototype.toString.call(param) === '[Object Functi]on';
+          return Object.prototype.toString.call(param) === '[Object Function]';
       };
 
       DOM.prototype.isObject = function isFunction(param) {
@@ -96,28 +96,51 @@
           return Object.prototype.toString.call(param) === '[Object Null]' ||
               Object.prototype.toString.call(param) === '[Object undefined]';
       }
-
       var $formCEP = new DOM('[data-js="form-cep"]');
-      var $inputCep = new DOM('[data-js="input-cep"]');
+      var $inputCEP = new DOM('[data-js="input-cep"]');
       var ajax = new XMLHttpRequest();
 
       $formCEP.on('submit', hundleSubmitFormCep);
 
       function hundleSubmitFormCep(event) {
           event.preventDefault();
-          var url = 'http:apps.widenet.com.br/busca-cep/api/cep/<cepCode>.json'.replace(
-              '<cepCode>',
-              $inputCep.get()[0].value
-          );
-          ajax.open('GET', '');
+          var url = getUrl();
+          ajax.open('GET', 'http://apps.widenet.com.br/busca-cep/api/cep/07941120.json');
           ajax.send();
           ajax.addEventListener('readystatechange', hundleReadyStateChange);
       }
 
-      function hundleReadyStateChange() {
-          if (ajax.readyState === 4 && ajax.status === 200) {
-              console.log('Popular formulario', ajax.responseText);
-          }
-          console.log('Carregando...')
+      function getUrl() {
+          return 'http://apps.widenet.com.br/busca-cep/api/cep/[CEP].json'.replace(
+              '[CEP]', $inputCEP.get()[0].value
+          );
       }
+
+      function hundleReadyStateChange() {
+          if (isRequestOk) {
+              fillCEPFields();
+          }
+      }
+
+      function isRequestOk() {
+          return ajax.readyState === 4 && ajax.status === 200;
+      }
+
+      function fillCEPFields() {
+          var data = JSON.parse(ajax.responseText);
+          console.log(data);
+
+          var $logradouro = new DOM('[data-js="logradouro"]');
+          var $bairro = new DOM('[data-js="bairro]"');
+          var $estado = new DOM('[data-js="estado"]');
+          var $cidade = new DOM('data-js="cidade"');
+          var $cep = new DOM('[data-js="cep"]');
+
+          $logradouro.get()[0].textContent = data.address;
+          $bairro.get()[0].textContent = data.district;
+          $estado.get()[0].textContent = data.state;
+          $cidade.get()[0].textContent = data.city;
+          $cep.get()[0].textContent = data.code;
+      }
+
   })(Window, document);
