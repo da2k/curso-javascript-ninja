@@ -9,7 +9,7 @@ function soma(num1, num2) {
 }
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-a = soma(3,2) + 5;
+var resultado = soma(3,2) + 5;
 
 // Qual o valor atualizado dessa variável?
 10
@@ -31,7 +31,7 @@ function atrib(){
 atrib();
 
 // Qual o retorno da função? (Use comentários de bloco).
-/* 'O valor da variável agora é 3' */
+/* O valor da variável agora é 3 */
 
 /*
 Crie uma função com as seguintes características:
@@ -58,7 +58,7 @@ condicional(1,2);
 condicional(1,2,3);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-8
+//8
 
 /*
 Crie uma função com as seguintes características:
