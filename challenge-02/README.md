@@ -22,12 +22,13 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function returnString(x) {
+function returnString() {
+  newvar = 5;
   return 'O valor da variável agora é: ' + x;
 }
 
 // Invoque a função criada acima.
-returnString(5);
+returnString();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
