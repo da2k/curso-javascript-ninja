@@ -42,8 +42,16 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function multiple( x, y, z ) {
-  if (x === undefined && y === undefined && z === undefined) {
+  if (x === undefined) {
     return 'Preencha todos os valores corretamente';
+  }
+  
+  if (y === undefined) {
+	return 'Preencha todos os valores corretamente';
+  }
+  
+  if (z === undefined) {
+	return 'Preencha todos os valores corretamente';
   }
 
   return ( x * y * z) + 2;
@@ -53,7 +61,7 @@ function multiple( x, y, z ) {
 multiple(3,2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-// NaN
+// 'Preencha todos os valores corretamente'
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 multiple( 3, 5, 2 );
@@ -70,8 +78,30 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+function sum( x, y, z ) {
+	if ( x === undefined && y === undefined && z === undefined ) {
+		return false;
+	}
+	
+	if ( x === '' && y === '' && z === '' ) {
+		return false;
+	}
+	
+	if ( x !== undefined && y === undefined && z === undefined ) {
+		return x;
+	}
+	
+	if ( x !== undefined && y !== undefined z === undefined ) {
+		return x + y;
+	}
+	
+	if ( x !== undefined && y !== undefined && z !== undefined ) {
+		return ( x + y ) / z;
+	}
+}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-function sum( x, y, z ) {}
+sum() // false
+sum(3,2) // 5
+sum(3,2,5) //  5
 ```
