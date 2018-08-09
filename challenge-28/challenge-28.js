@@ -1,4 +1,4 @@
-  (function(win, doc) {
+  (function(DOM) {
       /*
   No HTML:
   - Crie um formulário com um input de texto que receberá um CEP e um botão
@@ -28,139 +28,79 @@
   */
       'use strict';
 
-      function DOM(element) {
-          this.element = element;
-      }
+      function app() {
+          var $formCEP = new DOM('[data-js="form-cep"]');
+          var $inputCEP = new DOM('[data-js="input-cep"]');
+          var $logradouro = new DOM('[data-js="logradouro"]');
+          var $bairro = new DOM('[data-js="bairro]"');
+          var $estado = new DOM('[data-js="estado"]');
+          var $cidade = new DOM('data-js="cidade"');
+          var $cep = new DOM('[data-js="cep"]');
+          var $status = new DOM('[data-js="status"]');
+          var ajax = new XMLHttpRequest();
+          $formCEP.on('submit', hundleSubmitFormCep);
 
-      DOM.prototype.on = function on(event, callback) {
-          document.addEventListener(event, callback);
-      };
-
-      DOM.prototype.off = function off(event, callback) {
-          document.removeEventListener(event, callback);
-      };
-
-      DOM.prototype.get = function get(element) {
-          return this.element;
-      };
-
-      DOM.prototype.foreach = function forEach() {
-          return Array.prototype.forEach.apply(this.element, arguments);
-      };
-
-      DOM.prototype.map = function map() {
-          return Array.prototype.map.apply(this.element, arguments);
-      };
-
-      DOM.prototype.reduce = function reduce() {
-          return Array.prototype.reduce.apply(this.element, arguments);
-      };
-
-      DOM.prototype.reduce = function reduce() {
-          return Array.prototype.reduceRight.apply(this.element, arguments);
-      };
-
-      DOM.prototype.every = function every() {
-          return Array.prototype.every.apply(this.element, arguments);
-      };
-
-      DOM.prototype.some = function some() {
-          return Array.prototype.every.some.apply(this.element, arguments);
-      };
-
-      DOM.prototype.isString = function isBoolean(param) {
-          return Object.prototype.toString.call(param) === '[Object String]';
-      };
-
-      DOM.prototype.isBolean = function isBoolean(param) {
-          return Object.prototype.toString.call(param) === '[Object Boolea]n';
-      };
-
-      DOM.prototype.isNumber = function isNumber(param) {
-          return Object.prototype.toString.call(param) === '[Object Number]';
-      };
-
-      DOM.prototype.isFunction = function isFunction(param) {
-          return Object.prototype.toString.call(param) === '[Object Function]';
-      };
-
-      DOM.prototype.isObject = function isFunction(param) {
-          return Object.prototype.toString.call(param) === '[Object Object]';
-      };
-
-      DOM.prototype.isArray = function isArray(param) {
-          return Object.prototype.toString.call(param) === '[Object Array]';
-      }
-
-      DOM.prototype.isNull = function isNull(param) {
-          return Object.prototype.toString.call(param) === '[Object Null]' ||
-              Object.prototype.toString.call(param) === '[Object undefined]';
-      }
-      var $formCEP = new DOM('[data-js="form-cep"]');
-      var $inputCEP = new DOM('[data-js="input-cep"]');
-      var $logradouro = new DOM('[data-js="logradouro"]');
-      var $bairro = new DOM('[data-js="bairro]"');
-      var $estado = new DOM('[data-js="estado"]');
-      var $cidade = new DOM('data-js="cidade"');
-      var $cep = new DOM('[data-js="cep"]');
-      var $status = new DOM('[data-js="status"]');
-      var ajax = new XMLHttpRequest();
-
-      $formCEP.on('submit', hundleSubmitFormCep);
-
-      function hundleSubmitFormCep(event) {
-          event.preventDefault();
-          var url = getUrl();
-          ajax.open('GET', 'http://apps.widenet.com.br/busca-cep/api/cep/07941120.json');
-          ajax.send();
-          getMessage('loading');
-          ajax.addEventListener('readystatechange', hundleReadyStateChange);
-      }
-
-      function getUrl() {
-          debugger;
-          return 'http://apps.widenet.com.br/busca-cep/api/cep/[CEP].json'.replace(
-              '[CEP]', $inputCEP.get()[0].value
-          );
-      }
-
-      function hundleReadyStateChange() {
-          if (isRequestOk) {
-              fillCEPFields();
-              getMessage('ok');
+          function hundleSubmitFormCep(event) {
+              event.preventDefault();
+              var url = getUrl();
+              ajax.open('GET', 'http://apps.widenet.com.br/busca-cep/api/cep/07941120.json');
+              ajax.send();
+              getMessage('loading');
+              ajax.addEventListener('readystatechange', hundleReadyStateChange);
           }
-      }
 
-      function isRequestOk() {
-          return ajax.readyState === 4 && ajax.status === 200;
-      }
-
-      function fillCEPFields() {
-          var data = parseData();
-          if (!data)
-              getMessage('error');
-          console.log(data);
-          $logradouro.get()[0].textContent = data.address;
-      }
-
-      function parseData() {
-          var result;
-          try {
-              result = JSON.parse(ajax.responseText);
-          } catch (e) {
-              result = null;
+          function getUrl() {
+              return 'http://apps.widenet.com.br/busca-cep/api/cep/[CEP].json'.replace(
+                  '[CEP]', $inputCEP.get()[0].value
+              );
           }
-          return result;
+
+          function hundleReadyStateChange() {
+              if (isRequestOk) {
+                  fillCEPFields();
+                  getMessage('ok');
+              }
+          }
+
+          function isRequestOk() {
+              return ajax.readyState === 4 && ajax.status === 200;
+          }
+
+          function fillCEPFields() {
+              var data = parseData();
+              if (!data)
+                  getMessage('error');
+              console.log(data);
+              $logradouro.get()[0].textContent = data.address;
+          }
+
+          function parseData() {
+              var result;
+              try {
+                  result = JSON.parse(ajax.responseText);
+              } catch (e) {
+                  result = null;
+              }
+              return result;
+          }
+
+          function getMessage(type) {
+              var messages = {
+                  loading: 'Buscando informações para o CEP [CEP]...',
+                  ok: 'Endereço referente ao CEP [CEP]:',
+                  erro: 'Não encontramos o endereço para o CEP [CEP].'
+              }[type];
+              $status.get()[0].textContent = messages[type];
+
+          }
+
+          return {
+              getMessage: getMessage,
+              //replaceCep: replaceCep
+          };
+
       }
+      window.app = app();
+      app();
 
-      function getMessage(type) {
-          var messages = {
-              loading: 'Buscando informações para o CEP [CEP]...',
-              ok: 'Endereço referente ao CEP [CEP]:',
-              erro: 'Não encontramos o endereço para o CEP [CEP].'
-          }[type];
-          $status.get()[0].textContent = messages[type];
-
-      }
-
-  })(Window, document);
+  })(window.DOM);
