@@ -5,13 +5,17 @@
         this.element = element;
     }
 
-    DOM.prototype.on = function on(event, callback) {
-        document.addEventListener(event, callback);
+    DOM.prototype.on = function on(eventName, callback) {
+        Array.prototype.forEach.call(this.element, function(element) {
+            element.addEventListener(eventName, callback, false);
+        })
     };
 
-    DOM.prototype.off = function off(event, callback) {
-        document.removeEventListener(event, callback);
-    };
+    DOM.prototype.off = function off(eventName, element) {
+        Array.prototype.forEach.call(this.element, function(element) {
+            element.addEventListener(eventName, callback, false);
+        })
+    }
 
     DOM.prototype.get = function get(element) {
         return this.element;
