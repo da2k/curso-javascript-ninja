@@ -9,10 +9,10 @@ function soma( x, y ) {
 }
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-var resultado = soma( 10, 5);
+var resultado = soma( 10, 5) + 5;
 
 // Qual o valor atualizado dessa variável?
-15
+20
 
 // Declare uma nova variável, sem valor.
 var nova;
@@ -70,17 +70,24 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function madafoca(x, y, z){
-    if( y === undefined ){
+    var args = arguments.length
+    if( args === 0 ){
+        return false;
+    }else if( args === 1 ){
         return x;
-    }else if( z === undefined){
+    }else if( args === 2 ){
         return x + y;
-    }else{
+    }else if( args === 3 ){
         return ( x + y) / z;
+    }else{
+        return null
     }
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-madafoca(2);
-madafoca(2, 8);
-madafoca(2, 8, 4);
+madafoca(); // false
+madafoca(2); // 2
+madafoca(2, 8); // 10
+madafoca(2, 8, 4); // 2.5
+madafoca(2, 8, 4, 10); // null
 ```
