@@ -1,3 +1,40 @@
+/**
+ * 
+ * anotacoes ---
+ * 
+ * if ( counter > 10 ) // forma de parar a recurção
+		return;
+	setTimeout(timer, 1000) // Chamando o setTimeout() a cada 1 segundo, executando a própria function timer()
+}
+timer() // não esquecer de executar a function
+
+PARA PARAR UM CRONOMETRO - 
+
+no html:
+<button data-js="button"> </button> / para usar no javascript
+
+no js:
+var $button = document.querySelector ( '[data-js="button"]' )
+
+para pegar o id do setTimeout(), basta atribuir o setTimeout() a uma variável, por exemplo:
+
+temporizador = setTimeout(function (){}, 1000);
+onde o Temporizador, agora, é o id do setTimeout()
+
+parar parar um temporizador, deve-se usar o clearTimeout(id)
+para adcionar a um botâo essa funçâo, basta:
+adcioanr um evento ao botão e na função de callback  do evento, passa-se o cearTimeout(temporizador), ficando:
+
+$button.addEventListener ( ´click´, function (){
+	clearTimeout(temporizador);
+}, false )
+
+setInterval() e o clearSetinterval() // funciona da mesma forma
+ * 
+ * 
+ * 
+ */
+
 (function (window, document) {
     'use strict'
 
