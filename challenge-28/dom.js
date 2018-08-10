@@ -13,7 +13,7 @@
 
     DOM.prototype.off = function off(eventName, element) {
         Array.prototype.forEach.call(this.element, function(element) {
-            element.addEventListener(eventName, callback, false);
+            element.removeEventListener(eventName, callback, false);
         })
     }
 
