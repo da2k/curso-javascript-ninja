@@ -38,23 +38,14 @@
 
     function app() {
         var $formCar = new DOM('[data-js="form-car"]');
-
-
-        $formCar.on('submit', function(e) {
-            e.preventDefault();
-            var $url = new DOM('[data-js="url"]');
-            var fragment = document.createDocumentFragment();
-            var p = document.createElement('p');
-            var url = $url.get()[0].value;
-            // var modelo = document.createTextNode($modelo.get()[0].value);
-            // p.appendChild(modelo);
-            // fragment.appendChild(p);
-
-            //document.body.appendChild(fragment);
-        });
+        var $url = new DOM('[data-js="url"]');
+        var $marca = new DOM('[data-js="marca"]');
+        var $modelo = new DOM('[data-js="modelo"]');
+        var $ano = new DOM('[data-js="ano"]');
+        var $placa = new DOM('[data-js="placa"]');
+        var $cor = new DOM('[data-js="cor"]');
     }
 
-    window.app = app;
+    window.DOM = app;
     app();
-
 })(window.DOM);

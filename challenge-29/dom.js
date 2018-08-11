@@ -5,20 +5,20 @@
         this.element = document.querySelectorAll(element);
     }
 
+    DOM.prototype.get = function get() {
+        return this.element;
+    };
+
     DOM.prototype.on = function on(eventName, callback) {
-        Array.prototype.forEach.call(this.element, function(element) {
+        this.element.forEach(function(element) {
             element.addEventListener(eventName, callback, false);
         });
     };
 
     DOM.prototype.off = function off(eventName, callback) {
-        Array.prototype.forEach.call(this.element, function(element) {
+        this.element.forEach(function(element) {
             element.removeEventListener(eventName, callback, false);
         });
-    };
-
-    DOM.prototype.get = function get(element) {
-        return this.element;
     };
 
     DOM.prototype.forEach = function forEach() {
@@ -39,14 +39,6 @@
 
     DOM.prototype.filter = function filter() {
         return Array.prototype.filter.apply(this.element, arguments);
-    };
-
-    DOM.prototype.every = function every() {
-        return Array.prototype.every.apply(this.element, arguments);
-    };
-
-    DOM.prototype.some = function some() {
-        return Array.prototype.some.apply(this.element, arguments);
     };
 
     window.DOM = DOM;

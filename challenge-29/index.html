@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Challenge - 29</title>
+
 </head>
 
 <body>
@@ -14,51 +15,31 @@
         <p>Informações da empresa</p>
     </div>
     <form data-js="form-car">
-        <p>Url</p><input type="url">
-        <p>Marca</p><input type="text">
-        <p>Modelo</p><input type="text">
-        <p>Ano:</p><input type="text">
-        <p>Placa</p><input type="text">
-        <p>Cor</p><input type="text">
+        <p>Url</p><input type="url" data-js="url">
+        <p>Marca</p><input type="text" data-js="marca">
+        <p>Modelo</p><input type="text" data-js="modelo">
+        <p>Ano:</p><input type="text" data-js="ano">
+        <p>Placa</p><input type="text" data-js="placa">
+        <p>Cor</p><input type="text" data-js="cor">
         <button type="submit">Cadastrar</button>
     </form>
+    <h2>Informações cadastradas</h2>
+    <table data-js="table">
+        <thead>
+            <tr>
+                <th>url</th>
+                <th>marca</th>
+                <th>modelo</th>
+                <th>ano</th>
+                <th>placa</th>
+                <th>cor</th>
+            </tr>
+        </thead>
+
+    </table>
     <div>
-        <h2>Informações cadastradas</h2>
-        <table>
-            <thead>
-                <th>URL</th>
-                <th>Marca</th>
-                <th>Modelo</th>
-                <th>Ano</th>
-                <th>Placa</th>
-                <th>Cor</th>
-            </thead>
-            <tbody>
-                <td>
-                    <p data-js="url">url do carro</p>
-                </td>
-                <td>
-                    <p data-js="marca-carro">Marca do Carro</p>
-                </td>
-                <td>
-                    <p data-js="modelo">Modelo</p>
-                </td>
-                <td>
-                    <p data-js="ano">Ano</p>
-                </td>
-                <td>
-                    <p data-js="placa">Placa</p>
-                </td>
-                <td>
-                    <p data-js="cor">Cor</p>
-                </td>
-            </tbody>
-        </table>
-    </div>
-
-
-    <script src="dom.js"></script>
-    <script src="challenge-29.js"></script>
+        <script src="dom.js"></script>
+        <script src="challenge-29.js"></script>
 </body>
 
 </html>
