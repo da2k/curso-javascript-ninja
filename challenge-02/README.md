@@ -24,14 +24,14 @@ Onde VALOR é o novo valor da variável.
 */
 function atribuiValor( x ) {
     nova = x;
-    return "O valor da variável agora é " + nova + " .";
+    return "O valor da variável agora é " + nova + ".";
 }
 
 // Invoque a função criada acima.
 atribuiValor("joia");
 
 // Qual o retorno da função? (Use comentários de bloco).
-"O valor da variável agora é joia."
+// "O valor da variável agora é joia."
 
 /*
 Crie uma função com as seguintes características:
@@ -58,7 +58,7 @@ compra( 2, 5 );
 compra( 2, 5, 2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-22
+// 22
 
 /*
 Crie uma função com as seguintes características:
@@ -80,7 +80,7 @@ function madafoca(x, y, z){
     }else if( args === 3 ){
         return ( x + y) / z;
     }else{
-        return null
+        return null;
     }
 }
 
