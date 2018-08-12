@@ -139,6 +139,10 @@
     });
   }
 
+  //Neste exemplo, estou utilizando o método reduce que é próprio de arrays, para fazer isso
+  //é preciso usar o array.prototype, e para saber em qual array-like esse prototype
+  //tem de ser aplicado, utilzei o métodoco call() para dizer quem é o this. dessa função
+
   /*
   Mostre no console que a função acima funciona, invocando-a em 3 console.log
   diferentes, com quantidades variáveis de parâmetros passados.
