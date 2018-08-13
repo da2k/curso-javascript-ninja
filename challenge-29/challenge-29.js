@@ -36,7 +36,7 @@
     que será nomeado de "app".
     */
 
-    function app() {
+    var app = (function() {
         return {
             init: function init() {
                 console.log('Init events');
@@ -50,7 +50,38 @@
 
             hundleSubmit: function hundleSubmit(e) {
                 e.preventDefault();
-                console.log('submit....')
+                var $tableCar = $('[data-js="table-car"]').get();
+                $tableCar.appendChild(app.createNewCar());
+
+            },
+
+            createNewCar: function createNewCar() {
+                var $fragment = document.createDocumentFragment();
+                var $tr = document.createElement('tr');
+                var $tdImage = document.createElement('td');
+                var $image = document.createElement('img');
+                var $tdBrand = document.createElement('td');
+                var $tdYear = document.createElement('td');
+                var $tdPlate = document.createElement('td');
+                var $tdColor = document.createElement('td');
+
+                $image.setAttribute('src', $tdImage.textContent = $('[data-js="image"]').get().value);
+                $tdImage.appendChild($image);
+
+
+                $tdBrand.textContent = $('[data-js="brand-model"]').get().value;
+                $tdYear.textContent = $('[data-js="year"]').get().value;
+                $tdPlate.textContent = $('[data-js="plate"]').get().value;
+                $tdColor.textContent = $('[data-js="color"]').get().value;
+
+                $tr.appendChild($tdImage);
+                $tr.appendChild($tdBrand);
+                $tr.appendChild($tdYear);
+                $tr.appendChild($tdPlate);
+                $tr.appendChild($tdColor);
+
+
+                return $fragment.appendChild($tr);
             },
 
             companyInfo: function companyInfo() {
@@ -61,7 +92,7 @@
             },
 
             getCompanyInfo: function getCompanyInfo() {
-                if (!app().isReady.call(this))
+                if (!app.isReady.call(this))
                     return
                 var data = JSON.parse(this.responseText);
                 var $companyName = $('[data-js="company-name"]').get();
@@ -75,7 +106,7 @@
                 return this.readyState === 4 && this.status === 200;
             }
         }
-    }
+    })();
 
-    app().init();
+    app.init();
 })(window.DOM);
