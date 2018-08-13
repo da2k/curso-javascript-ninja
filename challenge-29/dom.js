@@ -2,11 +2,16 @@
     'use strict';
 
     function DOM(element) {
+        if (!(this instanceof DOM))
+            return new DOM(element);
         this.element = document.querySelectorAll(element);
+
     }
 
-    DOM.prototype.get = function get() {
-        return this.element;
+    DOM.prototype.get = function get(index) {
+        if (!index)
+            return this.element[0];
+        return this.element(index);
     };
 
     DOM.prototype.on = function on(eventName, callback) {

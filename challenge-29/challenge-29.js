@@ -1,4 +1,4 @@
-(function(DOM) {
+(function($) {
     'use strict';
 
     /*
@@ -37,15 +37,45 @@
     */
 
     function app() {
-        var $formCar = new DOM('[data-js="form-car"]');
-        var $url = new DOM('[data-js="url"]');
-        var $marca = new DOM('[data-js="marca"]');
-        var $modelo = new DOM('[data-js="modelo"]');
-        var $ano = new DOM('[data-js="ano"]');
-        var $placa = new DOM('[data-js="placa"]');
-        var $cor = new DOM('[data-js="cor"]');
+        return {
+            init: function init() {
+                console.log('Init events');
+                this.companyInfo();
+                this.initEvents();
+            },
+
+            initEvents: function initEvents() {
+                $('[data-js="form-register"]').on('submit', this.hundleSubmit);
+            },
+
+            hundleSubmit: function hundleSubmit(e) {
+                e.preventDefault();
+                console.log('submit....')
+            },
+
+            companyInfo: function companyInfo() {
+                var ajax = new XMLHttpRequest();
+                ajax.open('GET', 'company.json', true);
+                ajax.send();
+                ajax.addEventListener('readystatechange', this.getCompanyInfo, false);
+            },
+
+            getCompanyInfo: function getCompanyInfo() {
+                if (!app().isReady.call(this))
+                    return
+                var data = JSON.parse(this.responseText);
+                var $companyName = $('[data-js="company-name"]').get();
+                var $companyPhone = $('[data-js="company-phone"]').get();
+
+                $companyName.textContent = data.name;
+                $companyPhone.textContent = data.phone;
+            },
+
+            isReady: function isReady() {
+                return this.readyState === 4 && this.status === 200;
+            }
+        }
     }
 
-    window.DOM = app;
-    app();
+    app().init();
 })(window.DOM);

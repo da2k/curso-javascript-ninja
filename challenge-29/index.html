@@ -6,36 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Challenge - 29</title>
+    <style>
+        input {
+            padding: 5px;
+            width: 300px;
+        }
+    </style>
 
 </head>
 
 <body>
-    <h1>Cadastro de carros</h1>
-    <div id="info-company">
-        <p>Informações da empresa</p>
-    </div>
-    <form data-js="form-car">
-        <p>Url</p><input type="url" data-js="url">
-        <p>Marca</p><input type="text" data-js="marca">
-        <p>Modelo</p><input type="text" data-js="modelo">
-        <p>Ano:</p><input type="text" data-js="ano">
-        <p>Placa</p><input type="text" data-js="placa">
-        <p>Cor</p><input type="text" data-js="cor">
+    <header>
+        <h1>
+            <span data-js="company-name"></span> -
+            <span data-js="company-phone"></span>
+        </h1>
+    </header>
+    <form data-js="form-register">
+        <p>Url</p><input type="url" data-js="image">
+        <p>Marca/Modelo</p><input type="text" data-js="brand-model">
+        <p>Ano:</p><input type="text" data-js="year">
+        <p>Placa</p><input type="text" data-js="plate">
+        <p>Cor</p><input type="text" data-js="color">
         <button type="submit">Cadastrar</button>
     </form>
     <h2>Informações cadastradas</h2>
     <table data-js="table">
         <thead>
             <tr>
-                <th>url</th>
+                <th>Url</th>
                 <th>marca</th>
-                <th>modelo</th>
                 <th>ano</th>
                 <th>placa</th>
                 <th>cor</th>
             </tr>
         </thead>
-
+        <tbody data-js="table-car"></tbody>
     </table>
     <div>
         <script src="dom.js"></script>
