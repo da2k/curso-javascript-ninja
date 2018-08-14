@@ -42,7 +42,7 @@ Utilizando a estrutura de repetição `while`, mostre no console todos os númer
 pares entre 10 e 20, inclusive esses 2.
 */
 console.log( 'Números pares entre 10 e 20:' );
-var count = 0;
+var count = 10;
 while (count <= 20) {
   if (count % 2 === 0){console.log(count)}
   count++
@@ -51,8 +51,8 @@ while (count <= 20) {
 Na mesma ideia do exercício acima: mostre agora os números ímpares.
 */
 console.log( 'Números ímpares entre 10 e 20:' );
-var countImpar = 0;
-while (countImpar <= 20) {
+var countImpar = 10 ;
+while (countImpar < 20) {
   if (countImpar % 2 !== 0){console.log(countImpar)}
   countImpar++
 }
