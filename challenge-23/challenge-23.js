@@ -1,4 +1,7 @@
-/*
+(function(win, doc) {
+  'use strict';
+
+  /*
 Vamos desenvolver mais um projeto. A ideia é fazer uma mini-calculadora.
 As regras são:
 
@@ -23,3 +26,98 @@ multiplicação (x), então no input deve aparecer "1+2x".
 input;
 - Ao pressionar o botão "CE", o input deve ficar zerado.
 */
+
+  var input = doc.querySelector('[ data-js="screen" ]');
+
+  var buttons = doc.querySelectorAll('[ type="button" ]');
+
+  var operation = [];
+
+  buttons.forEach(function(button) {
+    button.addEventListener('click', function() {
+      execButton(button.id);
+    });
+  });
+
+  function addOperation(value) {
+    if (operation.length < 1) {
+      operation.push(+value);
+    } else {
+      if (isOperation(value)) {
+        if (isOperation(lastOperation())) {
+          operation[operation.length - 1] = value;
+        } else {
+          operation.push(value);
+        }
+      } else {
+        if (isOperation(lastOperation())) {
+          operation.push(+value);
+        } else {
+          var newValue = operation[operation.length - 1] + value;
+          operation[operation.length - 1] = +newValue;
+        }
+      }
+    }
+    updateInput();
+  }
+
+  function lastOperation() {
+    return operation[operation.length - 1];
+  }
+
+  function updateInput() {
+    input.value = operation.join(' ');
+  }
+
+  function isOperation(value) {
+    return ['+', '-', '*', '/'].lastIndexOf(value) > -1;
+  }
+
+  function cancelEntry() {
+    operation = [];
+    updateInput();
+  }
+
+  function calc() {
+    var result = eval(operation.join(' '));
+    operation.push('= ' + result);
+    updateInput();
+  }
+
+  function execButton(value) {
+    switch (value) {
+      case '0':
+      case '1':
+      case '2':
+      case '3':
+      case '4':
+      case '5':
+      case '6':
+      case '7':
+      case '8':
+      case '9':
+        return addOperation(value);
+        break;
+      case 'soma':
+        return addOperation('+');
+        break;
+      case 'subtracao':
+        return addOperation('-');
+        break;
+      case 'multiplicacao':
+        return addOperation('*');
+        break;
+      case 'divisao':
+        return addOperation('/');
+        break;
+      case 'CE':
+        return cancelEntry();
+        break;
+      case 'igual':
+        return calc();
+        break;
+      default:
+        return false;
+    }
+  }
+})(window, document);
