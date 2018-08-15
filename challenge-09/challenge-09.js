@@ -2,8 +2,7 @@
 Crie uma IIFE que envolva todo o código desse arquivo. Faça também a
 indentação correta do código, para ficar dentro da IIFE.
 */
-
- (function(){
+(function(){
 
 
             /*
@@ -128,5 +127,4 @@ indentação correta do código, para ficar dentro da IIFE.
             console.log(mod(function(number1 , number2){
                 return number1 % number2;
             }));
-
- })();
+})();
