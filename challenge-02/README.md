@@ -77,7 +77,7 @@ function valores(n1, n2, n3) {
         return n1;
     } else if (n1 !== undefined && n2 !== undefined && n3 === undefined) {
         return n1 + n2;
-    } else if (n1 !== undefined && n2 !== undefined && n3 !=== undefined) {
+    } else if (n1 !== undefined && n2 !== undefined && n3 !== undefined) {
         return (n1 + n2) / n3;
     } else {
         return null;
