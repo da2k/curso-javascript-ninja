@@ -23,14 +23,15 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 function novo_valor() {
-    return 'O valor da variável agora é VALOR';
+    challenge = 20;
+    return 'O valor da variável agora é ' + challenge;
 }
 
 // Invoque a função criada acima.
 challenge = novo_valor();
 
 // Qual o retorno da função? (Use comentários de bloco).
-/** O retorno da função é a string O valor da variável agora é VALOR */
+/** O retorno da função é a string O valor da variável agora é 10 */
 
 
 /*
@@ -41,7 +42,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function multiplicacao(n1, n2, n3) {
-    if(!n1 || !n2 || !n3) {
+    if(n1 === undefined || n2 === undefined || n3 === undefined) {
         return 'Preencha todos os valores corretamente!';
     }
 
@@ -70,13 +71,13 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function valores(n1, n2, n3) {
-    if(!n1 && !n2 && !n3) {
+    if(n1 === undefined && n2 === undefined && n3 === undefined) {
         return false;
-    } else if (n1 && !n2 && !n3) {
+    } else if (n1 !== undefined && n2 === undefined && n3 === undefined) {
         return n1;
-    } else if (n1 && n2 && !n3) {
+    } else if (n1 !== undefined && n2 !== undefined && n3 === undefined) {
         return n1 + n2;
-    } else if (n1 && n2 && n3) {
+    } else if (n1 !== undefined && n2 !== undefined && n3 !=== undefined) {
         return (n1 + n2) / n3;
     } else {
         return null;
