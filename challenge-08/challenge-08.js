@@ -62,25 +62,26 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
 function calculator(arg){
   var operation = arg
   return function (arg1, arg2){
+          var result;
           switch(arg){
             case "+":
-              var result = arg1 + arg2
+              result = arg1 + arg2
               break;
             case "-":
-              var result = arg1 - arg2
+              result = arg1 - arg2
               break;
             case "*":
-              var result = arg1 * arg2
+              result = arg1 * arg2
               break;
             case "/":
-              var result = arg1 / arg2
+              result = arg1 / arg2
               break;
             case "%":
-              var result = arg1 % arg2
+              result = arg1 % arg2
               break;
             default: return "Operação inválida."
           }
-      return console.log("Resultado da operação: "+ arg1 +" "+ operation +" "+ arg2 +" = "+ result +".")
+      return "Resultado da operação: "+ arg1 +" "+ operation +" "+ arg2 +" = "+ result +"."
     }
 }
 /*
