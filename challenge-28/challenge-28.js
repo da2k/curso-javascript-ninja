@@ -1,4 +1,5 @@
-  /*
+  (function(DOM) {
+      /*
   No HTML:
   - Crie um formulário com um input de texto que receberá um CEP e um botão
   de submit;
@@ -25,3 +26,81 @@
   - Utilize a lib DOM criada anteriormente para facilitar a manipulação e
   adicionar as informações em tela.
   */
+      'use strict';
+
+      function app() {
+          var $formCEP = new DOM('[data-js="form-cep"]');
+          var $inputCEP = new DOM('[data-js="input-cep"]');
+          var $logradouro = new DOM('[data-js="logradouro"]');
+          var $bairro = new DOM('[data-js="bairro]"');
+          var $estado = new DOM('[data-js="estado"]');
+          var $cidade = new DOM('data-js="cidade"');
+          var $cep = new DOM('[data-js="cep"]');
+          var $status = new DOM('[data-js="status"]');
+          var ajax = new XMLHttpRequest();
+          $formCEP.on('submit', hundleSubmitFormCep);
+
+          function hundleSubmitFormCep(event) {
+              event.preventDefault();
+              var url = getUrl();
+              ajax.open('GET', 'http://apps.widenet.com.br/busca-cep/api/cep/07941120.json');
+              ajax.send();
+              getMessage('loading');
+              ajax.addEventListener('readystatechange', hundleReadyStateChange);
+          }
+
+          function getUrl() {
+              return 'http://apps.widenet.com.br/busca-cep/api/cep/[CEP].json'.replace(
+                  '[CEP]', $inputCEP.get()[0].value
+              );
+          }
+
+          function hundleReadyStateChange() {
+              if (isRequestOk) {
+                  fillCEPFields();
+                  getMessage('ok');
+              }
+          }
+
+          function isRequestOk() {
+              return ajax.readyState === 4 && ajax.status === 200;
+          }
+
+          function fillCEPFields() {
+              var data = parseData();
+              if (!data)
+                  getMessage('error');
+              console.log(data);
+              $logradouro.get()[0].textContent = data.address;
+          }
+
+          function parseData() {
+              var result;
+              try {
+                  result = JSON.parse(ajax.responseText);
+              } catch (e) {
+                  result = null;
+              }
+              return result;
+          }
+
+          function getMessage(type) {
+              var messages = {
+                  loading: 'Buscando informações para o CEP [CEP]...',
+                  ok: 'Endereço referente ao CEP [CEP]:',
+                  erro: 'Não encontramos o endereço para o CEP [CEP].'
+              }[type];
+              $status.get()[0].textContent = messages[type];
+
+          }
+
+          return {
+              getMessage: getMessage,
+              //replaceCep: replaceCep
+          };
+
+      }
+      window.app = app();
+      app();
+
+  })(window.DOM);
