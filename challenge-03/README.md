@@ -141,7 +141,7 @@ com metragens diferentes passadas por parâmetro.
 */
 pessoa.andar(150);
 pessoa.andar(200);
-pessoa.andar(100;
+pessoa.andar(100);
 
 /*
 A pessoa ainda está andando? (Use a instrução para responder e comentários
@@ -183,8 +183,30 @@ deve conter no retorno da frase acima é "metro" no lugar de "metros".
 método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
-?
+
+pessoa.apresentacao() {
+  var sexo = 'o';
+  var idadeAnos = 'anos';
+  var metrosCaminhados = 'metros';
+  
+  if ( pessoa.sexo === 'feminino' ) {
+  sexo = 'a';
+  }
+  
+  if ( pessoa.idade === 1) {
+    idadeAnos = 'ano';
+  }
+  
+  if ( pessoa.caminhouQuantosMetros === 1 ) {
+    metrosCaminhados = 'metro';
+  }
+
+  return 'Olá, eu sou ' + sexo + ' ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + ' ' + idadeAnos + ' , minha altura é ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metros!';
+};
+
+
+
 
 // Agora, apresente-se ;)
-?
-```
+'Olá, eu sou a Rafaela Diniz, tenho 26 anos, minha altura é 1.66, meu peso é 75 kg e, só hoje, eu já caminhei 450 metros!'
+
