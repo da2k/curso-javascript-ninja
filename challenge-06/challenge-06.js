@@ -12,7 +12,7 @@ Os elementos serão nomes de times do campeonato escolhido, e os nomes devem
 estar na ordem em que eles aparecem na tabela no momento da solução desse
 desafio.
 */
-var teams = ['São Paulo', 'Santos', 'Palmeiras', 'Corinthians', 'Portuguesa']
+var teams = ['São Paulo', 'Santos', 'Palmeiras', 'Corinthians', 'Portuguesa'];
 
 console.log( 'Times que estão participando do campeonato:', teams );
 
@@ -34,13 +34,14 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
 */
 function showTeamPosition(posicao) {
 
-    var nomeTime = teams[posicao-1] ? teams[posicao-1] : '';
-
-    if(nomeTime){
-        return 'O time que está em ' + posicao + 'º lugar é o ' + nomeTime + '.';
+    if (posicao < 1 || posicao > 5) {
+        return 'Não temos a informação do time que está nessa posição.';
     }
+    
+    return 'O time que está em ' + posicao + 'º lugar é o ' + teams[posicao - 1] + '.';
+    
 
-    return 'Não temos a informação do time que está nessa posição.';
+    
 }
 
 /*
@@ -50,6 +51,7 @@ função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 console.log(showTeamPosition(1));
 console.log(showTeamPosition(3));
 console.log(showTeamPosition(4));
+console.log(showTeamPosition(5));
 console.log(showTeamPosition(8));
 
 /*
@@ -97,7 +99,7 @@ function convertToHex (cor) {
             break;
 
     }
-    
+
     return corHexadecimal;
 }
 
