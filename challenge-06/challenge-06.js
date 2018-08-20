@@ -80,27 +80,26 @@ function convertToHex (cor) {
     
     switch (cor) {
         case 'red':
-            corHexadecimal = 'O hexadecimal para a cor ' + cor + ' é #FF0000';
+            corHexadecimal = '#FF0000';
             break;
         case 'blue':
-            corHexadecimal = 'O hexadecimal para a cor ' + cor + ' é #0000FF';
+            corHexadecimal = '#0000FF';
             break;
         case 'yellow':
-            corHexadecimal = 'O hexadecimal para a cor ' + cor + ' é #FFFF00';
+            corHexadecimal = '#FFFF00';
             break;
         case 'orange':
-            corHexadecimal = 'O hexadecimal para a cor ' + cor + ' é #FFA500';
+            corHexadecimal = '#FFA500';
             break;
         case 'green':
-            corHexadecimal = 'O hexadecimal para a cor ' + cor + ' é #008000';
+            corHexadecimal = '#008000';
             break;
         default:
-            corHexadecimal = 'Não temos o equivalente hexadecimal para ' + cor + '.';
-            break;
+            return 'Não temos o equivalente hexadecimal para ' + cor + '.';
 
     }
 
-    return corHexadecimal;
+    return 'O hexadecimal para a cor ' + cor + ' é ' + corHexadecimal + '.';
 }
 
 /*
