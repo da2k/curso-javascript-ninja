@@ -25,7 +25,7 @@ var pessoa = {
   peso: 75, 
   andando: false,
   caminhouQuantosMetros: 0;
-}
+};
 
 /*
 Adicione um método ao objeto `pessoa` chamado `fazerAniversario`. O método deve
@@ -88,7 +88,7 @@ Crie um método chamado `mostrarAltura` que retorne a frase:
 - "Minha altura é [ALTURA]m."
 */
 pessoa.mostrarAltura = function() {
-  return 'Minha altura é ' + pessoa.altura + 'm.;
+  return 'Minha altura é ' + pessoa.altura + 'm.';
 };
 
 /*
