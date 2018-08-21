@@ -1772,3 +1772,44 @@ front > index.html
 >     }
 >   }
 > })();
+
+
+
+/* 
+Seção 33
+*/
+//Vídeo 195 - 200
+TDD: Test Driven Development
+BDD: Behavior Driven Development
+Baby steps: escrever o mínimo de código possível para que uma condição passe.
+1. O teste tem que quebrar (red)
+2. Corrija o seu código (green)
+3. Melhore ele (blue - refactory)
+Chai, Mocha, Assert
+
+Code Coverage: quanto do nosso código está 'coberto'
+Istanbul: npm que verifica quanto do código é coberto pelo teste. Cria um report na pasta  nome_modules.
+
+
+
+/* 
+Seção 34 - Bônus
+*/
+//Vídeo 201 - 204
+Uglify: biblioteca npm que minifica o código javascript.
+para instalar:
+> npm install uglify-js -g
+para executar (ver o preview):
+> uglifyjs main.js
+para criar um novo arquivo:
+> uglifyjs --output main.min.js -- main.js
+para comprimir ainda mais:
+> uglifyjs --output main.min.js --compress -- main.js
+para modificar nome de funções para nomes menores:
+> uglifyjs --mangle -- main.js
+> uglifyjs --output main.min.js --mangle --compress -- main.js
+
+Para criar um sourcemap:
+> uglifyjs --source-map main.source.map --output main.min.js --mangle --compress --main.js
+O sourcemap faz uma relação do arquivo normal com o minificado para facilitar o debug. Funciona no Developer tools dos navegadores.
+
