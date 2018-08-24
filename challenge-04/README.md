@@ -7,15 +7,31 @@ um único parâmetro como argumento. Essa função deve retornar `true` se o
 equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
-?
+var isTruthy = function(parametro){
+	return parametro ? true : false;
+}
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
-?
+isTruthy(false);
+isTruthy(null);
+isTruthy(undefined);
+isTruthy(0);
+isTruthy('');
+isTruthy(NaN);
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
-?
+isTruthy(true);
+isTruthy(1);
+isTruthy('0');
+isTruthy('parametro');
+isTruthy(20);
+isTruthy(12);
+isTruthy('NaN');
+isTruthy('21');
+isTruthy('aqui tem!');
+isTruthy(80);
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
@@ -29,13 +45,22 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `assentos` - Number - cinco por padrão
 - `quantidadePessoas` - Number - zero por padrão
 */
-?
+var carro = {
+	marca:'fiat',
+	modelo: '4x4',
+	placa: NBM1234,
+	ano: 2018,
+	cor: 'branco',
+	quantasPortas: 4,
+	assentos: 5,
+	quantidadePessoas: 0	
+}
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
-?
+carro.mudarCor('preto');
 
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
