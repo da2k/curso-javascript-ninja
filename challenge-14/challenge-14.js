@@ -17,22 +17,28 @@
       number: i
     });
   }
+  console.log(numberObjects);
   /*
   Crie um array chamado `justNumbers`, que terá como elementos somente os
   números do array criado acima. Mostre esse novo array no console.
   */
   console.log('\nJust Numbers:');
   var justNumbers = [];
-  justNumbers = justNumbers.map(function (item, index))
-
+  justNumbers = numberObjects.map(function (item, index) {
+    return justNumbers.push(item);
+  })
+  console.log(justNumbers);
   /*
   Crie um novo array chamado `justMod2Or3`, que receberá do array criado acima
   somente os números que forem divisíveis por 2 ou 3. Mostre esse novo array
   no console.
   */
   console.log('\nJust module of division by 2 or 3:');
-  // ?
-
+  var justMod2Or3 = [];
+  justMod2Or3 = justNumbers.filter(function (item, index) {
+    return item % 2 == 0 || item % 3 == 0;
+  })
+  console.log(justMod2Or3);
   /*
   Declare uma variável chamada operation que receba, do array criado acima,
   um valor reduzido pela seguinte operação:
@@ -42,15 +48,21 @@
   Mostre o resultado no console.
   */
   console.log('\nOperation:');
-  // ?
-
+  var operation = justMod2Or3.reduce(function (acumulado, atual, index, array) {
+    return (acumulado + 1) * atual;
+  }, 0)
+  console.log(operation);
   /*
   Faça o mesmo cálculo passado acima, mas começando do último item para o
   primeiro. O nome da variável deve ser operation2. Mostre o resultado no
   console.
   */
   console.log('\nOperation 2:');
-  // ?
+  var operation2 = justMod2Or3.reduceRight(function (acumulado, atual, index,
+    array) {
+    return (acumulado + 1) * atual;
+  }, 0)
+  console.log(operation2);
 
   /*
   Crie um array chamado `name`. Cada elemento desse array deve ser uma sílaba
@@ -61,20 +73,26 @@
   falada, como se você estivesse falando em código xD
   */
   console.log('\nSeu nome na língua do "P":');
-  // ?
-
+  var name = ['La', 'ra'];
+  var reduce = name.reduce(function (acumulado, atual, index, array) {
+    return acumulado + atual + 'p';
+  }, 'p')
+  console.log(reduce);
   /*
   Crie uma variável chamada `inversedName`, que reduzirá o array em uma string
   e atribuirá o seu nome invertido (usando o array criado acima).
   */
   console.log('\nInversed Name:');
-  // ?
-
+  var inversedName = []
+  inversedName = name.reduceRight(function (acumulado, atual, index, array) {
+    return acumulado + atual;
+  })
+  console.log(inversedName);
   /*
   Mostre no console o array `numberObjects`.
   */
   console.log('\nNumber objects');
-  // ?
+  console.log(numberObjects);
 
   /*
   Verifique se existem em algum índice de numberObjects um objeto ìgual a
@@ -86,7 +104,7 @@
   o que acontece ;)
   */
   console.log('\nExiste um { number: 2 } em numberObjects?');
-  // ?
+
 
   /*
   Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
