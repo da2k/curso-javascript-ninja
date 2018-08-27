@@ -39,6 +39,6 @@ function divisao(x,y) {
 return  x / y;
 }
 
-// Invoque a função criada acima, passando os parâmetros(ARGUMENTOS seria a mesma coisa que parametros?) 10 e 2.
+// Invoque a função criada acima, passando os parâmetros(ARGUMENTOS seria a mesma coisa que parametros) 10 e 2.
 divisao(10,2);
 ```
