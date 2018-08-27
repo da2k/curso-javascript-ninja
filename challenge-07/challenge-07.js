@@ -44,9 +44,7 @@ pares entre 10 e 20, inclusive esses 2.
 console.log( 'Números pares entre 10 e 20:' );
 var cont = 10;
 while ( cont <= 20 ) {
-    if (!(cont % 2)){
-        console.log(cont);
-    }
+    !(cont % 2) ? console.log(cont) : '';
     cont++;
 }
 
@@ -56,9 +54,7 @@ Na mesma ideia do exercício acima: mostre agora os números ímpares.
 console.log( 'Números ímpares entre 10 e 20:' );
 var cont = 10;
 while ( cont <= 20 ) {
-    if (cont % 2){
-        console.log(cont);
-    }
+    cont % 2 ? console.log(cont) : '';
     cont++;
 }
 
@@ -70,14 +66,10 @@ Só vamos mudar o range:
 */
 console.log( 'Números pares entre 100 e 120:' );
 for (var cont = 100; cont <= 120; cont++) {
-    if (!(cont % 2)) {
-        console.log(cont);
-    }
+    !(cont % 2) ? console.log(cont) : '';
 }
 
 console.log( 'Números ímpares entre 111 e 125:' );
 for (var cont = 111; cont <= 125; cont++) {
-    if (cont % 2) {
-        console.log(cont);
-    }
+    cont % 2 ? console.log(cont) : '';
 }
