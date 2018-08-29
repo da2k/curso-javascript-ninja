@@ -99,7 +99,8 @@ var mod = calculator('%');
 Faça uma operação com cada uma das funções criadas acima, mostrando o resultado
 no console.
 */
-console.log(subtraction(2,3));
+console.log(subtraction(2,3)); 
 console.log(multiplication(2,3));
 console.log(division(2,3));
+console.log(mod(2,3));
 console.log(mod(2,3));
