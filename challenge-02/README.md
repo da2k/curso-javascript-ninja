@@ -82,20 +82,25 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 
-function argcar (x, y, z){
-    if (x == undefined){
-        return x;
-    } if (x && y === true) {
-        return x + y;
-    } if (x && y && z === true) {
-        return (x + y) / z;
-    } if () {
-        return false;
-    } if else{
-        return null;
-    }
-}
+function arg(x , y, x){
+    if ( x !== undefined && y === undefined && z === undefined){
+      return x;
+    } else if ( x !== undefined && y !== undefined && z === undefined){
+      return x + y;
+    } else if ( x !== undefined && y !== undefined && z !== undefined){
+      return (x + y) / z;
+    } else if (x === undefined && y === undefined && z === undefined){
+      return false;
+    } else {
+      return null;
+    } 
+ }
+
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+argcar(); // false
+argcar(1); // 1
+argcar(3, 8); // 11
+argcar(3, 8, 12); // 0.9
+argcar(null);
 ```
