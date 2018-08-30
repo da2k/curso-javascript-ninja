@@ -48,8 +48,8 @@
     Após a função, mostrar a mensagem no console:
     'The person has more than 25 years old? [TRUE/FALSE]'
     */
-    function moreThan( birthday ) {
-        return person.age > birthday;
+    function moreThan( age ) {
+        return person.age > age;
     }
     console.log( 'The person has more than 25 years old? ' + moreThan( 25 ) );
 
@@ -59,13 +59,13 @@
     Mostre no console os números no array.
     */
     console.log( 'De 0 a 10:' );
-    numbers = [];
+    var numbers = [];
     var count = 0;
     while ( count <= 20 ) {
-        numbers.push(count);
         if ( count > 10 ) {
             break;
         }
+        numbers.push(count);
         count++;
     }
     console.log( numbers );
