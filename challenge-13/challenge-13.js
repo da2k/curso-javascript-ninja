@@ -146,7 +146,7 @@ var some = brasil.some(function(item) {
     return item === 'Ceará';
 });
 
-Console.log( some === true ? 'Ceará está incluído!' : 'Ceará não foi incluído :(' );
+console.log( some === true ? 'Ceará está incluído!' : 'Ceará não foi incluído :(' );
 
 /*
 Percorra o array `newBrasil` e crie um novo array que some 1 no ID de cada
