@@ -5,8 +5,8 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
 function soma(n1, n2){
-  return n1 + n2;
-  }
+    return n1 + n2;
+}
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
 var somafun = soma(8, 4) + 5;
@@ -23,9 +23,9 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 function adcVal(){
-  sv = 8;
-  return 'o valor da variável agora é ' + sv;
-  }  
+    sv = 8;
+    return 'o valor da variável agora é ' + sv;
+}  
 
 // Invoque a função criada acima.
 adcVal()
@@ -41,12 +41,11 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
  function argumentos(a1, a2, a3){
-  if(!a1 || !a2 || !a3){
+if(!a1 || !a2 || !a3){
         return 'Preencha todos os valores corretamente!';
-    }else{
-        return a1 * a2 * a3 + 2;
     }
-  }  
+    return a1 * a2 * a3 + 2;
+}  
 
 // Invoque a função criada acima, passando só dois números como argumento.
 argumentos(2, 4);
@@ -72,19 +71,14 @@ Crie uma função com as seguintes características:
 function tArg(a1, a2, a3){
     if(a1 && !a2 && !a3){
         return a1;
-    }else if(a2 && !a3 && !a1){
-        return a2;
-    }else if(a3 && !a1 && !a2){
-        return a3;
     }else if(a1 && a2 && !a3){
         return a1 + a2;
     }else if(a1 && a2 && a3){
         return (a1 + a2) / a3;
     }else if(!a1 && !a2 && !a3){
         return false;
-    }else{
-        return null;
     }
+    return null;
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
