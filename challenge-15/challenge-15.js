@@ -22,21 +22,19 @@
   */
   // ?
   function Person(name, lastName, age) {
-    return {
-      name: name,
-      lastName: lastName,
-      age: age,
-      getFullName: function () {
-        return '' + this.name + ' ' + this.lastName + '';
-      },
-      getAge: function () {
-        return age;
-      },
-      addAge: function () {
-        this.age += arguments[0];
-        return this;
-      }
-    }
+    this.name = name;
+    this.lastName = lastName;
+    this.age = age;
+    this.getFullName = function getFullName(){
+      return this.name + ' ' + this.lastName;
+    };
+    this.getAge = function getAge() {
+      return this.age;
+    };
+    this.addAge = function addAge() {
+      this.age += arguments[0];
+      return this;
+    };  
   }
   /*
   Crie 3 novos objetos usando o construtor acima. Os objetos serão novas
@@ -45,17 +43,17 @@
   Mostre as 3 novas pessoas criadas no console (Um console.log por pessoa).
   */
   console.log('Novas pessoas criadas à partir de Person:');
-  var pessoa = Person("Davi", "Sousa", 20);
-  var pessoaDois = Person("Lara", "Cardoso", 19);
-  var pessoaTres = Person("Dante", "Allef", 18);
+  var Davi =new Person("Davi", "Sousa", 20);
+  var Lara = new Person("Lara", "Cardoso", 19);
+  var Dante = new Person("Dante", "Allef", 18);
 
   /*
   Mostre no console o nome completo de cada pessoa.
   */
   console.log('\nNomes das pessoas:');
-  console.log('Pessoa 1:', pessoa.name)
-  console.log('Pessoa 2:', pessoaDois.name)
-  console.log('Pessoa 3:', pessoaTres.name)
+  console.log('Pessoa 1:', Davi.name)
+  console.log('Pessoa 2:', Lara.name)
+  console.log('Pessoa 3:', Dante.name)
 
 
   /*
@@ -63,19 +61,19 @@
   - "[NOME COMPLETO] tem [IDADE] anos."
   */
   console.log('\nIdade das pessoas:');
-  console.log('Pessoa 1:', pessoa.age)
-  console.log('Pessoa 2:', pessoaDois.age)
-  console.log('Pessoa 3:', pessoaTres.age)
+  console.log(Davi.getFullName,'tem', Davi.age,'anos')
+  console.log(Lara.getFullName,'tem ', Lara.age,'anos')
+  console.log(Dante.getFullName,'tem ', Dante.age,'anos')
   /*
   Adicione alguns anos à cada pessoa, e mostre no console a nova idade de
   cada um. A frase deverá ser no formato:
   - "[NOME COMPLETO] agora tem [NOVA IDADE] anos."
   */
   console.log('\nNova idade das pessoas:');
-  pessoa.addAge(2)
-  pessoaDois.addAge(2)
-  pessoaTres.addAge(2)
-  console.log(pessoa.getFullName(), 'agora tem', pessoa.age)
-  console.log(pessoaDois.getFullName(), 'agora tem', pessoaDois.age)
-  console.log(pessoaTres.getFullName(), 'agora tem', pessoaTres.age)
+  Davi.addAge(2)
+  Dante.addAge(2)
+  Dante.addAge(2)
+  console.log(Davi.getFullName(), 'agora tem', Davi.age,'anos')
+  console.log(Lara.getFullName(), 'agora tem', Lara.age,'anos')
+  console.log(Dante.getFullName(), 'agora tem', Dante.age,'anos')
 })()
