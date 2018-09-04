@@ -179,26 +179,19 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao= function(){
-    var resposta;
-    if(pessoa.idade === 1 && pessoa.caminhouQuantosMetros > 1){
-        return(pessoa.sexo === 'F' || pessoa.sexo === 'f')?'Olá, eu sou a '+ pessoa.nome + ' ' + pessoa.sobrenome + ', tenho '+ pessoa.idade + ' ano, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros +' metros!'
-        :'Olá, eu sou o '+ pessoa.nome + ' ' + pessoa.sobrenome + ', tenho '+ pessoa.idade + ' ano, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros +' metros!';
-    }else if(pessoa.idade === 1 && pessoa.caminhouQuantosMetros === 1) {
-        return(pessoa.sexo === 'F' || pessoa.sexo === 'f')?'Olá, eu sou a '+ pessoa.nome + ' ' + pessoa.sobrenome + ', tenho '+ pessoa.idade + ' ano, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros +' metro!'
-        :'Olá, eu sou o '+ pessoa.nome + ' ' + pessoa.sobrenome + ', tenho '+ pessoa.idade + ' ano, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros +' metro!';
-    }else if(pessoa.idade > 1 &&  pessoa.caminhouQuantosMetros === 1){
-         return(pessoa.sexo === 'F' || pessoa.sexo === 'f')?'Olá, eu sou a '+ pessoa.nome + ' ' + pessoa.sobrenome + ', tenho '+ pessoa.idade + ' anos, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros +' metro!'
-        :'Olá, eu sou o '+ pessoa.nome + ' ' + pessoa.sobrenome + ', tenho '+ pessoa.idade + ' anos, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros +' metro!';
-    }else if(pessoa.idade > 1 &&  pessoa.caminhouQuantosMetros > 1){
-        return(pessoa.sexo === 'F' || pessoa.sexo === 'f')?'Olá, eu sou a '+ pessoa.nome + ' ' + pessoa.sobrenome + ', tenho '+ pessoa.idade + ' anos, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros +' metros!'
-        :'Olá, eu sou o '+ pessoa.nome + ' ' + pessoa.sobrenome + ', tenho '+ pessoa.idade + ' anos, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros +' metros!';
-    }else if(pessoa.idade > 1 &&  pessoa.caminhouQuantosMetros === 0){
-        return(pessoa.sexo === 'F' || pessoa.sexo === 'f')?'Olá, eu sou a '+ pessoa.nome + ' ' + pessoa.sobrenome + ', tenho '+ pessoa.idade + ' anos, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros +' metro!'
-        :'Olá, eu sou o '+ pessoa.nome + ' ' + pessoa.sobrenome + ', tenho '+ pessoa.idade + ' anos, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros +' metro!';
-    }else if(pessoa.idade === 1 &&  pessoa.caminhouQuantosMetros === 0){
-         return(pessoa.sexo === 'F' || pessoa.sexo === 'f')?'Olá, eu sou a '+ pessoa.nome + ' ' + pessoa.sobrenome + ', tenho '+ pessoa.idade + ' ano, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros +' metro!'
-        :'Olá, eu sou o '+ pessoa.nome + ' ' + pessoa.sobrenome + ', tenho '+ pessoa.idade + ' ano, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros +' metro!';
-    }   
+  var sexo= 'o';
+  var idade= 'anos';
+  var metros= 'metros';
+  if(pessoa.sexo === 'f' || pessoa.sexo === 'F'){
+    sexo= 'a';
+  }
+  if(pessoa.idade === 1){
+    idade= 'ano';
+  }
+  if(pessoa.caminhouQuantosMetros === 1){
+    metros= 'metro';
+  }
+    return 'Olá, eu sou ' + sexo + ' ' + pessoa.nome + ' '+pessoa.sobrenome+ ', tenho '+ pessoa.idade +' ' + idade + ', '+pessoa.altura+', meu peso é '+pessoa.peso+' e, só hoje, eu já caminhei '+pessoa.caminhouQuantosMetros+' ' + metros + '!';
 }
 
 // Agora, apresente-se ;)
