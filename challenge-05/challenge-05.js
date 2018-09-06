@@ -15,7 +15,7 @@ function retornarValores(args){
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-console.log(retornarValores( myVar )[1]);
+console.log(retornarValores(myVar)[1]);
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
