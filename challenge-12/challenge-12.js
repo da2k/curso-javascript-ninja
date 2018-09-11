@@ -95,14 +95,14 @@
     /*
     Juntando todos os itens do array, mostre no console seu nome.
     */
-    console.log( myName.join() );
+    console.log( myName.join( '' ) );
 
     console.log( '\nMeu nome invertido é:' );
 
     /*
     Ainda usando o objeto acima, mostre no console seu nome invertido.
     */
-    console.log( myName.reverse() );
+    console.log( myName.reverse().join( '' ) );
 
     console.log( '\nAgora em ordem alfabética:' );
     /*
