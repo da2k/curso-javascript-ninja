@@ -14,7 +14,7 @@ function receive (arr) {
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-receive(qualquer)[1];
+console.log(receive(qualquer)[1]);
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -35,11 +35,11 @@ var nova = [ 1, "3", "aaa", 4, false ];
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-func2(nova, 0); //1
-func2(nova, 1); //"3"
-func2(nova, 2); //"aaa"
-func2(nova, 3); //4
-func2(nova, 4); //false
+console.log(func2(nova, 0)); //1
+console.log(func2(nova, 1)); //"3"
+console.log(func2(nova, 2)); //"aaa"
+console.log(func2(nova, 3)); //4
+console.log(func2(nova, 4)); //false
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -68,7 +68,7 @@ function book(nome) {
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-book(); 
+console.log(book()); 
 /* 1984
 :
 {quantidadeDePaginas: 50, autor: "GO", editora: "Martin"}
@@ -87,18 +87,18 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-"O livro 1984 tem " + book(1984).quantidadeDePaginas + " páginas!"; //"O livro 1984 tem 50 páginas!"
+console.log("O livro 1984 tem " + book(1984).quantidadeDePaginas + " páginas!"; //"O livro 1984 tem 50 páginas!");
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-"O autor do livro 1984 é " + book(1984).autor + "."; //"O autor do livro 1984 é GO."
+console.log("O autor do livro 1984 é " + book(1984).autor + "."; //"O autor do livro 1984 é GO.");
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-"O livro 1984 foi publicado pela editora " + book(1984).editora + "."; //"O livro 1984 foi publicado pela editora Martin."
+console.log("O livro 1984 foi publicado pela editora " + book(1984).editora + ".";); //"O livro 1984 foi publicado pela editora Martin."
