@@ -60,9 +60,7 @@ function book(nome) {
                   "o apanhador": { quantidadeDePaginas: 100, autor: "JD", editora: "Intrinseca" },
                   "1984": { quantidadeDePaginas: 50, autor: "GO", editora: "Martin" }
                  };
-    if(objeto[nome])
-        return objeto[nome];
-    return objeto;
+    return objeto[nome] ? objeto[nome] : objeto;
 }
 
 /*
