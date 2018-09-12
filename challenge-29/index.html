@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        :root {
+            --main-color: rgb(37, 37, 37);
+            --fill-color: whitesmoke;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 8rem;
+        }
+        h1{
+            background-color: var(--main-color);
+            color: var(--fill-color);
+            padding: 2rem 8rem;
+            text-transform: uppercase;
+        }
+        h1 span {
+            display: block;
+        }
+        h1 span:last-child {
+            font-size: 1.5rem;
+        }
+        form {
+            flex: 1;
+            margin-right: 8rem;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 0.25rem;
+        }
+        input {
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            border: 1px solid #ccc;
+        }
+        ul{
+            list-style: none;
+        }
+        ul li {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1rem;
+        }
+        ul li:last-child {
+            margin-bottom: 0;
+        }
+        button {
+            font-size: 1rem;
+            font-weight: bold;
+            border: 0;
+            outline: 0;
+            background-color: brown;
+            color: var(--fill-color);
+            padding: 1rem 2rem;
+            border-radius: 0.25rem;
+            transition: .3s all;
+            cursor: pointer;
+            max-width: 50%;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 2rem;
+        }
+        button:hover {
+            background-color: rgb(122, 21, 21);
+        }
+        .table-content {
+            flex: 2;
+            display: flex;
+            justify-content: flex-end;
+            overflow-x: auto;
+            border-radius: 0.25rem;
+        }
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+        }
+        th, td {
+            padding: 1rem;
+        }
+        td {
+            border: 1px solid #ccc;
+        }
+        td.plate{
+            text-transform: uppercase;
+        }
+        th {
+            border: 1px solid #000;
+            background: var(--main-color);
+            color: var(--fill-color);
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        @media only screen and (max-width: 1200px) {
+            h1{
+                padding: 2rem;
+            }
+            section {
+                padding: 4rem;
+            }
+            form {
+                flex: 100%;
+                margin-right: 0;
+                margin-bottom: 2rem;
+            }
+            .table-content {
+                flex: 100%;
+                justify-content: flex-start;
+            }
+        }
+
+         @media only screen and (max-width: 480px) {
+            h1{
+                font-size: 1.5rem;
+            }
+            h1, section {
+                padding: 2rem;
+            }
+            button {
+                max-width: 100%;
+            }
+         }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>
+            <span data-js="company-name"></span>
+            <span data-js="company-phone"></span>
+        </h1>
+    </header>
+
+    <section class="main-content">
+        <form action="/"  data-js="form-register">
+            <ul>
+                <li>
+                    <label>Imagem do carro:</label>
+                    <input type="url" data-js="image">
+                </li>
+                <li>
+                    <label>Marca / Modelo:</label>
+                    <input type="text" data-js="brand-model">
+                </li>
+                <li>
+                    <label>Ano:</label>
+                    <input type="text" data-js="year">
+                </li>
+                <li>
+                    <label>Placa:</label>
+                    <input type="text" data-js="plate">
+                </li>
+                <li>
+                    <label>Cor:</label>
+                    <input type="text" data-js="color">
+                </li>
+                <li>
+                    <button type="submit">Cadastrar</button>
+                </li>
+            </ul>
+        </form>
+
+        <div class="table-content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Imagem do carro</th>
+                        <th>Marca / Modelo</th>
+                        <th>Ano</th>
+                        <th>Placa</th>
+                        <th>Cor</th>
+                    </tr>
+                </thead>
+
+                <tbody data-js="table-car"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <script src="dom.js"></script>
+    <script src="challenge-29.js"></script>
+</body>
+
+</html>
