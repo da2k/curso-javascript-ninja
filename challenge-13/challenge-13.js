@@ -154,12 +154,10 @@
     Atribua o novo array a uma variável chamada `map`.
     */
     var map = newBrasil.map( function ( item ) {
-       // var arrAux = [];
         return { id: item.id+1, estado: item.estado + ' pertence ao Brasil.' };
-       // return arrAux;
     });
 
-    /*
+    /*  
     Mostre no console o array criado acima:
     */
     console.log( '\nnewBrasil agora com mais informações:' );
@@ -169,8 +167,8 @@
     Filtre o array criado acima, retornando somente os estados que tiverem
     ID par. Atribua o valor à uma variável chamada `filter`.
     */
-    var filter = map.filter( function ( item, index ) {
-        return item[index].id % 2 === 0;
+    var filter = map.filter( function ( item ) {
+        return item.id % 2 === 0;
     });
 
     /*
