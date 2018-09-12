@@ -11,18 +11,10 @@
     Mostre esse array no console.
     */
     console.log( 'Number Objects Array:' );
-    var numberObjects = [
-        { number: 1 },
-        { number: 2 },
-        { number: 3 },
-        { number: 4 },
-        { number: 5 },
-        { number: 6 },
-        { number: 7 },
-        { number: 8 },
-        { number: 9 },
-        { number: 10 },
-    ]
+    var numberObjects = [];
+    for( var cont = 1; cont <= 10; cont++ ) {
+        numberObjects.push( { number: cont } );
+    }
     console.log( numberObjects );
     /*
     Crie um array chamado `justNumbers`, que terá como elementos somente os
@@ -106,7 +98,7 @@
     */
     console.log( '\nExiste um { number: 2 } em numberObjects?' );
     console.log ( 
-        numberObjects.indexOf( { number: 2 } )
+        numberObjects.indexOf( { number: 2 } ) > -1
         ? 'Existe um objeto { number: 2 } em numberObjects!'
         : 'Não existe um objeto { number: 2 } em numberObjects :('
     );
@@ -117,7 +109,7 @@
     */
     console.log( '\nE buscando a partir do último índice, o { number: 2 } existe?' );
     console.log ( 
-        numberObjects.lastIndexOf( { number: 2 }, 2 )
+        numberObjects.lastIndexOf( { number: 2 }, 2 ) > -1
         ? 'Existe um objeto { number: 2 } em numberObjects!'
         : 'Não existe um objeto { number: 2 } em numberObjects :('
     );
@@ -127,10 +119,10 @@
     formato de String.
     */
     console.log( '\njustMod2Or3 é um array? Se for, a representação dele em String é:' );
-    console.log( 
-        Array.isArray( justMod2Or3 )
-        ? justMod2Or3.toString()
-        : ''
-    );
+    if( Array.isArray( justMod2Or3 ) ) {
+        console.log( justMod2Or3.toString() );
+    }
+       
+        
     // ?
 })();
