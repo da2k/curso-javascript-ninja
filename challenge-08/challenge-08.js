@@ -28,7 +28,7 @@ function showName() { return 'Cinthia' };
 /*
 Declare uma variável chamada `varShowName` que recebe a função criada acima.
 */
-var varShowName = showName();
+var varShowName = showName;
 
 /*
 Usando a variável criada acima, mostre no console o nome e o retorno da função
@@ -50,33 +50,30 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
   "Operação inválida."
 */
 function calculator(operation) {
-
-	switch(operation) {
-
-		case '+':
-			return function (x, y) {
-				return 'Resultado da operação: ' + x + ' + ' + y + ' = ' + (x+y)  + '.';
-			}
+  
+  return function (x,y) {
+    var result = 0;
+	  switch(operation) {
+      	case '+':
+			result = x+y;
+			break;
 		case '-':
-			return function (x, y) {
-				return 'Resultado da operação: ' + x + ' - ' + y + ' = ' + (x-y)  + '.';
-			}
+			result = x-y;
+			break;
 		case '*':
-			return function (x, y) {
-				return 'Resultado da operação: ' + x + ' * ' + y + ' = ' + (x*y)  + '.';
-			}
+			result = x*y;
+			break;
 		case '/':
-			return function (x, y) {
-				return 'Resultado da operação: ' + x + ' / ' + y + ' = ' + (x/y)  + '.';
-			}
+			result = x/y;
+			break;
 		case '%':
-			return function (x, y) {
-				return 'Resultado da operação: ' + x + ' % ' + y + ' = ' + (x%y)  + '.';
-			}
+			result = x%y;
+			break;
 		default:
 			return 'Operação inválida';
-
-	}
+		}
+	return 'Resultado da operação: ' + x + ' ' +  operation + ' ' + y + ' = ' + result  + '.';
+  };
 }
 /*
 Declare uma variável chamada `sum`, que receberá a função acima, passando como
