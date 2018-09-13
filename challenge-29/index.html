@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Tech Veículos</title>
+</head>
+
+<body>
+  <header>
+    <h1 data-js="title"></h1>
+    <h4 data-js="tel"></h4>
+  </header>
+
+  <form action="/" data-js="formCadastro">
+    <label for="urlImage">
+      URL:
+      <input type="url" data-js="urlImage" id="url-image">
+    </label>
+    <label for="brand">
+      Marca:
+      <input type="text" data-js="brand" id="brand">
+    </label>
+    <label for="year">
+      Ano:
+      <input type="text" data-js="year" id="year">
+    </label>
+    <label for="licencePlate">
+      Placa:
+      <input type="text" data-js="plate" id="licence-plate">
+    </label>
+    <label for="color">
+      Cor:
+      <input type="text" data-js="color" id="color">
+    </label>
+
+    <button type="submit">Cadastrar</button>
+  </form>
+  <br>
+  <hr>
+  <div class="table">
+    <table>
+      <thead>
+        <tr>
+          <th>url</th>
+          <th>marca</th>
+          <th>ano</th>
+          <th>placa</th>
+          <th>cor</th>
+        </tr>
+      </thead>
+      <tbody data-js="table-car">
+      </tbody>
+    </table>
+  </div>
+
+  <script src="DOM.js"></script>
+  <script src="js/challenge-29.js"></script>
+</body>
+
+</html>
