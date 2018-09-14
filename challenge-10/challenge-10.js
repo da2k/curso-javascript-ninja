@@ -48,7 +48,8 @@
 	
 	function isOperatorValid (operator) {
 
-		return(operator === '+' || operator === '-' || operator === '*' || operator === '/' || operator === '%');
+		return Boolean(operation[operator]);
+
 	};
 
 	/*
@@ -171,6 +172,6 @@
 	*/
 	operationSignal = 'k';
 	var tipo = calculator(operationSignal);
-	console.log( tipo(number1,number2) ? showOperationMessage(operationSignal, number1, number2) + tipo(number1,number2) : showErrorMessage() );
+	console.log( tipo(number1,number2) ? showOperationMessage(operationSignal, number1, number2) + tipo(number1,number2) : showErrorMessage(operationSignal) );
 
 } () );
