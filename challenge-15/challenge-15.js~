@@ -76,9 +76,9 @@
     */
     console.log( '\nNova idade das pessoas:' );
     pessoa1.addAge(5);
-    pessoa2.addAge(3);
-	pessoa3.addAge(1);
-	console.log(pessoa1.getFullName() + ' agora tem ' + pessoa1.getAge() + ' anos.');
-	console.log(pessoa2.getFullName() + ' agora tem ' + pessoa2.getAge() + ' anos.');
-	console.log(pessoa3.getFullName() + ' agora tem ' + pessoa3.getAge() + ' anos.');
+    pessoa1.addAge(3);
+	 pessoa1.addAge(1);
+	 console.log(pessoa1.getFullName() + ' agora tem ' + pessoa1.getAge() + ' anos.');
+	 console.log(pessoa2.getFullName() + ' agora tem ' + pessoa2.getAge() + ' anos.');
+	 console.log(pessoa3.getFullName() + ' agora tem ' + pessoa3.getAge() + ' anos.');
 })();
