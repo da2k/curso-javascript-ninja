@@ -28,11 +28,11 @@ function retornaValoradd() {
  }
 
 // Invoque a função criada acima.
-retornaValoradd()
+retornaValoradd();
 
 // Qual o retorno da função? (Use comentários de bloco).
-'o valor da variável agora é: 8'
-
+/*o valor da variável agora é: 8
+*/
 /*
 Crie uma função com as seguintes características:
 1. A função deve receber 3 argumentos;
@@ -44,7 +44,7 @@ Crie uma função com as seguintes características:
     if ((x===undefined) || (y===undefined) || (z===undefined)){
       return 'Preencha todos os valores corretamente!';
       } else { 
-      return x * y * z;
+      return (x * y * z) + 2;
       }
      }
 
