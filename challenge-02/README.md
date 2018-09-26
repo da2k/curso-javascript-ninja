@@ -31,8 +31,7 @@ function adicionaValor(5);
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
-a função adicionaValor(valor), retorna o valor passado
-no argumento valor.
+a função adicionaValor(valor), retorna o valor passado no argumento valor.
 */
 
 /*
