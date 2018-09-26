@@ -17,25 +17,25 @@ var add = somar(3,2) + 5;
 10
 
 // Declare uma nova variável, sem valor.
-var num;
+var newVar;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function retornarValor(num) {
-	num = 5;
-	return 'O valor da variavel agora é: ' + num;
+function addValor() {
+	newVar = 25;
+	return 'O valor da variavel agora é: ' + newVar;
 }
 
 // Invoque a função criada acima.
-retornarValor()
+addValor();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
 Como retorno da função obtivemos a saida: 'O valor 
-da variável agora é : 5 
+da variável agora é : 25 
 */
 
 /*
@@ -45,16 +45,15 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-function argumentos(a,b,c) {
-	if(a && b && c == underfined) {
+function newFunction(a,b,c) {
+	if(a === undefined || b === undefined || c === undefined) {
 		return 'Preencha todos os valores corretamentes'
-	}else {
-		return (a*b*c)+2 
 	}
+	return (a * b * c) + 2;
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
-hard(a,b);
+newFunction(3,2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 //O retorno foi a string 'Preencha todos os valos corretamente'
@@ -74,18 +73,17 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-var a = 1;
-var b = 2;
-var c = 3;
-function hard(a,b,c) {
-	if(a === 1){
-		return a;
-	}else if(a === 1 && b === 2) {
+function threeArg(a,b,c) {
+	if(a = true) {
+		return a ;
+	}else if(a = true & b = true) {
 		return a + b;
-	}else if(a === 1 && b === 2 && c === 3){
-		return (a+b)/c;
-	}else {
+	}else if(a && b && c) {
+		return ((a+b)/c);
+	}else if(a && b && c = undefined) {
 		return false;
+	}else {
+		return null;
 	}
 }
 
