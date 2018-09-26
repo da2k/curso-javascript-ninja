@@ -45,14 +45,11 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-var a = 1;
-var b = 2;
-var c = 3;
-function hard(a,b,c) {
-	if(a === 1 && b === 2 && c === 3) {
-		return (a * b * c) + 2;
+function argumentos(a,b,c) {
+	if(a && b && c == underfined) {
+		return 'Preencha todos os valores corretamentes'
 	}else {
-		return 'Preencha todos os valores corretamente!';
+		return (a*b*c)+2 
 	}
 }
 
