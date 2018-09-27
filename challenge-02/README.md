@@ -59,7 +59,7 @@ newFunction(3,2);
 //O retorno foi a string 'Preencha todos os valos corretamente'
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-hard(a,b,c);
+newFunction(a,b,c);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 // 8
@@ -73,14 +73,14 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-function threeArg(a,b,c) {
-	if(a = true) {
+function threeArgs(a,b,c) {
+	if(a !== undefined && b === undefined && c === undefined) {
 		return a ;
-	}else if(a = true & b = true) {
+	}else if(a !== undefined && b !== undefined && c === undefined) {
 		return a + b;
-	}else if(a && b && c) {
-		return ((a+b)/c);
-	}else if(a && b && c = undefined) {
+	}else if(a !== undefined && b !== undefined && c !== undefined) {
+		return (a + b) / c;
+	}else if(a === undefined && b === undefined && c === undefined) {
 		return false;
 	}else {
 		return null;
@@ -89,5 +89,8 @@ function threeArg(a,b,c) {
 
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+threeArgs(); //false
+threeArgs(1); // 1
+threeArgs(1,2) // 3
+threeArgs(1,2,3) //1
 ```
