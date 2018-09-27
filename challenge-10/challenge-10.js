@@ -9,10 +9,10 @@ deles seja "true", usando os Wrapper Objects como "conversores" nos valores
 das variáveis. Analise o que está sendo impresso no console para saber como
 resolver o problema corretamente.
 */
-var five = '5';
+var five = Number('5');
 console.log( five + ' é número?', typeof five === 'number' );
 
-var concat = 10 + 10;
+var concat = String(10) + String(10);
 console.log( '"' + concat + '" é uma string? E é igual a "1010"?', typeof concat === 'string' );
 
 /*
@@ -25,7 +25,11 @@ função receberá dois parâmetros e retornará a operação referente à sua
 propriedade, usando os valores passados por parâmetro.
 */
 // ?
-
+var operation = {'soma': function(x,y){return 'A soma é: ' + (x+y)},
+                 'subtracao': function(x,y){return 'A subtracao é: ' + (x-y)},
+                 'multiplicacao': function(x,y){return 'A multiplicacao é: ' + (x*y)},
+                 'divisao': function(x,y){return 'A divisao é: ' + (x/y)},};
+console.log(operation.soma(11,2), operation.subtracao(11,2), operation.multiplicacao(11,2), operation.divisao(11,2))
 /*
 Crie uma função chamada `isOperatorValid`, que receberá um operador por
 parâmetro.
@@ -37,7 +41,11 @@ Caso contrário, "false".
 - O desafio é fazer o retorno sem usar "if" ou "switch".
 */
 // ?
-
+var operator = function isOperatorValid(operador){
+  return (operador === 'soma' || operador === 'subtracao' || operador === 'multiplicacao' ||
+  operador === 'divisao')
+}
+console.log(operator('oi'));
 /*
 Agora vamos criar a calculadora.
 - Crie uma função chamada `calculator`, que receberá como parâmetro um
@@ -52,6 +60,23 @@ os dois parâmetros da função de retorno de "calculator".
 */
 // ?
 
+var calculator = function (operador) {
+  if(!operator(operador)){
+    return false;
+  }
+  return function(x,y){
+      if(typeof x === 'number' && typeof y === 'number'){
+        return operation[operador](x,y)
+      }
+      return false;
+  }
+
+}
+var teste = 'soma'
+var operacao = calculator(teste);
+if(operacao){
+  console.log(calculator(teste)(11,85))
+}
 /*
 Crie uma função chamada "showOperationMessage" que recebe três parâmetros:
 - o operador, o primeiro número e o segundo número. O retorno da função
