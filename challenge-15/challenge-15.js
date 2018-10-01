@@ -1,3 +1,5 @@
+(function (){
+  
 /*
 Envolva todo o código desse desafio em uma IIFE.
 Crie um arquivo chamado index.html e adicione esse script ao HTML.
@@ -21,7 +23,21 @@ as seguintes características:
   adicionados à idade original (age). Esse método deverá retornar o objeto
   que será instanciado.
 */
-// ?
+function Person (name, lastName, age) {
+    this.name = name;
+    this.lastName = lastName;
+    this.age = age;
+    this.getFullName = function () {
+      return this.name + ' ' + this.lastName
+    };
+    this.getAge = function () {
+      return this.age
+    };
+    this.addAge = function () {
+      this.age += arguments[0];
+      return this;
+    }
+}
 
 /*
 Crie 3 novos objetos usando o construtor acima. Os objetos serão novas
@@ -30,20 +46,29 @@ parâmetros corretamente para o construtor para criar as novas pessoas.
 Mostre as 3 novas pessoas criadas no console (Um console.log por pessoa).
 */
 console.log( 'Novas pessoas criadas à partir de Person:' );
-// ?
+var diana = new Person('Diana', 'Dias', 35);
+var artur = new Person('Artur', 'Drummond', 33);
+var julieta = new Person('Julieta', 'Silva', 67);
 
+console.log(diana);
+console.log(artur);
+console.log(julieta);
 /*
 Mostre no console o nome completo de cada pessoa.
 */
 console.log( '\nNomes das pessoas:' );
-// ?
+console.log(diana.getFullName());
+console.log(artur.getFullName());
+console.log(julieta.getFullName());
 
 /*
 Mostre no console as idades de cada pessoa, com a frase:
 - "[NOME COMPLETO] tem [IDADE] anos."
 */
 console.log( '\nIdade das pessoas:' );
-// ?
+console.log(diana.getFullName() + ' tem ' + diana.getAge() + ' anos' );
+console.log(artur.getFullName() + ' tem ' + artur.getAge() + ' anos' );
+console.log(julieta.getFullName() + ' tem ' + julieta.getAge() + ' anos' );
 
 /*
 Adicione alguns anos à cada pessoa, e mostre no console a nova idade de
@@ -51,4 +76,8 @@ cada um. A frase deverá ser no formato:
 - "[NOME COMPLETO] agora tem [NOVA IDADE] anos."
 */
 console.log( '\nNova idade das pessoas:' );
-// ?
+console.log(diana.getFullName() + ' agora tem ' + diana.addAge(-2).getAge() + ' anos' );
+console.log(artur.getFullName() + ' agora tem ' + artur.addAge(2).getAge() + ' anos' );
+console.log(julieta.getFullName() + ' agora tem ' + julieta.addAge(5).getAge() + ' anos' );
+  
+ })();
