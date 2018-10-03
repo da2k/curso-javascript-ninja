@@ -16,10 +16,10 @@
     usar o nome que achar melhor, desde que ele seja semântico, ou seja, o nome
     dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
     */
-    var $btnstart = document.querySelector('[data-js="start"]'); 
-    var $btnstop = document.querySelector('[data-js="stop"]'); 
-    var $btnreset = document.querySelector('[data-js="reset"]'); 
-    var $input = document.querySelector('[data-js="input"]'); 
+    var $btnstart = doc.querySelector('[data-js="start"]'); 
+    var $btnstop = doc.querySelector('[data-js="stop"]'); 
+    var $btnreset = doc.querySelector('[data-js="reset"]'); 
+    var $input = doc.querySelector('[data-js="input"]'); 
 
     var timer = 0;
     var counter;
