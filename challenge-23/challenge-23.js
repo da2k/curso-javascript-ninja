@@ -23,3 +23,77 @@ multiplicação (x), então no input deve aparecer "1+2x".
 input;
 - Ao pressionar o botão "CE", o input deve ficar zerado.
 */
+(function() {
+    'use strict';
+
+    var $visor = document.querySelector('[data-js="visor"]');
+    var $buttonsNumbers = document.querySelectorAll('[data-js="button-number"]');
+    var $buttonsOperations = document.querySelectorAll('[data-js="button-operation"]');
+    var $buttonEqual = document.querySelector('[data-js="button-equal"]');
+    var $buttonCe = document.querySelector('[data-js="button-ce"]');
+
+    Array.prototype.forEach.call($buttonsNumbers, function($button) {
+        $button.addEventListener('click', handleNumberClick, false);
+    });
+
+    Array.prototype.forEach.call($buttonsOperations, function($button) {
+        $button.addEventListener('click', handleOperationClick, false);
+    });
+
+    $buttonEqual.addEventListener('click', handleEqualClick, false);
+    $buttonCe.addEventListener('click', handleCeClick, false);
+    
+    function handleNumberClick() {
+        $visor.value += this.value;
+    }
+
+    function handleOperationClick() {
+        $visor.value = removeLastCharIfItsAnOperator($visor.value);
+        $visor.value += this.value;
+    }
+
+    function handleCeClick() {
+        $visor.value = 0;
+    }
+
+    function handleEqualClick() {
+        $visor.value = removeLastCharIfItsAnOperator($visor.value);
+
+        var visorValues = $visor.value.match(/\d+[+x÷-]?/g);
+
+        $visor.value = visorValues.reduce(function(accumulated, actual) {
+            var firstValue = accumulated.slice(0, -1);
+            var operator = accumulated.split('').pop();
+            var lastValue = removeLastCharIfItsAnOperator(actual);
+            var lastOperator = isLastCharAnOperation(actual) ? actual.split('').pop() : '';
+
+            switch(operator) {
+                case '+':
+                  return (+(firstValue) + +(lastValue)) + lastOperator;
+                case '-':
+                  return (+(firstValue) - +(lastValue)) + lastOperator;
+                case 'x':
+                  return (+(firstValue) * +(lastValue)) + lastOperator;
+                case '÷':
+                  return (+(firstValue) / +(lastValue)) + lastOperator;
+              }
+        });
+    }
+
+    function isLastCharAnOperation(number) {
+        var operations = ['+', '-', 'x', '÷'];
+        var lastChar = number.split('').pop();
+
+        return operations.some(function(operator) {
+            return operator === lastChar;
+        });
+    }
+
+    function removeLastCharIfItsAnOperator(number) {
+        if (isLastCharAnOperation(number)) {
+            return number.slice(0, -1);
+        }
+
+        return number;
+    }
+})();
