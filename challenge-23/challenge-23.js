@@ -1,25 +1,86 @@
-/*
-Vamos desenvolver mais um projeto. A ideia é fazer uma mini-calculadora.
-As regras são:
+(function (win, doc) {  
+  'use strict';
 
-- Deve ter somente 1 input, mas não deve ser possível entrar dados nesse input
-diretamente;
-- O input deve iniciar com valor zero;
-- Deve haver 10 botões para os números de 0 a 9. Cada botão deve ser um número;
-- Deve haver 4 botões para as operações principais: soma (+), subtração(-),
-multiplicação(x) e divisão(÷);
-- Deve haver um botão de "igual" (=) que irá calcular os valores e um botão "CE"
-que irá limpar o input, deixando-o com valor 0;
 
-- A cada número pressionado, o input deve atualizar concatenando cada valor
-digitado, como em uma calculadora real;
-- Ao pressionar um botão com uma das 4 operações, deve aparecer o símbolo da
-operação no input. Se o último caractere no input já for um símbolo de alguma
-operação, esse caractere deve ser substituído pelo último pressionado.
-Exemplo:
-- Se o input tem os valores: "1+2+", e for pressionado o botão de
-multiplicação (x), então no input deve aparecer "1+2x".
-- Ao pressionar o botão de igual, o resultado do cálculo deve ser mostrado no
-input;
-- Ao pressionar o botão "CE", o input deve ficar zerado.
-*/
+
+  var $btnAc = doc.querySelector('[data-js="btnAc"]'); 
+  var $btnDiv = doc.querySelector('[data-js="btnDiv"]'); 
+  var $btnSeven = doc.querySelector('[data-js="btnSeven"]'); 
+  var $btnEight = doc.querySelector('[data-js="btnEight"]'); 
+  var $btnNine = doc.querySelector('[data-js="btnNine"]'); 
+  var $btnMult = doc.querySelector('[data-js="btnMult"]'); 
+  var $btnFour = doc.querySelector('[data-js="btnFour"]'); 
+  var $btnFive = doc.querySelector('[data-js="btnFive"]'); 
+  var $btnSix = doc.querySelector('[data-js="btnSix"]'); 
+  var $btnSub = doc.querySelector('[data-js="btnSub"]'); 
+  var $btnOne = doc.querySelector('[data-js="btnOne"]'); 
+  var $btnTwo = doc.querySelector('[data-js="btnTwo"]'); 
+  var $btnThree = doc.querySelector('[data-js="btnThree"]'); 
+  var $btnAdd = doc.querySelector('[data-js="btnAdd"]'); 
+  var $btnZero = doc.querySelector('[data-js="btnZero"]'); 
+  var $btnIqual = doc.querySelector('[data-js="btnIqual"]'); 
+  var $display = doc.querySelector('[data-js="display"]'); 
+  
+
+  $btnOne.addEventListener('click', function(event){
+       $display.value += 1;
+  }, false);
+  $btnTwo.addEventListener('click', function(event){
+        $display.value += 2;
+  }, false);
+  $btnAdd.addEventListener('click', function(event){
+        console.log($display.value); 
+  }, false);
+  /*
+  Vamos desenvolver mais um projeto. A ideia é fazer uma mini-calculadora.
+  As regras são:
+
+  - Deve ter somente 1 input, mas não deve ser possível entrar dados nesse input
+  diretamente;
+  - O input deve iniciar com valor zero;
+  - Deve haver 10 botões para os números de 0 a 9. Cada botão deve ser um número;
+  - Deve haver 4 botões para as operações principais: soma (+), subtração(-),
+  multiplicação(x) e divisão(÷);
+  - Deve haver um botão de "igual" (=) que irá calcular os valores e um botão "CE"
+  que irá limpar o input, deixando-o com valor 0;
+
+  - A cada número pressionado, o input deve atualizar concatenando cada valor
+  digitado, como em uma calculadora real;
+  - Ao pressionar um botão com uma das 4 operações, deve aparecer o símbolo da
+  operação no input. Se o último caractere no input já for um símbolo de alguma
+  operação, esse caractere deve ser substituído pelo último pressionado.
+  Exemplo:
+  - Se o input tem os valores: "1+2+", e for pressionado o botão de
+  multiplicação (x), então no input deve aparecer "1+2x".
+  - Ao pressionar o botão de igual, o resultado do cálculo deve ser mostrado no
+  input;
+  - Ao pressionar o botão "CE", o input deve ficar zerado.
+  */
+  /*
+  Vamos desenvolver mais um projeto. A ideia é fazer uma mini-calculadora.
+  As regras são:
+
+  - Deve ter somente 1 input, mas não deve ser possível entrar dados nesse input
+  diretamente;
+  - O input deve iniciar com valor zero;
+  - Deve haver 10 botões para os números de 0 a 9. Cada botão deve ser um número;
+  - Deve haver 4 botões para as operações principais: soma (+), subtração(-),
+  multiplicação(x) e divisão(÷);
+  - Deve haver um botão de "igual" (=) que irá calcular os valores e um botão "CE"
+  que irá limpar o input, deixando-o com valor 0;
+
+  - A cada número pressionado, o input deve atualizar concatenando cada valor
+  digitado, como em uma calculadora real;
+  - Ao pressionar um botão com uma das 4 operações, deve aparecer o símbolo da
+  operação no input. Se o último caractere no input já for um símbolo de alguma
+  operação, esse caractere deve ser substituído pelo último pressionado.
+  Exemplo:
+  - Se o input tem os valores: "1+2+", e for pressionado o botão de
+  multiplicação (x), então no input deve aparecer "1+2x".
+  - Ao pressionar o botão de igual, o resultado do cálculo deve ser mostrado no
+  input;
+  - Ao pressionar o botão "CE", o input deve ficar zerado.
+  */
+
+
+})(window, document);  
