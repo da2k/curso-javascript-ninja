@@ -94,6 +94,6 @@ funcao2(); // false
 funcao2(1); // 1
 funcao2(1,2); // 3
 funcao2(1,2,3); // 1
-funcao2(
+
 
 ```
