@@ -25,21 +25,31 @@
 	// ?
 
 	function DOM (stg) { 
-		this.element = stg;
+		this.element = doc.querySelectorAll(stg);
 	}
 
-	DOM.prototype.on = function(element, event, callback) {
-		doc.querySelector(element).addEventListener(event, callback, false);
+	DOM.prototype.on = function(event, callback) {
+		Array.prototype.forEach.call(this.element, function(element){
+			element.addEventListener(event, callback, false);
+		});
+	};
+
+	DOM.prototype.get = function() {
+		return this.element
 	}
 
-
+	DOM.prototype.off = function(event, callback) {
+		Array.prototype.forEach.call(this.element, function(element){
+			element.removeEventListener(event, callback, false);
+		});
+	}
 	var $a = new DOM('[data-js="link"]');
 	$a.on('click', function(e) {
 	  e.preventDefault();
 	  console.log('clicou');
 	});
 
-	//console.log('Elementos selecionados:', $a.get());
-	//console.log('$a é filho de body?', $a.get()[0].parentNode === document.body);
+	console.log('Elementos selecionados:', $a.get());
+	console.log('$a é filho de body?', $a.get()[0].parentNode === document.body);
 
 })(window, document);	
