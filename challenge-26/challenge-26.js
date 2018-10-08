@@ -1,4 +1,4 @@
-(function (){
+(function (win, doc){
 'use strict';
 
 	/*
@@ -24,26 +24,14 @@
 	*/
 	// ?
 
-	function DOM ('stg') {
+	function DOM (stg) { 
 		this.element = stg;
 	}
 
-	DOM.prototype.on (element, event, callback){
-		document.querySelector(element).addEventListener(event, callback, false);
+	DOM.prototype.on = function(element, event, callback) {
+		doc.querySelector(element).addEventListener(event, callback, false);
 	}
 
-	DOM.prototype.get (element, event, callback){
-		document.querySelector(element).addEventListener(event, callback, false);
-	}
-
-	on('[data-js="link"]' , 'click', function(){
-		console.log('Click');
-	});
-
-	var $a = document.querySelector('[data-js="link"]');
-	$a.addEventListener('click', function(){
-		console.log('clicou')
-	}, false);
 
 	var $a = new DOM('[data-js="link"]');
 	$a.on('click', function(e) {
@@ -51,7 +39,7 @@
 	  console.log('clicou');
 	});
 
-	console.log('Elementos selecionados:', $a.get());
-	console.log('$a é filho de body?', $a.get()[0].parentNode === document.body);
+	//console.log('Elementos selecionados:', $a.get());
+	//console.log('$a é filho de body?', $a.get()[0].parentNode === document.body);
 
-})();	
+})(window, document);	
