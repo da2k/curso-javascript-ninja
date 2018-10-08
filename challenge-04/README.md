@@ -118,8 +118,8 @@ citado acima, no lugar de "pessoas".
 */
 
 carro.adicionarPessoas = function (numPessoas) {
-
-  if (carro.quantidadePessoas == carro.assentos) {
+  var totalPessoas = carro.quantidadePessoas + numeroPessoas;
+  if (carro.quantidadePessoas == carro.assentos && totalPessoas >= carro.assentos) {
     return 'O carro já está lotado!';
   }
 
@@ -173,11 +173,11 @@ carro.adicionarPessoas(3); //"Já temos 5 pessoas no carro!"
 carro.adicionarPessoas(1); //"O carro já está lotado!"
 
 // Tire 4 pessoas do carro.
-?
+carro.adicionarPessoas(-4); //"Já temos 1 pessoas no carro!"
 
 // Adicione 10 pessoas no carro.
-?
+carro.adicionarPessoas(10); //"Só cabem mais 4 pessoas!"
 
 // Quantas pessoas temos no carro?
-?
+carro.quantidadePessoas; // 1
 ```
