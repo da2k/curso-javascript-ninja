@@ -7,43 +7,52 @@ Crie um array e mostre no console a representação em String desse array,
 usando o método visto na aula 13.
 */
 console.log( 'O array em formato de string é:' );
+arr = ['o','l','á']
+console.log(arr.join(''));
 // ?
 
 /*
 Crie 2 arrays `sul` e `sudeste`, que serão as regiões do Brasil.
 Cada array deve conter os estados dessa região.
 */
-// ?
+//
+sudeste = ['sp','rj','es']
+sul = ['rs','fl','cu']
 
 /*
 Crie uma variável chamada `brasil`, que irá receber as duas regiões
 concatenadas. Mostre o `brasil` no console.
 */
 console.log( '\nAlguns Estados do Brasil:' );
-// ?
-
+//
+brasil = sudeste.concat(sul)
+console.log(brasil);
 /*
 Adicione 3 novos estados da região Norte no início do array e mostre no console.
 */
 console.log( '\nMais estados adicionados:' );
-// ?
-
+//
+brasil.unshift('oi');
+console.log(brasil);
 /*
 Remova o primeiro estado do array `brasil` e mostre-o no console.
 */
 console.log( '\nEstado removido:' );
-// ?
-
+//
+brasil.shift();
+console.log(brasil);
 /*
 Crie um novo array chamado `newSul`, que receba somente os estados do sul,
 pegando do array `brasil`. Não remova esses itens de `brasil`.
 */
-// ?
+//
 
 /*
 Mostre no console os estados que estão em `newSul`.
 */
 console.log( '\nEstados do Sul do Brasil:' );
+newSul = brasil.slice(3,6);
+console.log(newSul);
 // ?
 
 /*
@@ -55,8 +64,8 @@ console.log( '\nAlguns Estados do Brasil:' );
 /*
 Crie um novo array chamado `nordeste`, que tenha os estados do nordeste.
 */
-// ?
-
+//
+nordeste = ['rs','fl','curs','fl','cu']
 /*
 Mostre no console os estados do nordeste.
 */
@@ -73,8 +82,9 @@ chamada `newSudeste`.
 Adicione os estados do `nordeste` ao array `brasil`. Esses estados devem
 ficar no mesmo nível que os estados já existentes, não em um array separado.
 */
-// ?
-
+//
+brasil = brasil.concat(nordeste);
+console.log(brasil);
 /*
 Mostre no console os estados em `newSudeste`.
 */
@@ -95,13 +105,20 @@ propriedades:
 - `estado`: que será o estado do array `brasil`.
 */
 // ?
+newBrasil = []
+brasil.forEach((item,index)=>{
+  newBrasil.push({
+    id: index,
+    estado: item
+  })
+})
 
 /*
 Mostre o array `newBrasil` no console
 */
 console.log( '\nnewBrasil:' );
 // ?
-
+console.log(newBrasil)
 /*
 Percorra o array `brasil` e verifique se os estados tem mais de 7 letras cada,
 atribuindo o resultado à uma variável. Se tiver, mostre no console a frase:
@@ -129,8 +146,13 @@ objeto desse array, e adicione a frase abaixo na propriedade `estado`:
 - "[ESTADO] pertence ao Brasil."
 Atribua o novo array a uma variável chamada `map`.
 */
-// ?
-
+//
+var map = newBrasil.map((item, index) =>{
+  item.id++;
+  item.estado = item.estado + 'vrau';
+  return item;
+})
+console.log(map)
 /*
 Mostre no console o array criado acima:
 */
