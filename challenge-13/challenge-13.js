@@ -19,6 +19,7 @@ Cada array deve conter os estados dessa região.
 sudeste = ['sp','rj','es']
 sul = ['rs','fl','cu']
 
+
 /*
 Crie uma variável chamada `brasil`, que irá receber as duas regiões
 concatenadas. Mostre o `brasil` no console.
@@ -118,7 +119,7 @@ Mostre o array `newBrasil` no console
 */
 console.log( '\nnewBrasil:' );
 // ?
-console.log(newBrasil)
+console.log(newBrasil);
 /*
 Percorra o array `brasil` e verifique se os estados tem mais de 7 letras cada,
 atribuindo o resultado à uma variável. Se tiver, mostre no console a frase:
