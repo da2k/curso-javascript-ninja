@@ -115,7 +115,7 @@ carro.addPessoas = function(numeroPessoas){
   var espaco = carro.assentos - carro.quantidadePessoas;
   var pessoas = espaco == 1 ? 'pessoa' : 'pessoas';
 
-  if(espaco < 5 && numeroPessoas > 5){
+  if(espaco > 0 && numeroPessoas > espaco || numeroPessoas < 0 && carro.quantidadePessoas == 0){
     return 'Só cabem mais '+espaco+' '+pessoas+'!';
   }
 
@@ -157,17 +157,17 @@ carro.obterMarcaModelo(); // 'Esse carro é um Audi A3.'
 carro.addPessoas(2); // 'Já temos 2 pessoas no carro!'
 
 // Adicione mais 4 pessoas no carro.
-carro.addPessoas(4);
+carro.addPessoas(4); // 'Só cabem mais 3 pessoas!'
 
 // Faça o carro encher.
-carro.addPessoas(3);
+carro.addPessoas(3); // 'Já temos 5 pessoas no carro!'
 
 // Tire 4 pessoas do carro.
-carro.addPessoas(-4);
+carro.addPessoas(-4); // 'Já temos 1 pessoas no carro!'
 
 // Adicione 10 pessoas no carro.
-carro.addPessoas(10);
+carro.addPessoas(10); // 'Só cabem mais 4 pessoas!'
 
 // Quantas pessoas temos no carro?
-carro.quantidadePessoas;
+carro.quantidadePessoas; // 1
 ```
