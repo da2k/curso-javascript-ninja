@@ -1,5 +1,5 @@
 # Desafio da semana #3
-
+test
 ```js
 // Declarar uma variável qualquer, que receba um objeto vazio.
 ?
