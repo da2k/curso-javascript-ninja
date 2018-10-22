@@ -58,13 +58,10 @@
     }
 
     function handleReadyStateChange() {
-      clearData();
-
+      clearData()
       if (isRequestOk()) {
         fillCEPFields();
-        //getMessage('ok')
       }
-
       if (isRequestFailed()) {
         getMessage('error')
       }
@@ -82,8 +79,7 @@
       var data = parseData();
 
       if (data.status === 0) {
-        getMessage('error')
-        clearData()
+        return getMessage('error', clearData())
       } else {
         getMessage('ok')
       }
@@ -97,11 +93,11 @@
     }
 
     function clearData() {
-      $logradouro.textContent = '-';
-      $bairro.textContent = '-';
-      $estado.textContent = '-';
-      $cidade.textContent = '-';
-      $cep.textContent = '-'
+      $logradouro.get()[0].textContent = '-';
+      $bairro.get()[0].textContent = '-';
+      $estado.get()[0].textContent = '-';
+      $cidade.get()[0].textContent = '-';
+      $cep.get()[0].textContent = '-'
     }
 
     function parseData() {
