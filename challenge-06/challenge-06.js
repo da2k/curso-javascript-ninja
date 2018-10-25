@@ -108,4 +108,4 @@ convertToHex("green");
 convertToHex("yellow");
 convertToHex("white");
 convertToHex("pink");
-convertToHex("gray");
+convertToHex("gray"); 
