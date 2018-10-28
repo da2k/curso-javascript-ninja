@@ -2,7 +2,7 @@
 
 ```js
 // Declarar uma variável qualquer, que receba um objeto vazio.
-?
+const myVar = {};
 
 /*
 Declarar uma variável `pessoa`, que receba suas informações pessoais.
@@ -16,7 +16,6 @@ As propriedades e tipos de valores para cada propriedade desse objeto devem ser:
 - `andando` - Boolean - recebe "falso" por padrão
 - `caminhouQuantosMetros` - Number - recebe "zero" por padrão
 */
-?
 
 /*
 Adicione um método ao objeto `pessoa` chamado `fazerAniversario`. O método deve
@@ -67,71 +66,116 @@ Crie um método chamado `mostrarAltura` que retorne a frase:
 */
 ?
 
+const person = {
+  nome: 'Filippo',
+  sobrenome: 'Barcellos',
+  sexo: 'Masculino',
+  idade: 28,
+  altura: 1.85,
+  peso: 90,
+  andando: false,
+  caminhouQuantosMetros: 0,
+  fazerAniversario() {
+    this.idade++;
+  },
+  andar(value) {
+    this.caminhouQuantosMetros =+ value;
+    this.andando = true;
+  },
+  parar() {
+    this.andando = false;
+  },
+  getFullName() {
+    return `Olá! Meu nome é ${this.nome} ${this.sobrenome}!`;
+  },
+  getAge() {
+    return `Olá, eu tenho ${this.idade} anos!`;
+  },
+  getWeight() {
+    return `Eu peso ${this.peso} Kg."`;
+  },
+  getHeight() {
+    return `Minha altura é ${this.altura} m`
+  },
+  apresentacao() {
+    const article = this.sexo === 'Masculino' ? 'o' : 'a';
+    const plural = this.age === 1 ? 'ano' : 'anos';
+    const mtrs = this.caminhouQuantosMetros <= 1 ? 'metro' : 'metros';
+
+    return `Olá, eu sou ${article} ${this.nome} ${this.sobrenome}, tenho ${this.idade} ${plural}, ${this.altura}, meu peso é ${this.peso} e, só hoje, eu já caminhei ${this.caminhouQuantosMetros} ${mtrs}!`;
+  }
+}
+
 /*
 Agora vamos brincar um pouco com o objeto criado:
 Qual o nome completo da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+person.getFullName();
+
 
 /*
 Qual a idade da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+person.getAge();
 
 /*
 Qual o peso da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+person.getWeight();
 
 /*
 Qual a altura da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+person.getHeight();
 
 /*
 Faça a `pessoa` fazer 3 aniversários.
 */
-?
+person.fazerAniversario();
+person.fazerAniversario();
+person.fazerAniversario();
 
 /*
 Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
 comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
-?
+//31
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
 com metragens diferentes passadas por parâmetro.
 */
-?
+person.andar(10);
+person.andar(20);
+person.andar(30);
 
 /*
 A pessoa ainda está andando? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+//sim
 
 /*
 Se a pessoa ainda está andando, faça-a parar.
 */
-?
+person.parar();
 
 /*
 E agora: a pessoa ainda está andando? (Use uma instrução para responder e
 comentários inline ao lado da instrução para mostrar a resposta retornada)
 */
-?
+//nops
 
 /*
 Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
 inline ao lado da instrução para mostrar a resposta retornada)
 */
-?
+//60m
 
 /*
 Agora vamos deixar a brincadeira um pouco mais divertida! :D
