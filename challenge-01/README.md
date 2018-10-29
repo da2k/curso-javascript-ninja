@@ -43,37 +43,19 @@ var souninja = true
 ?
 
 
-function comida () {
-
-var arroz = 'arroz';
-var feijao = 'feijão';
-var ovo = 'ovo';
-
-}
+var comida ['arroz','feijao','ovo'];
 
 
 // Digite a instrução que imprime o valor de 'feijao', que está na variável `comida`.
 ?
 
-
-
-function comida () {
-
-var arroz = 'arroz';
-var feijao = 'feijão';
-var ovo = 'ovo';
-
-return feijao;
-
-}
-
-comida ()
+comida[1];
 
 
 // Digite o código que verifica se a variável `soma' é igual a variável `myvar` (testando também o tipo).
 ?
 
-soma == myvar
+soma === myvar
 
 // Digite o código que verifica se a variável `myvar` é menor ou igual à variável `soma`.
 ?
