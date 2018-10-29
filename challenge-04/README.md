@@ -7,15 +7,24 @@ um único parâmetro como argumento. Essa função deve retornar `true` se o
 equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
-?
+let isTruthy = function( param ) {
+  return param ? true : false;
+}
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
-?
+isTruthy(null);
+isTruthy(false);
+isTruthy(undefined);
+isTruthy('');
+isTruthy(0);
+isTruthy(NaN);
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
-?
+isTruthy(true);
+isTruthy(1);
+
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
@@ -29,7 +38,6 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `assentos` - Number - cinco por padrão
 - `quantidadePessoas` - Number - zero por padrão
 */
-?
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
@@ -51,6 +59,54 @@ Crie um método chamado `obterModelo` que retorne o modelo do carro.
 Crie um método chamado `obterMarca` que retorne a marca do carro.
 */
 ?
+
+const carro = {
+  marca: 'Audi',
+  modelo: 'Q3',
+  placa: 'KOA-3624',
+  ano: 2018,
+  cor: 'Preto',
+  quantasPortas: 5,
+  assentos: 5,
+  quantidadePessoas: 0,
+  mudarCor( newColor ) {
+    this.cor = newColor;
+  },
+  obterCor() {
+    return this.cor;
+  },
+  obterModelo() {
+    return this.modelo;
+  },
+  obterMarca() {
+    return this.marca;
+  },
+  obterMarcaModelo() {
+    return `Esse carro é um ${this.marca} ${this.modelo}`;
+  },
+  addPessoas( qtd ) {
+    var totalPessoas = this.quantidadePessoas + qtd;
+    var qtdAindaCabem = totalPessoas - this.assentos;
+
+    var checkPlural = function(arg) {
+      return arg === 1 ? 'pessoa' : 'pessoas';
+    }
+
+    if( this.assentos === this.quantidadePessoas ) {
+      return `O carro está lotado`;
+    }
+
+    if( totalPessoas > this.assentos ) {
+
+      return `Só cabem mais ${qtdAindaCabem} ${checkPlural(qtdAindaCabem)} no carro.`
+    }
+
+    this.quantidadePessoas += qtd;
+    return `Ja temos ${totalPessoas} ${checkPlural(totalPessoas)} no carro!`;
+  }
+}
+
+
 
 /*
 Crie um método chamado `obterMarcaModelo`, que retorne:
