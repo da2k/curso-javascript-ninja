@@ -7,34 +7,34 @@ um único parâmetro como argumento. Essa função deve retornar `true` se o
 equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
-function isTruthy(x){
-    return x ? true : false;
+var isTruthy = function(x) {
+    return x ? true : false; //return !!x
 };
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
-function isTruthy(0);
-function isTruthy(-0);
-function isTruthy(null);
-function isTruthy(NaN);
-function isTruthy(undefined);
-function isTruthy('');
-function isTruthy("");
-function isTruthy(false);
+isTruthy(0);
+isTruthy(-0);
+isTruthy(null);
+isTruthy(NaN);
+isTruthy(undefined);
+isTruthy('');
+isTruthy("");
+isTruthy(false);
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
-function isTruthy(1);
-function isTruthy('a');
-function isTruthy(true);
-function isTruthy(2);
-function isTruthy('b');
-function isTruthy(3);
-function isTruthy('c');
-function isTruthy(4);
-function isTruthy('d');
-function isTruthy(5);
-function isTruthy('e');
+isTruthy(1);
+isTruthy('a');
+isTruthy(true);
+isTruthy(2);
+isTruthy('b');
+isTruthy(3);
+isTruthy('c');
+isTruthy(4);
+isTruthy('d');
+isTruthy(5);
+isTruthy('e');
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
@@ -48,21 +48,22 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `assentos` - Number - cinco por padrão
 - `quantidadePessoas` - Number - zero por padrão
 */
-var carro = {marca: 'Fiat', 
-modelo: 'Palio', 
-placa: 'RJT-0589', 
-ano: 2018, 
-cor: 'Preto',
-quantasPortas: 4, 
-assentos: 5, 
-quantidadePessoas: 0 
+var carro = {
+    marca: 'Fiat', 
+    modelo: 'Palio', 
+    placa: 'RJT-0589', 
+    ano: 2018, 
+    cor: 'Preto',
+    quantasPortas: 4, 
+    assentos: 5, 
+    quantidadePessoas: 0 
 };
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
-carro.mudaCor = function(cor){
+carro.mudarCor = function(cor){
     carro.cor = cor;
 };
 
@@ -143,13 +144,13 @@ Qual a cor atual do carro?
 carro.obterCor(); //'Preto'
 
 // Mude a cor do carro para vermelho.
-carro.cor = 'Vermelho';
+carro.mudarCor('Vermelho');
 
 // E agora, qual a cor do carro?
 carro.obterCor(); //'Vermelho'
 
 // Mude a cor do carro para verde musgo.
-carro.cor = 'Verde Musgo';
+carro.mudarCor('Verde Musgo');
 
 // E agora, qual a cor do carro?
 carro.obterCor(); //'Verde Musgo'
