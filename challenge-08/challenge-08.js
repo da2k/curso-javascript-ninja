@@ -100,7 +100,7 @@ parâmetro o operador de soma.
 var sum = calculator("+");
 
 /*
-Agora `sum` é uma função. Mostre no console a soma de dois números, usando ela.
+Agora `sum` é uma função. Mostre no console a soma de dois números, usando ela..
 */
 console.log(sum(1, 2));
 
