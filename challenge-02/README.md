@@ -22,9 +22,9 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function atrOutraVar (x) {
-  outraVar = x;
-  return 'O valor da variável agora é ' + x;
+function atrOutraVar () {
+  valor = 1;
+  return 'O valor da variável agora é ' + valor;
 }
 
 // Invoque a função criada acima.
@@ -60,7 +60,7 @@ minhaFuncao(2,2);
 minhaFuncao(2,2,2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-10
+//10
 
 /*
 Crie uma função com as seguintes características:
@@ -86,8 +86,8 @@ function outraFuncao(x,y,z){
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-outraFuncao() //false
-outraFuncao(2) //2
-outraFuncao(2,2) //4
-outraFuncao(2,2,2) //2
-outraFuncao(null) //nulls
+outraFuncao(); //false
+outraFuncao(2); //2
+outraFuncao(2,2); //4
+outraFuncao(2,2,2); //2
+outraFuncao(null); //null
