@@ -2,17 +2,19 @@
 Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
-// ?
+var arr = [ 'Rafael', true, null, 25, function() {} ];
 
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
-// ?
+function returnArray(param) {
+    return param;
+}
 
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-// ?
+console.log( returnArray(arr)[1] );
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -20,18 +22,24 @@ segundo, um número. A função deve retornar o valor de um índice do array que
 no primeiro parâmetro. O índice usado para retornar o valor, deve ser o número passado no
 segundo parâmetro.
 */
-// ?
+function posArray( newArray, num ) {
+    console.log(newArray[num]);
+}
 
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
-// ?
+var dados = [ true, null, function() {}, 'String', 99 ];
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-// ?
+posArray( dados, 0 );
+posArray( dados, 1 );
+posArray( dados, 2 );
+posArray( dados, 3 );
+posArray( dados, 4 );
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -47,30 +55,47 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-// ?
+function book(nomeLivro) {
+    var lista = {
+        'Steve Jobs': { quantidadePaginas: 500, autor: 'Walter Isaacson', editora: 'QRM Editoria' },
+        'Senhor do Anéis': { quantidadePaginas: 800, autor: 'J. K. Rowling', editora: 'Universal Studios' },
+        'O homem mais inteligente da história': { quantidadePaginas: 250, autor: 'Augusto Cury', editora: 'Brasileira' }
+    };
+    if ( nomeLivro === 'Steve Jobs' ) {
+        return lista["Steve Jobs"];
+    } 
+    if ( nomeLivro === 'Senhor dos Anéis' ) {
+        return lista["Senhor do Anéis"];
+    } 
+    if ( nomeLivro === 'O homem mais inteligente da história') {
+        return lista["O homem mais inteligente da história"];
+    }
+    return lista;
+}
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-// ?
+console.log( book() );
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// ?
+var nomeLivro = 'Senhor dos Anéis';
+console.log( 'O livro ' + nomeLivro + ' tem ' + book(nomeLivro).quantidadePaginas + ' páginas!' );
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
+console.log( 'O autor do livro ' + nomeLivro + ' é ' + book(nomeLivro).autor );
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-// ?
+console.log( 'O livro ' + nomeLivro + ' foi publicado pela editora ' + book(nomeLivro).editora );
