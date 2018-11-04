@@ -99,8 +99,6 @@ indentação correta do código, para ficar dentro da IIFE.
     var division = calculator(1,1);
     var mod = calculator(1,1);
 
-
-
     /*
     Mostre as variáveis acima no `console` (uma chamada de console por variável),
     criando a função de `callback` que faz o cálculo para subração, multiplicação,
