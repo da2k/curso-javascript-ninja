@@ -1,5 +1,4 @@
 # Desafio da semana #4
-
 ```js
 /*
 Declare uma variável chamada `isTruthy`, e atribua a ela uma função que recebe
@@ -7,14 +6,26 @@ um único parâmetro como argumento. Essa função deve retornar `true` se o
 equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
-?
+var isTruthy = function(parametro){
+    return parametro ? "true" : "false" ;
+}
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
-?
+
+isTruthy('');
+isTruthy(0);
+isTruthy(-0);
+isTruthy(undefined);
+isTruthy(null);
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
+isTruthy(1);
+isTruthy(2);
+isTruthy(3);
+isTruthy(4);
+isTruthy("Qualquer coisa aqui");
 ?
 
 /*
@@ -29,35 +40,49 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `assentos` - Number - cinco por padrão
 - `quantidadePessoas` - Number - zero por padrão
 */
-?
+var carro = {
+    marca: "Wolks", modelo:"Golfera" , placa:"NFD-4455" , ano: 6945 , cor:"Vermelho" , quantasPortas:5,
+    assentos: 5, quantidadePessoas:0}
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
+function mudaCor(cor){
+    carro.cor = cor;
+}
 ?
 
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
+    function obterCor(){
+        return carro.cor;
+    }
 ?
 
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
-?
+function obterModelo(){
+    return carro.modelo;
+}
 
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
 */
-?
+function obterMarca(){
+    return carro.marca;
+}
 
 /*
 Crie um método chamado `obterMarcaModelo`, que retorne:
 "Esse carro é um [MARCA] [MODELO]"
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
-?
+function obterMarcaModelo(){
+    return "Esse carro é um " +carro.marca + " - " +carro.modelo;
+}
 
 /*
 Crie um método que irá adicionar pessoas no carro. Esse método terá as
@@ -75,7 +100,18 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-?
+carro.adicionarPessoas = function(numero){
+    var total = carro.quantidadePessoas + numero; 
+    if(carro.quantidadePessoas >= carro.assentos){
+        return "O carro já está lotado!"
+    }
+    if(total > carro.assentos){
+        var cabem = carros.assentos - carro.quantidadePessoas;
+        return "Só cabem mais "+cabem +" pessoas!"
+    }
+    carro.quantidadePessoas += numeroPessoas;
+    return 'Já temos '+carro.quantidadePessoas +' pessoas no carro!"'
+}
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -85,28 +121,30 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-?
+carro.cor
+"Rosa"ca
 
 // Mude a cor do carro para vermelho.
-?
+mudaCor("Rosa");
 
 // E agora, qual a cor do carro?
-?
+carro.cor
+"Rosa"
 
 // Mude a cor do carro para verde musgo.
-?
+mudaCor("Verde musgo");
 
 // E agora, qual a cor do carro?
-?
+carro.cor
+"Verde musgo"
 
 // Qual a marca e modelo do carro?
-?
+carro.modelo
+"Golfera"
 
 // Adicione 2 pessoas no carro.
-?
 
-// Adicione mais 4 pessoas no carro.
-?
+// Adicione mais 4 pessoas no carro
 
 // Faça o carro encher.
 ?
