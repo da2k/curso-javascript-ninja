@@ -36,8 +36,13 @@ myvar <= soma
 
 // Crie uma função chamada `divisao` que receba como parâmetro dois números, e retorne o resultado da divisão entre eles.
 function divisao(x, y) { 
+<<<<<<< HEAD
   var z = x / y;
   return z;
+=======
+  var x = x / y;
+  return x;
+>>>>>>> 45d1659e4daabbae3f732dcde1f1ac442b2c1294
  }
 
 // Invoque a função criada acima, passando os parâmetros 10 e 2.

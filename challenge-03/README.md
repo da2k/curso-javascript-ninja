@@ -64,7 +64,7 @@ Crie um método chamado `nomeCompleto`, que retorne a frase:
 - "Olá! Meu nome é [NOME] [SOBRENOME]!"
 */
 pessoa.nomeCompleto = function() {
-	return `Olá! meu nome é ${pessoa.nome} ${pessoa.sobrenome}`
+	return `${pessoa.nome} ${pessoa.sobrenome}`
 }
 
 /*
@@ -185,16 +185,22 @@ deve conter no retorno da frase acima é "metro" no lugar de "metros".
 método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
+
 pessoa.apresentacao = function() {
+	var sexo = 'o'
+	var idade = 'anos'
+	var caminhar = 'metros'
+
 	if(pessoa.sexo === 'Feminino') {
-		return `Olá, eu sou a ${pessoa.nomeCompleto()}, tenho ${pessoa.idade} anos, ${pessoa.altura}m de altura, meu peso é ${pessoa.peso} e, só hoje, eu já caminhei ${pessoa.caminhouQuantosMetros} metros!`
-	} else if(pessoa.idade === 1) {
-		return `Olá, eu sou o ${pessoa.nomeCompleto()}, tenho ${pessoa.idade} ano, ${pessoa.altura}m de altura, meu peso é ${pessoa.peso} e, só hoje, eu já caminhei ${pessoa.caminhouQuantosMetros} metros!`
-	} else if(pessoa.caminhouQuantosMetros === 1) {
-		return `Olá, eu sou o ${pessoa.nomeCompleto()}, tenho ${pessoa.idade} anos, ${pessoa.altura}m de altura, meu peso é ${pessoa.peso} e, só hoje, eu já caminhei ${pessoa.caminhouQuantosMetros} metro!`
-	} else {
-		return `Olá, eu sou o ${pessoa.nomeCompleto()}, tenho ${pessoa.idade} anos, ${pessoa.altura}m de altura, meu peso é ${pessoa.peso} e, só hoje, eu já caminhei ${pessoa.caminhouQuantosMetros} metros!`
+		sexo = 'a'
 	}
+	if(pessoa.idade === '1') {
+		idade = 'ano'
+	}
+	if(pessoa.caminhouQuantosMetros === 1) {
+		caminhar = 'metro'
+	}
+	return `Olá, eu sou ${sexo} ${pessoa.nomeCompleto()}, tenho ${pessoa.idade} ${idade}, ${pessoa.altura}m de altura, meu peso é ${pessoa.peso} e, só hoje, eu já caminhei ${pessoa.caminhouQuantosMetros} ${caminhar}!`
 }
 
 // Agora, apresente-se ;)
