@@ -14,7 +14,7 @@ var qualquer = recebe(2, 6) + 5;
 
 
 // Qual o valor atualizado dessa variável?
-13
+13;
 
 // Declare uma nova variável, sem valor.
 var without;
