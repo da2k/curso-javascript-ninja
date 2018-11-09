@@ -15,8 +15,8 @@ soma = 15 + 8;
 soma += 1; 
 
 // Atribua à variável `soma` todo o valor dela, multiplicando por 3, usando o operador de multiplicação abreviado.
-soma = soma * 3;
-
+// soma = soma * 3; errado
+soma *= 3;
 // Qual é o valor da variável `soma` até aqui?
 72
 
