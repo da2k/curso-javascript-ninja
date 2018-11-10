@@ -186,32 +186,25 @@ correta, de acordo com os dados inseridos no objeto.
 */
 
 pessoa.apresentacao = function(){
-var apresentacao = "Olá, eu sou";
 if (pessoa.sexo == "Feminino" || pessoa.sexo == "feminino") {
-apresentacao += " a " + pessoa.nome + " " + pessoa.sobrenome + ", ";
+var sexo = "Olá, eu sou a " + pessoa.nome + " " + pessoa.sobrenome + ", ";
 } else {
-apresentacao += " o " + pessoa.nome + " " + pessoa.sobrenome + ", ";
+var sexo = "Olá, eu sou o " + pessoa.nome + " " + pessoa.sobrenome + ", ";
 }
-
-apresentacao += "tenho " + pessoa.idade;
 
 if (pessoa.idade == 1) {
-apresentacao += " ano, ";
+var idade = "tenho " + pessoa.idade + " ano, ";
 } else {
-apresentacao += " anos, ";
+var idade = "tenho " + pessoa.idade + " anos, ";
 }
-
-apresentacao += pessoa.altura + ", ";
-
-apresentacao += "meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei ";
 
 if (pessoa.caminhouQuantosMetros == 1) {
-apresentacao += pessoa.caminhouQuantosMetros + " metro!";
+var caminhou = pessoa.altura + ", " + "meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " metro!";
 } else {
-apresentacao += pessoa.caminhouQuantosMetros + " metros!";
+var caminhou = pessoa.altura + ", " + "meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " metros!";;
 }
 
-return apresentacao;
+return sexo + idade + caminhou;
 
 }
 
