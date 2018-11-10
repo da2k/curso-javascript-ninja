@@ -22,14 +22,14 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function mensagem(valor) {
-    myVar = valor;
+function mensagem() {
+    myVar = 15;
 
     return "O valor da variável agora é " + myVar + ".";
 }
 
 // Invoque a função criada acima.
-mensagem(15);
+mensagem();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
@@ -73,31 +73,26 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function teste(a, b, c) {
-    //5. Se nenhum argumento for passado, retorne o valor booleano `false`.
-    if (a === undefined && b === undefined && c === undefined) {
-        return false;
+    if (a !== undefined && b === undefined && c === undefined) {
+        return a;
     }
-    //4. Se todos os argumentos forem passados, retorne a soma do primeiro com o segundo, e o resultado, dividido pelo terceiro.
+    else if (a !== undefined && b !== undefined && c === undefined) {
+        return a + b;
+    }
     else if (a !== undefined && b !== undefined && c !== undefined) {
         return (a + b) / c;
     }
-    //3. Se dois argumentos forem passados, retorne a soma dos dois argumentos.
-    else if (a !== undefined && b !== undefined) {
-        return a + b;
+    else if (a === undefined && b === undefined && c === undefined) {
+        return false;
     }
-    //2. Se somente um argumento for passado, retorne o valor do argumento.
-    else if (a !== undefined) {
-        return a;
-    }
-    //6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
     else {
         return null;
     }
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-teste(); //false
-teste(4); //4
-teste(4, 2); //6
-teste(4, 2, 3); //2
+teste(); // false
+teste(4); // 4
+teste(4, 2); // 6
+teste(4, 2, 3); // 2
 ```
