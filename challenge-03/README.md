@@ -208,8 +208,6 @@ return sexo + idade + caminhou;
 
 }
 
-
-
 // Agora, apresente-se ;)
-?
+pessoa.apresentacao(); //"Olá, eu sou o Rodrigo Cantanhede, tenho 36 anos, 1.7, meu peso é 86 e, só hoje, eu já caminhei 12 metros!"
 ```
