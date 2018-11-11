@@ -147,7 +147,9 @@ pessoa.andando; // true
 /*
 Se a pessoa ainda está andando, faça-a parar.
 */
-pessoa.parar();
+if (pessoa.andando) {
+    pessoa.parar();
+}
 
 /*
 E agora: a pessoa ainda está andando? (Use uma instrução para responder e
