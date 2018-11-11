@@ -197,5 +197,5 @@ pessoa.apresentacao = function () {
 }
 
 // Agora, apresente-se ;)
-console.log(pessoa.apresentacao())
+console.log(pessoa.apresentacao()) // Olá, eu sou o Henrique Moreira, tenho 28 anos, tenho 1.87 metros, Eu peso 89Kg. e, só hoje, ja caminhei 1360 metros.
 ```
