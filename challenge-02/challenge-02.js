@@ -76,7 +76,7 @@ function myFunction(x, y, z) {
   if (x !== undefined && y !== undefined && z === undefined) {
     return x + y
   }
-  if (z !== undefined && y !== undefined && z !== undefined) {
+  if (x !== undefined && y !== undefined && z !== undefined) {
     return (x + y) / z
   }
   if (x === undefined && y === undefined && z === undefined) {
