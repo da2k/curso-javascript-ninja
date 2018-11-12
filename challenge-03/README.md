@@ -58,7 +58,7 @@ Crie um método chamado `nomeCompleto`, que retorne a frase:
 */
 
 pessoa.nomeCompleto = function(){
-return "Olá! Meu nome é " + pessoa.nome + " " + pessoa.sobrenome;
+return "Olá! Meu nome é " + pessoa.nome + " " + pessoa.sobrenome + "!";
 }
 
 /*
@@ -101,21 +101,21 @@ Qual a idade da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
 
-pessoa.idade // 33
+pessoa.mostrarIdade(); // "Olá, eu tenho 33 anos!"
 
 /*
 Qual o peso da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
 
-pessoa.peso // 86
+pessoa.mostrarPeso(); //"Eu peso 86 Kg" 
 
 /*
 Qual a altura da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
 
-pessoa.altura // 1.7
+pessoa.mostrarAltura(); //"Minha altura é 1.7m."
 
 /*
 Faça a `pessoa` fazer 3 aniversários.
