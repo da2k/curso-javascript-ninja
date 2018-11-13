@@ -77,4 +77,4 @@ for (let index = 100; index <= 120; index++) {
 for (let index = 111; index <= 125; index++) {
     index % 2 !== 0 ? console.log(index) : ''; 
 }
-// ?
+// ? 
