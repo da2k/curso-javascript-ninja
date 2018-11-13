@@ -6,9 +6,8 @@ para o contrário.
 */
 
 var isTruthy = function(x) {
-    var equivalente = x ? true : false;
-    return equivalente; 
-} 
+return !!x;
+};
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 
@@ -18,6 +17,7 @@ isTruthy(undefined);
 isTruthy(false);
 isTruthy(-0);
 isTruthy(null);
+isTruthy("");
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
@@ -109,18 +109,22 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
     citado acima, no lugar de "pessoas".
     */
 
-    carro.adicionarPessoas = function(x) {
-        var quantidadeDisponivel = 5 - (carro.quantidadePessoas);
-        if(carro.quantidadePessoas < 5 && (carro.quantidadePessoas + x) > 5 ) {
-            return (quantidadeDisponivel) > 1 ? "Só cabem mais " + quantidadeDisponivel + " pessoas!" : "Só cabe mais " + quantidadeDisponivel + " pessoa!";
-        } else if (carro.quantidadePessoas >= 5) {
-            return "O carro já está lotado!";
-        } else {
-            carro.quantidadePessoas += x;
-            return "Já temos " + carro.quantidadePessoas + " pessoas no carro!";
-        }
-    }
+carro.adicionarPessoas = function (x) {
+    var quantPessoas = carro.quantidadePessoas;
+    var quantAssentosDisponiveis = 5 - quantPessoas;
 
+    if (quantPessoas == quantAssentosDisponiveis) {
+        return "O carro já está lotado!"
+    };
+
+    if (quantPessoas < 5 && (quantPessoas + x) > 5) {
+        return quantAssentosDisponiveis > 1 ? "Só cabem mais " + quantAssentosDisponiveis + " pessoas!" : "Só cabem mais " + quantAssentosDisponiveis + " pessoa!"
+    };
+    
+    carro.quantidadePessoas += x;
+    return "Já temos " + carro.quantidadePessoas + " pessoas no carro!";
+
+}
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
 utilize sempre o formato de invocação do método (ou chamada da propriedade),
