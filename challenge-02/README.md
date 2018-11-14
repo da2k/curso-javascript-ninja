@@ -53,7 +53,7 @@ function tresArgumentos(a,b,c){
 tresArgumentos(2,2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-// o resultado é NaN.
+// o resultado é 'Preencha todos os valores corretamente!'
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 tresArgumentos(2,2,2);
