@@ -1,15 +1,15 @@
-Resumo do curso JS Ninja
+# Resumo do curso JS Ninja
 
-/* 
-Seção 1
-*/
+## Seção 1
 
-// Vídeo 02
+### Vídeo 02
 Variáveis: valores simbólicos de valores
 
 Pra criar uma variável:
-> var nome;
-> var num = 1;
+```javascript
+var nome;
+var num = 1;
+```
 
 Tipos de dados: number, string, boolean, null, undefined, {} object, [] array.
 
@@ -18,27 +18,36 @@ undefined aparece quando uma variável é declarada, porém não há um valor ai
 null é um valor por si só. Pode ser a representação de um valor nulo ou sem valor. JS nunca determina um valor como nulo, isso tem que ser feito pelo programador.
 
 Objetos:
-> var x = {};
-> var pessoa = {
-> altura: 1.87,
-> peso: 90   
-> };
+```javascript
+var x = {};
+var pessoa = {
+  altura: 1.87,
+  peso: 90   
+};
+```
 
 Array:
-> var numeros = [];
-> numeros = [ 1, 2, 3, 4 ];
-Para acessar um determinado array:
-> numero[0];
-> numero[3];
+```javascript
+var numeros = [];
+numeros = [ 1, 2, 3, 4 ];
 
-// Vídeo 03
+// Para acessar um determinado array:
+numero[0];
+numero[3];
+```
+
+
+### Vídeo 03
 Operadores aritméticos:
+```
 + Adição;
 - Subtração;
 * Multiplicação;
 / Divisão.
+```
 
 Operadores aritméticos abreviados:
+```
 ++ adição de 1 (incremento);
 -- substração de 1 (decréscimo).
 
@@ -48,124 +57,151 @@ Operadores aritméticos abreviados:
 -= subtrai valor;
 *= multiplica valor;
 /= divide valor;
+```
 
-// Vídeo 04
+### Vídeo 04
 Operadores de igualdade / relacionais:
+```
 == igual a
 != diferente de
 
 === igual a, e do mesmo tipo
 !== diferente de, mas do mesmo tipo
+```
 
 Referência:
 https://www.codecademy.com/en/forum_questions/51392b8a3bd5292a360000eb
 
+```
 > maior que
 < menor que
 >= maior ou igual a
 <= menor ou igual a
+```
 
-// Vídeo 05
+### Vídeo 05
 Funções: blocos de código Javascript nomeados, e que podem ser invocados usando o operador ().
-> function nome() {};
->
-> var x = 1;
-> function soma() {
-> x = x + 1;    
-> };
-> soma(); // retorna 2
+```javascript
+function nome() {};
+
+var x = 1;
+function soma() {
+  x = x + 1;    
+};
+
+soma(); // retorna 2
+```
 
 Escopo: variáveis criadas dentro da função não podem ser invocadas fora dela.
 Parâmetros: são argumentos, valores, que a função recebe e pode manipular dentro dela.
 > function soma( x, y ) { return x + y; } // x e y são parâmetros
 
 
+----
 
-/* 
-Seção 2
-*/
 
-// Vídeo 08
+## Seção 2
+### Vídeo 08
 Operadores lógicos: combina dois valores e retorna se é true ou false.
-&& (AND)
-|| (OR)
-! (NOT)
+```javascript
+&& // (AND)
+|| // (OR)
+! // (NOT)
+```
 
-// Vídeo 09
+### Vídeo 09
 Operadores unários: tenta converter valor para número ou concateca valores.
- + e -
-> +'3' // retorna 3
-> +'fernando' // retorna NaN (not a number)
-> '3'  + 3 // retorna '33' (concatena)
+```javascript
+// + e -
 
- //Vídeo 10
++'3' // retorna 3
++'fernando' // retorna NaN (not a number)
+'3'  + 3 // retorna '33' (concatena)
+```
+
+### Vídeo 10
 Estrutura léxica
 Javascript é case sensitive.
 Comentários:
+```javascript
 // de linha
 /*
 de bloco
 */
+```
 
 Literais: valores que fazem parte do código javascript.
-Números 12, 1.2
-Strings 'ninja' "ninja"
-Null
-Objetos { a: 1 }
-Arrays [ 1, 2 ]
-Bolleanas true false
+- Números 12, 1.2
+- Strings 'ninja' "ninja"
+- Null
+- Objetos { a: 1 }
+- Arrays [ 1, 2 ]
+- Bolleanas true false
 
 Identificadores: nomes pra variáveis e funções
+
 Podem iniciar com _ ou $, letras de a a z e A a Z.
+
 Podem conter _ ou $, letras de a a z e A a Z, dígitos de 0 a 9 e qualquer caractere UNICODE.
 
 Palavras reservadas: palavras reservadas pelos desenvolvedores de Javascript e por isso não podem ser usadas como identificadores.
 https://www.w3schools.com/js/js_reserved.asp
 
-// Vídeo 11
+### Vídeo 11
 Instruções condicionais (IF)
-> if(condicao) { rotina }
-> var x = 3;
-> var y = 3;
-> if( x == y ) { return 'yes'; } // retorna 'yes'
-> if( x !== y || y == 3 ) { return 'yes' } // retorna 'yes', porque y == 3
+```javascript
+//if(condicao) { rotina }
+var x = 3;
+var y = 3;
+if( x == y ) { return 'yes'; } // retorna 'yes'
+if( x !== y || y == 3 ) { return 'yes' } // retorna 'yes', porque y == 3
 
-ELSE: caso a primeira condição do IF não se concretize, faça o de ELSE
-> if (condicao) { rotina }
-> else { rotina02 };
+// ELSE: caso a primeira condição do IF não se concretize, faça o de ELSE
+if (condicao) { rotina }
+else { rotina02 };
 
-ELSEIF: cria uma segunda condicional no IF.
-> if (condicao) { rotina }
-> elseif (condicao) { rotina02 }
-> else { rotina03 };
+// ELSEIF: cria uma segunda condicional no IF.
+if (condicao) { rotina }
+elseif (condicao) { rotina02 }
+else { rotina03 };
+```
+
+
+---
 
 
 
-/* 
-Seção 3
-*/
-
-// Vídeo 16
+## Seção 3
+### Vídeo 16
 Objetos: conjunto de propriedades.
-> { propriedade: 'valor' };
-> var objeto = { propriedade: 'valor, propriedade2: 10, propriedade3: true };
-> objeto.propriedade // retorna 'valor'
+```javascript
+var objeto = {
+  propriedade: 'valor',
+  propriedade2: 10,
+  propriedade3: true
+}
+objeto.propriedade // retorna 'valor'
+```
 
-// Vídeo 17
+### Vídeo 17
 Métodos do objeto: função dentro de um objeto
-> var objeto2 = { metodo: function( num ) {return num} }
-> objeto2.metodo();
+```javascript
+var objeto2 = {
+  metodo: function( num ) {return num}
+}
+objeto2.metodo();
+```
 
 Para alterar o valor:
-> objeto.propriedade2 = 20;
+```javascript
+objeto.propriedade2 = 20;
+```
+
+---
 
 
-
-/* 
-Seção 4
-*/
-
-// Vídeo 21
+## Seção 4
+### Vídeo 21
 Truthy e Falsy: valores que, em termos booleanos, são verdadeiros ou falso.
 
 Valores falsy:
@@ -182,33 +218,35 @@ Descobrir a representação booleana, sem usar o if:
 !!variável
 
 
-// Vídeo 22
+### Vídeo 22
 Condicional ternário: uma forma abreviada de fazer uma condicional. Usar apenas pra instruções pequenas.
+```javascript
+// condição ? true : false.
+1 === 2 ? true : false // returna false.
+var sexo = pessoa.sexo === 'Feminino' ? 'a' : 'o';
+var carro = 'string' ? 'porta' : 'janela' // returna 'porta'
+```
 
-condição ? true : false.
-> 1 === 2 ? true : false // returna false.
-> var sexo = pessoa.sexo === 'Feminino' ? 'a' : 'o';
-> var carro = 'string' ? 'porta' : 'janela' // returna 'porta'
-
-
-// Vídeo 23
+### Vídeo 23
 Escopo local e global: o que é declarado dentro de funções só é acessível dentro dela.
 
-Utilização da var: utilizando-se o var, ele se detém ao escopo. Se não utilizado, o JS interpreta como se a variável fosse de escopo global,
-> function newFunction() {
-> newVar = 'variavel global';
-> return newVar;   
-> };
-> newVar; // retorna 'variavel global'
-Argumentos de função também são locais.
+Utilização da var: utilizando-se o var, ele se detém ao escopo. Se não utilizado, o JS interpreta como se a variável fosse de escopo global.
+```javascript
+function newFunction() {
+  newVar = 'variavel global';
+  return newVar;   
+};
+newVar; // retorna 'variavel global'
 
+// Argumentos de função também são locais.
+```
 
 
 /* 
 Seção 5
 */
 
-// Vídeo 28
+### Vídeo 28
 Retorno de funções com arrays e objetos
 > myFunction() {
 > return [ 1, 2, 3 ];   
@@ -226,7 +264,7 @@ Retorno de funções com arrays e objetos
 > myFunction2().prop1; // retorna 1
 
 
-// Vídeo 29
+### Vídeo 29
 Arrays e objetos como argumentos
 > var arr = [ 1, 2, 3 ];
 > function myFunction(arg) {
@@ -249,7 +287,7 @@ Arrays e objetos como argumentos
 Seção 6
 */
 
-// Vídeo 35
+### Vídeo 35
 Operador vírgula: junta várias expressões
 > var a, b = 2, c;
 > function myFunc() {
@@ -274,7 +312,7 @@ switch (x) {
 Atenção: não esquecer de colocar o break depois de cada 'case'.
 
 
-// Vídeo 36
+### Vídeo 36
 Estrutura de repetição (loop)
 While
 
@@ -289,7 +327,7 @@ while( counter < 10 ) {
 Seção 7
 */
 
-// Vídeo 39
+### Vídeo 39
 Operador módulo %: resto da divisão (inteiro).
 3 % 3 = 0
 5 % 2 = 1
@@ -302,7 +340,7 @@ Mostrar somente os números pares:
 > }
 
 
-// Vídeo 40
+### Vídeo 40
 Propriedade de arrays
 length: conta quantos elementos tem no array
 
@@ -314,7 +352,7 @@ length: conta quantos elementos tem no array
 > }; // retorna todos os elementos do array
 
 
-// Vídeo 41
+### Vídeo 41
 push(): adiciona elemento em um array
 > arr.push(false); // arr = [ 'Fernando', 1, true, function() {}, false ]
 
@@ -327,13 +365,13 @@ for ( init, condition, final-expression ) {};
 Seção 8
 */
 
-// Vídeo 44
+### Vídeo 44
 Nomear funções: facilita o debug.
 > var func = function func() {};
 > func.name // retorna func
 
 
-// Vídeo 45
+### Vídeo 45
 Functional programming: maneira de programar.
 Objetos de primeira classe. Objetos e funções tem o mesmo tratamento (pode fazer a mesma coisa com os dois).
 
@@ -356,7 +394,7 @@ Também pode-se atribuir uma função a uma variável
 > };
 
 
-// Vídeo 46
+### Vídeo 46
 Retornar funções de outras funções
 
 > function adder(x) {
@@ -371,7 +409,7 @@ Retornar funções de outras funções
 > adder(2)(3); // 5
 
 
-// Vídeo 47
+### Vídeo 47
 Você pode passar funções por parâmetro
 
 > function showOtherFunction(func) {
@@ -390,7 +428,7 @@ Você pode passar funções por parâmetro
 Seção 9
 */
 
-// Vídeo 51
+### Vídeo 51
 Escopo de funções: global e local
 > function myFunction() {
 >     function() {
@@ -402,7 +440,7 @@ Escopo de funções: global e local
 > console.log ( sum() ); // retorna um erro. sum() não é acessível globalmente
 
 
-// Vídeo 52
+### Vídeo 52
 HOISTING: move todas as funções literais pra cima do documento, pra que ela funcione pra todo o escopo dele ou da função na qual está inserida.
 > function myFunction() {
 >     var number1 = 1;
@@ -426,7 +464,7 @@ Porém, se a função estiver atribuída a uma variável, ele não fará hoistin
 > console.log( myFunction() ); // retorna um erro
 Nesse caso, a variável deveria ser criada antes de sua chamada para não retornar undefined.
 
-// Vídeo 53
+### Vídeo 53
 IIFE: função autoexecutável.
 > (function() {
 >     return 1 + 2;
@@ -438,7 +476,7 @@ IIFE: função autoexecutável.
 Seção 10
 */
 
-// Vídeo 58
+### Vídeo 58
 Wrapper objects (construtores): criam novos objetos.
 Valores primitivos não tem propriedades. Pra isso, usar os construtores para introduzir características de objetos neles.
 
@@ -456,7 +494,7 @@ Conversores (sem o new): convertem o tipo.
 > var age = Number('150');
 > var ninja = Boolean(0);
 
-// Vídeo 59
+### Vídeo 59
 typeof: operador unário e retorna o tipo desse operando. Somente pra valores primitivos.
 
 > typeof undefined; // 'undefined'
@@ -479,7 +517,7 @@ Pra testar null, usar:
 Seção 11
 */
 
-// Vídeo 65
+### Vídeo 65
 Laços/loops: do while. A primeira instrução sempre é feita, independente se a condição é cumprida.
 > var counter = 1;
 > do {
@@ -502,7 +540,7 @@ For/in: percorre as propriedades de um objeto ou verifica se há propriedade den
 > console.log( 'brand' in car ); // retorna 'true'
 
 
-// Vídeo 66
+### Vídeo 66
 Saltos: return, por exemplo pode ser usado em qualquer lugar na função. Ele pula instruções depois do return, se certa condição é encontrada.
 Return, break.
 Continue, por sua vez, dá continuidade, ignorando o resto da expressão.
@@ -513,7 +551,7 @@ Continue, por sua vez, dá continuidade, ignorando o resto da expressão.
 Seção 12
 */
 
-// Vídeo 70
+### Vídeo 70
 Objetos: são mutáveis
 > var obj = {
 >     prop1: 'prop1',
@@ -537,7 +575,7 @@ Criando objetos:
 * Object.create(); // herda propriedades de um objeto
 
 
-// Vídeo 71
+### Vídeo 71
 > var obj2 = Object.create(obj);
 obj2 herda propriedades do Object.prototype
 Se algum elemento é modificado no obj2, não é modificado no obj. Porém, se há alguma propriedade modificada no obj, obj2 é atualizado de acordo.
@@ -546,7 +584,7 @@ Se algum elemento é modificado no obj2, não é modificado no obj. Porém, se h
 > obj2.hasOwnProperty('y') // false, obj2 não é dele, é herdado do obj
 
 
-// Vídeo 72
+### Vídeo 72
 Métodos do objeto
 Object.keys(obj): pega as propriedades do objeto
 > Object.keys(obj); // [ 'x', 'y' ]
@@ -571,7 +609,7 @@ Arrays - adicionar e remover itens
 // 'doze'
 
 
-// Vídeo 73
+### Vídeo 73
 Array: join(): junta elementos de um array em uma única string.
 > var arr = [ 'arroz', 'feijao', 'macarrao' ];
 > arr.join();
@@ -593,19 +631,19 @@ sort(): ordena em ordem alfabética. Modifica o array principal.
 Seção 13
 */
 
-// Vídeo 76
+### Vídeo 76
 toString(): transforma os itens do array em string (junta todos os elementos, separados por uma vírgula);
 concat(): adiciona um elemento ao array, porém não modifica o objeto original. Junta todos em uma array só.
 unshift(): adiciona um elemento no começo do array.
 shift(): remove o primeiro elemento do array.
 
 
-//Vídeo 77
+### Vídeo 77
 slice( x, y ): retorna um intervalo do array. Se usado número negativo, ele pega o número total do array e subtrai por esse número e retorna a partir dele.
 splice( x, y ): retira itens e modifica o array principal. Se usado um único parâmetro, ele retorna os números depois desse índice. O array principal fica com os elementos restantes.
 splice( x, y, z ): x - onde vai começar a inserção dos novos elementos, y - se algum deles vai ser removido, z - elemento a ser inserido.
 
-//Vídeo 78
+### Vídeo 78
 forEach(): 
 > var arr = [ 1, 2, 3, 4, 5, 6, 7 ];
 > arr.forEach( function( item, index, array ) {
@@ -623,7 +661,7 @@ var some = arr.some(function(item) {
     return item % 2 === 0;
 });
 
-//Vídeo 79
+### Vídeo 79
 map(): varre todo o array, modificando conforme uma certa lógica, não modificando o array original.
 > var map = arr.map(function(item, index, array) {
 >     return item + 1;
@@ -642,7 +680,7 @@ var filter = arr. filter(function(item){
 Seção 14
 */
 
-//Vídeo 83
+### Vídeo 83
 reduce(): varre todo o array e faz uma ação pré-determinada em cada etapa.
 var arr = [ 1, 2, 3, 4, 5 ];
 arr.reduce(function( acumulado, atual, index, array ) {
@@ -653,7 +691,7 @@ Acumulado é o valor somado na etapa anterior.
 reduceRight(): faz a mesma coisa do reduce(), porém da direita pra esquerda.
 
 
-//Vídeo 84
+### Vídeo 84
 indexOf(): procura o valor dentro de um array e retorna o índice desse item. Se não houver o item, ele retorna -1.
 O segundo parâmetro determina a partir de qual índice ele deve procurar.
 console.log( arr.indexOf( 3, 1 ) ); // retorna 2
@@ -668,7 +706,7 @@ isArray(): um método que retorna true ou false, verificando se o objeto é um a
 Seção 15
 */
 
-//Vídeo 89
+### Vídeo 89
 JS no Browser
 > <script src="main.js"> </script>
 Cuidado com as variáveis globais! Usar IIFE (function(){}());
@@ -688,7 +726,7 @@ this: chama o objeto principal, podendo ser um objeto mesmo ou a window.
 >    }
 >    console.log('myFunction(): ', myFunction());
 
-//Vídeo 90
+### Vídeo 90
 arguments: variável que retorna os argumentos da sua função em forma de array. 
 Não usar 'arguments' como nome de variável ou argumento.
 
@@ -698,11 +736,11 @@ Não usar 'arguments' como nome de variável ou argumento.
 Seção 16
 */
 
-//Vídeo 93
+### Vídeo 93
 'use strict': não permite a criação de uma variável sem o var. Usar em toda função IIFE para não entrar em conflito com outras funções de terceiros.
 
 
-//Vídeo 94
+### Vídeo 94
 'use strict': não permite o uso de with.
 with: encurta o caminho de um objeto.
 >    var obj = {
@@ -722,12 +760,12 @@ with: encurta o caminho de um objeto.
 >    }
 
 
-//Vídeo 95
+### Vídeo 95
 'use strict': se delete não pode ser executado, ele retorna SyntaxError. Delete é só permitido se deletar propriedades do objeto.
 Propriedades tem que ter nomes diferentes. Argumento de funções tem que ter nomes diferentes.
 
 
-//Vídeo 96
+### Vídeo 96
 Objeto String
 .length: conta a quantidade de caracteres do string.
 .charAt(n): seleciona o caracter do índice indicado.
@@ -738,7 +776,7 @@ Objeto String
 .split('string'): é indicado uma string onde será seccionado a string, para a criação de um array. O parâmetro é removido do resultado.
 **Para realizar o replace de mais de uma string repetida, usar o var.split('string').join('string2'). Por exemplo, quero substituir todos os 'n' de fernando por 'z'. Usar var.split('n').join('z')
 
-//Vídeo 97
+### Vídeo 97
 .substring(n, n): faz a mesma coisa que o slice, com a diferença que se o primeiro número for maior que o segundo, ele retorna a string ao contrário.
 .toLowerCase(): retorna a string em caixa baixa.
 .toUpperCase(): returna a string em caixa alta.
@@ -748,7 +786,7 @@ Objeto String
 /* 
 Seção 17
 */
-//Vídeo 101
+### Vídeo 101
 Expressões regulares (regex): servem para manipular strings. É um tipo primitivo de Javascript.
 Ferramenta para teste de regex: https://regex101.com/
 Objeto RegExp()
@@ -757,7 +795,7 @@ Objeto RegExp()
 > texto.match(/m/g); // retorna ['m','m','m','m'];
 
 
-//Vídeo 102
+### Vídeo 102
 Flags:
 g: global;
 i: ignore case;
@@ -781,7 +819,7 @@ Lista de caracteres: [abcd] - vai achar todos os a, b, c, d em separado
 Agrupamento de caracteres: ()
 
 
-//Vídeo 103
+### Vídeo 103
 Os intervalos são baseados na tabela unicode. Se usado o [A-z], ele pegaria todos os caracteres alfanúmericos, inclusive [, \, ], ^, _, ´, porque eles estão na tabela unicode.
 Referência: http://www.ftrain.com/unicode/
 .replace();
@@ -802,14 +840,14 @@ Também funciona com funções
 /* 
 Seção 18
 */
-//Vídeo 107
+### Vídeo 107
 \s: espaço em branco
 \n: quebra de linha
 \t: espaçamento tab
 .: qualquer caracter, exceto quebra de linha
 
 
-//Vídeo 108
+### Vídeo 108
 Negação
 [^abc]: o match é feito com qualquer item, menos com os da lista, ou seja a, b, c.
 \W: qualquer caractere, menos os alfanuméricos
@@ -824,7 +862,7 @@ Por exemplo
 11, 111, 1111 são selecionados, ao passo que 1, 11111 não são
 
 
-//Vídeo 109
+### Vídeo 109
 Intervalo aberto
 \d{n,}: captura um dígito com no mínimo n números
 \d{n}: captura dígito com o número exato de n
@@ -849,7 +887,7 @@ regex: / [\w+]+@\w+\.\w+([.\w]+)? /
 /* 
 Seção 19
 */
-//Vídeo 113
+### Vídeo 113
 ^: início da string. Captura somente se houver match no começo da string.
 $: fim de string. Uso: >$ (caracter a ser testado tem que vir antes do $)
 ?: depois de um repetidor, + por exemplo, ele faz uma captura não gulosa. Captura não gulosa: captura o mínimo de caracteres que estão dentro dessa condição.
@@ -860,14 +898,14 @@ flags
 m: captura caracteres em outras linhas. Funcioa com os ^ e $.
 
 
-//Vídeo 114
+### Vídeo 114
 .match(regexp): retorna tudo que combina com os caracteres especificados.
 .replace(regexp, string): retorna a string com a substituição de caracteres.
 .split(regexp, string): converte a string em um array e divide a string de acordo com o caracter especificado.
 .search(regexp): retorna o índice do caracter especificado. Funciona que nem o indexOf(). Flag global não funciona.
 
 
-//Vídeo 115
+### Vídeo 115
 Construtor RegExp()
 > var regex = new RegExp( 'nando' );
 > 'fernando'.match ( regex );
@@ -898,7 +936,7 @@ Para usar aspas simples em um string: usar barra para escapar
 /* 
 Seção 20
 */
-//Vídeo 119
+### Vídeo 119
 if de uma linha só: não precisa usar {}
 >	(function(win) {
 >	  if( win === window )
@@ -915,7 +953,7 @@ window.alert( 'string' ): aparece um popup de alerta no navegador. Não é muito
 window.prompt( 'string' ): recebe input do usuário.
 
 
-//Vídeo 120
+### Vídeo 120
 .prompt, exemplo:
 > (function(win){
 >    'use strict';
@@ -937,7 +975,7 @@ window.document: referente ao DOM (Document Object Model), ao HTML.
 > })(window, document);
 
 
-//Vídeo 121
+### Vídeo 121
 getElementByTagName(), getElementByName(), querySelector(), querySelectorAll()
 
 > (function(win, doc){
@@ -952,7 +990,7 @@ getElementByTagName(), getElementByName(), querySelector(), querySelectorAll()
 > })(window, document);
 
 
-//Vídeo 122
+### Vídeo 122
 Formulários
 > (function(win, doc){
 >    'use strict';
@@ -989,12 +1027,12 @@ Formulários
 /* 
 Seção 21
 */
-//Vídeo 126
+### Vídeo 126
 Sync e Async: sync efetua funções em sequência e bloqueia interação com o site até que todo o script seja carregado.
 Event listener é um tipo de função async, pois é acionado apenas quando um determinado evento é acionado.
 
 
-//Vídeo 127
+### Vídeo 127
 setTimeout( function() {}, 1000): efetua determinada função depois de um tempo pré-estabelecido.
 setInterval( function() {}, 1000 ): efetua determinada função a cada x tempo.
 Para criar uma função com um loop não infinito:
@@ -1014,7 +1052,7 @@ Para criar uma função com um loop não infinito:
 > })(window, document);
 
 
-//Vídeo 128
+### Vídeo 128
 setInterval vs setTimeout: a função do Timeout somente é executada depois de executar funções anteiores. Sua função é colocada na fila de eventos.
 A função do Interval executa nos intervalos independente de existir outra função em conjunto.
 
@@ -1026,7 +1064,7 @@ clearInterval(id)
 /* 
 Seção 22
 */
-//Vídeo 131
+### Vídeo 131
 Propriedades e métodos de funções
 .name: retorna o nome da função
 .lenght: retorna o número de parâmetros que a função recebe
@@ -1045,7 +1083,7 @@ Propriedades e métodos de funções
 > myFunction.call(obj); // retorna Daciuk;
 
 
-//Vídeo 132
+### Vídeo 132
 call( arg1, arg2,... ):
 apply(): funciona da mesma forma que o call, porém os argumentos ficam dentro de um array
 apply( this, [arg1, arg2, ..., argN] )
@@ -1061,7 +1099,7 @@ apply( this, [arg1, arg2, ..., argN] )
 > myFunction.apply(obj, ['a', 'b', 'c', 'd']); // retorna Daciuk a b c d;
 
 
-//Vídeo 133
+### Vídeo 133
 .prototype: estende um construtor
 > (function(){
 >     'use strict';
@@ -1084,7 +1122,7 @@ apply( this, [arg1, arg2, ..., argN] )
 > })();
 
 
-//Vídeo 134
+### Vídeo 134
 Array.prototype: pode receber outros tipos de métodos.
 Array-like: elementos que se comportam como arrays, mas não o são. arguments, elementos de querySelectorAll são exemplos de array like
 > (function(){
@@ -1103,26 +1141,26 @@ Array-like: elementos que se comportam como arrays, mas não o são. arguments, 
 /* 
 Seção 23
 */
-//Vídeo 137
+### Vídeo 137
 Debug 1
 Breakpoint: no Developer Tools, na aba Sources, ao clicar no número da linha se cria um Breakpoint. Nesse ponto, o código para de rodar.
 Scope: verifica todas as variáveis, locais e globais chamadas até o momento
 
 
-//Vídeo 138
+### Vídeo 138
 Debug 2
 Breakpoint: se selecionado uma linha de código dentro de uma função que se repete, é mostrado cada valor atualizado das variáveis da função.
 Também se pode acessar variáveis na parada do breakpoint.
 
 
-//Vídeo 139
+### Vídeo 139
 Debug 3
 Seta com bolinhas: vai para a próxima chamada de função ou a anterior.
 console.log: usar para saber se cada função está funcionando ou sendo chamada.
 debugger; : específico do navegador. ele cria um breakpoint manualmente no código. Funciona no Chrome
 
 
-//Vídeo 140
+### Vídeo 140
 Debug 4
 console.time e console.timeEnd: calcula o tempo de início e final de execução de determinadas funções
 console.table: mostra em forma de tabela os itens de um array
@@ -1132,7 +1170,7 @@ console.table: mostra em forma de tabela os itens de um array
 /* 
 Seção 25
 */
-//Vídeo 150
+### Vídeo 150
 script inline: são scripts que são chamados dentro de uma tag HTML. Não é uma boa prática.
 > <a href="javascript:boom()">Boom!</a>
 void (0) retorna sempre undefined e pode ser usada como 'preventDefault'.
@@ -1146,7 +1184,7 @@ evento inline: não é uma boa prática utilizá-los.
 ele faz o evento do evento inline depois direciona para o href
 
 
-//Vídeo 151
+### Vídeo 151
 false nos eventos de clique
 
 no HTML:
@@ -1181,20 +1219,20 @@ clicou na div > clicou no a > clicou no span
 Os eventos são acionados no elemento pai para dentro (parent to child)
 
 
-//Vídeo 152
+### Vídeo 152
 eventos são cumulativos. Pode-se manipular eventos usando uma função. Lembrar que funções em javascript são lidadas como objetos.
 novos eventos:
 'input': quando o usuário muda algo no form
 'keyup': quando o usuário solta uma tecla
 'keydown': uma tecla é pressionada
-'change': em uma tag "select", o valor é modificado
+'change': em uma tag <select>, o valor é modificado
 
 
 
 /* 
 Seção 26
 */
-//Vídeo 153
+### Vídeo 153
 API DOM: cria uma árvore de hierarquia da página do navegador. Ele cria nós que podem ser manipulados separadamentes. 
 Percorrer elementos.
 Eles contam quebras de linha:
@@ -1204,7 +1242,7 @@ Eles contam quebras de linha:
 .nextSibling e .previousSibling: mostra o próximo irmão e o anterior. 
 
 
-//Vídeo 154
+### Vídeo 154
 .nodeType: retorna um número de acordo com o tipo de nó.
 Document: 9
 Element: 1
@@ -1216,7 +1254,7 @@ documentFragment: 11
 .nodeName: o nome do nó. Em elementos HTML, retorna o nome da tag.
 
 
-//Vídeo 155
+### Vídeo 155
 .child: HTMLCollection. Apesar de não ser padronizada, é bastante utilizada. Retorna os elementos filhos de um nó.
 .firstElementChild, .lastElementChild, .nextElementSibling, .previousElementSibling: retorna o filho elemento. Retorna toda a tag.
 .childElementCount: retorna um número de child de um nó. Funciona da mesma forma que elemento.length
@@ -1226,14 +1264,14 @@ Métodos
 .hasAttributes(): se existir qualquer atributo retorna true.
 
 
-//Vídeo 156
+### Vídeo 156
 .appendChild(child): adiciona ou move um elemento dentro de um nó.
 .insertBefore(node, beforeWhom): adiciona um elemento. Parâmentros: node: o que inserir; beforeWhom: antes desse elemento.
 .cloneNode(boolean): clona um elemento. Recebe como parâmetro uma booleana para definir se o conteúdo desse elemento é clonado ou não.
 .hasChildNodes(): retorna uma booleana, verificando se dentro do elemento especificado existe nós filhos.
 
 
-//Vídeo 157
+### Vídeo 157
 .removeChild(child): remove um filho especificado dentro do nó.
 .replaceChild(new, old): substitui ou remaneja um elemento filho por outro.
 document.createTextNode(text): cria um texto dentro do document.
@@ -1245,7 +1283,7 @@ document.createElement(tagName): cria um elemento. Os dois métodos podem ser us
 // é criado um novo parágrafo com o conteúdo do newTextNode
 
 
-//Vídeo 158
+### Vídeo 158
 Atributos
 element.id: retorna o id do elemento.
 element.className: retorna a classe do elemento.
@@ -1259,7 +1297,7 @@ São getters e setters, ou seja, podemos receber ou atribuir um valor com esses 
 /* 
 Seção 27
 */
-//Vídeo 161
+### Vídeo 161
 DOM Atributos: funciona pra qualquer atributo HTML válido.
 element.id, element.className, element.value, element.href, element.title, element.src
 
@@ -1277,7 +1315,7 @@ Manipular com performance
 > document.body.appendChild(fragment);
 
 
-//Vídeo 162
+### Vídeo 162
 Eventos
 Ordem dos scripts importa: quando o navegador lê o código, ele para em um script e aciona o que é necessário. Se o elemento chamado não foi carregado ainda, vai ocorrer um erro.
 
@@ -1291,7 +1329,7 @@ Para carregar todos os elementos, usar evento:
 windows = load
 
 
-//Vídeo 163
+### Vídeo 163
 Técnicas Ninja
 Copiar array: atribuindo um array a outro, é criado uma referência do primeiro, portanto, não uma cópia
 > var arr = [ 1, 2, 3, 4, 5 ];
@@ -1307,7 +1345,7 @@ Object.prototype.toString.call(arguments); // retorna [object Arguments]
 /* 
 Seção 28
 */
-//Vídeo 167
+### Vídeo 167
 AJAX: asynchronous Javascript and XML
 a ação ocorre de maneira paralela, assíncrona. Requisições na mesma URL e traz informações sem fazer o refresh.
 
@@ -1323,7 +1361,7 @@ windows.XMLHttpRequest()
 Na aba Network do developer tools, ele eparece como Type: xhr (xml http request).
 
 
-//Vídeo 168
+### Vídeo 168
 evento onreadystatechange: quando há mudança de estado
 
 ajax.readyState
@@ -1340,7 +1378,7 @@ ajax.status: verifica o status do http (200, 403, 404, 500 etc)
 > });
 
 
-//Vídeo 169
+### Vídeo 169
 Verificando se conexão foi bem sucedida.
 
 ajax.responseText: recebe o conteúdo do objeto ajax como texto
@@ -1349,7 +1387,7 @@ ajax.responseXML: recebe conteúdo do tipo xml
 > function isRequestOk() {
 >   return ajax.readyState === 4 ajax.status === 200;
 > }
-> ajax.addEventListener('onreadystatechange', function(){
+> ajax.addEventListener('readystatechange', function(){
 >   if( isRequestOk() ){
 >   var data = JSON.parse(ajax.responseText); // transformar dados JSON pra objetos, para manipulação
 >   console.log('Requisição ok', data.message);
@@ -1357,7 +1395,7 @@ ajax.responseXML: recebe conteúdo do tipo xml
 > });
 
 
-//Vídeo 170
+### Vídeo 170
 Tratamento de erro
 throw: cria objeto de erro
 > thow new Error('Mensagem de erro');
@@ -1374,7 +1412,7 @@ try | catch: se houver erro, ele não para o código, mas joga para o catch
 /* 
 Seção 29
 */
-//Vídeo 175
+### Vídeo 175
 Module pattern: criar código modular para ser usado em outras aplicações.
 
 Colocar dentro de uma função e chamá-la.
@@ -1398,7 +1436,7 @@ No documento de importação:
 /* 
 Seção 30
 */
-//Vídeo 182
+### Vídeo 182
 Closure: determinar valor de uma variável através de uma IIFE, para evitar conflitos.
 > var counter = 0;
 > var increment = (function(){
@@ -1433,16 +1471,16 @@ $div.classList.remove('container'); // remove a classe 'container'
 /* 
 Seção 31
 */
-//Vídeo 183
+### Vídeo 183
 innerHTML: getter e setter. Pega o conteúdo como string. Diferente do textContent, porque ele insere como texto mesmo, não como elementos HTML.
 
 
-//Vídeo 184
+### Vídeo 184
 Problemas de segurança: se aceitar o input do usuário sem tratar, o seu site fica a merce de mal uso, hacker, inserção de scripts e propagandas.
 Verificar a entrada do usuário para que não entre scripts tanto no front quanto no back.
 
 
-//Vídeo 185
+### Vídeo 185
 insertAdjacentHTML(pos, text-str)
 pos: position, onde vai ser inserido seu HTML
 beforebegin - afterbegin
@@ -1461,14 +1499,14 @@ console.dir(): mostra o HTML como objeto, mostrando suas propriedades e métodos
 .outerHTML: representação em string da tag.
 
 
-//Vídeo 186
+### Vídeo 186
 devdocs.io: reúne a documentação de várias linguagens
 
 var date = new Date(year, month, day, hour, min, sec, milliseconds);
 console.log(date); // retorna a data e horário
 
 
-//Vídeo 187
+### Vídeo 187
 Date.now(): não precisa ser instanciado para ser iniciado
 vai representar o número de milisegundos que se passaram desde 1º janeiro 1970.
 É útil para saber quanto tempo se passou entre uma ação e outra.
@@ -1485,7 +1523,7 @@ date.getSeconds(); // 0-59
 date.getTime(); // retorna o tempo em ms desde 1970, como o Date.now()
 
 
-//Vídeo 188
+### Vídeo 188
 Math Object
 Math.PI: retorna o número pi. Útil para cálculo de circunferência.
 Math.abs(x): valor absoluto, positivo de um número.
@@ -1508,7 +1546,7 @@ Math.random(): retorna um número aleatório entre 0 e 1
 /* 
 Seção 32
 */
-//Vídeo 189 - 190
+### Vídeo 189 - 190
 Como funciona o AJAX no lado do servidor?
 Fazer uma simulação  com REST API.
 
@@ -1554,7 +1592,7 @@ front > index.html
 > })();
 
 
-//Vídeo 191
+### Vídeo 191
 Cors: corrige o erro de portas
 npm install --save cors
 
@@ -1610,7 +1648,7 @@ front > index.html
 > })();
 
 
-//Vídeo 192
+### Vídeo 192
 ajax.open('GET', url, async); // não usar o ajax.open('GET', url, false)
 Sendo síncrona, ele pode quebrar a sua aplicação
 
@@ -1625,7 +1663,7 @@ ajax.setRequestHeader(
 ajax.send('key1=value1&key2=value2');
 
 
-//Vídeo 193
+### Vídeo 193
 rest-api > index.js
 > 'use strict';
 > 
@@ -1694,7 +1732,7 @@ front > index.html
 > })();
 
 
-//Vídeo 194
+### Vídeo 194
 Como cadastrar o usuário
 
 rest-api > index.js
@@ -1778,7 +1816,7 @@ front > index.html
 /* 
 Seção 33
 */
-//Vídeo 195 - 200
+### Vídeo 195 - 200
 TDD: Test Driven Development
 BDD: Behavior Driven Development
 Baby steps: escrever o mínimo de código possível para que uma condição passe.
@@ -1795,7 +1833,7 @@ Istanbul: npm que verifica quanto do código é coberto pelo teste. Cria um repo
 /* 
 Seção 34 - Bônus
 */
-//Vídeo 201 - 204
+### Vídeo 201 - 204
 Uglify: biblioteca npm que minifica o código javascript.
 para instalar:
 > npm install uglify-js -g
