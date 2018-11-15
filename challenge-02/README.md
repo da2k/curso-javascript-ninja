@@ -51,34 +51,34 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-
+//REVISÃO
 function retorna (x,y,z) {
-	if ((x===undefined || y===undefined || z===undefined) || (x===null || y===null || z===null)) {
+	if (x===undefined || y===undefined || z===undefined) {
 		return "Preencha os valores corretamente!";
 	} else {
-		return x*y*z + +'2';
+		return x*y*z + 2;
 	}
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
-x=2;
-y=3;
-retorna ()
+//REVISÃO
+retorna (1 ,2)
+"Preencha os valores corretamente!"
+
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 'Preencha os valores corretamente!'
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-//A função neste caso não retornou corretamente.
+//REVISÃO
+retorna (1,3,4)
+14
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 
-/* Não consegui caracterizar na condição if a inexistência da variável.
-<<<<<<< HEAD
-Meu raciocínio se baseou no teste das variáveis se elas eram do tipo undefined ou null. */
-=======
-Meu raciocínio se baseou no teste das variáveis se eram do tipo undefined ou null. */
->>>>>>> 808422c561cf24b2419d2cf4024abf2c567a0c7b
+//REVISÃO
+retorna (1,3,4)
+14
 
 /*
 Crie uma função com as seguintes características:
@@ -89,10 +89,34 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
+//REVISÃO
 
-/* Entendi a questão mas não consegui estabelecer os parâmetros para testar as condicionais*/
+function retorna2 ( x,y,z ) { 
+    if(x!==undefined && y===undefined && z===undefined){
+        return x;
+    } else if (x!==undefined && y!==undefined && z===undefined){
+        return x+y;
+    } else if ( x!==undefined && y!==undefined && z!==undefined) { 
+        return (x+y)/z;
+    } else if  ( x===undefined && y===undefined && z===undefined ) {
+        return false;}
+    else {
+        return null;
+    }
+}
+
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 
- //Como explicado acima, não consegui construir esta função.
+//REVISÃO
+retorna2(2) //2
+2
+
+retorna2(3,5) //8
+8
+
+retorna2(3,5,2) //4
+4
+
+ 
 ```
