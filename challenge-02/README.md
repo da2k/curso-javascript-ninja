@@ -74,7 +74,11 @@ retorna ()
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 
 /* Não consegui caracterizar na condição if a inexistência da variável.
+<<<<<<< HEAD
 Meu raciocínio se baseou no teste das variáveis se elas eram do tipo undefined ou null. */
+=======
+Meu raciocínio se baseou no teste das variáveis se eram do tipo undefined ou null. */
+>>>>>>> 808422c561cf24b2419d2cf4024abf2c567a0c7b
 
 /*
 Crie uma função com as seguintes características:
