@@ -20,7 +20,8 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function addValor(valor){semValor = valor; return "O valor da variavel agora é " + semValor;}
+var valor;
+function addValor(){valor = 10; return "O valor da variavel agora é " + valor;}
 
 // Invoque a função criada acima.
 addValor(10);
@@ -36,11 +37,10 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function multiplicador (a,b,c){
-  if(! (a && b && c) ){
+  if( a === undefined || b === undefined || c === undefined ){
     return "Preencha os valores corretamente";
-  }else{
-    return a*b*c+2;
   }
+  return (a * b * c) + 2;
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
@@ -65,17 +65,18 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function dosTresArgumentos(a, b, c) {
-    if (arguments.length === 1) {
-        return arguments[0];
-    } else if (arguments.length === 2) {
-        return arguments[0] + arguments[1];
-    } else if (arguments.length === 3) {
-        return (arguments[0] + arguments[1]) / arguments[2];
-    } else if (arguments.length < 1) {
+
+    if(a === undefined){
         return false;
-    } else {
-        return null;
+    }else if(b === undefined){
+        return a; 
+    }else if(c === undefined){
+        return a+b;
+    }else if(a && b && c){
+        return (a+b) / c;
     }
+
+    return null;
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
