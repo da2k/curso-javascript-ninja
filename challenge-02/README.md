@@ -20,13 +20,13 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function addValor(valor){semValor = valor; return "O valor da variavel agora é " + semValor.}
+function addValor(valor){semValor = valor; return "O valor da variavel agora é " + semValor;}
 
 // Invoque a função criada acima.
 addValor(10);
 
 // Qual o retorno da função? (Use comentários de bloco).
-/* O valor da variavel agora é 10. */
+/* O valor da variavel agora é 10 */
 
 /*
 Crie uma função com as seguintes características:
