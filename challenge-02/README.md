@@ -9,10 +9,10 @@ function soma(arg1, arg2) {
 }
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-var recebe = soma(6 , 23) + '5';
+var recebe = soma(6 , 23) + 5;
 
 // Qual o valor atualizado dessa variável?
-295
+34
 
 // Declare uma nova variável, sem valor.
 var novavar;
@@ -34,7 +34,7 @@ addvalor();
 // Qual o retorno da função? (Use comentários de bloco).
 
 /*A função vai retornar o seguinte resultado: */
-	O valor da variável agora é 6.
+/*	O valor da variável agora é 6. */
 
 /*
 Crie uma função com as seguintes características:
@@ -44,10 +44,10 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function condicao ( arg1, arg2 , arg3 ) {
-	if ( arg1 == null || arg2 == null || arg3 == null) {
+	if ( arg1 === undefined || arg2 === undefined || arg3 === undefined) {
 		return 'Preencha todos os valores corretamente!';
 	} else {
-		return (arg1 * arg2 * arg3) + '2';
+		return (arg1 * arg2 * arg3) + 2;
 	}
 }
 
