@@ -2,7 +2,7 @@
 Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
-var myArray = ['Fernando', true, 26, null, 'Teste'];
+var myArray = ['Fernando', true, 26, null, { a: 3.14 }];
 
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
@@ -29,17 +29,17 @@ function myFunction2(arr, index) {
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
-var myArray2 = [null, true, 15, 'Teste 1', 'Teste 2', 30];
+var myArray2 = [null, true, 15, 'Teste 1', { a: 'Teste', b: 1 }, 2,54];
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-myFunction2(myArray2, 0);
-myFunction2(myArray2, 1);
-myFunction2(myArray2, 2);
-myFunction2(myArray2, 3);
-myFunction2(myArray2, 4);
+console.log(myFunction2(myArray2, 0));
+console.log(myFunction2(myArray2, 1));
+console.log(myFunction2(myArray2, 2));
+console.log(myFunction2(myArray2, 3));
+console.log(myFunction2(myArray2, 4));
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
