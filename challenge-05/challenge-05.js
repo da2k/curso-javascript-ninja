@@ -89,7 +89,6 @@ usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
 var nomeLivro = '1984';
-
 console.log('O livro ' + nomeLivro + ' tem ' + book(nomeLivro).quantidadePaginas + ' páginas!');
 
 /*
@@ -97,7 +96,6 @@ Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-nomeLivro = 'Admirável mundo novo';
 console.log('O autor do livro ' + nomeLivro + ' é ' + book(nomeLivro).autor + '.');
 
 /*
@@ -105,5 +103,4 @@ Ainda com a função acima, imprima o nome da editora de um livro qualquer, usan
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-nomeLivro = 'Laranja Mecânica';
 console.log('O livro ' + nomeLivro + ' foi publicado pela editora ' + book(nomeLivro).editora + '.');
