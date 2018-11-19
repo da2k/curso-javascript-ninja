@@ -8,11 +8,20 @@ equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
 
+// Solução do professor.
+var isTruthy = function( value ){
+
+  return !!value;
+
+};
+
+/* - Minha Solução 
 var isTruthy = function( value ){
 
   return value ? true : false;
 
-}
+}; */
+
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 
@@ -29,7 +38,7 @@ isTruthy( false );
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
 isTruthy('String');
-isTruthy("Nova String");
+isTruthy(10 + 15);
 isTruthy(true);
 isTruthy({});
 isTruthy({ a : 'primeira letra do alfabeto'});
@@ -63,7 +72,7 @@ var carro = {
     assentos : 5,
     quantidadePessoas : 0
 
-}
+};
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
@@ -114,7 +123,7 @@ Para retornar os valores de marca e modelo, utilize os métodos criados.
 
 carro.obterMarcaModelo = function(){
 
-    return 'Esse carro é um '+carro.obterMarca()+' '+obterModelo()+'';
+    return 'Esse carro é um '+carro.obterMarca()+' '+carro.obterModelo();
 
 };
 
@@ -140,22 +149,21 @@ carro.addPessoas = function( numeroPessoas ){
 
     var pessoasCarro = numeroPessoas;
     var cabeQuantasPessoas = carro.assentos - carro.quantidadePessoas;
-    
+    var pluralOuSingular = cabeQuantasPessoas === 1 ?  'pessoa' : 'pessoas';   
     
 
-    if( carro.quantidadePessoas >= carro.assentos ) {
+    if( carro.quantidadePessoas === carro.assentos && pessoasCarro >= carro.assentos) {
 
        return 'O carro já está lotado!';
 
-    }else if( carro.quantidadePessoas < carro.assentos && pessoasCarro > cabeQuantasPessoas ){
+    }else if( pessoasCarro > cabeQuantasPessoas ){
 
-       return 'Só cabem mais '+cabeQuantasPessoas+' pessoas!';
+       return 'Só cabem mais '+cabeQuantasPessoas+' '+pluralOuSingular+'!';
 
-    }else {
-
-        carro.quantidadePessoas += pessoasCarro;
-    
     }
+        
+    carro.quantidadePessoas += pessoasCarro;
+    
 
 
     return 'Já temos '+carro.quantidadePessoas+' pessoas no carro!';
@@ -170,38 +178,38 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-?
+carro.obterCor(); // Caramelo
 
 // Mude a cor do carro para vermelho.
-?
+carro.mudarCor('Vermelho');
 
 // E agora, qual a cor do carro?
-?
+carro.obterCor(); // Vermelho
 
 // Mude a cor do carro para verde musgo.
-?
+carro.mudarCor('Verde Musgo');
 
 // E agora, qual a cor do carro?
-?
+carro.obterCor(); // Verde Musgo
 
 // Qual a marca e modelo do carro?
-?
+carro.obterMarcaModelo(); // Esse carro é um Volkswagen Polo 1.6 MSI
 
 // Adicione 2 pessoas no carro.
-?
+carro.addPessoas(2); // Já temos 2 pessoas no carro!
 
 // Adicione mais 4 pessoas no carro.
-?
+carro.addPessoas(4); // Só cabem mais 3 pessoas!
 
 // Faça o carro encher.
-?
+carro.addPessoas(3); // Já temos 5 pessoas no carro!
 
 // Tire 4 pessoas do carro.
-?
+carro.addPessoas(-4); // Já temos 1 pessoas no carro!
 
 // Adicione 10 pessoas no carro.
-?
+carro.addPessoas(10); // Só cabem mais 4 pessoas!
 
 // Quantas pessoas temos no carro?
-?
+carro.quantidadesPessoas; // 1
 ```
