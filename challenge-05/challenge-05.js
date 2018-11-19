@@ -119,7 +119,8 @@ usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
 
-console.log( 'O livro JavaScript: O Guia Definitivo tem ' + book('JavaScript: O Guia Definitivo').quantidadePaginas + ' páginas!' );
+var bookName = 'JavaScript: O Guia Definitivo';
+console.log( 'O livro ' + bookName + ' tem ' + book( bookName ).quantidadePaginas + ' páginas!' );
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
@@ -127,7 +128,8 @@ a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
 
-console.log( 'O autor do livro Segredos do Ninja Javascript é ' + book('Segredos do Ninja Javascript').autor + '.' );
+var bookName = 'Segredos do Ninja Javascript';
+console.log( 'O autor do livro ' + bookName + ' é ' + book( bookName ).autor + '.' );
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
@@ -135,4 +137,5 @@ a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
 
-console.log( 'O livro JavaScript Patterns foi publicado pela editora ' + book('JavaScript Patterns').editora + '.' );
+var bookName = 'JavaScript Patterns';
+console.log( 'O livro ' + bookName + ' foi publicado pela editora ' + book( bookName ).editora + '.' );
