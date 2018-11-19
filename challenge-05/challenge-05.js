@@ -74,11 +74,8 @@ function book(nomeLivro) {
             editora: 'Aleph'
         }
     };
-
-    if(nomeLivro !== undefined)
-        return obj[nomeLivro];
-    else
-        return obj;
+    
+    return !nomeLivro ? obj : obj[nomeLivro];
 }
 
 /*
