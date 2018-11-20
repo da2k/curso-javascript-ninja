@@ -6,6 +6,7 @@ e imprima o nome desse campeonato no console.
 */
 
 var championship = 'Campeonato Inglês';
+console.log( championship );
 
 /*
 Declare uma variável chamada `teams`, que receberá um array com 5 elementos.
@@ -62,6 +63,21 @@ function showTeamPosition( position ){
     }
 };
 
+/* Resolução Professor - com IF    
+
+function showTeamPosition( position ){
+
+    if( position < 1 || position > 5 ){
+
+        return 'Não temos a informação do time que está nessa posição.';
+
+    }
+
+    return 'O time que está em '+ position +'º lugar é o ' + teams[ position - 1 ] + '.'
+
+} */
+
+
 /*
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
@@ -70,6 +86,7 @@ console.log( showTeamPosition( 1 ) );
 console.log( showTeamPosition( 2 ) );
 console.log( showTeamPosition( 5 ) );
 console.log( showTeamPosition( 8 ) );
+
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
@@ -96,28 +113,31 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
 */
 
 function convertToHex( color ){
+
+    var hexa;
     
     switch( color ) {
 
         case 'gray' :
-            return 'O hexadecimal para a cor ' + color + ' é #808080.';
-        break;
+            hexa = '#808080';
+            break;
         case 'blue' :
-            return 'O hexadecimal para a cor ' + color + ' é #0000FF.';
-        break;
+            hexa = '#0000FF';
+            break;
         case 'red' :
-            return 'O hexadecimal para a cor ' + color + ' é #FF0000.';
-        break;
+            hexa = '#FF0000';
+            break;
         case 'orange' :
-            return 'O hexadecimal para a cor ' + color + ' é #FFA500.';
-        break;
+            hexa = '#FFA500';
+            break;
         case 'yellow' :
-            return 'O hexadecimal para a cor ' + color + ' é #FFFF00.';
-        break;
+            hexa = '#FFFF00';
+            break;
         default:
             return 'Não temos o equivalente hexadecimal para ' + color + '.';
     }
 
+    return 'O hexadecimal para a cor ' + color + ' é ' + hexa + '.';
 };
 
 /*
