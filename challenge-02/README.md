@@ -74,10 +74,10 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function challenge02Function02(arg1, arg2, arg3) {
-    if(arg2 === undefined && arg3 === undefined) {
+    if(arg1 !== undefined && arg2 === undefined && arg3 === undefined) {
         return arg1;
     }
-    else if(arg3 === undefined) {
+    else if(arg1 !== undefined && arg2 !== undefined && arg3 === undefined) {
         return arg1 + arg2
     }
     else if(arg1 !== undefined && arg2 !== undefined && arg3 !== undefined) {
@@ -96,4 +96,4 @@ challenge02Function02(2); // o resultado será 2
 challenge02Function02(2, 3); // o resultado será 5
 challenge02Function02(2, 3, 5); // o resultado será 1
 challenge02Function02(); // o resultado será false
-challenge02Function02(2, null, 2); // o resultado será null
+challenge02Function02(2, undefined, 2); // o resultado será null
