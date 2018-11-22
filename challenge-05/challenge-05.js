@@ -59,23 +59,9 @@ propriedades:
 os livros.  */
 
 function book(nome) {
-    var nomesLivros = {prop1:{nome: "hobbit", quantidadePaginas:100, autor:"Rodrigo", editora:"esquina"}, prop2:{nome: "Star Wars", quantidadePaginas:200, autor:"George", editora:"Imperio"}, prop3:{nome: "Bíblia", quantidadePaginas:2000, autor:"Deus", editora:"SBB"}}
-    if(nome == nomesLivros.prop1.nome) {
-        return nomesLivros.prop1;
-    }
-
-    if(nome == nomesLivros.prop2.nome) {
-        return nomesLivros.prop2;
-    }
-
-    if(nome == nomesLivros.prop3.nome) {
-        return nomesLivros.prop3;
-    }
-
-    if(nome == undefined) {
-        return nomesLivros;
-    }
-
+    var nomesLivros = {"o hobbit":{quantidadePaginas:100, autor:"Rodrigo", editora:"esquina"}, "Star Wars": { quantidadePaginas:200, autor:"George", editora:"Imperio"}, "Bíblia":{quantidadePaginas:2000, autor:"Deus", editora:"SBB"}}
+   
+    return !nome ? nomesLivros : nomesLivros[nome];
 };
 
 /*
@@ -84,24 +70,21 @@ Usando a função criada acima, imprima o objeto com todos os livros.
 
 console.log(book());
 
-prop1: {nome: "hobbit", quantidadePaginas: 100, autor: "Rodrigo", editora: "esquina"}
-prop2: {nome: "Star Wars", quantidadePaginas: 200, autor: "George", editora: "Imperio"}
-prop3: {nome: "Bíblia", quantidadePaginas: 2000, autor: "Deus", editora: "SBB"}
-
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-
-console.log("O livro " + book("hobbit").nome + " tem " + book("hobbit").quantidadePaginas + " páginas!");
+var nome = "o hobbit";
+console.log("O livro " + nome + " tem " + book(nome).quantidadePaginas + " páginas!");
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
+
 */
-console.log("O aurtor do livro " + book("hobbit").nome + " é " + book("hobbit").autor + ".");
+console.log("O autor do livro "+ nome + " é " + book(nome).autor + ".");
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
@@ -109,4 +92,4 @@ a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
 
-console.log(book("Star Wars").nome + " foi publicado pela editora " + book("Star Wars").editora + ".");
+console.log("O livro " + nome + " foi publicado pela editora " + book(nome).editora + ".");
