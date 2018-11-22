@@ -77,24 +77,27 @@ function calculator( operators ) {
 
             case '+' :
                 result = number1 + number2;
-                return 'Resultado da operação: ' + number1 + ' ' + operators + ' ' + number2 + ' = '  + result;
+                break;
             case '-' : 
                 result = number1 - number2;
-                return 'Resultado da operação: ' + number1 + ' ' + operators + ' ' + number2 + ' = '  + result;
+                break;
             case '*' :
                 result = number1 * number2;
-                return 'Resultado da operação: ' + number1 + ' ' + operators + ' ' + number2 + ' = ' + result;
+                break;
             case '/' :
                 result = number1 / number2;
-                return 'Resultado da operação: ' + number1 + ' ' + operators + ' ' + number2 + ' = ' + result;
+                break;
             case '%' :
                 result = number1 % number2;
-                return 'Resultado da operação: ' + number1 + ' ' + operators + ' ' + number2 + ' = ' + result;
+                break;
             default:
                 return 'Operação inválida.';
         }
 
-    }
+        return 'Resultado da operação: ' + number1 + ' ' + operators + ' ' + number2 + ' = ' + result + '.';
+
+
+    };
 
 };
 
