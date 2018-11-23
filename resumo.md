@@ -915,655 +915,793 @@ texto.replace(/(\w)(\w)/g, function(capturaTotal, letra1, letra2) {
 });
 ```
 
+---
 
-/* 
-Seção 18
-*/
+## Seção 18
 ### Vídeo 107
+```
 \s: espaço em branco
-\n: quebra de linha
-\t: espaçamento tab
-.: qualquer caracter, exceto quebra de linha
 
+\n: quebra de linha
+
+\t: espaçamento tab
+
+.: qualquer caracter, exceto quebra de linha
+```
 
 ### Vídeo 108
-Negação
+#### Negação
+```
 [^abc]: o match é feito com qualquer item, menos com os da lista, ou seja a, b, c.
+
 \W: qualquer caractere, menos os alfanuméricos
+
 \D: qualquer caractere, menos dígitos
+
 \S: qualquer caractere, menos os espaços em branco
+```
 
-Repetidores
-Intervalo
+#### Repetidores
+#### Intervalo
 {n,m}: intem anterior ao menos n vezes, e no máximo m vezes.
-Por exemplo
-\d{2,4} seleciona dígitos com 2, 3 ou 4 números seguidos.
-11, 111, 1111 são selecionados, ao passo que 1, 11111 não são
+```
+Por exemplo:
 
+\d{2,4} seleciona dígitos com 2, 3 ou 4 números seguidos.
+
+11, 111, 1111 são selecionados, ao passo que 1, 11111 não são
+```
 
 ### Vídeo 109
-Intervalo aberto
+#### Intervalo aberto
+```
 \d{n,}: captura um dígito com no mínimo n números
 \d{n}: captura dígito com o número exato de n
+```
 
-Opcional
+#### Opcional
 ?: o item anterior é uma adição opcional.
+```
 Exemplo:
 \s\d? seleciona os espaços em branco, inclusive aqueles que possuem um dígito em seguida. Ou seja, os caracteres ' 3' serão selecionados.
+
 \w+: uma ou mais ocorrências
+
 \w*: zero ou mais ocorrências
+```
 
 Para filtrar URLs válias:
+```
 http://wwww.google.com
 regex: / https?:\/\/\w+[.\w]+ /
+```
 
 teste@gmail.com
+```
 Para filtrar email:
 regex: / [\w+]+@\w+\.\w+([.\w]+)? /
+```
 
+---
 
-
-/* 
-Seção 19
-*/
+## Seção 19
 ### Vídeo 113
+```
 ^: início da string. Captura somente se houver match no começo da string.
+
 $: fim de string. Uso: >$ (caracter a ser testado tem que vir antes do $)
+
 ?: depois de um repetidor, + por exemplo, ele faz uma captura não gulosa. Captura não gulosa: captura o mínimo de caracteres que estão dentro dessa condição.
-(?:) : faz a seleção mas não agrupa os caracteres dentro da seleção. Por exemplo: ju(n|l)ho seleciona junho, julho, n, l. Para não selecionar n nem o l, utilizamos a expressão: ju(?:n|lho).
+
+(?:) : faz a seleção mas não agrupa os caracteres dentro da seleção,
+Por exemplo: ju(n|l)ho seleciona junho, julho, n, l. Para não selecionar n nem o l, utilizamos a expressão: ju(?:n|lho).
+
 \1, \2: referência dentro da regex. Faz uma referência de agrupamento dentro da própria regex. Por exemplo, <(\w+)>.+?<\/(\1)> seleciona todas as tags iguais, ou seja <h1> teste </h1> (\1 repete a primeira captura).
+```
 
-flags
+#### flags
+```
 m: captura caracteres em outras linhas. Funcioa com os ^ e $.
-
+```
 
 ### Vídeo 114
+```
 .match(regexp): retorna tudo que combina com os caracteres especificados.
-.replace(regexp, string): retorna a string com a substituição de caracteres.
-.split(regexp, string): converte a string em um array e divide a string de acordo com o caracter especificado.
-.search(regexp): retorna o índice do caracter especificado. Funciona que nem o indexOf(). Flag global não funciona.
 
+.replace(regexp, string): retorna a string com a substituição de caracteres.
+
+.split(regexp, string): converte a string em um array e divide a string de acordo com o caracter especificado.
+
+.search(regexp): retorna o índice do caracter especificado. Funciona que nem o indexOf(). Flag global não funciona.
+```
 
 ### Vídeo 115
-Construtor RegExp()
-> var regex = new RegExp( 'nando' );
-> 'fernando'.match ( regex );
-Na RegExp, a barra é usada pra considerar o caracter como literal. Para usar como global, usa-se a dupla barra. Por exemplo:
-> regex = new RegExp( '\\d' ); // captura digitos. Funciona como se fosse /\d/.
+#### Construtor RegExp()
+```javascript
+var regex = new RegExp( 'nando' );
+'fernando'.match ( regex );
+
+// Na RegExp, a barra é usada pra considerar o caracter como literal. Para usar como global, usa-se a dupla barra. Por exemplo:
+
+regex = new RegExp( '\\d' ); // captura digitos. Funciona como se fosse /\d/.
+```
 
 Métodos de RegExp
+
 .test('string'): verifica se há o conjunto de caracter. Retorna uma boolean.
-> /\d/.test(name) // retorna true;
-> /z/.test(name) // retona false;
+```javascript
+/\d/.test(name) // retorna true;
+/z/.test(name) // retona false;
+```
 
 .exec('string'): executa o search e guarda os resultados em um array.
-> var regex = /\d/g;
-> var name = 'fer123nando';
-> var result;
-> while ( result = regex.exec(name) !== null ) {
->    console.log(result); //retorna true 3 vezes;
-> }
+```javascript
+var regex = /\d/g;
+var name = 'fer123nando';
+var result;
+
+while ( result = regex.exec(name) !== null ) {
+   console.log(result); //retorna true 3 vezes;
+}
+```
 
 Caracteres especiais:
+```
 \t: tab
+
 \n: quebra de linha
+
 Para usar aspas simples em um string: usar barra para escapar
 'Julio\'s bar'
+```
 
+---
 
-
-/* 
-Seção 20
-*/
+## Seção 20
 ### Vídeo 119
 if de uma linha só: não precisa usar {}
->	(function(win) {
->	  if( win === window )
->	    console.log( 'win é uma referência local à window' );
->	})(window);
+```javascript
+(function(win) {
+  if( win === window )
+    console.log( 'win é uma referência local à window' );
+})(window);
+```
 Somente a primeira linha depois do if é considerada.
 
-Métodos do window
+#### Métodos do window
 window.alert( 'string' ): aparece um popup de alerta no navegador. Não é muito mais usado.
-> (function(win) {
->     'use strict';
->     window.alert( 'Mensagem' ); // também pode ser usado sem o 'window.'
-> })(window);
-window.prompt( 'string' ): recebe input do usuário.
+```javascript
+(function(win) {
+    'use strict';
+    window.alert( 'Mensagem' ); // também pode ser usado sem o 'window.'
+})(window);
 
+window.prompt( 'string' ); // recebe input do usuário.
+```
 
 ### Vídeo 120
 .prompt, exemplo:
-> (function(win){
->    'use strict';
->     var name = prompt( 'Qual o seu nome?' );
->     if( name )
->         console.log( 'Olá', name );
->     else
->         console.log( 'não respondeu :(' );
-> })(window);
+```javascript
+(function(win){
+   'use strict';
+    var name = prompt( 'Qual o seu nome?' );
+    if( name )
+        console.log( 'Olá', name );
+    else
+        console.log( 'não respondeu :(' );
+})(window);
 
-window.confirm( 'string' ): retorna true ou false.
-
+window.confirm( 'string' ); // retorna true ou false.
+```
 window.document: referente ao DOM (Document Object Model), ao HTML.
-> (function(win, doc){
->    'use strict';
->    console.log( doc.getElementById( 'my-link' ) ); // retorna o elemento cujo id é my-link
->    console.log( doc.getElementsByClassName( 'my-link' ) ); // retorna elementos cujas classes são my-link. Retorna um HTML collection
->    console.log( doc.getElementsByTagName( 'a' ) ); // retorna elementos de tags a. Retorna um HTML collection
-> })(window, document);
+```javascript
+(function(win, doc){
+   'use strict';
+   console.log( doc.getElementById( 'my-link' ) ); // retorna o elemento cujo id é my-link
 
+   console.log( doc.getElementsByClassName( 'my-link' ) ); // retorna elementos cujas classes são my-link. Retorna um HTML collection
+
+   console.log( doc.getElementsByTagName( 'a' ) ); // retorna elementos de tags a. Retorna um HTML collection
+})(window, document);
+```
 
 ### Vídeo 121
-getElementByTagName(), getElementByName(), querySelector(), querySelectorAll()
 
-> (function(win, doc){
->    'use strict';
->    var $inputs = doc.getElementsByTagName( 'input' ); // esse valor é dinâmico
->    console.log( doc.getElementByName( 'username' ) ); // retorna o elemento cujo name (atributo) é username
+- getElementByTagName()
+- getElementByName()
+- querySelector()
+- querySelectorAll()
+```javascript
+(function(win, doc){
+   'use strict';
+   var $inputs = doc.getElementsByTagName( 'input' ); // esse valor é dinâmico
+   console.log( doc.getElementByName( 'username' ) ); // retorna o elemento cujo name (atributo) é username
 >
->    $input = doc.querySelector( 'input' ); // seleciona a partir de um seletor CSS. Esse valor não é dinâmico
->    $input = doc.querySelector( '[type="text"]' );
->    $input = doc.querySelector( '.my-link' ); // seleciona o primeiro elemento de class='my-link'
->    $input = doc.querySelectorAll( '.my-link' ); // seleciona elementos de class='my-link'
-> })(window, document);
-
+   $input = doc.querySelector( 'input' ); // seleciona a partir de um seletor CSS. Esse valor não é dinâmico
+   $input = doc.querySelector( '[type="text"]' );
+   $input = doc.querySelector( '.my-link' ); // seleciona o primeiro elemento de class='my-link'
+   $input = doc.querySelectorAll( '.my-link' ); // seleciona elementos de class='my-link'
+})(window, document);
+```
 
 ### Vídeo 122
-Formulários
-> (function(win, doc){
->    'use strict';
+#### Formulários
+```javascript
+(function(win, doc){
+   'use strict';
 >
->    var $inputUsername = doc.querySelector( '#username' );
->    var $inputPassword = doc.querySelector( '#password' );
->    $inputUsername.value = 'Fernando Daciuk'; // muda o atribute value dos elementos selecionados
->    $inputPassword.value = 'minhasenha'; 
+   var $inputUsername = doc.querySelector( '#username' );
+   var $inputPassword = doc.querySelector( '#password' );
+   $inputUsername.value = 'Fernando Daciuk'; // muda o atribute value dos elementos selecionados
+   $inputPassword.value = 'minhasenha'; 
 >
-> })(window, document);
+})(window, document);
+```
 
-Introdução a eventos
+#### Introdução a eventos
+```
 .addEventListener('click')
-Formulários
-> (function(win, doc){
->    'use strict';
->
->    var $inputUsername = doc.querySelector( '#username' );
->    var $inputPassword = doc.querySelector( '#password' );
->    var $button = doc.querySelector( '#button' );
->
->    $button.addEventListener( 'click', function(event) {
->       event.preventDefault(); // previne a ação padrão do clique nesse elemento
->       console.log( 'Click no botão' );    
-> }, false );
->
->    $inputUsername.addEventListener( 'click', function(event) {
->       alert('Clique no input');    
-> }, false );
-> })(window, document);
+```
+#### Formulários
+```javascript
+(function(win, doc){
+   'use strict';
 
+   var $inputUsername = doc.querySelector( '#username' );
+   var $inputPassword = doc.querySelector( '#password' );
+   var $button = doc.querySelector( '#button' );
 
+   $button.addEventListener( 'click', function(event) {
+      event.preventDefault(); // previne a ação padrão do clique nesse elemento
+      console.log( 'Click no botão' );    
+}, false );
 
-/* 
-Seção 21
-*/
+   $inputUsername.addEventListener( 'click', function(event) {
+      alert('Clique no input');    
+}, false );
+})(window, document);
+```
+
+---
+
+## Seção 21
 ### Vídeo 126
-Sync e Async: sync efetua funções em sequência e bloqueia interação com o site até que todo o script seja carregado.
+**Sync e Async**: sync efetua funções em sequência e bloqueia interação com o site até que todo o script seja carregado.
+
 Event listener é um tipo de função async, pois é acionado apenas quando um determinado evento é acionado.
 
 
 ### Vídeo 127
-setTimeout( function() {}, 1000): efetua determinada função depois de um tempo pré-estabelecido.
-setInterval( function() {}, 1000 ): efetua determinada função a cada x tempo.
+**setTimeout( function() {}, 1000)**: efetua determinada função depois de um tempo pré-estabelecido.
+
+**setInterval( function() {}, 1000 )**: efetua determinada função a cada x tempo.
 Para criar uma função com um loop não infinito:
+```javascript
+(function(win, doc) {
+    'use strict';
 
-> (function(win, doc) {
->     'use strict';
-> 
->     var counter = 0;
->     function timer() {
->         console.log( 'timer', counter++ );
->         if ( counter > 10 )
->             return;
->         setTimeout( timer, 1000 );
->     }
->     timer();
-> 
-> })(window, document);
+    var counter = 0;
+    function timer() {
+        console.log( 'timer', counter++ );
+        if ( counter > 10 )
+            return;
+        setTimeout( timer, 1000 );
+    }
+    timer();
 
+})(window, document);
+```
 
 ### Vídeo 128
-setInterval vs setTimeout: a função do Timeout somente é executada depois de executar funções anteiores. Sua função é colocada na fila de eventos.
+**setInterval vs setTimeout**: a função do Timeout somente é executada depois de executar funções anteiores. Sua função é colocada na fila de eventos.
+
 A função do Interval executa nos intervalos independente de existir outra função em conjunto.
 
 Funções de cancelamento de Timeout e Interval:
+```
 clearTimeout(id)
 clearInterval(id)
+```
 
+---
 
-/* 
-Seção 22
-*/
+## Seção 22
 ### Vídeo 131
-Propriedades e métodos de funções
+#### Propriedades e métodos de funções
+```
 .name: retorna o nome da função
-.lenght: retorna o número de parâmetros que a função recebe
-.toString: converte toda a função em string
-.call(): chama/invoca a função
-.call(this): 
-> function myFunction( a, b, c, d ) {
->     console.log( this.lastName );
-> }
-> 
-> var obj = {
->     lastName: 'Daciuk';
-> }
-> 
-> myFunction.call(); // retorna undefined
-> myFunction.call(obj); // retorna Daciuk;
 
+.lenght: retorna o número de parâmetros que a função recebe
+
+.toString: converte toda a função em string
+
+.call(): chama/invoca a função
+```
+.call(this): 
+```javascript
+function myFunction( a, b, c, d ) {
+    console.log( this.lastName );
+}
+
+var obj = {
+    lastName: 'Daciuk';
+}
+
+myFunction.call(); // retorna undefined
+myFunction.call(obj); // retorna Daciuk;
+```
 
 ### Vídeo 132
-call( arg1, arg2,... ):
-apply(): funciona da mesma forma que o call, porém os argumentos ficam dentro de um array
-apply( this, [arg1, arg2, ..., argN] )
-> function myFunction( a, b, c, d ) {
->     console.log( this.lastName, a, b, c, d );
-> }
-> 
-> var obj = {
->     lastName: 'Daciuk';
-> }
-> 
-> myFunction.call(obj, 'a', 'b', 'c', 'd'); // retorna Daciuk a b c d;
-> myFunction.apply(obj, ['a', 'b', 'c', 'd']); // retorna Daciuk a b c d;
+```
+call( arg1, arg2,... )
 
+apply(): funciona da mesma forma que o call, porém os argumentos ficam dentro de um array
+
+apply( this, [arg1, arg2, ..., argN] )
+```
+```javascript
+function myFunction( a, b, c, d ) {
+    console.log( this.lastName, a, b, c, d );
+}
+
+var obj = {
+    lastName: 'Daciuk';
+}
+
+myFunction.call(obj, 'a', 'b', 'c', 'd'); // retorna Daciuk a b c d;
+myFunction.apply(obj, ['a', 'b', 'c', 'd']); // retorna Daciuk a b c d;
+```
 
 ### Vídeo 133
-.prototype: estende um construtor
-> (function(){
->     'use strict';
-> 
->     function MyFunction( name, lastName ) { //construtores possuem letra maiúscula
->         this.name = name;
->         this.lastName = lastName;
->     }
-> 
->     MyFunction.prototype.fullname = function() {
->         return this.name + ' ' + this.lastName;
->     }
-> 
->     var fernando = new MyFunction ( 'Fernando', 'Daciuk' );
-> 
->      MyFunction.prototype.age = 30;
-> 
->     console.log( fernando.fullName() ); // retorna Fernando Daciuk
->     console.log( fernando.age ); // retorna 30. Se existisse no construtor original, o do valor do construtor se sobrepoe
-> })();
+**.prototype**: estende um construtor
+```javascript
+(function(){
+    'use strict';
 
+    function MyFunction( name, lastName ) { //construtores possuem letra maiúscula
+        this.name = name;
+        this.lastName = lastName;
+    }
+
+    MyFunction.prototype.fullname = function() {
+        return this.name + ' ' + this.lastName;
+    }
+
+    var fernando = new MyFunction ( 'Fernando', 'Daciuk' );
+
+     MyFunction.prototype.age = 30;
+
+    console.log( fernando.fullName() ); // retorna Fernando Daciuk
+    console.log( fernando.age ); // retorna 30. Se existisse no construtor original, o do valor do construtor se sobrepoe
+})();
+```
 
 ### Vídeo 134
-Array.prototype: pode receber outros tipos de métodos.
-Array-like: elementos que se comportam como arrays, mas não o são. arguments, elementos de querySelectorAll são exemplos de array like
-> (function(){
->     'use strict';
-> 
->     function myFunction() {
->         Array.prototype.forEach.call( arguments, function(item, index) {
->             console.log( item );
->         });
->     }
->     myFunction( 1, 2, 3, 4, 5 ); // retorna cada número em uma linha
-> })();
+**Array.prototype**: pode receber outros tipos de métodos.
+**Array-like**: elementos que se comportam como arrays, mas não o são. arguments, elementos de querySelectorAll são exemplos de array like
+```javascript
+(function(){
+    'use strict';
 
+    function myFunction() {
+        Array.prototype.forEach.call( arguments, function(item, index) {
+            console.log( item );
+        });
+    }
+    myFunction( 1, 2, 3, 4, 5 ); // retorna cada número em uma linha
+})();
+```
 
+---
 
-/* 
-Seção 23
-*/
+## Seção 23
 ### Vídeo 137
-Debug 1
-Breakpoint: no Developer Tools, na aba Sources, ao clicar no número da linha se cria um Breakpoint. Nesse ponto, o código para de rodar.
-Scope: verifica todas as variáveis, locais e globais chamadas até o momento
+#### Debug 1
+**Breakpoint**: no Developer Tools, na aba Sources, ao clicar no número da linha se cria um Breakpoint. Nesse ponto, o código para de rodar.
+
+**Scope**: verifica todas as variáveis, locais e globais chamadas até o momento
 
 
 ### Vídeo 138
-Debug 2
-Breakpoint: se selecionado uma linha de código dentro de uma função que se repete, é mostrado cada valor atualizado das variáveis da função.
+#### Debug 2
+**Breakpoint**: se selecionado uma linha de código dentro de uma função que se repete, é mostrado cada valor atualizado das variáveis da função.
 Também se pode acessar variáveis na parada do breakpoint.
 
 
 ### Vídeo 139
-Debug 3
-Seta com bolinhas: vai para a próxima chamada de função ou a anterior.
-console.log: usar para saber se cada função está funcionando ou sendo chamada.
-debugger; : específico do navegador. ele cria um breakpoint manualmente no código. Funciona no Chrome
+#### Debug 3
+**Seta com bolinhas**: vai para a próxima chamada de função ou a anterior.
+
+**console.log**: usar para saber se cada função está funcionando ou sendo chamada.
+
+**debugger;** : específico do navegador. ele cria um breakpoint manualmente no código. Funciona no Chrome.
 
 
 ### Vídeo 140
-Debug 4
-console.time e console.timeEnd: calcula o tempo de início e final de execução de determinadas funções
-console.table: mostra em forma de tabela os itens de um array
+#### Debug 4
+**console.time e console.timeEnd**: calcula o tempo de início e final de execução de determinadas funções
 
+**console.table**: mostra em forma de tabela os itens de um array
 
+---
 
-/* 
-Seção 25
-*/
+## Seção 25
 ### Vídeo 150
-script inline: são scripts que são chamados dentro de uma tag HTML. Não é uma boa prática.
-> <a href="javascript:boom()">Boom!</a>
+**script inline**: são scripts que são chamados dentro de uma tag HTML. Não é uma boa prática.
+```html
+<a href="javascript:boom()">Boom!</a>
+```
 void (0) retorna sempre undefined e pode ser usada como 'preventDefault'.
 
-Eventos
+#### Eventos
 Referência de eventos:
 https://developer.mozilla.org/en-US/docs/Web/Events
 
-evento inline: não é uma boa prática utilizá-los.
-> <a href="javascript:" onclick="boom()">Boom!</a>
+**evento inline**: não é uma boa prática utilizá-los.
+```html
+<a href="javascript:" onclick="boom()">Boom!</a>
+```
 ele faz o evento do evento inline depois direciona para o href
 
 
 ### Vídeo 151
-false nos eventos de clique
+_false_ nos eventos de clique
 
 no HTML:
+```html
 <div data-js="div">
   <a href="#" data-js="link">Link no <span data-js="span">span</span></a>
 </div>
+```
+```javascript
+function on(element, event, callback){
+  document.querySelector(element)
+    .addEventListener(event, callback, false); //false
+}
 
-> function on(element, event, callback){
->   document.querySelector(element)
->     .addEventListener(event, callback, false); //false
-> }
-> 
-> on('[data-js]="link"', 'click', function(event) {
->   event.preventDefault();
->   alert('clicou no a');
-> });
-> 
-> on('[data-js]="div"', 'click', function() {
->   alert('clicou na div');
-> });
-> 
-> on('[data-js]="span"', 'click', function() {
->   alert('clicou no span');
-> });
+on('[data-js]="link"', 'click', function(event) {
+  event.preventDefault();
+  alert('clicou no a');
+});
 
->> ação do usuário: clicou no span. Se false:
+on('[data-js]="div"', 'click', function() {
+  alert('clicou na div');
+});
+
+on('[data-js]="span"', 'click', function() {
+  alert('clicou no span');
+});
+```
+
+```
+ação do usuário: clicou no span. Se false:
 clicou no span > clicou no a > clicou na div
 Os eventos são acionados do elemento clicado para fora (child to parent)
-
->> ação do usuário: clicou no span. Se true:
+```
+```
+ação do usuário: clicou no span. Se true:
 clicou na div > clicou no a > clicou no span
 Os eventos são acionados no elemento pai para dentro (parent to child)
-
+```
 
 ### Vídeo 152
 eventos são cumulativos. Pode-se manipular eventos usando uma função. Lembrar que funções em javascript são lidadas como objetos.
 novos eventos:
-'input': quando o usuário muda algo no form
-'keyup': quando o usuário solta uma tecla
-'keydown': uma tecla é pressionada
-'change': em uma tag <select>, o valor é modificado
+- 'input': quando o usuário muda algo no form
+- 'keyup': quando o usuário solta uma tecla
+- 'keydown': uma tecla é pressionada
+- 'change': em uma tag ```<select>```, o valor é modificado
 
+---
 
-
-/* 
-Seção 26
-*/
+## Seção 26
 ### Vídeo 153
-API DOM: cria uma árvore de hierarquia da página do navegador. Ele cria nós que podem ser manipulados separadamentes. 
+**API DOM**: cria uma árvore de hierarquia da página do navegador. Ele cria nós que podem ser manipulados separadamentes. 
 Percorrer elementos.
-Eles contam quebras de linha:
-.parentNode: traz os nós (NodeList) parent
-.childNode: traz os nós (NodeList) child.
-.firstChild e .lastChild: trás o primeiro e últimos filhos.
-.nextSibling e .previousSibling: mostra o próximo irmão e o anterior. 
 
+Eles contam quebras de linha:
+```
+.parentNode: traz os nós (NodeList) parent
+
+.childNode: traz os nós (NodeList) child.
+
+.firstChild e .lastChild: trás o primeiro e últimos filhos.
+
+.nextSibling e .previousSibling: mostra o próximo irmão e o anterior. 
+```
 
 ### Vídeo 154
+```
 .nodeType: retorna um número de acordo com o tipo de nó.
-Document: 9
-Element: 1
-Text: 3
-Comments: 8
-documentFragment: 11
+```
+- Document: 9
+- Element: 1
+- Text: 3
+- Comments: 8
+- documentFragment: 11
 
+```
 .nodeValue: retorna o conteúdo textual do nó.
 .nodeName: o nome do nó. Em elementos HTML, retorna o nome da tag.
-
+```
 
 ### Vídeo 155
+```
 .child: HTMLCollection. Apesar de não ser padronizada, é bastante utilizada. Retorna os elementos filhos de um nó.
+
 .firstElementChild, .lastElementChild, .nextElementSibling, .previousElementSibling: retorna o filho elemento. Retorna toda a tag.
+
 .childElementCount: retorna um número de child de um nó. Funciona da mesma forma que elemento.length
+```
 
-Métodos
+#### Métodos]
+```
 .hasAttribute(name): retorna uma booleana. Verifica se existe um atributo no elemento.
-.hasAttributes(): se existir qualquer atributo retorna true.
 
+.hasAttributes(): se existir qualquer atributo retorna true.
+```
 
 ### Vídeo 156
+```
 .appendChild(child): adiciona ou move um elemento dentro de um nó.
-.insertBefore(node, beforeWhom): adiciona um elemento. Parâmentros: node: o que inserir; beforeWhom: antes desse elemento.
-.cloneNode(boolean): clona um elemento. Recebe como parâmetro uma booleana para definir se o conteúdo desse elemento é clonado ou não.
-.hasChildNodes(): retorna uma booleana, verificando se dentro do elemento especificado existe nós filhos.
 
+.insertBefore(node, beforeWhom): adiciona um elemento. Parâmentros: node: o que inserir; beforeWhom: antes desse elemento.
+
+.cloneNode(boolean): clona um elemento. Recebe como parâmetro uma booleana para definir se o conteúdo desse elemento é clonado ou não.
+
+.hasChildNodes(): retorna uma booleana, verificando se dentro do elemento especificado existe nós filhos.
+```
 
 ### Vídeo 157
+```
 .removeChild(child): remove um filho especificado dentro do nó.
-.replaceChild(new, old): substitui ou remaneja um elemento filho por outro.
-document.createTextNode(text): cria um texto dentro do document.
-document.createElement(tagName): cria um elemento. Os dois métodos podem ser usados em conjunto. Exemplo:
-> var newTextNode = document.createTextNode('Opa!');
-> var $newP = document.createElement('p');
-> $newP.appendChild(newTextNode);
-> $main.appendChild($newP);
-// é criado um novo parágrafo com o conteúdo do newTextNode
 
+.replaceChild(new, old): substitui ou remaneja um elemento filho por outro.
+
+document.createTextNode(text): cria um texto dentro do document.
+
+document.createElement(tagName): cria um elemento. Os dois métodos podem ser usados em conjunto. Exemplo:
+```
+```javascript
+var newTextNode = document.createTextNode('Opa!');
+var $newP = document.createElement('p');
+
+$newP.appendChild(newTextNode);
+$main.appendChild($newP);
+// é criado um novo parágrafo com o conteúdo do newTextNode
+```
 
 ### Vídeo 158
-Atributos
+#### Atributos
+```
 element.id: retorna o id do elemento.
+
 element.className: retorna a classe do elemento.
+```
 São getters e setters, ou seja, podemos receber ou atribuir um valor com esses atributos.
 
+```
 .getAttribute(attr): retorna o atributo determinado pelo parâmetro. Retorna sempre string.
+
 .setAttribute(attr, value): atributos podem ser criados e determinados valores para eles.
+```
 
+---
 
-
-/* 
-Seção 27
-*/
+## Seção 27
 ### Vídeo 161
+```
 DOM Atributos: funciona pra qualquer atributo HTML válido.
+
 element.id, element.className, element.value, element.href, element.title, element.src
+```
 
-Manipular com performance
-> document.createDocumentFragment(): melhora a performance, manipulando elementos fora do DOM. Use sempre para adição de elementos no DOM.
->   .parentNode === null
-> 
-> var fragment = document.createDocumentFragment();
-> var childP = document.createElement('p');
-> var textChildP = document.createTextNode('Texto da tag P!');
-> 
-> childP.appendChild(textChildP);
-> fragment.appendChild(childP);
-> 
-> document.body.appendChild(fragment);
+#### Manipular com performance
+```javascript
+document.createDocumentFragment(): melhora a performance, manipulando elementos fora do DOM. Use sempre para adição de elementos no DOM.
+  .parentNode === null
 
+var fragment = document.createDocumentFragment();
+var childP = document.createElement('p');
+var textChildP = document.createTextNode('Texto da tag P!');
+
+childP.appendChild(textChildP);
+fragment.appendChild(childP);
+
+document.body.appendChild(fragment);
+```
 
 ### Vídeo 162
-Eventos
+#### Eventos
 Ordem dos scripts importa: quando o navegador lê o código, ele para em um script e aciona o que é necessário. Se o elemento chamado não foi carregado ainda, vai ocorrer um erro.
 
 Para evitar esse erro, use o evento:
+```
 document = 'DOMContentLoaded'
+```
 Isso significa que os elementos internos podem não ter carregados ainda, mas os elementos sim.
 
-Boa prática: colocar script no final do <body>
+> Boa prática: colocar script no final do ```<body>```
 
 Para carregar todos os elementos, usar evento:
+```
 windows = load
+```
 
 
 ### Vídeo 163
-Técnicas Ninja
-Copiar array: atribuindo um array a outro, é criado uma referência do primeiro, portanto, não uma cópia
-> var arr = [ 1, 2, 3, 4, 5 ];
-> var arr2 = arr.slice(); //ele copia o primeiro array
+#### Técnicas Ninja
+**Copiar array**: atribuindo um array a outro, é criado uma referência do primeiro, portanto, não uma cópia
+```javascript
+var arr = [ 1, 2, 3, 4, 5 ];
+var arr2 = arr.slice(); //ele copia o primeiro array
+```
 
-Saber de tipo de dado real: o typeof, para arrays, retorna object. Para saber o tipo real do objeto, utilizamos:
+**Saber de tipo de dado real**: o typeof, para arrays, retorna object. Para saber o tipo real do objeto, utilizamos:
+```javascript
 Object.prototype.toString.call(arr); // retorna [object Array]
 Object.prototype.toString.call(myFunction); // retorna [object Function]
 Object.prototype.toString.call(arguments); // retorna [object Arguments]
+```
 
+---
 
-
-/* 
-Seção 28
-*/
+## Seção 28
 ### Vídeo 167
-AJAX: asynchronous Javascript and XML
-a ação ocorre de maneira paralela, assíncrona. Requisições na mesma URL e traz informações sem fazer o refresh.
+**AJAX**: asynchronous Javascript and XML. A ação ocorre de maneira paralela, assíncrona. Requisições na mesma URL e traz informações sem fazer o refresh.
 
-windows.XMLHttpRequest()
+#### windows.XMLHttpRequest()
 1. Instanciar objeto:
-> var ajax = new XMLHttpRequest(); //não precisa do window. pois é um objeto global;
+```javascript
+var ajax = new XMLHttpRequest(); //não precisa do window. pois é um objeto global;
+```
 2. Abrir a conexão:
-> ajax.open(<protocol>, <url>) //protocolo http, tipo post, get. Qual URL ele vai buscar essas informações
+```javascript
+ajax.open(<protocol>, <url>) //protocolo http, tipo post, get. Qual URL ele vai buscar essas informações
 
-> var ajax = new XMLHttpRequest();
-> ajax.open('GET', '/');
-> ajax.send();
-Na aba Network do developer tools, ele eparece como Type: xhr (xml http request).
+var ajax = new XMLHttpRequest();
+ajax.open('GET', '/');
+ajax.send();
+```
+Na aba Network do developer tools, ele eparece como Type: **xhr** (xml http request).
 
 
 ### Vídeo 168
-evento onreadystatechange: quando há mudança de estado
+evento **onreadystatechange**: quando há mudança de estado
 
-ajax.readyState
-0: não enviado
-1: conexão aberta
-2: Headers recebidos //informações básicas sobre o arquivo
-3: Carregando o corpo do request
-4: Concluído
+**ajax.readyState**
+- 0: não enviado
+- 1: conexão aberta
+- 2: Headers recebidos //informações básicas sobre o arquivo
+- 3: Carregando o corpo do request
+- 4: Concluído
 
-ajax.status: verifica o status do http (200, 403, 404, 500 etc)
-
-> ajax.addEventListener('onreadystatechange', function(){
->  console.log('Terminou a requisição', ajax.readyState, ajax.status);
-> });
-
+**ajax.status**: verifica o status do http (200, 403, 404, 500 etc)
+```javascript
+ajax.addEventListener('onreadystatechange', function(){
+  console.log('Terminou a requisição', ajax.readyState, ajax.status);
+});
+```
 
 ### Vídeo 169
 Verificando se conexão foi bem sucedida.
-
+```
 ajax.responseText: recebe o conteúdo do objeto ajax como texto
 ajax.responseXML: recebe conteúdo do tipo xml
-
-> function isRequestOk() {
->   return ajax.readyState === 4 ajax.status === 200;
-> }
-> ajax.addEventListener('readystatechange', function(){
->   if( isRequestOk() ){
->   var data = JSON.parse(ajax.responseText); // transformar dados JSON pra objetos, para manipulação
->   console.log('Requisição ok', data.message);
-> }
-> });
+```
+```javascript
+function isRequestOk() {
+  return ajax.readyState === 4 ajax.status === 200;
+}
+ajax.addEventListener('readystatechange', function(){
+  if( isRequestOk() ){
+  var data = JSON.parse(ajax.responseText); // transformar dados JSON pra objetos, para manipulação
+  console.log('Requisição ok', data.message);
+}
+});
+```
 
 
 ### Vídeo 170
-Tratamento de erro
-throw: cria objeto de erro
-> thow new Error('Mensagem de erro');
+#### Tratamento de erro
+**throw**: cria objeto de erro
+```javascript
+thow new Error('Mensagem de erro');
+
 try | catch: se houver erro, ele não para o código, mas joga para o catch 
-> try {
->   throw new Error('Mensagem de erro');
-> }
-> catch(e) {
->   console.log(e);
-> }
+try {
+  throw new Error('Mensagem de erro');
+}
+catch(e) {
+  console.log(e);
+}
+```
 
+---
 
-
-/* 
-Seção 29
-*/
+## Seção 29
 ### Vídeo 175
-Module pattern: criar código modular para ser usado em outras aplicações.
+**Module pattern**: criar código modular para ser usado em outras aplicações.
 
 Colocar dentro de uma função e chamá-la.
-
-> function app(){
->   //código modular
-> }
-> app();
-> //para ser exportado:
->  window.app = app;
-
+```javascript
+function app(){
+  //código modular
+}
+app();
+//para ser exportado:
+ window.app = app;
+```
 No documento de importação:
 1. não esquecer de chamar o arquivo .js antes do main.js
 2. no script, fazer
-> (function(DOM){
->   //código
-> })(window.DOM);
+```javascript
+(function(DOM){
+  //código
+})(window.DOM);
+```
 
+---
 
-
-/* 
-Seção 30
-*/
+## Seção 30
 ### Vídeo 182
-Closure: determinar valor de uma variável através de uma IIFE, para evitar conflitos.
-> var counter = 0;
-> var increment = (function(){
->   var counter = 0;
->   return function(){
->     return counter++;
->   }
-> })();
-> 
-> function otherFunction() {
->   counter = 150;
-> }
-> 
-> otherFunction(); // isso interfere no resultado do incremento, se não houvesse uma IIFE no var increment.
+**Closure**: determinar valor de uma variável através de uma IIFE, para evitar conflitos.
+```javascript
+var counter = 0;
+var increment = (function(){
+  var counter = 0;
+  return function(){
+    return counter++;
+  }
+})();
 
-Manipulando CSS:
+function otherFunction() {
+  counter = 150;
+}
+
+otherFunction(); // isso interfere no resultado do incremento, se não houvesse uma IIFE no var increment.
+```
+
+**Manipulando CSS**:
+```javascript
 element.style.propertie = 'value';
-$div.style.width = '100px';
-$div.style.backgroundColor = 'black'; //se a propriedade tem um -, trocar para uma letra maiúscula.
-ou
-$div.setAttribute('style', 'width:100px; position: relative;' );
 
+$div.style.width = '100px';
+
+$div.style.backgroundColor = 'black'; //se a propriedade tem um -, trocar para uma letra maiúscula.
+
+// ou
+
+$div.setAttribute('style', 'width:100px; position: relative;' );
+```
 element.classList: traz a lista de clases de um elemento
-contains
+```javascript
 $div.classList.contains('blue'); // retorna true ou false
 $div.classList.add('red'); // adiciona a classe 'red'
 $div.classList.toggle('blue'); // se tiver o blue, ele retira e vice-versa
 $div.classList.remove('container'); // remove a classe 'container'
+```
 
+---
 
-
-/* 
-Seção 31
-*/
+## Seção 31
 ### Vídeo 183
-innerHTML: getter e setter. Pega o conteúdo como string. Diferente do textContent, porque ele insere como texto mesmo, não como elementos HTML.
+**innerHTML**: getter e setter. Pega o conteúdo como string. Diferente do textContent, porque ele insere como texto mesmo, não como elementos HTML.
 
 
 ### Vídeo 184
-Problemas de segurança: se aceitar o input do usuário sem tratar, o seu site fica a merce de mal uso, hacker, inserção de scripts e propagandas.
+**Problemas de segurança**: se aceitar o input do usuário sem tratar, o seu site fica a merce de mal uso, hacker, inserção de scripts e propagandas.
 Verificar a entrada do usuário para que não entre scripts tanto no front quanto no back.
 
 
 ### Vídeo 185
-insertAdjacentHTML(pos, text-str)
+**insertAdjacentHTML(pos, text-str)**
+```
 pos: position, onde vai ser inserido seu HTML
 beforebegin - afterbegin
 beforeend - afterend
+```
+```html
 <!-- beforebegin -->
 <p>
 <!-- afterbegin -->
@@ -1571,25 +1709,29 @@ foo
 <!-- beforeend -->
 </p>
 <!-- afterend -->
+```
+exemplo: ```$form.insertAdjacentHTML('afterbegin', '<h1>Meu Formulário</h1>');```
 
-exemplo: $form.insertAdjacentHTML('afterbegin', '<h1>Meu Formulário</h1>');
+**console.dir()**: mostra o HTML como objeto, mostrando suas propriedades e métodos.
 
-console.dir(): mostra o HTML como objeto, mostrando suas propriedades e métodos.
-.outerHTML: representação em string da tag.
+**.outerHTML**: representação em string da tag.
 
 
 ### Vídeo 186
-devdocs.io: reúne a documentação de várias linguagens
+**devdocs.io**: reúne a documentação de várias linguagens
 
+```javascript
 var date = new Date(year, month, day, hour, min, sec, milliseconds);
 console.log(date); // retorna a data e horário
-
+```
 
 ### Vídeo 187
-Date.now(): não precisa ser instanciado para ser iniciado
+**Date.now()**: não precisa ser instanciado para ser iniciado
 vai representar o número de milisegundos que se passaram desde 1º janeiro 1970.
+
 É útil para saber quanto tempo se passou entre uma ação e outra.
 
+```javascript
 date.getDate(); // 0-31 dia do mês
 date.getDay(); // 0-6 dia da semana
 date.getFullYear(); // 2015 ano com 4 dígitos
@@ -1600,10 +1742,11 @@ date.getMinutes(); // 0-59
 date.getMonth(); // 0-11
 date.getSeconds(); // 0-59
 date.getTime(); // retorna o tempo em ms desde 1970, como o Date.now()
-
+```
 
 ### Vídeo 188
-Math Object
+#### Math Object
+```javascript
 Math.PI: retorna o número pi. Útil para cálculo de circunferência.
 Math.abs(x): valor absoluto, positivo de um número.
 Math.abs(-10) // retorna 10
@@ -1619,314 +1762,345 @@ Math.cbrt(x): retorna a raiz cúbica
 Math.max([x1, x2, xn]): retorna o maior número
 Math.min([x1, x2, xn]): retorna o menor número
 Math.random(): retorna um número aleatório entre 0 e 1
+```
 
+---
 
-
-/* 
-Seção 32
-*/
+## Seção 32
 ### Vídeo 189 - 190
 Como funciona o AJAX no lado do servidor?
+
 Fazer uma simulação  com REST API.
 
+```
 > front
 > rest-api > index.js, package.json
+```
 
 Para instalar o REST API
+```
 npm install -g nodemon
 nodemon index.js
-
-/* instalar express */
+```
+Instalar express
+```
 npm install --save express
-
+```
 rest-api > index.js
-> 'use strict';
-> 
-> var express = require('express'); // ele verifica se existe uma pasta 'express' e um index.js
-> var app = express();
-> 
-> app.get('/', function(request, response){ // resquest (req) são dados que vem do front; response (res) é a resposta do servidor
->  response.send('Home'); //o que é respondido para o cliente. Pode ser código em HTML
-> });
-> 
-> app.get('/user', function(request, response){
->   response.send('User');
-> });
-> 
-> app.listen(3000); //porta que é enviado
+```javascript
+'use strict';
+
+var express = require('express'); // ele verifica se existe uma pasta 'express' e um index.js
+var app = express();
+
+app.get('/', function(request, response){ // resquest (req) são dados que vem do front; response (res) é a resposta do servidor
+ response.send('Home'); //o que é respondido para o cliente. Pode ser código em HTML
+});
+
+app.get('/user', function(request, response){
+  response.send('User');
+});
+
+app.listen(3000); //porta que é enviado
+```
 
 front > index.html
-> (function(){
->   'use strict';
-> 
->   var ajax = new XHttpRequest();
->   ajax.open('GET', 'localhost:3000/user');
->   ajax.send();
-> 
->   ajax.addEventListener('readystatechange', function(e) {
->     if( ajax.readyState === 4 && ajax.status === 200 ){
->       console.log(ajax.responseText);
->     }
->   }, false);
-> })();
+```javascript
+(function(){
+  'use strict';
 
+  var ajax = new XHttpRequest();
+  ajax.open('GET', 'localhost:3000/user');
+  ajax.send();
+
+  ajax.addEventListener('readystatechange', function(e) {
+    if( ajax.readyState === 4 && ajax.status === 200 ){
+      console.log(ajax.responseText);
+    }
+  }, false);
+})();
+```
 
 ### Vídeo 191
-Cors: corrige o erro de portas
+**Cors**: corrige o erro de portas
+```
 npm install --save cors
-
+```
 rest-api > index.js
-> 'use strict';
-> 
-> var express = require('express');
-> var cors = require('cors');
-> var app = express();
-> var users = {
->   joao: {
->     nome: 'João',
->     idade: 30
->   },
->   maria: {
->     nome: 'Maria',
->     idade: 22
->   }
-> };
->
-> app.use(cors());
-> 
-> app.get('/', function(req, res){
->  res.send('Home');
-> });
-> 
-> app.get('/user/:username', function(req, res){ // :username é uma variável
->   res.send('req.params.username'); // retorna valores dinâmicos
->   var username = req.params.username;
->   res.json(users[username]);
->   if (users[username]){
->     return res.json(users[username]);  
-> }
-> res.status(404).json({ error: 'Usuário não encontrado' });
-> });
-> 
-> app.listen(3000); //porta que é enviado
+```javascript
+'use strict';
 
+var express = require('express');
+var cors = require('cors');
+var app = express();
+var users = {
+  joao: {
+    nome: 'João',
+    idade: 30
+  },
+  maria: {
+    nome: 'Maria',
+    idade: 22
+  }
+};
+
+app.use(cors());
+
+app.get('/', function(req, res){
+ res.send('Home');
+});
+
+app.get('/user/:username', function(req, res){ // :username é uma variável
+  res.send('req.params.username'); // retorna valores dinâmicos
+  var username = req.params.username;
+  res.json(users[username]);
+  if (users[username]){
+    return res.json(users[username]);  
+}
+res.status(404).json({ error: 'Usuário não encontrado' });
+});
+
+app.listen(3000); //porta que é enviado
+```
 
 front > index.html
-> (function(){
->   'use strict';
-> 
->   var ajax = new XHttpRequest();
->   ajax.open('GET', 'http://localhost:3000/user');
->   ajax.send();
-> 
->   ajax.addEventListener('readystatechange', function(e) {
->     if( ajax.readyState === 4 && ajax.status === 200 ){
->       console.log(ajax.responseText);
->     }
->   }, false);
-> })();
+```javascript
+(function(){
+  'use strict';
 
+  var ajax = new XHttpRequest();
+  ajax.open('GET', 'http://localhost:3000/user');
+  ajax.send();
+
+  ajax.addEventListener('readystatechange', function(e) {
+    if( ajax.readyState === 4 && ajax.status === 200 ){
+      console.log(ajax.responseText);
+    }
+  }, false);
+})();
+```
 
 ### Vídeo 192
+```javascript
 ajax.open('GET', url, async); // não usar o ajax.open('GET', url, false)
+```
 Sendo síncrona, ele pode quebrar a sua aplicação
-
+```javascript
 ajax.abort(); // para a requisição
-
-Método POST
+```
+#### Método POST
+```javascript
 ajax.open('POST', url);
 ajax.setRequestHeader(
   'Content-Type',
   'application/x-www-form-urlencoded'
 );
 ajax.send('key1=value1&key2=value2');
-
+```
 
 ### Vídeo 193
 rest-api > index.js
-> 'use strict';
-> 
-> var express = require('express');
-> var cors = require('cors');
-> var bodyParser = require('body-parser');
-> var app = express();
-> var users = [
->   {
->     username: 'joao',
->     name: 'João',
->     age: 30
->   },
->   {
->     username: 'maria',
->     name: 'Maria',
->     age: 22
->   }
-> ];
->
-> app.use(bodyParser.urlencoded({ extended: false }));
-> app.use(cors());
-> 
-> app.get('/', function(req, res){
->  res.json({ response: 'Home' });
-> });
-> 
-> app.get('/user/:username', function(req, res){ // :username é uma variável
->   var username = req.params.username;
->   var hasUser = users.some( function(user) {
->   return users.username === username;
-> });
->   if ( hasUser ){
->     return res.json( user.filter(function(user){
->   }));  
-> }
-> res.status(404).json({ error: 'Usuário não encontrado' });
-> });
-> 
-> app.post('/user', function(req, res) {
->   var username = req.body.username;
->   var age = req.body.age;
->   res.json({ username: username, age: age });
-> });
-> 
-> app.listen(3000); //porta que é enviado
+```javascript
+'use strict';
 
->> para parsear dados, é necessário instalar o body parser
+var express = require('express');
+var cors = require('cors');
+var bodyParser = require('body-parser');
+var app = express();
+var users = [
+  {
+    username: 'joao',
+    name: 'João',
+    age: 30
+  },
+  {
+    username: 'maria',
+    name: 'Maria',
+    age: 22
+  }
+];
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cors());
+
+app.get('/', function(req, res){
+ res.json({ response: 'Home' });
+});
+
+app.get('/user/:username', function(req, res){ // :username é uma variável
+  var username = req.params.username;
+  var hasUser = users.some( function(user) {
+  return users.username === username;
+});
+  if ( hasUser ){
+    return res.json( user.filter(function(user){
+  }));  
+}
+res.status(404).json({ error: 'Usuário não encontrado' });
+});
+
+app.post('/user', function(req, res) {
+  var username = req.body.username;
+  var age = req.body.age;
+  res.json({ username: username, age: age });
+});
+
+app.listen(3000); //porta que é enviado
+```
+
+Para parsear dados, é necessário instalar o body parser
+```
 npm install --save body-parser
-
+```
 
 front > index.html
-> (function(){
->   'use strict';
-> 
->   var ajax = new XHttpRequest();
->   ajax.open('POST', 'http://localhost:3000/user');
->   ajax.setRequestHeader('Content-Type', 'application/x-www-form-url-urlencoded');
->   ajax.send('username=roberto&age=32');
-> 
->   ajax.onreadystatechange = function(){
->     if(ajax.readyState === 4) {
->       console.log('Usuário cadastrado!');
->     }
->   }
-> })();
+```javascript
+(function(){
+  'use strict';
 
+  var ajax = new XHttpRequest();
+  ajax.open('POST', 'http://localhost:3000/user');
+  ajax.setRequestHeader('Content-Type', 'application/x-www-form-url-urlencoded');
+  ajax.send('username=roberto&age=32');
+
+  ajax.onreadystatechange = function(){
+    if(ajax.readyState === 4) {
+      console.log('Usuário cadastrado!');
+    }
+  }
+})();
+```
 
 ### Vídeo 194
 Como cadastrar o usuário
 
 rest-api > index.js
-> 'use strict';
-> 
-> var express = require('express');
-> var cors = require('cors');
-> var bodyParser = require('body-parser');
-> var app = express();
-> var users = [
->   {
->     username: 'joao',
->     name: 'João',
->     age: 30
->   },
->   {
->     username: 'maria',
->     name: 'Maria',
->     age: 22
->   }
-> ];
->
-> app.use(bodyParser.urlencoded({ extended: false }));
-> app.use(cors());
-> 
-> app.get('/', function(req, res){
->  res.json({ response: 'Home' });
-> });
-> 
-> app.get('/user/:username', function(req, res){ // :username é uma variável
->   var username = req.params.username;
->   var hasUser = users.some( function(user) {
->   return user.username === username;
-> });
->   if ( hasUser ){
->     return res.json( user.filter(function(user){
->        return user.username === username;
->   }));  
-> }
-> res.status(404).json({ error: 'Usuário não encontrado' });
-> });
-> 
-> app.post('/user', function(req, res) {
->   var username = req.body.username;
->   var age = req.body.age;
->   var user = req.body.user;
->
->   var hasUser = users.some( function(user) {
->     return user.username === username;
->   });
->
->   if( !hasUser ){
->     users.push({
->       username: username,
->       age: age
->     });
->   }
->   return res.json(users);
-> });
-> 
-> app.listen(3000); //porta que é enviado
+```javascript
+'use strict';
+
+var express = require('express');
+var cors = require('cors');
+var bodyParser = require('body-parser');
+var app = express();
+var users = [
+  {
+    username: 'joao',
+    name: 'João',
+    age: 30
+  },
+  {
+    username: 'maria',
+    name: 'Maria',
+    age: 22
+  }
+];
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cors());
+
+app.get('/', function(req, res){
+ res.json({ response: 'Home' });
+});
+
+app.get('/user/:username', function(req, res){ // :username é uma variável
+  var username = req.params.username;
+  var hasUser = users.some( function(user) {
+  return user.username === username;
+});
+  if ( hasUser ){
+    return res.json( user.filter(function(user){
+       return user.username === username;
+  }));  
+}
+res.status(404).json({ error: 'Usuário não encontrado' });
+});
+
+app.post('/user', function(req, res) {
+  var username = req.body.username;
+  var age = req.body.age;
+  var user = req.body.user;
+
+  var hasUser = users.some( function(user) {
+    return user.username === username;
+  });
+
+  if( !hasUser ){
+    users.push({
+      username: username,
+      age: age
+    });
+  }
+  return res.json(users);
+});
+
+app.listen(3000); //porta que é enviado
+```
 
 front > index.html
-> (function(){
->   'use strict';
-> 
->   var ajax = new XHttpRequest();
->   ajax.open('POST', 'http://localhost:3000/user');
->   ajax.setRequestHeader('Content-Type', 'application/x-www-form-url-urlencoded');
->   ajax.send('username=roberto&user=Roberto&age=32');
-> 
->   ajax.onreadystatechange = function(){
->     if(ajax.readyState === 4) {
->       console.log('Usuário cadastrado!');
->     }
->   }
-> })();
+```javascript
+(function(){
+  'use strict';
 
+  var ajax = new XHttpRequest();
+  ajax.open('POST', 'http://localhost:3000/user');
+  ajax.setRequestHeader('Content-Type', 'application/x-www-form-url-urlencoded');
+  ajax.send('username=roberto&user=Roberto&age=32');
 
+  ajax.onreadystatechange = function(){
+    if(ajax.readyState === 4) {
+      console.log('Usuário cadastrado!');
+    }
+  }
+})();
+```
 
-/* 
-Seção 33
-*/
+---
+
+## Seção 33
 ### Vídeo 195 - 200
-TDD: Test Driven Development
-BDD: Behavior Driven Development
-Baby steps: escrever o mínimo de código possível para que uma condição passe.
+- TDD: Test Driven Development
+- BDD: Behavior Driven Development
+
+**Baby steps**: escrever o mínimo de código possível para que uma condição passe.
 1. O teste tem que quebrar (red)
 2. Corrija o seu código (green)
 3. Melhore ele (blue - refactory)
 Chai, Mocha, Assert
 
-Code Coverage: quanto do nosso código está 'coberto'
-Istanbul: npm que verifica quanto do código é coberto pelo teste. Cria um report na pasta  nome_modules.
+**Code Coverage**: quanto do nosso código está 'coberto'
 
+> Istanbul: npm que verifica quanto do código é coberto pelo teste. Cria um report na pasta  nome_modules.
 
+---
 
-/* 
-Seção 34 - Bônus
-*/
+## Seção 34 - Bônus
 ### Vídeo 201 - 204
-Uglify: biblioteca npm que minifica o código javascript.
-para instalar:
-> npm install uglify-js -g
-para executar (ver o preview):
-> uglifyjs main.js
-para criar um novo arquivo:
-> uglifyjs --output main.min.js -- main.js
-para comprimir ainda mais:
-> uglifyjs --output main.min.js --compress -- main.js
-para modificar nome de funções para nomes menores:
-> uglifyjs --mangle -- main.js
-> uglifyjs --output main.min.js --mangle --compress -- main.js
+> Uglify: biblioteca npm que minifica o código javascript.
 
+Para instalar:
+```
+npm install uglify-js -g
+```
+Para executar (ver o preview):
+```
+uglifyjs main.js
+```
+Para criar um novo arquivo:
+```
+uglifyjs --output main.min.js -- main.js
+```
+Para comprimir ainda mais:
+```
+uglifyjs --output main.min.js --compress -- main.js
+```
+Para modificar nome de funções para nomes menores:
+```
+uglifyjs --mangle -- main.js
+uglifyjs --output main.min.js --mangle --compress -- main.js
+```
 Para criar um sourcemap:
-> uglifyjs --source-map main.source.map --output main.min.js --mangle --compress --main.js
+```
+uglifyjs --source-map main.source.map --output main.min.js --mangle --compress --main.js
+```
 O sourcemap faz uma relação do arquivo normal com o minificado para facilitar o debug. Funciona no Developer tools dos navegadores.
 
