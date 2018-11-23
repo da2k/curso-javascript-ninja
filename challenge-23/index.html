@@ -1,0 +1,86 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Challenge 23 - Calculadora</title>
+
+  <style>
+
+    .container {
+      width: 100%;
+      max-width: 200px;
+      margin: 0 auto;
+    }
+
+    .resultado-visor input {
+      margin: 0 auto;
+      margin-bottom: 20px;
+      display: block;
+      width: 100%;
+    }
+
+    button {
+      margin-bottom: 10px;
+    }
+
+    .botoes {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .botoes > div:first-child {
+      width: 50%;
+    }
+    .botoes > div:last-child {
+      width: 20%;
+    }
+
+    .botoes > div:last-child button {
+      width: 100%;
+    }
+
+    button[data-js="btn0"] {
+      width: 100%;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="resultado-visor">
+      <input type="text" value="0" readonly data-js="resultadoVisor"> <!-- Visor da calculadora -->
+    </div>
+
+    <div class="botoes">
+      <div>
+        <button data-js="button-number" value="1">1</button>
+        <button data-js="button-number" value="2">2</button>
+        <button data-js="button-number" value="3">3</button>
+        <button data-js="button-number" value="4">4</button>
+        <button data-js="button-number" value="5">5</button>
+        <button data-js="button-number" value="6">6</button>
+        <button data-js="button-number" value="7">7</button>
+        <button data-js="button-number" value="8">8</button>
+        <button data-js="button-number" value="9">9</button>
+        <button data-js="button-number" value="0">0</button>
+      </div>
+      <div>
+        <button data-js="button-operation" value="+">+</button>
+        <button data-js="button-operation" value="-">-</button>
+        <button data-js="button-operation" value="/">/</button>
+        <button data-js="button-operation" value="*">*</button>
+      </div>
+    </div>
+
+    <div>
+      <button data-js="btnCE">CE</button>
+      <button data-js="btnResultado">=</button>
+    </div>
+
+  </div>
+
+  <script src="challenge-23.js"></script>
+</body>
+</html>

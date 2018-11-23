@@ -175,7 +175,7 @@
 
             console.log(doc.querySelector("#bairro").hasChildNodes());
 
-            
+
 
 
           } else if (ajax.status !== 200)
