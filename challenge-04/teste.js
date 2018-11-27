@@ -1,6 +1,3 @@
-# Desafio da semana #4
-
-```js
 /*
 Declare uma variável chamada `isTruthy`, e atribua a ela uma função que recebe
 um único parâmetro como argumento. Essa função deve retornar `true` se o
@@ -15,27 +12,27 @@ var isTruthy = function(arg) {
 }
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
-isTruthy(0);
-isTruthy('');
-isTruthy("");
-isTruthy(undefined);
-isTruthy(null);
-isTruthy(Nan);
-isTruthy();
+console.log(isTruthy(0));
+console.log(isTruthy(''));
+console.log(isTruthy(""));
+console.log(isTruthy(undefined));
+console.log(isTruthy(null));
+console.log(isTruthy(NaN));
+console.log(isTruthy());
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
-isTruthy(1);
-isTruthy([]);
-isTruthy({});
-isTruthy(true);
-isTruthy(10.8);
-isTruthy('1');
-isTruthy('10.9');
-isTruthy(true);
-isTruthy(!0);
-isTruthy(!false);
+console.log(isTruthy(1));
+console.log(isTruthy([]));
+console.log(isTruthy({}));
+console.log(isTruthy(true));
+console.log(isTruthy(10.8));
+console.log(isTruthy('1'));
+console.log(isTruthy('10.9'));
+console.log(isTruthy(true));
+console.log(isTruthy(!0));
+console.log(isTruthy(!false));
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
@@ -64,7 +61,7 @@ var carro = {
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
-carro.mudaCor = function(cor) {
+carro.mudarCor = function(cor) {
     carro.cor = cor;
 }
 /*
@@ -113,17 +110,18 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-caro.adicionarPessoas = function (numeroPessoas) {
+carro.adicionarPessoas = function (numeroPessoas) {
     if (carro.quantidadePessoas < carro.assentos ) {
         if(carro.quantidadePessoas + numeroPessoas <= carro.assentos) {
-            carro.quantidadePessoas += carro.assentos;
+            carro.quantidadePessoas = carro.quantidadePessoas + numeroPessoas;
         }
         else {
             var grau = carro.assentos - carro.quantidadePessoas === 1 ? 'pessoa' : 'pessoas'
-            return 'Só cabem mais + ' carro.assentos - carro.quantidadePessoas + ' ' + grau
+            return 'Só cabem mais + ' + carro.assentos - carro.quantidadePessoas + ' ' + grau
         }
+        console.log(carro.quantidadePessoas)
     }
-    else if (carro.quantidadePessoas === carro.assentos) {
+    else if (carro.quantidadePessoas >= carro.assentos) {
         return 'O carro já está lotado!'
     }
     else {
@@ -145,7 +143,7 @@ console.log(carro.obterCor()); // preto
 carro.mudarCor('vermelho');
 
 // E agora, qual a cor do carro?
-console.log(carro.obterCor()); vermelho
+console.log(carro.obterCor()); //vermelho
 
 // Mude a cor do carro para verde musgo.
 carro.mudarCor('verde musgo');
@@ -157,10 +155,10 @@ console.log(carro.obterCor()); // verde musgo
 console.log(carro.obterMarcaModelo())// 'Este carro é um Nissan Versa
 
 // Adicione 2 pessoas no carro.
-carro.adicionarPessoas(2);
+//carro.adicionarPessoas(2);
 
 // Adicione mais 4 pessoas no carro.
-carro.adicionarPessoas(4);
+//carro.adicionarPessoas(4);
 
 // Faça o carro encher.
 carro.adicionarPessoas(10);
@@ -169,8 +167,7 @@ carro.adicionarPessoas(10);
 carro.quantidadePessoas = 1;
 
 // Adicione 10 pessoas no carro.
-carro.adicionaPessoas(10);
+carro.adicionarPessoas(10);
 
 // Quantas pessoas temos no carro?
-carro.quantidadePessoas(); // 1
-```
+carro.quantidadePessoas; // 1
