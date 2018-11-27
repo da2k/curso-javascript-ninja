@@ -71,22 +71,18 @@
     */
     function calculator(operator) {
         
-        if(isOperatorValid(operator)) {
-            
-            return function(number1, number2) {
-                
-                if(typeof number1 !== 'number' || typeof number2 !== 'number') {
-                    return false
-                }
-                else {
-                    return operation[operator](number1, number2);
-                }
-
-            };
-
+        if(!isOperatorValid(operator)) {
+            return false;
         }
-        
-        return false;
+
+        return function(number1, number2) {
+            
+            if(typeof number1 !== 'number' || typeof number2 !== 'number') {
+                return false
+            }
+            
+            return operation[operator](number1, number2);
+        };
     }
 
     /*
@@ -208,12 +204,12 @@
     a mensagem de erro será mostrada no console.
     */
     operationSignal = 'x';
-    var mod = calculator(operationSignal);
+    var invalid = calculator(operationSignal);
    
-    if(mod) {
+    if(invalid) {
         number1 = 8;
         number2 = 9;
-        console.log(showOperationMessage(operationSignal, number1, number2), mod(number1, number2));
+        console.log(showOperationMessage(operationSignal, number1, number2), invalid(number1, number2));
     }
     else {
         console.log(showErrorMessage(operationSignal));
