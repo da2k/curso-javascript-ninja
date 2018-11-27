@@ -20,7 +20,7 @@ isTruthy('');
 isTruthy("");
 isTruthy(undefined);
 isTruthy(null);
-isTruthy(Nan);
+isTruthy(NaN);
 isTruthy();
 
 /*
@@ -64,7 +64,7 @@ var carro = {
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
-carro.mudaCor = function(cor) {
+carro.mudarCor = function(cor) {
     carro.cor = cor;
 }
 /*
@@ -113,22 +113,24 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-caro.adicionarPessoas = function (numeroPessoas) {
+carro.adicionarPessoas = function (numeroPessoas) {
     if (carro.quantidadePessoas < carro.assentos ) {
         if(carro.quantidadePessoas + numeroPessoas <= carro.assentos) {
-            carro.quantidadePessoas += carro.assentos;
+            carro.quantidadePessoas = carro.quantidadePessoas + numeroPessoas;
+            return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!' 
         }
         else {
-            var grau = carro.assentos - carro.quantidadePessoas === 1 ? 'pessoa' : 'pessoas'
-            return 'Só cabem mais + ' carro.assentos - carro.quantidadePessoas + ' ' + grau
-        }
+            var grau = (carro.assentos - carro.quantidadePessoas) === 1 ? 'pessoa' : 'pessoas'
+            return 'Só cabem mais ' + (carro.assentos - carro.quantidadePessoas) + ' ' + grau
+        }        
     }
-    else if (carro.quantidadePessoas === carro.assentos) {
+    else if (carro.quantidadePessoas === carro.assentos ) {
         return 'O carro já está lotado!'
     }
     else {
         return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!' 
     }
+    
 } 
 
 /*
@@ -139,38 +141,38 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-console.log(carro.obterCor()); // preto
+carro.obterCor(); // preto
 
 // Mude a cor do carro para vermelho.
 carro.mudarCor('vermelho');
 
 // E agora, qual a cor do carro?
-console.log(carro.obterCor()); vermelho
+carro.obterCor(); //vermelho
 
 // Mude a cor do carro para verde musgo.
 carro.mudarCor('verde musgo');
 
 // E agora, qual a cor do carro?
-console.log(carro.obterCor()); // verde musgo
+carro.obterCor(); // verde musgo
 
 // Qual a marca e modelo do carro?
-console.log(carro.obterMarcaModelo())// 'Este carro é um Nissan Versa
+carro.obterMarcaModelo()// 'Este carro é um Nissan Versa
 
 // Adicione 2 pessoas no carro.
-carro.adicionarPessoas(2);
+carro.adicionarPessoas(2));
 
 // Adicione mais 4 pessoas no carro.
-carro.adicionarPessoas(4);
+carro.adicionarPessoas(4));
 
 // Faça o carro encher.
-carro.adicionarPessoas(10);
+carro.adicionarPessoas(3));
 
 // Tire 4 pessoas do carro.
 carro.quantidadePessoas = 1;
 
 // Adicione 10 pessoas no carro.
-carro.adicionaPessoas(10);
+carro.adicionarPessoas(10));
 
 // Quantas pessoas temos no carro?
-carro.quantidadePessoas(); // 1
+carro.quantidadePessoas; // 1
 ```
