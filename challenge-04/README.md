@@ -124,8 +124,13 @@ carro.adicionarPessoas = function (numeroPessoas) {
             return 'Só cabem mais ' + (carro.assentos - carro.quantidadePessoas) + ' ' + grau
         }        
     }
-    else if (carro.quantidadePessoas === carro.assentos ) {
+    else if (carro.quantidadePessoas === carro.assentos && carro.quantidadePesoas + numeroPessoas >= carro.assentos ) {
         return 'O carro já está lotado!'
+    }
+    else if (carro.quantidadePessoas + numeroPessoas <= carro.assentos) {
+        carro.quantidadePessoas + numeroPessoas < 0 ? carro.quantidadePessoas = 0 : carro.quantidadePessoas += numeroPessoas;
+        
+        return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!' 
     }
     else {
         return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!' 
