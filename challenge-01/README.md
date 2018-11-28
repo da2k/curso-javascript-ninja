@@ -19,7 +19,7 @@
 // Qual é o valor da variável `soma` até aqui?
 ?
 
-// Declare uma variável chamada `souninja`, atribuindo à ela o valor booleano que representa `verdadeiro`.
+// Declare uma variável chamada `souninja`, atribuindo a ela o valor booleano que representa `verdadeiro`.
 ?
 
 // Declare uma variável chamada `comida` que recebe um array com os valores 'arroz', 'feijão' e 'ovo'.
