@@ -4,29 +4,34 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-?
+function sum(arg1, arg2) {
+    return arg1 + arg2;
+}
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-?
+var total = sum(7, 9) + 5;
 
 // Qual o valor atualizado dessa variável?
-?
+21
 
 // Declare uma nova variável, sem valor.
-?
+var newVar;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-?
+function addValueNewVar() {
+    newVar = 'valor';
+    return newVar;
+}
 
 // Invoque a função criada acima.
-?
+addValueNewVar()
 
 // Qual o retorno da função? (Use comentários de bloco).
-?
+'valor'
 
 /*
 Crie uma função com as seguintes características:
@@ -35,19 +40,24 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-?
+function checkIfNullAndReturnExpressionResult(arg1, arg2, arg3) {
+    if (!arg1 || !arg2 || !arg3) {
+        return 'Preencha todos os valores corretamente';
+    }
+    return (arg1 * arg2 * arg3) + 2;
+}
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+checkIfNullAndReturnExpressionResult(2, 2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+checkIfNullAndReturnExpressionResult(2, 2); // 'Preencha todos os valores corretamente'
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+checkIfNullAndReturnExpressionResult(10, 10, 10);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+1002
 
 /*
 Crie uma função com as seguintes características:
@@ -58,8 +68,26 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+function conditionalTest(arg1, arg2, arg3) {
+    if (arg1 && !arg2 && !arg3) {
+        return arg1;
+    }
+    if (arg1 && arg2 && !arg3) {
+        return arg1 + arg2;
+    }
+    if (arg1 && arg2 && arg3) {
+        return (arg1 + arg2) / arg3;
+    }
+    if (!arg1 && !arg2 && !arg3) {
+        return false;
+    }
+    return null;
+}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+
+conditionalTest(1); // 1
+conditionalTest(1, 3); // 4
+conditionalTest(1, 3, 2); // 2
+
 ```
