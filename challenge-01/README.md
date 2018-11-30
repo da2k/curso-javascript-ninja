@@ -32,7 +32,7 @@ console.log(comida[1]); //feijão
 soma === myvar;
 
 // Digite o código que verifica se a variável `myvar` é menor ou igual à variável `soma`.
-soma === myvar; //false
+myvar <= soma; //false
 
 // Crie uma função chamada `divisao` que receba como parâmetro dois números, e retorne o resultado da divisão entre eles.
 function divisao(num1, num2){
