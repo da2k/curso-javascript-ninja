@@ -60,28 +60,18 @@ Crie uma função com as seguintes características:
 */
 ? function ninja(x,y,z){
 	var resultado;
-    if(x != undefined && y === undefined && z === undefined){
+    if(x !== undefined && y === undefined && z === undefined){
 		resultado = x;
-    } else if(x === undefined && y != undefined && z === undefined ){
-    	resultado = y;
-    } else if(x === undefined && y === undefined && z != undefined ){
-		resultado = z;
-    } else if(x != undefined && y != undefined){
-		resultado = x+y; 
-    } else if(x != undefined && z != undefined){
-		resultado = x+z; 
-    } else if(y != undefined && z != undefined){
-		resultado = y+z; 
-    } else if(x != undefined && y != undefined && z != undefined){
-		resultado = x+y/z; 
+    } else if(x !== undefined && y !== undefined && z === undefined ){
+    	resultado = x+y;
+    } else if(x !== undefined && y !== undefined && z !== undefined){
+		resultado = (x+y)/z; 
     } else if(x === undefined && y === undefined && z === undefined){
 		resultado = false; 
     } else{
 		resultado = null;
     }
-
     return resultado;
-
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
