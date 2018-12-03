@@ -4,6 +4,7 @@ Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 */
 var array = [1, true, "Leo", false, "legal"];
 
+
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
@@ -15,7 +16,7 @@ var funcao = function(arg) {
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-funcao(array)[1]; //true
+console.log(funcao(array)[1]);
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -36,11 +37,11 @@ var valores = [0, "1", true, [1, 2, 3], { leo: "legal" }];
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-retornaIndice(valores, 0); //0
-retornaIndice(valores, 1); //'1'
-retornaIndice(valores, 2); //true
-retornaIndice(valores, 3); //[ 1, 2, 3 ]
-retornaIndice(valores, 4); //{ leo: 'legal' }
+console.log(retornaIndice(valores, 0));
+console.log(retornaIndice(valores, 1));
+console.log(retornaIndice(valores, 2)); 
+console.log(retornaIndice(valores, 3)); 
+console.log(retornaIndice(valores, 4));
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -82,7 +83,7 @@ var selecionaLivro = function(livro) {
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-selecionaLivro();
+console.log(selecionaLivro());
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
