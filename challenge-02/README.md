@@ -70,25 +70,31 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function myCalc(a,b,c){
-    if( b === undefined || c === undefined){
+    if( a !== undefined && b === undefined && c === undefined){
         return a;
     }
-
-    if(a !== undefined && b !== undefined || c === undefined){
+    
+    else if(a !== undefined && b !== undefined && c === undefined){
         return a + b;
     }
-    
-    if(a !== undefined || b !== undefined || c !== undefined){
+
+    else if(a !== undefined && b !== undefined && c !== undefined){
         return (a + b) / c;
     }
-    
-    if(a === undefined || b === undefined || c === undefined){
+
+    else if(a === undefined && b === undefined && c === undefined){
         return false;
+    } 
+    
+    else {
+        return null;
     }
     
-    return null;
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+myCalc();       // false
+myCalc(1);      // 1
+myCalc(1,2);    // 3
+myCalc(1,2,3);  // 1
 ```
