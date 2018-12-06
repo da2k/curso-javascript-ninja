@@ -42,10 +42,10 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function exemplo1( x, y, z ) {
-  if(x === null || y === null || z === null) {
+  if(x === undefined || y === undefined || z === undefined) {
     return 'Preencha todos os valores corretamente!';
     } else {
-    return (x * y * z) + 5;
+    return (x * y * z) + 2;
     }
   }
 }
@@ -54,13 +54,13 @@ function exemplo1( x, y, z ) {
 exemplo1( 2, 3);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-//
+// Preencha todos os valores corretamente!
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 exemplo1( 2, 3, 4);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-// 29
+// 26
 
 /*
 Crie uma função com as seguintes características:
@@ -71,8 +71,24 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+function exemplo2( a, b, c) {
+  if(a !== undefined && b === undefined && c === undefined) {
+    return a;
+  } else if (a !== undefined && b !== undefined && c === undefined) {
+    return a + b;
+  } else if (a !== undefined && b !== undefined && c !== undefined) {
+    return (a + b) / c;
+  } else if (a === undefined && b === undefined && c === undefined) {
+    return false;
+  } else {
+    return null;
+  }
+}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+exemplo2();   // false
+exemplo2(4);  // 4
+exemplo2(4, 3);   // 7
+exemplo2(4, 3, 8);    // 0.875
+
 ```
