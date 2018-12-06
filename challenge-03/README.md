@@ -193,7 +193,7 @@ pessoa.apresentacao = function() {
 		metrosAndados = 'metro';
 	}
 	return 'Olá, eu sou ' + sexo + ' ' + pessoa.nome + ' ' + nome.sobrenome + ', tenho ' + pessoa.idade + ' ' + idade + ', ' + pessoa.altura + ' 'm, meu peso é ' ' + pessoa.peso + 'Kg e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' ' + metrosAndados ' + '!';
-};
+}
 
 // Agora, apresente-se ;)
 pessoa.apresentacao();
