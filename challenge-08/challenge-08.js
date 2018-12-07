@@ -70,10 +70,13 @@ function calculator(operacao){
       case '/':
         resultado = num1 / num2;
         break;
+      case '%':
+        resultado = num1 % num2;
+        break;
       default:
         return 'Operação inválida.';
         break;
-    }
+    };
     return 'Resultado da operação: '+ num1 +' '+ operacao +' '+ num2 +' = '+ resultado+'.';
   }
 }
@@ -106,4 +109,4 @@ no console.
 console.log(subtraction(10, 3));//Resultado da operação: 10 - 3 = 7.
 console.log(multiplication(8, 5));//Resultado da operação: 8 * 5 = 40.
 console.log(division(100, 4));//Resultado da operação: 100 / 4 = 25.
-console.log(mod(8, 2));//Operação inválida.
+console.log(mod(8, 2));//Resultado da operação: 8 % 2 = 0.
