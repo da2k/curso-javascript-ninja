@@ -14,13 +14,13 @@ o resultado no console, com a frase:
 */
 var valor1 = 20;
 var valor2 = 13;
-console.log('A soma de '+valor1+' e '+valor2+' é igual a '+sum(valor1, valor2)+'.');
+console.log('A soma de '+valor1+' e '+valor2+' é igual a '+sum(valor1, valor2)+'.');//A soma de 20 e 13 é igual a 33.
 
 /*
 Mostre no console o nome da função criada acima, com a frase:
 "O nome da função que faz a soma é [NOME DA FUNÇÃO]."
 */
-console.log('O nome da função que faz a soma é '+ sum.name +'.');
+console.log('O nome da função que faz a soma é '+ sum.name +'.');//O nome da função que faz a soma é calculateSum.
 
 /*
 Crie uma função literal chamada `showName`. Essa função deve retornar o
@@ -40,7 +40,7 @@ Usando a variável criada acima, mostre no console o nome e o retorno da funçã
 atribuída a ela, com a seguinte frase:
 "A função [NOME DA FUNÇÃO] retorna [RETORNO DA FUNÇÃO]."
 */
-console.log('A função '+ varShowName.name +' retorna '+ varShowName() +'.');
+console.log('A função '+ varShowName.name +' retorna '+ varShowName() +'.');//A função showName retorna Antonio Marcos.
 
 /*
 Crie uma função literal chamada `calculator`, que funcione assim:
@@ -87,7 +87,7 @@ var sum = calculator('+');
 /*
 Agora `sum` é uma função. Mostre no console a soma de dois números, usando ela.
 */
-console.log(sum(16, 3));
+console.log(sum(16, 3));//Resultado da operação: 16 + 3 = 19.
 
 /*
 Agora, declare algumas variáveis com os nomes `subtraction`, `multiplication`,
@@ -103,7 +103,7 @@ var mod = calculator('%');
 Faça uma operação com cada uma das funções criadas acima, mostrando o resultado
 no console.
 */
-console.log(subtraction(10, 3));
-console.log(multiplication(8, 5));
-console.log(division(100, 4));
-console.log(mod(8, 2));
+console.log(subtraction(10, 3));//Resultado da operação: 10 - 3 = 7.
+console.log(multiplication(8, 5));//Resultado da operação: 8 * 5 = 40.
+console.log(division(100, 4));//Resultado da operação: 100 / 4 = 25.
+console.log(mod(8, 2));//Operação inválida.
