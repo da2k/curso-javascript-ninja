@@ -73,7 +73,7 @@
 
 
       function isRequestOK() {
-        return ajax.readyState === 4 && ajax.status === 200;
+        return ajax.readyState === 1 && ajax.status === 200;
     }
 
       function fillCepFields() {
