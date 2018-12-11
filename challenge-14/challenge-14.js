@@ -11,18 +11,10 @@
     Mostre esse array no console.
     */
     console.log( 'Number Objects Array:' );
-    var numberObjects = [
-        { number: 1 },
-        { number: 2 },
-        { number: 3 },
-        { number: 4 },
-        { number: 5 },
-        { number: 6 },
-        { number: 7 },     
-        { number: 8 },        
-        { number: 9 },        
-        { number: 10 },
-    ];
+    var numberObjects = [];
+    for( var i = 1; i <= 10; i++ ) {
+        numberObjects.push( { number: i } );
+    }
     console.log( numberObjects );
 
     /*
@@ -81,11 +73,10 @@
     */
     console.log( '\nSeu nome na língua do "P":' );
     var name = [ 'DA', 'NI', 'EL' ];
-    console.log( 
-        name.reduce( function( accum, curr ) {
-            return accum + 'P' + curr.slice(1);
-        }, '' ) 
-    );
+    var nameP = name.reduce( function( accum, curr ) {
+        return accum + 'P' + curr;
+    }, '' );
+    console.log( nameP );
 
     /*
     Crie uma variável chamada `inversedName`, que reduzirá o array em uma string
@@ -121,11 +112,9 @@
     } else {
         console.log( 'Não existe um objeto { number: 2 } em numberObjects :(' );
     }
-    console.log( '\nO método indexOf pesquisa pelo elemento que foi passado por parâmetro,' +
-        '\natravés do critério de comparação \'===\'. O método retorna o valor do índice da ocorrência,' +
-        '\ncaso nenhum item for encontrado é retornado o valor \'-1\'.' + 
-        '\nDesta forma, a expressão \'justNumbers.indexOf( 2 ) >= 0\', correspode à \'true\' apenas se o ' +
-        '\nnúmero 2 for encontrado.' );
+    console.log( '\nA expressão \'numberObjects.indexOf( { number: 2 } );\' retorna \'false\',' +
+        '\npois não corresponde ao mesmo objeto. Por isso foi criado uma array apenas com' +
+        '\nvalores primitivos, desta forma, o valor 2 pode ser encontrado pelo \'indexOf()\'' );
 
     /*
     Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
