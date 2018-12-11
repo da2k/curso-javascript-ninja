@@ -56,7 +56,7 @@
 	- O desafio é fazer o retorno sem usar "if" ou "switch".
 	*/
 	function isOperatorValid (op){		
-		return (op==='+'|| op=== '-'|| op==='*' || op=== '/'|| op==='%'); 
+		return !!operation[op]; 
 	}
 	console.log(isOperatorValid('/'));
 	
@@ -72,16 +72,18 @@
 	operador passado para a função "calculator", e passando para esse método
 	os dois parâmetros da função de retorno de "calculator".
 	*/
+		
 	function calculator(op) {
-		if ( !isOperatorValid( op ) ) {
-			return false;
-		} 
-		return function( num1,num2 ){
-				if (typeof num1 !== 'number' || typeof num2 !== 'number')
-					return false;
-			} 
-			return operation[ op ]( num1,num2 );
-	}
+        if (isOperatorValid(op)) {
+            return function(num1, num2) {
+                if ( typeof num1 !== 'number' || typeof num2 !== 'number' ) {
+                    return false;
+                }
+                return operation[op](num1, num2);
+            }
+        }
+        return false;
+    }
 		
 	/*
 	Crie uma função chamada "showOperationMessage" que recebe três parâmetros:
