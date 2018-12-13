@@ -72,28 +72,28 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
 */
 function convertToHex( colorString ) {
     var colors = {
-        'green': '#00FF00',
-        'blue': '#0000FF',
-        'red': '#FF0000',
-        'black': '#000000',
-        'white': '#FFFFFF'
+        green: '#00FF00',
+        blue: '#0000FF',
+        red: '#FF0000',
+        black: '#000000',
+        white: '#FFFFFF'
     };
     
     switch( colorString ) {
         case 'green':
-        return 'O hexadecimal para a cor '+ colorString +' é '+ colors['green'] +'.'
+        return 'O hexadecimal para a cor '+ colorString +' é '+ colors.green +'.'
         break;
         case 'blue':
-        return 'O hexadecimal para a cor '+ colorString +' é '+ colors['blue'] +'.'
+        return 'O hexadecimal para a cor '+ colorString +' é '+ colors.blue +'.'
         break;
         case 'red':
-        return 'O hexadecimal para a cor '+ colorString +' é '+ colors['red'] +'.'
+        return 'O hexadecimal para a cor '+ colorString +' é '+ colors.red +'.'
         break;
         case 'black':
-        return 'O hexadecimal para a cor '+ colorString +' é '+ colors['black'] +'.'
+        return 'O hexadecimal para a cor '+ colorString +' é '+ colors.black +'.'
         break;
         case 'white':
-        return 'O hexadecimal para a cor '+ colorString +' é '+ colors['white'] +'.'
+        return 'O hexadecimal para a cor '+ colorString +' é '+ colors.white +'.'
         break;
         default:
         return 'Não temos o equivalente hexadecimal para '+ colorString +'.'
