@@ -37,7 +37,7 @@
     var fullName = 'daniel-bastos';
     console.log(fullName);
     fullName = fullName.split('-').map(function(word) {
-        return word.slice(0, 1).toUpperCase() + word.slice( 1);
+        return word.charAt(0).toUpperCase() + word.slice(1);
     }).join(' ');
     console.log(fullName);
 
@@ -53,18 +53,9 @@
     console.log( '\nMeus amigos:' );
     var names = [ 'Marcos', 'Danilo', 'Osvaldo', 'Marcio', 'Diego' ];
     var strNames = names.reduce(function( phrase, name, index, arr ) {
-        switch(index) {
-            case 0:
-                var separator = '';
-                break;
-            case (arr.length - 1):
-                var separator = ' e ';
-                break;
-            default:
-                var separator = ', ';
-        }
+        var separator = index === arr.length - 1 ? ' e ' : ', ';
         return phrase + separator + name;
-    }, '') + ' são meus amigos.';
+    }).concat( ' são meus amigos.' );
     console.log(strNames);
     /*
     Usando o replace(), faça a string "Roberto" virar "Roberta".
