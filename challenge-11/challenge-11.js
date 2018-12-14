@@ -38,10 +38,13 @@ esse objeto tem.
 Após o loop, mostre a frase:
 'The person has [COUNTER] properties'
 */
+var counter =0;
 for (var prop in person){
 
 	console.log('The '+prop+' of person is '+person[prop]);
+	counter++;
 }
+console.log('The person has '+counter+'  properties');
 
 /*
 Crie uma função chamada `moreThan`, que vai verificar se a pessoa (objeto
@@ -60,6 +63,24 @@ function moreThan (age){
 
 console.log('The person has more than 25 years old? '+ moreThan(age) );
 
+/* Poderia tb usar:*/
+
+function moreThan (age){
+	if (person.age> 25) {
+		return true;
+	}
+	return false;
+}
+
+console.log('The person has more than 25 years old? '+ moreThan(25) );
+
+/* Poderia tb usar:*/
+
+function moreThan (age){	
+	return person.age > age;
+	}	
+console.log('The person has more than 25 years old? '+ moreThan(25) );
+
 /*
 Faça um loop de 0 a 20, que adicione cada número como um item de um
 array chamado `numbers`. Se o contador for maior que 10, saia do loop.
@@ -68,18 +89,22 @@ Mostre no console os números no array.
 console.log( 'De 0 a 10:');
 
 var numbers = [];
-
 for (var i = 0; i <= 20; i++) {
-
 	if ( i > 10 ) {
-
 		break;
 	}
-
 	numbers[i] = i;
 	console.log(numbers[i]);
 }
-
+/* Poderia tb usar o método push:*/
+var numbers = [];
+for (var i = 0; i <= 20; i++) {
+	if ( i > 10 ) {
+		break;
+	}
+	numbers.push(i);	
+}
+console.log(numbers);
 
 /*
 Faça outro loop de 0 a 20, que adicione a um array chamado `numbers` (já
@@ -97,5 +122,20 @@ for (var i = 0; i <= 20; i++) {
 		console.log(numbers[i]);
 	}	
 }
+
+console.log( 'Pares de 0 a 20:');
+
+/* Poderia tb usar:*/
+
+numbers=[];
+
+for (var i = 0; i <= 20; i++) {
+
+	if ( i % 2 === 0 ) {
+		continue;
+	}
+	numbers.push(i);	
+}
+	console.log( numbers );
 
 })()
