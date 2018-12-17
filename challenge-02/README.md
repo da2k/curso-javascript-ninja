@@ -76,16 +76,21 @@ Crie uma função com as seguintes características:
 */
 		function arg4 (y,x,z){
 		if (x == undefined && z == x){
-			return y;}
+			return y;
+		}
 		else if (z == undefined){
-			return y + x}
+			return y + x;
+		}
 		else if (y != undefined){
-			return ((y+x)/z)}
-		else if (y == undefined){
-			return resp = false}
+			return ((y+x)/z);
+		}
+		else if (y === undefined){
+			return false;
+		}
 		else{
-			return null}
-			}	
+			return null;
+		}
+		}	
 
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
