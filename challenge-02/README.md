@@ -27,7 +27,7 @@ Onde VALOR é o novo valor da variável.
 */
 	function retCarac (){
 		semValor = 1;
-		return semValor +""
+		return "O valor da variável agora é " + semValor;
 	}
 
 
@@ -94,5 +94,5 @@ Crie uma função com as seguintes características:
 	arg4(1) 		//1
 	arg4(1,2)   	//3
 	arg4(1,2,3)		//1	
-	
+
 ```
