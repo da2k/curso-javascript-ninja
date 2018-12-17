@@ -1,4 +1,4 @@
-<!-- Escreva aqui sua dúvida após essa linha -->
+Escreva aqui sua dúvida
 
 <!-- Não apague daqui pra baixo! -->
 @fdaciuk

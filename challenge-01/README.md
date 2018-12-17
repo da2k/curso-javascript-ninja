@@ -20,7 +20,11 @@ soma = soma * 3;
 	//72
 
 // Declare uma variável chamada `souninja`, atribuindo à ela o valor booleano que representa `verdadeiro`.
+<<<<<<< HEAD
  var souninja = true;
+=======
+ ?
+>>>>>>> master
 
 // Declare uma variável chamada `comida` que recebe um array com os valores 'arroz', 'feijão' e 'ovo'.
 var comida = ["arroz", "feijão", "ovo"];
