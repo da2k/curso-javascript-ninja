@@ -33,7 +33,7 @@
     console.log( '\nFormatando CPFs corretamente:' );
     
     function formatCPF(cpf) {
-        return cpf.replace(/(\d{3})/g, '$1' + '.');
+        return cpf.replace( /(\d{3})(\d{3})(\d{3})(\d{2})/g, '$1.$2.$3-$4' );
     }
     console.log( formatCPF( cleanCPF('049-214 3421-1') ) );
     console.log( formatCPF( cleanCPF('210.458.522-05') ) );
