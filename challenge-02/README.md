@@ -45,7 +45,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 	  function newFunc2(a, b, c){
-    if (a == undefined && b == a && b == c){
+    if (a === undefined || b === a || b === c){
       return  respVal="Preencha todos os valores"} else{
       return ((a*b*c)+2)}
     }
