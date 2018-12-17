@@ -6,6 +6,12 @@ e imprima o nome desse campeonato no console.
 */
 // ?
 
+var championship = `Mineiro`;
+console.log(championship);
+
+
+
+
 /*
 Declare uma variável chamada `teams`, que receberá um array com 5 elementos.
 Os elementos serão nomes de times do campeonato escolhido, e os nomes devem
@@ -13,6 +19,8 @@ estar na ordem em que eles aparecem na tabela no momento da solução desse
 desafio.
 */
 // ?
+
+var teams = [`Cruzeiro`, `America`, `Atletico`, `montalvania`];
 
 console.log( 'Times que estão participando do campeonato:', teams );
 
@@ -32,7 +40,17 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     - Se não houver time para a posição passada, deve retornar a mensagem:
     "Não temos a informação do time que está nessa posição."
 */
-// ?
+
+showTeamPosition = function (x) {
+
+    if (x===0) {
+        console.log(`Nao existe essa posicao, favor colocar acima de 0`);
+    } else if (x<5 && x!= 0){
+    console.log (`O time que está em` ,x, `º lugar é o `, teams[x]);
+} else {
+    console.log(`Nao temos informacao do time que esta nesta posicao `);
+}
+}
 
 /*
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
