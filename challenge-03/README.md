@@ -41,7 +41,7 @@ booleano que representa "verdadeiro";
 		if (x > 0){
 			pessoa.andando = true;
 		}
-		return pessoa.quantosMetroscaminhou = pessoa.quantosMetroscaminhou + x;	
+		return pessoa.quantosMetroscaminhou += x;	
 	}
 
 /*
@@ -59,7 +59,7 @@ Crie um método chamado `nomeCompleto`, que retorne a frase:
 */
 
 	pessoa.nomeCompleto = function(){
-		return "Olá meu nome é " + pessoa.nome + " " + pessoa.sobrenome
+		return "Olá meu nome é " + pessoa.nome + " " + pessoa.sobrenome + "!";
 	}
 
 /*
@@ -79,7 +79,7 @@ Crie um método chamado `mostrarPeso`, que retorne a frase:
 */
 
 	pessoa.mostrarPeso = function(){
-		return "Eu peso " + pessoa.peso + "KG."
+		return "Eu peso " + pessoa.peso + "KG.";
 }
 
 /*
@@ -87,7 +87,7 @@ Crie um método chamado `mostrarAltura` que retorne a frase:
 - "Minha altura é [ALTURA]m."
 */
 	pessoa.mostrarAltura = function(){
-		return "Minha altura é " + pessoa.altura + "m."
+		return "Minha altura é " + pessoa.altura + "m.";
 	}
 
 /*
