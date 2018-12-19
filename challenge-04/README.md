@@ -15,17 +15,26 @@ para o contrário.
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 	isTruthy(0) 		//false
-	isTruthy(1) 		//true 
+	isTruthy(NaN) 		//false 
 	isTruthy(undefined) //false 
 	isTruthy(null) 		//false 
-	isTruthy("0")		//true 
-	isTruthy("Max")		//true 
+	isTruthy(-0)		//false 
+	isTruthy(false)		//false
+	isTruthy("")		//false 
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
 
-	isTruthy("truthy","truthy","truthy","truthy","truthy","truthy","truthy","truthy","truthy","truthy") //true
+	isTruthy(1) 			//true
+	isTruthy("Max")			//true
+	isTruthy(1+1)			//true
+	isTruthy(function(){}) 	//true
+	isTruthy({})			//true
+	isTruthy([])			//true
+	isTruthy({a: 1, b: 2})	//true
+	isThruthy([1,2,3])		//true
+
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
@@ -40,7 +49,16 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `quantidadePessoas` - Number - zero por padrão
 */
 		
-		var carro = {marca: "Ford", modelo: "GT", placa: "IVN1012", ano: 2010, cor: "Vermelho", quantasPortas:4, assentos: 5, quantidadePessoas: 0}
+		var carro = {
+			marca: "Ford", 
+			modelo: "GT", 
+			placa: "IVN1012", 
+			ano: 2010, 
+			cor: "Vermelho", 
+			quantasPortas:4, 
+			assentos: 5, 
+			quantidadePessoas: 0
+		}
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
