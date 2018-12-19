@@ -104,29 +104,38 @@ Para retornar os valores de marca e modelo, utilize os métodos criados.
 
 /*
 Crie um método que irá adicionar pessoas no carro. Esse método terá as
-seguintes características:
+seguintes características: */
 
- carro.entrarPessoa = function(x){
-        var totalPessoas = x + carro.quantidadePessoas;
-        var quantosPodem = carro.assentos - carro.quantidadePessoas;
-        var lugarDisp = totalPessoas - carro.assentos
-
-
-			if(x === undefined || x === null){
-				return "Já temos " + carro.quantidadePessoas + " pessoas no carro!";
-				}
-            else if(totalPessoas <= carro.assentos){
-                carro.quantidadePessoas = carro.quantidadePessoas + x;
-                return "Já temos " + totalPessoas + " pessoas no carro!";
-                }
-
-            else if(totalPessoas > carro.assentos && lugarDisp >= 1){
-                return "Só cabem mais " + quantosPodem + " pessoas!"
-            }   
-                else {
-                    return  "O carro já está lotado!"
-                      }
-}
+		carro.entrarPessoa = function(x){
+		        var totalPessoas = x + carro.quantidadePessoas;
+		        var quantosPodem = carro.assentos - carro.quantidadePessoas;
+		        var lugarDisp = totalPessoas - carro.assentos
+		
+		
+		            if(x === undefined || x === null){
+		                return "Já temos " + carro.quantidadePessoas + " pessoas no carro!";
+		                }
+		            else if(totalPessoas <= carro.assentos && totalPessoas === 1){
+		                carro.quantidadePessoas = carro.quantidadePessoas + x;
+		                return "Já temos " + totalPessoas + " pessoa no carro!";
+		                }
+		
+		            else if(totalPessoas <= carro.assentos && totalPessoas > 1){
+		                carro.quantidadePessoas = carro.quantidadePessoas + x;
+		                return "Já temos " + totalPessoas + " pessoas no carro!";
+		                }
+		
+		            else if(totalPessoas > carro.assentos && quantosPodem === 1){
+		                return "Só cabe mais " + quantosPodem + " pessoa!"
+		            }
+		            
+		            else if(totalPessoas > carro.assentos && quantosPodem > 1){
+		                return "Só cabem mais " + quantosPodem + " pessoas!"
+		            }      
+		                else {
+		                    return  "O carro já está lotado!"
+		                      }
+		}
 
 - Ele deverá receber por parâmetro o número de pessoas entrarão no carro. Esse
 número não precisa encher o carro, você poderá acrescentar as pessoas aos
