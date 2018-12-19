@@ -109,29 +109,22 @@ seguintes características: */
 		carro.entrarPessoa = function(x){
 		        var totalPessoas = x + carro.quantidadePessoas;
 		        var quantosPodem = carro.assentos - carro.quantidadePessoas;
-		        var lugarDisp = totalPessoas - carro.assentos
+		        var lugarDisp = totalPessoas - carro.assentos;
+		        var pluralOuSingularTotal = totalPessoas === 1 ? " pessoa" : " pessoas"
+		        var pluralOuSingularCabe = quantosPodem === 1 ? " pessoa" : " pessoas"
 		
 		
 		            if(x === undefined || x === null){
 		                return "Já temos " + carro.quantidadePessoas + " pessoas no carro!";
 		                }
-		            else if(totalPessoas <= carro.assentos && totalPessoas === 1){
+		            else if(totalPessoas <= carro.assentos){
 		                carro.quantidadePessoas = carro.quantidadePessoas + x;
-		                return "Já temos " + totalPessoas + " pessoa no carro!";
+		                return "Já temos " + totalPessoas + pluralOuSingularTotal + " no carro!";
 		                }
-		
-		            else if(totalPessoas <= carro.assentos && totalPessoas > 1){
-		                carro.quantidadePessoas = carro.quantidadePessoas + x;
-		                return "Já temos " + totalPessoas + " pessoas no carro!";
-		                }
-		
-		            else if(totalPessoas > carro.assentos && quantosPodem === 1){
-		                return "Só cabe mais " + quantosPodem + " pessoa!"
+				
+		            else if(totalPessoas > carro.assentos && lugarDisp > 0){
+		                return "Só cabe mais " + quantosPodem + pluralOuSingularCabe + "!"
 		            }
-		            
-		            else if(totalPessoas > carro.assentos && quantosPodem > 1){
-		                return "Só cabem mais " + quantosPodem + " pessoas!"
-		            }      
 		                else {
 		                    return  "O carro já está lotado!"
 		                      }
