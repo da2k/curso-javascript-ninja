@@ -4,6 +4,9 @@
 // Declarar uma variável qualquer, que receba um objeto vazio.
 var objeto = { propriedade : 'valor' }
 
+//Correção do exercício
+var objeto = { }
+
 /*
 Declarar uma variável `pessoa`, que receba suas informações pessoais.
 As propriedades e tipos de valores para cada propriedade desse objeto devem ser:
@@ -270,6 +273,9 @@ retornada)
 */
 pessoa.idade //25
 
+//Corrigindo exercício
+pessoa.mostrarIdadade() //25
+
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
 com metragens diferentes passadas por parâmetro.
@@ -277,6 +283,11 @@ com metragens diferentes passadas por parâmetro.
 pessoa(10),
 pessoa(5),
 pessoa(2)
+
+//Corrigindo Exercício
+pessoa.andar(10)
+pessoa.andar(15)
+pessoa.andar(2)
 
 /*
 A pessoa ainda está andando? (Use a instrução para responder e comentários
@@ -289,11 +300,17 @@ Se a pessoa ainda está andando, faça-a parar.
 */
 pessoa.parar
 
+//Corrigindo Exercicio
+pessoa.parar()
+
 /*
 E agora: a pessoa ainda está andando? (Use uma instrução para responder e
 comentários inline ao lado da instrução para mostrar a resposta retornada)
 */
 pessoa.parar()
+
+//Corringindo Exercício
+pessoa.andando // false
 
 /*
 Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
@@ -336,5 +353,26 @@ pessoa.apresentacao = function (){
         return fraseApresentacao;
     }
     return fraseApresentacao = 'Olá eu sou o ' + pessoa.nome + ', ' + pessoa.idade + ' anos, ' + pessoa.altura + ', meu peso é ' + pessoa.peso +  'kg e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metros!';
+}
+
+//Corrigindo o exercício
+
+pessoa.apresentação = function (){
+    var sexo = 'o'
+    var idadeAnos = 'anos';
+    var metrosCaminhados = 'metros';
+
+    if ( pessoa.sexo === 'Feminino'){
+        sexo = 'a';
+    }
+    if ( pessoa.idade === 1){
+        idadeAnos = 'ano';
+    }
+    if (pessoa.caminhouQuantosMetros){
+        metrosCaminhos = 'metro';
+    }
+
+    return fraseApresentacao = 'Olá eu sou' + sexo + ' ' + pessoa.nome + ', ' + pessoa.idade + idadeAnos + pessoa.altura + ', meu peso é ' + pessoa.peso +  'kg e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + metrosCaminhados +'!';
+
 }
 ```
