@@ -24,17 +24,24 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 
+//Exercício Feito
 function nomeString(variavel){
     return 'o Valor da variavel agora é' + variavel
 }
 
+//Exercicio corrigido
+function nomeString(){
+    variavel = 'Andressa'
+    return 'O valor da variavel agora é ' + variavel
+}
+
 
 // Invoque a função criada acima.
-nomeString(3)
+nomeString()
 
 // Qual o retorno da função? (Use comentários de bloco).
 // O valor da retornado da função será 3
-nomeString(3);
+'O valor da variavel agora é Andressa'
 
 /*
 Crie uma função com as seguintes características:
@@ -50,6 +57,15 @@ function calculo(a1,a2,a3){
         var expressao = a1*a2*a3
         expressao += 2;
         return expressao
+    }
+}
+
+//Corrigindo o exercício
+function calculo(a1,a2,a3){
+    if(a1 === undefined || a2 === undefined || a3 === undefined ){
+        return 'Preencha todos os valores corretamente';
+    } else {
+        return a1 * a2 * a3 +2
     }
 }
 
@@ -84,6 +100,21 @@ function calculo2(a,b,c){
     } else if (a && b && c){
         return (a + b)/c
     } else if () {
+        return false;
+    } else  {
+        return null;
+    }
+}
+
+// Correção do exercício
+function calculo2(a,b,c){
+    if (a !== undefined & b === undefined & c === undefined ){
+        return a;
+    } else if (a !==  undefined && b !== undefined && c === undefined ){
+        return a + b;
+    } else if (a !==  undefined && b !== undefined && c !== undefined){
+        return (a + b)/c
+    } else if (a ===  undefined && b === undefined && c === undefined) {
         return false;
     } else  {
         return null;
