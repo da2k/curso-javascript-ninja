@@ -3,7 +3,7 @@ Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
 
-	var varArray = [8, 30, 3, 0, 5];
+	var varArray = [8, "Max", {a: 1}, function(){}, null];
 
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
