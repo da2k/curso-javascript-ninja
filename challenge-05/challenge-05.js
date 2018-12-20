@@ -59,32 +59,16 @@ seguintes características:
 os livros.
 */
 	
-	var livros = ["O Alquimista", "Harry Potter", "Moby Dick"];
 	function book(nameBook){
-			if (nameBook === undefined){
-				return {
-				alquimista: {paginas: 208, autor: "Paulo Coelho", editora: "Companhia das Letras"},
-				harryPotter:   {paginas: 223, autor: "J. K. Rowling", editora:  "Bloomsbury Publishing"},
-				mobyDick: {paginas: 635, autor: "Herman Melville", editora: "Harper & Brothers "}
-				}
-			} 
-			else if (nameBook === "O Alquimista"){
-				return{
-					alquimista: {paginas: 208, autor: "Paulo Coelho", editora: "Companhia das Letras"}
-				}
-			}
-			else if (nameBook === "Harry Potter"){
-				return{
-					harryPotter:   {paginas: 223, autor: "J. K. Rowling", editora:  "Bloomsbury Publishing"}
-				}
-			}
-			else if (nameBook === "Moby Dick"){
-				return{
-					mobyDick: {paginas: 635, autor: "Herman Melville", editora: "Harper & Brothers "}	
-				}
-			}	
-	};
-
+		var allBooks = {
+			"Harry Potter": {paginas: 223, autor: "J. K. Rowling", editora:  "Bloomsbury Publishing"},
+			"O Alquimista": {paginas: 208, autor: "Paulo Coelho", editora: "Companhia das Letras"},
+			"A arte da guerra": {paginas: 185, autor: "Sun Tzu", editora:  "China"}
+		}
+		
+		return 	!nameBook ? allBooks : allBooks[nameBook];
+		
+	}
 
 
 /*
@@ -98,7 +82,7 @@ usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
 
-	console.log("O livro " + livros[0] + " tem " + book(livros[0]).alquimista.paginas + " páginas!");
+	console.log("O livro O Aquimista tem " + book("O Alquimista").paginas + " páginas!");
 	
 	
 
@@ -107,11 +91,11 @@ Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-	console.log("O autor do livro " + livros[1] + " é " + book(livros[1]).harryPotter.autor +".");
+	console.log("O autor do livro Harry Potter é " + book("Harry Potter").autor + ".");
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-	console.log("O livro "+ livros[2] +" foi publicado pela editora "+ book(livros[2]).mobyDick.editora + ".");
+	console.log("O livro A arte da guerra foi publicado pela editora " + book("A arte da guerra").editora + ".");
