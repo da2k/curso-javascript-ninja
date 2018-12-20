@@ -37,8 +37,11 @@ Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-	console.log(myFunction(varArray2));
-
+	console.log(myFunction2(varArray2, 0));
+	console.log(myFunction2(varArray2, 1));
+	console.log(myFunction2(varArray2, 2));
+	console.log(myFunction2(varArray2, 3));
+	console.log(myFunction2(varArray2, 4));
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
 livro. 
