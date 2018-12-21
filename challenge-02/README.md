@@ -43,21 +43,31 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-function multipicacao(var x,y,z){
-    if(x= )
+function multiplicacao(var x,y,z){
+    
+    if(x= null) {
+        console.log('Preencha todos os valores corretamente');
+    }
+    if(y= null){
+        console.log('Preencha todos os valores corretamente');
+    }
+    if(z = null){
+        console.log('Preencha todos os valores corretamente');
+    }
+    return x * y * z + 2;
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+multiplicacao(2,5);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+//Preencha todos os valores corretamente//
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+multiplicacao(2,5,2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+//22//
 
 /*
 Crie uma função com as seguintes características:
