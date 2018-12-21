@@ -30,3 +30,4 @@ projeto.
 */
 
 console.log('Link do pull request do seu projeto');
+console.log('/ThalesAlonso/Loja-de-Carros/pull/1');
