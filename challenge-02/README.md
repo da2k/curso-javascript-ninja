@@ -45,10 +45,10 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function multValues(a, b, c) {
-    if( (a && b && c) && (!isNaN(a) && !isNaN(b) && !isNaN(c)))  {
+    if (a && b && c)  {
         return (a * b * c) + 2;
     } else {
-        return 'preencha os valores corretamente e execute a função';
+        return 'preencha todos os valores corretamente e execute a função';
     }
 }
 
