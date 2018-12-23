@@ -12,7 +12,7 @@ function soma(a, b) {
 var result = soma(10, 13) + 5;
 
 // Qual o valor atualizado dessa variável?
-// 28
+result = 28;
 
 // Declare uma nova variável, sem valor.
 var myvar;
@@ -22,14 +22,13 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function addValue(value) {
-    myvar = value;
-
-    return myvar.toString();
+function addValue() {
+    myvar = 'fernando';
+    return 'o retorno da variavel agora é: ' + myvar;
 }
 
 // Invoque a função criada acima.
-addValue('fernando');
+addValue();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /* 
@@ -45,18 +44,19 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function multValues(a, b, c) {
-    if (a && b && c)  {
-        return (a * b * c) + 2;
-    } else {
-        return 'preencha todos os valores corretamente e execute a função';
-    }
+    if (a === undefined || b === undefined || c === undefined)  {
+       return 'preencha todos os valores corretamente!';
+    } 
+    
+    return (a * b * c) + 2;
+    
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
 multValues(2, 4);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-// O retorno será: preencha os valores corretamente e execute a função
+// O retorno será: preencha os valores corretamente!
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 multValues(2, 4, 6);
@@ -74,40 +74,18 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function testValues(a, b, c) {
-    var arg1, arg2, arg3;
 
-    var result = false;
-
-    if(a) {
-        if(!isNaN(a)){
-            arg1 = true;
-            result = a;
-        } else {
-            return null;
-        }
-    } 
-    if(b) {
-        if(!isNaN(a)){
-            arg2 = true;
-            result += b;
-        } else {
-            return null;
-        }
-    }
-
-    if(c) {
-        if(!isNaN(c)) {
-            arg3 = true;
-        } else {
-            return null;
-        }
-    }
-
-    if(arg1 && arg2 && arg3) {
+    if(a !== undefined && b === undefined && c === undefined) {
+        return a;
+    } else if (a !== undefined && b !== undefined && c === undefined) {
+        return a + b;
+    } else if(a !== undefined && b !== undefined && c !== undefined) {
         return (a + b) / c;
+    } else if(a !== undefined && b === undefined && c === undefined) {
+        return false;
+    } else {
+        return null;
     }
-
-    return result;
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
@@ -115,4 +93,3 @@ testValues(); // false
 testValues(2); // 2
 testValues(1, 2); // 3
 testValues(1, 2, 3); // 1
-testValues(1, 2, '3a'); // null
