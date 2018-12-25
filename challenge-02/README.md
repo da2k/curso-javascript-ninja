@@ -23,7 +23,7 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 function adicionaValor() {
-	novaVariavel = 10;
+	novaVariavel += 10;
 	return "O valor da variável agora é " + novaVariavel;
 }
 
@@ -32,7 +32,7 @@ adicionarValor();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
-O valor da variável agora é 10
+O valor da variável agora é NaN
 */
 
 /*
@@ -43,7 +43,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function mult(a, b, c) {
-	if(!a || !b || !c) {
+	if(a === undefined || b === undefined || c === undefined) {
 		return "Preencha todos os valores corretamente!";
 	}
 	return (a * b * c) + 2;
@@ -71,16 +71,16 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function teste(a, b, c) {
-	if(a && !b && !c){
+	if(a !== undefined && b === undefined && c === undefined){
 		return a;
 	}
-	if(a && b && !c){
+	if(a !== undefined && b !== undefined && c === undefined){
 		return a + b;
 	}
-	if(a && b && c){
+	if(a !== undefined && b !== undefined && c !== undefined){
 		return (a + b) / c;
 	}
-	if(!a && !b && !c) {
+	if(a === undefined && b === undefined && c === undefined) {
 		return false;
 	}
 	return null;
