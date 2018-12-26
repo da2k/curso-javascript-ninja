@@ -55,19 +55,20 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
   "Operação inválida."
 */
 function calculator(operator) {
-    switch(operator) {
-        case '+':
-        case '-':
-        case '*':
-        case '/': 
-        case '%':
-            return function executeCalc(num1, num2) {
-                return eval(num1 + operator + num2); 
-            }
-        default: 
-            console.log('Operação inválida');
-            break;
+    return function executeCalc(num1, num2) {
+        switch(operator) {
+            case '+':
+            case '-':
+            case '*':
+            case '/': 
+            case '%':
+                var resultado = eval(num1 + operator + num2); 
+                return 'Resultado da operação: ' + num1 + ' ' + operator +  ' ' + num2 +' = ' + resultado;
+            default: 
+                return 'Operação inválida' ;
+        }
     }
+
 }
 
 /*
@@ -75,7 +76,6 @@ Declare uma variável chamada `sum`, que receberá a função acima, passando co
 parâmetro o operador de soma.
 */
 var sum = calculator('+');
-var multiplication = calculator('x');
 
 /*
 Agora `sum` é uma função. Mostre no console a soma de dois números, usando ela.
@@ -91,6 +91,7 @@ var subtraction = calculator('-');
 var multiplication = calculator('*');
 var division = calculator('/');
 var mod = calculator('%');
+var multError = calculator('x'); // forçando erro.
 
 /*
 Faça uma operação com cada uma das funções criadas acima, mostrando o resultado
@@ -100,3 +101,4 @@ console.log('subtração: ' + subtraction(30, 20));
 console.log('multiplicação: ' + multiplication(2, 8));
 console.log('divisão: ' + division(333, 3));
 console.log('modulo: ' + mod(233, 17));
+console.log('multiplicação: ' + multError(5, 77));
