@@ -90,5 +90,5 @@ function tresArgs(arg1, arg2, arg3){
 tresArgs(); // false
 tresArgs(1); // 1
 tresArgs(1, 2); // 3
-tresArgs(1, 2, 3)// 1
+tresArgs(1, 2, 3) // 1
 ```
