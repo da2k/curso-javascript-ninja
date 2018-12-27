@@ -24,7 +24,7 @@
         age: 35,
         weight: 86,
         birthday: '02/01'
-    }
+    };
 
     /*
     Use um loop para percorrer o objeto criado acima, mostrando no console
@@ -50,7 +50,7 @@
     'The person has more than 25 years old? [TRUE/FALSE]'
     */
     function moreThan(age) {
-        return person.age > age ? true : false; 
+        return person.age > age;
     }
     console.log('The person has more than 25 years old? ' + moreThan(25));
 
