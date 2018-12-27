@@ -68,7 +68,7 @@ e faça a indentação correta.
     operador passado para a função "calculator", e passando para esse método
     os dois parâmetros da função de retorno de "calculator".
     */
-    function calculadora(operator) {
+    function calculator(operator) {
         if (!isOperatorValid(operator)) {
             return false;
         }
@@ -118,7 +118,7 @@ e faça a indentação correta.
     parâmetro a variável que recebeu o sinal da operação.
     */
     operationSignal = '+';
-    var sum = calculadora(operationSignal);
+    var sum = calculator(operationSignal);
 
     /*
     PASSO 3:
@@ -132,7 +132,7 @@ e faça a indentação correta.
     - O segundo, a função de soma, passando os dois operandos.
     - Se "sum" for "false", mostrar no console a mensagem de erro.
     */
-    if (typeof sum === 'function') {
+    if ( sum ) {
         console.log(showOperationMessage(operationSignal, number1, number2) + sum(number1, number2));
     } else {
         showErrorMessage(operationSignal);
@@ -143,30 +143,34 @@ e faça a indentação correta.
     divisão e resto. Crie variáveis com os nomes "subtraction",
     "multiplication", "division" e "mod".
     */
-    operationSignal = '-'; number1 = 34; number2 = 16;
-    var sub = calculadora(operationSignal);
-    if (typeof sub === 'function') {
+    operationSignal = '-'; 
+    var sub = calculator(operationSignal);
+    if ( sub ) {
+        number1 = 34; number2 = 16;
         console.log(showOperationMessage(operationSignal, number1, number2) + sub(number1, number2));
     } else {
         showErrorMessage(operationSignal);
     }
-    operationSignal = '*'; number1 = 7; number2 = 13;
-    var mult = calculadora(operationSignal);
-    if (typeof mult === 'function') {
+    operationSignal = '*';
+    var mult = calculator(operationSignal);
+    if ( mult) {
+        number1 = 7; number2 = 13;
         console.log(showOperationMessage(operationSignal, number1, number2) + mult(number1, number2));
     } else {
         showErrorMessage(operationSignal);
     }
-    operationSignal = '/'; number1 = 34; number2 = 16;
-    var div = calculadora(operationSignal);
-    if (typeof div === 'function') {
+    operationSignal = '/'; 
+    var div = calculator(operationSignal);
+    if ( div ) {
+        number1 = 34; number2 = 16;
         console.log(showOperationMessage(operationSignal, number1, number2) + div(number1, number2));
     } else {
         showErrorMessage(operationSignal);
     }
-    operationSignal = '%'; number1 = 56; number2 = 23;
-    var resto = calculadora(operationSignal);
-    if (typeof resto === 'function') {
+    operationSignal = '%'; 
+    var resto = calculator(operationSignal);
+    if ( resto ) {
+        number1 = 56; number2 = 23;
         console.log(showOperationMessage(operationSignal, number1, number2) + resto(number1, number2));
     } else {
         showErrorMessage(operationSignal);
@@ -177,7 +181,7 @@ e faça a indentação correta.
     a mensagem de erro será mostrada no console.
     */
    operationSignal = 'x'; 
-   var mult2 = calculadora(operationSignal);
+   var mult2 = calculator(operationSignal);
    if (typeof mult2 !== 'function') {
         console.log(showErrorMessage(operationSignal));
    }
