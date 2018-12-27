@@ -69,9 +69,43 @@ Crie uma função com as seguintes características:
 4. Se todos os argumentos forem passados, retorne a soma do primeiro com o segundo, e o resultado, dividido pelo terceiro.
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
-*/
-?
+*/d
+function treeArg(arg1, arg2, arg3){
+    if(arg1 !== undefined && arg2 === undefined && arg3 === undefined){
+        return arg1;
+    }
+    else if(arg1 !== undefined && arg2 !== undefined && arg3 === undefined){
+        return arg1 + arg2;
+    }
+    else if(arg1 !== undefined && arg2 !== undefined && arg3 !== undefined){
+        return (arg1 + arg2)/arg3;
+    }
+    else if(arg1 === undefined && arg2 === undefined && arg3 === undefined){
+        return false;
+    }
+    else{
+        return null;
+    }
+}
 
-// Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
-```
+// Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário //de linha ao lado da função com o resultado de cada invocação.
+/*
+[Done] exited with code=0 in 0.168 seconds
+
+[Running] node "d:\AnaPaula\Estudos\curso-javascript-ninja\challenge-02\challenge-02.js"
+14
+
+[Done] exited with code=0 in 0.148 seconds
+
+[Running] node "d:\AnaPaula\Estudos\curso-javascript-ninja\challenge-02\challenge-02.js"
+5
+
+[Done] exited with code=0 in 0.141 seconds
+
+[Running] node "d:\AnaPaula\Estudos\curso-javascript-ninja\challenge-02\challenge-02.js"
+5
+
+[Done] exited with code=0 in 0.13 seconds
+
+[Running] node "d:\AnaPaula\Estudos\curso-javascript-ninja\challenge-02\challenge-02.js"
+false */
