@@ -180,6 +180,7 @@ e faça a indentação correta.
     Repita o PASSO 2 novamente, mas passando um operador inválido, para ver se
     a mensagem de erro será mostrada no console.
     */
+   operationSignal = '*'; 
    operationSignal = 'x'; 
    var mult2 = calculator(operationSignal);
    if (typeof mult2 !== 'function') {
