@@ -7,9 +7,9 @@ Envolva todo o código desse desafio em uma IIFE.
     Crie um array e mostre no console a representação em String desse array,
     usando o método visto na aula 13.
     */
-    var array = ['fernando', 25, 'mendes', true, {videoGame: 'ps4', jogos: ['RL', 'FIFA', 'CS:GO']}];
+    
     console.log( 'O array em formato de string é:' );
-    console.log(array.toString());
+    console.log(['fernando', 25, 'mendes', true, {videoGame: 'ps4', jogos: ['RL', 'FIFA', 'CS:GO']}].toString());
 
     /*
     Crie 2 arrays `sul` e `sudeste`, que serão as regiões do Brasil.
@@ -29,7 +29,7 @@ Envolva todo o código desse desafio em uma IIFE.
     Adicione 3 novos estados da região Norte no início do array e mostre no console.
     */
     console.log( '\nMais estados adicionados:' );
-    brasil.unshift('Amazonas', 'Roraima', 'Tocantins');
+    brasil.unshift('Amapá', 'Amazonas', 'Tocantins');
     console.log(brasil);
     
 
@@ -44,7 +44,12 @@ Envolva todo o código desse desafio em uma IIFE.
     Crie um novo array chamado `newSul`, que receba somente os estados do sul,
     pegando do array `brasil`. Não remova esses itens de `brasil`.
     */
-    var newSul = brasil.slice(2, 5);
+    //var newSul = brasil.slice(2, 5);
+    var newSul = brasil.filter(function(estado) {
+        return sul.some(function(estadoSul) {
+            return estado === estadoSul;
+        })
+    });
 
     /*
     Mostre no console os estados que estão em `newSul`.
@@ -61,7 +66,16 @@ Envolva todo o código desse desafio em uma IIFE.
     /*
     Crie um novo array chamado `nordeste`, que tenha os estados do nordeste.
     */
-    var nordeste = ['Alagoas', 'Bahia', 'Ceará', 'Maranhão', 'Paraiba', 'Pernambuco', 'Piaui', 'Rio Grande do Norte', 'Sergipe'];
+    var nordeste = ['Alagoas', 
+        'Bahia', 
+        'Ceará', 
+        'Maranhão', 
+        'Paraiba', 
+        'Pernambuco', 
+        'Piaui', 
+        'Rio Grande do Norte', 
+        'Sergipe'
+    ];
 
     /*
     Mostre no console os estados do nordeste.
@@ -85,7 +99,7 @@ Envolva todo o código desse desafio em uma IIFE.
     Mostre no console os estados em `newSudeste`.
     */
     console.log( '\nEstados em newSudeste:' );
-    console.log(sudeste);
+    console.log(newSudeste);
 
     /*
     Mostre no console os estados do `brasil`.
@@ -125,7 +139,7 @@ Envolva todo o código desse desafio em uma IIFE.
     var moreThan7 = brasil.every(function(estado) {
         return brasil.length > 7;
     });
-    moreThan7 ? console.log('Sim, todos os estados tem mais de 7 letras!') : console.log('Nem todos os estados tem mais de 7 letras!');
+    console.log(moreThan7 ? 'Sim, todos os estados tem mais de 7 letras!' : 'Nem todos os estados tem mais de 7 letras!');
 
     /*
     Percorra o array `brasil` e verifique se o Ceará está incluído, atribuindo o
@@ -135,7 +149,6 @@ Envolva todo o código desse desafio em uma IIFE.
     Senão, mostrar a frase:
     - "Ceará não foi incluído :("
     */
-    console.log('ARRAAAAAAY: ', brasil)
     console.log( '\nCeará está incluído em `brasil`?' );
     var hasCeara = brasil.some(function(estado) {
         return estado === 'Ceará';
@@ -149,7 +162,7 @@ Envolva todo o código desse desafio em uma IIFE.
     Atribua o novo array a uma variável chamada `map`.
     */
     var map = newBrasil.map(function(estado) {
-        return {id: estado.id+1, estado: estado.estado + ' pertence ao Brasil.!'}
+        return {id: estado.id+1, estado: estado.estado + ' pertence ao Brasil.!'};
     });
 
     /*
@@ -162,7 +175,7 @@ Envolva todo o código desse desafio em uma IIFE.
     Filtre o array criado acima, retornando somente os estados que tiverem
     ID par. Atribua o valor à uma variável chamada `filter`.
     */
-    var filter = newBrasil.filter(function(estado) {
+    var filter = map.filter(function(estado) {
         return estado.id % 2 === 0 ;
     });
 
