@@ -135,9 +135,9 @@ pessoa.mostrarIdade(); //'Olá! Eu tenho 42 anos!'
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
 com metragens diferentes passadas por parâmetro.
 */
+pessoa.andar(30);
 pessoa.andar(20);
-pessoa.andar(22);
-pessoa.andar(25);
+pessoa.andar(5);
 
 /*
 A pessoa ainda está andando? (Use a instrução para responder e comentários
@@ -148,21 +148,19 @@ pessoa.andando; //true
 /*
 Se a pessoa ainda está andando, faça-a parar.
 */
-?
+pessoa.parar();
 
 /*
 E agora: a pessoa ainda está andando? (Use uma instrução para responder e
 comentários inline ao lado da instrução para mostrar a resposta retornada)
 */
-if (pessoa.andando){
-   pessoa.parar();
-}
+pessoa.andando; //false
 
 /*
 Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
 inline ao lado da instrução para mostrar a resposta retornada)
 */
-pessoa.caminhouQuantosMetros; //67
+pessoa.caminhouQuantosMetros; //55
 
 /*
 Agora vamos deixar a brincadeira um pouco mais divertida! :D
