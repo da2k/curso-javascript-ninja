@@ -25,7 +25,7 @@ var pessoa = {
     peso: 84,
     andando: false,
     caminhouQuantosMetros: 0
-}
+};
 
 
 /*
@@ -34,8 +34,8 @@ alterar o valor da propriedade `idade` dessa pessoa, somando `1` a cada vez que
 for chamado.
 */
 pessoa.fazerAniversario = function (){
-    pessoa.idade = ++pessoa.idade;
-}
+    pessoa.idade++;
+};
 
 /*
 Adicione um método ao objeto `pessoa` chamado `andar`, que terá as seguintes
@@ -48,9 +48,9 @@ valor dessa propriedade a quantidade passada por parâmetro;
 booleano que representa "verdadeiro";
 */
 pessoa.andar = function(quant){
-    pessoa.caminhouQuantosMetros = ++quant;
+    pessoa.caminhouQuantosMetros += quant;
     pessoa.andando = true;
-}
+};
 
 /*
 Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o valor
@@ -58,7 +58,7 @@ da propriedade `andando` para o valor booleano que representa "falso".
 */
 pessoa.parar = function(){
     pessoa.andando = false;
-}
+};
 
 /*
 Crie um método chamado `nomeCompleto`, que retorne a frase:
@@ -66,7 +66,7 @@ Crie um método chamado `nomeCompleto`, que retorne a frase:
 */
 pessoa.nomeCompleto = function(){
     return "Olá! Meu nome é " + pessoa.nome + " " + pessoa.sobrenome +"!";
-}
+};
 
 /*
 Crie um método chamado `mostrarIdade`, que retorne a frase:
@@ -74,7 +74,7 @@ Crie um método chamado `mostrarIdade`, que retorne a frase:
 */
 pessoa.mostrarIdade = function(){
     return "Olá! Eu tenho " + pessoa.idade + " anos!";
-}
+};
 
 /*
 Crie um método chamado `mostrarPeso`, que retorne a frase:
@@ -82,7 +82,7 @@ Crie um método chamado `mostrarPeso`, que retorne a frase:
 */
 pessoa.mostrarPeso = function(){
     return "Eu peso " + pessoa.peso + " Kg.";
-}
+};
 
 /*
 Crie um método chamado `mostrarAltura` que retorne a frase:
@@ -90,7 +90,7 @@ Crie um método chamado `mostrarAltura` que retorne a frase:
 */
 pessoa.mostrarAltura = function(){
     return "Minha altura " + pessoa.altura + " m.";
-}
+};
 
 /*
 Agora vamos brincar um pouco com o objeto criado:
