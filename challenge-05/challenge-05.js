@@ -28,9 +28,6 @@ function myFunc2(a, b) {
     return a[b];
 }
 
-console.log(myFunc2(array, 2));
-
-
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
@@ -77,7 +74,7 @@ function book( bookName ) {
             autor: 'Pedrino de Jesus',
             editora: 'Editora Chorume'
         }
-    }
+    };
 
     return bookName ? bookFeatures[bookName] : bookFeatures;
 }
