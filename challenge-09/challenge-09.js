@@ -44,7 +44,7 @@ indentação correta do código, para ficar dentro da IIFE.
 
         function sum() {
             return number1 + number2;
-        };
+        }
 
         console.log( 'A soma de 40 e 50 é igual a', sum() );        
         console.log( 'Na função myFunction3, number1 é igual a', number1 );
@@ -69,7 +69,7 @@ indentação correta do código, para ficar dentro da IIFE.
     function calculator(number1, number2) {
         return function(callback) {
             return callback(number1, number2);
-        }
+        };
     }
 
     /*
@@ -88,7 +88,9 @@ indentação correta do código, para ficar dentro da IIFE.
     anônima tem como seus argumentos.
     */
     console.log( 'O resultado da soma é:' );
-    console.log( sum(function(number1, number2) { return number1 + number2 }) );
+    console.log( sum(function(number1, number2) {
+        return number1 + number2
+    }) );
 
     /*
     Agora declare outra variáveis chamadas `subtraction`, `multiplication`,
