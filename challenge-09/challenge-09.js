@@ -89,7 +89,7 @@ indentação correta do código, para ficar dentro da IIFE.
     */
     console.log( 'O resultado da soma é:' );
     console.log( sum(function(number1, number2) {
-        return number1 + number2
+        return number1 + number2;
     }) );
 
     /*
