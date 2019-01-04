@@ -110,14 +110,22 @@ indentação correta do código, para ficar dentro da IIFE.
     chamada.
     */
     console.log( 'O resultado da subtração é:' );
-    console.log( subtraction(function(number1, number2) { return number1 - number2 }) );
+    console.log( subtraction(function(number1, number2) {
+        return number1 - number2;
+    }) );
 
     console.log( 'O resultado da multiplicação é:' );
-    console.log( multiplication(function(number1, number2) { return number1 * number2 }) );
+    console.log( multiplication(function(number1, number2) {
+        return number1 * number2;
+    }) );
 
     console.log( 'O resultado da divisão é:' );
-    console.log( division(function(number1, number2) { return number1 / number2 }) );
+    console.log( division(function(number1, number2) {
+        return number1 / number2;
+    }) );
 
     console.log( 'O resto da divisão é:' );
-    console.log( mod(function(number1, number2) { return number1 - number2 }) );
+    console.log( mod(function(number1, number2) {
+        return number1 % number2;
+    }) );
 })();
