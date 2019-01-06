@@ -45,11 +45,11 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function verifica(a,b,c) {
-    if(a == null || b == null || c == null){
+    if(a === undefined || b === undefined || c === undefined){
         return "Preencha todos os valores corretamente!";
-    } else {
-        return (a*b*c)+2;
-    }
+    } 
+    return (a*b*c)+2;
+    
 };
 
 // Invoque a função criada acima, passando só dois números como argumento.
@@ -74,23 +74,22 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function _retornoDeTres(n1,n2,n3){
-    if(n1 != null && n2 == null && n3 == null){
+    if(n1 !== undefined && n2 === undefined && n3 === undefined){
         return n1;
-    } else if (n1 != null && n2 != null && n3 == null) {
+    } else if (n1 !== undefined && n2 !== undefined && n3 === undefined) {
         return n1+n2;
-    } else if (n1 != null && n2 != null && n3 != null) {
+    } else if (n1 !== undefined && n2 !== undefined && n3 !== undefined) {
         return (n1+n2)/n3
-    } else if (n1 == null && n2 == null && n3 == null) {
+    } else if (n1 === undefined && n2 === undefined && n3 === undefined) {
         return false;
-    } else {
-        return null;
     }
+    return null;
 };
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-_retornoDeTres() // false
+_retornoDeTres(); // false
 _retornoDeTres(1) // 1
-_retornoDeTres(1,2) // 3
-_retornoDeTres(1,2,3) //1
+_retornoDeTres(1,2); // 3
+_retornoDeTres(1,2,3); //1
 
 ```
