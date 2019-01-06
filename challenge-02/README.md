@@ -28,7 +28,7 @@ function addValor(){
 }
 
 // Invoque a função criada acima.
-addValor()
+addValor();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*O valor da variável agora é 10*/
