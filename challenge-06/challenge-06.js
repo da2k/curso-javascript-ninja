@@ -82,27 +82,21 @@ function convertToHex( color ) {
     switch (color) {
         case 'red':
             return `O hexadecimal para a cor ${color} é ${red}.`;
-            break;
         
         case 'blue':
             return `O hexadecimal para a cor ${color} é ${blue}.`;
-            break;
         
         case 'black':
             return `O hexadecimal para a cor ${color} é ${black}.`;
-            break;
         
         case 'white':
             return `O hexadecimal para a cor ${color} é ${white}.`;
-            break;
             
         case 'green':
             return `O hexadecimal para a cor ${color} é ${green}.`;
-            break;
     
         default:
             return `Não temos o equivalente hexadecimal para ${color}.`;
-            break;
     }
 }
 
