@@ -9,13 +9,13 @@ function soma (x,y){
 }
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-somar = soma(4,6) + 5;
+var somar = soma(4,6) + 5;
 
 // Qual o valor atualizado dessa variável?
 15
 
 // Declare uma nova variável, sem valor.
-var valor = null;
+var valor;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
@@ -70,11 +70,11 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function threeArgs(x,y,z){
-	if (x != undefined && y === undefined && z === undefined){
+	if (x !== undefined && y === undefined && z === undefined){
 		return x;
-	} else if (x != undefined && y != undefined && z === undefined){
+	} else if (x !== undefined && y !== undefined && z === undefined){
 		return x + y;
-	} else if (x != undefined && y != undefined && z != undefined){
+	} else if (x !== undefined && y !== undefined && z !== undefined){
 		return (x + y)/z;
 	} else if (x === undefined && y === undefined && z === undefined) {
 		return false;
