@@ -43,9 +43,7 @@
     /*
     Mostre no console todos os livros.
     */
-    for (var i = 0; i < books.length; i++) {
-        console.log(books[i]);
-    }
+    console.log(books);
 
     console.log( '\nLivro que está sendo removido:' );
     /*
@@ -57,31 +55,23 @@
     /*
     Mostre no console os livros restantes.
     */
-    for (var i = 0; i < books.length; i++) {
-        console.log(books[i]);
-    }
+    console.log(books);
 
     /*
     Converta os objetos que ficaram em `books` para strings.
     */
-    for (var i = 0; i < books.length; i++) {
-        books[i] = JSON.stringify(books[i]);
-    }
+    books = JSON.stringify(books);
     console.log( '\nLivros em formato string:' );
 
     /*
     Mostre os livros nesse formato no console:
     */
-    for (var i = 0; i < books.length; i++) {
-        console.log(books[i]);
-    }
+    console.log(books);
 
     /*
     Converta os livros novamente para objeto.
     */
-    for (var i = 0; i < books.length; i++) {
-        books[i] = JSON.parse(books[i]);
-    }
+    books = JSON.parse(books);
     console.log( '\nAgora os livros são objetos novamente:' );
 
     /*
@@ -99,7 +89,7 @@
     Crie um array chamado `myName`. Cada item desse array deve ser uma letra do
     seu nome. Adicione seu nome completo no array.
     */
-    var myName = ['j', 'o', 'n', 'a', 't', 'h', 'a', 'n', ' ', 'l', 'e', 'a', 'l', ' ', 'd', 'o', 's', ' ', 's', 'a', 'n', 't', 'o', 's'];
+    var myName = ['J', 'o', 'n', 'a', 't', 'h', 'a', 'n', ' ', 'L', 'e', 'a', 'l', ' ', 'd', 'o', 's', ' ', 'S', 'a', 'n', 't', 'o', 's'];
     console.log( '\nMeu nome é:' );
 
     /*
