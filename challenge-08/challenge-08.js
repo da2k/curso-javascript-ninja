@@ -102,6 +102,7 @@ var subtraction = calculator( '-' );
 var multiplication = calculator( '*' );
 var division = calculator( '/' );
 var mod = calculator( '%' );
+var paraError = calculator( 'x');
 
 /*
 Faça uma operação com cada uma das funções criadas acima, mostrando o resultado
@@ -111,3 +112,4 @@ console.log( subtraction(3, 2) );
 console.log( multiplication(8, 4) );
 console.log( division(20, 2) );
 console.log( mod(20, 3) );
+console.log( paraError(23, 7) );
