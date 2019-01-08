@@ -29,13 +29,17 @@ function otherFunction(arr, idx) {
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
-var mixedArray = [ 1, 'a', true, null, undefined ];
+var anotherArray = [ 1, 'a', true, null, undefined ];
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-console.log(myFunction(mixedArray));
+console.log(otherFunction(anotherArray, 0));
+console.log(otherFunction(anotherArray, 1));
+console.log(otherFunction(anotherArray, 2));
+console.log(otherFunction(anotherArray, 3));
+console.log(otherFunction(anotherArray, 4));
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -53,28 +57,24 @@ os livros.
 */
 function book(title) {
   var books = {
-    CLEAN_ARCHITECTURE: {
+    'Clean Architecture': {
       quantidadePaginas: 430,
       autor: 'Robert C. Martin',
       editora: 'Prentice Hall'
     },
-    DESIGN_PATTERNS: {
+    'Design Patterns': {
         quantidadePaginas: 416,
-        autor: 'Erich Gamma, Richard Helm, Ralph Johnson e John Vlissides',
+        autor: 'Erich Gamma, Richard Helm, Ralph Johnson & John Vlissides',
         editora: 'Addison-Wesley'
     },
-    HARRY_POTTER: {
+    'Harry Potter and the Goblet of Fire': {
       quantidadePaginas: 636,
       autor: 'J. K. Rowling',
       editora: 'Bloomsbury Publishing'
     }
   };
-
-  if (title === undefined) {
-    return books;
-  }
-
-  return books[title];
+  
+  return !title ? books : books[title];
 }
 
 /*
@@ -87,18 +87,19 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-console.log("O livro Clean Architecture tem " + book('CLEAN_ARCHITECTURE').quantidadePaginas + " páginas!");
+var bookName = 'Clean Architecture';
+console.log("O livro " + bookName + " tem " + book(bookName).quantidadePaginas + " páginas!");
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log("Os autores do livro Design Patterns são " + book('DESIGN_PATTERNS').autor + ".");
+console.log("O autor do livro " + bookName + " é " + book(bookName).autor + ".");
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log("O livro Harry Potter foi publicado pela editora " + book('HARRY_POTTER').editora + ".")
+console.log("O livro " + bookName + " foi publicado pela editora " + book(bookName).editora + ".")
