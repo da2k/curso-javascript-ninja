@@ -113,7 +113,7 @@ citado acima, no lugar de "pessoas".
 */
 carro.adicionaPessoas = function (quantidadePassageiros) {
 var vagas = 'pessoas';
-if (carro.quantidadePessoas+quantidadePassageiros > carro.assentos === 1)
+if ((carro.assentos - carro.quantidadePessoas) === 1)
 vagas = 'pessoa';
 if (carro.quantidadePessoas+quantidadePassageiros > carro.assentos && carro.quantidadePessoas < 5) {
 return 'Só cabem mais ' +(carro.assentos-carro.quantidadePessoas) +' ' +vagas;
