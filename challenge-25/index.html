@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Challenge-25</title>
+</head>
+<body>
+  <form method="get">
+    <label>Name:</label>
+    <input type="text" data-js="inputName" required><br>
+    <label>E-mail:</label>
+    <input type="email" data-js="inputEmail" required><br>
+    <label>Fone:</label>
+    <input type="text" data-js="inputFone" required maxlength="12"><br>
+    <select data-js="select">
+      <option value="">Selecione a linguagem</option>
+      <option value="js">Javascript</option>
+      <option value="py">Python</option>
+      <option value="go">Golang</option>
+      <option value="php">PHP</option>
+      <option value="rb">Ruby</option>
+    </select>
+    <button data-js="buttonForm"type="submit">Enviar dados</button>
+  </form>
+ <script src="challenge-25.js"></script>
+</body>
+</html>
