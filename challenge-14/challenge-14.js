@@ -13,7 +13,7 @@
     console.log( 'Number Objects Array:' );
     var numberObjects = [];
     for (var i = 1; i <= 10; i++) {
-        numberObjects.push( { number: i } );
+        numberObjects.push({ number: i });
     }
     console.log(numberObjects);
 
@@ -47,9 +47,8 @@
     Mostre o resultado no console.
     */
     console.log( '\nOperation:' );
-    var operation = justMod2Or3.reduce(function(total, item) {        
-        total++
-        return total *= item;
+    var operation = justMod2Or3.reduce(function(total, current) {        
+        return (total + 1) * current;
     }, 0);
     console.log(operation);
 
@@ -59,9 +58,8 @@
     console.
     */
     console.log( '\nOperation 2:' );
-    var operation2 = justMod2Or3.reduceRight(function(total, item) {        
-        total++
-        return total *= item;
+    var operation2 = justMod2Or3.reduceRight(function(total, current) {        
+        return (total + 1) * current;
     }, 0);
     console.log(operation2);
 
@@ -75,18 +73,18 @@
     */
     console.log( '\nSeu nome na língua do "P":' );
     var name = ['Jo', 'na', 'than'];
-    var namep = name.reduce(function(nome, item) {
-        return nome + 'P' + item;
+    var nameP = name.reduce(function(name, current) {
+        return name + 'P' + current;
     }, '');
-    console.log(namep);
+    console.log(nameP);
 
     /*
     Crie uma variável chamada `inversedName`, que reduzirá o array em uma string
     e atribuirá o seu nome invertido (usando o array criado acima).
     */
     console.log( '\nInversed Name:' );
-    var inversedName = name.reduceRight(function(nome, item) {
-        return nome += item;
+    var inversedName = name.reduceRight(function(name, current) {
+        return name + current;
     }, '');
     console.log(inversedName);
 
