@@ -196,5 +196,5 @@ pessoa.apresentacao = function(){
 }
 
 // Agora, apresente-se ;)
-pessoa.apresentacao(); //Olá, eu sou a Gabriela Peixoto, tenho 26 anos, 1.62, meu peso é 58 e, só hoje, eu já caminhei 18 metros!'
+pessoa.apresentacao(); //Olá, eu sou a Gabriela Peixoto, tenho 27 anos, 1.62, meu peso é 58 e, só hoje, eu já caminhei 18 metros!'
 ```
