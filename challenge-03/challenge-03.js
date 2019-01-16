@@ -45,7 +45,7 @@ pessoa.fazerAniversario = function () {
 
  //ver idade
  pessoa.idade
- s
+ 
 
 
 
@@ -131,7 +131,7 @@ MÉTODO pessoa.mostrarPeso
 
 pessoa.mostrarPeso = function () {
 
-	return 'Meu peso é ' + pessoa.peso + 'kg.';
+	return 'Meu peso é ' + pessoa.peso +'kg.';
 };
 
 /*
@@ -240,7 +240,17 @@ deve conter no retorno da frase acima é "metro" no lugar de "metros".
 método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
-?
+pessoa.apresentacao = function() {
+
+	var sexo = 'o';
+    var metros = 'metros';
+    var ano = 'anos';
+	sexo = pessoa.sexo === 'Masculino' ? 'o' : 'a'; 
+    metros = pessoa.caminhandoQuantosMetros > 1 ? 'metros' : 'metro';
+  
+return 'Olá, eu sou ' + sexo + ' ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + ' anos, ' + pessoa.altura +', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhandoQuantosMetros + ' ' + metros + '!';
+
+};
 
 // Agora, apresente-se ;)
 ?
