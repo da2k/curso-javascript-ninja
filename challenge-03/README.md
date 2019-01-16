@@ -2,7 +2,7 @@
 
 ```js
 // Declarar uma variável qualquer, que receba um objeto vazio.
-var newvar = {};
+var newVar = {};
 
 /*
 Declarar uma variável `pessoa`, que receba suas informações pessoais.
@@ -46,8 +46,8 @@ valor dessa propriedade a quantidade passada por parâmetro;
 - Ele deverá modificar o valor da propriedade `andando` para o valor
 booleano que representa "verdadeiro";
 */
-pessoa.andar = function(x) {
-    pessoa.caminhouQuantosMetros += x;
+pessoa.andar = function(metros) {
+    pessoa.caminhouQuantosMetros += metros;
     pessoa.andando = true;
 };
 
@@ -64,7 +64,7 @@ Crie um método chamado `nomeCompleto`, que retorne a frase:
 - "Olá! Meu nome é [NOME] [SOBRENOME]!"
 */
 pessoa.nomeCompleto = function() {
-    return "Olá! Meu nome é " + pessoa.nome + " " + pessoa.sobrenome; 
+    return "Olá! Meu nome é " + pessoa.nome + " " + pessoa.sobrenome + '!' + ; 
 };
 
 /*
@@ -96,25 +96,25 @@ Agora vamos brincar um pouco com o objeto criado:
 Qual o nome completo da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.nomeCompleto(); // Klever Sobrinho 
+pessoa.nomeCompleto(); // Olá! Meu nome é Klever Sobrinho 
 
 /*
 Qual a idade da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.idade; // 23
+pessoa.mostrarIdade(); // Olá, eu tenho 23 anos!
 
 /*
 Qual o peso da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.peso; // 88
+pessoa.mostrarPeso(); // Eu peso 88Kg
 
 /*
 Qual a altura da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.altura; // 1.68
+pessoa.mostrarAltura(); // Minha altura é 1.68m
 
 /*
 Faça a `pessoa` fazer 3 aniversários.
@@ -128,7 +128,7 @@ Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
 comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
-pessoa.idade; // 26
+pessoa.mostrarIdade(); // Olá, eu tenho 26 anos!
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
@@ -179,18 +179,23 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao = function() {
-    if(pessoa.sexo === "Feminino") {
-        var gen = "Olá, eu sou a ";
-        return fem + pessoa.nomeCompleto() + ", tenho" + pessoa.idade + " anos, " + pessoa.altura + ", meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " metros!";
-    } else if(pessoa.idade === 1) {
-        var age = " ano, "; 
-        return "Olá, eu sou o " + pessoa.nomeCompleto() + ", tenho" + pessoa.idade + age + pessoa.altura + ", meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " metros!"; 
-    } else if(pessoa.caminhouQuantosMetros === 1) {
-        var meters = " metro!";
-        return "Olá, eu sou o " + pessoa.nomeCompleto() + ", tenho" + pessoa.idade + " anos, " + pessoa.altura + ", meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + meters; 
+    var gender = "o";
+    var age = "anos"; 
+    var meters = "metros";
+
+    if( pessoa.sexo === "Feminino" ) {
+        gender = "a";
+    }  
+
+    if( pessoa.idade === 1 ) {
+        age = "ano";
     }
-    return "Olá, eu sou o " + pessoa.nomeCompleto() + ", tenho" + pessoa.idade + " anos, " + pessoa.altura + ", meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " metros!"; 
+    
+    if( pessoa.caminhouQuantosMetros === 1 ) {
+        meters = "metro";
+    }
+    return "Olá, eu sou " + gender + " " + pessoa.nome + " " + pessoa.sobrenome + ", tenho " + pessoa.idade + " " + age + ", " + "minha altura é " + pessoa.altura + "m, " + "eu peso " + pessoa.peso + "Kg," + " e só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " " + meters + "." +; 
 };
 
 // Agora, apresente-se ;)
-pessoa.apresentacao();
+pessoa.apresentacao(); // Olá, eu sou o Klever Sobrinho, tenho 26 anos, minha altura é 1.68m, eu peso 88Kg, e só hoje, eu já caminhei 150 metros.
