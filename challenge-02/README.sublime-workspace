@@ -11,7 +11,7 @@
 			"file": "README.md",
 			"settings":
 			{
-				"buffer_size": 2856,
+				"buffer_size": 3057,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -92,23 +92,24 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2856,
+						"buffer_size": 3057,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2419,
-								2419
+								2609,
+								2609
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1080.0,
+						"translation.y": 972.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
