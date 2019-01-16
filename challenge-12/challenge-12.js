@@ -1,7 +1,7 @@
 /*
 Envolva todo o conteúdo desse arquivo em uma IIFE.
 */
-teste versionamento
+
 (function(params) {
     
 
