@@ -22,17 +22,17 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function adicionaValor(argString) {
-    argString = 'VALOR';
-    return argString;
+function adicionaValor() {
+    nonValue = 30
+    return `O valor da variável agora é ${nonValue}`;
 }
 
 // Invoque a função criada acima.
-adicionaValor(nonValue);
+adicionaValor();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /* 
-    VALOR
+    O valor da variável agora é 30
 */
 
 /*
@@ -77,7 +77,7 @@ Crie uma função com as seguintes características:
 function sum(a, b, c) {
     
     if(a && b && c) {
-        return a + b / c;
+        return (a + b) / c;
     } else if (a && b) {
         return a + b;
     } else if (a) {
