@@ -1,6 +1,6 @@
-# Desafio Semana #1
+//# Desafio Semana #1
 
-```js
+
 // Declarar uma variável chamada `myvar`, sem valor.
 ?
 
@@ -39,4 +39,3 @@
 
 // Invoque a função criada acima, passando os parâmetros 10 e 2.
 ?
-```
