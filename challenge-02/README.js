@@ -4,7 +4,7 @@
 
 
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-function soma(a,b){
+function sum(a,b){
 	return a + b;
 }
 
