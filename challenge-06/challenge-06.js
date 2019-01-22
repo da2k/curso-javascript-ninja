@@ -33,9 +33,10 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 function showTeamPosition( number ) {
-    if( teams[number] ) {
-        return 'O time que está em ' + number + 'º lugar é o ' + teams[number] + '.';
+    if( number < 1 || number > 5 ) {
+        return 'O time que está em ' + number + 'º lugar é o ' + teams[ number - 1 ] + '.';
     }
+
     return 'Não temos a informação do time que está nessa posição.';
 }
 
@@ -72,36 +73,38 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 function convertToHex( color ) {
-    switch(color) {
-        case 'vermelho':
-            console.log('O hexadecimal para a cor ' + color + ' é #ef2b2b.');
+    var hexa;
+    switch( color ) {
+        case 'red':
+            hexa = '#EF2B2B';
             break;
-        case 'azul':
-            console.log('O hexadecimal para a cor ' + color + ' é #2a76ef.');
+        case 'blue':
+            hexa = '#2A76EF';
             break;
-        case 'verde':
-            console.log('O hexadecimal para a cor ' + color + ' é #3de827.');
+        case 'green':
+            hexa = '#3DE827';
             break;
-        case 'preto':
-            console.log('O hexadecimal para a cor ' + color + ' é #161616.');
+        case 'black':
+            hexa = '#161616';
             break;
-        case 'cinza':
-            console.log('O hexadecimal para a cor ' + color + ' é #939090.');
+        case 'gray':
+            hexa = '#939090';
             break;
         default:
-            console.log('Não temos o equivalente hexadecimal para ' + color + '.');
-            break;
+            return 'Não temos o equivalente hexadecimal para ' + color + '.';
     }
+
+    return 'O hexadecimal para a cor ' + color + ' é ' + hexa;
 }
 
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-convertToHex( 'vermelho' );
-convertToHex( 'azul' );
-convertToHex( 'verde' );
-convertToHex( 'preto' );
-convertToHex( 'cinza' );
-convertToHex( 'rosa' );
-convertToHex( 'marrom' );
-convertToHex( 'roxo' );
+convertToHex( 'red' );
+convertToHex( 'blue' );
+convertToHex( 'green' );
+convertToHex( 'black' );
+convertToHex( 'gray' );
+convertToHex( 'pink' );
+convertToHex( 'brown' );
+convertToHex( 'purple' );
