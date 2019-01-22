@@ -16,7 +16,7 @@
     var person = {
         name : 'Jonathan',
         lastname : 'Henrique',
-        age : 27
+        age : 25
     };
     console.log( 'Propriedades de "person":');
 
@@ -135,5 +135,6 @@
     Mostre todos os itens do array acima, odenados alfabéticamente.
     */
     console.log(myName.sort());
+    
 
 })();
