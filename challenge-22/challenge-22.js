@@ -50,8 +50,8 @@
   diferentes, com quantidades variáveis de parâmetros passados.
   */
   console.log( '\nSomar alguns números:' );
-  console.log( sum(4,4,4,4) );
-  console.log( sum(1,2,3,4,5,6,7) );
+  console.log( sum(4, 4, 4, 4) );
+  console.log( sum(1, 2, 3, 4, 5, 6, 7) );
   console.log( sum(10) );
 
   /*
@@ -59,7 +59,7 @@
   entrados pelo usuário. Mostre para o usuário a seguinte frase:
   "Entre com alguns números que serão somados:"
   */
-  var userEntry = prompt('Entre com alguns números que serão somados:');
+  var userEntry = win.prompt('Entre com alguns números que serão somados:');
 
   /*
   Mostre no console o valor entrado pelo usuário:
