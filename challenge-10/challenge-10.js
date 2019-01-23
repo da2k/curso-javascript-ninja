@@ -1,7 +1,11 @@
-/*
-Crie uma IIFE que envolva todo esse arquivo (inclusive esse comentário),
-e faça a indentação correta.
-*/
+
+(function(){
+    /*
+    Crie uma IIFE que envolva todo esse arquivo (inclusive esse comentário),
+    e faça a indentação correta.
+    */
+
+})();
 
 /*
 Sem alterar os códigos nos `console.log` abaixo, faça com que o retorno
@@ -10,9 +14,15 @@ das variáveis. Analise o que está sendo impresso no console para saber como
 resolver o problema corretamente.
 */
 var five = '5';
+
+five =Number('5');
 console.log( five + ' é número?', typeof five === 'number' );
 
+
+
 var concat = 10 + 10;
+
+concat = String(10 + 10);
 console.log( '"' + concat + '" é uma string? E é igual a "1010"?', typeof concat === 'string' );
 
 /*
