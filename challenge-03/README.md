@@ -75,7 +75,7 @@ Crie um método chamado `nomeCompleto`, que retorne a frase:
 
 pessoa.nomeCompleto = function(){
 
-	return "Olá! " Meu nome é: " + pessoa.nome + " " + pessoa.sobrenome + "!";
+	return "Olá! Meu nome é: " + pessoa.nome + " " + pessoa.sobrenome + "!";
 
 }
 
