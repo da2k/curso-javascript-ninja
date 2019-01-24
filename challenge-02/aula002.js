@@ -47,4 +47,18 @@ console.log(Animal);
 
 // palavras reservadas: nao se pode utilizar de jeito nenhum
 
+// COMO ATUALIZAR REPOSITÓRIO:
+
+// git clone endereco-ssh-do-repositorio
+// git branch: mostra as branchs criadas
+// git remote add upstream endereco-ssh-do-repositorio: upstream repositorio remoto
+// git fetch upstream: puxar todas as atualizações do repositorio remoto
+// git merge upstream/master: atualiza as modificações
+
+// criar branch:
+// git checkout -b nome-da-branch
+// git checkout nome-da-branch: mudar de branch
+
+
+
 
