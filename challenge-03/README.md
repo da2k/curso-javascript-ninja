@@ -48,7 +48,7 @@ booleano que representa "verdadeiro";
 */
 
 pessoa.andar = function(x) {
-    pessoa.caminhouquantosmetros = pessoa.caminhouquantosmetros + x
+    pessoa.caminhouquantosmetros = pessoa.caminhouquantosmetros + x;
     andando = true;
 }
 

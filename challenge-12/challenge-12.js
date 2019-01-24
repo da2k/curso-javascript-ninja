@@ -29,7 +29,7 @@
     Não use nenhuma estrutura de repetição, nem crie o array manualmente.
     */
 
-    console.log( Object.keys (person) );    
+    console.log( Object.keys (person) );    // KEYS É USADO PARA MOSTRAR PROPRIEDADES DO OBJETO
 
 
     /*
@@ -67,7 +67,7 @@
     console.log( '\nLivro que está sendo removido:' );
 
 
-    console.log( books.pop() );
+    console.log( books.pop() );  // POP - RETIRA ITEM DO ARRAY - PUSH - ADICIONA
 
 
     /*
@@ -118,7 +118,7 @@
 
     for  (var i = 0; i < books.length; i++ )
     {
-       for (var pro in books [i]) {
+       for (var prop in books [i]) {
         
         console.log(prop + ':' + books[i][prop]);
 

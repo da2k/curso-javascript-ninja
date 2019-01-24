@@ -61,7 +61,7 @@ passado por parâmetro.
 carro.mudarCor = function (x) {
 
     carro.cor = x;
-    return carro.cor;
+    
 }
 
 /*
