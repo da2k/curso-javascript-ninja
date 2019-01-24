@@ -16,7 +16,7 @@
     var person = {
         name : 'Jonathan',
         lastname : 'Henrique',
-        age : 25
+        age : 25 
     };
     console.log( 'Propriedades de "person":');
 
