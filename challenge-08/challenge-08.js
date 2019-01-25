@@ -12,8 +12,10 @@ Invoque a função criada acima, passando dois números que serão somados, e mo
 o resultado no console, com a frase:
 "A soma de [VALOR 1] e [VALOR2] é igual a [RESULTADO]."
 */
-var res_sum = sum(12, 19);
-console.log( 'A soma de 12 e 19 é igual a ' + res_sum + ' .' );
+var value1 = 10;
+var value2 = 20;
+
+console.log( 'A soma de ' + value1 + ' e ' + value2 + ' é igual a ' + sum( value1, value2 ) + ' .' );
 
 /*
 Mostre no console o nome da função criada acima, com a frase:
@@ -25,23 +27,21 @@ console.log( 'O nome da função que faz a soma é ' + sum.name + '.' );
 Crie uma função literal chamada `showName`. Essa função deve retornar o
 seu nome.
 */
-function showName(name) {
-	return name;
+function showName() {
+	return 'Klever';
 }
 
 /*
 Declare uma variável chamada `varShowName` que recebe a função criada acima.
 */
-var varShowName = function showName(name) {
-	return name;
-};
+var varShowName = showName;
 
 /*
 Usando a variável criada acima, mostre no console o nome e o retorno da função
 atribuída a ela, com a seguinte frase:
 "A função [NOME DA FUNÇÃO] retorna [RETORNO DA FUNÇÃO]."
 */
-console.log( 'A função ' + varShowName.name + ' retorna ' + varShowName('Klever') + '.' )
+console.log( 'A função ' + varShowName.name + ' retorna ' + varShowName() + '.' )
 
 /*
 Crie uma função literal chamada `calculator`, que funcione assim:
@@ -56,33 +56,33 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
   "Operação inválida."
 */
 function calculator(operator) {
-	return function math(x, y) {
+	return function math(number1, number2) {
 		var res_math;
 		switch(operator) {
             case '+':
-				res_math = x + y;
+				res_math = number1 + number2;
 			    break;
             
             case '-':
-				res_math = x - y;
+				res_math = number1 - number2;
 			    break;
             
             case '*':
-				res_math = x * y;
+				res_math = number1 * number2;
 			    break;
 			
             case '/':
-				res_math = x / y;
+				res_math = number1 / number2;
 			    break;
 
             case '%':
-				res_math = x % y;
+				res_math = number1 % number2;
 			    break;
 
             default:
 				return 'Operação inválida'; 
 		}
-		return 'Resultado da operação: ' + x + ' ' + operator + ' ' + y + ' = ' + res_math + '.'
+		return 'Resultado da operação: ' + number1 + ' ' + operator + ' ' + number2 + ' = ' + res_math + '.'
 	};
 }
 
