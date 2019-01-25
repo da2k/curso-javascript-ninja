@@ -92,7 +92,7 @@
     var myName = 'Jonathan';
     var myNewName = [];
     var len = myName.length;
-    for (var i = 0, j = 1; i < len; i++) {
+    for (var i = 0; i < len; i++) {
         myNewName.push( i % 2 === 0 ? myName[i].toUpperCase() : myName[i].toLowerCase() );
     }
     console.log(myNewName.join(''));
