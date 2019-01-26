@@ -116,7 +116,7 @@ carro.adicionaPessoas = function(pessoas) {
     
     let qtdePessoas = carro.quantidadePessoas + pessoas;
 
-    if(carro.quantidadePessoas === carro.assentos) {
+    if(carro.quantidadePessoas === carro.assentos && qtdePessoas >= carro.assentos) {
         return "O carro já está lotado"; 
     }
 
