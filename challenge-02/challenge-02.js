@@ -1,7 +1,7 @@
 function soma(a,b){ return a + b}
 console.log(soma(2, 7));
 
-var add = soma(10, 20);
+var add = soma(10, 20) + 5;
 
 console.log(add);
 
