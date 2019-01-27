@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>Challenge 24 - Calculator</title>
+</head>
+<body>
+
+  <form method="get">
+    <label>Nome:</label>
+    <input type="text" data-js="inputNome" required><br>
+    <label>E-mail:</label>
+    <input type="email" data-js="inputEmail" required><br>
+    <label>Fone:</label>
+    <input type="text" data-js="inputFone" required maxlength="11"><br>
+    <select data-js="select">
+      <option value="">Selecione o assunto</option>
+      <option value="HTML">HTML</option>
+      <option value="CSS">CSS</option>
+      <option value="Javascript">Javascript</option>
+    </select>
+
+    <button data-js="buttonForm"type="submit">Mostrar dados captados</button>
+  </form>
+
+  <script src="challenge-25.js"></script>
+</body>
+</html>
