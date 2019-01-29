@@ -57,47 +57,27 @@ os livros.
 */
 function book(name) {
 
-    const livro1Obj = {
-        nome: 'A Guerra dos Tronos',
-        quantidadePaginas: 562,
-        autor: 'George R.R. Martin',
-        editora: 'Leya',
-    }
-
-    const livro2Obj = {
-        nome: 'O Festim dos Corvos',
-        quantidadePaginas: 762,
-        autor: 'George R.R. Martin',
-        editora: 'Leya',
-    }
-
-    const livro3Obj = {
-        nome: 'A Dança dos Dragões',
-        quantidadePaginas: 872,
-        autor: 'George R.R. Martin',
-        editora: 'Leya',
-    }
-
     const bookObj = {
-        livro1Obj,
-        livro2Obj,
-        livro3Obj
+        'A Guerra dos Tronos': {
+            quantidadePaginas: 562,
+            autor: 'George R.R. Martin',
+            editora: 'Leya',
+        },
+        'O Festim dos Corvos': {
+            quantidadePaginas: 762,
+            autor: 'George R.R. Martin',
+            editora: 'Leya',
+        },
+        'A Dança dos Dragões' : {
+            quantidadePaginas: 872,
+            autor: 'George R.R. Martin',
+            editora: 'Leya',
+        }
     }
     
-    if(name) {
-         if(bookObj.livro1Obj.nome == name) {
-             return bookObj.livro1Obj
-         }
 
-         if(bookObj.livro2Obj.nome === name) {
-            return bookObj.livro2Obj
-        }
+    return !name ? bookObj : bookObj[ name ];
 
-        if(bookObj.livro3Obj.nome === name) {
-            return bookObj.livro3Obj
-        }
-    }
-    return bookObj;
 }
 
 /*
