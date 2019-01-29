@@ -84,7 +84,6 @@ function convertToHex(color){
       var hexadecimal = "#FF0000"
       break;
     case "white":
-
       var hexadecimal = "#FFFFFF"
       break;
     case "black":
