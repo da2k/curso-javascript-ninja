@@ -59,16 +59,19 @@ function book(name) {
 
     const bookObj = {
         'A Guerra dos Tronos': {
+            nome: 'A Guerra dos Tronos',
             quantidadePaginas: 562,
             autor: 'George R.R. Martin',
             editora: 'Leya',
         },
         'O Festim dos Corvos': {
+            nome: 'O Festim dos Corvos',
             quantidadePaginas: 762,
             autor: 'George R.R. Martin',
             editora: 'Leya',
         },
         'A Dança dos Dragões' : {
+            nome: 'A Dança dos Dragões',
             quantidadePaginas: 872,
             autor: 'George R.R. Martin',
             editora: 'Leya',
