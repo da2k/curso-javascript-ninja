@@ -1,7 +1,11 @@
-/*
-Crie uma IIFE que envolva todo esse arquivo (inclusive esse comentário),
-e faça a indentação correta.
-*/
+
+(function(){
+    /*
+    Crie uma IIFE que envolva todo esse arquivo (inclusive esse comentário),
+    e faça a indentação correta.
+    */
+
+})();
 
 (function(){console.log(`teste da IIFE`)}());
 
@@ -12,11 +16,23 @@ das variáveis. Analise o que está sendo impresso no console para saber como
 resolver o problema corretamente.
 */
 var five = '5';
+<<<<<<< HEAD
 five = Number('5');
+=======
+
+five =Number('5');
+>>>>>>> 296575e729fea1ade93f621c3ed386a4075556bf
 console.log( five + ' é número?', typeof five === 'number' );
 
+
+
 var concat = 10 + 10;
+<<<<<<< HEAD
 concat = String(`10 + 10`);
+=======
+
+concat = String(10 + 10);
+>>>>>>> 296575e729fea1ade93f621c3ed386a4075556bf
 console.log( '"' + concat + '" é uma string? E é igual a "1010"?', typeof concat === 'string' );
 
 /*
