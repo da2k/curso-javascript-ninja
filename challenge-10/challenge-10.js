@@ -3,6 +3,8 @@ Crie uma IIFE que envolva todo esse arquivo (inclusive esse comentário),
 e faça a indentação correta.
 */
 
+(function(){console.log(`teste da IIFE`)}());
+
 /*
 Sem alterar os códigos nos `console.log` abaixo, faça com que o retorno
 deles seja "true", usando os Wrapper Objects como "conversores" nos valores
@@ -10,9 +12,11 @@ das variáveis. Analise o que está sendo impresso no console para saber como
 resolver o problema corretamente.
 */
 var five = '5';
+five = Number('5');
 console.log( five + ' é número?', typeof five === 'number' );
 
 var concat = 10 + 10;
+concat = String(`10 + 10`);
 console.log( '"' + concat + '" é uma string? E é igual a "1010"?', typeof concat === 'string' );
 
 /*
@@ -26,6 +30,23 @@ propriedade, usando os valores passados por parâmetro.
 */
 // ?
 
+var operations = {
+    '+':function(n1, n2){
+       return n1 + n2;},
+
+    '-':function(n1, n2){
+        return n1 - n2;},
+
+    '*':function(n1, n2){
+        return n1 * n2;},
+
+    '/': function(n1, n2){
+        return n1/n2;},
+
+    '%': function(n1, n2){
+        return n1%n2;}
+}
+
 /*
 Crie uma função chamada `isOperatorValid`, que receberá um operador por
 parâmetro.
@@ -37,6 +58,10 @@ Caso contrário, "false".
 - O desafio é fazer o retorno sem usar "if" ou "switch".
 */
 // ?
+
+function isOperatorValid(){
+    
+}
 
 /*
 Agora vamos criar a calculadora.
