@@ -84,8 +84,24 @@
     // ?
 
     function calculator(operador){
-        return isOperatorValid(operador);
+        
+       var validator = isOperatorValid (operador);
+
+       if(validator == true){
+        return false;} 
+        
+        else 
+           return function(x , y){ 
+                var decision = x === 'number' || y === 'number';
+
+                if(decision == false){
+                    return false
+                } else 
+                    return operations(operador);
+           }
     }
+
+    console.log(calculator('+'))
 
 
     /*
