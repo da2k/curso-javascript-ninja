@@ -10,20 +10,20 @@ myvar = 10;
 // Declare uma nova variável chamada `soma`, e adicione uma instrução somando os valores 15 e 8.
 var soma;
 soma = 15 + 8;
-
+//soma = 23;
 
 // Atribua à variável `soma` todo o valor dela, somando 1, usando o operador de soma abreviado.
 soma++;
+//soma = 24;
 
 // Atribua à variável `soma` todo o valor dela, multiplicando por 3, usando o operador de multiplicação abreviado.
 soma *= 3;
 
 // Qual é o valor da variável `soma` até aqui?
-24;
+soma  = 72;
 
 // Declare uma variável chamada `souninja`, atribuindo à ela o valor booleano que representa `verdadeiro`.
-var souninja;
-souninja = 1 < 2;
+var souninja = true;
 
 // Declare uma variável chamada `comida` que recebe um array com os valores 'arroz', 'feijão' e 'ovo'.
 var comida;
