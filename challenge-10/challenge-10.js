@@ -87,21 +87,24 @@
         
        var validator = isOperatorValid (operador);
 
-       if(validator == true){
+       if(validator != true){
         return false;} 
         
         else 
            return function(x , y){ 
-                var decision = x === 'number' || y === 'number';
+               x , y = 10;
+                var decision = typeof x === 'number' || typeof y === 'number';
 
-                if(decision == false){
+                console.log('valor de decision: ', decision);
+
+                if(decision != false){
                     return false
                 } else 
-                    return operations(operador);
+                    return operations(operador(x, y));
            }
     }
 
-    console.log(calculator('+'))
+    console.log(calculator('+'));
 
 
     /*
