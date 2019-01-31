@@ -67,9 +67,9 @@
     */
     console.log( '\n"O Centauro de Luvas" em caixa alta:' );
     
-        console.log( text.replace( /(O Centauro de Luvas)/ , function( totalCatch , catch1 ) {
+        console.log( text.replace( /(O Centauro de Luvas)/ , function( phase ) {
 
-            return catch1.toUpperCase();
+            return phase.toUpperCase();
 
         }) );
 
@@ -124,9 +124,9 @@
     */
     console.log( '\nRegex que vai fazer o match com as datas do texto:' );
     
-        var regexDate = /(\d\d) de (junho|julho) de (\d\d\d\d)/gi;
+        var regexDate = /(\d\d) de (junho|julho) de (\d\d\d\d)/g;
 
-        console.log( text.match( regexDate ) );
+        console.log( regexDate );
 
     /*
     Agora crie a função que irá fazer o replace dos dados. A função será chamada
