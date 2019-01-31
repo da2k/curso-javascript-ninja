@@ -1,157 +1,107 @@
-# Desafio da semana #3
+# Desafio da semana #2
+
+Nesse exercício, você está livre para escolher os nomes para suas variáveis e funções! :smile:
 
 ```js
-// Declarar uma variável qualquer, que receba um objeto vazio.
-?
+// Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
+function soma(x, y) {
+  return x + y;
+}
+
+// Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento,
+// e somando `5` ao resultado retornado da função.
+var qualquer = soma(2, 3) + 5;
+
+// Qual o valor atualizado dessa variável?
+10
+
+// Declare uma nova variável, sem valor.
+var semvalor;
 
 /*
-Declarar uma variável `pessoa`, que receba suas informações pessoais.
-As propriedades e tipos de valores para cada propriedade desse objeto devem ser:
-- `nome` - String
-- `sobrenome` - String
-- `sexo` - String
-- `idade` - Number
-- `altura` - Number
-- `peso` - Number
-- `andando` - Boolean - recebe "falso" por padrão
-- `caminhouQuantosMetros` - Number - recebe "zero" por padrão
+Crie uma função que adicione um valor à variável criada acima, e retorne a string:
+    O valor da variável agora é VALOR.
+Onde VALOR é o novo valor da variável.
 */
-?
+ function mudavalor(){
+    semvalor = 1000;
+    return 'O valor da variável agora é ' + semvalor; 
+  }
+
+
+
+// Invoque a função criada acima.
+mudavalor()
+
+// Qual o retorno da função? (Use comentários de bloco).
+/* 'O valor da variável agora é 1000' */
 
 /*
-Adicione um método ao objeto `pessoa` chamado `fazerAniversario`. O método deve
-alterar o valor da propriedade `idade` dessa pessoa, somando `1` a cada vez que
-for chamado.
+Crie uma função com as seguintes características:
+1. A função deve receber 3 argumentos;
+2. Se qualquer um dos três argumentos não estiverem preenchidos, a função deve retornar a string:
+    Preencha todos os valores corretamente!
+3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-?
+  function tripla(x, y, z) {
+     if( x  === undefined || y === undefined || z === undefined){
+        return 'Preencha todos os valores corretamente!';
+     }else {
+        return x * y * z + 2;
+        }
+     }
+
+
+
+// Invoque a função criada acima, passando só dois números como argumento.
+tripla(2, 3)
+
+
+
+// Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
+/* 'Preencha todos os valores corretamente!'
+ */
+
+// Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
+tripla(2, 3, 4)
+
+
+// Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
+//26
 
 /*
-Adicione um método ao objeto `pessoa` chamado `andar`, que terá as seguintes
-características:
-- Esse método deve receber por parâmetro um valor que representará a quantidade
-de metros caminhados;
-- Ele deve alterar o valor da propriedade `caminhouQuantosMetros`, somando ao
-valor dessa propriedade a quantidade passada por parâmetro;
-- Ele deverá modificar o valor da propriedade `andando` para o valor
-booleano que representa "verdadeiro";
+Crie uma função com as seguintes características:
+1. A função deve receber 3 argumentos.
+2. Se somente um argumento for passado, retorne o valor do argumento.
+3. Se dois argumentos forem passados, retorne a soma dos dois argumentos.
+4. Se todos os argumentos forem passados, retorne a soma do primeiro com o segundo, e o resultado, dividido pelo terceiro.
+5. Se nenhum argumento for passado, retorne o valor booleano `false`.
+6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
 
-/*
-Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o valor
-da propriedade `andando` para o valor booleano que representa "falso".
+function novaFuncao(x, y, z) {
+  if (x !== undefined && y === undefined && z === undefined){
+    return x;
+  } else if (x !== undefined && y !== undefined && z === undefined){
+    return x + y;
+  } else if (x !== undefined && y !== undefined && z !== undefined){
+    return (x + y) / z;
+  } else if (x === undefined && y === undefined && z === undefined){
+    return false;
+  } else {
+    return null
+  }
+}
+
+// Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
+/* novaFuncao()
+false
+ novaFuncao(1)
+1
+ novaFuncao(1, 2)
+3
+> novaFuncao(2,8,2)
+5
+ 
 */
-?
-
-/*
-Crie um método chamado `nomeCompleto`, que retorne a frase:
-- "Olá! Meu nome é [NOME] [SOBRENOME]!"
-*/
-?
-
-/*
-Crie um método chamado `mostrarIdade`, que retorne a frase:
-- "Olá, eu tenho [IDADE] anos!"
-*/
-?
-
-/*
-Crie um método chamado `mostrarPeso`, que retorne a frase:
-- "Eu peso [PESO]Kg."
-*/
-?
-
-/*
-Crie um método chamado `mostrarAltura` que retorne a frase:
-- "Minha altura é [ALTURA]m."
-*/
-?
-
-/*
-Agora vamos brincar um pouco com o objeto criado:
-Qual o nome completo da pessoa? (Use a instrução para responder e comentários
-inline ao lado da instrução para mostrar qual foi a resposta retornada)
-*/
-?
-
-/*
-Qual a idade da pessoa? (Use a instrução para responder e comentários
-inline ao lado da instrução para mostrar qual foi a resposta retornada)
-*/
-?
-
-/*
-Qual o peso da pessoa? (Use a instrução para responder e comentários
-inline ao lado da instrução para mostrar qual foi a resposta retornada)
-*/
-?
-
-/*
-Qual a altura da pessoa? (Use a instrução para responder e comentários
-inline ao lado da instrução para mostrar qual foi a resposta retornada)
-*/
-?
-
-/*
-Faça a `pessoa` fazer 3 aniversários.
-*/
-?
-
-/*
-Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
-comentários inline ao lado da instrução para mostrar qual foi a resposta
-retornada)
-*/
-?
-
-/*
-Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
-com metragens diferentes passadas por parâmetro.
-*/
-?
-
-/*
-A pessoa ainda está andando? (Use a instrução para responder e comentários
-inline ao lado da instrução para mostrar qual foi a resposta retornada)
-*/
-?
-
-/*
-Se a pessoa ainda está andando, faça-a parar.
-*/
-?
-
-/*
-E agora: a pessoa ainda está andando? (Use uma instrução para responder e
-comentários inline ao lado da instrução para mostrar a resposta retornada)
-*/
-?
-
-/*
-Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
-inline ao lado da instrução para mostrar a resposta retornada)
-*/
-?
-
-/*
-Agora vamos deixar a brincadeira um pouco mais divertida! :D
-Crie um método para o objeto `pessoa` chamado `apresentacao`. Esse método deve
-retornar a string:
-- "Olá, eu sou o [NOME COMPLETO], tenho [IDADE] anos, [ALTURA], meu peso é [PESO] e, só hoje, eu já caminhei [CAMINHOU QUANTOS METROS] metros!"
-
-Só que, antes de retornar a string, você vai fazer algumas validações:
-- Se o `sexo` de `pessoa` for "Feminino", a frase acima, no início da
-apresentação, onde diz "eu sou o", deve mostrar "a" no lugar do "o";
-- Se a idade for `1`, a frase acima, na parte que fala da idade, vai mostrar a
-palavra "ano" ao invés de "anos", pois é singular;
-- Se a quantidade de metros caminhados for igual a `1`, então a palavra que
-deve conter no retorno da frase acima é "metro" no lugar de "metros".
-- Para cada validação, você irá declarar uma variável localmente (dentro do
-método), que será concatenada com a frase de retorno, mostrando a resposta
-correta, de acordo com os dados inseridos no objeto.
-*/
-?
-
-// Agora, apresente-se ;)
-?
 ```
