@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <title>Challenge 20</title>
@@ -8,29 +9,32 @@
         label { display: block }
         input { margin-bottom: 10px }
     </style>
+
 </head>
+
 <body>
     <form action="." method="get">
         <div>
             <label>Nome:</label>
-            <input type="text" />
+            <input type="text" id="username" />
         </div>
 
         <div>
             <label>E-mail:</label>
-            <input type="email" />
+            <input type="email" id="useremail" />
         </div>
 
         <div>
             <label>Mensagem</label>
-            <textarea cols="30" rows="10"></textarea>
+            <textarea cols="30" rows="10" id="message"></textarea>
         </div>
 
         <div>
-            <button type="submit">Enviar</button>
+            <button type="submit" id="button">Enviar</button>
         </div>
     </form>
 
     <script src="challenge-20.js"></script>
 </body>
+
 </html>
