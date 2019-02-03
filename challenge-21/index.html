@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Challenge-21</title>
+    <style>
+        body {
+            font-family: sans-serif
+        }
+
+        label {
+            display: block
+        }
+
+        input {
+            margin-bottom: 10px;
+            border-radius:5px;
+            padding:5px 15px;
+            border:2px solid gray;
+            color:gray;
+            font-weight: bold;
+        }
+        
+        [data-start], [data-stop], [data-reset] {
+            border-radius:5px;
+            border:none;
+            padding:5px 15px;
+            color:white;
+            font-weight: bold;
+        }
+        [data-start] {
+            background-color:darkgreen;
+        }        
+        [data-stop] {
+            background-color:brown;
+        }
+        [data-reset] {
+            background-color:grey;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <input type="text" value="0">
+    <button data-start>Start</button>
+    <button data-stop>Stop</button>
+    <button data-reset>Reset</button>
+    <script src="challenge-21.js"></script>
+</body>
+
+</html>

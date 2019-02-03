@@ -1,3 +1,32 @@
+(function(win, doc) {
+    'use strict';
+
+    var $input = doc.querySelector('[type=text]');
+    var $start = doc.querySelector('[data-start]');
+    var $stop = doc.querySelector('[data-stop]');
+    var $reset = doc.querySelector('[data-reset]');
+    var cronometro;
+
+    $start.addEventListener('click', startTime, false);
+    $stop.addEventListener('click', stopTime, false);
+    $reset.addEventListener('click', resetTime, false);
+
+    function startTime() {
+        cronometro = setInterval(() => {
+            $input.value++
+        }, 1000);
+    };
+
+    function stopTime() {
+        clearInterval(cronometro);
+    };
+
+    function resetTime() {
+        $input.value = 0;
+        stopTime();
+    }
+
+})(window, document);
 /*
 O desafio de hoje será um pequeno projeto: um cronômetro!
 As regras para criação do cronômetro são as seguintes:
