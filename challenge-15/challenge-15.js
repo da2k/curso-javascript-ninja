@@ -1,3 +1,6 @@
+(function(){
+
+
 /*
 Envolva todo o código desse desafio em uma IIFE.
 Crie um arquivo chamado index.html e adicione esse script ao HTML.
@@ -21,7 +24,31 @@ as seguintes características:
   adicionados à idade original (age). Esse método deverá retornar o objeto
   que será instanciado.
 */
-// ?
+
+function Person(name, lastName, age){
+
+  this.name = name;
+  this.lastName = lastName;
+  this.age = age;
+
+  this.getFullName = function getFullName(){
+
+    return this.name + ' ' + this.lastName;
+  };
+
+  this.getAge = function getAge(){
+    return this.age;
+  };
+
+  this.addAge = function getAdd(){
+
+    this.age += arguments[0];
+    return this;
+  };
+
+
+
+}
 
 /*
 Crie 3 novos objetos usando o construtor acima. Os objetos serão novas
@@ -30,25 +57,46 @@ parâmetros corretamente para o construtor para criar as novas pessoas.
 Mostre as 3 novas pessoas criadas no console (Um console.log por pessoa).
 */
 console.log( 'Novas pessoas criadas à partir de Person:' );
-// ?
+
+var matheus = new Person('Matheus','Gonzaga','19');
+var rafael = new Person('Rafael','Silva','35');
+var gabriela = new Person('Gabriela','Dias','24');
+
+console.log(matheus);
+console.log(rafael);
+console.log(gabriela);
 
 /*
 Mostre no console o nome completo de cada pessoa.
 */
 console.log( '\nNomes das pessoas:' );
-// ?
+
+console.log(matheus.getFullName());
+console.log(rafael.getFullName());
+console.log(gabriela.getFullName());
 
 /*
 Mostre no console as idades de cada pessoa, com a frase:
 - "[NOME COMPLETO] tem [IDADE] anos."
 */
 console.log( '\nIdade das pessoas:' );
-// ?
 
+console.log('Matheus com '+matheus.getAge()+' anos');
+console.log('Rafael com '+rafael.getAge()+' anos');
+console.log('Gabriela com '+gabriela.getAge()+' anos');
 /*
 Adicione alguns anos à cada pessoa, e mostre no console a nova idade de
 cada um. A frase deverá ser no formato:
 - "[NOME COMPLETO] agora tem [NOVA IDADE] anos."
 */
 console.log( '\nNova idade das pessoas:' );
-// ?
+
+matheus.addAge(20);
+rafael.addAge(36);
+gabriela.addAge(25);
+
+console.log(matheus.getFullName() +' agora tem '+ matheus.getAge() +' anos.');
+console.log(rafael.getFullName() +' agora tem '+ rafael.getAge() +' anos.');
+console.log(gabriela.getFullName() +' agora tem '+ gabriela.getAge() +' anos.');
+
+})();
