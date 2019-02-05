@@ -83,28 +83,17 @@
     */
     // ?
 
-    function calculator(operador){
-        
-       var validator = isOperatorValid (operador);
 
-       if(validator != true){
-        return false;} 
-        
-        else 
-           return function(x , y){ 
-               x , y = 10;
-                var decision = typeof x === 'number' || typeof y === 'number';
+function calculator(operador){
 
-                console.log('valor de decision: ', decision);
+    if(isOperatorValid(operador)){
+        return function (n1, n2){
+            if(typeof n1 !== 'number' && typeof n2 !== 'number');
+                return false;
+        } return operations[operador];
 
-                if(decision != false){
-                    return false
-                } else 
-                    return operations(operador(x, y));
-           }
-    }
-
-    console.log(calculator('+'));
+    } return false;
+}   
 
 
     /*
