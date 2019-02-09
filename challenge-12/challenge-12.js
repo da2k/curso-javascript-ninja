@@ -100,7 +100,6 @@
     Juntando todos os itens do array, mostre no console seu nome.
     */
     console.log( myName.join('') )
-
     console.log( '\nMeu nome invertido é:' );
 
     /*
