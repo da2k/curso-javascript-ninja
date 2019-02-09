@@ -19,9 +19,10 @@
     Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
     */
     
-        var username = prompt( 'Qual o seu nome? ' );
+        var username = prompt( 'Qual o seu nome? ' ) || 'Desconhecido'
 
-        if( username === null ) username = 'Desconhecido';
+        /*  if( !username ) 
+            username = 'Desconhecido'; */
         
         alert( 'Bem vindo ' + username + '!' );
 
@@ -37,7 +38,7 @@
     /*
     - Selecione o input de "Nome", atribuindo-o à uma variável chamada
     `$inputUsername`.
-    */
+    */  
     
         var $inputUsername = doc.querySelector( "[type='text']" );
         console.log( $inputUsername.value );
@@ -68,8 +69,8 @@
     entrados pelo usuário.
     */
     
-        // $inputUsername.value = username;
-        // $inputEmail.value = email;
+        $inputUsername.value = username;
+        $inputEmail.value = email;
 
     /*
     Adicione um listener de evento de click ao botão que faça o seguinte:
@@ -100,20 +101,22 @@
 
             event.preventDefault();
 
-            if( $inputUsername.value === '' ) 
-                alert( 'Preencha o nome do usuário!' );
+            if( !$inputUsername.value ) 
+                 return alert( 'Preencha o nome do usuário!' );
 
-            if( $inputEmail.value === '' )
-                alert( 'Preencha o email!' );
+            if( !$inputEmail.value )
+                return alert( 'Preencha o email!' );
 
-            if( $message.value === '' )
-                alert( 'Preencha a mensagem!' );
+            if( !$message.value )
+               return alert( 'Preencha a mensagem!' );
             
-            if( isValidEmail( $inputEmail.value ) === false )
-               alert( 'Entre com um e-mail válido' );
+            if( !isValidEmail( $inputEmail.value ) )
+               return alert( 'Entre com um e-mail válido' );
                
-            if( $inputUsername.value !== '' && $inputEmail.value !== '' && $message.value !== '' && isValidEmail( $inputEmail.value ) === true )
-                confirm( 'Tem certeza que deseja enviar o formulário?' ) ? alert( 'Enviado com sucesso!' ) : alert( 'Não enviado.' );
+            if( confirm( 'Tem certeza que deseja enviar o formulário?' ) )
+                return alert( 'Enviado com sucesso!' );
+            
+            alert( 'Não enviado.' );
             
         } , false );
 
@@ -146,12 +149,11 @@
     
         function isValidEmail( email ){
             
-            var regex = /[\w.+]+[^_]@\w+\.\w{2,}(?:.\w{2})?/gm;    
+            var regex = /^[\w.+]+@\w+\.\w{2,}(?:\.\w{2})?$/gm;    
 
             return regex.test( email );
            
 
-        }
-        console.log( isValidEmail( 'meu.email+categoria_@gmail.com' ) );
+        };
 
 })( window , document );
