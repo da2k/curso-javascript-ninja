@@ -62,6 +62,11 @@ function calculator(operator) {
             '*': (a, b) => a * b,
             '%': (a, b) => a % b
         };
+
+        if(!calculate[operator]) {
+            return `Operação inválida`;
+        }
+
         return `Resultado da operação: ${a} ${operator} ${b} = ${calculate[operator](a, b)}.`;
     }
 }
@@ -95,3 +100,4 @@ console.log(multiplication(2,2));
 console.log(division(2,2));
 console.log(mod(2,2));
 console.log(calculator('+')(5, 10));
+console.log(calculator('1')(5, 10));
