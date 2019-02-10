@@ -1,0 +1,1 @@
+getFullName.call(peopleOne) 
