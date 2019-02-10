@@ -4,29 +4,34 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-?
+function soma(n1, n2){
+    return n1 + n2;
+}
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-?
+var soma = soma(1, 5) + 5;
 
 // Qual o valor atualizado dessa variável?
-?
+11
 
 // Declare uma nova variável, sem valor.
-?
+var novoValor;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-?
+funcion valor(){
+    novoValor =  1;
+    return 'O valor da variável agora é ' +  novoValor ;
+}
 
 // Invoque a função criada acima.
-?
+valor();
 
 // Qual o retorno da função? (Use comentários de bloco).
-?
+/*O valor da variável agora é 1*/
 
 /*
 Crie uma função com as seguintes características:
@@ -35,19 +40,27 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-?
+
+function tresValores(x,y,z){
+    if (x === undefined || y === undefined || x === undefined){
+        return 'Preencha todos os valores corretamente!';
+    }else{
+        return (x * y * z) + 2;
+    }
+
+}
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+function tresValores(2,3);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+
+//Preencha todos os valores corretamente!
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
-
+function tresValores(1,2,3);
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+//8
 
 /*
 Crie uma função com as seguintes características:
@@ -58,8 +71,27 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+function tresArgumentos(a,b,c){
+  if (a !== undefined && b === undefined && c === undefined){
+	return a;
+  }
+  else if (a !== undefined && b !== undefined && c === undefined){
+    return a + b;
+  } 
+  else if (a !== undefined && b !== undefined && c !== undefined){
+	return (a + b) / c;
+  } 
+  else if (a === undefined && b === undefined && c === undefined){
+	return false;
+  } else {
+	return null;
+  }
+}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
-```
+
+tresArgumentos(); //false
+tresArgumentos(1); //1
+tresArgumentos(1,5); //6
+tresArgumentos(2,5,7); //1
+
