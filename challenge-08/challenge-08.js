@@ -94,3 +94,4 @@ console.log(subtraction(2,2));
 console.log(multiplication(2,2));
 console.log(division(2,2));
 console.log(mod(2,2));
+console.log(calculator('+')(5, 10));
