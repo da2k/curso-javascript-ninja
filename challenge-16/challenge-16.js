@@ -62,8 +62,14 @@
     */
     var array = ['leonardo', 'justino', 'pegasus', 'boss', 'irak', 'teste', 'vixi']
 
-    var amigos = array.toString().replace('/,/g',', ').slice(array.toString(), array.toString().lastIndexOf(',')).concat(' e ' + array.toString().slice(array.toString().lastIndexOf(',') + 1))
+    var amigos = array.reduce( function( acumulado, atual, index ) {
+        var separator = array.length - 1 === index ? ' e ' : ', '
+        return acumulado + separator + atual
+    }).concat(' são meus amigos.')
+
+    // var amigos = array.toString().replace('/,/g',', ').slice(array.toString(), array.toString().lastIndexOf(',')).concat(' e ' + array.toString().slice(array.toString().lastIndexOf(',') + 1))
     console.log( '\nMeus amigos:', amigos);
+    console.log(amigos.replace(amigos.lastIndexOf(','), ' e '))
     // ?
     
     /*
