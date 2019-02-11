@@ -53,6 +53,8 @@
 
       function sum(){
 
+        console.log( arguments );
+
         var result = Array.prototype.reduce.call( arguments , function( acumulated , current ){
 
           return acumulated + current ;
@@ -68,7 +70,7 @@
     console.log( '\nSomar alguns números:' );
 
       console.log( sum( 1, 2 ) );
-      console.log( sum( 15 ,2 , 70 , 10 ,30 ,40 ,50 ,5) );
+      console.log( sum( 15 ,2 , 70 , 10 ,30 ,40 ,50 ,5 ) );
       console.log( sum( 30 ,40 ,50 ,5 , 39 ) );
 
     /*
