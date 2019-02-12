@@ -86,15 +86,19 @@
 
 function calculator(operador){
 
-    if(isOperatorValid(operador)){
-        return function (n1, n2){
-            if(typeof n1 !== 'number' && typeof n2 !== 'number');
-                return false;
-        } return operations[operador];
+    if(! isOperatorValid(operador)){
 
-    } return false;
-}   
+        return false;
+    }
+    return function (x, y){
 
+       if(typeof x !== 'number' && typeof y !== 'number'){
+         return false;
+       }
+
+        return operations[operador](x, y);
+    } 
+}
 
     /*
     Crie uma função chamada "showOperationMessage" que recebe três parâmetros:
@@ -105,6 +109,11 @@ function calculator(operador){
     */
     // ?
 
+    function showOperationMessage(operator, number1, number2){
+
+        return `A operação ${number1} ${operator} ${number2} = `;
+    }
+
     /*
     Crie uma função chamada "showErrorMessage" que recebe um parâmetro: o
     operador da operação cálculo, quando a operação não for válida.
@@ -112,6 +121,11 @@ function calculator(operador){
     'Operação "[OPERATOR]" não permitida!'
     */
     // ?
+
+    function showErrorMessage(operator){
+
+        return `Operação ${operator} não permitida`;
+    }
 
     /*
     Nossa calculadora está pronta! Agora vamos testá-la:
@@ -121,6 +135,10 @@ function calculator(operador){
     */
     // ?
 
+    var number1 = 0;
+    var number2 = 0;
+    var operationSignal;
+
     /*
     PASSO 2:
     Atribua à variável operationSignal o operador de soma, e declare uma
@@ -128,6 +146,9 @@ function calculator(operador){
     parâmetro a variável que recebeu o sinal da operação.
     */
     // ?
+
+    operationSignal = '+';
+    var sum = calculator(operationSignal);
 
     /*
     PASSO 3:
@@ -142,6 +163,8 @@ function calculator(operador){
     - Se "sum" for "false", mostrar no console a mensagem de erro.
     */
     // ?
+
+    console.log(sum(number1, number2));
 
     /*
     Repita desde o "PASSO 2" com as operações de subtração, multiplicação,
