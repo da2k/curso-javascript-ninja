@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Challenge 23</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="calculator.css" />
+  </head>
+  <body>
+    <div class="calculator">
+      <span class="logo">JO<span>R</span>GE CA<span>L</span>CULATOR</span>
+      <div class="visor">
+        <input type="text" value="0" data-visor disabled />
+      </div>
+      <div class="keyboard">
+        <div class="line">
+          <div><button class="key" data-key="key" value="7">7</button></div>
+          <div><button class="key" data-key="key" value="8">8</button></div>
+          <div><button class="key" data-key="key" value="9">9</button></div>
+          <div>
+            <button class="key green" data-operation value="%">%</button>
+          </div>
+        </div>
+        <div class="line">
+          <div><button class="key" data-key="key" value="4">4</button></div>
+          <div><button class="key" data-key="key" value="5">5</button></div>
+          <div><button class="key" data-key="key" value="6">6</button></div>
+          <div>
+            <button class="key green" data-operation value="x">x</button>
+          </div>
+        </div>
+        <div class="line">
+          <div><button class="key" data-key="key" value="1">1</button></div>
+          <div><button class="key" data-key="key" value="2">2</button></div>
+          <div><button class="key" data-key="key" value="3">3</button></div>
+          <div>
+            <button class="key green" data-operation value="-">-</button>
+          </div>
+        </div>
+        <div class="line">
+          <div><button class="key" data-ce value="C">C</button></div>
+          <div><button class="key" data-key="key" value="0">0</button></div>
+          <div><button class="key red" data-igual value="=">=</button></div>
+          <div>
+            <button class="key green" data-operation value="+">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="challenge-23.js"></script>
+  </body>
+</html>
