@@ -1,0 +1,89 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Roboto Condensed", sans-serif !important;
+  font-weight: 400;
+}
+body {
+  padding-top: 15%;
+}
+
+.calculator {
+  width: 300px;
+  height: 450px;
+  margin: 0 auto;
+  background-color: #424043;
+  border-radius: 8px 8px 20px 20px;
+  border: 5px solid #2e2d2e;
+  padding: 40px 20px 20px;
+}
+.logo {
+  font-weight: 700;
+  color: #cacacd;
+  font-size: 11px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  display: block;
+}
+.logo span {
+  font-size: 15px;
+}
+.visor {
+  width: 100%;
+  padding: 8px 10px 20px;
+  border-radius: 3px 3px 6px 6px;
+  background-color: #2e2d2e;
+  box-shadow: 3px 2px 2px inset #1d1d1d;
+}
+.visor input {
+  width: 100%;
+  border-radius: 3px;
+  border: 5px solid #424043;
+  border-left-width: 8px;
+  border-right-width: 8px;
+  font-size: 20px;
+  padding: 2px 5px;
+  box-shadow: 2px 1px 3px inset #1d1d1d8f;
+  text-align: right;
+}
+.keyboard {
+  padding-top: 65px;
+}
+.key {
+  border-radius: 100%;
+  font-size: 20px;
+  width: 35px;
+  height: 35px;
+  display: block;
+  margin: 0 auto;
+  outline: none !important;
+  font-weight: 400;
+  border: 1px outset;
+  box-shadow: 2px 1px 2px inset #1d1d1d8f, 2px 1px 2px #1d1d1d8f;
+  cursor: pointer;
+}
+
+.key:hover {
+  transition: all 300ms ease-in-out;
+  opacity: 0.75;
+}
+
+.red {
+  background-color: #b12d2a;
+  border: 1px outset #972523;
+}
+.green {
+  background-color: #21431d;
+  border: 1px outset #193316;
+}
+
+.line {
+  display: table;
+  width: 100%;
+}
+
+.line div {
+  display: table-cell;
+  padding: 10px;
+}

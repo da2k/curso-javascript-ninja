@@ -1,33 +1,112 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="utf-8">
-  <title>Challenge 24 - Calculator</title>
-</head>
-<body>
-  <input type="text" value="0" readonly data-js="visor">
-  <div class="buttons-numbers">
-    <button data-js="button-number" value="0">0</button>
-    <button data-js="button-number" value="1">1</button>
-    <button data-js="button-number" value="2">2</button>
-    <button data-js="button-number" value="3">3</button>
-    <button data-js="button-number" value="4">4</button>
-    <button data-js="button-number" value="5">5</button>
-    <button data-js="button-number" value="6">6</button>
-    <button data-js="button-number" value="7">7</button>
-    <button data-js="button-number" value="8">8</button>
-    <button data-js="button-number" value="9">9</button>
-  </div>
+  <head>
+    <meta charset="utf-8" />
+    <title>Challenge 24 - Calculator</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="calculator.css" />
+  </head>
+  <body>
+    <div class="calculator">
+      <span class="logo">JO<span>R</span>GE CA<span>L</span>CULATOR</span>
+      <div class="visor">
+        <input type="text" value="0" readonly data-js="visor" />
+      </div>
 
-  <div class="operations">
-    <button data-js="button-operation" value="+">+</button>
-    <button data-js="button-operation" value="-">-</button>
-    <button data-js="button-operation" value="x">x</button>
-    <button data-js="button-operation" value="÷">÷</button>
-    <button data-js="button-equal" value="=">=</button>
-    <button data-js="button-ce" value="ce">CE</button>
-  </div>
+      <div class="keyboard">
+        <div class="line">
+          <div>
+            <button class="key" data-js="button-number" value="7">7</button>
+          </div>
+          <div>
+            <button class="key" data-js="button-number" value="8">8</button>
+          </div>
+          <div>
+            <button class="key" data-js="button-number" value="9">9</button>
+          </div>
+          <div>
+            <button class="key green" data-js="button-operation" value="÷">
+              ÷
+            </button>
+          </div>
+        </div>
+        <div class="line">
+          <div>
+            <button class="key" data-js="button-number" value="4">4</button>
+          </div>
+          <div>
+            <button class="key" data-js="button-number" value="5">5</button>
+          </div>
+          <div>
+            <button class="key" data-js="button-number" value="6">6</button>
+          </div>
+          <div>
+            <button class="key green" data-js="button-operation" value="x">
+              x
+            </button>
+          </div>
+        </div>
+        <div class="line">
+          <div>
+            <button class="key" data-js="button-number" value="1">1</button>
+          </div>
+          <div>
+            <button class="key" data-js="button-number" value="2">2</button>
+          </div>
+          <div>
+            <button class="key" data-js="button-number" value="3">3</button>
+          </div>
+          <div>
+            <button class="key green" data-js="button-operation" value="-">
+              -
+            </button>
+          </div>
+        </div>
+        <div class="line">
+          <div>
+            <button class="key" data-js="button-ce" value="ce">CE</button>
+          </div>
+          <div>
+            <button class="key" data-js="button-number" value="0">0</button>
+          </div>
+          <div>
+            <button class="key red" data-js="button-equal" value="=">=</button>
+          </div>
+          <div>
+            <button class="key green" data-js="button-operation" value="+">
+              +
+            </button>
+          </div>
+        </div>
+      </div>
+      <!--
+        <div class="buttons-numbers">
+          <button class="key" data-js="button-number" value="0">0</button>
+          <button class="key" data-js="button-number" value="1">1</button>
+          <button class="key" data-js="button-number" value="2">2</button>
+          <button class="key" data-js="button-number" value="3">3</button>
+          <button class="key" data-js="button-number" value="4">4</button>
+          <button class="key" data-js="button-number" value="5">5</button>
+          <button class="key" data-js="button-number" value="6">6</button>
+          <button class="key" data-js="button-number" value="7">7</button>
+          <button class="key" data-js="button-number" value="8">8</button>
+          <button class="key" data-js="button-number" value="9">9</button>
+        </div>
 
-  <script src="challenge-24.js"></script>
-</body>
+        <div class="operations">
+          <button class="key" data-js="button-operation" value="+">+</button>
+          <button class="key" data-js="button-operation" value="-">-</button>
+          <button class="key" data-js="button-operation" value="x">x</button>
+          <button class="key" data-js="button-operation" value="÷">÷</button>
+          <button class="key" data-js="button-equal" value="=">=</button>
+          <button class="key" data-js="button-ce" value="ce">CE</button>
+        </div>
+      -->
+    </div>
+    <script src="challenge-24.js"></script>
+  </body>
 </html>
