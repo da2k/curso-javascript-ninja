@@ -38,7 +38,7 @@
   function setCurrEvent(eventName) {
     $playgroundContainer.removeEventListener(currEvent, fireAction);
     currEvent = eventName;
-    $textCurrEvent.innerText = eventName;
+    $textCurrEvent.textContent = eventName;
     $playgroundContainer.addEventListener(currEvent, fireAction);
   }
 
