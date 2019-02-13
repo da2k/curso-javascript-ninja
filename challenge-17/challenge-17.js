@@ -143,8 +143,13 @@
     console o resultado.
     */
     function replaceDate(data) {
-        return 
+        var dataArray = data.split(' ')
+        return dataArray[0] + '/' + getMonthNumber(dataArray[2]) + '/' + dataArray[4] 
     }
-    console.log( '\nReplace de datas:' );
+    var datesText = text.match(regexDate)
+    for (var data of datesText) {
+
+        console.log( '\nReplace de datas:', replaceDate(data) );
+    }
     // ?
 }())
