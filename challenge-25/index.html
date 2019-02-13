@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Challenge 25</title>
+
+  <style>
+    .panel {
+      margin: 15px;
+    }
+
+    .playground-container {
+      padding: 50px;
+      border: 2px solid #777;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>JS Events Playground</h1>
+  <div class="panel">
+
+    <form>
+      <label>Event Name</label>
+      <input type="text" name="eventName" data-js="eventName">
+      <input type="submit" value="submit" data-js="submitEvent">
+    </form>
+
+  </div>
+  <div class="panel">
+
+    <label>Test <span data-js="textCurrEvent"></span> Here:</label>
+
+    <div class="playground-container" data-js="playgroundContainer">
+      <span>Sample Text.</span>
+      <input type="text" name="playgroundInput" placeholder="Keyboard Events Here!">
+      <select>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+      </select>
+      <button>Button</button>
+    </div>
+
+  </div>
+  <script src="challenge-25.js"></script>
+</body>
+
+</html>
