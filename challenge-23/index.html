@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <title>Mini Calculadora - Challenge 23</title>
+</head>
+<body>
+   <main id="container">
+      <div>
+         <input type="text" readonly value="0" id="visor" data-js="visor" >
+      </div>
+      <table>
+         <tr>
+            <td rowspan="4" id="ce" ><button data-js="button-ce" value="ce">CE</button></td>
+            <td><button data-js="button-number" value="7" >7</button></td>
+            <td><button data-js="button-number" value="8" >8</button></td>
+            <td><button data-js="button-number" value="9" >9</button></td>
+            <td><button data-js="button-operation" value="÷">÷</button></td>
+         </tr>
+         <tr>
+            <td><button data-js="button-number" value="4" >4</button></td>
+            <td><button data-js="button-number" value="5" >5</button></td>
+            <td><button data-js="button-number" value="6" >6</button></td>
+            <td><button data-js="button-operation" value="x">x</button></td>
+         </tr>
+         <tr>
+            <td><button data-js="button-number" value="1" >1</button></td>
+            <td><button data-js="button-number" value="2" >2</button></td>
+            <td><button data-js="button-number" value="3" >3</button></td>
+            <td><button data-js="button-operation" value="-">-</button></td>
+         </tr>
+         <tr>
+            <td><button data-js="button-number" value="0" >0</button></td>
+            <td colspan="2"><button id="submit" data-js="button-equal" value="=">=</button></td>
+            <td><button data-js="button-operation" value="+">+</button></td>
+         </tr>
+      </table>
+   </main>
+
+   <script src="js/challenge-23.js" ></script>
+</body>
+</html>

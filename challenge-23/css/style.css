@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+input#visor {
+   width: 243px;
+   background-color: #d4d4d4;
+   padding: 5px;
+   text-align: right;
+}
+
+table {
+   width: 160px;
+   background-color: #d4d4d4;
+   padding: 5px;
+}
+
+table tr td#ce {
+   vertical-align: top;
+}
+
+button {
+   width: 45px;
+}
+
+button#submit {
+   width: 94px;
+}
