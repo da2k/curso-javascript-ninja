@@ -4,29 +4,43 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-?
+
+function soma(x, y){
+    return x + y;
+};
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-?
+
+let myVar = soma(2, 3) + 5;
 
 // Qual o valor atualizado dessa variável?
-?
+
+console.log(myVar);
 
 // Declare uma nova variável, sem valor.
-?
+
+let myVar2;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-?
+
+function addValue(){
+    return `O valor da variável agora é ${myVar2 = 5}.`;
+};
 
 // Invoque a função criada acima.
-?
+
+console.log(myVar2);
+addValue();
 
 // Qual o retorno da função? (Use comentários de bloco).
-?
+
+// console.log(addValue()); 5
+
+console.log(myVar2);
 
 /*
 Crie uma função com as seguintes características:
@@ -35,19 +49,24 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-?
+
+function treeArguments(x, y, z){
+    if(x !== undefined && y === undefined || z === undefined){
+        return "Preencha todos os valores corretamente!";
+    };
+    return x * y * z + 2;
+};
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+// Qual o resultado da invocação (Use comentários para mostrar o valor retornado).
 
-// Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+console.log(treeArguments(2, 3)); // Preencha todos os valores corretamente!
+
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+// Qual o resultado da invocação (Use comentários para mostrar o valor retornado).
 
-// Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+console.log(treeArguments(2, 3, 5)); // 32
 
 /*
 Crie uma função com as seguintes características:
@@ -58,8 +77,31 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+
+function treeParams(x, y, z){
+    if(x !== undefined && y === undefined && z === undefined){
+        return x;
+    }
+    else if(x, y !== undefined && z === undefined){
+        return x + y;
+    }
+    else if(x, y, z !== undefined){
+        let tree = (x + y) / z;
+        return tree.toFixed(2);
+    }
+    else if (x, y, z === undefined){
+        return false;
+    }
+    else {
+        return null;
+    };
+};
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+console.log("-------------------");
+console.log(treeParams());
+console.log(treeParams());
+console.log(treeParams(5));
+console.log(treeParams(5, 5));
+console.log(treeParams(5, 5, 3));
 ```
