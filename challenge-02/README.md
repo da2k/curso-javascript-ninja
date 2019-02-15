@@ -76,6 +76,7 @@ function multiArgCond(x, y, z){
     }else if(x !==undefined && y !== undefined && z ===undefined ){
     	return x + y;
     }else if(x !==undefined && y !==undefined && z !== undefined){
+    	
     	return (x + y) / z;
     }else if(x ==undefined && y ==undefined && z !== undefined){
     	return false;
@@ -85,5 +86,8 @@ function multiArgCond(x, y, z){
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-/*Preencha todos os valores corretamente*/
+ multiArgCond(); //false
+ multiArgCond(1); //1
+ multiArgCond(1,2); //3
+ multiArgCond(1,2,3); //1
 ```
