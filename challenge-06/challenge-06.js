@@ -4,7 +4,9 @@ para começar o desafio.
 Declare uma variável chamada `championship` que receberá o nome do campeonato,
 e imprima o nome desse campeonato no console.
 */
-// ?
+
+let championship = "Campeonato Carioca";
+console.log(championship);
 
 /*
 Declare uma variável chamada `teams`, que receberá um array com 5 elementos.
@@ -12,9 +14,8 @@ Os elementos serão nomes de times do campeonato escolhido, e os nomes devem
 estar na ordem em que eles aparecem na tabela no momento da solução desse
 desafio.
 */
-// ?
 
-console.log( 'Times que estão participando do campeonato:', teams );
+let teams = ["Flamento", "Vasco", "Fluminense", "Botafogo", "Volta Redonda"]
 
 /*
 Crie uma função chamada `showTeamPosition` com as seguintes características:
@@ -25,26 +26,47 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     que está nessa posição no array criado acima com os nomes dos times.
     --------------
     Dica: lembre-se que arrays começam no índice zero, então a posição passada
-    deve ser sempre um número a mais que o índice do array ;)
+    deve ser sempre um número a mais que o índice do array ;
     --------------
     - A função só deve retornar a frase acima somente se o time estiver entre
     os 5 primeiros.
     - Se não houver time para a posição passada, deve retornar a mensagem:
     "Não temos a informação do time que está nessa posição."
 */
-// ?
+
+function showTeamPosition(position){
+    if(position <= 5){
+        return `O time que está em ${position}º lugar é o ${teams[--position]}.`;
+    }
+    else {
+        return `Não temos a informação do time que está nessa posição.`;
+    };
+};
 
 /*
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
-// ?
+
+console.log("----------------------------");
+console.log(showTeamPosition(1));
+console.log(showTeamPosition(3));
+console.log(showTeamPosition(2));
+console.log(showTeamPosition(5));
+console.log(showTeamPosition(6));
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
 repetição "while".
 */
-// ?
+
+console.log("----------------------------");
+let contador = 20;
+
+while(contador <= 30){
+    console.log(contador++);
+};
+console.log("-----------------------------------------------");
 
 /*
 Crie uma função chamada `convertToHex`, com as seguintes características:
@@ -58,9 +80,50 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     a frase:
     "Não temos o equivalente hexadecimal para [COR]."
 */
-// ?
+
+
+function convertToHex(color){
+
+    let white = "#FFFFFF";
+    let black = "#000000";
+    let blue = "#0000FF";
+    let red = "#FF0000";
+    let yellow = "#FFFF00"
+
+    switch(color){
+        case "white":
+            console.log(`O hexadecimal para a cor ${color} é ${white}.`);
+            break;
+        case "black":
+            console.log(`O hexadecimal para a cor ${color} é ${black}.`);
+            break;
+        case "blue":
+            console.log(`O hexadecimal para a cor ${color} é ${blue}.`);
+            break;
+        case "red":
+            console.log(`O hexadecimal para a cor ${color} é ${red}.`);
+            break;
+        case "yellow":
+            console.log(`O hexadecimal para a cor ${color} é ${yellow}.`);
+            break;
+        default:
+            console.log(`Não temos o equivalente hexadecimal para ${color}.`);
+
+    };
+
+    return undefined ? "0" : "-----------------------------------------------";
+
+};
 
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-// ?
+
+console.log(convertToHex("gray"));
+console.log(convertToHex("red"));
+console.log(convertToHex("black"));
+console.log(convertToHex("pink"));
+console.log(convertToHex("white"));
+console.log(convertToHex("yellow"));
+console.log(convertToHex("green"));
+console.log(convertToHex("blue"));
