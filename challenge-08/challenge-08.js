@@ -80,6 +80,8 @@ function calculator(operator){
             case "%":
                 result = x % y;
                 break;
+            default:
+                return `Operação inválida.`;
         };
         return (`Resultado da operação: ${x} ${operator} ${y} = ${result}.`);
     };
