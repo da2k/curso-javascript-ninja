@@ -132,3 +132,22 @@ a frase:
 var nomeLivro = 'Segredos do Ninja Javascript'; // aqui usando variável para facilitar
 console.log ('O livro ' + nomeLivro + ' foi publicado pela editora ' + book(nomeLivro).editora + '.');
 //O livro Segredos do Ninja Javascript foi publicado pela editora Novatec.
+
+
+
+//EXTRAS ESTUDOS
+
+var counter = 10;
+
+while (counter > 10) {
+
+console.log(counter);
+counter++;
+}
+
+// contagem regressiva
+var counter = 20;
+while (counter > 0) {
+
+console.log (counter --);
+}
