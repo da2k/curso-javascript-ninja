@@ -117,7 +117,7 @@ carro.addPessoa = function(numeroPessoas){
     carro.quantidadePessoas = numeroPessoas;
     return 'Já temos ' + carro.quantidadePessoas + carro.quantasPortas > 1 ? ' pessoas no carro!' : ' pessoa no carro!';
   }
-  else if(carro.quantidadePessoas = carro.assentos){
+  else if(carro.quantidadePessoas === carro.assentos){
     return 'O carro está lotado';
   }
   else if(numeroPessoas > lugaresRestantes){
