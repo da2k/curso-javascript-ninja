@@ -24,52 +24,6 @@
 
 	var DOM = function DOM(querySelector) {
 		this.element = doc.querySelectorAll(querySelector);
-		this.element.forEach = function (callback) {
-			return Array.prototype.forEach.call(this, callback);
-		}
-		this.element.map = function (callback) {
-			return Array.prototype.map.call(this, callback);
-		}
-		this.element.filter = function (callback) {
-			return Array.prototype.filter.call(this, callback);
-		}
-		this.element.reduce = function (callback, initialValue) {
-			return Array.prototype.reduce.call(this, callback, initialValue);
-		}
-		this.element.reduceRight = function (callback, initialValue) {
-			return Array.prototype.reduceRight.call(this, callback, initialValue);
-		}
-		this.element.every = function (callback) {
-			return Array.prototype.every.call(this, callback);
-		}
-		this.element.some = function (callback) {
-			return Array.prototype.some.call(this, callback);
-		}
-	}
-	DOM.isArray = function (value) {
-		return DOM.getType(value) === 'Array';
-	}
-	DOM.isObject = function (value) {
-		return DOM.getType(value) === 'Object';
-	}
-	DOM.isFunction = function (value) {
-		return DOM.getType(value) === 'Function';
-	}
-	DOM.isNumber = function (value) {
-		return DOM.getType(value) === 'Number';
-	}
-	DOM.isString = function (value) {
-		return DOM.getType(value) === 'String';
-	}
-	DOM.isBoolean = function (value) {
-		return DOM.getType(value) === 'Boolean';
-	}
-	DOM.isNull = function (value) {
-		return DOM.getType(value) === 'Null' || DOM.getType(value) === 'Undefined';;
-	}
-	DOM.getType = function (value) {
-		var objectTypeStr = Object.prototype.toString.call(value);
-		return objectTypeStr.match(/\[object (\w+)\]/)['input'];
 	}
 
 	DOM.prototype.on = function (eventName, callback) {
@@ -88,12 +42,67 @@
 		return this.element;
 	}
 
-	var $a = new DOM('[data-js="link"]');
-	$a.on('click', function (e) {
-		e.preventDefault();
-		console.log('clicou');
+	DOM.prototype.forEach = function (callback) {
+		return Array.prototype.forEach.call(this.element, callback);
+	}
+
+	DOM.prototype.map = function (callback) {
+		return Array.prototype.map.call(this.element, callback);
+	}
+
+	DOM.prototype.filter = function (callback) {
+		return Array.prototype.filter.call(this.element, callback);
+	}
+
+	DOM.prototype.reduce = function (callback, initialValue) {
+		return Array.prototype.reduce.call(this.element, callback, initialValue);
+	}
+
+	DOM.prototype.reduceRight = function (callback, initialValue) {
+		return Array.prototype.reduceRight.call(this.element, callback, initialValue);
+	}
+
+	DOM.prototype.every = function (callback) {
+		return Array.prototype.some.call(this.element, callback);
+	}
+
+	DOM.prototype.some = function (callback) {
+		return Array.prototype.every.call(this.element, callback);
+	}
+
+	DOM.prototype.isArray = function (value) {
+		return Object.prototype.toString.call(value) === '[object Array]';
+	}
+
+	DOM.prototype.isObject = function (value) {
+		return Object.prototype.toString.call(value) === '[object Object]';
+	}
+
+	DOM.prototype.isFunction = function (value) {
+		return Object.prototype.toString.call(value) === '[object Function]';
+	}
+
+	DOM.prototype.isNumber = function (value) {
+		return Object.prototype.toString.call(value) === '[object Number]';
+	}
+
+	DOM.prototype.isString = function (value) {
+		return Object.prototype.toString.call(value) === '[object String]';
+	}
+
+	DOM.prototype.isBoolean = function (value) {
+		return Object.prototype.toString.call(value) === '[object Boolean]';
+	}
+
+	DOM.prototype.isNull = function (value) {
+		return value === null || value === undefined;
+	}
+
+	var $anchorList = new DOM('[data-js=link]');
+	$anchorList.forEach(function ($e) {
+		console.log($e.textContent)	
 	});
 
-	console.log('Elementos selecionados:', $a.get());
-	console.log('$a é filho de body?', $a.get()[0].parentNode === doc.body);
+	var dom = new DOM();
+	console.log( dom.isString('1') );
 })(document);
