@@ -117,6 +117,8 @@ Qual a cor atual do carro?
 // Adicione 10 pessoas no carro.
 ?
 
+
+
 // Quantas pessoas temos no carro?
 ?
 ```
