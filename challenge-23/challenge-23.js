@@ -28,11 +28,110 @@
   - Ao pressionar o botão "CE", o input deve ficar zerado.
   */
 
+
+    // SOLUÇÃO DO PROFESSOR;
+
     var $display = document.querySelector('[data-js="display"]');
+    var $buttons = document.querySelectorAll('[data-js="button-number"]');
+    var $buttonsOperations = document.querySelectorAll('[data-js="button-operation"]');
+    var $buttonCE = document.querySelector('[data-js="button-ce"]');
+    var $buttonEqual = document.querySelector('[data-js="button-equal"]');
+
+
+    Array.prototype.forEach.call( $buttons, function ( btn ){
+
+      btn.addEventListener( 'click' , handleClickNumber, false );
+
+    });
+
+    Array.prototype.forEach.call( $buttonsOperations, function( btn ){
+
+      btn.addEventListener( 'click' , handleClickOperation , false );
+
+    });
+
+    $buttonCE.addEventListener( 'click', handleClickCE , false );
+    $buttonEqual.addEventListener( 'click', handleClickEqual , false );
+
+    function handleClickNumber() {
+
+      $display.value += this.value;
+
+    }
+    function handleClickOperation() {
+
+      $display.value = removeLastOperator( $display.value );
+      $display.value += this.value;
+
+    }
+
+    function handleClickCE(){
+
+      $display.value = 0;
+
+    }
+
+    function isLastItemAnOperation( number ) {
+
+      var operations = ['+', '-' , '*' , '÷'];
+      var lastItem = number.split('').pop();
+      return operations.some( function( operator ){
+
+        return operator === lastItem;
+
+      } );
+    }
+
+    function removeLastOperator( number ) {
+
+      if( isLastItemAnOperation( number ) ){
+
+        return number.slice( 0 , -1 );
+
+      }
+
+      return number;
+
+    }
+
+    function handleClickEqual() {
+
+      $display.value = removeLastOperator( $display.value );
+
+      var allValues = $display.value.match(/\d+[+*÷-]?/g);
+
+      var result = allValues.reduce( function( accumulated , current ){
+
+        var firstValue = accumulated.slice(0 , -1);
+        var operator = accumulated.split('').pop();
+        var lastValue =  removeLastOperator( current );
+        var lastOperator = isLastItemAnOperation( current ) ? current.split('').pop() : '';
+
+        switch( operator ){
+
+          case '+':
+            return (Number(firstValue) + Number(lastValue)) + lastOperator;
+          case '-':
+            return (Number(firstValue) - Number(lastValue)) + lastOperator;
+          case '*':
+            return (Number(firstValue) * Number(lastValue)) + lastOperator;
+          case '÷':
+            return (Number(firstValue) / Number(lastValue)) + lastOperator;
+
+        }
+
+     });
+
+      $display.value = result;
+    }
+
+   /* MINHA SOLUÇÃO;
+
+   var $display = document.querySelector('[data-js="display"]');
     var $buttons = document.querySelectorAll('[data-js="button-number"]');
     var operation = [];
     var newValue;
-    var operators = ['+', '-' , '*' , '%' , '/'];
+    var operators = ['+', '-' , '*', '/'];
 
 
     function initButtons() {
@@ -138,5 +237,6 @@
 
   }
 
+  */
 
 })( window , document );
