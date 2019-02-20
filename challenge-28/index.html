@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Challenge 28</title>
+</head>
+
+<body>
+  <form data-js="formCep">
+    <fieldset>
+      <input type="text" name="cpf" data-js="inputCep">
+      <button type="submit">Enviar</button>
+      <span data-js="statusMessage"></span>
+    </fieldset>
+  </form>
+
+  <fieldset>
+    <label for="logradouro">logradouro
+      <input type="text" name="logradouro" id="logradouro" data-js="inputLogradouro" disabled>
+    </label><br>
+    <label for="bairro">bairro
+      <input type="text" name="bairro" id="bairro" data-js="inputBairro" disabled>
+    </label><br>
+    <label for="cidade">cidade
+      <input type="text" name="cidade" id="cidade" data-js="inputCidade" disabled>
+    </label><br>
+    <label for="estado">estado
+      <input type="text" name="estado" id="estado" data-js="inputEstado" disabled>
+    </label><br>
+    <label for="CEP">CEP
+      <input type="text" name="CEP" id="CEP" data-js="inputCEP" disabled>
+    </label><br>
+  </fieldset>
+
+  <script src="DOM.js"></script>
+  <script src="challenge-28.js"></script>
+</body>
+
+</html>

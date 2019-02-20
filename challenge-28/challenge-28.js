@@ -1,3 +1,5 @@
+(function (doc) {
+  'use strict;'
   /*
   No HTML:
   - Crie um formulário com um input de texto que receberá um CEP e um botão
@@ -25,3 +27,81 @@
   - Utilize a lib DOM criada anteriormente para facilitar a manipulação e
   adicionar as informações em tela.
   */
+  var $form = new DOM('[data-js=formCep]');
+  var $inputCep = new DOM('[data-js=inputCep]');
+  var $inputLogradouro = new DOM('[data-js=inputLogradouro]');
+  var $inputBairro = new DOM('[data-js=inputBairro]');
+  var $inputCidade = new DOM('[data-js=inputCidade]');
+  var $inputEstado = new DOM('[data-js=inputEstado]');
+  var $inputCEP = new DOM('[data-js=inputCEP]');
+  var $statusMessage = new DOM('[data-js=statusMessage]');
+
+  function initialize() {
+    initEvents();
+  }
+
+  function initEvents() {
+    $form.get()[0].addEventListener('submit', handleSubmitForm);
+  }
+
+  function handleSubmitForm(e) {
+    e.preventDefault();
+    searchCep(getCep());
+  }
+
+  function getCep() {
+    var cep = $inputCep.get()[0].value.replace(/\D/g, '');
+    $inputCep.get()[0].value = cep;
+    return cep;
+  }
+
+  function searchCep(cep) {
+    const uri = 'https://viacep.com.br/ws/' + cep + '/json/';
+    var xhr = new XMLHttpRequest();
+    setRequestMessage('Buscando informações para o CEP ' + cep + '...');
+    xhr.open('GET', uri);
+    xhr.send();
+    xhr.onreadystatechange = function () {
+      try {
+        if (isRequestOk(xhr)) {
+          var responseJson = JSON.parse(xhr.responseText);
+          if(responseJson.erro === true) {
+            throw new Error('CEP não encontrado.');
+          }
+          fillFields(responseJson);
+          setRequestMessage('Endereço referente ao CEP ' + cep + ':');
+        } else if (isRequestError(xhr)) {
+          throw new Error('CEP não encontrado.');
+        }
+      } catch (exception) {
+        setRequestMessage('Não encontramos o endereço para o CEP ' + cep + '.');
+      }
+    }
+  }
+
+  function handlRequestStateChange () {
+
+  }
+
+  function isRequestOk(request) {
+    return request.status === 200 && request.readyState === 4;
+  }
+
+  function isRequestError(request) {
+    return request.status !== 200 && request.readyState === 4;
+  }
+
+  function fillFields(jsonAdress) {
+    $inputLogradouro.get()[0].value = jsonAdress.logradouro;
+    $inputBairro.get()[0].value = jsonAdress.bairro;
+    $inputCidade.get()[0].value = jsonAdress.localidade;
+    $inputEstado.get()[0].value = jsonAdress.uf;
+    $inputCEP.get()[0].value = jsonAdress.cep;
+  }
+
+  function setRequestMessage(text) {
+    $statusMessage.get()[0].textContent = text;
+  }
+
+  initialize();
+})(document);
