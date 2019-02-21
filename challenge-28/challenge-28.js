@@ -35,6 +35,7 @@
   var $inputEstado = new DOM('[data-js=inputEstado]');
   var $inputCEP = new DOM('[data-js=inputCEP]');
   var $statusMessage = new DOM('[data-js=statusMessage]');
+  var xhr = new XMLHttpRequest();
 
   function initialize() {
     initEvents();
@@ -51,36 +52,29 @@
 
   function getCep() {
     var cep = $inputCep.get()[0].value.replace(/\D/g, '');
-    $inputCep.get()[0].value = cep;
     return cep;
   }
 
   function searchCep(cep) {
     const uri = 'https://viacep.com.br/ws/' + cep + '/json/';
-    var xhr = new XMLHttpRequest();
-    setRequestMessage('Buscando informações para o CEP ' + cep + '...');
     xhr.open('GET', uri);
     xhr.send();
-    xhr.onreadystatechange = function () {
-      try {
-        if (isRequestOk(xhr)) {
-          var responseJson = JSON.parse(xhr.responseText);
-          if(responseJson.erro === true) {
-            throw new Error('CEP não encontrado.');
-          }
-          fillFields(responseJson);
-          setRequestMessage('Endereço referente ao CEP ' + cep + ':');
-        } else if (isRequestError(xhr)) {
-          throw new Error('CEP não encontrado.');
-        }
-      } catch (exception) {
-        setRequestMessage('Não encontramos o endereço para o CEP ' + cep + '.');
-      }
-    }
+    xhr.onreadystatechange = handlRequestStateChange;
+    setRequestMessage('loading');
   }
 
-  function handlRequestStateChange () {
-
+  function handlRequestStateChange() {
+    try {
+      if (isRequestOk(xhr)) {
+        var responseJson = JSON.parse(xhr.responseText);
+        fillFields(responseJson);
+        setRequestMessage('success');
+      } else if (isRequestError(xhr)) {
+        throw new Error('CEP não encontrado.');
+      }
+    } catch (exception) {
+      setRequestMessage('error');
+    }
   }
 
   function isRequestOk(request) {
@@ -92,15 +86,28 @@
   }
 
   function fillFields(jsonAdress) {
-    $inputLogradouro.get()[0].value = jsonAdress.logradouro;
-    $inputBairro.get()[0].value = jsonAdress.bairro;
-    $inputCidade.get()[0].value = jsonAdress.localidade;
-    $inputEstado.get()[0].value = jsonAdress.uf;
-    $inputCEP.get()[0].value = jsonAdress.cep;
+    if (!jsonAdress.erro) {
+      $inputLogradouro.get()[0].value = jsonAdress.logradouro;
+      $inputBairro.get()[0].value = jsonAdress.bairro;
+      $inputCidade.get()[0].value = jsonAdress.localidade;
+      $inputEstado.get()[0].value = jsonAdress.uf;
+      $inputCEP.get()[0].value = jsonAdress.cep;
+    } else {
+      throw new Error('CEP não encontrado.');
+    }
   }
 
-  function setRequestMessage(text) {
-    $statusMessage.get()[0].textContent = text;
+  function setRequestMessage(messagekey) {
+    $statusMessage.get()[0].textContent = getMessage(messagekey);
+  }
+
+  function getMessage(messageKey) {
+    var messages = {
+      success: 'Endereço referente ao CEP [CEP]:',
+      loading: 'Buscando informações para o CEP [CEP]...',
+      error: 'Não encontramos o endereço para o CEP [CEP].'
+    };
+    return messages[messageKey].replace('[CEP]', getCep());
   }
 
   initialize();
