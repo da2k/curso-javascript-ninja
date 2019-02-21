@@ -14,7 +14,7 @@ function retornaArray(array){
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-retornaArray(array)[1];
+console.log(retornaArray(array)[1]);
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -56,31 +56,20 @@ propriedades:
 os livros.
 */
 function book(livro){
-  var livros = { livro1: { nome: 'Livro1',
+  var livros = { 'Livro1': { nome: 'Livro1',
                           quantidadePaginas: 10,
                           autor: 'João',
                           editora: 'Saraiva'},
-                livro2: { nome: 'Não sei',
+                'Não sei': { nome: 'Não sei',
                           quantidadePaginas: 15,
                          autor: 'Maria',
                          editora: 'Funcesi'},
-                livro3: { nome: 'Qual nome?',
+                'Qual nome?': { nome: 'Qual nome?',
                           quantidadePaginas: 20,
                          autor: 'José',
                          editora: 'Funcesi'}
                };
-  if(livros.livro1.nome === livro){
-    return livros.livro1;
-  }
-  else if(livros.livro2.nome === livro){
-    return livros.livro2;
-  }
-  else if(livros.livro3.nome === livro){
-    return livros.livro3;
-  }
-  else{
-    return 'Livro não encontrado!';
-  }
+  return !livro ? livros : livros[livro];
 };
 
 
@@ -94,18 +83,18 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-'O livro ' + book('Qual nome?').nome + ' tem ' + book('Qual nome?').quantidadePaginas + ' páginas!' //"O livro Qual nome? tem 20 páginas!"
+'O livro Qual nome? tem ' + book('Qual nome?').quantidadePaginas + ' páginas!' //"O livro Qual nome? tem 20 páginas!"
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-'O autor do livro ' + book('Qual nome?').nome + ' é ' + book('Qual nome?').autor + '.' //"O autor do livro Qual nome? é José."
+'O autor do livro Qual nome? é ' + book('Qual nome?').autor + '.' //"O autor do livro Qual nome? é José."
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-'O livro ' + book('Qual nome?').nome + ' foi publicado pela editora ' + book('Qual nome?').editora + '.' //"O livro Qual nome? foi publicado pela editora Funcesi."
+'O livro Qual nome? foi publicado pela editora ' + book('Qual nome?').editora + '.' //"O livro Qual nome? foi publicado pela editora Funcesi."
