@@ -83,10 +83,6 @@ function outraFuncao(a, b, c) {
         return a
     } else if (a && b && !c) {
         return a + b;
-    } else if (a && !b && c) {
-        return a + c;
-    } else if (!a && b && c) {
-        return b + c;
     } else if (a && b && c) {
         return (a + b) / c;
     } else if (!a && !b && !c) {
