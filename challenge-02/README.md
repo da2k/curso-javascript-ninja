@@ -44,7 +44,7 @@ Crie uma função com as seguintes características:
 */
 function novaFuncao(a, b, c) {
     if (a === undefined || b === undefined || c === undefined) {
-        return 'Preencha os valores corretamente!';
+        return 'Preencha todos os valores corretamente!';
     } else {
         return a * b * c + 2;
     }
@@ -81,10 +81,6 @@ Crie uma função com as seguintes características:
 function outraFuncao(a, b, c) {
     if (a && !b && !c) {
         return a
-    } else if (!a && b && !c) {
-        return b;
-    } else if (!a && !b && c) {
-        return c;
     } else if (a && b && !c) {
         return a + b;
     } else if (a && !b && c) {
@@ -93,6 +89,8 @@ function outraFuncao(a, b, c) {
         return b + c;
     } else if (a && b && c) {
         return (a + b) / c;
+    } else if (!a && !b && !c) {
+        return false;
     } else {
         return null;
     }
@@ -102,25 +100,14 @@ function outraFuncao(a, b, c) {
 
 // Passando um único parâmetro.
 outraFuncao(1); // Retorna o número 1.
-outraFuncao(2); // Retorna o número 3.
-outraFuncao(3); // Retorna o número 3.
 
 // Passando apenas 2 parâmetros.
 outraFuncao(1, 2); // Retorna o número 3, resultado da soma dos dois parâmetros.
-
-// Passando três parâmetros, mas com apenas dois parâmetros válidos.
-outraFuncao(1, 2, undefined); // Retorna 3, resultado da soma dos parâmetros a e b;
-outraFuncao(1, undefined, 3); // Retorna 4, resultado da soma dos parâmetros a e c;
-outraFuncao(undefined, 2, 3); // Retorna 5, resultado da soma dos parâmetros b e c;
 
 // Passando três parâmetros válidos.
 outraFuncao(1, 2, 3); // Retorna 1, resultado da soma de a e b, dividido por c;
 
 // Não passando parâmetros ou três parâmetros inválidos
-outraFuncao(); // Retorna null, como especificado na função;
-outraFuncao(undefined, undefined, undefined); // Retorna null;
-
-
-
+outraFuncao(); // Retorna false, como especificado na função;
 
 ```
