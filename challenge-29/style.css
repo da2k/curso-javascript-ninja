@@ -1,0 +1,36 @@
+header {
+  border-bottom: 2px solid #777;
+}
+
+.grid-50 {
+  display: block;
+  width: 50%;
+  padding: 20px;
+  float:left;
+  box-sizing: border-box;
+}
+
+.form-field {
+  width: 100%;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.form-field-submit{
+  background-color: #fff;
+  border-width: 4px;
+  font-size: 18px;
+  width: 50%;
+  float: right;
+}
+
+.table-control {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.table-control thead tr th, .table-control tbody tr td{
+  border: solid 1px #000;
+}

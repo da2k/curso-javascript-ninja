@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Recebimento</title>
+</head>
+
+<body>
+
+  <header>
+    <h1><span data-js="companyName"></span></h1>
+    <p><span data-js="companyPhone"></span></p>
+  </header>
+
+  <main>
+
+    <section class="grid-50">
+      <h1>Cadastrar Carros</h1>
+
+      <form action="/" data-js="formCarro">
+        <label for="imagem">
+          Imagem do Carro (URL)
+          <input class="form-field" type="text" name="imagem" id="imagem" data-js="inputImagem" required>
+        </label><br>
+        <label for="modelo">
+          Marca / Modelo
+          <input class="form-field" type="text" name="modelo" id="modelo" data-js="inputMarca" required>
+        </label><br>
+        <label for="ano">
+          Ano
+          <select class="form-field" name="ano" id="ano" data-js="inputAno" required>
+            <option value="2019">2019</option>
+            <option value="2018">2018</option>
+            <option value="2017">2017</option>
+            <option value="2016">2016</option>
+            <option value="2015">2015</option>
+            <option value="2014">2014</option>
+            <option value="2013">2013</option>
+          </select>
+        </label><br>
+        <label for="placa">
+          Placa
+          <input class="form-field" type="text" name="placa" id="placa" data-js="inputPlaca" required>
+        </label><br>
+        <label for="cor">
+          Cor
+          <input class="form-field" type="text" name="cor" id="cor" data-js="inputCor" required>
+        </label><br>
+
+        <button type="submit" class="form-field form-field-submit grid-50 grid-right">Cadastrar</button>
+
+      </form>
+
+    </section>
+
+    <section class="grid-50">
+      <h1>Carros Cadastrados</h1>
+
+      <table data-js="tableCar" class="table-control">
+        <thead>
+          <tr>
+            <th>Imagem</th>
+            <th>Marca / Modelo</th>
+            <th>Ano</th>
+            <th>Placa</th>
+            <th>Cor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Table Content -->
+        </tbody>
+      </table>
+
+    </section>
+
+  </main>
+
+  <script src="DOM.js"></script>
+  <script src="AJAX.js"></script>
+  <script src="challenge-29.js"></script>
+
+</body>
+
+</html>

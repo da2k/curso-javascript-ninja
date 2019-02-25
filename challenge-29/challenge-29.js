@@ -1,4 +1,4 @@
-(function() {
+(function (doc, $, ajax) {
   'use strict';
 
   /*
@@ -36,4 +36,69 @@
   que será nomeado de "app".
   */
 
-})();
+  function app() {
+
+    function initEvents() {
+      $('[data-js="formCarro"]').on('submit', handleSubmit.bind(this));
+    }
+
+    function loadCompanyInfo() {
+      ajax('/company.json').get(function (response) {
+        $('[data-js="companyName"]').get().textContent = response.name;
+        $('[data-js="companyPhone"]').get().textContent = response.phone;
+      })
+    }
+
+    function handleSubmit(event) {
+      event.preventDefault();
+      this.addRow(this.getFormInputs());
+    }
+
+    function getFormInputs() {
+      return {
+        imagem: $('[data-js=inputImagem]').get().value,
+        marca: $('[data-js=inputMarca]').get().value,
+        ano: $('[data-js=inputAno]').get().value,
+        placa: $('[data-js=inputPlaca]').get().value,
+        cor: $('[data-js=inputCor]').get().value
+      };
+    }
+
+    function addRow(jsonCar) {
+      var tableBody = $('[data-js="tableCar"]').get().lastElementChild;
+      tableBody.appendChild(this.createRowFragment(jsonCar));
+    }
+
+    function createRowFragment(jsonCar) {
+      var $fragment = doc.createDocumentFragment();
+      var $tr = doc.createElement('tr');
+      Object.keys(jsonCar).forEach(function (field) {
+        var $td = doc.createElement('td');
+        if (field === 'imagem') {
+          var $img = doc.createElement('img');
+          $img.setAttribute('src', jsonCar[field])
+          $td.appendChild($img);
+        } else {
+          $td.textContent = jsonCar[field];
+        }
+        $tr.appendChild($td);
+      });
+      return $fragment.appendChild($tr);
+    }
+
+    return {
+      init: function () {
+        this.initEvents();
+        this.loadCompanyInfo();
+      },
+      initEvents: initEvents,
+      loadCompanyInfo: loadCompanyInfo,
+      handleSubmit: handleSubmit,
+      getFormInputs: getFormInputs,
+      addRow: addRow,
+      createRowFragment: createRowFragment
+    }
+  }
+  app().init();
+
+})(document, window.DOM, window.AJAX);
