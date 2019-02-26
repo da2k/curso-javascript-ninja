@@ -64,7 +64,7 @@
     que foram passadas para a primeira função `calculator`.
     */
     function calculator(x, y) {
-        return function calc(callback) {
+        return function (callback) {
             return callback(x, y);
         };
     }
