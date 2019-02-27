@@ -58,20 +58,11 @@ os livros.
 */
 function book(nomeLivro){
     obj = {
-        guerraCivil : {quantidadedePaginas :300,autor : 'Stuart Moore',editora: 'Novo Século'},
-        vendedordeSonhos : {quantidadedePaginas :300,autor:'Augusto Cury',editora: 'SP Editora'},
-        theStarRover : {quantidadedePaginas : 329,autor: 'Jack London',editora: 'Simon & Schuster'}
+        'Guerra Civil' : {quantidadedePaginas :300,autor : 'Stuart Moore',editora: 'Novo Século'},
+        'Vendedor de Sonhos' : {quantidadedePaginas :300,autor:'Augusto Cury',editora: 'SP Editora'},
+        'the Star Rover' : {quantidadedePaginas : 329,autor: 'Jack London',editora: 'Simon & Schuster'}
     }
-    if(nomeLivro === 'guerraCivil'){
-        return obj.guerraCivil;
-    }
-    if(nomeLivro === 'vendedordeSonhos'){
-        return obj.vendedordeSonhos;
-    }
-    else if(nomeLivro === 'theStarRover') {
-        return obj.theStarRover;
-    }
-    return obj;
+    return !nomeLivro ? obj : obj[nomeLivro];
 }
 
 
@@ -87,18 +78,19 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-console.log('O livro '+obj.guerraCivil+' tem '+obj.guerraCivil.quantidadedePaginas);
+var bookName = 'Guerra Civil';
+console.log('O livro é '+bookName+ ' tem ' + book(bookName).quantidadedePaginas + ' páginas!');
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log('O autor do livro é '+obj.guerraCivil+' é '+obj.guerraCivil.autor);
+console.log('O autor do livro é '+bookName+ ' tem ' + book(bookName).autor + ' páginas');
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log('O livro '+obj.guerraCivil+ 'foi publicado pela editora '+obj.guerraCivil.editora);
+console.log(' o livro '+book('guerra civil')+ ' foi publicado pela editora '+ book('guerra Civil').editora+ '.');
