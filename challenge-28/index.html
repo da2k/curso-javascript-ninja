@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Cep</title>
+    <!-- Material Icon CDN -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Materialize CSS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"
+    />
+    <!-- Your custom styles -->
+    <!-- <link rel="stylesheet" href="css/style.css" /> -->
+    <!-- Used as an example only to position the footer at the end of the page.
+    You can delete these styles or move it to your custom css file -->
+    <style>
+      body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+      }
+      main {
+        flex: 1 0 auto;
+        justify-content: center;
+        padding: 4%;
+        background-color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="purple darken-3">
+        <div class="nav-wrapper">
+          <div class="container">
+            <a href="#" class="brand-logo center">Search Cep</a>
+            <a href="#" data-activates="mobile-menu" class="button-collapse"
+              ><i class="material-icons">menu</i></a
+            >
+            <!-- <ul class="right hide-on-med-and-down">
+              <li><a href="#">item1</a></li>
+              <li><a href="#">item2</a></li>
+              <li><a href="#">item3</a></li>
+              <li><a href="#">item4</a></li>
+            </ul> -->
+            <ul class="side-nav" id="mobile-menu">
+              <!-- <li>
+                <div class="userView">
+                  <div class="background">
+                    <img
+                      src="http://lorempixel.com/output/abstract-q-c-640-480-10.jpg"
+                      alt="Background Sidenav"
+                    />
+                  </div>
+                  <a href="#!user"
+                    ><img
+                      class="circle"
+                      src="http://lorempixel.com/output/people-q-c-640-480-9.jpg"
+                      alt="User Image Sidenav"
+                  /></a>
+                  <a href="#!name"
+                    ><span class="white-text name">John Doe</span></a
+                  >
+                  <a href="#!email"
+                    ><span class="white-text email"
+                      >jdandturk@gmail.com</span
+                    ></a
+                  >
+                </div>
+              </li>
+              <li><a href="#">item1</a></li>
+              <li><a href="#">item2</a></li>
+              <li><a href="#">item3</a></li>
+              <li><a href="#">item4</a></li>
+            </ul> -->
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="row">
+          <form data-js="formCep">
+              <div class="input-field col s12 l8 center">
+                <label for="inputCep" data-error="wrong" data-success="right">Digite o CEP desejado:</label>
+                <input type="text" id="inputCep" data-js="inputCep" />
+              </div>
+              <div class="input-field col s12 l4">
+                  <button
+                  class="btn waves-effect waves-light purple darken-1 left"
+                  type="submit"
+                  name="action"
+                >
+                  Consultar
+                  <i class="material-icons right">send</i>
+                </button>
+              </div>
+          </form>
+        </div>
+
+        <div class="row">
+          <div class="col s12 center">
+            <p class="white" data-js="status"></p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col s12" data-js="cep-infos">
+            <div class="card purple darken-4">
+              <div class="card-content white-text">
+                <span class="card-title"></span>
+                <p>
+                  <strong>Endereco:</strong> <span data-js="endereco"></span>
+                </p>
+                <p><strong>Bairro:</strong> <span data-js="bairro"></span></p>
+                <p><strong>Estado</strong> <span data-js="estado"></span></p>
+                <p><strong>Cidade</strong> <span data-js="cidade"></span></p>
+                <p><strong>CEP:</strong> <span data-js="cep"></span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="page-footer purple darken-3">
+      <div class="footer-copyright">
+        <div class="container center">
+          © 2019 | @leticiamrosa
+        </div>
+      </div>
+    </footer>
+    <!-- jQuery CDN -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Materialize JS CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script>
+      $("document").ready(function() {
+        $(".button-collapse").sideNav();
+      });
+    </script>
+    <script src="DOM.js"></script>
+    <script src="challenge-28.js"></script>
+  </body>
+</html>
