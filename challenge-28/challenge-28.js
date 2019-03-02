@@ -158,7 +158,6 @@
     $bairro.get()[0].textContent = data.district ;
     $estado.get()[0].textContent = data.state;
     $cep.get()[0].textContent = data.code;
-
   }
 
   function clearData() {
