@@ -16,10 +16,10 @@ var $buttonsOperations = document.querySelectorAll('[data-js="button-operation"]
 var $buttonCE = document.querySelector('[data-js="button-ce"]');
 var $buttonEqual = document.querySelector('[data-js="button-equal"]');
 
-Array.prototype.forEach.call($buttonsNumbers, function(button) {
+Array.prototype.forEach.call($buttonsNumbers, function (button) {
   button.addEventListener('click', handleClickNumber, false);
 });
-Array.prototype.forEach.call($buttonsOperations, function(button) {
+Array.prototype.forEach.call($buttonsOperations, function (button) {
   button.addEventListener('click', handleClickOperation, false);
 });
 $buttonCE.addEventListener('click', handleClickCE, false);
@@ -41,13 +41,13 @@ function handleClickCE() {
 function isLastItemAnOperation(number) {
   var operations = ['+', '-', 'x', '÷'];
   var lastItem = number.split('').pop();
-  return operations.some(function(operator) {
+  return operations.some(function (operator) {
     return operator === lastItem;
   });
 }
 
 function removeLastItemIfItIsAnOperator(number) {
-  if(isLastItemAnOperation(number)) {
+  if (isLastItemAnOperation(number)) {
     return number.slice(0, -1);
   }
   return number;
@@ -55,21 +55,48 @@ function removeLastItemIfItIsAnOperator(number) {
 
 function handleClickEqual() {
   $visor.value = removeLastItemIfItIsAnOperator($visor.value);
-  var allValues = $visor.value.match(/\d+[+x÷-]?/g);
-  $visor.value = allValues.reduce(function(accumulated, actual) {
-    var firstValue = accumulated.slice(0, -1);
-    var operator = accumulated.split('').pop();
+  var allValues = getAllValues($visor.value);
+  $visor.value = allValues.reduce(calculate);
+
+  function calculate(accumulated, actual) {
+    var firstValue = getFirstValue(accumulated);
+    var operator = getOperator(accumulated);
     var lastValue = removeLastItemIfItIsAnOperator(actual);
     var lastOperator = isLastItemAnOperation(actual) ? actual.split('').pop() : '';
-    switch(operator) {
+    return calculator(operator)(Number(firstValue), Number(lastValue)) + lastOperator;
+
+  }
+
+  function getFirstValue(acc) {
+    return acc.slice(0, -1);
+  }
+
+  function getOperator(acc) {
+    return acc.split('').pop();
+  }
+
+  function getAllValues(number) {
+    return number.match(/\d+[+x÷-]?/g);
+  }
+
+  function calculator(op) {
+    switch (op) {
       case '+':
-        return ( Number(firstValue) + Number(lastValue) ) + lastOperator;
+        return function (x, y) {
+          return x + y;
+        }
       case '-':
-        return ( Number(firstValue) - Number(lastValue) ) + lastOperator;
+        return function (x, y) {
+          return x - y;
+        }
       case 'x':
-        return ( Number(firstValue) * Number(lastValue) ) + lastOperator;
+        return function (x, y) {
+          return x * y;
+        }
       case '÷':
-        return ( Number(firstValue) / Number(lastValue) ) + lastOperator;
+        return function (x, y) {
+          return y !== 0 ? x / y : 'Divisão por Zero';
+        }
     }
-  });
+  }
 }
