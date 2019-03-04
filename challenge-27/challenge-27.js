@@ -1,4 +1,5 @@
 (function (window, document) {
+  'use strict';
   /*
   Aproveitando a lib DOM que fizemos na semana anterior, crie agora para ela
   métodos semelhantes aos que existem no array, mas que sirvam para os
