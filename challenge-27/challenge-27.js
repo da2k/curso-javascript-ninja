@@ -45,59 +45,59 @@
     return this.element;
   };
 
-  DOM.prototype.forEach = function (callback) {
-    Array.prototype.forEach.call(this.element, callback);
+  DOM.prototype.forEach = function () {
+    Array.prototype.forEach.apply(this.element, arguments);
   };
 
-  DOM.prototype.map = function (callback) {
-    return Array.prototype.map.call(this.element, callback);
+  DOM.prototype.map = function () {
+    return Array.prototype.map.apply(this.element, arguments);
   };
 
-  DOM.prototype.filter = function (callback) {
-    return Array.prototype.filter.call(this.element, callback);
+  DOM.prototype.filter = function () {
+    return Array.prototype.filter.apply(this.element, arguments);
   };
 
-  DOM.prototype.reduce = function (callback, initialValue) {
-    return Array.prototype.reduce.call(this.element, callback, initialValue);
+  DOM.prototype.reduce = function () {
+    return Array.prototype.reduce.apply(this.element, arguments);
   };
 
-  DOM.prototype.reduceRight = function (callback, initialValue) {
-    return Array.prototype.reduceRight.call(this.element, callback, initialValue);
+  DOM.prototype.reduceRight = function () {
+    return Array.prototype.reduceRight.apply(this.element, arguments);
   };
 
-  DOM.prototype.every = function (callback) {
-    return Array.prototype.every.call(this.element, callback);
+  DOM.prototype.every = function () {
+    return Array.prototype.every.apply(this.element, arguments);
   };
 
-  DOM.prototype.some = function (callback) {
-    return Array.prototype.some.call(this.element, callback);
+  DOM.prototype.some = function () {
+    return Array.prototype.some.apply(this.element, arguments);
   };
 
-  DOM.isArray = function (obj) {
+  DOM.prototype.isArray = function (obj) {
     return Object.prototype.toString.call(obj) === '[object Array]';
   };
 
-  DOM.isObject = function(obj) {
+  DOM.prototype.isObject = function(obj) {
     return Object.prototype.toString.call(obj) === '[object Object]';
   };
 
-  DOM.isFunction = function(obj) {
+  DOM.prototype.isFunction = function(obj) {
     return Object.prototype.toString.call(obj) === '[object Function]';
   };
 
-  DOM.isNumber = function(obj) {
+  DOM.prototype.isNumber = function(obj) {
     return Object.prototype.toString.call(obj) === '[object Number]';
   };
 
-  DOM.isString = function(obj) {
+  DOM.prototype.isString = function(obj) {
     return Object.prototype.toString.call(obj) === '[object String]';
   };
 
-  DOM.isBoolean = function(obj) {
+  DOM.prototype.isBoolean = function(obj) {
     return Object.prototype.toString.call(obj) === '[object Boolean]';
   };
 
-  DOM.isNull = function(obj) {
+  DOM.prototype.isNull = function(obj) {
     return Object.prototype.toString.call(obj) === '[object Null]' ||
     Object.prototype.toString.call(obj) === '[object Undefined]';
   };
