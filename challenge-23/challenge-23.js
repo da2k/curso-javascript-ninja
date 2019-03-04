@@ -1,3 +1,72 @@
+(function(win, doc) {
+  'use strict';
+
+  var $visor = doc.querySelector('[data-js="visor"]');
+  var $buttonNumbers = doc.querySelectorAll('[data-js="button-number"]');
+  var $buttonOperations = doc.querySelectorAll('[data-js="button-operation"]');
+  var $buttonCE = doc.querySelector('[data-js="button-ce"]');
+  var $buttonEqual = doc.querySelector('[data-js="button-equal"]');
+  Array.prototype.forEach.call($buttonNumbers, function(button) {
+    button.addEventListener('click', handleClickNumber, false);
+  });
+
+  Array.prototype.forEach.call($buttonOperations, function(button) {
+    button.addEventListener('click', handleClickOperations, false);
+  });
+
+  $buttonCE.addEventListener('click', handleClickCE, false);
+  $buttonEqual.addEventListener('click', handleClickEqual, false);
+  function handleClickNumber() {
+    $visor.value += this.value;
+    //alert(this.value);
+  }
+
+  function handleClickOperations() {
+    $visor.value = removeLastItemIfItIsOperator($visor.value);
+    $visor.value += this.value;
+  }
+  function handleClickCE() {
+    $visor.value = 0;
+  }
+  function isLastItemAnOperation(number) {
+    var operations = ['+', '-', 'x', '÷'];
+    var lastItem = number.split('').pop();
+    return operations.some(function(operator) {
+      return operator === lastItem;
+    });
+  }
+
+  function removeLastItemIfItIsOperator(number) {
+    if (isLastItemAnOperation(number)) {
+      return number.slice(0, -1);
+    }
+    return number;
+  }
+
+  function handleClickEqual() {
+    $visor.value = removeLastItemIfItIsOperator($visor.value);
+    var allValues = $visor.value.match(/\d+[+x÷-]?/g);
+    $visor.value = allValues.reduce(function(acumulado, atual) {
+      var firstValue = acumulado.slice(0, -1);
+      var operator = acumulado.split('').pop();
+      var lastValue = removeLastItemIfItIsOperator(atual);
+      var lastOperator = isLastItemAnOperation(atual)
+        ? atual.split('').pop()
+        : '';
+      switch (operator) {
+        case '+':
+          return Number(firstValue) + Number(lastValue) + lastOperator;
+        case '-':
+          return Number(firstValue) - Number(lastValue) + lastOperator;
+        case 'x':
+          return Number(firstValue) * Number(lastValue) + lastOperator;
+        case '÷':
+          return Number(firstValue) / Number(lastValue) + lastOperator;
+      }
+      //return acumulado + atual;
+    });
+  }
+})(window, document);
 /*
 Vamos desenvolver mais um projeto. A ideia é fazer uma mini-calculadora.
 As regras são:
