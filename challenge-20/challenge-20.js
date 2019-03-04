@@ -1,4 +1,7 @@
-/*
+(function(win, doc) {
+  "use strict";
+
+  /*
 1. Envolva todo o conteúdo desse desafio em uma IIFE.
 2. Adicione a diretiva 'use strict';
 3. Passe por parâmetro para a IIFE os objetos window e document.
@@ -8,51 +11,62 @@ a marcação criada nele para fazer nosso desafio ;)
 O HTML NÃO PODE ser alterado!
 */
 
-/*
+  /*
 Ao carregar a página, pergunte ao usuário "Qual o seu nome?". Atribua o
 resultado à uma variável chamada `username`. Se o usuário não digitar um
 nome, `username` deve receber "Desconhecido".
 Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
 */
-// ?
+  var username = win.prompt("Qual o seu nome?");
+  if (!username || username.length === 0) {
+    username = "Desconhecido";
+  } else {
+    win.alert("Bem vinda " + username);
+  }
 
-/*
+  /*
 Agora, pergunte ao usuário "Qual o seu e-mail?", atribuindo o resultado à
 uma variável chamada `email`.
 */
-// ?
+  var email = win.prompt("Qual o seu e-mail?");
+  console.log(email);
 
-/*
+  /*
 - Selecione o input de "Nome", atribuindo-o à uma variável chamada
 `$inputUsername`.
 */
-// ?
+  var $inputUsername = doc.querySelector("input[type=text]");
+  console.log($inputUsername);
 
-/*
+  /*
 - Selecione o input de "Email", atribuindo-o à uma variável chamada
 `$inputEmail`.
 */
-// ?
+  var $inputEmail = doc.querySelector("input[type=email]");
+  console.log($inputEmail);
 
-/*
+  /*
 - Selecione o campo de "Mensagem", atribuindo-o à uma variável chamada
 `$message`.
 */
-// ?
+  var $message = doc.querySelector("textarea");
+  console.log($message);
 
-/*
+  /*
 - Selecione o botão de envio do formulário, atribuindo-o à uma variável
 chamada `$button`.
 */
-// ?
+  var $button = doc.querySelector("button[type=submit]");
+  console.log($button);
 
-/*
+  /*
 Preencha os campos de "Nome" e "Email" que estão no documento com os valores
 entrados pelo usuário.
 */
-// ?
+  $inputUsername.value = username;
+  $inputEmail.value = email;
 
-/*
+  /*
 Adicione um listener de evento de click ao botão que faça o seguinte:
 1. Verificar se todos os campos estão preenchidos:
 - Mostrar um alert para cada campo não preenchido, como abaixo:
@@ -76,9 +90,43 @@ Se for confirmado, mostre um alerta com a mensagem:
 Caso contrário, mostre um alerta com a mensagem:
     - "Não enviado."
 */
-// ?
 
-/*
+  function checkField(e) {
+    e.preventDefault();
+
+    var alertNome = "Preencha o nome do usario!";
+    var alertEmail = "Preencha o e-mail";
+    var alertEmailValid = "Entre com um e-mail valido";
+    var alertMensagem = "Preencha a mensagem";
+
+    var valid = (function() {
+      !$inputUsername.value ? win.alert(alertNome) : null;
+      !isValidEmail($inputEmail.value) ? win.alert(alertEmail) : null;
+      !$inputEmail.value ? win.alert(alertEmailValid) : null;
+      !$message.value ? win.alert(alertMensagem) : null;
+    })();
+
+    if (!valid) {
+      return sendForm();
+    }
+  }
+
+  function sendForm() {
+    if (
+      $inputEmail.value &&
+      $inputUsername.value &&
+      $message.value &&
+      isValidEmail($inputEmail.value)
+    ) {
+      return win.confirm("Tem certeza que deseja enviar esse formulario");
+    } else {
+      win.alert("nao enviado");
+    }
+  }
+
+  $button.addEventListener("click", checkField, false);
+
+  /*
 Crie uma função chamada `isValidEmail`, que será usada na validação do
 envio do formulário.
 Essa função deve receber o e-mail por parâmetro e verificar se é um e-mail
@@ -104,4 +152,8 @@ Alguns e-mails inválidos:
     - "rita-marica@titica.a.b"
     - "agua_@evida.br.com"
 */
-// ?
+
+  function isValidEmail(email) {
+    return /^[\w+.]+@\w+.\w{2,}(?:.\w{2})?$/.test(email);
+  }
+})(window, document);
