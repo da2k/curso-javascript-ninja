@@ -8,7 +8,7 @@ var myvar;
 myvar = 10;
 
 // Declare uma nova variável chamada `soma`, e adicione uma instrução somando os valores 15 e 8.
-var soma = 15 + 8; 
+var soma = 15 + 8;  
 // 23
 
 // Atribua à variável `soma` todo o valor dela, somando 1, usando o operador de soma abreviado.
@@ -40,10 +40,10 @@ myvar <= soma;
 
 // Crie uma função chamada `divisao` que receba como parâmetro dois números, e retorne o resultado da divisão entre eles.
 function divisao(a, b){
-    return a / b;
+    return a / b; 
 }
 
 // Invoque a função criada acima, passando os parâmetros 10 e 2.
-divisao(10, 2);
+divisao(10, 2); 
 //5
 ```
