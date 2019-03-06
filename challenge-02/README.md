@@ -10,10 +10,6 @@ function soma(a,b){
 soma(5, 3); // 8
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-var result = soma(10,2);
-result += 5; //17;
-
-//correcao professor
 var result = soma(10,2) + 5;
 
 // Qual o valor atualizado dessa variável?
@@ -27,12 +23,6 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function info(){
-    nova = "O valor da variável agora é" .result;
-    return nova;
-}
-
-//correcao professor
 function addValue(){
     nova = 25;
     return "O valor da variavel agora é " + nova;
@@ -40,10 +30,12 @@ function addValue(){
 
 
 // Invoque a função criada acima.
-Info();
+addValue();
 
 // Qual o retorno da função? (Use comentários de bloco).
-undefined;
+/* 
+    O valor da variavel agora é 25
+*/
 
 /*
 Crie uma função com as seguintes características:
@@ -52,19 +44,6 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-function dados(a, b, c){
-    if(a === "" || b === "" || c === "" ){
-        var res = "Preencha todos os valores corretamente!";
-        return  res;
-    } else {
-        var res2 = a*b*c;
-        res2 += 2;
-        return res2;
-    }
-
-}
-
-//correcao professor
 function novosValores(a, b, c){
     if(a === undefined || b === undefined || c === undefined){
     return "Preencha todos os valorers corretamente!";
@@ -77,7 +56,7 @@ function novosValores(a, b, c){
 dados(2, 2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-//"Preencha todos os valorers corretamente!"
+// Preencha todos os valorers corretamente!
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 dados(2, 5, 4);
@@ -112,8 +91,8 @@ function novaFunc(a, b, c){
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 
 novaFunc(); //false;
-novaFunc(2); //2
-novaFunc(2, 5); //7
-novaFunc(2, 5, 8); //0.875
+novaFunc(3); //3
+novaFunc(3, 10); //13
+novaFunc(3, 10, 2); //6,5
 
 ```
