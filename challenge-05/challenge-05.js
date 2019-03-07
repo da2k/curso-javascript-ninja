@@ -7,14 +7,14 @@ var arr = [10, 20, 30, 40, 15];
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
-function randomArg(arr) {
+function myFunction(arr) {
   return arr;
 }
 
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-console.log(randomArg(arr)[1]);
+console.log(myFunction(arr)[1]);
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
