@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <title>Ninja JS</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>
+      <span data-js="company-name"></span> -
+      <span data-js="company-phone"></span>
+    </h1>
+  </header>
+
+  <div class="container">
+    <form action="/" data-js="form-register">
+      <ul>
+        <li>
+          <label>Imagem do Veículo:</label>
+          <input type="url" data-js="form-img-url">
+        </li>
+        <li>
+          <label>Marca e Modelo:</label>
+          <input type="text" data-js="form-brand-model">
+        </li>
+        <li>
+          <label>Ano:</label>
+          <input type="text" data-js="form-year">
+        </li>
+        <li>
+          <label>Placa:</label>
+          <input type="text" data-js="form-plate">
+        </li>
+        <li>
+          <label>Cor:</label>
+          <input type="text" data-js="form-color">
+        </li>
+        <li>
+          <input type="submit" value="Cadastrar">
+        </li>
+      </ul>
+    </form>
+
+    <table data-js="table">
+      <thead>
+        <tr>
+          <th>Imagem</th>
+          <th>Marca e Modelo</th>
+          <th>Ano</th>
+          <th>Placa</th>
+          <th>Cor</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+
+  </div>
+
+
+  <!-- <div data-js="company-info">
+    <h3>
+      <span data-js="company-name"></span> - <span data-js="company-phone"></span>
+    </h3>
+  </div>
+  <form data-js="form">
+    <div>
+      <div>
+        <label>URL Imagem: </label>
+        <input type="text" data-js="img-url" placeholder="http://imgurl.jpg">
+      </div>
+      <div>
+        <img src="" data-js="img-display" width="200" height="200">
+      </div>
+    </div>
+    <div>
+      <label>Marca / Modelo: </label>
+      <input type="text" data-js="brand-model" placeholder="Ford Ecosport">
+    </div>
+
+    <div>
+      <label>Ano: </label>
+      <input type="text" data-js="year" placeholder="2015/2016">
+    </div>
+
+    <div>
+      <label>Placa: </label>
+      <input type="text" data-js="plate" placeholder="XYZ-2263">
+    </div>
+
+    <div>
+      <label>Cor: </label>
+      <input type="text" data-js="color" placeholder="Prata">
+    </div>
+
+    <button type="submit">Cadastrar</button>
+  </form>
+
+  <div data-js="table-display" style="display: none">
+    <table data-js="table">
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Marca / Modelo</th>
+          <th>Ano</th>
+          <th>Placa</th>
+          <th>Cor</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+
+    </table>
+  </div> -->
+
+
+
+  <script src="DOM.js"></script>
+  <script src="challenge-29.js"></script>
+</body>
+
+</html>

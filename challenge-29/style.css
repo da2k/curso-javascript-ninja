@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul, li {
+  list-style: none;
+}
+
+body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+header {
+  align-self: center;
+  margin-top: 1rem;
+
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px #000;
+}
+
+.container {
+  margin: 0 1rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.container form {
+  min-width: 30%;
+  display: flex;
+  justify-content: center;
+}
+
+.container form ul {
+  width: 100%;
+}
+
+.container form ul li {
+  width: 90%;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.container form label {
+  font-size: 1.5rem;
+}
+
+.container form input {
+  width: 80%;
+  margin: 0.5rem 0;
+  font-size: 1.5rem;
+  border-radius: 10rem;
+  text-align: center;
+}
+
+.container form input[type="submit"] {
+  background: #0f4e4b;
+  color: #fff;
+  text-shadow: 1px 1px 1px #fff;
+  text-transform: uppercase;
+}
+
+.container table {
+  flex-grow: 1;
+  margin-top: 1rem;
+  border: solid 1px black;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.container table thead th {
+  padding: 0.5rem;
+  background-color: #6c90c9;
+  border: solid 1px black;
+  color: #ffffff;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 1px 1px 1px #fff;
+}
+
+.container table tbody td {
+  border: solid 1px black;
+  padding: 0.5rem;
+
+  text-shadow: 1px 1px 1px #000;
+}
