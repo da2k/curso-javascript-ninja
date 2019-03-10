@@ -1,0 +1,53 @@
+body{
+	display: block;
+	width: 90%;
+	height: 100%;
+	background: #ccc;
+    font-family:sans-serif;
+}
+
+#container{   
+	display: block;
+	width: 45%;
+	height: 50%;
+	margin: auto;
+	text-align: center;
+    
+    background: #789ab7
+}
+
+#title{
+    display: block;
+    padding: 10px;
+    font-size: 25px;
+}
+
+#inputEntrada{
+    width: 80%;
+    height: 40px;
+    font-size: 25px;
+}
+
+.buttons{
+    width: 40%;
+    height: 50px;
+    font-size: 18px; 
+}
+
+#status{
+    
+}
+
+article{
+    text-align: justify;
+    margin: auto;
+    padding: 10px;
+}
+
+.form{
+    text-align: center;
+}
+
+#resp{
+    font-size: 18px; 
+}

@@ -1,3 +1,7 @@
+(function(window, document){
+
+  'use strict';
+
   /*
   No HTML:
   - Crie um formulário com um input de texto que receberá um CEP e um botão
@@ -12,8 +16,8 @@
   - O CEP pode ser entrado pelo usuário com qualquer tipo de caractere, mas
   deve ser limpo e enviado somente os números para a requisição abaixo;
   - Ao submeter esse formulário, deve ser feito um request Ajax para a URL:
-  "https://viacep.com.br/ws/[CEP]/json/", onde [CEP] será o CEP passado
-  no input criado no HTML;
+  "", onde [CEP] será o CEP passado
+  no input criado no HTML;https://viacep.com.br/ws/[CEP]/json/
   - Essa requisição trará dados de um CEP em JSON. Preencha campos na tela
   com os dados recebidos.
   - Enquanto os dados são buscados, na área de mensagens de status, deve mostrar
@@ -25,3 +29,121 @@
   - Utilize a lib DOM criada anteriormente para facilitar a manipulação e
   adicionar as informações em tela.
   */
+
+function app(){
+
+  var $formCEP = new DOM('[data-js="form-cep"]');
+  var $inputCEP = new DOM('[data-js="input-cep"]');  
+  var ajax = new XMLHttpRequest();
+  var $logradouro = new DOM("[data-js='logradouro']");      
+  var $bairro = new DOM("[data-js='bairro']");
+  var $cidade = new DOM("[data-js='cidade']");
+  var $estado = new DOM("[data-js='estado']");
+  var $cep = new DOM("[data-js='cep']");
+  var $status = new DOM("[data-js='status']");
+  $formCEP.on('submit', handleSubmitFormCEP);
+
+  function handleSubmitFormCEP(event){
+    event.preventDefault();    
+    var url = getUrl();
+    ajax.open('GET', url); 
+    ajax.send();
+    getMessage('carregando');
+    ajax.addEventListener('readystatechange', handleReadyStateChange);
+  }
+
+  function getUrl(){
+    return replaceCEP('https://viacep.com.br/ws/[CEP]/json/'); 
+  }
+
+  function clearCEP(){
+    return $inputCEP.get()[0].value.replace(/\D+/g,'');  
+  }
+
+  function handleReadyStateChange(){
+    if(isRequestOk){  
+       
+      if(fillCEPFields()){
+        getMessage('sucesso'); 
+      }            
+    }
+  }
+
+  function isRequestOk(){
+    return ajax.readyState===4 && ajax.status === 200;
+  }
+
+  function fillCEPFields(){
+      var data = parseData();
+      if(!data){
+        getMessage('erro');   
+        data = clearData();  
+        respBusca(data); 
+        return false;  
+      }
+
+      respBusca(data);
+
+      return true;    
+  }
+
+  function respBusca(data){
+    $logradouro.get()[0].textContent = data.logradouro;
+    $bairro.get()[0].textContent = data.bairro;      
+    $estado.get()[0].textContent = data.localidade;
+    $cep.get()[0].textContent = data.cep;    
+    $cidade.get()[0].textContent = data.uf;
+  }
+
+  function clearData(){
+    return {
+      logradouro:'-',
+      bairro:'-',
+      localidade:'-',
+      cep:'-',
+      uf:'-'
+    };
+  }
+
+  function parseData(){
+    var result;
+    try{
+      result = JSON.parse(ajax.responseText);
+    }catch(e){
+        result = null;
+    }
+    return result;
+  }
+
+  function getMessage(type){        
+    var mensagens =  {
+      carregando:replaceCEP('Buscando informações para o CEP [CEP]...'),
+      sucesso: replaceCEP('Endereço referente ao CEP [CEP]:'),
+      erro: replaceCEP('Não encontramos o endereço para o CEP [CEP].')
+    };    
+    $status.get()[0].textContent = mensagens[type];  
+  }
+
+  function replaceCEP(message){
+    return message.replace('[CEP]', clearCEP());
+  }
+
+  return {
+    getMessage: getMessage,
+    replaceCEP: replaceCEP,
+    parseData: parseData,
+    handleSubmitFormCEP: handleSubmitFormCEP,
+    getUrl: getUrl,
+    clearCEP: clearCEP,
+    handleReadyStateChange: handleReadyStateChange,
+    isRequestOk: isRequestOk,
+    fillCEPFields: fillCEPFields,
+    clearData: clearData,
+    respBusca: respBusca
+  };
+
+}
+  window.app = app();
+  app();
+
+})(window, document);
