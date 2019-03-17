@@ -1,4 +1,4 @@
-(function() {
+(function($) {
   'use strict';
 
   /*
@@ -36,4 +36,91 @@
   que será nomeado de "app".
   */
 
-})();
+var app = (function appController(){
+
+    return {
+
+      init : function init(){
+        this.openAjaxConnection();
+        this.events();
+      },
+
+      openAjaxConnection : function openAjaxConnection() {
+        var ajax = new XMLHttpRequest;
+        ajax.open('GET' , '/company.json', true);
+        ajax.send();
+        ajax.addEventListener('readystatechange', this.getInfoCompany, false);
+      },
+
+      requestOk : function requestOk(){
+        return ajax.readyState === 4 && ajax.status === 200;
+      },
+
+      getInfoCompany : function getInfoCompany(){
+        if(!app.requestOk)
+          return;
+          var data = JSON.parse(this.responseText);
+          var $companyName = $('[data-js="company-name"]');
+          var $companyPhone = $('[data-js="company-phone"]');
+          $companyName.get().textContent = data.name;
+          $companyPhone.get().textContent = data.phone;
+      },
+
+      events : function events(){
+        $('[data-js="form-register-car"]').on('submit' , this.setInfoTable);
+      },
+
+      setInfoTable : function setInfoTable(e){
+        e.preventDefault();
+        var $tbody = $('[data-js="tbody"]').get();
+        $tbody.appendChild(app.createNewTr());
+        app.clear();
+      },
+
+      createNewTr : function createNewTr(){
+        var $fragment = document.createDocumentFragment();
+
+        var $createTr = document.createElement('tr');
+        var $tdImage = document.createElement('td');
+        var $tdBrand = document.createElement('td');
+        var $tdYear = document.createElement('td');
+        var $tdBoard = document.createElement('td');
+        var $tdColor = document.createElement('td');
+        var $image = document.createElement('img');
+
+        $image.src = $('[data-js="field-image-car"]').get().value;
+        $tdImage.appendChild($image);
+
+        $tdBrand.textContent = $('[data-js="field-brand"]').get().value;
+        $tdYear.textContent = $('[data-js="field-year"]').get().value;
+        $tdBoard.textContent = $('[data-js="field-board"]').get().value;
+        $tdColor.textContent = $('[data-js="field-color"]').get().value;
+
+        $createTr.appendChild($tdImage);
+        $createTr.appendChild($tdBrand);
+        $createTr.appendChild($tdYear);
+        $createTr.appendChild($tdBoard);
+        $createTr.appendChild($tdColor);
+
+        return $fragment.appendChild($createTr);
+
+      },
+
+      clear : function clear(){
+        $('[data-js="field-image-car"]').get().value = '';
+        $('[data-js="field-brand"]').get().value = '';
+        $('[data-js="field-year"]').get().value = '';
+        $('[data-js="field-board"]').get().value = '';
+        $('[data-js="field-color"]').get().value = '';
+      }
+    }
+
+
+
+  })();
+
+  app.init();
+
+
+
+})(window.DOM);

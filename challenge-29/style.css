@@ -1,0 +1,55 @@
+h1{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 800;
+}
+input[type=text],input[type=url]{
+  width: 550px;
+  padding: 10px 20px;
+  margin: 10px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+div.md-5 {
+  width: 50%;
+  float: left;
+}
+label{
+  font-family: Open Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  display: block;
+}
+button {
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: #4568ba;
+  cursor: pointer;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+}
+button:hover{
+  background-color: #7d95cf;
+}
+
+table, td, th {
+  border: 1px solid #ddd;
+  text-align: left;
+}
+table{
+  border-collapse: collapse;
+  width: 100%;
+}
+th,td {
+  padding: 20px;
+  text-align: center;
+}
+img {
+  max-width: 250;
+  height: 150px;
+  padding-left: 20%;
+  padding-right: 20%;
+}

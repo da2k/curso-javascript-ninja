@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>Challenge-29</title>
+</head>
+<body>
+  <header>
+      <h1>
+        <span data-js="company-name"></span>
+        <span data-js="company-phone"></span>
+      </h1>
+  </header>
+
+  <div class="container">
+      <form action="/" data-js="form-register-car">
+        <div class="md-5">
+            <label for="field-image-car">Imagem do carro:</label>
+            <input type="url" id="field-image-car" placeholder="url..." data-js="field-image-car"><br>
+            <label for="field-brand">Marca / Modelo:</label>
+            <input type="text" id="field-brand" placeholder="brand" data-js="field-brand"><br>
+        </div>
+        <label for="field-year">Ano:</label>
+        <input type="text" id="field-year" placeholder="year" data-js="field-year"><br>
+        <label for="field-board">Placa:</label>
+        <input type="text" id="field-board" placeholder="board" data-js="field-board"><br>
+        <label for="field-color">Cor:</label>
+        <input type="text" id="field-color" placeholder="color" data-js="field-color"><br>
+        <button>Cadastrar</button>
+      </form>
+  </div>
+  <br>
+  <table>
+    <thead>
+      <th>Imagem do carro</th>
+      <th>Marca / Modelo</th>
+      <th>Ano</th>
+      <th>Placa</th>
+      <th>Cor</th>
+    </thead>
+
+    <tbody data-js="tbody">
+    </tbody>
+  </table>
+  <script src="dom.js"></script>
+  <script src="challenge-29.js"></script>
+</body>
+</html>
