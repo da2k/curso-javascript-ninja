@@ -15,3 +15,33 @@ usar o nome que achar melhor, desde que ele seja semântico, ou seja, o nome
 dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
 */
 // ?
+
+
+(function(){
+  function cronometro(){
+    let counter = document.querySelector("[data-js='counter']");
+    let start = document.querySelector("[data-js='start']");
+    let stop = document.querySelector("[data-js='stop']");
+    let reset = document.querySelector("[data-js='reset']");
+    let segundos
+
+    let incrementcounter = function(){
+      let increment = function(){
+        counter.value = parseInt(counter.value) + 1
+        segundos = setTimeout(increment, 1000)
+      }
+      increment()
+    }
+    let stopcounter= function(){
+      clearTimeout(segundos)
+    }
+    let zerocounter= function(){
+      counter.value = 0
+    }
+
+    start.addEventListener('click', incrementcounter)
+    stop.addEventListener('click', stopcounter)
+    reset.addEventListener('click', zerocounter)
+  }
+  cronometro()
+})()
