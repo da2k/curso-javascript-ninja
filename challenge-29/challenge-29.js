@@ -121,6 +121,4 @@ var app = (function appController(){
 
   app.init();
 
-
-
 })(window.DOM);
