@@ -41,19 +41,24 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-?
+function multiplica3(a,b,c) {
+... if(isNaN(a) || isNaN(b) || isNaN(c)) {
+..... return "Preencha todos os valores corretamente" } else {
+..... return (a * b * c) + '2';}
+... }
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+multiplica3(a,b);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+//'Preencha todos os valores corretamente'
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+multiplica3(a,b,c);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+/* 62
+O resultado acima foi obtido quando a= 1, b = 2 e c = 3*/
 
 /*
 Crie uma função com as seguintes características:
