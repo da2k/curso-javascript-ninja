@@ -84,9 +84,9 @@
   console.log('\nNome com letras intercaladas entre caixa alta e baixa:');
   var myName = 'Otávio';
   var newName = [];
-  for (let index = 0; index < array.length; index++) {
-    newName.push(index % 2 === 0 ? myName[i].toLowerCase() : myName[i].toUpperCase());
+  for (var index = 0; index < myName.length; index++) {
+    newName.push(index % 2 === 0 ? myName[index].toLowerCase() : myName[index].toUpperCase());
   }
 
-  console.log(myName);
+  console.log(newName.join(''));
 })();
