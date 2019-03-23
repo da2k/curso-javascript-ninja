@@ -4,29 +4,36 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-?
+function soma(x,y) {
+	return x + y;
+}
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-?
+var somaCinco = soma(2,3) + 5;
 
 // Qual o valor atualizado dessa variável?
-?
+10
 
 // Declare uma nova variável, sem valor.
-?
+var valor;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-?
+
+function addValor(valor) {
+	return "O valor da variável agora é " + valor;
+}
+
 
 // Invoque a função criada acima.
-?
+addValor(5);
 
 // Qual o retorno da função? (Use comentários de bloco).
-?
+
+/*R: O valor da variável agora é 5*/
 
 /*
 Crie uma função com as seguintes características:
@@ -35,19 +42,28 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-?
+
+function somaTres(x,y,z) {
+	if(x === " " || y === " " || z === " "){
+		return "Preencha todos os valores corretamente!";
+	}else{
+		var soma =  x + y + z;
+
+		return soma * 3 + 2;
+	}
+}
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+somaTres(2,5);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+//NaN
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+somaTres(6,4,5);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+47
 
 /*
 Crie uma função com as seguintes características:
@@ -58,8 +74,48 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+
+function novaSomaTres(x,y,z) {
+
+	if(x !== NaN && y === undefined && z === undefined) {
+		
+		return x;
+
+	}else if(x !== NaN && y !== NaN && z === undefined){
+		
+		return x + y;
+
+	}else if(x !== NaN && y !== NaN && z !== NaN){
+		
+		return (x + y) / z;
+
+	}else if(x === undefined && y === undefined && z === undefined){
+
+		return false;
+
+	}else{
+
+		return null;
+
+	}
+
+}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+
+
+novaSomaTres(2)
+//2
+
+novaSomaTres(6,4)
+//10
+
+novaSomaTres(6,4,5)
+//2
+
+novaSomaTres();
+//undefined
+
+novaSomaTres("Não sou um numero")
+"Não sou um numero"
 ```
