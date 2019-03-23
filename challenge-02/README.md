@@ -77,15 +77,15 @@ Crie uma função com as seguintes características:
 
 function novaSomaTres(x,y,z) {
 
-	if(x !== NaN && y === undefined && z === undefined) {
+	if(x !== undefined && y === undefined && z === undefined) {
 		
 		return x;
 
-	}else if(x !== NaN && y !== NaN && z === undefined){
+	}else if(x !== undefined && y !== undefined && z === undefined){
 		
 		return x + y;
 
-	}else if(x !== NaN && y !== NaN && z !== NaN){
+	}else if(x !== undefined && y !== undefined && z !== undefined){
 		
 		return (x + y) / z;
 
@@ -103,6 +103,8 @@ function novaSomaTres(x,y,z) {
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 
+novaSomaTres();
+//false
 
 novaSomaTres(2)
 //2
@@ -113,9 +115,4 @@ novaSomaTres(6,4)
 novaSomaTres(6,4,5)
 //2
 
-novaSomaTres();
-//undefined
-
-novaSomaTres("Não sou um numero")
-"Não sou um numero"
 ```
