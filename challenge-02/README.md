@@ -44,7 +44,7 @@ Crie uma função com as seguintes características:
 */
 
 function somaTres(x,y,z) {
-	if(x === " " || y === " " || z === " "){
+	if(x === undefined || y === undefined || z === undefined){
 		return "Preencha todos os valores corretamente!";
 	}else{
 		var soma =  x + y + z;
@@ -54,16 +54,16 @@ function somaTres(x,y,z) {
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
-somaTres(2,5);
+somaTres(2,3);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-//NaN
+//"Preencha todos os valores corretamente!"
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-somaTres(6,4,5);
+somaTres(2,3,5);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-47
+32
 
 /*
 Crie uma função com as seguintes características:
