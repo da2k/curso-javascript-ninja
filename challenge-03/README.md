@@ -49,13 +49,8 @@ booleano que representa "verdadeiro";
 
 pessoa.andar = function(metrosCaminhados) {
 
-	var caminhou = pessoa.caminhouQuantosMetros;
-
-	pessoa.caminhouQuantosMetros = caminhou + metrosCaminhados
-
+	caminhouQuantosMetros += metrosCaminhados;
 	pessoa.andando = true;
-
-	return pessoa.caminhouQuantosMetros;
 
 }
 
@@ -93,7 +88,7 @@ Crie um método chamado `mostrarPeso`, que retorne a frase:
 - "Eu peso [PESO]Kg."
 */
 pessoa.mostrarPeso = function() {
-	return "Ola, eu tenho " + pessoa.peso + "Kg.";
+	return "Eu peso " + pessoa.peso + "Kg.";
 }
 
 /*
@@ -149,7 +144,7 @@ comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
 
-//pessoa.idade 30
+pessoa.idade // "Olá, eu tenho 30 anos!"
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
@@ -211,6 +206,8 @@ correta, de acordo com os dados inseridos no objeto.
 pessoa.apresentacao = function() {
 
 	var preNome;
+	var posIdade;
+	var posCaminhado;
 	
 
 	if(pessoa.sexo === 'feminino') {
@@ -219,15 +216,12 @@ pessoa.apresentacao = function() {
 		preNome = "Olá, eu sou o ";
 	};
 
-	var posIdade;
 
 	if (pessoa.idade === 1) {
 		posIdade = " ano, ";
 	}else{
 		posIdade = " anos, ";
 	};
-
-	var posCaminhado;
 
 	if (pessoa.caminhouQuantosMetros === 1) {
 		posCaminhado = " metro!";
