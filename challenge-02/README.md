@@ -69,7 +69,32 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+function desafio2 (x,y,z){
+
+	if((isNaN(x)==false) && ((isNaN(y)==true) && (isNaN(z)==true))){
+		return x;
+	}else if((isNaN(y)==false) && ((isNaN(x)==true) && (isNaN(z)==true))){
+		return y;
+	}else if((isNaN(z)==false) && ((isNaN(x)==true) && (isNaN(y)==true))){
+		return z;
+
+	}else if ((isNaN(z)==true) && ((isNaN(x)==false) && (isNaN(y)==false))){
+		return x+y;
+	}else if ((isNaN(y)==true) && ((isNaN(x)==false) && (isNaN(z)==false))){
+		return x+z;
+	}else if ((isNaN(x)==true) && ((isNaN(y)==false) && (isNaN(z)==false))){
+		return y+z;
+
+	}else if ((isNaN(x)==false) && (isNaN(y)==false) && (isNaN(z)==false)){
+		return (x+y)/z;
+
+	}else if ((isNaN(x)==true) && (isNaN(y)==true) && (isNaN(z)==true)){
+		return false;
+
+	}else{
+		return null;
+	}
+}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 ?
