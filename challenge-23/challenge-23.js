@@ -1,4 +1,4 @@
-(function () {
+(function (document,window) {
   'use strict';
   /*
   Vamos desenvolver mais um projeto. A ideia é fazer uma mini-calculadora.
@@ -90,4 +90,4 @@
     });
   }
 
-})();
+})(document,window);
