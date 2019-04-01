@@ -9,7 +9,7 @@ loop, mostre no console a mensagem:
 Qual loop você deve usar para que essa mensagem seja mostrada no console?
 */
 // ?
-aaaaaaaaaa
+aaaaaaaaaaaaaa
 /*
 Crie um objeto chamado `person`, que receba as seguintes propriedades:
 - 'name', 'age', 'weight' e 'birthday'. Preencha com os valores corretos
