@@ -15,7 +15,7 @@ Crie um objeto chamado `person`, que receba as seguintes propriedades:
 para o nome, idade, peso e data de nascimento dessa pessoa.
 */
 // ?
-
+aaaaaa
 /*
 Use um loop para percorrer o objeto criado acima, mostrando no console
 a frase:
