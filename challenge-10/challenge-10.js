@@ -24,7 +24,10 @@ funcional, mas dessa vez, separando algumas responsabilidades.
 função receberá dois parâmetros e retornará a operação referente à sua
 propriedade, usando os valores passados por parâmetro.
 */
-// ?
+operation = { '+': function(x,y){return x+y},
+    '-': function(x,y){return x-y},
+    '*': function(x,y){return x*y},
+    '/': function(x,y){return x/y}
 
 /*
 Crie uma função chamada `isOperatorValid`, que receberá um operador por
@@ -50,7 +53,9 @@ parâmetros;
 operador passado para a função "calculator", e passando para esse método
 os dois parâmetros da função de retorno de "calculator".
 */
-// ?
+function calculator(op){
+	return function(p1,p2){
+	return typeof p1=== "number" && typeof p2==="number ? operation[op](p1,p2) : false;
 
 /*
 Crie uma função chamada "showOperationMessage" que recebe três parâmetros:
