@@ -23,7 +23,7 @@ Mostre no console o segundo elemento desse último array, criado acima, com a
 frase:
 "O segundo elemento do segundo array é [ELEMENTO]."
 */
-console.log('O segundo elemento do segundo array é ' + arr[1] + '.');
+console.log('O segundo elemento do segundo array é ' + arr[5][1] + '.');
 
 /*
 Mostre no console quantos itens tem o primeiro array criado, com a frase:
