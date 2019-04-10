@@ -119,8 +119,8 @@
     */
     console.log( '\nFazer replace dos textos das tags:' );
 
-    var regex = /(<\w+>)([^<]+)(<\/\w+>)/g;
+    var regex = /(<(\w+)>)([^<]+)(<\/\w+>)/g;
     var html = '<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>';
 
-    console.log( html.replace( regex, '$1O texto dentro da tag "$1" é "$2"$3' ) );
+    console.log( html.replace( regex, '$1O texto dentro da tag "$2" é "$3"$4\n' ) );
 })();
