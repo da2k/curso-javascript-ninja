@@ -93,4 +93,5 @@ ultimato(1) // 1
 ultimato(1,2) // 3
 ultimato(1,2,3) // 1
 ultimato() // false
+// @lucasribs
 ```
