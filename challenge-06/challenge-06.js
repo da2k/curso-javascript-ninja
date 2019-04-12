@@ -72,35 +72,18 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     a frase:
     "Não temos o equivalente hexadecimal para [COR]."
 */
-function convertToHex(cor) {
-  var message = 'O hexadecimal para a cor ' + cor + ' é ';
-  var hexadecimal = '';
+function convertToHex(color) {
+  var message = 'O hexadecimal para a color ' + color + ' é ';
 
-  switch (cor) {
-    case 'red':
-      hexadecimal = '#ff000';
-      return message + hexadecimal + '.';
-    break;
-    case 'black':
-      hexadecimal = '#000000';
-      return message + hexadecimal + '.';
-    break;
-    case 'blue':
-      hexadecimal = '#0000FF';
-      return message + hexadecimal + '.';
-    break;
-    case 'pink':
-      hexadecimal = '#ff69b4';
-      return message + hexadecimal + '.';
-    break;
-    case 'yellow':
-      hexadecimal = '#ffff00';
-      return message + hexadecimal + '.';
-    break;
+  switch (color) {
+    case 'red': return message + '#ff000.';
+    case 'black': return message + '#000000.';
+    case 'blue': return message + '#0000FF.';
+    case 'pink': return message + '#ff69b4.';
+    case 'yellow': return message + '#ffff00.';
     default:
-      message = 'Não temos o equivalente hexadecimal para ' + cor + '.';
+      message = 'Não temos o equivalente hexadecimal para ' + color + '.';
   }
-
   return message;
 }
 
