@@ -25,7 +25,7 @@ Onde VALOR é o novo valor da variável.
 //a funcao deve adicionar ou atribuir um novo valor?
 function add_valor(x){
   x = 5;
-  return 'O valor da variável agora é 5.';
+  return 'O valor da variável agora é' + x + '.';
 }
 
 // Invoque a função criada acima.
@@ -42,11 +42,11 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function multiplica(x, y, z){
-  if(x === undefined ||y === undefined || z === undefined){
+  if(x === undefined || y === undefined || z === undefined){
     return 'Preencha todos os valores corretamente!';
   }
   else{
-    return x * y * z;
+    return (x * y * z) + 2;
   }
 }
 
@@ -71,6 +71,8 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
+/* esta funcao considera que eh possivel que sejam passados valores para z sem que sejam para y e x,
+bem como para y sem que seja passado valor para x*/
 function multiplica_especial(x, y, z){
   if(x !== undefined || y !== undefined || z !== undefined){
     if((x !== undefined && y !== undefined) || (x !== undefined && z !== undefined) || (z !== undefined && y !== undefined)){
@@ -105,10 +107,36 @@ function multiplica_especial(x, y, z){
   }
 }
 
+// outra forma
+function mult(x, y, z){
+	if((x !== undefined) && (y === undefined) && (z === undefined)){
+		return x;
+	}
+	// y so vai receber algum valor apos x receber
+	else if((x !== undefined) && (y !== undefined) && (z === undefined)){
+		return y + z;
+	}
+	else if((x !== undefined) && (y !== undefined) && (z === undefined)){
+		return (x + y) / z;
+	}
+	else if((x === undefined) && (y === undefined) && (z === undefined)){
+		return false;
+	}
+	else {
+		return null;
+	}
+}
+
+
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 multiplica_especial(1, 2, 3);
+// 1
 multiplica_especial(1, 2);
+// 3
 multiplica_especial(1);
+// 1
 multiplica_especial();
+// false
 multiplica_especial('a', 2, 3);
+// NaN
 ```
