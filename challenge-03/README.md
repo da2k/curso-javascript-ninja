@@ -46,7 +46,7 @@ valor dessa propriedade a quantidade passada por parâmetro;
 booleano que representa "verdadeiro";
 */
 pessoa.andar = function (metrosCaminhados) {
-    pessoa.caminhouQunatosMetros += metrosCaminhados;
+    pessoa.caminhouQuantosMetros += metrosCaminhados;
     pessoa.andando = true;
 };
 
@@ -159,7 +159,7 @@ pessoa.andando(); //false
 Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
 inline ao lado da instrução para mostrar a resposta retornada)
 */
-pessoa.caminhouQuantosMetros(); //70
+pessoa.caminhouQuantosMetros; //70
 
 /*
 Agora vamos deixar a brincadeira um pouco mais divertida! :D
@@ -178,8 +178,23 @@ deve conter no retorno da frase acima é "metro" no lugar de "metros".
 método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
-?
+pessoa.apresentacao = function () {
+	var inicioFrase = "Olá, eu sou o";
+	var singularIdade = "anos";
+	var alteraMetros = "metros";
+	var fraseExibida = inicioFrase + " " + pessoa.nome + ", tenho " + pessoa.idade + singularIdade + ", " + pessoa.altura + " meu peso é " + pessoa.peso + " e, só hoje, eu caminhei " + pessoa.caminhouQuantosMetros + alteraMetros;
+	if (pessoa.sexo === "Feminino") {
+		inicioFrase = "Olá, eu sou a";
+    }
+	if (pessoa.idade === 1) {
+		singularIdade = "ano";
+    }
+	if (pessoa.caminhouQuantosMetros === 1) {
+		alteraMetros = "metro";
+    }
+	return inicioFrase + " " + pessoa.nome + ", tenho " + pessoa.idade + " " + singularIdade + ", " + pessoa.altura + ", meu peso é " + pessoa.peso + " e, só hoje, eu caminhei " + pessoa.caminhouQuantosMetros + " " + alteraMetros;
+};
 
 // Agora, apresente-se ;)
-?
+//"Olá, eu sou o Danilo, tenho 26 anos, 1.87, meu peso é 80 e, só hoje, eu caminhei 70 metros"
 ```
