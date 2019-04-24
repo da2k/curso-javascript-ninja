@@ -90,18 +90,41 @@ function book(titulo){
 		}
 	};
 	
+  return titulo ? box[titulo] : box;
 	if('harry potter' == titulo){
-		return box.harry_potter;
+		return box['harry potter'];
 	}
 	else if('hannibal' == titulo){
-		return box.hannibal;
+		return box['hannibal'];
 	}
 	else if('poirot' == titulo){
-		return box.poirot;
+		return box['poirot'];
 	}
 	else {
 		return box;
 	}
+}
+//ou
+function book(titulo){
+	var box = {
+		'harry potter': {
+			quantidadePaginas: 398,
+			autor: 'k. k. rowling',
+			editora: 'rocco'
+		},
+		'hannibal': {
+			quantidadePaginas: 264,
+			autor: 'thomas harris',
+			editora: 'arqueiro'
+		},
+		'poirot': {
+			quantidadePaginas: 211,
+			autor: 'agatha christie',
+			editora: 'sextante'
+		}
+	};
+	
+  return titulo ? box[titulo] : box;
 }
 
 /*
