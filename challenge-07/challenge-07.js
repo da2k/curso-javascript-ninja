@@ -21,8 +21,8 @@ var addItem = function(vetor, novo_elemento){
 3) Adicione um novo array ao array criado no início do desafio, com ao menos 3
 itens de tipos diferentes, mostrando o resultado no console.
 */
-var novo_vetor = addItem(vetor, ['a', 2, true]);
-console.log(novo_vetor);
+addItem(vetor, ['a', 2, true]);
+console.log(vetor);
 
 /*
 4) Mostre no console o segundo elemento desse último array, criado acima, com a
@@ -33,8 +33,7 @@ frase:
     console.log('O segundo elemento do segundo array é ' + vetor[--vetor.length][1] + '.');
     - isso nao da certo, `--vetor.length` ou `--(vetor.length)` diminui o tamanho do array
 */
-var ultimo = novo_vetor.length - 1;
-console.log('O segundo elemento do segundo array é ' + novo_vetor[ultimo][1] + '.');
+console.log('O segundo elemento do segundo array é ' + vetor[vetor.length - 1][1] + '.');
 
 /*
 5) Mostre no console quantos itens tem o primeiro array criado, com a frase:
@@ -46,7 +45,7 @@ console.log('O primeiro array tem ' + vetor.length + ' itens.');
 7) Agora mostre no console quantos itens tem o segundo array criado, com a frase:
 "O segundo array tem [QUANTIDADE DE ITENS] itens."
 */
-console.log('O segundo array tem ' + novo_vetor.length + ' itens.');
+console.log('O segundo array tem ' + vetor[vetor.length - 1].length + ' itens.');
 
 /*
 8) Utilizando a estrutura de repetição `while`, mostre no console todos os números
