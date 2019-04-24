@@ -9,7 +9,12 @@ A função deverá retornar o array atualizado.
 */
 var addItem = function(vetor, novo_elemento){
     vetor[vetor.length] = novo_elemento;
-    return vetor; //nao precisa nem retornar
+    return vetor;
+};
+//ou
+var addItem = function(vetor, novo_elemento){
+    vetor.push(novo_elemento);
+    return vetor;
 };
 
 /*
