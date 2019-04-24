@@ -16,8 +16,8 @@ correto da variável ou função chamada.
 */
 function myFunction() {
     var number1 = 10;
+    var number2 = 20;  
     console.log( 'Na função `myFunction`, o primeiro número é', number1 );
-    var number2 = 20;
     console.log( 'Na função `myFunction`, o segundo número é', number2 );
     return number1 + number2;
 }
@@ -43,10 +43,10 @@ myFunction2();
 function myFunction3() {
     var number1 = 40;
     var number2 = 50;
+    function sum() {
+      return number1 + number2;
+    };
     console.log( 'Na função myFunction3, number1 é igual a', number1 );
-        function sum() {
-            return number1 + number2;
-        };
     console.log( 'A soma de 40 e 50 é igual a', sum() );
     return sum();
 }
