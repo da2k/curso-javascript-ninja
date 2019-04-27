@@ -85,4 +85,4 @@ function verificarParametros(arg1, arg2, arg3){
 console.log("Nenhum argumento: ", verificarParametros()); // Nenhum argumento passado
 console.log("Somente 1 argumento passado: ", verificarParametros(1));
 console.log("Somente 2 argumentos passados:", verificarParametros(2, 2));
-console.log("Todos os argumentos passados: ", verificarParametros(2, 2, 2));
+console.log("Todos os argumentos passados: ", verificarParametros(2, 2, 2)); 
