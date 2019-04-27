@@ -35,7 +35,15 @@ var cincoTiposDiferentes = [ 2, undefined, NaN, "Nome", null ];
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-// ?
+var myArray02 = [15, "Ninja", 88];
+
+function myFunction02 ( myArray02, param02 ) {
+    return myArray02[ param02 ];
+}
+
+console.log( myFunction02 ( myArray02, 0 ) );
+console.log( myFunction02 ( myArray02, 1 ) );
+console.log( myFunction02 ( myArray02, 2 ) );
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
