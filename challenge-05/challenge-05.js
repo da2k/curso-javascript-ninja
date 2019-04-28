@@ -58,13 +58,32 @@ propriedades:
 - A função deve retornar o objeto referente ao livro passado por parâmetro.
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
-*/
-// ?
+*/function book ( bookName ) {
+    var allBooks = { 
+        "Game of Trhores": { 
+            totalDePaginas: 300, 
+            nomeAutor: "Jose", 
+            editora: "Person" 
+        }, 
+        "Jurasic Park": { 
+            totalDePaginas: 580, 
+            nomeAutor: "Magno", 
+            editora: "Abril" 
+        }, 
+        "O Mágico de Oz": { 
+            totalDePaginas: 890, 
+            nomeAutor: "Rosana", 
+            aeditora: "Saravira" 
+        } 
+    };
+
+    return !bookName ? allBooks : allBooks[ bookName ];
+}
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-// ?
+console.log( book() );
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
@@ -78,11 +97,11 @@ Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
+console.log( "O livro "+ bookName +" tem páginas " + book( bookName ).totalDePaginas + " páginas.");
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-// ?
+console.log( "O livro " + bookName + " foi publicado pela editora " + book( bookName ).editora);
