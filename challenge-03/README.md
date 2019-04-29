@@ -16,7 +16,7 @@ As propriedades e tipos de valores para cada propriedade desse objeto devem ser:
 - `andando` - Boolean - recebe "falso" por padrão
 - `caminhouQuantosMetros` - Number - recebe "zero" por padrão
 */
-var pessoa = {nome:"Poliana",sobrenome:"Silva",sexo:"Feminimo",idade:25,altura:1.60,peso:65,andando:false,caminhouQuantosMetros:0}
+var pessoa = {nome:"Poliana",sobrenome:"Silva",sexo:"Feminino",idade:25,altura:1.60,peso:65,andando:false,caminhouQuantosMetros:0}
 
 /*
 Adicione um método ao objeto `pessoa` chamado `fazerAniversario`. O método deve
