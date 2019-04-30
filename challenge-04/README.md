@@ -7,15 +7,33 @@ um único parâmetro como argumento. Essa função deve retornar `true` se o
 equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
-?
+var isTruthy = function (argument) {
+  return !!argument;
+};
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
-?
+isTruthy(0); // false
+isTruthy(-0); // false
+isTruthy(false); //false
+isTruthy(''); //false
+isTruthy("");
+isTruthy(NaN); //false
+isTruthy(null); //false
+isTruthy(undefined); //false
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
-?
+isTruthy(true); //true
+isTruthy(1); //true
+isTruthy(2); //true
+isTruthy(Infinity); //true
+isTruthy("a"); //true
+isTruthy('b'); //true
+isTruthy([]); //true
+isTruthy({}); //true
+isTruthy(isTruthy); //true
+isTruthy(!isTruthy(0)); //true
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
@@ -29,35 +47,54 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `assentos` - Number - cinco por padrão
 - `quantidadePessoas` - Number - zero por padrão
 */
-?
+var carro = {
+  marca: 'Volkswagen',
+  modelo: 'Spacefox',
+  placa: 'ABC1234',
+  ano: 2018,
+  cor: 'prata',
+  quantasPortas: 4,
+  assentos: 5,
+  quantidadePessoas: 0
+};
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
-?
+carro.mudarCor = function(newColor) {
+  carro.cor = newColor;
+}
 
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
-?
+carro.obterCor = function() {
+  return carro.cor;
+}
 
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
-?
+carro.obterModelo = function() {
+  return carro.modelo;
+}
 
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
 */
-?
+carro.obterMarca = function() {
+  return carro.marca;
+}
 
 /*
 Crie um método chamado `obterMarcaModelo`, que retorne:
 "Esse carro é um [MARCA] [MODELO]"
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
-?
+carro.obterMarcaModelo = function() {
+  return ('Esse carro é um ' + carro.obterMarca() + ' ' + carro.obterModelo())
+}
 
 /*
 Crie um método que irá adicionar pessoas no carro. Esse método terá as
@@ -75,7 +112,25 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-?
+
+carro.addPassenger = function(passengers) {
+  if (carro.quantidadePessoas + passengers < 0) {
+    return "Não há tantos passageiros disponíveis para remover!"
+  }
+  if (carro.quantidadePessoas === carro.assentos && passengers > 0 && -passengers > carro.quantidadePessoas) {
+    return "O carro já está lotado!";
+  }
+  if ((carro.quantidadePessoas === (carro.assentos - 1)) && passengers > 1) {
+    return ("Só cabe mais 1 pessoa!")
+  }
+  if (carro.quantidadePessoas + passengers <= carro.assentos){
+    carro.quantidadePessoas += passengers;
+    return ("Já temos " + (carro.quantidadePessoas)+ " pessoas no carro.");
+  }
+  if (carro.quantidadePessoas <= carro.assentos) {
+    return "Só cabem mais " + (carro.assentos - carro.quantidadePessoas) + " pessoas!";
+  }
+}
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -85,38 +140,39 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-?
+carro.cor; // 'prata'
+
 
 // Mude a cor do carro para vermelho.
-?
+carro.mudarCor('vermelho');
 
 // E agora, qual a cor do carro?
-?
+carro.cor; // 'vermelho'
 
 // Mude a cor do carro para verde musgo.
-?
+carro.mudarCor('verde musgo');
 
 // E agora, qual a cor do carro?
-?
+carro.cor; //'verde musgo'
 
 // Qual a marca e modelo do carro?
-?
+carro.obterMarcaModelo(); //'Esse carro é um Volkswagen Spacefoox '
 
 // Adicione 2 pessoas no carro.
-?
+carro.addPassenger(2); // 'Já temos 2 pessoas no carro.'
 
 // Adicione mais 4 pessoas no carro.
-?
+carro.addPassenger(4); //'Só cabem mais 3 pessoas!'
 
 // Faça o carro encher.
-?
+carro.addPassenger(3); // 'Já temos 5 pessoas no carro.'
 
 // Tire 4 pessoas do carro.
-?
+carro.addPassenger(-4); //'Já temos 1 pessoas no carro.'
 
 // Adicione 10 pessoas no carro.
-?
+carro.addPassenger(10); //'Só cabem mais 4 pessoas!'
 
 // Quantas pessoas temos no carro?
-?
+carro.quantidadePessoas; //1
 ```
