@@ -32,7 +32,7 @@
   }
 
   DOM.prototype.get = function get(){
-    return this.elements;
+    return this.element;
   }
 
   DOM.prototype.off = function off(eventType,callback){
