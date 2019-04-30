@@ -41,7 +41,13 @@ adicionaItens( [ 'Práticar', 5566, undefined ]);
 Mostre no console quantos itens tem o primeiro array criado, com a frase:
 "O primeiro array tem [QUANTIDADE DE ITENS] itens."
 */
-// ?
+var arr = [ 'Danilo', function () {}, { carro: 'Focus', moto: 'Honda'}, true ];
+
+function adicionaItens () {
+     return console.log( 'O primeiro array tem ' + arr.length + '.' );
+}
+
+adicionaItens(); //O primeiro array tem 4.
 
 /*
 Agora mostre no console quantos itens tem o segundo array criado, com a frase:
