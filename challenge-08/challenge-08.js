@@ -3,31 +3,41 @@ Declare uma variável chamada `sum` e atribua a ela uma função chamada
 `calculateSum`. A função deve receber dois parâmetros e retornar a soma
 desses parâmetros.
 */
-// ?
+var sum = function calculateSum ( param01, param02 ) {
+    return param01 + param02;
+}
 
 /*
 Invoque a função criada acima, passando dois números que serão somados, e mostre
 o resultado no console, com a frase:
 "A soma de [VALOR 1] e [VALOR2] é igual a [RESULTADO]."
 */
-// ?
+var sum = function calculateSum ( param01, param02 ) {
+    return 'A soma de ' + param01 + ' e ' + param02 + ' é igual a ' + (param01 + param02);
+}
+
+console.log( sum( 9, 17 ) );
 
 /*
 Mostre no console o nome da função criada acima, com a frase:
 "O nome da função que faz a soma é [NOME DA FUNÇÃO]."
 */
-// ?
+console.log( 'O nome da função criada acima é ' + sum );
 
 /*
 Crie uma função literal chamada `showName`. Essa função deve retornar o
 seu nome.
 */
-// ?
+function showName () {
+    return 'Danilo Silva Borges';
+}
 
 /*
 Declare uma variável chamada `varShowName` que recebe a função criada acima.
 */
-// ?
+var varShowName = function showName () {
+    return 'Danilo Silva Borges';
+}
 
 /*
 Usando a variável criada acima, mostre no console o nome e o retorno da função
