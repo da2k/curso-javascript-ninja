@@ -54,28 +54,59 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
   - Se o operador não for válido, retornar a frase:
   "Operação inválida."
 */
-// ?
+function calculator ( operator ) {
+    return function ( number01, number02 ) {
+        var result;
+        switch( operator ) {
+
+            case '+':
+                result = number01 + number02;
+                break;
+            case '-':
+                result = number01 - number02;
+                break;
+            case '*':
+                result = number01 * number02;
+                break;
+            case '/':
+                result = number01 / number02;
+                break;
+            case '%':
+                result = number01 % number02;
+                break;
+            default:
+                console.log( 'Operação inválida!' )
+        }
+        return 'Resultado da operação: ' + number01 + ' ' + operator + ' ' + number02 + '= ' + result + '.';
+    };
+}
 
 /*
 Declare uma variável chamada `sum`, que receberá a função acima, passando como
 parâmetro o operador de soma.
 */
-// ?
+var sum = calculator( '+' );
 
 /*
 Agora `sum` é uma função. Mostre no console a soma de dois números, usando ela.
 */
-// ?
+console.log( sum( 2,3 ) ); // Resultado da operação: 2 + 3 = 5.
 
 /*
 Agora, declare algumas variáveis com os nomes `subtraction`, `multiplication`,
 `division` e `mod`, e atribua a elas a função `calculator`, passando o operador
 correto por parâmetro para cada uma delas.
 */
-// ?
+var subtraction = calculator( '-' );
+var multiplication = calculator( '*' );
+var division = calculator( '/' );
+var mod = calculator( '%' );
 
 /*
 Faça uma operação com cada uma das funções criadas acima, mostrando o resultado
 no console.
 */
-// ?
+console.log( subtraction( 10,5 ) ); //Resultado da operação: 10 - 5 = 5.
+console.log( multiplication( 150, 50 ) ); //Resultado da operação: 150 * 50 = 7500.
+console.log( division( 16, 4 ) ); //Resultado da operação: 16 / 4 = 4.
+console.log( mod( 7, 5 ) ); //Resultado da operação: 7 % 5 = 2.
