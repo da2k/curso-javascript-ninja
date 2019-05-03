@@ -58,7 +58,6 @@ function calculator ( operator ) {
     return function ( number01, number02 ) {
         var result;
         switch( operator ) {
-
             case '+':
                 result = number01 + number02;
                 break;
