@@ -5,29 +5,36 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
 ?
-
+function soma (x , y){
+    return x + y;
+}
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
 ?
-
+var resultado_soma = soma (25,25) + 5;
 // Qual o valor atualizado dessa variável?
 ?
-
+55
 // Declare uma nova variável, sem valor.
 ?
-
+var x;
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
 ?
-
+function imprimir_valor (x){
+    x = 20; 
+    return 'O valor da variável agora é ' + x +'.';
+}
 // Invoque a função criada acima.
 ?
-
+imprimir_valor(x);
 // Qual o retorno da função? (Use comentários de bloco).
 ?
-
+/*
+O valor da variável agora é 20.
+*/
 /*
 Crie uma função com as seguintes características:
 1. A função deve receber 3 argumentos;
@@ -36,19 +43,25 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 ?
-
+function tres_parametros(a, b, c){
+    if(!a || !b || !c){
+        return "Preencha todos os valores corretamente!";
+    }else{
+        return a * b * c + 2;
+    }
+}
 // Invoque a função criada acima, passando só dois números como argumento.
 ?
-
+tres_parametros(2, 1);
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 ?
-
+// Preencha todos os valores corretamente!
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 ?
-
+tres_parametros(2, 1, 3);
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 ?
-
+//8
 /*
 Crie uma função com as seguintes características:
 1. A função deve receber 3 argumentos.
@@ -59,7 +72,24 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 ?
-
+function tres_parametros(w, y ,z){
+    if(w && !y && !z){
+        return  w;
+    } if(w && y && !z){
+        return  w + y;
+    }if(w && y && z){
+        return  (w + y) / z;
+    }
+    if(!w && !y && !z){
+        return  false;
+    }else{
+        return null;
+    }
+}
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 ?
+tres_parametros(); // false
+tres_parametros(10); // 10
+tres_parametros(10, 10); //20
+tres_parametros(10, 10, 4); //5
 ```
