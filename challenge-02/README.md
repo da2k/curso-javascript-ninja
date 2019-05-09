@@ -8,13 +8,13 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 function bruno (x, y){
     return x+y
 };
-bruno(5, 5);
+
 
 
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
- var bruno (5, 5);
- bruno=+5
+ var soma =bruno (5, 5)+5;
+ 
 
 // Qual o valor atualizado dessa variável?
 15
@@ -28,16 +28,17 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 funtion semvalor (){
-    return VALOR =""
+ semvalor =25
+ return 'o valor da variavel agora e' +semvalor;
 }
 
 // Invoque a função criada acima.
-? var VALOR
+? var semvalor
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
-essa funcao retorna uma string vazia
-
+semvalor();
+o valor agora e 25
 */
 
 
@@ -45,36 +46,35 @@ essa funcao retorna uma string vazia
 Crie uma função com as seguintes características:
 1. A função deve receber 3 argumentos;
 */
-function test (x=5, b=2, y){};
+function test (a, b, c){
+    if (a===undefined || b===undefined ||c===undefined){
+        return "preencha todos os valores corretament!!"
+    }else{
+        (a*b*c)+2;
+    }
+};
+test();
+
 
 /*2. Se qualquer um dos três argumentos não estiverem preenchidos, a função deve retornar a string:
     Preencha todos os valores corretamente!
-    */
-    return "preencha todos os valores corretamente"
 
 /*3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 
-function test (){
-    return x*b*y+2
-};
-
 // Invoque a função criada acima, passando só dois números como argumento.
-function test (6, 5){
-    return 6+5
-};
+function test (6, 5);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 ?
-//o valor e 6
+//"preencha todos os valores corretament!!"
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 ?
-function test (x, b, y){
-    return 5+6+10
-    }
+function test (2,3,5);
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?//21
+function teste ;
+// 26
 
 /*
 Crie uma função com as seguintes características:
@@ -85,10 +85,30 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+function newFunction( a, b, c){
+    if(a !===undefined && b=== undefined && c=== undefined ){
+return x; 
+    }else if (x !== undefined && b!== undefined && c === undefined ){
+        return a + b;
+    }else if (x !== undefined && b!== undefined && c !== undefined){
+return (a+b)/c;
+    }
+    else if (x === undefined && b=== undefined && c === undefined)
+    return false;
+
+else{
+    return null}
+
+}
+
+
+
+
+
+
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 ?
  function try(a,b,c){
-     
+
  }
