@@ -13,11 +13,11 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
  
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
 
-var  x = soma(5,5)+"5";
+var  x = soma(5,5)+5;
 
 // Qual o valor atualizado dessa variável?
 
-console.log(x) //=>"105"
+console.log(x) //=>15
 
 // Declare uma nova variável, sem valor.
 
@@ -47,8 +47,8 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function f(a,b,c){
-   if( a>=0 && b>=0 && c>=0 ){
-    return a*b*c+"2";
+   if( a && b && c){
+    return a*b*c+2;
    }
    else{
      return " Preencha todos os valores corretamente!";
@@ -62,11 +62,11 @@ f(10,10)
 console.log(f(10,10))  
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 
-f(10,10,10)
+f(10,10,10) // =>1002
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 
-console.log(f(10,10,10))  
+console.log(f(10,10,10))  // =>
 
 /*
 Crie uma função com as seguintes características:
@@ -79,20 +79,22 @@ Crie uma função com as seguintes características:
 */
 function funcao(a,b,c){
 
-     if(a>0 && b>0 && c>0){
+function funcao(a,b,c){
+
+     if(a && b && c){
       return a+b/c;
      }
-     else if(a>0 && c>0){
+     else if(a && c){
       return a+c;
      }
-     else if(a>0){
+     else if(a){
      return a;
      }
-     else{
-
-      return false
-
+     else if(a === undefined && b === undefined && c === undefined){
+          return false
      }
+     return null
+   
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
