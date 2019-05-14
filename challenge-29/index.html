@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <title>Ninja JS</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>
+        <span data-js="company-name"></span> -
+        <span data-js="company-phone"></span>
+      </h1>
+    </header>
+
+    <div class="container">
+      <form action="/" data-js="form-register">
+        <ul>
+          <li>
+            <label>Imagem do Veículo:</label>
+            <input type="url" data-js="form-img-url">
+          </li>
+          <li>
+            <label>Marca e Modelo:</label>
+            <input type="text" data-js="form-brand-model">
+          </li>
+          <li>
+            <label>Ano:</label>
+            <input type="text" data-js="form-year">
+          </li>
+          <li>
+            <label>Placa:</label>
+            <input type="text" data-js="form-plate">
+          </li>
+          <li>
+            <label>Cor:</label>
+            <input type="text" data-js="form-color">
+          </li>
+          <li>
+            <input type="submit" value="Cadastrar">
+          </li>
+        </ul>
+      </form>
+
+      <table data-js="table">
+        <thead>
+          <tr>
+            <th>Imagem</th>
+            <th>Marca e Modelo</th>
+            <th>Ano</th>
+            <th>Placa</th>
+            <th>Cor</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+
+    </div>
+
+    <script src="DOM.js"></script>
+    <script src="challenge-29.js"></script>
+  </body>
+
+</html>

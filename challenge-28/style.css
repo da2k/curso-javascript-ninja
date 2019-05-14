@@ -1,0 +1,31 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+
+  background-color:	#FFB6C1;
+}
+
+#title {
+  font-size: 3rem;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: white;
+}
+
+#inputEntrada {
+  padding: .5rem;
+  border: none;
+  background-color: #FAFAFA;
+  color: purple;
+  outline: none;
+}
+
+.button {
+  margin-left: .5rem;
+  padding: .5rem;
+  border: none;
+  background-color: #FAFAFA;
+  color: purple;
+  outline: none;
+}
