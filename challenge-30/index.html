@@ -1,52 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>Catálogo</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Catálogo</title>
   </head>
 
   <body>
-      <header>
-          <h1><span data-js="company-name"></span> - <span data-js="company-phone"></span></h1>
-      </header>
+		<header>
+			<h1><span data-js="company-name"></span> - <span data-js="company-phone"></span></h1>
+		</header>
 
-      <main>
-          <form data-js="form-registration">
-              <label>URL Imagem:</label>
-              <input type="url" data-js="img-url">
+		<main>
+			<form data-js="form-registration">
+				<label>URL Imagem:</label>
+				<input type="url" data-js="img-url">
 
-              <label>Marca Modelo:</label>
-            	<input type="text" data-js="brand-model">
+				<label>Marca Modelo:</label>
+				<input type="text" data-js="brand-model">
 
-              <label>Ano:</label>
-              <input type="text" data-js="year">
+				<label>Ano:</label>
+				<input type="text" data-js="year">
 
-              <label>Placa:</label>
-              <input type="text" data-js="plate">
+				<label>Placa:</label>
+				<input type="text" data-js="plate">
 
-              <label>Cor:</label>
-              <input type="text" data-js="color">
+				<label>Cor:</label>
+				<input type="text" data-js="color">
 
-              <button type="submit">Cadastrar</button>
-          </form>
-          <table class="hidden">
-              <thead>
-                  <tr>
-                      <th>Imagem</th>
-											<th>Marca e Modelo</th>
-                      <th>Ano</th>
-                      <th>Placa</th>
-											<th>Cor</th>
-                  </tr>
-              </thead>
-              <tbody data-js="tbody"></tbody>
-          </table>
-      </main>
-    
-      <script src="DOM.js"></script>
-      <script src="scripts.js"></script>
+				<button type="submit">Cadastrar</button>
+			</form>
+			<table class="hidden">
+				<thead>
+					<tr>
+						<th>Imagem</th>
+						<th>Marca e Modelo</th>
+						<th>Ano</th>
+						<th>Placa</th>
+						<th>Cor</th>
+					</tr>
+				</thead>
+				<tbody data-js="tbody"></tbody>
+			</table>
+		</main>
+	
+		<script src="DOM.js"></script>
+		<script src="scripts.js"></script>
   </body>
 
 </html> 

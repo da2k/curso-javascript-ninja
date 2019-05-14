@@ -87,12 +87,12 @@
 			var xhr = new XMLHttpRequest();
 			xhr.addEventListener('readystatechange', function () {
 				if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-						var companyInfo = JSON.parse(xhr.responseText);
-						var $companyName = new DOM('[data-js="company-name"]');
-						var $companyPhone = new DOM('[data-js="company-phone"]');
+					var companyInfo = JSON.parse(xhr.responseText);
+					var $companyName = new DOM('[data-js="company-name"]');
+					var $companyPhone = new DOM('[data-js="company-phone"]');
 
-						$companyName.get().textContent = companyInfo.name;
-						$companyPhone.get().textContent = companyInfo.phone;
+					$companyName.get().textContent = companyInfo.name;
+					$companyPhone.get().textContent = companyInfo.phone;
 				}
 			}, false);
 
@@ -104,29 +104,14 @@
 			var xhr = new XMLHttpRequest();
 			xhr.addEventListener('readystatechange', function () {
 				if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-						var data = JSON.parse(xhr.responseText);
-						clearTable();
-						setStoredCars(data);
+					var data = JSON.parse(xhr.responseText);
+					clearTable();
+					setStoredCars(data);
 				}
 			}, false);
 
 			xhr.open('GET', 'http://localhost:3000/car');
 			xhr.send();
-		}
-
-		function createRemoveBtnTd() {
-			var $fragment = document.createDocumentFragment();
-			var $td = document.createElement('td');
-			var $button = document.createElement('button');
-
-			$button.textContent = 'Remover';
-			$button.setAttribute('data-js', 'remove-btn');
-			$button.addEventListener('click', remove, false);
-
-			$td.appendChild($button);
-			$fragment.appendChild($td);
-
-			return $fragment;
 		}
 
 		function remove() {
@@ -150,9 +135,24 @@
 			xhr.send(carString);
 		}
 
+		function createRemoveBtnTd() {
+			var $fragment = document.createDocumentFragment();
+			var $td = document.createElement('td');
+			var $button = document.createElement('button');
+
+			$button.textContent = 'Remover';
+			$button.setAttribute('data-js', 'remove-btn');
+			$button.addEventListener('click', remove, false);
+
+			$td.appendChild($button);
+			$fragment.appendChild($td);
+
+			return $fragment;
+		}
+
 		function clearTable() {
 			Array.prototype.forEach.call($table.get().children, function (item) {
-					$table.get().removeChild(item);
+				$table.get().removeChild(item);
 			});
 		}
 
@@ -162,15 +162,15 @@
 			});
 
 			if (!isTableEmpty())
-					revealTable();
+				revealTable();
 		}
 
 		function isTableEmpty() {
-				return $table.get().childElementCount === 0;
+			return $table.get().childElementCount === 0;
 		}
 
 		function revealTable() {
-				$table.get().closest('table').classList.remove('hidden');
+			$table.get().closest('table').classList.remove('hidden');
 		}
 
 		return {
