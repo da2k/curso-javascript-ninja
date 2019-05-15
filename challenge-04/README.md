@@ -133,18 +133,17 @@ var qtddPessoatemos = this.quantidadePessoas+numeroPessoa === 1 ? "pessoa" : "pe
   if(this.assentos >= this.quantidadePessoas + numeroPessoa){
       
       this.quantidadePessoas+= numeroPessoa;
-      return this.quantidadePessoas === this.assentos ? `O carro já está lotado!` : `Já temos ${this.quantidadePessoas} ${qtddPessoatemos} no carro!`;
+      return `Já temos ${this.quantidadePessoas} ${qtddPessoatemos} no carro!`;
 
   }
-  else{
-  	 if(this.assentos > this.quantidadePessoas && this.assentos<this.quantidadePessoas+numeroPessoa){
+  if(this.assentos > this.quantidadePessoas && this.assentos<this.quantidadePessoas+numeroPessoa){
        
-       return `Só cabem mais ${ this.assentos - this.quantidadePessoas} ${qtddPessoaCabe}!`
-     }
+     return `Só cabem mais ${ this.assentos - this.quantidadePessoas} ${qtddPessoaCabe}!`
+  }
 
-       return `O carro já está lotado!`;
+     return `O carro já está lotado!`;
 
-    }
+   
   
 
 
