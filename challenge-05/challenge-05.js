@@ -18,7 +18,7 @@ function arrayFunction(array){
 Imprima o segundo índice do array retornado pela função criada acima.
 */
 
-console.log( arrayFunction( a[2] ) ) 
+console.log( arrayFunction( a )[1]  ) 
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
