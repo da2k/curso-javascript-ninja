@@ -16,15 +16,16 @@
     nome, `username` deve receber "Desconhecido".
     Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
     */
-    var username = prompt( 'Qual seu nome?' );
+    var username = winD.prompt( 'Qual seu nome?' );
     if (!username) username = 'Desconhecido';
+    winD.alert('Bem vindo ' + username + '!');
 
 
     /*
     Agora, pergunte ao usuário "Qual o seu e-mail?", atribuindo o resultado à
     uma variável chamada `email`.
     */
-    var email = prompt( 'Qual o seu e-mail?' );
+    var email = winD.prompt( 'Qual o seu e-mail?' );
    
     /*
     - Selecione o input de "Nome", atribuindo-o à uma variável chamada
