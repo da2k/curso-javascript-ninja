@@ -16,8 +16,7 @@
     nome, `username` deve receber "Desconhecido".
     Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
     */
-    var username = winD.prompt( 'Qual seu nome?' );
-    if (!username) username = 'Desconhecido';
+    var username = winD.prompt( 'Qual seu nome?' ) || 'Desconhecido';
     winD.alert('Bem vindo ' + username + '!');
 
 
@@ -84,10 +83,23 @@
     */
     $button.addEventListener( 'click', function (event) {
         event.preventDefault();
-        !$inputUsername.value ? winD.alert('Preencha o nome do usuário!'):0;
-        !$inputEmail.value    ? winD.alert('Preencha o e-mail') : 
-            !isValidEmail( $inputEmail.value ) ? winD.alert( 'Entre com um e-mail válido!' ):0;
-        !$message.value       ? winD.alert('Preencha a mensagem!'):0;
+        if (!$inputUsername.value) {
+            winD.alert('Preencha o nome do usuário!');
+            return 0;
+        }
+        if (!$inputEmail.value) {
+            winD.alert('Preencha o e-mail');
+            return 0;
+        }
+        if (!isValidEmail( $inputEmail.value )) {
+            winD.alert( 'Entre com um e-mail válido!' );
+            return 0;
+        }
+        if (!$message.value) {
+            winD.alert('Preencha a mensagem!');
+            return 0;
+        }
+        winD.confirm ('Tem certeza que deseja enviar o formulário?') ? winD.alert('Enviado com sucesso!') : winD.alert ('Não enviado.')
         
     }, false);
 
@@ -118,6 +130,6 @@
         - "agua_@evida.br.com"
     */
     function isValidEmail( email ) {
-        return !!email.match(/^(\w|[_+.])+@(\w|_)+\.\w\w+(\.\w\w)?$/);
+        return !!email.match(/^([\w_+.])+@(\w)+\.\w{2,}(\.\w{1,2})?$/);
     }
 })(window, document);
