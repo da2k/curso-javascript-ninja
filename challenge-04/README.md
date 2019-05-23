@@ -113,7 +113,22 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-?
+carro.adicionarPessoas = function(x) {
+var totalPessoas = carro.quantidadePessoas + x;
+
+if ( carro.quantidadePessoas == carro.acentos && totalPessoas >= carro.acentos ) {
+return 'O carro já está lotado';
+}
+
+if( totalPessoas > carro.acentos){
+var cabem = carro.acentos - carro.quantidadePessoas;
+var ps = cabem == 1 ? ' pessoa' : ' pessoas';
+return 'Só cabem ' +cabem +' ' +ps +' no carro!'
+}
+
+carro.quantidadePessoas += x;
+return 'Já temos ' +carro.quantidadePessoas +' pessoas no carro!';
+};
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -141,20 +156,20 @@ carro.obterCor(); //Verde Musgo
 carro.obterMarcaModelo(); //"Esse carro é um peugeot soleil"
 
 // Adicione 2 pessoas no carro.
-?
+carro.adicionarPessoas(2); //Já temos 2 pessoas no carro!
 
 // Adicione mais 4 pessoas no carro.
-?
+carro.adicionarPessoas(4); //Só cabem mais 3 pessoas no carro!
 
 // Faça o carro encher.
-?
+carro.adicionarPessoas(3); //Já temos 5 pessoas no carro!
 
 // Tire 4 pessoas do carro.
-?
+carro.adicionarPessoas(-4); //Já temos 1 pessoa no carro!
 
 // Adicione 10 pessoas no carro.
-?
+carro.adicionarPessoas(10); //Só cabem mais 4 pessoas no carro!
 
 // Quantas pessoas temos no carro?
 ?
-```
+carro.quantidadePessoas; //1
