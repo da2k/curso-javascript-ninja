@@ -23,9 +23,7 @@ var pessoa = {
   idade: 34,
   altura: 1.72,
   peso: 95,
-  andando: function(andar = false) {
-    return andar;
-  },
+  andando: false,
   caminhouQuantosMetros: 0
 };
 
@@ -98,13 +96,13 @@ Agora vamos brincar um pouco com o objeto criado:
 Qual o nome completo da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.nomeCompleto(); //'Olá! Meu nome é alexandre ramos'
+pessoa.nomeCompleto(); // 'Olá! Meu nome é alexandre ramos'
 
 /*
 Qual a idade da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.mostrarIdade(); //'Olá, eu tenho 35 anos'
+pessoa.mostrarIdade(); // 'Olá, eu tenho 37 anos'
 
 /*
 Qual o peso da pessoa? (Use a instrução para responder e comentários
@@ -130,7 +128,7 @@ Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
 comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
-pessoa.idade; //37
+pessoa.mostraIdade(); //37
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
@@ -183,6 +181,7 @@ correta, de acordo com os dados inseridos no objeto.
 pessoa.apresentacao = function() {
   let pronome = "o";
   let plural = "s";
+  let metrosCaminhados = "s";
 
   if (pessoa.sexo === "feminino") {
     pronome = "a";
@@ -190,6 +189,10 @@ pessoa.apresentacao = function() {
 
   if (pessoa.idade === 1) {
     plural = "";
+  }
+
+  if (pessoa.caminhouQuantosMetros === 1) {
+    metrosCaminhados = "";
   }
 
   return (
@@ -209,7 +212,9 @@ pessoa.apresentacao = function() {
     pessoa.peso +
     "kg e, só hoje, eu já caminhei " +
     pessoa.caminhouQuantosMetros +
-    " metros!"
+    " metro" +
+    metrosCaminhados +
+    "!"
   );
 };
 
