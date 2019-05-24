@@ -22,16 +22,17 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function add(value) {
-  newVar = value;
+function add() {
+  newVar = 34;
   return "O valor da variavel agora é " + newVar;
 }
 
 // Invoque a função criada acima.
-add(20);
+add();
 
 // Qual o retorno da função? (Use comentários de bloco).
-/* "O valor da variavel agora é 20" */
+
+/* "O valor da variavel agora é 34" */
 
 /*
 Crie uma função com as seguintes características:
@@ -44,19 +45,22 @@ function multiplyPlus(n1, n2, n3) {
   if (n1 === undefined || n2 === undefined || n3 === undefined) {
     return "Preencha todos os valores corretamente!";
   }
-  return n1 * n2 * n3 + 2;
+  // prettier-ignore
+  return ( n1 * n2 * n3 ) + 2;
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
 multiplyPlus(2, 3);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
+
 // "Preencha todos os valores corretamente!"
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 multiplyPlus(2, 3, 5);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
+
 // 32
 
 /*
