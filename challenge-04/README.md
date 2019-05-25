@@ -16,7 +16,6 @@ isTruthy(0); //false
 isTruthy(-0); //false
 isTruthy(false); //false
 isTruthy(""); //false
-isTruthy(""); //false
 isTruthy(undefined); //false
 isTruthy(null); //false
 isTruthy(NaN); //false
@@ -115,7 +114,7 @@ citado acima, no lugar de "pessoas".
 carro.entrarPessoas = function(numerosPessoas) {
   var assentosDisponivel = carro.assentos - carro.quantidadesPessoas;
 
-  if (assentosDisponivel <= 0) {
+  if (assentosDisponivel === 0) {
     return "O carro já está lotado!";
   }
 
@@ -174,11 +173,11 @@ carro.entrarPessoas(4); // ''Só cabem mais 3 pessoas''
 carro.entrarPessoas(3); // 'Já temos 5 pessoas no carro!'
 
 // Tire 4 pessoas do carro.
-carro.entrarPessoas(-4); // 'Já temos 5 pessoas no carro!'
+carro.entrarPessoas(-4); // 'Já temos 1 pessoa no carro!'
 
 // Adicione 10 pessoas no carro.
-carro.entrarPessoas(10); // 'O carro já está lotado!'
+carro.entrarPessoas(10); // 'Só cabem mais 4 pessoas'
 
 // Quantas pessoas temos no carro?
-carro.quantidadesPessoas; //5
+carro.quantidadesPessoas; //1
 ```
