@@ -35,6 +35,10 @@ var arr2 = ["alexia", 1, null, undefined, new Date()];
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
+console.log(arrayFunc(arr2, 0));
+console.log(arrayFunc(arr2, 1));
+console.log(arrayFunc(arr2, 2));
+console.log(arrayFunc(arr2, 3));
 console.log(arrayFunc(arr2, 4));
 
 /*
@@ -70,11 +74,7 @@ function book(nameBook) {
     }
   };
 
-  if (nameBook === undefined) {
-    return books;
-  }
-
-  return books[nameBook];
+  return !nameBook ? books : books[nameBook];
 }
 
 /*
@@ -87,9 +87,11 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
+
+const bookName = "A Game of Thrones";
 console.log(
-  "O livro Harry Potter tem",
-  book("Harry Potter").quantidadePaginas,
+  "O livro " + bookName + " tem",
+  book(bookName).quantidadePaginas,
   "paginas"
 );
 
@@ -98,7 +100,7 @@ Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log("O autor do livro Harry Potter é", book("Harry Potter").autor);
+console.log("O autor do livro " + bookName + " é", book(bookName).autor);
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
@@ -106,6 +108,6 @@ a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
 console.log(
-  "O livro Harry Potter foi publicado pela editora",
-  book("Harry Potter").editora
+  "O livro " + bookName + " foi publicado pela editora",
+  book(bookName).editora
 );
