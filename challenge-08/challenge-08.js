@@ -62,7 +62,7 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
   - Essa segunda função deve receber dois parâmetros;
   - Esses dois parâmetros serão os operandos usados na operação matemática;
   - O retorno dessa segunda função é a operação matemática completa, com a frase:
-  " "
+  " Resultado da operação: [NUMERO1] [OPERADOR] [NUMERO2] = [RESULTADO]."
   - Se o operador não for válido, retornar a frase:
   "Operação inválida."
 */
