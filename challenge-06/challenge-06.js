@@ -4,7 +4,7 @@ para começar o desafio.
 Declare uma variável chamada `championship` que receberá o nome do campeonato,
 e imprima o nome desse campeonato no console.
 */
-var championship = "paulista";
+var championship = "Campeonato Paulista";
 
 console.log(championship);
 
@@ -35,7 +35,7 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 function showTeamPosition(number) {
-  return number > teams.length
+  return number > teams.length || number < 1
     ? "Não temos a informação do time que está nessa posição."
     : "O time que está em " + number + "º lugar é o " + teams[number - 1] + ".";
 }
@@ -48,6 +48,7 @@ console.log(showTeamPosition(1));
 console.log(showTeamPosition(3));
 console.log(showTeamPosition(4));
 console.log(showTeamPosition(6));
+console.log(showTeamPosition(0));
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
@@ -72,27 +73,29 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 function convertToHex(cor) {
+  let hexa;
   switch (cor) {
     case "red":
-      return "O hexadecimal para a cor " + cor + " é #ff0000.";
+      hexa = "#ff0000";
       break;
     case "blue":
-      return "O hexadecimal para a cor " + cor + " é #0000ff.";
+      hexa = "#0000ff";
       break;
     case "yellow":
-      return "O hexadecimal para a cor " + cor + " é #ffff00.";
+      hexa = "#ffff00";
       break;
     case "green":
-      return "O hexadecimal para a cor " + cor + " é #00ff00.";
+      hexa = "#00ff00";
       break;
     case "white":
-      return "O hexadecimal para a cor " + cor + " é #ffffff.";
+      hexa = "#ffffff";
       break;
 
     default:
       return "Não temos o equivalente hexadecimal para " + cor + ".";
       break;
   }
+  return "O hexadecimal para a cor " + cor + " é " + hexa + ".";
 }
 
 /*
