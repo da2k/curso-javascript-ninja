@@ -16,7 +16,7 @@ desafio.
 */
 var teams = ['Corinthians', 'São Paulo', 'Santos', 'Palmeiras', 'Ituano'];
 
-console.log( 'Times que estão participando do campeonato:', teams );
+console.log( 'Times que estão participando do campeonato: ', teams );
 
 /*
 Crie uma função chamada `showTeamPosition` com as seguintes características:
@@ -40,7 +40,7 @@ function showTeamPosition(index){
     return 'O time que está em '+ index + ' º lugar é o ' + teams[index - 1] +".";
     }
 
-    return 'Não temos a informação do time que está nessa posição.'
+    return 'Não temos a informação do time que está nessa posição. '
 
 }
 
