@@ -22,12 +22,13 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function adicionaValor(valor) {
-    return `O valor da variável é ${newVar + valor}`
+function adicionaValor() {
+    newVar = 30;
+    return `O valor da variável é ${newVar}`
 }
 
 // Invoque a função criada acima.
-const resultado2 = adicionaValor(5);
+const resultado2 = adicionaValor();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*  O valor da variável é NaN*/
@@ -50,13 +51,13 @@ function multiplica(x, y, z) {
 multiplica(2, 5);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+// 'Preencha todos os valores corretamente'
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+multiplica(1,2,3);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+// 8
 
 /*
 Crie uma função com as seguintes características:
@@ -67,8 +68,23 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+function multiplasOperacoes(x, y, z) {
+    if (x && y && z) {
+        return (x + y) / z; 
+    } else if (x && y) {
+        return x + y;
+    } else if (x) {
+        return x;
+    } else if (!x && !y && !z) {
+        return false;
+    } else {
+        return null;
+    }
+}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+multiplasOperacoes() // false
+multiplasOperacoes(3) // 3
+multiplasOperacoes(3, 2) // 5
+multiplasOperacoes(3, 2, 2) // 2.5
 ```
