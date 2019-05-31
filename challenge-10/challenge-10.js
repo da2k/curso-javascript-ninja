@@ -54,7 +54,7 @@
   - O desafio é fazer o retorno sem usar "if" ou "switch".
   */
  function isOperatorValid(operator){
-  return Boolean(operation[operator])
+  return !!operation[operator]
  }
 
   /*
@@ -70,16 +70,16 @@
   os dois parâmetros da função de retorno de "calculator".
   */
   function calculator(operator){
-    if(isOperatorValid(operator)){
-      return function(n1, n2){
-        if(typeof n1 !== 'number' || typeof n2 !== 'number'){
-          return false
-        }
-  
-        return operation[operator](n1, n2)
-      }
+    if(!isOperatorValid(operator)){
+      return false
     }
-    return false   
+
+    return function(n1, n2){
+      if(typeof n1 !== 'number' && typeof n2 !== 'number'){
+        return false
+      }  
+      return operation[operator](n1, n2)
+    };
   }
 
   /*
@@ -109,8 +109,8 @@
   - Declare 3 variáveis: "number1" e "number2", iniciando com valor zero, e
   "operationSignal", sem valor por enquanto.
   */
- let number1 = 10;
- let number2 = 20;
+ let number1 = 0;
+ let number2 = 0;
  let operationSignal; 
 
   /*
@@ -120,6 +120,7 @@
   parâmetro a variável que recebeu o sinal da operação.
   */
   operationSignal = "+"
+
   const sum = calculator(operationSignal)
 
   /*
@@ -136,6 +137,9 @@
   */
  
   if(sum){
+    number1 = 20;
+    number2 = 34;
+
     console.log(showOperationMessage(number1, number2, operationSignal),sum(number1, number2))    
   } else{
     showErrorMessage(operationSignal)
@@ -150,48 +154,52 @@
   operationSignal = "-"
   const subtraction = calculator(operationSignal)
 
-  number1 = 43;
-  number2 = 25;
-
   if(subtraction){
+    number1 = 43;
+    number2 = 25;
+
    console.log(showOperationMessage(number1, number2, operationSignal),subtraction(number1, number2))    
-   } else{
+  } 
+  else{
    showErrorMessage(operationSignal) 
   }
 
   operationSignal = "*"
   const multiplication = calculator(operationSignal)
 
-  number1 = 3;
-  number2 = 25;
-
   if(multiplication){
+    number1 = 3;
+    number2 = 25; 
+
    console.log(showOperationMessage(number1, number2, operationSignal),multiplication(number1, number2))    
-   } else{
+  } 
+  else{
    showErrorMessage(operationSignal)
   }
 
   operationSignal = "/"
   const division = calculator(operationSignal)
 
-  number1 = 24;
-  number2 = 8;
-
   if(division){
-   console.log(showOperationMessage(number1, number2, operationSignal),division(number1, number2))    
-   } else{
+    number1 = 24;
+    number2 = 8;
+  
+   console.log(showOperationMessage(number1, number2, operationSignal),division(number1, number2))
+  } 
+  else{
    showErrorMessage(operationSignal)
   }
 
   operationSignal = "%"
   const mod = calculator(operationSignal)
 
-  number1 = 24;
-  number2 = 8;
-
   if(mod){
+    number1 = 24;
+    number2 = 8;
+
    console.log(showOperationMessage(number1, number2, operationSignal),mod(number1, number2))    
-   } else{
+  } 
+  else{
    showErrorMessage(operationSignal)
   }
   
@@ -200,15 +208,16 @@
   Repita o PASSO 2 novamente, mas passando um operador inválido, para ver se
   a mensagem de erro será mostrada no console.
   */
- operationSignal = "="
+ operationSignal = "9"
  const igual = calculator(operationSignal)
 
- number1 = 24;
- number2 = 8;
-
  if(igual){
+  number1 = 24;
+  number2 = 8;
+
   console.log(showOperationMessage(number1, number2, operationSignal),igual(number1, number2))    
-  } else{
+ } 
+ else{
   console.log(showErrorMessage(operationSignal))
  }
 })()
