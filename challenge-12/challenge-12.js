@@ -16,7 +16,7 @@
     lastname: "ramos",
     age: 34
   };
-  console.log('Propriedades de "person":', person);
+  console.log('Propriedades de "person":');
 
   /*
     Mostre no console, em um array, todas as propriedades do objeto acima.
@@ -64,18 +64,18 @@
   /*
     Converta os objetos que ficaram em `books` para strings.
     */
-  const booksStr = JSON.stringify(books);
+  books = JSON.stringify(books);
   console.log("\nLivros em formato string:");
 
   /*
     Mostre os livros nesse formato no console:
     */
-  console.log(booksStr);
+  console.log(books);
 
   /*
     Converta os livros novamente para objeto.
     */
-  const BooksParse = JSON.parse(booksStr);
+  books = JSON.parse(books);
   console.log("\nAgora os livros são objetos novamente:");
 
   /*
@@ -83,20 +83,24 @@
     no formato abaixo:
         "[PROPRIEDADE]: [VALOR]"
     */
-  console.log(BooksParse);
+  for (let i = 0; i < books.length; i++) {
+    for (let prop in books[i]) {
+      console.log(`${prop} : ${books[i][prop]}`);
+    }
+  }
 
   /*
     Crie um array chamado `myName`. Cada item desse array deve ser uma letra do
     seu nome. Adicione seu nome completo no array.
     */
-  const myName = ["a", "l", "e", "a", "n", "d", "r", "e"];
+  const myName = ["a", "l", "e", "x", "a", "n", "d", "r", "e"];
   console.log("\nMeu nome é:");
 
   /*
     Juntando todos os itens do array, mostre no console seu nome.
     */
-  let name = myName.join("");
-  console.log(name);
+
+  console.log(myName.join(""));
 
   console.log("\nMeu nome invertido é:");
 
