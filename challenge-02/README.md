@@ -87,12 +87,12 @@ Crie uma função com as seguintes características:
 */
 function operacao(x, y, z) {
 
-    if (x !== null || x , y !== null || x,y,z !== null) {
-        if (y == null && z == null) {
+    if (x !== undefined || y !== undefined || z !== undefined) {
+        if (y == undefined && z == undefined) {
             console.log(x)
         }
 
-        else if (z == null) {
+        else if (z == undefined) {
             console.log(x + y)
         }
 
@@ -108,15 +108,15 @@ function operacao(x, y, z) {
     }
 }
 
+// Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
+
 var a = operacao(4)
 var ab = operacao(4, 6)
 var abc = operacao(4, 6, 2)
 var c = operacao()
 
-// Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-
 4
 10
 5
-null
+false
 ```
