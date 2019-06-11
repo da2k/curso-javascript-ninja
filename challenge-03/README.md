@@ -1,3 +1,6 @@
+# Desafio da semana #3
+
+```js
 // Declarar uma variável qualquer, que receba um objeto vazio.
 var pessoa = {}
 
@@ -247,40 +250,12 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 
-pessoa.apresentacao = function apresentacao() {
-    if (pessoa.sexo == "masculino") {
-        if (pessoa.idade == 1) {
-            if (pessoa.distanciaPercorrida < 1) {
-                console.log(`Olá, eu sou o ${pessoa.nome} ${pessoa.sobrenome}, tenho ${pessoa.idade} ano, tenho ${pessoa.altura} de altura, meu peso é ${pessoa.peso}kg e, só hoje, eu já caminhei ${pessoa.distanciaPercorrida} metro!`)
-            } else {
-                console.log(`Olá, eu sou o ${pessoa.nome} ${pessoa.sobrenome}, tenho ${pessoa.idade} ano, tenho ${pessoa.altura} de altura, meu peso é ${pessoa.peso}kg e, só hoje, eu já caminhei ${pessoa.distanciaPercorrida} metros!`)
-            }
-
-        } else {
-            if (pessoa.distanciaPercorrida < 1) {
-                console.log(`Olá, eu sou o ${pessoa.nome} ${pessoa.sobrenome}, tenho ${pessoa.idade} anos, tenho ${pessoa.altura} de altura, meu peso é ${pessoa.peso}kg e, só hoje, eu já caminhei ${pessoa.distanciaPercorrida} metro!`)
-            } else {
-                console.log(`Olá, eu sou o ${pessoa.nome} ${pessoa.sobrenome}, tenho ${pessoa.idade} anos, tenho ${pessoa.altura} de altura, meu peso é ${pessoa.peso}kg e, só hoje, eu já caminhei ${pessoa.distanciaPercorrida} metros!`)
-            }
-        }
-
-    }
-    else {
-        if (pessoa.idade == 1) {
-            if (pessoa.distanciaPercorrida < 1) {
-                console.log(`Olá, eu sou a ${pessoa.nome} ${pessoa.sobrenome}, tenho ${pessoa.idade} ano, tenho ${pessoa.altura} de altura, meu peso é ${pessoa.peso}kg e, só hoje, eu já caminhei ${pessoa.distanciaPercorrida} metro!`)
-            } else {
-                console.log(`Olá, eu sou a ${pessoa.nome} ${pessoa.sobrenome}, tenho ${pessoa.idade} ano, tenho ${pessoa.altura} de altura, meu peso é ${pessoa.peso}kg e, só hoje, eu já caminhei ${pessoa.distanciaPercorrida} metros!`)
-            }
-
-        } else {
-            if (pessoa.distanciaPercorrida < 1) {
-                console.log(`Olá, eu sou a ${pessoa.nome} ${pessoa.sobrenome}, tenho ${pessoa.idade} anos, tenho ${pessoa.altura} de altura, meu peso é ${pessoa.peso}kg e, só hoje, eu já caminhei ${pessoa.distanciaPercorrida} metro!`)
-            } else {
-                console.log(`Olá, eu sou a ${pessoa.nome} ${pessoa.sobrenome}, tenho ${pessoa.idade} anos, tenho ${pessoa.altura} de altura, meu peso é ${pessoa.peso}kg e, só hoje, eu já caminhei ${pessoa.distanciaPercorrida} metros!`)
-            }
-        }
-    }
+apresentacao: function apresentacao() {
+    var genero = pessoa.sexo === "masculino" ? "o" : "a"
+    var idade = pessoa.idade > 1 ? "anos" : "ano"
+    var distancia = pessoa.distanciaPercorrida > 1 ? "metros" : "metro"
+    
+    console.log(`Olá, eu sou ${genero} ${pessoa.nome} ${pessoa.sobrenome}, tenho ${pessoa.idade} ano${idade}, tenho ${pessoa.altura} de altura, meu peso é ${pessoa.peso}kg e, só hoje, eu já caminhei ${pessoa.distanciaPercorrida} ${distancia}!`)
 
 }
 
