@@ -7,15 +7,36 @@ um único parâmetro como argumento. Essa função deve retornar `true` se o
 equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
-?
+var isTruthy = function (x){
+    var test = x === true ? true : false
+    console.log(test)
+}
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
-?
+isTruthy()
+
+isTruthy(!true)
+
+isTruthy(false)
+
+isTruthy("")
+
+isTruthy('')
+
+isTruthy(0)
+
+isTruthy(-0)
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
-?
+isTruthy(true)
+
+isTruthy(!!true)
+
+isTruthy(!false)
+
+isTruthy(!!!false)
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
@@ -29,35 +50,57 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `assentos` - Number - cinco por padrão
 - `quantidadePessoas` - Number - zero por padrão
 */
-?
+
+var carro = {
+    marca: "GM",
+    modelo: "Celta",
+    placa: "PMI0032",
+    ano: 2016,
+    cor: "cinza",
+    quantasPortas: 4,
+    assentos: 5,
+    quantidadePessoas: 0
+}
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
-?
+
+carro.mudaCor = function (cor) {
+    carro.cor = cor
+}
 
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
-?
+carro.obterCor = function () {
+    console.log(carro.cor)
+}
 
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
-?
+carro.obterModelo = function () {
+    console.log(carro.modelo)
+}
 
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
 */
-?
+carro.obterMarca = function () {
+    console.log(carro.marca)
+}
+
 
 /*
 Crie um método chamado `obterMarcaModelo`, que retorne:
 "Esse carro é um [MARCA] [MODELO]"
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
-?
+carro.obterMarcaModelo = function () {
+    console.log(`Esse carro é um ${carro.marca} ${carro.modelo}`)
+}
 
 /*
 Crie um método que irá adicionar pessoas no carro. Esse método terá as
@@ -75,7 +118,24 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-?
+carro.recebePassageiro = function (pessoas) {
+    var pessoas = pessoas
+    if (carro.assentos - carro.quantidadePessoas < pessoas) {
+
+        if (carro.assentos - carro.quantidadePessoas == 0) {
+            console.log(`Impossivel acomodar ${pessoas} passageiros. Nao ha vagas`)
+
+        }
+        
+        else {
+            console.log(`Impossivel acomodar ${pessoas} passageiros. O carro so tem ${carro.assentos - carro.quantidadePessoas} vaga(s).`)
+        }
+    }
+    else {
+        carro.quantidadePessoas < carro.assentos ? console.log(`Ja tem(mos) ${carro.quantidadePessoas += pessoas} pessoa(s) no carro.`) : console.log()
+        carro.quantidadePessoas < carro.assentos ? console.log(`Cabe(m) mais ${carro.assentos - carro.quantidadePessoas} pessoa(s) no carro!`) : console.log("O carro já está lotado!")
+    }
+}
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -85,38 +145,58 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-?
+carro.obterCor()
+//cinza
 
 // Mude a cor do carro para vermelho.
-?
+carro.mudaCor("vermelho")
+
+
 
 // E agora, qual a cor do carro?
-?
+carro.obterCor()
+//vermelho
 
 // Mude a cor do carro para verde musgo.
-?
+carro.mudaCor("verde-musgo")
+
 
 // E agora, qual a cor do carro?
-?
+carro.obterCor()
+//verde-musgo
+
 
 // Qual a marca e modelo do carro?
-?
+carro.obterModelo()
+//Celta
 
 // Adicione 2 pessoas no carro.
-?
+carro.recebePassageiro(2)
+//Ja tem(mos) 2 pessoa(s) no carro.
+//Cabe(m) mais 3 pessoa(s) no carro!
 
 // Adicione mais 4 pessoas no carro.
-?
+carro.recebePassageiro(4)
+//Impossivel acomodar 4 passageiros. O carro so tem 3 vaga(s).
+
 
 // Faça o carro encher.
-?
+carro.recebePassageiro(3)
+//Ja tem(mos) 5 pessoa(s) no carro.
+//O carro já está lotado!
 
 // Tire 4 pessoas do carro.
-?
+carro.removePassageiro = function (pessoas) {
+    carro.quantidadePessoas - pessoas > 0 ? carro.quantidadePessoas -= pessoas : console.log("Existem apenas ${carro.quantidadePessoas} passageiro(s) no veiculo.")
+}
+carro.removePassageiro(4)
 
 // Adicione 10 pessoas no carro.
-?
+carro.recebePassageiro(10)
+//Impossivel acomodar 10 passageiros. O carro so tem 4 vaga(s).
+
 
 // Quantas pessoas temos no carro?
-?
+console.log(carro.quantidadePessoas)
+//1
 ```
