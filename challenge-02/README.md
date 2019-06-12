@@ -22,17 +22,17 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function qq(valor) {
-	qualquer = "O valor da variável agora é " + valor;
-	return qualquer;
+function qq() {
+	qualquer = 25;
+	return "O valor da variável agora é " + qualquer;
 }
 
 // Invoque a função criada acima.
-qq(5);
+qq();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
-'O valor da variável agora é 5'
+O valor da variável agora é 25
 */
 
 /*
@@ -43,7 +43,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function multiplicacao(a, b, c) {
-	if (a == undefined || b == undefined || c == undefined) {
+	if (a === undefined || b === undefined || c === undefined) {
 		return "Preencha todos os valores corretamente!"
 	}
 	return (a * b * c) + 2;
