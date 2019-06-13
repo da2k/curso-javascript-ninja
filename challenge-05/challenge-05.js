@@ -3,21 +3,20 @@ Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
 // ?
-var myVar = ["Kaio", 30, "Gemeos", 2, "Junho"]
+var myVar = ["Kaio", 30, true, [1,2], {a: "casa"}];
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
 // ?
 var getArray = function (array) {
-    return array
-}
+    return array;
+};
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
 // ?
-console.log(myVar)
-var show = getArray(myVar[1])
-console.log(show)
+
+console.log(getArray(myVar[1]))
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
 segundo, um número. A função deve retornar o valor de um índice do array que foi passado
@@ -26,8 +25,8 @@ segundo parâmetro.
 */
 // ?
 
-var setArray = function (array, num) {
-    return array[num]
+var setArray = function (array, index) {
+    return array[index]
 }
 
 /*
@@ -60,54 +59,58 @@ os livros.
 */
 // ?
 
-function book () {
+function book (bookName) {
 
-    return {
+    var allBooks = {
 
-        senhorDosAneis: {
+        'Senhor dos Aneis': {
             quantidadePaginas: 300,
             autor: "Tolken",
             editora: "Abril"
         },
 
-        starWars: {
+        'Star Wars': {
             quantidadePaginas: 225,
             autor: "George Lucas",
             editora: "Nova"
         },
 
-        gameOfThrones: {
+        'Game Of Thrones': {
             quantidadePaginas: 500,
             autor: "George Martin",
             editora: "Cultura"
         }
     }
+    
+    return !bookName ? allBooks : allBooks [bookName]
 }
 
-var livro = book().starWars
-console.log(livro)
+
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-// ?
+
+console.log( book() )
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// ?
+var bookName = 'Game Of Thrones'
+console.log(`O livro ${bookName} tem ${book(bookName).quantidadePaginas} páginas!`)
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
+console.log(`O autor do livro ${bookName} e ${book(bookName).autor}.`)
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-// ?
+console.log(`O livro ${bookName} foi publicado pela editora ${book(bookName).editora}.`)
+
