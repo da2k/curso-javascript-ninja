@@ -84,7 +84,7 @@ function book () {
     }
 }
 
-var livro = book().starWars
+var livro = book().gameOfThrones
 console.log(livro)
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
