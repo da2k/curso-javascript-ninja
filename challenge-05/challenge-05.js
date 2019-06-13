@@ -3,17 +3,21 @@ Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
 // ?
-
+var myVar = ["Kaio", 30, "Gemeos", 2, "Junho"]
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
 // ?
-
+var getArray = function (array) {
+    return array
+}
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
 // ?
-
+console.log(myVar)
+var show = getArray(myVar[1])
+console.log(show)
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
 segundo, um número. A função deve retornar o valor de um índice do array que foi passado
@@ -22,16 +26,23 @@ segundo parâmetro.
 */
 // ?
 
+var setArray = function (array, num) {
+    return array[num]
+}
+
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
 // ?
-
+var newArray = [1, true, "carro", null, 1.8]
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
 // ?
+console.log(newArray)
+var show = setArray(newArray, 3)
+
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -49,6 +60,32 @@ os livros.
 */
 // ?
 
+function book () {
+
+    return {
+
+        senhorDosAneis: {
+            quantidadePaginas: 300,
+            autor: "Tolken",
+            editora: "Abril"
+        },
+
+        starWars: {
+            quantidadePaginas: 225,
+            autor: "George Lucas",
+            editora: "Nova"
+        },
+
+        gameOfThrones: {
+            quantidadePaginas: 500,
+            autor: "George Martin",
+            editora: "Cultura"
+        }
+    }
+}
+
+var livro = book().starWars
+console.log(livro)
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
