@@ -46,6 +46,7 @@ pessoas. As variáveis deverão ser o primeiro nome da pessoa. Passe os
 parâmetros corretamente para o construtor para criar as novas pessoas.
 Mostre as 3 novas pessoas criadas no console (Um console.log por pessoa).
 */
+
 console.log( 'Novas pessoas criadas à partir de Person:' );
 let davi = new Person('Davi', 'Rocha', 31);
   alana = new Person('Alana', 'Alves', 29);
