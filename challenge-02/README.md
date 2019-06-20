@@ -87,5 +87,8 @@ function threeargs (n1, n2, n3) {
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
-```
+threeargs () ; // false 
+threeargs (2) ; // 2 
+threeargs (2, 3) ; // 5 
+threeargs (5, 5, 5) ; // 2
+
