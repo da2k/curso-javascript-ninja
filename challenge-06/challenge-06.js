@@ -16,8 +16,8 @@ estar na ordem em que eles aparecem na tabela no momento da solução desse
 desafio.
 */
 
-var teams = ["Ceara", "Ferroviario","Fortaleza","Horizonte","Icasa"]
-console.log( 'Times que estão participando do campeonato:', teams );
+var teams = ["Ceara", "Ferroviario", "Fortaleza", "Horizonte", "Icasa"]
+console.log('Times que estão participando do campeonato:', teams);
 
 /*
 Crie uma função chamada `showTeamPosition` com as seguintes características:
@@ -36,10 +36,10 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 
-function showTeamPosition(x){
-    teams.includes(teams[x]) ? 
-    console.log( `O time que está em ${x+1}º lugar é o ${teams[x]}.`) :  
-    console.log( `Não temos a informação do time que está nessa posição.`)   
+function showTeamPosition(x) {
+    teams.includes(teams[x]) ?
+        console.log(`O time que está em ${x + 1}º lugar é o ${teams[x]}.`) :
+        console.log(`Não temos a informação do time que está nessa posição.`)
 }
 
 
@@ -60,10 +60,10 @@ Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
 repetição "while".
 */
 
-function contador(){
-let x=0
+function contador() {
+    let x = 20
 
-    while (x < 30){
+    while (x < 30) {
         x++
         console.log(x)
     }
@@ -84,10 +84,40 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 // ?
-
-
-
+function convertToHex(cor) {
+    switch (cor) {
+        case "blue":
+            console.log(`O hexadecimal para a cor ${cor} é #0000FF`)
+            break
+        case "green":
+            console.log(`O hexadecimal para a cor ${cor} é #008000`)
+            break
+        case "purple":
+            console.log(`O hexadecimal para a cor ${cor} é #A020F0`)
+            break
+        case "red":
+            console.log(`O hexadecimal para a cor ${cor} é #FF0000`)
+            break
+        case "orange":
+            console.log(`O hexadecimal para a cor ${cor} é #FFA500`)
+            break
+        case "yellow":
+            console.log(`O hexadecimal para a cor ${cor} é #FFFF00`)
+            break
+        default:
+            console.log(`Não temos o equivalente hexadecimal para ${cor}.`)
+            break
+    }
+}
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-// ?
+
+convertToHex("blue")
+convertToHex("red")
+convertToHex("orange")
+convertToHex("yellow")
+convertToHex("pink")
+convertToHex("purple")
+convertToHex("green")
+convertToHex("black")
