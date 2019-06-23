@@ -58,36 +58,46 @@ propriedades:
 os livros.
 */
 
-function book(livro){
-    var nomeLivro = objetoLivro{nLivro1 : "O Príncipe"{quantidadePaginas : 130, autor : "Maquiável", Editora : "Ática"}, 
-                                nLivro2 : "Como fazer amigos e influenciar pessoas"{quantidadePaginas : 700, autor : "Daile Carnegie", Editora : "Ática"}, 
-                                nLivro3 : "10% mais feliz"{quantidadePaginas : 400, autor : "Dan Harris", Editora : "Ática"}};
+function book(bookName){
+    var allBooks = {
+        "O Príncipe" : {quantidadePaginas : 130, autor : "Maquiável", Editora : "Ática"}, 
+        "Como fazer amigos e influenciar pessoas" : {quantidadePaginas : 700, 
+            autor : "Daile Carnegie", Editora : "Ática"}, 
+        "10% mais feliz" : {quantidadePaginas : 400, autor : "Dan Harris", Editora : "Ática"}};
 
-    if(livro == nLivro1){return nLivro1;}
-}
+        if( !bookName ){
+            return allBooks;
+        }
+
+        return allBooks[bookName];  
+
+};
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-// ?
+
+console.log( book());
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// ?
+var bookName = 'O Príncipe';
+console.log( "O livro " + bookName + ' tem ' + book( bookName ).quantidadePaginas + ' páginas! ' );
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
+console.log(' O autor do livro ' + bookName + ' é ' + book( bookName ).autor + '.')
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-// ?
+
+console.log( 'O livro ' + bookName + ' foi publicado pela editora ' + book( bookName ).Editora + '.');
