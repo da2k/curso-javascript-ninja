@@ -39,19 +39,23 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-?
+function args3(x, y, z) {
+  if(x == null || y == null || z == null){
+    return 'Preencha todas as variavéis'} else{
+    return (x * y * z) + 2;}
+}
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+args3(1, 2)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+'Preencha todas as variavéis'
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+args3(1, 2, 3)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+8
 
 /*
 Crie uma função com as seguintes características:
@@ -62,8 +66,24 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+function args32(x, y, z) {
+	if (x == null && y == null && z == null) {
+		return false;
+	} else if (y == null && z == null) {
+		return x;
+	} else if (z == null) {
+		return x + y;
+	} else {
+		return (x +y) / z;
+	}
+}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
-```
+//Primeiro teste
+console.log(args32());
+//Segundo teste
+console.log(args32(x));
+//Terceiro Teste
+console.log(args32(x, y));
+//Quarto teste
+console.log(args32(x, y, z));
