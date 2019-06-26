@@ -9,7 +9,7 @@ function soma(x, y) {
  }
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-var result = 5 + soma(10, 5);
+var result = soma(10, 5) + 5;
 console.log(result);
 // Qual o valor atualizado dessa variável?
 20
@@ -23,14 +23,15 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 function func(){
-  return myvar = 'VALOR';
+  myvar = 25;
+  return 'O valor da variável agora é ' + myvar;
  }
 
 // Invoque a função criada acima.
 myvar = func();
 console.log(myvar);
 // Qual o retorno da função? (Use comentários de bloco).
-'VALOR'
+/* 'O valor da variável agora é 25' */
 
 /*
 Crie uma função com as seguintes características:
@@ -40,9 +41,19 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function args3(x, y, z) {
-  if(x == null || y == null || z == null){
-    return 'Preencha todas as variavéis'} else{
-    return (x * y * z) + 2;}
+  	if(x === undefined || y === undefined || z === undefined){
+    	return 'Preencha todas as variavéis'
+	} else {
+    	return (x * y * z) + 2;
+    }
+}
+
+function args3opcionalSemElse(x, y, z) {
+  	if(x === undefined || y === undefined || z === undefined){
+    	return 'Preencha todas as variavéis'
+	}
+    return (x * y * z) + 2;
+    
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
@@ -67,15 +78,28 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function args32(x, y, z) {
-	if (x == null && y == null && z == null) {
+	if (x === undefined && y === undefined && z === undefined) {
 		return false;
-	} else if (y == null && z == null) {
+	} else if (y === undefined && z === undefined) {
 		return x;
-	} else if (z == null) {
+	} else if (z === undefined) {
 		return x + y;
 	} else {
 		return (x +y) / z;
 	}
+}
+
+function args32Correcao(x, y, z) {
+	if (x !== undefined && y === undefined && z === undefined) {
+		return x;
+	} else if (x !== undefined && y !== undefined && z === undefined) {
+		return x + y;
+	} else if (x !== undefined && y !== undefined && z !== undefined) {
+		return (x + y) / z;
+	} else  if (x === undefined && y === undefined && z === undefined){
+		return false;
+	}
+	return null;
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
@@ -84,10 +108,10 @@ var y = 2;
 var z = 3;
 
 //Primeiro teste
-console.log(args32());
+console.log(args32Correcao());
 //Segundo teste
-console.log(args32(x));
+console.log(args32Correcao(x));
 //Terceiro Teste
-console.log(args32(x, y));
+console.log(args32Correcao(x, y));
 //Quarto teste
-console.log(args32(x, y, z));
+console.log(args32Correcao(x, y, z));
