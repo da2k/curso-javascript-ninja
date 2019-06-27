@@ -154,7 +154,35 @@ function teste(a, b ,c ){
             
         }
 
-        console.log(pessoa.apresentacao())
+        // console.log(pessoa.apresentacao())
+
+
+
+
+                                            //CHALLENGE-04
+
+
+
+        var isTruthy = function(argument){
+            if(argument){
+                return true
+            }else{
+                return false
+            }
+        }
+
+        // console.log(isTruthy(0))
+        // console.log(isTruthy(false))
+        // console.log(isTruthy(''))
+        // console.log(isTruthy(""))
+        // console.log(isTruthy(-0))
+
+
+        // console.log(isTruthy(1))
+        // console.log(isTruthy('Pedro'))
+        // console.log(isTruthy(true))
+        // console.log(isTruthy([]))
+        // console.log(isTruthy({}))
 
 
 
@@ -162,6 +190,71 @@ function teste(a, b ,c ){
 
 
 
+ var carro = {
+     marca: 'Toyota',
+     modelo: 'Corolla',
+     placa: 'JSP-4550',
+     ano: 2008,
+     cor: 'Prata',
+     qntPortas: 4,
+     assentos: 5,
+     qntPessoas: 0
+ }
 
 
+ carro.mudarCor = function(cor){
+     this.cor = cor
+ }
 
+ carro.obterCor = function(){
+     console.log(this.cor)
+     return this.cor
+ }
+
+ carro.obterModelo = function(){
+     console.log(this.modelo)
+     return this.modelo
+ }
+
+ carro.obterMarca = function(){
+     console.log(this.marca)
+     return this.marca
+ }
+
+ carro.obterMarcaModelo = function(){
+     console.log('Esse carro é um '+this.marca+' '+this.modelo)
+     return 'Esse carro é um '+this.marca+' '+this.modelo;
+ }
+
+ carro.addPessoas = function(qnt){
+     if(this.qntPessoas >= this.assentos){
+         console.log('Esse carro já está lotado')
+         return false
+     }
+
+     if(this.qntPessoas < this.assentos && qnt > (this.assentos-this.qntPessoas)){
+         if(this.assentos-this.qntPessoas == 1){
+            console.log('Só cabem mais '+(this.assentos-this.qntPessoas)+' pessoa no carro')
+            return 'Só cabem mais '+(this.assentos-this.qntPessoas)+' pessoa no carro'
+         }
+         console.log('Só cabem mais '+(this.assentos-this.qntPessoas)+' pessoas no carro')
+         return 'Só cabem mais '+(this.assentos-this.qntPessoas)+' pessoas no carro'
+     }
+        this.qntPessoas += qnt
+        console.log('Já temos: '+this.qntPessoas+' pessoas no carro')
+
+ }
+
+
+    console.log(carro.obterCor())
+
+    carro.mudarCor('Vermelho')
+    carro.obterCor()
+    carro.obterMarcaModelo()
+
+    carro.addPessoas(2)
+    carro.addPessoas(4)
+    carro.addPessoas(3)
+    carro.qntPessoas -= 4
+    console.log(carro.qntPessoas)
+    carro.addPessoas(10)
