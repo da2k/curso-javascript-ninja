@@ -93,7 +93,7 @@ Declare uma variável chamada `sum`, que receberá a função acima, passando co
 parâmetro o operador de soma.
 */
 
-    var sum = calculator('+')
+    var sum = calculator('+')  // /// /// //  // / // / / // / / // / 
 
 /*
 Agora `sum` é uma função. Mostre no console a soma de dois números, usando ela.
