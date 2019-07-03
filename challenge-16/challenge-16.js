@@ -68,11 +68,17 @@ console.log( '\nMeus amigos:' );
 
 var amigos = ['vinicius','ewerton','danilo','miguel','isabel'];
 
-var frase = amigos.reverse().join(',').replace(',',' e ').split(',').reverse().join(',').concat(
-     ' são meus amigos.'
-	);
+var add = '';
+var frase = amigos.reduce( function(acomulado , atual,index,array){
+	
+    add = index+1  === array.length ? ' e ' : ' , ';
+
+    return  acomulado + add +atual
+
+} ,'' ).replace(' , ','') ;
 
 console.log(  frase )
+
 
 
 /*
@@ -81,7 +87,7 @@ Mostre o resultado no console.
 */
 console.log( '\nEra "Roberto", agora é:' );
 
-console.log( 'Roberto'.split('').reverse().join('').replace('o','a').split('').reverse().join('') )
+console.log( 'Roberto'.replace('to','ta') )
 
 /*
 Mostre no console a parte "nando" da string "Fernando". Use o método que
