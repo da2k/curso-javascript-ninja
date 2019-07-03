@@ -67,7 +67,7 @@
 
 
 
-        arr = [1,3,5,4,78,9]
+    arr = [1,3,5,4,78,9]
 
     arr2 = arr.map(function(item){
             return `R$ ${item.toFixed(2)}`
