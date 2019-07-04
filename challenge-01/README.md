@@ -28,5 +28,4 @@ function divisao(x,y){
 var dividir = x/y;
 return dividir;
 // Invoque a função criada acima, passando os parâmetros 10 e 2.
-
 divisao(10/2);
