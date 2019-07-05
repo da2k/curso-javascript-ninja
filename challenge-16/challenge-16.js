@@ -1,4 +1,8 @@
-/*
+(function(){
+
+    'use strict'
+
+    /*
 1. Envolva todo o conteúdo desse desafio em uma IIFE.
 2. Adicione a diretiva 'use strict';
 3. Crie um arquivo index.html e adicione esse script à ele.
@@ -13,8 +17,13 @@ Ex: no caso do nome ser "Fernando", deve mostrar as frases:
 - "e é a 2ª letra do meu nome."
 E assim por diante, até a última.
 */
+
+var name = 'Pedro'
+
 console.log( 'As letras do seu nome:' );
-// ?
+for(let i=0;i<name.length;i++){
+    console.log(name[i]+' é a '+i+'° letra do meu nome ')
+}
 
 /*
 - Declare uma variável chamada `fullName`, que receba seu nome completo,
@@ -28,8 +37,19 @@ curso para fazer isso funcionar corretamente :)
 - Mostre no console o nome no formato slug, e o resultado final. Use um
 console.log para cada formato.
 */
+
+var fullName = 'pedro-henrique-bastos-carvalho'
+var novo = fullName.split('-')
+
+for(let i = 0;i<novo.length;i++){
+    let letra = novo[i].charAt(0).toUpperCase()
+    novo[i] = letra +novo[i].slice(1)
+}
+
+console.log(novo)
 console.log( '\nNome convertido à partir de um slug:' );
-// ?
+
+console.log(novo.join(' '))
 
 /*
 - Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
@@ -41,21 +61,31 @@ O resultado final deve ficar mais ou menos assim:
 5 nomes foi somente uma sugestão ;)
 */
 console.log( '\nMeus amigos:' );
-// ?
+
+var newName = ['Paulo', 'Silva', 'João', 'Júlia', 'Maria']
+    newName = newName.join(', ')
+    newName = newName.replace(', M',' e M').concat(' são meus amigos')
+    console.log(newName)
 
 /*
 Usando o replace(), faça a string "Roberto" virar "Roberta".
 Mostre o resultado no console.
 */
 console.log( '\nEra "Roberto", agora é:' );
-// ?
+
+var rob = 'Roberto'
+    rob = rob.split('o').join('a').replace('a','o')
+    console.log(rob)
 
 /*
 Mostre no console a parte "nando" da string "Fernando". Use o método que
 faz a busca do final para o início da string.
 */
 console.log( '\nParte de uma string:' );
-// ?
+
+rob = 'Fernando'
+console.log(rob.slice(3,8))
+
 
 /*
 Declare uma variável chamada `myName`, que receba o seu primeiro nome,
@@ -67,4 +97,23 @@ de qualquer tamanho, escrito de qualquer forma.
 Ex.: Nomes que deveriam funcionar: "Fernando", "RoBertO", "gabriEla", etc.
 */
 console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
-// ?
+
+var myName = 'pedro miguel silveira'
+
+function intercala(nome){
+    let newNome = nome.split('')
+    
+    for(let i=0;i<newNome.length;i++){
+        if(i%2 ==0){
+            newNome[i] = newNome[i].toUpperCase()
+        }else{
+            newNome[i] = newNome[i].toLowerCase()
+        }
+    }
+    console.log(newNome.join(''))
+    return newNome
+}
+
+intercala(myName)
+
+})()
