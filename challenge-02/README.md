@@ -9,26 +9,29 @@ function soma(a, b){
 }
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-?
+var result = soma(2,3) + 5;
 
 // Qual o valor atualizado dessa variável?
-?
+10
 
 // Declare uma nova variável, sem valor.
-?
+var myvar;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-?
+function valorString(){
+    myvar = 'VALOR';
+    return 'O valor da variável agora é VALOR.';
+}
 
 // Invoque a função criada acima.
-?
+valorString();
 
 // Qual o retorno da função? (Use comentários de bloco).
-?
+//'O valor da variável agora é VALOR.'
 
 /*
 Crie uma função com as seguintes características:
@@ -37,19 +40,25 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-?
+function test(a, b, c){
+    if(a === undefined || b === undefined || c === undefined){
+        return 'Preencha todos os valores corretamente!';
+    } else {
+        return a * b * c + 2;
+    }
+}
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+test(1, 2)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+'Preencha todos os valores corretamente!'
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+test(1, 2, 3)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+//8
 
 /*
 Crie uma função com as seguintes características:
@@ -60,8 +69,39 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+function newTest(a, b, c){
+    var paramCount = 0;
+    var paramStore = [];
+
+    if(a !== undefined) {
+        paramCount++;
+        paramStore.push(a);
+    }
+    if(b !== undefined) {
+        paramCount++; 
+        paramStore.push(b);
+    }
+    if(c !== undefined) {
+        paramCount++;
+        paramStore.push(c);
+    }
+
+    if(paramCount === 1){
+        return paramStore[0];
+    } else if(paramCount === 2){
+        return paramStore[0] + paramStore[1];
+    } else if(paramCount === 3){
+        return (paramStore[0] + paramStore[1]) / paramStore[2];
+    } else if(paramCount === 0){
+        return false;
+    } else {
+        return null;
+    }
+}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+newTest(1); //1
+newTest(1, 2); //3
+newTest(1, 2, 3); //1
+newTest(); //false
 ```
