@@ -49,13 +49,13 @@ function test(a, b, c){
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
-test(1, 2)
+test(1, 2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 'Preencha todos os valores corretamente!'
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-test(1, 2, 3)
+test(1, 2, 3);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 //8
