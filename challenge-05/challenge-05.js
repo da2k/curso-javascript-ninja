@@ -79,10 +79,7 @@ function book(bookname) {
         editora: 'Disney'
     }
     }
-    if(bookname === undefined) {
-        return Livros
-    }
-    return Livros[bookname]
+    return bookname === undefined ? Livros : Livros[bookname]
 }
 
 /*
@@ -97,7 +94,8 @@ usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
 
-console.log(`O livro Branca de Neve tem ${Livros['Branca de Neve'].quantidadePaginas} páginas!`)
+var bookName = 'Branca de Neve'
+console.log(`O livro ${bookName} tem ${Livros[bookName].quantidadePaginas} páginas!`)
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
