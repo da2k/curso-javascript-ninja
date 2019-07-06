@@ -43,16 +43,16 @@ Crie uma função com as seguintes características:
 function test(a, b, c){
     if(a === undefined || b === undefined || c === undefined){
         return 'Preencha todos os valores corretamente!';
-    } else {
-        return a * b * c + 2;
-    }
+    } 
+
+    return a * b * c + 2;
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
 test(1, 2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-'Preencha todos os valores corretamente!'
+//'Preencha todos os valores corretamente!'
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 test(1, 2, 3);
