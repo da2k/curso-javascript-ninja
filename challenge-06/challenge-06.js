@@ -56,7 +56,7 @@ function showTeamPosition(x) {
         console.log('Não temos a informação do time que está nessa posição.')
     }
     */
-    return x > teams.length ?console.log('Não temos a informação do time que está nessa posição'): console.log(`O time que está em ${x--}º lugar é o ${teams[x]}.`)
+    return x > teams.length || x < 1 ?console.log('Não temos a informação do time que está nessa posição'): console.log(`O time que está em ${x--}º lugar é o ${teams[x]}.`)
 }
 
 /*
@@ -68,7 +68,7 @@ showTeamPosition(1)
 showTeamPosition(3)
 showTeamPosition(4)
 showTeamPosition(5)
-showTeamPosition(6)
+showTeamPosition(0)
 
 
 /*
@@ -97,25 +97,27 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
 */
 
 function convertToHex(cor) {
+    var hexa;
     switch(cor) {
         case 'black':
-        console.log(`O hexadecimal para a ${cor} é #000000`)
-        break
+            hexa = '#000000'
+            break
         case 'red' : 
-        console.log(`O hexadecimal para a ${cor} é #FF0000`)
-        break
+            hexa = '#FF0000'
+            break
         case 'verde' :
-        console.log(`O hexadecimal para a ${cor} é #008000`)
-        break
+            hexa = '#008000'
+            break
         case 'azul':
-        console.log(`O hexadecimal para a ${cor} é #0000FF`)
-        break
+            hexa = '#0000FF'
+            break
         case 'branco':
-        console.log(`O hexadecimal para a ${cor} é #FFFFFF`)
-        break
+            hexa = '#FFFFFF'
+            break
         default:
-        console.log(`Não temos o equivalente Hexadecimal para ${cor}`)
+            return console.log(`Não temos o equivalente Hexadecimal para ${cor}`)
 }
+      return console.log(`O hexadecimal para a ${cor} é ${hexa}`)
 }
 
 
