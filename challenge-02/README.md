@@ -31,7 +31,7 @@ function valorString(){
 valorString();
 
 // Qual o retorno da função? (Use comentários de bloco).
-//'O valor da variável agora é VALOR.'
+/* 'O valor da variável agora é VALOR.' */
 
 /*
 Crie uma função com as seguintes características:
