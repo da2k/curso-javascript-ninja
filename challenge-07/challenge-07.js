@@ -10,7 +10,8 @@ A função deverá retornar o array atualizado.
 */
 
 function addItem(x) {
-    vetor.push(x)
+    vetor.push(x);
+    return vetor;
 }
 
 /*
@@ -78,15 +79,15 @@ Só vamos mudar o range:
 - No primeiro "for", mostre os números pares entre 100 e 120, inclusive eles;
 - No segundo "for", mostre os números ímpares entre 111 e 125, inclusive eles.
 */
-for(var vetorPar = [],vetorImpar= [], contador = 100 ; contador <= 120 ; contador++ ) {
-    if(contador % 2 == 0) {
+for(var vetorPar = [],vetorImpar= [], contador = 100 ; contador <= 125; contador++ ) {
+    if(contador % 2 == 0 && contador <= 120) {
         vetorPar.push(contador)
-    } else {
+    } else if(contador % 2 == 1 && contador >= 111) {
         vetorImpar.push(contador)
     }
 }
 
 console.log( `Números pares entre 100 e 120: ${vetorPar}` );
 
-console.log( `Números impares entre 100 e 120: ${vetorImpar}`  );
+console.log( `Números impares entre 111 e 125: ${vetorImpar}`  );
 // ?
