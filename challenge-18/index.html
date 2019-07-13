@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript Ninja</title>
+
+
+    <style>
+    
+        input[type=text]{
+            border-color: crimson;
+            border-style: none none solid none;
+            font-weight: bolder;
+            
+        }
+
+        input:focus{
+            outline: none;
+        }
+
+        .aviso{
+            display: none;
+            font-family: 'Arial', sans-serif;
+            color:red;
+            font-size: 0.8em;
+            margin:5px 45px;
+        }
+        
+    </style>
+</head>
+<body>
+    <input type="text" name="nome" id="nome" autofocus maxlength="14">
+    <span class="aviso">CPF inválido</span>
+
+<!-- <script>
+
+    (function(){
+
+        let campo = document.querySelector('#nome')
+        
+
+        campo.addEventListener('input', function(){
+            let valor = campo.value
+
+            if(campo.value.length === 3){
+                campo.value += '.'
+
+            }else if(campo.value.length === 7){
+                campo.value += '.'
+
+            }else if(campo.value.length === 11){
+                campo.value += '-'
+            }
+
+            if(campo.value.length === 14){
+                validaCPF()
+            }
+        })
+
+
+        function validaCPF(){
+            let valor = campo.value
+            let aviso = document.querySelector('.aviso')
+
+            if(!campo.value.match(/^[0-9]{3}\.[0-9]{3}\.[0-9]{3}\-[0-9]{2}/)){
+                aviso.style.display = 'block'
+            }else{
+                aviso.style.display = 'none'
+            }
+        }
+
+        campo.addEventListener('blur', validaCPF)
+
+
+
+
+    })()
+
+
+
+
+
+
+</script> -->
+<script src="challenge-18.js"></script>
+</body>
+</html>
