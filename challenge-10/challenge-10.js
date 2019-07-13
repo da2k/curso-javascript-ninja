@@ -26,13 +26,13 @@
     função receberá dois parâmetros e retornará a operação referente à sua
     propriedade, usando os valores passados por parâmetro.
     */
-    var operation = { 
+    var operation = {
 
         '+' : function(num1, num2) {
             return num1 + num2;
             },
 
-            
+
         '-' : function(num1, num2) {
             return num1 - num2;
             },
@@ -50,7 +50,7 @@
             }
         };
 
-    
+
 
     /*
     Crie uma função chamada `isOperatorValid`, que receberá um operador por
@@ -81,21 +81,21 @@
     operador passado para a função "calculator", e passando para esse método
     os dois parâmetros da função de retorno de "calculator".
     */
-    
+
     function calculator(operator) {
         if(!isOperatorValid(operator)) {
             return false;
-        } 
-        
+        }
+
         return function(x, y) {
             if(typeof x !=='number' || typeof y !== 'number') {
                 return false;
             }
             return operation[operator](x,y);
-        }    
-        
+        }
+
     }
-        
+
 
     /*
     Crie uma função chamada "showOperationMessage" que recebe três parâmetros:
@@ -154,11 +154,11 @@
         number1 = 10;
         number2 = 5;
         console.log(showOperationMessage(operationSignal, number1, number2), sum(number1, number2));
-    }   
+    }
     else {
         console.log(showErrorMessage(operationSignal));
     }
-    
+
 
     /*
     Repita desde o "PASSO 2" com as operações de subtração, multiplicação,
@@ -171,7 +171,7 @@
     number1 = 35;
     number2 = 8;
     console.log(showOperationMessage(operationSignal, number1, number2), subtration(number1, number2));
-}   
+}
 else {
     console.log(showErrorMessage(operationSignal));
 }
@@ -183,7 +183,7 @@ operationSignal = '*';
     number1 = 25;
     number2 = 8;
     console.log(showOperationMessage(operationSignal, number1, number2), multiplication(number1, number2));
-}   
+}
 else {
     console.log(showErrorMessage(operationSignal));
 }
@@ -195,7 +195,7 @@ operationSignal = '/';
     number1 = 100;
     number2 = 5;
     console.log(showOperationMessage(operationSignal, number1, number2), division(number1, number2));
-}   
+}
 else {
     console.log(showErrorMessage(operationSignal));
 }
@@ -206,7 +206,7 @@ operationSignal = '%';
     number1 = 37;
     number2 = 5;
     console.log(showOperationMessage(operationSignal, number1, number2), mod(number1, number2));
-}   
+}
 else {
     console.log(showErrorMessage(operationSignal));
 }
@@ -224,8 +224,7 @@ else {
     number1 = 37;
     number2 = 5;
     console.log(showOperationMessage(operationSignal, number1, number2), mod(number1, number2));
-}   
-else {
+}else {
     console.log(showErrorMessage(operationSignal));
 }
 
