@@ -1,4 +1,8 @@
-/*
+(function(window, document){
+
+    'use strict'
+
+    /*
 1. Envolva todo o conteúdo desse desafio em uma IIFE.
 2. Adicione a diretiva 'use strict';
 3. Passe por parâmetro para a IIFE os objetos window e document.
@@ -14,43 +18,66 @@ resultado à uma variável chamada `username`. Se o usuário não digitar um
 nome, `username` deve receber "Desconhecido".
 Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
 */
-// ?
+
+var username
+
+username = prompt('Qual o seu nome?')
+
+if(!username){
+    username = 'Desconhecido'
+}
+
+alert('Bem vindo '+username)
+
 
 /*
 Agora, pergunte ao usuário "Qual o seu e-mail?", atribuindo o resultado à
 uma variável chamada `email`.
 */
-// ?
+
+var email = prompt('Qual o seu email?')
+
+
 
 /*
 - Selecione o input de "Nome", atribuindo-o à uma variável chamada
 `$inputUsername`.
 */
-// ?
+
+var $inputUsername = document.querySelector('[type=text]')
+
+console.log($inputUsername)
 
 /*
 - Selecione o input de "Email", atribuindo-o à uma variável chamada
 `$inputEmail`.
 */
-// ?
+var $inputEmail = document.querySelector('[type=email]')
+
+console.log($inputEmail)
 
 /*
 - Selecione o campo de "Mensagem", atribuindo-o à uma variável chamada
 `$message`.
 */
-// ?
+
+var $message = document.querySelector('textarea')
+console.log($message)
 
 /*
 - Selecione o botão de envio do formulário, atribuindo-o à uma variável
 chamada `$button`.
 */
-// ?
+
+var $button = document.querySelector('button')
 
 /*
 Preencha os campos de "Nome" e "Email" que estão no documento com os valores
 entrados pelo usuário.
 */
-// ?
+
+$inputUsername.value = username
+$inputEmail.value = email
 
 /*
 Adicione um listener de evento de click ao botão que faça o seguinte:
@@ -76,7 +103,44 @@ Se for confirmado, mostre um alerta com a mensagem:
 Caso contrário, mostre um alerta com a mensagem:
     - "Não enviado."
 */
-// ?
+
+    var $form = document.querySelector('form')
+
+    $button.addEventListener('click', function(event){
+        event.preventDefault()
+        console.log('CLicou')
+
+        if($inputUsername.value === '') alert('Preencha o nome do usuário!')
+        if($inputEmail.value === '') alert('Preencha o e-mail!')
+        if($message.value == '') alert('Preencha a mensagem!')
+
+        if(isValidEmail($inputEmail.value)){
+                console.log('Email válido')
+                if(confirm('Deseja realmente mandar o formulário?')){
+                    console.log('Enviado com sucesso')
+                }else{
+                    console.log('Não enviado')
+                }
+        }else{
+            console.log('Email inválido')
+        }
+
+
+    })
+
+    function isValidEmail(email){
+        var regex = /^[\w._+]+@[\w_]+.\w{2,}(.\w{0,2})?$/gm
+
+        if(!regex.test(email)){
+            alert('Entre com email válido')
+            return false
+        }else{
+            return true
+        }
+    }
+
+    
+
 
 /*
 Crie uma função chamada `isValidEmail`, que será usada na validação do
@@ -105,3 +169,4 @@ Alguns e-mails inválidos:
     - "agua_@evida.br.com"
 */
 // ?
+})(window, document)
