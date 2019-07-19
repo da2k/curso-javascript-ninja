@@ -42,10 +42,10 @@ Crie uma função com as seguintes características:
 */
 function multiplicar(x,y,z) {
   var msgErro = 'Preencha todos os valores corretamente!';
-  if (x == undefined || y == undefined || z == undefined)
+  if (x === undefined || y === undefined || z === undefined) {
     return msgErro;
-  else
-    return (x * y * z) + 2;
+  }
+  return (x * y * z) + 2;
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
@@ -70,13 +70,13 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function complexa(x,y,z) {
-	if (x != undefined && y == undefined && z == undefined)
+	if (x !== undefined && y === undefined && z === undefined)
 	   return x;
-	else if (x != undefined && y != undefined && z == undefined)
+	else if (x !== undefined && y !== undefined && z === undefined)
 	   return x + y;
-	else if (x != undefined && y != undefined && z != undefined)
+	else if (x !== undefined && y !== undefined && z !== undefined)
 	   return (x + y) / z;
-	else if (x == undefined && y == undefined && z == undefined)
+	else if (x === undefined && y === undefined && z === undefined)
 	   return false;
 	else
 	   return null;
