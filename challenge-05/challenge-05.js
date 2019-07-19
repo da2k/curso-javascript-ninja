@@ -55,19 +55,19 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-function book(livro){
-    var obj = {
-        livro1: {
+function book(bookName){
+    var allBooks = {
+        'Livro 1': {
             quantidadePaginas: 100,
             autor: 'Alison Gustavo de Lima',
             editora: 'Saraiva'
         },
-        livro2: {
+        'Livro 2': {
             quantidadePaginas: 175,
             autor: 'Fernando Daciuk',
             editora: 'Atlas'
         },
-        livro3: {
+        'Livro 3': {
             quantidadePaginas: 300,
             autor: 'Autor desconhecido',
             editora: 'Mundo'
