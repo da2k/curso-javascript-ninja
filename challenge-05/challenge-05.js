@@ -22,7 +22,7 @@ segundo, um número. A função deve retornar o valor de um índice do array que
 no primeiro parâmetro. O índice usado para retornar o valor, deve ser o número passado no
 segundo parâmetro.
 */
-function myFunction(array, num){
+function myFunction(array, num) {
     return array[num];
 }
 
@@ -55,7 +55,7 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-function book(bookName){
+function book(bookName) {
     var allBooks = {
         'Livro 1': {
             quantidadePaginas: 100,
@@ -87,18 +87,21 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-console.log('O livro livro1 tem ' + book('livro1').quantidadePaginas + ' páginas!');
+var bookName = 'Livro 1';
+console.log('O livro ' + bookName + ' tem ' + book(bookName).quantidadePaginas + ' páginas!');
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log('O autor do livro livro2 é ' + book('livro2').autor + '.');
+bookName = 'Livro 2';
+console.log('O autor do livro ' + bookName + ' é ' + book(bookName).autor + '.');
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log('O livro livro3 foi publicado pela editora ' + book('livro2').editora + '.');
+bookName = 'Livro 3';
+console.log('O livro ' + bookName + ' foi publicado pela editora ' + book(bookName).editora + '.');
