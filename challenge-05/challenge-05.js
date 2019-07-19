@@ -74,9 +74,7 @@ function book(bookName){
         }
     };
 
-    if(bookName !== undefined) return allBooks[bookName];
-
-    return allBooks;
+    return !bookName ? allBooks : allBooks[bookName];
 }
 
 /*
