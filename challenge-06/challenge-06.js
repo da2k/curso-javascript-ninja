@@ -15,7 +15,7 @@ desafio.
 */
 var teams = ['Cotinthians', 'São Paulo', 'Palmeiras', 'Santos', 'Red Bull Brasil'];
 
-console.log( 'Times que estão participando do campeonato:', teams );
+console.log('Times que estão participando do campeonato:', teams);
 
 /*
 Crie uma função chamada `showTeamPosition` com as seguintes características:
@@ -33,7 +33,8 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     - Se não houver time para a posição passada, deve retornar a mensagem:
     "Não temos a informação do time que está nessa posição."
 */
-function showTeamPosition(teamPosition){
+//Como eu fiz
+/* function showTeamPosition(teamPosition){
     var position;
     var team;
 
@@ -63,7 +64,15 @@ function showTeamPosition(teamPosition){
     }
 
     return 'O time que está em ' + position + 'º lugar é o ' + team + '.';
+} */
+function showTeamPosition(position) {
+
+    if (position < 1 || position > 5)
+        return "Não temos a informação do time que está nessa posição.";
+
+    return 'O time que está em ' + position + 'º lugar é o ' + teams[position - 1] + '.';
 }
+
 
 /*
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
@@ -79,8 +88,8 @@ Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
 repetição "while".
 */
 var count = 20;
-while(++count <= 30){
-  console.log(count);
+while (count <= 30) {
+    console.log(count++);
 }
 
 /*
@@ -95,9 +104,9 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     a frase:
     "Não temos o equivalente hexadecimal para [COR]."
 */
-function convertToHex(color){
+function convertToHex(color) {
     var hex;
-    switch(color){
+    switch (color) {
         case 'red':
             hex = '#ff0000';
             break;
