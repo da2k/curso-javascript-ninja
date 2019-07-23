@@ -8,16 +8,17 @@ Crie uma função chamada `addItem`, que irá adicionar itens no array criado.
 A função deverá retornar o array atualizado.
 */
 function addItem(item) {
-    return arr.push(item);
+    arr.push(item);
+
+    return arr;
 }
 
 /*
 Adicione um novo array ao array criado no início do desafio, com ao menos 3
 itens de tipos diferentes, mostrando o resultado no console.
 */
-addItem([{ teste: 'teste' }, undefined, [1, 2, 3]]);
 
-console.log(arr);
+console.log(addItem([{ teste: 'teste' }, undefined, [1, 2, 3]]));
 
 /*
 Mostre no console o segundo elemento desse último array, criado acima, com a
