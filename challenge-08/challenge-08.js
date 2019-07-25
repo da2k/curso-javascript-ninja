@@ -27,7 +27,7 @@ Crie uma função literal chamada `showName`. Essa função deve retornar o
 seu nome.
 */
 function showName() {
-    return showName.name;
+    return 'Alison Gustavo';
 }
 
 /*
@@ -54,13 +54,13 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
   - Se o operador não for válido, retornar a frase:
   "Operação inválida."
 */
-function calculator(operador) {
+function calculator(operator) {
     return function (x, y) {
 
-        if (operador !== '+' && operador !== '-' && operador !== '*' && operador !== '/' && operador !== '%')
+        if (operator !== '+' && operator !== '-' && operator !== '*' && operator !== '/' && operator !== '%')
             return 'Operação inválida.';
 
-        return 'Resultado da operação: ' + x + ' ' + operador + ' ' + y + ' = ' + eval(x + operador + y) + '.';
+        return 'Resultado da operação: ' + x + ' ' + operator + ' ' + y + ' = ' + eval(x + operator + y) + '.';
     };
 }
 
