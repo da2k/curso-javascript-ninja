@@ -77,11 +77,10 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function maisTresArgumentos(a,b,c){
-  if(a || b || c == true){
-    var valorRecebido = maisTresArgumentos(a,b,c);
-    return valorRecebido;
+  if(a == true && b,c == NaN || b,c == undefined){
+    var retornaA = a;
+    return retornaA;
   }
-}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 ?
