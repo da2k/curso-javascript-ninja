@@ -1,3 +1,4 @@
+
 /*
 O desafio dessa semana é criar uma mini library (biblioteca) para
 reutilizarmos nossos códigos quando fizermos manipulação de DOM!
@@ -21,11 +22,49 @@ Só passe para o próximo problema quando tiver resolvido o anterior :)
 */
 // ?
 
-var $a = new DOM('[data-js="link"]');
-$a.on('click', function(e) {
-  e.preventDefault();
-  console.log('clicou');
-});
+// var $a = new DOM('[data-js="link"]');
+// $a.on('click', function(e) {
+//   e.preventDefault();
+//   console.log('clicou');
+// });
 
-console.log('Elementos selecionados:', $a.get());
-console.log('$a é filho de body?', $a.get()[0].parentNode === document.body);
+// console.log('Elementos selecionados:', $a.get());
+// console.log('$a é filho de body?', $a.get()[0].parentNode === document.body);
+
+
+function DOM(element){
+
+  this.$element = document.querySelectorAll(element)
+  this.name = 'Standard'
+
+  this.on = function( event, callback){
+    this.$element.forEach((e)=>{
+      e.addEventListener(event, callback)
+    })
+  }
+
+  this.off = function(event, callback){
+    $this.$element.forEach((e)=>{
+      e.removeEventListener(event, e)
+    })
+  }
+
+  this.get = function(){
+    return this.$element
+  }
+
+}
+
+
+var $elemento = new DOM('[data-js="link"]')
+
+console.log($elemento)
+
+$elemento.on('click', function(event){
+  event.preventDefault()
+
+  console.log('Clicou')
+})
+
+console.log('Elementos Selecionados: ', $elemento.get())
+console.log('$elemento é filho de body?', $elemento.get()[0].parentNode === document.body); // true
