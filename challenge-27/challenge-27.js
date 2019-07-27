@@ -1,3 +1,5 @@
+
+
 /*
 Aproveitando a lib DOM que fizemos na semana anterior, crie agora para ela
 métodos semelhantes aos que existem no array, mas que sirvam para os
@@ -19,3 +21,47 @@ Crie os seguintes métodos para verificação de tipo:
 - isArray, isObject, isFunction, isNumber, isString, isBoolean, isNull.
 O método isNull deve retornar `true` se o valor for null ou undefined.
 */
+
+function DOM(element){
+
+    this.element = document.querySelectorAll(element)
+    this.name = 'Standard'
+  
+    this.on = function( event, callback){
+      this.element.forEach((e)=>{
+        e.addEventListener(event, callback)
+      })
+    }
+  
+    this.off = function(event, callback){
+      $this.element.forEach((e)=>{
+        e.removeEventListener(event, e)
+      })
+    }
+  
+    this.get = function(){
+      return this.element
+    }
+
+    this.forEach = function(){
+        Array.prototype.forEach.apply(this.element, arguments)
+    }
+
+    this.map = function(){
+         Array.prototype.map.apply(this.element, arguments)
+    }
+  
+  }
+
+  var p = new DOM('p')
+
+  p.forEach(function(e){
+      console.log(e)
+  })
+
+  
+let j = p.map(function(e){
+    return e
+})
+
+  console.log(j)
