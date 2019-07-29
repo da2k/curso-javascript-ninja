@@ -1,6 +1,3 @@
-# Desafio Semana #1
-
-```js
 // Declarar uma variável chamada `myvar`, sem valor.
 var myvar;
 
@@ -23,7 +20,7 @@ soma *= 3;
 var souninja = true;
 
 // Declare uma variável chamada `comida` que recebe um array com os valores 'arroz', 'feijão' e 'ovo'.
-var comida = ['Arroz', 'Feijão', 'Ovo'] //Melhor prato de comida <3
+var comida = ['Arroz', 'Feijão', 'Ovo'] //Melhor prato de comida <3!
 
 // Digite a instrução que imprime o valor de 'feijao', que está na variável `comida`.
 comida[1]
@@ -48,4 +45,3 @@ function divisao(a, b)
   return a / b;
 };
 divisao(10, 2)
-```
