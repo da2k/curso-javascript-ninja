@@ -141,12 +141,78 @@ e faça a indentação correta.
     divisão e resto. Crie variáveis com os nomes "subtraction",
     "multiplication", "division" e "mod".
     */
-    // ?
+
+    // ===> Subtração
+    operationSignal = '-';
+    var subtraction = calculator(operationSignal);
+
+    if(sum) {
+        number1 = 90;
+        number2 = 36;
+
+        console.log(showOperationMessage(operationSignal, number1, number2), subtraction(number1, number2) )
+    } else {
+        showErrorMessage(operationSignal);
+    }
+
+
+    // ===> Multiplicação
+    operationSignal = '*';
+    var multiplication = calculator(operationSignal);
+
+    if(multiplication) {
+        number1 = 4;
+        number2 = 10;
+
+        console.log(showOperationMessage(operationSignal, number1, number2), multiplication(number1, number2) )
+    } else {
+        showErrorMessage(operationSignal);
+    }
+
+
+    // ===> Divisão
+    operationSignal = '/';
+    var division = calculator(operationSignal);
+
+    if(division) {
+        number1 = 100;
+        number2 = 25;
+
+        console.log(showOperationMessage(operationSignal, number1, number2), division(number1, number2) )
+    } else {
+        showErrorMessage(operationSignal);
+    }
+
+
+    // ===> Mod
+    operationSignal = '%';
+    var mod = calculator(operationSignal);
+
+    if(mod) {
+        number1 = 6;
+        number2 = 4;
+
+        console.log(showOperationMessage(operationSignal, number1, number2), mod(number1, number2) )
+    } else {
+        showErrorMessage(operationSignal);
+    }
 
     /*
     Repita o PASSO 2 novamente, mas passando um operador inválido, para ver se
     a mensagem de erro será mostrada no console.
     */
-    // ?
+
+    // ===> Bagulho errado
+    operationSignal = '~';
+    var wrong = calculator(operationSignal);
+
+    if(wrong) {
+        number1 = 6;
+        number2 = 4;
+
+        console.log(showOperationMessage(operationSignal, number1, number2), wrong(number1, number2) )
+    } else {
+        showErrorMessage(operationSignal);
+    }
 
 });
