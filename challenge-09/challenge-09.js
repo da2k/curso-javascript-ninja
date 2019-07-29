@@ -64,7 +64,7 @@
     function calculator(n1, n2){
         return function(callback){
             return callback(n1, n2);
-        }
+        };
     }
 
     /*
