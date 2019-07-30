@@ -140,7 +140,7 @@
     - O segundo, a função de soma, passando os dois operandos.
     - Se "sum" for "false", mostrar no console a mensagem de erro.
     */
-    if (!!sum) {
+    if (sum) {
         number1 = 2;
         number2 = 2;
         console.log(showOperationMessage(operationSignal, number1, number2), sum(number1, number2));
