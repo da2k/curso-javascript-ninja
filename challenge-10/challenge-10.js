@@ -53,10 +53,16 @@
     Caso contrário, "false".
     - O desafio é fazer o retorno sem usar "if" ou "switch".
     */
-    function isOperatorValid(operator) {
+    //Como fiz
+    /* function isOperatorValid(operator) {
         return typeof (operation[operator]) === 'function' ? true : false;
-    }
+    } */
 
+    //Como Daciuk fez
+    function isOperatorValid(operator) {
+        return !!operation[operator];
+    }
+ 
     /*
     Agora vamos criar a calculadora.
     - Crie uma função chamada `calculator`, que receberá como parâmetro um
