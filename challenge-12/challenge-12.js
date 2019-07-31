@@ -36,20 +36,9 @@
     `name`: String
     `pages`: Number
     */
-    books = [
-        {
-            name: 'Alice no país das maravilhas',
-            pages: 300
-        },
-        {
-            name: 'Harry Potter',
-            pages: 200
-        },
-        {
-            name: 'O senhor dos aneis',
-            pages: 100
-        }
-    ];
+    books.push({ name: 'Alice no país das maravilhas', pages: 300 });
+    books.push({ name: 'Harry Potter', pages: 200 });
+    books.push({ name: 'O senhor dos aneis', pages: 100 });
     console.log('\nLista de livros:');
 
     /*
@@ -61,7 +50,7 @@
     /*
     Remova o último livro, e mostre-o no console.
     */
-    console.log(Object.keys(books).pop());
+    console.log(books.pop());
 
     console.log('\nAgora sobraram somente os livros:');
     /*
