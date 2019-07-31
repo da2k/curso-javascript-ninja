@@ -4,29 +4,35 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-?
+function soma(a,b) {
+... return a+b;
+... }
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-?
+var fun = soma(3,5) + 5;
 
 // Qual o valor atualizado dessa variável?
-?
+13
 
 // Declare uma nova variável, sem valor.
-?
+var x;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-?
+function addvalue() {
+... x = 15;
+... var value = 'O valor da variável agora é 15';
+... return value;
+... }
 
 // Invoque a função criada acima.
-?
+addvalue();
 
 // Qual o retorno da função? (Use comentários de bloco).
-?
+/*'O valor da variável agora é 15'*/
 
 /*
 Crie uma função com as seguintes características:
@@ -35,19 +41,27 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-?
+function arg(c,d,e) {
+... if ( c === undefined || d === undefined || e === undefined) {
+..... var pre = 'Preencha todos os valores corretamente!';
+..... return pre;
+..... } else {
+..... var f = c * d * e;
+..... return f + 2;
+..... }
+... }
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+arg(5,4);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+//'Preencha todos os valores corretamente!'
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+arg(2,3,2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+//o resultado foi 14
 
 /*
 Crie uma função com as seguintes características:
@@ -58,8 +72,43 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+ function arg2 ( g , h , i ) {
+... if( g !== undefined && h===undefined && i===undefined) {
+..... return g;
+..... } else if(g === undefined && h !== undefined && i===undefined) {
+..... return h;
+..... } else if(g === undefined && h === undefined && i !==undefined) {
+..... returni;
+..... } else if(g!==undefined && h !== undefined && i===undefined) {
+..... return g + h;
+..... } else if(g === undefined && h !== undefined && i !== undefined) {
+..... return h + i;
+..... } else if(g !== undefined && h === undefined && i !== undefined) {
+..... return g + i;
+..... } else if(g !== undefined && h !== undefined && i !== undefined) {
+..... var j =  g + h;
+..... return j / i;
+..... } else if(g === undefined && h === undefined && i === undefined) {
+..... var fake = false;
+..... return fake;
+..... }
+... else {
+..... var amen = null;
+..... return amen;
+..... }
+... }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+> arg2(); //false
+false
+> arg2(45); //45
+45
+> arg2(); //false - sem nenhum argumento
+false
+> arg2(45); // 45 - com um argumento irá repetir o valor
+45
+> arg2(3,5); //8 - com dois argumentos irá somar os dois
+8
+> arg2(5,15,4); //5 - com 3 argumentos
+5
 ```
