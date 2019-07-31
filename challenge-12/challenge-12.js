@@ -28,7 +28,7 @@
     /*
     Crie um array vazio chamado `books`.
     */
-    var books = {};
+    var books = [];
 
     /*
     Adicione nesse array 3 objetos, que serão 3 livros. Cada livro deve ter a
@@ -36,20 +36,20 @@
     `name`: String
     `pages`: Number
     */
-    books = {
-        book1: {
+    books = [
+        {
             name: 'Alice no país das maravilhas',
             pages: 300
         },
-        book2: {
+        {
             name: 'Harry Potter',
             pages: 200
         },
-        book3: {
+        {
             name: 'O senhor dos aneis',
             pages: 100
         }
-    }
+    ];
     console.log('\nLista de livros:');
 
     /*
@@ -91,7 +91,9 @@
     no formato abaixo:
         "[PROPRIEDADE]: [VALOR]"
     */
-    console.log(books);
+    for (var book in books) {
+        console.log(books[book]);
+    }
 
     /*
     Crie um array chamado `myName`. Cada item desse array deve ser uma letra do
