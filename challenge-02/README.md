@@ -24,8 +24,7 @@ Onde VALOR é o novo valor da variável.
 */
 function addvalue() {
 ... x = 15;
-... var value = 'O valor da variável agora é 15';
-... return value;
+... return 'O valor da variável agora é ' + x;
 ... }
 
 // Invoque a função criada acima.
@@ -41,14 +40,11 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-function arg(c,d,e) {
-... if ( c === undefined || d === undefined || e === undefined) {
-..... var pre = 'Preencha todos os valores corretamente!';
-..... return pre;
-..... } else {
-..... var f = c * d * e;
-..... return f + 2;
+function arg(a , b , c) {
+... if( a === undefined || b === undefined || c === undefined) {
+..... return 'Preencha todos os valores corretamente!';
 ..... }
+... return a*b*c + 2;
 ... }
 
 // Invoque a função criada acima, passando só dois números como argumento.
@@ -72,29 +68,17 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
- function arg2 ( g , h , i ) {
-... if( g !== undefined && h===undefined && i===undefined) {
-..... return g;
-..... } else if(g === undefined && h !== undefined && i===undefined) {
-..... return h;
-..... } else if(g === undefined && h === undefined && i !==undefined) {
-..... returni;
-..... } else if(g!==undefined && h !== undefined && i===undefined) {
-..... return g + h;
-..... } else if(g === undefined && h !== undefined && i !== undefined) {
-..... return h + i;
-..... } else if(g !== undefined && h === undefined && i !== undefined) {
-..... return g + i;
-..... } else if(g !== undefined && h !== undefined && i !== undefined) {
-..... var j =  g + h;
-..... return j / i;
-..... } else if(g === undefined && h === undefined && i === undefined) {
-..... var fake = false;
-..... return fake;
-..... }
-... else {
-..... var amen = null;
-..... return amen;
+> function arg2( a , b , c ) {
+... if ( a !== undefined && b === undefined && c === undefined ) {
+..... return a;
+..... } else if( a !== undefined && b !== undefined && c === undefined ) {
+..... return a + b;
+..... } else if(a !== undefined && b !== undefined && c !== undefined) {
+..... return (a+b) / c;
+..... } else if (a === undefined && b === undefined && c === undefined) {
+..... return false;
+..... } else {
+..... return null;
 ..... }
 ... }
 
