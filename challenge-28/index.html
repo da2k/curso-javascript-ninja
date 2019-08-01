@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <title>Consulta CEP</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+    
+        input::-webkit-input-placeholder{
+            color:rgb(64, 153, 98) !important;
+            font-weight: bolder;
+            font-style: italic;
+        }
+        
+        input[type=text]{
+            color:black;
+            font-weight: bolder;
+            font-size:1.2em;
+            text-align: center;
+        }
+
+
+        #status{
+            display: none;
+        }
+    </style>
+  </head>
+  <body>
+
+    
+    <div class="container">
+        <div class="row">
+            <div class="offset-3"></div>
+                <div class="col-md-6">
+                    <div class="card mt-3">
+                        <div class="card-header">
+                            <h3 class="text-center font-weight-bold font-italic text-success">VIACEP API</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="mx-xl-2">
+
+                                <input type="text" name="cep" id="inputCep" placeholder="INFORME O CEP" class="form-control form-control-sm" maxlength="9" autofocus>
+                                
+                                <button class="btn btn-success btn-block btn-sm mt-2" disabled>Buscar</button>
+                                <div id="status" class="">
+                                    <span id="aviso" class="font-weight-bolder text-center d-block">CEP INVÁLIDO</span> 
+                                </div>
+
+                                <ul class="list-group list-group-flush d-none" id="info">
+                                        <li class="list-group-item p-1" id="cep">CEP: 41387-180 </li>
+                                        <li class="list-group-item p-1" id="log">Logradouro: Travessa ideal</li>
+                                        <li class="list-group-item p-1" id="bai">Bairro: Sete de abril</li>
+                                        <li class="list-group-item p-1" id="cid">Cidade: Salvador</li>
+                                        <li class="list-group-item p-1" id="uf">Estado: BA</li>
+                                      </ul>
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            <div class="offset-3"></div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="challenge-28.js"></script>
+</body>
+</html>

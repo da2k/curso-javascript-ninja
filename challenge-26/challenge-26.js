@@ -66,5 +66,5 @@ $elemento.on('click', function(event){
   console.log('Clicou')
 })
 
-console.log('Elementos Selecionados: ', $elemento.get())
+console.log('Elementos Selecionados: ', $elemento.get()) /
 console.log('$elemento é filho de body?', $elemento.get()[0].parentNode === document.body); // true

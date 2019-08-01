@@ -25,3 +25,100 @@
   - Utilize a lib DOM criada anteriormente para facilitar a manipulação e
   adicionar as informações em tela.
   */
+
+  $input = document.querySelector('input')
+  $divStatus = document.querySelector('#status')
+  $spanAviso = document.querySelector('#aviso')
+  $btn = document.querySelector('.btn')
+
+  $divDados = document.querySelector('#info')
+  
+  $input.addEventListener('input', valida)
+  $btn.addEventListener('click', busca)
+
+
+  function valida(){
+    let cep = this.value
+
+    if(cep.length == 5){
+      this.value +='-'
+    }
+
+    if(cep.length <9){
+      $divStatus.classList.remove("d-block")
+      $divDados.classList.value = "list-group list-group-flush d-none"
+      $btn.setAttribute("disabled","")
+    }
+
+    if(cep.length == 9){
+      let regex = /^\d{5}-\d{3}$/gmi
+
+      if(cep.match(regex)){
+        console.log('CEP válido')
+
+        $divStatus.classList.value = "alert alert-info d-block mt-2 p-1"
+        $spanAviso.innerText = 'CEP VÁLIDO'
+        $btn.removeAttribute("disabled")
+
+      }else{
+        console.log('Cep inválido')
+        $divDados.classList.value = "list-group list-group-flush d-none"
+        $divStatus.classList.value = "alert alert-danger d-block mt-2 p-1"
+        $spanAviso.innerText = 'CEP INVÁLIDO'
+      }
+    }
+  }
+
+
+  function busca(){
+    let cep = $input.value.replace("-","")
+    let url = `https://viacep.com.br/ws/${cep}/json/`;
+
+    let request = new XMLHttpRequest()
+        request.open('GET', url)
+    
+    
+
+        request.addEventListener('readystatechange', function(){
+          
+
+          console.log(request.readyState)
+
+          if(request.readyState < 4){
+              $divStatus.classList.value = "alert alert-warning d-block mt-2 p-1"
+              $spanAviso.innerText = 'CARREGANDO...'
+          
+            }else if(request.readyState == 4){  
+              let dados = JSON.parse(request.responseText);
+
+              if(!dados.erro){
+
+                  $divStatus.classList.value = "alert alert-success d-block mt-2 p-1"
+                  $spanAviso.innerText = 'CARREGADO COM SUCESSO'
+
+                  $divDados.classList.value = "list-group list-group-flush d-block"
+                  $liCep = document.querySelector('#cep')
+                  $liLog = document.querySelector('#log')
+                  $liBai = document.querySelector('#bai')
+                  $liCid = document.querySelector('#cid')
+                  $liUf = document.querySelector('#uf')
+
+                  $liCep.innerText = 'CEP: '+dados.cep
+                  $liLog.innerText = 'Logradouro: '+dados.logradouro
+                  $liBai.innerText = 'Bairro: '+dados.bairro
+                  $liCid.innerText = 'Cidade: '+dados.localidade
+
+              }else{
+
+                $divStatus.classList.value = "alert alert-dark d-block mt-2 p-1"
+                $spanAviso.innerText = 'CEP NÃO ENCONTRADO'
+              }
+
+            }
+
+    })
+
+    request.send(null)
+
+    console.log('Buscando cep: '+cep+' na url: '+url)
+  }
