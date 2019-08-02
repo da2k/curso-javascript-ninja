@@ -63,12 +63,10 @@ que foram passadas para a primeira função `calculator`.
 
 function calculator( x , y) {
     return function(callback) {
-        function() {
-            
-        }
         return callback( x , y)
+        }
     }
-}
+
 
 /*
 Declare uma variável chamada `sum`, e atribua a ela a função `calculator`,
@@ -87,7 +85,7 @@ uma função anônima que irá retornar a soma dos dois números que essa funç�
 anônima tem como seus argumentos.
 */
 console.log( 'O resultado da soma é:', );
-// ?
+console.log(sum(function (){ w + z}))
 
 /*
 Agora declare outra variáveis chamadas `subtraction`, `multiplication`,
