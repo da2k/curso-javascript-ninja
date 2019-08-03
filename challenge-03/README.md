@@ -37,8 +37,8 @@ valor dessa propriedade a quantidade passada por parâmetro;
 - Ele deverá modificar o valor da propriedade `andando` para o valor
 booleano que representa "verdadeiro";
 */
-pessoa.andar = function(a){
-... return pessoa.caminhouQuantosMetros + a;
+ pessoa.andar = function(c) {
+... caminhouQuantosMetros += c;
 ... pessoa.andando = true;
 ... }
 
@@ -171,28 +171,20 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao = function(){
-... if( pessoa.sexo === 'Feminino' ) {
-..... x = 'a';
-..... return 'Olá, eu sou ' + x + ' ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + ' anos, ' + pessoa.altura + 'm, meu peso é ' + pessoa.peso + 'kg e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metros!';
-..... } else if( pessoa.idade === 1 ) {
-..... x = ' ano, ';
-..... return 'Olá, eu sou o ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + x + pessoa.altura + 'm, meu peso é ' + pessoa.peso + 'kg e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metros!';
-..... } else if(pessoa.caminhouQuantosMetros === 1) {
-..... x = ' metro!';
-..... return'Olá, eu sou o ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + ' anos, ' + pessoa.altura + 'm, meu peso é ' + pessoa.peso + 'kg e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + x;
-..... }
-... return 'Olá, eu sou o ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + ' anos, ' + pessoa.altura + 'm, meu peso é ' + pessoa.peso + 'kg e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metros!';
-... }
+var x = 'o';
+var y = 'anos';
+var z = 'metros';
+	
+	if(pessoa.sexo === 'Feminino'){
+	x = 'a';
+	};
+	if(pessoa.idade === 1){
+	y = 'ano';
+	};
+	if(pessoa.caminhouQuantosMetros ===1){
+	z = 'metro';
+	};
 
-// Agora, apresente-se ;)
-pessoa.apresentacao(); //para as informações normais
-'Olá, eu sou o Lucas Guiral, tenho 30 anos, 1.85m, meu peso é 85kg e, só hoje, eu já caminhei 13 metros!'
-
-pessoa.apresentacao();//Para sexo = Feminino
-'Olá, eu sou a Lucas Guiral, tenho 30 anos, 1.85m, meu peso é 85kg e, só hoje, eu já caminhei 13 metros!'
-pessoa.apresentacao();//Para 1 ano de idade
-'Olá, eu sou o Lucas Guiral, tenho 1 ano, 1.85m, meu peso é 85kg e, só hoje, eu já caminhei 13 metros!'
-
-pessoa.apresentacao();//Para um metro
-'Olá, eu sou o Lucas Guiral, tenho 30 anos, 1.85m, meu peso é 85kg e, só hoje, eu já caminhei 1 metro!'
+return 'Olá, eu sou ' + x + ' ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + ' ' + y + ', ' + pessoa.altura + ' , meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' ' + z + '!'
+};
 ```
