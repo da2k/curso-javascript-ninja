@@ -52,6 +52,7 @@ Após a função, mostrar a mensagem no console:
 */
 
 function moreThan(idade) {
+    // return person.age > age
     if(person.age > idade) {
         return true
     }
@@ -83,7 +84,17 @@ criado acima, só precisa ser reiniciado) números de 0 a 20, inclusive
 esses. Se o número for ímpar, pular para o próximo número.
 Mostrar no console os números do array.
 */
+var numbers2 = []
 console.log( 'Pares de 0 a 20:' );
+
+for(counter = 0; counter <= 20; counter++) {
+    if(counter % 2 == 0) {
+        continue;
+    }
+    numbers2.push(counter)
+}
+
+console.log(numbers2)
 
 // ?
 })()
