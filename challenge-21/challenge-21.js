@@ -30,38 +30,37 @@
  var $reset = doc.querySelector( '[data-js="reset"]' );
 
 
- var cont = 0;
+ $start.addEventListener( 'click' , startTimer , false )
+
+
+ $stop.addEventListener(  'click' , stopTimer , false )
+
+
+ $reset.addEventListener( 'click' , resetTimer , false )
+
 
  var temporizador;
 
- function timer(){
+ function startTimer(){
          
-   $inputCronometro.value = cont;
-   cont += 1;
-
+   $inputCronometro.value = Number($inputCronometro.value) + 1;
    temporizador = setTimeout( timer ,1000);  
     
  }
 
- $start.addEventListener( 'click' , timer  , false )
 
+ function stopTimer(){
+     
+      clearTimeout( temporizador )
 
- $stop.addEventListener( 'click' , function(){
-   
-   clearTimeout( temporizador )
+ }
 
- } , false )
+function resetTimer(){
 
+   $inputCronometro.value = 0;
+   stopTimer()
 
- $reset.addEventListener( 'click' ,function(){
-   
-   cont = 0;
-   $inputCronometro.value = cont;
-
-   clearTimeout( temporizador );
-   
- } , false )
-
+}
 
 
 
