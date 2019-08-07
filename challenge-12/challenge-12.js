@@ -22,9 +22,7 @@
 	Mostre no console, em um array, todas as propriedades do objeto acima.
 	Não use nenhuma estrutura de repetição, nem crie o array manualmente.
 	*/
-	for(var prop in person){
-		console.log(prop);
-	}
+	console.log(Object.keys(person));
 
 	/*
 	Crie um array vazio chamado `books`.
