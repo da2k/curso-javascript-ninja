@@ -17,6 +17,13 @@
         console.log(item)
     });
 
+    var numberObjects2 = []
+    for( var i = 1 ; i <= 10; i++) {
+        numberObjects2.push({number: i})
+    }
+
+    console.log(numberObjects2)
+
     /*
     Crie um array chamado `justNumbers`, que terá como elementos somente os
     números do array criado acima. Mostre esse novo array no console.
@@ -89,7 +96,7 @@
     var nameP = name.reduce(function (acumulador , valorAtual) {
         return  acumulador + 'P' + valorAtual
 
-    })
+    }, '')
 
     console.log(nameP)
 
@@ -103,6 +110,7 @@
     })
 
     console.log(inversedName)
+    console.log(name.reverse().join(''))
 
     /*
     Mostre no console o array `numberObjects`.
@@ -126,7 +134,7 @@
     })
     console.log(existe)
     
-    if(numberObjects.indexOf({number:2})) {
+    if(numberObjects.indexOf({number:2}) > -1) {
         console.log('Existe um objeto { number: 2 } em numberObjects!')
     } else {
         console.log('Não existe um objeto { number: 2 } em numberObjects :(')
@@ -140,7 +148,7 @@
     */
     console.log( '\nE buscando a partir do último índice, o { number: 2 } existe?' );
 
-    if(numberObjects.lastIndexOf({number:2})) {
+    if(numberObjects.lastIndexOf({number:2}) > -1) {
         console.log('Existe um objeto { number: 2 } em numberObjects!')
     } else {
         console.log('Não existe um objeto { number: 2 } em numberObjects :(')
