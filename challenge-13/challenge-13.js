@@ -8,13 +8,13 @@
 	usando o método visto na aula 13.
 	*/
 	console.log( 'O array em formato de string é:' );
-	console.log(['p',true,3,2.5,false].toString());
+	console.log(['Paulo','ninja','javaScript',true].toString());
 	/*
 	Crie 2 arrays `sul` e `sudeste`, que serão as regiões do Brasil.
 	Cada array deve conter os estados dessa região.
 	*/
-	var sul = ['Paraná','Rio Grande do Sul', 'Santa Catarina'];
-	var sudeste = ['São Paulo','Rio de Janeiro', 'Minas Gerais','Espírito Santo'];
+	var sudeste = ['Espirito Santo','Minas Gerais','São Paulo','Rio de Janeiro'];
+	var sul = ['Paraná','Santa Catarina','Rio Grande do Sul'];
 
 	/*
 	Crie uma variável chamada `brasil`, que irá receber as duas regiões
@@ -27,24 +27,22 @@
 	Adicione 3 novos estados da região Norte no início do array e mostre no console.
 	*/
 	console.log( '\nMais estados adicionados:' );
-	brasil.unshift('Acre','Pará','Rondônia');
+	brasil.unshift('Acre','Amapa','Pará');
 	console.log(brasil);
 	/*
 	Remova o primeiro estado do array `brasil` e mostre-o no console.
 	*/
 	console.log( '\nEstado removido:' );
-	var estadoRemovido = brasil.shift();
-	console.log(estadoRemovido);
+	console.log(brasil.shift());
 
 	/*
 	Crie um novo array chamado `newSul`, que receba somente os estados do sul,
 	pegando do array `brasil`. Não remova esses itens de `brasil`.
 	*/
-	
-	var newSul = brasil.filter(function(item){
-		return item === 'Paraná' || item === 'Santa Catarina' || item === 'Rio Grande do Sul';
-	})	
-	
+	//var newSul = [];
+	var newSul = brasil.slice(2, 5)
+
+				
 	/*
 	Mostre no console os estados que estão em `newSul`.
 	*/
@@ -60,7 +58,7 @@
 	/*
 	Crie um novo array chamado `nordeste`, que tenha os estados do nordeste.
 	*/
-	var nordeste = ['Maranhão','Piauí','Ceará','Rio Grande do Norte','Paraíba','Pernambuco','Alagoas','Sergipe','Bahia'];
+	var nordeste = ['Maranhão','Piauí','Ceará','Rio Grande do Norte','Paraíba','Pernambuco','Sergipe','Alagoas','Bahia'];
 
 	/*
 	Mostre no console os estados do nordeste.
@@ -100,12 +98,13 @@
 	- `estado`: que será o estado do array `brasil`.
 	*/
 	var newBrasil = [];
-	brasil.forEach(function(item, index){
+	brasil.forEach(function(item, index, array){
 		newBrasil.push({
 			id: index,
 			estado: item
 		});
 	});
+
 	/*
 	Mostre o array `newBrasil` no console
 	*/
@@ -120,11 +119,10 @@
 	- "Nem todos os estados tem mais de 7 letras!"
 	*/
 	console.log( '\nTodos os estados de `brasil` tem mais de 7 letras?' );
-	var teste = brasil.every(function(item){
+	var every = brasil.every(function(item){
 		return item.length > 7;
 	});
-
-	console.log(teste ? 'Sim, todos os estados tem mais de 7 letras!' : 'Nem todos os estados tem mais de 7 letras!');
+	console.log(every ? 'Sim, todos os estados tem mais de 7 letras!' : 'Nem todos os estados tem mais de 7 letras!');
 	
 	/*
 	Percorra o array `brasil` e verifique se o Ceará está incluído, atribuindo o
@@ -135,11 +133,10 @@
 	- "Ceará não foi incluído :("
 	*/
 	console.log( '\nCeará está incluído em `brasil`?' );
-	var teste2 = brasil.some(function(item){
+	var some = brasil.some(function(item){
 		return item === 'Ceará';
-	})
-
-	console.log(teste2 ? 'Ceará está incluído!' : 'Ceará não foi incluído :(');
+	});
+	console.log(some ? 'Ceará está incluído!' : 'Ceará não foi incluído :(');
 	
 	/*
 	Percorra o array `newBrasil` e crie um novo array que some 1 no ID de cada
@@ -147,12 +144,21 @@
 	- "[ESTADO] pertence ao Brasil."
 	Atribua o novo array a uma variável chamada `map`.
 	*/
-	var map = newBrasil.map(function(item){
-		item.id++;
-		item.estado += ' pertence ao Brasil';
-		return item;
-	});
+	var map = newBrasil.map(function(item, index){
+		/*
+		return {
+			id: item.id++,
+			estado: item.estado + ' pertence ao Brasil.'
+		};
+		*/
+		
+			item.id++;
+			item.estado += " pertence ao Brasil.";
+			return item;
+		
 
+	});
+	
 	/*
 	Mostre no console o array criado acima:
 	*/
@@ -163,8 +169,8 @@
 	Filtre o array criado acima, retornando somente os estados que tiverem
 	ID par. Atribua o valor à uma variável chamada `filter`.
 	*/
-	var filter = map.filter(function(item){
-		return item.id % 2 === 0;
+	var filter = map.filter(function(item, index, array){
+		return item.id % 2 === 0;	 
 	});
 
 	/*
