@@ -28,9 +28,9 @@
     this.name = name,
     this.lastName = lastName,
     this.age = age
-    getFullName = () => console.log (`${this.name} ${this.lastName}`),
-    getAge = () => console.log(this.age),
-    addAge = (arguments) => console.log(arguments + this.age) 
+    this.getFullName = function () { return `${this.name} ${this.lastName}`}
+    this.getAge = () => this.age
+    this.addAge = (arguments) => arguments + this.age
   }
 
   /*
@@ -50,6 +50,9 @@
   Mostre no console o nome completo de cada pessoa.
   */
   console.log( '\nNomes das pessoas:' );
+  console.log(pessoa1.getFullName()) 
+  console.log(pessoa2.getFullName())
+  console.log(pessoa3.getFullName())
   
 
   /*
@@ -57,7 +60,10 @@
   - "[NOME COMPLETO] tem [IDADE] anos."
   */
   console.log( '\nIdade das pessoas:' );
-  // ?
+  console.log(` ${pessoa1.getFullName()} tem ${pessoa1.getAge()} anos`)
+  console.log(` ${pessoa2.getFullName()} tem ${pessoa2.getAge()} anos`)
+  console.log(` ${pessoa3.getFullName()} tem ${pessoa3.getAge()} anos`)
+
 
   /*
   Adicione alguns anos à cada pessoa, e mostre no console a nova idade de
@@ -65,5 +71,7 @@
   - "[NOME COMPLETO] agora tem [NOVA IDADE] anos."
   */
   console.log( '\nNova idade das pessoas:' );
-  // ?
+  console.log(`${pessoa1.getFullName()} agora tem ${pessoa1.addAge(2)} anos.`)
+  console.log(`${pessoa2.getFullName()} agora tem ${pessoa2.addAge(2)} anos.`)
+  console.log(`${pessoa3.getFullName()} agora tem ${pessoa3.addAge(2)} anos.`)
 })()
