@@ -97,10 +97,16 @@ console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
 var myName = 'raphael'
 var newName = myName.split('').map(function(item, index) {
     return index % 2 === 0 ? item.toUpperCase() : item.toLowerCase()
-}).join()
+}).join('')
 
 console.log(newName)
 
+var newName2 = []
 
+for( var i = 0 , len = myName.length ; i < len ; i++) {
+    newName2.push( i % 2 === 0 ? myName[i].toLowerCase() : myName[i].toUpperCase())
+}
+
+console.log(newName2.join(''))
 
 })()
