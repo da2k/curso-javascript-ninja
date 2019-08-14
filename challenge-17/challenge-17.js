@@ -12,7 +12,7 @@ regulares! Para isso, iremos usar o texto abaixo. Coloque-o em uma
 variável chamada `text`:
 "Manuel Marques de Sousa, Conde de Porto Alegre (Rio Grande, 13 de junho de 1804 – Rio de Janeiro, 18 de julho de 1875), apelidado de "O Centauro de Luvas", foi um militar, político, abolicionista e monarquista brasileiro."
 */
-var text = 'Manuel Marques de Sousa, Conde de Porto Alegre (Rio Grande, 13 de junho de 1804 – Rio de Janeiro, 18 de julho de 1875), apelidado de "O Centauro de Luvas", foi um militar, político, abolicionista e monarquista brasileiro.'
+var text = 'Manuel Marques de Sousa, Conde de Porto Alegre (Rio Grande, 13 de Junho de 1804 – Rio de Janeiro, 18 de Julho de 1875), apelidado de "O Centauro de Luvas", foi um militar, político, abolicionista e monarquista brasileiro.'
 
 /*
 Vamos começar com umas brincadeiras fáceis :D
@@ -20,7 +20,7 @@ Troque o nome "Manuel Marques de Sousa" pelo seu nome, e mostre o resultado
 no console:
 */
 console.log( 'Adicionando seu nome no texto:' );
-var newText = text.replace('Manuel Marques de Sousa', 'Raphael Silvestre dos Santos')
+var newText = text.replace(/Manuel Marques de Sousa/, 'Raphael Silvestre dos Santos')
 console.log(newText)
 
 /*
@@ -29,7 +29,7 @@ console.
 Ex: Se você for da São Paulo, substitua por "paulista".
 */
 console.log( '\nTrocando naturalidade:' );
-var newText = newText.replace('brasileiro' , 'paulista' )
+var newText = newText.replace(/brasileiro/g , 'paulista' )
 console.log(newText)
 
 
@@ -46,7 +46,7 @@ Substitua todas as letras (somente letras) de "D" maiúsculo até "h"
 minúsculo por "0" (número zero). Mostre o resultado no console:
 */
 console.log( '\nTrocando de "D" a "h" por "0":' );
-var newText = newText.replace([/[D-h]/gi , '0'])
+var newText = newText.replace(/[D-Hd-h]/g , '0')
 console.log(newText)
 
 /*
@@ -62,7 +62,15 @@ Substitua a frase "O Centauro de Luvas", deixando-a em caixa alta, usando
 o método `toUpperCase()`. Mostre o resultado no console:
 */
 console.log( '\n"O Centauro de Luvas" em caixa alta:' );
-// ?
+var frase = 'O Centauro de Luvas'
+frase.replace(/[a-zA-Z]/, function (){
+    console.log(frase.toUpperCase())
+})
+
+console.log(text.replace(/O Centauro de Luvas/, function (frase) {
+    return frase.toUpperCase()
+}))
+
 
 /*
 Agora iremos substituir as datas no formato "13 de junho de 1804" para
@@ -77,7 +85,29 @@ Use um console.log para cada mês, usando a frase:
 "O mês de [NOME DO MÊS] é representado pelo número [NÚMERO DO MÊS]."
 */
 console.log( '\nMeses representados por números:' );
-// ?
+
+function getMonthNumber(mes) {
+    var meses = {
+        Janeiro: '01',
+        Fevereiro: '02',
+        'Março': '03',
+        Abril: '04',
+        Maio: '05',
+        Junho: '06',
+        Julho: '07',
+        Agosto: '08',
+        Setembro: '09',
+        Outubro: '10',
+        Novembro: '11',
+        Dezembro: '12'
+    }
+    return meses[mes]
+}
+
+console.log(`O mês de Setembro é representado pelo número ${getMonthNumber('Setembro')}`)
+console.log(`O mês de Março é representado pelo número ${getMonthNumber('Março')}`)
+console.log(`O mês de Dezembro é representado pelo número ${getMonthNumber('Dezembro')}`)
+
 
 /*
 Agora, declare uma variável chamada `regexDate` que irá receber a expressão
@@ -88,7 +118,8 @@ Com o que vimos até agora, você consegue fazer :D
 Mostre a regex no console.
 */
 console.log( '\nRegex que vai fazer o match com as datas do texto:' );
-// ?
+var regexDate = /(\d\d) de (Junho|Julho) de (\d\d\d\d)/gi
+console.log(regexDate)
 
 /*
 Agora crie a função que irá fazer o replace dos dados. A função será chamada
@@ -98,5 +129,9 @@ Após criar a função, faça o replace das datas no texto, mostrando no
 console o resultado.
 */
 console.log( '\nReplace de datas:' );
-// ?
+function replaceDate(regex, day, month, year) {
+    return day +'/'+ getMonthNumber(month) + '/' + year
+}
+console.log(text.replace(regexDate, replaceDate))
+
 })()
