@@ -20,6 +20,12 @@
     var username = prompt( 'Qual o seu nome?' ) || 'Desconhecido' ;
     
     alert( 'Bem vindo ' + username  + ' !');
+
+    /**
+     * if( !username )
+     *      username = 'Desconhecido';
+     * alert( 'Bem vindo ' + username );
+     */
     
 
     /*
