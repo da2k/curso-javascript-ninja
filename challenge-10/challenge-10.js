@@ -1,6 +1,7 @@
 
 (function (){
 /*
+(function (){/*
 Crie uma IIFE que envolva todo esse arquivo (inclusive esse comentário),
 e faça a indentação correta.
 */
@@ -14,7 +15,7 @@ resolver o problema corretamente.
 var five = Number('5');
 console.log( five + ' é número?', typeof five === 'number' );
 
-var concat = String(10) + String(10);
+var concat = String(10)+ String(10);
 console.log( '"' + concat + '" é uma string? E é igual a "1010"?', typeof concat === 'string' );
 
 /*
@@ -47,8 +48,9 @@ Caso contrário, "false".
 - O desafio é fazer o retorno sem usar "if" ou "switch".
 */
 
-function isOperatorValid(operador) {
-    console.log(!!operation[operador])
+function isOperatorValid(operador){
+    //return operation[operador] !== undefined
+    return !!operation[operador]
 }
 
 /*
@@ -64,17 +66,18 @@ operador passado para a função "calculator", e passando para esse método
 os dois parâmetros da função de retorno de "calculator".
 */
 
-function calculator( operador) {
-    if(!isOperatorValid (operador)) {
+function calculator(operador) {
+    if(!isOperatorValid(operador)) {
         return false
     }
-    return function ( x , y) {
-        if( typeof x !== 'number' && typeof y !== 'number') {
+    return function (x, y) {
+        if(typeof x !== 'number' && typeof y !== 'number') {
             return false
+            }
+            return operation[operador](x , y)
         }
-        return operation[operador]( x , y)
     }
-}
+
 
 /*
 Crie uma função chamada "showOperationMessage" que recebe três parâmetros:
@@ -88,6 +91,10 @@ function showOperationMessage( operador, number1, number2) {
     return `A operação ${number1} ${operador} ${number2}`
 }
 
+function showOperationMessage ( operador , x , y) {
+    return `A operação ${x} ${operador} ${y} = `;
+}
+
 /*
 Crie uma função chamada "showErrorMessage" que recebe um parâmetro: o
 operador da operação cálculo, quando a operação não for válida.
@@ -99,15 +106,19 @@ function showErrorMessage( operador) {
     return `Operação "${operador}" não é permitida!`
 }
 
+function showErrorMessage ( operador) {
+   return `Operação ${operador} não é permitida!`
+}
+
 /*
 Nossa calculadora está pronta! Agora vamos testá-la:
 PASSO 1:
 - Declare 3 variáveis: "number1" e "number2", iniciando com valor zero, e
 "operationSignal", sem valor por enquanto.
 */
-
-var number1 = 0;
-var number2 = 0;
+// ?
+var number1 = 0; 
+var number2 = 0; 
 var operationSignal;
 
 /*
@@ -118,6 +129,9 @@ parâmetro a variável que recebeu o sinal da operação.
 */
 
 operationSignal = "+"
+var sum = calculator(operationSignal)
+
+operationSignal = '+';
 var sum = calculator(operationSignal)
 
 /*
@@ -141,6 +155,14 @@ if(sum) {
     console.log(showErrorMessage(operationSignal))
 }
 
+if (sum) {
+    number1 = 10;
+    number2 = 20;
+    console.log(showOperationMessage(operationSignal, number1, number2), sum( number1, number2));
+} else {
+    console.log(showErrorMessage( operationSignal))
+}
+
 /*
 Repita desde o "PASSO 2" com as operações de subtração, multiplicação,
 divisão e resto. Crie variáveis com os nomes "subtraction",
@@ -148,9 +170,58 @@ divisão e resto. Crie variáveis com os nomes "subtraction",
 */
 // ?
 
+var subtração = '-';
+var multiplicação = '*';
+var divisão = '/';
+var modulo = '%';
+
+var subtraction = calculator(subtração);
+var multiplication = calculator(multiplicação);
+var division = calculator(divisão);
+var mod= calculator(modulo);
+
+if(subtraction) {
+    number1 = 10;
+    number2 = 2;
+    console.log(showOperationMessage(subtração, number1, number2), subtraction( number1, number2))
+} else {
+    console.log(showErrorMessage( subtração))
+}
+
+if(multiplication) {
+    number1 = 10;
+    number2 = 3;
+    console.log(showOperationMessage( multiplicação , number1 , number2), multiplication( number1, number2))
+} else {
+    console.log(showErrorMessage( multiplicação))
+}
+
+if(division) {
+    number1 = 10;
+    number2 = 4;
+    console.log(showOperationMessage( divisão , number1 , number2) , division( number1 , number2))
+} else {
+    console.log(showErrorMessage( divisão))
+}
+
+if(mod) {
+    number1 = 30;
+    number2 = 4;
+    console.log(showOperationMessage ( modulo , number1 , number2) , mod( number1 , number2))
+} else {
+    console.log(showErrorMessage( modulo))
+}
 /*
 Repita o PASSO 2 novamente, mas passando um operador inválido, para ver se
 a mensagem de erro será mostrada no console.
 */
 // ?
-})
+var SinalInvalido = '&'
+var invalido = calculator(SinalInvalido)
+
+if(invalido) {
+    console.log(showErrorMessage ( invalido))
+} else {
+    console.log( showErrorMessage (SinalInvalido))
+}
+})()
