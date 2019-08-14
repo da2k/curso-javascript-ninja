@@ -43,7 +43,8 @@ divisao(x, y) {
 var x = 10;
 var y = 20;
 x = x / y;
-return x;}
+return x;
+}
 
 // Invoque a função criada acima, passando os parâmetros 10 e 2.
 divisao(x, y)
