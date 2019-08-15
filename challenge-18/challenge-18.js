@@ -45,8 +45,8 @@ Mostre o resultado no console.
 console.log( '\nFormatando CPFs corretamente:' );
 var regexCpfValido = /(\d{3})(\d{3})(\d{3})(\d{2})/
 
-var cpfValidos = cpfLimpo.map(function (item){
-    item.replace(regexCpfValido, function (captotal ,a , b , c , d) {
+var cpfValidos = cpfLimpo.map(function (item) {
+    return item.replace(regexCpfValido, function (captotal ,a , b , c , d) { 
     return a + '.' + b + '.' + c + '-' + d
     
 })})
