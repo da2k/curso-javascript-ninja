@@ -23,3 +23,95 @@ multiplicação (x), então no input deve aparecer "1+2x".
 input;
 - Ao pressionar o botão "CE", o input deve ficar zerado.
 */
+( function( wind , doc){
+ 
+ 'use strict';
+
+ var $input = doc.querySelector('input'); 
+ var $buttonNumber = doc.querySelectorAll('[data-js="number"]');
+ var $buttonOperacoes =  doc.querySelectorAll('[data-js="operador"]');
+ var $buttonCe  = doc.querySelector('[data-js="ce"]');
+ var $buttonResultado = doc.querySelector('[data-js="="]');
+
+
+ // 
+  Array.prototype.forEach.call( $buttonNumber , atribuirNumber    )
+  Array.prototype.forEach.call( $buttonOperacoes , atribuirOperador  )
+  $buttonCe.addEventListener( 'click' , atribuirClear , false )
+  $buttonResultado.addEventListener('click', atribuirResultado , false)
+ //
+
+
+
+ function  atribuirNumber( item ){
+      
+         item.onclick = function(){
+           
+           var regex = /(^0\d)+/gm;
+      
+           $input.value +=   item.innerHTML;
+           $input.value = $input.value.replace( regex ,item.innerHTML);
+          
+       }
+ }
+
+
+ function atribuirOperador( item ){
+
+      item.onclick = function(){
+
+          var regex = /[\+\-\x\÷]$/g;
+         
+          if( regex.test( $input.value ) )
+           $input.value  = $input.value.replace(regex , item.innerHTML );
+          else
+           $input.value+= item.innerHTML;
+ 
+      }
+ }  
+ 
+
+ function atribuirClear(){
+
+     $input.value = 0;
+
+ }
+
+
+ function atribuirResultado(){
+
+  var regex1  = /(\d+)([\x\÷])(\d+)/g;
+  var regex2  = /(\d+)([\+\-])(\d+)/g;
+  var value   = $input.value;
+
+  if( regex1.test( $input.value ) )
+  $input.value = value.replace(regex1 , primeiraOrdem )
+  else if( regex2.test( $input.value ) )
+  $input.value = value.replace(regex2 , segundaOrdem  )
+  else
+  return 'Trabalho finalizado.';
+   
+  atribuirResultado();
+
+ }
+
+ function primeiraOrdem(regex,n1,operador,n2){
+     
+	if( operador === 'x' )
+	return +n1 * +n2;
+    else if( operador === '÷' )
+    return +n1 / +n2;
+
+ }
+ function segundaOrdem(regex,n1,operador,n2){
+  
+    if( operador === '+' )
+	return +n1 + +n2;
+    else if( operador === '-' )
+    return +n1 - +n2;
+
+	
+ }
+
+
+} )( window ,  document )

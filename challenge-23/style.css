@@ -1,0 +1,19 @@
+div{
+ margin: 0 auto;
+ padding-top: 30px;
+ padding-bottom: 30px;
+ width: 180px;
+ height: 200px;
+ background-color: grey;
+ color: white;
+}
+
+button{		
+ background-color: white;
+ width: 42px;
+ height: 42px;
+}
+
+button:hover{
+ background-color: #dedede;
+}
