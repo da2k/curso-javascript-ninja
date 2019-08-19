@@ -65,7 +65,7 @@ O resultado deve ser:
 ["junho", "julho"]
 */
 console.log( '\nMatch com as palavras "junho" ou "julho" para a frase "Os meses de janeiro, junho e julho começam com a letra j.":' );
-var regexJunhoJulho = /\j\w{3}\o/g
+var regexJunhoJulho = /\j\w{3}\o/g // /\ju[nl]ho\/g
 var frase = 'Os meses de janeiro, junho e julho começam com a letra j.'
 console.log(frase.match(regexJunhoJulho))
 
@@ -79,7 +79,7 @@ O resultado deve ser:
 ["<div>", "<section>", "<blockquote>"]
 */
 console.log( '\nMatch com a abertura de uma tag HTML:' );
-var regexTagVazia = /\<[a-z]+\>/g
+var regexTagVazia = /\<\w+\>/g
 
 var aberturaTags ="<div><section><blockquote>Texto <img /></blockquote></section></div>"
 console.log(aberturaTags.match(regexTagVazia))
@@ -94,7 +94,7 @@ O resultado deve ser:
 ["<li></li>", "<li></li>", "<span></span>"]
 */
 console.log( '\nMatch com tags HTML vazias (abertura e fechamento da tag):' );
-var regexTagCompleta = /\<[a-z]+\>\<\/[a-z]+\>/g 
+var regexTagCompleta = /\<\w+\>\<\/\w+\>/g 
 
 var tagsCompletas = "<div><ul><li></li><li></li><li><span></span></li></ul></div>"
 
