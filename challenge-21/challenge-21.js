@@ -44,7 +44,7 @@
  function startTimer(){
          
    $inputCronometro.value = Number($inputCronometro.value) + 1;
-   temporizador = setTimeout( timer ,1000);  
+   temporizador = setTimeout( startTimer ,1000);  
     
  }
 
