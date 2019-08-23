@@ -25,16 +25,16 @@ Array.prototype.forEach.call($buttonsOperations, function(button) {
 $buttonCE.addEventListener('click', handleClickCE, false);
 $buttonEqual.addEventListener('click', handleClickEqual, false);
 
-function handleClickNumber() {
+function handleClickNumber(){
   $visor.value += this.value;
 }
 
-function handleClickOperation() {
+function handleClickOperation(){
   $visor.value = removeLastItemIfItIsAnOperator($visor.value);
   $visor.value += this.value;
 }
 
-function handleClickCE() {
+function handleClickCE(){
   $visor.value = 0;
 }
 
