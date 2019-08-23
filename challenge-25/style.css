@@ -1,0 +1,16 @@
+body{
+  background-color:gray;
+  color:white;
+  text-align:center;
+  margin-top:10%;
+}
+
+h1, h3{
+  margin:0;
+}
+
+input{
+  margin-top:2%;
+}
+
+
