@@ -20,48 +20,37 @@
  */
  // ?
 
-
  var $inputCronometro = doc.querySelector( '[data-js="cronometro"]' );
-
  var $start = doc.querySelector( '[data-js="start"]' );
-
  var $stop  = doc.querySelector( '[data-js="stop"]'  );
-
  var $reset = doc.querySelector( '[data-js="reset"]' );
-
-
- $start.addEventListener( 'click' , startTimer , false )
-
-
- $stop.addEventListener(  'click' , stopTimer , false )
-
-
- $reset.addEventListener( 'click' , resetTimer , false )
-
-
  var temporizador;
 
- function startTimer(){
-         
-   $inputCronometro.value = Number($inputCronometro.value) + 1;
-   temporizador = setTimeout( startTimer ,1000);  
-    
+ function initialize(){
+    initEvents()
  }
 
+function initEvents(){
+  $start.addEventListener( 'click' , startTimer , false )
+  $stop.addEventListener(  'click' , stopTimer , false )
+  $reset.addEventListener( 'click' , resetTimer , false )
+}
+
+ function startTimer(){
+   $inputCronometro.value = Number($inputCronometro.value) + 1;
+   temporizador = setTimeout( startTimer ,1000);  
+ }
 
  function stopTimer(){
-     
-      clearTimeout( temporizador )
-
+     clearTimeout( temporizador )
  }
 
 function resetTimer(){
-
    $inputCronometro.value = 0;
    stopTimer()
-
 }
 
 
+initialize();
 
 } )( window , document )
