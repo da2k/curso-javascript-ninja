@@ -1,0 +1,30 @@
+body{
+  font-family:sans-serif;
+}
+
+header{
+  text-align:center;
+}
+
+form, table{
+  float: left;
+  width:50%;
+}
+ul{
+  list-style:none;
+}
+
+label{
+  display:block;
+}
+
+button:hover,
+button:focus{
+  background:darkgreen;
+  cursor:pointer;
+}
+
+td, th{
+  padding:5px 15px;
+  border:1px solid #ccc;
+}
