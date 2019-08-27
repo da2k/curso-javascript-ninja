@@ -60,7 +60,7 @@ calc(2,2,2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 //10.
-
+//seloko
 /*
 Crie uma função com as seguintes características:
 1. A função deve receber 3 argumentos.
