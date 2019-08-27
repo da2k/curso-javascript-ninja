@@ -60,7 +60,7 @@ calc(2,2,2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 //10.
-//seloko
+
 /*
 Crie uma função com as seguintes características:
 1. A função deve receber 3 argumentos.
@@ -70,8 +70,51 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+function variavel(x,y,z){
+	if(x!=''&& y!=''&& z!=''){
+		return (x+y)/z;
+	}
+	if(x==''&& y=='' && z==''){
+		return false;
+	}
+	if(x!=''&&y!=''){
+		return x+y;
+	}
+	if(x!=''&&z!=''){
+		return x+z;
+	}
+	if(y!=''&&z!=''){
+		return y+z;
+	}
+	if(x!=''&&y==''&&z==''){
+		return x;
+	}
+	if(x==''&&y!=''&&z==''){
+		return y;
+	}
+	if(x==''&&y==''&&z!=''){
+		return z;
+	}
+	else {
+		return null;
+	}
+}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+variavel('','','');
+//false
+variavel(2,'','');
+//2;
+variavel(''3,'');
+//3;
+variavel('','',4);
+//4;
+variavel(2,4,'');
+//6;
+variavel(4,8,3);
+//4;
+variavel(3,'',5);
+//8;
+variavel('',7,9);
+//16;
 ```
