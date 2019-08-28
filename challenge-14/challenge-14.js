@@ -91,6 +91,8 @@
     return acumulado + atual;
   });
 
+  console.log(inversedName);
+
   /*
   Mostre no console o array `numberObjects`.
   */
