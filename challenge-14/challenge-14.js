@@ -110,7 +110,7 @@
   */
   console.log('\nExiste um { number: 2 } em numberObjects?');
   console.log(numberObjects.indexOf({ number: 2 }) > -1 ? 'Existe um objeto { number: 2 } em numberObjects!' : 'Não existe um objeto { number: 2 } em numberObjects :(');
-  console.log('O método indexOf vai percorrer o array e vai comparar cada indice do array validando se o valor passado por parâmetro existe no array, caso exista ele irá retornar o indice do array que contém esse valor, caso não ele retronará -1');
+  console.log('\nO método retorná que não existe um objeto { number: 2 } em numberObjects, pois, quando comparamos objetos estamos comparando referências na mémoria, nesse caso o apontamento é diferente, portanto, o retorno indexOf será -1\n');
 
   /*
   Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
