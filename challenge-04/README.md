@@ -106,13 +106,13 @@ carro.adicionarPessoas = function(numeroDePessoas) {
 
 	if(assentosDisponiveis === 0) { 
 		return 'O carro já está lotado!'; 
-	} else if(assentosDisponiveis >= numeroDePessoas) { 
-		carro.quantidadePessoas = carro.quantidadePessoas + numeroDePessoas;
+	} else if(numeroDePessoas > assentosDisponiveis) { 		
 		return 'Só cabem mais ' + assentosDisponiveis + ' pessoas!'; 
 	} else {		
+		carro.quantidadePessoas = carro.quantidadePessoas + numeroDePessoas;
 		return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!';
     }
-}; // Melhorar...
+};
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -122,38 +122,38 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-?
+carro.obterCor() // "Cinza"
 
 // Mude a cor do carro para vermelho.
-?
+carro.mudaCor("Vermelho");
 
 // E agora, qual a cor do carro?
-?
+carro.obterCor(); // "Vermelho"
 
 // Mude a cor do carro para verde musgo.
-?
+carro.mudaCor("Verde Musgo");
 
 // E agora, qual a cor do carro?
-?
+carro.obterCor(); // "Verde Musgo"
 
 // Qual a marca e modelo do carro?
-?
+carro.obterMarcaModelo(); // "Esse carro é um Honda Fit."
 
 // Adicione 2 pessoas no carro.
-?
+carro.adicionarPessoas(2);
 
 // Adicione mais 4 pessoas no carro.
-?
+carro.adicionarPessoas(4);
 
 // Faça o carro encher.
-?
+carro.adicionarPessoas(3);
 
 // Tire 4 pessoas do carro.
-?
+carro.quantidadePessoas = 1;
 
 // Adicione 10 pessoas no carro.
-?
+carro.adicionarPessoas(10);
 
 // Quantas pessoas temos no carro?
-?
+1
 ```
