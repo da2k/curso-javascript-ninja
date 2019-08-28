@@ -46,14 +46,14 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `quantidadePessoas` - Number - zero por padrão
 */
 var carro = {
-marca:'Jeep',
-modelo:'Renegade',
-placa:'ABC1234',
-ano:2019,
-cor:'Prata',
-quantasPortas:4,
-assentos:5,
-quantidadePessoas:0
+    marca:'Jeep',
+    modelo:'Renegade',
+    placa:'ABC1234',
+    ano:2019,
+    cor:'Prata',
+    quantasPortas:4,
+    assentos:5,
+    quantidadePessoas:0
 }
 
 /*
@@ -77,15 +77,12 @@ Crie um método chamado `obterMarca` que retorne a marca do carro.
 */
 carro.obterMarca=function(){return carro.marca;};
 
-
-
 /*
 Crie um método chamado `obterMarcaModelo`, que retorne:
 "Esse carro é um [MARCA] [MODELO]"
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 carro.obterMarcaModelo=function(){Esse carro é um [MARCA] [MODELO]"
-
 
 /*
 Crie um método que irá adicionar pessoas no carro. Esse método terá as
@@ -103,7 +100,18 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-?
+carro.novoPassageiro=function(passageiro){
+	var vagas = carro.assentos-carro.quantidadePessoas;
+	var txPessoa= vagas==1?'pessoa':'pessoas';
+  	if(vagas==0){
+    	return 'O carro já está lotado!';
+  	} else if(passageiro>vagas){
+    	return 'Só cabem mais '+vagas+' '+txPessoa+'!'	
+  	} else{
+		carro.quantidadePessoas+=passageiro;
+		return 'Já temos '+carro.quantidadePessoas+' pessoas no carro!';
+  	}
+};
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -113,38 +121,51 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-?
+carro.obterCor(); //Prata
 
 // Mude a cor do carro para vermelho.
-?
+carro.mudarCor('Vermelho');
 
 // E agora, qual a cor do carro?
-?
+carro.obterCor(); //Vermelho
 
 // Mude a cor do carro para verde musgo.
-?
+carro.mudarCor('Verde Musgo');
 
 // E agora, qual a cor do carro?
-?
+carro.obterCor(); //Verde Musgo
 
 // Qual a marca e modelo do carro?
-?
+carro.obterMarcaModelo(); //Esse carro é um Jeep Renegade
 
 // Adicione 2 pessoas no carro.
-?
+carro.novoPassageiro(2); //Já temos 2 pessoas no carro!
 
 // Adicione mais 4 pessoas no carro.
-?
+carro.novoPassageiro(4); //Só cabem mais 3 pessoas!
 
 // Faça o carro encher.
-?
+carro.novoPassageiro(3); //Já temos 5 pessoas no carro!
 
 // Tire 4 pessoas do carro.
-?
+carro.tirarPassageiro=function(passageiro){
+	if(passageiro>carro.quantidadePessoas){
+		  var txPessoa=carro.quantidadePessoas==1?'pessoa':'pessoas';	
+		  return 'Tem apenas '+carro.quantidadePessoas+' '+txPessoa;
+  } else if(carro.quantidadePessoas==0){
+		  return 'O carro está vazio!';
+  } else{
+      carro.quantidadePessoas-=passageiro;
+      txPessoa= carro.quantidadePessoas==1?'pessoa':'pessoas';
+      return 'Agora o carro tem '+carro.quantidadePessoas+' '+txPessoa;
+  }
+};
+
+carro.tirarPassageiro(4); //Agora o carro tem 1 pessoa
 
 // Adicione 10 pessoas no carro.
-?
+carro.novoPassageiro(10); //Só cabem mais 4 pessoas!
 
 // Quantas pessoas temos no carro?
-?
+carro.quantidadePessoas; //1
 ```
