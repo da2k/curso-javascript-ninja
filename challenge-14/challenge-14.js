@@ -79,8 +79,8 @@
   var name = ['A', 'li', 'son'];
 
   console.log(name.reduce(function (acumulado, atual) {
-    return acumulado + 'p' + atual;
-  }));
+    return acumulado + 'P' + atual;
+  }, ''));
 
   /*
   Crie uma variável chamada `inversedName`, que reduzirá o array em uma string
