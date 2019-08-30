@@ -49,7 +49,7 @@ Crie uma função com as seguintes características:
 */
 
 function meuExercicio(a,b,c) {
-    if((a && b && c === null) || (a && b && c === undefined)) {
+    if(a === undefined && b === undefined && c === undefined) {
         return 'Preencha todos os valores corretamente!'
     }else {
         var multiplicacao = a * b * c + 2;
