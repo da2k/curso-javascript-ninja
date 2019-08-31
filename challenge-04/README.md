@@ -8,12 +8,8 @@ equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
 var isTruthy = function(a) {
-	if (a) {
-		return true;
-	} else {
-		return false;
-	}
-}
+	return a ? true : false;
+};
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 isTruthy(null);
@@ -110,7 +106,7 @@ citado acima, no lugar de "pessoas".
 		} else {
 			return "Só cabem mais "+ vagas + qtde;
 		}
-	}
+	};
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
