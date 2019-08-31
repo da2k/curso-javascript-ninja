@@ -43,7 +43,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function calc(a,b,c){
-	if(a==''||b==''||c==''){
+	if(a===undefined||b===undefined||c==undefined){
 		return 'Preencha os valores corretamente.'
 	}
 	return (a*b*c)+2;
