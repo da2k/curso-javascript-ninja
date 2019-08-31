@@ -132,6 +132,7 @@ carro.obterCor();
 carro.mudarCor("preto");
 
 // E agora, qual a cor do carro?
+carro.obterCor();
 /* preto */
 
 // Mude a cor do carro para verde musgo.
@@ -139,6 +140,7 @@ carro.mudarCor("verde musgo");
 
 
 // E agora, qual a cor do carro?
+carro.obterCor();
 /* verde musgo */
 
 // Qual a marca e modelo do carro?
