@@ -38,7 +38,16 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `assentos` - Number - cinco por padrão
 - `quantidadePessoas` - Number - zero por padrão
 */
-var carro = {marca: "Honda", modelo: "Fit", placa: "KPL0956", ano: 2014, cor: "vermelho", quantasPortas: 4, assentos: 5, quantidadePessoas: 0};
+var carro = {
+	marca: "Honda",
+	modelo: "Fit",
+	placa: "KPL0956",
+	ano: 2014,
+	cor: "vermelho",
+	quantasPortas: 4,
+	assentos: 5,
+	quantidadePessoas: 0
+};
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
@@ -75,7 +84,7 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 carro.obterMarcaModelo = function(){
-	return "Esse carro é um "+ carro.marca +" "+carro.modelo;
+	return "Esse carro é um "+ carro.obterMarca() +" "+carro.obterModelo();
 }
 
 /*
