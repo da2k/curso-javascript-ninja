@@ -1,4 +1,5 @@
 
+
 var pessoa = {nome : 'Luan', sobrenome : 'Melo',sexo : 'Masculino',idade : 19, altura : 183 + 'cm', peso : 82.3 + "kg" , andando : false, caminhouQuantosMetros : 0}
 
 pessoa.fazerAniversario = function(){ pessoa.idade++ }
