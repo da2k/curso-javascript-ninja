@@ -71,29 +71,17 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function variavel(x,y,z){
-	if(x!=''&& y!=''&& z!=''){
-		return (x+y)/z;
-	}
-	if(x==''&& y=='' && z==''){
+	if(x=== undefined && y===undefined && z===undefined){
 		return false;
 	}
-	if(x!=''&&y!=''){
+	else if(x!==undefined && y!==undefined && z===undefined){
 		return x+y;
 	}
-	if(x!=''&&z!=''){
-		return x+z;
-	}
-	if(y!=''&&z!=''){
-		return y+z;
-	}
-	if(x!=''&&y==''&&z==''){
+	else if(x!== undefined && y===undefined && z===undefined){
 		return x;
 	}
-	if(x==''&&y!=''&&z==''){
-		return y;
-	}
-	if(x==''&&y==''&&z!=''){
-		return z;
+	else if(x!==undefined && y!==undefined && z!==undefined){
+		return (x+y)/z;
 	}
 	else {
 		return null;
