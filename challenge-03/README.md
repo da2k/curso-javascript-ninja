@@ -195,5 +195,5 @@ pessoa.apresentacao = function() {
 
 // Agora, apresente-se ;)
 pessoa.apresentacao();
-
+/* "Olá, eu sou o Renato Prata tenho 40 anos, 1.77, meu peso é 73 e, só hoje eu já caminhei 180 metros!" */
 ```
