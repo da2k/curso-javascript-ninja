@@ -117,7 +117,7 @@ citado acima, no lugar de "pessoas".
 		}
 	};
 
-/*
+/*teste
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
 utilize sempre o formato de invocação do método (ou chamada da propriedade),
 adicionando comentários _inline_ ao lado com o valor retornado, se o método
