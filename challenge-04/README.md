@@ -147,7 +147,7 @@ carro.addPassageiro(4) // Só cabem 3 pessoas
 carro.addPassageiro(3) // Já temos 5 pessoas no carro
 
 // Tire 4 pessoas do carro.
-carro.quantidadePessoas -= 4
+carro.addPassageiro(-4) // Já temos 1 pessoa no carro
 
 // Adicione 10 pessoas no carro.
 carro.addPassageiro(10) // Só cabem 4 pessoas
