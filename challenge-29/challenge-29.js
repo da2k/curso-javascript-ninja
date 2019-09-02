@@ -40,7 +40,7 @@
     return {
       init: function init(){
         console.log('app init');
-        this.getCompanyInfo();
+        this.companyInfo();
         this.initEvents();
       },
 
@@ -51,7 +51,7 @@
       handleSubmit: function handleSubmit(e){
         e.preventDefault();
         console.log('submit');
-        var $tableCar = $('[data-js="table-car"]').get();
+        var $tableCar = $('[data-js="table-car"]').get()[0];
         $tableCar.appendChild(app.createNewCar());
       },
 
@@ -59,16 +59,20 @@
         var $fragment = document.createDocumentFragment();
         var $tr = document.createElement('tr');
         var $tdImage = document.createElement('td');
+        var $image = document.createElement('img');
         var $tdBrand = document.createElement('td');
         var $tdYear = document.createElement('td');
         var $tdPlate = document.createElement('td');
         var $tdColor = document.createElement('td');
 
-        $tdImage.textContent = $('[data-js="image"]').get().value;
-        $tdBrand.textContent = $('[data-js="brand-model"]').get().value;
-        $tdYear.textContent = $('[data-js="year"]').get().value;
-        $tdPlate.textContent = $('[data-js="plate"]').get().value;
-        $tdColor.textContent = $('[data-js="color"]').get().value;
+        $image.setAttribute('src', $('[data-js="image"]').get()[0].value); 
+        $tdImage.appendChild($image);
+
+       
+        $tdBrand.textContent = $('[data-js="brand-model"]').get()[0].value;
+        $tdYear.textContent = $('[data-js="year"]').get()[0].value;
+        $tdPlate.textContent = $('[data-js="plate"]').get()[0].value;
+        $tdColor.textContent = $('[data-js="color"]').get()[0].value;
 
         $tr.appendChild($tdImage);
         $tr.appendChild($tdBrand);
@@ -92,8 +96,8 @@
         }
 
         var data = JSON.parse(this.responseText);
-        var $companyName = $('[data-js="company-name"]').get();
-        var $companyPhone = $('[data-js="company-phone"]').get();
+        var $companyName = $('[data-js="company-name"]').get()[0];
+        var $companyPhone = $('[data-js="company-phone"]').get()[0];
         $companyName.get()[0].textContent = data.name;
         $companyPhone.get()[0].textContent = data.phone;
       },
