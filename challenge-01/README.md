@@ -31,7 +31,7 @@ var comida = ["arroz", feijão", "ovo"];
 comida;
 
 // Digite o código que verifica se a variável `soma' é igual a variável `myvar` (testando também o tipo).
-soma == myvar;
+soma === myvar;
 =false
 
 // Digite o código que verifica se a variável `myvar` é menor ou igual à variável `soma`.
