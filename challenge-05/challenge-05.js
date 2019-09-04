@@ -2,17 +2,19 @@
 Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
-// ?
+var myArray = [1,null, "ola", undefined, 1.9, "teste"];
 
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
-// ?
+function myFunction(arr){
+	return arr;
+}
 
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-// ?
+console.log(myFunction(myArray)[1]);
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -20,18 +22,25 @@ segundo, um número. A função deve retornar o valor de um índice do array que
 no primeiro parâmetro. O índice usado para retornar o valor, deve ser o número passado no
 segundo parâmetro.
 */
-// ?
+function retornaIndice(arg0,arg1){
+	return arg0[arg1];
+}
 
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
-// ?
+var arr = myArray;
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-// ?
+retornaIndice(arr,0);
+retornaIndice(arr,1);
+retornaIndice(arr,2);
+retornaIndice(arr,3);
+retornaIndice(arr,4);
+retornaIndice(arr,5);
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -47,7 +56,26 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-// ?
+var objetoLivro = {
+	livro1: {
+		nome: livros {
+			quantidadePaginas: 180,
+			autor: "Prata",
+			editora: "Abril"
+		}	
+	}
+function book(livro) {
+	var livroObj = objetoLivro;
+	if(livro === null) {
+		return livroObj;
+	} else if(livroObj.livro1.nome === livro) {
+		return livroObj.livro1.nome;
+	} else if (livroObj.livro2.nome === livro) {
+		return livroObj.livro2.nome;
+	} else {
+		return livroObj.livro3.nome;
+	}
+}
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
