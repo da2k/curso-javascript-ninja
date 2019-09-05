@@ -38,7 +38,7 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
 // 
 function showTeamPosition(x){
   if (x <=5){
-    return `O time que está na ${x}ª posição é o ${teams[x+-1]}`}else{
+    return `O time que está na ${x}ª posição é o ${teams[x-1]}`}else{
       return 'Não temos a informação do time que está nessa posição.'
       }
  }
