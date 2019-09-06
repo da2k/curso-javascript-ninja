@@ -56,19 +56,12 @@ os livros.
 */
 function book(nomLivro) {
     var livros = {
-        livro1: { quantidadePaginas: 1999, autor: 'Ambrosio', editora: 'LAvros SA'},
-        livro2: { quantidadePaginas: 2300, autor: 'Asdrubal', editora: 'LAvros SA'},
-        livro3: { quantidadePaginas: 5000, autor: 'Teresa', editora: 'Inova'}
+        'livro1': { quantidadePaginas: 1999, autor: 'Ambrosio', editora: 'LAvros SA'},
+        'livro2': { quantidadePaginas: 2300, autor: 'Asdrubal', editora: 'LAvros SA'},
+        'livro3': { quantidadePaginas: 5000, autor: 'Teresa', editora: 'Inova'}
     };
 
-    if (nomLivro === 'livro1')
-        return livros.livro1;
-    else if (nomLivro === 'livro2')
-        return livros.livro2;
-    else if (nomLivro === 'livro3')
-        return livros.livro3;        
-
-    return livros;
+    return nomLivro ? livros[nomLivro] : livros;
 };
 
 /*
