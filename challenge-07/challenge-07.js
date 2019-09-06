@@ -9,7 +9,7 @@ Crie uma função chamada `addItem`, que irá adicionar itens no array criado.
 A função deverá retornar o array atualizado.
 */
 //
-function addItem(arr,item){
+function addItem(item){
   arr.push(item)
   return arr}
 
