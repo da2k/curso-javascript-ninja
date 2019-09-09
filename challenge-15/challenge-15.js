@@ -33,6 +33,7 @@ function Person(name, lastName, age){
   };
   this.addAge = function addAge(){
     this.age += arguments[0];
+    return this;
   };
 }
 
