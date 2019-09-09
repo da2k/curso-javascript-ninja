@@ -34,8 +34,8 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
 */
 function showTeamPosition(pos) {
 
-    if (pos >= 0 && pos < 5)
-        return 'O time que está em ' + (pos + 1) + 'º lugar é o ' + teams[pos] + '.';
+    if (pos > 0 && pos < 5)
+        return 'O time que está em ' + pos + 'º lugar é o ' + teams[pos - 1] + '.';
     else
         return 'Não temos a informação do time que está nessa posição.';
 };
@@ -44,9 +44,9 @@ function showTeamPosition(pos) {
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
-console.log(showTeamPosition(0));
 console.log(showTeamPosition(1));
 console.log(showTeamPosition(2));
+console.log(showTeamPosition(3));
 console.log(showTeamPosition(5));
 
 /*
@@ -90,7 +90,7 @@ function convertToHex(color) {
             response = 'O hexadecimal para a cor ' + color + ' é ' + colorHexa + '.';
             break;
     }
-    
+
     return response;
 }
 
