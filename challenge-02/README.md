@@ -90,5 +90,9 @@ function numeros(x,y,z){
 numeros();
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+numeros();//false
+numeros(1);//1
+numeros(1,5);//6
+numeros(1,5,2);//3
+
 ```
