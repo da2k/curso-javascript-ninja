@@ -110,7 +110,7 @@ var mod = calculator("%");
 Faça uma operação com cada uma das funções criadas acima, mostrando o resultado
 no console.
 */
-subtraction(12,5)
-multiplication(10,8)
-division(7,8)
-mod(5879,2)
+console.log(subtraction(12,5))
+console.log(multiplication(10,8))
+console.log(division(7,8))
+console.log(mod(5879,2))
