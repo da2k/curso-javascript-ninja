@@ -55,7 +55,7 @@
   var phrase = friends.reduce(function(acumulado, atual, index){
     var separator = friends.length - 1 === index ? ' e ' : ', ';
     return acumulado + separator + atual;
-  });
+  }).concat(' são meus amigos.');
   console.log(phrase);
 
   /*
