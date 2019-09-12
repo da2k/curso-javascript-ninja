@@ -9,7 +9,6 @@ A função deverá retornar o array atualizado.
 */
 function addItem(param){
 	arr.push(param);
-	console.log(arr);
 	return arr;
 }
 
@@ -55,7 +54,7 @@ Na mesma ideia do exercício acima: mostre agora os números ímpares.
 */
 console.log( 'Números ímpares entre 10 e 20:' );
 var number = 10
-while (number <=20){
+while (number <20){
 	number%2!==0 ? console.log(number) : ''
 	number++;
 }
@@ -72,6 +71,6 @@ for (var i = 100; i <= 120; i++) {
 }
 
 console.log( 'Números ímpares entre 111 e 125:' );
-for (var i = 100; i <= 125; i++) {
+for (var i = 111; i <= 125; i++) {
 	i%2!==0 ? console.log(i) : ''
 }
