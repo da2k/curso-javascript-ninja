@@ -35,8 +35,8 @@
   */
   console.log('\nNome convertido à partir de um slug:');
   var fullName = 'alison-gustavo-de-lima';
-  var newFullName = fullName.split('-').map(function(value){
-    return value.replace(value.charAt(0), value.charAt(0).toUpperCase());
+  var newFullName = fullName.split('-').map(function(name){
+    return name.replace(name.charAt(0), name.charAt(0).toUpperCase());
   }).join(' ');
   console.log(fullName);
   console.log(newFullName);
