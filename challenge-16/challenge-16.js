@@ -17,7 +17,7 @@
   */
   console.log('As letras do seu nome:');
   var name = 'Alison';
-  for (var i = 0; i < name.length; i++) {
+  for (var i = 0, len = name.length; i < len; i++) {
     console.log(name.charAt(i) + ' é a ' + (i + 1) + 'ª letra do meu nome.');
   }
 
