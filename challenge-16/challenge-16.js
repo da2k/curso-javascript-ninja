@@ -35,15 +35,11 @@
   */
   console.log('\nNome convertido à partir de um slug:');
   var fullName = 'alison-gustavo-de-lima';
-  function correctName(fullName) {
-    var name = '';
-    fullName.split('-').forEach(function (item, index, array) {
-      name += item.replace(item.charAt(0), item.charAt(0).toUpperCase()) + ' ';
-    });
-    return name.trim();
-  }
+  var newFullName = fullName.split('-').map(function(value){
+    return value.replace(value.charAt(0), value.charAt(0).toUpperCase());
+  }).join(' ');
   console.log(fullName);
-  console.log(correctName(fullName));
+  console.log(newFullName);
 
   /*
   - Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
