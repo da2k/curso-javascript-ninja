@@ -51,14 +51,12 @@
   5 nomes foi somente uma sugestão ;)
   */
   console.log('\nMeus amigos:');
-  var names = ['Neymar', 'Richarlison', 'Hudson', 'Luan', 'Reinaldo'];
-  function concatNames(names) {
-    var namesJoin = names.join(', ');
-    var lastComma = namesJoin.substring(namesJoin.lastIndexOf(','));
-    var replaceLastComma = lastComma.replace(',', ' e')
-    return namesJoin.replace(lastComma, replaceLastComma.concat(' são meus amigos.'));
-  }
-  console.log(concatNames(names));
+  var friends = ['Neymar', 'Richarlison', 'Hudson', 'Luan', 'Reinaldo'];
+  var phrase = friends.reduce(function(acumulado, atual, index){
+    var separator = friends.length - 1 === index ? ' e ' : ', ';
+    return acumulado + separator + atual;
+  });
+  console.log(phrase);
 
   /*
   Usando o replace(), faça a string "Roberto" virar "Roberta".
