@@ -157,10 +157,10 @@
   */
   console.log( '\nCeará está incluído em `brasil`?' );
 
-  if(brasil.indexOf('Ceará')>0){
-    console.log('Ceará está incluído!');
-  }else{
-    console.log('Ceará não foi incluído :(');
+  if(brasil.indexOf('Ceará')>-1){
+      console.log('Ceará está incluído!');
+    }else{
+      console.log('Ceará não foi incluído :(');
   };
 
   /*
