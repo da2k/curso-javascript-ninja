@@ -9,9 +9,9 @@ loop, mostre no console a mensagem:
 Qual loop você deve usar para que essa mensagem seja mostrada no console?
 */
   var once = false;
-  while ( once == true ) {
-    console.log('Entrou ao menos uma vez!')
-  }
+  do {
+    console.log('Entrou ao menos uma vez!');
+  }while (once);
 
 /*
 Crie um objeto chamado `person`, que receba as seguintes propriedades:
@@ -21,8 +21,8 @@ para o nome, idade, peso e data de nascimento dessa pessoa.
   var person = {
     name: 'Luan',
     age: 19,
-    weight: 84 + 'kg',
-    birthday: '08/08/2000'
+    weight: 84,
+    birthday: '08/08'
   }
 
 /*
@@ -34,9 +34,12 @@ esse objeto tem.
 Após o loop, mostre a frase:
 'The person has [COUNTER] properties'
 */
+  var counter = 0;
   for ( var prop in person ) {
     console.log(`The ${prop} of person is ${person[prop]}`)
+    counter ++;
   }
+  console.log(`The person has ${counter} properties`);
 
 /*
 Crie uma função chamada `moreThan`, que vai verificar se a pessoa (objeto
@@ -46,11 +49,7 @@ Após a função, mostrar a mensagem no console:
 'The person has more than 25 years old? [TRUE/FALSE]'
 */
   function moreThan (idade){
-    if ( person.age >= idade ) {
-      return true
-    } else {
-      return false
-    }
+    return person.age > idade ? true : false;
   }
   console.log(`The person has more than 25 years old?`, moreThan(25));
 
@@ -63,11 +62,11 @@ Mostre no console os números no array.
   console.log( 'De 0 a 10:' );
   for ( var i = 0, numbers = []; i < 20; i++ ) {
     if ( i > 10 ) {
-      console.log(numbers);
       break;
     }
     numbers.push(i);
   }
+  console.log(numbers);
   
 
 /*
@@ -84,4 +83,5 @@ console.log( 'Pares de 0 a 20:' );
       continue;}
   }
   console.log(numbers)
-}() )
+  
+}() );
