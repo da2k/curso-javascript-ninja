@@ -63,7 +63,7 @@
   Mostre o resultado no console.
   */
   console.log('\nEra "Roberto", agora é:');
-  console.log('Roberto'.split("").reverse().join("").replace('o', 'a').split("").reverse().join(""));
+  console.log('Roberto'.replace('to', 'ta'));
 
   /*
   Mostre no console a parte "nando" da string "Fernando". Use o método que
