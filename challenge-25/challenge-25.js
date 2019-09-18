@@ -1,3 +1,4 @@
+(function(win, doc){
 
   /*
   Essa semana você terá dois desafios:
@@ -15,3 +16,20 @@
   Tente aplicar na prática alguns dos eventos que estão ali e coloque nesse
   desafio os experimentos legais que você conseguir desenvolver :D
   */
+  var $a = document.querySelector('[data-js = "link"]');
+  $a.onclick = function(event){
+    event.preventDefault();
+    alert("ALO");
+  }
+  
+  function lala(element, event, callback){
+    document.querySelector(element)
+      .addEventListener(event, callback, false);
+  }
+  
+  lala('[data-js="input"]', 'keyup', function(event){
+    console.log(this.value)
+  });
+
+}(window, document);  
+  
