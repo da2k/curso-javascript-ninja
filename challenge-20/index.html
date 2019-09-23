@@ -1,36 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="utf-8" />
-    <title>Challenge 20</title>
-    <style>
-        body { font-family: sans-serif }
-        label { display: block }
-        input { margin-bottom: 10px }
-    </style>
+<meta charset="utf-8">
+<title>JS Ninja - Challenge 20</title>
+<link rel="stylesheet" href="css/bootstrap.css">
 </head>
 <body>
-    <form action="." method="get">
-        <div>
-            <label>Nome:</label>
-            <input type="text" />
-        </div>
+	<div class="container mt-3">
+		<div class="alert alert-success" role="alert">
+			<div class="row">
+				<div class="col-md-9">
+					<h2>JS Ninja - Challenge 20</h2>
+				</div>
+			</div>
+		</div>
+		<div class="card shadow">
 
-        <div>
-            <label>E-mail:</label>
-            <input type="email" />
-        </div>
+			<div class="card-body">
+				<form method="get" action="/">
+					<div class="form-group">
+						<label>Nome:</label> <input type="text" class="form-control"/>
+					</div>
+					<div class="form-group">
+						<label>E-mail:</label> <input type="email" class="form-control"/>
+					</div>
+					<div class="form-group">
+						<label>Mensagem:</label>
+						<textarea cols="30" rows="10" class="form-control"></textarea>
+					</div>
+					<button type="submit" class="btn btn-success">Enviar</button>
+				</form>
+			</div>
+		</div>
+	</div>
 
-        <div>
-            <label>Mensagem</label>
-            <textarea cols="30" rows="10"></textarea>
-        </div>
-
-        <div>
-            <button type="submit">Enviar</button>
-        </div>
-    </form>
-
-    <script src="challenge-20.js"></script>
+	<script src="challenge-20.js"></script>
 </body>
 </html>
