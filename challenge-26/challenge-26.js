@@ -22,23 +22,22 @@ selecionados.
 Dica: olhe os erros que acontecem no console, e vá resolvendo um a um.
 Só passe para o próximo problema quando tiver resolvido o anterior :)
 */
- var  DOM =  function( noDom ){
+var  DOM =  function( noDom ){
     this.element = doc.querySelectorAll( noDom );
+}
 
-    this.on = function( event , callback ){
+DOM.prototype.on  = function( event , callback ){
        Array.prototype.forEach.call( this.element , function( element ){
           element.addEventListener( event ,callback , false )
        } )
-    }
-    this.off = function(event ,callback){
-    	 Array.prototype.forEach.call( this.element , function( element ){
+}
+DOM.prototype.off = function(event ,callback){
+       Array.prototype.forEach.call( this.element , function( element ){
           element.removeEventListener(  event ,callback , false )
        } )
     }
-    this.get =function(){
-    	return this.element;
-    }
-
+DOM.prototype.get = function(){
+      return this.element;
 }
 
 var $a = new DOM('[data-js="link"]');
