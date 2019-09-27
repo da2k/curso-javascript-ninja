@@ -24,14 +24,14 @@ Onde VALOR é o novo valor da variável.
 */
 function adicionaValor() {
 	umaVariavel = 10;
-	return "O valor da variável agora é 10";
+	return "O valor da variável agora é " + umaVariavel;
 }
 
 // Invoque a função criada acima.
 adicionaValor();
 
 // Qual o retorno da função? (Use comentários de bloco).
-// O valor da variável agora é 10
+/* O valor da variável agora é 10 */
 
 /*
 Crie uma função com as seguintes características:
