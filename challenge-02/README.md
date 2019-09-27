@@ -4,30 +4,50 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-?
+
+x = 10;
+y = 20;
+function soma(){
+  return x + y;
+}
+soma()
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-?
+
+x = 10;
+y = 20;
+function soma(){
+  return x + y + 5;
+}
+soma()
 
 // Qual o valor atualizado dessa variável?
-?
+35
 
 // Declare uma nova variável, sem valor.
-?
+var notValue;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-?
+function withNumber() {
+  return notValue = 200;
+}
 
 // Invoque a função criada acima.
-?
+withNumber();
 
 // Qual o retorno da função? (Use comentários de bloco).
-?
-
+/*
+var notValue;
+function withNumber() {
+  return notValue = 200; 
+}
+withNumber();
+200
+notValue = 200;
 /*
 Crie uma função com as seguintes características:
 1. A função deve receber 3 argumentos;
