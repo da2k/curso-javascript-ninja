@@ -17,14 +17,13 @@ var newVar = soma(10,20) + 5;
 
 // Declare uma nova variável, sem valor.
 var notValue;
-
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
 function withNumber() {
-  return notValue = 200;
+  return 'O valor da variável agora é ' + notValue;
 }
 
 // Invoque a função criada acima.
@@ -50,29 +49,21 @@ var x;
 var y;
 var z;
 
-function multiplicacao() {
-  if(x === "" && y === "" && z === "") {
-      var resposta = "Preencha todos os valores corretamente!";
-      return resposta;
+function multiplicacao(x, y, z) {
+  if(x === undefined || y === undefined || z === undefined) {
+      return 'Preencha todos os valores corretamente!';
     }
-  return x * y * z + 2;
+    return ( x * y * z ) + 2;
   }
-
+multiplicacao(10,20,2);
 // Invoque a função criada acima, passando só dois números como argumento.
-x = 10;
-y = 20;
-z = ''; 
-multiplicador();
+multiplicador(10,20);
 '
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 //"Preencha todos os valores corretamente!"
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-
-x = 10;
-y = 20;
-z = 2; 
-multiplicador();
+multiplicador(10,20,2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 /*202*/
