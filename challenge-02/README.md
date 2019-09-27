@@ -45,10 +45,6 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-var x;
-var y;
-var z;
-
 function multiplicacao(x, y, z) {
   if(x === undefined || y === undefined || z === undefined) {
       return 'Preencha todos os valores corretamente!';
