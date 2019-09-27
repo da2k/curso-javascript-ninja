@@ -11,11 +11,7 @@ soma(10,20)
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
 
-function soma(){
-  return x + y + 5;
-}
-soma(10,20)
-
+var newVar = soma(10,20) + 5;
 // Qual o valor atualizado dessa variável?
 35
 
