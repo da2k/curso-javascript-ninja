@@ -74,6 +74,35 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 
+function values(value01, value02, value03) {
+    if(value01 !== undefined && value02 === undefined && value03 === undefined) { 
+        return value01;
+    } else if(value01 !== undefined && value02 !== undefined && value03 === undefined){
+        return value01 + value02;
+    } else if (value01 !== undefined && value02 !== undefined && value03 === undefined) {
+        return ( value01 + value02) / value03;
+    } else if (value01 === undefined && value02 === undefined && value03 === undefined) {
+        return false;
+    } else {
+        return null;
+    }
+}
+
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
 ```
+/*
+values();
+Nenhum argumento.
+
+values(10);
+10
+Com um valor.
+
+values(10,5);
+15
+Com dois valores.
+
+values(10,5,3);
+5
+Com três valores.
+*/
