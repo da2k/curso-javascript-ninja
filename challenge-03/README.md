@@ -1,4 +1,4 @@
-# Desafio da semana #3
+ # Desafio da semana #3
 
 ```js
 // Declarar uma variável qualquer, que receba um objeto vazio.
@@ -186,8 +186,20 @@ deve conter no retorno da frase acima é "metro" no lugar de "metros".
 método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
-?
 
+pessoa.apresentacao = function(){
+    if(pessoa.sexo === 'Feminino') { 
+        return 'Olá, eu sou a' +  pessoa.nome + ',' + 'tenho '+ pessoa.idade + 'anos, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metros!';
+    }
+    if(pessoa.idade === 1) { 
+        return 'Olá, eu sou a' +  pessoa.nome + ',' + 'tenho '+ pessoa.idade + 'ano, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metros!';
+    }
+    if(pessoa.caminhouQuantosMetros === 1) { 
+        return 'Olá, eu sou a' +  pessoa.nome + ',' + 'tenho '+ pessoa.idade + 'ano, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metro!';
+    }
+    return 'Olá, eu sou o' +  pessoa.nome + ',' + 'tenho '+ pessoa.idade + ' anos, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metros!';
+}
 // Agora, apresente-se ;)
-?
+pessoa.apresentacao();
+'Olá, eu sou oMarcelo,tenho 34 anos, 1.65, meu peso é 75 e, só hoje, eu já caminhei 40 metros!'
 ```
