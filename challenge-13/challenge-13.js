@@ -127,10 +127,12 @@
             return item.length > 7
         });
 
-    if (todosOsEstadosTemMaisDeSeteLetras)
-        console.log('Sim, todos os estados tem mais de 7 letras!');
-    else
-        console.log('Nem todos os estados tem mais de 7 letras!');
+    console.log(
+        todosOsEstadosTemMaisDeSeteLetras
+            ? 'Sim, todos os estados tem mais de 7 letras!'
+            : 'Nem todos os estados tem mais de 7 letras!'
+            );
+            
     /*
     Percorra o array `brasil` e verifique se o Ceará está incluído, atribuindo o
     resultado à uma variável. Se esse estado existir no array, mostrar a frase no
@@ -145,11 +147,11 @@
         return item === 'Ceará'
     });
 
-    if (cearaEstaIncluido)
-        console.log('Ceará está incluído!');
-    else
-        console.log('Ceará não foi incluído :(');
-
+    console.log(
+        cearaEstaIncluido
+            ? 'Ceará está incluído!'
+            : 'Ceará não foi incluído :('
+        );
 
     /*
     Percorra o array `newBrasil` e crie um novo array que some 1 no ID de cada
@@ -159,10 +161,10 @@
     */
     var map = newBrasil.map(function(item) {
         
-        item.id += 1;
-        item.estado = item.estado + ' pertence ao Brasil.';
-
-        return item;
+        return {
+            id: item.id + 1;
+            estado: item.estado + ' pertence ao Brasil.'
+        };
     });
 
     /*
@@ -175,7 +177,7 @@
     Filtre o array criado acima, retornando somente os estados que tiverem
     ID par. Atribua o valor à uma variável chamada `filter`.
     */
-    var estadosComIdPar = newBrasil.filter(function(item) {
+    var estadosComIdPar = map.filter(function(item) {
         return (item.id % 2 === 0 ? item : null);
     });
 
