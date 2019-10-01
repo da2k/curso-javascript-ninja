@@ -132,7 +132,7 @@
             ? 'Sim, todos os estados tem mais de 7 letras!'
             : 'Nem todos os estados tem mais de 7 letras!'
             );
-            
+
     /*
     Percorra o array `brasil` e verifique se o Ceará está incluído, atribuindo o
     resultado à uma variável. Se esse estado existir no array, mostrar a frase no
@@ -162,7 +162,7 @@
     var map = newBrasil.map(function(item) {
         
         return {
-            id: item.id + 1;
+            id: item.id + 1,
             estado: item.estado + ' pertence ao Brasil.'
         };
     });
