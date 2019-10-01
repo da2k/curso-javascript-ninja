@@ -197,9 +197,9 @@ pessoa.apresentacao = function(){
     if(pessoa.caminhouQuantosMetros === 1) { 
         return 'Olá, eu sou a' +  pessoa.nome + ',' + 'tenho '+ pessoa.idade + 'ano, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metro!';
     }
-    return 'Olá, eu sou o' +  pessoa.nome + ',' + 'tenho '+ pessoa.idade + ' anos, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metros!';
+    return 'Olá, eu sou o ' +  pessoa.nome + ',' + 'tenho '+ pessoa.idade + ' anos, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metros!';
 }
 // Agora, apresente-se ;)
 pessoa.apresentacao();
-'Olá, eu sou oMarcelo,tenho 34 anos, 1.65, meu peso é 75 e, só hoje, eu já caminhei 40 metros!'
+'Olá, eu sou o Marcelo,tenho 34 anos, 1.65, meu peso é 75 e, só hoje, eu já caminhei 40 metros!'
 ```
