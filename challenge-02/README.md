@@ -47,7 +47,7 @@ function soma3(x, y, z) {
         return "Preencha todos os valores corretamente!";
     // 3 - O retorno da função deve ser a multiplicação dos 3 argumentos, somando '2'
     } else {
-        return x * y * z + '2';
+        return x * y * z + 2;
     }
 }
 
@@ -61,7 +61,7 @@ soma3(1,2)
 soma3(1,2,3)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-'62'
+8
 
 /*
 Crie uma função com as seguintes características:
