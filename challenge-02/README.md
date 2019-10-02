@@ -1,4 +1,4 @@
-// Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
+/ Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
 
 Function soma( x , y) {
 Var resul = x + y;
