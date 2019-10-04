@@ -12,18 +12,12 @@
     Mostre esse array no console.
     */
     console.log( 'Number Objects Array:' );
-    var numberObjects = [
-        { number: 1 },
-        { number: 2 },
-        { number: 3 },
-        { number: 4 },
-        { number: 5 },
-        { number: 6 },
-        { number: 7 },
-        { number: 8 },
-        { number: 9 },
-        { number: 10 },
-    ];
+    var numberObjects = [];
+    var i = 0;
+    while (i < 10) {
+        numberObjects.push({ number: i + 1 });
+        i++;
+    }
     console.log(numberObjects);
 
     /*
@@ -84,7 +78,7 @@
     var name = ['E', 'du', 'ar', 'do'];
     var p = name.reduce(function(acumulado, item){
         return acumulado + 'p' + item;
-    });
+    }, '');
     console.log(p);
 
     /*
