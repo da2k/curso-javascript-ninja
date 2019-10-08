@@ -7,15 +7,108 @@ um único parâmetro como argumento. Essa função deve retornar `true` se o
 equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
-?
+var isTruthy;
+function isCondicional() {
+  return isTruthy ? true : false;
+}
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
-?
-
+isTruthy;
+undefined
+isCondicional();
+false
+isTruthy = null;
+null
+isCondicional();
+false
+var isTruthy = NaN;
+undefined
+isTruthy
+NaN
+isCondicional();
+false
+var isTruthy = 0;
+undefined
+isCondicional();
+false
+var isTruthy = -0;
+undefined
+isTruthy
+-0
+isCondicional();
+false
+var isTruthy = '';
+undefined
+isTruthy
+''
+isCondicional();
+false
+var isTruthy = "";
+undefined
+isTruthy
+''
+isCondicional();
+false
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
-?
+var isTruthy = 10;
+isTruthy
+10
+isCondicional();
+true
+
+var isTruthy = 'Henrique';
+isTruthy;
+'Henrique'
+isCondicional();
+true
+
+var isTruthy = {};
+isTruthy;
+{}
+isCondicional();
+true
+
+var isTruthy = [];
+isCondicional();
+true
+
+var isTruthy = 1.60;
+isTruthy;
+1.6
+isCondicional();
+true
+
+var isTruthy = 120;
+isTruthy;
+120
+isCondicional();
+true
+
+var isTruthy = 150;
+isTruthy;
+150
+isCondicional();
+true
+
+var isTruthy = 3.14;
+isTruthy;
+3.14
+isCondicional();
+true
+
+var isTruthy = 1.00000;
+isTruthy;
+1
+isCondicional();
+true
+
+var isTruthy = {time: 'Palmeiras'};
+isTruthy;
+{ time: 'Palmeiras' }
+isCondicional();
+true
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
@@ -29,29 +122,33 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `assentos` - Number - cinco por padrão
 - `quantidadePessoas` - Number - zero por padrão
 */
-?
+var carro = { marca: 'Chevrolet', modelo: 'Celta', placa: 'ftx789', ano: 2009, cor: 'cinza', quantasPortas: 4, assentos: 5, quantidadePessoas: 0}
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
-?
-
+carro.mudarCor = function(outraCor) {
+  return carro.cor = outraCor;
+}
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
-?
-
+carro.obterCor = function() {
+  return carro.cor;
+}
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
-?
-
+carro.obterModelo = function() {
+  return carro.modelo;
+}
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
 */
-?
-
+carro.obterMarca = function() {
+  return carro.marca;
+}
 /*
 Crie um método chamado `obterMarcaModelo`, que retorne:
 "Esse carro é um [MARCA] [MODELO]"
