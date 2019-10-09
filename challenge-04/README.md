@@ -244,3 +244,5 @@ carro.quantidadePessoas;
 24
 
 // Quantas pessoas temos no carro?
+carro.embarque(2);
+'Já temos 2 pessoas no carro!'
