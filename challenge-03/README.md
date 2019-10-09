@@ -1,12 +1,7 @@
 # Desafio da semana #3
 
 ```js
-// Declarar uma variável qualquer, que receba um objeto vazio.
-var objeto = {};
-
-
-/*
-Declarar uma variável `pessoa`, que receba suas informações pessoais.
+// Declarar uma variável `pessoa`, que receba suas informações pessoais.
 As propriedades e tipos de valores para cada propriedade desse objeto devem ser:
 - `nome` - String
 - `sobrenome` - String
@@ -181,22 +176,16 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao = function() {
-    var artigo;
+    var artigo = 'o';
+    var idade = 'ano'
+    var caminhada = 'metro!'
     if(pessoa.sexo === 'Feminino') {
         artigo = "a";
-    } else {
-        artigo = "o"
     }
-    var idade;
-    if(pessoa.idade === 1) {
-        idade = 'ano';
-    }else {
+    if(pessoa.idade > 1) {
         idade = 'anos';
     }
-    var caminhada;
-    if(pessoa.caminhouQuantosMetros === 1) {
-        caminhada = 'metro!';
-    } else {
+    if(pessoa.caminhouQuantosMetros > 1) {
         caminhada = 'metros!';
     }
    return "Olá, eu sou "+artigo+" "+pessoa.nome + " "+ pessoa.sobrenome+ ", tenho "+pessoa.idade+" "+idade+", "+pessoa.altura+" de altura, meu peso é "+pessoa.peso+"kg e, só hoje, eu já caminhei "+pessoa.caminhouQuantosMetros+" "+ caminhada;
