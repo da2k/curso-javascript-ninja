@@ -123,7 +123,6 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `quantidadePessoas` - Number - zero por padrão
 */
 var carro = { marca: 'Chevrolet', modelo: 'Celta', placa: 'ftx789', ano: 2009, cor: 'cinza', quantasPortas: 4, assentos: 5, quantidadePessoas: 0}
-
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
@@ -173,8 +172,22 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-?
-
+carro.embarque = function(passageiros) {
+    carro.quantidadePessoas += passageiros;
+    if(carro.quantidadePessoas >= carro.assentos) {
+        return 'O carro já está lotado!';
+    }
+    if(carro.quantidadePessoas <= carro.assentos) {
+        var totaldeVagas = carro.assentos - passageiros;
+        return 'Só cabem mais ' + totaldeVagas + ' pessoas!';
+    }
+    if(carro.quantidadePessoas === 4) {
+        var totaldevagas = 5;
+        var total = carro.quantidadePessoas - totaldevagas;
+        return 'Só cabem mais ' + total + 'pessoa.';
+    }
+    return 'Já temos ' + passageiros + ' pessoas no carro!';
+}
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
 utilize sempre o formato de invocação do método (ou chamada da propriedade),
@@ -204,20 +217,30 @@ carro.modelo
 'Celta'
 
 // Adicione 2 pessoas no carro.
-?
+carro.embarque(2);
+'Só cabem mais 3 pessoas!'
 
 // Adicione mais 4 pessoas no carro.
-?
+carro.embarque(4);
+'O carro já está lotado!'
 
 // Faça o carro encher.
-?
+carro.embarque(8);
+'O carro já está lotado!'
+carro.quantidadePessoas
+14
 
 // Tire 4 pessoas do carro.
-?
+carro.desembarque = function() {
+  return carro.quantidadePessoas - 4;
+}
+carro.desembarque();
+10
 
 // Adicione 10 pessoas no carro.
-?
+carro.embarque(10);
+'O carro já está lotado!'
+carro.quantidadePessoas;
+24
 
 // Quantas pessoas temos no carro?
-?
-```
