@@ -80,10 +80,11 @@ function testeParametro(a, b, c) {
     return a + b;
   } else if (a !== undefined && b !== undefined && c !== undefined) {
     return (a + b) / c;
-  } else {
+  } else if (a === undefined && b === undefined && c === undefined) {
     return false;
+  } else {
+    return null;
   }
-  return null;
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
