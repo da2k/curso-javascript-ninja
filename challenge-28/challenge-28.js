@@ -1,4 +1,4 @@
-  ( function( wind , doc ){
+( function( wind , doc ){
      
      'use strict';
 
@@ -84,32 +84,68 @@
  var ajax = new XMLHttpRequest();
 
  $buttonConfimar.on('click',function(event){
-   $message.get()[0].textContent = 'Buscando informações para o CEP '+formatarCep(clearCep($getInput.get()[0].value));
-   ajax.open('GET', 'http://apps.widenet.com.br/busca-cep/api/cep/'+formatarCep(clearCep($getInput.get()[0].value))+'.json');
+   var url ='http://apps.widenet.com.br/busca-cep/api/cep/'+cep()+'.json';
+   ajax.open('GET', url );
    ajax.send();
-   ajax.addEventListener('readystatechange',function(){
-     if(isRequestOk(ajax)){
-       var data = JSON.parse(ajax.responseText);
-       $inputs.forEach( function(element){
-       element.value = !!informacaoDeInderenco(element,data) ? informacaoDeInderenco(element,data) : '';
-       })
-       messageStatusDaRequisição(data)
-    }
-   },false)
+   $message.get()[0].textContent = replaceCep('loading');
+   ajax.addEventListener('readystatechange',handleReadyStateChange,false)
  } )
-
+ 
+ function cep(){
+  return clearCep($getInput.get()[0].value);
+ }
+ 
  function clearCep(cep){
-    var regex = /\d+/g;
-    return cep.match( regex ).reduce( function(atual ,acomulado){
-      return atual + acomulado;
-    } ,'');
+    return cep.replace('\/D\g','') 
  }
 
- function formatarCep(cep){
-     return cep.replace( cep.slice(5),'-'+cep.slice(5,8) );
+ function fiilCeFields(){
+   var data = parseData();
+   if(!data){
+     clearData();
+     return  $message.get()[0].textContent = replaceCep('error');
+   }
+   consultarCep(data)
+   $message.get()[0].textContent = replaceCep('ok');
  }
 
- function isRequestOk(ajax){
+ function  parseData(){
+  var resultado = null;
+    try{
+      resultado = JSON.parse(ajax.responseText);
+      if(resultado.status === 0){
+       resultado = null;
+      }
+    }
+    catch(e){
+    };
+   return resultado;
+ }
+
+  function clearData(){
+    return consultarCep({code:'',state:'',city:'',district:'',address:''});
+ }
+
+ function messageStatusDaRequisicao(type){
+   return {
+    'loading':'Buscando informações para o CEP [CEP]...', 
+    'ok':'Endereço referente ao CEP [CEP] ',
+    'error':'Não encontramos o endereço para o CEP [CEP] '
+   }[type];
+ }
+
+ function consultarCep(data){
+  $inputs.get().forEach( function(element){
+       element.value = !!informacaoDeInderenco(element,data) ? informacaoDeInderenco(element,data) : '';
+  })
+ }
+ 
+ function handleReadyStateChange(){
+     if(isRequestOk)
+     return  fiilCeFields()
+ }
+
+ function isRequestOk(){
   return ajax.readyState === 4 && ajax.status === 200;
  }
 
@@ -127,12 +163,8 @@
          };
  }
 
- function messageStatusDaRequisição(data){
-  if($inputs.every( (element)=>!!element.value ))
-    $message.get()[0].textContent = 'Endereço referente ao CEP '+formatarCep(clearCep($getInput.get()[0].value));
-  else if(!!data.message) 
-    $message.get()[0].textContent = 'Não encontramos o endereço para o CEP '+formatarCep(clearCep($getInput.get()[0].value));
+ function replaceCep(msg){
+  return  messageStatusDaRequisicao(msg).replace('[CEP]',cep());
  }
-
-
- })( window , document )
+ 
+})( window , document )
