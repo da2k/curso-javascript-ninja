@@ -2,17 +2,19 @@
 Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
-// ?
+var nina = ['Nina', 3, 'fofa', true, null]
 
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
-// ?
+function myNina(arg) {
+  return arg;
+}
 
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-// ?
+console.log(myNina(nina[1]));
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -20,18 +22,20 @@ segundo, um número. A função deve retornar o valor de um índice do array que
 no primeiro parâmetro. O índice usado para retornar o valor, deve ser o número passado no
 segundo parâmetro.
 */
-// ?
+function arrayComplex(arg, indice) {
+  return arg[indice];
+}
 
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
-// ?
+var feriados = ['natal', 25, null, 'pascoa', true]
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-// ?
+arrayComplex(feriados, 3); //pascoa
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -47,7 +51,18 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-// ?
+function book(bookTitle) {
+  var infoBook = {
+    "otherBookTitle": {
+      otherOtherBookTitle: {
+        "quantidadePaginas": 2,
+        "autor": "String",
+        "editora": "String"
+      }
+    }
+  }
+  return
+}
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
