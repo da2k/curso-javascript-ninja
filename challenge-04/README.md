@@ -45,13 +45,22 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `assentos` - Number - cinco por padrão
 - `quantidadePessoas` - Number - zero por padrão
 */
-var carro = { marca: 'Chevrolet', modelo: 'Celta', placa: 'ftx789', ano: 2009, cor: 'cinza', quantasPortas: 4, assentos: 5, quantidadePessoas: 0}
+var carro = { 
+  marca: 'Chevrolet',
+  modelo: 'Celta',
+  placa: 'ftx789',
+  ano: 2009,
+  cor: 'cinza',
+  quantasPortas: 4,
+  assentos: 5,
+  quantidadePessoas: 0
+}
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
 carro.mudarCor = function(outraCor) {
-  return carro.cor = outraCor;
+  carro.cor = outraCor;
 }
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
@@ -96,20 +105,18 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 citado acima, no lugar de "pessoas".
 */
 carro.embarque = function(passageiros) {
-    carro.quantidadePessoas += passageiros;
-    if(carro.quantidadePessoas >= carro.assentos) {
+    var totaldeVagas = carro.quantidadePessoas + passageiros;
+    if(totaldeVagas === carro.assentos) {
         return 'O carro já está lotado!';
     }
-    if(carro.quantidadePessoas <= carro.assentos) {
+    if(carro.quantidadePessoas > carro.assentos) {
         var totaldeVagas = carro.assentos - passageiros;
-        return 'Só cabem mais ' + totaldeVagas + ' pessoas!';
+        var pluralOuSingular = totaldeVagas === 1 ? 'pessoa' : 'pessoas'; 
+        return 'Só cabem mais ' + totaldeVagas + ' ' + pluralOuSingular + '!';
     }
-    if(carro.quantidadePessoas === 4) {
-        var totaldevagas = 5;
-        var total = carro.quantidadePessoas - totaldevagas;
-        return 'Só cabem mais ' + total + 'pessoa.';
-    }
-    return 'Já temos ' + passageiros + ' pessoas no carro!';
+    carro.quantidadePessoas += passageiros;
+    var pluralOuSingular = carro.quantidadePessoas === 1 ? 'pessoa' : 'pessoas'; 
+    return 'Já temos ' + carro.quantidadePessoas + ' ' + pluralOuSingular + ' no carro!';
 }
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -119,25 +126,26 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-carro.cor
-'azul'
+carro.obterCor();
+'cinza'
 
 // Mude a cor do carro para vermelho.
 carro.mudarCor('vermelho');
 
 // E agora, qual a cor do carro?
-'vermelho'
+carro.obterCor();//'vermelho'
 
 // Mude a cor do carro para verde musgo.
 carro.mudarCor('verde musgo');
+//
 
 // E agora, qual a cor do carro?
-carro.cor
+carro.obterCor();
 'verde musgo'
 
 // Qual a marca e modelo do carro?
-carro.modelo
-'Celta'
+carro.obterMarcaModelo();
+'Esse carro é um Chevrolete do Celta.'
 
 // Adicione 2 pessoas no carro.
 carro.embarque(2);
