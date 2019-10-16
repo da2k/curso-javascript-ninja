@@ -106,11 +106,11 @@ citado acima, no lugar de "pessoas".
 */
 carro.embarque = function(passageiros) {
     var totaldeVagas = carro.quantidadePessoas + passageiros;
-    if(totaldeVagas === carro.assentos) {
+    if(carro.quantidadePessoas === carro.assentos && totaldeVagas >= carro.assentos) {
         return 'O carro já está lotado!';
     }
-    if(carro.quantidadePessoas > carro.assentos) {
-        var totaldeVagas = carro.assentos - passageiros;
+    if(totaldeVagas > carro.assentos) {
+        var totaldeVagas = carro.assentos - carro.quantidadePessoas;
         var pluralOuSingular = totaldeVagas === 1 ? 'pessoa' : 'pessoas'; 
         return 'Só cabem mais ' + totaldeVagas + ' ' + pluralOuSingular + '!';
     }
@@ -149,31 +149,24 @@ carro.obterMarcaModelo();
 
 // Adicione 2 pessoas no carro.
 carro.embarque(2);
-'Só cabem mais 3 pessoas!'
+'Já temos 2 pessoas no carro!'
 
 // Adicione mais 4 pessoas no carro.
 carro.embarque(4);
-'O carro já está lotado!'
+'Só cabem mais 1 pessoa!'
 
 // Faça o carro encher.
-carro.embarque(8);
+carro.embarque(3);
 'O carro já está lotado!'
-carro.quantidadePessoas
-14
 
 // Tire 4 pessoas do carro.
-carro.desembarque = function() {
-  return carro.quantidadePessoas - 4;
-}
-carro.desembarque();
-10
+carro.embarque(-4);
+'Já temos 1 pessoa no carro!' 
 
 // Adicione 10 pessoas no carro.
 carro.embarque(10);
-'O carro já está lotado!'
-carro.quantidadePessoas;
-24
+'Só cabem mais 4 pessoas!'
 
 // Quantas pessoas temos no carro?
-carro.embarque(2);
-'Já temos 2 pessoas no carro!'
+carro.embarque(10);
+'Só cabem mais 4 pessoas!'
