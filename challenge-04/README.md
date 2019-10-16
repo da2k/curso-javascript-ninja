@@ -114,8 +114,7 @@ carro.embarque = function(passageiros) {
     if(totaldeVagas > carro.assentos)
         return 'Só cabem mais ' + totaldeVagas + ' ' + pluralOuSingular + '!';
     }
-    carro.quantidadePessoas += passageiros;
-    var pluralOuSingular = carro.quantidadePessoas === 1 ? 'pessoa' : 'pessoas'; 
+    carro.quantidadePessoas += passageiros; 
     return 'Já temos ' + carro.quantidadePessoas + ' ' + pluralOuSingular + ' no carro!';
 }
 /*
