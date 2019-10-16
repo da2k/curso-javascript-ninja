@@ -106,12 +106,12 @@ citado acima, no lugar de "pessoas".
 */
 carro.embarque = function(passageiros) {
     var totaldeVagas = carro.quantidadePessoas + passageiros;
+    var totaldeVagas = carro.assentos - carro.quantidadePessoas;
+    var pluralOuSingular = totaldeVagas === 1 ? 'pessoa' : 'pessoas'; 
     if(carro.quantidadePessoas === carro.assentos && totaldeVagas >= carro.assentos) {
         return 'O carro já está lotado!';
     }
-    if(totaldeVagas > carro.assentos) {
-        var totaldeVagas = carro.assentos - carro.quantidadePessoas;
-        var pluralOuSingular = totaldeVagas === 1 ? 'pessoa' : 'pessoas'; 
+    if(totaldeVagas > carro.assentos)
         return 'Só cabem mais ' + totaldeVagas + ' ' + pluralOuSingular + '!';
     }
     carro.quantidadePessoas += passageiros;
