@@ -9,7 +9,7 @@ function Soma(x, y) {
 }
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-var resultado = Soma(10 + 2) + 5;
+var resultado = Soma(10, 2) + 5;
 
 // Qual o valor atualizado dessa variável?
 //17
@@ -46,10 +46,7 @@ function Multiplicar(a, b, c){
     if (a === undefined || b === undefined || c === undefined){
         return 'Preencha todos os valores corretamente!';
     } 
-    else {
         return (a * b * c) + 2;
-    }
-    
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
