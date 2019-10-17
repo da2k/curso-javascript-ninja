@@ -86,12 +86,9 @@
   */
   console.log( '\nNova idade das pessoas:' );
   var anos = 15;
-  teresa.addAge(anos);
-  flavia.addAge(anos);
-  eduardo.addAge(anos);
-  console.log('Nova idade:', teresa.getFullName(), 'agora tem', teresa.getAge(), 'anos');
-  console.log('Nova idade:', flavia.getFullName(), 'agora tem', flavia.getAge(), 'anos');
-  console.log('Nova idade:', eduardo.getFullName(), 'agora tem', eduardo.getAge(), 'anos');
+  console.log('Nova idade:', teresa.getFullName(), 'agora tem', teresa.addAge(anos).getAge(), 'anos');
+  console.log('Nova idade:', flavia.getFullName(), 'agora tem', flavia.addAge(anos).getAge(), 'anos');
+  console.log('Nova idade:', eduardo.getFullName(), 'agora tem', eduardo.addAge(anos).getAge(), 'anos');
 
 
 })();
