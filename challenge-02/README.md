@@ -44,7 +44,7 @@ function multiplicar(a , b , c){
    if(a == 0) || (b == 0) || (c == 0) {
      return 'Preencha todos os valores corretamente!';
    }
-   return a * b * c;   
+   return (a * b * c) + 2;   
 
 // Invoque a função criada acima, passando só dois números como argumento.
 multiplicar(1 , 2);
@@ -56,7 +56,7 @@ Preencha todos os valores corretamente!
 multiplicar(1 , 2 , 3);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-6
+8
 
 /*
 Crie uma função com as seguintes características:
@@ -69,6 +69,7 @@ Crie uma função com as seguintes características:
 */
 function oper(a , b , c){
   var test[0 , 0 , 0];
+  
   if(a > 0) {
     test[0] = 1;
   }
@@ -77,19 +78,20 @@ function oper(a , b , c){
   }
   if(c > 0){
     test[2] = 1;
-    switch(test){
-      case 001 : return c;
-      case 010 : return b;
-      case 011 : return b + c;
-      case 100 : return a;
-      case 101 : return a + c;
-      case 111 : return (a + b) / c;
-      case 000 : return false;
-      default  : return null;
-     }
-   }
-}
+    
+  switch(test){
+        case 001 : return c;
+        case 010 : return b;
+        case 011 : return b + c;
+        case 100 : return a;
+        case 101 : return a + c;
+        case 111 : return (a + b) / c;
+        case 000 : return false;
+        default  : return null;
+  } 
   
+}  
+
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 oper (0, 2, 3);   //* resultado: 5
 oper (1, 0, 3);   //* resultado: 4
