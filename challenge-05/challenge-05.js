@@ -2,30 +2,41 @@
 Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
-
+var array = [10,'Joseph Stefano',true,null,undefined];
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
+function converted(args){
+  return console.log(args[1]);
+}
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-
+converted(array);
+Joseph Stefano
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
 segundo, um número. A função deve retornar o valor de um índice do array que foi passado
 no primeiro parâmetro. O índice usado para retornar o valor, deve ser o número passado no
 segundo parâmetro.
 */
-
+var array = [10,15,20,15,30];
+var number = 20;
+function myFunction(args, args2){
+  return args;
+}
+myFunction(array,number)[2];
+20
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
-
+var array = [10,15,20,15,30];
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-
+myFunction(array,number)
+[ 10, 15, 20, 15, 30 ]
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
 livro. Dentro dessa função, declare uma variável que recebe um objeto com as
