@@ -20,23 +20,28 @@ segundo, um número. A função deve retornar o valor de um índice do array que
 no primeiro parâmetro. O índice usado para retornar o valor, deve ser o número passado no
 segundo parâmetro.
 */
-var array = [10,15,20,15,30];
-var number = 20;
-function myFunction(args, args2){
-  return args;
+function myFunction(args, index){
+  return args[index];
 }
-myFunction(array,number)[2];
-20
+
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
-var array = [10,15,20,15,30];
+var array = [10,'shevechenko',function(),true,undefined];
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-myFunction(array,number)
-[ 10, 15, 20, 15, 30 ]
+console.log(myFunction(array,0));
+10
+console.log(myFunction(array,1));
+shevechenko
+console.log(myFunction(array,2));
+[function]
+console.log(myFunction(array,3));
+true
+console.log(myFunction(array,4));
+undefined
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
 livro. Dentro dessa função, declare uma variável que recebe um objeto com as
