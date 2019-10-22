@@ -7,7 +7,7 @@ var array = [10,'Joseph Stefano',true,null,undefined];
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
 function converted(args){
-  return console.log(args[1]);
+  return console.log(args);
 }
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
@@ -56,30 +56,49 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-// ?
+function book(nomeDoLivro) {
+    var livros = {
+        'Os segredos de uma mente milionaria': {
+            quantidadePaginas : 143,
+            autor: 'T. Harv Eker',
+            editora: 'Sextante'
+        },
+        'Eterna vigilância': {
+            quantidadePaginas : 288,
+            autor: 'Snowden Edward',
+            editora: 'Planeta'
+        },
+        'Knowledge is Profit': {
+            quantidadePaginas : 162,
+            autor: 'Debora G Barbosa',
+            editora: 'Amazon'
+        }
+    };
+    return !nomeDoLivro ? livros : livros[nomeDoLivro];
+}
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-// ?
-
+console.log(book());
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// ?
-
+console.log('O livro Knowledge is Profit ' + book('Knowledge is Profit').quantidadePaginas + ' paginas!');
+O livro Knowledge is Profit 162 paginas!
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
-
+console.log('Autor do Livro Os segredos da mente milionária é '+ book('Os segredos de uma mente milionaria').autor + '.');
+Autor do Livro Os segredos da mente milionária é T. Harv Eker.
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-// ?
+console.log('Há editora do livro Eterna vigilância do famoso hacker Eduard Snowden é a ' + book('Eterna vigilância').editora + '.');
+Há editora do livro Eterna vigilância do famoso hacker Eduard Snowden é a Planeta.
