@@ -1,5 +1,4 @@
 # Desafio da semana #4
-
 /*
 Declare uma variável chamada `isTruthy`, e atribua a ela uma função que recebe
 um único parâmetro como argumento. Essa função deve retornar `true` se o
@@ -114,7 +113,26 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 citado acima, no lugar de "pessoas".
 */
 carro.entrarNoCarro = function(_qtde){
-	_
+  var restam  = carro.assentos - carro.quantidadePessoas;
+  var ficamNoCarro  = _qtde + carro.quantidadePessoas;
+	
+	console.log('Restam: ' + restam);
+	console.log('ficamNoCarro: ' + ficamNoCarro);
+	if(ficamNoCarro > carro.assentos){	   
+    if (!restam){
+       return 'O carro já está lotado!';
+    }
+	   if(restam === 1){
+	      return 'Só cabem mais ' + restam + ' pessoa!';
+	   }
+	   else{
+	      return 'Só cabem mais ' + restam + ' pessoas!';
+	   }   
+	}
+  carro.quantidadePessoas += _qtde;
+
+  return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!';
+	
 }
 
 /*
@@ -125,37 +143,37 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-?
+carro.obterCor();
 
 // Mude a cor do carro para vermelho.
-?
+carro.mudarCor("Azul");
 
 // E agora, qual a cor do carro?
-?
+carro.obterCor();           // AZUL
 
 // Mude a cor do carro para verde musgo.
-?
+carro.mudarCor("Verde Musgo");
 
 // E agora, qual a cor do carro?
-?
+carro.obterCor();           // verde musgo
 
 // Qual a marca e modelo do carro?
-?
+carro.obterMarcaModelo();    //"Esse carro é um Fiat Marea Turbo 3.0"
 
 // Adicione 2 pessoas no carro.
-?
+carro.entrarNoCarro(2);     //"Já temos 2 pessoas no carro!"
 
 // Adicione mais 4 pessoas no carro.
-?
+carro.entrarNoCarro(4);    //"Só cabem mais 3 pessoas!"
 
 // Faça o carro encher.
-?
+carro.entrarNoCarro(3);    //"Já temos 5 pessoas no carro!"
 
 // Tire 4 pessoas do carro.
-?
+carro.entrarNoCarro(3);    //"Já temos 1 pessoas no carro!"
 
 // Adicione 10 pessoas no carro.
-?
+carro.entrarNoCarro(10);    //"Só cabem mais 4 pessoas!"
 
 // Quantas pessoas temos no carro?
-?
+carro.entrarNoCarro(0);     //"Já temos 1 pessoas no carro!"
