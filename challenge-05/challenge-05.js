@@ -14,7 +14,7 @@ function retornaArr(arg) {
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-console.log(retornaArr(qualquer)[1])
+console.log(retornaArr(qualquer)[1]) // [ 1, 2, 3 ]
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -35,7 +35,7 @@ let qualquer2 = [[1, 2, 3, 4], false, true, 'henrique', null, {prop1: 1}]
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-console.log(retornaArr(qualquer2))
+console.log(retornaArr(qualquer2)) // [ [ 1, 2, 3, 4 ], false, true, 'henrique', null, { prop1: 1 } ]
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -82,18 +82,18 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-console.log(`O livro JavaScript de Alto Desempenho tem ${book('JavaScript de Alto Desempenho').quantidadePaginas} páginas`)
+console.log(`O livro JavaScript de Alto Desempenho tem ${book('JavaScript de Alto Desempenho').quantidadePaginas} páginas`) // O livro JavaScript de Alto Desempenho tem 248 páginas
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log(`O autor no livro JavaScript de Alto Desempenho é ${book('JavaScript de Alto Desempenho').autor}.`)
+console.log(`O autor no livro JavaScript de Alto Desempenho é ${book('JavaScript de Alto Desempenho').autor}.`) // O autor no livro JavaScript de Alto Desempenho é Nicholas C. Zakas.
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log(`O livro JavaScript de Alto Desempenho foi publicado pela editora ${book('JavaScript de Alto Desempenho').editora}.`)
+console.log(`O livro JavaScript de Alto Desempenho foi publicado pela editora ${book('JavaScript de Alto Desempenho').editora}.`) // O livro JavaScript de Alto Desempenho foi publicado pela editora Novatec.
