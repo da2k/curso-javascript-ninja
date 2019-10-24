@@ -33,6 +33,9 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 let showTeamPosition = (posicao) => {
+    if( posicao < 1 || posicao > 5) {
+        return 'Não temos a informação do time que está nessa posição.'
+    }
   return `O time que está  na ${posicao}º lugar é o ${teams[posicao - 1]}`
 }
 
@@ -44,6 +47,7 @@ console.log(showTeamPosition(1)) // O time que está  na 1º lugar é o Corinthi
 console.log(showTeamPosition(2)) // O time que está  na 2º lugar é o Santos
 console.log(showTeamPosition(3)) // O time que está  na 3º lugar é o Palmeiras
 console.log(showTeamPosition(4)) // O time que está  na 4º lugar é o São Paulo
+console.log(showTeamPosition(6)) // Não temos a informação do time que está nessa posição.
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
