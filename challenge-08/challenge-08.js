@@ -13,8 +13,8 @@ o resultado no console, com a frase:
 "A soma de [VALOR 1] e [VALOR2] é igual a [RESULTADO]."
 */
 console.log(
-    `A soma de 10 e 15 é igual a ${calculateSum(10, 15)}`
-    ) // A soma de 10 e 15 é igual a 25
+  `A soma de 10 e 15 é igual a ${calculateSum(10, 15)}`
+) // A soma de 10 e 15 é igual a 25
 
 /*
 Mostre no console o nome da função criada acima, com a frase:
