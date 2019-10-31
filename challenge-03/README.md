@@ -173,8 +173,31 @@ deve conter no retorno da frase acima é "metro" no lugar de "metros".
 método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
-?
+pessoa.apresentacao = function(){
+
+    if(pessoa.sexo == 'Masculino' || sexo == 'masculino'){ 
+     
+        var sexoo = 'Olá!, eu sou o';      
+    
+    }else if(pessoa.sexo == 'Feminino' || sexo == 'feminino'){
+     var sexoo = 'Olá!, eu sou a';
+    }
+    if(pessoa.idade == 1){
+        var idadee = 'ano';
+    }else if(pessoa.idade > 1){
+       var idadee = 'anos';
+    }
+    if(pessoa.caminhouQuantosMetros == 1){
+      
+        var caminhouQuantosMetross = 'metro'
+    
+    }else if(pessoa.caminhouQuantosMetros > 1){
+        var caminhouQuantosMetross = 'metros'
+    }
+    
+    return pessoa.sexoo+' '+pessoa.nome+' '+pessoa.sobrenome+' e tenho '+pessoa.idade+' '+idadee+' '+pessoa.altura+'  ,meu peso é '+pessoa.peso+'  e so hoje eu ja caminhei '+pessoa.caminhouQuantosMetros+' '+caminhouQuantosMetross;
+}
 
 // Agora, apresente-se ;)
-?
+"Olá, eu sou o Luciano Soares e tenho 18 anos 1.82  ,meu peso é 62 e so hoje eu ja caminhei 0 metros"
 ```
