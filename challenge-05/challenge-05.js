@@ -22,18 +22,24 @@ segundo, um número. A função deve retornar o valor de um índice do array que
 no primeiro parâmetro. O índice usado para retornar o valor, deve ser o número passado no
 segundo parâmetro.
 */
-// ?
+function minhaFuncao(arr, index){
+  return arr[index];
+}
+  
 
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
-// ?
-
+var array = [1, 'dois', true, [1,2,'Rod], {a:1}];
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-// ?
+minhaFuncao(array,0);
+minhaFuncao(array,1);
+minhaFuncao(array,2);
+minhaFuncao(array,3);
+minhaFuncao(array,4);
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -49,8 +55,25 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-// ?
-
+function book(nomeLivro){
+  var todosLivros = {
+   'cangaceiro':{
+      quantidadePaginas: 120,
+      autor: 'Flavio Almeida',
+      editora: 'Casa do Código'
+  },
+    'kubernetes':{
+      quantidadePaginas: 142,
+      autor: 'Lucas Santos',
+      editora: 'Casa do Código'
+  },
+   'arduino':{
+      quantidadePaginas: 75,
+      autor: 'Fernando Bryan Frizzarin',
+      editora: 'Casa do Código'                         
+  }
+}
+}
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
