@@ -5,28 +5,38 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
 ?
+function mytest(n1,n2){
+ return n1+n2;
+}
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
 ?
+var myrecebe=mytest(23,5)+5;
 
 // Qual o valor atualizado dessa variável?
 ?
-
+33
 // Declare uma nova variável, sem valor.
 ?
-
+var mynova
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
 ?
+var myadd=function(){
+    mynova='Ana';
+    return 'O valor da variável agora é '+mynova
 
+}
 // Invoque a função criada acima.
 ?
+myadd()
 
 // Qual o retorno da função? (Use comentários de bloco).
 ?
+// O valor da variável agora é Ana
 
 /*
 Crie uma função com as seguintes características:
@@ -36,19 +46,30 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 ?
+function myseguinte(n1,n2,n3){
+    if(n1===undefined || n2===undefined ||n3===undefined){
+        return 'Preencha todos os valores corretamente!'
+    }else{
+    return (n1*n2*n3)+2;
+    }
+
+}
 
 // Invoque a função criada acima, passando só dois números como argumento.
 ?
+myseguinte(2,4);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 ?
+'Preencha todos os valores corretamente!'
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 ?
+myseguinte(2,4,3);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 ?
-
+26
 /*
 Crie uma função com as seguintes características:
 1. A função deve receber 3 argumentos.
@@ -59,7 +80,26 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 ?
+function mydeve( a,b,c){
+    if( a!=undefined && b===undefined && c===undefined){
+        return a;
+    }
+    else if(a!=undefined && b!=undefined && c===undefined){
+         return a+b; 
+    }else if(a!=undefined && b!=undefined && c!=undefined){
+        return (a+b)/c;
+    } else if(a===undefined && b===undefined && c===undefined){
+        return false;
+    }else{
+        return null;
+    }
+
+}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 ?
+mydeve()//false
+mydeve(5)//5
+mydeve(2,3)//5
+mydeve(3,4,5)//1.4
 ```
