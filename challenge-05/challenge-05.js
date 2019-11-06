@@ -73,29 +73,33 @@ function book(nomeLivro){
       editora: 'Casa do Código'                         
   }
 }
+if(!todosLivros){
+    return todosLivros;
+  }
+  return todosLivros[nomeLivro];
 }
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-// ?
+book();
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// ?
+console.log( 'O livro Cangaceiro Javascript tem ' + book( 'cangaceiro' ).quantidadePaginas + ' páginas!' );
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
+console.log( 'O autor do livro Kubernetes é ' + book( 'kubernetes' ).autor + '.');
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-// ?
+console.log( 'O livro Arduino foi publicado pela editora ' + book( 'arduino' ).editora + '.' );
