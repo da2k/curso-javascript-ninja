@@ -1,6 +1,7 @@
 # Desafio Semana #1
 
 ```js
+
 // Declarar uma variável chamada `myvar`, sem valor.
 var myvar;
 
@@ -11,7 +12,7 @@ myvar = 10;
 var soma = 15 + 8;
 
 // Atribua à variável `soma` todo o valor dela, somando 1, usando o operador de soma abreviado.
-soma += 1;
+soma += 1; ou soma++;
 
 // Atribua à variável `soma` todo o valor dela, multiplicando por 3, usando o operador de multiplicação abreviado.
 soma *= 3;
@@ -40,5 +41,5 @@ function divisao(n1, n2) {
 	}
 
 // Invoque a função criada acima, passando os parâmetros 10 e 2.
-divisao(10, 2)
+divisao(10, 2);
 ```
