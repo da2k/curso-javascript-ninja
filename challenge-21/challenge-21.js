@@ -14,4 +14,26 @@ Utilize o atributo data-js para nomear o campo e os botões. Você pode
 usar o nome que achar melhor, desde que ele seja semântico, ou seja, o nome
 dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
 */
-// ?
+var counter = 0;
+var tempo = document.querySelector("[data-js='input']");
+var inicio = document.querySelector("[data-js='start']");
+var para = document.querySelector("[data-js='stop']");
+var reinicio = document.querySelector("[data-js='reset']");
+
+var crono;
+
+inicio.addEventListener("click", function timer(){
+    tempo.value = counter;
+    counter++;
+    crono = setTimeout(timer, 1000);
+}, false);   
+
+para.addEventListener("click", function(){
+    clearTimeout(crono);
+}, false);   
+
+reinicio.addEventListener("click", function (){    
+    tempo.value = 0;    
+    clearTimeout(crono);    
+    counter = 0;
+}, false); 
