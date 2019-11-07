@@ -15,7 +15,7 @@ desafio.
 */
 let teams = ['Corinthians', 'Santos', 'Palmeiras', 'São Paulo', 'Guarani']
 
-console.log('Times que estão participando do campeonato:', teams);
+console.log('Times que estão participando do campeonato:', teams) // Times que estão participando do campeonato: [ 'Corinthians', 'Santos', 'Palmeiras', 'São Paulo', 'Guarani' ]
 
 /*
 Crie uma função chamada `showTeamPosition` com as seguintes características:
