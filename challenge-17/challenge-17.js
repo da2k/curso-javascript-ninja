@@ -115,7 +115,7 @@
     }
   } */
 
-  function getMonthNumber(month) {
+  function getMonthNumber(monthName) {
     const months = {
       'janeiro': '01',
       'fevereiro': '02',
