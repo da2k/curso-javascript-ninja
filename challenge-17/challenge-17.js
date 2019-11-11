@@ -49,7 +49,7 @@
   Mostre o resultado no console:
   */
   console.log('\nTrocando "A" e "a" por "4":');
-  console.log(text.replace(/[a]/gi, 4));
+  console.log(text.replace(/a/gi, 4));
 
   /*
   Substitua a frase "O Centauro de Luvas", deixando-a em caixa alta, usando
