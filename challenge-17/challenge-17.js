@@ -147,7 +147,7 @@
   Mostre a regex no console.
   */
   console.log('\nRegex que vai fazer o match com as datas do texto:');
-  var regexDate = /(\d\d)( de )(junho|julho)( de )(\d\d\d\d)/g;
+  var regexDate = /(\d\d) de (junho|julho) de (\d\d\d\d)/g;
   console.log(regexDate);
 
   /*
@@ -159,11 +159,9 @@
   */
   console.log('\nReplace de datas:');
   function replaceDate() {
-    return text.replace(regexDate, function (dataEstensa) {
-      return dataEstensa.replace(/(junho|julho)/g, function (mes) {
-        return getMonthNumber(mes);
-      }).replace(/ de /g, '/');
-    })
+    return text.replace(regexDate, function (dataCompleta, dia, mes, ano) {
+      return dia + '/' + getMonthNumber(mes) + '/' + ano;
+    });
   }
 
   console.log(replaceDate())
