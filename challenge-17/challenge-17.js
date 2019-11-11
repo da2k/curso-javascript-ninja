@@ -131,7 +131,7 @@
       'dezembro': '12'
     };
 
-    return months[month];
+    return months[monthName];
   }
 
   console.log('O mês de março é representado pelo número ' + getMonthNumber('março') + '.');
