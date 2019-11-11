@@ -159,8 +159,8 @@
   */
   console.log('\nReplace de datas:');
   function replaceDate() {
-    return text.replace(regexDate, function (dataCompleta, dia, mes, ano) {
-      return dia + '/' + getMonthNumber(mes) + '/' + ano;
+    return text.replace(regexDate, function (fullDate, day, month, year) {
+      return day + '/' + getMonthNumber(month) + '/' + year;
     });
   }
 
