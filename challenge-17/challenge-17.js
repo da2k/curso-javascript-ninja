@@ -57,7 +57,7 @@
   */
   console.log('\n"O Centauro de Luvas" em caixa alta:');
   console.log(text.replace(/(O Centauro de Luvas)/, function (retorno) {
-    return retorno.toLocaleUpperCase();
+    return retorno.toUpperCase();
   }));
 
   /*
