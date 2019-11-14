@@ -44,7 +44,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function passarArgumentos(a,b,c){
-        if((a === undefined && b === undefined) && c === undefined){
+        if(a === undefined || b === undefined || c === undefined){
             return "Preencha todos os valores corretamente!";
     }else{
         return (a * b * c) + 2;
@@ -55,7 +55,7 @@ function passarArgumentos(a,b,c){
 passarArgumentos(2,3);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-// NaN
+// Preencha todos os valores corretamente!
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 passarArgumentos(2,3,4);
@@ -73,11 +73,11 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function argumentos(x,y,z){
-    if(x >=0 && y === undefined && z === undefined ){
+    if(x !== undefined && y === undefined && z === undefined ){
         return x;
-    }else if(x >= 0 && y >= 0 && z === undefined){
+    }else if(x !== undefined && y !== undefined && z === undefined){
         return x + y;
-    }else if(x >= 0 && y >= 0 && z >= 0){
+    }else if(x !== undefined && y !== undefined && z !== undefined){
         return (x + y) / z;
     }else if(x === undefined || y === undefined || z === undefined){
         return false;
