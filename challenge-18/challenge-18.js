@@ -64,7 +64,9 @@
   ["junho", "julho"]
   */
   console.log('\nMatch com as palavras "junho" ou "julho" para a frase "Os meses de janeiro, junho e julho começam com a letra j.":');
-  // ?
+  var regex = /j\w{3}o/g;
+
+  console.log('Os meses de janeiro, junho e julho começam com a letra j.'.match(regex));
 
   /*
   Crie uma expressão regular que faça o match com a abertura de uma tag
@@ -76,7 +78,8 @@
   ["<div>", "<section>", "<blockquote>"]
   */
   console.log('\nMatch com a abertura de uma tag HTML:');
-  // ?
+  var regex = /<\w+>/g;
+  console.log('<div><section><blockquote>Texto <img /></blockquote></section></div>'.match(regex));
 
   /*
   Crie uma expressão regular que faça o match com uma tag HTML vazia, casando
@@ -88,7 +91,8 @@
   ["<li></li>", "<li></li>", "<span></span>"]
   */
   console.log('\nMatch com tags HTML vazias (abertura e fechamento da tag):');
-  // ?
+  var regex = /<\w+><\/\w+>/g;
+  console.log('<div><ul><li></li><li></li><li><span></span></li></ul></div>'.match(regex));
 
   /*
   Vamos complicar um pouco agora :D
@@ -113,5 +117,8 @@
   corretas, para depois aplicar no código ;)
   */
   console.log('\nFazer replace dos textos das tags:');
-  // ?
+  var regex = /(<\w+>)([\wà-û ]+)(<\/\w+>)/gi;
+
+  console.log('<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>'.replace(regex, '$1' + 'O texto dentro da tag "$1" é "$2"' + '$3\n'));
+
 })();
