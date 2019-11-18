@@ -118,9 +118,9 @@
     variável chamada "sum", que receba a função "calculator", passando por
     parâmetro a variável que recebeu o sinal da operação.
     */
-        
+    operationSignal = '+';
     var sum = calculator(operationSignal);
-
+     
     /*
     PASSO 3:
     "sum" agora é uma função, e, se o sinal correto não foi passado para a
