@@ -4,33 +4,18 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-<<<<<<< HEAD
 function sum(x, y){
-	return x + y;
+  return x + y;
 }
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-var mysum = sum(2, 5) + 5;
+var mysum = sum(2,5) + 5;
 
 // Qual o valor atualizado dessa variável?
 12
 
 // Declare uma nova variável, sem valor.
-var newvar;
-=======
-function soma(x, y){
-  return x + y;
-}
-
-// Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-var somando = soma(10, 5) + 5;
-
-// Qual o valor atualizado dessa variável?
-20
-
-// Declare uma nova variável, sem valor.
-var semvalor;
->>>>>>> a8879ba54e29494ba1799c433c449ca82e1157c5
+var myvar;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
@@ -38,8 +23,8 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 function addValue(){
-	newvar = 25;
-	return 'O valor da variável agora é ' + newvar;
+  myvar = 25;
+  return 'O valor da variável agora é ' + myvar;
 }
 
 // Invoque a função criada acima.
@@ -99,7 +84,6 @@ function threeArgs(x, y, z){
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-<<<<<<< HEAD
 threeArgs();
 // false
 threeArgs(5);
@@ -109,7 +93,3 @@ threeArgs(5,5);
 threeArgs(5,5,5);
 // 2
 ```
-=======
-?
-```
->>>>>>> a8879ba54e29494ba1799c433c449ca82e1157c5
