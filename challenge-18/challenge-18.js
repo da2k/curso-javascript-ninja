@@ -20,11 +20,9 @@
   console.log('Limpando CPFs:');
 
   function cleanCpf(cpf) {
-    var regexCpf = /\d{1,3}/g;
 
-    var cleanCpf = cpf.match(regexCpf).join("");
+    return cpf.replace(/[^\d]/g, '');
 
-    return cleanCpf;
   }
 
   console.log(cleanCpf('049-214 3421-1'));
