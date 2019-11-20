@@ -21,7 +21,7 @@
 
   function cleanCpf(cpf) {
 
-    return cpf.replace(/[^\d]/g, '');
+    return cpf.replace(/\D/g, '');
 
   }
 
