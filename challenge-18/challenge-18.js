@@ -40,7 +40,7 @@
   function formatCpf(cpf) {
     var regexCpfMask = /(\d{3})(\d{3})(\d{3})(\d{2})/g;
 
-    return cpf.replace(regexCpfMask, '$1' + '.' + '$2' + '.' + '$3' + '-' + '$4');
+    return cpf.replace(regexCpfMask, '$1.$2.$3-$4');
   }
 
   cpfs.forEach(function (cpf) {
