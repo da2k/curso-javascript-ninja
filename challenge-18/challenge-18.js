@@ -22,7 +22,6 @@
   function cleanCpf(cpf) {
 
     return cpf.replace(/\D/g, '');
-
   }
 
   var cpfs = ['049-214 3421-1', '210.458.522-05', '735 500 794 - 22', '101.123-131x32'];
@@ -41,15 +40,12 @@
   function formatCpf(cpf) {
     var regexCpfMask = /(\d{3})(\d{3})(\d{3})(\d{2})/g;
 
-    var maskedCpf = cpf.replace(regexCpfMask, '$1' + '.' + '$2' + '.' + '$3' + '-' + '$4');
-
-    return maskedCpf;
+    return cpf.replace(regexCpfMask, '$1' + '.' + '$2' + '.' + '$3' + '-' + '$4');
   }
 
-  console.log(formatCpf(cleanCpf('049-214 3421-1')));
-  console.log(formatCpf(cleanCpf('210.458.522-05')));
-  console.log(formatCpf(cleanCpf('735 500 794 - 22')));
-  console.log(formatCpf(cleanCpf('101.123-131x32')));
+  cpfs.forEach(function (cpf) {
+    console.log(formatCpf(cleanCpf(cpf)));
+  });
 
   /*
   Crie uma expressão regular que faça match com as palavras "junho" ou "julho",
