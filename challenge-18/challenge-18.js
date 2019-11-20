@@ -25,10 +25,11 @@
 
   }
 
-  console.log(cleanCpf('049-214 3421-1'));
-  console.log(cleanCpf('210.458.522-05'));
-  console.log(cleanCpf('735 500 794 - 22'));
-  console.log(cleanCpf('101.123-131x32'));
+  var cpfs = ['049-214 3421-1', '210.458.522-05', '735 500 794 - 22', '101.123-131x32'];
+
+  cpfs.forEach(function (cpf) {
+    console.log(cleanCpf(cpf));
+  });
 
   /*
   Usando os CPFs limpos acima, deixe-os com a formatação correta de CPF.
