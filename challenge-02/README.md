@@ -15,20 +15,23 @@ var variavel = soma(5,6) + 5
 16
 
 // Declare uma nova variável, sem valor.
-var variavel2
+var valor
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-?
+function adicionaValor(){
+    valor = 17
+    return 'O valor da variável agora é ' + valor
+}
 
 // Invoque a função criada acima.
-?
+adicionaValor()
 
 // Qual o retorno da função? (Use comentários de bloco).
-?
+/* O valor da variavel agora é 17 */
 
 /*
 Crie uma função com as seguintes características:
@@ -37,19 +40,24 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-?
+function funcaoTestaArgumento(a, b, c){
+    if (a == null || b == null || c == null)
+        return 'Preencha todos os valores corretamente'
+    
+    return a*b*c + 2
+}
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+funcaoTestaArgumentos(2,3)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+// Preencha todos os valores corretamente
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+funcaoTestaArgumentos(2,3,4)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+// 26
 
 /*
 Crie uma função com as seguintes características:
@@ -60,8 +68,27 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+> function funcaoTestaParametros(a,b,c){
+    if (a!=null && b==null && c==null)
+        return a
+    else if (a!=null && b!=null && c==null)
+        return a+b
+    else if (a!=null && b!=null && c!=null)
+        return (a+b)/c
+    else if (a==null && b==null && c==null)
+        return false
+    else
+        return null
+}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+funcaoTestaParametros(1)                // 1
+funcaoTestaParametros(1, 2)             // 3
+funcaoTestaParametros(1, 2, 3)          // 1
+funcaoTestaParametros()                 // false
+funcaoTestaParametros(null, null, null) // false
+funcaoTestaParametros(null, 2, null)    // null
+
+
+
 ```
