@@ -2,36 +2,45 @@
 Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
-// ?
+var newArray = [1,'Daniel', function(){}, true, undefined ];
 
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
-// ?
+function myFunction(arr){
+    return arr;
+}
 
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-// ?
-
+console.log( myFunction(newArray)[1] );
+console.log('-------------------------');
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
 segundo, um número. A função deve retornar o valor de um índice do array que foi passado
 no primeiro parâmetro. O índice usado para retornar o valor, deve ser o número passado no
 segundo parâmetro.
 */
-// ?
+function otherFunction(myArray, index){
+    return myArray[index];
+}
 
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
-// ?
+var otherArray = [33.3, false, function(){ [1,2,3] }, 'Curso', 5 * 5];
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-// ?
+console.log(otherFunction (otherArray, 0) );
+console.log(otherFunction (otherArray, 1) );
+console.log(otherFunction (otherArray, 2) );
+console.log(otherFunction (otherArray, 3) );
+console.log(otherFunction (otherArray, 4) );
+console.log('-------------------------');
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -47,30 +56,54 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-// ?
+function book(bookName){
+
+    var allBooks = {
+        
+        'Segredos do Ninja Javascript': {
+            quantidadePaginas: 488,
+            autor: 'John Resig & Bear Bibeault',
+            editora: 'Novatec'
+        },
+
+        'Introdução ao HTML5': {
+            quantidadePaginas: 220,
+            autor: 'Bruce LAwson & Remy Sharp',
+            editora: 'All Books'
+        },
+
+        'Smashing CSS': {
+            quantidadePaginas: 283,
+            autor: 'Erick A. Meyer',
+            editora: 'Bookman'
+        }
+    };
+
+    return !bookName ? allBooks: allBooks[bookName];
+}
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-// ?
-
+console.log( book() );
+console.log('-------------------------');
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// ?
-
+console.log( `O livro Segredos do Ninja Javascript tem ${book('Segredos do Ninja Javascript').quantidadePaginas} páginas!` );
+console.log('-------------------------');
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
-
+console.log( 'O autor do livro Introdução ao HTML5 é ' + book('Introdução ao HTML5').autor )
+console.log('-------------------------');
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-// ?
+console.log( `O livro Smashing CSS foi publicado pela editora ${book('Smashing CSS').editora}.` );
