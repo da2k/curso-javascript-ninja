@@ -56,30 +56,35 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-function book(bookName){
+function book(nomeLivro){
 
-    var allBooks = {
+    var livros = {
         
-        'Segredos do Ninja Javascript': {
-            quantidadePaginas: 488,
-            autor: 'John Resig & Bear Bibeault',
-            editora: 'Novatec'
+        quem_pensa_enriquece: {
+            quantidadePaginas: 248,
+            autor: 'Napoleon Hill',
+            editora: 'Fundamento'
         },
 
-        'Introdução ao HTML5': {
-            quantidadePaginas: 220,
-            autor: 'Bruce LAwson & Remy Sharp',
-            editora: 'All Books'
+        os_segredos_da_mente_milionaria: {
+            quantidadePaginas: 176 ,
+            autor: 'T. Harv Eker',
+            editora: 'Editora Sextante'
         },
 
-        'Smashing CSS': {
-            quantidadePaginas: 283,
-            autor: 'Erick A. Meyer',
-            editora: 'Bookman'
+        o_milagre_do_amanha: {
+            quantidadePaginas: 196,
+            autor: 'Hal Elrod',
+            editora: 'BestSeller'
         }
     };
 
-    return !bookName ? allBooks: allBooks[bookName];
+    if(!nomeLivro){
+        return livros;
+    }
+    return livros[nomeLivro];
+    
+    //return !nomeLivro ? livros: livros[nomeLivro]; // Condicional ternário
 }
 
 /*
@@ -92,18 +97,18 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-console.log( `O livro Segredos do Ninja Javascript tem ${book('Segredos do Ninja Javascript').quantidadePaginas} páginas!` );
+console.log( `O livro Quem pensa Enriquece tem ${book('quem_pensa_enriquece').quantidadePaginas} páginas!` );
 console.log('-------------------------');
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log( 'O autor do livro Introdução ao HTML5 é ' + book('Introdução ao HTML5').autor )
+console.log( `O autor do livro Os segredos da mente milionaria é ${book('os_segredos_da_mente_milionaria').autor}.`);
 console.log('-------------------------');
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log( `O livro Smashing CSS foi publicado pela editora ${book('Smashing CSS').editora}.` );
+console.log( `O livro O milagre do amanhã foi publicado pela editora ${book('o_milagre_do_amanha').editora}.` );
