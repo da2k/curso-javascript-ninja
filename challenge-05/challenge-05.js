@@ -64,35 +64,25 @@ os livros.
 */
 var book = function(nomeLivro){
     var livros = {
-        Biblia: {
+        'Biblia': {
             quantidadePaginas: 10000,
             autor: 'jeová',
             editora: 'catolica'
         },
-        Alcorao: {
+        'Alcorao': {
             quantidadePaginas: 10000,
             autor: 'alah',
             editora: 'mulçumana'
         },
-        Tora: {
+        'Tora': {
             quantidadePaginas: 10000,
             autor: 'yahweh',
             editora: 'judeu'
         }
     };
 
-    if (nomeLivro === undefined) {
-        return livros;
-    }
-    else if (nomeLivro === 'biblia'){
-        return livros.Biblia;
-    }
-    else if (nomeLivro === 'alcorao'){
-        return livros.Alcorao;
-    }
-    else if (nomeLivro === 'tora'){
-        return livros.Tora;
-    }
+    return nomeLivro ? livros[nomeLivro] : livros;
+    
 };
 
 /*
@@ -105,8 +95,9 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
+var nomeLivro = 'Biblia';
 console.log(
-    'O livro Biblia tem ' + book('biblia').quantidadePaginas + ' paginas!'
+    'O livro '+ nomeLivro +' tem ' + book(nomeLivro).quantidadePaginas + ' paginas!'
 );
 
 /*
@@ -115,7 +106,7 @@ a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
 console.log(
-    'O livro Biblia tem ' + book('biblia').autor + ' paginas!'
+    'O livro ' + nomeLivro + 'tem ' + book(nomeLivro).autor + ' paginas!'
 );
 
 /*
@@ -124,5 +115,5 @@ a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
 console.log(
-    'O livro Biblia foi publicado pela editora ' + book('biblia').editora + '.'
+    'O livro ' + nomeLivro + ' foi publicado pela editora ' + book(nomeLivro).editora + '.'
 );
