@@ -96,7 +96,7 @@
   uma tag HTML. O texto deve ser capturado e substituído por:
   'O texto dentro da tag "[NOME DA TAG]" é "[TEXTO]"'
 
-  Use a marcação abaixo para fazer o replace:
+  Use a marcação abaixo para fazer  o replace:
   "<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>"
 
   A marcação deve permanecer como está, somente o texto deve ser substituído.
@@ -112,7 +112,7 @@
   corretas, para depois aplicar no código ;)
   */
   console.log('\nFazer replace dos textos das tags:');
-  var regex = /(<\w+>)([\wà-û ]+)(<\/\w+>)/gi;
+  var regex = /(<\w+>)([^<]+)(<\/\w+>)/gi;
 
   console.log('<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>'.replace(regex, '$1' + 'O texto dentro da tag "$1" é "$2"' + '$3\n'));
 
