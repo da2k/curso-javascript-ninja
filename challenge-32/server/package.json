@@ -5,5 +5,11 @@
     "body-parser": "^1.14.2",
     "cors": "^2.7.1",
     "express": "^4.13.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  },
+  "scripts": {
+    "dev": "nodemon app.js"
   }
 }
