@@ -113,38 +113,34 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-carro.adicionarPessoas = function (numPessoas) {
     
-    carro.quantidadePessoas = numPessoas;
-    var mensagem;
-
-    var pessoaMesseger;
-
-    var pessoasRestantes = carro.assentos - numPessoas;
-
-    if (carro.quantidadePessoas > 1) {
-        pessoaMesseger = ' pessoas';
-    } else if (numPessoas === 1 || carro.quantidadePessoas === 1) {
-        pessoaMesseger = ' pessoa';
-    };
-
-    /* if (pessoasRestantes > 1) {
-        pessoaMesseger = ' pessoas';
-    } else {
-        pessoaMesseger = ' pessoa';
-    };
- */
-    if (carro.quantidadePessoas > 5) {
-        mensagem = "O carro já está lotado!"
-
-    } else if(carro.quantidadePessoas < 5 && carro.quantidadePessoas >= 0){
-        mensagem = "Só cabem mais " + pessoasRestantes + pessoaMesseger;
-    }
-
-
-    return 'Já temos ' + carro.quantidadePessoas + pessoaMesseger + ' no carro. ' + mensagem;
-};
-
+carro.adicionarPessoas = function(numPessoas) {
+	
+	/* console.log(numPessoas); */
+	
+	//Quantidade de pessoas existentes no carro + número de pessoas adicionado pelo usuário.
+	
+	var totalPessoas = carro.quantidadePessoas + numPessoas;
+	var quantasPessoasCab = carro.assentos - carro.quantidadePessoas;
+	var pluralOuSingular = quantasPessoasCab === 1 ? ' pessoa' : ' pessoas';
+	var cabemSingular = carro.quantidadePessoas === 4 ? ' cabe ' : ' cabem ';
+	
+	
+	if(carro.quantidadePessoas === carro.assentos && totalPessoas >= carro.assentos){
+		return 'O carro já está lotado!';
+	}
+	
+	if(totalPessoas > carro.assentos){
+		return 'Só' + cabemSingular + 'mais ' + quantasPessoasCab + pluralOuSingular;
+	}
+	
+	
+	//Depois de verificado o total de pessoas é que colocaremos o numPessoas;
+	carro.quantidadePessoas += numPessoas;
+	
+	return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro! ' + numPessoas;
+	
+}
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
 utilize sempre o formato de invocação do método (ou chamada da propriedade),
@@ -171,20 +167,26 @@ carro.obterMarca();//verde musgo
 carro.obterMarcaModelo(); //'Esse carro é um Ford e seu modelo é: ka'
 
 // Adicione 2 pessoas no carro.
-?
+carro.adicionarPessoas(2);
+/*Já temos 2 pessoas no carro!*/
 
 // Adicione mais 4 pessoas no carro.
-?
+carro.adicionarPessoas(4);
+/* Só cabem mais 3 pessoas no carro'*/
 
 // Faça o carro encher.
-?
+carro.adicionarPessoas(3);
+/* Já temos 5 pessoas no carro */
 
 // Tire 4 pessoas do carro.
-?
+carro.adicionarPessoas(-4);
+/* Só cabem mais 1 pessoa no carro'*/
 
 // Adicione 10 pessoas no carro.
-?
+carro.adicionarPessoas(10);
+/* Só cabem mais 4 pessoas no carro'*/
 
 // Quantas pessoas temos no carro?
-?
+carro.quantidadePessoas;
+/*1*/
 ```
