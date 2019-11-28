@@ -29,10 +29,9 @@ segundo parâmetro.
 
 var arr = [3, 6, 7, 8];
 
-function doisParam(arr, 2){
-	return 2; 
+function doisParam(arr, index){
+	return arr[index]; 
 }
-
 
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
