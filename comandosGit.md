@@ -4,6 +4,7 @@
 2) **git add .** == adiciona as modificações realizadas na branch;
 3) **git status** == Checar se as modificações foram realizadas;
 4) **git commit -m " "** == adicionar comentários as modificações realizadas;  
+5) **git  push origin challenge0_** == adiciona as modificações ao repositório. 
 
 # COMANDOS PARA FETCH
 
