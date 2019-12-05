@@ -8,10 +8,10 @@
 
 # COMANDOS PARA FETCH
 
-1) **git checkout master** == sair da branch master;
+1) **git checkout master** == entrar na branch master;
 2) **git fetch upstream** ==  realizar a aquisição da branch externa;
 3) **git merge upstream/master** == mesclar os arquivos da sua branch com os das branches principais;
-4) ** git checkout -b Challenge03** == criando uma nova branch e acessando-a para as modificações;
+4) **git checkout -b Challenge03** == criando uma nova branch e acessando-a para as modificações;
 ****
 
 **OBS:** para checar o repositório = remote -v
