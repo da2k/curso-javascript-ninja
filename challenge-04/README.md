@@ -29,7 +29,7 @@ Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
 isTruthy(1);
 isTruthy(10);
-isTruthy(5 + 4);
+isTruthy((5 + 4));
 isTruthy(true);
 isTruthy(!false);
 isTruthy([]);
