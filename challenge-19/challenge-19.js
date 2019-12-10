@@ -92,16 +92,16 @@
   function hasClass(markup, cssClass) {
 
     if (markup.search(new RegExp('[\"\']' + cssClass + '[\"\']')) !== -1) {
-      return true + ' para a classe ' + cssClass;
+      return true;
     }
 
-    return false + ' para a classe ' + cssClass;
+    return false;
   }
 
   var classes = ['container', 'text', 'date', 'excerpt', 'main'];
 
   classes.forEach(function(classe){
-    console.log(hasClass(markup, classe));
+    console.log(hasClass(markup, classe) +  ' para a classe ' + cssClass);
   });
 
 })();
