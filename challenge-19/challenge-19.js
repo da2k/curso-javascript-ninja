@@ -98,10 +98,10 @@
     return false + ' para a classe ' + cssClass;
   }
 
-  console.log(hasClass(markup, 'container'));
-  console.log(hasClass(markup, 'text'));
-  console.log(hasClass(markup, 'date'));
-  console.log(hasClass(markup, 'excerpt'));
-  console.log(hasClass(markup, 'main'));
+  var classes = ['container', 'text', 'date', 'excerpt', 'main'];
+
+  classes.forEach(function(classe){
+    console.log(hasClass(markup, classe));
+  });
 
 })();
