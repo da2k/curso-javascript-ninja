@@ -100,8 +100,8 @@
 
   var classes = ['container', 'text', 'date', 'excerpt', 'main'];
 
-  classes.forEach(function(classe){
-    console.log(hasClass(markup, classe) +  ' para a classe ' + cssClass);
+  classes.forEach(function(cssClass){
+    console.log(hasClass(markup, cssClass) +  ' para a classe ' + cssClass);
   });
 
 })();
