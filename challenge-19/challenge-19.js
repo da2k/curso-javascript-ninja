@@ -91,11 +91,9 @@
 
   function hasClass(markup, cssClass) {
 
-    if (markup.search(new RegExp('[\"\']' + cssClass + '[\"\']')) !== -1) {
-      return true;
-    }
+    var regex = new RegExp('[\"\']' + cssClass + '[\"\']');
 
-    return false;
+    markup.test(regex);
   }
 
   var classes = ['container', 'text', 'date', 'excerpt', 'main'];
