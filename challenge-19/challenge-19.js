@@ -93,7 +93,7 @@
 
     var regex = new RegExp('[\"\']' + cssClass + '[\"\']');
 
-    markup.test(regex);
+    return regex.test(markup);
   }
 
   var classes = ['container', 'text', 'date', 'excerpt', 'main'];
