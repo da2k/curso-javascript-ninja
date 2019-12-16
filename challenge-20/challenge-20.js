@@ -88,30 +88,20 @@
   */
   $button.addEventListener('click', function (event) {
 
-    var count = 0;
+    event.preventDefault();
 
-    if ($inputUsername.value === '') {
-      alert('Preencha o nome do usuário!');
-      count++;
-    }
-    if ($inputEmail.value === '') {
-      alert('Preencha o e-mail!');
-      count++;
-    }
-    if ($message.value === '') {
-      alert('Preencha a mensagem!');
-      count++;
-    }
-    if (!isValidEmail($inputEmail.value)) {
-      alert('Entre com um e-mail válido!');
-      count++;
-    }
-    if (count === 0) {
-      if (confirm('Tem certeza que deseja enviar o formulário?'))
-        alert('Enviado com sucesso!');
-      else
-        alert('Não enviado.');
-    }
+    if (!$inputUsername.value)
+      return alert('Preencha o nome do usuário!');
+    if (!$inputEmail.value)
+      return alert('Preencha o e-mail!');
+    if (!$message.value)
+      return alert('Preencha a mensagem!');
+    if (!isValidEmail($inputEmail.value))
+      return alert('Entre com um e-mail válido!');
+
+    if (confirm('Tem certeza que deseja enviar o formulário?'))
+      return alert('Enviado com sucesso!');
+    return alert('Não enviado.');
 
   }, false);
 
