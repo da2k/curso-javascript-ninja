@@ -33,29 +33,15 @@
   - Selecione o input de "Nome", atribuindo-o à uma variável chamada
   `$inputUsername`.
   */
-  var inputsList = doc.querySelectorAll('input')
-  var $inputUsername;
 
-  inputsList.forEach(function (input) {
-
-    if (input.type === 'text')
-      $inputUsername = input;
-
-  });
+  var $inputUsername = doc.querySelector('input[type="text"]');
 
   /*
   - Selecione o input de "Email", atribuindo-o à uma variável chamada
   `$inputEmail`.
   */
 
-  var $inputEmail;
-
-  inputsList.forEach(function (input) {
-
-    if (input.type === 'email')
-      $inputEmail = input;
-
-  });
+  var $inputEmail = doc.querySelector('input[type="email"]');
 
   /*})();
   - Selecione o campo de "Mensagem", atribuindo-o à uma variável chamada
