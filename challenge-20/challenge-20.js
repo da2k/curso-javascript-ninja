@@ -86,9 +86,9 @@
   Caso contrário, mostre um alerta com a mensagem:
       - "Não enviado."
   */
-  $button.addEventListener('click', function (event) {
+  $button.addEventListener('click', function (ev) {
 
-    event.preventDefault();
+    ev.preventDefault();
 
     if (!$inputUsername.value)
       return alert('Preencha o nome do usuário!');
