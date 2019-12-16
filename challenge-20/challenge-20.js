@@ -125,14 +125,14 @@
       - "sandro@culinaria.dahora"
 
   Alguns e-mails inválidos:
-      - "walter-da-silva@maraca.br"
+      - "walter-da-silva@maraca.brwalter-da-silva@maraca.br"
       - "rita-marica@titica.a.b"
       - "agua_@evida.br.com"
   */
   function isValidEmail(email) {
-    var regex = /[\w+.]+@\w+.\w{2,}.?\w{1,2}/g;
+    var regex = /^[\w+.]+@\w+.\w{2,}.?\w{1,2}$/g;
 
-    return email === email.match(regex)[0];
+    return regex.test(email);
   }
 
 })(window, document);
