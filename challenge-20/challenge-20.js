@@ -18,10 +18,7 @@
   Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
   */
 
-  var username = prompt('Qual é o seu nome?');
-
-  if (!username)
-    username = 'Desconhecido';
+  var username = prompt('Qual é o seu nome?') || 'Desconhecido';
 
   alert('Bem vindo ' + username);
 
