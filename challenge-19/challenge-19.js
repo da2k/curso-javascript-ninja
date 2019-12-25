@@ -47,7 +47,7 @@
     console.log( '\nRegex para números somente no final das linhas:' );
     // ?
     var numbersAtTheEnd = new RegExp('\\d+$','gm');
-    console.group(numbersAtTheEnd);
+    console.log(numbersAtTheEnd);
     /*
     Verifique se a regex acima casa com o texto na variável `otherText`,
     mostrando o resultado no console.
