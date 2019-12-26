@@ -1,4 +1,4 @@
-/* # Desafio da semana #4 */
+/* # Desafio da semana #5 */
 
 /*
 Crie uma variável qualquer, que receba um array com alguns valores aleatórios

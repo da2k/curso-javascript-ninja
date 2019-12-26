@@ -1,4 +1,4 @@
-/* # Desafio Semana #8 */
+/* # Desafio Semana #6 */
 
 /*
 Vamos falar um pouco sobre "Futebol". Escolha um campeonato estadual qualquer
