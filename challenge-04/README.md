@@ -114,21 +114,17 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 citado acima, no lugar de "pessoas".
 */
 carro.adicionaPessoas = function(numPessoas) {
-  var cheio = false;
-  var assentosLivres = carro.assentos - carro.quantidadePessoas; 
   
-  if (carro.quantidadePessoas === carro.assentos) {
-    cheio = true;
+    if (carro.assentos === 0) {
+      return 'O carro já está lotado!';
+    } else if (carro.assentos === 1 && numPessoas > 1) {
+       return 'Só cabe mais ' + carro.assentos + ' pessoa!';
+    } else if (carro.assentos < numPessoas) {
+       numPessoas = 0;
+       return 'Só cabem mais ' + carro.assentos + ' pessoas!';
     } else {
-    cheio = false;
-    }
-    
-  if (cheio == true) {
-      'O carro já está lotado!';
-    } else {
-      'Só cabem mais ' + assentosLivres + ' pessoas!';
-      
       carro.quantidadePessoas += numPessoas;
+      carro.assentos -= numPessoas;
       return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!';
     }
 };
@@ -159,20 +155,26 @@ carro,obterCor(); //'verde musgo'
 carro.obterModelo();  //'Ford'
 
 // Adicione 2 pessoas no carro.
-carro.adicionaPessoas(2);
+carro.adicionaPessoas(2); // "Já temos 2 pessoas no carro!"
 
 // Adicione mais 4 pessoas no carro.
-?
+carro.adicionaPessoas(4); // "Só cabem mais 3 pessoas!"
 
 // Faça o carro encher.
-?
+carro.adicionaPessoas(3); "Já temos 5 pessoas no carro!"
 
 // Tire 4 pessoas do carro.
-?
+carro.removerPessoas = function(numPessoas) {
+  carro.quantidadePessoas -= numPessoas;
+  carro.assentos += numPessoas;
+  return 'Temos ' + carro.quantidadePessoas + ' pessoas no carro!';
+};
+
+carro.removePessoas(4); //"Temos 1 pessoas no carro!"
 
 // Adicione 10 pessoas no carro.
-?
+carro.adicionaPessoas(10); // "Só cabem mais 4 pessoas!"
 
 // Quantas pessoas temos no carro?
-?
+carro.quantidadePessoas; // 1
 ```
