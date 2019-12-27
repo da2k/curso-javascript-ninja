@@ -32,9 +32,8 @@ isThuthy(!!1);
 isThuthy(!NaN);
 isThuthy(!null);
 isThuthy(!!true);
-
-isThuthy(!0);
-isThuthy(!!1);
+isThuthy(!-0);
+isThuthy(!'');
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
