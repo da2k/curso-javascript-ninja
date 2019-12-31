@@ -56,38 +56,38 @@ os livros.
 */
 // function book(nomeDoLivro) {
      var obj = {
-       eurobo = {
-        qtdPaginas : 320,
-        autor : "Asimov",
-        editora : "Cultura"
+       eurobo: {
+          qtdPaginas : 320,
+          autor : "Asimov",
+          editora : "Cultura"
        },
          
-       senhor_dos_aneis = {
-        qtdPaginas : 720,
-        autor : "Tolkien",
-        editora : "Sextante"
+       senhor_dos_aneis: {
+          qtdPaginas : 720,
+          autor : "Tolkien",
+          editora : "Sextante"
        },
          
-       starwars = {
-        qtdPaginas : 280,
-        autor : "George Lucas",
-        editora : ""
+       starwars: {
+          qtdPaginas : 280,
+          autor : "George Lucas",
+          editora : "Abril"
        }
-         
-     }
+     };
+     return obj;
 }
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-// ?
+// book();
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// ?
+// book(starwars).qtdPaginas;
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
