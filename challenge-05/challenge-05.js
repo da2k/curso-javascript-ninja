@@ -54,8 +54,8 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-// function book(nomeDoLivro) {
-     var obj = {
+// function book(livros) {
+     var livros = {
        eurobo: {
           qtdPaginas : 320,
           autor : "Asimov",
@@ -74,7 +74,7 @@ os livros.
           editora : "Abril"
        }
      };
-     return obj;
+     return livros;
 }
 
 /*
