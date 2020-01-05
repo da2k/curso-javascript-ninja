@@ -40,7 +40,6 @@
   $buttonCE.addEventListener('click', function(){
     $valor.value = 0;
   }, false);
-
   Array.prototype.forEach.call($buttonsOperations, function(button) {
     button.addEventListener('click', handlerClickOperation, false);
   });
@@ -49,12 +48,8 @@
   function handlerClickNumber() {
     $valor.value += this.value;
   }
-  // function handlerClickCE(event) {
-  //   $valor.value = 0;
-  // }
 
   function handlerClickOperation() {
-    removeLastItemIfItIsAnOperator();
     $valor.value = removeLastItemIfItIsAnOperator($valor.value);
     $valor.value += this.value;
   }
