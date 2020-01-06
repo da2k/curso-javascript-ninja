@@ -28,10 +28,10 @@ function soul() {
 ... }
 
 // Invoque a função criada acima.
-?
+soul()
 
 // Qual o retorno da função? (Use comentários de bloco).
-?
+/*O valor da variável agora é 2*/
 
 /*
 Crie uma função com as seguintes características:
@@ -40,19 +40,24 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-?
+function newFunction( a, b, c ) {
+... if ( a === undefined || b === undefined || c === undefined ) {
+... return 'Preencha os valores corretamente'
+... } else {
+... return ( a * b * c ) + 2
+...}
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+newFunction( 2, 4 )
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+//'Preencha os valores corretamente'
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+newFunction(2, 2, 2)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+10
 
 /*
 Crie uma função com as seguintes características:
