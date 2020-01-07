@@ -5,7 +5,7 @@ Declare uma variável chamada `championship` que receberá o nome do campeonato,
 e imprima o nome desse campeonato no console.
 */
 let campionship = 'Campenonato Paulista'
-
+console.log(champioship)
 /*
 Declare uma variável chamada `teams`, que receberá um array com 5 elementos.
 Os elementos serão nomes de times do campeonato escolhido, e os nomes devem
@@ -33,12 +33,11 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 function showTeamPosition(arg){
-    var time = arg - 1;
-    
-     if(arg > teams.length){
+
+     if(arg < 1 || arg > teams.length){
         return 'Não temos a informação do time que está nessa posição.';
      }
-     return `O time que está em ${arg++}º lugar é o ${teams[time]}.`;
+     return `O time que está em ${arg}º lugar é o ${teams[arg - 1]}.`;
 }
 
 /*
