@@ -71,5 +71,8 @@ Crie uma função com as seguintes características:
 ?
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+//wakeup() -> result: false
+//wakeup(2) -> result: 2
+//wakeup(2, 3) -> result: 5
+//wakeup(2, 3, 2) -> result: 2.5
 ```
