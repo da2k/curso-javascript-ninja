@@ -4,7 +4,7 @@ Declare uma variável chamada `sum` e atribua a ela uma função chamada
 desses parâmetros.
 */
 var sum = function calculateSum( numberOne, numberTwo ) {
-  return numberOne + numberTwo;  
+  return numberOne + numberTwo  
 };
 
 /*
@@ -13,8 +13,9 @@ o resultado no console, com a frase:
 "A soma de [VALOR 1] e [VALOR2] é igual a [RESULTADO]."
 */
 //isso aqui não está certo, verificar
-sum(2,4)
-console.log('A soma de ' + sum(numberOne) + ' e ' + sum(numberTwo) + ' é igual a ' + sum(10, 5) + ' );
+var nbOne = 2;
+var nbTwo = 3;  
+console.log('A soma de ' + nbOne + ' e ' + nbTwo + ' é igual a ' + sum(nbOne, nbTwo));
 
 /*
 Mostre no console o nome da função criada acima, com a frase:
@@ -58,7 +59,23 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
 */
 function calculator(operator) {
   return function (opOne, opTwo) {
-    return 'Resultado da operação: ' + opOne + ' ' + operator + ' ' + opTwo + ' = ' +  + ' . '
+  var result;  
+    switch(operator) {
+      case '+': result = (opOne + opTwo)
+        break;
+      case '-': result = (opOne - opTwo)
+        break;
+      case '*': result = (opOne * opTwo)
+        break;
+      case '/': result = (opOne / opTwo)
+        break;
+      case '%': result = (opOne % opTwo)
+        break;
+               
+      default:
+        return 'Operação inválida.'
+    }
+    return 'Resultado da operação: ' + opOne + ' ' + operator + ' ' + opTwo + ' = ' + result + '.'
   }
 }
 
@@ -66,22 +83,28 @@ function calculator(operator) {
 Declare uma variável chamada `sum`, que receberá a função acima, passando como
 parâmetro o operador de soma.
 */
-// ?
+var sum = calculator('+');
 
 /*
 Agora `sum` é uma função. Mostre no console a soma de dois números, usando ela.
 */
-// ?
+console.log(sum(45,13)); // Resultado da operação: 45 + 18 = 63.
 
 /*
 Agora, declare algumas variáveis com os nomes `subtraction`, `multiplication`,
 `division` e `mod`, e atribua a elas a função `calculator`, passando o operador
 correto por parâmetro para cada uma delas.
 */
-// ?
+var subtraction = calculator('-');
+var multiplication = calculator('*');
+var division = calculator('/');
+var mod = calculator('%');
 
 /*
 Faça uma operação com cada uma das funções criadas acima, mostrando o resultado
 no console.
 */
-// ?
+console.log(subtraction(5,1)); // Resultado da operação: 5 - 1 = 4 .
+console.log(multiplication(5,1)); // Resultado da operação: 5 * 1 = 5 .
+console.log(division(5,1)); // Resultado da operação: 5 / 1 = 5 . 
+console.log(mod(5,1)); // Resultado da operação: 5 % 1 = 0 .
