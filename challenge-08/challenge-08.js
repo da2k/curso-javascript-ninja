@@ -56,7 +56,11 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
   - Se o operador não for válido, retornar a frase:
   "Operação inválida."
 */
-function 
+function calculator(operator) {
+  return function (opOne, opTwo) {
+    return 'Resultado da operação: ' + opOne + ' ' + operator + ' ' + opTwo + ' = ' +  + ' . '
+  }
+}
 
 /*
 Declare uma variável chamada `sum`, que receberá a função acima, passando como
