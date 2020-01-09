@@ -67,14 +67,14 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function novaFuncao2(x, y, z) {
-  if (x && y && z) return (x + y) / z;
-  else if (x && y) return x + y;
-  else if (y && z) return y + z;
-  else if (x && z) return x + z;
-  else if (x) return x;
-  else if (y) return y;
-  else if (z) return z;
-  else if (!x && !y && !z) return false;
+  if (x !== undefined && y !== undefined && z !== undefined) return (x + y) / z;
+  else if (x !== undefined && y !== undefined) return x + y;
+  else if (y !== undefined && z !== undefined) return y + z;
+  else if (x !== undefined && z!== undefined ) return x + z;
+  else if (x !== undefined) return x;
+  else if (y !== undefined) return y;
+  else if (z !== undefined) return z;
+  else if (x === undefined && y === undefined && z === undefined) return false;
 
   return null;
 }
