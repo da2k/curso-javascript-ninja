@@ -34,7 +34,7 @@ for chamado.
 */
 pessoa.fazerAniversario = function() {
     pessoa.idade++;
-}
+};
 
 /*
 Adicione um método ao objeto `pessoa` chamado `andar`, que terá as seguintes
@@ -46,63 +46,63 @@ valor dessa propriedade a quantidade passada por parâmetro;
 - Ele deverá modificar o valor da propriedade `andando` para o valor
 booleano que representa "verdadeiro";
 */
-pessoa.andar = function(x) {
-    this.caminhouQuantosMetros += x;
-    this.andando = true;
-}
+pessoa.andar = function(metros) {
+    pessoa.caminhouQuantosMetros += metros;
+    pessoa.andando = true;
+};
 
 /*
 Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o valor
 da propriedade `andando` para o valor booleano que representa "falso".
 */
 pessoa.parar = function() {
-    this.andando = false;
-}
+    pessoa.andando = false;
+};
 
 /*
 Crie um método chamado `nomeCompleto`, que retorne a frase:
 - "Olá! Meu nome é [NOME] [SOBRENOME]!"
 */
 pessoa.nomeCompleto = function() {
-    return 'Olá! Meu nome é ' + this.nome + ' ' + this.sobrenome;
-}
+    return 'Olá! Meu nome é ' + pessoa.nome + ' ' + pessoa.sobrenome + '!';
+};
 
 /*
 Crie um método chamado `mostrarIdade`, que retorne a frase:
 - "Olá, eu tenho [IDADE] anos!"
 */
 pessoa.mostrarIdade = function() {
-    return 'Olá! eu tenho ' + this.idade + ' anos!'
-}
+    return 'Olá, eu tenho ' + pessoa.idade + ' anos!';
+};
 
 /*
 Crie um método chamado `mostrarPeso`, que retorne a frase:
 - "Eu peso [PESO]Kg."
 */
 pessoa.mostrarPeso = function() {
-    return 'Eu peso ' + this.peso + 'Kg.'
-}
+    return 'Eu peso ' + pessoa.peso + 'Kg.';
+};
 
 /*
 Crie um método chamado `mostrarAltura` que retorne a frase:
 - "Minha altura é [ALTURA]m."
 */
 pessoa.mostrarAltura = function() {
-    return 'Minha altura é ' + this.altura + 'm';
-}
+    return 'Minha altura é ' + pessoa.altura + 'm.';
+};
 
 /*
 Agora vamos brincar um pouco com o objeto criado:
 Qual o nome completo da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.nomeCompleto(); // Olá! Meu nome é Alisson Youssf
+pessoa.nomeCompleto(); // Olá! Meu nome é Alisson Youssf!
 
 /*
 Qual a idade da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.mostrarIdade(); // Olá! eu tenho 42 anos!
+pessoa.mostrarIdade(); // Olá, eu tenho 42 anos!
 
 /*
 Qual o peso da pessoa? (Use a instrução para responder e comentários
@@ -114,7 +114,7 @@ pessoa.mostrarPeso(); // Eu peso 80Kg.
 Qual a altura da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.mostrarAltura(); // Minha altura é 1.7m
+pessoa.mostrarAltura(); // Minha altura é 1.7m.
 
 /*
 Faça a `pessoa` fazer 3 aniversários.
@@ -128,7 +128,7 @@ Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
 comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
-pessoa.mostrarIdade(); // Olá! eu tenho 45 anos!
+pessoa.mostrarIdade(); // Olá, eu tenho 45 anos!
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
@@ -180,44 +180,29 @@ correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao = function() {    
 
-    var fraseSexo;
-    var palavraAno;
-    var palavraMetro;
+    var sexo = 'o';
+    var idadeAnos = 'anos';
+    var metrosCaminhados = 'metros';
 
 
-    if (pessoa.sexo === 'Masculino' || pessoa.sexo === 'masculino' ) {
-       fraseSexo = 'Olá, eu sou o ';
-    }
-    else {
-        fraseSexo = 'Olá, eu sou a ';
-    }
+    if (pessoa.sexo === 'Feminino' || pessoa.sexo === 'feminino' ) 
+         sexo = 'a';    
     
+    if (pessoa.idade === 1) 
+        idadeAnos = 'ano';        
 
-    if (pessoa.idade > 1) {
-        this.palavraAno = 'anos';
-    } 
-    else {
-        this.palavraAno = 'ano';
-    }
-    
-
-    if (pessoa.caminhouQuantosMetros > 1) {
-        this.palavraMetro = 'metros';
-    } 
-    else {
-        this.palavraMetro = 'metro';
-    }
+    if (pessoa.caminhouQuantosMetros === 1 ) 
+        metrosCaminhados = 'metro';     
 
 
-    return fraseSexo 
-        + this.nome + ' ' + this.sobrenome
-        + ', tenho ' + this.idade + ' ' + this.palavraAno
-        + ', ' + pessoa.altura
-        + ', meu peso é ' + pessoa.peso
-        + ' e, só hoje ja caminhei ' + pessoa.caminhouQuantosMetros + ' ' + this.palavraMetro;
+    return 'Olá, eu sou ' + sexo + ' '
+        + pessoa.nome + ' ' + pessoa.sobrenome
+        + ', tenho ' + pessoa.idade + ' ' + idadeAnos
+        + ', ' + pessoa.altura + 'm'
+        + ', meu peso é ' + pessoa.peso + ' Kg'
+        + ' e, só hoje já caminhei ' + pessoa.caminhouQuantosMetros + ' ' + metrosCaminhados + '!';
 }
 
-
 // Agora, apresente-se ;)
-pessoa.apresentacao(); // Olá, eu sou o Alisson Youssf, tenho 45 anos, 1.7, meu peso é 80 e, só hoje ja caminhei 60 metros!
+pessoa.apresentacao(); // Olá, eu sou o Alisson Youssf, tenho 45 anos, 1.7m, meu peso é 80 Kg e, só hoje já caminhei 60 metros!
 ```
