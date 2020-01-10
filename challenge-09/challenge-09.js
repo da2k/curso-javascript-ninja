@@ -25,14 +25,14 @@
       myFunction2();
   */
   function myFunction2() {
-      var number1 = 10;
-      var number2 = 20;
-      var sum = function sum() {
-        
-        return sum();          
-      };
-      console.log( 'A soma de 10 e 20 é igual a', sum ? sum() : undefined );
-      return number1 + number2;  
+    var number1 = 10;
+    var number2 = 20;
+    var sum = function sum() {
+      return number1 + number2;               
+    };
+    
+    console.log( 'A soma de 10 e 20 é igual a', sum ? sum() : undefined );  
+      return sum();
   }
   myFunction2();
 
@@ -40,14 +40,16 @@
       myFunction3();
   */
   function myFunction3() {
-      console.log( 'A soma de 40 e 50 é igual a', sum() );
-      var number2 = 50;
-      console.log( 'Na função myFunction3, number1 é igual a', number1 );
-      var number1 = 40;
+    var number1 = 40;
+    var number2 = 50;
+    console.log( 'Na função myFunction3, number1 é igual a', number1 );
+ 
+    function sum() {
+      return number1 + number2;
+    };
+    
+    console.log( 'A soma de 40 e 50 é igual a', sum() );    
       return sum();
-      function sum() {
-          return number1 + number2;
-      };
   }
   myFunction3();
 
@@ -64,14 +66,19 @@
   por parâmetro, INVOCADA, e passando a ela por parâmetro os dois valores
   que foram passadas para a primeira função `calculator`.
   */
-  // ?
+  function calculator(nbOne, nbTwo) {
+    function call(callback) {
+      return 
+    };
+    return call()
+  }
 
   /*
   Declare uma variável chamada `sum`, e atribua a ela a função `calculator`,
   passando dois números por parâmetro.
   */
-  // ?
-
+  var sum = calculator(2,3);
+  
   /*
   Sabemos que `sum` agora tem uma função atribuída a ela, que é o retorno de
   `calculator`. E essa função espera um parâmetro `callback`. O `callback`
