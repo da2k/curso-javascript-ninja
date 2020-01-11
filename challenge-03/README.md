@@ -89,7 +89,6 @@ inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
 pessoa.nomeCompleto() // 'Olá, meu nome é Vitor Conde!'
 
-
 /*
 Qual a idade da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
@@ -170,8 +169,22 @@ deve conter no retorno da frase acima é "metro" no lugar de "metros".
 método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
-?
+pessoa.apresentacao = function() {
+... let genero = 'o'
+... let tempo = 'anos'
+... let distancia = 'metros'
+... if (pessoa.sexo === 'Feminino') {
+.... genero = 'a'
+.... }
+... if (pessoa.idade === 1) {
+.... tempo = 'ano'
+.... }
+... if (pessoa.caminhouQuantosMetros === 1) {
+.... distancia = 'metro'
+.... }
+... return `Olá, eu sou ${genero} ${pessoa.nome} ${pessoa.sobrenome}, tenho ${pessoa.idade} ${tempo}, ${pessoa.altura}m, meu peso é ${pessoa.peso}kg e, só hoje, eu já caminhei ${pessoa.caminhouQuantosMetros} ${distancia}`
+
 
 // Agora, apresente-se ;)
 ?
-```
+pessoa.apresentacao() // 'Olá, eu sou o Vitor Conde, tenho 22 anos, 1.75m, meu peso é 80kg e, só hoje, eu já caminhei 24 metros :)'
