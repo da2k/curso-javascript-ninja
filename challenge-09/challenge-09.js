@@ -67,10 +67,9 @@
   que foram passadas para a primeira função `calculator`.
   */
   function calculator(nbOne, nbTwo) {
-    function call(callback) {
-      return 
+    return function(callback) {
+      return callback(nbOne, nbTwo);
     };
-    return call()
   }
 
   /*
@@ -89,14 +88,19 @@
   anônima tem como seus argumentos.
   */
   console.log( 'O resultado da soma é:' );
-  // ?
+  console.log(sum (function( nbOne, nbTwo ) {
+                return nbOne + nbTwo;     
+  })  );
 
   /*
   Agora declare outra variáveis chamadas `subtraction`, `multiplication`,
   `division` e `mod`, e atribua à elas `calculator`, passando números
   diferentes para cada chamada.
   */
-  // ?
+  var subtraction = calculator(12,3);
+  var multiplication = calculator(8,4);
+  var division = calculator(44,11);
+  var mod = calculator(12,5);
 
   /*
   Mostre as variáveis acima no `console` (uma chamada de console por variável),
@@ -106,15 +110,23 @@
   chamada.
   */
   console.log( 'O resultado da subtração é:' );
-  // ?
+  console.log( subtraction(function(nbOne, nbTwo) {
+    return nbOne - nbTwo;
+  }) );
 
   console.log( 'O resultado da multiplicação é:' );
-  // ?
+  console.log( multiplication(function(nbOne, nbTwo) {
+    return nbOne * nbTwo;
+  }) );
 
   console.log( 'O resultado da divisão é:' );
-  // ?
+  console.log( division(function(nbOne, nbTwo) {
+    return nbOne / nbTwo;
+  }) );
 
   console.log( 'O resto da divisão é:' );
-  // ?
+  console.log( mod(function(nbOne,nbTwo) {
+    return nbOne % nbTwo;
+  }) );
   
 })();
