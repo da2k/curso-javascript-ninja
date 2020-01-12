@@ -197,7 +197,7 @@ pessoa.apresentacao = function(){
     else if ( pessoa.caminhouQuantosMetros > 1 ){
         metros = 'metros'
     }
-    return 'Olá, eu sou ' + artigo + ' ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + ' anos, ' + pessoa.altura + 'm., meu peso é ' + pessoa.peso + 'Kg. e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metros!'
+    return 'Olá, eu sou ' + artigo + ' ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + ' ' + anos + ', ' + pessoa.altura + 'm., meu peso é ' + pessoa.peso + 'Kg. e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metros!'
 };
 
 // Agora, apresente-se ;)
