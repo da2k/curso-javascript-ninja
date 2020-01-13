@@ -3,6 +3,39 @@
 Nesse exercício, você está livre para escolher os nomes para suas variáveis e funções! :smile:
 
 ```js
+// Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
+function numericSum(x, y) {
+  return x + y;
+}
+
+// Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
+var resultSum = numericSum(23, 15);
+resultSum += 5;
+
+// Qual o valor atualizado dessa variável?
+43
+
+// Declare uma nova variável, sem valor.
+var myVar;
+
+/*
+Crie uma função que adicione um valor à variável criada acima, e retorne a string:
+    O valor da variável agora é VALOR.
+Onde VALOR é o novo valor da variável.
+*/
+function addValue(value) {
+  myVar = value;
+  return `O valor da variável agora é ${myVar}`;
+}
+
+// Invoque a função criada acima.
+addValue('VALOR');
+
+// Qual o retorno da função? (Use comentários de bloco).
+/*
+*  O valor da variável agora é VALOR
+*/
+
 /*
 Crie uma função com as seguintes características:
 1. A função deve receber 3 argumentos;
