@@ -3,31 +3,6 @@
 Nesse exercício, você está livre para escolher os nomes para suas variáveis e funções! :smile:
 
 ```js
-// Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-?
-
-// Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-?
-
-// Qual o valor atualizado dessa variável?
-?
-
-// Declare uma nova variável, sem valor.
-?
-
-/*
-Crie uma função que adicione um valor à variável criada acima, e retorne a string:
-    O valor da variável agora é VALOR.
-Onde VALOR é o novo valor da variável.
-*/
-?
-
-// Invoque a função criada acima.
-?
-
-// Qual o retorno da função? (Use comentários de bloco).
-?
-
 /*
 Crie uma função com as seguintes características:
 1. A função deve receber 3 argumentos;
@@ -35,19 +10,25 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-?
+function multiplication(x, y, z) {
+  if(x === undefined || y === undefined || z === undefined) {
+    return 'Preencha todos os valores corretamente!';
+  }else {
+    return (x * y * z) + 2;
+  }
+}
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+multiplication(7, 8);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+// 'Preencha todos os valores corretamente!'
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+multiplication(7, 8, 9);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+//506
 
 /*
 Crie uma função com as seguintes características:
@@ -58,8 +39,22 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+function returnCondition(x, y, z) {
+  if (x !== undefined && y === undefined && z === undefined) {
+    return x;
+  } else if (x !== undefined && y !== undefined && z === undefined) {
+    return x + y;
+  } else if (x !== undefined && y !== undefined && z !== undefined) {
+    return (x + y) / z;
+  } else if (x === undefined && y === undefined && z === undefined) {
+    return false;
+  } else {
+    return null;
+  }
+}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
-```
+returnCondition(); // false
+returnCondition(5) // 5
+returnCondition(5, 5); // 10
+returnCondition(5, 5, 2) // 5
