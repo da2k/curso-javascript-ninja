@@ -54,8 +54,9 @@
   - O desafio é fazer o retorno sem usar "if" ou "switch".
   */
   function isOperatorValid(op){
-    op === '+' || op === '-' || op === '*' || op === '/' || op === '%'
-    return true
+    op == '+' || op == '-' || op == '*' || op == '/' || op == '%' ? op = true : op = false; 
+    
+    return op
   }
 
   /*
@@ -70,7 +71,22 @@
   operador passado para a função "calculator", e passando para esse método
   os dois parâmetros da função de retorno de "calculator".
   */
-  // ?
+  function calculator(op) {
+    if (isOperatorValid() != true) {
+      return false
+    } 
+    else {
+      return function( param1, param2 ){
+        if (!Number(param1) || !Number(param2)) {
+          return false
+        }
+        else {
+          
+        }
+      }   
+    } 
+       
+  }
 
   /*
   Crie uma função chamada "showOperationMessage" que recebe três parâmetros:
