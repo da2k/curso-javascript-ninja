@@ -13,7 +13,7 @@
   var five = Number('5');
   console.log( five + ' é número?', typeof five === 'number' );
 
-  var concat = String(10 + 10);
+  var concat = String(10) + 10;
   console.log( '"' + concat + '" é uma string? E é igual a "1010"?', typeof concat === 'string' );
 
   /*
@@ -30,7 +30,7 @@
     '-': function( number1, number2){ return number1 - number2 },
     '*': function( number1, number2){ return number1 * number2 },
     '/': function( number1, number2){ return number1 / number2 },
-    '%': function( number1, number2){ return number1 % number2 },
+    '%': function( number1, number2){ return number1 % number2 }
   }
 
   /*
@@ -44,8 +44,7 @@
   - O desafio é fazer o retorno sem usar "if" ou "switch".
   */
   function isOperatorValid(operador){
-    return (operador === '+' || operador === '-' || operador === '*'|| operador === '/' || operador === '%');
-  }
+    return !!operation[operador]; }
 
   /*
   Agora vamos criar a calculadora.
@@ -64,7 +63,7 @@
     if(!isOperatorValid(operador)){ return false; }
 
     return function(number1, number2){
-    if(typeof number1 !== 'number' && typeof number2 !== 'number' ){
+    if(typeof number1 !== 'number' || typeof number2 !== 'number' ){
       return false;
     }
     return operation[operador](number1, number2)
@@ -89,7 +88,7 @@
   'Operação "[OPERATOR]" não permitida!'
   */
   function showErrorMessage(operador){
-    if(!isOperatorValid(operador)){ return `Operação ${operador} não permitida!`; }
+     return `Operação ${operador} não permitida!`;
   }
 
   /*

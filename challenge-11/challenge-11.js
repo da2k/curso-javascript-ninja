@@ -35,9 +35,12 @@
   Após o loop, mostre a frase:
   'The person has [COUNTER] properties'
   */
+  var counter = 0;
   for(var prop in person){
     console.log(`The ${prop} of person is ${person[prop]}`)
+    counter++;
   }
+  console.log(`The person has ${counter} properties`)
 
   /*
   Crie uma função chamada `moreThan`, que vai verificar se a pessoa (objeto
@@ -75,7 +78,7 @@
   console.log( 'Pares de 0 a 20:' );
   numbers = [];
   for(var i = 0; i <= 20; i++){
-    if(i % 2 !== 0){
+    if(i % 2 === 0){
       continue;
     }
      numbers.push(i)
