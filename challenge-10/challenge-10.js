@@ -71,17 +71,17 @@
   operador passado para a função "calculator", e passando para esse método
   os dois parâmetros da função de retorno de "calculator".
   */
-  function calculator(op) {
-    if (isOperatorValid() != true) {
+  function calculator( op ) {
+    
+    if (isOperatorValid( op ) != true) {
       return false
     } 
     else {
       return function( param1, param2 ){
-        if (!Number(param1) || !Number(param2)) {
+        if ( !Number( param1 ) || !Number( param2 ) ) {
           return false
         }
-        else {
-          
+        else { return operation[ op ]( param1, param2 )
         }
       }   
     } 
@@ -95,7 +95,9 @@
   'A operação [NUMBER1] [OPERATOR] [NUMBER2] =';
   Essa função mostrará a mensagem da operação que criaremos mais abaixo.
   */
-  // ?
+  function showOperationMessage( op, num1, num2 ) {
+    return 'A operação ' + num1 + ' ' + op + ' ' + num2 + ' = ';
+  }
 
   /*
   Crie uma função chamada "showErrorMessage" que recebe um parâmetro: o
@@ -103,7 +105,9 @@
   Essa função deverá retornar a frase:
   'Operação "[OPERATOR]" não permitida!'
   */
-  // ?
+  function showErrorMessage( op ) {
+    return 'Operação ' + op + ' não permitida!'
+  }
 
   /*
   Nossa calculadora está pronta! Agora vamos testá-la:
@@ -111,7 +115,9 @@
   - Declare 3 variáveis: "number1" e "number2", iniciando com valor zero, e
   "operationSignal", sem valor por enquanto.
   */
-  // ?
+  var number1 = 0;
+  var number2 = 0;
+  var operationSignal = '';
 
   /*
   PASSO 2:
@@ -119,7 +125,8 @@
   variável chamada "sum", que receba a função "calculator", passando por
   parâmetro a variável que recebeu o sinal da operação.
   */
-  // ?
+  operationSignal = '+';
+  var sum = calculator(operationSignal);
 
   /*
   PASSO 3:
@@ -133,7 +140,15 @@
   - O segundo, a função de soma, passando os dois operandos.
   - Se "sum" for "false", mostrar no console a mensagem de erro.
   */
-  // ?
+  operationalSignal = '+';
+  if (operationSignal !== '+') {
+    console.log( showErrorMessage( operacionalSignal ) );
+  } 
+  else {
+    number1 = 10;
+    number2 = 5;
+    console.log( showOperationMessage( operationalSignal, number1, number2 ), sum( number1, number2 ) )
+  }
 
   /*
   Repita desde o "PASSO 2" com as operações de subtração, multiplicação,
