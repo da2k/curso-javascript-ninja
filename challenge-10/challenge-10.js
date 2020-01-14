@@ -53,10 +53,14 @@
   Caso contrário, "false".
   - O desafio é fazer o retorno sem usar "if" ou "switch".
   */
-  function isOperatorValid(op){
-    op == '+' || op == '-' || op == '*' || op == '/' || op == '%' ? op = true : op = false; 
+  function isOperatorValid(operationalSignal){
+    operationalSignal == '+' || 
+    operationalSignal == '-' || 
+    operationalSignal == '*' || 
+    operationalSignal == '/' || 
+    operationalSignal == '%' ? operationalSignal = true : operationalSignal = false; 
     
-    return op
+    return operationalSignal
   }
 
   /*
@@ -133,7 +137,7 @@
   "sum" agora é uma função, e, se o sinal correto não foi passado para a
   função "calculator", "sum" será false. Certifique-se de que "sum" não é
   "false", e então atribua às variáveis "number1" e "number2", dois números
-  que serão os operandos da operação de soma.
+  ca  que serão os operandos da operação de soma.
   Após isso, mostre no console o resultado da operação, passando dois
   parâmetros para o método "log" de "console":
   - O primeiro será a mensagem da operação (usando a função criada acima);
@@ -141,8 +145,8 @@
   - Se "sum" for "false", mostrar no console a mensagem de erro.
   */
   operationalSignal = '+';
-  if (operationSignal !== '+') {
-    console.log( showErrorMessage( operacionalSignal ) );
+  if ( !isOperatorValid(operationalSignal) || operationalSignal != '+' ) {
+    console.log( showErrorMessage( operationalSignal ) );
   } 
   else {
     number1 = 10;
@@ -155,11 +159,22 @@
   divisão e resto. Crie variáveis com os nomes "subtraction",
   "multiplication", "division" e "mod".
   */
-  // ?
+  operatorSignal = '-';
+  var subtraction = calculator(operatorSignal);
+  
+  operatorSignal = '*';
+  var multiplication = calculator(operatorSignal);
+  
+  operatorSignal = '/';
+  var division = calculator(operatorSignal);
+  
+  operatorSignal = '%';
+  var mod = calculator(operatorSignal);
 
   /*
   Repita o PASSO 2 novamente, mas passando um operador inválido, para ver se
   a mensagem de erro será mostrada no console.
   */
-  // ?
+  operatorSignal = '$';
+  var whatever = calculator(operatorSignal);
 })();
