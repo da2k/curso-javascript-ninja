@@ -53,15 +53,25 @@ os livros.
 */
 function book(bookTitle) {
   var infoBook = {
-    "otherBookTitle": {
-      otherOtherBookTitle: {
+    "internObject": {
+      bookTitle: {
+        "quantidadePaginas": 2,
+        "autor": "String",
+        "editora": "String"
+      },
+      bookTitle: {
+        "quantidadePaginas": 2,
+        "autor": "String",
+        "editora": "String"
+      },
+      bookTitle: {
         "quantidadePaginas": 2,
         "autor": "String",
         "editora": "String"
       }
     }
   }
-  return
+  return infoBook.bookTitle;
 }
 
 /*
