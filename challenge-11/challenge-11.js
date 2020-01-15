@@ -35,9 +35,10 @@
   Após o loop, mostre a frase:
   'The person has [COUNTER] properties'
   */
-  for( prop in person ) {
-    console.log('The ' + prop + ' of person is ' + person[] + ' ')
-    var counter++;
+  var counter = 0;
+  for( var prop in person ) {
+    console.log('The ' + prop + ' of person is ' + person[prop] + ' .');
+    counter++;
   }
   console.log('The person has ' + counter + ' properties');
 
@@ -48,7 +49,10 @@
   Após a função, mostrar a mensagem no console:
   'The person has more than 25 years old? [TRUE/FALSE]'
   */
-  // ?
+  function moreThan(age) {
+    return person.age > age ? true : false
+  }
+  console.log('The person has more than 25 years old? ' + moreThan(age) + '');
 
   /*
   Faça um loop de 0 a 20, que adicione cada número como um item de um
@@ -56,7 +60,16 @@
   Mostre no console os números no array.
   */
   console.log( 'De 0 a 10:' );
-  // ?
+  var numbers = [];
+  for( count = 0; count <= 20; count++ ) {
+    if (count <= 10) {
+      numbers.push(count);
+    }
+    else {
+      break;
+    }  
+  }
+  console.log(numbers); 
 
   /*
   Faça outro loop de 0 a 20, que adicione a um array chamado `numbers` (já
