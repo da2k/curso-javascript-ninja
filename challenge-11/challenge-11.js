@@ -78,6 +78,16 @@
   Mostrar no console os números do array.
   */
   console.log( 'Pares de 0 a 20:' );
-  // ?
+   
+  var numbers = [];
+  for( count = 0; count <= 20; count++ ) {
+    if (count % 2 == 0) {
+      numbers.push(count);
+    }
+    else {
+      continue;
+    }  
+  }
+  console.log(numbers);
 
 })();
