@@ -23,8 +23,9 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 function adicionaValor(){
-... return semValor='VALOR';
-... }
+    semValor='VALOR';
+    return "O valor da variável agora é "+ semValor;
+}
 
 // Invoque a função criada acima.
 adicionaValor();
