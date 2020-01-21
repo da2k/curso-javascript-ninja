@@ -23,7 +23,7 @@
     Mostre no console, em um array, todas as propriedades do objeto acima.
     Não use nenhuma estrutura de repetição, nem crie o array manualmente.
     */
-    console.log( person.);
+    console.log( Object.values(person) );
 
     /*
     Crie um array vazio chamado `books`.
@@ -36,25 +36,36 @@
     `name`: String
     `pages`: Number
     */
-    // ?
+    books.push( {'name' : 'Neuromancer',
+                 'pages' : 321
+                } );
+  
+    books.push( {'name' : 'Eu Robo',
+                 'pages' : 278
+                } );
+  
+    books.push( { 'name' : 'Fundação',
+                  'pages' : 357 
+                } );
+  
     console.log( '\nLista de livros:' );
 
     /*
     Mostre no console todos os livros.
     */
-    // ?
+    console.log(books);
 
     console.log( '\nLivro que está sendo removido:' );
     /*
     Remova o último livro, e mostre-o no console.
     */
-    // ?
+    books.pop();
 
     console.log( '\nAgora sobraram somente os livros:' );
     /*
     Mostre no console os livros restantes.
     */
-    // ?
+    console.log(books);
 
     /*
     Converta os objetos que ficaram em `books` para strings.
