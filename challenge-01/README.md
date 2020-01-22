@@ -36,7 +36,6 @@ if(soma === myvar){
 }else{
   console.log("As variáveis não possuem valor igual e nem são do mesmo tipo");
 }
-
 // Digite o código que verifica se a variável `myvar` é menor ou igual à variável `soma`.
 if(myvar <= soma){
   console.log('A variável myvar é menor ou igual a variável soma');
