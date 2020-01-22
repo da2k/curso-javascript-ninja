@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>MM Cars</title>
+</head>
+<body>
+  <h1><span id="companyName">MM Cars</span> - <span id="companyPhone">(51) 7070-7070</span></h1>
+  <form id="formRegister">
+    <label>Imagem do carro:</label>
+    <input type="url" id="formImage">
+
+    <label>Marca/Modelo:</label>
+    <input type="text" id="formModel">
+
+    <label>Ano:</label>
+    <input type="number" id="formYear">
+
+    <label>Placa:</label>
+    <input type="text" id="formPlate">
+
+    <label>Cor:</label>
+    <input type="text" id="formColor">
+
+    <button type="submit">Cadastrar</button>
+  </form>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Imagem do carro</th>
+        <th>Marca/Modelo</th>
+        <th>Ano</th>
+        <th>Placa</th>
+        <th>Cor</th>
+      </tr>
+    </thead>
+    <tbody id="tableCar"></tbody>
+  </table>
+</body>
+</html>

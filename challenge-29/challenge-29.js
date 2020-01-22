@@ -36,4 +36,76 @@
   que será nomeado de "app".
   */
 
+  function app() {
+    return {
+      init: function() {
+        console.log('foi!')
+        this.companyInfo();
+        this.initEvents();
+      },
+
+      initEvents: function initEvents() {
+        var formRegister = document.getElementById('formRegister');
+        formRegister.addEventListener('submit', this.handleSubmit);
+      },
+
+      handleSubmit: function handleSubmit(e) {
+        e.preventDefault();
+        var tableCar = document.getElementById('tableCar');
+        tableCar.appendChild(app().createNewCar());
+      },
+
+      createNewCar: function createNewCar() {
+        var fragment = document.createElementFragment();
+        var tr = document.createElement('tr');
+        var tdImage = document.createElement('td');
+        var img = document.createElement('img');
+        var tdModel = document.createElement('td');
+        var tdYear = document.createElement('td');
+        var tdPlate = document.createElement('td');
+        var tdColor = document.createElement('td');
+
+        img.src = document.getElementById('formImage').value;
+        tdImage.appendChild(img);
+
+        tdModel.textContent = document.getElementById('formModel').value;
+        tdYear.textContent = document.getElementById('formYear').value;
+        tdPlate.textContent = document.getElementById('formPlate').value;
+        tdColor.textContent = document.getElementById('formColor').value;
+
+        tr.appendChild(tdImage);
+        tr.appendChild(tdModel);
+        tr.appendChild(tdYear);
+        tr.appendChild(tdPlate);
+        tr.appendChild(tdColor);
+
+        return fragment.appendChild(tr);
+      },
+
+      companyInfo: function companyInfo() {
+        var ajax = new XMLHttpRequest();
+        ajax.open('get', '/company.json', true);
+        ajax.send();
+        ajax.addEventListener('readystatechange', this.getCompanyInfo, false);
+      },
+
+      getCompanyInfo: function getCompanyInfo() {
+        if(!app().isReady.call(this))
+          return;
+
+        var data = JSON.parse(this.responseText);
+        var companyName = document.getElementById('companyName')
+        var companyPhone = document.getElementById('companyPhone')
+
+        companyName.innerHTML = data.name;
+        companyPhone.innerHTML = data.phone;
+      },
+
+      isReady: function isReady() {
+        return this.readyState === 4 && this.status === 200;
+      }
+    };
+  }
+
+  app().init();
 })();
