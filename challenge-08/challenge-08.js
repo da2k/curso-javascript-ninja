@@ -62,52 +62,63 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
 
 
 function calculator(operation) {
-  // var number1 = 2;
-  // var number2 = 8;
-  return function (number1 = 2, number2 = 8) {
-    if (operation === '+') {
-      var resultado = number1 + number2;
-    } else {
-      var resultado = "Operação Inválida";
+  return function (number1, number2) {
+    var resultado;
+
+    switch (operation) {
+      case '+':
+        resultado = number1 + number2;
+        break;
+      case '-':
+        resultado = number1 - number2;
+        break;
+      case '*':
+        resultado = number1 * number2;
+        break;
+      case '/':
+        resultado = number1 / number2;
+        break;
+      case '%':
+        resultado = number1 % number2;
+        break;
+
+      default:
+        return "Operação Inválida";
     }
-    // switch (operation) {
-    //   case '+':
 
-    //     break;
-
-    //   default:
-    //     var resultado = "Operação Inválida";
-    //     break;
-    // }
-
-    return console.log("Resultado da operação: " + number1 + " + " + operation + " + " + number2 + " = " + resultado + ".")
-  };
+    return "Resultado da operação: " + number1 + " " + operation + " " + number2 + " = " + resultado;
+  }
 }
 
 /*
 Declare uma variável chamada `sum`, que receberá a função acima, passando como
 parâmetro o operador de soma.
 */
-var sum = calculator();
+var sum = calculator('+');
 
-sum('+');
 
 // calculator('+');
 
 /*
 Agora `sum` é uma função. Mostre no console a soma de dois números, usando ela.
 */
-// ?
+console.log(sum(8,7));
 
 /*
 Agora, declare algumas variáveis com os nomes `subtraction`, `multiplication`,
 `division` e `mod`, e atribua a elas a função `calculator`, passando o operador
 correto por parâmetro para cada uma delas.
 */
-// ?
+var subtraction = calculator('-');
+var multiplication = calculator('*');
+var division = calculator('/');
+var mod = calculator('%');
 
 /*
 Faça uma operação com cada uma das funções criadas acima, mostrando o resultado
 no console.
 */
-// ?
+console.log(subtraction(8, 7));
+console.log(multiplication(8, 7));
+console.log(division(8, 7));
+console.log(mod(8, 7));
