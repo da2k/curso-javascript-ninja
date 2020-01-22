@@ -13,7 +13,7 @@ function soma(a,b){
     return a+b;
 }
     
-var total = soma(2,3) + 5
+var total = soma(2,3) + 5;
 console.log(total);
 
 // Qual o valor atualizado dessa variável?
@@ -58,7 +58,7 @@ function multi(a,b,c){
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
-multi(1,2)
+multi(1,2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 /*
@@ -66,8 +66,7 @@ Preencha os valores corretamente!
 */
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
-multi(1,1,1)
+multi(1,1,1);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 */ 5 /*
@@ -106,8 +105,8 @@ function tri(a,b,c){
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 
-tri(1) // 1
-tri(1,1) // 2
-tri(1,1,1) // null
+tri(1); // 1
+tri(1,1); // 2
+tri(1,1,1); // null
 
 ```
