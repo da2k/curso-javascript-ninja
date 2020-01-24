@@ -20,16 +20,16 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function addValue(nvar) {
-  nvar = "VALOR";
-  return `O valor da variável agora é ${nvar}`;
+function addValue() {
+  newVar = 666  ;
+  return `O valor da variável agora é ${newVar}`;
  }
 
 // Invoque a função criada acima.
-addValue(newVar);
+addValue();
 
 // Qual o retorno da função? (Use comentários de bloco).
-O valor da variável agora é VALOR
+O valor da variável agora é 666;
 
 /*
 Crie uma função com as seguintes características:
@@ -66,8 +66,27 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
+function args(x, y, z) {
+  var operation;
 
+  if (x !== undefined && y === undefined && z === undefined) {
+    operation = x;
+  } else if (y !== undefined && z === undefined) {
+    operation = x + y;
+  } else if (z !== undefined) {
+    operation = (x + y) / z;
+  } else if (x === undefined) {
+    operation = false;
+  } else {
+    operation = null;
+  }
+
+  return operation;
+}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+console.log(args()); // false
+console.log(args(1)); // 1
+console.log(args(1, 2)); // 3
+console.log(args(1, 2, 3)); // 1
 ```
