@@ -23,8 +23,8 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 function adicionarValor(x){
-  semValor = 0
-  semValor += x
+  semValor = x
+  return semValor
   console.log(`O valor da variável agora é ${semValor}`
 }
 
@@ -32,7 +32,7 @@ function adicionarValor(x){
 adicionaValor(4)
 
 // Qual o retorno da função? (Use comentários de bloco).
-/* O valor da variável é 4 */
+/* O valor da variável agora é 4 */
 
 /*
 Crie uma função com as seguintes características:
@@ -42,23 +42,23 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function tresArgs(x, y, z){
-  if(typeof x !== Number || x === undefined || typeof y !== Number || y === undefined || typeof z !== Number || z === undefined){
+  if(typeof x === null || x === undefined || typeof y === null || y === undefined || typeof z === null  || z === undefined){
     console.log('Preencha todos os valores corretamente!')
   } else {
-    return x*y*z
+    return (x*y*z) + 2
   }
 }
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+tresArgs(4,3)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+//Preencha todos os valores corretamente!
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+tresArgs(4,3,2)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+26
 
 /*
 Crie uma função com as seguintes características:
@@ -69,8 +69,32 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+function novaFuncao(x, y, z){
+  if(!x && !y){
+      return z
+  } else if(!x && !z){
+      return y
+  } else if(!y && !z){
+      return x
+  } else if(!x){
+      return y + z
+  } else if(!y) {
+      return x + z
+  } else if(!z){
+      return x + y
+  } else if(x && y && z){
+      return (x + y) / z
+  } else if(!x && !y && !z){
+      return false
+  } else {
+      return null
+  }
+}
+      
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+novaFuncao(2) // 2
+novaFuncao(2, 4) // 6
+novaFuncao(2, 4, 2) // 3
+novaFuncao() // undefined
 ```
