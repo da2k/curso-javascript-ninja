@@ -1,4 +1,4 @@
-(function() {
+(function () {
   /*
   Crie uma IIFE que envolva todo o código desse arquivo. Faça também a
   indentação correta do código, para ficar dentro da IIFE.
@@ -13,8 +13,8 @@
   function myFunction() {
     var number1 = 10;
     var number2 = 20;
-    console.log( 'Na função `myFunction`, o primeiro número é', number1 );
-    console.log( 'Na função `myFunction`, o segundo número é', number2 );
+    console.log('Na função `myFunction`, o primeiro número é', number1);
+    console.log('Na função `myFunction`, o segundo número é', number2);
     return number1 + number2;
   }
   myFunction();
@@ -27,10 +27,10 @@
     var number2 = 20;
 
     var sum = function sum() {
-        return number1 + number2;
+      return number1 + number2;
     };
 
-    console.log( 'A soma de 10 e 20 é igual a', sum ? sum() : undefined );
+    console.log('A soma de 10 e 20 é igual a', sum ? sum() : undefined);
 
     return sum();
   }
@@ -47,8 +47,8 @@
       return number1 + number2;
     };
 
-    console.log( 'Na função myFunction3, number1 é igual a', number1 );
-    console.log( 'A soma de 40 e 50 é igual a', sum() );
+    console.log('Na função myFunction3, number1 é igual a', number1);
+    console.log('A soma de 40 e 50 é igual a', sum());
 
     return sum();
   }
@@ -70,7 +70,7 @@
 
   function calculator(number1, number2) {
 
-    return function(callback) {
+    return function (callback) {
       return callback(number1, number2);
     }
   }
@@ -79,7 +79,7 @@
   Declare uma variável chamada `sum`, e atribua a ela a função `calculator`,
   passando dois números por parâmetro.
   */
-  var sum = calculator(10,20);
+  var sum = calculator(10, 20);
 
   /*
   Sabemos que `sum` agora tem uma função atribuída a ela, que é o retorno de
@@ -90,8 +90,9 @@
   uma função anônima que irá retornar a soma dos dois números que essa função
   anônima tem como seus argumentos.
   */
-  console.log( 'O resultado da soma é: ');
-  console.log( sum(function (num1, num2){
+  console.log('O resultado da soma é: ');
+
+  console.log(sum(function (num1, num2) {
     return num1 + num2;
   }));
   // ?
@@ -101,7 +102,10 @@
   `division` e `mod`, e atribua à elas `calculator`, passando números
   diferentes para cada chamada.
   */
-  // ?
+  var subtraction = calculator(10, 8);
+  var multiplication = calculator(10, 8);
+  var division = calculator(10, 8);
+  var mod = calculator(10, 8);
 
   /*
   Mostre as variáveis acima no `console` (uma chamada de console por variável),
@@ -110,15 +114,23 @@
   As suas respostas devem estar abaixo dos `console.log` referentes à cada
   chamada.
   */
-  console.log( 'O resultado da subtração é:' );
-  // ?
+  console.log('O resultado da subtração é:');
+  console.log(subtraction(function (num1, num2) {
+    return num1 - num2;
+  }));
 
-  console.log( 'O resultado da multiplicação é:' );
-  // ?
+  console.log('O resultado da multiplicação é:');
+  console.log(multiplication(function (num1, num2) {
+    return num1 * num2;
+  }));
 
-  console.log( 'O resultado da divisão é:' );
-  // ?
+  console.log('O resultado da divisão é:');
+  console.log(division(function (num1, num2) {
+    return num1 / num2;
+  }));
 
-  console.log( 'O resto da divisão é:' );
-  // ?
+  console.log('O resto da divisão é:');
+  console.log(mod(function (num1, num2) {
+    return num1 % num2;
+  }));
 })();
