@@ -25,7 +25,7 @@ Onde VALOR é o novo valor da variável.
 function adicionarValor(x){
   semValor = x
   return semValor
-  console.log(`O valor da variável agora é ${semValor}`
+  console.log(`O valor da variável agora é ${semValor}`)
 }
 
 // Invoque a função criada acima.
