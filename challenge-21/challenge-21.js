@@ -22,25 +22,23 @@
   var $buttonReset = document.querySelector('[data-js="button-reset"]');
   var $input = document.querySelector('input[type="text"]');
   var temporizador;
-  var counter = 0;
 
-  function timer() {
-    $input.value = counter++;
-    temporizador = setTimeout(timer, 1000);
+  $buttonStart.addEventListener('click', startTimer, false);
+  $buttonStop.addEventListener('click', stopTimer, false);
+  $buttonReset.addEventListener('click', resetTimer, false);
+
+  function startTimer() {
+    $input.value = +$input.value + 1;
+    temporizador = setTimeout(startTimer, 1000);
   }
 
-  $buttonStart.addEventListener('click', function () {
-    timer();
-  }, false)
-
-  $buttonStop.addEventListener('click', function () {
+  function stopTimer() {
     clearTimeout(temporizador);
-  }, false);
+  }
 
-  $buttonReset.addEventListener('click', function () {
+  function resetTimer() {
     clearTimeout(temporizador);
     $input.value = 0;
-    counter = 0;
-  }, false);
+  }
 
 })(window, document);
