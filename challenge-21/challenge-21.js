@@ -37,7 +37,7 @@
   }
 
   function resetTimer() {
-    clearTimeout(temporizador);
+    stopTimer();
     $input.value = 0;
   }
 
