@@ -7,7 +7,7 @@ um único parâmetro como argumento. Essa função deve retornar `true` se o
 equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
-var isTruthy = function isItTruthy(x){
+var isTruthy = function (x){
   if(x){
     return true
   } else {
@@ -15,12 +15,31 @@ var isTruthy = function isItTruthy(x){
   }
 }
 
+var isTruthy = function (x){
+  if(x){
+    return true
+  } 
+  return false
+}
+
+var isTruthy = function (x){
+  return x? true:false
+}
+
+var isTruthy = function (x){
+  return !!x
+}
+
+
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 isTruthy(0)
+isTruthy(-0)
 isTruthy(NaN)
 isTruthy(false)
 isTruthy('')
 isTruthy()
+isTruthy(null)
+isTruthy(undefinded)
 
 
 /*
@@ -31,6 +50,7 @@ isTruthy('a')
 isTruthy(true)
 isTruthy({})
 isTruthy([])
+isTruthy(function(){})
 
 
 /*
@@ -54,7 +74,7 @@ var carro = {
   quantasPortas: 4,
   assentos: 5,
   quantidadePessoas: 0
-  }
+}
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
@@ -90,6 +110,11 @@ carro.obterMarcaModelo = function (){
   return `Esse carro é um ${this.marca} ${this.modelo}`
 }
 
+carro.obterMarcaModelo = function(){
+  return `Esse carro é um ${carro.obterMarca()} ${carro.obterModelo()}`
+}
+
+
 /*
 Crie um método que irá adicionar pessoas no carro. Esse método terá as
 seguintes características:
@@ -107,18 +132,17 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 citado acima, no lugar de "pessoas".
 */
 carro.adicionarPessoas = function (pessoa){
-  if(this.quantidadePessoas === 5) {
+  if(this.quantidadePessoas === this.assentos) {
     return 'O carro já está lotado!'
-  } else if (this.quantidadePessoas + pessoa > 5) {
-      if(this.quantidadePessoas === 4) {
-        return `Só cabe mais ${5 - this.quantidadePessoas} pessoa!`
+  } else if (this.quantidadePessoas + pessoa > this.assentos) {
+      if(this.quantidadePessoas === this.assentos - 1) {
+        return `Só cabe mais ${this.assentos - this.quantidadePessoas} pessoa!`
       } else {
-        return `Só cabem mais ${5 - this.quantidadePessoas} pessoas!`
+        return `Só cabem mais ${this.assentos - this.quantidadePessoas} pessoas!`
       }
-  } else {
+  } 
   this.quantidadePessoas += pessoa
   console.log(`Já temos ${this.quantidadePessoas} no carro!`)
-  }
 }
   
 
@@ -158,6 +182,8 @@ carro.adicionarPessoas(3) /Já temos 5 no carro!
 
 // Tire 4 pessoas do carro.
 carro.quantidadePessoas -= 4
+
+carro.adicionarPessoas(-4)
 
 // Adicione 10 pessoas no carro.
 carro.adicionarPessoas(10) /Só cabem mais 4 pessoas!
