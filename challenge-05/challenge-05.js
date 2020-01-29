@@ -59,17 +59,17 @@ os livros.
 */
 function book(nome){
   var b = {
-    livro1: {
+    'livro1': {
       quantidadePaginas: 350,
       autor: 'Fulano',
       editora: 'Record'
     },
-    livro2: {
+    'livro2': {
       quantidadePaginas: 240,
       autor: 'Sicrano',
       editora: 'Martis Fontes'
     },
-    livro3: {
+    'livro3': {
       quantidadePaginas: 789,
       autor: 'Beltrano',
       editora: 'Jambô'
@@ -89,29 +89,50 @@ function book(nome){
     }
 }
   
+function book(bookName){
+  var allBooks = {
+    'Segredos do Ninja JavaScript': {
+      quantidadePaginas: 480,
+      autor: 'John Resig & Bear Bibeault',
+      editora: 'Novatec'
+    },
+    'Introdução ao HTML5': {
+      quantidadePaginas: 220,
+      autor: 'Bruce Lawson & Remy Sharp',
+      editora: 'Alta Books'
+    },
+    'Smashing CSS': {
+      quantidadePaginas: 283,
+      autor: 'Erick A. Meyer',
+      editora: 'Bookman'
+    }
+  }
+  
+  return !bookName? allBooks:allBooks[bookName]
+}
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-book()
+console.log(book())
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-console.log(`O livro ${book('livro2')} tem ${book('livro2').quantidadePaginas} páginas!`)
+console.log(`O livro livro2 tem ${book('livro2').quantidadePaginas} páginas!`)
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log(`O autor do livro ${book('livro1')} é ${book('livro1').autor}.`)
+console.log(`O autor do livro livro1 é ${book('livro1').autor}.`)
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log(`O livro ${book('livro3')} foi publicado pela editora ${book('livro3').editora}.`)
+console.log(`O livro livro3 foi publicado pela editora ${book('livro3').editora}.`)
