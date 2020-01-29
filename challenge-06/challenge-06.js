@@ -33,8 +33,11 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     - Se não houver time para a posição passada, deve retornar a mensagem:
     "Não temos a informação do time que está nessa posição."
 */
-function showTeamPosition(x){
-  return `O time que está em ${x+1}º lugar é o ${teams[x]}`
+function showTeamPosition(position){
+  if( position > teams.length || position < 1){
+    return `Não temos a informação do time que está nessa posição.`
+  }
+  return `O time que está em ${position}º lugar é o ${teams[position - 1]}`
 }
 
 /*
@@ -45,6 +48,7 @@ showTeamPosition(0)
 showTeamPosition(2)
 showTeamPosition(1)
 showTeamPosition(4)
+showTeamPosition(6)
 
 
 /*
@@ -72,23 +76,46 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
 function convertToHex(cor) {
   switch(cor){
     case 'vermelho':
-      console.log(`O hexadecimal para a cor ${cor} é FF0000.`)
+      console.log(`O hexadecimal para a cor ${cor} é #FF0000.`)
       break
     case 'azul':
-      console.log(`O hexadecimal para a cor ${cor} é 0000FF.`)
+      console.log(`O hexadecimal para a cor ${cor} é #0000FF.`)
       break
     case 'verde':
-      console.log(`O hexadecimal para a cor ${cor} é 008000.`)
+      console.log(`O hexadecimal para a cor ${cor} é #008000.`)
       break
     case 'branco': 
-      console.log(`O hexadecimal para a cor ${cor} é 000000.`)
+      console.log(`O hexadecimal para a cor ${cor} é #FFFFFF.`)
       break
     case 'preto':
-      console.log(`O hexadecimal para a cor ${cor} é FFFFFF.`)
+      console.log(`O hexadecimal para a cor ${cor} é #000000.`)
       break
     default:
       console.log(`Não temos o equivalente hexadecimal para ${cor}.`)
   }
+}
+
+function convertToHex(cor){
+  switch(cor){
+    case 'vermelho':
+      hex = '#FF0000'
+      break
+    case 'azul':
+      hex = '#0000FF'
+      break
+    case 'verde':
+      hex = '008000'
+      break
+    case 'branco':
+      hex = '#FFFFFF'
+      break
+    case 'preto':
+      hex = '000000'
+      break
+    default:
+      return `Não temos o equivalente hexadecimal para ${cor}.`
+  }
+  return `O hexadecimal para a cor ${cor} é ${hex}.`
 }
 
 /*
