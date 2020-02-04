@@ -46,7 +46,7 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `assentos` - Number - cinco por padrão
 - `quantidadePessoas` - Number - zero por padrão
 */
-
+var carro = {marca: 'Ford', modelo: 'EcoSport', placa: 'ABC-1234', ano: 2015, cor: 'Branca', quantasPortas: 4, assentos: 5, quantidadePessoas: 0}
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
@@ -68,8 +68,8 @@ carro.obterCor = function(){
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
 carro.obterModelo = function(){
-... return carro.modelo;
-... };
+ return carro.modelo;
+};
 
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
@@ -104,7 +104,21 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-?
+carro.addPessoas = function(numPessoas){
+  var totalPessoas = carro.quantidadePessoas + numPessoas;
+  if(carro.quantidadePessoas === carro.assentos && totalPessoas >= carro.assentos){
+    return 'O carro já está lotado.';
+  }
+
+  if(totalPessoas > carro.assentos){
+    numPessoasCabem = carro.assentos - carro.quantidadePessoas;
+    var verificaPlural = numPessoasCabem === 1 ? ' pessoa' : ' pessoas'
+    return 'Só cabem mais ' + numPessoasCabem + verificaPlural + ' no carro.'
+  }
+
+  carro.quantidadePessoas += numPessoas;
+  return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro.'; 
+};
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -114,38 +128,39 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-?
+carro.obterCor(); //Branca
 
 // Mude a cor do carro para vermelho.
-?
+carro.mudaCor('Vermelha') 
 
 // E agora, qual a cor do carro?
-?
+carro.obterCor(); //'Vermelha'
 
 // Mude a cor do carro para verde musgo.
-?
+carro.mudaCor('Verde Musgo')
 
 // E agora, qual a cor do carro?
-?
+carro.obterCor(); //'Verde Musgo'
 
 // Qual a marca e modelo do carro?
-?
+carro.obterMarcaModelo(); // 'Esse carro é um Ford EcoSport'
 
 // Adicione 2 pessoas no carro.
-?
+carro.addPessoas(2); //'Já temos 2 pessoas no carro.'
 
 // Adicione mais 4 pessoas no carro.
-?
+carro.addPessoas(4); //'Só cabem mais 3 pessoas no carro.'
 
 // Faça o carro encher.
-?
+carro.addPessoas(3); //'Já temos 5 pessoas no carro.'
+carro.addPessoas(1); //'O carro já está lotado.'
 
 // Tire 4 pessoas do carro.
-?
+carro.addPessoas(-4); //'Já temos 1 pessoas no carro.'
 
 // Adicione 10 pessoas no carro.
-?
+carro.addPessoas(10); //'Só cabem mais 4 pessoas no carro.'
 
 // Quantas pessoas temos no carro?
-?
+carro.quantidadePessoas; //1
 ```
