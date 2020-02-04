@@ -11,7 +11,7 @@
   var once = false
   do{
     console.log(`Entrou ao menos uma vez!`)
-  }while (once === true)
+  }while (once)
 
   /*
   Crie um objeto chamado `person`, que receba as seguintes propriedades:
@@ -49,12 +49,16 @@
   Após a função, mostrar a mensagem no console:
   'The person has more than 25 years old? [TRUE/FALSE]'
   */
-  var age = 40
   function moreThan(age){
     if(person.age > age){
       return true
     }
     return false
+  }
+  console.log(`The person has more than 25 years old? ${moreThan(25)}`)
+
+  function moreThan(age){
+    return person.age > age 
   }
   console.log(`The person has more than 25 years old? ${moreThan(25)}`)
 
@@ -66,10 +70,10 @@
   console.log( 'De 0 a 10:' );
   var numbers = []
   for(var i = 0; i <= 20; i++){
-    numbers.push(i)
-    if(i === 10){
+    if(i > 10){
       break
     }
+    numbers.push(i)
   }
   console.log(numbers)
   
@@ -83,7 +87,7 @@
   console.log( 'Pares de 0 a 20:' );
   numbers = []
   for(var i = 0; i <= 20; i++){
-    if(i % 2 === 0){
+    if(i % 2 !== 0){
       numbers.push(i)
     } else {
       continue
