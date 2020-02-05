@@ -53,19 +53,26 @@ os livros.
 */
 function book(bookname) {
     var collection = {
-        'Das Kapital': { quantidadePaginas: 674, autor: 'Karl Marx', editora: 'boitempo' },
-        'Crise e Golpe' : { quantidadePaginas: 208, autor: 'Alysson Mascaro', editora: 'boitempo' },
-        'Ulysses' : { quantidadePaginas: 728, autor: 'James Joyce', editora: 'Companhia das Letras‎' }
+        'Das Kapital': { 
+            quantidadePaginas: 674, 
+            autor: 'Karl Marx', 
+            editora: 'boitempo' },
+        'Crise e Golpe' : { 
+            quantidadePaginas: 208, 
+            autor: 'Alysson Mascaro', 
+            editora: 'boitempo' },
+        'Ulysses' : { 
+            quantidadePaginas: 728, 
+            autor: 'James Joyce', 
+            editora: 'Companhia das Letras‎' }
     };
-    return collection[bookname];
+    return !bookname ?  collection : collection[bookname] ;
 }
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-book('Das Kapital');
-book('Crise e Golpe');
-book('Ulysses');
+console.log(book());
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
