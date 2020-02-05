@@ -72,18 +72,18 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-`O livro Crise e Golpe tem ${book('Crise e Golpe').quantidadePaginas} páginas!`
+console.log(`O livro Crise e Golpe tem ${book('Crise e Golpe').quantidadePaginas} páginas!`);
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-`O autor do livro Ulysses é ${book('Ulysses').autor}`
+console.log(`O autor do livro Ulysses é ${book('Ulysses').autor}`)
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-`O livro Das Kapital foi publicado pela editora ${book('Das Kapital').editora}.`
+console.log(`O livro Das Kapital foi publicado pela editora ${book('Das Kapital').editora}.`)
