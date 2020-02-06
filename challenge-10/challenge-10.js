@@ -43,9 +43,11 @@ parâmetro a ela é válido, ou seja, se ele é igual a '+', '-', '*', '/' ou
 Caso contrário, "false".
 - O desafio é fazer o retorno sem usar "if" ou "switch".
 */
-function isOperatorValid() {
+function isOperatorValid(operator) {
+  return operation[operator]
 
 }
+
 
 /*
 Agora vamos criar a calculadora.
@@ -59,7 +61,17 @@ parâmetros;
 operador passado para a função "calculator", e passando para esse método
 os dois parâmetros da função de retorno de "calculator".
 */
-// ?
+function calculator(operator) {
+  if (!isOperatorValid(operator)) {
+    return false
+  }
+  return function(num1, num2) {
+    if (typeof num1 !== 'number' || typeof num2 !== 'number') {
+      return false
+    }
+    return operation[operator](num1, num2);
+  }
+}
 
 /*
 Crie uma função chamada "showOperationMessage" que recebe três parâmetros:
