@@ -56,8 +56,7 @@ repetição "while".
 */
 var ct = 20;
 while ( ct <= 30 ) {
-    console.log(ct);
-    ct++;
+    console.log(ct++);
 }
 
 /*
@@ -73,25 +72,27 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 function convertToHex(color) {
+    var hexa;
     switch (color) {
         case 'black':
-            return 'O hexadecimal para a cor "black" é "#000000".';
+            hexa = '#000000';
             break;
         case 'gray':
-            return 'O hexadecimal para a cor "gray" é "#808080".';
+            hexa = '#808080';
             break;
         case 'blue':
-            return 'O hexadecimal para a cor "blue" é "#0000FF".';
+            hexa = '#0000FF';
             break;
         case 'cyan':
-            return 'O hexadecimal para a cor "cyan" é "#00FFFF".';
+            hexa = '#00FFFF';
             break;
         case 'green':
-            return 'O hexadecimal para a cor "green" é "#008000".';
+            hexa = '#008000';
             break;
         default:
             return `Não temos o equivalente hexadecimal para ${color}.`;      
     }
+    return `O hexadecimal para a cor "${color}" é "${hexa}".`;
 }
 
 /*
