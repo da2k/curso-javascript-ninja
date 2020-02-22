@@ -1,0 +1,46 @@
+body {
+    font-family: sans-serif;
+    padding: 40px;
+}
+
+form, table {
+    float: left;
+    width: 50%;
+}
+
+header {
+    text-align: center;
+}
+
+input {
+    padding: 5px;
+    width: 300px;
+    margin-bottom: 10px;
+}
+
+button{
+    background-color: green;
+    border: 0;
+    color: #ffffff;
+    padding: 10px 20px;
+    margin-top: 5px
+}
+
+button:hover, button:focus {
+    background-color: darkgreen;
+    cursor: pointer;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: 5px 15px;
+    border: 1px solid #cccccc;
+}
+
+img {
+    max-width: 200px;
+    height: auto;
+}
