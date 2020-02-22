@@ -26,12 +26,13 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function myvar(a) {
-  return `O valor da variável agora é ${a}`
+function myvar() {
+  myvar = 5
+  return `O valor da variável agora é ${myvar}`
 }
 
 // Invoque a função criada acima.
-myvar(5)
+myvar()
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*'O valor da variável agora é 5' */
