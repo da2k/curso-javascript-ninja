@@ -88,8 +88,8 @@
                 return
 
             var data = JSON.parse(this.responseText)
-            var companyName = DOM('[data-js="nomeDaLoja"]')
-            var companyPhone = DOM('[data-js="telefoneDaLoja"]')
+            var companyName = DOM('[data-js="nomeDaLoja"]').get()
+            var companyPhone = DOM('[data-js="telefoneDaLoja"]').get()
             companyName.textContent = data.name
             companyPhone.textContent = data.phone
         },
