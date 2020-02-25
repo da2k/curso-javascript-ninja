@@ -9,11 +9,10 @@ function soma(a,b){
 }
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-let operacao1 = soma(2,4);
-operacao1 += 5; 
+let operacao1 = soma(2,4) + 5;
 
 // Qual o valor atualizado dessa variável?
-5;
+11;
 
 // Declare uma nova variável, sem valor.
 let variavel;
