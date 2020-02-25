@@ -23,7 +23,7 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 function adicionar(){
-  let valor = variavel + 5;
+  valor = 5;
   return "O valor da variável agora é "+valor;
 }
 
