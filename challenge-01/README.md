@@ -8,7 +8,7 @@
 ?
 
 // Declare uma nova variável chamada `soma`, e adicione uma instrução somando os valores 15 e 8.
-?
+?...
 
 // Atribua à variável `soma` todo o valor dela, somando 1, usando o operador de soma abreviado.
 ?
