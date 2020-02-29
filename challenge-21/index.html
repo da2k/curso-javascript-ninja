@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>challenge 21</title>
+    <style>
+
+        html {
+            font: normal 100% arial;
+            background: white;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: auto;
+            margin-top: 3rem;
+            width: 800px;
+            background: #0069d9;
+        }
+
+        .título {
+            font: normal 1.2rem 'arial black';
+            margin: 0; margin-top: 1rem;
+            padding-left: 2rem;
+            color: white;
+        }
+
+        .painelAzul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            color: #0c5460;
+            background-color: #d1ecf1;
+            border: 2px solid #adc7cc;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        input {
+            width: 4rem;
+            height: 2rem;
+            text-align: center;
+            color: #808080;
+            font: bold 1.5rem 'arial';
+            border: 2px solid #adc7cc;
+        }
+
+        button {
+            font: normal 1rem "arial black";
+            color: white;
+            margin-top: 1rem;
+            border: 3px solid transparent;
+            border-color: #0069d9;
+            background-color: #007bff;
+            border-radius: 0.25rem;
+            height: 2rem;
+            width: 6rem;
+        }
+
+        button:hover {
+            color: #ffffff;
+            background-color: #0069d9;
+        }
+
+        button:active {
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+        }
+
+    </style>
+</head>
+<body>
+    <p class="título">Cronômetro - Challenge 21</p>
+    <div class="painelAzul">
+        <input type="text" class="inputText" data-js="inputText" value="0">
+        <div>
+            <button class="botao" data-js="start" >Start</button>
+            <button class="botao" style="margin-left: 1rem; margin-right: 1rem;" data-js="stop">Stop</button>
+            <button class="botao" data-js="reset" >Reset</button>
+        </div>
+    </div>
+    <script src="challenge-21.js"></script>
+</body>
+</html>
