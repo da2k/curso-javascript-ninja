@@ -49,7 +49,7 @@ booleano que representa "verdadeiro";
 
 pessoa.andar = function( x ) {
  if ( x !== undefined ) {
-  return pessoa.caminhouQauntosMetros = x, pessoa.andando = true;
+  return pessoa.caminhouQauntosMetros += x, pessoa.andando = true;
      }
  }; 
 
