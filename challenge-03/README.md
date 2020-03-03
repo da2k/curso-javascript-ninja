@@ -66,7 +66,7 @@ Crie um método chamado `nomeCompleto`, que retorne a frase:
 - "Olá! Meu nome é [NOME] [SOBRENOME]!"
 */
 pessoa.nomeCompleto = function() {
- return pessoa.nome + " " + pessoa.sobrenome;
+ return ' Olá! Meu nome é '+ pessoa.nome+' ' + pessoa.sobrenome + '!';
 }
 
 /*
@@ -124,14 +124,16 @@ pessoa.mostrarAltura() // 'Minha altura é 1.77m'
 /*
 Faça a `pessoa` fazer 3 aniversários.
 */
-pessoa.fazerAniversario(3);
+pessoa.fazerAniversario();
+pessoa.fazerAniversario();
+pessoa.fazerAniversario();
 
 /*
 Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
 comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
-pessoa.idade // 33
+pessoa.idade // 32
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
@@ -163,7 +165,7 @@ Quantos metros a pessoa andou? (Use uma instrução para responder e comentário
 inline ao lado da instrução para mostrar a resposta retornada)
 */
 
-pessoa.caminhouQuantosMetros // 4
+pessoa.caminhouQuantosMetros // 9
 
 /*
 Agora vamos deixar a brincadeira um pouco mais divertida! :D
@@ -183,8 +185,24 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentação = function() {
-return " Olá, eu sou o "+pessoa.nomeCompleto()+ ' tenho '+pessoa.idade+' anos, '+pessoa.altura+', meu peso é '+ pessoa.peso+' KGs e, só hoje, eu já caminhei '+pessoa.caminhouQauntosMetros+' metros!';
-}
+    var sexo;
+    var ano;
+    var metros;
+if ( pessoa.sexo === 'Feminino' ) {
+     pessoa.sexo = ' a ' ; 
+} else {
+    pessoa.sexo = "o";
+} if ( pessoa.idade === 1 ) {
+    pessoa.ano = " ano "; 
+} else { 
+     pessoa.ano = " anos ";
+} if ( pessoa.caminhouQauntosMetros === 1 ) {
+    pessoa.metros = 'metro';
+} else { 
+    pessoa.metros = 'metros';
+return " Olá, eu sou "+pessoa.sexo+' '+pessoa.nome+ ' '+pessoa.sobrenome+ ' tenho '+pessoa.idade+ ''+pessoa.ano+ ', '+pessoa.altura+', meu peso é '+ pessoa.peso+' KGs e, só hoje, eu já caminhei '+pessoa.caminhouQauntosMetros+' '+pessoa.metros+'!';
+    }
+};
 
 // Agora, apresente-se ;)
 ?
