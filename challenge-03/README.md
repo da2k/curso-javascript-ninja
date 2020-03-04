@@ -193,7 +193,7 @@ if ( pessoa.sexo === 'Feminino' ) {
 } if ( pessoa.idade === 1 ) {
     ano = " ano "; 
 } if ( pessoa.caminhouQauntosMetros === 1 ) {
-    pessoa.metros = 'metro';
+    metros = 'metro';
 }
 return " Olá, eu sou "+sexo+' '+pessoa.nome+ ' '+pessoa.sobrenome+ ' tenho '+pessoa.idade+ ''+ano+ ', '+pessoa.altura+', meu peso é '+ pessoa.peso+' KGs e, só hoje, eu já caminhei '+pessoa.caminhouQauntosMetros+' '+metros+'!';
 };
