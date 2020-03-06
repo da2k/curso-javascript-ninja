@@ -42,17 +42,8 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function multiplica(x, y, z) {
-  var ret = 'Preencha todos os valores corretamente!';
-  if(!x) {
-    return ret;
-  }
-  
-  if(!y) {
-    return ret;
-  }
-  
-  if(!z) {
-    return ret;
+  if(!x || !y || !z) {
+    return 'Preencha todos os valores corretamente!';
   }
   
   return (x * y * z) + 2;
@@ -69,7 +60,7 @@ multiplica(2, 3);
 multiplica(2, 3, 4);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-26
+// 26
 
 /*
 Crie uma função com as seguintes características:
@@ -89,9 +80,9 @@ function func(x, y, z) {
     return (x + y) / z;
   } else if (!x && !y && !z) {
     return false;
-  } else {
-    return null;
-   }
+  } 
+  
+  return null;
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
