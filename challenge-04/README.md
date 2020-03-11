@@ -115,7 +115,7 @@ carro.adicionarPessoasCarro = function( x ) {
 
     var quantidadePessoasQueremEntrar = carro.quantidadePessoas + x;
     
-    if(carro.quantidadePessoas === carro.assentos) {
+    if( carro.quantidadePessoas === carro.assentos && quantidadePessoasQueremEntrar >= carro.assentos) {
         return 'O carro já está lotado!';
     }
     
@@ -127,7 +127,6 @@ carro.adicionarPessoasCarro = function( x ) {
     
     carro.quantidadePessoas += x
     return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!';
-
 };
 
 /*
@@ -158,17 +157,17 @@ carro.obterMarcaModelo(); // 'Esse carro é um Pegout 207'
 carro.adicionarPessoasCarro(2);
 
 // Adicione mais 4 pessoas no carro.
-carro.adicionarPessoasCarro(4) // 'Só cabem mais 3 pessoas!'
+carro.adicionarPessoasCarro(4); // 'Só cabem mais 3 pessoas!'
 
 // Faça o carro encher.
 carro.adicionarPessoasCarro(3);
 
 // Tire 4 pessoas do carro.
-carro.quantidadePessoas = 1;
+carro.adicionarPessoasCarro(-4); // 'Já temos 1 pessoas no carro!'
 
 // Adicione 10 pessoas no carro.
-carro.adicionarPessoasCarro(10) // 'Só cabem mais 4 pessoas!'
+carro.adicionarPessoasCarro(10); // 'Só cabem mais 4 pessoas!'
 
 // Quantas pessoas temos no carro?
-carro.quantidadePessoas // 1
+carro.quantidadePessoas; // 1
 ```
