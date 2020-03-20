@@ -113,4 +113,4 @@ a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
 // ?
-"O livro Iago foi publicado pela editora " + book("Iago").editora
+"O livro Iago foi publicado pela editora " + book("Iago").editora 
