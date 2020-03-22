@@ -1,6 +1,3 @@
-# Desafio da semana #3
-
-```js
 // Declarar uma variável qualquer, que receba um objeto vazio.
 var objeto = {};
 
@@ -198,4 +195,3 @@ pessoa.apresentacao = function() {
 
 // Agora, apresente-se ;)
 pessoa.apresentacao();
-```
