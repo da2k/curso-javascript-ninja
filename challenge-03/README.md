@@ -60,58 +60,58 @@ pessoa.parar = function() {
 Crie um método chamado `nomeCompleto`, que retorne a frase:
 - "Olá! Meu nome é [NOME] [SOBRENOME]!"
 */
-function nomeCompleto(nome, sobrenome) {
-  return `Olá! Meu nome é ${nome} ${sobrenome}.`;
-}
+pessoa.nomeCompleto = function() {
+  return `Olá! Meu nome é ${pessoa.nome} ${pessoa.sobrenome}.`;
+};
 
 /*
 Crie um método chamado `mostrarIdade`, que retorne a frase:
 - "Olá, eu tenho [IDADE] anos!"
 */
-function mostrarIdade(idade) {
-  return `Olá, eu tenho ${idade} anos!`;
-}
+pessoa.mostrarIdade = function() {
+  return `Olá, eu tenho ${pessoa.idade} anos!`;
+};
 
 /*
 Crie um método chamado `mostrarPeso`, que retorne a frase:
 - "Eu peso [PESO]Kg."
 */
-function mostrarPeso(peso) {
-  return `Eu peso ${peso}kg.`;
-}
+pessoa.mostrarPeso = function() {
+  return `Eu peso ${pessoa.peso}kg.`;
+};
 
 /*
 Crie um método chamado `mostrarAltura` que retorne a frase:
 - "Minha altura é [ALTURA]m."
 */
-function mostrarAltura(altura) {
-  return `Minha altura é ${altura}m.`;
-}
+pessoa.mostrarAltura = function() {
+  return `Minha altura é ${pessoa.altura}m.`;
+};
 
 /*
 Agora vamos brincar um pouco com o objeto criado:
 Qual o nome completo da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-nomeCompleto(pessoa.nome, pessoa.sobrenome);
+pessoa.nomeCompleto(); // 'Olá! Meu nome é Rodrigo Carvalho.'
 
 /*
 Qual a idade da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-mostrarIdade(pessoa.idade);
+pessoa.mostrarIdade(); // 'Olá, eu tenho 25 anos!'
 
 /*
 Qual o peso da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-mostrarPeso(pessoa.peso);
+pessoa.mostrarPeso(); // 'Eu peso 85kg.'
 
 /*
 Qual a altura da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-mostrarAltura(pessoa.altura);
+pessoa.mostrarAltura(); // 'Minha altura é 1.77m.'
 
 /*
 Faça a `pessoa` fazer 3 aniversários.
@@ -125,7 +125,7 @@ Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
 comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
-mostrarIdade(pessoa.idade); // 'Olá, eu tenho 28 anos!'
+pessoa.mostrarIdade(); // 'Olá, eu tenho 28 anos!'
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
