@@ -1,6 +1,8 @@
-Desafio da semana #2
+# Desafio da semana #2
+
 Nesse exercício, você está livre para escolher os nomes para suas variáveis e funções! 😄
 
+```
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
 ?
 
@@ -60,3 +62,4 @@ Crie uma função com as seguintes características:
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 ?
+```
