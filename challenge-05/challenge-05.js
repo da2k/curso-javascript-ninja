@@ -35,7 +35,11 @@ var newArray = [0, true, "Carvalho", false, "500"];
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-showArray(newArray);
+myFunc(newArray, 0);
+myFunc(newArray, 1);
+myFunc(newArray, 2);
+myFunc(newArray, 3);
+myFunc(newArray, 4);
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
