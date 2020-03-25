@@ -2,7 +2,7 @@
 
 Nesse exercício, você está livre para escolher os nomes para suas variáveis e funções! 😄
 
-```
+```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
 ?
 
