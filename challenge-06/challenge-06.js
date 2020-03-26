@@ -37,7 +37,7 @@ function showTeamPosition(num) {
   if (num >= 1 && num <= 5) {
     return `O time que está em ${num}º lugar é o ${teams[num - 1]}.`;
   }
-  return "Não temos a informação do time que está nessa posição.";
+  return `Não temos a informação do time que está em ${num}º lugar.`;
 }
 
 /*
@@ -47,7 +47,7 @@ função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 console.log(showTeamPosition(1));
 console.log(showTeamPosition(2));
 console.log(showTeamPosition(3));
-console.log(showTeamPosition(6));
+console.log(showTeamPosition(15));
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
