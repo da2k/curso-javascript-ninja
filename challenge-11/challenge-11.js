@@ -49,7 +49,7 @@
     'The person has more than 25 years old? [TRUE/FALSE]'
     */
     function moreThan( age ) {
-        return person.age > age ? true : false;        
+        return person.age > age;        
     }
     console.log( 'The person has more than 25 years old? ' + moreThan( 25 ) );
 
@@ -59,11 +59,11 @@
     Mostre no console os números no array.
     */
     var numbers = [];
-    for( var counter = 0; counter <= 20; counter++ ) {
-        numbers.push( counter );
-        if( counter >= 10 ) {
+    for( var counter = 0; counter < 20; counter++ ) {        
+        if( counter > 10 ) {
             break;
         }
+        numbers.push( counter );
     }
     console.log( 'De 0 a 10:', numbers );
 
