@@ -13,7 +13,7 @@ resolver o problema corretamente.
   var five = Number("5");
   console.log(five + " é número?", typeof five === "number");
 
-  var concat = String(10 + 10);
+  var concat = String(10) + String(10);
   console.log(
     '"' + concat + '" é uma string? E é igual a "1010"?',
     typeof concat === "string"
@@ -57,7 +57,7 @@ Caso contrário, "false".
 - O desafio é fazer o retorno sem usar "if" ou "switch".
 */
   function isOperatorValid(operator) {
-    return operation[operator] ? true : false;
+    return !!operation[operator];
   }
 
   /*
@@ -135,7 +135,7 @@ parâmetros para o método "log" de "console":
 - O segundo, a função de soma, passando os dois operandos.
 - Se "sum" for "false", mostrar no console a mensagem de erro.
 */
-  if (isOperatorValid(operationSignal)) {
+  if (sum) {
     number1 = 8;
     number2 = 12;
     console.log(
@@ -151,7 +151,7 @@ divisão e resto. Crie variáveis com os nomes "subtraction",
 */
   operationSignal = "-";
   var subtraction = calculator(operationSignal);
-  if (isOperatorValid(operationSignal)) {
+  if (subtraction) {
     number1 = 8;
     number2 = 12;
     console.log(
@@ -162,7 +162,7 @@ divisão e resto. Crie variáveis com os nomes "subtraction",
 
   operationSignal = "*";
   var multiplication = calculator(operationSignal);
-  if (isOperatorValid(operationSignal)) {
+  if (multiplication) {
     number1 = 8;
     number2 = 12;
     console.log(
@@ -173,7 +173,7 @@ divisão e resto. Crie variáveis com os nomes "subtraction",
 
   operationSignal = "/";
   var division = calculator(operationSignal);
-  if (isOperatorValid(operationSignal)) {
+  if (division) {
     number1 = 8;
     number2 = 12;
     console.log(
@@ -181,10 +181,10 @@ divisão e resto. Crie variáveis com os nomes "subtraction",
       division(number1, number2)
     );
   } else console.log(showErrorMessage(operationSignal));
-  
+
   operationSignal = "%";
   var mod = calculator(operationSignal);
-  if (isOperatorValid(operationSignal)) {
+  if (mod) {
     number1 = 8;
     number2 = 12;
     console.log(
@@ -200,7 +200,7 @@ a mensagem de erro será mostrada no console.
   operationSignal = "a";
   sum = calculator(operationSignal);
 
-  if (isOperatorValid(operationSignal)) {
+  if (sum) {
     number1 = 8;
     number2 = 12;
     console.log(
