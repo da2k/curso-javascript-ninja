@@ -11,7 +11,7 @@ Qual loop você deve usar para que essa mensagem seja mostrada no console?
   var once = false;
   do {
     console.log("Entrou ao menos uma vez!");
-  } while (once === true);
+  } while (once);
   // Para que essa mensagem seja exibida no console devo uzar o loop "do while".
 
   /*
