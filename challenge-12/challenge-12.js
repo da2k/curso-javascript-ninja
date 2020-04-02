@@ -66,20 +66,21 @@ Mostre no console os livros restantes.
   /*
 Converta os objetos que ficaram em `books` para strings.
 */
-  var stringfiedBooks = [];
   for (book in books) {
-    stringfiedBooks.push(JSON.stringify(books[book]));
+    books[book] = JSON.stringify(books[book]);
   }
 
   /*
 Mostre os livros nesse formato no console:
 */
-  console.log("\nLivros em formato string:", stringfiedBooks);
+  console.log("\nLivros em formato string:", books);
 
   /*
 Converta os livros novamente para objeto.
 */
-  // ?
+  for (book in books) {
+    books[book] = JSON.parse(books[book]);
+  }
   console.log("\nAgora os livros são objetos novamente:", books);
 
   /*
@@ -97,7 +98,7 @@ no formato abaixo:
 Crie um array chamado `myName`. Cada item desse array deve ser uma letra do
 seu nome. Adicione seu nome completo no array.
 */
-  var myName = ["R", "o", "d", "r", "i", "g", "o"];
+  var myName = ["r", "o", "d", "r", "i", "g", "o"];
 
   /*
 Juntando todos os itens do array, mostre no console seu nome.
@@ -107,7 +108,7 @@ Juntando todos os itens do array, mostre no console seu nome.
   /*
 Ainda usando o objeto acima, mostre no console seu nome invertido.
 */
-  console.log("\nMeu nome invertido é:", myName.reverse());
+  console.log("\nMeu nome invertido é:", myName.reverse().join(""));
 
   /*
 Mostre todos os itens do array acima, odenados alfabéticamente.
