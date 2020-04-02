@@ -56,16 +56,7 @@
   - O desafio é fazer o retorno sem usar "if" ou "switch".
   */
   function isOperatorValid(operator) {
-    switch(operator) {
-      case '+':
-      case '-':
-      case '*':
-      case '/':
-      case '%':
-        return true;
-      default:
-        return false;
-    }
+    return !!operation[operator];
   } 
 
   /*
