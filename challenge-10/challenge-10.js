@@ -44,8 +44,7 @@
     - O desafio é fazer o retorno sem usar "if" ou "switch".
     */
     function isOperatorValid( operator ){
-        return operator === "+" || operator === "-" || operator === "*" 
-        || operator === "/" || operator === "%";
+        return !!operation[operator];
     }
     
     /*
@@ -62,7 +61,7 @@
     */
     function calculator( operator ) {
         if ( !isOperatorValid( operator ) ) return false;
-        return function numbers( x, y ){
+        return function( x, y ){
             if ( typeof x !== "number" ||  typeof y !== "number" ) 
                 return false;
             return operation[operator]( x, y );
@@ -87,7 +86,6 @@
     'Operação "[OPERATOR]" não permitida!'
     */
     function showErrorMessage( operator ) {
-        if ( isOperatorValid( operator ) ) return false;
         return "Operação " + operator + " não permitida!"
     }
     
