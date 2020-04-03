@@ -26,14 +26,14 @@
     this.name = name;
     this.lastName = lastName;
     this.age = age;
-    this.getFullName = function () {
+    this.getFullName = function getFullName() {
       return `${this.name} ${this.lastName}`;
     };
-    this.getAge = function () {
+    this.getAge = function getAge() {
       return this.age;
     };
-    this.addAge = function (qtd) {
-      this.age += qtd;
+    this.addAge = function addAge() {
+      this.age += arguments[0];
       return this;
     };
   }
@@ -56,9 +56,9 @@
   Mostre no console o nome completo de cada pessoa.
   */
   console.log("\nNomes das pessoas:");
-  console.log(rodrigo.name);
-  console.log(tayanne.name);
-  console.log(jessica.name);
+  console.log(rodrigo.getFullName());
+  console.log(tayanne.getFullName());
+  console.log(jessica.getFullName());
 
   /*
   Mostre no console as idades de cada pessoa, com a frase:
@@ -75,6 +75,13 @@
   - "[NOME COMPLETO] agora tem [NOVA IDADE] anos."
   */
   console.log("\nNova idade das pessoas:");
-  rodrigo.addAge(5);
-  console.log(`${rodrigo.getFullName()} agora tem ${rodrigo.getAge()}`);
+  console.log(
+    `${rodrigo.getFullName()} agora tem ${rodrigo.addAge(5).getAge()} anos.`
+  );
+  console.log(
+    `${tayanne.getFullName()} agora tem ${tayanne.addAge(70).getAge()} anos.`
+  );
+  console.log(
+    `${jessica.getFullName()} agora tem ${jessica.addAge(-20).getAge()} anos.`
+  );
 })();
