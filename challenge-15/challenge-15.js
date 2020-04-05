@@ -34,8 +34,8 @@
     this.getAge = function getAge(){
       return this.age;
     }
-    this.addAge = function addAge(years){
-      this.age+=years;
+    this.addAge = function addAge(){
+      this.age+=arguments[0] === undefined ? 0 : arguments[0];
       return this;
     }
   }
