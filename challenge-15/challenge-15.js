@@ -78,5 +78,5 @@
   console.log( '\nNova idade das pessoas:' );
   console.log('\n', menandro.addAge(2).getFullName(), ' agora tem ', menandro.getAge(), '\n',
     jane.addAge(13).getFullName(), ' agora tem', jane.getAge(), '\n', 
-    vinicius.addAge(1).getFullName(), ' agora tem ', vinicius.getAge());
+    vinicius.addAge().getFullName(), ' agora tem ', vinicius.getAge());
 })();
