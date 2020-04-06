@@ -71,12 +71,12 @@ function book( bookName ) {
             editora: 'Bookman'
         }
     }
-    if( !bookName ) {
-        return allBooks;
-    } else {
-        return allBooks[ bookName ]
-    }
-    // return !bookName ? allBooks: allBooks[ bookName ]
+    // if( !bookName ) {
+    //     return allBooks;
+    // } else {
+    //     return allBooks[ bookName ]
+    // }
+    return !bookName ? allBooks: allBooks[ bookName ]
 }    
 
 /*
