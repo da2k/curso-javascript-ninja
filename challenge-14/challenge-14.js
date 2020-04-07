@@ -11,18 +11,10 @@
   Mostre esse array no console.
   */
   console.log( 'Number Objects Array:' );
-  var numberObjects = [
-    { number: 1 },
-    { number: 2 },
-    { number: 3 },
-    { number: 4 },
-    { number: 5 },
-    { number: 6 },
-    { number: 7 },
-    { number: 8 },
-    { number: 9 },
-    { number: 10 },
-  ];
+  var numberObjects = [];
+  do {
+    numberObjects.push({ number: numberObjects.length + 1 });
+  } while(numberObjects.length < 10);
 
   console.log(numberObjects);
   
@@ -31,7 +23,9 @@
   números do array criado acima. Mostre esse novo array no console.
   */
   console.log( '\nJust Numbers:' );
-  var justNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  var justNumbers = numberObjects.map(function(item) {
+    return item.number;
+  });
   console.log(justNumbers);
 
   /*
@@ -41,9 +35,7 @@
   */
   console.log( '\nJust module of division by 2 or 3:' );
   var justMod2Or3 = justNumbers.filter(function(item) {
-     if(item % 2 === 0 || item % 3 === 0) {
-       return item;
-     }
+     return item % 2 === 0 || item % 3 === 0;
   });
   
   console.log(justMod2Or3);
@@ -58,8 +50,8 @@
   */
   console.log( '\nOperation:' );
   var operation = justMod2Or3.reduce(function(total, item) {
-    return total * item;
-  }) + 1;
+    return (total + 1) * item;
+  }, 0);
   console.log(operation);
 
   /*
@@ -69,8 +61,8 @@
   */
   console.log( '\nOperation 2:' );
   var operation2 = justMod2Or3.reduceRight(function(total, item) {
-    return total * item;
-  }) + 1;
+    return (total + 1) * item;
+  }, 0);
   console.log(operation2);
 
   /*
