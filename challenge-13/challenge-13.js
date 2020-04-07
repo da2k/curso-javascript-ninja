@@ -30,7 +30,7 @@
     Adicione 3 novos estados da região Norte no início do array e mostre no console.
     */
     console.log( '\nMais estados adicionados:' );
-    brasil.unshift( 'Amazonas', 'Roraima', 'Amapá' );
+    brasil.unshift( 'Acre', 'Amapá', 'Amazonas', 'Roraima' );
     console.log( brasil );
 
     /*
@@ -43,7 +43,7 @@
     Crie um novo array chamado `newSul`, que receba somente os estados do sul,
     pegando do array `brasil`. Não remova esses itens de `brasil`.
     */
-    var newSul = brasil.slice( 2,5 );
+    var newSul = brasil.slice( 3,6 );
 
     /*
     Mostre no console os estados que estão em `newSul`.
@@ -72,7 +72,7 @@
     Remova de `brasil` os estados do `sudeste`, colocando-os em uma variável
     chamada `newSudeste`.
     */
-    var newSudeste = brasil.splice( 5, 4 );
+    var newSudeste = brasil.splice( 6, 4 );
 
     /*
     Adicione os estados do `nordeste` ao array `brasil`. Esses estados devem
@@ -118,15 +118,10 @@
     - "Nem todos os estados tem mais de 7 letras!"
     */
     console.log( '\nTodos os estados de `brasil` tem mais de 7 letras?' );
-    var countNomesGrandesEstados = 0;
-    brasil.forEach( function(item, index ) {
-        brasil[ index ].length > 7 ? countNomesGrandesEstados++ : '';        
+    var every = brasil.every( function( item ) {
+        return item.length > 7;
     } );
-    if ( countNomesGrandesEstados === brasil.length ) {
-        console.log( 'Sim, todos os estados tem mais de 7 letras!' );
-    } else {
-        console.log( 'Nem todos os estados tem mais de 7 letras!' );
-    };
+    console.log( every ? 'Sim, todos os estados tem mais de 7 letras!' : 'Nem todos os estados tem mais de 7 letras!' );
 
     /*
     Percorra o array `brasil` e verifique se o Ceará está incluído, atribuindo o
@@ -137,17 +132,10 @@
     - "Ceará não foi incluído :("
     */
     console.log( '\nCeará está incluído em `brasil`?' );
-    var cearaExiste;
-    brasil.forEach( function( item ) {
-        if ( item === 'Ceará' ) {
-            return cearaExiste = true;
-        };
+    var some = brasil.some( function( item ) {
+        return item === 'Ceará';
     } );
-    if ( cearaExiste ) {
-        console.log( 'Ceará está incluído!' );
-    } else {
-        console.log( 'Ceará não foi incluído :(' );
-    };
+    console.log( some ? 'Ceará está incluído!' : 'Ceará não foi incluído :(' );
 
     /*
     Percorra o array `newBrasil` e crie um novo array que some 1 no ID de cada
@@ -156,7 +144,7 @@
     Atribua o novo array a uma variável chamada `map`.
     */
     var map = newBrasil.map( function( item ) {
-        return { 'id': item.id + 01, 'estado': item.estado + ' pertence ao Brasil.' };
+        return { id: item.id + 01, estado: item.estado + ' pertence ao Brasil.' };
     } );
 
     /*
@@ -170,7 +158,7 @@
     ID par. Atribua o valor à uma variável chamada `filter`.
     */
     var filter = map.filter( function( item ) {
-        return item.id % 2 === 0 ? item : '';
+        return item.id % 2 === 0;
     } );
 
     /*
