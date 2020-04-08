@@ -17,7 +17,7 @@
   */
   console.log('As letras do seu nome:');
   var name = 'Rodrigo';
-  for (var i = 0; i < name.length; i++) {
+  for (var i = 0, len = name.length; i < len; i++) {
     console.log(`${name[i]} é a ${i + 1}ª letra do meu nome.`);
   }
 
@@ -35,16 +35,13 @@
   */
   console.log('\nNome convertido à partir de um slug:');
   var fullName = 'rodrigo-henrique-ramos-de-carvalho';
-  var nameArray = fullName.split('-');
-  var capArray = nameArray.map(function (e) {
+  var newNameFormat = fullName.split('-').map(function (e) {
     if (e.length > 2) {
-      var newE = e[0].toUpperCase() + e.slice(1);
-      return newE;
+      return e[0].toUpperCase() + e.slice(1);
     }
     return e;
-  });
-  var normalFormat = capArray.join(' ');
-  console.log(normalFormat);
+  }).join(' ');
+  console.log(newNameFormat);
   console.log('\nNome em formato de slug:');
   console.log(fullName);
 
@@ -59,18 +56,23 @@
   */
   console.log('\nMeus amigos:');
   var names = ['Rodrigo', 'Tayanne', 'Jéssica', 'Ortega', 'Douglas'];
-  var lastIndex = names.length - 1;
-  var mainPart = names.slice(0, lastIndex);
-  var lastName = names.pop();
-  var namesString = mainPart.join(', ') + ` e ${lastName} sâo meus amigos.`;
-  console.log(namesString);   
+  // var lastIndex = names.length - 1;
+  // var mainPart = names.slice(0, lastIndex);
+  // var lastName = names.pop();
+  // var namesString = mainPart.join(', ') + ` e ${lastName} sâo meus amigos.`;
+  // console.log(namesString); 
+  var sentence = names.reduce(function (t, v, i) {
+    var separator = i === names.length -1 ? ' e ' : ', ';
+    return t + separator + v;
+  }).concat(' são meus amigos.');  
+  console.log(sentence);
 
   /*
   Usando o replace(), faça a string "Roberto" virar "Roberta".
   Mostre o resultado no console.
   */
   console.log('\nEra "Roberto", agora é:');
-  console.log('Roberto'.substr(0, 6).concat('a'));
+  console.log('Roberto'.replace('to', 'ta'));
 
   /*
   Mostre no console a parte "nando" da string "Fernando". Use o método que
@@ -89,14 +91,14 @@
   Ex.: Nomes que deveriam funcionar: "Fernando", "RoBertO", "gabriEla", etc.
   */
   console.log('\nNome com letras intercaladas entre caixa alta e baixa:');
-  var name = 'Rodrigo';
+  var myName = 'Rodrigo';
   var newName = '';
-  for (var c in name) {
+  for (var c in myName) {
     if (c % 2 === 0) {
-      newName += name[c].toUpperCase();
+      newName += myName[c].toUpperCase();
       continue;
     }
-    newName += name[c];
+    newName += myName[c];
   }
   console.log(newName);
 })();
