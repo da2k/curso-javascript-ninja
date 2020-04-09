@@ -79,10 +79,10 @@
     console.log( '\nSeu nome na língua do "P":' );
 
     var name = [ 'an', 'dré' ];     
-    var reduce = name.reduce( function( acumulado, item ) {
-        return acumulado += item;
-    },'P' );
-    console.log( reduce );
+    var reduceP = name.reduce( function( acumulado, item ) {
+        return acumulado += 'p' + item;
+    },'' );
+    console.log( reduceP );
 
     /*
     Crie uma variável chamada `inversedName`, que reduzirá o array em uma string
@@ -90,7 +90,9 @@
     */
     console.log( '\nInversed Name:' );
     
-    var inversedName = name.reverse().join( '' );
+    var inversedName = name.reduceRight( function( acumulado, item ) {
+        return acumulado + item;
+    } );
     console.log( inversedName );
 
     /*
@@ -111,7 +113,8 @@
     */
     console.log( '\nExiste um { number: 2 } em numberObjects?' );
     
-    console.log( numberObjects.indexOf( { number: 2 } ) ? 'Existe um objeto { number: 2 } em numberObjects!' : 'Não existe um objeto { number: 2 } em numberObjects :(' );
+    var objNumber2 = numberObjects[ 1 ];
+    console.log( numberObjects.indexOf( objNumber2 ) > -1 ? 'Existe um objeto { number: 2 } em numberObjects!' : 'Não existe um objeto { number: 2 } em numberObjects :(' );
 
     /*
     Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
@@ -119,7 +122,7 @@
     */
     console.log( '\nE buscando a partir do último índice, o { number: 2 } existe?' );
     
-    console.log( numberObjects.lastIndexOf( { number: 2 },2 ) ? 'Existe um objeto { number: 2 } em numberObjects!' : 'Não existe um objeto { number: 2 } em numberObjects :(' );
+    console.log( numberObjects.lastIndexOf( objNumber2, 2 ) > -1 ? 'Existe um objeto { number: 2 } em numberObjects!' : 'Não existe um objeto { number: 2 } em numberObjects :(' );
 
     /*
     Verifique se `justMod2Or3` é um array. Se for, mostre-o no console, no
