@@ -24,7 +24,7 @@
     function separarLetras( str ) {
         var tamanhoSTR = str.length;
         for( var i = 0; i < tamanhoSTR; i++ ) {
-            console.log( str[ i ] + ' é a ' + ( i + 1) + 'ª letra do meu nome.' );
+            console.log( str[ i ] + ' é a ' + ( i + 1 ) + 'ª letra do meu nome.' );
         }
         return 'Fim';
     }
