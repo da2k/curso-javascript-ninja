@@ -22,9 +22,11 @@
     var name = 'André';
 
     function separarLetras( str ) {
-        for( var i = 0; i <= str.length; i++ ) {
+        var tamanhoSTR = str.length;
+        for( var i = 0; i < tamanhoSTR; i++ ) {
             console.log( str[ i ] + ' é a ' + ( i + 1) + 'ª letra do meu nome.' );
         }
+        return 'Fim';
     }
     console.log( separarLetras( name ) );
 
