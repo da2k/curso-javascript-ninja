@@ -21,11 +21,12 @@
     
     var name = 'André';
 
-    console.log( name.charAt( 0 ) + ' é a ' + ( name.indexOf( 'A' ) + 1 ) + 'ª letra do meu nome.' );
-    console.log( name.charAt( 1 ) + ' é a ' + ( name.indexOf( 'n' ) + 1 ) + 'ª letra do meu nome.' );
-    console.log( name.charAt( 2 ) + ' é a ' + ( name.indexOf( 'd' ) + 1 ) + 'ª letra do meu nome.' );
-    console.log( name.charAt( 3 ) + ' é a ' + ( name.indexOf( 'r' ) + 1 ) + 'ª letra do meu nome.' );
-    console.log( name.charAt( 4 ) + ' é a ' + ( name.indexOf( 'é' ) + 1 ) + 'ª letra do meu nome.' );
+    function separarLetras( str ) {
+        for( var i = 0; i <= str.length; i++ ) {
+            console.log( str[ i ] + ' é a ' + ( i + 1) + 'ª letra do meu nome.' );
+        }
+    }
+    console.log( separarLetras( name ) );
 
     /*
     - Declare uma variável chamada `fullName`, que receba seu nome completo,
