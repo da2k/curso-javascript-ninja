@@ -44,9 +44,26 @@
     */
     console.log( '\nNome convertido à partir de um slug:' );
     
-    var fullName = 'andré-rodrigues';
+    var fullName = 'andré-rodrigues-melgaço';
+    
+    function converterSlugEmNormal( slug ) {   
 
-    console.log( fullName.charAt( 0 ).toUpperCase() + fullName.slice( 1, 5 ) + fullName.replace( '-', ' ' ).charAt( 5 ) + fullName.charAt( 6 ).toUpperCase() + fullName.slice( 7 ));
+        var textoEmArray = slug.split( '-' );
+        var textoConvertido;
+
+        textoEmArray = textoEmArray.map( function( item, index ) {
+            return item[ 0 ].toUpperCase() + item.slice( 1 );
+        } );
+
+        textoConvertido = textoEmArray.join( ' ' );
+
+        return textoConvertido;
+    }
+
+    console.log( fullName );
+
+    var newFullName = converterSlugEmNormal( fullName );
+    console.log( newFullName );
 
     /*
     - Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
@@ -59,37 +76,46 @@
     */
     console.log( '\nMeus amigos:' );
     
-    var arr = [ 'André', 'Camila', 'Pérola', 'Charles', 'Rodrigo' ];
-    function quemSaoMeusAmigos( arr ) {
+    var friends = [ 'André', 'Camila', 'Pérola', 'Charles', 'Rodrigo' ];
 
+    // MINHA SOLUÇÃO:
+    function quemSaoMeusAmigos( arr ) {
+        
         var primeiraParte;
         var segundaParte;
-
+        
         primeiraParte = arr.slice(0, arr.length - 1).join( ', ' );
         segundaParte = arr.slice( arr.length - 1 );
-
+        
         return primeiraParte + ' e ' + segundaParte + ' são meus amigos.';
     }
-    console.log( quemSaoMeusAmigos( arr ) );
-
+    console.log( quemSaoMeusAmigos( friends ) );
+    
+    // SOLUÇÃO DO PROFESSOR:
+    var phrase = friends.reduce( function( acumalado, atual, index ) {
+        var separador = friends.length - 1 === index ? ' e ' : ', ';
+        return acumalado + separador + atual;
+    } ).concat( ' são meus amigos.' );
+    console.log( phrase );
+    
     /*
     Usando o replace(), faça a string "Roberto" virar "Roberta".
     Mostre o resultado no console.
     */
     console.log( '\nEra "Roberto", agora é:' );
-    
+   
     var roberto = 'Roberto';
-    console.log( roberto.slice( 0, 6 ) + roberto.slice( 6 ).replace( 'o', 'a' ) );
-
+    console.log( roberto.replace( 'to', 'ta' ) );
+   
     /*
     Mostre no console a parte "nando" da string "Fernando". Use o método que
     faz a busca do final para o início da string.
     */
     console.log( '\nParte de uma string:' );
-    
+  
     var fernando = 'Fernando';
-    console.log( fernando.slice( 3 ) );
-
+    console.log( fernando.substring( fernando.length, 3 ) );
+  
     /*
     Declare uma variável chamada `myName`, que receba o seu primeiro nome,
     escrito de forma natural.
@@ -100,14 +126,16 @@
     Ex.: Nomes que deveriam funcionar: "Fernando", "RoBertO", "gabriEla", etc.
     */
     console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
-    
+ 
     var myName = 'André Rodrigues';
-
+    
+    // MINHA SOLUÇÃO:
     function nomeIntercalado( str ) {
 
         var textoIntercalado = str[ 0 ];
+        var textoTamanho = str.length;
 
-        for( var i = 1; i < str.length; i++ ) {
+        for( var i = 1; i < textoTamanho; i++ ) {
             if( i % 2 === 0 ) {
                 textoIntercalado += str[ i ].toUpperCase();
             }
@@ -118,6 +146,27 @@
 
         return textoIntercalado;
     }
-    console.log( nomeIntercalado( myName ) );
+    console.log( nomeIntercalado( myName ) ); //Resultado: AnDrÉ RoDrIgUeS
+    
+    // SOLUÇÃO DO PROFESSOR:
+    var myNewName = [];
+    for( var i = 0, len = myName.length; i < len; i++ ) {
+        myNewName.push( i % 2 === 0 ? myName[ i ].toLowerCase() : myName[ i ].toUpperCase() );
+    };
+    console.log( myNewName.join( '' ) ); //Resultado: aNdRé rOdRiGuEs
+    
+    // MINHA SOLUÇÃO DEPOIS DA AULA DE CORREÇÃO:
+    function nomeIntercalado( str ) {
 
+        var textoIntercalado = str[ 0 ];
+        var textoTamanho = str.length;
+
+        for( var i = 1; i < textoTamanho; i++ ) {
+            i % 2 === 0 ? textoIntercalado += str[ i ].toUpperCase() : textoIntercalado += str[ i ].toLowerCase();
+        };
+
+        return textoIntercalado;
+    }
+    console.log( nomeIntercalado( myName ) ); //Resultado: AnDrÉ RoDrIgUeS
+    
 } ) ();
