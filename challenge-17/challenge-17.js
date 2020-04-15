@@ -49,7 +49,7 @@
   Mostre o resultado no console:
   */
   console.log( '\nTrocando "A" e "a" por "4":' );
-  console.log(text.replace(/[Aa]/g, '4'));
+  console.log(text.replace(/a/gi, '4'));
 
   /*
   Substitua a frase "O Centauro de Luvas", deixando-a em caixa alta, usando
@@ -75,18 +75,22 @@
   console.log( '\nMeses representados por números:' );
 
   function getMonthNumber(month) {
-    switch (month.toLowerCase()) {
-      case 'março':
-        return '03';
-      case 'junho':
-        return '06';
-      case 'julho':
-        return '07';
-      case 'setembro':
-        return '09';
-      default:
-        return '12';
-    }
+    var months= {
+      janeiro: '01',
+      fevereiro: '02',
+      'março': '03',
+      abril: '04',
+      maio: '05',
+      junho: '06',
+      julho: '07',
+      agosto: '08',
+      setembro: '09',
+      outubro: '10',
+      novembro: '11',
+      dezembro: '12',
+    };
+    
+    return months[month];
   }
 
   var month = 'março';
