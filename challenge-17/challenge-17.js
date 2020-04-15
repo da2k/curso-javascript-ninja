@@ -122,12 +122,10 @@
   console o resultado.
   */
   console.log( '\nReplace de datas:' );
-  function replaceDate(day, month, year) {
+  function replaceDate(regex, day, month, year) {
     return `${day}/${getMonthNumber(month)}/${year}`;
   }
 
-  console.log(text.replace(regexDate, function(total, day, month, year) {
-    return replaceDate(day, month, year);
-  }));
+  console.log(text.replace(regexDate, replaceDate));
 
 })();
