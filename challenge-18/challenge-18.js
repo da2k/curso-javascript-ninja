@@ -21,13 +21,8 @@
     console.log( 'Limpando CPFs:' );
     
     function cleanCPF( cpf ) {
-
-        var regex = /\D/g;
-        var cpfLimpo; 
-        
-        cpfLimpo = cpf.replace( regex, '' )
-
-        return cpfLimpo;
+        var regex = /\D/g;        
+        return cpf.replace( regex, '' );
     }
     console.log( cleanCPF( '049-214 3421-1' ) );
     console.log( cleanCPF( '210.458.522-05' ) );
