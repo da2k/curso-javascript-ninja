@@ -20,6 +20,7 @@
     */
     console.log( 'Limpando CPFs:' );
     
+    // MINHA SOLUÇÃO
     function cleanCPF( cpf ) {
         var regex = /\D/g;        
         return cpf.replace( regex, '' );
@@ -28,22 +29,45 @@
     console.log( cleanCPF( '210.458.522-05' ) );
     console.log( cleanCPF( '735 500 794 - 22' ) );
     console.log( cleanCPF( '101.123-131x32' ) );
-
+    // MINHA SOLUÇÃO
+    
+    console.log( cleanCPF( '\n' ) );
+    
+    // SOLUÇÃO DO PROFESSOR
+    function cleanCPF( cpf ) {  
+        return cpf.replace( /\D/g, '' );
+    }
+    var cpfs = [ '049-214 3421-1', '210.458.522-05', '735 500 794 - 22', '101.123-131x32' ];
+    cpfs.forEach( function( cpf ) {
+        console.log( cleanCPF( cpf ) );
+    } );
+    // SOLUÇÃO DO PROFESSOR
+    
     /*
     Usando os CPFs limpos acima, deixe-os com a formatação correta de CPF.
     Ex.: "999.999.999-99"
     Mostre o resultado no console.
     */
-    console.log( '\nFormatando CPFs corretamente:' );
-    
-    function formataçãoCorretaCPF( cpf ) {        
-        return cpf.slice( 0, 3 ) + '.' + cpf.slice( 3, 6 ) + '.' + cpf.slice( 6, 9 ) + '-' + cpf.slice( 9, 11 );
+   console.log( '\nFormatando CPFs corretamente:' );
+   
+   // MINHA SOLUÇÃO
+   function formataçãoCorretaCPF( cpf ) {        
+       return cpf.slice( 0, 3 ) + '.' + cpf.slice( 3, 6 ) + '.' + cpf.slice( 6, 9 ) + '-' + cpf.slice( 9, 11 );
     }
     console.log( formataçãoCorretaCPF( cleanCPF( '049-214 3421-1' ) ) );
     console.log( formataçãoCorretaCPF( cleanCPF( '210.458.522-05' ) ) );
     console.log( formataçãoCorretaCPF( cleanCPF( '735 500 794 - 22' ) ) );
     console.log( formataçãoCorretaCPF( cleanCPF( '101.123-131x32' ) ) );
-
+    // MINHA SOLUÇÃO
+    
+    console.log( '\n' );
+    
+    // SOLUÇÃO DO PROFESSOR
+    cpfs.forEach( function( cpf ) {
+        console.log( cleanCPF( cpf ).replace( /(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4' ) );
+    } );    
+    // SOLUÇÃO DO PROFESSOR
+    
     /*
     Crie uma expressão regular que faça match com as palavras "junho" ou "julho",
     usando o mínimo de caracteres possíveis na regex.
@@ -56,10 +80,16 @@
     ["junho", "julho"]
     */
     console.log( '\nMatch com as palavras "junho" ou "julho" para a frase "Os meses de janeiro, junho e julho começam com a letra j.":' );
-    
+
+    // MINHA SOLUÇÃO
     var regexJunhoJulho = /ju\w+/g;
     var fraseMatch = 'Os meses de janeiro, junho e julho começam com a letra j.';
     console.log( fraseMatch.match( regexJunhoJulho ) );
+    // MINHA SOLUÇÃO
+
+    // SOLUÇÃO DO PROFESSOR
+    console.log( 'Os meses de janeiro, junho e julho começam com a letra j.'.match( /ju[nl]ho/g ) );
+    // SOLUÇÃO DO PROFESSOR
 
     /*
     Crie uma expressão regular que faça o match com a abertura de uma tag
@@ -71,11 +101,17 @@
     ["<div>", "<section>", "<blockquote>"]
     */
     console.log( '\nMatch com a abertura de uma tag HTML:' );
-    
+  
+    // MINHA SOLUÇÃO
     var regexHTML = /<\w+>/g;
     var htmlMatch = '<div><section><blockquote>Texto <img /></blockquote></section></div>';
     console.log( htmlMatch.match( regexHTML ) );
-
+    // MINHA SOLUÇÃO
+    
+    // SOLUÇÃO DO PROFESSOR
+    console.log( '<div><section><blockquote>Texto <img /></blockquote></section></div>'.match( /<\w+>/g ) );
+    // SOLUÇÃO DO PROFESSOR
+    
     /*
     Crie uma expressão regular que faça o match com uma tag HTML vazia, casando
     com a abertura e fechamento da tag.
@@ -86,40 +122,58 @@
     ["<li></li>", "<li></li>", "<span></span>"]
     */
     console.log( '\nMatch com tags HTML vazias (abertura e fechamento da tag):' );
-    
+
+    // MINHA SOLUÇÃO
     var regexHTMLVazia = /<li><\/li>|<span><\/span>/g;
     var htmlMatchVazio = '<div><ul><li></li><li></li><li><span></span></li></ul></div>';
     console.log( htmlMatchVazio.match( regexHTMLVazia ) );
-
+    // MINHA SOLUÇÃO
+    
+    // SOLUÇÃO DO PROFESSOR
+    console.log( '<div><ul><li></li><li></li><li><span></span></li></ul></div>'.match( /<\w+><\/\w+>/g ) );
+    // SOLUÇÃO DO PROFESSOR
+    
     /*
     Vamos complicar um pouco agora :D
-
+    
     Crie uma expressão regular que faça o match com um texto existente dentro de
     uma tag HTML. O texto deve ser capturado e substituído por:
     'O texto dentro da tag "[NOME DA TAG]" é "[TEXTO]"'
-
+    
     Use a marcação abaixo para fazer o replace:
     "<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>"
-
+    
     A marcação deve permanecer como está, somente o texto deve ser substituído.
     No replace, utilize quebras de linha para deixar uma tag por linha.
-
+    
     O resultado deve ser esse:
     <h1>O texto dentro da tag "h1" é "Título da página"</h1>
     <p>O texto dentro da tag "p" é "Este é um parágrafo"</p>
     <footer>O texto dentro da tag "footer" é "Rodapé"</footer>
-
+    
     Uma dica: faça o match aos poucos. Para facilitar o teste, use o site
     https://regex101.com/#javascript e verifique se as capturas estão
     corretas, para depois aplicar no código ;)
     */
-    console.log( '\nFazer replace dos textos das tags:' );
-    
-    var textoReplace = '<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>';
-    var regexReplace = /(<(\w+)>)(\D+)(<\/\w+>)(<(\w+)>)(\D+)(<\/\w+>)(<(\w+)>)(\D+)(<\/\w+>)/g;
-    var textoModificado = textoReplace.replace( regexReplace, function( regex, h1Abertura, tagH1, h1Texto, h1fechamento, pAbertura, tagP, pTexto, pFechamento, footerAbertura, tagFooter, footerTexto, footerFechamento ) {
-        return h1Abertura + 'O texto dentro da tag "' + tagH1 + '" é "' + h1Texto + '.' + h1fechamento + '\n' + pAbertura + 'O texto dentro da tag "' + tagP + '" é "' + pTexto + '.' + pFechamento + '\n' + footerAbertura + 'O texto dentro da tag "' + tagFooter + '" é "' + footerTexto + '.' + footerFechamento + '\n';
+   console.log( '\nFazer replace dos textos das tags:' );
+   
+   // MINHA SOLUÇÃO
+   var textoReplace = '<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>';
+   var regexReplace = /(<(\w+)>)(\D+)(<\/\w+>)(<(\w+)>)(\D+)(<\/\w+>)(<(\w+)>)(\D+)(<\/\w+>)/g;
+   var textoModificado = textoReplace.replace( regexReplace, function( regex, h1Abertura, tagH1, h1Texto, h1fechamento, pAbertura, tagP, pTexto, pFechamento, footerAbertura, tagFooter, footerTexto, footerFechamento ) {
+       return h1Abertura + 'O texto dentro da tag "' + tagH1 + '" é "' + h1Texto + '.' + h1fechamento + '\n' + pAbertura + 'O texto dentro da tag "' + tagP + '" é "' + pTexto + '.' + pFechamento + '\n' + footerAbertura + 'O texto dentro da tag "' + tagFooter + '" é "' + footerTexto + '.' + footerFechamento + '\n';
     } );
     console.log( textoModificado );
-
+    // MINHA SOLUÇÃO
+    
+    // SOLUÇÃO DO PROFESSOR
+    console.log( 
+        '<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>'
+        .replace( 
+            /(<(\w+)>)([^<]+)(<\/\w+>)/g,
+            '$1O texto dentro da tag "$2" é "$3"$4\n'
+        ) 
+    );
+    // SOLUÇÃO DO PROFESSOR
+    
 } ) ();
