@@ -9,10 +9,10 @@ function soma (n1, n2){
 }
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-var soma = soma(2, 2);
+var soma = soma(2, 2) + 5;
 
 // Qual o valor atualizado dessa variável?
-4;
+9;
 
 // Declare uma nova variável, sem valor.
 var = qualquer;
