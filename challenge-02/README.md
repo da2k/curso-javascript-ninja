@@ -9,29 +9,29 @@ function soma(num1, num2) {
  }
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-var valor = soma(1,2) + '5';
+var valor = soma(1,2) + 5;
 
 // Qual o valor atualizado dessa variável?
-valor === '35';
+8
 
 // Declare uma nova variável, sem valor.
-var new_V = null;
+var new_V;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function foo(param) {
-  new_V = param;
-  return 'O valor da variável agora é ' + param;
+function foo() {
+  new_V = 42;
+  return 'O valor da variável agora é ' + new_V;
 }
 
 // Invoque a função criada acima.
-foo(1);
+foo();
 
 // Qual o retorno da função? (Use comentários de bloco).
-/* 'O Valor da variável agora é 1' */
+/* 'O Valor da variável agora é 42' */
 
 /*
 Crie uma função com as seguintes características:
@@ -42,31 +42,24 @@ Crie uma função com as seguintes características:
 */
 function foo1(arg1, arg2, arg3) {
   if(arg1 >=0 && arg2 >=0 && arg3 >=0) {
-    return (arg1 * arg2 * arg3) + '2';
+    return (arg1 * arg2 * arg3) + 2;
   } else if(arg1 === undefined && arg3 === undefined || arg2 === undefined) {
     return 'Preencha todos os valores corretamente!';
-  } else {
-    return 'Preencha todos os valores corretamente!';
   }
+  return 'Preencha todos os valores corretamente!';
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
 foo1(1,2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-/* 
-> foo1(1,2)
-'Preencha todos os valores corretamente!'
-*/
+//'Preencha todos os valores corretamente!'
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-foo1(1,2,3);
+foo1(2,2,2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-/*
-> foo1(1,2,3)
-'62'
-*/
+// 10
 
 /*
 Crie uma função com as seguintes características:
@@ -88,7 +81,8 @@ function foo2(arg1,arg2,arg3) {
   	}
   } else if (arg1 === undefined && arg2 === undefined && arg3 === undefined) {
   	return false;
-  } else {
+  } 
+  else {
   	return null;
   }
 }
