@@ -1,3 +1,4 @@
+(function() {
   /*
   No HTML:
   - Crie um formulário com um input de texto que receberá um CEP e um botão
@@ -25,3 +26,165 @@
   - Utilize a lib DOM criada anteriormente para facilitar a manipulação e
   adicionar as informações em tela.
   */
+
+  function DOM(elements) {
+    this.element = document.querySelectorAll(elements);
+  }
+
+  DOM.prototype.on = function(eventType, callback) {
+    Array.prototype.forEach.call(this.element, function(element) {
+      element.addEventListener(eventType, callback, false);
+    });
+  };
+
+  DOM.prototype.off = function(eventType, callback) {
+    Array.prototype.forEach.call(this.element, function(element) {
+      element.removeEventListener(eventType, callback, false);
+    });
+  };
+
+  DOM.prototype.get = function() {
+    return this.element;
+  };
+
+  DOM.prototype.forEach = function() {
+    return Array.prototype.forEach.apply(this.element, arguments);
+  }
+
+  DOM.prototype.map = function() {
+    return Array.prototype.map.apply(this.element, arguments);
+  }
+
+  DOM.prototype.filter = function() {
+    return Array.prototype.filter.apply(this.element, arguments);
+  }
+
+  DOM.prototype.reduce = function() {
+    return Array.prototype.reduce.apply(this.element, arguments);
+  }
+
+  DOM.prototype.reduceRight = function() {
+    return Array.prototype.reduceRight.apply(this.element, arguments);
+  }
+
+  DOM.prototype.every = function() {
+    return Array.prototype.every.apply(this.element, arguments);
+  }
+
+  DOM.prototype.some = function() {
+    return Array.prototype.some.apply(this.element, arguments);
+  }
+
+  DOM.isArray = function(element) {
+    return Object.prototype.toString.call(element) === '[object Array]';
+  }
+
+  DOM.isObject = function(element) {
+    return Object.prototype.toString.call(element) === '[object Object]';
+  }
+
+  DOM.isFunction = function(element) {
+    return Object.prototype.toString.call(element) === '[object Function]';
+  }
+
+  DOM.isNumber = function(element) {
+    return Object.prototype.toString.call(element) === '[object Number]';
+  }
+
+  DOM.isString = function(element) {
+    return Object.prototype.toString.call(element) === '[object String]';
+  }
+
+  DOM.isBoolean = function(element) {
+    return Object.prototype.toString.call(element) === '[object Boolean]';
+  }
+
+  DOM.isNull = function(element) {
+    return Object.prototype.toString.call(element) === '[object Null]' 
+    || Object.prototype.toString.call(element) === '[object Undefined]';
+  }
+
+  var $formCEP = new DOM('[data-js="form-cep"]');
+  var $inputCEP = new DOM('[data-js="input-cep"]');
+  var $address = new DOM('[data-js="logradouro"]');
+  var $district = new DOM('[data-js="bairro"]');
+  var $state = new DOM('[data-js="estado"]');
+  var $city = new DOM('[data-js="cidade"]');
+  var $code = new DOM('[data-js="cep"]');
+  var ajax = new XMLHttpRequest();
+ 
+  $formCEP.on('submit', handleFormHTML); 
+
+  function handleFormHTML(event) {
+    event.preventDefault();
+    var url = getUrl();
+    ajax.open('GET', url);
+    ajax.send();
+    ajax.addEventListener('readystatechange', handleReadyStateChange);
+    handleMessages();
+  }
+  
+  function handleReadyStateChange() {
+    if(isRequestOk()) {
+      handleMessages();
+      fillCEPFields();
+    }
+  }
+
+  function getUrl() {
+    return replaceCEP('http://apps.widenet.com.br/busca-cep/api/cep/[CEP].json');
+  }
+
+  function clearCEP() {
+    return $inputCEP.get()[0].value.replace(/\D/g, '');
+  }
+
+  function isRequestOk() {
+    return ajax.readyState === 4 && ajax.status === 200;
+  }
+
+  function fillCEPFields() {
+    var data = JSON.parse(ajax.responseText);
+    
+    if(!data.ok) 
+      data = clearData();
+    $address.get()[0].textContent = data.address;
+    $district.get()[0].textContent = data.district;
+    $state.get()[0].textContent = data.state;
+    $city.get()[0].textContent = data.city;
+    $code.get()[0].textContent = data.code;
+  }
+
+  function clearData() {
+    return {
+      address: '-',
+      district: '-',
+      state: '-',
+      city: '-',
+      code: '-'
+    }
+  }
+
+  function handleMessages() {
+    var $status = new DOM('[data-js="status"]');
+    var messages = { 
+      ok: replaceCEP("Endereço referente ao CEP [CEP]."),
+      error: replaceCEP('Não encontramos o endereço para o CEP [CEP].'),
+      loading: replaceCEP('Buscando informações para o CEP [CEP]...')
+    };
+    if(isRequestOk()) 
+      return $status.get()[0].textContent = checkCorrectMessage(messages);
+    return $status.get()[0].textContent = messages.loading;
+  }
+
+  function replaceCEP(message) {
+    return message.replace('[CEP]', clearCEP());
+  }
+
+  function checkCorrectMessage(messages) {
+    var data = JSON.parse(ajax.responseText);
+    var messageType = data.ok ? 'ok' : messageType = 'error';
+    return messages[messageType];
+  }
+
+})();
