@@ -8,16 +8,30 @@ equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
 var isTruthy = function(arg1) {
-	(!!arg1 ) ? return true : return false;
+	return !!arg1;
 };
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
-?
+isTruthy(false);
+isTruthy(null);
+isTruthy('');
+isTruthy(0);
+isTruthy(undefined);
+isTruthy(NaN);
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
-?
+isTruthy(1);
+isTruthy('A');
+isTruthy([]);
+isTruthy({});
+isTruthy(function() {});
+isTruthy(true);
+isTruthy(1+1);
+isTruthy(2*2);
+isTruthy([1,2,3]);
+isTruthy({a:1, b:2});
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
@@ -77,8 +91,8 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 carro.obterMarcaModelo = function() {
-	var marca = carro.obterMarca;
-	var modelo = carro.obterModelo;
+	var marca = carro.obterMarca();
+	var modelo = carro.obterModelo();
 	return 'Esse carro é um '+marca+' '+modelo;
 };
 
@@ -98,7 +112,21 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-?
+carro.addPessoas = function(numeroPessoas) {
+	var totalPessoas = carro.quantidadePessoas + numeroPessoas;
+	if(carro.quantidadePessoas === carro.assentos && totalPessoas >= carro.assentos) {
+		return 'O carro já está lotado!';
+	}
+	if(totalPessoas > carro.assentos) {
+		var quantidadePessoasCabem = carro.assentos - carro.quantidadePessoas;
+		var pluralOuSingular = quantidadePessoasCabem === 1 ? 'pessoa' : 'pessoas';
+		var pluralOuSingular1 = quantidadePessoasCabem === 1 ? 'cabe' : 'cabem';
+		return 'Só '+pluralOuSingular1+' mais '+quantidadePessoasCabem+' '+pluralOuSingular+'!';
+	}
+	carro.quantidadePessoas += numeroPessoas;
+	return 'Já temos '+carro.quantidadePessoas+' pessoas no carro!';
+};
+
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
 utilize sempre o formato de invocação do método (ou chamada da propriedade),
@@ -125,20 +153,20 @@ carro.obterCor(); // Verde Musgo
 carro.obterModelo(); // Celta
 
 // Adicione 2 pessoas no carro.
-?
+carro.addPessoas(2); //'Já temos 2 pessoas no carro!'
 
 // Adicione mais 4 pessoas no carro.
-?
+carro.addPessoas(4); // 'Só cabem mais 3 pessoas!'
 
 // Faça o carro encher.
-?
+carro.addPessoas(1); //'O carro já está lotado!'
 
 // Tire 4 pessoas do carro.
-?
+ carro.addPessoas(-4); // 'Já temos 1 pessoas no carro!'
 
 // Adicione 10 pessoas no carro.
-?
+carro.addPessoas(10); //'Só cabem mais 4 pessoas!'
 
 // Quantas pessoas temos no carro?
-?
+carro.quantidadePessoas; // 1
 ```
