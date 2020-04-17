@@ -92,7 +92,7 @@
         - "Não enviado."
     */
     
-    $button.addEventListener( 'click', function() {
+    $button.addEventListener( 'click', function( event ) {
 
         event.preventDefault();
 
@@ -100,7 +100,7 @@
             return win.alert( 'Preencha o nome do usuário!' );
         };
 
-        if( $inputEmail.value === '' ) {
+        if( !$inputEmail.value ) {
             return win.alert( 'Preencha o e-mail!' );
         };
 
@@ -108,7 +108,7 @@
             return win.alert( 'Entre com um e-mail válido!' );
         };
 
-        if( $message.value === '' ) {
+        if( !$message.value ) {
             return win.alert( 'Preencha a mensagem!' );
         };
 
@@ -148,7 +148,7 @@
     */
     
     function isValidEmail( email ) {
-        var regex = new RegExp( '^.+?\\@\\w+?\\.\\w{2,}\\.?\\w?\\w?' );
+        var regex = new RegExp( '^[\\w+.]+@\\w+\\.\\w{2,}(?:\\.\\w{2})?$' );
         return regex.test( email );
     }
 
