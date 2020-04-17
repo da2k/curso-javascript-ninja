@@ -17,7 +17,8 @@
   */
   console.log( 'Limpando CPFs:' );
   function cleanCPF(cpf) {
-    return cpf.replace(/[-.\sx]/g, '');
+    //return cpf.replace(/[-.\sx]/g, '');
+    return cpf.replace(/\D/g, ''); // tudo que não é número
   }
 
   console.log(cleanCPF('049-214 3421-1'));
@@ -36,6 +37,7 @@
       return `${match1}.${match2}.${match3}-${match4}`;
     });
   }
+  // cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4'); tbm funciona
 
   console.log(formatCPF(cleanCPF('049-214 3421-1')));
   console.log(formatCPF(cleanCPF('210.458.522-05')));
@@ -107,10 +109,13 @@
   corretas, para depois aplicar no código ;)
   */
   console.log( '\nFazer replace dos textos das tags:' );
-  regexTag = /<(\w+)>([\w+é+í+á\s]+)<\/\w+>/gi;
+  regexTag = /<(\w+)>([\w+é+í+á\s]+)<\/\w+>/gi; // <(\w+)>([^<]+)<\/\w+>
   console.log('<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>'
     .replace(regexTag, function(regex, match1, match2) {
     return `<${match1}>O texto dentro da tag "${match1}" é "${match2}"</${match1}>\n`;
   }));
-
+  
+  // console.log('<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>'
+  //    .replace(regexTag, '<$1>O texto dentro da tag "$1" é "$2"</$1>\n`)
+  //);
 })();
