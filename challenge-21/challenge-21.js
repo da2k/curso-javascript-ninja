@@ -15,3 +15,32 @@ usar o nome que achar melhor, desde que ele seja semântico, ou seja, o nome
 dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
 */
 // ?
+
+(function (win, doc) {
+  var $input = doc.querySelector('[data-js="input"]');
+  var $startButton = doc.querySelector('[data-js="start-button"]');
+  var $stopButton = doc.querySelector('[data-js="stop-button"]');
+  var $resetButton = doc.querySelector('[data-js="reset-button"]');
+
+  var counter = 0;
+  var timer;
+
+  function start() {
+    $input.value = ++counter;
+    timer = setTimeout(start, 1000);
+  }
+
+  function stop() {
+    clearTimeout(timer);
+  }
+
+  function reset() {
+    stop();
+    $input.value = 0;
+    counter = 0;
+  }
+
+  $startButton.addEventListener('click', start);
+  $stopButton.addEventListener('click', stop);
+  $resetButton.addEventListener('click', reset);
+})(window, document);
