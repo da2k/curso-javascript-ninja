@@ -17,7 +17,7 @@
     Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
     */
     var username = prompt('Qual o seu nome?') || 'Desconhecido';
-    alert(`Bem vindo, ${usernameR}`);
+    alert(`Bem vindo, ${usernameR}!`);
 
     /*
     Agora, pergunte ao usuário "Qual o seu e-mail?", atribuindo o resultado à
@@ -57,8 +57,8 @@
     Preencha os campos de "Nome" e "Email" que estão no documento com os valores
     entrados pelo usuário.
     */
-    // $inputUsername.value = username;
-    // $inputEmail.value = email;
+    $inputUsername.value = username;
+    $inputEmail.value = email;
 
     /*
     Adicione um listener de evento de click ao botão que faça o seguinte:
@@ -103,7 +103,7 @@
         if (!isValidEmail($inputEmail.value)) {
             alert('Entre com um e-mail válido!');
         }
-    });
+    }, false);
 
     /*
     Crie uma função chamada `isValidEmail`, que será usada na validação do
