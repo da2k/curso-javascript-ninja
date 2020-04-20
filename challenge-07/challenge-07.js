@@ -87,5 +87,6 @@ for(var par = 100; par <= 120; par++){
 console.log( 'Números ímpares entre 111 e 125:' );
 for( var impar = 111; impar <= 125; impar++ ){
     impar % 2 !== 0 ? console.log(impar) : '';
+    
 }
 // ?
