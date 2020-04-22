@@ -19,6 +19,7 @@ dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
 
     'use strict';
 
+    // MINHA SOLUÇÃO    
     var $imputCronometro = doc.querySelector( '[data-js="cronometro"]' );
     var $btnStart = doc.querySelector( '[data-js="btn-start"]' );
     var $btnStop = doc.querySelector( '[data-js="btn-stop"]' );
@@ -46,5 +47,32 @@ dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
         $imputCronometro.value = 0;
         win.clearInterval( startSetInterval );
     }, false );
+    // MINHA SOLUÇÃO
 
+    // SOLUÇÃO DO PROFESSOR DO CURSO    
+    var $timer = doc.querySelector( '[data-js="timer"]' );
+    var $start = doc.querySelector( '[data-js="start"]' );
+    var $stop = doc.querySelector( '[data-js="stop"]' );
+    var $reset = doc.querySelector( '[data-js="reset"]' );
+    var interval;
+        
+    $start.addEventListener( 'click', startTimer, false );
+    $stop.addEventListener( 'click', stopTimer, false );
+    $reset.addEventListener( 'click', resetTimer, false );
+
+    function startTimer() {
+        $timer.value = +$timer.value + 1; // "+" ANTES DA VARIÁVEL CONVERTE STRING EM NUMBER
+        interval = setTimeout( startTimer, 1000 );
+    }
+
+    function stopTimer() {
+        clearTimeout( interval );
+    }
+
+    function resetTimer() {
+        $timer.value = 0;
+        stopTimer();
+    }
+    // SOLUÇÃO DO PROFESSOR DO CURSO    
+    
 } ) ( window, document );
