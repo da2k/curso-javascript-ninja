@@ -33,7 +33,7 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 var showTeamPosition = function(posicao) {
-    if (posicao > 5) {
+    if (posicao < 1 || posicao > 5) {
         return "Não temos a informação do time que está nessa posição.";
     }
     console.log(`O time que está na ${posicao}º lugar é o ${teams[posicao-1]}.`)
@@ -99,8 +99,32 @@ var convertToHex = function(cor) {
     }
 }
 
-
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-// ?
+convertToHex('red')
+// O hexadecimal para a cor red é #E74C3C.
+
+convertToHex('black')
+// O hexadecimal para a cor black é #000000.
+
+convertToHex('white')
+// O hexadecimal para a cor white é #ffffff.
+
+convertToHex('green')
+// O hexadecimal para a cor green é #138D75.
+
+convertToHex('blue')
+// O hexadecimal para a cor blue é #2E86C1.
+
+convertToHex('orange')
+// Não temos o equivalente hexadecimal para orange.
+
+convertToHex('yellow')
+// Não temos o equivalente hexadecimal para yellow.
+
+convertToHex('salmon')
+// Não temos o equivalente hexadecimal para salmon.
+
+convertToHex('grey')
+// Não temos o equivalente hexadecimal para grey.
