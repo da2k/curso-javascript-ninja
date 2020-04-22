@@ -52,6 +52,7 @@
   console.log('\nSomar alguns números:');
   console.log(sum(1, 5, 4)); // 10
   console.log(sum(5, 3, 2, 7, 10)); // 27
+  console.log(sum(40, -10, 3, -5)); // 28
 
   /*
   Declare uma variável chamada `userEntry`, que irá receber alguns valores
@@ -73,7 +74,7 @@
   */
   console.log('\nFunção que limpa entrada do usuário (somente números):');
   function justNumbers(value) {
-    return value.match(/\d/g);
+    return value.match(/\d+/g);
   };
   console.log(justNumbers);
 
