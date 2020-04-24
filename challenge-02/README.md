@@ -23,20 +23,16 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-var newvar;
-function adicionarValor() {
+function adicionar(newvar) {
 newvar = 15;
-return 'O valor da variável agora é: |'+ newvar);
+return "O valor da variável agora é: " + newvar;
 }
-newvar;
-adicionarValor()
 
 // Invoque a função criada acima.
-adicionarValor()
+adicionar()
 
 // Qual o retorno da função? (Use comentários de bloco).
-/*O retorno da função será de 25*/
-newvar = 25;
+/*'O valor da variável agora é: 15'*/
 
 /*
 Crie uma função com as seguintes características:
@@ -45,24 +41,25 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-function newFunction(x, y, z){
-   if( x === undefined || y === undefined || z === undefined{
-   return 'Preencha todos os valores corretamente!';
-   } 
-   return (a * b * c) + 2;
-}
+> function newFunction(x, y, z){
+   if(x === undefined || y === undefined || z === undefined){
+     return "Preencha todos os valores corretamente!";
+   }
+     return ((x * y * z) + 2);
+ }
+
 
 // Invoque a função criada acima, passando só dois números como argumento.
-newFunction(1, 2)
+newFunction(5, 6)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-//Resposta: "Preencha todos os valores corretamente!"
-newFunction(1,2);
+/*'Preencha todos os valores corretamente!'*/
+
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-newFunction(2, 3, 4)
+newFunction(2, 5, 7)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-//26
+/*72*/
 
 /*
 Crie uma função com as seguintes características:
@@ -73,23 +70,32 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-function threeArgs(x, y, z){
-   if(x !== undefined && y === undefined && z === undefined){
-   return x;
-   } else if (x !== undefined && y !== undefined && z === undefined) {
-   return X + y;
-   } else if (x !== undefined && y !== undefined && z === undefined) {
-   return (x + y) / z;
-   } else if (x === undefined && y === undefined && z === undefined) {
-   return false;
-    }
-    else {
-      return null;
-    }
+
+function treeArgs(a,b,c){
+   if(a === undefined && b === undefined && c === undefined){
+     return false;
+    } else if(a !== undefined && b === undefined && c === undefined){
+     return a;
+    } else if(a === undefined && b !== undefined && c === undefined){
+     return b;
+    } else if(a === undefined && b === undefined && c !== undefined){
+     return c;
+    } else if(a !== undefined && b !== undefined && c === undefined){
+     return a + b;
+    } else if(a === undefined && b !== undefined && c !== undefined){
+    return b + c;
+    } else if(a !== undefined && b === undefined && c !== undefined){
+    return c + a;
+    } else if(a !== undefined && b !== undefined && c !== undefined){
+    return ((a + b) / c);
+    } 
+    return null;
 }
 
+
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-threeArgs();               //false
-threeArgs(1);              //1
-threeArgs(1, 2);          //3
-threeArgs(1, 2, 3);       //1
+
+/*treeArgs()                            false*/
+/*treeArgs(3)                               3*/
+/*treeArgs(5,6)                            11*/
+/*treeArgs(10,15,30)       0.8333333333333334*/
