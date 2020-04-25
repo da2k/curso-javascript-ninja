@@ -12,8 +12,7 @@ return x + y;
 var mysum = soma(2, 5) + 5
 
 // Qual o valor atualizado dessa variável?
-x = 2;
-y = 5;
+mysum = 12;
 
 // Declare uma nova variável, sem valor.
 var newvar;
@@ -23,9 +22,9 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function adicionar(newvar) {
+function adicionar() {
 newvar = 15;
-return "O valor da variável agora é: " + newvar;
+return 'O valor da variável agora é: ' + newvar;
 }
 
 // Invoque a função criada acima.
@@ -41,13 +40,21 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-> function newFunction(x, y, z){
+function newFunction(x, y, z){
+   if(x === undefined || y === undefined || z === undefined){
+     return "Preencha todos os valores corretamente!";
+   } else {
+     return (x * y * z) + 2;
+   }
+ }
+ 
+ Outra forma de resolver é:
+ function newFunction(x, y, z){
    if(x === undefined || y === undefined || z === undefined){
      return "Preencha todos os valores corretamente!";
    }
-     return ((x * y * z) + 2);
+     return (x * y * z) + 2;
  }
-
 
 // Invoque a função criada acima, passando só dois números como argumento.
 newFunction(5, 6)
@@ -76,26 +83,18 @@ function treeArgs(a,b,c){
      return false;
     } else if(a !== undefined && b === undefined && c === undefined){
      return a;
-    } else if(a === undefined && b !== undefined && c === undefined){
-     return b;
-    } else if(a === undefined && b === undefined && c !== undefined){
-     return c;
     } else if(a !== undefined && b !== undefined && c === undefined){
      return a + b;
-    } else if(a === undefined && b !== undefined && c !== undefined){
-    return b + c;
-    } else if(a !== undefined && b === undefined && c !== undefined){
-    return c + a;
     } else if(a !== undefined && b !== undefined && c !== undefined){
-    return ((a + b) / c);
-    } 
+    return (a + b) / c;
+    } else {
     return null;
+  }
 }
-
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 
-/*treeArgs()                            false*/
-/*treeArgs(3)                               3*/
-/*treeArgs(5,6)                            11*/
-/*treeArgs(10,15,30)       0.8333333333333334*/
+/*treeArgs()                            false
+  treeArgs(3)                               3
+  treeArgs(5,6)                            11
+  treeArgs(10,15,30)       0.8333333333333334*/
