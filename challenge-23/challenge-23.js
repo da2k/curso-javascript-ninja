@@ -123,8 +123,6 @@
     $display.value = secondaryRemaining;
   }
 
-  calculate();
-
   function checkIfHasPrimary(exp) {
     return /(\d+)(\x|%)(\d+)/.test(exp);
   }
