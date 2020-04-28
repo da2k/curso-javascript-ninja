@@ -95,34 +95,32 @@ Crie um método que irá adicionar pessoas no carro. Esse método terá as
 seguintes características:
 - Ele deverá receber por parâmetro o número de pessoas entrarão no carro. Esse
 número não precisa encher o carro, você poderá acrescentar as pessoas aos
-poucos.
+poucos. ---
 - O método deve retornar a frase: "Já temos [X] pessoas no carro!"
 - Se o carro já estiver cheio, com todos os assentos já preenchidos, o método
-deve retornar a frase: "O carro já está lotado!"
+deve retornar a frase: "O carro já está lotado!" ---
 - Se ainda houverem lugares no carro, mas a quantidade de pessoas passadas por
 parâmetro for ultrapassar o limite de assentos do carro, então você deve
 mostrar quantos assentos ainda podem ser ocupados, com a frase:
-"Só cabem mais [QUANTIDADE_DE_PESSOAS_QUE_CABEM] pessoas!"
+"Só cabem mais [QUANTIDADE_DE_PESSOAS_QUE_CABEM] pessoas!" ---
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
-citado acima, no lugar de "pessoas". 
+citado acima, no lugar de "pessoas". ---
 */
 
-function adicionarQuantidadePessoas ( numeroPessoas, valorMaximo ) {
-  var valorMaximo = 5;
-  var numeroPessoas = 0;
-  
-  if( numeroPessoas = 5 ) {
-   return 'O carro já está lotado!'
-    if( numeroPessoas < 5 ) {
-      return 'Já temos ' + numeroPessoas + ' pessoas no carro!'
-        if ( numeroPessoas = 4 ) {
-          return 'Só cabe mais 1 pessoa no carro!'
-        } 
-        
-        return 'Só cabem mais ' + (valorMaximo - numeroPessoas) + ' pessoas no carro!'
-    }  
-  }
-};
+function adicionarPessoas (numeroPessoas, valorMaximo) {
+   var valorMaximo = 5;
+   var numeroPessoas = 0;
+   if(numeroPessoas > 5) {
+     return 'O carro já está lotado!'
+       if(numeroPessoas = 4) {
+         return 'Só cabe mais 1 pessoa no carro!'
+          if(numeroPessoas < 5) {
+             return 'Só cabem mais ' + (valorMaximo - numeroPessoas) + ' ' + ' pessoas no carro!'
+          }
+          return 'Já temos ' + numeroPessoas + ' ' + ' pessoas no carro!'
+        }
+      }
+   };
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
