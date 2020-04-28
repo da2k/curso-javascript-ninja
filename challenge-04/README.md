@@ -142,20 +142,22 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 citado acima, no lugar de "pessoas". ---
 */
 
-function adicionarPessoas (numeroPessoas, valorMaximo) {
-   var valorMaximo = 5;
-   var numeroPessoas = 0;
-   if(numeroPessoas > 5) {
-     return 'O carro já está lotado!'
-       if(numeroPessoas = 4) {
-         return 'Só cabe mais 1 pessoa no carro!'
-          if(numeroPessoas < 5) {
-             return 'Só cabem mais ' + (valorMaximo - numeroPessoas) + ' ' + ' pessoas no carro!'
-          }
-          return 'Já temos ' + numeroPessoas + ' ' + ' pessoas no carro!'
-        }
+carro.adicionarPessoas = function ( numeroPessoas ) {
+   var totalPessoas = carro.quantidadePessoas + numeroPessoas;
+   var quantasPessoasCabem = carro.assentos - carro.quantidadePessoas;
+   var pluralOuSingular = quantasPessoasCabem === 1 ? ' pessoa' : ' pessoas';
+   
+     if( carro.quantidadePessoas == carro.assentos && totalPessoas >= carro.assentos) {
+       return 'O carro já está lotado!';
       }
-   };
+     if( totalPessoas > carro.assentos ) {
+       return 'Só cabem mais ' + quantasPessoasCabem + pluralOuSingular + '!';
+       }
+     carro.quantidadePessoas += numeroPessoas;
+     return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!';
+     };
+     
+ carro.quantidadePessoas = 0;
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -189,24 +191,33 @@ carro.obterMarcaModelo();     // 'Esse carro é um Chevrolet Spin Activ'
 
 // Adicione 2 pessoas no carro.
 
-adicionarQuantidadePessoas(2)
+carro.adicionarPessoas(2)
+// 'Já temos 2 pessoas no carro!'
 
 // Adicione mais 4 pessoas no carro.
 
-adicionarQuantidadePessoas(4)
+carro.adicionarPessoas(4)
+// 'Só cabem mais 3 pessoas!'
 
 // Faça o carro encher.
 
-adicionarQuantidadePessoas()      // 'O carro já está lotado!'
+carro.adicionarPessoas(3)
+// 'Já temos 5 pessoas no carro!'
 
 // Tire 4 pessoas do carro.
 
-adicionarQuantidadePessoas(-4)
+carro.quantidadePessoas = 0;
+
+carro.adicionarPessoas(-4);
+// 'Já temos 1 pessoas no carro!'
 
 // Adicione 10 pessoas no carro.
 
-adicionarQuantidadePessoas(10)
+carro.adicionarPessoas(10);
+// 'Só cabem mais 4 pessoas!'
 
 // Quantas pessoas temos no carro?
-5 pessoas
+
+carro.quantidadePessoas;
+// 'Já temos 1 pessoas no carro!'
 ```
