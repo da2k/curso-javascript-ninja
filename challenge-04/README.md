@@ -11,16 +11,44 @@ para o contrário.
 isTruthy = function ( x ) {
   return x ? true : false;
  };
+ 
+var isTruthy = function(param) {
+  if(param) {
+    return true;
+  } else {
+    return false;
+  }
+ };
+ 
+ var isTruthy = function(param) {
+  return !!param;
+ };
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 
-isTruthy (undefined, null, NaN, 0, -0, '', "", false);
+isTruthy(false);
+isTruthy(null);
+isTruthy(undefined);
+isTruthy('');
+isTruthy(0);
+isTruthy(-0);
+isTruthy(NaN);
+isTruthy("");
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
 
-isTruthy ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9');
+isTruthy(1);
+isTruthy('Fernando');
+isTruthy([]);
+isTruthy({});
+isTruthy(function() {});
+isTruthy(20 * 30);
+isTruthy(10 + 10);
+isTruthy([1, 2, 3]);
+isTruthy({ a: 1, b: 2});
+isTruthy('Curso JS Ninja');
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
@@ -56,6 +84,12 @@ carro.mudarCor = function ( x ) {
   carro.cor = x
 };
 
+// Resposta do instrutor
+
+carro.mudarCor = function(cor) {
+  carro.cor = cor;
+};
+
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
@@ -87,8 +121,9 @@ Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 
 carro.obterMarcaModelo = function () {
- return 'Esse carro é um ' + carro.marca + ' ' + carro.modelo
+  return 'Esse carro é um ' + carro.obterMarca() + ' ' + carro.obterModelo();
 };
+
 
 /*
 Crie um método que irá adicionar pessoas no carro. Esse método terá as
@@ -130,31 +165,27 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-carro.cor     // 'Cinza Sation Steel'
+carro.obterCor();     // 'Azul Blue Eyes'
 
 // Mude a cor do carro para vermelho.
 
-carro.obterCor = function () {
- return carro.cor = 'vermelho'
-};
+carro.mudarCor('Vermelho');      // Undefined
 
 // E agora, qual a cor do carro?
 
-carro.obterCor()      // 'vermelho'
+carro.obterCor();
 
 // Mude a cor do carro para verde musgo.
 
-carro.obterCor = function () {
- return carro.cor = 'verde musgo'
-};
+carro.mudarCor('Verde musgo');
 
 // E agora, qual a cor do carro?
 
-carro.obterCor()      // 'verde musgo'
+carro.obterCor()      // 'Verde musgo'
 
 // Qual a marca e modelo do carro?
 
-carro.marca + carro.modelo      // 'Chevrolet Spin Activ'
+carro.obterMarcaModelo();     // 'Esse carro é um Chevrolet Spin Activ'
 
 // Adicione 2 pessoas no carro.
 
