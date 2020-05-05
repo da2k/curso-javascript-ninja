@@ -116,16 +116,22 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 citado acima, no lugar de "pessoas".
 */
 carro.adicionarPessoas = function(numero){
+    let assentosRestantes = this.assentos - this.quantidadePessoas;
+    let flexaoPlural1 = assentosRestantes>1 ? 'm': '';
+    let flexaoPlural2 = assentosRestantes>1 ? 's': '';
+    if(typeof numero !== 'number' || numero<0){
+        return 'Valor inválido -> valor não-numérico ou negativo!';
+    }
     let pessoas = this.quantidadePessoas + numero;
     if(pessoas <= this.assentos){
         this.quantidadePessoas = pessoas;
-        return `Já temos ${this.quantidadePessoas} no carro!`;
+        if(this.quantidadePessoas === this.assentos){
+            return 'O carro já está lotado!';
+        }
+        return `Já temos ${this.quantidadePessoas} pessoa${flexaoPlural2} no carro!`;
     }else if(this.quantidadePessoas === this.assentos){
         return 'O carro já está lotado!';
     }else{
-        let assentosRestantes = this.assentos - this.quantidadePessoas;
-        let flexaoPlural1 = assentosRestantes>1 ? 'm': '';
-        let flexaoPlural2 = assentosRestantes>1 ? 's': '';
         return `Só cabe${flexaoPlural1} mais ${assentosRestantes} pessoa${flexaoPlural2}!`;
     }
 }
@@ -162,15 +168,23 @@ console.log(carro.adicionarPessoas(2)); //Já temos 2 no carro!
 console.log(carro.adicionarPessoas(4)); //Só cabem mais 3 pessoas!
 
 // Faça o carro encher.
-console.log(carro.adicionarPessoas(3)); //Já temos 5 no carro!
+console.log(carro.adicionarPessoas(3)); //O carro já está lotado!
 
 // Tire 4 pessoas do carro.
 carro.removerPessoas = function(numero){
+    if(typeof numero !== 'number' || numero<0){
+        console.log('Valor inválido!');
+        return;
+    }
+    if(this.quantidadePessoas===0){
+        console.log('Carro vazio!');
+        return;
+    }
     let pessoas = this.quantidadePessoas - numero;
     if(pessoas >= 0 && this.quantidadePessoas >= numero && numero>=0 && numero<=this.assentos){
         this.quantidadePessoas = pessoas;
     }else{
-        console.log('Valor inválido');
+        console.log('Valor inválido!');
     }
 }
 
