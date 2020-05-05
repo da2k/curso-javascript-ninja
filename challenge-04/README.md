@@ -23,6 +23,7 @@ isTruthy('');
 isTruthy("");
 isTruthy(NaN);
 isTruthy(false);
+isTruthy(undefined);
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
