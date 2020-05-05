@@ -17,8 +17,7 @@
   nome, `username` deve receber "Desconhecido".
   Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
   */
-  var username = win.prompt('Qual o seu nome?');
-  username = username ? username : 'Desconhecido';
+  var username = win.prompt('Qual o seu nome?') || 'Desconhecido';
   win.alert(`Bem vindo ${username}`);
 
   /*
@@ -31,13 +30,13 @@
   - Selecione o input de "Nome", atribuindo-o à uma variável chamada
   `$inputUsername`.
   */
-  var $inputUserName = doc.querySelector('[type=text]');
+  var $inputUserName = doc.querySelector('input[type=text]');
 
   /*
   - Selecione o input de "Email", atribuindo-o à uma variável chamada
   `$inputEmail`.
   */
-  var $inputEmail = doc.querySelector('[type=email]');
+  var $inputEmail = doc.querySelector('input[type=email]');
 
   /*
   - Selecione o campo de "Mensagem", atribuindo-o à uma variável chamada
@@ -88,20 +87,15 @@
     var alert = null;
 
     if(!$inputUserName.value) 
-      alert = 'Preencha o nome do usuário!';
+      return win.alert('Preencha o nome do usuário!');
 
     if(!$inputEmail.value) 
-      alert ='Preencha o e-mail!';
+      return win.alert('Preencha o e-mail!');
     else if(!isValidEmail($inputEmail.value))
-      alert ='Entre com um e-mail válido!';
+      return win.alert('Entre com um e-mail válido!');
 
     if(!$message.value) 
-      alert ='Preencha a mensagem!';
-
-    if(alert != null) {
-      win.alert(alert);
-      return;
-    }
+      return win.alert('Preencha a mensagem!');
 
     var confirmation = win.confirm('Tem certeza de que deseja enviar o formulário?')
     win.alert(confirmation ? 'Enviado com sucesso!' : 'Não enviado.')
