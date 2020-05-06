@@ -1,19 +1,43 @@
 /*
 Crie um array com 5 items (tipos variados).
 */
-// ?
+
+var arr = [1, 'Evelyn', null, true, { papel: 'branca' } ];
 
 /*
 Crie uma função chamada `addItem`, que irá adicionar itens no array criado.
 A função deverá retornar o array atualizado.
 */
-// ?
+
+var qtd = arr.length;
+
+arr.push( { cor: 'cinza' } );
+
+function addItem ( arr ) {
+   while ( qtd > 5 ) {
+     console.log( arr );
+       }
+  }
 
 /*
 Adicione um novo array ao array criado no início do desafio, com ao menos 3
 itens de tipos diferentes, mostrando o resultado no console.
 */
-// ?
+
+arr.push( {'Oliveira', false, { cor: 'vermelho' } } );
+
+arr
+/* [
+  1,
+  'Evelyn',
+  null,
+  true,
+  { papel: 'branca' },
+  { cor: 'cinza' },
+  'Oliveira',
+  false,
+  { cor: 'vermelho' }
+] */
 
 /*
 Mostre no console o segundo elemento desse último array, criado acima, com a
