@@ -25,7 +25,8 @@ Só passe para o próximo problema quando tiver resolvido o anterior :)
 */
 
 function DOM(elements){
-  this.element = document.querySelectorAll(elements);}
+  this.element = document.querySelectorAll(elements)
+;}
 
 
 DOM.prototype.on = function on(eventType, callback) {
