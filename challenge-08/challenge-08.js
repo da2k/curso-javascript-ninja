@@ -43,14 +43,14 @@ function showName(){
 Declare uma variável chamada `varShowName` que recebe a função criada acima.
 */
 //
-let varShowName = showName();
+let varShowName = showName;
 /*
 Usando a variável criada acima, mostre no console o nome e o retorno da função
 atribuída a ela, com a seguinte frase:
 "A função [NOME DA FUNÇÃO] retorna [RETORNO DA FUNÇÃO]."
 */
 // 
-console.log(`A função ${varShowName} retorna ${varShowName}.`); //A função showName retorna showName.
+console.log(`A função ${varShowName.name} retorna ${varShowName()}.`); //A função showName retorna showName.
 /*
 Crie uma função literal chamada `calculator`, que funcione assim:
 - A função deve receber um parâmetro que dirá qual operação matemática ela
