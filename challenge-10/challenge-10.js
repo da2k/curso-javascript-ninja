@@ -66,11 +66,11 @@
         if(!isOperatorValid(op)){
             return false;
         }
-        return function(callback){
+        return function(x,y){
             if(typeof x!=='number' || typeof y!=='number'){
-                return false;
+               return false;
             }
-            return callback(x,y);
+            return operation[op](x,y);
 
         }
     }
@@ -140,7 +140,7 @@
         if(errorMessage.length===0){
             number1 = 23;
             number2 = 57;
-            console.log(showOperationMessage(signal,number1,number2),operation[signal](number1,number2));
+            console.log(showOperationMessage(signal,number1,number2),result(number1,number2));
         }else{
             console.log(errorMessage);
         }
