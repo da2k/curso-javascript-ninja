@@ -15,9 +15,8 @@
   nome, `username` deve receber "Desconhecido".
   Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
   */
-  var userName = win.prompt('Qual o seu nome?');
-  if (userName === null || userName === '') userName = 'Deconhecido';
-  win.alert('Bem vindo ' + userName);
+  var userName = win.prompt('Qual o seu nome?') || 'Deconhecido';
+  win.alert('Bem vindo ' + userName + '!');
 
   /*
   Agora, pergunte ao usuário "Qual o seu e-mail?", atribuindo o resultado à
@@ -29,25 +28,25 @@
   - Selecione o input de "Nome", atribuindo-o à uma variável chamada
   `$inputUsername`.
   */
-  var $inputUserName = doc.querySelector('[data-js="nome"]');
+  var $inputUserName = doc.querySelector('input[type="text"]');
 
   /*
   - Selecione o input de "Email", atribuindo-o à uma variável chamada
   `$inputEmail`.
   */
-  var $inputEmail = doc.querySelector('[data-js="email"]');
+  var $inputEmail = doc.querySelector('input[type="email"]');
 
   /*
   - Selecione o campo de "Mensagem", atribuindo-o à uma variável chamada
   `$message`.
   */
-  var $message = doc.querySelector('[data-js="mensagem"]');
+  var $message = doc.querySelector('textarea');
 
   /*
   - Selecione o botão de envio do formulário, atribuindo-o à uma variável
   chamada `$button`.
   */
-  var $button = doc.querySelector('[data-js="button"]');
+  var $button = doc.querySelector('button');
 
   /*
   Preencha os campos de "Nome" e "Email" que estão no documento com os valores
@@ -62,40 +61,33 @@
   1. Verificar se todos os campos estão preenchidos:
   - Mostrar um alert para cada campo não preenchido, como abaixo:
   - Se o campo de "Nome" não estiver preenchido, mostrar:
-      - "Preencha o nome do usuário!"
+  - "Preencha o nome do usuário!"
   - Se o campo de "Email" não estiver preenchido, mostrar:
-      - "Preencha o e-mail!"
+  - "Preencha o e-mail!"
   - Se o campo de "Mensagem" não estiver preenchido, mostrar:
-      - "Preencha a mensagem!"
+  - "Preencha a mensagem!"
   - Se o campo de "Email" for inválido, mostrar:
-      - "Entre com um e-mail válido!"
+  - "Entre com um e-mail válido!"
 
   2. Para verificar se o e-mail é válido use a função `isValidEmail`, passando
   o e-mail que foi entrado no campo de "Email" por parâmetro. (A função
   `isValidEmail` será criada logo abaixo).
 
   3. Se tudo estiver OK, pergunte ao usuário:
-      - "Tem certeza que deseja enviar o formulário?"
+  - "Tem certeza que deseja enviar o formulário?"
   Se for confirmado, mostre um alerta com a mensagem:
-      - "Enviado com sucesso!"
+  - "Enviado com sucesso!"
   Caso contrário, mostre um alerta com a mensagem:
-      - "Não enviado."
+  - "Não enviado."
   */
- var hasInput = function hasInput (inputName, inputEmail, inputMensagem) {
-    if (inputName === 'Desconhecido' || inputName === null) return win.alert('Preencha o nome do usuário!');
-    if (inputEmail === '' || inputEmail === null) return win.alert('Preencha o e-mail!');
-    if (inputMensagem === '' || inputMensagem === null) return win.alert('Preencha a mensagem!');
-    return true;
-  };
-  //hasInput($inputUserName, $inputEmail, $message);
-  $button.addEventListener('click', function () {
-    if (hasInput($inputUserName, $inputEmail, $message)) {
-      if (isValidEmail($inputEmail)) {
-        win.confirm('Tem certeza que deseja enviar o formulário?')
-          ?win.alert('Enviado com sucesso!')
-          :win.alert('Não enviado.')
-      }
-    }
+  $button.addEventListener('click', function (event) {
+    event.preventDefault();
+    if (!$inputUserName.value) return win.alert('Preencha o nome do usuário!');
+    if (!$inputEmail.value) return win.alert('Preencha o e-mail!');
+    if (!isValidEmail($inputEmail.value)) return win.alert('Entre com um e-mail válido!');
+    if (!$message.value) return win.alert('Preencha a mensagem!');
+    if(!confirm('Tem certeza que deseja enviar o formulário?')) return win.alert('Não enviado.');
+    return win.alert('Enviado com sucesso!');
   }, false);
 
   /*
@@ -104,27 +96,27 @@
   Essa função deve receber o e-mail por parâmetro e verificar se é um e-mail
   válido.
   As regras para validação são:
-      - O nome do usuário (antes do arroba), pode ser qualquer caractere
-      alfanumérico, incluindo o underscore, sinal de "+" e o ponto;
-      - Após o arroba, o domínio pode conter somente caracteres alfanuméricos
-      e o underscore;
-      - Para a extensão, o domínio deve vir seguido de um ponto, e no mínimo
-      2 caracteres alfanuméricos;
-      - O final do domínio é opcional, mas se existir, deve começar com um
-      ponto, seguido de no máximo 2 caracteres alfanuméricos.
+  - O nome do usuário (antes do arroba), pode ser qualquer caractere
+  alfanumérico, incluindo o underscore, sinal de "+" e o ponto;
+  - Após o arroba, o domínio pode conter somente caracteres alfanuméricos
+  e o underscore;
+  - Para a extensão, o domínio deve vir seguido de um ponto, e no mínimo
+  2 caracteres alfanuméricos;
+  - O final do domínio é opcional, mas se existir, deve começar com um
+  ponto, seguido de no máximo 2 caracteres alfanuméricos.
 
   Alguns e-mails válidos que podem ser usados para testar:
-      - "meu.email+categoria@gmail.com"
-      - "juca_malandro@bol.com.br"
-      - "pedrobala@hotmail.uy"
-      - "sandro@culinaria.dahora"
+  - "meu.email+categoria@gmail.com"
+  - "juca_malandro@bol.com.br"
+  - "pedrobala@hotmail.uy"
+  - "sandro@culinaria.dahora"
 
   Alguns e-mails inválidos:
-      - "walter-da-silva@maraca.br"
-      - "rita-marica@titica.a.b"
-      - "agua_@evida.br.com"
+  - "walter-da-silva@maraca.br"
+  - "rita-marica@titica.a.b"
+  - "agua_@evida.br.com"
   */
-  var isValidEmail = function isValidEmail (email) {
-    return true;
+  var isValidEmail = function (email) {
+    return /^[\w+.]+@\w+\.\w{2,}(?:\.\w{2})?$/.test(email);
   };
 })(window, document);
