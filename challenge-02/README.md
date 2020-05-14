@@ -26,7 +26,7 @@ Onde VALOR é o novo valor da variável.
 function setValue(value) {
   any = value;
   let changedValue = "O valor da variável agora é " + any;
-  return changedValue;
+  return changedValue;    
 }
 
 // Invoque a função criada acima.
@@ -45,13 +45,12 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function multiplication(num, num2, num3) {
-  let mult = num * num2 * num3 + "2";
+  let mult = num * num2 * num3 + 2;
 
-  if (num3 == null) {
+  if (num3 === undefined) {
     console.log("Preencha os valores corretamente");
   }
-
-  return mult;
+    return mult;
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
@@ -59,13 +58,13 @@ console.log(multiplication(5, 6));
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 Preencha os valores corretamente
-NaN2
+
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 console.log(multiplication(5, 6, 7));
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-2102
+212
 
 /*
 Crie uma função com as seguintes características:
@@ -80,16 +79,16 @@ Crie uma função com as seguintes características:
 function calc(number, number2, number3) {
   let result = (number + number2) / number3;
   
-  if (number == null) {
+  if (number === undefined) {
     return false;
   
-  } else if (number2 == null && number3 == null) {
+  } else if (number2 === undefined && number3 === undefined) {
     return number;
   
-  } else if (number3 == null) {
+  } else if (number3 === undefined) {
     return number + number2;
   
-  } else if (number3 != null) {
+  } else if (number3 !== undefined) {
     return result;
   
   } else {
