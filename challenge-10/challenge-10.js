@@ -42,7 +42,7 @@
             return x % y;
         }
     };
-
+    
     /*
     Crie uma função chamada `isOperatorValid`, que receberá um operador por
     parâmetro.
