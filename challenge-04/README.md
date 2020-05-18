@@ -25,7 +25,7 @@ Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 isTruthy('0');
 isTruthy([]);
 isTruthy({});
-isTruthy('@');
+isTruthy(function(){});
 isTruthy('#');
 isTruthy(true);
 isTruthy(123);
@@ -90,7 +90,7 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 carro.obterMarcaModelo = function(){
-    return 'Esse carro é um ' + carro.marca + ' ' + carro.modelo;
+    return 'Esse carro é um ' + carro.obterMarca() + ' ' + carro.obterModelo();
 }
 
 /*
@@ -130,19 +130,19 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-carro.cor;//'verde'
+carro.obterCor();//'verde'
 
 // Mude a cor do carro para vermelho.
 carro.mudaCor('vermelho');
 
 // E agora, qual a cor do carro?
-carro.cor;//'vermelho'
+carro.obterCor();//'vermelho'
 
 // Mude a cor do carro para verde musgo.
 carro.mudaCor('verde musgo');
 
 // E agora, qual a cor do carro?
-carro.cor;//'verde musgo'
+carro.obterCor();//'verde musgo'
 
 // Qual a marca e modelo do carro?
 carro.obterMarcaModelo();//'Esse carro é um Jeep Renegate'
