@@ -52,6 +52,7 @@ let carro = {
     ano: 2019,
     cor: 'verde',
     quantasPortas: 5,
+    assentos: 5,
     quantidadePessoas: 0
 }
 
@@ -109,11 +110,9 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-carro.lugares = 5;
-
 carro.adicionaPessoa = function(quant){
     let res;
-    let vagas = carro.lugares - carro.quantidadePessoas;
+    let vagas = carro.assentos - carro.quantidadePessoas;
     let qnt_pes = ['cabem', 'pessoas'];
     vagas === 1 ? qnt_pes = ['cabe', 'pessoa'] : qnt_pes;
     vagas < quant ? res = 'Só ' + qnt_pes[0] + ' mais ' + vagas + ' ' + qnt_pes[1] + '!' : res;
