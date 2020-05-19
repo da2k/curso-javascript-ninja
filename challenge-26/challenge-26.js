@@ -20,12 +20,32 @@ Dica: olhe os erros que acontecem no console, e vá resolvendo um a um.
 Só passe para o próximo problema quando tiver resolvido o anterior :)
 */
 // ?
+(function (document) {
+  'use strict';
 
-var $a = new DOM('[data-js="link"]');
-$a.on('click', function(e) {
-  e.preventDefault();
-  console.log('clicou');
-});
+  var $a = new DOM('[data-js="link"]');
+  $a.on('click', function(e) {
+    e.preventDefault();
+    console.log('clicou');
+  });
 
-console.log('Elementos selecionados:', $a.get());
-console.log('$a é filho de body?', $a.get()[0].parentNode === document.body);
+  console.log('Elementos selecionados:', $a.get());
+  console.log('$a é filho de body?', $a.get()[0].parentNode === document.body);
+
+  function DOM(nodeString) {
+    this.element = document.querySelectorAll(nodeString);
+    this.on = function (e, f) {
+      this.element.forEach(function (elem) {
+        elem.addEventListener(e, f);
+      });
+    }
+    this.off = function (e, f) {
+      this.element.forEach(function (elem) {
+        elem.removeEventListener(e);
+      });
+    }
+    this.get = function () {
+      return this.element;
+    }
+  }
+})(document);
