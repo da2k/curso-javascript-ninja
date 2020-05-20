@@ -4,29 +4,34 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-?
+functon funcao(x,y){
+return x+y}
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-?
+var func = funcao(2,3)+5;
 
 // Qual o valor atualizado dessa variável?
-?
+10
 
 // Declare uma nova variável, sem valor.
-?
+var h;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-?
+function valor(){
+h="VALOR";
+return "o valor da variável agora é "+h;
 
 // Invoque a função criada acima.
-?
+valor();
 
 // Qual o retorno da função? (Use comentários de bloco).
-?
+/*
+  o valor da variável agora é VALOR;
+*/
 
 /*
 Crie uma função com as seguintes características:
@@ -35,19 +40,24 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-?
-
+function argu(x,y,z){
+if(x==null||y==null||z==null){
+      return "Preencha todos os valores corretamente!";
+      }else{
+      (x*y*z)+2;
+      }
+  }
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+argu(2,3);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+//Preencha todos os valores corretamente!
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+argu(2,3,4);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+26
 
 /*
 Crie uma função com as seguintes características:
@@ -58,8 +68,20 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+> function as(a,s,d){
+... if(a!=null||s==null||d==null){
+..... return a;
+..... }else if(a!=null||s!=null||d==null){
+..... return a+s;
+..... }else if(a!=null||s!=null||d!=null){
+..... return (a+s)/d;
+..... }else if(a==null||s==null||d==null){
+..... return false;
+..... }
+... }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+as(1);//Função vai retornar apenas o valor 1
+as(1,2)//Função vai retornar o valor 3, pois é o resultado da soma dos dois argumentos
+as(3,3,3)//Função vai retornar o valor 2, pois é o resultado da equação da função
 ```
