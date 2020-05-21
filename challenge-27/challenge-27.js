@@ -22,12 +22,13 @@
   O método isNull deve retornar `true` se o valor for null ou undefined.
   */
 
-  let myDom = new DOM("p");
-  myDom.myForEach(function (elem) {
+  let $p = new DOM("p");
+  $p.myForEach(function (elem) {
+    console.log(elem.firstChild.nodeValue);
     return elem;
   });
 
-  console.log(myDom.isNull(10));
+  console.log($p.isNull(null));
 
   function DOM(nodeString) {
     this.element = document.querySelectorAll(nodeString);
