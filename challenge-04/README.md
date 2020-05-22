@@ -14,7 +14,9 @@ let isTruthy = function(istrue) {
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 isTruthy(false);
 isTruthy(0);
-isTruthy(-0);
+isTruthy(null);
+isTruthy(undefined);
+isTruthy(NaN);
 isTruthy("");
 
 
@@ -50,7 +52,7 @@ const carro = {
   modelo: 'Ka',
   placa: 'ECM2352',
   ano: 2018,
-  cor: 'Vermelho',
+  cor: 'Azul',
   quantasPortas: 4,
   assentos: 5,
   quantidadePessoas: 0
@@ -91,7 +93,7 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 obterMarcaModelo() {
-    return `Esse carro é um ${carro.marca} ${carro.modelo}`;
+    return `Esse carro é um ${carro.obterMarca()} ${carro.obterModelo()}`;
   }
 
 /*
@@ -110,7 +112,25 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-?
+  addPassageiros(nPassageiros) {
+    let assentosOcupados = carro.quantidadePessoas + nPassageiros;
+    let assentosDisponiveis = carro.assentos - carro.quantidadePessoas;
+    let strPessoa = assentosDisponiveis === 1 ? "pessoa" : "pessoas";
+
+    if (carro.quantidadePessoas >= carro.assentos) {
+      return `O carro está lotado!`;
+    }
+
+    if (assentosOcupados > carro.assentos) {
+      return `Só cabem mais ${assentosDisponiveis} ${strPessoa}`;
+    }
+
+    carro.quantidadePessoas += nPassageiros;
+
+    return `Já temos ${carro.quantidadePessoas} pessoas no carro!`;
+  },
+};
+
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -120,38 +140,38 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-?
+carro.obterCor();
 
 // Mude a cor do carro para vermelho.
-?
+carro.mudarCor(vermelho);
 
 // E agora, qual a cor do carro?
-?
+carro.obeterCor(); //vermelho
 
 // Mude a cor do carro para verde musgo.
-?
+carro.mudarCor('verde musgo');
 
 // E agora, qual a cor do carro?
-?
+carro.obterCor(); //verde musgo
 
 // Qual a marca e modelo do carro?
-?
+ carro.obterMarcaModelo();
 
 // Adicione 2 pessoas no carro.
-?
+carro.addPassageiros(2);
 
 // Adicione mais 4 pessoas no carro.
-?
+carro.addPassageiros(4);
 
 // Faça o carro encher.
-?
+carro.addPassageiros(5);
 
 // Tire 4 pessoas do carro.
-?
+carro.addPassageiros(-4); 
 
 // Adicione 10 pessoas no carro.
-?
-
+carro.addPassageiros(10);// Só cabem mais 4 pessoas! 
+    
 // Quantas pessoas temos no carro?
-?
-```
+ carro.quantidadePessoas; //1
+
