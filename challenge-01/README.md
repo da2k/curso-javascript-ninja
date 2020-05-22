@@ -5,7 +5,7 @@
 var myvar;
 
 // Após declarada, atribua o valor 10 à variável `myvar`.
-
+myvar = 10;
 
 // Declare uma nova variável chamada `soma`, e adicione uma instrução somando os valores 15 e 8.
 var soma = 15 + 8;
@@ -32,7 +32,7 @@ comida[1];
 soma === myvar;
 
 // Digite o código que verifica se a variável `myvar` é menor ou igual à variável `soma`.
-myvar <= soma
+myvar <= soma;
 
 // Crie uma função chamada `divisao` que receba como parâmetro dois números, e retorne o resultado da divisão entre eles.
 function divisao(x, y){
