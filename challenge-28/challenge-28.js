@@ -1,4 +1,5 @@
 (function (document) {
+  "use strict";
   /*
     No HTML:
     - Crie um formulário com um input de texto que receberá um CEP e um botão
@@ -27,33 +28,59 @@
     adicionar as informações em tela.
     */
 
-  $input = getDOMElement("#cep")
-  $button = getDOMElement("#button");
-  $message = getDOMElement("#message");
-  $street = getDOMElement("#street");
-  $neighborhood = getDOMElement("#neighborhood");
-  $state = getDOMElement("#state");
-  $city = getDOMElement("#city");
-  $zipCode = getDOMElement("#zipCode");
-
-  function getDOMElement(selector) {
-    return document.querySelector(selector);
+  function DOM(selector) {
+    this.element = document.querySelector(selector);
+    this.addEventListener = function (event, callback) {
+      this.element.addEventListener(event, callback);
+    };
+    this.setContent = function (content) {
+      this.element.innerHTML = content;
+    };
+    this.getValue = function () {
+      return this.element.value;
+    };
+    this.setValue = function (value) {
+      return (this.element.value = value);
+    };
   }
+
+  var $input = new DOM("#cep");
+  var $button = new DOM("#button");
+  var $message = new DOM("#message");
+  var $street = new DOM("#street");
+  var $neighborhood = new DOM("#neighborhood");
+  var $state = new DOM("#state");
+  var $city = new DOM("#city");
+  var $zipCode = new DOM("#zipCode");
+
+  const BASE_URL = "https://ws.apicep.com/cep.json?code=";
 
   $button.addEventListener("click", function (e) {
     e.preventDefault();
-    _makeRequestAsync($input.value);
+    _findAddressAsync($input.element.value);
   });
 
-  function _makeRequestAsync(zipCode) {
+  async function _findAddressAsync(zipCode) {
     var formattedZipCode = formatZipCode(zipCode);
-    fillMessageField(`Buscando informações para o CEP ${zipCode}...`);
+    showMessage(`Buscando informações para o CEP ${zipCode}...`);
     var ajax = new XMLHttpRequest();
-    ajax.open("GET", `https://ws.apicep.com/cep.json?code=${formattedZipCode}`);
+    ajax.open("GET", `${BASE_URL}${formattedZipCode}`);
     ajax.send();
-    ajax.addEventListener("readystatechange", function (data) {
-      getAddress(data, zipCode);
+    ajax.addEventListener("readystatechange", function () {
+      if (isResponseOk(ajax)) {
+        try {
+          getAddress(ajax);
+        } catch (e) {
+          console.log(e);
+          showMessage(`Não encontramos o endereço para o CEP ${zipCode}`);
+        }
+      }
     });
+  }
+
+  function isResponseOk({ readyState, status }) {
+    if (readyState === 4 && status === 200) return true;
+    return false;
   }
 
   function formatZipCode(zipCode) {
@@ -65,38 +92,29 @@
     });
   }
 
-  function isNumber(value) {
-    console.log(Object.prototype.toString.call(value));
-    return Object.prototype.toString.call(value) === "[object Number]";
+  function getAddress({ response }) {
+    var {
+      address: street,
+      district: neighborhood,
+      state,
+      city,
+      code: zipCode,
+    } = JSON.parse(response);
+    var address = { street, neighborhood, state, city, zipCode };
+    console.log("Address: ", address);
+    showAddressInfo(address);
+    showMessage(`Endereço referente ao CEP ${zipCode}: `);
   }
 
-  function getAddress(data, zipCode) {
-    try {
-      var fullData = JSON.parse(data.target.response);
-      var addressData = {
-        street: fullData.address,
-        neighborhood: fullData.district,
-        state: fullData.state,
-        city: fullData.city,
-        zipCode: fullData.code,
-      };
-      fillAddressInfo(addressData);
-      fillMessageField(`Endereço referente ao CEP ${zipCode}: `);
-    } catch (e) {
-      console.log(e);
-      fillMessageField(`Não encontramos o endereço para o CEP ${zipCode}.`);
-    }
+  function showAddressInfo(info) {
+    $street.setContent(`Logradouro: ${info.street}`);
+    $neighborhood.setContent(`Bairro: ${info.neighborhood}`);
+    $state.setContent(`Estado: ${info.state}`);
+    $city.setContent(`Cidade: ${info.city}`);
+    $zipCode.setContent(`CEP: ${info.zipCode}`);
   }
 
-  function fillAddressInfo(info) {
-    $street.innerHTML = `Logradouro: ${info.street}`;
-    $neighborhood.innerHTML = `Bairro: ${info.neighborhood}`;
-    $state.innerHTML = `Estado: ${info.state}`;
-    $city.innerHTML = `Cidade: ${info.city}`;
-    $zipCode.innerHTML = `CEP: ${info.zipCode}`;
-  }
-
-  function fillMessageField(message) {
-    $message.innerHTML = message;
+  function showMessage(message) {
+    $message.setContent(message);
   }
 })(document);
