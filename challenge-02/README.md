@@ -4,29 +4,40 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-?
+    function soma(x,y){
+        return x + y;
+
+    }
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-?
+    var resul;
+    resul = soma(10,5) + 5;
 
 // Qual o valor atualizado dessa variável?
-?
+    20
 
 // Declare uma nova variável, sem valor.
-?
+    var test;
+
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-?
-
+    function valor(){
+        test = 25;
+        return "O valor da variavel agora é" + test ;
+    }
+    
 // Invoque a função criada acima.
-?
+    valor();
 
 // Qual o retorno da função? (Use comentários de bloco).
-?
+
+    /*
+    "O valor da variavel agora é 25"
+    /*
 
 /*
 Crie uma função com as seguintes características:
@@ -35,19 +46,27 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-?
+    function func(a,b,c) {
+        if (a === undefined || b === undefined || c === undefined){
+            return 'Preencha todos os valores corretamente!';
+        }else{
+            return (a * b * c) + 2;
+        }
+        
+    }
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+    func(2,4);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 ?
+// 'Preencha todos os valores corretamente!'
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+func(2,2,10);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+// 8
 
 /*
 Crie uma função com as seguintes características:
@@ -58,8 +77,24 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+    function func_tes1(x,y,w) {
+            if( x === undefined && y === undefined && w !== undefined ){
+                return w;
+        }eleif( x !== undefined && y !== undefined && w === undefined){
+                return x + y;
+        }eleif( x !== undefined && y !== undefined && w !== undefined){
+                return (x + y) / w;
+        }eleif( x === undefined && y === undefined && w === undefined){
+                return false;
+        }else{
+                return null;
+        }        
+    }
+    
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+ func_test(); //fasle
+ func_test(1); // 1
+ func_test(2,3) // 5
+ func_test(1,2,3) // 1
 ```
