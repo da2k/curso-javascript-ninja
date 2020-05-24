@@ -59,14 +59,14 @@ Crie uma função com as seguintes características:
     func(2,4);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
-// 'Preencha todos os valores corretamente!'
+
+    // 'Preencha todos os valores corretamente!'
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-func(2,2,10);
+    func(2,2,10);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-// 8
+    // 8
 
 /*
 Crie uma função com as seguintes características:
@@ -93,7 +93,7 @@ Crie uma função com as seguintes características:
     
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
- func_test(); //fasle
+ func_test(); // false
  func_test(1); // 1
  func_test(2,3) // 5
  func_test(1,2,3) // 1
