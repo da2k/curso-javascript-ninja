@@ -1,0 +1,15 @@
+.container-table {
+  max-width: 540px;
+  background-color: #E8E8E8;
+  margin: 3em auto;
+  padding: 1em;
+  border-radius: 10px;
+}
+
+table {
+  width: 100%;
+}
+
+td {
+  text-align: center;
+}
