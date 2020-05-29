@@ -13,7 +13,10 @@ o resultado no console, com a frase:
 "A soma de [VALOR 1] e [VALOR2] é igual a [RESULTADO]."
 */
 
-console.log(`A soma é igual a  ${sum(2, 3)}`); //8
+const value = 125;
+const value2 = 125;
+
+console.log(`A soma de ${value} e ${value2} é igual a  ${sum(value, value2)}`); //8
 
 /*
 Mostre no console o nome da função criada acima, com a frase:
@@ -26,7 +29,7 @@ Crie uma função literal chamada `showName`. Essa função deve retornar o
 seu nome.
 */
 function showName() {
-  return "Emerson";
+  return 'Emerson';
 }
 
 /*
@@ -39,7 +42,7 @@ Usando a variável criada acima, mostre no console o nome e o retorno da funçã
 atribuída a ela, com a seguinte frase:
 "A função [NOME DA FUNÇÃO] retorna [RETORNO DA FUNÇÃO]."
 */
-console.log(`A função ${varShowName.name} retorna ${showName()}`);
+console.log(`A função ${varShowName.name} retorna ${varShowName()}`);
 
 /*
 Crie uma função literal chamada `calculator`, que funcione assim:
