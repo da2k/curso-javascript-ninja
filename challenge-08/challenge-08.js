@@ -16,7 +16,7 @@ o resultado no console, com a frase:
 const value = 125;
 const value2 = 125;
 
-console.log(`A soma de ${value} e ${value2} é igual a  ${sum(value, value2)}`); //8
+console.log(`A soma de ${value} e ${value2} é igual a  ${sum(value, value2)}`); //250
 
 /*
 Mostre no console o nome da função criada acima, com a frase:
