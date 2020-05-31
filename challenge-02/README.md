@@ -85,6 +85,7 @@ function funcao(a,s,d){
     }
     else{
         return null;
+        
     }
 }
 
