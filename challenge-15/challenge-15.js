@@ -50,7 +50,6 @@
   var maria = new Person ('Maria', 'Eduarda', 22);
   console.log(gustavo);
   console.log(joao);
-  console.log(maria);
 
   /*
   Mostre no console o nome completo de cada pessoa.
@@ -58,7 +57,7 @@
   console.log( '\nNomes das pessoas:' );
   console.log(gustavo.getFullName());
   console.log(joao.getFullName());
-  console.log(maria.getFullName());
+
 
   /*
   Mostre no console as idades de cada pessoa, com a frase:
