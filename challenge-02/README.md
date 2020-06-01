@@ -42,7 +42,7 @@ Crie uma função com as seguintes características:
 */
 function teste(q, w, r){
   if(q===undefined || w===undefined || r===undefined){
-    return 'Preencha todos os valores corretamente!'
+    return 'Preencha todos os valores corretamente! '
   }
 
     return (q*w*r)+2;
