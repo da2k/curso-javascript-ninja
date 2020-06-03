@@ -177,5 +177,6 @@ carro.adicionarPessoas(10);
 //'O carro já está lotado!'
 
 // Quantas pessoas temos no carro?
-//5 pessoas
+carro.pessoas;
+//5 pessoas e uma sobrando.
 ```
