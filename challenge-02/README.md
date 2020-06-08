@@ -26,7 +26,7 @@ Onde VALOR é o novo valor da variável.
 ?
 
 // Qual o retorno da função? (Use comentários de bloco).
-?
+function()
 
 /*
 Crie uma função com as seguintes características:
