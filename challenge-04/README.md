@@ -123,8 +123,10 @@ carro.adicionarPessoas = function(qtdPessoas) {
         return `Só cabem mais ${ carro.assentos - carro.quantidadePessoas} ${numPessoa}!`;
     }
     carro.quantidadePessoas += qtdPessoas;
-    var numPessoa = carro.quantidadePessoas === 1 ? 'pessoa' : 'pessoas';
-    return `Já temos ${carro.quantidadePessoas} ${numPessoa} no carro!`;
+    if(carro.quantidadePessoas === 1) {
+        return 'Já temos uma pessoa no carro!';
+    }
+    return `Já temos ${carro.quantidadePessoas} pessoas no carro!`;
 }
 
 /*
