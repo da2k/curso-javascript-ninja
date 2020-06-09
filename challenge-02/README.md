@@ -22,17 +22,13 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function myFunc(valor){
-    if(valor != undefined) {
-        myVar2 = valor;
-        console.log('O valor da variável agora é', myVar2);
-    } else {
-        console.log('Variável não declarada!')
-    }
+function myFunc(){\
+    myVar2 = 35;
+    return 'O valor da variável é ' + myVar2;
 }
 
 // Invoque a função criada acima.
-myFunc2(10)
+myFunc2()
 
 // Qual o retorno da função? (Use comentários de bloco).
 // O valor da variável agora é 10
@@ -45,7 +41,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function myArguments(x,y,z){
-    if(x == undefined || x == NaN || y == undefined || z == undefined) {
+    if(x === undefined || x === undefined || y === undefined || z === undefined) {
         console.log('Preencha todos os valores corretamente!')
     } else {
         return (x * y * z) + 2
@@ -74,17 +70,17 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function myArgument(x, y, z) {
-    if (x === undefined) {
-        return false;
-    } else if (x != undefined) {
+    if (x !== undefined && y === undefined && z === undefined) {
         return x;
-    } else if (x != undefined || y != undefined) {
+    } else if (x !== undefined && y !== undefined && z === undefined) {
         return x + y;
-    } else if (x != undefined || y != undefined || z != undefined) {
-        return x + y / z;
+    } else if (x !== undefined && y !== undefined && z !== undefined) {
+        return (x + y) / z;
+    } else if (x === undefined && y === undefined && z === undefined) {
+        return false;
     } else {
-        return null;
-    } 
+        null;
+    }
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
@@ -96,7 +92,7 @@ function myArgument(x, y, z) {
 // 4
 
 // myArgument(4,5)
-// 4 (? fiz algo errado)
+// 9
 
-// myArgument(4,5,5)
-// 4,5,6 (? fiz algo errado)
+// myArgument(5,10,3)
+// 5
