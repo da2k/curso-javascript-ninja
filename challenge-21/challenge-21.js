@@ -1,4 +1,5 @@
-
+(function(win, document){
+  'use strict'
 /*
 O desafio de hoje será um pequeno projeto: um cronômetro!
 As regras para criação do cronômetro são as seguintes:
@@ -39,3 +40,4 @@ const resetTimer = () => {
 $buttonStart.addEventListener('click', startTimer)
 $buttonStop.addEventListener('click', stopTimer)
 $buttonReset.addEventListener('click', resetTimer)
+})(window, document)
