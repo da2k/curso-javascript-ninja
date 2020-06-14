@@ -1,6 +1,6 @@
-# Desafio Semana #1
+//# Desafio Semana #1
 
-```js
+//```js
 // Declarar uma variável chamada `myvar`, sem valor.
 var myvar;
 
@@ -35,10 +35,10 @@ soma === myvar;
 myvar <= soma;
 
 // Crie uma função chamada `divisao` que receba como parâmetro dois números, e retorne o resultado da divisão entre eles.
-> function divisao(x,y) {
-... return x/y;
-... }
+function divisao(x,y) {
+	return x/y;
+ }
 
 // Invoque a função criada acima, passando os parâmetros 10 e 2.
 divisao(10,2);
-```
+//```
