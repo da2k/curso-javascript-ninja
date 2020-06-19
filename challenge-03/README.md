@@ -25,7 +25,7 @@ As propriedades e tipos de valores para cada propriedade desse objeto devem ser:
 	peso: 88,
 	andando: false,
 	caminhouQuantosMetros: 0
-}
+};
 
 /*
 Adicione um método ao objeto `pessoa` chamado `fazerAniversario`. O método deve
