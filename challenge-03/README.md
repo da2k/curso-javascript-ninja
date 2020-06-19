@@ -34,7 +34,7 @@ for chamado.
 */
  pessoa.fazerAniversario = function() {
 	this.idade++;
-}
+};
 
 /*
 Adicione um método ao objeto `pessoa` chamado `andar`, que terá as seguintes
@@ -49,7 +49,7 @@ booleano que representa "verdadeiro";
 pessoa.andar = function(distanciaEmMetros){
 	this.caminhouQuantosMetros+=distanciaEmMetros;
 	this.andando = true;
-}
+};
 
 /*
 Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o valor
@@ -57,7 +57,7 @@ da propriedade `andando` para o valor booleano que representa "falso".
 */
 pessoa.parar = function(){
 	this.andando = false;
-}
+};
 
 /*
 Crie um método chamado `nomeCompleto`, que retorne a frase:
@@ -65,7 +65,7 @@ Crie um método chamado `nomeCompleto`, que retorne a frase:
 */
 pessoa.nomeCompleto = function() {
 	return "Olá! Meu nome é "+ this.nome +" "+ this.sobrenome+"!";
-}
+};
 
 /*
 Crie um método chamado `mostrarIdade`, que retorne a frase:
@@ -73,7 +73,7 @@ Crie um método chamado `mostrarIdade`, que retorne a frase:
 */
  pessoa.mostrarIdade = function(){
 	return "Olá, eu tenho "+ this.idade+" anos!";
-}
+};
 
 /*
 Crie um método chamado `mostrarPeso`, que retorne a frase:
@@ -81,7 +81,7 @@ Crie um método chamado `mostrarPeso`, que retorne a frase:
 */
  pessoa.mostrarPeso = function() {
 	return "Eu peso "+this.peso+" Kg.";
-}
+};
 
 /*
 Crie um método chamado `mostrarAltura` que retorne a frase:
@@ -89,7 +89,7 @@ Crie um método chamado `mostrarAltura` que retorne a frase:
 */
 pessoa.mostrarAltura = function() {
 	return "Minha altura é "+this.altura+".";
-}
+};
 
 /*
 Agora vamos brincar um pouco com o objeto criado:
@@ -102,19 +102,19 @@ pessoa.nomeCompleto();//'Olá! Meu nome é marcelo salvador!'
 Qual a idade da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.idade;//41
+ pessoa.mostrarIdade();//'Olá, eu tenho 35 anos!'
 
 /*
 Qual o peso da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.peso;//88
+pessoa.mostrarPeso();//'Eu peso 55 Kg.'
 
 /*
 Qual a altura da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.altura;//1.72
+pessoa.mostrarAltura();//'Minha altura é 1.6.'
 
 /*
 Faça a `pessoa` fazer 3 aniversários.
@@ -129,7 +129,7 @@ Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
 comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
-pessoa.idade;//44
+ pessoa.mostrarIdade();//'Olá, eu tenho 38 anos!'
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
@@ -180,28 +180,25 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
  pessoa.apresentancao = function () {
-	var masculinoOuFeminino;
-	var anoOuAnos;
-	var flexaoDistancia;
+	var masculinoOuFeminino = "a";
+	var anoOuAnos = "anos";
+	var flexaoDistancia = "metros";
+
 	if (this.sexo === "masculino") {
 		masculinoOuFeminino = "o";
-	}else {
-		masculinoOuFeminino = "a";
-	
-	}if (this.idade === 1) {
-		anoOuAnos = "ano";
-	}else {
-		anoOuAnos = "anos";
-	
-	}if(this.caminhouQuantosMetros === 1) {
-		flexaoDistancia = "metro";
-	} else {
-		flexaoDistancia = "metros";
 	}
 	
-	return "Olá, eu sou " +masculinoOuFeminino+ " " +this.nome+" "+this.sobrenome +", tenho " +this.idade+ " " +anoOuAnos+ ", " +this.altra+ ", meu peso é " +this.peso+ " e, só hoje, eu já caminhei " +this.caminhouQuantosMetros+ " "+ flexaoDistancia+"!";
+	if (this.idade === 1) {
+		anoOuAnos = "ano";
+	}
+	
+	if(this.caminhouQuantosMetros === 1) {
+		flexaoDistancia = "metro";
+	}
+	
+	return "Olá, eu sou " +masculinoOuFeminino+ " " +this.nome+" "+this.sobrenome +", tenho " +this.idade+ " " +anoOuAnos+ ", " +this.altra+ " m, meu peso é " +this.peso+ " e, só hoje, eu já caminhei " +this.caminhouQuantosMetros+ " "+ flexaoDistancia+"!";
 
-}
+};
 
 // Agora, apresente-se ;)
 pessoa.apresentancao();//'Olá, eu sou a cristiane salvador, tenho 35 anos, 1.6, meu peso é 55 e, só hoje, eu já caminhei 200 metros!'
