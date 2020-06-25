@@ -25,7 +25,7 @@ Onde VALOR é o novo valor da variável.
 function myFunction () {
   var newvar = 10;
 
-  return 'O valor da variável agora é ' + newvar
+  return "O valor da variável agora é " + newvar
 };
 
 // Invoque a função criada acima.
