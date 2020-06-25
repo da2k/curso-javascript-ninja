@@ -119,4 +119,4 @@
     console.log('O resto da divisão é: ' + mod(function (a, b) {
         return a % b;
     }));
-});
+}());
