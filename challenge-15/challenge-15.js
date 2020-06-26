@@ -91,6 +91,4 @@
   console.log(`${jenilton.getFullname()} agora tem ${jenilton.addAge(2).getAge()} anos`);
 
 
-
-
 })();
