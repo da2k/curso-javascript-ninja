@@ -24,7 +24,7 @@ Onde VALOR é o novo valor da variável.
 */
 function add() {
   novavar = 2;
-  return 'O valor da variável agora é ' + 2;
+  return 'O valor da variável agora é ' + novavar;
 }
 
 // Invoque a função criada acima.
@@ -76,15 +76,17 @@ function variosTestes(x, y, z) {
     return x;
   } else if(x !== undefined && y !== undefined && z === undefined) {
     return x + y;
-  } else if(x && y && z) {
+  } else if(x !== undefined && y !== undefined && z !== undefined) {
     return (x + y) / z;
+  } else if (x === undefined && y === undefined && z === undefined) {
+    return false;
   } else {
     return null;
   }
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-variosTestes() // null
+variosTestes() // false
 variosTestes(10) // 10
 variosTestes(10, 20) //30
 variosTestes(10, 20, 2) //15
