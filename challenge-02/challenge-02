@@ -23,17 +23,15 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 function adiciona() {
-   gato = 'VALOR';
-   return 'O valor da variável agora é VALOR.';
+   gato = 10;
+   return 'O valor da variável agora é ' + gato;
    }
 
 // Invoque a função criada acima.
 adiciona();
 
 // Qual o retorno da função? (Use comentários de bloco).
-/*
-'O valor da variável agora é VALOR.'
-*/
+/* 'O valor da variável agora é 10' */
 
 /*
 Crie uma função com as seguintes características:
@@ -46,19 +44,19 @@ function conta(x,y,z) {
    if (x === undefined || y === undefined || z === undefined){
    return 'Preencha todos os valores corretamente!';
    } return (x * y * z) + 2;
-   }
+ }
 
 // Invoque a função criada acima, passando só dois números como argumento.
 conta(2,2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-//'Preencha todos os valores corretamente!'
+// 'Preencha todos os valores corretamente!'
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 conta(2,2,2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-//10
+// 10
 
 /*
 Crie uma função com as seguintes características:
@@ -74,7 +72,7 @@ function calculo(x,y,z) {
       return x;
    } else if (x !== undefined && y !== undefined && z === undefined){
       return x + y;
-   } else if (x !== undefinded && y !== undefined && z !== undefined){
+   } else if (x !== undefined && y !== undefined && z !== undefined){
       return (x + y) / z;
    } else if (x === undefined && y === undefined && z === undefined){
       return false;
