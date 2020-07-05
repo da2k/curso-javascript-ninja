@@ -35,11 +35,11 @@ var myarray2 = ['Ninja', 52.4, true, [1, 2, 'Daciuk'], { b: 2 }];
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-console.log(myFunction2(myarray2, 0))
-console.log(myFunction2(myarray2, 1))
-console.log(myFunction2(myarray2, 2))
-console.log(myFunction2(myarray2, 3))
-console.log(myFunction2(myarray2, 4))
+console.log(myFunction2(myarray2, 0));
+console.log(myFunction2(myarray2, 1));
+console.log(myFunction2(myarray2, 2));
+console.log(myFunction2(myarray2, 3));
+console.log(myFunction2(myarray2, 4));
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -80,7 +80,7 @@ function book (bookName) {
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-console.log(book())
+console.log(book());
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
@@ -88,18 +88,18 @@ usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
 var bookName = 'Segredos do Ninja Javascript';
-console.log('O livro ' + bookName +' tem ' + book(bookName).quantidadeDePaginas + ' páginas!')
+console.log('O livro ' + bookName +' tem ' + book(bookName).quantidadeDePaginas + ' páginas!');
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log('O autor do livro  ' + bookName + ' é ' + book(bookName).autor + '.')
+console.log('O autor do livro  ' + bookName + ' é ' + book(bookName).autor + '.');
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log('O livro ' + bookName + ' foi publicado pela editora ' + book(bookName).editora + '.')
+console.log('O livro ' + bookName + ' foi publicado pela editora ' + book(bookName).editora + '.');
