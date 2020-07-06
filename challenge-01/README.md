@@ -20,10 +20,10 @@ soma *= 3;
 soma;//72
 
 // Declare uma variável chamada `souninja`, atribuindo à ela o valor booleano que representa `verdadeiro`.
-let souninja = true;
+const souninja = true;
 
 // Declare uma variável chamada `comida` que recebe um array com os valores 'arroz', 'feijão' e 'ovo'.
-let comida = ['arroz', 'feijão', 'ovo'];
+const comida = ['arroz', 'feijão', 'ovo'];
 
 // Digite a instrução que imprime o valor de 'feijao', que está na variável `comida`.
 comida[1];
