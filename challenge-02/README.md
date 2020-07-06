@@ -9,7 +9,7 @@ function soma(num1, num2){
 }
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-let profit = soma(2,3) + 5;
+const profit = soma(2,3) + 5;
 
 // Qual o valor atualizado dessa variável?
 profit;//10
