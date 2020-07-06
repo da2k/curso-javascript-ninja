@@ -4,7 +4,7 @@
     */
             /*
                 (function(){})();
-                ou 
+                ou
                 (function(){}());
             */
     /*
@@ -156,7 +156,7 @@
     - "Ceará não foi incluído :("
     */
     console.log( '\nCeará está incluído em `brasil`?' );
-    
+
     let some = brasil.some(
         function(element){
             return element === 'Ceará';
