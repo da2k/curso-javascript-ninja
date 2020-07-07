@@ -75,21 +75,13 @@ Crie uma função com as seguintes características:
 function lokura(a, b, c){
     var retorno;
 
-    if(a == undefined && b == undefined && c != undefined){
-        retorno = c;
-    }else if(a == undefined && b != undefined && c == undefined){
-        retorno = b;
-    }else if(a != undefined && b == undefined && c == undefined){
+    if(a !== undefined && b === undefined && c === undefined){
         retorno = a;
-    }else if(a != undefined && b != undefined && c == undefined){
+    }else if(a !== undefined && b !== undefined && c === undefined){
         retorno = a + b;
-    }else if(a != undefined && b == undefined && c != undefined){
-        retorno = a + c;
-    }else if(a == undefined && b!= undefined && c != undefined){
-        retorno = b + c;
-    }else if(a != undefined && b != undefined && c != undefined){
+    }else if(a !== undefined && b !== undefined && c !== undefined){
         retorno = (a + b)/c;
-    }else if(a == undefined && b == undefined & c == undefined){
+    }else if(a === undefined && b === undefined & c === undefined){
         retorno = false;
     }else{
         retorno = null;
