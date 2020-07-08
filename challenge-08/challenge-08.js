@@ -12,7 +12,6 @@ Invoque a função criada acima, passando dois números que serão somados, e mo
 o resultado no console, com a frase:
 "A soma de [VALOR 1] e [VALOR2] é igual a [RESULTADO]."
 */
-
 var v1 = 7;
 var v2 = 3;
 
