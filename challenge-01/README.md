@@ -18,7 +18,7 @@ soma++;
 soma*= 3;
 
 // Qual é o valor da variável `soma` até aqui?
-75
+72
 
 // Declare uma variável chamada `souninja`, atribuindo à ela o valor booleano que representa `verdadeiro`.
 let souninja = true;
@@ -33,7 +33,7 @@ console.log(comida[1]);
 console.log(soma == myvar); //Resultado FALSE
 
 // Digite o código que verifica se a variável `myvar` é menor ou igual à variável `soma`.
-console.log(soma <= myvar); //Resultado FALSE
+console.log(soma <= myvar); //Resultado TRUE
 
 // Crie uma função chamada `divisao` que receba como parâmetro dois números, e retorne o resultado da divisão entre eles.
 function divisao (num1, num2){
