@@ -13,7 +13,7 @@ function addNumbers (number1, number2) {
 let sum = addNumbers(25, 7) + 5;
 
 // Qual o valor atualizado dessa variável?
-37 
+37
 
 // Declare uma nova variável, sem valor.
 let any;
@@ -26,7 +26,7 @@ Onde VALOR é o novo valor da variável.
 function setValue(value) {
   any = value;
   let changedValue = "O valor da variável agora é " + any;
-  return changedValue;    
+  return changedValue;
 }
 
 // Invoque a função criada acima.
@@ -76,27 +76,23 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 
-function calc(number, number2, number3) {
-  let result = (number + number2) / number3;
-  
-  if (number === undefined) {
+const calc = (value1, value2, value3) => {
+  if(value1 === undefined) {
     return false;
-  
-  } else if (number2 === undefined && number3 === undefined) {
-    return number;
-  
-  } else if (number3 === undefined) {
-    return number + number2;
-  
-  } else if (number3 !== undefined) {
-    return result;
-  
+
+  } else if(value1  && value2 === undefined) {
+    return value1;
+
+  } else if(value1 && value2 && value3 === undefined) {
+    return value1 + value2;
+
+  } else if(value3) {
+    return (value1 + value2) / value3;
+
   } else {
     return null;
   }
-
 }
-
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 
@@ -104,4 +100,4 @@ console.log(calc()); // false
 console.log(calc(10)); // 10
 console.log(calc(10, 20)); // 30
 console.log(calc(10, 20, 30)); // 1
-
+```
