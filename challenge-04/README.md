@@ -46,7 +46,7 @@ var carro = {
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
-function mudarCor (cor){
+carro.mudarCor = function (cor){
     carro.cor = cor
 }
 
@@ -54,7 +54,7 @@ function mudarCor (cor){
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
-function obterCor (){
+carro.obterCor = function(){
     return `A cor do ${carro.modelo} é ${carro.cor}`
 }
 
@@ -62,14 +62,14 @@ function obterCor (){
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
-var obterModelo = function(){
+carro.obterModelo = function(){
     return carro.modelo
 }
 
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
 */
-var obterMarca = function(){
+carro.obterMarca = function(){
     return carro.marca
 }
 
@@ -78,7 +78,7 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 "Esse carro é um [MARCA] [MODELO]"
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
-function obterMarcaModelo (){
+carro.obterMarcaModelo = function (){
     return `Esse carro é um ${carro.marca} ${carro.modelo}`
 }
 
@@ -98,7 +98,7 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-var addPessoasNoCarro = function(pessoas){
+carro.addPessoasNoCarro = function(pessoas){
     if (carro.quantidadePessoas + pessoas === carro.assentos){
         carro.quantidadePessoas +=pessoas
         return `O carro já está lotado!`
@@ -129,39 +129,39 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-console.log(obterCor())//`A cor do Opala é Preta`
+console.log(carro.obterCor())//`A cor do Opala é Preta`
 
 // Mude a cor do carro para vermelho.
-mudarCor('vermelho')
+carro.mudarCor('vermelho')
 
 
 // E agora, qual a cor do carro?
-console.log(obterCor())//`A cor do Opala é vermelho`
+console.log(carro.obterCor())//`A cor do Opala é vermelho`
 
 // Mude a cor do carro para verde musgo.
-mudarCor('verde musgo')
+carro.mudarCor('verde musgo')
 
 // E agora, qual a cor do carro?
-console.log(obterCor())//`A cor do Opala é verde musgo`
+console.log(carro.obterCor())//`A cor do Opala é verde musgo`
 
 // Qual a marca e modelo do carro?
-console.log(obterMarcaModelo())//`Esse carro é um Chevrolet Opala`
+console.log(carro.obterMarcaModelo())//`Esse carro é um Chevrolet Opala`
 
 
 // Adicione 2 pessoas no carro.
-console.log(addPessoasNoCarro(2))//Já temos 2 pessoas no carro
+console.log(carro.addPessoasNoCarro(2))//Já temos 2 pessoas no carro
 
 // Adicione mais 4 pessoas no carro.
-console.log(addPessoasNoCarro(4))//Só cabem mais 3
+console.log(carro.addPessoasNoCarro(4))//Só cabem mais 3
 
 // Faça o carro encher.
-console.log(addPessoasNoCarro(3))//O carro já está lotado!
+console.log(carro.addPessoasNoCarro(3))//O carro já está lotado!
 
 // Tire 4 pessoas do carro.
-console.log(addPessoasNoCarro(-4))//Já temos 1 pessoa no carro
+console.log(carro.addPessoasNoCarro(-4))//Já temos 1 pessoa no carro
 
 // Adicione 10 pessoas no carro.
-console.log(addPessoasNoCarro(10))//Só cabem mais 4
+console.log(carro.addPessoasNoCarro(10))//Só cabem mais 4
 
 // Quantas pessoas temos no carro?
 console.log(carros.quantidadePessoas)//1
