@@ -9,10 +9,10 @@ function soma(a, b){
 }
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-var resultado = soma(2,3);
+var resultado = soma(2,3) + 5;
 
 // Qual o valor atualizado dessa variável?
-5
+10
 
 // Declare uma nova variável, sem valor.
 var qualquer = null;
@@ -23,15 +23,15 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 function valoriza(){
-    qualquer = "VALOR";
-    return "o valor da variavel agora e VALOR";
+    qualquer = 25;
+    return "o valor da variavel agora é " + qualquer;
 }
 
 // Invoque a função criada acima.
 valoriza();
 
 // Qual o retorno da função? (Use comentários de bloco).
-/* "o valor da variavel agora e VALOR" */
+/* "o valor da variavel agora é 25" */
 
 /*
 Crie uma função com as seguintes características:
@@ -41,7 +41,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function multiplica(a, b, c){
-    if(a == null || b == null || c == null){
+    if(a == undefined || b == undefined || c == undefined){
         return "Preencha todos os valores corretamente!";
     } else {
         return a * b * c + 2;
@@ -70,13 +70,13 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function crazy(a, b, c){
-    if(a != null && b == null && c == null){
+    if(a != undefined && b == undefined && c == undefined){
         return a;
-    }else if(a != null && b != null && c == null){
+    }else if(a != undefined && b != undefined && c == undefined){
         return a + b;
-    }else if(a != null && b != null && c != null){
+    }else if(a != undefined && b != undefined && c != undefined){
         return (a + b) / c;
-    }else if(a == null && b == null && c == null){
+    }else if(a == undefined && b == undefined && c == undefined){
         return false;
     }else{
         return null;
