@@ -4,17 +4,17 @@ o código, conforme vimos na aula anterior. Quebrar as responsabilidades
 em funções, onde cada função faça somente uma única coisa, e faça bem feito.
 
 - Remova as duplicações de código;
-- agrupe os códigos que estão soltos em funções (declarações de variáveis,
+- agrupe os códigos que estão soltos em funções (declarações de letiáveis,
 listeners de eventos, etc);
 - faça refactories para melhorar esse código, mas de forma que o mantenha com a
 mesma funcionalidade.
 */
 
-var $visor = document.querySelector('[data-js="visor"]');
-var $buttonsNumbers = document.querySelectorAll('[data-js="button-number"]');
-var $buttonsOperations = document.querySelectorAll('[data-js="button-operation"]');
-var $buttonCE = document.querySelector('[data-js="button-ce"]');
-var $buttonEqual = document.querySelector('[data-js="button-equal"]');
+let $visor = document.querySelector('[data-js="visor"]');
+let $buttonsNumbers = document.querySelectorAll('[data-js="button-number"]');
+let $buttonsOperations = document.querySelectorAll('[data-js="button-operation"]');
+let $buttonCE = document.querySelector('[data-js="button-ce"]');
+let $buttonEqual = document.querySelector('[data-js="button-equal"]');
 
 Array.prototype.forEach.call($buttonsNumbers, function(button) {
   button.addEventListener('click', handleClickNumber, false);
@@ -39,8 +39,8 @@ function handleClickCE() {
 }
 
 function isLastItemAnOperation(number) {
-  var operations = ['+', '-', 'x', '÷'];
-  var lastItem = number.split('').pop();
+  let operations = ['+', '-', 'x', '÷'];
+  let lastItem = number.split('').pop();
   return operations.some(function(operator) {
     return operator === lastItem;
   });
@@ -55,12 +55,12 @@ function removeLastItemIfItIsAnOperator(number) {
 
 function handleClickEqual() {
   $visor.value = removeLastItemIfItIsAnOperator($visor.value);
-  var allValues = $visor.value.match(/\d+[+x÷-]?/g);
+  let allValues = $visor.value.match(/\d+[+x÷-]?/g);
   $visor.value = allValues.reduce(function(accumulated, actual) {
-    var firstValue = accumulated.slice(0, -1);
-    var operator = accumulated.split('').pop();
-    var lastValue = removeLastItemIfItIsAnOperator(actual);
-    var lastOperator = isLastItemAnOperation(actual) ? actual.split('').pop() : '';
+    let firstValue = accumulated.slice(0, -1);
+    let operator = accumulated.split('').pop();
+    let lastValue = removeLastItemIfItIsAnOperator(actual);
+    let lastOperator = isLastItemAnOperation(actual) ? actual.split('').pop() : '';
     switch(operator) {
       case '+':
         return ( Number(firstValue) + Number(lastValue) ) + lastOperator;

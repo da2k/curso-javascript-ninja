@@ -28,7 +28,7 @@ console.log( '\nJust module of division by 2 or 3:' );
 // ?
 
 /*
-Declare uma variável chamada operation que receba, do array criado acima,
+Declare uma letiável chamada operation que receba, do array criado acima,
 um valor reduzido pela seguinte operação:
 - Somar 1 ao último valor retornado;
 - Multiplicar o resultado pelo valor atual.
@@ -40,7 +40,7 @@ console.log( '\nOperation:' );
 
 /*
 Faça o mesmo cálculo passado acima, mas começando do último item para o
-primeiro. O nome da variável deve ser operation2. Mostre o resultado no
+primeiro. O nome da letiável deve ser operation2. Mostre o resultado no
 console.
 */
 console.log( '\nOperation 2:' );
@@ -58,7 +58,7 @@ console.log( '\nSeu nome na língua do "P":' );
 // ?
 
 /*
-Crie uma variável chamada `inversedName`, que reduzirá o array em uma string
+Crie uma letiável chamada `inversedName`, que reduzirá o array em uma string
 e atribuirá o seu nome invertido (usando o array criado acima).
 */
 console.log( '\nInversed Name:' );

@@ -1,8 +1,8 @@
 'use strict';
 
-var express = require('express');
-var router = express.Router();
-var data = [];
+let express = require('express');
+let router = express.Router();
+let data = [];
 
 router.get('/', function(req, res) {
   res.json(data);

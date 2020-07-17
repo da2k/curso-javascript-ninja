@@ -1,8 +1,8 @@
 // Envolva todo o código desse arquivo em uma IIFE (incluindo esse comentário).
 
 /*
-Crie uma variável chamada `once`, que recebe `false` como seu valor.
-Crie um loop que execute enquanto essa variável for verdadeira. Dentro do
+Crie uma letiável chamada `once`, que recebe `false` como seu valor.
+Crie um loop que execute enquanto essa letiável for verdadeira. Dentro do
 loop, mostre no console a mensagem:
 'Entrou ao menos uma vez!'
 Qual loop você deve usar para que essa mensagem seja mostrada no console?
@@ -20,7 +20,7 @@ para o nome, idade, peso e data de nascimento dessa pessoa.
 Use um loop para percorrer o objeto criado acima, mostrando no console
 a frase:
 'The [PROPERTY] of person is [VALUE]'
-Aproveite e crie uma variável `counter` que vai contar quantas propriedades
+Aproveite e crie uma letiável `counter` que vai contar quantas propriedades
 esse objeto tem.
 Após o loop, mostre a frase:
 'The person has [COUNTER] properties'

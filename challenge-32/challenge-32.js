@@ -3,7 +3,7 @@ Já temos as funcionalidades de adicionar e remover um carro. Agora, vamos persi
 salvando-os temporariamente na memória de um servidor.
 
 Nesse diretório do `challenge-32` tem uma pasta `server`. É um servidor simples, em NodeJS, para 
-que possamos utilizar para salvar as informações dos nossos carros.
+que possamos utilizar para sallet as informações dos nossos carros.
 
 Para utilizá-lo, você vai precisar fazer o seguinte:
 

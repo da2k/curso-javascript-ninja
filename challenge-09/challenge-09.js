@@ -5,16 +5,16 @@ indentação correta do código, para ficar dentro da IIFE.
 
 /*
 Analise as funções abaixo (`myFunction`, `myFunction2` e `myFunction3`, e
-ajuste o posicionamento das variáveis e funções internas, para que os códigos
+ajuste o posicionamento das letiáveis e funções internas, para que os códigos
 dentro de `console.log` que estão retornando `undefined` retornem o valor
-correto da variável ou função chamada.
+correto da letiável ou função chamada.
 */
 function myFunction() {
     console.log( 'Na função `myFunction`, o primeiro número é', number1 );
     console.log( 'Na função `myFunction`, o segundo número é', number2 );
-    var number1 = 10;
+    let number1 = 10;
     return number1 + number2;
-    var number2 = 20;
+    let number2 = 20;
 }
 myFunction();
 
@@ -23,11 +23,11 @@ myFunction();
 */
 function myFunction2() {
     console.log( 'A soma de 10 e 20 é igual a', sum ? sum() : undefined );
-    var sum = function sum() {
+    let sum = function sum() {
         return number1 + number2;
     };
-    var number1 = 10;
-    var number2 = 20;
+    let number1 = 10;
+    let number2 = 20;
     return sum();
 }
 myFunction2();
@@ -37,9 +37,9 @@ myFunction2();
 */
 function myFunction3() {
     console.log( 'A soma de 40 e 50 é igual a', sum() );
-    var number2 = 50;
+    let number2 = 50;
     console.log( 'Na função myFunction3, number1 é igual a', number1 );
-    var number1 = 40;
+    let number1 = 40;
     return sum();
     function sum() {
         return number1 + number2;
@@ -63,7 +63,7 @@ que foram passadas para a primeira função `calculator`.
 // ?
 
 /*
-Declare uma variável chamada `sum`, e atribua a ela a função `calculator`,
+Declare uma letiável chamada `sum`, e atribua a ela a função `calculator`,
 passando dois números por parâmetro.
 */
 // ?
@@ -81,14 +81,14 @@ console.log( 'O resultado da soma é:' );
 // ?
 
 /*
-Agora declare outra variáveis chamadas `subtraction`, `multiplication`,
+Agora declare outra letiáveis chamadas `subtraction`, `multiplication`,
 `division` e `mod`, e atribua à elas `calculator`, passando números
 diferentes para cada chamada.
 */
 // ?
 
 /*
-Mostre as variáveis acima no `console` (uma chamada de console por variável),
+Mostre as letiáveis acima no `console` (uma chamada de console por letiável),
 criando a função de `callback` que faz o cálculo para subração, multiplicação,
 divisão e módulo (resto de divisão), conforme a função utilizada.
 As suas respostas devem estar abaixo dos `console.log` referentes à cada

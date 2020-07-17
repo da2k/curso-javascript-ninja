@@ -5,7 +5,7 @@
 */
 
 /*
-Declare uma variável chamada `name` que receba seu primeiro nome.
+Declare uma letiável chamada `name` que receba seu primeiro nome.
 Mostre no console todas as letras do seu nome separadas, com a frase:
 - "[LETRA] é a [POSIÇÃO]ª letra do meu nome."
 Ex: no caso do nome ser "Fernando", deve mostrar as frases:
@@ -17,7 +17,7 @@ console.log( 'As letras do seu nome:' );
 // ?
 
 /*
-- Declare uma variável chamada `fullName`, que receba seu nome completo,
+- Declare uma letiável chamada `fullName`, que receba seu nome completo,
 escrito no formato de slug (caixa baixa e palavras separadas por um traço).
 Ex: o nome "Fernando Daciuk" ficaria "fernando-daciuk"
 - Faça a primeira letra de cada nome ficar em caixa alta, e troque o traço
@@ -58,7 +58,7 @@ console.log( '\nParte de uma string:' );
 // ?
 
 /*
-Declare uma variável chamada `myName`, que receba o seu primeiro nome,
+Declare uma letiável chamada `myName`, que receba o seu primeiro nome,
 escrito de forma natural.
 Mostre no console esse nome, mas com as letras intercalando entre maiúsculas
 e minúsculas.

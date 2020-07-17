@@ -21,7 +21,7 @@ Só passe para o próximo problema quando tiver resolvido o anterior :)
 */
 // ?
 
-var $a = new DOM('[data-js="link"]');
+let $a = new DOM('[data-js="link"]');
 $a.on('click', function(e) {
   e.preventDefault();
   console.log('clicou');

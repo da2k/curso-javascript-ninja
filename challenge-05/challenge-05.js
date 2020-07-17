@@ -1,8 +1,8 @@
 /*
-Crie uma variável qualquer, que receba um array com alguns valores aleatórios
+Crie uma letiável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
-var myArray = ['Alexsander', 27, true, 'Javascript Ninja', undefined];
+let myArray = ['Alexsander', 27, true, 'Javascript Ninja', undefined];
 
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
@@ -27,9 +27,9 @@ function myFunction2(array, index) {
 };
 
 /*
-Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
+Declare uma letiável que recebe um array com 5 valores, de tipos diferentes.
 */
-var myArray2 = ['Javascript', 10, undefined, 'Alex', {a: 2}];
+let myArray2 = ['Javascript', 10, undefined, 'Alex', {a: 2}];
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
@@ -43,7 +43,7 @@ console.log(myFunction2(myArray2, 4));
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
-livro. Dentro dessa função, declare uma variável que recebe um objeto com as
+livro. Dentro dessa função, declare uma letiável que recebe um objeto com as
 seguintes características:
 - esse objeto irá receber 3 propriedades, que serão nomes de livros;
 - cada uma dessas propriedades será um novo objeto, que terá outras 3
@@ -57,7 +57,7 @@ os livros.
 */
 // Esses livros são reais e eu os recomendo... xD
 function book(bookName) {
-    var allBooks = { 
+    let allBooks = { 
         'O Códice Secreto': {
             quantidadePaginas: 301,
             autor: 'Lev Grossman',
@@ -89,7 +89,7 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-var bookName = 'Inferno';
+let bookName = 'Inferno';
 console.log('O livro ' + bookName + ' tem ' + book(bookName).quantidadePaginas + ' páginas!');
 
 /*
@@ -97,7 +97,7 @@ Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-var autor = 'Dan Brown'; 
+let autor = 'Dan Brown'; 
 console.log('O autor do livro ' + bookName + ' é ' + autor + '.' ); 
 
 /*

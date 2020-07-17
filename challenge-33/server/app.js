@@ -1,11 +1,11 @@
 'use strict';
 
-var express = require('express');
-var cors = require('cors');
-var bodyParser = require('body-parser');
-var app = express();
-var port = process.env.PORT || 3000;
-var routes = require('./routes');
+let express = require('express');
+let cors = require('cors');
+let bodyParser = require('body-parser');
+let app = express();
+let port = process.env.PORT || 3000;
+let routes = require('./routes');
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));

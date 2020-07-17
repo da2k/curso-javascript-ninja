@@ -20,7 +20,7 @@
 
   /*
   Crie uma função chamada `sum`. Essa função pode receber uma lista de
-  parâmetros variável, e deverá retornar a soma de todos eles.
+  parâmetros letiável, e deverá retornar a soma de todos eles.
   Não use estruturas de repetição para somar os argumentos.
   Na primeira linha, dentro da função, deixe um console.log para mostrar todos
   os parâmetros passados para essa função.
@@ -29,13 +29,13 @@
 
   /*
   Mostre no console que a função acima funciona, invocando-a em 3 console.log
-  diferentes, com quantidades variáveis de parâmetros passados.
+  diferentes, com quantidades letiáveis de parâmetros passados.
   */
   console.log( '\nSomar alguns números:' );
   // ?
 
   /*
-  Declare uma variável chamada `userEntry`, que irá receber alguns valores
+  Declare uma letiável chamada `userEntry`, que irá receber alguns valores
   entrados pelo usuário. Mostre para o usuário a seguinte frase:
   "Entre com alguns números que serão somados:"
   */
@@ -57,7 +57,7 @@
 
   /*
   Usando a função acima, faça a limpeza dos valores entrados pelo usuário,
-  atribuindo o resultado à uma variável `numbers`.
+  atribuindo o resultado à uma letiável `numbers`.
   */
   console.log( '\nEntrada do usuário limpa. Somente números:' );
   // ?

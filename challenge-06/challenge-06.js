@@ -1,20 +1,20 @@
 /*
 Vamos falar um pouco sobre "Futebol". Escolha um campeonato estadual qualquer
 para começar o desafio.
-Declare uma variável chamada `championship` que receberá o nome do campeonato,
+Declare uma letiável chamada `championship` que receberá o nome do campeonato,
 e imprima o nome desse campeonato no console.
 */
-var = championship; 
+let = championship; 
 console.log(championship);
 
 /*
-Declare uma variável chamada `teams`, que receberá um array com 5 elementos.
+Declare uma letiável chamada `teams`, que receberá um array com 5 elementos.
 Os elementos serão nomes de times do campeonato escolhido, e os nomes devem
 estar na ordem em que eles aparecem na tabela no momento da solução desse
 desafio.
 */
 // ?
-var teams = ['Atlético MG', 'Cruzeiro', 'Santos', 'Corinthians', 'São Paulo',];
+let teams = ['Atlético MG', 'Cruzeiro', 'Santos', 'Corinthians', 'São Paulo',];
 console.log('Times que estão participando do campeonato:', teams );
 
 /*
@@ -54,7 +54,7 @@ console.log(showTeamPosition(7));
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
 repetição "while".
 */
-var numero = 20;
+let numero = 20;
 while(numero <= 30) {
     console.log(numero++); 
 }
@@ -72,7 +72,7 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 function convertToHex(color) {
-    var hexa; 
+    let hexa; 
     switch(color) {
         case 'red':
         hexa =  '#F0000';

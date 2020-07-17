@@ -7,7 +7,7 @@
 /*
 Em todos os exercícios desse desafio, nós vamos utilizar expressões
 regulares! Para isso, iremos usar o texto abaixo. Coloque-o em uma
-variável chamada `text`:
+letiável chamada `text`:
 "Manuel Marques de Sousa, Conde de Porto Alegre (Rio Grande, 13 de junho de 1804 – Rio de Janeiro, 18 de julho de 1875), apelidado de "O Centauro de Luvas", foi um militar, político, abolicionista e monarquista brasileiro."
 */
 // ?
@@ -72,7 +72,7 @@ console.log( '\nMeses representados por números:' );
 // ?
 
 /*
-Agora, declare uma variável chamada `regexDate` que irá receber a expressão
+Agora, declare uma letiável chamada `regexDate` que irá receber a expressão
 regular que irá fazer o match com as datas. Crie grupos de captura para o
 dia, o mês e o ano. Para os meses, você pode fazer o match somente com os
 meses que estão no texto, não precisa adicionar todos.

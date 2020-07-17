@@ -25,7 +25,7 @@ as seguintes características:
 
 /*
 Crie 3 novos objetos usando o construtor acima. Os objetos serão novas
-pessoas. As variáveis deverão ser o primeiro nome da pessoa. Passe os
+pessoas. As letiáveis deverão ser o primeiro nome da pessoa. Passe os
 parâmetros corretamente para o construtor para criar as novas pessoas.
 Mostre as 3 novas pessoas criadas no console (Um console.log por pessoa).
 */

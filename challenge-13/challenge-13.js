@@ -16,7 +16,7 @@ Cada array deve conter os estados dessa região.
 // ?
 
 /*
-Crie uma variável chamada `brasil`, que irá receber as duas regiões
+Crie uma letiável chamada `brasil`, que irá receber as duas regiões
 concatenadas. Mostre o `brasil` no console.
 */
 console.log( '\nAlguns Estados do Brasil:' );
@@ -64,7 +64,7 @@ console.log( '\nEstados do Nordeste:' );
 // ?
 
 /*
-Remova de `brasil` os estados do `sudeste`, colocando-os em uma variável
+Remova de `brasil` os estados do `sudeste`, colocando-os em uma letiável
 chamada `newSudeste`.
 */
 // ?
@@ -104,7 +104,7 @@ console.log( '\nnewBrasil:' );
 
 /*
 Percorra o array `brasil` e verifique se os estados tem mais de 7 letras cada,
-atribuindo o resultado à uma variável. Se tiver, mostre no console a frase:
+atribuindo o resultado à uma letiável. Se tiver, mostre no console a frase:
 - "Sim, todos os estados tem mais de 7 letras!"
 Senão, mostre no console:
 - "Nem todos os estados tem mais de 7 letras!"
@@ -114,7 +114,7 @@ console.log( '\nTodos os estados de `brasil` tem mais de 7 letras?' );
 
 /*
 Percorra o array `brasil` e verifique se o Ceará está incluído, atribuindo o
-resultado à uma variável. Se esse estado existir no array, mostrar a frase no
+resultado à uma letiável. Se esse estado existir no array, mostrar a frase no
 console:
 - "Ceará está incluído!"
 Senão, mostrar a frase:
@@ -127,7 +127,7 @@ console.log( '\nCeará está incluído em `brasil`?' );
 Percorra o array `newBrasil` e crie um novo array que some 1 no ID de cada
 objeto desse array, e adicione a frase abaixo na propriedade `estado`:
 - "[ESTADO] pertence ao Brasil."
-Atribua o novo array a uma variável chamada `map`.
+Atribua o novo array a uma letiável chamada `map`.
 */
 // ?
 
@@ -139,7 +139,7 @@ console.log( '\nnewBrasil agora com mais informações:' );
 
 /*
 Filtre o array criado acima, retornando somente os estados que tiverem
-ID par. Atribua o valor à uma variável chamada `filter`.
+ID par. Atribua o valor à uma letiável chamada `filter`.
 */
 // ?
 
