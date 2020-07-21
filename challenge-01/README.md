@@ -1,42 +1,117 @@
-# Desafio Semana #1
+/*
+Envolva todo o código desse desafio em uma IIFE.
+*/
 
-```js
-// Declarar uma variável chamada `myvar`, sem valor.
-?
+(function() {
 
-// Após declarada, atribua o valor 10 à variável `myvar`.
-?
+/*
+Crie um array chamado numberObjects. Esse array deve ter 10 elementos. Cada
+elemento será um objeto no formato:
+{ number: [NUMBER] }
+Os números devem ser de 1 a 10.
+Mostre esse array no console.
+*/
 
-// Declare uma nova variável chamada `soma`, e adicione uma instrução somando os valores 15 e 8.
-?
+var numberObjects = []
 
-// Atribua à variável `soma` todo o valor dela, somando 1, usando o operador de soma abreviado.
-?
+for(var i =  0; i <= 10; i++){
+ numberObjects.push({number: i})
+}
+console.log( 'Number Objects Array:', numberObjects );
 
-// Atribua à variável `soma` todo o valor dela, multiplicando por 3, usando o operador de multiplicação abreviado.
-?
+/*
+Crie um array chamado `justNumbers`, que terá como elementos somente os
+números do array criado acima. Mostre esse novo array no console.
+*/
 
-// Qual é o valor da variável `soma` até aqui?
-?
 
-// Declare uma variável chamada `souninja`, atribuindo à ela o valor booleano que representa `verdadeiro`.
-?
+var justNumbers = numberObjects.map(function(item){
+    return item.number;
+  })
+  console.log("justNumbers", justNumbers)
 
-// Declare uma variável chamada `comida` que recebe um array com os valores 'arroz', 'feijão' e 'ovo'.
-?
+/*
+Crie um novo array chamado `justMod2Or3`, que receberá do array criado acima
+somente os números que forem divisíveis por 2 ou 3. Mostre esse novo array
+no console.
+*/
 
-// Digite a instrução que imprime o valor de 'feijao', que está na variável `comida`.
-?
+var justMod2Orr3 = justNumbers.filter(function(item){
+    return item % 2 === 0 || item % 3 === 0
+  })
+  console.log({justMod2Orr3})
 
-// Digite o código que verifica se a variável `soma' é igual a variável `myvar` (testando também o tipo).
-?
+/*
+Declare uma variável chamada operation que receba, do array criado acima,
+um valor reduzido pela seguinte operação:
+- Somar 1 ao último valor retornado;
+- Multiplicar o resultado pelo valor atual.
+O cálculo deve começar com zero.
+Mostre o resultado no console.
+*/
+var operation = justMod2Orr3.reduce(function(acc, curr){
+  return (acc + 1) * curr
+}, 0)
+console.log({operation})
+/*
+Faça o mesmo cálculo passado acima, mas começando do último item para o
+primeiro. O nome da variável deve ser operation2. Mostre o resultado no
+console.
+*/
 
-// Digite o código que verifica se a variável `myvar` é menor ou igual à variável `soma`.
-?
+var operation2 = justMod2Orr3.reduceRight(function(acc, curr){
+    return (acc + 1) * curr
+  }, 0)
+  console.log({operation2})
 
-// Crie uma função chamada `divisao` que receba como parâmetro dois números, e retorne o resultado da divisão entre eles.
-?
+/*
+Crie um array chamado `name`. Cada elemento desse array deve ser uma sílaba
+do seu nome. Vamos reduzir esse array, juntando todas as sílabas, mas usando
+a "língua do P".
+PS.: Lembra da língua do "P"? Não? A língua do "P" é uma brincadeira
+infantil, onde você coloca a letra "P" antes de cada sílaba de uma palavra
+falada, como se você estivesse falando em código xD
+*/
+console.log( '\nSeu nome na língua do "P":' );
+// ?
 
-// Invoque a função criada acima, passando os parâmetros 10 e 2.
-?
-```
+/*
+Crie uma variável chamada `inversedName`, que reduzirá o array em uma string
+e atribuirá o seu nome invertido (usando o array criado acima).
+*/
+console.log( '\nInversed Name:' );
+// ?
+
+/*
+Mostre no console o array `numberObjects`.
+*/
+console.log( '\nNumber objects' );
+// ?
+
+/*
+Verifique se existem em algum índice de numberObjects um objeto ìgual a
+{ number: 2 }. Se houver, mostre no console:
+- "Existe um objeto { number: 2 } em numberObjects!"
+Senão, mostre a frase:
+- "Não existe um objeto { number: 2 } em numberObjects :("
+Consegue prever o resultado? Deixe uma mensagem no console tentando explicar
+o que acontece ;)
+*/
+console.log( '\nExiste um { number: 2 } em numberObjects?' );
+// ?
+
+/*
+Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
+será que obtemos um resultado diferente? Faça a busca a partir do índice 2.
+*/
+console.log( '\nE buscando a partir do último índice, o { number: 2 } existe?' );
+// ?
+
+/*
+Verifique se `justMod2Or3` é um array. Se for, mostre-o no console, no
+formato de String.
+*/
+console.log( '\njustMod2Or3 é um array? Se for, a representação dele em String é:' );
+// ?
+
+})()

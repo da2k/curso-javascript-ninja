@@ -74,3 +74,30 @@ a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
 // ?
+
+
+// let array = [1,2,3,,4,5]
+
+// function arrayComParametro(parametro){ return parametro }
+
+// console.log(function Myarray(array)[1])
+
+// function doisParametros([arr, index){ return arr[index]; }
+
+// let arrayDiferente = [ "julia", 24, dancar(), true, { signo: touro }]
+
+// console.log(doisParametros(arrayDiferente, 0)); console.log(doisParametros(arrayDiferente, 1)); console.log(doisParametros(arrayDiferente, 2)); console.log(doisParametros(arrayDiferente, 3)); console.log(doisParametros(arrayDiferente, 4));
+
+// function book(nomeDoLivro){ let obj = { livro1: { quantidadePaginas: 12, autor: "autor1", editora: "editora1", }, livro2: { quantidadePaginas: 20, autor: "autor2", editora: "editora2", }, livro3: { quantidadePaginas: 30, autor: "autor3", editora: "editora3", } };
+
+// if( !nomeDoLivro ) { return book; } return obj.[nomeDoLivro] };
+
+// console.log(book())
+
+// console.log(obj.[nomeDoLivro.quantidadePaginas])
+
+// var bookName = "livro1" console.log('O livro ' + bookName + ' tem ' + book(bookName).quantidadePaginas + ' páginas');
+
+// var bookName = "livro1" console.log('O autor do livro' + bookName + ' é ' book(bookName).autor ' . ' );
+
+// var bookName = "livro1" console.log('O livro' + bookName + ' foi publicado pela editora ' book(bookName).editora ' . ' );
