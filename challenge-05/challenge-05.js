@@ -55,23 +55,15 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-function book(name){
+function book(bookName){
+
     var books = {
-        jason: { quantidadePaginas: 300, autor: 'pedro', editora: 'hebert'},
-        donald: { quantidadePaginas: 250, autor: 'lucas', editora: 'fenad'},
-        crazy: { quantidadePaginas: 400, autor: 'jesus', editora: 'deus'}
+        'A vingança de Jason':  { quantidadePaginas: 300, autor: 'Pedro Eduardo', editora: 'Hebert'},
+        'A História de Donald': { quantidadePaginas: 250, autor: 'Anakin Dath', editora: 'Fenad'},
+        'Crazy Duck':           { quantidadePaginas: 400, autor: 'Lucas Skywalker', editora: 'GodBook'}
     }
 
-    if(name === undefined){
-        return books;
-    }else if(name === 'jason'){
-        return books.jason;
-    }else if(name === 'donald'){
-        return books.donald;
-    }else if(name === 'crazy'){
-        return books.crazy;
-    }
-
+    return !bookName ? books : books[bookName];
 }
 
 /*
@@ -84,18 +76,19 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-console.log( 'O livro jason tem' +  book('jason').quantidadePaginas + ' páginas!' );
+var bookName = 'A vingança de Jason';
+console.log( 'O livro ' + bookName + ' tem ' +  book(bookName).quantidadePaginas + ' páginas!' );
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log( "O autor do livro donald é " + book('donald').autor + ".");
+console.log( "O autor do livro " + bookName + " é " + book(bookName).autor + ".");
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log("O livro crazy foi publicado pela editora " + book('crazy').editora + ".");
+console.log("O livro " + bookName + " foi publicado pela editora " + book(bookName).editora + ".");
