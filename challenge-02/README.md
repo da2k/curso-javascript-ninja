@@ -91,3 +91,4 @@ outraFuncao(); // false;
 outraFuncao(1); // 1;
 outraFuncao(7,3) // 10;
 outraFuncao(7,3,5) // 2;
+
