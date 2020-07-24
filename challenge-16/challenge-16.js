@@ -1,3 +1,6 @@
+(function(){
+'use strict'
+
 /*
 1. Envolva todo o conteúdo desse desafio em uma IIFE.
 2. Adicione a diretiva 'use strict';
@@ -14,7 +17,11 @@ Ex: no caso do nome ser "Fernando", deve mostrar as frases:
 E assim por diante, até a última.
 */
 console.log( 'As letras do seu nome:' );
-// ?
+var name = 'Maicon'
+
+for(var i = 0; i < name.length; i++){
+    console.log(`${name.charAt(i)} é a ${i + 1}° letra do meu nome`)
+}
 
 /*
 - Declare uma variável chamada `fullName`, que receba seu nome completo,
@@ -29,7 +36,13 @@ curso para fazer isso funcionar corretamente :)
 console.log para cada formato.
 */
 console.log( '\nNome convertido à partir de um slug:' );
-// ?
+var fullName = 'maicon-pereira-de-souza'
+
+var upperCaseFullName = fullName.split('-').map(function(name){
+    return (name.charAt(0).toUpperCase() + name.slice(1))
+}).join(' ')
+
+console.log(upperCaseFullName)
 
 /*
 - Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
@@ -41,21 +54,35 @@ O resultado final deve ficar mais ou menos assim:
 5 nomes foi somente uma sugestão ;)
 */
 console.log( '\nMeus amigos:' );
-// ?
+var namesArray = ['Bruno', 'Bianca', 'Monique', 'Ivan', 'Léo', 'Emanuelle']
+var newNamesArray = namesArray.reduce(function(acc, nomes, indice){
+    if(indice !== namesArray.length - 1){
+        return acc + (', ' + nomes)
+    }
+    return acc + (' e ' + nomes + ' são meus amigos')
+    
+},)
+
+console.log(newNamesArray)
 
 /*
 Usando o replace(), faça a string "Roberto" virar "Roberta".
 Mostre o resultado no console.
 */
 console.log( '\nEra "Roberto", agora é:' );
-// ?
+var roberto = 'Roberto'
 
+var roberta = roberto.replace('to', 'ta')
+
+console.log(roberta)
 /*
 Mostre no console a parte "nando" da string "Fernando". Use o método que
 faz a busca do final para o início da string.
 */
 console.log( '\nParte de uma string:' );
-// ?
+var fernando = 'Fernando'
+var nando = fernando.substring(fernando.length, 3)
+console.log(nando)
 
 /*
 Declare uma variável chamada `myName`, que receba o seu primeiro nome,
@@ -67,4 +94,25 @@ de qualquer tamanho, escrito de qualquer forma.
 Ex.: Nomes que deveriam funcionar: "Fernando", "RoBertO", "gabriEla", etc.
 */
 console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
-// ?
+var myName = 'Maicon'
+var myName2 = 'maria'
+var myName3 = 'FERNANDO'
+var myName4 = 'oTaViO'
+
+
+function interval (nome){
+    var newNameInterval = ''
+    for (var i = 0; i < nome.length; i++){
+     newNameInterval += i % 2 === 0 ?  nome[i].toUpperCase() :  nome[i].toLowerCase()
+       
+    }
+ console.log(newNameInterval)
+}
+
+interval(myName)
+interval(myName2)
+interval(myName3)
+interval(myName4)
+
+
+}())
