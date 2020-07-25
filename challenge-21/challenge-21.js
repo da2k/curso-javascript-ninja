@@ -21,23 +21,28 @@
   var $btnStart = document.querySelector('[data-js="btn-start"]');
   var $btnStop = document.querySelector('[data-js="btn-stop"]');
   var $btnReset = document.querySelector('[data-js="btn-reset"]');
+  var stopId;
   
-  $btnStart.addEventListener('click', function() {
-    function tempo() {
-      $inputTempo.value++;
-    
-      var stopTempo = setTimeout(tempo, 1000);
+  $btnStart.addEventListener('click', startTempo, false);
+  
+  $btnStop.addEventListener('click', stopTempo, false);
       
-      $btnStop.addEventListener('click', function() {
-        clearTimeout(stopTempo);
-      }, false);
-      
-      $btnReset.addEventListener('click', function() {
-        $inputTempo.value = 0;
-      }, false);
-    }
+  $btnReset.addEventListener('click', resetTempo, false);
+  
+  function startTempo() {
+    $inputTempo.value++;
     
-    tempo();
-  }, false);
-
+    stopId = setTimeout(startTempo, 1000);
+  }
+  
+  function stopTempo() {
+    clearTimeout(stopId);
+  }
+  
+  function resetTempo() {
+    stopTempo();
+    
+    $inputTempo.value = 0;
+  }
+  
 })(window, document);
