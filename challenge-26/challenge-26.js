@@ -21,16 +21,21 @@ Só passe para o próximo problema quando tiver resolvido o anterior :)
 */
 
 function DOM(strNode){
+
   this.element = document.querySelectorAll(strNode);
 
   this.on = (trigger, fn) => {
-    return addEventListener(trigger, fn);
+    this.element.forEach((elemento) => {
+      elemento.addEventListener(trigger, fn, false);
+    });
   }
 
-  this.get = () => {return this.element};
+  this.get = () => this.element;
 
   this.off = (trigger, fn) => {
-    return removeEventListener(trigger, fn);
+    this.element.forEach((elemento) => {
+      elemento.removeEventListener(trigger, fn, false);
+    });
   }
 }
 
