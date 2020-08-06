@@ -1,3 +1,5 @@
+(function(){
+'use strict'
 /*
 1. Envolva todo o conteúdo desse desafio em uma IIFE.
 2. Adicione a diretiva 'use strict';
@@ -15,7 +17,15 @@ eles! Use um console.log para cada CPF.
 - "101.123-131x32"
 */
 console.log( 'Limpando CPFs:' );
-// ?
+
+function cleanCPF(cpfBruto) {
+	return cpfBruto.match(/\d/g).join('');
+}
+
+console.log(cleanCPF("049-214 3421-1"));
+console.log(cleanCPF("210.458.522-05"));
+console.log(cleanCPF("735 500 794 - 22"));
+console.log(cleanCPF("101.123-131x32"));
 
 /*
 Usando os CPFs limpos acima, deixe-os com a formatação correta de CPF.
@@ -23,8 +33,10 @@ Ex.: "999.999.999-99"
 Mostre o resultado no console.
 */
 console.log( '\nFormatando CPFs corretamente:' );
-// ?
-
+console.log(cleanCPF("049-214 3421-1").replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, '\$1.\$2.\$3-\$4'));
+console.log(cleanCPF("210.458.522-05").replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, '\$1.\$2.\$3-\$4'));
+console.log(cleanCPF("735 500 794 - 22").replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, '\$1.\$2.\$3-\$4'));
+console.log(cleanCPF("101.123-131x32").replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, '\$1.\$2.\$3-\$4'));
 /*
 Crie uma expressão regular que faça match com as palavras "junho" ou "julho",
 usando o mínimo de caracteres possíveis na regex.
@@ -87,3 +99,4 @@ corretas, para depois aplicar no código ;)
 */
 console.log( '\nFazer replace dos textos das tags:' );
 // ?
+})();
