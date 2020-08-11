@@ -31,7 +31,9 @@ function addValue() {
 addValue();
 
 // Qual o retorno da função? (Use comentários de bloco).
-// o valor da variável agora é VALOR.
+/**
+o valor da variável agora é VALOR.
+*/
 
 /*
 Crie uma função com as seguintes características:
