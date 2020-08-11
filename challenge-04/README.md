@@ -37,7 +37,7 @@ Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 isTruthy(1);
 isTruthy([]);
 isTruthy({});
-isTruthy("oi");
+isTruthy("ooi");
 isTruthy(["batata"]);
 isTruthy({batata: 1});
 isTruthy(function() {});
