@@ -1,3 +1,5 @@
+(function( doc ) {
+  'use strict';
 /*
 Vamos desenvolver mais um projeto. A ideia é fazer uma mini-calculadora.
 As regras são:
@@ -23,3 +25,70 @@ multiplicação (x), então no input deve aparecer "1+2x".
 input;
 - Ao pressionar o botão "CE", o input deve ficar zerado.
 */
+var $inputCalculo = doc.querySelector( "input[type='text']" );
+var $ce = doc.querySelector( '[data-js="ce"]' );
+
+$ce.addEventListener('click', function(evt) {
+  evt.preventDefault();
+  $inputCalculo.value = '0';
+})
+
+var $btnValue = doc.querySelectorAll( '[data-js="value"]' );
+var $btnSoma = doc.querySelector( '[data-js="soma"]' );
+var $btnSub = doc.querySelector( '[data-js="sub"]' );
+var $btnMult = doc.querySelector( '[data-js="mult"]' );
+var $btnDivider = doc.querySelector( '[data-js="divider"]' );
+var $btnResult = doc.querySelector( '[data-js="result"]' );
+
+$btnSoma.addEventListener('click', function(evt) {
+    evt.preventDefault();
+    $inputCalculo.value += $btnSoma.textContent;
+    var testeValor = $inputCalculo.value.replace(/\D+$/, '+');
+    $inputCalculo.value = testeValor;
+});
+$btnSub.addEventListener('click', function(evt) {
+    evt.preventDefault();
+    $inputCalculo.value += $btnSub.textContent;
+    var testeValor = $inputCalculo.value.replace(/\D+$/, '-');
+    $inputCalculo.value = testeValor;
+});
+$btnMult.addEventListener('click', function(evt) {
+    evt.preventDefault();
+    $inputCalculo.value += $btnMult.textContent;
+    var testeValor = $inputCalculo.value.replace(/\D+$/, 'x');
+    $inputCalculo.value = testeValor;
+});
+$btnDivider.addEventListener('click', function(evt) {
+    evt.preventDefault();
+    $inputCalculo.value += $btnDivider.textContent;
+    var testeValor = $inputCalculo.value.replace(/\D+$/, '÷');
+    $inputCalculo.value = testeValor;
+});
+
+$btnValue.forEach(element => {
+    element.addEventListener('click', function(evt) {
+      evt.preventDefault();
+      element.textContent === 0 ? element.textContent = '0'
+      : $inputCalculo.value = $inputCalculo.value.replace(/^0+/, '');
+      $inputCalculo.value += element.textContent;
+    });
+});
+
+$btnResult.addEventListener('click', function(evt) {
+    evt.preventDefault();
+
+    var testeValor = $inputCalculo.value.replace(/\D+$/, '');
+    $inputCalculo.value = testeValor;
+
+    var multi = $inputCalculo.value.replace(/x/g, '*');
+    $inputCalculo.value = multi;
+    var divider = $inputCalculo.value.replace(/÷/g, '/');
+    $inputCalculo.value = divider;
+    var result = eval( $inputCalculo.value )
+
+    $inputCalculo.value = result;
+
+});
+
+
+})( document );
