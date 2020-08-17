@@ -88,24 +88,22 @@ for (prop in books) {
 Crie um array chamado `myName`. Cada item desse array deve ser uma letra do
 seu nome. Adicione seu nome completo no array.
 */
-// ?
-console.log( '\nMeu nome é:' );
+const myName = ['F', 'E', 'L', 'I', 'P', 'E']
+
 
 /*
 Juntando todos os itens do array, mostre no console seu nome.
 */
-// ?
+console.log( '\nMeu nome é:', myName.join(''));
 
-console.log( '\nMeu nome invertido é:' );
 
 /*
 Ainda usando o objeto acima, mostre no console seu nome invertido.
 */
-// ?
+console.log( '\nMeu nome invertido é:', myName.reverse().join('') );
 
-console.log( '\nAgora em ordem alfabética:' );
 /*
 Mostre todos os itens do array acima, odenados alfabéticamente.
 */
-// ?
+console.log( '\nAgora em ordem alfabética:', myName.sort().join('') );
 })();
