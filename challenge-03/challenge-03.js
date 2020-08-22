@@ -151,7 +151,7 @@ console.log(pessoa.andando); // false
 Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
 inline ao lado da instrução para mostrar a resposta retornada)
 */
-console.log(pessoa.caminhouQuantosMetros);
+console.log(pessoa.caminhouQuantosMetros); // 12018
 
 /*
 Agora vamos deixar a brincadeira um pouco mais divertida! :D
