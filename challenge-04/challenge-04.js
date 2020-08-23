@@ -1,21 +1,37 @@
-# Desafio da semana #4
+// # Desafio da semana #4
 
-```js
+// ```js
 /*
 Declare uma variável chamada `isTruthy`, e atribua a ela uma função que recebe
 um único parâmetro como argumento. Essa função deve retornar `true` se o
 equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
-?
+const isTruthy = (param) => !!param;
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
-?
+console.log(isTruthy(-0));
+console.log(isTruthy(0));
+console.log(isTruthy(''));
+console.log(isTruthy(""));
+console.log(isTruthy(``));
+console.log(isTruthy(false));
+console.log(isTruthy(NaN));
+console.log(isTruthy(undefined));
+console.log(isTruthy(null));
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
-?
+console.log(isTruthy(1));
+console.log(isTruthy(-1));
+console.log(isTruthy('Teste'));
+console.log(isTruthy("Henrique"));
+console.log(isTruthy(`Testando`));
+console.log(isTruthy([]));
+console.log(isTruthy(true));
+console.log(isTruthy({}));
+console.log(isTruthy(() => {}));
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
@@ -29,35 +45,46 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `assentos` - Number - cinco por padrão
 - `quantidadePessoas` - Number - zero por padrão
 */
-?
+const carro = {
+  marca: 'Jeep',
+  modelo: 'Renegade',
+  placa: 'HGT-0982',
+  ano: 2020,
+  cor: 'Prata',
+  quantasPortas: 4,
+  assentos: 5,
+  quantidadePessoas: 0
+};
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
-?
+carro.mudarCor = (cor) => carro.cor = cor;
 
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
-?
+carro.obterCor = () => carro.cor;
 
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
-?
+carro.obterModelo = () => carro.modelo;
 
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
 */
-?
+carro.obterMarca = () => carro.marca;
 
 /*
 Crie um método chamado `obterMarcaModelo`, que retorne:
 "Esse carro é um [MARCA] [MODELO]"
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
-?
+carro.obterMarcaModelo = () => {
+  return `Esse carro é um ${carro.obterMarca()} ${carro.obterModelo()}`;
+};
 
 /*
 Crie um método que irá adicionar pessoas no carro. Esse método terá as
@@ -75,7 +102,23 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-?
+carro.adicionarPessoas = (paramPessoas = 0) => {
+  let totalPessoas = carro.quantidadePessoas + paramPessoas;
+
+  if (carro.quantidadePessoas === carro.assentos && totalPessoas >= carro.assentos) {
+    return 'O carro já está lotado!';
+  }
+
+  if (totalPessoas > carro.assentos) {
+    let quantasPessoasCabem = carro.assentos - carro.quantidadePessoas;
+    let pluralSingular = quantasPessoasCabem === 1 ? 'pessoa' : 'pessoas';
+    return `Só cabem mais ${quantasPessoasCabem} ${pluralSingular}.`;
+  }
+
+  carro.quantidadePessoas += paramPessoas;
+
+  return `Já temos ${carro.quantidadePessoas} pessoas no carro.`;
+};
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -85,38 +128,38 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-?
+console.log(carro.obterCor()); // Prata
 
 // Mude a cor do carro para vermelho.
-?
+carro.mudarCor('vermelho');
 
 // E agora, qual a cor do carro?
-?
+console.log(carro.obterCor()); // vermelho
 
 // Mude a cor do carro para verde musgo.
-?
+carro.mudarCor('verde musgo');
 
 // E agora, qual a cor do carro?
-?
+console.log(carro.obterCor()); // verde musgo
 
 // Qual a marca e modelo do carro?
-?
+console.log(carro.obterMarcaModelo()); // Esse carro é um Jeep Renegade
 
 // Adicione 2 pessoas no carro.
-?
+console.log(carro.adicionarPessoas(2));
 
 // Adicione mais 4 pessoas no carro.
-?
+console.log(carro.adicionarPessoas(4));
 
 // Faça o carro encher.
-?
+console.log(carro.adicionarPessoas(3));
+console.log(carro.adicionarPessoas(1)); // O carro já está lotado.
 
 // Tire 4 pessoas do carro.
-?
+console.log(carro.adicionarPessoas(-4));
 
 // Adicione 10 pessoas no carro.
-?
+console.log(carro.adicionarPessoas(10)); // Só cabem mais 4 pessoas
 
 // Quantas pessoas temos no carro?
-?
-```
+console.log(carro.quantidadePessoas); // 1
