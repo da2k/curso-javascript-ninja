@@ -4,29 +4,34 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-?
+function somar(n1, n2){
+	return n1 + n2;
+}
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-?
+var minhaVariavel = somar(10, 10) + 5;
 
 // Qual o valor atualizado dessa variável?
-?
+25
 
 // Declare uma nova variável, sem valor.
-?
+var myvar;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-?
+function myfunction(){
+	myvar = 100;
+	return "O valor da variável agora é " + myvar;
+}
 
 // Invoque a função criada acima.
-?
+myfunction();
 
 // Qual o retorno da função? (Use comentários de bloco).
-?
+/* O valor da variável agora é 100 */
 
 /*
 Crie uma função com as seguintes características:
@@ -35,19 +40,24 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-?
+function xpto(n1, n2, n3){
+	if(n1 === undefined || n2 === undefined || n3 === undefined){
+		return "Preencha todos os valores corretamente!";
+	}
+	return (n1 * n2 * n3) + 2;
+}
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+xpto(2,2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+// Preencha todos os valores corretamente!
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+xpto(2,5,2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+// 22
 
 /*
 Crie uma função com as seguintes características:
@@ -58,8 +68,23 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+function funcaoNinja(a,b,c){
+	if(a !== undefined && b === undefined && c === undefined){
+		return a;
+	} else if(a !== undefined && b !== undefined && c === undefined){
+		return a + b;
+	} else if(a !== undefined && b !== undefined && c !== undefined){
+		return (a + b) / c;
+	} else if(a === undefined && b === undefined && c === undefined){
+		return false;
+	} else{
+		return null;
+	}
+}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+funcaoNinja(); // false
+funcaoNinja(5); // 5
+funcaoNinja(2,10); // 12
+funcaoNinja(10,2,2); // 6
 ```
