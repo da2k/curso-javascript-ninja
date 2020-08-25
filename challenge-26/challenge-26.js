@@ -40,9 +40,10 @@ function DOM(strNode){
 }
 
 var $a = new DOM('[data-js="link"]');
-$a.on('click', function(e) {
+$a.on('click', function handleClick(e) {
   e.preventDefault();
   console.log('clicou');
+  $a.off('click', handleClick);
 });
 
 console.log('Elementos selecionados:', $a.get());
