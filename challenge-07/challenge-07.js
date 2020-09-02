@@ -1,6 +1,7 @@
  	/*
 Crie um array com 5 items (tipos variados).
 */
+
 var meuArray = ['casa', 10, function(){return 'Santa Cruz'}, 500, null];
 
 /*
