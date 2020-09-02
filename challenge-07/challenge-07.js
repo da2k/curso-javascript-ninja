@@ -80,5 +80,4 @@ for(var num = 111; num <= 125; num++){
 	if(num % 2 === 1){
 		console.log(num);
 	}
-	
 }
