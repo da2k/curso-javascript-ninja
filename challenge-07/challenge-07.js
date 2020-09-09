@@ -71,6 +71,6 @@ for(var secondPair = 100; secondPair <= 120; secondPair++) {
 }
 
 console.log( 'Números ímpares entre 111 e 125:' );
-for(var secondOdd = 100; secondOdd <= 120; secondOdd++) {
+for(var secondOdd = 101; secondOdd <= 125; secondOdd++) {
     secondOdd % 2 !== 0 ? console.log(secondOdd) : null;
 }
