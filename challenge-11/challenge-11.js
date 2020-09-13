@@ -36,9 +36,13 @@
     Após o loop, mostre a frase:
     'The person has [COUNTER] properties'
     */
+    var counter = 0;
     for(var atribute in person) {
+        counter += 1;
         console.log('The', atribute, 'of person is', person[atribute]);
     }
+
+    console.log('The person has', counter, 'properties');
 
     /*
     Crie uma função chamada `moreThan`, que vai verificar se a pessoa (objeto
@@ -49,7 +53,7 @@
     */
     
     function moreThan(idade) {
-        return person.age > idade ? true : false;
+        return person.age > idade;
     }
 
     console.log('The person has more than 25 years old?', moreThan(25));
