@@ -80,7 +80,7 @@
             }
             
             return operation[operador]( x, y );
-        }
+        };
     }
 
     /*
@@ -139,7 +139,10 @@
         number1 = 10;
         number2 = 5;
 
-        console.log(showOperationMessage( operationSignal, number1, number2 ), sum( number1, number2 ) !== false ? sum( number1, number2 ) : showErrorMessage( operationSignal ) );
+        console.log( showOperationMessage( operationSignal, number1, number2 ), sum( number1, number2 ) );
+    }
+    else {
+        console.log( showErrorMessage( operationSignal ) );
     }
 
     /*
@@ -155,7 +158,10 @@
        number1 = 10;
        number2 = 5;
        
-       console.log(showOperationMessage( operationSignal, number1, number2 ), subtraction( number1, number2 ) !== false ? subtraction( number1, number2 ) : showErrorMessage( operationSignal ) );
+       console.log(showOperationMessage( operationSignal, number1, number2 ), subtraction( number1, number2 ) );
+    }
+    else {
+        console.log( showErrorMessage( operationSignal ) );
     }
     
     operationSignal = '*';
@@ -165,7 +171,10 @@
         number1 = 10;
         number2 = 5;
         
-        console.log(showOperationMessage( operationSignal, number1, number2 ), multiplication( number1, number2 ) !== false ? multiplication( number1, number2 ) : showErrorMessage( operationSignal ) );
+        console.log(showOperationMessage( operationSignal, number1, number2 ), multiplication( number1, number2 ) );
+    }
+    else {
+        console.log( showErrorMessage( operationSignal ) );
     }
     
     operationSignal = '/';
@@ -174,7 +183,10 @@
         number1 = 10;
         number2 = 5;
         
-        console.log(showOperationMessage( operationSignal, number1, number2 ), division( number1, number2 ) !== false ? division( number1, number2 ) : showErrorMessage( operationSignal ) );
+        console.log(showOperationMessage( operationSignal, number1, number2 ), division( number1, number2 ) );
+    }
+    else {
+        console.log( showErrorMessage( operationSignal ) );
     }
     
     operationSignal = '%';
@@ -184,7 +196,10 @@
         number1 = 10;
         number2 = 5;
 
-        console.log(showOperationMessage( operationSignal, number1, number2 ), mod( number1, number2 ) !== false ? mod( number1, number2 ) : showErrorMessage( operationSignal ) );
+        console.log(showOperationMessage( operationSignal, number1, number2 ), mod( number1, number2 ) );
+    }
+    else {
+        console.log( showErrorMessage( operationSignal ) );
     }
 
 
@@ -192,5 +207,18 @@
     Repita o PASSO 2 novamente, mas passando um operador inválido, para ver se
     a mensagem de erro será mostrada no console.
     */
-    // ?
+
+   operationSignal = 'x';
+   var novo = calculator( operationSignal );
+
+   if ( novo ) {
+       number1 = 10;
+       number2 = 5;
+
+       console.log(showOperationMessage( operationSignal, number1, number2 ), novo( number1, number2 ) );
+   }
+   else {
+       console.log( showErrorMessage( operationSignal ) );
+   }
+    
 })();
