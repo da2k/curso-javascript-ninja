@@ -132,7 +132,7 @@
     */
     console.log( '\nTodos os estados de `brasil` tem mais de 7 letras?' );
     var letras = brasil.every(function(item) {
-        return item > 7;
+        return item.length > 7;
     });
 
     console.log(letras ? 'Sim, todos os estados tem mais de 7 letras!' :
