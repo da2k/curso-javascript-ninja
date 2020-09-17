@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>mutheuswagen</title>
+    <style>
+      html {
+        font-size: 16px;
+      }
+      
+      body {
+        font-family: system-ui;
+        color: #212121;
+        margin: 0;
+      }
+    
+      header {
+        display: flex;
+        flex-direction: column;
+        padding: 3em 4vw;
+        align-items: center;
+        text-align: center;
+      }
+      
+      header h1 {
+        margin: 0;
+      }
+      
+      header h1 a {
+        font-size: 1.5rem;
+        color: #212121;
+        text-decoration: none;
+      }
+      
+      form {
+        display: flex;
+        flex-direction: column;
+        width: 80vw;
+        margin: 0 auto 2em;
+      }
+      
+      form label {
+        margin-bottom: 4px;
+      }
+      
+      form input {
+        margin-bottom: 16px;
+        border: 0;
+        border-radius: 4px;
+        padding: 12px;
+      }
+      
+      form button {
+        background-color: #212121;
+        color: #fff;
+        border-radius: 4px;
+        border: 0;
+        width: max-content;
+        padding: 16px;
+      }
+      
+      table {
+        border-collapse: collapse;
+        width: 90vw;
+        margin: 0 auto 2em;
+      }
+      
+      table th,
+      table td{
+        text-align: center;
+        vertical-align: center;
+        border: 1px solid #0f0f0f;
+      }
+      
+      table img {
+        display: block;
+        margin: 0 auto;
+        width: 40vw;
+      }
+      
+      @media (min-width: 600px) {
+        header {
+          flex-direction: row;
+          align-items: start;
+          text-align: right;
+        }
+        
+        header h1 {
+          line-height: 0;
+        }
+        
+        header nav {
+          margin-left: auto;
+        }
+        
+        main {
+          display: flex;
+          padding: 0 2em;
+        }
+        
+        form,
+        table {
+          width: 45vw;
+        }
+        
+        form {
+          max-width: 20em;
+        }
+        
+        table {
+          margin-left: auto;
+        }
+        
+        table img {
+          width: 20vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>
+        <a href="/" data-js="company-name"></a>
+      </h1>
+      
+      <nav>
+        <a data-js="company-phone"></a>
+      </nav>
+    </header>
+    <main>
+      <form data-js="form-car">
+        <label>Image:</label>
+        <input type="url" data-js="image" placeholder="ex: https://website.com/car">
+        
+        <label>Model:</label>
+        <input type="text" data-js="model" placeholder="ex: Volkswagen">
+        
+        <label>Year:</label>
+        <input type="text" data-js="year" placeholder="ex: 1992">
+        
+        <label>Plate:</label>
+        <input type="text" data-js="plate" placeholder="ex: PLT-223">
+        
+        <label>Color:</label>
+        <input type="text" data-js="color" placeholder="ex: Black">
+        
+        <button type="submit">Register</button>
+      </form>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Plate</th>
+            <th>Color</th>
+          </tr>
+        </thead>
+        <tbody data-js="table-car">
+          
+        </tbody>
+      </table>
+    </main>
+    
+    <script src="dom.js"></script>
+    <script src="challenge-29.js"></script>
+  </body>
+</html>
