@@ -30,17 +30,17 @@
 
     this.getfullName = function getFullName() {
       return this.name + ' ' + this.lastName;
-    }
+    };
 
     this.getAge = function getAge() {
       return this.age;
-    }
+    };
 
     this.addAge = function addAge() {
       this.age += arguments[0]
 
       return this;
-    }
+    };
   }
 
   /*
@@ -50,34 +50,38 @@
   Mostre as 3 novas pessoas criadas no console (Um console.log por pessoa).
   */
   console.log( 'Novas pessoas criadas à partir de Person:' );
-  var person_1 = new Person('Felipe', 'dos Anjos', 26);
-  var person_2 = new Person('Jeane', 'Martine Britto', 17);
-  var person_3 = new Person('Yasmin', 'Britto', 1);
+  var felipe = new Person('Felipe', 'dos Anjos', 26);
+  var jeane = new Person('Jeane', 'Martine Britto', 17);
+  var yasmin = new Person('Yasmin', 'Britto', 1);
+
+  console.log('Felipe:', felipe);
+  console.log('Jeane:', jeane);
+  console.log('Yasmin:', yasmin);
 
   /*
   Mostre no console o nome completo de cada pessoa.
   */
   console.log( '\nNomes das pessoas:' );
-  console.log(person_1.name);
-  console.log(person_2.name);
-  console.log(person_3.name);
+  console.log(felipe.getfullName());
+  console.log(jeane.getfullName());
+  console.log(yasmin.getfullName());
 
   /*
   Mostre no console as idades de cada pessoa, com a frase:
   - "[NOME COMPLETO] tem [IDADE] anos."
   */
   console.log( '\nIdade das pessoas:' );
-  console.log(person_1.age);
-  console.log(person_2.age);
-  console.log(person_3.age);
+  console.log(felipe.getfullName() + ' tem ' + felipe.getAge() + ' anos.');
+  console.log(jeane.getfullName() + ' tem ' + jeane.getAge() + ' anos.');
+  console.log(yasmin.getfullName() + ' tem ' + yasmin.getAge() + ' ano.');
   /*
   Adicione alguns anos à cada pessoa, e mostre no console a nova idade de
   cada um. A frase deverá ser no formato:
   - "[NOME COMPLETO] agora tem [NOVA IDADE] anos."
   */
   console.log( '\nNova idade das pessoas:' );
-  console.log(person_1.addAge(10).age);
-  console.log(person_2.addAge(10).age);
-  console.log(person_3.addAge(1).age);
+  console.log(felipe.getfullName() + ' agora tem ' + felipe.addAge(10).age + 'anos');
+  console.log(jeane.getfullName() + ' agora tem ' + jeane.addAge(10).age + 'anos');
+  console.log(yasmin.getfullName() + ' agora tem ' + yasmin.addAge(1).age + 'anos');
 
 })();
