@@ -4,7 +4,12 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-?
+function somaarg(argumento1, argumento2){
+. argumento1 = 1;                        
+. argumento2 = 2;                        
+. var sominha = argumento1 + argumento2; 
+. return sominha;                        
+. }                                      
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
 ?
