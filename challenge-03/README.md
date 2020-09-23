@@ -2,7 +2,7 @@
 
 ```js
 // Declarar uma variável qualquer, que receba um objeto vazio.
-?
+var myVar = {};
 
 /*
 Declarar uma variável `pessoa`, que receba suas informações pessoais.
@@ -16,7 +16,38 @@ As propriedades e tipos de valores para cada propriedade desse objeto devem ser:
 - `andando` - Boolean - recebe "falso" por padrão
 - `caminhouQuantosMetros` - Number - recebe "zero" por padrão
 */
-?
+var pessoa = {
+            nome: 'Val',
+            sobrenome: 'Ferreira',
+            sexo: 'M',
+            idade: 27,
+            altura: 1.90,
+            peso: 110,
+            andando: false,
+            caminhouQuantosMetros: 0,
+            fazerAniversario: function(){
+                pessoa.idade++;
+            },
+            andar: function(qmc){
+                pessoa.caminhouQuantosMetros += qmc;
+                pessoa.andando = true;
+            },
+            parar: function(){
+                pessoa.andando = false;
+            },
+            nomeCompleto: function(){
+                console.log(`Meu nome é ${pessoa.nome + ' ' + pessoa.sobrenome}` );
+            },
+            mostrarIdade: function(){
+                console.log(`Olá, eu tenho ${pessoa.idade} anos!`);
+            },
+            mostrarPeso: function(){
+                console.log(`Eu peso ${pessoa.peso}Kgs `);
+            },
+            mostrarAltura: function(){
+                console.log(`Eu tenho ${pessoa.altura} metros `);
+            }
+        }
 
 /*
 Adicione um método ao objeto `pessoa` chamado `fazerAniversario`. O método deve
@@ -153,5 +184,46 @@ correta, de acordo com os dados inseridos no objeto.
 ?
 
 // Agora, apresente-se ;)
-?
+console.log(pessoa);
+        pessoa.nomeCompleto();
+        pessoa.mostrarIdade();
+        pessoa.mostrarPeso();
+        pessoa.mostrarAltura();
+
+        for(var i=0;i<=3;i++){
+            pessoa.fazerAniversario();
+        }
+        pessoa.mostrarIdade();
+
+        var x = 5;
+        for (var i = 0; i <= 3; i++) {
+            x *= 5;
+            pessoa.andar(x);
+        }
+        console.log(pessoa.andando);
+        console.log(pessoa.parar());
+        console.log(pessoa.andando);
+        console.log(pessoa.caminhouQuantosMetros);
+
+        pessoa.apresentacao = function () {
+            var s = 'o';
+            var idadeAnos = 'anos';
+            var metrosCaminhados = 'metros';
+
+            if (pessoa.sexo === 'F') {
+                s = 'a';
+            }
+
+            if (pessoa.idade === 1) {
+                idadeAnos = 'ano';
+            }
+
+            if (pessoa.caminhouQuantosMetros === 1) {
+                metrosCaminhados = 'metro';
+            }
+              return 'Olá, eu sou ' + sexo + ' ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + ' ' + idadeAnos + ', ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' ' + metrosCaminhados + '!';
+
+        };
+        pessoa.apresentacao();
+       
 ```
