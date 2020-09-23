@@ -102,5 +102,4 @@ for ( var i = 0; i < tam; i++ ) {
 }
 
 console.log ( newName );
-
 } )();
