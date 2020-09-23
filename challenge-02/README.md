@@ -12,7 +12,7 @@ function somaarg(argumento1, argumento2){
 var qualquer = soma ( 1 , 2 ) + 5;
 
 // Qual o valor atualizado dessa variável?
-?
+8
 
 // Declare uma nova variável, sem valor.
 ?
