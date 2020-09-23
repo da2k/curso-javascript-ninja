@@ -1,5 +1,5 @@
 (function () {
-
+  'use strict';
 
   /*
   1. Envolva todo o conteúdo desse desafio em uma IIFE.
@@ -35,7 +35,20 @@
   console.log para cada formato.
   */
   console.log('\nNome convertido à partir de um slug:');
-  let fullName = 'felipe-silva-medeiros'
+  let fullName = 'nina-lopes-medeiros'
+
+  let fullNameSplitted = fullName.split('-');
+  let fullNameUppered = '';
+
+  fullNameSplitted.forEach(element => {
+    let firstLetter = element.charAt(0).toUpperCase()
+    element = firstLetter + element.slice(1);
+    fullNameUppered = fullNameUppered + element + ' ';
+  });
+
+  console.log(fullName);
+  console.log(fullNameUppered);
+
 
   /*
   - Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
@@ -47,7 +60,12 @@
   5 nomes foi somente uma sugestão ;)
   */
   console.log('\nMeus amigos:');
-  // ?
+  let friends = ['Carol','Mobral','Mhz','Deison','Piu']
+
+  let friendsString = friends.join();
+  let friendsComma = friendsString.lastIndexOf(',');
+  friendsString = friendsString.substring(0, friendsComma) + ' e ' + friendsString.substr(friendsComma + 1)
+  console.log(friendsString.concat(' são meus amigos.'))
 
   /*
   Usando o replace(), faça a string "Roberto" virar "Roberta".
