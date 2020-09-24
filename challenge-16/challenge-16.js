@@ -17,8 +17,8 @@
   E assim por diante, até a última.
   */
   console.log('As letras do seu nome:');
-  let name = 'Felipe'
-  for (let index = 0; index < name.length; index++) {
+  let name = 'Felipe';
+  for (let index = 0, len = name.length; index < len; index++) {
     console.log(name.charAt(index) + ' é a ' + (index + 1) +
       'ª letra do meu nome.')
   }
@@ -69,6 +69,13 @@
     friendsString.substr(friendsComma + 1)
   console.log(friendsString.concat(' são meus amigos.'))
 
+  let phrase = friends.reduce(function(acumulado, atual, index) {
+    let separator = friends.length - 1 === index ? ' e ' : ', ';
+    return acumulado + separator + atual;
+  }).concat(' são meus amigos.')
+
+  console.log(phrase);
+
   /*
   Usando o replace(), faça a string "Roberto" virar "Roberta".
   Mostre o resultado no console.
@@ -80,7 +87,7 @@
   nameRoberto = nameRoberto.slice(0, secondO) + 'a';
 
   console.log(nameRoberto);
-
+  console.log('Roberto'.replace('to', 'ta'));
 
   /*
   Mostre no console a parte "nando" da string "Fernando". Use o método que
@@ -107,7 +114,7 @@
 
   for (let index = 0; index < myName.length; index++) {
     let letter = myName.charAt(index);
-    console.log(index % 2 != 1)
+
     if (index % 2 != 1) {
       styledName = styledName + letter.toUpperCase();
     } else {
