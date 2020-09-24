@@ -19,7 +19,8 @@
   console.log('As letras do seu nome:');
   let name = 'Felipe'
   for (let index = 0; index < name.length; index++) {
-    console.log(name.charAt(index) + ' é a ' + (index + 1) + 'ª letra do meu nome.')
+    console.log(name.charAt(index) + ' é a ' + (index + 1) +
+      'ª letra do meu nome.')
   }
 
   /*
@@ -60,11 +61,12 @@
   5 nomes foi somente uma sugestão ;)
   */
   console.log('\nMeus amigos:');
-  let friends = ['Carol','Mobral','Mhz','Deison','Piu']
+  let friends = ['Carol', 'Mobral', 'Mhz', 'Deison', 'Piu']
 
   let friendsString = friends.join();
   let friendsComma = friendsString.lastIndexOf(',');
-  friendsString = friendsString.substring(0, friendsComma) + ' e ' + friendsString.substr(friendsComma + 1)
+  friendsString = friendsString.substring(0, friendsComma) + ' e ' +
+    friendsString.substr(friendsComma + 1)
   console.log(friendsString.concat(' são meus amigos.'))
 
   /*
@@ -72,14 +74,22 @@
   Mostre o resultado no console.
   */
   console.log('\nEra "Roberto", agora é:');
-  // ?
+  let nameRoberto = 'Roberto'
+  let secondO = nameRoberto.lastIndexOf('o');
+
+  nameRoberto = nameRoberto.slice(0, secondO) + 'a';
+
+  console.log(nameRoberto);
+
 
   /*
   Mostre no console a parte "nando" da string "Fernando". Use o método que
   faz a busca do final para o início da string.
   */
   console.log('\nParte de uma string:');
-  // ?
+  let fer = 'Fernando'
+
+  console.log(fer.substring(3))
 
   /*
   Declare uma variável chamada `myName`, que receba o seu primeiro nome,
@@ -91,5 +101,19 @@
   Ex.: Nomes que deveriam funcionar: "Fernando", "RoBertO", "gabriEla", etc.
   */
   console.log('\nNome com letras intercaladas entre caixa alta e baixa:');
-  // ?
+  let myName = 'gabriEla'
+  let styledName = ''
+  myName = myName.toLowerCase();
+
+  for (let index = 0; index < myName.length; index++) {
+    let letter = myName.charAt(index);
+    console.log(index % 2 != 1)
+    if (index % 2 != 1) {
+      styledName = styledName + letter.toUpperCase();
+    } else {
+      styledName = styledName + letter;
+    }
+  }
+  console.log(styledName);
+
 })();
