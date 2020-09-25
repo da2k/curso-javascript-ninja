@@ -15,7 +15,7 @@ var qualquer = soma ( 1 , 2 ) + 5;
 8
 
 // Declare uma nova variável, sem valor.
-?
+var sem  = null;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
