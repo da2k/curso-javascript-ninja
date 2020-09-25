@@ -22,13 +22,18 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-?
+function add(){
+    var adc = sem += 1;
+    return `O valor da variável agora é ${adc}`;
+}
 
 // Invoque a função criada acima.
-?
+    add()
 
 // Qual o retorno da função? (Use comentários de bloco).
-?
+/* 'O valor da variável
+agora é 1'
+*/
 
 /*
 Crie uma função com as seguintes características:
