@@ -4,7 +4,8 @@ para começar o desafio.
 Declare uma variável chamada `championship` que receberá o nome do campeonato,
 e imprima o nome desse campeonato no console.
 */
-// ?
+let championship = 'Cearense';
+console.log(championship);
 
 /*
 Declare uma variável chamada `teams`, que receberá um array com 5 elementos.
@@ -12,8 +13,7 @@ Os elementos serão nomes de times do campeonato escolhido, e os nomes devem
 estar na ordem em que eles aparecem na tabela no momento da solução desse
 desafio.
 */
-// ?
-
+let teams = ['Fortaleza', 'Ceara SC', 'Ferroviário', 'Guarany-CE', 'Uniclinic'];
 console.log( 'Times que estão participando do campeonato:', teams );
 
 /*
@@ -32,13 +32,24 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     - Se não houver time para a posição passada, deve retornar a mensagem:
     "Não temos a informação do time que está nessa posição."
 */
-// ?
+
+const showTeamPosition = function(id){
+  
+  if ( id > (teams.lengh -1))
+    return `O time está em ${id}º lugar é o ${teams[id]}. `;
+  return 'Não temos a informação do time que está nessa posição';
+
+};
 
 /*
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
-// ?
+let x=1
+while(x <=5){
+  console.log(showTeamPosition(x));
+  x++;
+};
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
