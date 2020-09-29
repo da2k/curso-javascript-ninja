@@ -7,7 +7,7 @@ var myvar = null
 
 // Após declarada, atribua o valor 10 à variável `myvar`.
 
-myvar += 10
+myvar = 10
 
 // Declare uma nova variável chamada `soma`, e adicione uma instrução somando os valores 15 e 8.
 
@@ -23,7 +23,7 @@ soma *= 3
 
 // Qual é o valor da variável `soma` até aqui?
 
-64
+72
 
 // Declare uma variável chamada `souninja`, atribuindo à ela o valor booleano que representa `verdadeiro`.
 
@@ -47,9 +47,8 @@ myvar <= soma
 
 // Crie uma função chamada `divisao` que receba como parâmetro dois números, e retorne o resultado da divisão entre eles.
 
-function divisao(6, 3){
-var divisao = 6 / 3
-return divisao
+function divisao(a, b){
+return (a / b)
 
 // Invoque a função criada acima, passando os parâmetros 10 e 2.
 
