@@ -11,26 +11,33 @@ return valor01 + valor02;
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
 
-var soma = 
+var num = soma(5, 2) + 5
 
 // Qual o valor atualizado dessa variável?
-?
+
+12
 
 // Declare uma nova variável, sem valor.
-?
+
+var vazio;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-?
+
+function vazio(){
+vazio = 10
+return `O valor da variável agora é ${vazio}`
 
 // Invoque a função criada acima.
-?
+vazio()
 
 // Qual o retorno da função? (Use comentários de bloco).
-?
+/*
+O valor da variável agora é 10
+*/
 
 /*
 Crie uma função com as seguintes características:
@@ -39,10 +46,20 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-?
+
+var num = desafio (2, 5, 3)
+
+function desafio(a, b, c){
+...if(desafio.length != 3){
+.....return'Preencha todos os valores corretamente!'}
+...else{
+.....return (a * b * c) + 2
+}
+
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+
+desafio(2,3)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 ?
