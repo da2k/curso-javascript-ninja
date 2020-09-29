@@ -36,7 +36,7 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
 const showTeamPosition = function(id){
   
   if ( id > (teams.lengh -1))
-    return `O time está em ${id}º lugar é o ${teams[id]}. `;
+    return `O time está em ${id}º lugar é o ${teams[id] -1 }. `;
   return 'Não temos a informação do time que está nessa posição';
 
 };
