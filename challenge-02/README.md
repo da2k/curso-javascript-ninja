@@ -42,10 +42,16 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-?
+function three( x , y , z ){
+    if( x === null || y === null || z === null ){
+        return 'Preencha todos os valores corretamente!';
+    }else{
+        return x * y * z + 2;
+    }
+}
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+three
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 ?
