@@ -71,8 +71,27 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+ function act( i , j , k ){
+if( i === number && j === null && k === null ){
+ return i.value;
+ }else if( i === null && j === number && k === null ){
+ return j.value;
+ }else if( i === null && j === null && k === number ){
+ return k.value;
+ }else if( i === number && j === number && k === null ){
+ return i + j;
+}else if(i === number && j === null && k === number ){
+     return i + k;
+ }else if ( i === null && j === number && k === number ){
+ return j + k;
+ }else if( i === number && j === number && k === number ){
+ return i + j / k;
+ }else if( i === null && j === null && k === null ){
+ return false;
+ }else{
+ null}
+ }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+
 ```
