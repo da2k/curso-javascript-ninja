@@ -43,7 +43,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function three( x , y , z ){
-    if( x === null || y === null || z === null ){
+    if( x === null && y === null && z === null ){
         return 'Preencha todos os valores corretamente!';
     }else{
         return x * y * z + 2;
@@ -51,16 +51,16 @@ function three( x , y , z ){
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
-three
+three(2,2)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+// NaN
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+three(2,2,3)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+// 14
 
 /*
 Crie uma função com as seguintes características:
