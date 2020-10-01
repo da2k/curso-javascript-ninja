@@ -54,7 +54,7 @@ function three( x , y , z ){
 three(2,2)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-// NaN
+// 'Preencha todos os valores corretamente!'
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 three(2,2,3)
