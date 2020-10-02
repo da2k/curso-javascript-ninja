@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge-21</title>
+
+    <style>
+        body {
+            display: flex;
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        div:nth-child(2) {
+            margin-bottom: 30px;
+        }
+        
+        div:nth-child(3) {
+            display:flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        input {
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    <main>
+        <h2>Cronômetro</h2>
+
+        <div>            
+            <input type="text" data-js="timer" disabled />            
+        </div>
+        <div>
+            <button type="button" data-js="start">Start</button>
+            <button type="button" data-js="stop">Stop</button>
+            <button type="button" data-js="reset">Reset</button>
+        </div>
+    </main>
+    
+
+
+    <script src="challenge-21.js"></script>
+</body>
+</html>
