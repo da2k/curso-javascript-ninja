@@ -72,16 +72,8 @@ Crie uma função com as seguintes características:
 function amount(a, b, c) {
 	if ( a !== undefined && b == undefined && c == undefined ) {
 		return a;
-	} else if ( a == undefined && b !== undefined && c == undefined ) {
-		return b;
-	} else if ( a == undefined && b == undefined && c !== undefined ) {
-		return c;
 	} else if ( a !== undefined && b !== undefined && c == undefined ) {
 		return a + b;
-	} else if ( a !== undefined && b == undefined && c !== undefined ) {
-		return a + c;
-	} else if ( a == undefined && b !== undefined && c !== undefined ) {
-		return b + c;
 	} else if ( a !== undefined && b !== undefined && c !== undefined ) {
 		return (a + b) / c;
 	} else if ( a == undefined && b == undefined && c == undefined ) {
