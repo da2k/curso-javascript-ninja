@@ -27,80 +27,59 @@
   - Ao pressionar o botão "CE", o input deve ficar zerado.
   */
 
-  var view = doc.querySelector( '[data-js="view"]' );
-  var clear = doc.querySelector( '[data-js="ce"]' );
-  var total = doc.querySelector( '[data-js="total"]' );
-
-  view.value = '0';
-
-  var numbers = [
-    doc.querySelector( '[data-js="zero"]' ),
-    doc.querySelector( '[data-js="one"]' ),
-    doc.querySelector( '[data-js="two"]' ),
-    doc.querySelector( '[data-js="three"]' ),
-    doc.querySelector( '[data-js="four"]' ),
-    doc.querySelector( '[data-js="five"]' ),
-    doc.querySelector( '[data-js="six"]' ),
-    doc.querySelector( '[data-js="seven"]' ),
-    doc.querySelector( '[data-js="eight"]' ),
-    doc.querySelector( '[data-js="nine"]' )
-  ];
-
-  var operations = [
-    { operation : '+' , element : doc.querySelector( '[data-js="sum"]' ) },
-    { operation : '-' , element : doc.querySelector( '[data-js="subtract"]' ) },
-    { operation : 'x' , element : doc.querySelector( '[data-js="multiply"]' ) },
-    { operation : '/' , element : doc.querySelector( '[data-js="divide"]' ) }
-  ]
-  
-  numbers.forEach(function(item, index) {
-    item.value = String(index);
-    item.addEventListener('click', function() {
-      view.value = view.value === '0' ? item.value : view.value + item.value;
-    }, false);
-  });
-
-  operations.forEach( function ( item ) {
-
-    item.element.addEventListener( 'click' , function () {
-
-      var verify = /[\D]$/;
-
-      view.value = verify.test(view.value) ?
-        view.value.replace(verify, item.operation) :
-        view.value + item.operation;
-
-    }, false )
-    
-  } );
-
-
-  clear.addEventListener( 'click' , function () {
-    view.value = '0';
-  } , false );
-
+  var $view = doc.querySelector( '[data-js="view"]' );
+  var $clear = doc.querySelector( '[data-js="ce"]' );
+  var $totalButton = doc.querySelector( '[data-js="total"]' );
+  var $buttonNumbers = doc.querySelectorAll( '[data-id="button-number"]' );
+  var $buttonOperations = doc.querySelectorAll( '[data-id="button-operation"]' )
+  var verifyOperators = /[+\-\/x]$/
   var calculator = [];
   var subCalculator = [];
   var isNumber = /\d+/;
 
-  total.addEventListener( 'click' , function () {
+  Array.prototype.forEach.call( $buttonNumbers , handleNumbers );
+  Array.prototype.forEach.call( $buttonOperations , handleOperations );
+  $clear.addEventListener( 'click' , handleClear , false );
+  $totalButton.addEventListener( 'click' , handleTotal , false );
+
+  function handleNumbers ( item ) {
+    item.addEventListener( 'click' , function () {
+      $view.value = $view.value === '0' ? item.value : $view.value + item.value;
+
+    }, false );
+  }
+
+  function handleOperations ( item ) {
+
+    item.addEventListener( 'click' , function () {
+      $view.value = verifyOperators.test($view.value) ?
+        $view.value.replace( verifyOperators , item.value ) : $view.value + item.value;
+    }, false );
+
+  }
+
+  function handleClear () {
+    $view.value = '0';
+  }
+
+  function handleTotal () {
+    var validate = /^\d[\dx\-+\/]*\d$/;
+    var selectItems = /(\d+[x/]\d+(?:[x/]\d+)*)|(\d+|[\+\-])/g
+    var operator = {
+      '+' : function(value1, value2) { return value1 + value2 },
+      '-' : function(value1, value2) { return value1 - value2 },
+      '/' : function(value1, value2) { return value1 / value2 },
+      'x' : function(value1, value2) { return value1 * value2 },
+    };
 
     calculator = [];
 
-    var validate = /^\d[\dx\-+\/]*\d$/;
+    if ( !validate.test($view.value) )
+      return;      
 
-    if ( !validate.test(view.value) )
-      return;
-
-    // var selectItems = /(\d+)|(x|\/|\+|-)/g;
-    // var selectItems = /(\d+)(x|\/)(\d+)|(?:(x|\/)(\d+))|(?:(\d+|\+|-))/g;
-    var selectItems = /(\d+[x/]\d+(?:[x/]\d+)*)|(\d+|[\+\-])/g
-
-    view.value.replace( selectItems , function(fullMatch , expression , item) {
-      // console.log(arguments);
+    $view.value.replace( selectItems , function(fullMatch , expression , item) {
       
-      if ( expression ) {
-        
+      if ( expression ) {        
         expression.replace( /(\d+|[x/])/g ,
         function ( otherItem ) {
           return isNumber.test(otherItem) ?
@@ -110,26 +89,12 @@
 
         calculator.push( subCalculator );
 
-        subCalculator = [];
-      
+        subCalculator = [];      
       }
 
-      if ( item ) {
-
+      if ( item )
         isNumber.test(item) ? calculator.push( Number( item ) ) : calculator.push( item );
-
-      }
-
     } );
-
-    // console.log(calculator);
-
-    var operator = {
-      '+' : function(value1, value2) { return value1 + value2 },
-      '-' : function(value1, value2) { return value1 - value2 },
-      '/' : function(value1, value2) { return value1 / value2 },
-      'x' : function(value1, value2) { return value1 * value2 },
-    };
 
     calculator = calculator.map( function ( item ) {
 
@@ -154,9 +119,7 @@
 
     } )
 
-    // console.log('Pós map:', calculator);
-
-    var total = calculator.toString();
+    var total = String( calculator[0].toFixed(0) );
 
     if ( calculator.length >= 3 ) {
 
@@ -176,12 +139,10 @@
       }
     }
 
-    // console.log('total:', total);
-
     typeof total !== 'string' ?
-      view.value = String( total.toFixed(0) ) :
-      view.value = total;
+      $view.value = String( total.toFixed(0) ) :
+      $view.value = total;
 
-  } , false );
+  }
 
 } ) ( window , document );
