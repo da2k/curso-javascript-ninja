@@ -77,8 +77,10 @@
   */
   console.log( '\nFunção que limpa entrada do usuário (somente números):' );
   function justNumbers( userEntry ) {
-    return userEntry.match( /\d/g );
+    return userEntry.match( /\d+/g );
   }
+
+  console.log( justNumbers.toString() );
   /*
   Usando a função acima, faça a limpeza dos valores entrados pelo usuário,
   atribuindo o resultado à uma variável `numbers`.
