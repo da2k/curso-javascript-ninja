@@ -49,6 +49,13 @@ function three( x , y , z ){
         return x * y * z + 2;
     }
 }
+//Nesse exemplo abaixo eu aprendi que mesmo não colocando o 'else' o js sabe que se a possibilidade acima do 'if' for falsa, vai simplesmente retornar o que está embaixo, sem precisar dizer explicitamente que é por 'else'.
+function threev2( x , y , z ){
+    if( x === undefined || y === undefined || z === undefined ){
+        return 'Preencha todos os valores corretamente!';
+    }
+    return x * y * z + 2;
+}
 
 // Invoque a função criada acima, passando só dois números como argumento.
 three(2,2)
