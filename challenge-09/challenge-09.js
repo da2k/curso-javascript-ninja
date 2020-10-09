@@ -128,3 +128,8 @@
     return param1 % param2;
   }));
 })();
+
+// const batata = function(param1, param2) {
+//   return param1 - param2;
+// }
+// batata(10,2);
