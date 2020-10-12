@@ -1,33 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="utf-8">
-  <title>Challenge 24 - Calculator</title>
-</head>
-<body>
-  <input type="text" value="0" readonly data-js="visor">
-  <div class="buttons-numbers">
-    <button data-js="button-number" value="0">0</button>
-    <button data-js="button-number" value="1">1</button>
-    <button data-js="button-number" value="2">2</button>
-    <button data-js="button-number" value="3">3</button>
-    <button data-js="button-number" value="4">4</button>
-    <button data-js="button-number" value="5">5</button>
-    <button data-js="button-number" value="6">6</button>
-    <button data-js="button-number" value="7">7</button>
-    <button data-js="button-number" value="8">8</button>
-    <button data-js="button-number" value="9">9</button>
-  </div>
 
-  <div class="operations">
-    <button data-js="button-operation" value="+">+</button>
-    <button data-js="button-operation" value="-">-</button>
-    <button data-js="button-operation" value="x">x</button>
-    <button data-js="button-operation" value="÷">÷</button>
-    <button data-js="button-equal" value="=">=</button>
-    <button data-js="button-ce" value="ce">CE</button>
-  </div>
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Challenge 23</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <main id="home-container">
+
+    <div class="home-content">
+
+      <h2 class="home-title">Calculator</h2>
+
+      <div class="home-buttons">
+
+        <div class="input">
+          <input type="text" disabled data-js="view" value="0"/>
+        </div>
+
+        <div  class="item_9">
+          <button type="button" data-js="nine" data-id="button-number" value="9" >9</button>
+        </div>
+        <div  class="item_8">
+          <button type="button" data-js="eight" data-id="button-number" value="8" >8</button>
+        </div>
+        <div  class="item_7">
+          <button type="button" data-js="seven" data-id="button-number" value="7" >7</button>
+        </div>
+        <div  class="item_6">
+          <button type="button" data-js="six" data-id="button-number" value="6" >6</button>
+        </div>
+        <div  class="item_5">
+          <button type="button" data-js="five" data-id="button-number" value="5" >5</button>
+        </div>
+        <div class="item_4">
+          <button type="button" data-js="four" data-id="button-number" value="4" >4</button>
+        </div>
+        <div class="item_3">
+          <button type="button" data-js="three" data-id="button-number" value="3" >3</button>
+        </div>
+        <div  class="item_2">
+          <button type="button" data-js="two" data-id="button-number" value="2" >2</button>
+        </div>
+        <div class="item_1">
+          <button type="button" data-js="one" data-id="button-number" value="1" >1</button>
+        </div>
+        <div class="item_0">
+          <button type="button" data-js="zero" data-id="button-number" value="0" >0</button>
+        </div>
+
+
+        <!-- Operações -->
+        <div class="sum">
+          <button type="button" data-js="sum" data-id="button-operation" value="+" > + </button>
+        </div>
+        <div class="subtract">
+          <button type="button" data-js="subtract" data-id="button-operation" value="-" > - </button>
+        </div>
+        <div class="multiply">
+          <button type="button" data-js="multiply" data-id="button-operation" value="x" > x </button>
+        </div>
+        <div class="divide">
+          <button type="button" data-js="divide" data-id="button-operation" value="/" > / </button>
+        </div>
+        <div class="total">
+          <button type="button" data-js="total" value="=" > = </button>
+        </div>
+        <div class="ce">
+          <button type="button" data-js="ce"> CE </button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
 
   <script src="challenge-24.js"></script>
+
 </body>
+
 </html>
