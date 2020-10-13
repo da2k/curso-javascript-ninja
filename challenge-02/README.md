@@ -78,27 +78,28 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-function act( i , j , k ){
-    if( i === undefined && j === undefined || i === undefined && k === undefined || j === undefined && k === undefined ){
-        return i || j || k ;
-    }else if( i === undefined || j === undefined || k === undefined ){
-        return i + j || i + k || j + k;
-    }else if( i === i && j === j && k === k ){
-        return i + j / k;
-    }else if( i === undefined && j === undefined && k === undefined ){
-        return false;
-    }else{
-        return null;
-    }
-}
+ function act( i , j , k ){                                                                                
+ if( i === undefined && j === undefined && k != null || i === undefined && k === undefined && j != null
+|| k === undefined && j === undefined && i != null ){                                                      
+ return i || j || k ;                                                                                  
+ }else if( i != null && j != null && k === undefined || i != null && k != null && j === undefined || k != null && j != null && i === undefined ){                                                            
+ return i + j || i + k || j + k;                                                                       
+ }else if( i != null && j != null && k != null ){                                                   
+ return i + j / k;                                                                                     
+ }else if( i === undefined && j === undefined && k === undefined ){                                    
+return false;                                                                                         
+}else{                                                                                                
+ return null;                                                                                          
+ }                                                                                                     
+ }                                                                                                       
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 
-act()//undefined
+act()//false
 
-act(1)//1
+act(50)//50
 
-act(1,2)//3
+act(50,3)//53
 
-act(1,2,3)//1.6666666666666665
+act(50,3,2)//51.5
 ```
