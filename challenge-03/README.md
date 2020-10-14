@@ -174,28 +174,23 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao = function () {
-    if( pessoa.sexo === 'Feminino' && pessoa.idade === 1 && pessoa.caminhouQuantosMetros === 1){
-        var resposta = 'Olá, eu sou a ' + pessoa.nome + ', tenho ' + pessoa.idade + ' ano, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metro!';
-    }
-    else if( pessoa.sexo !== 'Feminino' && pessoa.idade === 1 && pessoa.caminhouQuantosMetros === 1){
-        var resposta = 'Olá, eu sou o ' + pessoa.nome + ', tenho ' + pessoa.idade + ' ano, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metro!';
-    }
-    else if( pessoa.sexo !== 'Feminino' && pessoa.idade !== 1 && pessoa.caminhouQuantosMetros === 1 ){
-        var resposta = 'Olá, eu sou o ' + pessoa.nome + ', tenho ' + pessoa.idade + ' anos, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metro!';
-    }
-     else if( pessoa.sexo === 'Feminino' && pessoa.idade === 1 && pessoa.caminhouQuantosMetros !== 1 ){
-        var resposta = 'Olá, eu sou a ' + pessoa.nome + ', tenho ' + pessoa.idade + ' ano, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metros!';
-     }
-    else if( pessoa.sexo === 'Feminino' && pessoa.idade !== 1 && pessoa.caminhouQuantosMetros === 1 ){
-        var resposta = 'Olá, eu sou a ' + pessoa.nome + ', tenho ' + pessoa.idade + ' anos, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metro!';
-    } else if( pessoa.sexo === 'Feminino' && pessoa.idade !== 1 && pessoa.caminhouQuantosMetros !== 1 ){
-        var resposta = 'Olá, eu sou a ' + pessoa.nome + ', tenho ' + pessoa.idade + ' anos, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metros!';
-    } else if( pessoa.sexo !== 'Feminino' && pessoa.idade === 1 && pessoa.caminhouQuantosMetros !== 1 ){
-        var resposta = 'Olá, eu sou o ' + pessoa.nome + ', tenho ' + pessoa.idade + ' ano, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metros!';
-    }
-    else{
-        var resposta = 'Olá, eu sou o ' + pessoa.nome + ', tenho ' + pessoa.idade + ' anos, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metros!';
-        return resposta;
+        var mostrarSexo = 'o';
+        var mostrarIdade = 'anos';
+        var mostrarMetros = 'metros';
+        
+        if( pessoa.sexo === 'Feminino' ){
+            mostrarSexo = 'a';
+        }
+        
+        if( pessoa.idade === 1 ){
+            mostrarIdade = 'ano';
+        }
+        
+        if( pessoa.caminhouQuantosMetros === 1){
+            mostrarMetros = 'metro';
+        }
+
+        return 'Olá, eu sou o ' + pessoa.nome + ', tenho ' + pessoa.idade + ' anos, ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metros!';
     }
 }
 
