@@ -82,7 +82,7 @@ pessoa.mostrarPeso = function() {
 Crie um método chamado `mostrarAltura` que retorne a frase:
 - "Minha altura é [ALTURA]m."
 */
-pessoa.mostrarPeso = function() {
+pessoa.mostrarAltura = function() {
     return 'Minha altura é ' + pessoa.altura + 'm';
 }
 
