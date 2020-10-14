@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Challenge 23</title>
+
+    <style>
+        div.calc {
+            background-color: rgb(227, 227, 227);
+            width: 300px;   
+            margin: 50px auto;
+            padding-bottom: 10px; 
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 0px;
+            padding: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            color: #fff;
+            background-color: #333;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        div.clearFix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        input {
+            width: 100%;
+            border: none;           
+            font-size: 18px;
+            outline: none;
+            padding: 15px 10px 20px 10px;
+            margin-bottom: 5px;
+        }
+
+        button {
+            width: 21.67%;
+            height: 40px;
+            float: left;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid #999;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="calc clearFix">
+        <h1>TonCalc</h1>
+        <input type="text" value="0" data-js="input" readonly>
+    
+        <button data-js="numbers" value="1">1</button>
+        <button data-js="numbers" value="2">2</button>
+        <button data-js="numbers" value="3">3</button>
+        <button data-js="operations" value="+">&plus;</button>
+        <button data-js="numbers" value="4">4</button>
+        <button data-js="numbers" value="5">5</button>
+        <button data-js="numbers" value="6">6</button>
+        <button data-js="operations" value="-">&minus;</button>
+        <button data-js="numbers" value="7">7</button>
+        <button data-js="numbers" value="8">8</button>
+        <button data-js="numbers" value="9">9</button>
+        <button data-js="operations" value="x">&times;</button>
+        <button data-js="numbers" value="0">0</button>
+        <button data-js="equals" value="=">&equals;</button>
+        <button data-js="CE" value="CE">CE</button>
+        <button data-js="operations" value="/">&divide;</button>   
+    </div>
+
+
+    <script src="challenge-23.js"></script>
+</body>
+</html>
