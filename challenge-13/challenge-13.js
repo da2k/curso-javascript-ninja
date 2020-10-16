@@ -32,7 +32,7 @@
   brasil.unshift('Acre', 'Amapá', 'Amazonas');
   console.log(brasil);
 
-  /*
+  /*.
   Remova o primeiro estado do array `brasil` e mostre-o no console.
   */
   console.log( '\nEstado removido:' );
