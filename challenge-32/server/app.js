@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get('/', function(req, res) {
-  res.json({ message: 'hi' });
+  res.json({ message: 'hello' });
 });
 
 app.use('/car', routes);
