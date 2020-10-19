@@ -124,7 +124,7 @@ citado acima, no lugar de "pessoas".
 carro.addPessoasCarro = function(x){
     if(x <= carro.assentos && (carro.quantidadePessoas + x) <= carro.assentos && x === 1){
         carro.quantidadePessoas += x ;
-        return "Já temos " + carro.quantidadePessoas + ' pessoa no carro!';
+        return "Já temos " + carro.quantidadePessoas + ' pessoas no carro!';
     }
     if(x <= carro.assentos && (carro.quantidadePessoas + x) <= carro.assentos){
         carro.quantidadePessoas += x ;
@@ -138,6 +138,7 @@ carro.addPessoasCarro = function(x){
     }
     return "O carro já está lotado!";
 };
+
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -162,7 +163,7 @@ carro.mudarCor("Verde Musgo");
 carro.carro.obterCor(); // "Verde Musgo"
 
 // Qual a marca e modelo do carro?
-obterMarcaModelo(); // "Esse carro é um Ford Ka"
+carro.obterMarcaModelo(); // "Esse carro é um Ford Ka"
 
 // Adicione 2 pessoas no carro.
 carro.addPessoasCarro(2); // "Já temos 2 pessoa no carro!"
@@ -173,13 +174,12 @@ carro.addPessoasCarro(4); // "Só cabem mais 3 pessoas!"
 // Faça o carro encher.
 carro.addPessoasCarro(3); // "Já temos 5 pessoa no carro!"
 
-
 // Tire 4 pessoas do carro.
-carro.quantidadePessoas - 4;
+carro.quantidadePessoas(-4); // "Já temos 1 pessoa no carro!"
 
 // Adicione 10 pessoas no carro.
-carro.addPessoasCarro(10); // "O carro já está lotado!"
+carro.addPessoasCarro(10); // "Só cabem mais 4 pessoas!"
 
 // Quantas pessoas temos no carro?
-carro.quantidadePessoas; // 5
+carro.quantidadePessoas; // 1
 ```
