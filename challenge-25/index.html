@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pizzara Avenida</title>
+    <style>
+        .container {
+            width: 600px;
+            margin: 0 auto;
+        }
+
+        h1 { border-bottom-style: inset; }
+        
+        pre { font-size: 1.2em; }
+        
+        .detalhes { width: 380px; }
+        
+        .oculta { display: none; }
+        
+        .exibe { display: inline; }
+
+        span { margin-left: 90px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pizzaria Avenida - Controle de Pedidos</h1>
+
+        <p>
+            Item do Pedido: 
+            <input type="radio" name="rbItem" data-js="rbItem" id="rbPizza"checked> <label for="rbPizza">Pizza</label>
+            <input type="radio" name="rbItem" data-js="rbItem" id="rbBebida"> <label for="rbBebida">Bebida</label>
+            <input type="radio" name="rbItem" data-js="rbItem" id="rbSobremesa"> <label for="rbSobremesa">Sobremesa</label>
+
+            <span>Item:</span> 
+            <select name="selPizza" data-js="selPizza">
+                <option value="pequena">Pizza Pequena</option>
+                <option value="media">Pizza Média</option>
+                <option value="familia">Pizza Família</option>
+            </select>
+
+            <select name="selBebida" data-js="selBebida" class="oculta">
+                <option value="refrigerante">Refrigerante Litro</option>
+                <option value="suco">Jarra de Suco</option>
+                <option value="agua">Água Mineral</option>
+            </select>
+
+            <select name="selSobremesa" data-js="selSobremesa" class="oculta">
+                <option value="pudim">Pudim</option>
+                <option value="mousse">Mousse</option>
+                <option value="manjar">Manjar</option>
+            </select>
+        </p>
+        
+        <p>
+            <label for="inDetalhes">Detalhes do Item:</label>
+            <input type="text" name="inDetalhes" data-js="inDetalhes" id="inDetalhes" class="detalhes">
+            
+            <input type="button" value="Adicionar" data-js="btnAdicionar">
+        </p>
+        
+        <pre data-js="outPedido"></pre>
+    </div>    
+    <script src="challenge-25.js"></script>
+</body>
+</html>
