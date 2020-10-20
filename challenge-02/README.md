@@ -86,7 +86,7 @@ if ( i === undefined && j === undefined && k !== undefined || i === undefined &&
 && j === undefined || k !== undefined && j !== undefined && i === undefined ){                              
 return i + j || i + k || j + k ;                                                                      
  }else if( i !== undefined && j !== undefined && k !== undefined ){                                    
- return i + j / k;                                                                                     
+ return (i + j) / k;                                                                                     
 }else if( i === undefined && j === undefined && k === undefined ){                                    
  return false;                                                                                         
 }                                                                                                    
