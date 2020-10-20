@@ -1,3 +1,5 @@
+  (function(win, doc){
+    'use strict';
   /*
   No HTML:
   - Crie um formulário com um input de texto que receberá um CEP e um botão
@@ -25,3 +27,163 @@
   - Utilize a lib DOM criada anteriormente para facilitar a manipulação e
   adicionar as informações em tela.
   */
+
+ function DOM(elements) {
+  this.element = document.querySelectorAll(elements);
+}
+
+DOM.prototype.on = function on(eventType, callback) {
+  Array.prototype.forEach.call(this.element, function(element){
+    element.addEventListener(eventType, callback, false);
+  });
+};
+DOM.prototype.off = function off(eventType, callback) {
+  Array.prototype.forEach.call(this.element, function(element){
+    element.removeEventListener(eventType, callback, false);
+  });
+};
+DOM.prototype.get = function get() {
+  return this.element;
+};
+DOM.prototype.forEach = function forEach() {
+    return Array.prototype.forEach.apply(this.element, arguments);
+};
+DOM.prototype.map = function map() {
+    return Array.prototype.map.apply(this.element, arguments);
+};
+DOM.prototype.filter = function filter() {
+    return Array.prototype.filter.apply(this.element, arguments);
+};
+DOM.prototype.reduce = function reduce() {
+    return Array.prototype.reduce.apply(this.element, arguments);
+};
+DOM.prototype.reduceRight = function reduceRight() {
+    return Array.prototype.reduceRight.apply(this.element, arguments);
+};
+DOM.prototype.every = function every() {
+    return Array.prototype.every.apply(this.element, arguments);
+};
+DOM.prototype.some = function some() {
+    return Array.prototype.some.apply(this.element, arguments);
+};
+
+DOM.prototype.isArray = function isArray(param) {
+    return Object.prototype.toString.call(param) === '[object Array]'; 
+};
+DOM.prototype.isFunction = function isFunction(param) {
+    return Object.prototype.toString.call(param) === '[object Function]'
+};
+DOM.prototype.isObject = function isObject(param) {
+    return Object.prototype.toString.call(param) === '[object Object]'
+};
+DOM.prototype.isNumber = function isNumber(param) {
+    return Object.prototype.toString.call(param) === '[object Number]'
+};
+DOM.prototype.isString = function isString(param) {
+    return Object.prototype.toString.call(param) === '[object String]'
+};
+DOM.prototype.isBoolean = function isBoolean(param) {
+    return Object.prototype.toString.call(param) === '[object Boolean]'
+};
+DOM.prototype.isNull = function isNull(param) {
+    return Object.prototype.toString.call(param) === '[object Null]'
+    || Object.prototype.toString.call(param) === '[object Undefined]';
+};
+
+
+const $form = new DOM ('[data-js="form"]');
+const $inputcep = new DOM('[data-js="inputcep"]');
+const $logradouro = new DOM ('[data-js="logradouro"]');
+const $bairro = new DOM ('[data-js="bairro"]');
+const $estado = new DOM ('[data-js="estado"]');
+const $cidade = new DOM ('[data-js="cidade"]');
+const $cep = new DOM ('[data-js="cep"]');
+const $status = new DOM('[data-js="status"]')
+
+const ajax = new XMLHttpRequest();
+
+
+$form.on('submit', handleSubmitFormCEP);
+
+
+function handleSubmitFormCEP(event) {
+  event.preventDefault();
+  ajax.open('GET', getClearURL());
+  ajax.send();
+  getMessage('loading');
+  ajax.addEventListener('readystatechange', handleReadyStateChange);
+}
+
+function getClearURL() {
+  return replaceCEP('https://ws.apicep.com/cep/[CEP].json');
+}
+
+function clearCEP() {
+  return $inputcep.get()[0].value.replace(/\D+/g, '');
+}
+
+function handleReadyStateChange() {
+  if(isRequestOK()) {
+    fillCEPFields();
+    getMessage('ok');
+  }
+}
+
+function isRequestOK() {
+  return ajax.readyState === 4 && ajax.status === 200;
+}
+
+function fillCEPFields() {
+  const data = parseData();
+  if(!data) {
+    getMessage('error');
+    data = clearData();
+  }
+  
+  $logradouro.get()[0].textContent = data.address;
+  
+  $bairro.get()[0].textContent = data.district;
+  
+  $estado.get()[0].textContent = data.state;
+  
+  $cidade.get()[0].textContent = data.city;
+  
+  $cep.get()[0].textContent = data.code;
+}
+
+function clearData() {
+  return {
+    address: '-',
+    district: '-',
+    state: '-',
+    city: '-',
+    code: '-'
+  }
+}
+
+function parseData() {
+  let result;
+  try {
+    result = JSON.parse(ajax.responseText);
+  }
+  catch(event) {
+    result = null;
+  }
+  return result;
+}
+
+function getMessage(type) {
+  const messages = {
+    loading: replaceCEP('Buscando informações para o CEP [CEP]:'), 
+    ok: replaceCEP('Endereço referente ao CEP [CEP]'), 
+    error: replaceCEP('Não encontramos o endereço para o CEP [CEP].')
+  };
+  
+  $status.get()[0].textContent = messages[type];
+}
+
+function replaceCEP(message) {
+  return message.replace('[CEP]', clearCEP());
+}
+
+}(window, document))
