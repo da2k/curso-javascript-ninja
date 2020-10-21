@@ -1,5 +1,6 @@
 # Desafio da semana #3
 
+
 ```js
 // Declarar uma variável qualquer, que receba um objeto vazio.
 var objeto = {}
@@ -127,7 +128,6 @@ pessoa.mostrarIdade() //"Olá, eu tenho 44 anos !"
 pessoa.mostrarIdade() //"Olá, eu tenho 45 anos !"
 pessoa.mostrarIdade() //"Olá, eu tenho 46 anos !"
 
-
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
 com metragens diferentes passadas por parâmetro.
@@ -202,7 +202,6 @@ pessoa.apresentacao = function() {
 
     
     } 
-
 
 // Agora, apresente-se ;)
 pessoa.apresentacao()//"Olá, eu sou a Gilmara Pimentel, tenho 43 anos, 1.5 m , meu peso é 42 Kg, e só hoje, eu já caminhei 9 metros!"
