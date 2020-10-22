@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        img {
+            max-width: 200px;
+            height: auto;
+        }
+    </style>
+    <title>D2DCar</title>
+</head>
+<body>
+    <header>
+        <h1 data-js="company-name">-</h1>
+        <span data-js="company-phone">(---)</span>
+    </header>
+    <form action="/" data-js="form-register">
+        <ul>
+            <li>
+                <label>Imagem do carro: </label>
+                <input type="url" data-js="carImage">
+            </li>
+            <li>
+                <label>Marca / Modelo: </label>
+                <input type="text" data-js="brand-model">
+            </li>
+            <li>
+                <label>Ano: </label>
+                <input type="text" data-js="year">
+            </li>
+            <li>
+                <label>Placa: </label>
+                <input type="text" data-js="licensePlate">
+            </li>
+            <li>
+                <label>Cor: </label>
+                <input type="text" data-js="color">
+            </li>
+            <li>
+                <button type="submit">Cadastrar</button>
+            </li>
+        </ul>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Imagem do Carro</th>
+                <th>Marca / Modelo</th>
+                <th>Ano</th>
+                <th>Placa</th>
+                <th>Cor</th>
+            </tr>
+        </thead>
+        <tbody data-js="table-car">
+        </tbody>
+    </table>
+    <script src="./DOM.js"></script>
+    <script src="./challenge-29.js"></script>
+</body>
+</html>
