@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>challenge-28</title>
+</head>
+<body>
+  <div>
+    Informe o CEP:
+  </div>
+  <div>
+    CEP: <input type="text" data-js="input" >
+    <button data-js="button" >Pesquisa cep...</button>
+  </div>
+  <div data-js="adress" >
+    <h2>Endereço pesquisado: </h2>
+    <div style="font-size: 23px; font-weight: 900;">
+      <span>Status: </span> <span data-js="status">Aguardando entrada de cep...</span>
+    </div>
+    <p>
+      <strong>Logradouro: </strong> <span data-js="logradouro" >...</span>
+      <strong>Bairro: </strong> <span data-js="bairro" > ... </span>
+    </p>
+    <p>
+      <strong>Cidade: </strong><span data-js="cidade" > ... </span>
+      <strong>Uf: </strong><span data-js="uf" > ... </span>
+      <strong>CEP: </strong><span data-js="cep" > ... </span>
+    </p>
+  </div>
+
+  <script src="dom.js"></script>
+  <script src="challenge-28.js"></script>
+</body>
+</html>
