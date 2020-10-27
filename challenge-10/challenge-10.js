@@ -10,10 +10,10 @@
   das variáveis. Analise o que está sendo impresso no console para saber como
   resolver o problema corretamente.
   */
-  var five = Number('5');
+  const five = Number('5');
   console.log( five + ' é número?', typeof five === 'number' );
 
-  var concat = String(10 + 10);
+  const concat = String(10) + 10;
   console.log( '"' + concat + '" é uma string? E é igual a "1010"?', typeof concat === 'string' );
 
   /*
@@ -59,7 +59,17 @@
   operador passado para a função "calculator", e passando para esse método
   os dois parâmetros da função de retorno de "calculator".
   */
-  // ?
+  function calculator(operador) {
+    if (!isOperatorValid(operador)) {
+      return false;
+    }
+    return function (param1, param2) {
+      if (( typeof param1 || typeof param2) !== Number) {
+        return false;
+      }
+      return operation[operador](param1, param2);
+    }
+  }
 
   /*
   Crie uma função chamada "showOperationMessage" que recebe três parâmetros:
@@ -68,7 +78,9 @@
   'A operação [NUMBER1] [OPERATOR] [NUMBER2] =';
   Essa função mostrará a mensagem da operação que criaremos mais abaixo.
   */
-  // ?
+  function showOperationMessage(operator, number1, number2) {
+    return 'A operação' + number1 + ' ' + operator + ' ' + number2 + ' =';
+  }
 
   /*
   Crie uma função chamada "showErrorMessage" que recebe um parâmetro: o
@@ -76,7 +88,9 @@
   Essa função deverá retornar a frase:
   'Operação "[OPERATOR]" não permitida!'
   */
-  // ?
+  function showErrorMessage(operador) {
+    return 'Operação ' + operador + " não é permitida!"
+  }
 
   /*
   Nossa calculadora está pronta! Agora vamos testá-la:
@@ -84,7 +98,9 @@
   - Declare 3 variáveis: "number1" e "number2", iniciando com valor zero, e
   "operationSignal", sem valor por enquanto.
   */
-  // ?
+  let number1 = 0;
+  let number2 = 0;
+  let operationSignal;
 
   /*
   PASSO 2:
@@ -92,7 +108,8 @@
   variável chamada "sum", que receba a função "calculator", passando por
   parâmetro a variável que recebeu o sinal da operação.
   */
-  // ?
+  operationSignal = '+';
+  const sum = calculator(operationSignal);
 
   /*
   PASSO 3:
@@ -106,7 +123,9 @@
   - O segundo, a função de soma, passando os dois operandos.
   - Se "sum" for "false", mostrar no console a mensagem de erro.
   */
-  // ?
+  if (sum) {
+
+  }
 
   /*
   Repita desde o "PASSO 2" com as operações de subtração, multiplicação,
