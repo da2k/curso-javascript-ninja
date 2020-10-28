@@ -1,42 +1,30 @@
-# Desafio Semana #1
+let myvar = 10;
+console.log(myvar);
 
-```js
-// Declarar uma variável chamada `myvar`, sem valor.
-?
+let soma = 15+8;
+console.log('a soma de 15 + 8 é '+ soma);
 
-// Após declarada, atribua o valor 10 à variável `myvar`.
-?
+++soma;
+console.log('o valor de soma usando operador abreviado de soma o resultado é '+soma);
 
-// Declare uma nova variável chamada `soma`, e adicione uma instrução somando os valores 15 e 8.
-?
+soma *= 3;
+console.log('o valor até aqui é '+ soma);
 
-// Atribua à variável `soma` todo o valor dela, somando 1, usando o operador de soma abreviado.
-?
+let sounija = true;
 
-// Atribua à variável `soma` todo o valor dela, multiplicando por 3, usando o operador de multiplicação abreviado.
-?
+let comida = ['arroz', 'feijao', 'ovo'];
+console.log(comida[0]);
 
-// Qual é o valor da variável `soma` até aqui?
-?
+let verifica = soma === myvar;
+console.log('Podemos dizer que o tipo e valores de soma e myvar é: '+verifica);
 
-// Declare uma variável chamada `souninja`, atribuindo à ela o valor booleano que representa `verdadeiro`.
-?
+let verifica2 = myvar <= soma;
+console.log('É verdade que myvar é menor ou igual a soma? '+verifica2);
 
-// Declare uma variável chamada `comida` que recebe um array com os valores 'arroz', 'feijão' e 'ovo'.
-?
+function divisao(x,y){
+    return x/y;
+}
+console.log(divisao(10,2)); //retornará 5
 
-// Digite a instrução que imprime o valor de 'feijao', que está na variável `comida`.
-?
-
-// Digite o código que verifica se a variável `soma' é igual a variável `myvar` (testando também o tipo).
-?
-
-// Digite o código que verifica se a variável `myvar` é menor ou igual à variável `soma`.
-?
-
-// Crie uma função chamada `divisao` que receba como parâmetro dois números, e retorne o resultado da divisão entre eles.
-?
-
-// Invoque a função criada acima, passando os parâmetros 10 e 2.
-?
-```
+//Fernando eu tirei os pedidos, porquê acho que você já sabe praticamente todas as perguntas/pedidos decorados!
+//Estou usando Let pois li um livro por causa do ES5 e ES6
