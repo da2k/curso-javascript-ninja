@@ -13,7 +13,7 @@ console.log('o valor até aqui é '+ soma);
 let sounija = true;
 
 let comida = ['arroz', 'feijao', 'ovo'];
-console.log(comida[0]);
+console.log(comida[1]);
 
 let verifica = soma === myvar;
 console.log('Podemos dizer que o tipo e valores de soma e myvar é: '+verifica);
