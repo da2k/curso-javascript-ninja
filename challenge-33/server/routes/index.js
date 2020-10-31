@@ -9,13 +9,19 @@ router.get('/', function(req, res) {
 });
 
 router.post('/', function(req, res) {
-  data.push({
-    image: req.body.image,
-    brandModel: req.body.brandModel,
-    year: req.body.year,
-    plate: req.body.plate,
-    color: req.body.color
+  let hasCar = data.some(function(car) {
+    return car.plate === req.body.plate;
   });
+  
+  if(!hasCar) {
+    data.push({
+      image: req.body.image,
+      brandModel: req.body.brandModel,
+      year: req.body.year,
+      plate: req.body.plate,
+      color: req.body.color
+    });
+  }
   res.json({ message: 'success' });
 });
 
