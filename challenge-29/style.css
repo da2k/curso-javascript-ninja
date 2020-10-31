@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  font: 300 14px Roboto;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  max-width: 600px;
+  width: 90%;
+}
+
+h1, h3 {
+  background-color:#0056FB;
+  color: #fff;
+  text-align: center;
+}
+
+h1 {
+  font: 700 26px Roboto;
+  margin-bottom: 10px;
+}
+
+h3 {
+  margin-bottom: 8px;
+  font: 500 16px Roboto;
+}
+
+div.form {
+  width: 100%;
+  height: 170px;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+div.form > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+div.car-salon > h3 {
+  margin-top: 10px;
+}
+
+input {
+  border: none;
+  border-bottom: 2px solid #9900E3;
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  width: 100px;
+  height: 40px;
+  background-color: #9900E3;
+  outline: none;
+  border: none;
+  font: 400 16px Roboto;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100px;
+}
+
+button:hover {
+  background-color: #FF01B8;
+}
+
+.cars {
+  background-color: #9900E3;
+  display: grid;
+  grid-template-columns: 1fr, 1fr, 1fr, 1fr;
+  text-align: center;
+}
+
+.title {
+  font: 700 14px Roboto;
+  color: #fff;
+}
+
+.item-1 {
+  grid-area: 1 / 2;
+}
+
+.item-2 {
+  grid-area: 1 / 5;
+}
+
+.item-3 {
+  grid-area: 1 / 4;
+}
+
+.item-4 {
+  grid-area: 1 / 3;
+}
+
+.item-5 {
+  grid-area: 1 / 1;
+}
+
+.table {
+  display: grid;
+  grid-template-columns: "1fr, 1fr, 1fr, 1fr, 1fr";
+  border: 2px solid #9900E3;
+  font: 700 16px Roboto;
+  text-align: center;
+}

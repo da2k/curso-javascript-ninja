@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1 data-js="title">Carregando dados...</h1>
+
+    <h3><span>Ligue:</span><span data-js="phone">carregando...</span></h3>
+
+    <div class="form" >
+      <div>
+        Marca/Modelo: <input type="text" data-js="input" >
+      </div>
+      <div>
+        Ano: <input type="text" data-js="input" >
+      </div>
+      <div>
+        Placa: <input type="text" data-js="input" >
+      </div>
+      <div>
+        Cor: <input type="text" data-js="input" >
+      </div>
+      <div>
+        Foto: <input type="text" data-js="input" data-id="image" >
+      </div>
+      <div>
+        <button type="text" data-js="button" >Cadastrar</button>
+      </div>
+    </div>
+    <div class="car-salon" data-js="car-salon">
+      <h3>Salão virtual</h3>
+      <div class="cars">
+        <div class="item-1 title">Marca/Modelo</div>
+        <div class="item-2 title">Ano</div>
+        <div class="item-3 title">Placa</div>
+        <div class="item-4 title">Cor</div>
+        <div class="item-5 title">Imagem</div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <script src="DOM.js"></script>
+  <script src="challenge-29.js"></script>
+</body>
+</html>
