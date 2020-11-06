@@ -2,7 +2,7 @@
 
 ```js
 // Declarar uma variável qualquer, que receba um objeto vazio.
-var myobject;
+var myobject = {};
 
 /*
 Declarar uma variável `pessoa`, que receba suas informações pessoais.
@@ -16,7 +16,7 @@ As propriedades e tipos de valores para cada propriedade desse objeto devem ser:
 - `andando` - Boolean - recebe "falso" por padrão
 - `caminhouQuantosMetros` - Number - recebe "zero" por padrão
 */
-var pessoa = {nome: 'Dean', sobrenome: 'Winchester', sexo: 'Masculino', idade: 25, altura: 1.80, peso: 80, andando: false, caminhouQuantosMetros: 0};
+var pessoa = {nome: 'Dean', sobrenome: 'Winchester', sexo: 'Masculino', idade: 27, altura: 1.80, peso: 80, andando: false, caminhouQuantosMetros: 0};
 
 
 /*
@@ -39,7 +39,7 @@ valor dessa propriedade a quantidade passada por parâmetro;
 booleano que representa "verdadeiro";
 */
 pessoa.andar = function(qtdMetros) {
-  pessoa.quantidadeDeMetros = qtdMetros;
+  pessoa.quantidadeDeMetros += qtdMetros;
   pessoa.andando = true;
 }
 
@@ -56,7 +56,7 @@ Crie um método chamado `nomeCompleto`, que retorne a frase:
 - "Olá! Meu nome é [NOME] [SOBRENOME]!"
 */
 pessoa.nomeCompleto = function() {
-  return 'Olá! Meu nome é '+pessoa.nome+' '+pessoa.sobrenome;
+  return 'Olá! Meu nome é '+pessoa.nome+' '+pessoa.sobrenome+'!';
 }
 
 
@@ -65,7 +65,7 @@ Crie um método chamado `mostrarIdade`, que retorne a frase:
 - "Olá, eu tenho [IDADE] anos!"
 */
 pessoa.mostrarIdade = function() {
-  return 'Olá! eu tenho '+pessoa.idade+' Anos';
+  return 'Olá! eu tenho '+pessoa.idade+' Anos!';
 }
 
 /*
@@ -89,13 +89,13 @@ Agora vamos brincar um pouco com o objeto criado:
 Qual o nome completo da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.nomeCompleto(); // 'Olá! Meu nome é Dean Winchester'
+pessoa.nomeCompleto(); // 'Olá! Meu nome é Dean Winchester!'
 
 /*
 Qual a idade da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.mostrarIdade(); // 'Olá! eu tenho 27 Anos'
+pessoa.mostrarIdade(); // 'Olá! eu tenho 27 Anos!'
 
 /*
 Qual o peso da pessoa? (Use a instrução para responder e comentários
@@ -121,7 +121,7 @@ Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
 comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
-pessoa.mostrarIdade(); // 'Olá! eu tenho 28 Anos'
+pessoa.mostrarIdade(); // 'Olá! eu tenho 30 Anos!'
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
@@ -129,7 +129,7 @@ com metragens diferentes passadas por parâmetro.
 */
 pessoa.andar(50);
 pessoa.andar(100);
-pessoa.andar(150);
+pessoa.andar(50);
 
 /*
 A pessoa ainda está andando? (Use a instrução para responder e comentários
@@ -152,7 +152,7 @@ pessoa.andando; // false
 Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
 inline ao lado da instrução para mostrar a resposta retornada)
 */
-pessoa.quantidadeDeMetros; // 150
+pessoa.quantidadeDeMetros; // 200
 
 /*
 Agora vamos deixar a brincadeira um pouco mais divertida! :D
@@ -197,7 +197,7 @@ pessoa.apresentacao = function() {
     metroS = 'metros'
   }
   
-  return 'Olá, eu sou '+sexoS+' '+pessoa.nome+' '+pessoa.sobrenome+', tenho '+pessoa.idade+' '+idadeS+', '+pessoa.altura+', meu peso é '+pessoa.peso+' e, só hoje, eu já caminhei '+pessoa.quantidadeMetros+' '+metroS;
+  return 'Olá, eu sou '+sexoS+' '+pessoa.nome+' '+pessoa.sobrenome+', tenho '+pessoa.idade+' '+idadeS+', '+pessoa.altura+', meu peso é '+pessoa.peso+' e, só hoje, eu já caminhei '+pessoa.quantidadeMetros+'m. '+metroS;
 }
 
 // Agora, apresente-se ;)
@@ -207,11 +207,11 @@ pessoa.apresentacao();
 
 // Retorno 1:
 
-/* 'Olá, eu sou o Dean Winchester, tenho 25 anos, 1.82, meu peso é 70 e, só hoje, eu já caminhei 50 metros'
+/* 'Olá, eu sou o Dean Winchester, tenho 30 anos, 1.82, meu peso é 70 e, só hoje, eu já caminhei 50 metros'
 
 // Retorno 2:
 
-/* 'Olá, eu sou a Dean Winchester, tenho 25 anos, 1.82, meu peso é 70 e, só hoje, eu já caminhei 50 metros' */
+/* 'Olá, eu sou a Dean Winchester, tenho 30 anos, 1.82, meu peso é 70 e, só hoje, eu já caminhei 50m. metros' */
 
 // Retorno 3:
 
