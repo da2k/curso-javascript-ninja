@@ -12,7 +12,7 @@ var soma = 15 + 8;
 resultado da soma = 23.
 
 // Atribua à variável `soma` todo o valor dela, somando 1, usando o operador de soma abreviado.
-++soma
+++soma;
 resultado da soma + 1 = 24
 Usei pre-incremento
 
@@ -40,10 +40,9 @@ myvar <= soma;
 
 // Crie uma função chamada `divisao` que receba como parâmetro dois números, e retorne o resultado da divisão entre eles.
 function divisao(x, y) {
-  return 4 / 2;
+  return x / y;
 }
-divisao(4, 2)
-Resultado será 2.
+
 
 // Invoque a função criada acima, passando os parâmetros 10 e 2.
 function divisao(x, y){
