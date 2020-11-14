@@ -60,24 +60,27 @@ os livros.
 */
 function book(nameBook) {
 	var livros = {
-		'Super Natural': {
+		superNatural: {
 			quantidadePaginas: 500,
 			autor: 'Chock',
 			editora: 'Super Natural test'
 		},
-		'Friedrich Nietzsche': {
+		FriedrichNietzsche: {
 			quantidadePaginas: 325,
 			autor: 'Friedrich Nietzsche',
 			editora: 'Martin Claret'
 		},
-		'Ansiedade': {
+		Ansiedade: {
 			quantidadePaginas: 160,
 			autor: 'Augusto Cury',
 			editora: 'Saraiva'
 		}
 	}
-
-	return !nameBook ? livros : livros[nameBook];
+	// Verificar se foi passado o parâmetro
+	if (nameBook === undefined) {
+		return livros;
+	}
+	return nameBook;
 };
 
 /*
@@ -90,19 +93,21 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-var nameBook = 'Super Natural';
-console.log('O livro ' + nameBook + ' Tem ' + book('Super Natural').quantidadePaginas + ' páginas!');
+console.log(
+	'O livro ' + book('superNatural') + ' tem ' + book('superNatural')['quantidadePaginas'] + ' Páginas!'
+
+)
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log('O autor do livro ' + nameBook + ' é ' + book(nameBook).autor);
+// ?
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log('O livro ' + nameBook + ' foi publicado pela editora ' + book(nameBook).editora);
+// ?
