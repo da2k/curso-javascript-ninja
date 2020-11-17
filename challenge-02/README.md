@@ -4,29 +4,34 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-?
+function soma(a, b) { return a + b };
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-?
+const total = soma(2,3);
 
 // Qual o valor atualizado dessa variável?
-?
+5
 
 // Declare uma nova variável, sem valor.
-?
+var x;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-?
+function transformValueToString(value) {
+    x = `O valor da variável agora é ${value}`;
+    return x;
+};
 
 // Invoque a função criada acima.
-?
+transformValueToString(10);
 
 // Qual o retorno da função? (Use comentários de bloco).
-?
+/*
+*  o resultardo é: 'O valor da variável agora é 10'
+*/
 
 /*
 Crie uma função com as seguintes características:
@@ -35,19 +40,22 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-?
+function multiple(a, b, c) {
+    if(!a || !b || !c) return 'Preencha todos os valores corretamente!';
+    return (a * b * c) * 2;
+};
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+multiple(1, 2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+// retorno da funcao: 'Preencha todos os valores corretamente!'
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+multiple(1, 1, 1);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+//retorno da funcao:  2
 
 /*
 Crie uma função com as seguintes características:
@@ -58,8 +66,24 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+function handleNumbers(a, b, c) {
+    if(a && b && c) return (a + b) / c ;
+    if(a && b) return a + b;
+    if(a) return a;
+    if(!a && !b && !c) return false;
+    return null;
+};
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+// handleNumbers(10)
+// retorno: 10;
+
+// handleNumbers(5,5);
+// retorno: 10;
+
+// handleNumbers(10, 15, 2);
+// retorno 12.5;
+
+// handleNumbers();
+// retorno: false;
 ```
