@@ -103,6 +103,4 @@ sumValid() //false
 sumValid(15) //15
 sumValid(15, 15) //30
 sumValid(15, 15, 3) //10
-
-
 ```
