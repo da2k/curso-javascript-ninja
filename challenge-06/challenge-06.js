@@ -13,8 +13,8 @@ Os elementos serão nomes de times do campeonato escolhido, e os nomes devem
 estar na ordem em que eles aparecem na tabela no momento da solução desse
 desafio.
 */
-var teams = ['roma','paris saint germain', 'Barcelona', 'Manchester United', 'Real Madrid', 'Manchester City'];
-teams.sort();
+var teams = ['paris saint germain', 'Barcelona', 'Manchester United', 'Real Madrid', 'Manchester City'];
+
 
 console.log( 'Times que estão participando do campeonato:', teams );
 
@@ -35,12 +35,10 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 function showTeamPosition(numPosicao) {
-  if (numPosicao > 1 && numPosicao <= 5) {
-    return 'O time que está em ' + numPosicao +'°'+ ' lugar é o ' + teams[numPosicao];
-  }
-  else if (numPosicao > 5) {
+  if (numPosicao < 1 || numPosicao > 5) {
     return 'Não temos a informação do time que está nessa posição.';
   }
+  return 'O time que está em ' + numPosicao +'°'+ ' lugar é o ' + teams[numPosicao - 1] + ' -';
 
 }
 
@@ -48,8 +46,12 @@ function showTeamPosition(numPosicao) {
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
-console.log(showTeamPosition(4));
-
+console.log(showTeamPosition(1));
+console.log(showTeamPosition(2));
+console.log(showTeamPosition(3));
+console.log(showTeamPosition(5));
+console.log(showTeamPosition(8));
+console.log(showTeamPosition(0));
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
 repetição "while".
