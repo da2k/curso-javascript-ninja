@@ -85,7 +85,7 @@
   */
   console.log( '\nFunção que limpa entrada do usuário (somente números):' );
   function justNumbers( string ){
-    let justNum = new RegExp( '\\d', 'gm' )
+    let justNum = new RegExp( '\\d+', 'gm' )
     return string.match(justNum) 
   }
   console.log( justNumbers.toString() )
