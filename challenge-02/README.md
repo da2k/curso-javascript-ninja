@@ -75,21 +75,13 @@ Crie uma função com as seguintes características:
 function teste( x, y, z ) {
   var retorno;
   
-  if (x == null && y == null && z != null) {
-    retorno = z;
-  } else if (x == null && y != null && z == null) {
-    retorno = y;
-  } else if (x != null && y == null && z == null) {
+  if (x !== undefined && y === undefined && z === undefined) {
     retorno = x;
-  } else if (x == null && y != null && z != null) {
-    retorno = y + z;
-  } else if (x != null && y == null && z != null) {
-    retorno = x + z;
-  } else if (x != null && y != null && z == null) {
+  } else if (x !== undefined && y !== undefined && z === undefined) {
     retorno = x + y;
-  } else if (x != null && y != null && z != null) {
+  } else if (x !== undefined && y !== undefined && z !== undefined) {
     retorno = (x + y) / z;
-  } else if (x === null || y === null || z === null) {
+  } else if (x === undefined || y === undefined || z === undefined) {
     retorno = false;
   } else {
     retorno = null;
@@ -99,9 +91,9 @@ function teste( x, y, z ) {
 
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
+teste() // null
 teste(2) // 2
 teste(2, 7) // 9
 teste(2, 7, 3) // 3
-teste( null, null, null ) // false
-teste() // null
+teste( undefined, undefined, undefined ) // false
 ```
