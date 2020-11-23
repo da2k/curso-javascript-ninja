@@ -5,8 +5,6 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
 function soma( x, y ) {
-   x = 10;
-   y = 30;
    return x + y; 
 }
 
@@ -15,11 +13,11 @@ soma();
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
 let x = soma(3, 5);
 
-soma() + 5; 
+x + 5; 
 
 
 // Qual o valor atualizado dessa variável?
-x = 55; 
+x = 13; 
 
 // Declare uma nova variável, sem valor.
 let y;
@@ -31,7 +29,7 @@ Onde VALOR é o novo valor da variável.
 */
 function qualquer(){
     let y = 3;
-    return = 'O valor da variável agora é 3'
+    return = 'O valor da variável agora é ' + y;
 };
 
 // Invoque a função criada acima.
@@ -51,10 +49,7 @@ Crie uma função com as seguintes características:
 */
 
 function tentativa(a, b, c) {
-    a = 2;
-    b = 3;
-    c = 2
-    if(a, b, c === undefined) {
+    if(a === undefined || b === undefined || c === undefined) {
         return 'Preencha todos os valores corretamente'
     } else {
         return a * b * c + 2
@@ -65,17 +60,7 @@ function tentativa(a, b, c) {
 
 // Invoque a função criada acima, passando só dois números como argumento.
 
-function tentativa(a, b, c) {
-    a = 2;
-    b = 3;
-    c 
-    if(a, b, c === undefined) {
-        return 'Preencha todos os valores corretamente'
-    } else {
-        return a * b * c + 2
-    }
-}
-
+tentativa(1, 2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 
@@ -83,22 +68,11 @@ function tentativa(a, b, c) {
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 
-
-function tentativa(a, b, c) {
-    a = 2;
-    b = 3;
-    c = 2
-    if(a, b, c === undefined) {
-        return 'Preencha todos os valores corretamente'
-    } else {
-        return a * b * c + 2
-    }
-}
+tentativa(2, 3, 4);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 
-// console.log(tentativa());
-// 14
+// 26
 
 /*
 Crie uma função com as seguintes características:
@@ -110,17 +84,14 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function eita(a, b, c){
-  a = 3;
-  b = 5;
-  c = 8;
   
-  if(a) {
+  if(a !== undefined && b === undefined && c === undefined) {
     return a;
-   } else if(a, b){
+   } else if(a !== undefined && b !== undefined && c === undefined){
       return a + b;
-    } else if (a, b, c){
-      return a + b / c;
-    } else if(undefined){
+    } else if (a, b, c !== undefined){
+      return (a + b) / c;
+    } else if(a, b, c === undefined){
       return false;
     } else {
       return null
@@ -128,35 +99,10 @@ function eita(a, b, c){
 }
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 
-function eita(){
-}
-// ``` undefined
+function eita(); // false
 
-function eita(a){
-    a = 3;
-    return a 
-}
-// 3
+function eita(2); // 1
 
-function eita(a, b){
-    a = 3;
-    b = 5;
-    return a + b 
-}
-// 8
+function eita(2, 2); // 4
 
-function eita(a, b, c){
-    a = 3;
-    b = 5;
-    c = 8;
-    return a + b /  c
-}
-// 3.625
-
-function eita(a, b, c){
-    return false;
-}
-
-function eita(){
-    return null;
-}
+function eita(2, 2, 2) // 2
