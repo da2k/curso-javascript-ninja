@@ -43,7 +43,7 @@ pares entre 10 e 20, inclusive esses 2.
 */
 let par = 10;
 
-while(par <= 20){
+while(par < 20){
 	let div = par % 2;
 	div === 0 ? console.log(par) : false;
 	par++;
