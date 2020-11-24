@@ -243,5 +243,5 @@ Nao há um metodo para remover pessoas. Não encontrei orientações para criar 
 carro.adicionarPessoas(10);  // 'O carro está lotado'
 
 // Quantas pessoas temos no carro?
-5 
+5
 ```
