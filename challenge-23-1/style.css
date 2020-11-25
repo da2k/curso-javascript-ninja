@@ -1,0 +1,94 @@
+body{
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(to right, #ff00008c, #fa4f00a2);
+}
+
+.calculator-grid{
+  width: 450px;
+  height: 370px;
+  border: 4px solid black;
+  padding: 10px;
+  background-color: rgba(0,0,0,0.7);
+  border-radius: 15px;
+  margin: 100px auto;
+}
+
+.input-wrapper{
+  display: flex;
+}
+
+input{
+  border: 2px solid rgba(0,0,0,0.9);
+  border-radius: 10px;
+  background-color: slategrey;
+  color: rgb(0, 0, 0);
+  text-align: right;
+  width: 445px;
+  font-size: 50px;
+  
+  
+}
+
+.number-operations-wrapper{
+  display:flex;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  padding: 10px 10px;
+  margin: 15px auto;
+  border: 2px solid black;
+}
+
+.numbers-wrapper{ 
+  width: 240px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 2px solid black;
+  margin: auto; 
+  border-radius: 10px;
+}
+
+.numbers{
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 10px 10px;
+  border-radius: 10px;
+}
+
+.operations-wrapper{
+  width: 165px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 2px solid black;
+  margin: auto; 
+  border-radius: 10px;
+  
+  
+}
+.operations{
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 10px 10px;
+  border-radius: 10px;
+  
+}
+
+button{
+  font-size: 30px;
+  height: 50px;
+  width: 60px;
+  border: 2px solid black;
+  border-radius: 50%;
+  background-color: slategrey;
+  margin: 5px 5px;
+  
+}
+
+button:hover{
+  background-color:rgb(57, 66, 75) ;
+  color: white;
+  cursor: pointer
+}
+
+/*
+button[value="0"]{
+  display: block;
+  margin: 2px auto
+}
+*/
