@@ -21,9 +21,7 @@
     Mostre no console, em um array, todas as propriedades do objeto acima.
     Não use nenhuma estrutura de repetição, nem crie o array manualmente.
     */
-    for(var prop in person){
-        console.log(prop, ':', person[prop])
-    }
+    console.log(Object.keys(person));
 
     /*
     Crie um array vazio chamado `books`.
@@ -36,18 +34,18 @@
     `name`: String
     `pages`: Number
     */
-    books[0] = {
+    books.push({
         name: 'Codigo Da Vinci',
         pages: 560
-    };
-    books[1] = {
+    });
+    books.push({
         name: 'Fortaleza Digital',
         pages: 700
-    };
-    books[2] = {
+    });
+    books.push({
         name: 'Anjos e Demônios',
         pages: 450
-    };
+    });
     console.log( '\nLista de livros:' );
 
     /*
@@ -70,26 +68,18 @@
     /*
     Converta os objetos que ficaram em `books` para strings.
     */
-    for(var i = 0; i < books.length; i++)
-    {
-        books[i] = JSON.stringify(books[i])
-    }
+     books = JSON.stringify(books);
     console.log( '\nLivros em formato string:' );
     /*
     Mostre os livros nesse formato no console:
     */
-    for(var i = 0; i < books.length; i++)
-    {
-        console.log(books[i])
-    }
+    console.log(books);
+
 
     /*
     Converta os livros novamente para objeto.
     */
-    for(var i = 0; i < books.length; i++)
-    {
-        books[i] = JSON.parse(books[i])
-    }
+    books = JSON.parse(books)
     console.log( '\nAgora os livros são objetos novamente:' );
 
     /*
@@ -97,8 +87,9 @@
     no formato abaixo:
         "[PROPRIEDADE]: [VALOR]"
     */
-    for(var prop in person){
-        console.log(prop, ',', person[prop])
+    for(var i = 0; i < books.length; i++)
+        for(var prop in books[i]){
+            console.log(prop, ':', books[i][prop])
     }
 
     /*
