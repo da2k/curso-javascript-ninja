@@ -22,13 +22,13 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function addValue(value){
-    empty = value;
+function addValue(){
+    empty = 2;
     return "O valor da variável agora é " + empty; 
 }
 
 // Invoque a função criada acima.
-addValue(2);
+addValue();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
@@ -77,7 +77,7 @@ function manyCases(x, y, z){
         return x + y;
     }else if (x) {
         return x;
-    }else {
+    }else if (x === undefined && y === undefined && z === undefined) {
         return false
     }
 
