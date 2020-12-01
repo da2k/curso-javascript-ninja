@@ -56,7 +56,7 @@ var carro = {
     cor: "prata",
     quantasPortas: 4,
     assentos: 5,
-    quantidadePessoas: 5,
+    quantidadePessoas: 0,
 };
 
 /*
@@ -114,11 +114,10 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 citado acima, no lugar de "pessoas".
 */
 carro.abrirAPorta = function(numberPeople) {
-
     var availableQuantity = carro.assentos - carro.quantidadePessoas;
     var metricQuantityPeople = availableQuantity === 1 ? "pessoa" : "pessoas";
 
-    if (carro.quantidadePessoas >== carro.assentos ) {
+    if (carro.quantidadePessoas >= carro.assentos) {
         return "O carro já esta lotado!";
     }
 
@@ -138,38 +137,39 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-?
+carro.obterCor(); // 'preto'
 
 // Mude a cor do carro para vermelho.
-?
+carro.mudaCor('vermelho');
 
 // E agora, qual a cor do carro?
-?
+carro.obterCor(); // 'vermelho'
 
 // Mude a cor do carro para verde musgo.
-?
+carro.mudaCor('verde musgo');
 
 // E agora, qual a cor do carro?
-?
+carro.obterCor(); // 'verde musgo'
 
 // Qual a marca e modelo do carro?
-?
+carro.obterMarca(); // 'Ford'
+carro.obterModelo(); // 'básico'
 
 // Adicione 2 pessoas no carro.
-?
+carro.abrirAPorta(2); // 'Já temos 2 pessoas no carro!'
 
 // Adicione mais 4 pessoas no carro.
-?
+carro.abrirAPorta(4); // 'Só cabem mais 3 pessoas!'
 
 // Faça o carro encher.
-?
+carro.abrirAPorta(3); // 'Já temos 5 pessoas no carro!'
 
 // Tire 4 pessoas do carro.
-?
+carro.quantidadePessoas -= 4;
 
 // Adicione 10 pessoas no carro.
-?
+carro.quantidadePessoas += 10; 
 
 // Quantas pessoas temos no carro?
-?
+carro.quantidadePessoas; // 11
 ```
