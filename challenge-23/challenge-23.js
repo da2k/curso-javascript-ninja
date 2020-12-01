@@ -23,3 +23,45 @@ multiplicação (x), então no input deve aparecer "1+2x".
 input;
 - Ao pressionar o botão "CE", o input deve ficar zerado.
 */
+
+let $inputVisor = document.querySelector('[data-js="visor"]');
+
+let $buttonsNumbers = document.querySelectorAll('[data-js="button-number"]');
+
+let $buttonsOperations = document.querySelectorAll('[data-js="button-operation"]');
+
+let $buttonCE = document.querySelector('[data-js="button-ce"]');
+
+console.log($inputVisor);
+console.table($buttonsNumbers);
+
+Array.prototype.forEach.call($buttonsNumbers, function(button) {
+  button.addEventListener('click', handleCLickNumber, false);
+});
+
+Array.prototype.forEach.call($buttonsOperations, function(button) {
+  button.addEventListener('click', handleClickOperation, false);
+})
+
+$buttonCE.addEventListener('click', handleClickCE, false);
+
+
+function handleCLickNumber(e) {
+  $inputVisor.value += this.value;
+}
+
+function handleClickOperation(e) {
+  let operation = ["+", "-", "*", "/"];
+
+  if(isLastItemAnOperation(operation)) {
+    $inputVisor.value = $inputVisor.value.slice(0, -1);
+  }
+
+
+
+  $inputVisor.value += this.value;
+}
+
+function handleClickCE(e) {
+  $inputVisor.value = 0;
+}
