@@ -64,7 +64,7 @@
       return false;
     }
     return function (param1, param2) {
-      if (( typeof param1 || typeof param2) !== Number) {
+      if (( typeof param1 || typeof param2) !== 'number') {
         return false;
       }
       return operation[operador](param1, param2);
@@ -124,7 +124,11 @@
   - Se "sum" for "false", mostrar no console a mensagem de erro.
   */
   if (sum) {
-
+    number1 = 12;
+    number2 = 4;
+    console.log(showOperationMessage(operationSignal, number1, number2), sum(number1, number2));
+  } else {
+    console.log(showErrorMessage(operationSignal))
   }
 
   /*
@@ -132,11 +136,57 @@
   divisão e resto. Crie variáveis com os nomes "subtraction",
   "multiplication", "division" e "mod".
   */
-  // ?
+  operationSignal = '-';
+  const subtraction = calculator(operationSignal);
+  if (subtraction) {
+    number1 = 8;
+    number2 = 2;
+    console.log(showOperationMessage(operationSignal, number1, number2), subtraction(number1, number2));
+  } else {
+    console.log(showErrorMessage(operationSignal))
+  }
+
+  operationSignal = '*';
+  const multiplication = calculator(operationSignal);
+  if (multiplication) {
+    number1 = 20;
+    number2 = 6;
+    console.log(showOperationMessage(operationSignal, number1, number2), multiplication(number1, number2));
+  } else {
+    console.log(showErrorMessage(operationSignal))
+  }
+
+  operationSignal = '/';
+  const division = calculator(operationSignal);
+  if (division) {
+    number1 = 40;
+    number2 = 6;
+    console.log(showOperationMessage(operationSignal, number1, number2), division(number1, number2));
+  } else {
+    console.log(showErrorMessage(operationSignal))
+  }
+
+  operationSignal = '%';
+  const mod = calculator(operationSignal);
+  if (mod) {
+    number1 = 6;
+    number2 = 2;
+    console.log(showOperationMessage(operationSignal, number1, number2), mod(number1, number2));
+  } else {
+    console.log(showErrorMessage(operationSignal))
+  }
 
   /*
   Repita o PASSO 2 novamente, mas passando um operador inválido, para ver se
   a mensagem de erro será mostrada no console.
   */
-  // ?
+  operationSignal = 'invalido';
+  const invalid = calculator(operationSignal);
+  if (invalid) {
+    number1 = 10;
+    number2 = 16;
+    console.log(showOperationMessage(operationSignal, number1, number2), invalid(number1, number2));
+  } else {
+    console.log(showErrorMessage(operationSignal))
+  }
 })();
