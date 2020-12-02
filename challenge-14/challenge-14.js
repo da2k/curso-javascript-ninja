@@ -11,18 +11,10 @@
     Mostre esse array no console.
     */
     console.log( 'Number Objects Array:' );
-    var numberObjects = [
-        { number: 1 },
-        { number: 2 },
-        { number: 3 },
-        { number: 4 },
-        { number: 5 },
-        { number: 6 },
-        { number: 7 },
-        { number: 8 },
-        { number: 9 },
-        { number: 10 }
-    ]
+    var numberObjects = []
+    for(var i = 0; i <= 10; i++){
+        numberObjects.push({ number : i})
+    }
     console.log(numberObjects);
     /*
     Crie um array chamado `justNumbers`, que terá como elementos somente os
@@ -53,9 +45,7 @@
     */
     console.log( '\nOperation:' );
     var operation = justMod2Or3.reduce(function (acc, value, index, array) {
-        if (index === array.length -1)
-            return (acc + value) * value
-        return acc + value;
+        return (acc + 1) * value;
     }, 0);
     console.log(operation);
     /*
@@ -65,9 +55,7 @@
     */
     console.log( '\nOperation 2:' );
     var operation2 = justMod2Or3.reduceRight(function  (acc, value, index, array) {
-        if (index === 0)
-            return (acc + value) * value
-        return acc + value;
+        return (acc + 1) * value;
     }, 0);
     console.log(operation2);
 
@@ -110,10 +98,8 @@
     o que acontece ;)
     */
     console.log( '\nExiste um { number: 2 } em numberObjects?' );
-    var indexOf = numberObjects.map(function (num) {
-        return num.number;
-    }).indexOf(2);
-    if(indexOf !== -1){
+
+    if(numberObjects.indexOf({ number: 2}) > -1){
         console.log( '\nExiste um objeto { number: 2 } em numberObjects!' );
     } else {
         console.log( '\nNão existe um objeto { number: 2 } em numberObjects :(' );
@@ -125,10 +111,7 @@
     será que obtemos um resultado diferente? Faça a busca a partir do índice 2.
     */
     console.log( '\nE buscando a partir do último índice, o { number: 2 } existe?' );
-    var lastIndexOf =  numberObjects.map(function (num) {
-        return num.number;
-    }).lastIndexOf(2, 2);
-    if(lastIndexOf !== -1){
+    if(numberObjects.lastIndexOf({ number: 2 }, 2) > -1){
         console.log( '\nExiste um objeto { number: 2 } em numberObjects!' );
     } else {
         console.log( '\nNão existe um objeto { number: 2 } em numberObjects :(' );
