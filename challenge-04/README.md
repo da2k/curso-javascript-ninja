@@ -8,7 +8,7 @@ equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
 var isTruthy = function ( arg ) {
-	return !!param;
+	return !!arg;
 }
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
@@ -28,7 +28,7 @@ isTruthy( 1 );
 isTruthy( 'Pessoa' );
 isTruthy( [] );
 isTruthy( {} );
-isTruthy( function () {} );
+isTruthy( function() {} );
 isTruthy( 'Teste' );
 isTruthy( 20 + 10 );
 isTruthy( 8 );
