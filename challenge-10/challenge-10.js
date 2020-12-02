@@ -226,4 +226,4 @@
     console.log(showErrorMessage(operationSignal));
   }
 
-});
+})();
