@@ -31,8 +31,9 @@
         this.getAge = function () {
             return this.age;
         }
-        this.addAge = function (plus) {
-            return this.age += plus;
+        this.addAge = function () {
+            this.age += arguments[0];
+            return this;
         }
     }
 
@@ -71,7 +72,7 @@
     - "[NOME COMPLETO] agora tem [NOVA IDADE] anos."
     */
     console.log( '\nNova idade das pessoas:' );
-    console.log(person1.getFullName() + ' agora tem ' + person1.addAge(2) + ' anos.')
-    console.log(person2.getFullName() + ' agora tem ' + person2.addAge(3) + ' anos.')
-    console.log(person3.getFullName() + ' agora tem ' + person3.addAge(5) + ' anos.')
+    console.log(person1.getFullName() + ' agora tem ' + person1.addAge(2).getAge() + ' anos.')
+    console.log(person2.getFullName() + ' agora tem ' + person2.addAge(3).getAge() + ' anos.')
+    console.log(person3.getFullName() + ' agora tem ' + person3.addAge(5).getAge() + ' anos.')
 } ());
