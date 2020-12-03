@@ -25,15 +25,11 @@ input;
 */
 
 let $inputVisor = document.querySelector('[data-js="visor"]');
-
 let $buttonsNumbers = document.querySelectorAll('[data-js="button-number"]');
-
 let $buttonsOperations = document.querySelectorAll('[data-js="button-operation"]');
-
 let $buttonCE = document.querySelector('[data-js="button-ce"]');
+let $butonEqual = document.querySelector('[data-js="button-equal"]');
 
-console.log($inputVisor);
-console.table($buttonsNumbers);
 
 Array.prototype.forEach.call($buttonsNumbers, function(button) {
   button.addEventListener('click', handleCLickNumber, false);
@@ -45,23 +41,38 @@ Array.prototype.forEach.call($buttonsOperations, function(button) {
 
 $buttonCE.addEventListener('click', handleClickCE, false);
 
+$butonEqual.addEventListener('click', handleClickEqual, false);
+
 
 function handleCLickNumber(e) {
   $inputVisor.value += this.value;
 }
 
 function handleClickOperation(e) {
-  let operation = ["+", "-", "*", "/"];
-
-  if(isLastItemAnOperation(operation)) {
-    $inputVisor.value = $inputVisor.value.slice(0, -1);
+  if(isLastItemAnOperation()) {
+    removeLastItemIfItIsAnOperator();
   }
-
-
-
   $inputVisor.value += this.value;
 }
 
 function handleClickCE(e) {
   $inputVisor.value = 0;
+}
+
+function handleClickEqual(e) {
+  removeLastItemIfItIsAnOperator();
+}
+
+function removeLastItemIfItIsAnOperator() {
+  $inputVisor.value = $inputVisor.value.slice(0, -1);
+}
+
+function isLastItemAnOperation(e) {
+  let operations = ['+', '-', '*', '/'];
+
+  let lastItem  = $inputVisor.value.split('').pop();
+
+  return operations.some(function(operation) {
+    return operation === lastItem;
+  })
 }
