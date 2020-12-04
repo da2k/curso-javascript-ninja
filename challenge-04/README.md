@@ -56,15 +56,15 @@ var carro = {
     cor: "prata",
     quantasPortas: 4,
     assentos: 5,
-    quantidadePessoas: 0,
+    quantidadePessoas: 0
 };
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
-carro.mudaCor = function(newColor) {
-    carro.cor = newColor;
+carro.mudaCor = function(novaCor) {
+    carro.cor = novaCor;
 };
 
 /*
@@ -93,8 +93,8 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 "Esse carro é um [MARCA] [MODELO]"
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
-carro.obterMarca = function() {
-    return carro.marca;
+carro.obterMarcaModelo = function() {
+    return "Esse carro é um " + carro.obterMarca() + " " + carro.obterMarca();
 };
 
 /*
@@ -113,19 +113,19 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-carro.abrirAPorta = function(numberPeople) {
-    var availableQuantity = carro.assentos - carro.quantidadePessoas;
-    var metricQuantityPeople = availableQuantity === 1 ? "pessoa" : "pessoas";
+carro.abrirAPorta = function( qtdPessoas ) {
+    var qtdDisponivel = carro.assentos - carro.quantidadePessoas;
+    var metricaQtdPessoas = qtdDisponivel === 1 ? "pessoa" : "pessoas";
 
     if (carro.quantidadePessoas >= carro.assentos) {
         return "O carro já esta lotado!";
     }
 
-    if (numberPeople > availableQuantity) {
-        return "Só cabem mais " + availableQuantity + " " + metricQuantityPeople + "!";
+    if (qtdPessoas > qtdDisponivel) {
+        return "Só cabem mais " + qtdDisponivel + " " + metricaQtdPessoas + "!";
     }
 
-    carro.quantidadePessoas += numberPeople;
+    carro.quantidadePessoas += qtdPessoas;
     return "Já temos " + carro.quantidadePessoas + " pessoas no carro!";
 };
 
@@ -152,8 +152,7 @@ carro.mudaCor('verde musgo');
 carro.obterCor(); // 'verde musgo'
 
 // Qual a marca e modelo do carro?
-carro.obterMarca(); // 'Ford'
-carro.obterModelo(); // 'básico'
+carro.obterMarcaModelo() // 'Esse carro é um Ford básico'
 
 // Adicione 2 pessoas no carro.
 carro.abrirAPorta(2); // 'Já temos 2 pessoas no carro!'
