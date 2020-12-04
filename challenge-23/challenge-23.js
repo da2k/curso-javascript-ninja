@@ -44,35 +44,55 @@ $buttonCE.addEventListener('click', handleClickCE, false);
 $butonEqual.addEventListener('click', handleClickEqual, false);
 
 
-function handleCLickNumber(e) {
+function handleCLickNumber() {
   $inputVisor.value += this.value;
 }
 
-function handleClickOperation(e) {
-  if(isLastItemAnOperation()) {
-    removeLastItemIfItIsAnOperator();
-  }
+function handleClickOperation() {
+  $inputVisor.value = removeLastItemIfItIsAnOperator($inputVisor.value);
   $inputVisor.value += this.value;
 }
 
-function handleClickCE(e) {
+function handleClickCE() {
   $inputVisor.value = 0;
 }
 
-function handleClickEqual(e) {
-  removeLastItemIfItIsAnOperator();
-}
-
-function removeLastItemIfItIsAnOperator() {
-  $inputVisor.value = $inputVisor.value.slice(0, -1);
-}
-
-function isLastItemAnOperation(e) {
+function isLastItemAnOperation(number) {
   let operations = ['+', '-', '*', '/'];
 
-  let lastItem  = $inputVisor.value.split('').pop();
+  let lastItem  = number.split('').pop();
 
   return operations.some(function(operation) {
     return operation === lastItem;
   })
+}
+
+function removeLastItemIfItIsAnOperator(number) {
+  if(isLastItemAnOperation(number)) {
+    return number.slice(0. -1);
+  }
+  return number;
+}
+
+
+function handleClickEqual(e) {
+  $inputVisor.value = removeLastItemIfItIsAnOperator($inputVisor.value);
+  let allValues = $inputVisor.value.match(/\d+[+*/-]?/g);
+  $inputVisor.value = allValues.reduce(function (accumulated, current) {
+    let firstValue = accumulated.slice(0, -1);
+    let operator = accumulated.split('').pop();
+    let lastValue = removeLastItemIfItIsAnOperator(current);
+    let lastOperator = isLastItemAnOperation(current) ? current.split('').pop() : '';
+    switch (operator) {
+      case '+':
+        return (Number(firstValue) + Number(lastValue)) + lastOperator;
+      case '-':
+        return (Number(firstValue) - Number(lastValue)) + lastOperator;
+      case '*':
+        return (Number(firstValue) * Number(lastValue)) + lastOperator;
+      case '/':
+        return (Number(firstValue) / Number(lastValue)) + lastOperator;
+
+    }
+  });
 }
