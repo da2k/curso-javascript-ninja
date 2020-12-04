@@ -179,13 +179,23 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao = function() {
-  if (pessoa.sexo === 'Feminino' || sexo === 'feminino') {
-    return `Olá, eu sou a ${pessoa.nome} ${pessoa.sobrenome}, tenho ${pessoa.idade} anos, ${pessoa.altura} metros, meu peso é ${pessoa.peso}kg e, só hoje, eu já caminhei ${pessoa.caminhouQuantosMetros} metros!`;
-  } else if (pessoa.idade === 1) {
-    return `Olá, eu sou o ${pessoa.nome} ${pessoa.sobrenome}, tenho ${pessoa.idade} ano, ${pessoa.altura} metros, meu peso é ${pessoa.peso}kg e, só hoje, eu já caminhei ${pessoa.caminhouQuantosMetros} metros!`;
-  } else if (pessoa.caminhouQuantosMetros === 1) {
-    return `Olá, eu sou o ${pessoa.nome} ${pessoa.sobrenome}, tenho ${pessoa.idade} anos, ${pessoa.altura} metros, meu peso é ${pessoa.peso}kg e, só hoje, eu já caminhei ${pessoa.caminhouQuantosMetros} metro!`;
+  var artigo = 'o';
+  var anos = 'anos';
+  var metros = 'metros';
+
+  if (pessoa.sexo === 'Feminino') {
+    artigo = 'a';
   }
+
+  if (pessoa.idade === 1) {
+    anos = 'ano';
+  }
+
+  if (pessoa.caminhouQuantosMetros === 1) {
+    metros = 'metro';
+  }
+
+  return `Olá, eu sou ${artigo} ${pessoa.nome} ${pessoa.sobrenome}, tenho ${pessoa.idade} ${anos}, ${pessoa.altura} metros, meu peso é ${pessoa.peso}kg e, só hoje, eu já caminhei ${pessoa.caminhouQuantosMetros} ${metros}!`;
 }
 
 // Agora, apresente-se ;)
