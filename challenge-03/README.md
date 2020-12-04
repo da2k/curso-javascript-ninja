@@ -180,12 +180,12 @@ correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao = function() {
   if (pessoa.sexo === 'Feminino' || sexo === 'feminino') {
-    return `Olá, eu sou a ${pessoa.nome} ${sobrenome}, tenho ${pessoa.idade} anos, ${pessoa.altura} metros, meu peso é ${pessoa.peso}kg e, só hoje, eu já caminhei ${pessoa.caminhouQuantosMetros} metros!`;
+    return `Olá, eu sou a ${pessoa.nome} ${pessoa.sobrenome}, tenho ${pessoa.idade} anos, ${pessoa.altura} metros, meu peso é ${pessoa.peso}kg e, só hoje, eu já caminhei ${pessoa.caminhouQuantosMetros} metros!`;
   } else if (pessoa.idade === 1) {
-    return `Olá, eu sou o ${pessoa.nome} ${sobrenome}, tenho ${pessoa.idade} ano, ${pessoa.altura} metros, meu peso é ${pessoa.peso}kg e, só hoje, eu já caminhei ${pessoa.caminhouQuantosMetros} metros!`;
+    return `Olá, eu sou o ${pessoa.nome} ${pessoa.sobrenome}, tenho ${pessoa.idade} ano, ${pessoa.altura} metros, meu peso é ${pessoa.peso}kg e, só hoje, eu já caminhei ${pessoa.caminhouQuantosMetros} metros!`;
   } else if (pessoa.caminhouQuantosMetros === 1) {
-    return `Olá, eu sou o ${pessoa.nome} ${sobrenome}, tenho ${pessoa.idade} anos, ${pessoa.altura} metros, meu peso é ${pessoa.peso}kg e, só hoje, eu já caminhei ${pessoa.caminhouQuantosMetros} metro!`;
-  } else if ()
+    return `Olá, eu sou o ${pessoa.nome} ${pessoa.sobrenome}, tenho ${pessoa.idade} anos, ${pessoa.altura} metros, meu peso é ${pessoa.peso}kg e, só hoje, eu já caminhei ${pessoa.caminhouQuantosMetros} metro!`;
+  }
 }
 
 // Agora, apresente-se ;)
