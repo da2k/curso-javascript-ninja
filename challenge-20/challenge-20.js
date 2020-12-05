@@ -17,14 +17,9 @@
   Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
   */
   // ?
-  let username = prompt('Qual o seu nome?');
-  if (username) {
-    alert('Bem-vindo ' + username + '!')
-  }
-  else {
-    username = 'Desconhecido';
-    alert('Bem-vindo '  + username + '!')
-  }
+  let username = prompt('Qual o seu nome?') || 'Desconhecido';
+
+  alert('Bem-vindo ' + username + '!')
   /*
   Agora, pergunte ao usuário 'Qual o seu e-mail?', atribuindo o resultado à
   uma variável chamada `email`.
@@ -86,7 +81,27 @@
   Caso contrário, mostre um alerta com a mensagem:
       - "Não enviado."
   */
-  // ?
+  $button.addEventListener('click', function(event) {
+    event.preventDefault();
+    if (!$inputUsername.value) {
+      return alert('Preencha o nome do usuário!')
+    }
+    if (!$inputEmail.value) {
+      return alert('Preencha o e-mail!');
+    }
+    if (!isValidEmail($inputEmail.value)) {
+      return alert('Entre com um e-mail válido!');
+    }
+    if (!$message.value) {
+      return alert('Preencha a mensagem!');
+    }
+    if (!confirm('Tem certeza que deseja enviar o formulário?')) {
+      return alert('Não enviado.')
+    }
+    return alert('Enviado com sucesso!')
+
+
+  }, false)
 
   /*
   Crie uma função chamada `isValidEmail`, que será usada na validação do
@@ -114,5 +129,7 @@
       - "rita-marica@titica.a.b"
       - "agua_@evida.br.com"
   */
-  // ?
+  function isValidEmail(email) {
+    return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)
+  }
 })(window, document);
