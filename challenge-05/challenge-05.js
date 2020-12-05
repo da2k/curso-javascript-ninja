@@ -35,7 +35,11 @@ var arrayFiveValues = [undefined, true, 2, 'valor', []];
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-console.log(returnArray(arrayFiveValues));
+console.log(twoParams(arrayFiveValues, 0));
+console.log(twoParams(arrayFiveValues, 1));
+console.log(twoParams(arrayFiveValues, 2));
+console.log(twoParams(arrayFiveValues, 3));
+console.log(twoParams(arrayFiveValues, 4));
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -51,7 +55,7 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-function book(name) {
+function book(title) {
     var books = {
         "Dom Quixote": {
             quantidadePaginas: 512,
@@ -70,11 +74,11 @@ function book(name) {
         }
     }
 
-    if (!name) {
+    if (!title) {
         return books;
     }
     
-    return books[name];
+    return books[title];
 }
 
 /*
