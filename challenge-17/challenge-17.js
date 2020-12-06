@@ -87,65 +87,28 @@
     "O mês de [NOME DO MÊS] é representado pelo número [NÚMERO DO MÊS]."
     */
     console.log( '\nMeses representados por números:' );
-    var nomeMes = [
-        'janeiro',
-        'fevereiro',
-        'março',
-        'abril',
-        'maio',
-        'junho',
-        'julho',
-        'agosto',
-        'setembro',
-        'outubro',
-        'novembro',
-        'dezembro'
-    ]
-    function getMonthNumber (mes) {
-        switch (mes) {
-            case nomeMes[0]:
-                return '01';
-                break;
-            case nomeMes[1]:
-                return '02';
-                break;
-            case nomeMes[2]:
-                return '03';
-                break;
-            case nomeMes[3]:
-                return '04';
-                break;
-            case nomeMes[4]:
-                return '05';
-                break;
-            case nomeMes[5]:
-                return '06';
-                break;
-            case nomeMes[6]:
-                return '07';
-                break;
-            case nomeMes[7]:
-                return '08';
-                break;
-            case nomeMes[8]:
-                return '09';
-                    break;
-            case nomeMes[9]:
-                return '10';
-                break;
-            case nomeMes[10]:
-                return '11';    
-                break;
-            case nomeMes[11]:
-                return '12';
-                break;
-            default:
-                return ''
-          }
+   
+    function getMonthNumber (monthName) {
+        var months = {
+            'janeiro' : '01',
+            'fevereiro': '02',
+            'março': '03',
+            'abril': '04',
+            'maio': '05',
+            'junho': '06',
+            'julho': '07',
+            'agosto': '08',
+            'setembro': '09',
+            'outubro': '10',
+            'novembro': '11',
+            'dezembro': '12'
+        }
+        return months[monthName];
     }
-    for(i = 0, len = nomeMes.length; i<len; i++){
-        console.log('O mês de ' + nomeMes[i] + ' é representado pelo número ' + getMonthNumber(nomeMes[i]) +'.')
-    }
+    console.log('O mês de março é representado pelo número ' + getMonthNumber('março') +'.');
+    console.log('O mês de setembro é representado pelo número ' + getMonthNumber('setembro') +'.');
+    console.log('O mês de dezembro é representado pelo número ' + getMonthNumber('dezembro') +'.')
+
     /*
     Agora, declare uma variável chamada `regexDate` que irá receber a expressão
     regular que irá fazer o match com as datas. Crie grupos de captura para o
@@ -155,8 +118,8 @@
     Mostre a regex no console.
     */
     console.log( '\nRegex que vai fazer o match com as datas do texto:' );
-    regexDate = /(\d{2}) de (\w+) de (\d{4})+/g;
-    console.log(newText.match(regexDate));
+    regexDate = /(\d\d) de (junho|julho) de (\d\d\d\d)+/g;
+    console.log(regexDate);
     
     /*
     Agora crie a função que irá fazer o replace dos dados. A função será chamada
@@ -166,10 +129,8 @@
     console o resultado.
     */
     console.log( '\nReplace de datas:' );
-    function replaceDate (textoRegex) {
-        return textoRegex.replace(regexDate, function (capTotal, dia, mes, ano) {
-            return dia + '/' + getMonthNumber(mes) + '/' + ano;
-        });
+    function replaceDate (textoRegex, dia, mes, ano) {
+        return dia + '/' + getMonthNumber(mes) + '/' + ano;
     }
-    console.log(replaceDate(newText));
+    console.log(newText.replace(regexDate, replaceDate));
 }())
