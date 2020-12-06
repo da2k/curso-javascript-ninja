@@ -13,6 +13,18 @@ var isTruthy = function( n ){
   return res;
 };
 
+// Outras opções corretas:
+
+var isTruthy = function( n ) {
+  return n ? true ? false;
+};
+
+ou
+
+var isTruthy = function( n ) {
+  return !!n;
+};
+
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 
 isTruthy(undefined); // false
@@ -105,6 +117,14 @@ carro.obterMarcaModelo = function() {
   return 'Esse carro é um ' + carro.marca + ' ' + carro.modelo + '.';
 };
 
+
+// Correção:
+
+carro.obterMarcaModelo = function() {
+  return 'Esse carro é um ' + carro.obterMarca() + ' ' + carro.obterModelo();
+};
+
+
 /*
 Crie um método que irá adicionar pessoas no carro. Esse método terá as
 seguintes características:
@@ -131,11 +151,11 @@ carro.addPessoas = function( n ) {
     var novoPassageiro = n;
     var disponivel = carro.assentos - carro.quantidadePessoas;
 
-    if( carro.quantidadePessoas === carro.assentos) {
+    if( carro.quantidadePessoas === carro.assentos && novoPassageiro >= carro.assentos ) {
       return 'O carro já está lotado!';
-    } else if ( carro.quantidadePessoas === 0 && novoPassageiro > carro.assentos ) {
+    } else if ( carro.quantidadePessoas === 0 && novoPassageiro >= carro.assentos ) {
         return 'Só cabem ' + carro.assentos + ' pessoas no carro!';
-    } else if ( novoPassageiro > disponivel || novoPassageiro >= carro.assentos ) {
+    } else if ( novoPassageiro > disponivel || novoPassageiro > carro.assentos ) {
         var plural = disponivel === 1 ? 'pessoa!' : 'pessoas!';
         return 'Só cabem mais ' + disponivel + ' ' + plural;
     } else {
@@ -144,6 +164,25 @@ carro.addPessoas = function( n ) {
     } 
 };
 
+
+// Outra opção correta: (Adicionada condição não requerida no desafio)
+
+carro.addPessoas = function( n ) {
+    var totPessoas = carro.quantidadePessoas + n;
+    if( carro.quantidadePessoas === carro.assentos && totPessoas >= carro.assentos) {
+        return 'O carro já está lotado!';   
+    }
+
+    if( totPessoas > carro.assentos ) {
+        var disponivel = carro.assentos - carro.quantidadePessoas;
+        var plural = disponivel === 1 ? 'pessoa!' : 'pessoas!';
+        return 'Só cabem mais ' + disponivel + plural + '!';
+    }
+
+    carro.quantidadePessoas += n;
+    return 'Já temos ' + carro.quantidadePessoas + ' pessoas no carro!';
+
+};
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
 utilize sempre o formato de invocação do método (ou chamada da propriedade),
@@ -155,13 +194,21 @@ Qual a cor atual do carro?
 
 carro.cor; // 'Branco'
 
-// Mude a cor do carro para vermelho.
+// Correção:
 
+carro.obterCor(); // 'Branco'
+
+// Mude a cor do carro para vermelho.
+	
 carro.mudarCor('Vermelho');
 
 // E agora, qual a cor do carro?
 
 'Vermelho'
+
+//Correção:
+
+carro.obterCor(); // 'Vermelho'
 
 // Mude a cor do carro para verde musgo.
 
@@ -171,9 +218,17 @@ carro.mudarCor('Verde Musgo');
 
 'Verde Musgo'
 
+//Correção:
+
+carro.obterCor(); // 'Verde Musgo'
+
 // Qual a marca e modelo do carro?
 
 carro.obterMarcaModelo; // 'Renault Sandero.'
+
+//Correção:
+
+carro.obterMarcaModelo(); // 'Este carro é um Renault Sandero.'
 
 // Adicione 2 pessoas no carro.
 
@@ -190,6 +245,10 @@ carro.addPessoas(3); // 'Já temos 5 pessoas no carro!'
 // Tire 4 pessoas do carro.
 
 carro.quantidadePessoas = 1;
+
+//Inclusão de conteúdo não solicitado no desafio?
+
+carro.addPessoas(-4); // 'Já temos 1 pessoas no carro!'
 
 // Adicione 10 pessoas no carro.
 
