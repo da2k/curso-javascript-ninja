@@ -90,6 +90,5 @@
         }
 
         console.log( 'Pares de 0 a 20:', numbers );
-        // ?
     }
 )()
