@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Challenge 28</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 10px;
+            box-shadow: 0 0 3px #000;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        form input[type="text"] {
+            width: 75%;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            background-image: linear-gradient(rgb(30, 92, 79), rgb(57, 122, 108));
+            color:#fff;
+            font-weight: bold;
+            border-radius: 5px;
+            border: none;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        fieldset {
+            padding: 30px 20px;
+        }
+
+        legend {
+            display: inline-block;
+            padding: 10px 20px;
+            background-image: linear-gradient(rgb(30, 92, 79), rgb(57, 122, 108));
+            color:#fff;
+            font-size: 18px;
+            font-weight: bold;
+            font-style: italic;
+            border-radius: 5px;
+
+        }
+       
+        label {
+            display: block;
+            color: #2c2c2c;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"] {
+            width: 96%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            outline: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form method="GET" action="#" data-js="form">
+            <label for="cep">CEP:</label>
+            <input type="text" name="cep" id="cep" data-js="cep" required autofocus>
+    
+            <input type="submit" value="Enviar" class="btn">
+        </form>
+
+        <h2 data-js="status"></h2>
+    
+        <fieldset>
+            <legend>Endereço</legend>
+    
+            <label for="logradouro">Logradouro:</label>
+            <input type="text" name="logradouro" id="logradouro" readonly data-js="logradouro"> 
+
+            <label for="bairro">Bairro:</label>
+            <input type="text" name="bairro" id="bairro" readonly data-js="bairro">
+
+            <label for="estado">Estado:</label>
+            <input type="text" name="estado" id="estado" readonly data-js="estado">   
+
+            <label for="cidade">Cidade:</label>
+            <input type="text" name="cidade" id="cidade" readonly data-js="cidade">
+
+            <label for="cep2">CEP:</label>
+            <input type="text" name="cep2" id="cep2" readonly data-js="cep2">
+    
+        </fieldset>
+    </div>
+
+
+    <script src="challenge-28.js"></script>
+</body>
+</html>
