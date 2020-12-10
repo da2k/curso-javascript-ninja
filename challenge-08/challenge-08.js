@@ -4,9 +4,9 @@ Declare uma variável chamada `sum` e atribua a ela uma função chamada
 desses parâmetros.
 */
 
-var sum = function calculateSum(x, y) {
+var sum = function calculateSum( x, y ) {
   return x + y;
-}
+};
 
 /*
 Invoque a função criada acima, passando dois números que serão somados, e mostre
@@ -14,14 +14,17 @@ o resultado no console, com a frase:git
 "A soma de [VALOR 1] e [VALOR2] é igual a [RESULTADO]."
 */
 
-console.log('A soma de x e y é igual a ' + sum(2, 3) + '.');
+var value1 = 2;
+var value2 = 3;
+
+console.log( 'A soma de ' + value1 + ' e ' + value2 + ' é igual a ' + sum(value1, value2) + '.' );
 
 /*
 Mostre no console o nome da função criada acima, com a frase:
 "O nome da função que faz a soma é [NOME DA FUNÇÃO]."
 */
 
-console.log('O nome da função que faz a soma é ' + sum.name + '.')
+console.log( 'O nome da função que faz a soma é ' + sum.name + '.' )
 
 /*
 Crie uma função literal chamada `showName`. Essa função deve retornar o
@@ -29,16 +32,14 @@ seu nome.
 */
 
 function showName() {
-  return showName.name;
+  return 'Gigleydson Dias'
 }
 
 /*
 Declare uma variável chamada `varShowName` que recebe a função criada acima.
 */
 
-var varShowName = function showName() {
-  return showName.name;
-}
+var varShowName = showName;
 
 /*
 Usando a variável criada acima, mostre no console o nome e o retorno da função
@@ -46,7 +47,7 @@ atribuída a ela, com a seguinte frase:
 "A função [NOME DA FUNÇÃO] retorna [RETORNO DA FUNÇÃO]."
 */
 
-console.log('A função ' + varShowName.name + ' retorna ' + varShowName() + '.');
+console.log( 'A função ' + varShowName.name + ' retorna ' + varShowName() + '.' );
 
 /*
 Crie uma função literal chamada `calculator`, que funcione assim:
@@ -61,35 +62,37 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
   "Operação inválida."
 */
 
-function calculator(operador) {
-  return function(x, y){
+function calculator( operador ) {
+  return function( x, y ){
 
-    var resultado = 'Resultado da operação: ' + x + ' ' + operador + ' ' + y + ' = '
+    var resultado;
 
-    switch(operador) {
+    switch( operador ) {
       case '+':
-        return resultado + (x + y) + '.';
+        resultado = x + y;
         break;
 
       case '-':
-        return resultado + (x - y) + '.';
+        resultado = x - y;
         break;
 
       case '*':
-        return resultado + (x * y) + '.';
+        resultado = x * y;
         break;
 
       case '/':
-        return resultado + (x / y) + '.';
+        resultado = x / y;
         break;
 
       case '%':
-        return resultado + (x % y) + '.';
+        resultado = x % y;
         break;
 
         default:
           return 'Operação inválida'; 
     }
+
+    return 'Resultado da operação: ' + x + ' ' + operador + ' ' + y + ' = ' + resultado + '.';
   }; 
 }
 
@@ -98,12 +101,12 @@ Declare uma variável chamada `sum`, que receberá a função acima, passando co
 parâmetro o operador de soma.
 */
 
-var sum = calculator('+');
+var sum = calculator( '+' );
 
 /*
 Agora `sum` é uma função. Mostre no console a soma de dois números, usando ela.
 */
-console.log( sum(4, 2) );
+console.log( sum( 4, 2 ) );
 
 /*
 Agora, declare algumas variáveis com os nomes `subtraction`, `multiplication`,
@@ -111,17 +114,17 @@ Agora, declare algumas variáveis com os nomes `subtraction`, `multiplication`,
 correto por parâmetro para cada uma delas.
 */
 
-var subtraction = calculator('-');
-var multiplication = calculator('*');
-var division = calculator('/');
-var mod = calculator('%');
+var subtraction = calculator( '-' );
+var multiplication = calculator( '*' );
+var division = calculator( '/' );
+var mod = calculator( '%' );
 
 /*
 Faça uma operação com cada uma das funções criadas acima, mostrando o resultado
 no console.
 */
 
-console.log( subtraction(4, 2) );
-console.log( multiplication(2, 4) );
-console.log( division(4, 2) );
-console.log( mod(4, 2) );
+console.log( subtraction( 4, 2 ) );
+console.log( multiplication( 2, 4 ) );
+console.log( division( 4, 2 ) );
+console.log( mod( 4, 2 ) );
