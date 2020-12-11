@@ -98,3 +98,6 @@ convertToHex('verde');
 convertToHex('azul');
 convertToHex('preto');
 convertToHex('branco');
+convertToHex('rosa');
+convertToHex('magenta');
+convertToHex('marrom');
