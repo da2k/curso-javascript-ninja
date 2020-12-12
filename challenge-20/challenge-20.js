@@ -79,29 +79,17 @@
     */
     $button.addEventListener('click', function(event) {
         event.preventDefault();
-        var validacao = true;
-        if($inputUsername.value === 'Desconhecido') {
-            win.alert('Preencha o nome do usuário!');
-            validacao = false;
-        }   
-        //console.log('(bool)$inputEmail.value.match', !!$inputEmail.value.match(/([a-z+._]+)@([\w]+)\.(\w{2,})\.?([\w]{2})?/));
-        //console.log('(bool)isValidEmail', !!isValidEmail($inputEmail.value));
-        if(!isValidEmail($inputEmail.value)) {
-            win.alert('Preencha o e-mail!');
-            validacao = false;
-        }
-            
-        if($message.value === ''){
-            win.alert('Preencha a mensagem!');
-            validacao = false;
-        }
-        if(validacao){
-            var enviar = win.confirm('Tem certeza que deseja enviar o formulário?')
-            if(enviar)
-                win.alert('Enviado com sucesso!');
-            else
-                win.alert('Não enviado.');
-        }
+        if($inputUsername.value === 'Desconhecido') 
+            return alert('Preencha o nome do usuário!');
+        if(!$inputEmail.value) 
+            return alert('Preencha o e-mail!');
+        if(!isValidEmail($inputEmail.value))
+            return alert('Entre com um e-mail válido!');
+        if(!$message.value)
+            return alert('Preencha a mensagem!');
+        if(!confirm('Tem certeza que deseja enviar o formulário?'))
+            return alert('Não enviado.');
+        return alert('Enviado com sucesso!');
     }, false)
 
     /*
@@ -129,6 +117,6 @@
         - "agua_@evida.br.com"
     */
     function isValidEmail (email) {
-        return email.match(/^([a-z+._]+)@([\w]+)\.(\w{2,})\.?(\w{2})?$/gi);
+        return /^[\w+.]+@\w+\.\w{2,}(?:\.\w{2})?$/.test(email);
     } 
 }(document, window));
