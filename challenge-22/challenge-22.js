@@ -1,15 +1,12 @@
-  (function (doc, win) {
-  'use strict'
+(function (doc, win) {
+  'use strict';
   /*
   Crie dois objetos, que serão duas pessoas. Cada um deve ter as propriedades
   `name` e `lastName`, preenchidos com o nome e sobrenome da pessoa.
   */
-  function MyFunction (name, lastName) {
-    this.name = name;
-    this.lastName = lastName;
-  }
-  var guilherme = new MyFunction('Guilherme', 'Lopes')
-  var fernando = new MyFunction('Fernando', 'Daciuk')
+
+  var guilherme = { name: 'Guilherme', lastName: 'Lopes' };
+  var fernando = { name: 'Fernando', lastName: 'Daciuk' };
 
   /*
   Agora crie uma função chamada `getFullName` que retorne as propriedades
@@ -22,12 +19,12 @@
   pessoas que foram criadas anteriormente, passando as pessoas acima como
   contexto da função. Use um console.log por pessoa.
   */
-  console.log( 'O nome das pessoas é:' );
-  MyFunction.prototype.getFullName = function () {
+  function getFullName() {
     return this.name + ' ' + this.lastName;
   }
-  console.log(guilherme.getFullName());
-  console.log(fernando.getFullName());
+  console.log( 'O nome das pessoas é:' );
+  console.log(getFullName.call(guilherme));
+  console.log(getFullName.call(fernando));
   /*
   Crie uma função chamada `sum`. Essa função pode receber uma lista de
   parâmetros variável, e deverá retornar a soma de todos eles.
@@ -37,11 +34,9 @@
   */
   function sum () {
     console.log(arguments)
-    var soma = 0;
-    Array.prototype.forEach.call(arguments, function(item) {
-      soma += Number(item);
+    return Array.prototype.reduce.call(arguments, function(acc, atual) {
+      return +acc + +atual;
     });
-    return soma;
   }
 
   /*
