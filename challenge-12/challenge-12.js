@@ -89,24 +89,30 @@
   Crie um array chamado `myName`. Cada item desse array deve ser uma letra do
   seu nome. Adicione seu nome completo no array.
   */
-  // ?
-  console.log( '\nMeu nome é:' );
+
+  const myName = [];
+
+  myName[0] = "J";
+  myName[1] = "u";
+  myName[2] = "l";
+  myName[3] = "i";
+  myName[4] = "a";
 
   /*
   Juntando todos os itens do array, mostre no console seu nome.
   */
-  // ?
-
-  console.log( '\nMeu nome invertido é:' );
+  console.log( '\nMeu nome é:' );
+  console.log(myName);
 
   /*
   Ainda usando o objeto acima, mostre no console seu nome invertido.
   */
-  // ?
+  console.log( '\nMeu nome invertido é:' );
+  console.log(myName.reverse());
 
-  console.log( '\nAgora em ordem alfabética:' );
   /*
   Mostre todos os itens do array acima, odenados alfabéticamente.
   */
-  // ?
+  console.log( '\nAgora em ordem alfabética:' );
+  console.log(myName.sort());
 })();
