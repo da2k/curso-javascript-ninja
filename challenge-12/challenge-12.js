@@ -81,9 +81,12 @@
       "[PROPRIEDADE]: [VALOR]"
   */
   for ( let i = 0; i < Object.keys(books).length; i++ ) {
-    console.log(books[i]);
-    //console.log(books[i].name, books[i].pages)
+    //for ( let i = 0; i < books.length; i++ ) ou pode ser assim
+    for( let prop in books[i] ) {
+            console.log( prop + ': ' + books[i][prop]);
+    }
   }
+  //Object.values retorna array de valores das propriedades
 
   /*
   Crie um array chamado `myName`. Cada item desse array deve ser uma letra do
