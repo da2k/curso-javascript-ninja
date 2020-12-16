@@ -8,67 +8,74 @@
   usando o método visto na aula 13.
   */
   console.log( 'O array em formato de string é:' );
-  // ?
+
+  const array = [1,2,3];
+  console.log(array.toString());
 
   /*
   Crie 2 arrays `sul` e `sudeste`, que serão as regiões do Brasil.
   Cada array deve conter os estados dessa região.
   */
-  // ?
+  const sul = ["Paraná", "Santa Catarina", "Rio Grande do Sul"];
+  const sudeste = ["Espírito Santo", "Minas Gerais", "Rio de Janeiro", "São Paulo"];
 
   /*
   Crie uma variável chamada `brasil`, que irá receber as duas regiões
   concatenadas. Mostre o `brasil` no console.
   */
   console.log( '\nAlguns Estados do Brasil:' );
-  // ?
+
+  const brasil = sul.concat([sudeste]);
+  console.log(brasil);
 
   /*
   Adicione 3 novos estados da região Norte no início do array e mostre no console.
   */
   console.log( '\nMais estados adicionados:' );
-  // ?
+
+  console.log(brasil.unshift("Acre", "Amapá", "Amazonas"));
+  console.log(brasil);
 
   /*
   Remova o primeiro estado do array `brasil` e mostre-o no console.
   */
   console.log( '\nEstado removido:' );
-  // ?
+  console.log(brasil.shift());
 
   /*
   Crie um novo array chamado `newSul`, que receba somente os estados do sul,
   pegando do array `brasil`. Não remova esses itens de `brasil`.
   */
-  // ?
+  const newSul = brasil.slice(2,5);
 
   /*
   Mostre no console os estados que estão em `newSul`.
   */
   console.log( '\nEstados do Sul do Brasil:' );
-  // ?
+  console.log(newSul);
 
   /*
   Mostre no console todos os estados que estão em `brasil`.
   */
   console.log( '\nAlguns Estados do Brasil:' );
-  // ?
+  console.log(brasil);
 
   /*
   Crie um novo array chamado `nordeste`, que tenha os estados do nordeste.
   */
-  // ?
+  const nordeste = ["lagoas", "Bahia", "Ceará", "Maranhão", "Paraíba", "Piauí", "Pernambuco", "Rio Grande do Norte", "Sergipe"]
 
   /*
   Mostre no console os estados do nordeste.
   */
   console.log( '\nEstados do Nordeste:' );
-  // ?
+  console.log(nordeste);
 
   /*
   Remova de `brasil` os estados do `sudeste`, colocando-os em uma variável
   chamada `newSudeste`.
   */
-  // ?
+
 
   /*
   Adicione os estados do `nordeste` ao array `brasil`. Esses estados devem
