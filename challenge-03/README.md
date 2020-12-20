@@ -1,7 +1,7 @@
 # Desafio Semana #3
 
 ```js
-// Aluno: Bruno Benício de Andrade Lima
+// Aluno: Bruno Benício de Andrade Lima 
 
 // Declarar uma variável qualquer, que receba um objeto vazio.
 ✔
