@@ -147,14 +147,15 @@ citado acima, no lugar de "pessoas".
 ✔
     carro.addPessoas = function( numPessoas ) {
         var totPessoas = carro.quantidadePessoas + numPessoas;
+        var pessoasRestantes = carro.assentos - carro.quantidadePessoas;
+        var pluralOuSingularA = pessoasRestantes === 1 ? ' cabe' : ' cabem';
+        var pluralOuSingular = pessoasRestantes === 1 ? ' pessoa' : ' pessoas';
+        
         if ( carro.quantidadePessoas === carro.assentos && totPessoas >=carro.assentos ) {
             return 'O carro já está lotado!';
         }
         
         if ( totPessoas > carro.assentos ) {
-            var pessoasRestantes = carro.assentos - carro.quantidadePessoas;
-            var pluralOuSingular = pessoasRestantes === 1 ? ' pessoa' : ' pessoas';
-            var pluralOuSingularA = pessoasRestantes === 1 ? ' cabe' : ' cabem';
             return 'Só'+ pluralOuSingularA +' mais ' + pessoasRestantes + pluralOuSingular + ' no carro!';
         }
 
