@@ -1,4 +1,5 @@
 (function() {
+
   'use strict'
   /*
   1. Envolva todo o conteúdo desse desafio em uma IIFE.
@@ -16,6 +17,7 @@
   - "735 500 794 - 22"
   - "101.123-131x32"
   */
+ 
   console.log( 'Limpando CPFs:' );
   function cleanCPF(cpf) {
     return cpf.replace(/[\D\s]/g, '') 
