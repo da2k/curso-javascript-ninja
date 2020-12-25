@@ -36,7 +36,7 @@
     $inputTimer.value = 0;
     stop();
   }
- 
+
   $start.addEventListener('click', start, false );
   $stop.addEventListener('click', stop, false )
   $reset.addEventListener('click', reset, false)
