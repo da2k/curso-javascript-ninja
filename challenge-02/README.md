@@ -9,10 +9,10 @@ function soma(x,y) {
 }
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-var myvar = soma(2,3)
+var myvar = soma(2,3) + 5
 
 // Qual o valor atualizado dessa variável?
-5
+10
 
 // Declare uma nova variável, sem valor.
 var novalue;
@@ -24,7 +24,7 @@ Onde VALOR é o novo valor da variável.
 */
 function adicione(){
   novalue = 5;
-  return 'O valor da variável agora é 5.'
+  return `O valor da variável agora é ${novalue} `
 }
 
 // Invoque a função criada acima.
@@ -41,15 +41,10 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function argumentos(x,y,z){
-  if (x ===  null) {
-    return 'Preencha todos os valores corretamente!'
-  } else if(y === null) {
-      return 'Preencha todos os valores corretamente!'
-  } else if (z === null) {
-      return 'Preencha todos os valores corretamente!'
-  } else {
-      return (x*y*z)+2
-    }
+  if (x ===  undefined || y === undefined || z === undefined) {
+    return "Preencha o valor"
+  }
+    return (x*y*z)+2
 }
 
 
@@ -75,15 +70,16 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function argumentos(x,y,z) {
-  if(argumentos[0, 1, 2].length === 1) {
-    return argumentos[0]
-  } else if(argumentos[0, 1, 2].length === 2) {
-    return argumentos[0]+argumentos[1]
-  } else if(argumentos[0, 1, 2].length === 3) {
-    return ((argumentos[0]+argumentos[1])/argumentos[2])
-  } else {
-    return null
+  if(x !== undefined && y === undefined && z === undefined) {
+    return x
+  } else if(x !== undefined && y !== undefined && z === undefined) {
+    return x+y
+  } else if(x !== undefined && y !== undefined && z !== undefined) {
+    return ((x+y)/z)
+  } else if(x === undefined && y === undefined && z === undefined) {
+    return false
   }
+  return null
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
