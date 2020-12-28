@@ -21,7 +21,27 @@ Só passe para o próximo problema quando tiver resolvido o anterior :)
 */
 // ?
 
-var $a = new DOM('[data-js="link"]');
+function DOM (elements) {
+  this.element = document.querySelectorAll(elements);
+}
+
+DOM.prototype.on = function(event, callback) {
+    Array.prototype.map.call(this.element, function(element) {
+        element.addEventListener(event,  callback, false);
+    }
+)}
+  
+DOM.prototype.off = function(event, callback){
+    Array.prototype.map.call(this.element, function(element) {
+      element.removeEventListener(event,  callback, false);
+    }
+)}
+
+DOM.prototype.get = function(){
+  return this.element;
+}
+
+const $a = new DOM('[data-js="link"]');
 $a.on('click', function(e) {
   e.preventDefault();
   console.log('clicou');
