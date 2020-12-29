@@ -123,6 +123,13 @@
     var $formCep = new DOM ('[data-js="form-cep"]');
     var $inputCep = new DOM ('[data-js="input-cep"]');
     var ajax = new XMLHttpRequest();
+    var $status = new DOM ('[data-js="status"]');
+    var $logradouro = new DOM ('[data-js="logradouro"]');
+    var $bairro = new DOM ('[data-js="bairro"]');
+    var $estado = new DOM ('[data-js="estado"]');
+    var $cidade = new DOM ('[data-js="cidade"]');
+    var $cep = new DOM ('[data-js="cep"]');
+    
     $formCep.on('submit',handleSubmitFormCep);
 
     function handleSubmitFormCep(event){
@@ -130,18 +137,23 @@
       var url = getUrl();
       ajax.open('GET', url);
       ajax.send();
+      getMessage('loading');
       ajax.addEventListener('readystatechange', handleReadyStateChange);
     };
 
     function getUrl() {
-    	return 'https://ws.apicep.com/cep/<cepCode>.json'.replace(
-    		'<cepCode>', $inputCep.get()[0].value.replace(/\D/g, '')
-    	);
+    	return replaceCEP('https://ws.apicep.com/cep/[CEP].json');
     }
 
+    function clearCep(){
+    	return $inputCep.get()[0].value.replace(/\D/g, '')
+    };
+
     function handleReadyStateChange() {
-      if(isRequestOK())
+      if(isRequestOK()) {
       	fillCepFieldes();
+      	getMessage('ok');
+      }
     }
 
     function isRequestOK() {
@@ -149,26 +161,29 @@
     }
 
     function fillCepFieldes() {
-    	
     	var data = parseData();
+    	console.log(data);
+    	if(data.ok  === false) {
+    		getMessage('error');
+    		clearData();
+    		return;
+    	} else {
+	    	$logradouro.get()[0].textContent = data.address;
+	    	$bairro.get()[0].textContent = data.district;
+	    	$estado.get()[0].textContent = data.state;
+	    	$cidade.get()[0].textContent = data.city;
+	    	$cep.get()[0].textContent = data.code;
+    	}
+    }
 
-    	if(!data)
-    		return console.log('DATA ERROR', data);
-    	console.log('DATA', data);
-    	var $logradouro = new DOM ('[data-js="logradouro"]');
-    	$logradouro.get()[0].textContent = data.address;
-
-		var $bairro = new DOM ('[data-js="bairro"]');
-    	$bairro.get()[0].textContent = data.district;
-
-    	var $estado = new DOM ('[data-js="estado"]');
-    	$estado.get()[0].textContent = data.state;
-
-    	var $cidade = new DOM ('[data-js="cidade"]');
-    	$cidade.get()[0].textContent = data.city;
-
-    	var $cep = new DOM ('[data-js="cep"]');
-    	$cep.get()[0].textContent = data.code;
+    function clearData() {
+    	return {
+			address: '-',
+			district: '-',
+			state: '-',
+			city: '-',
+			code: '-'
+    	}
     }
 
     function parseData (){
@@ -183,11 +198,17 @@
     }
 
     function getMessage(type) {
-    	return messages = {
-    		loading: 'Buscando informações para o CEP [CEP]...',
-    		ok: 'Endereço referente ao CEP [CEP]:',
-    		error: 'Não encontramos o endereço para o CEP [CEP].'
-    	}[type];
+    	var messages = {
+    		loading: replaceCEP('Buscando informações para o CEP [CEP]...'),
+    		ok: replaceCEP('Endereço referente ao CEP [CEP]:'),
+    		error: replaceCEP('Não encontramos o endereço para o CEP [CEP]')
+    	};
+
+    	$status.get()[0].textContent = messages[type];
+    }
+
+    function replaceCEP(message){
+    	return message.replace('[CEP]', clearCep());
     }
 
 })();
