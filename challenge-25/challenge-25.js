@@ -14,3 +14,14 @@ https://developer.mozilla.org/en-US/docs/Web/Events#Categories
 Tente aplicar na prática alguns dos eventos que estão ali e coloque nesse
 desafio os experimentos legais que você conseguir desenvolver :D
 */
+
+
+$button = document.querySelector('[data-js="button"]');
+
+function on(element, event, callback) {
+   return  element.addEventListener(event, callback);
+}
+
+on($button, 'click', function(){
+    alert('clicou');
+})
