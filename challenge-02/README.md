@@ -16,7 +16,7 @@ var recebe = soma(15,8) + 5;
 // Declare uma nova variável, sem valor.
 Var semValor;
 
-/*
+
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
@@ -32,7 +32,7 @@ valor()
 // Qual o retorno da função? (Use comentários de bloco).
 /*o valor da variavel agora é 20*/
 
-/*
+
 Crie uma função com as seguintes características:
 1. A função deve receber 3 argumentos;
 2. Se qualquer um dos três argumentos não estiverem preenchidos, a função deve retornar a string:
