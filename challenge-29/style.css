@@ -1,0 +1,67 @@
+body {
+  font-family: monaco, sans-serif;
+}
+
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.5em;
+}
+span {
+  margin: 10px;
+}
+
+main {
+  display: flex;
+  align-items: top;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  flex-flow: column;
+}
+
+ul {
+  list-style: none;
+}
+
+input {
+  width: 100%;
+  height: 20px;
+  margin-bottom: 20px;
+  border-color: cornflowerblue;
+}
+
+#form-button {
+  width: 30%;
+  padding: 10px;
+  border: none;
+  background-color: cornflowerblue;
+  color: aliceblue;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td {
+  border: 1px solid cornflowerblue;
+  min-width: 80px;
+  padding: 10px;
+}
+
+#table-container {
+  width: 60%
+}
+
+img {
+  max-width: 200px;
+  height: auto;
+}
