@@ -16,20 +16,21 @@ let $buttonsOperations = document.querySelectorAll('[data-js="button-operation"]
 let $buttonCE = document.querySelector('[data-js="button-ce"]');
 let $buttonEqual = document.querySelector('[data-js="button-equal"]');
 
-
 function initialize() {
 	initEvents();
 }
 
 function initEvents() {
-	 Array.prototype.forEach.call($buttonsNumbers, function(button) {
-      button.addEventListener('click', handleClickNumber, handleClickClearNumberVisor, false);
-    });
-    Array.prototype.forEach.call($buttonsOperations, function(button) {
-      button.addEventListener('click', handleClickOperation, false);
-    });
-    $buttonCE.addEventListener('click', handleClickCE, false);
-    $buttonEqual.addEventListener('click', handleClickEqual, false);
+		Array.prototype.forEach.call($buttonsNumbers, function(button) {
+	 		 button.addEventListener('click', handleClickNumber, false);
+		});
+		
+   	 Array.prototype.forEach.call($buttonsOperations, function(button) {
+    	  button.addEventListener('click', handleClickOperation, false);
+		});
+
+		$buttonCE.addEventListener('click', handleClickCE, false);
+		$buttonEqual.addEventListener('click', handleClickEqual, false);
 }
 
 
@@ -37,8 +38,10 @@ function handleClickNumber() {
 	if($visor.value === '0'){
 		return $visor.value = this.value;
 	}
-	return $visor.value += this.value		
+	return $visor.value += this.value	
+
 }
+
 
 function handleClickOperation() {
   $visor.value = removeLastItemIfItIsAnOperator($visor.value);
@@ -46,7 +49,7 @@ function handleClickOperation() {
 }
 
 function handleClickCE() {
-  $visor.value = 0;
+  $visor.value = 0; 
 }
 
 function isLastItemAnOperation(number) {
@@ -74,16 +77,13 @@ function handleClickEqual(){
   $visor.value = removeLastItemIfItIsAnOperator($visor.value);
   let allValues = $visor.value.match(getRegexOperation());
   $visor.value = allValues.reduce(calculateAllValues); 
- 
-  console.log($visor.value);
+  handleClickClear($visor.value);
 }
 
-
-function  handleClickClearNumberVisor() {
-	console.log('teste');
+function handleClickClear(value) {
+	h
+	console.log(value +'novato');
 }
-
-
 
  function getRegexOperation(){
 	 return new RegExp('\\d+[' + getOperations().join('') + ']?', 'g');
@@ -94,13 +94,13 @@ function calculateAllValues(accumulated, actual) {
 		let operator = accumulated.split('').pop();
 		let lastValue = removeLastItemIfItIsAnOperator(actual);
 		let lastOperator = isLastItemAnOperation(actual) ? actual.split('').pop() : '';
-
+		let resultado = 0;
 		console.log(firstValue + ' first');
 		console.log(operator + ' operator');
 		console.log(lastValue + ' last');
-		console.log(lastOperator + ' last operator');
 
-		return doOperation(operator, firstValue, lastValue) + lastOperator;	
+		resultado = doOperation(operator, firstValue, lastValue) + lastOperator;
+		return resultado;
 		
 }
 
