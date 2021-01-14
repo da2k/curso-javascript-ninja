@@ -30,7 +30,7 @@
   Adicione 3 novos estados da região Norte no início do array e mostre no console.
   */
   console.log( '\nMais estados adicionados:' );
-  brasil.unshift('Acre', 'Amapá', "Amazonas", "Pará", 'Rondônia', 'Roraima', 'Tocantins')
+  brasil.unshift('Acre', 'Amapá', "Amazonas")
   console.log(brasil);
 
   /*
@@ -43,7 +43,7 @@
   Crie um novo array chamado `newSul`, que receba somente os estados do sul,
   pegando do array `brasil`. Não remova esses itens de `brasil`.
   */
-  var newSul = brasil.slice(6, 9);
+  var newSul = brasil.slice(2, 5);
   
   /*
   Mostre no console os estados que estão em `newSul`.
