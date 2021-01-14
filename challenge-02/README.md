@@ -44,22 +44,24 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function newfunction(a,b,c){
-  if(a === undefined && b !== undefined && c !== undefined){
+  if(a === undefined || b !== undefined || c !== undefined){
   return 'Preencha todos os valores corretamente'
-  }else if(
+  }else if{
+  return a * b * c + 2
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+newfunction(2,3)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+/*
+Preencha todos os valores corretamente
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+newfunction(2,3,2)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+14
 
 /*
 Crie uma função com as seguintes características:
