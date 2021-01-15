@@ -81,9 +81,17 @@ function argfuncao(x,y,z){
    else if( x !== undefined && y !== undefined && z == undefined){
       return x + y
    }
+   else if( x,y,z !== undefined){
+      return ( x + y ) / z
+   }
+  else{
+    return false
+  }
 
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+argfuncao(2)        // 2
+argfuncao(2,3)     // 5
+argfuncao(2,3,4)  // 1.25
 ```
