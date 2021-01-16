@@ -141,32 +141,57 @@ DOM.isNull = function(value){
 
 const $formCep = new DOM('[data-js="form-cep"]');
 const $inputCep = new DOM('[data-js="input-cep"]');
-var ajax = new XMLHttpRequest();
-
-
+const $address = new DOM('[data-js="address"]');
+const $district = new DOM('[data-js="district"]');
+const $state = new DOM('[data-js="state"]');
+const $city = new DOM('[data-js="city"]');
+const $code = new DOM('[data-js="code"]');
+const $status = new DOM('[data-js="status"]');
+const ajax = new XMLHttpRequest();
 
 $formCep.on('submit', handleSubmitFormCep); 
 
 function handleSubmitFormCep(event) {
   event.preventDefault();
   
-  console.log($inputCep.getDomElements()[0].value);
   let url = 'https://ws.apicep.com/cep/[cepCode].json'.replace('[cepCode]', $inputCep.getDomElements()[0].value)
 
   ajax.open('GET', url );
   ajax.send();
+  getMessage('loading');
   ajax.addEventListener('readystatechange', handleReadyStateChange);
 }
 
 function handleReadyStateChange(){
-  if(ajax.readyState === 4 && ajax.status === 200 ){
-    console.log('Popular Formulário', ajax.responseText);
+  if(isRequestOk()) {
+    fillCepFields();
+    getMessage('ok');
   }
-
-  console.log('Carregando');
+ 
 }
 
+function isRequestOk(){
+   return ajax.readyState === 4 && ajax.status === 200; 
+}
 
+function fillCepFields() {
+  const data = JSON.parse(ajax.responseText);
 
+  console.log(data);
+  $address.getDomElements()[0].textContent = data.address;
+  $district.getDomElements()[0].textContent = data.district;
+  $state.getDomElements()[0].textContent = data.state;
+  $city.getDomElements()[0].textContent = data.city;
+  $code.getDomElements()[0].textContent = data.code;
 
+}
 
+function getMessage(type) {
+  const messages =  {
+    loading: 'Buscando informações para o CEP',
+    ok: 'Requisição realizada com sucesso', 
+    error: 'Não encontramos o endereço para o CEP.'
+  };
+  
+  $status.getDomElements()[0].textContent = messages[type];
+}

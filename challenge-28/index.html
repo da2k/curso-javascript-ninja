@@ -6,6 +6,21 @@
     <title>Challenge-28</title>
 </head>
 <body>
-    
+    <form data-js="form-cep">
+            CEP
+            <input type="text" data-js="input-cep" ></input>
+            <button type="submit">Buscar</button>
+    </form>
+    <div>
+        <p>Logradouro: <span data-js="address"></span></p>
+        <p>Bairro:<span data-js="district"></span></p>
+        <p>Estado: <span data-js="state"></span></p>
+        <p>Cidade: <span data-js="city"></span></p>
+        <p>CEP: <span data-js="code"></span></p>
+    </div>
+    <div data-js="status">
+        <p>Status da Requisição</p>
+    </div>
+    <script src="challenge-28.js"></script>
 </body>
 </html>
