@@ -204,4 +204,8 @@ pessoa.apresentacao = function () {
 // Agora, apresente-se ;)
 
 //'Olá, eu sou o Glauber Mendes, tenho 37 anos, 1.88m, meu peso é 96kg e, só hoje, eu já caminhei 1500 metros!'
+<<<<<<< HEAD
+=======
+
+>>>>>>> b7cd1119ae5ab241d0605873e69e2ea33b4ff922
 ```
