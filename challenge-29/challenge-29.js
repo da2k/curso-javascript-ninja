@@ -1,4 +1,4 @@
-(function() {
+(function($) {
   'use strict';
 
   /*
@@ -36,4 +36,77 @@
   que será nomeado de "app".
   */
 
-})();
+  function app() {
+    return {
+      init: function init() {
+        this.companyInfo();
+        this.initEvents();
+      },
+      
+      initEvents: function initEvents() {
+        $('[data-js="form-register"]').on('submit', this.handleSubmit, false);
+      },
+
+      handleSubmit: function handleSubmit(e){
+        e.preventDefault();
+        const $tableCar = $('[data-js="table-car"]').getDomElements();
+        $tableCar.appendChild(app().createNewCar());
+      },
+
+      createNewCar: function createNewCar(){
+        const $fragment = document.createDocumentFragment();
+        const $tr = document.createElement('tr');
+        const $tdImage = document.createElement('td');
+        const $image = document.createElement('img');
+        const $tdBrand = document.createElement('td');
+        const $tdYear = document.createElement('td');
+        const $tdPlate = document.createElement('td');
+        const $tdColor = document.createElement('td');
+
+        $image.src = $('[data-js="image"]').getDomElements().value;
+        
+        $tdImage.appendChild($image)
+
+        $tdImage.textContent = $('[data-js="image"]').getDomElements().value;
+        $tdBrand.textContent = $('[data-js="model-brand"]').getDomElements().value;
+        $tdYear.textContent = $('[data-js="year"]').getDomElements().value;
+        $tdPlate.textContent = $('[data-js="plate"]').getDomElements().value;
+        $tdColor.textContent = $('[data-js="color"]').getDomElements().value;
+
+        $tr.appendChild($tdImage);
+        $tr.appendChild($tdBrand);
+        $tr.appendChild($tdYear);
+        $tr.appendChild($tdPlate);
+        $tr.appendChild($tdColor);
+
+        return $fragment.appendChild($tr);
+      },
+
+      companyInfo: function(){
+        const ajax = new XMLHttpRequest();
+        ajax.open('GET', '/company.json', true);
+        ajax.send();
+        ajax.addEventListener('readystatechange', this.getCompanyInfo, false);
+
+      },
+      
+      getCompanyInfo: function() {
+        if(this.readyState === 4 && this.status === 200) {
+          const data = JSON.parse(this.responseText);
+          const $headerTitleCompany = $('[data-js="company"]');
+          const $headerTitlePhone = $('[data-js="phone"]');
+          $headerTitleCompany.getDomElements().textContent = data.name;
+          $headerTitlePhone.getDomElements().textContent = data.phone;
+  
+        }
+      
+      },
+
+    }
+
+  }
+
+  app().init();
+
+
+})(window.DOM);
