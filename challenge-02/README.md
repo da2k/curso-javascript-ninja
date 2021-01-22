@@ -45,9 +45,9 @@ Crie uma função com as seguintes características:
 function meusArgumentos (a, b, c) {
     if (a === undefined || b === undefined || c === undefined) {
       return "Preencha todos os valores corretamente!";
+    }else{
+      return (a * b * c) + 2;
     }
-  
-    return (a * b * c) + 2;
   }
 
 // Invoque a função criada acima, passando só dois números como argumento.
