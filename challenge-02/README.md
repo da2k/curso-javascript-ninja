@@ -87,6 +87,6 @@ function sumValue(a, b, c){
 sumValue(); // false
 sumValue(4); // 4
 sumValue(4, 2); // 6
-sumValue(4, 2, 3); // 2
+sumValue(4, 2, 3); // 2.
 
 ```
