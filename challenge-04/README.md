@@ -7,12 +7,15 @@ equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
 
+```js
 const isTruthy = function(param) {
     return param ? true : false;
 };
+```
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 
+```js
 isTruthy(false);
 isTruthy(null);
 isTruthy(undefined);
@@ -34,6 +37,7 @@ isTruthy('JavaScript');
 isTruthy(2 * 3);
 isTruthy(20 + 30);
 isTruthy(['banana, pera']);
+``` 
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
@@ -48,6 +52,7 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `quantidadePessoas` - Number - zero por padrão
 */
 
+```js
 let carro = {
     marca: 'Toyota Yaris',
     modelo: 'Sedan XS',
@@ -60,41 +65,50 @@ let carro = {
 };
 
 console.log(carro);
+```
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
 
+```js
 carro.mudarCor = function(cor) {
     carro.cor = cor;
 };
 
 console.log(mudarCor);
+```
 
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
 
+```js
 carro.obterCor = function() {
     return carro.cor;
 };
+```
 
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
 
+```js
 carro.obterModelo = function() {
     return carro.modelo;
 };
+```
 
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
 */
 
+```js
 carro.obterMarca = function() {
     return carro.marca;
 };
+```
 
 /*
 Crie um método chamado `obterMarcaModelo`, que retorne:
@@ -102,9 +116,11 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 
+```js
 carro.obterMarcaModelo = function() {
     return carro.obterMarca() + ' e ' + carro.obterModelo();
 };
+```
 
 /*
 Crie um método que irá adicionar pessoas no carro. Esse método terá as
@@ -123,6 +139,7 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 citado acima, no lugar de "pessoas".
 */
 
+```js
 carro.adicionarPessoas = function(numeroPessoas) {
     let totalPessoas = carro.quantidadePessoas + numeroPessoas;
 
@@ -139,6 +156,7 @@ carro.adicionarPessoas = function(numeroPessoas) {
     carro.quantidadePessoas += numeroPessoas;
     return 'Já temos ' + totalPessoas + ' pessoas no carro!'
 };
+```
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -148,39 +166,59 @@ retornar algum valor.
 
 Qual a cor atual do carro
 */
-
+```js
 carro.obterCor();
+```
 
 // Mude a cor do carro para vermelho.
+```js
 carro.mudarCor('Prata');
+```
 
 // E agora, qual a cor do carro
+```js
 carro.obterCor();
+```
 
 // Mude a cor do carro para verde musgo.
 carro.mudarCor('Verde Musgo');
 
 // E agora, qual a cor do carro
+```js
 carro.obterCor();
+```
 
 // Qual a marca e modelo do carro
+```js
 carro.obterMarcaModelo();
+```
 
 // Adicione 2 pessoas no carro.
+```js
 carro.adicionarPessoas(2);
+```
 
 // Adicione mais 4 pessoas no carro.
+```js
 carro.adicionarPessoas(4);
+```
 
 // Faça o carro encher.
+```js
 carro.adicionarPessoas(3);
+```
 
 // Tire 4 pessoas do carro.
+```js
 carro.adicionarPessoas(-4);
+```
 
 // Adicione 10 pessoas no carro.
+```js
 carro.adicionarPessoas(10);
+```
 
 // Quantas pessoas temos no carro
+```js
 carro.quantidadePessoas;  // ==> 1 pessoa
-
+```
