@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    #draggable {
+        width: 200px;
+        height: 20px;
+        text-align: center;
+        background: white;
+    }
+
+    .zona {
+        width: 200px;
+        height: 20px;
+        background: rgb(43, 226, 217);
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+</style>
+
+<body>
+    <h2>Click counter.</h2>
+    <button data-count="count">Click</button>
+    <input data-campo="campo" type="text" value="0">
+
+    <hr>
+    <h2>Change backgroud of input to green.</h2>
+    <form id="form">
+        <input data-psw="psw" type="text" placeholder="password">
+    </form>
+
+    <hr>
+
+    <h2>Make div draggable to other divs.</h2>
+    <div class="zona">
+        <div id="draggable" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)">
+            Essa div pode ser movida.
+        </div>
+    </div>
+    <div class="zona"></div>
+    <div class="zona"></div>
+    <div class="zona"></div>
+
+
+    <script src="challenge-25.js"></script>
+</body>
+
+</html>
