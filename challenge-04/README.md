@@ -9,11 +9,10 @@ para o contrário.
 */
 var isTruthy = function(a) {
   if(a) {
-   true
-  } else {
-    false
+   return true
   }
-}
+  return false
+};
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 isTruthy(NaN)
@@ -21,6 +20,8 @@ isTruthy(undefined)
 isTruthy(0)
 isTruthy(-0)
 isTruthy(false)
+isTruthy('')
+isTruthy(null)
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
@@ -30,6 +31,7 @@ isTruthy(1)
 isTruthy(true)
 isTruthy({})
 isTruthy([])
+isTruthy(function() {})
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
@@ -60,21 +62,21 @@ passado por parâmetro.
 */
 var mudarCor = function(cor) {
   carro.cor = cor
-}
+};
 
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
 var obterCor = function() {
   return carro.cor
-}
+};
 
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
 var obterModelo = function() {
   return carro.modelo
-}
+};
 
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
@@ -108,17 +110,17 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-var adicionarPessoas = function(pessoas) {
+carro.adicionarPessoas = function(pessoas) {
   carro.quantidadePessoas += pessoas
-  var resto = carro.quantidadePessoas - 5
+  var resto = carro.quantidadePessoas - carro.assentos 
   var word
   (resto === 1) ? word = 'pessoa' : word = 'pessoas'
-  if (carro.quantidadePessoas < 5) {
-    console.log(`Já temos ${carro.quantidadePessoas} ${word} no carro`)
-  } else if (pessoas > resto) {
-    console.log(`Só cabem mais ${resto} ${word}`)
+  if (carro.quantidadePessoas < carro.assentos) {
+    return `Já temos ${carro.quantidadePessoas} ${word} no carro`
+  } else if (pessoas > carro.assentos) {
+    return `Só cabem mais ${resto} ${word}`
   } else {
-   console.log(`O carro já está lotado`)
+   return `O carro já está lotado`
   }
 }
 
@@ -130,26 +132,25 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-obterCor()
+carro.obterCor()
 "branco"
 
 // Mude a cor do carro para vermelho.
-mudarCor('vermelho')
-undefined
+carro.mudarCor('vermelho')
 
 // E agora, qual a cor do carro?
 carro.cor
 "vermelho"
 
 // Mude a cor do carro para verde musgo.
-mudarCor('verde musgo')
+carro.mudarCor('verde musgo')
 
 // E agora, qual a cor do carro?
 carro.cor
 'verde musgo'
 
 // Qual a marca e modelo do carro?
-obterMarcaModelo()
+carro.obterMarcaModelo()
 "Esse carro é um Fiat Palio"
 
 // Adicione 2 pessoas no carro.
