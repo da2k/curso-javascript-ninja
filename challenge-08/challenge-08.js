@@ -7,6 +7,7 @@ var sum = function calculateSum ( x, y ) {
   return x + y ;
 }
 
+
 /*
 Invoque a função criada acima, passando dois números que serão somados, e mostre
 o resultado no console, com a frase:
