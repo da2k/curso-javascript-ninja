@@ -145,35 +145,37 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-carro.adicionarPessoas  = function(y) {
 
-    var pessoas = 'pessoas';
-    var assentosSobrando = carro.assentos - carro.quantidadesPessoas;
-    if(assentosSobrando === 1) { pessoas = 'pessoa'}
+//Coloquei uma condicao para impedir que o valor de carro.quantidadesPessoas seja menor que ZERO
+/*
+if(carro.quantidadesPessoas === 0 && numeroPessoas <= 0 ){
 
-    if(assentosSobrando == 0){
-        return 'O carro já está lotado ! Já temos'+ ' '+ carro.quantidadesPessoas + ' '+ 'pessoas no carro !'
-    } else if
-        (assentosSobrando <=5 && y === assentosSobrando  ) {
-            carro.quantidadesPessoas += y;
+    return "O carro ja esta vazio!"
+} */
 
-    return 'Já temos'+ ' '+ carro.quantidadesPessoas + ' '+ 'pessoas no carro !'
+carro.adicionarPessoas  = function(numeroPessoas) {
+ var assentosDisponiveis = carro.assentos - carro.quantidadesPessoas ;
+ var totalPessoas = carro.quantidadesPessoas + numeroPessoas;
+ var pluralSingular = assentosDisponiveis === 1 ? 'pessoa' : 'pessoas'
 
-        } else if
-            (assentosSobrando <=5 && y < assentosSobrando){
-                carro.quantidadesPessoas += y;
+ if(carro.quantidadesPessoas === carro.assentos && totalPessoas >= carro.assentos) {
+return "O carro já está lotado!"
 
-        return 'Já temos'+ ' '+ carro.quantidadesPessoas + ' '+ 'pessoas no carro !'
+}
 
 
-        }  else if (assentosSobrando <=5 && y > assentosSobrando){
+if(totalPessoas > carro.assentos){
 
-            return 'Só cabem mais' + ' '  + assentosSobrando + ' ' + pessoas + '!'
-        } else if
+    return 'Só cabem mais' + ' ' +assentosDisponiveis + ' ' + pluralSingular + '!'
+}
 
-            (assentosSobrando ===1 )
+if(carro.quantidadesPessoas === 0 && numeroPessoas <= 0 ){
 
-            return 'Só cabem mais' + ' ' + assentosSobrando + ' ' + pessoas + '!'
+    return "O carro ja esta vazio!"
+}
+
+carro.quantidadesPessoas += numeroPessoas;
+ return 'Já temos' + ' '+ carro.quantidadesPessoas + ' ' + 'no carro!'
 
         }
 
