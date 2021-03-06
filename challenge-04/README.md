@@ -1,6 +1,6 @@
 # Desafio da semana #4
 
-```js
+````js
 /*
 Declare uma variável chamada `isTruthy`, e atribua a ela uma função que recebe
 um único parâmetro como argumento. Essa função deve retornar `true` se o
@@ -147,36 +147,36 @@ citado acima, no lugar de "pessoas".
 */
 carro.adicionarPessoas  = function(y) {
 
-    var pessoas = 'pessoas';    
+    var pessoas = 'pessoas';
     var assentosSobrando = carro.assentos - carro.quantidadesPessoas;
     if(assentosSobrando === 1) { pessoas = 'pessoa'}
 
     if(assentosSobrando == 0){
         return 'O carro já está lotado ! Já temos'+ ' '+ carro.quantidadesPessoas + ' '+ 'pessoas no carro !'
-    } else if 
+    } else if
         (assentosSobrando <=5 && y === assentosSobrando  ) {
-            carro.quantidadesPessoas += y; 
-        
+            carro.quantidadesPessoas += y;
+
     return 'Já temos'+ ' '+ carro.quantidadesPessoas + ' '+ 'pessoas no carro !'
 
         } else if
             (assentosSobrando <=5 && y < assentosSobrando){
-                carro.quantidadesPessoas += y; 
-        
+                carro.quantidadesPessoas += y;
+
         return 'Já temos'+ ' '+ carro.quantidadesPessoas + ' '+ 'pessoas no carro !'
 
 
         }  else if (assentosSobrando <=5 && y > assentosSobrando){
 
             return 'Só cabem mais' + ' '  + assentosSobrando + ' ' + pessoas + '!'
-        } else if 
+        } else if
 
-            (assentosSobrando ===1 ) 
-        
+            (assentosSobrando ===1 )
+
             return 'Só cabem mais' + ' ' + assentosSobrando + ' ' + pessoas + '!'
-            
+
         }
-    
+
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -218,15 +218,18 @@ carro.cor
 'Só cabem mais 3 pessoas!'
 
 // Faça o carro encher.
-> carro.adicionarPessoas(3)
+> carro.adicionarPessoas(5)
 'Já temos 5 pessoas no carro !'
 
 // Tire 4 pessoas do carro.
 ?
-
+> carro.adicionarPessoas(-4)
+'Já temos 5 pessoas no carro !'
 // Adicione 10 pessoas no carro.
-?
+?> carro.adicionarPessoas(10)
+'Já temos 5 pessoas no carro !'
 
 // Quantas pessoas temos no carro?
 ?
-```
+```carro.quantidadesPessoas
+````
