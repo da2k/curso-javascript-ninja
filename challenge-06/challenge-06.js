@@ -35,15 +35,11 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
 */
 function showTeamPosition(position){
 
-    if(position > 1 && position <= 5 ) {
+    if(position < 1 || position > 5) return 'Não temos a informação do time que está na ' + position + 'º posição.'
+
     var index = position - 1;
     return 'O time que está em' + ' ' + position + 'º lugar é o' + ' '+ teams[index]+ '.';
-    } else {
-
-        return 'Não temos a informação do time que está nessa posição.'; 
     }
-
-}
 
 
 /*
@@ -55,7 +51,7 @@ console.log(showTeamPosition(2));
 console.log(showTeamPosition(3));
 console.log(showTeamPosition(4));
 console.log(showTeamPosition(5));
-console.log(showTeamPosition(0));
+console.log(showTeamPosition(8));
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
@@ -110,7 +106,7 @@ function convertToHex(color) {
 
     }
 
-        return "O hexadecimal para a color" + ' ' + color + ' ' + 'é'+'' + ' ' + hexadecimal + ".";
+        return "O hexadecimal para a cor" + ' ' + color + ' ' + 'é'+'' + ' ' + hexadecimal + ".";
 };
 
 
