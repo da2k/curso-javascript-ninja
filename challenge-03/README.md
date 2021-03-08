@@ -47,7 +47,8 @@ valor dessa propriedade a quantidade passada por parâmetro;
 booleano que representa "verdadeiro";
 */
 pessoa.andar = function(metros){
-    return pessoa.caminhouQntsMetros += metros, pessoa.andando = true;
+    return pessoa.caminhouQntsMetros += metros, 
+     pessoa.andando = true;
 }
 
 /*
@@ -194,7 +195,7 @@ pessoa.apresentacao = function(){
         w = ' metro ';
     }
 
-    var resposta = console.log("Olá, eu sou"+ sx + pessoa.nome + " " + pessoa.sobrenome + ", tenho "+ pessoa.idade + y +", "+ pessoa.altura.toFixed(2) + ", meu peso é "+ pessoa.peso + "Kg e, só hoje, eu já caminhei " + pessoa.caminhouQntsMetros + w + "!");
+    var resposta = console.log("Olá, eu sou"+ sx + pessoa.nome + " " + pessoa.sobrenome + ", tenho "+ pessoa.idade + y +", "+ pessoa.altura.toFixed(2) + "m, meu peso é "+ pessoa.peso + "Kg e, só hoje, eu já caminhei " + pessoa.caminhouQntsMetros + w + "!");
 
     return resposta;
 }
