@@ -119,7 +119,8 @@
   o que acontece ;)
   */
   console.log( '\nExiste um { number: 2 } em numberObjects?' );
-  // ?
+
+
 
   /*
   Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
