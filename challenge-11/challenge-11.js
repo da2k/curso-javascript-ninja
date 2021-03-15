@@ -1,3 +1,5 @@
+
+(function(){
 // Envolva todo o código desse arquivo em uma IIFE (incluindo esse comentário).
 
 /*
@@ -8,6 +10,12 @@ loop, mostre no console a mensagem:
 Qual loop você deve usar para que essa mensagem seja mostrada no console?
 */
 // ?
+let once =  false;
+
+do{
+    console.log('Entrou ao menos uma vez!');
+    
+ } while(once); 
 
 /*
 Crie um objeto chamado `person`, que receba as seguintes propriedades:
@@ -16,6 +24,14 @@ para o nome, idade, peso e data de nascimento dessa pessoa.
 */
 // ?
 
+let person = {
+
+    name: 'Gilmara',
+    age: 43,
+    weigth: 50,
+    birthday: '04/28'   
+
+}
 /*
 Use um loop para percorrer o objeto criado acima, mostrando no console
 a frase:
@@ -27,6 +43,17 @@ Após o loop, mostre a frase:
 */
 // ?
 
+// console.log('Idade de person', person['age'])
+
+let counter = 0;
+
+for(let props in person){
+    counter++;
+    console.log('The ' + props + ' of person is ' + person[props]);
+}
+
+console.log('O objeto tem ', counter + ' propriedades');
+
 /*
 Crie uma função chamada `moreThan`, que vai verificar se a pessoa (objeto
 criado acima) é mais velha que a idade passada por parâmetro.
@@ -35,13 +62,34 @@ Após a função, mostrar a mensagem no console:
 'The person has more than 25 years old? [TRUE/FALSE]'
 */
 // ?
+function moreThan(age){
+
+    return person.age > age;
+    
+    
+};
+
+console.log('The person has more than 25 years old?', moreThan(25));
 
 /*
 Faça um loop de 0 a 20, que adicione cada número como um item de um
 array chamado `numbers`. Se o contador for maior que 10, saia do loop.
 Mostre no console os números no array.
 */
+
+counter = 0;
+let numbers = [];
+
+while(counter<=20){
+
+    if(counter >10) break;
+   
+    numbers.push(counter++);
+};
+
 console.log( 'De 0 a 10:' );
+console.log(numbers);
+
 // ?
 
 /*
@@ -52,3 +100,20 @@ Mostrar no console os números do array.
 */
 console.log( 'Pares de 0 a 20:' );
 // ?
+numbers = [];
+
+for(i=0; i<=20; i++){
+    
+    if(i % 2 !== 0) continue;
+    numbers.push(i);
+ 
+   
+}
+
+console.log(numbers);
+
+})();
+
+
+
+
