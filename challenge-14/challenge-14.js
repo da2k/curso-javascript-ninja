@@ -120,24 +120,30 @@
   */
   console.log( '\nExiste um { number: 2 } em numberObjects?' );
 
-  if(numberObjects.indexOf({number: 2} > -1)){
+  if(numberObjects.indexOf({number: 2}) > -1){
     console.log("Existe um objeto { number: 2 } em numberObjects!");
-  }else{
+  } else {
     console.log("Não existe um objeto { number: 2 } em numberObjects :(");
   };
-  //ele nao encontra o valor só a chave?
+  //cria novo objeto na memoria por isso nao encontra
 
   /*
   Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
   será que obtemos um resultado diferente? Faça a busca a partir do índice 2.
   */
   console.log( '\nE buscando a partir do último índice, o { number: 2 } existe?' );
-  //last indexof
+  if(numberObjects.lastIndexOf({number: 2}, 2) > -1){
+    console.log("Existe um objeto { number: 2 } em numberObjects!");
+  } else {
+    console.log("Não existe um objeto { number: 2 } em numberObjects :(");
+  };
 
   /*
   Verifique se `justMod2Or3` é um array. Se for, mostre-o no console, no
   formato de String.
   */
   console.log( '\njustMod2Or3 é um array? Se for, a representação dele em String é:' );
-  Array.isArray(justMod2Or3);
+  if (Array.isArray(justMod2Or3)) {
+    console.log(justMod2Or3.toString())
+  };
 })();
