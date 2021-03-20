@@ -1,142 +1,43 @@
 (function (win, doc) {
     'use strict';
     /*
-    1. Envolva todo o conteúdo desse desafio em uma IIFE.
-    2. Adicione a diretiva 'use strict';
-    3. Passe por parâmetro para a IIFE os objetos window e document.
-    4. Dessa vez não é necessário criar um HTML. Ele já existe, e vamos utilizar
-    a marcação criada nele para fazer nosso desafio ;)
+    O desafio de hoje será um pequeno projeto: um cronômetro!
+    As regras para criação do cronômetro são as seguintes:
+    1. Crie um arquivo index.html e adicione esse script a ele;
+    2. Crie um campo `input` do tipo `text`, e inicie-o com um valor 0 (zero).
+    Ele será o nosso cronômetro;
+    3. Crie 3 botões para as ações do cronômetro: Start, Stop e Reset;
+    4. Ao clicar em Start, o valor do campo deve ser incrementado de 1 em 1, a
+    cada segundo;
+    5. Ao clicar em Stop, o cronômetro deve parar de contar;
+    6. Ao clicar em Reset, o cronômetro deve zerar e parar de contar.
     
-    O HTML NÃO PODE ser alterado!
+    Utilize o atributo data-js para nomear o campo e os botões. Você pode
+    usar o nome que achar melhor, desde que ele seja semântico, ou seja, o nome
+    dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
     */
 
-    /*
-    Ao carregar a página, pergunte ao usuário "Qual o seu nome?". Atribua o
-    resultado à uma variável chamada `username`. Se o usuário não digitar um
-    nome, `username` deve receber "Desconhecido".
-    Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
-    */
-    var username = prompt("Qual o seu nome?");
-    alert("Bem vindo " + username + '!');
-    if (!username)
-        username = 'Desconhecido';
-    /*
-    Agora, pergunte ao usuário "Qual o seu e-mail?", atribuindo o resultado à
-    uma variável chamada `email`.
-    */
-    var email = prompt("Qual o seu e-mail?");
+    var $buttonStart = doc.querySelector('[data-js="start"]');
+    var $buttonStop = doc.querySelector('[data-js="stop"]');
+    var $buttonReset = doc.querySelector('[data-js="reset"]');
+    var $cronometro = doc.querySelector('input[type="text"]');
+    var temporizador;
 
-    /*
-    - Selecione o input de "Nome", atribuindo-o à uma variável chamada
-    `$inputUsername`.
-    */
-    var $inputUsername = document.querySelector('input[type=text]');
+    $buttonStart.addEventListener('click', startTimer, false);
+    $buttonStop.addEventListener('click', stopTimer, false);
+    $buttonReset.addEventListener('click', resetTimer, false);
 
-    /*
-    - Selecione o input de "Email", atribuindo-o à uma variável chamada
-    `$inputEmail`.
-    */
-
-    var $inputEmail = document.querySelector('input[type=email]');
-
-    /*
-    - Selecione o campo de "Mensagem", atribuindo-o à uma variável chamada
-    `$message`.
-    */
-
-    var $message = document.querySelector('textarea');
-
-    /*
-    - Selecione o botão de envio do formulário, atribuindo-o à uma variável
-    chamada `$button`.
-    */
-    var $button = document.querySelector('button');
-
-    /*
-    Preencha os campos de "Nome" e "Email" que estão no documento com os valores
-    entrados pelo usuário.
-    */
-    $inputUsername.value = username;
-    $inputEmail.value = email;
-
-    /*
-    Adicione um listener de evento de click ao botão que faça o seguinte:
-    1. Verificar se todos os campos estão preenchidos:
-    - Mostrar um alert para cada campo não preenchido, como abaixo:
-    - Se o campo de "Nome" não estiver preenchido, mostrar:
-        - "Preencha o nome do usuário!"
-    - Se o campo de "Email" não estiver preenchido, mostrar:
-        - "Preencha o e-mail!"
-    - Se o campo de "Mensagem" não estiver preenchido, mostrar:
-        - "Preencha a mensagem!"
-    - Se o campo de "Email" for inválido, mostrar:
-        - "Entre com um e-mail válido!"
-    
-    2. Para verificar se o e-mail é válido use a função `isValidEmail`, passando
-    o e-mail que foi entrado no campo de "Email" por parâmetro. (A função
-    `isValidEmail` será criada logo abaixo).
-    
-    3. Se tudo estiver OK, pergunte ao usuário:
-        - "Tem certeza que deseja enviar o formulário?"
-    Se for confirmado, mostre um alerta com a mensagem:
-        - "Enviado com sucesso!"
-    Caso contrário, mostre um alerta com a mensagem:
-        - "Não enviado."
-    */
-    $button.addEventListener('click', function (event) {
-        event.preventDefault();
-        if (!$inputUsername.value) {
-            return alert("Preencha o nome do usuário!");
-        }
-
-        if (!$inputEmail.value) {
-            return alert("Preencha o e-mail!");
-        }
-
-        if(!isValidEmail($inputEmail.value)){
-            return alert("Entre com um e-mail válido!");
-        }
-
-        if (!$message.value) {
-            return alert("Preencha a mensagem!");
-        }
-
-        if (!confirm("Tem certeza que deseja enviar o formulário?")) {
-            return alert("Não enviado!");
-        }
-
-        return alert("Enviado com sucesso!");
-    }, false)
-
-    /*
-    Crie uma função chamada `isValidEmail`, que será usada na validação do
-    envio do formulário.
-    Essa função deve receber o e-mail por parâmetro e verificar se é um e-mail
-    válido.
-    As regras para validação são:
-        - O nome do usuário (antes do arroba), pode ser qualquer caractere
-        alfanumérico, incluindo o underscore, sinal de "+" e o ponto;
-        - Após o arroba, o domínio pode conter somente caracteres alfanuméricos
-        e o underscore;
-        - Para a extensão, o domínio deve vir seguido de um ponto, e no mínimo
-        2 caracteres alfanuméricos;
-        - O final do domínio é opcional, mas se existir, deve começar com um
-        ponto, seguido de no máximo 2 caracteres alfanuméricos.
-    
-    Alguns e-mails válidos que podem ser usados para testar:
-        - "meu.email+categoria@gmail.com"
-        - "juca_malandro@bol.com.br"
-        - "pedrobala@hotmail.uy"
-        - "sandro@culinaria.dahora"
-    
-    Alguns e-mails inválidos:
-        - "walter-da-silva@maraca.br"
-        - "rita-marica@titica.a.b"
-        - "agua_@evida.br.com"
-    */
-    
-    function isValidEmail(email){
-        return /^[\w+.]+@\w+\.\w{2,}(?:.\w{2})?$/gm.test(email);
+    function startTimer() {
+        $cronometro.value++;
+        temporizador = setTimeout(startTimer, 1000);
     }
 
+    function stopTimer() {
+        clearTimeout(temporizador);
+    }
+
+    function resetTimer() {
+        $cronometro.value = 0;
+        stopTimer();
+    }
 })(window, document);
