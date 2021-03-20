@@ -1,107 +1,106 @@
-/*
-1. Envolva todo o conteúdo desse desafio em uma IIFE.
-2. Adicione a diretiva 'use strict';
-3. Passe por parâmetro para a IIFE os objetos window e document.
-4. Dessa vez não é necessário criar um HTML. Ele já existe, e vamos utilizar
-a marcação criada nele para fazer nosso desafio ;)
+(function () {
+  'use strict';
 
-O HTML NÃO PODE ser alterado!
-*/
+  /*
+    Crie dois objetos, que serão duas pessoas. Cada um deve ter as propriedades
+    `name` e `lastName`, preenchidos com o nome e sobrenome da pessoa.
+    */
 
-/*
-Ao carregar a página, pergunte ao usuário "Qual o seu nome?". Atribua o
-resultado à uma variável chamada `username`. Se o usuário não digitar um
-nome, `username` deve receber "Desconhecido".
-Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
-*/
-// ?
+  var obj1 = {
+    name: 'Kayque',
+    lastName: 'Almeida'
+  };
 
-/*
-Agora, pergunte ao usuário "Qual o seu e-mail?", atribuindo o resultado à
-uma variável chamada `email`.
-*/
-// ?
+  var obj2 = {
+    name: 'Kayque2',
+    lastName: 'Almeida2'
+  };
 
-/*
-- Selecione o input de "Nome", atribuindo-o à uma variável chamada
-`$inputUsername`.
-*/
-// ?
+  /*
+  Agora crie uma função chamada `getFullName` que retorne as propriedades
+  `name` e `lastName` dos objetos acima, formando um nome completo.
+  A função não deve receber nenhum parâmetro, mas as propriedades `name` e
+  `lastName` devem ser dinâmicas.
+  A mesma função deve servir para as duas pessoas (ou qualquer outra que for
+  criada).
+  Depois disso, invoque essa função, mostrando no console o nome completo das
+  pessoas que foram criadas anteriormente, passando as pessoas acima como
+  contexto da função. Use um console.log por pessoa.
+  */
+  console.log('O nome das pessoas é:');
 
-/*
-- Selecione o input de "Email", atribuindo-o à uma variável chamada
-`$inputEmail`.
-*/
-// ?
+  function getFullName() {
+    return this.name + " " + this.lastName;
+  }
 
-/*
-- Selecione o campo de "Mensagem", atribuindo-o à uma variável chamada
-`$message`.
-*/
-// ?
+  console.log(getFullName.call(obj1));
+  console.log(getFullName.call(obj2));
 
-/*
-- Selecione o botão de envio do formulário, atribuindo-o à uma variável
-chamada `$button`.
-*/
-// ?
+  /*
+  Crie uma função chamada `sum`. Essa função pode receber uma lista de
+  parâmetros variável, e deverá retornar a soma de todos eles.
+  Não use estruturas de repetição para somar os argumentos.
+  Na primeira linha, dentro da função, deixe um console.log para mostrar todos
+  os parâmetros passados para essa função.
+  */
 
-/*
-Preencha os campos de "Nome" e "Email" que estão no documento com os valores
-entrados pelo usuário.
-*/
-// ?
+  function sum() {
+    console.log(arguments);
+    return Array.prototype.reduce.call(arguments, function (accumulated, actual) {
+      return Number(accumulated) + Number(actual);
+    });
+  }
 
-/*
-Adicione um listener de evento de click ao botão que faça o seguinte:
-1. Verificar se todos os campos estão preenchidos:
-- Mostrar um alert para cada campo não preenchido, como abaixo:
-- Se o campo de "Nome" não estiver preenchido, mostrar:
-    - "Preencha o nome do usuário!"
-- Se o campo de "Email" não estiver preenchido, mostrar:
-    - "Preencha o e-mail!"
-- Se o campo de "Mensagem" não estiver preenchido, mostrar:
-    - "Preencha a mensagem!"
-- Se o campo de "Email" for inválido, mostrar:
-    - "Entre com um e-mail válido!"
+  /*
+  Mostre no console que a função acima funciona, invocando-a em 3 console.log
+  diferentes, com quantidades variáveis de parâmetros passados.
+  */
+  console.log('\nSomar alguns números:');
 
-2. Para verificar se o e-mail é válido use a função `isValidEmail`, passando
-o e-mail que foi entrado no campo de "Email" por parâmetro. (A função
-`isValidEmail` será criada logo abaixo).
+  console.log(sum(1, 2, 3, 4, 5));
+  console.log(sum({}, 'Kayque', 3, 4, 5));
+  console.log(sum(1, 2, 3, [4, 5], 5));
 
-3. Se tudo estiver OK, pergunte ao usuário:
-    - "Tem certeza que deseja enviar o formulário?"
-Se for confirmado, mostre um alerta com a mensagem:
-    - "Enviado com sucesso!"
-Caso contrário, mostre um alerta com a mensagem:
-    - "Não enviado."
-*/
-// ?
+  /*
+  Declare uma variável chamada `userEntry`, que irá receber alguns valores
+  entrados pelo usuário. Mostre para o usuário a seguinte frase:
+  "Entre com alguns números que serão somados:"
+  */
 
-/*
-Crie uma função chamada `isValidEmail`, que será usada na validação do
-envio do formulário.
-Essa função deve receber o e-mail por parâmetro e verificar se é um e-mail
-válido.
-As regras para validação são:
-    - O nome do usuário (antes do arroba), pode ser qualquer caractere
-    alfanumérico, incluindo o underscore, sinal de "+" e o ponto;
-    - Após o arroba, o domínio pode conter somente caracteres alfanuméricos
-    e o underscore;
-    - Para a extensão, o domínio deve vir seguido de um ponto, e no mínimo
-    2 caracteres alfanuméricos;
-    - O final do domínio é opcional, mas se existir, deve começar com um
-    ponto, seguido de no máximo 2 caracteres alfanuméricos.
+  var userEntry = prompt("Entre com alguns números que serão somados: ");
 
-Alguns e-mails válidos que podem ser usados para testar:
-    - "meu.email+categoria@gmail.com"
-    - "juca_malandro@bol.com.br"
-    - "pedrobala@hotmail.uy"
-    - "sandro@culinaria.dahora"
+  /*
+  Mostre no console o valor entrado pelo usuário:
+  */
+  console.log('\nEntrada do usuário:');
 
-Alguns e-mails inválidos:
-    - "walter-da-silva@maraca.br"
-    - "rita-marica@titica.a.b"
-    - "agua_@evida.br.com"
-*/
-// ?
+  console.log(userEntry);
+
+  /*
+  Crie uma função chamada `justNumbers`, que recebe por parâmetro uma string
+  e remove tudo o que não for número, retornando um array somente com os números
+  da string. Mostre a representação em string dessa função no console.
+  */
+  console.log('\nFunção que limpa entrada do usuário (somente números):');
+
+  function justNumbers(entry) {
+    return entry.replace(/\D+/g, ',').split(',');
+  }
+
+  /*
+  Usando a função acima, faça a limpeza dos valores entrados pelo usuário,
+  atribuindo o resultado à uma variável `numbers`.
+  */
+  console.log('\nEntrada do usuário limpa. Somente números:');
+
+  var numbers = justNumbers(userEntry);
+  console.log(numbers);
+
+  /*
+  Agora com o array de números, utilize a função `sum` para somar todos os
+  números desse array e mostre o resultado no console.
+  */
+  console.log('\nSomar números entrados pelo usuário:');
+  console.log(sum.apply(sum, numbers));
+
+})();
