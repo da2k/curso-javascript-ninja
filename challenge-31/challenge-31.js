@@ -1,14 +1,21 @@
 /*
-Agora vamos criar a funcionalidade de "remover" um carro. Adicione uma nova
-coluna na tabela, com um botão de remover.
+Crie uma nova branch chamada `challenge-30`, e copie tudo o que foi feito no
+desafio da aula anterior para esse novo repositório, nessa branch
+`challenge-30`.
 
-Ao clicar nesse botão, a linha da tabela deve ser removida.
+Adicione um arquivo na raiz desse novo repositório chamado `.gitignore`.
+O conteúdeo desse arquivo deve ser somente as duas linhas abaixo:
 
-Faça um pull request no seu repositório, na branch `challenge-31`, e cole
-o link do pull request no `console.log` abaixo.
+node_modules
+npm-debug.log
 
-Faça um pull request, também com a branch `challenge-31`, mas no repositório
-do curso, para colar o link do pull request do seu repo.
+Faça as melhorias que você achar que são necessárias no seu código, removendo
+duplicações, deixando-o o mais legível possível, e então suba essa alteração
+para o repositório do seu projeto.
+
+Envie um pull request da branch `challenge-30` para a `master` e cole aqui
+nesse arquivo, dentro do `console.log`, o link para o pull request no seu
+projeto.
 */
 
-console.log('Link do pull request do seu projeto');
+console.log('Link do pull request do seu projeto', 'https://github.com/kayquealmeida/car_project.git');
