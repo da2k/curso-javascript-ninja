@@ -2,13 +2,15 @@
 Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
-var array = ['Paulo', 33, 'Fortaleza', 'Ceará', null];
+let array = ['Paulo', 33, 'Fortaleza', 'Ceará', null];
 
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
-function func(arg){
+function func(arg) {
+
 	return arg;
+
 }	
 
 /*
@@ -22,15 +24,17 @@ segundo, um número. A função deve retornar o valor de um índice do array que
 no primeiro parâmetro. O índice usado para retornar o valor, deve ser o número passado no
 segundo parâmetro.
 */
-function func2(arg1, arg2){
+function func2(arg1, arg2) {
+
 	return arg1[arg2];
+
 }
 
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
 
-var valores = [null, 1, [1, 2, 3], 'Paulo', true];	
+let valores = [null, 1, [1, 2, 3], 'Paulo', true];	
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
@@ -54,8 +58,10 @@ propriedades:
 os livros.
 */
 
-function book(arg){
-	var livros = {
+function book(arg) {
+
+	let livros = {
+
 		'Linux, a bíblia': {
 			quantidadeDePaginas: 818,
 			autor: 'Christopher Negus',
@@ -71,8 +77,11 @@ function book(arg){
 			autor: 'Herbet Schildt',
 			editora: 'Pearson'
 		}
-	} 
-	return arg === undefined ? livros :livros[arg]; 	
+
+	}
+
+	return arg === undefined ? livros :livros[arg]; 
+
 }
 
 /*
@@ -85,18 +94,18 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-console.log('O livro Algoritmos tem '+book('Algoritmos').quantidadeDePaginas+' páginas');
+console.log(`O livro Algoritmos tem ${book('Algoritmos').quantidadeDePaginas} páginas`);
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log("O autor do livro Linux, a bíblia é "+book('Linux, a bíblia').autor);
+console.log(`O autor do livro Linux, a bíblia é ${book('Linux, a bíblia').autor}`);
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log("O livro C completo e total foi publicado pela editora "+book('C completo e total').editora);
+console.log(`O livro C completo e total foi publicado pela editora ${book('C completo e total').editora}`);
