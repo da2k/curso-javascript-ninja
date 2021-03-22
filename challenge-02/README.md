@@ -4,27 +4,31 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-function soma(a, b){
+function soma(a, b) {
+
 	return a + b;
+
 }
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-var func = soma(2, 3) + 5;
+let func = soma(2, 3) + 5;
 
 // Qual o valor atualizado dessa variável?
 10
 
 // Declare uma nova variável, sem valor.
-var n;
+let n;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function add(){
+function add() {
+
 	n = 3;
-	return 'O valor da variável agora é: ' + n;
+	return `O valor da variável agora é: ${n}`;
+    
 }
 
 // Invoque a função criada acima.
@@ -42,12 +46,18 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-function nomeDaFuncao(a, b, c){
-	if(a === undefined || b === undefined || c === undefined){
+function nomeDaFuncao(a, b, c) {
+    
+	if (!a || !b || !c) {
+
 		return 'Preencha todos os valores corretamente!';
-	}else{
+
+	} else {
+
 		return (a * b * c) + 2;
+
 	} 
+
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
@@ -72,17 +82,29 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function func(a, b, c){
-	if(a !== undefined && b === undefined && c === undefined){
+
+	if (a && !b && !c) {
+
 		return a;
-	}else if(a !== undefined && b !== undefined && c === undefined){
+
+	} else if (a && b && !c) {
+
 		return a + b;
-	}else if(a !== undefined && b !== undefined && c !== undefined){
+
+	} else if (a && b && c) {
+
 		return (a + b) / c;
-	}else if(a === undefined && b === undefined && c === undefined){
+
+	} else if (!a && !b && !c) {
+
 		return false;
-	}else{
+
+	} else {
+
 		return null;
+
 	}
+  
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
