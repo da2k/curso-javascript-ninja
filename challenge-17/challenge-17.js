@@ -77,7 +77,7 @@
     */
     console.log( '\n"O Centauro de Luvas" em caixa alta:' );
     // ?
-    console.log(text.replace(/(O Centauro) de Luvas/, function(regex, phrase){
+    console.log(text.replace(/(O Centauro de Luvas)/, function(regex, phrase){
             console.log('REGEX, Sou a captura total ->',regex)
             console.log('Phrase, sou a captura entre parentheses ->',phrase)
             return phrase.toUpperCase();
