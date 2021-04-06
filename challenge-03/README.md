@@ -70,7 +70,7 @@ Crie um método chamado `nomeCompleto`, que retorne a frase:
 */
 
 pessoa.nomeCompleto = function () {
-  return ("Olá" Meu nome é " + pessoa.nome + " " + pessoa.sobrenome + "!");
+  return ("Olá meu nome é " + pessoa.nome + " " + pessoa.sobrenome + "!");
   }
 
 /*
@@ -93,16 +93,20 @@ pessoa.mostrarPeso = function () {
 
 /*
 Crie um método chamado `mostrarAltura` que retorne a frase:
-- "Minha altura é [ALTURA]m."
+- "Minha altura é [ALTURA]m."é "
 */
-?
+
+pessoa.mostrarAltura = function () {
+... return ("Minha altura é " + pessoa.altura + "m.");
+... }
 
 /*
 Agora vamos brincar um pouco com o objeto criado:
 Qual o nome completo da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+
+
 
 /*
 Qual a idade da pessoa? (Use a instrução para responder e comentários
