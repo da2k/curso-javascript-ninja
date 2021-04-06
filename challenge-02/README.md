@@ -6,15 +6,13 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
 soma = function (x, y){
 return x + y
-console.log (3,5)
 }
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-var n1 = 5
-n1 += soma (5,5)
+var soma2 = soma (2,5) +5
 
 // Qual o valor atualizado dessa variável?
-15
+12
 
 // Declare uma nova variável, sem valor.
 var n2;
@@ -24,16 +22,18 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
- n3 = function () {
-... n2 = "Valor"
-... return valor
-... }
+
+function addValue (){
+    n2 = 20
+    return " o Valor da variavel agora é " + n2;
+}
+
 
 // Invoque a função criada acima.
-n3()
+addValue()
 
 // Qual o retorno da função? (Use comentários de bloco).
-
+ o Valor da variavel agora é = 25
 // "valor"
 
 /*
@@ -43,23 +43,28 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-soma1 = function ( x,y,z){
-    if (x && y && z !=){
-        return "atring"
+
+function newFunction (a, b, c){
+    if (a ===undefined|| b====undefined || c === undefined ){
+        return " Preencha todos os valores corretamente!"
+    } else {
+        return (a * b *c) + 2
     }
 }
 
+
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+newFunction (4,4)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+
+// Preencha todos os valores corretamente!
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+newFunction (4,4,4)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+66
 
 /*
 Crie uma função com as seguintes características:
@@ -70,8 +75,30 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+
+function threArgs (x, y,z){
+if (x !== undefined && y === undefined && z === undefined){
+   return x;
+}
+else if (x !== undefined && y !== undefined && z === undefined ){
+    return x + y
+}
+else if (x !== undefined && y !== undefined && z !== undefined  ){
+    return ( x + y)/z
+}
+else if (x === undefined && y === undefined && z === undefined){
+    return false
+} else {
+    return null;
+}
+
+}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+threArgs() // false
+threArgs(1) // 1
+threArgs(1,2) // 3
+threArgs(1,2,3) // 1
+
+
 ```
