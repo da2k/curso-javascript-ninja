@@ -106,36 +106,36 @@ Qual o nome completo da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
 
-pessoa.nomeCompleto () //'Olá meu nome é Danilo Silva!'
+pessoa.nomeCompleto (); //'Olá meu nome é Danilo Silva!'
 
 /*
 Qual a idade da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
 
-pessoa.mostrarIdade () //'Olá, eu tenho 25 anos!'
+pessoa.mostrarIdade (); //'Olá, eu tenho 25 anos!'
 
 /*
 Qual o peso da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
 
-pessoa.mostrarPeso () //'Eu peso 70kg.'
+pessoa.mostrarPeso (); //'Eu peso 70kg.'
 
 /*
 Qual a altura da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
  
- pessoa.mostrarAltura () //'Minha altura é 1.85m.'
+ pessoa.mostrarAltura (); //'Minha altura é 1.85m.'
 
 /*
 Faça a `pessoa` fazer 3 aniversários.
 */
 
-pessoa.fezAniversario ()
-pessoa.fezAniversario ()
-pessoa.fezAniversario ()
+pessoa.fezAniversario ();
+pessoa.fezAniversario ();
+pessoa.fezAniversario ();
 
 /*
 Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
@@ -143,16 +143,16 @@ comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
 
-pessoa.mostrarIdade () //'Olá, eu tenho 28 anos!'
+pessoa.mostrarIdade (); //'Olá, eu tenho 28 anos!'
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
 com metragens diferentes passadas por parâmetro.
 */
 
-pessoa.andar (8)
-pessoa.andar (150)
-pessoa.andar (585)
+pessoa.andar (8);
+pessoa.andar (150);
+pessoa.andar (585);
 
 /*
 A pessoa ainda está andando? (Use a instrução para responder e comentários
@@ -165,7 +165,7 @@ pessoa.andando //true
 Se a pessoa ainda está andando, faça-a parar.
 */
 
-pessoa.parar ()
+pessoa.parar ();
 
 /*
 E agora: a pessoa ainda está andando? (Use uma instrução para responder e
