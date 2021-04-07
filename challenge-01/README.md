@@ -14,10 +14,10 @@ var soma = 15+8;
 soma++;
 
 // Atribua à variável `soma` todo o valor dela, multiplicando por 3, usando o operador de multiplicação abreviado.
-soma =*3;
+soma *=3;
 
 // Qual é o valor da variável `soma` até aqui?
-84
+72
 
 // Declare uma variável chamada `souninja`, atribuindo à ela o valor booleano que representa `verdadeiro`.
 ? var souninja='true';
@@ -29,7 +29,7 @@ var comida['arroz','feijao','ovo'];
 comida[1];
 
 // Digite o código que verifica se a variável `soma' é igual a variável `myvar` (testando também o tipo).
-soma == myvar;
+soma === myvar;
 
 // Digite o código que verifica se a variável `myvar` é menor ou igual à variável `soma`.
 myvar<=soma;
@@ -40,5 +40,5 @@ return z/x;
 }
 
 // Invoque a função criada acima, passando os parâmetros 10 e 2.
-function (10,2);
+divisao(10,2);
 ```
