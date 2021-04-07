@@ -198,8 +198,29 @@ deve conter no retorno da frase acima é "metro" no lugar de "metros".
 método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
-?
+
+pessoa.apresentacao = function () {
+
+    var artigo = "o";
+    var idadePlural = "anos";
+    var metrosPlural = "metros";
+
+
+    if (pessoa.sexo === "Feminino") {
+        artigo = "a";
+    } if (pessoa.idade === 1) {
+        idadePlural = "ano";
+    } if (pessoa.caminhouQuantosMetros === 1) {
+        metrosPlural = "metro";
+    } 
+
+    return "Olá, eu sou " + artigo + " " + pessoa.nome + " " + pessoa.sobrenome + ", tenho " + pessoa.idade + " " + idadePlural + ", meu peso é " + pessoa.peso + "Kg e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " " + metrosPlural + "!";
+
+}
 
 // Agora, apresente-se ;)
 ?
-```
+
+pessoa.apresentacao ();
+
+;)
