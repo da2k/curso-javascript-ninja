@@ -22,17 +22,10 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
+
 function atribui_valor(){
-  return 'VALOR';
-}
-
-new = atribui_valor();
-
-ou
-
-function atribui_valor2(){
-  new = 'VALOR';
-  return new;
+  new = 10;
+  return 'O valor da variável agora é'+new;
 }
 
 // Invoque a função criada acima.
