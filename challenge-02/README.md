@@ -32,7 +32,7 @@ function atribui_valor(){
 atribui_valor();
 
 // Qual o retorno da função? (Use comentários de bloco).
- // 'VALOR'
+ /* 'O valor da variável agora é 10' */
 
 /*
 Crie uma função com as seguintes características:
@@ -43,7 +43,7 @@ Crie uma função com as seguintes características:
 */
 function teste(a,b,c){
 
-  if (( a == null) || ( b == null) || ( c == null)){
+  if ( a === undefined  ||  b === undefined) ||  c === undefined){
     return 'Preencha todos os valores corretamente!'
   }else{
   return a*b*c+2;
@@ -73,16 +73,16 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function teste2(a,b,c){
-  if((b==null)&&(c==null)){
+  if( a!== undefined &&  b === undefined && c === undefined ){
     return a;  
   }
-  else if(c==null){
+  else if( a!== undefined &&  b !== undefined && c === undefined ){
     return a+b;  
   }
-  else if(c!=null){
+  else if( a!== undefined &&  b !== undefined && c !== undefined ){
     return (a+b)/c;
   }
-  else if (( a == null) && ( b == null) && ( c == null)){
+  else if ( a === undefined &&  b === undefined &&  c === undefined ){
     return 'false';
   }
   else{
@@ -91,5 +91,9 @@ function teste2(a,b,c){
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+teste2(); // false
+teste2(1); // 1
+teste2(2,6); // 8 
+teste2(2,6,4); // 2
+
 ```
