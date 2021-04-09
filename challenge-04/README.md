@@ -112,16 +112,24 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-carro.adcionarPessoas = function(x){
+
+// Acompanhei sua correção, entendi sua lógica, a minha se e passo uma qtd de pessoas para inserir no carro acima da capacidade, ele aloca as que podem nos assentos vazios
+// e retorna oque sobra. Acho que o mais importante foi entender sua lógica =D, não alterei o meu exercício em relação a isso, mas sim em relação ao decrementar pessoas, 
+// adcionei a condição && (x>0), não testei mas acho que daria certo!!! 
+// muito obrigado
+
+                                      
+
+carro.adcionarPessoas = function(x){  // comentário acima Marcel                                
 
     var saldoLugares = carro.quantidadePessoas+x-carro.assentos;
     var plural = saldoLugares > 1 ? 'pessoas' : 'pessoa';
 
-    if (carro.quantidadePessoas >= carro.assentos){
+    if (carro.quantidadePessoas >= carro.assentos) && (x>0){
         return "O carro já está lotado!";
     }
 
-    if ((carro.quantidadePessoas + x) > carro.assentos){
+    if ((carro.quantidadePessoas + x) > carro.assentos) && (x>0){
         return "Só cabem mais " + saldoLugares + " " + plural;
     }
 
@@ -165,7 +173,7 @@ carro.adcionarPessoas(4); // "Só cabem mais 1 pessoa"
 carro.adcionarPessoas(3); // "Já temos 5 pessoas no carro!"
 
 // Tire 4 pessoas do carro.
-carro.quantidadePessoas=1
+carro.adcionarPessoas(-4); // "Já temos 1 pessoa no carro!"
 
 // Adicione 10 pessoas no carro.
 carro.adcionarPessoas(10); // "Só cabem mais 6 pessoas"
