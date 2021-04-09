@@ -9,7 +9,7 @@ para o contrário.
 var
 var isTruthy = function(x){ 
                             return x ? true : false;
-                          }
+                          };
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 isTruthy(0);
@@ -19,14 +19,15 @@ isTruthy(undefined);
 isTruthy('');
 isTruthy("");
 isTruthy(false);
+isTruthy(NaN);
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
 isTruthy(1);
-isTruthy(2);
-isTruthy(3);
-isTruthy(4);
+isTruthy([]);
+isTruthy({});
+isTruthy(4*2);
 isTruthy(5);
 isTruthy(6);
 isTruthy(true);
@@ -46,28 +47,45 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `assentos` - Number - cinco por padrão
 - `quantidadePessoas` - Number - zero por padrão
 */
-var carro = {marca: 'Volks' , modelo: 'Gol' , placa:'BKN2574' , ano:2008 , cor:'Azul' , quantasPortas:4 , assentos:5 , quantidadePessoas:0};
+var carro = {
+      marca: 'Volks', 
+      modelo: 'Gol', 
+      placa:'BKN2574', 
+      ano:2008, 
+      cor:'Azul', 
+      quantasPortas:4, 
+      assentos:5, 
+      quantidadePessoas:0
+      };
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
-carro.mudaCor = function(x){carro.cor=x;};
+carro.mudaCor = function(x){
+                           carro.cor=x;
+                           };
 
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
-carro.obterCor = function(){return carro.cor;};
+carro.obterCor = function(){
+                            return carro.cor;
+                            };
 
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
-carro.obterModelo = function(){return carro.modelo;};
+carro.obterModelo = function(){
+                              return carro.modelo;
+                              };
 
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
 */
-carro.obterMarca = function(){return carro.marca;};
+carro.obterMarca = function(){
+                              return carro.marca;
+                              };
 
 /*
 Crie um método chamado `obterMarcaModelo`, que retorne:
@@ -75,8 +93,8 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 carro.obterMarcaModelo = function(){
-return 'Esse carro é um '+ carro.marca + ' ' + carro.modelo+'.';
-};
+                                    return 'Esse carro é um '+ carro.obterMarca() + ' ' + carro.obterModelo() + '.';
+                                    };
 
 /*
 Crie um método que irá adicionar pessoas no carro. Esse método terá as
@@ -120,19 +138,19 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-carro.cor
+carro.obterCor();
 
 // Mude a cor do carro para vermelho.
 carro.mudaCor('vermelho');
 
 // E agora, qual a cor do carro?
-carro.cor
+carro.obterCor();
 
 // Mude a cor do carro para verde musgo.
 carro.mudaCor('verde musgo');
 
 // E agora, qual a cor do carro?
-carro.cor
+carro.obterCor();
 
 // Qual a marca e modelo do carro?
 carro.obterMarcaModelo();
