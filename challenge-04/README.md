@@ -29,18 +29,34 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `assentos` - Number - cinco por padrão
 - `quantidadePessoas` - Number - zero por padrão
 */
-?
+
+var carro = {
+    marca: "Chevrolet",
+    modelo: "Onix",
+    placa: "BRJ0S21",
+    ano: 2021,
+    cor: "Prata Metálico",
+    quantasPortas: 4,
+    assentos: 5,
+    quantidadeDePessoas: 0,
+}
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
-?
+
+carro.mudarCor = function (novaCor) {
+    carro.cor = novaCor;
+}
 
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
-?
+
+carro.obterCor = function () {
+    return carro.cor; 
+}
 
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
