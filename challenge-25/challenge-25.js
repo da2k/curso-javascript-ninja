@@ -14,3 +14,19 @@ https://developer.mozilla.org/en-US/docs/Web/Events#Categories
 Tente aplicar na prática alguns dos eventos que estão ali e coloque nesse
 desafio os experimentos legais que você conseguir desenvolver :D
 */
+
+function on(element, event, callback) {
+	document.querySelector(element).addEventListener(event, callback, false);
+}
+
+function off(element, event, callback) {
+	document.querySelector(element).removeEventListener(event, callback, false);
+}
+
+function handleClick(event) {
+	event.preventDefault();
+	alert('clicou no a');
+}
+
+on('button', 'click', handleClick);
+off('button', 'click', handleClick);
