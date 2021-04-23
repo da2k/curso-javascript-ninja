@@ -84,7 +84,7 @@ carro.obterMarcaModelo = function () {
     var modelo = carro.obterModelo ();
     var marca = carro.obterMarca ();
 
-    return "Esse carro é um " + modelo + " " + marca + ".";
+    return "Esse carro é um " + marca + " " + modelo + ".";
 }
 
 /*
@@ -103,7 +103,25 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-?
+
+carro.passageiros = function (_pessoas) {
+    
+    var vagasSobrando = carro.assentos - carro.quantidadeDePessoas;
+ 
+    if (carro.quantidadeDePessoas >= carro.assentos && _pessoas	> 0) {
+        return "O carro já está lotado!"
+    } 
+    
+    if (_pessoas > vagasSobrando) {
+
+        var plural = vagasSobrando === 1 ? " pessoa" : " pessoas";
+        return "Só cabem mais " + vagasSobrando +  plural + "!"
+
+    } 
+        carro.quantidadeDePessoas += _pessoas ;
+
+        return "Já temos " + carro.quantidadeDePessoas + " pessoas no carro!"
+}
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -113,38 +131,61 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-?
+
+carro.cor
+//"Prata Metálico"
 
 // Mude a cor do carro para vermelho.
-?
+
+carro.mudarCor ("Vermelho")
 
 // E agora, qual a cor do carro?
-?
+
+carro.cor
+//"Vermelho"
 
 // Mude a cor do carro para verde musgo.
-?
+
+carro.mudarCor ("Verde Musgo")
 
 // E agora, qual a cor do carro?
-?
+
+carro.cor
+//"Verde Musgo"
 
 // Qual a marca e modelo do carro?
-?
+
+carro.obterMarcaModelo ()
+//"Esse carro é um Chevrolet Onix."
 
 // Adicione 2 pessoas no carro.
-?
+
+carro.passageiros (2)
+//"Já temos 2 pessoas no carro!"
 
 // Adicione mais 4 pessoas no carro.
-?
+
+carro.passageiros (4)
+//"Só cabem mais 3 pessoas!"
 
 // Faça o carro encher.
-?
+
+carro.passageiros (3)
+//"O carro já está lotado!"
 
 // Tire 4 pessoas do carro.
-?
+
+carro.passageiros (-4)
+//"Já temos 1 pessoas no carro!"
 
 // Adicione 10 pessoas no carro.
-?
+
+carro.passageiros (10)
+//"Só cabem mais 4 pessoas!"
 
 // Quantas pessoas temos no carro?
-?
+
+carro.quantidadeDePessoas
+//1
+
 ```
