@@ -7,7 +7,9 @@ var arr = [1,4,8,5,9];
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
-
+function myFunction(arg){
+  return arg;
+}
 
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
