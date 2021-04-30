@@ -28,5 +28,5 @@ Envie um pull request da branch `challenge-30` para a `master` e cole aqui
 nesse arquivo, dentro do `console.log`, o link para o pull request no seu
 projeto.
 */
-
+console.log('ok');
 console.log('Link do pull request do seu projeto');
