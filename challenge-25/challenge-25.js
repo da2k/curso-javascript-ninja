@@ -14,3 +14,18 @@ https://developer.mozilla.org/en-US/docs/Web/Events#Categories
 Tente aplicar na prática alguns dos eventos que estão ali e coloque nesse
 desafio os experimentos legais que você conseguir desenvolver :D
 */
+
+const nome = document.querySelector('[data-js="nome"]');
+const email = document.querySelector('[data-js="email"]');
+const phone = document.querySelector('[data-js="phone"]');
+const form = document.querySelector('[data-js="form"]');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  if(nome !== ''){
+    return true;
+  }
+
+  form.submit();
+})
