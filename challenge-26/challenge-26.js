@@ -19,7 +19,25 @@ selecionados.
 Dica: olhe os erros que acontecem no console, e vá resolvendo um a um.
 Só passe para o próximo problema quando tiver resolvido o anterior :)
 */
-// ?
+
+function DOM(str){
+
+  this.element = document.querySelectorAll(str);
+
+  this.on = (event, fnc) => {
+    Array.prototype.forEach.call(this.element, (element) => {
+      element.addEventListener(event, fnc, false)
+    })
+  }
+  this.off = (event, fnc) => {
+    Array.prototype.forEach.call(this.element, (element) => {
+      element.removeEventListener(event, fnc, false)
+    })
+  }
+  this.get = () => {
+    return this.element
+  }
+}
 
 var $a = new DOM('[data-js="link"]');
 $a.on('click', function(e) {
