@@ -2,7 +2,7 @@
 
 var express = require('express');
 var router = express.Router();
-var data = [];
+var data = [{image: 'https://images.com/car.png', brandModel: 'Fiat', year: 2007, plate: 'sdf555', color: 'red'}];
 
 router.get('/', function(req, res) {
   console.log('[GET] /car:', data)
