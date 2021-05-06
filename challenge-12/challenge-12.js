@@ -103,7 +103,7 @@
   /*
   Ainda usando o objeto acima, mostre no console seu nome invertido.
   */
-  console.log(myName.reverse().join(''))
+  console.log(myName.reverse().join('')); // euqirneH
 
   console.log('\nAgora em ordem alfabética:');
   /*
