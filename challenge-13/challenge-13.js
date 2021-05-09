@@ -9,7 +9,7 @@ usando o método visto na aula 13.
 */
 console.log( 'O array em formato de string é:' );
 var arr = [1,2,3,4,5];
-console.log(arr.toString());
+console.log(arr);
 
 /*
 Crie 2 arrays `sul` e `sudeste`, que serão as regiões do Brasil.
