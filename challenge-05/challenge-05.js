@@ -17,7 +17,7 @@ function recebeArray (parametro) {
 Imprima o segundo índice do array retornado pela função criada acima.
 */
 
-recebeArray (myArray)[2]
+console.log ( recebeArray (myArray)[1] );
 //20
 
 /*
@@ -42,8 +42,12 @@ Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
 
- recebeArray (variavelAGrande)
-//[ 'Danilo', true, false, 26, null ]
+console.log (agenteDuplo (variavelAGrande, 0));
+console.log (agenteDuplo (variavelAGrande, 1));
+console.log (agenteDuplo (variavelAGrande, 2));
+console.log (agenteDuplo (variavelAGrande, 3));
+console.log (agenteDuplo (variavelAGrande, 4));
+
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
