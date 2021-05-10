@@ -41,7 +41,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function multiplicaTresValores(numeroUm, numeroDois, numeroTres){
-  if((numeroUm || numeroDois || numeroTres) === false){
+  if(!(numeroUm && numeroDois && numeroTres)){
     return `Preencha todos os valores corretamente!`;
   }
   return numeroUm * numeroDois * numeroTres + 2;
