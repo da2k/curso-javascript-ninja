@@ -63,30 +63,58 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-// ?
+
+function book (titleBook) {
+    var livros = {
+        "HTML5 e CSS3:guia prático e visual":  {
+            quantidadePaginas: 576,
+            autor: "Elizabeth Castro & Bruce Hyslop",
+            editora: "Alta Books",
+        },
+        "JavaScript: O Guia Definitivo": {
+            quantidadePaginas: 1080, 
+            autor: "David Flanagan",
+            editora: "BookMan",
+        },
+        "Eloquent Javascript": {
+            quantidadePaginas: 472, 
+            autor: "Marijn Haverbeke",
+            editora: "No Starch Press",
+        }
+    }
+
+    return !titleBook ? livros : livros[titleBook];
+
+}
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-// ?
+
+console.log (book ());
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// ?
+
+console.log ("O livro Eloquente Javascript tem " + book ("Eloquent Javascript").quantidadePaginas + " páginas!");
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
+ 
+console.log ("O autor do livro JavaScript: O Guia Definitivo é " + book ("JavaScript: O Guia Definitivo").autor + ".");
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-// ?
+
+console.log ("O livro HTML5 e CSS3:guia prático e visual foi publicado pela editora " + book ("HTML5 e CSS3:guia prático e visual").editora +".")
+
+/*
