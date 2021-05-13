@@ -113,6 +113,7 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
+
 carro.addPessoasCarro = function(numeroPessoas) {
   this.quantidadePessoas = numeroPessoas <= this.assentos ?  numeroPessoas: 0;
 
