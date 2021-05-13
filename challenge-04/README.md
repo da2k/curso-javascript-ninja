@@ -7,15 +7,34 @@ um único parâmetro como argumento. Essa função deve retornar `true` se o
 equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
-?
+var isTruty = function(value){
+  return !!value;
+}
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
-?
+isTruty('');
+isTruty("");
+isTruty(undefined);
+isTruty(null);
+isTruty(NaN);
+isTruty(-0);
+isTruty(0);
+isTruty(false);
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
-?
+isTruty(" ");
+isTruty(' ');
+isTruty(10);
+isTruty(-1);
+isTruty(1.3);
+isTruty("Gabriel");
+isTruty(true);
+isTruty([];
+isTruty(0.88);
+isTruty({});
+isTruty(function(){});
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
@@ -29,35 +48,54 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `assentos` - Number - cinco por padrão
 - `quantidadePessoas` - Number - zero por padrão
 */
-?
+var carro = {
+  marca: 'Fiat',
+  modelo: 'Ferrari',
+  placa: 'XXXXXXXX',
+  ano: '2020',
+  cor: 'azul',
+  quantasPortas: 4,
+  assentos: 5,
+  quantidadePessoas: 0
+}
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
-?
+carro.mudarCor = function(cor) {
+  this.cor = cor;
+}
 
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
-?
+carro.obterCor = function() {
+  return this.cor;
+}
 
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
-?
+carro.obterModelo = function() {
+  return this.modelo;
+}
 
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
 */
-?
+carro.obterMarca = function() {
+  return this.marca;
+}
 
 /*
 Crie um método chamado `obterMarcaModelo`, que retorne:
 "Esse carro é um [MARCA] [MODELO]"
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
-?
+carro.obterMarcaModelo = function() {
+  return `Esse carro é um ${this.marca} do modelo ${this.modelo}`;
+}
 
 /*
 Crie um método que irá adicionar pessoas no carro. Esse método terá as
@@ -75,7 +113,18 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-?
+carro.addPessoasCarro = function(numeroPessoas) {
+  this.quantidadePessoas = numeroPessoas <= this.assentos ?  numeroPessoas: 0;
+
+  if(this.quantidadePessoas + numeroPessoas >  this.assentos){
+    if(  this.assentos - this.quantidadePessoas === 1 ){
+      return `Só cabem mais ${this.assentos - this.quantidadePessoas} pessoa!`
+    }
+    return `Só cabem mais ${this.assentos - this.quantidadePessoas} pessoas!`
+  }
+
+  return numeroPessoas < this.assentos ? `Já temos ${this.quantidadePessoas} pessoas no carro!`: `O carro já está lotado!`;
+}
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -85,38 +134,38 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-?
+this.carro.obterCor(); //azul
 
 // Mude a cor do carro para vermelho.
-?
+this.carro.mudarCor('Amarelo')
 
 // E agora, qual a cor do carro?
-?
+this.carro.obterCor(); //Amarelo
 
 // Mude a cor do carro para verde musgo.
-?
+this.mudarCor('verde musgo'); 
 
 // E agora, qual a cor do carro?
-?
+this.carro.obterCor(); //verde musgo
 
 // Qual a marca e modelo do carro?
-?
+this.carro.obterMarcaModelo() 
 
 // Adicione 2 pessoas no carro.
-?
+this.carro.addPessoasCarro(2);
 
 // Adicione mais 4 pessoas no carro.
-?
+this.carro.addPessoasCarro(4)
 
 // Faça o carro encher.
-?
+this.carro.addPessoasCarro(3);
 
 // Tire 4 pessoas do carro.
-?
+this.carro.quantidadePessoas -= 4;
 
 // Adicione 10 pessoas no carro.
-?
+this.carro.addPessoasCarro(10);
 
 // Quantas pessoas temos no carro?
-?
+//1
 ```
