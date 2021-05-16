@@ -1,4 +1,6 @@
-/*
+(function(){
+    'use strict'
+   /*
 1. Envolva todo o conteúdo desse desafio em uma IIFE.
 2. Adicione a diretiva 'use strict';
 3. Crie um arquivo index.html e adicione esse script à ele.
@@ -10,15 +12,14 @@ regulares! Para isso, iremos usar o texto abaixo. Coloque-o em uma
 variável chamada `text`:
 "Manuel Marques de Sousa, Conde de Porto Alegre (Rio Grande, 13 de junho de 1804 – Rio de Janeiro, 18 de julho de 1875), apelidado de "O Centauro de Luvas", foi um militar, político, abolicionista e monarquista brasileiro."
 */
-// ?
-
+var text = 'Manuel Marques de Sousa, Conde de Porto Alegre (Rio Grande, 13 de junho de 1804 – Rio de Janeiro, 18 de julho de 1875), apelidado de "O Centauro de Luvas", foi um militar, político, abolicionista e monarquista brasileiro.';
 /*
 Vamos começar com umas brincadeiras fáceis :D
 Troque o nome "Manuel Marques de Sousa" pelo seu nome, e mostre o resultado
 no console:
 */
 console.log( 'Adicionando seu nome no texto:' );
-// ?
+console.log(text.replace('Manuel Marques de Sousa', 'José Airton da Silva Morais'));
 
 /*
 Agora, substitua a palavra "brasileiro" por sua cidade natal e mostre no
@@ -26,21 +27,21 @@ console.
 Ex: Se você for da São Paulo, substitua por "paulista".
 */
 console.log( '\nTrocando naturalidade:' );
-// ?
+console.log(text.replace('brasileiro', 'Cearense'));
 
 /*
 Substitua todos os números por um traço `-`. Cada caractere de número deve
 ser um traço. Mostre o resultado no console:
 */
 console.log( '\nTrocando números por -:' );
-// ?
+console.log(text.replace(/\d/g , '-'));
 
 /*
 Substitua todas as letras (somente letras) de "D" maiúsculo até "h"
 minúsculo por "0" (número zero). Mostre o resultado no console:
 */
 console.log( '\nTrocando de "D" a "h" por "0":' );
-// ?
+console.log(text.replace(/[D-Za-h]/g, '0'));
 
 /*
 Substitua todos os "A" (maiúsculos ou minúsculos) por "4".
@@ -91,3 +92,5 @@ console o resultado.
 */
 console.log( '\nReplace de datas:' );
 // ?
+    
+}());
