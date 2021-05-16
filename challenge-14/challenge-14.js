@@ -72,14 +72,29 @@ Envolva todo o código desse desafio em uma IIFE.
   infantil, onde você coloca a letra "P" antes de cada sílaba de uma palavra
   falada, como se você estivesse falando em código xD
   */
-  console.log( '\nSeu nome na língua do "P":' );
+
+  var name = ["ju", "li", "a"]
+
+
+  var reduceName = name.reduce(function(acc, curr){
+      return acc + "P" + curr
+    }, ' ')
+    console.log({reduceName})
+
   // ?
 
   /*
   Crie uma variável chamada `inversedName`, que reduzirá o array em uma string
   e atribuirá o seu nome invertido (usando o array criado acima).
   */
-  console.log( '\nInversed Name:' );
+
+  var reduceName = name.reduceRight(function(acc, curr){
+      return acc + curr
+    }, '')
+    console.log({reduceName})
+
+    //ou   console.log(name.reverse().join(''))
+
   // ?
 
   /*
@@ -87,16 +102,28 @@ Envolva todo o código desse desafio em uma IIFE.
   */
   console.log( '\nNumber objects' );
   // ?
-
+    console.log(numberObjects)
   /*
   Verifique se existem em algum índice de numberObjects um objeto ìgual a
   { number: 2 }. Se houver, mostre no console:
   - "Existe um objeto { number: 2 } em numberObjects!"
   Senão, mostre a frase:
-  - "Não existe um objeto { number: 2 } em numberObjects :("
+  - c em numberObjects :("
   Consegue prever o resultado? Deixe uma mensagem no console tentando explicar
   o que acontece ;)
   */
+
+
+  //deve apontar pro objeto e não criar outro na memória
+  var obj = numberObjects[1]
+
+    if(numberObjects.indexOf(obj) > -1 ) {
+      console.log("Existe um objeto { number: 2 } em numberObjects!")
+    } else {
+      console.log("Não existe um objeto { number: 2 }")
+    }
+
+
   console.log( '\nExiste um { number: 2 } em numberObjects?' );
   // ?
 
@@ -104,6 +131,14 @@ Envolva todo o código desse desafio em uma IIFE.
   Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
   será que obtemos um resultado diferente? Faça a busca a partir do índice 2.
   */
+
+
+  if(numberObjects.lastIndexOf({number: 2}, 2) > -1 ) {
+    console.log("Existe um objeto { number: 2 } em numberObjects!")
+  } else {
+    console.log("Não existe um objeto { number: 2 }")
+  }
+
   console.log( '\nE buscando a partir do último índice, o { number: 2 } existe?' );
   // ?
 
@@ -111,6 +146,10 @@ Envolva todo o código desse desafio em uma IIFE.
   Verifique se `justMod2Or3` é um array. Se for, mostre-o no console, no
   formato de String.
   */
+
+  if (Array.isArray(justMod2Orr3)){
+    console.log(justMod2Orr3v.toString())
+  }
   console.log( '\njustMod2Or3 é um array? Se for, a representação dele em String é:' );
   // ?
 
