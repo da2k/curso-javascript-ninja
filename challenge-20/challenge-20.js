@@ -1,6 +1,6 @@
-(function (win, dec) {
+(function(win, doc){
 
-    'use strict'
+    'use strict';
     /*
     1. Envolva todo o conteúdo desse desafio em uma IIFE.
     2. Adicione a diretiva 'use strict';
@@ -18,48 +18,59 @@
     Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
     */
 
-    var username = prompt('Qual o seu nome?');
+    var username = win.prompt('Qual o seu nome?');
+    console.log(username);
+    
 
-    if (username)
-        alert('Bem vindo', username);
-    else
-        alert('Desconhecido');
+    if ( username ){
+        win.alert('Bem vindo ' + username);
+
+    }
+    else{
+        win.alert('Desconhecido, você não colocou seu nome.');
+    }
+
 
     /*
     Agora, pergunte ao usuário "Qual o seu e-mail?", atribuindo o resultado à
     uma variável chamada `email`.
     */
-    // ?
+    
+    var email = win.prompt('Qual o seu email?');
+    console.log(email);
 
     /*
     - Selecione o input de "Nome", atribuindo-o à uma variável chamada
     `$inputUsername`.
     */
-    // ?
+    
+    var $inputUsername = doc.getElementsByTagName (' input ').item(0);
 
     /*
     - Selecione o input de "Email", atribuindo-o à uma variável chamada
     `$inputEmail`.
     */
-    // ?
+    var $inputEmail = doc.getElementsByTagName('input').item(1);
 
     /*
     - Selecione o campo de "Mensagem", atribuindo-o à uma variável chamada
     `$message`.
     */
-    // ?
+    var $mensagem = document.getElementsByTagName('textarea');
 
     /*
     - Selecione o botão de envio do formulário, atribuindo-o à uma variável
     chamada `$button`.
     */
-    // ?
+    
+    var $button = doc.getElementsByTagName('button');
 
     /*
     Preencha os campos de "Nome" e "Email" que estão no documento com os valores
     entrados pelo usuário.
     */
-    // ?
+    
+
 
     /*
     Adicione um listener de evento de click ao botão que faça o seguinte:
