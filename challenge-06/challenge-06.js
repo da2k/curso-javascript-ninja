@@ -109,9 +109,58 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     a frase:
     "Não temos o equivalente hexadecimal para [COR]."
 */
-// ?
+
+function convertToHex (color) {
+    switch (color) {
+        case 'yellow':
+            return "O hexadecimal para a cor " + color + " é #FFF587.";
+        break;
+
+        case 'orange':
+            return "O hexadecimal para a cor " + color + " é #FF8C64.";
+        break;
+
+        case 'red':
+            return "O hexadecimal para a cor " + color + " é #FF665A.";
+        break;
+
+        case 'gray':
+            return "O hexadecimal para a cor " + color + " é #A3A1A8.";
+        break;
+
+        case 'blue':
+            return "O hexadecimal para a cor " + color + " é #2A96FA.";
+        break;
+
+        default:
+        return "Não temos o equivalente hexadecimal para " + color + "."
+    }
+}
 
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-// ?
+
+console.log (convertToHex ("brown"));
+//Não temos o equivalente hexadecimal para brown.
+
+console.log (convertToHex ("red"));
+//O hexadecimal para a cor red é #FF665A.
+
+console.log (convertToHex ("orange"));
+//O hexadecimal para a cor orange é #FF8C64.
+
+console.log (convertToHex ("pink"));
+//Não temos o equivalente hexadecimal para pink.
+
+console.log (convertToHex ("green"));
+//Não temos o equivalente hexadecimal para green.
+
+console.log (convertToHex ("blue"));
+//O hexadecimal para a cor blue é #2A96FA.
+
+console.log (convertToHex ("gray"));
+//O hexadecimal para a cor gray é #A3A1A8.
+
+console.log (convertToHex ("yellow"));
+//O hexadecimal para a cor yellow é #FFF587.
