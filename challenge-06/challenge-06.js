@@ -4,7 +4,10 @@ para começar o desafio.
 Declare uma variável chamada `championship` que receberá o nome do campeonato,
 e imprima o nome desse campeonato no console.
 */
-// ?
+
+var championship = 'Pernambucano';
+
+console.log ('O Campeonato é o', championship);
 
 /*
 Declare uma variável chamada `teams`, que receberá um array com 5 elementos.
@@ -12,7 +15,8 @@ Os elementos serão nomes de times do campeonato escolhido, e os nomes devem
 estar na ordem em que eles aparecem na tabela no momento da solução desse
 desafio.
 */
-// ?
+
+var teams = ['Naútico', 'Sport', 'Salgueiro', 'Santa Cruz', 'Central']
 
 console.log( 'Times que estão participando do campeonato:', teams );
 
@@ -32,19 +36,66 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     - Se não houver time para a posição passada, deve retornar a mensagem:
     "Não temos a informação do time que está nessa posição."
 */
-// ?
+
+function showTeamPosition (number) {
+    switch (number) {
+        case 1:
+            return "O time que está em "  + number + "º lugar é o " + teams[0] + ".";
+        break;
+
+        case 2:
+            return "O time que está em "  + number + "º lugar é o " + teams[1] + ".";
+        break;
+
+        case 3:
+            return "O time que está em "  + number + "º lugar é o " + teams[2] + ".";
+        break;
+
+        case 4:
+            return "O time que está em "  + number + "º lugar é o " + teams[3] + ".";
+        break;
+
+        case 5:
+            return "O time que está em "  + number + "º lugar é o " + teams[4] + ".";
+        break;
+
+        default:
+            return "Não temos a informação do time que está nessa posição."; 
+    }   
+}
 
 /*
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
-// ?
+
+console.log (showTeamPosition (1));
+// O time que está em 1º lugar é o Naútico.
+
+console.log (showTeamPosition (2));
+// O time que está em 1º lugar é o Sport.
+
+console.log (showTeamPosition (4));
+// O time que está em 1º lugar é o Santa Cruz.
+
+console.log (showTeamPosition (5));
+// O time que está em 1º lugar é o Central.
+
+console.log (showTeamPosition (8));
+// Não temos a informação do time que está nessa posição.
+
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
 repetição "while".
 */
-// ?
+
+var number = 20;
+
+while (number <= 30) {
+    console.log (number);
+    number ++;
+}
 
 /*
 Crie uma função chamada `convertToHex`, com as seguintes características:
@@ -58,9 +109,58 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     a frase:
     "Não temos o equivalente hexadecimal para [COR]."
 */
-// ?
+
+function convertToHex (color) {
+    switch (color) {
+        case 'yellow':
+            return "O hexadecimal para a cor " + color + " é #FFF587.";
+        break;
+
+        case 'orange':
+            return "O hexadecimal para a cor " + color + " é #FF8C64.";
+        break;
+
+        case 'red':
+            return "O hexadecimal para a cor " + color + " é #FF665A.";
+        break;
+
+        case 'gray':
+            return "O hexadecimal para a cor " + color + " é #A3A1A8.";
+        break;
+
+        case 'blue':
+            return "O hexadecimal para a cor " + color + " é #2A96FA.";
+        break;
+
+        default:
+        return "Não temos o equivalente hexadecimal para " + color + "."
+    }
+}
 
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-// ?
+
+console.log (convertToHex ("brown"));
+//Não temos o equivalente hexadecimal para brown.
+
+console.log (convertToHex ("red"));
+//O hexadecimal para a cor red é #FF665A.
+
+console.log (convertToHex ("orange"));
+//O hexadecimal para a cor orange é #FF8C64.
+
+console.log (convertToHex ("pink"));
+//Não temos o equivalente hexadecimal para pink.
+
+console.log (convertToHex ("green"));
+//Não temos o equivalente hexadecimal para green.
+
+console.log (convertToHex ("blue"));
+//O hexadecimal para a cor blue é #2A96FA.
+
+console.log (convertToHex ("gray"));
+//O hexadecimal para a cor gray é #A3A1A8.
+
+console.log (convertToHex ("yellow"));
+//O hexadecimal para a cor yellow é #FFF587.
