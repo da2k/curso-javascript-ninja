@@ -97,25 +97,25 @@ Agora vamos brincar um pouco com o objeto criado:
 Qual o nome completo da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-Maria Silva //Maria Silva
+pessoa.nomeCompleto //Maria Silva
 
 /*
 Qual a idade da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-57 anos // 57 anos
+pessoa.idade // 57 anos
 
 /*
 Qual o peso da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-75 Kg // 75Kg
+pessoa.peso // 75Kg
 
 /*
 Qual a altura da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-1,69m // 1,69m
+pessoa.altura // 1,69m
 
 /*
 Faça a `pessoa` fazer 3 aniversários.
