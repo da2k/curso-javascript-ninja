@@ -144,12 +144,12 @@ andar(3);
 A pessoa ainda está andando? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-
+pessoa.andando // true
 
 /*
 Se a pessoa ainda está andando, faça-a parar.
 */
-?
+pessoa.andando = false;
 
 /*
 E agora: a pessoa ainda está andando? (Use uma instrução para responder e
