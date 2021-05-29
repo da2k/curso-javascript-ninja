@@ -53,7 +53,7 @@ function changeBackgroundColorAndColor(){
 let $square =  document.querySelector('[data-js="square"]');
 let $circle =  document.querySelector('[data-js="circle"]');
 let $rectangle = document.querySelector('[data-js="rectangle"]');
-let $dropZones =  document.querySelectorAll('.drag-drop input');
+let $dropZones = document.querySelectorAll("#drop-area input");
 
 console.log($dropZones)
 
@@ -69,8 +69,6 @@ $rectangle.addEventListener('dragstart', dragStarted, false);
 
 function dragStarted(event){
   event.dataTransfer.setData('text/plain', this.id);
-  // event.target.style.color = 'green';
-  // console.log(this.id)
   this.value = "";
 
 }
@@ -78,17 +76,18 @@ function dragStarted(event){
 for(let dropZone of $dropZones ){
   dropZone.addEventListener('dragover', function(event){
     event.preventDefault();
-    // console.log('dragover', event)
   }, false);
 
 
-  dropZone.addEventListener('drop', function(event){
-    event.preventDefault();
-    const droppedElementId =  event.dataTransfer.getData('text/plain');
-    const droppedElement = document.getElementById(droppedElementId);
-    dropZone.appendChild(droppedElement);
-
-  }, false);
+  dropZone.addEventListener(
+    "drop",
+    function (event) {
+      event.preventDefault();
+      const droppedElementId = event.dataTransfer.getData("text/plain");
+      dropZone.value = droppedElementId;
+    },
+    false
+  );
 }
 
 
