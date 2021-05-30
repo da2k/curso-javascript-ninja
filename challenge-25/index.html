@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Events</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main>
+      <h1 id="copy">Copy and Paste</h1>
+      <section class="events">
+        <div class="elements">
+          <div class="readonly-fields">
+            <input data-js="name" contenteditable="true" type="text" value="Gilmara" readonly/>
+            <input data-js="city" type="text" value="Rio de Janeiro" readonly/>
+            <input data-js="color" type="text" value="Vermelho" readonly/>
+          </div>
+          <div class="copy-paste">
+            <div>
+              <legend>Cidade</legend>
+              <input type="text" placeholder="Cole o valor"/>
+            </div>
+            <div>
+              <legend>Nome</legend>
+              <input type="text" placeholder="Cole o valor"/>
+            </div>
+            <div>
+              <legend>Cor</legend>
+              <input type="text" placeholder="Cole o valor"/>
+            </div>
+          </div>
+        </div>
+      </section>
+      <h1>Drag and Drop</h1>
+      <section class="events">
+        <div class="elements">
+          <div class="readonly-fields">
+            <input data-js="square" id="Quadrado" draggable="true" type="text" value="Quadrado"/>
+            <input data-js="circle" id="Circulo" draggable="true" type="text" value="Circulo"/>
+            <input data-js="rectangle" id="retangulo" draggable="true" type="text" value="Retangulo" readonly/>
+          </div>
+          <div id="drop-area">
+            <input id="rectangle" type="text" placeholder="Arraste o valor"/>
+            <input id="square" type="text" placeholder="Arraste o valor"/>
+            <input id="circle" type="text" placeholder="Arraste o valor"/>
+          </div>
+        </section>
+        <h1>Blur</h1>
+        <section class="events">
+          <div class="elements">
+            <div class="focus-blur">
+              <legend>Email</legend>
+              <input data-js="email" type="text" placeholder="Digite um email valido"/>
+            </div>
+          </div>
+        </section>
+      </main>
+      <script src="challenge-25.js"></script>
+    </body>
+  </body>
+</html>

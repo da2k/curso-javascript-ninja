@@ -1,0 +1,147 @@
+*{
+  border: 0;
+  margin:0;
+  padding: 0;
+}
+
+
+main {
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px;
+
+
+}
+
+h1{
+
+  margin-bottom: 20px;
+}
+
+
+
+section.events{
+  padding: 20px;
+  background-color: rgb(16, 91, 231);
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+  border-radius: 12px;
+}
+
+input {
+
+  border-radius: 5px;
+}
+
+input#square {
+
+  width: 100px;
+  height: 100px;
+  background: #BF3BFF;
+
+
+}
+
+input::placeholder {
+
+  color: blueviolet;
+
+}
+
+
+input#circle {
+
+  width: 120px;
+  height: 120px;
+  background: #C0FF3E;
+  border-radius: 50%;
+
+}
+
+input#rectangle {
+
+  width: 130px;
+  height: 80px;
+  background: #FF4500;
+
+}
+
+.readonly-fields{
+
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+#drop-area{
+
+  display:flex;
+  justify-content: space-around;
+  margin-top: 20px;
+
+}
+
+input::placeholder {
+  color: black;
+
+}
+
+
+
+
+legend {
+
+  font-weight: bold;
+  margin-right: 5px;
+  text-align: center;
+
+}
+
+
+.copy-paste{
+
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.copy-paste legend {
+  text-align: center;
+}
+
+
+.copy-paste input {
+
+  margin-right: 5px;
+}
+
+
+.drag-drop {
+
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+
+ input {
+   text-align: center;
+   margin-right: 20px;
+}
+
+.focus-blur {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.focus-blur input {
+  margin-top: 10px;
+  margin-right: 0px;
+
+}
