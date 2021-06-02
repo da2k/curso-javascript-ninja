@@ -11,8 +11,7 @@
 
 // Declare uma nova variável chamada `soma`, e adicione uma instrução somando os valores 15 e 8.
 
-  let x = 15;
-  let soma = x + 8;
+  let soma = 15 + 8;
   console.log(soma);
 
 // Atribua à variável `soma` todo o valor dela, somando 1, usando o operador de soma abreviado.
@@ -31,9 +30,8 @@
 
 // Declare uma variável chamada `souninja`, atribuindo à ela o valor booleano que representa `verdadeiro`.
 
-  const souninja = 10;
-  let Emanoel = 10;
-  console.log(Emanoel == souninja);
+  const souninja = true;
+  console.log(souninja);
 
 // Declare uma variável chamada `comida` que recebe um array com os valores 'arroz', 'feijão' e 'ovo'.
 
@@ -63,6 +61,6 @@
 
 // Invoque a função criada acima, passando os parâmetros 10 e 2.
 
-  console.log(divisao (9 , 3));
+  console.log(divisao (10 , 2));
   console.log(divisao);
 ```
