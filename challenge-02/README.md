@@ -39,6 +39,7 @@ Crie uma função com as seguintes características:
 2. Se qualquer um dos três argumentos não estiverem preenchidos, a função deve retornar a string:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
+*/
 function multiArguments(a, b, c) {
   if(!a || !b || !c){
     return "Preencha todos os valores corretamente!";
@@ -46,7 +47,6 @@ function multiArguments(a, b, c) {
     return (a * b * c) + 2;
   }
 }
-?
 
 // Invoque a função criada acima, passando só dois números como argumento.
 multiArguments(2, 5)
