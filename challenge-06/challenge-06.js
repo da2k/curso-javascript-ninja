@@ -18,11 +18,11 @@ desafio.
 // ?
 
 var teams = [
-    '',
     'Sao Paulo',
     'Gremio',
     'Portuguesa',
-    'Vitoria'
+    'Vitoria',
+    'Bahia'
 ]
 
 console.log( 'Times que estão participando do campeonato:', teams );
@@ -43,9 +43,9 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     - Se não houver time para a posição passada, deve retornar a mensagem:
     "Não temos a informação do time que está nessa posição."
 */
-// ?
 function ranking(rank) {
-    var mesage = 'O time que está em '+rank+'º lugar é o '+teams[rank]+'.';
+var grade = rank - 1;
+    var mesage = 'O time que está em '+rank+'º lugar é o '+teams[grade]+'.';
    switch (rank) {
        case 1:
         console.log(mesage);   
@@ -69,7 +69,12 @@ function ranking(rank) {
    }
 }
 
-ranking(6);
+ranking(1);// O time que está em 1º lugar é o Sao Paulo.
+ranking(2);// O time que está em 2º lugar é o Gremio.
+ranking(3);// O time que está em 3º lugar é o Portuguesa.
+ranking(4);// O time que está em 4º lugar é o Vitoria.
+
+ranking(6);// Não temos a informação do time que está nessa posição.
 
 /*
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
@@ -81,7 +86,13 @@ função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
 repetição "while".
 */
-// ?
+var n = 20;
+while (n <= 30) {
+
+    console.log(n);
+    n++;
+    
+}
 
 /*
 Crie uma função chamada `convertToHex`, com as seguintes características:
@@ -95,9 +106,41 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     a frase:
     "Não temos o equivalente hexadecimal para [COR]."
 */
-// ?
+function convertToHex(cor) {
+    var HEX = '';
+    switch (cor) {
+        case 'red':
+            HEX = 'ff0000'
+            break;
+        case 'green':
+            HEX = '00b33c'
+            break;
+        case 'blue':
+            HEX = '0066ff'
+            break;        
+        case 'yellow':
+            HEX = 'ffff00'
+            break;
+        case 'black':
+            HEX = '000000'
+            break;
+        default:
+            return console.log('Não temos o equivalente hexadecimal para '+cor+'.');
+            break;
+    }
+    return console.log('O hexadecimal para a cor '+cor+' é '+HEX+'.');
+}
 
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-// ?
+
+convertToHex('red')// O hexadecimal para a cor red é ff0000.
+convertToHex('green')// O hexadecimal para a cor green é 00b33c.
+convertToHex('blue')// O hexadecimal para a cor blue é 0066ff.
+convertToHex('yellow')// O hexadecimal para a cor yellow é ffff00.
+convertToHex('black')// O hexadecimal para a cor black é 000000.
+convertToHex('purple')// Não temos o equivalente hexadecimal para purple.
+convertToHex('gray')// Não temos o equivalente hexadecimal para gray.
+convertToHex('violet')// Não temos o equivalente hexadecimal para violet.
+convertToHex('orange')// Não temos o equivalente hexadecimal para orange.
