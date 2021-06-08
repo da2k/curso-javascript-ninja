@@ -14,10 +14,10 @@ var soma = 15+8;
 soma++
 
 // Atribua à variável `soma` todo o valor dela, multiplicando por 3, usando o operador de multiplicação abreviado.
-?
+soma = soma * 3;
 
 // Qual é o valor da variável `soma` até aqui?
-?
+48
 
 // Declare uma variável chamada `souninja`, atribuindo à ela o valor booleano que representa `verdadeiro`.
 var souninja = true;
