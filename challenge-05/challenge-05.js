@@ -59,30 +59,69 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-// ?
+function book( bookName ) {
+... var allBooks = {
+..... 'Segredos do Ninja Javascript': {
+....... quantidadesPaginas: 468,
+....... autor: 'John Resig & Bear Bibeault',
+....... editora: 'Novatec'
+....... },
+..... 'Introdução ao HTML5': {
+....... quantidadesPaginas: 220,
+....... autor: 'Bruce Lawson',
+....... editora: 'Alta Books'
+....... },
+..... 'Smashing CSS': {
+....... quantidadesPaginas: 283,
+....... autor: 'Erick A. Meyer',
+....... editora: 'Bookman'
+....... }
+..... };
+...
+... return !bookName ? allBooks : allBooks [ bookName ];
+... }
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-// ?
+book();
+{
+  'Segredos do Ninja Javascript': {
+    quantidadesPaginas: 468,
+    autor: 'John Resig & Bear Bibeault',
+    editora: 'Novatec'
+  },
+  'Introdução ao HTML5': {
+    quantidadesPaginas: 220,
+    autor: 'Bruce Lawson',
+    editora: 'Alta Books'
+  },
+  'Smashing CSS': {
+    quantidadesPaginas: 283,
+    autor: 'Erick A. Meyer',
+    editora: 'Bookman'
+  }
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// ?
+console.log ( 'O Livro Smashing CSS tem ' + book("Smashing CSS").quantidadesPaginas + ' paginas! ') ; 
+  // O Livro Smashing CSS tem 283 paginas!
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
+console.log ( 'O autor do livro Smashing CSS é ' + book("Smashing CSS").autor) ; 
+  // O autor do livro Smashing CSS é Erick A. Meyer
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-// ?
+console.log ( 'O livro Smashing CSS foi publicado pela editora ' + book("Smashing CSS").editora) ;
+// O livro Smashing CSS foi publicado pela editora Bookman
