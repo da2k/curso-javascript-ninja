@@ -65,7 +65,7 @@ Crie um método chamado `nomeCompleto`, que retorne a frase:
 - "Olá! Meu nome é [NOME] [SOBRENOME]!"
 */
 pessoa.nomeCompleto = function(){
-  return `Olá! Meu nome é ${this.nome} ${this.sobrenome}`;
+  return `Olá! Meu nome é ${this.nome} ${this.sobrenome}!`;
 }
 
 /*
@@ -73,7 +73,7 @@ Crie um método chamado `mostrarIdade`, que retorne a frase:
 - "Olá, eu tenho [IDADE] anos!"
 */
 pessoa.mostrarIdade = function(){
-  return `Olá! eu tenho ${this.idade} anos`;
+  return `Olá! eu tenho ${this.idade} anos!`;
 }
 
 /*
@@ -98,14 +98,14 @@ Agora vamos brincar um pouco com o objeto criado:
 Qual o nome completo da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.nomeCompleto() //Olá! Meu nome é Daniel Bastos;
+pessoa.nomeCompleto() //Olá! Meu nome é Daniel Bastos!;
 
 
 /*
 Qual a idade da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.mostrarIdade() //Olá! eu tenho 20 anos;
+pessoa.mostrarIdade() //Olá! eu tenho 20 anos!;
 
 
 /*
@@ -132,7 +132,7 @@ Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
 comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
-pessoa.mostrarIdade() //Olá! eu tenho 23 anos;
+pessoa.mostrarIdade() //Olá! eu tenho 23 anos!;
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
@@ -150,7 +150,10 @@ pessoa.andando // true
 /*
 Se a pessoa ainda está andando, faça-a parar.
 */
-pessoa.parar()
+if(pessoa.andando){
+  pessoa.parar();
+}
+
 
 /*
 E agora: a pessoa ainda está andando? (Use uma instrução para responder e
