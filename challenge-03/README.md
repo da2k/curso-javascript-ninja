@@ -81,7 +81,7 @@ Crie um método chamado `mostrarPeso`, que retorne a frase:
 - "Eu peso [PESO]Kg."
 */
 pessoa.mostrarPeso = function(){
-  return `Eu peso ${this.peso}Kg`;
+  return `Eu peso ${this.peso}Kg.`;
 }
 
 /*
@@ -89,7 +89,7 @@ Crie um método chamado `mostrarAltura` que retorne a frase:
 - "Minha altura é [ALTURA]m."
 */
 pessoa.mostrarAltura = function(){
-  return `Minha altura é ${this.altura}m`;
+  return `Minha altura é ${this.altura}m.`;
 }
 
 
@@ -112,13 +112,13 @@ pessoa.mostrarIdade() //Olá! eu tenho 20 anos!;
 Qual o peso da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.mostrarPeso() //Eu peso 80Kg;
+pessoa.mostrarPeso() //Eu peso 80Kg.;
 
 /*
 Qual a altura da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.mostrarAltura() //Minha altura é 1.70m;
+pessoa.mostrarAltura() //Minha altura é 1.70m.;
 
 /*
 Faça a `pessoa` fazer 3 aniversários.
