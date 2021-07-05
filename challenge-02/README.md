@@ -23,8 +23,8 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 function adcionaValor(){
-  semValor = 'VALOR';
-  return semValor;
+  semValor = 'teste';
+  return 'o valor da variável agora é '+ semValor;
 }
 
 // Invoque a função criada acima.
@@ -32,7 +32,7 @@ adicionaValor();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
-  VALOR
+  o valor da variável agora é teste
 */
 
 /*
