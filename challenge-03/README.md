@@ -195,7 +195,7 @@ pessoa.apresentacao = function(){
   else{
     ano = 'anos';
   }
-  if(this.metro === 1){
+  if(this.caminhouQuantosMetros === 1){
     metros = 'metro';
   }
   else{
