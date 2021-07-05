@@ -186,7 +186,7 @@ correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao = function(){
   var sexo, ano, metros;
-  if(this.sexo === 'feminino'){
+  if(this.sexo === 'Feminino'){
     sexo = 'a';
   }
   else{
