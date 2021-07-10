@@ -10,46 +10,54 @@
 </head>
 
 <body>
+  <div class="wrapper">
 
-  <H1>Vem buscar seu cep aqui, que é mais barato.</H1>
+    <div class="subwrapper">
+      <div class="nav">
+        <H1>Vem buscar seu cep aqui, que é mais barato.</H1>
+      </div>
+      <div class="busca">
 
-  <div id="busca">
+        <form id='cepFind' action="">
 
-    <form id='cepFind' action="">
+          <input type="text" name="buscaCep" placeholder="Digite seu cep aqui" id="buscaCep"> <button
+            type="submit">Procurar</button> <button type="reset" onclick="emptyCEP()">Apagar</button>
 
-      <input type="text" name="buscaCep" placeholder="Digite seu cep aqui" id="buscaCep"> <button
-        type="submit">Procurar</button> <button type="reset" onclick="emptyCEP()">Apagar</button>
+        </form>
+      </div>
 
-    </form>
-  </div>
-
-
-  <br>
-  <br>
-
-  <div class="resultados">
-    <div class="campos">
-      <label for="log">Logradouro</label> <input type="text" readonly name="log" id="log">
+      <div class="resultados">
+        <div class="campos">
+          <label class="label" for="log">Logradouro</label> <input type="text" class="input-resp" readonly name="log"
+            id="log">
+          </input>
+        </div>
+        <div class="campos">
+          <label for="bairro">Bairro</label> <input type="text" class="input-resp" readonly name="bairro" id="bairro">
+          </input>
+        </div>
+        <div class="campos">
+          <label for="cidade">Cidade</label> <input type="text" class="input-resp" readonly name="cidade" id="cidade">
+          </input>
+        </div>
+        <div class="campos">
+          <label for="estado">Estado</label> <input type="text" class="input-resp" readonly name="estado" id="estado">
+          </input>
+        </div>
+        <div class="campos">
+          <label for="cep">Cep</label> <input type="text" class="input-resp" readonly name="cep" id="cep">
+          </input>
+        </div>
+        <div class="campos">
+          <label for="req">Status</label> <input type="text" class="input-resp" readonly name="req" id="req">
+          </input>
+        </div>
+      </div>
     </div>
-    <div class="campos">
-      <label for="bairro">Bairro</label> <input type="text" readonly name="bairro" id="bairro">
-    </div>
-    <div class="campos">
-      <label for="cidade">Cidade</label> <input type="text" readonly name="cidade" id="cidade">
-    </div>
-    <div class="campos">
-      <label for="estado">Estado</label> <input type="text" readonly name="estado" id="estado">
-    </div>
-    <div class="campos">
-      <label for="cep">Cep</label> <input type="text" readonly name="cep" id="cep">
-    </div>
-    <div class="campos">
-    <label for="req">Status:</label> <input type="text" readonly name="req" id="req">
-  </div>
-  </div>
 
 
-  <script src="./challenge-28.js"></script>
+
+    <script src="./challenge-28.js"></script>
 </body>
 
 </html>

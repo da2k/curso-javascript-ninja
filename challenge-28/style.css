@@ -1,9 +1,44 @@
-.resultados{
-  background-color: rgb(241, 241, 250);
+body {
+  background-color: yellow;
+  color: blue;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
-.campos label{
-color:blue;
-padding-right: 5px;
-width: 100px
+button {
+  color: blue;
+  background-color: rgb(241, 241, 136);
+}
+
+.campos label {
+  color: blue;
+  width: 100px;
+  float: left;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.input-resp {
+  width: 200px;
+}
+
+.resultado {
+  border: solid 2px black;
+}
+
+.busca {
+  margin-bottom: 30px;
+}
+
+.nav {
+  width: 330px;
 }
