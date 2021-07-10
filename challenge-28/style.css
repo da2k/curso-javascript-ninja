@@ -1,0 +1,9 @@
+.resultados{
+  background-color: rgb(241, 241, 250);
+}
+
+.campos label{
+color:blue;
+padding-right: 5px;
+width: 100px
+}

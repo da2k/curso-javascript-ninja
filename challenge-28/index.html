@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <H1>Vem buscar seu cep aqui, que é mais barato.</H1>
+
+  <div id="busca">
+
+    <form id='cepFind' action="">
+
+      <input type="text" name="buscaCep" placeholder="Digite seu cep aqui" id="buscaCep"> <button
+        type="submit">Procurar</button> <button type="reset" onclick="emptyCEP()">Apagar</button>
+
+    </form>
+  </div>
+
+
+  <br>
+  <br>
+
+  <div class="resultados">
+    <div class="campos">
+      <label for="log">Logradouro</label> <input type="text" readonly name="log" id="log">
+    </div>
+    <div class="campos">
+      <label for="bairro">Bairro</label> <input type="text" readonly name="bairro" id="bairro">
+    </div>
+    <div class="campos">
+      <label for="cidade">Cidade</label> <input type="text" readonly name="cidade" id="cidade">
+    </div>
+    <div class="campos">
+      <label for="estado">Estado</label> <input type="text" readonly name="estado" id="estado">
+    </div>
+    <div class="campos">
+      <label for="cep">Cep</label> <input type="text" readonly name="cep" id="cep">
+    </div>
+    <div class="campos">
+    <label for="req">Status:</label> <input type="text" readonly name="req" id="req">
+  </div>
+  </div>
+
+
+  <script src="./challenge-28.js"></script>
+</body>
+
+</html>
