@@ -1,5 +1,6 @@
 # Aula 13
 ##ToString: 
+
 Converte o array em uma string;
 Utilização: 
 
@@ -8,6 +9,7 @@ Utilização:
 ```
 
 ##Shift: 
+
 Remove itens no inicio do array;
 Utilização: 
 
@@ -16,6 +18,7 @@ Utilização:
 ```
 
 ##Slice: 
+
 cria um novo array de um outro array, através dos parâmetros passados;
 Utilização: 
 
@@ -24,6 +27,7 @@ Utilização:
 ```
 
 ##Splice: 
+
 Adiciona ou remove itens no array;
 Utilização: 
 
@@ -32,6 +36,7 @@ Utilização:
 ```
 
 ##Concat: 
+
 Concatena itens no array;
 Utilização: 
 
@@ -40,6 +45,7 @@ Utilização:
 ```
 
 ##ForEach: 
+
 Passa por todos os itens do array e retorna o que for definido;
 Utilização: 
 
@@ -50,6 +56,7 @@ Utilização:
 ```
 
 ##Every: 
+
 O some retorna o true se todos os itens da expressão forem verdadeiros.
 Utilização: 
 
@@ -60,6 +67,7 @@ Utilização:
 ```
 
 ##Some: 
+
 O some retorna o true se um dos itens da expressão for verdadeiro.
 Utilização: 
 
@@ -70,6 +78,7 @@ Utilização:
 ```
 
 ##Map: 
+
 O retorno do map deve ser definido, pois ele retorna exatamente o que for especificado.
 Utilização: 
 
@@ -86,6 +95,7 @@ Utilização:
 ```
 
 ##filter: 
+
 O filter retorna o item!
 Utilização: 
 
@@ -98,6 +108,7 @@ array.filer(function(item, index){
 # Aula 14
 
 ## Reduce
+
 Retorna o valor acumulado mais o valor atual
 Quando utilizado com números realiza o cálculo matemático conforme a expressão passada e com texto, concatena.
 ```js
@@ -120,6 +131,7 @@ Forma que é feito o cálculo
 ```
 
 ## ReduceRight
+
 Retorna o valor acumulado mais o valor atual, porém começa da direita para a esquerda. O que pode fazer toda a diferença se for utilizado para realizar cálculos matemáticos.
 ```js
 var arr = [1,2,3,4,5];
