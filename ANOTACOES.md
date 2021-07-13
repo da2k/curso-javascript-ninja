@@ -1,5 +1,5 @@
 # Aula 13
-##ToString: 
+## ToString 
 
 Converte o array em uma string;
 Utilização: 
@@ -8,7 +8,7 @@ Utilização:
     console.log([1,2,3,4,5,6].toString())
 ```
 
-##Shift: 
+## Shift 
 
 Remove itens no inicio do array;
 Utilização: 
@@ -17,7 +17,7 @@ Utilização:
     console.log(brasil.shift())
 ```
 
-##Slice: 
+## Slice 
 
 cria um novo array de um outro array, através dos parâmetros passados;
 Utilização: 
@@ -26,7 +26,7 @@ Utilização:
     var newSul = brasil.slice(2,5);
 ```
 
-##Splice: 
+## Splice 
 
 Adiciona ou remove itens no array;
 Utilização: 
@@ -35,7 +35,7 @@ Utilização:
     var newSudeste = brasil.splice(5, 4)
 ```
 
-##Concat: 
+## Concat 
 
 Concatena itens no array;
 Utilização: 
@@ -44,7 +44,7 @@ Utilização:
     brasil = brasil.concat(nordeste);
 ```
 
-##ForEach: 
+## ForEach 
 
 Passa por todos os itens do array e retorna o que for definido;
 Utilização: 
@@ -55,7 +55,7 @@ Utilização:
     })
 ```
 
-##Every: 
+## Every
 
 O some retorna o true se todos os itens da expressão forem verdadeiros.
 Utilização: 
@@ -66,7 +66,7 @@ Utilização:
     })
 ```
 
-##Some: 
+## Some 
 
 O some retorna o true se um dos itens da expressão for verdadeiro.
 Utilização: 
@@ -77,7 +77,7 @@ Utilização:
     })
 ```
 
-##Map: 
+## Map 
 
 O retorno do map deve ser definido, pois ele retorna exatamente o que for especificado.
 Utilização: 
@@ -94,7 +94,7 @@ Utilização:
     }) 
 ```
 
-##filter: 
+## filter 
 
 O filter retorna o item!
 Utilização: 
