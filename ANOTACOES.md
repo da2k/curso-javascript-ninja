@@ -151,7 +151,6 @@ console.log(arr.indexOf(3))
 // Pode ser inicializado a partir de um um idex especifico.
 
 console.log(arr.indexOf(3, 4))
-
 ```
 
 Sempre que o retorno for " >= 0 " o item existe no array.
@@ -162,3 +161,17 @@ Sempre que o retorno for " >= 0 " o item existe no array.
 
 OBS.: Não inverte a posição de indexação dos intens no array.
 
+## isArray
+
+Verifica se é uma array
+```js
+var arr = [1,2,3,4,5];
+console.log(Array.isArray(arr));
+```
+instalar as extensões:
+- Git lens
+- Markdown preview Enhanced
+- Git Graph
+- Git History
+- Code Spell Checker
+- Brazilian Portuguese Code Spell Checker
