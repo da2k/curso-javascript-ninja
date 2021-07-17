@@ -43,7 +43,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function funcaoTresValores(a,b,c){
-    if(a === null || b === null || c === null){
+    if(a === undefined || b === undefined || c === undefined){
        return "Preencha todos os valores corretamente!";
     } else {
         return (a*b*c) + '2';
@@ -72,18 +72,10 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function funcaoRecebe3Valores( a, b, c ){
-    if(a !== null && b === null && c === null){
+    if(a !== undefined && b === undefined && c === undefined){
         return a;
-    } else if(a === null && b !== null && c === null){
-        return b;
-    } else if(a === null && b === null && c !== null) {
-        return c;
     } else if(a !== null && b !== null && c === null){
         return a + b;
-    } else if(a !== null && b === null && c !== null) {
-        return a + c;
-    } else if(a === null && b !== null && c !== null) {
-        return b + c;
     } else if(a !== null && b !== null && c !== null) {
         return (a + b) / c;
     } else if(a === null && b === null && c === null) {
