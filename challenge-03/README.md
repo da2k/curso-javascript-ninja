@@ -186,6 +186,6 @@ validacaoMetrosCaminhados = "metros";
     return "Olá, eu sou " + validacaoSexo + " " +  pessoa.nome + " " + pessoa.sobrenome + ", tenho " + pessoa.idade + " " + validacaoIdade + ", " + pessoa.altura + "m, e só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " " + validacaoMetrosCaminhados + "!";
 }
 
-// Agora, apresente-se ;)
+// Agora, apresente-se  ;)
 pessoa.apresentacao(); 
 ```
