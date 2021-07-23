@@ -50,7 +50,7 @@ propriedades:
     - `editora` - String
 - A função deve retornar o objeto referente ao livro passado por parâmetro.
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
-os livros.
+os livros
 */
 var book = (nomeLivro) => {
     var caracLivros = {
