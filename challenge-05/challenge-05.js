@@ -33,7 +33,7 @@ var myArray2 = [true, "João", 2, "224", null];
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
-array criado.
+array criado
 */
 console.log(myFunction(myArray2));
 
