@@ -11,6 +11,7 @@ var addItem = (arg) => {
     myArr.push(arg);
     return console.log(myArr);
 }
+console.log(addItem.name);
 
 /*
 Adicione um novo array ao array criado no início do desafio, com ao menos 3
