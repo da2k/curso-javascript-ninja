@@ -82,3 +82,5 @@
   console.log(joao.getFullName() + ' agora tem ' + joao.addAge(4).getAge()  + ' anos.')
   console.log(maria.getFullName() + ' agora tem ' + maria.addAge(-2).getAge()  + ' anos.')
 })();
+
+
