@@ -20,7 +20,7 @@
   - Se o input tem os valores: "1+2+", e for pressionado o botão de
   multiplicação (x), então no input deve aparecer "1+2x".
   - Ao pressionar o botão de igual, o resultado do cálculo deve ser mostrado no
-  input;
+  input;ss
   - Ao pressionar o botão "CE", o input deve ficar zerado.
   */
 
