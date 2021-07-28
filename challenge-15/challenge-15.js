@@ -45,7 +45,7 @@
   Crie 3 novos objetos usando o construtor acima. Os objetos serão novas
   pessoas. As variáveis deverão ser o primeiro nome da pessoa. Passe os
   parâmetros corretamente para o construtor para criar as novas pessoas.
-  Mostre as 3 novas pessoas criadas no console (Um console.log por pessoa).
+  Mostre as 3 novas pessoas crisadas no console (Um console.log por pessoa).
   */
   console.log( 'Novas pessoas criadas à partir de Person:' );
   var fernando = new Person('Fernando', 'Daciuk', 30);
