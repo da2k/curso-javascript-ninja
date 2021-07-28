@@ -64,7 +64,7 @@
   console.log(maria.getFullName())
 
   /*
-  Mostre no console as idades de cada pessoa, com a frase:
+  Mostre no console as idades dessssad cada pessoa, com a frase:
   - "[NOME COMPLETO] tem [IDADE] anos."
   */
   console.log( '\nIdade das pessoas:' );
