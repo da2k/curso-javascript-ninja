@@ -15,9 +15,18 @@
     - "e é a 2ª letra do meu nome."
     E assim por diante, até a última.
     */
+   // loss option
     console.log( 'As letras do seu nome:' );
    var name = 'Pablo';
         for (let i = 0; i < name.length; i++) {
+            var pos = i+1;
+            console.log(name[i] + ' é a ' + pos + 'a letra do meu nome');
+        }
+
+    // good option
+    console.log('--- good way ----')
+    var name = 'Pablo';
+        for (let i = 0, len = name.length; i < len; i++) {
             var pos = i+1;
             console.log(name[i] + ' é a ' + pos + 'a letra do meu nome');
         }
@@ -34,9 +43,10 @@
     - Mostre no console o nome no formato slug, e o resultado final. Use um
     console.log para cada formato.
     */
+   // Loss Option
     console.log( '\nNome convertido à partir de um slug:' );
-    var fullName = 'pablo-binotto';
-    fullName = fullName.replace("-", ", ").split(', ')
+    var fullName = 'pedro-alvares-de-cabral';
+    fullName = fullName.split('-')
     var FullName = ''
     function slug(fullName, separator) {
         for (let i = 0; i < fullName.length; i++) {
@@ -49,7 +59,6 @@
                 }  else if (j === 0) {
                         FullName += fullName[i][j].toUpperCase()
                 }
-                
                 else {
                 FullName += fullName[i][j]  
                 }           
@@ -57,10 +66,15 @@
         }
         console.log('\n', FullName)
     }
-    
     slug(fullName, '%')
-    
-    
+
+     // good option
+     console.log('--- good way ----')
+    var NewfullName = fullName.map((item) => {
+        return item[0].toUpperCase() + item.slice(1)
+    }).join(' ')
+
+    console.log(NewfullName)
 
     /*
     - Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
@@ -73,17 +87,30 @@
     */
     console.log( '\nMeus amigos:' );
     var amigos =   ['João', 'Maria', 'Roberto', 'Pedro' , 'Marcos']
-    amigos = amigos.reduce((acc, act) => {
-        return acc + ', ' +  act
+    var new_amigos = amigos.reduce((acc, act) => {
+        return acc + ', ' +  act;
     })
-    console.log(amigos)
+    console.log(new_amigos)
+
+    // good option
+    console.log('--- good way ----')
+    new_amigos = amigos.reduce((acc, act, ind) => {
+        var sep = amigos.length - 1 == ind ? ' e ' : ', '
+        return acc + sep +  act
+    }) + ' são meus amigos.'
+    console.log(new_amigos)
 
     /*
     Usando o replace(), faça a string "Roberto" virar "Roberta".
     Mostre o resultado no console.
     */
     console.log( '\nEra "Roberto", agora é:' );
-    console.log(amigos.replace('Roberto',  'Roberta'))
+
+    console.log(
+        amigos.filter((item) => {
+            return item == "Roberto" 
+        }).toString().replace('to', 'ta')
+    )
 
     /*
     Mostre no console a parte "nando" da string "Fernando". Use o método que
@@ -102,7 +129,7 @@
     Ex.: Nomes que deveriam funcionar: "Fernando", "RoBertO", "gabriEla", etc.
     */
     console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
-    var myName = 'pablo augusto santos binotto';
+    var myName = 'pablo augusto santos dellamonica binotto';
     var myNewName = ''
     for (let i = 0; i < myName.length; i++) {
         i % 2 === 0 ? myNewName += myName[i].toLowerCase() :  myNewName += myName[i].toUpperCase()
