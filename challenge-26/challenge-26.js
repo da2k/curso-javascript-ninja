@@ -19,7 +19,7 @@
   Só passe para o próximo problema quando tiver resolvido o anterior :)
   */
 
-  ( () => {
+  (() => {
     'use strict';
 
   function DOM (elements) {
