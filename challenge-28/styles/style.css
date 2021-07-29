@@ -1,0 +1,153 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Martel:wght@400;700&family=Viaoda+Libre&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color:rgb(248,235,235);
+    font-family: 'Martel', serif;
+    font-weight: bold;
+    color:rgb(255,31,31);
+}
+
+.main {
+    width: 35rem;
+    height: 80vh;
+    background-color: rgb(242,216,216);
+    display: flex;
+    flex-direction: column;
+    margin: 4rem auto;
+    align-items: center;
+    border-radius: 3rem;
+    box-shadow: 0.07rem 0.2rem 1rem white;
+
+
+}
+
+.main h1 {
+    border-bottom: 0.0625rem solid rgba(255,255,255,0.5);
+    margin-top:2rem;
+    font-weight: bold;
+    letter-spacing: 0.09rem;
+    padding: 0.25rem;
+    font-size: 1.5rem;
+
+}
+
+.main h1:hover {
+    opacity: 0.7;
+}
+.main legend:hover{
+    opacity: 0.7;
+}
+
+.main input, .main textarea {
+    padding: 0.5rem;
+
+}
+
+
+#form {
+    margin-top: 2rem;
+    width: 21rem;
+    display: flex;
+    flex-direction: column;
+    align-items: space-evenly;
+
+}
+
+#form form{
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+.main legend {
+    font-size: 1rem;
+    margin-bottom: 0.1rem;
+}
+
+#form input {
+    margin-right: 0.08rem;
+    border-radius: 0.25rem;
+    width: 8rem;
+    border: 0.001rem solid rgb(255,31,31);
+}
+
+#form button {
+    border-radius: 0.25rem;
+    width: 8rem;
+    background-color: rgb(255,31,31);
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    border: 0.001rem solid white;
+}
+
+#form button:hover{
+    background-color: white;
+    color: rgb(255,31,31);
+    border: 0.001rem solid  rgb(255,31,31);;
+}
+
+.main #results {
+    display: flex;
+    flex-direction: column;
+    width:70%;
+    border-top: 0.0625rem solid rgba(255,255,255,0.5);
+}
+.main #results legend:first-child,
+.main div:last-child {
+    margin-top: 0.5rem;
+
+}
+
+.main #results input{
+    margin-bottom: 0.5rem;
+    border-radius: 0.25rem;
+
+}
+.main #results textarea{
+    width: 100%;
+}
+
+.main div:last-child {
+
+    margin-bottom: 0.0625rem;
+
+}
+
+@media(max-width:580px){
+
+    .main {
+        width:30rem;
+    }
+    #form {
+        width: 18rem;
+    }
+    .main #results{
+        width: 50%;
+    }
+    .main div:last-child {
+        width: 18rem;
+    }
+
+}
+
+@media(max-height:690px){
+
+    .main {
+        height: 110vh;
+    }
+
+    .main h1  {
+       margin-top: 2rem;
+}
+}

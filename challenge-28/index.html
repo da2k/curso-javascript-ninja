@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles/style.css"/>
+        <title>Consulta de CEP</title>
+    </head>
+    <body>
+        <div class="main">
+            <h1>Pesquisa de CEP</h1>
+            <div id="form">
+                <form>
+                    <input type="text" placeholder="Digite um Cep"/>
+                    <button type="submit">Consultar CEP</button>
+                </form>
+            </div>
+            <div id="results">
+                <div>
+                    <legend>Status da requisição</legend>
+                    <textarea rows="2"></textarea>
+                </div>
+                <legend for="logradouro">Logradouro</legend>
+                <input type="text" data-js="street"/>
+                <legend>Bairro</legend>
+                <input type="text" data-js="district"/>
+                <legend>Cidade</legend>
+                <input type="text" data-js="city"/>
+                <legend>Estado</legend>
+                <input type="text" data-js="state"/>
+                <legend>CEP</legend>
+                <input type="text" data-js="cep"/>
+            </div>
+        </div>
+        <script src="lib/dom.js"></script>
+        <script src="scripts/challenge-28.js"></script>
+    </body>
+</html>
