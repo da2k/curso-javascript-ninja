@@ -2,41 +2,48 @@
 
 ```js
 // Declarar uma variável chamada `myvar`, sem valor.
-?
+let myVar;
 
 // Após declarada, atribua o valor 10 à variável `myvar`.
-?
+myVar = 10;
+console.log(myVar);
 
 // Declare uma nova variável chamada `soma`, e adicione uma instrução somando os valores 15 e 8.
-?
+let soma = 15 + 8;
 
 // Atribua à variável `soma` todo o valor dela, somando 1, usando o operador de soma abreviado.
-?
+soma++;
 
-// Atribua à variável `soma` todo o valor dela, multiplicando por 3, usando o operador de multiplicação abreviado.
-?
+/* Atribua à variável `soma` todo o valor dela, multiplicando por 3,
+ usando o operador de multiplicação abreviado */
+soma *= 3;
 
-// Qual é o valor da variável `soma` até aqui?
-?
+// Qual é o valor da variável `soma` até aqui
+console.log(soma);
 
-// Declare uma variável chamada `souninja`, atribuindo à ela o valor booleano que representa `verdadeiro`.
-?
+/* Declare uma variável chamada `souninja`,
+atribuindo à ela o valor booleano que representa `verdadeiro`. */
+const souNinja = true;
+console.log(souNinja);
 
-// Declare uma variável chamada `comida` que recebe um array com os valores 'arroz', 'feijão' e 'ovo'.
-?
-
+/* Declare uma variável chamada `comida` que recebe um array com os valores
+'arroz', 'feijão' e 'ovo'. */
+const comida = ["arroz", "feijão", "ovos"];
 // Digite a instrução que imprime o valor de 'feijao', que está na variável `comida`.
-?
-
-// Digite o código que verifica se a variável `soma' é igual a variável `myvar` (testando também o tipo).
-?
+console.log(comida[1]);
+/* Digite o código que verifica se a variável
+ `soma' é igual a variável `myvar` (testando também o tipo). */
+const tips = (somas, myVars) => somas === myVars;
+console.log(tips(soma, myVar));
 
 // Digite o código que verifica se a variável `myvar` é menor ou igual à variável `soma`.
-?
+const tips02 = (somass, myVarss) => myVarss <= somass;
+// eslint-disable-next-line no-console
+console.log(tips02(soma, myVar));
+/* Crie uma função chamada `divisao` que receba como parâmetro dois números,
+e retorne o resultado da divisão entre eles. */
+const divisao = (sum1, sum2) => sum1 / sum2;
 
-// Crie uma função chamada `divisao` que receba como parâmetro dois números, e retorne o resultado da divisão entre eles.
-?
-
-// Invoque a função criada acima, passando os parâmetros 10 e 2.
-?
+// Invoque a função criada acima, passando os parâmetros 10 e 2.;
+console.log(divisao(10, 2));
 ```
