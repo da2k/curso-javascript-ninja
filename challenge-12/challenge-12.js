@@ -36,12 +36,10 @@ seguintes propriedades:
 `name`: String
 `pages`: Number
 */
-var books = [ 
-   { name: ' Bíblia' , pages: '570' } ,
-   { name: ' Profetas e Reis' , pages: '800' } ,
-   { name: ' Fé e Obras' , pages: '45' }
-]
-         
+
+books.push({ name: ' Bíblia' , pages: '570' });
+books.push({ name: ' Profetas e Reis' , pages: '800' });
+books.push({ name: ' Fé e Obras' , pages: '45' });       
          
 console.log( '\nLista de livros:', books);
 
@@ -49,11 +47,6 @@ console.log( '\nLista de livros:', books);
 Mostre no console todos os livros.
 */
   
-var books = [ 
-   { name: ' Bíblia' , pages: '570' } ,
-   { name: ' Profetas e Reis' , pages: '800' } ,
-   { name: ' Fé e Obras' , pages: '45' }
-]
 for(var i =0 ; i< books.length; i++) {
   console.log( 'Lista de livros:' , books[i]);
 }
@@ -76,42 +69,34 @@ for(var i =0 ; i< books.length; i++) {
 Converta os objetos que ficaram em `books` para strings.
 */
 
-for(var i =0 ; i< books.length; i++) {
-  var aux = JSON.stringify(books[i])
-  books[i] = aux;
-}
+  books = JSON.stringify(books)
+  console.log( books);
 
-for(i =0 ; i< books.length; i++) {
-  console.log( books[i]);
-}
 
 /*
 Mostre os livros nesse formato no console:
 */
   
-for(i =0 ; i< books.length; i++) {
-  console.log( books[i]);
-}
-
+  console.log( books);
+  
 /*
 Converta os livros novamente para objeto.
 */
-for( i =0 ; i< books.length; i++) {
-  aux = JSON.parse(books[i])
-   books[i] = aux;
-}
 
-for(i =0 ; i< books.length; i++) {
-  console.log( '\nAgora os livros são objetos novamente:' , books[i] ); 
-}
-  
+  books = JSON.parse(books)
 
 /*
 Mostre no console todas as propriedades e valores de todos os livros,
 no formato abaixo:
     "[PROPRIEDADE]: [VALOR]"
 */
----------------------------------------------------------------------------------------------------------
+
+  for(i =0 ; i< books.length; i++) {
+    for( var prop in books ){
+      console.log( prop + ':' + books[i][prop] );
+    }
+}
+  
 
 /*
 Crie um array chamado `myName`. Cada item desse array deve ser uma letra do
@@ -127,25 +112,18 @@ myName[3]='c'
 myName[4]='e'
 myName[5]='l'
 
-for(var i =0 ; i< myName.length; i++) {
-  console.log( myName[i] );
-}
-  
+ 
 
 /*
 Juntando todos os itens do array, mostre no console seu nome.
 */
 console.log(myName.join(''))
 
-
-
 /*
 Ainda usando o objeto acima, mostre no console seu nome invertido.
 */
 myName.reverse();
-console.log( '\nMeu nome invertido é:', myName);
-
-
+console.log( '\nMeu nome invertido é:', myName.join(''));
 
 /*
 Mostre todos os itens do array acima, odenados alfabéticamente.
