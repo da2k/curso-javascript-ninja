@@ -32,15 +32,18 @@
             $tempo.value = +$tempo.value+1;
             console.log($tempo.value)
             $intervalo = setTimeout(startFunc, 1000)
+            $start.setAttribute('disabled', true)
         }
 
         function stopFunc() {
             clearInterval($intervalo)
+            $start.removeAttribute('disabled', true)
         }
 
         function resetFunc() {
             clearInterval($intervalo)
             $tempo.value = 0;
+            $start.removeAttribute('disabled', true)
         }
 
 })(window, document)
