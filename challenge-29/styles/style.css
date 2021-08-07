@@ -1,0 +1,166 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;700&family=WindSong&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+:root {
+  --darker-orange: #FF8C00;
+  --linear-contrast: #F5F5DC;
+}
+
+body {
+  font-family:'Roboto Slab', serif;
+  color: rgba(0,0,0,0.9)
+}
+
+main {
+  background: linear-gradient(to bottom right, var(--darker-orange), var(--linear-contrast));
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+main h1{
+  font-size: 3.5rem;
+  font-family: 'WindSong', cursive;
+  color: rgba(0,0,0,0.8)
+}
+
+main h4 {
+  font-size: 1rem;
+}
+
+form[data-js="carRegistration"]{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form[data-js="carRegistration"] input::placeholder{
+  color: rgba(0,0,0,0.5)
+}
+
+
+form[data-js="carRegistration"] span{
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-bottom: 0.4rem;
+  text-align: center;
+}
+
+form[data-js="carRegistration"] input {
+  border-radius: 0.2rem;
+  background-color: rgba(0,0,0,0.2);
+  box-shadow: 0.01rem 0.01rem 0.01rem 0.1rem var(--darker-orange);
+  color: rgba(0,0,0,1.5);
+  font-weight: bold;
+  text-align: center;
+  margin-right: 0.6rem;
+  width:12rem;
+
+}
+
+form[data-js="carRegistration"] input:hover{
+  background-color: rgba(0,0,0,0.4);
+}
+
+div[data-js="cars-details"]{
+  display:flex;
+}
+
+.display-column{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+
+}
+
+div[data-js="image"] input[type="url"]{
+  width: 20rem;
+}
+
+div[data-js="image"] span {
+  margin-bottom: 0.5rem;
+}
+
+form[data-js="carRegistration"] button {
+  background-color: var(--darker-orange);
+  width: 5rem;
+  height: 1.8rem;
+  border-radius: 0.2rem;
+  color:  rgba(0,0,0,1.8);
+  border: 0.01rem solid rgba(0,0,0,1);
+  cursor: pointer;
+  transition: 800ms;
+  font-weight: bold;
+}
+
+form[data-js="carRegistration"] button:hover{
+  background-color:  rgba(0,0,0,0.9);
+  color: var(--darker-orange);
+  border: 0.01rem solid ;
+  font-weight: bold;
+}
+
+div[data-js="table-container"]{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+table {
+  margin-top: 1rem;
+  border: 0.1rem solid rgba(0,0,0,0.5);
+  width: 30rem;
+}
+
+table thead{
+  background-color: var(--darker-orange);
+  transition: 800ms;
+}
+
+table thead:hover {
+  background-color:var(--linear-contrast);
+ }
+
+table td {
+  font-weight: 300;
+  border: 0.1rem solid;
+  text-align: center;
+}
+
+table tr td.image{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+table tr td.image img:hover{
+  transform: scale(5.5);
+  background-size: cover;
+}
+
+table img {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-size:  contain;
+  border-radius: 0.3rem;
+
+}

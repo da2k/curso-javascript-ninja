@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/style.css">
+  <title>Challenge 29 - Cadastro de carros</title>
+</head>
+<body>
+  <main>
+      <header>
+        <h1></h1>
+        <h4></h4>
+      </header>
+
+      <form data-js="carRegistration">
+
+        <div data-js="image" class="display-column">
+          <span>Imagem do carro</span>
+          <input type="url" value="" placeholder="URL da imagem"/>
+        </div>
+
+        <div data-js="cars-details">
+          <div class="display-column">
+              <span>Marca/Modelo</span>
+              <input data-js="make" type="text"/>
+          </div>
+
+          <div class="display-column">
+              <span>Ano</span>
+              <input data-js="year" type="text"/>
+          </div>
+
+          <div class="display-column">
+            <span>Placa</span>
+            <input data-js="plate" type="text"/>
+          </div>
+
+          <div class="display-column">
+            <span>Cor</span>
+            <input data-js="color" type="text"/>
+          </div>
+
+        </div>
+          <button type="submit">Cadastrar</button>
+      </form>
+      <div data-js="table-container">
+        <table>
+            <thead>
+              <tr>
+                <th>Imagem</th>
+                <th>Modelo/Marca</th>
+                <th>Ano</th>
+                <th>Plate</th>
+                <th>Cor</th>
+              </tr>
+            </thead>
+
+          <tbody></tbody>
+        </table>
+      </div>
+  </main>
+
+  <script src="lib/dom.js"></script>
+  <script src="script/challenge-29.js"></script>
+</body>
+</html>
