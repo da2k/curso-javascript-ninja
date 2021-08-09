@@ -29,15 +29,13 @@
   var flag = 0
   var digito = ''
   var history = ''
-// get DOM elements
+  // get DOM elements
   var digito = doc.querySelectorAll("[data-js='d']")
 
-// função para cada digito
-
+  // função para cada digito
   Array.prototype.forEach.call(digito, function (dig) {
     dig.addEventListener('click', historico, false)
   })
-
   // função para atualizar o input
   function historico() {
     console.log('Flag', flag)
@@ -54,53 +52,16 @@
     }
   }
 
-
-  var opa = doc.querySelector("[data-js='opa']")
-  var ops = doc.querySelector("[data-js='ops']")
-  var opd = doc.querySelector("[data-js='opd']")
-  var opm = doc.querySelector("[data-js='opm']")
-
-  var ce = doc.querySelector("[data-js='ce']")
-
-  var inp = doc.querySelector("[data-js='inp']")
-  // sinal de igual
-  var di = doc.querySelector("[data-js='di']")
-  // ponto
-  var dp = doc.querySelector("[data-js='dp']")
-
-  // Add event on click
-
-  opa.addEventListener('click', inputedopa, false)
-  ops.addEventListener('click', inputedops, false)
-  opd.addEventListener('click', inputedopd, false)
-  opm.addEventListener('click', inputedopm, false)
-
-  ce.addEventListener('click', inputedce, false)
-
-  //inp.addEventListener('click', inputedinp, false)
-
-  di.addEventListener('click', inputeddi, false)
-
-  dp.addEventListener('click', inputeddp, false)
-
-
-  // função para cada operador
-  function inputedopa() { digito = '+'; opHist('+'); console.log(digito)}
-  function inputedops() { digito = '-'; opHist('-'); console.log(digito)}
-  function inputedopd() { digito = '/'; opHist('/'); console.log(digito)}
-  function inputedopm() { digito = '*'; opHist('*'); console.log(digito)}
-  function inputeddp() { digito = '.';  opHist('.'); console.log(digito)}
-
-  function inputeddi() { digito = '='; fim(history); console.log(digito)}
-
-  // função CE - para zerar o display
-  function inputedce() { inp.value=0; digito=''; history = ''; console.log('Clear')}
-
-
-  function opHist(d) {
+  var opa = doc.querySelectorAll("[data-js='opa']")
+  Array.prototype.forEach.call(opa, function (ope) {
+    ope.addEventListener('click', opHist, false)
+  })
+  function opHist() {
+    var d = this.id.slice(-1)
     console.log('Flag', flag)
      if (isOperator()) {
       console.log('verdade', isOperator())
+
         history = history.replace(/.$/, d)
         //history += d;
         inp.value = history;
@@ -109,21 +70,25 @@
       history += d;
       inp.value = history;
     }
-
-
-    // if (
-    //    history.slice(-1) === '+'
-    // || history.slice(-1) === '-'
-    // || history.slice(-1) === '/'
-    // || history.slice(-1) === '*'
-    // ) {
-    //   history.replace(/.$/, d)
-    // } else {
-    //   console.log('lastindex', history.slice(-1))
-    //   history += d;
-    //   inp.value = history;
-    // }
   }
+
+  // limpar os dados e zerar o display
+  var ce = doc.querySelector("[data-js='ce']")
+  ce.addEventListener('click', inputedce, false)
+  function inputedce() { inp.value=0; digito=''; history = ''; console.log('Clear')}
+
+  // mostrar dados no display
+  var inp = doc.querySelector("[data-js='inp']")
+
+  // ponto
+  var dp = doc.querySelector("[data-js='dp']")
+  dp.addEventListener('click', inputeddp, false)
+  function inputeddp() { digito = '.';  opHist('.'); console.log(digito)}
+
+  // sinal de igual
+  var di = doc.querySelector("[data-js='di']")
+  di.addEventListener('click', inputeddi, false)
+  function inputeddi() { digito = '='; fim(history); console.log(digito)}
 
   function isOperator() {
     var operators = ['+', '-', '/', '*']
