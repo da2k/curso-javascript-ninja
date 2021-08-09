@@ -1,0 +1,71 @@
+.main
+{
+  background-color: rgb(70, 51, 51);
+  width: 200px;
+  height: 275px;
+}
+
+input{
+  margin: 2px;
+  width: 130px;
+  height: 46px;
+  text-align: right;
+  font-size: xx-large;
+}
+
+.numbers{
+  background-color: rgb(87, 66, 66);
+  width: 196px;
+  margin-left: 3px;
+  margin-bottom:4px;
+}
+
+.n{
+  background-color: rgb(212, 206, 197);
+  width: 42px;
+  height: 50px;
+  float: left;
+  font-size: larger;
+  text-align:center;
+  margin: 2px;
+
+}
+
+.op{
+  width: 47px;
+  height: 50px;
+  float: left;
+  background-color: teal;
+  font-size: larger;
+  text-align:center;
+  margin: 2px;
+}
+
+.ce{
+  width: 46px;
+  height: 52px;
+  float: left ;
+  font-size: larger;
+  text-align:center;
+  margin: 2px;
+  background-color: tomato;
+}
+
+.result{
+  float: left;
+}
+
+.ce:hover
+{
+background-color: turquoise;
+}
+
+.op:hover
+{
+background-color: turquoise;
+}
+
+.n:hover
+{
+background-color: turquoise;
+}
