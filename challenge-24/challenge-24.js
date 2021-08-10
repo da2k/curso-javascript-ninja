@@ -53,23 +53,12 @@ function removeLastItemIfItIsAnOperator(number) {
   return number;
 }
 
+  // função para fazer a conta
+  function calc(fn) {
+    return new Function('return ' + fn)();
+  }
+
 function handleClickEqual() {
   $visor.value = removeLastItemIfItIsAnOperator($visor.value);
-  var allValues = $visor.value.match(/\d+[+x÷-]?/g);
-  $visor.value = allValues.reduce(function(accumulated, actual) {
-    var firstValue = accumulated.slice(0, -1);
-    var operator = accumulated.split('').pop();
-    var lastValue = removeLastItemIfItIsAnOperator(actual);
-    var lastOperator = isLastItemAnOperation(actual) ? actual.split('').pop() : '';
-    switch(operator) {
-      case '+':
-        return ( Number(firstValue) + Number(lastValue) ) + lastOperator;
-      case '-':
-        return ( Number(firstValue) - Number(lastValue) ) + lastOperator;
-      case 'x':
-        return ( Number(firstValue) * Number(lastValue) ) + lastOperator;
-      case '÷':
-        return ( Number(firstValue) / Number(lastValue) ) + lastOperator;
-    }
-  });
+  $visor.value = calc($visor.value)
 }
