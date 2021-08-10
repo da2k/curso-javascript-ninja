@@ -104,6 +104,8 @@
   }
 
   function fim(history) {
+    if(isOperator())
+    history = history.replace(/.$/, '')
       flag = 1
       inp.value = calc(history)
       console.log(calc(history))
