@@ -126,4 +126,4 @@ function replaceDate(capTotal2, cap1, cap2,cap3){
 
 console.log(text.replace( regexDate, replaceDate ));
 
-})();
+})(); 
