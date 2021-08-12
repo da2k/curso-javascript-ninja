@@ -29,4 +29,4 @@ nesse arquivo, dentro do `console.log`, o link para o pull request no seu
 projeto.
 */
 
-console.log('https://github.com/Gilmara-Git/cars4sales');
+console.log('https://github.com/Gilmara-Git/cars4sale/pull/1');
