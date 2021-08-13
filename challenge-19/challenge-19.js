@@ -97,7 +97,7 @@ function hasClass( markup , cssClass ){
 
     var macthClass = new RegExp( ' class=["\'](?:[\\w\\s]+)?'+ cssClass +'(?:[\\w\\s]+)?["\']' );
 
-    return macthClass.test(markup);
+    return macthClass.test(markup) + ' para a classe ' + cssClass ;
  
 }
 
