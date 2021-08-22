@@ -33,10 +33,10 @@
   DOM.prototype.forEach = function forEach() {
     return Array.prototype.forEach.apply(this.element, arguments)
   }
-  $a.forEach(function (item) {
-    console.log(item.firstChild.nodeValue)
+  var foreach = $a.forEach(function (item) {
+    console.log( item.firstChild.nodeValue )
   })
-
+  console.log(foreach)
   DOM.prototype.map = function map() {
     return Array.prototype.map.apply(this.element, arguments)
   }
@@ -44,7 +44,6 @@
     return item.getAttribute('data-js');
   })
   console.log(MAP)
-
   DOM.prototype.filter = function filter() {
     return Array.prototype.filter.apply(this.element, arguments)
   }
@@ -52,7 +51,6 @@
     return item;
   })
   console.log(filtro)
-
   DOM.prototype.reduce = function reduce() {
     return Array.prototype.reduce.apply(this.element, arguments);
   }
@@ -60,7 +58,6 @@
     return acc + ' ' + act.getAttribute('data-js') + index;
   },0)
   console.log(reduce)
-
   DOM.prototype.reduceRight = function reduceRight() {
     return Array.prototype.reduceRight.apply(this.element, arguments)
   }
@@ -68,7 +65,6 @@
     return acc + ' ' + act.getAttribute('data-js') + index;
   },0)
   console.log(reduceRight)
-
   DOM.prototype.every = function every() {
     return Array.prototype.every.apply(this.element, arguments)
   }
@@ -76,7 +72,6 @@
     return item.getAttribute('data-js') == 'link' ;
   },0)
   console.log(every)
-
   DOM.prototype.some = function some() {
     return Array.prototype.some.apply(this.element, arguments)
   }
@@ -84,5 +79,20 @@
     return item.firstChild.nodeValue < 0 ;
   },0)
   console.log(some)
+
+  DOM.prototype.anyObj = function anyObj(params0, params1) {
+    return Object.prototype.toString.call(params0) === params1
+  }
+  var dom = new DOM();
+  console.log('isArray ? ',  dom.anyObj([], '[object Array]' ))
+  console.log('isObject ? ', dom.anyObj({}, '[object Object]' ))
+  console.log('isFunction ? ', dom.anyObj(() => {}, '[object Function]' ))
+  console.log('isNumber ? ', dom.anyObj(1, '[object Number]' ))
+  console.log('isString ? ', dom.anyObj('text', '[object String]' ))
+  console.log('isBoolean ? ', dom.anyObj(false, '[object Boolean]' ))
+  console.log('isNull ? ', dom.anyObj(null, '[object Null]' ))
+  console.log('isNull ? ', dom.anyObj(undefined, '[object Undefined]' ))
+
+  // isArray, isObject, isFunction, isNumber, isString, isBoolean, isNull.
 
 })()
