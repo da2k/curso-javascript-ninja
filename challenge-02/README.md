@@ -33,7 +33,7 @@ function New_letters() {
 New_letters()
 
 // Qual o retorno da função? (Use comentários de bloco).
-/* O valor da variavel agora e 10 */
+*/ O valor da variavel agora e 10 */
 
 /*
 Crie uma função com as seguintes características:
