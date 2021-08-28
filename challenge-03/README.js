@@ -29,6 +29,8 @@ var pessoa = {
     caminhouQuantosMetros: 0,
 }
 
+// TO DO
+
 /*
 Adicione um método ao objeto `pessoa` chamado `fazerAniversario`. O método deve
 alterar o valor da propriedade `idade` dessa pessoa, somando `1` a cada vez que
