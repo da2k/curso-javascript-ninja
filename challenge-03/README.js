@@ -1,8 +1,9 @@
-# Desafio da semana #3
+// # Desafio da semana #3
 
-```js
+// ```js
 // Declarar uma variável qualquer, que receba um objeto vazio.
-?
+
+var objeto = {};
 
 /*
 Declarar uma variável `pessoa`, que receba suas informações pessoais.
@@ -16,7 +17,17 @@ As propriedades e tipos de valores para cada propriedade desse objeto devem ser:
 - `andando` - Boolean - recebe "falso" por padrão
 - `caminhouQuantosMetros` - Number - recebe "zero" por padrão
 */
-?
+
+var pessoa = {
+    nome: 'Vyctoria',
+    sobrenome: 'Silva',
+    sexo: 'feminino', 
+    idade: 22,
+    altura: 165,
+    peso: 53,
+    andando: false,
+    caminhouQuantosMetros: 0,
+}
 
 /*
 Adicione um método ao objeto `pessoa` chamado `fazerAniversario`. O método deve
@@ -154,4 +165,4 @@ correta, de acordo com os dados inseridos no objeto.
 
 // Agora, apresente-se ;)
 ?
-```
+// ```
