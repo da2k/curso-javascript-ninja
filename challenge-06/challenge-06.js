@@ -5,7 +5,8 @@ Declare uma variável chamada `championship` que receberá o nome do campeonato,
 e imprima o nome desse campeonato no console.
 */
 // ?
-
+let championship = 'PGL Major Krakow 2017';
+console.log(championship);
 /*
 Declare uma variável chamada `teams`, que receberá um array com 5 elementos.
 Os elementos serão nomes de times do campeonato escolhido, e os nomes devem
@@ -13,7 +14,7 @@ estar na ordem em que eles aparecem na tabela no momento da solução desse
 desafio.
 */
 // ?
-
+let teams = ['Gambit', 'Immortals','Astralis','VirtusPro','Fnatic'];
 console.log( 'Times que estão participando do campeonato:', teams );
 
 /*
@@ -33,19 +34,32 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 // ?
-
+function showTeamPosition(posicao){
+  if(posicao <= 0)
+    return 'Não temos a informação do time que está nessa posição.';;
+ return (posicao <= 5) ? `O time que esta em ${posicao} é o ${teams[posicao]}`:'Não temos a informação do time que está nessa posição.';
+}
+  
+ 
 /*
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
 // ?
+teams.push('SK Gaming');
+for(let i = 2; i < 6){
+console.log(`${i}: ${teams[i]}`)};
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
 repetição "while".
 */
 // ?
-
+let i = 20;
+while(i<=30){
+  console.log(i);
+i++
+};
 /*
 Crie uma função chamada `convertToHex`, com as seguintes características:
     - A função recebe uma cor por parâmetro, do tipo string. Exemplo: "red";
@@ -59,8 +73,39 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 // ?
+function convertToHex (color) {
+  var hexa;
+  switch (color) {
+    case 'AliceBlue':
+      hexa = '#f0f8ff';
+      break;
+    case 'AntiqueWhite':
+      hexa = '#faebd7';
+      break;
+    case 'AntiqueWhite1':
+      hexa = '#ffefdb';
+      break;
+    case 'AntiqueWhite2':
+      hexa = '#eedfcc';
+      break;
+    case 'AntiqueWhite3':
+      hexa = '#cdc0b0';
+      break;
+    default:
+      return `Não temos o equivalente hexadecimal para  #{color}.`;
+  }
 
+  return `O hexadecimal para a cor #{color}  é #{hexa}.`;
+}
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
 // ?
+console.log(convertToHex('AliceBlue'));
+console.log(convertToHex('AntiqueWhite'));
+console.log(convertToHex('AntiqueWhite1'));
+console.log(convertToHex('AntiqueWhite2'));
+console.log(convertToHex('AntiqueWhite3'));
+console.log(convertToHex('red'));
+console.log(convertToHex('white'));
+console.log(convertToHex('black'));
