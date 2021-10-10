@@ -25,10 +25,10 @@ soma
 72
 
 // Declare uma variável chamada `souninja`, atribuindo à ela o valor booleano que representa `verdadeiro`.
-souninja = true;
+var souninja = true;
 
 // Declare uma variável chamada `comida` que recebe um array com os valores 'arroz', 'feijão' e 'ovo'.
-comida = ['arroz', 'feijão', 'ovo'];
+var comida = ['arroz', 'feijão', 'ovo'];
 
 // Digite a instrução que imprime o valor de 'feijao', que está na variável `comida`.
 comida[1];
