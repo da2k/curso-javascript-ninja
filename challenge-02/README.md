@@ -94,5 +94,4 @@ newFunction(); //false
 newFunction(1); //1
 newFunction(2, 3); //5
 newFunctioin(3, 3, 2); //3
-
 ```
