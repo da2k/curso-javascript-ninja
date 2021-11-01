@@ -6,7 +6,7 @@ Crie os seguintes métodos:
 - forEach, map, filter, reduce, reduceRight, every e some.
 
 Crie também métodos que verificam o tipo do objeto passado por parâmetro.
-Esses métodos não precisam depender de criar um novo elmento do DOM, podem
+Esses métodos não precisam depender de criar um novo elemento do DOM, podem
 ser métodos estáticos.
 
 Métodos estáticos não obrigam o uso do `new`, podendo ser usados diretamente
