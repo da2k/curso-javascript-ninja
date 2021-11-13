@@ -188,11 +188,27 @@ deve conter no retorno da frase acima é "metro" no lugar de "metros".
 método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
+pessoa.apresentacao = function() {
+    var sexo = 'o';
+    var idadeAnos = 'anos';
+    var metrosCaminhados = 'metros';
 
+    if (pessoa.sexo === 'Feminino') {
+        sexo = 'a';
+    } 
+    
+    if (pessoa.idade === 1) {
+        idadeAnos = 'ano';
+    }
+
+    if (pessoa.caminhouQuantosMetros === 1) {
+        metrosCaminhados = 'metro';
+    }
+    return 'Olá, eu sou ' + sexo + ' ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + ' ' + idadeAnos + ' ' + pessoa.altura + ', meu peso é '+ pessoa.peso + 'Kg(s) e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' ' + metrosCaminhados + '!'
+}
 
 // Agora, apresente-se ;)
-pessoa.apresentacao = function() {
-    return 'Olá, eu sou o ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + ' anos, ' + pessoa.mostrarAltura() + ', meu peso é '+ pessoa.peso + 'Kg(s) e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' metros!'
-}
+pessoa.apresentacao()
+//'Olá, eu sou o Lucas Imposimato, tenho 38 anos 1.76, meu peso é 80Kg(s) e, só hoje, eu já caminhei 850 metros!'
 
 ```
