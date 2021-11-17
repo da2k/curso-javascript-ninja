@@ -22,7 +22,6 @@ soma *3
 var souninja= true
 
 
-
 // Declare uma variável chamada `comida` que recebe um array com os valores 'arroz', 'feijão' eovo'.
 var  comida=['arroz','feijão' 'ovo'] 
 
@@ -30,10 +29,9 @@ var  comida=['arroz','feijão' 'ovo']
 comida[1]
 
 // Digite o código que verifica se a variável `soma' é igual a variável `myvar` (testando também o tipo).
-?
 
-// Digite o código que verifica se a variável `myvar` é menor ou igual à variável `soma`.
-?
+
+// Digite o código que verifica se a variável `myvar` é menor ou igual à variável `soma`.?
 
 // Crie uma função chamada `divisao` que receba como parâmetro dois números, e retorne o resultado da divisão entre eles.
 function  divisao(){var  numero ='10'/ '2',returna numero;}
@@ -41,5 +39,5 @@ function  divisao(){var  numero ='10'/ '2',returna numero;}
 
 
 // Invoque a função criada acima, passando os parâmetros 10 e 2.
-?
+
 ```
