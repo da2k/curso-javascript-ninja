@@ -2,10 +2,10 @@
 
 ```js
 // Declarar uma variável chamada `myvar`, sem valor.
-var myvar
+var myvar;
 
 // Após declarada, atribua o valor 10 à variável `myvar`
-var  myvar=10
+myvar= 10;  
   // Declare uma nova variável chamada `soma`, e adicione uma instrução somando os valores 15 e 8.
 var soma= 15+8
 // Atribua à variável `soma` todo o valor dela, somando 1, usando o operador de soma abreviado.
