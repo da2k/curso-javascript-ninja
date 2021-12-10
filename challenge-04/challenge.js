@@ -1,21 +1,18 @@
-# Desafio da semana #4
-
-```js
 /*
 Declare uma variável chamada `isTruthy`, e atribua a ela uma função que recebe
 um único parâmetro como argumento. Essa função deve retornar `true` se o
 equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
-?
+
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
-?
+
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
-?
+
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
@@ -29,35 +26,35 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `assentos` - Number - cinco por padrão
 - `quantidadePessoas` - Number - zero por padrão
 */
-?
+
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
-?
+
 
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
-?
+
 
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
-?
+
 
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
 */
-?
+
 
 /*
 Crie um método chamado `obterMarcaModelo`, que retorne:
 "Esse carro é um [MARCA] [MODELO]"
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
-?
+
 
 /*
 Crie um método que irá adicionar pessoas no carro. Esse método terá as
@@ -75,7 +72,7 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-?
+
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -85,38 +82,26 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-?
 
 // Mude a cor do carro para vermelho.
-?
 
 // E agora, qual a cor do carro?
-?
 
 // Mude a cor do carro para verde musgo.
-?
 
 // E agora, qual a cor do carro?
-?
 
 // Qual a marca e modelo do carro?
-?
 
 // Adicione 2 pessoas no carro.
-?
 
 // Adicione mais 4 pessoas no carro.
-?
 
 // Faça o carro encher.
-?
 
 // Tire 4 pessoas do carro.
-?
 
 // Adicione 10 pessoas no carro.
-?
 
 // Quantas pessoas temos no carro?
-?
-```
+
