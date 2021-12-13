@@ -155,3 +155,83 @@ correta, de acordo com os dados inseridos no objeto.
 // Agora, apresente-se ;)
 ?
 ```
+Respostas
+ var vazio = {};
+
+ var pessoa = {nome:'felipe' ,sobrenome:'melo', sexo:'masculino', idade:27, altura:1.82,peso:63,andando: false,caminhouquantosmetros:0}
+
+ pessoa.fazeraniversario = function() {
+ 	pessoa.idade ++;
+ };
+ 
+ pessoa.andar = function(metros) {
+ 		pessoa.caminhouquantosmetros += metros;
+ 	    pessoa.andando = true
+ };
+
+pessoa.parar = function() {
+	return andando = false;
+};
+
+pessoa.nomecompleto = function() {
+	return 'Olá!, meu nome é ' + pessoa.nome + ' ' + pessoa.sobrenome;
+
+};
+
+pessoa.mostraridade = function() {
+	return 'Olá, eu tenho '+ pessoa.idade +' anos';
+};
+
+pessoa.mostrarpeso = function() {
+	return 'Olá, eu tenho' + pessoa.peso + ' kilos';
+};
+
+pessoa.mostraraltura = function() {
+	return "Olá, eu tenho" + pessoa.altura + ' de altura';
+};
+
+pessoa.nomecompleto();
+
+pessoa.mostraraltura();
+
+pessoa.mostraridade();
+
+pessoa.mostrarpeso();
+
+pessoa.fazeraniversario();
+pessoa.fazeraniversario();
+pessoa.fazeraniversario();
+
+pessoa.mostraridade();
+
+pessoa.andar(40);
+pessoa.andar(60);
+pessoa.andar(200);
+
+pessoa.andando
+
+pessoa.parar();
+
+pessoa.andando
+
+pessoa.caminhouquantosmetros
+
+pessoa.apresentar = function() {
+	var sexo = 'o';
+	var idade = 'anos';
+	var metrosCaminhados ='metros';
+
+	if (pessoa.sexo === 'feminino') {
+		sexo = 'a';
+	}
+	if (pessoa.idade === 1) {
+		idade = 'ano';
+	}
+	if (pessoa.caminhouquantosmetros === 1) {
+		metrosCaminhados = 'metro';
+	}
+		return 'Olá, eu sou '+ sexo + ' '+ pessoa.nomecompleto + ', tenho 'pessoa.idade + ' '+idade + ', ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouquantosmetros +' '+ metrosCaminhados +'!';
+	
+};
+
+pessoa.apresentar();
