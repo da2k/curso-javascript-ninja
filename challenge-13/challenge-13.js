@@ -1,150 +1,113 @@
-/*
-Envolva todo o código desse desafio em uma IIFE.
-*/
+(function(){
+    /*
+    Envolva todo o conteúdo desse arquivo em uma IIFE.
+    */
 
-/*
-Crie um array e mostre no console a representação em String desse array,
-usando o método visto na aula 13.
-*/
-console.log( 'O array em formato de string é:' );
-// ?
+    /*
+    Crie um objeto chamado `person`, com as propriedades:
+        `name`: String
+        `lastname`: String
+        `age`: Number
+    Preencha cada propriedade com os seus dados pessoais, respeitando o tipo
+    de valor para cada propriedade.
+    */
+    person = {'name' : 'Maxwell',
+            'lastname' : 'Oliveira',
+            'age' : 20};
+    console.log( 'Propriedades de "person":' );
 
-/*
-Crie 2 arrays `sul` e `sudeste`, que serão as regiões do Brasil.
-Cada array deve conter os estados dessa região.
-*/
-// ?
+    /*
+    Mostre no console, em um array, todas as propriedades do objeto acima.
+    Não use nenhuma estrutura de repetição, nem crie o array manualmente.
+    */
 
-/*
-Crie uma variável chamada `brasil`, que irá receber as duas regiões
-concatenadas. Mostre o `brasil` no console.
-*/
-console.log( '\nAlguns Estados do Brasil:' );
-// ?
+    console.log(Object.keys(person));
 
-/*
-Adicione 3 novos estados da região Norte no início do array e mostre no console.
-*/
-console.log( '\nMais estados adicionados:' );
-// ?
+    /*
+    Crie um array vazio chamado `books`.
+    */
+    var books = [];
 
-/*
-Remova o primeiro estado do array `brasil` e mostre-o no console.
-*/
-console.log( '\nEstado removido:' );
-// ?
+    /*
+    Adicione nesse array 3 objetos, que serão 3 livros. Cada livro deve ter a
+    seguintes propriedades:
+    `name`: String
+    `pages`: Number
+    */
+    books.push( {name : 'Sapiens', pages : 500},
+        {name : 'Homodeus', pages : 500},
+        {name: 'Cosmos', pages : 500}  );
+    
+    console.log( '\nLista de livros:' );
 
-/*
-Crie um novo array chamado `newSul`, que receba somente os estados do sul,
-pegando do array `brasil`. Não remova esses itens de `brasil`.
-*/
-// ?
+    /*
+    Mostre no console todos os livros.
+    */
+    console.log(books);
 
-/*
-Mostre no console os estados que estão em `newSul`.
-*/
-console.log( '\nEstados do Sul do Brasil:' );
-// ?
+    console.log( '\nLivro que está sendo removido:' );
+    /*
+    Remova o último livro, e mostre-o no console.
+    */
+    console.log(books.pop());
 
-/*
-Mostre no console todos os estados que estão em `brasil`.
-*/
-console.log( '\nAlguns Estados do Brasil:' );
-// ?
+    console.log( '\nAgora sobraram somente os livros:' );
+    /*
+    Mostre no console os livros restantes.
+    */
+    console.log(books);
 
-/*
-Crie um novo array chamado `nordeste`, que tenha os estados do nordeste.
-*/
-// ?
+    /*
+    Converta os objetos que ficaram em `books` para strings.
+    */
+    books = JSON.stringify(books);
+    console.log( '\nLivros em formato string:' );
 
-/*
-Mostre no console os estados do nordeste.
-*/
-console.log( '\nEstados do Nordeste:' );
-// ?
+    /*
+    Mostre os livros nesse formato no console:
+    */
+    console.log(books);
 
-/*
-Remova de `brasil` os estados do `sudeste`, colocando-os em uma variável
-chamada `newSudeste`.
-*/
-// ?
+    /*
+    Converta os livros novamente para objeto.
+    */
+    books = JSON.parse(books);
+    console.log( '\nAgora os livros são objetos novamente:' );
 
-/*
-Adicione os estados do `nordeste` ao array `brasil`. Esses estados devem
-ficar no mesmo nível que os estados já existentes, não em um array separado.
-*/
-// ?
+    /*
+    Mostre no console todas as propriedades e valores de todos os livros,
+    no formato abaixo:
+        "[PROPRIEDADE]: [VALOR]"
+    */
+    for(var i = 0; i < books.length; i++){
+        for(var prop in books[i] ){
+            console.log(prop + ": " + books[i][prop]);
+        }
+    }
 
-/*
-Mostre no console os estados em `newSudeste`.
-*/
-console.log( '\nEstados em newSudeste:' );
-// ?
+    /*
+    Crie um array chamado `myName`. Cada item desse array deve ser uma letra do
+    seu nome. Adicione seu nome completo no array.
+    */
+    var myName = ['M','a','x','w','e','l','l'];
+    console.log( '\nMeu nome é:' );
 
-/*
-Mostre no console os estados do `brasil`.
-*/
-console.log( '\nAlguns estados do Brasil:' );
-// ?
+    /*
+    Juntando todos os itens do array, mostre no console seu nome.
+    */
+    console.log(myName.join(""));
 
-/*
-usando forEach, percorra o array `brasil` e gere um novo array chamado
-`newBrasil`. Esse array deve ter cada item como um objeto, com as
-propriedades:
-- `id`: que será o índice do array `brasil`,
-- `estado`: que será o estado do array `brasil`.
-*/
-// ?
+    console.log( '\nMeu nome invertido é:' );
 
-/*
-Mostre o array `newBrasil` no console
-*/
-console.log( '\nnewBrasil:' );
-// ?
+    /*
+    Ainda usando o objeto acima, mostre no console seu nome invertido.
+    */
+    console.log(myName.reverse().join(""));
 
-/*
-Percorra o array `brasil` e verifique se os estados tem mais de 7 letras cada,
-atribuindo o resultado à uma variável. Se tiver, mostre no console a frase:
-- "Sim, todos os estados tem mais de 7 letras!"
-Senão, mostre no console:
-- "Nem todos os estados tem mais de 7 letras!"
-*/
-console.log( '\nTodos os estados de `brasil` tem mais de 7 letras?' );
-// ?
+    console.log( '\nAgora em ordem alfabética:' );
+    /*
+    Mostre todos os itens do array acima, odenados alfabéticamente.
+    */
+    console.log(myName.sort());
 
-/*
-Percorra o array `brasil` e verifique se o Ceará está incluído, atribuindo o
-resultado à uma variável. Se esse estado existir no array, mostrar a frase no
-console:
-- "Ceará está incluído!"
-Senão, mostrar a frase:
-- "Ceará não foi incluído :("
-*/
-console.log( '\nCeará está incluído em `brasil`?' );
-// ?
-
-/*
-Percorra o array `newBrasil` e crie um novo array que some 1 no ID de cada
-objeto desse array, e adicione a frase abaixo na propriedade `estado`:
-- "[ESTADO] pertence ao Brasil."
-Atribua o novo array a uma variável chamada `map`.
-*/
-// ?
-
-/*
-Mostre no console o array criado acima:
-*/
-console.log( '\nnewBrasil agora com mais informações:' );
-// ?
-
-/*
-Filtre o array criado acima, retornando somente os estados que tiverem
-ID par. Atribua o valor à uma variável chamada `filter`.
-*/
-// ?
-
-/*
-Mostre o array filtrado acima no console.
-*/
-console.log( '\nEstados com ID par:' );
-// ?
+})();
