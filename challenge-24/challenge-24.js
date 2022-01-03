@@ -53,11 +53,11 @@ function isLastItemAnOperation(number) {
   });
 }
 
-function removeLastItemIfItIsAnOperator(number) {
-  if(isLastItemAnOperation(number)) {
-    return number.slice(0, -1);
+function removeLastItemIfItIsAnOperator(string) {
+  if(isLastItemAnOperation(string)) {
+    return string.slice(0, -1);
   }
-  return number;
+  return string;
 }
 
 function handleClickEqual() {
