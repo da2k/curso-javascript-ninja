@@ -63,7 +63,10 @@ function removeLastItemIfItIsAnOperator(string) {
 function handleClickEqual() {
   $visor.value = removeLastItemIfItIsAnOperator($visor.value);
   var allValues = $visor.value.match(/\d+[+x÷-]?/g);
-  $visor.value = allValues.reduce(function(accumulated, actual) {
+  $visor.value = allValues.reduce(calculateAllValues);
+}
+
+    function calculateAllValues (accumulated, actual) {
     var firstValue = accumulated.slice(0, -1);
     var operator = accumulated.split('').pop();
     var lastValue = removeLastItemIfItIsAnOperator(actual);
@@ -78,5 +81,7 @@ function handleClickEqual() {
       case '÷':
         return ( Number(firstValue) / Number(lastValue) ) + lastOperator;
     }
-  });
-}
+  }
+
+  initialize()
+
