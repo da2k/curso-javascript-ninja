@@ -65,25 +65,33 @@ pessoa.parar = function( paraDeAndar ){
 Crie um método chamado `nomeCompleto`, que retorne a frase:
 - "Olá! Meu nome é [NOME] [SOBRENOME]!"
 */
-?
+ pessoa.nomeCompleto = function(){
+... return 'Olá! Meu nome é ' + pessoa.nome + ' ' + pessoa.sobrenome;
+... }
 
 /*
 Crie um método chamado `mostrarIdade`, que retorne a frase:
 - "Olá, eu tenho [IDADE] anos!"
 */
-?
+pessoa.mostrarIdade = function(){
+... return 'Olá, eu tenho ' + pessoa.idade + ' ' + 'anos!'
+... }
 
 /*
 Crie um método chamado `mostrarPeso`, que retorne a frase:
 - "Eu peso [PESO]Kg."
 */
-?
+pessoa.mostrarPeso = function() {
+... return 'Eu peso ' + pessoa.peso + 'Kg.';
+... }
 
 /*
 Crie um método chamado `mostrarAltura` que retorne a frase:
 - "Minha altura é [ALTURA]m."
 */
-?
+> pessoa.mostrarAltura = function(){
+... return 'Minha altura é ' + pessoa.altura + 'm.'
+... }
 
 /*
 Agora vamos brincar um pouco com o objeto criado:
