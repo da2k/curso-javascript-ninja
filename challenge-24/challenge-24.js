@@ -12,7 +12,9 @@ mesma funcionalidade.
 
 var $visor = document.querySelector('[data-js="visor"]');
 var $buttonsNumbers = document.querySelectorAll('[data-js="button-number"]');
-var $buttonsOperations = document.querySelectorAll('[data-js="button-operation"]');
+var $buttonsOperations = document.querySelectorAll(
+  '[data-js="button-operation"]'
+);
 var $buttonCE = document.querySelector('[data-js="button-ce"]');
 var $buttonEqual = document.querySelector('[data-js="button-equal"]');
 
@@ -21,16 +23,15 @@ function initialize() {
 }
 
 function initEvents() {
-  Array.prototype.forEach.call($buttonsNumbers, function(button) {
-    button.addEventListener('click', handleClickNumber, false);
+  Array.prototype.forEach.call($buttonsNumbers, function (button) {
+    button.addEventListener("click", handleClickNumber, false);
   });
-  Array.prototype.forEach.call($buttonsOperations, function(button) {
-    button.addEventListener('click', handleClickOperation, false);
+  Array.prototype.forEach.call($buttonsOperations, function (button) {
+    button.addEventListener("click", handleClickOperation, false);
   });
-  $buttonCE.addEventListener('click', handleClickCE, false);
-  $buttonEqual.addEventListener('click', handleClickEqual, false);
+  $buttonCE.addEventListener("click", handleClickCE, false);
+  $buttonEqual.addEventListener("click", handleClickEqual, false);
 }
-
 
 function handleClickNumber() {
   $visor.value += this.value;
@@ -46,15 +47,15 @@ function handleClickCE() {
 }
 
 function isLastItemAnOperation(number) {
-  var operations = ['+', '-', 'x', '÷'];
-  var lastItem = number.split('').pop();
-  return operations.some(function(operator) {
+  var operations = ["+", "-", "x", "÷"];
+  var lastItem = number.split("").pop();
+  return operations.some(function (operator) {
     return operator === lastItem;
   });
 }
 
 function removeLastItemIfItIsAnOperator(string) {
-  if(isLastItemAnOperation(string)) {
+  if (isLastItemAnOperation(string)) {
     return string.slice(0, -1);
   }
   return string;
@@ -66,22 +67,27 @@ function handleClickEqual() {
   $visor.value = allValues.reduce(calculateAllValues);
 }
 
-    function calculateAllValues (accumulated, actual) {
-    var firstValue = accumulated.slice(0, -1);
-    var operator = accumulated.split('').pop();
-    var lastValue = removeLastItemIfItIsAnOperator(actual);
-    var lastOperator = isLastItemAnOperation(actual) ? actual.split('').pop() : '';
-    switch(operator) {
-      case '+':
-        return ( Number(firstValue) + Number(lastValue) ) + lastOperator;
-      case '-':
-        return ( Number(firstValue) - Number(lastValue) ) + lastOperator;
-      case 'x':
-        return ( Number(firstValue) * Number(lastValue) ) + lastOperator;
-      case '÷':
-        return ( Number(firstValue) / Number(lastValue) ) + lastOperator;
-    }
+function calculateAllValues(accumulated, actual) {
+  var firstValue = accumulated.slice(0, -1);
+  var operator = accumulated.split("").pop();
+  var lastValue = removeLastItemIfItIsAnOperator(actual);
+  var lastOperator = isLastItemAnOperation(actual)
+    ? actual.split("").pop()
+    : "";
+  return doOperation(operator, firstValue, lastValue) + lastOperator;
+}
+
+function doOperation(operator, firstValue, lastValue) {
+  switch (operator) {
+    case "+":
+      return (Number(firstValue) + Number(lastValue) ) ;
+    case "-":
+      return ( Number(firstValue) - Number(lastValue) ) ;
+    case "x":
+      return ( Number(firstValue) * Number(lastValue) ) ;
+    case "÷":
+      return ( Number(firstValue) / Number(lastValue) ) ;
   }
+}
 
-  initialize()
-
+initialize();
