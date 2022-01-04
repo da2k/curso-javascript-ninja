@@ -57,10 +57,9 @@ booleano que representa "verdadeiro";
 Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o valor
 da propriedade `andando` para o valor booleano que representa "falso".
 */
-pessoa.parar = function( paraDeAndar) {
-... if(paraDeAndar <= 0) { pessoa.andando = false } else if( paraDeAndar > 0) return 
- 'pessoa ainda continua andando valor não pode ser maior que zero'
-... return paraDeAndar
+pessoa.parar = function(){
+... if(pessoa.andando = true) { pessoa.andando = false}
+... return pessoa.andando
 ... }
 
 /*
@@ -148,7 +147,7 @@ pessoa.andar(10)
 A pessoa ainda está andando? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+pessoa.andar(10) // true
 
 /*
 Se a pessoa ainda está andando, faça-a parar.
