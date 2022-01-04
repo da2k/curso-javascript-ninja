@@ -152,19 +152,19 @@ pessoa.andar(10) // true
 /*
 Se a pessoa ainda está andando, faça-a parar.
 */
-?
+pessoa.parar() // false
 
 /*
 E agora: a pessoa ainda está andando? (Use uma instrução para responder e
 comentários inline ao lado da instrução para mostrar a resposta retornada)
 */
-?
+pessoa.andando // false
 
 /*
 Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
 inline ao lado da instrução para mostrar a resposta retornada)
 */
-?
+pessoa.caminhouQuantosMetros // 10 
 
 /*
 Agora vamos deixar a brincadeira um pouco mais divertida! :D
