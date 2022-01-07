@@ -3,27 +3,34 @@
 Nesse exercício, você está livre para escolher os nomes para suas variáveis e funções! :smile:
 
 ```js
+import entrada from 'readline-sync'
+
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-?
+function soma(n1, n2){
+    return n1+n2
+}
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-?
+var novoResultado = soma(2, 5) + 5;
 
 // Qual o valor atualizado dessa variável?
-?
+12
 
 // Declare uma nova variável, sem valor.
-?
+var semValor;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-?
+function adicionarSemvalor(){
+    semValor = 4;
+    return "O valor da variável agora é " + semValor;
+}
 
 // Invoque a função criada acima.
-?
+console.log(adicionarSemvalor())
 
 // Qual o retorno da função? (Use comentários de bloco).
 ?
@@ -41,13 +48,13 @@ Crie uma função com as seguintes características:
 ?
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+Preencha todos os valores corretamente!
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+console.log(multiplica(1, 2, 3));
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+8
 
 /*
 Crie uma função com as seguintes características:
@@ -58,8 +65,23 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+function comTres (a, b, c){
+    if (a !== undefined && b === undefined && c === undefined){
+        return a
+    } else if (a !== undefined && b !== undefined && c === undefined){
+        return a + b
+    } else if (a !== undefined && b !== undefined && c !== undefined){
+        return (a + b)/c
+    } else if (a === undefined && b === undefined && c === undefined) {
+    return false
+    } else {
+        return null
+    }
+}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+console.log("//sem argumento",comTres())
+console.log("//com um argumento", comTres(200))
+console.log("//com dois argumentos", comTres(3, 1))
+console.log("//com tres argumentos", comTres(3, 7, 2))
 ```
