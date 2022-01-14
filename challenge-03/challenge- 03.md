@@ -35,6 +35,7 @@ for chamado.
 */
 pessoa.fazerAniversario = function(){
     pessoa.idade++
+    return pessoa.idade
 }
 
 /*
@@ -47,28 +48,27 @@ valor dessa propriedade a quantidade passada por parâmetro;
 - Ele deverá modificar o valor da propriedade `andando` para o valor
 booleano que representa "verdadeiro";
 */
- pessoa.andar = function(metros){
-... pessoa.caminhouQuantosMetros = metros;
-... if(pessoa.caminhouQuantosMetros > 0) return pessoa.andando = true
-... return pessoa.caminhouQuantosMetros + metros
-... }
+>pessoa.andar = function(metros){
+ if(pessoa.caminhouQuantosMetros > 0 ) {pessoa.andando = true} else if(pessoa.caminhouQuantosMetros >= 1){ pessoa.caminhouQuantosMetros + metros}
+ return pessoa.caminhouQuantosMetros += metros;
+}
 
 /*
 Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o valor
 da propriedade `andando` para o valor booleano que representa "falso".
 */
 pessoa.parar = function(){
-... if(pessoa.andando = true) { pessoa.andando = false}
-... return pessoa.andando
-... }
+ if(pessoa.andando = true) { pessoa.andando = false}
+ return pessoa.andando
+ }
 
 /*
 Crie um método chamado `nomeCompleto`, que retorne a frase:
 - "Olá! Meu nome é [NOME] [SOBRENOME]!"
 */
  pessoa.nomeCompleto = function(){
-... return 'Olá! Meu nome é ' + pessoa.nome + ' ' + pessoa.sobrenome;
-... }
+return 'Olá! Meu nome é ' + pessoa.nome + ' ' + pessoa.sobrenome;
+ }
 
 /*
 Crie um método chamado `mostrarIdade`, que retorne a frase:
@@ -131,7 +131,7 @@ Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
 comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
-pessoa.mostrarIdade() //'Olá, eu tenho 28 anos!'
+pessoa.idade() //28
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
@@ -147,7 +147,7 @@ pessoa.andar(10)
 A pessoa ainda está andando? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.andar(10) // true
+pessoa.andando // true
 
 /*
 Se a pessoa ainda está andando, faça-a parar.
@@ -161,8 +161,8 @@ comentários inline ao lado da instrução para mostrar a resposta retornada)
 pessoa.andando // false
 
 /*
-Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
-inline ao lado da instrução para mostrar a resposta retornada)
+E agora: a pessoa ainda está andando? (Use uma instrução para responder e
+comentários inline ao lado da instrução para mostrar a resposta retornada)
 */
 pessoa.caminhouQuantosMetros // 10 
 
@@ -183,8 +183,16 @@ deve conter no retorno da frase acima é "metro" no lugar de "metros".
 método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
-?
+//rascunho do codigo, alterar 'o'/'a' para receber as condicionais de masculino e feminino e fazer a singularidade de ano
 
+> pessoa.apresentacao = function(){
+... let sexo;
+... let idade;
+... let caminhada;
+... if(pessoa.sexo === 'Feminino'){ sexo = 'Eu sou a ' } else if(pessoa.sexo === 'Masculino'){ sexo = 'Eu sou o ' }
+... if(pessoa.idade === 1){ idade = 'Ano '} else if(pessoa.idade >= 1 ){idade = 'Anos '}
+... if(pessoa.caminhouQuantosMetros === 1) { caminhada = ' Metro '} else if(pessoa.caminhouQuantosMetros > 1){caminha = ' Metros '}
+... return "Olá " + sexo + pessoa.nome + pessoa.sobrenome + ', tenho ' + pessoa.idade + idade +
 // Agora, apresente-se ;)
 ?
 ```
