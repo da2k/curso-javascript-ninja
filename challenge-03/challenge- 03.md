@@ -49,18 +49,19 @@ valor dessa propriedade a quantidade passada por parâmetro;
 booleano que representa "verdadeiro";
 */
 >pessoa.andar = function(metros){
- if(pessoa.caminhouQuantosMetros > 0 ) {pessoa.andando = true} else if(pessoa.caminhouQuantosMetros >= 1){ pessoa.caminhouQuantosMetros + metros}
- return pessoa.caminhouQuantosMetros += metros;
-}
+... if(pessoa.caminhouQuantosMetros > 0) {pessoa.andando = true} else if(pessoa.caminhouQuantosMetros >= 1){ pessoa.caminhouQuantosMetros + metros}
+... else if(metros === 0){pessoa.caminhouQuantosMetros = 0}
+... return pessoa.caminhouQuantosMetros +=metros;
+... }
 
 /*
 Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o valor
 da propriedade `andando` para o valor booleano que representa "falso".
 */
 pessoa.parar = function(){
- if(pessoa.andando = true) { pessoa.andando = false}
- return pessoa.andando
- }
+... if(pessoa.andando = true){pessoa.andando = false}
+... return pessoa.parar = pessoa.caminhouQuantosMetros = 0;
+... }
 
 /*
 Crie um método chamado `nomeCompleto`, que retorne a frase:
@@ -186,13 +187,14 @@ correta, de acordo com os dados inseridos no objeto.
 //rascunho do codigo, alterar 'o'/'a' para receber as condicionais de masculino e feminino e fazer a singularidade de ano
 
 > pessoa.apresentacao = function(){
-... let sexo;
-... let idade;
-... let caminhada;
-... if(pessoa.sexo === 'Feminino'){ sexo = 'Eu sou a ' } else if(pessoa.sexo === 'Masculino'){ sexo = 'Eu sou o ' }
-... if(pessoa.idade === 1){ idade = 'Ano '} else if(pessoa.idade >= 1 ){idade = 'Anos '}
-... if(pessoa.caminhouQuantosMetros === 1) { caminhada = ' Metro '} else if(pessoa.caminhouQuantosMetros > 1){caminha = ' Metros '}
-... return "Olá " + sexo + pessoa.nome + pessoa.sobrenome + ', tenho ' + pessoa.idade + idade +
+ let sexo;
+  let idade;
+  let caminhada;
+  if(pessoa.sexo === 'Feminino'){ sexo = 'Eu sou a ' } else if(pessoa.sexo === 'Masculino'){ sexo = 'Eu sou o ' }
+  if(pessoa.idade === 1){ idade = 'Ano '} else if(pessoa.idade >= 1 ){idade = 'Anos '}
+  if(pessoa.caminhouQuantosMetros === 1) { caminhada = ' Metro '} else if(pessoa.caminhouQuantosMetros > 1){caminha = ' Metros '}
+ return 'Olá ' + sexo + pessoa.nome +''+ pessoa.sobrenome + ', tenho ' + pessoa.idade +''+ idade + ',' + pessoa.altura + ', ' + 'meu peso é ' + pessoa.peso +'kg'+ 'e' + ', só hoje, eu ja caminhei ' + pessoa.caminhouQuantosMetros + caminhada + '!'
+... }
 // Agora, apresente-se ;)
 ?
 ```
