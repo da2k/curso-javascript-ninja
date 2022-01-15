@@ -196,5 +196,5 @@ correta, de acordo com os dados inseridos no objeto.
  return 'Olá ' + sexo + pessoa.nome +''+ pessoa.sobrenome + ', tenho ' + pessoa.idade +''+ idade + ',' + pessoa.altura + ', ' + 'meu peso é ' + pessoa.peso +'kg'+ 'e' + ', só hoje, eu ja caminhei ' + pessoa.caminhouQuantosMetros + caminhada + '!'
 ... }
 // Agora, apresente-se ;)
-?
+pessoa.apresentacao()
 ```
