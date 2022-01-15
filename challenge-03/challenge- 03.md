@@ -193,7 +193,7 @@ correta, de acordo com os dados inseridos no objeto.
   if(pessoa.sexo === 'Feminino'){ sexo = 'Eu sou a ' } else if(pessoa.sexo === 'Masculino'){ sexo = 'Eu sou o ' }
   if(pessoa.idade === 1){ idade = 'Ano '} else if(pessoa.idade >= 1 ){idade = 'Anos '}
   if(pessoa.caminhouQuantosMetros === 1) { caminhada = ' Metro '} else if(pessoa.caminhouQuantosMetros > 1){caminha = ' Metros '}
- return 'Olá ' + sexo + pessoa.nome +''+ pessoa.sobrenome + ', tenho ' + pessoa.idade +''+ idade + ',' + pessoa.altura + ', ' + 'meu peso é ' + pessoa.peso +'kg'+ 'e' + ', só hoje, eu ja caminhei ' + pessoa.caminhouQuantosMetros + caminhada + '!'
+ return 'Olá ' + sexo + pessoa.nome +''+ pessoa.sobrenome + ', tenho ' + pessoa.idade +''+ idade + ',' + pessoa.altura + ', ' + 'meu peso é ' + pessoa.peso +'kg '+ 'e' + ', só hoje, eu ja caminhei ' + pessoa.caminhouQuantosMetros + caminhada + '!'
 ... }
 // Agora, apresente-se ;)
 ?
