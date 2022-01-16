@@ -186,15 +186,16 @@ correta, de acordo com os dados inseridos no objeto.
 */
 //rascunho do codigo, alterar 'o'/'a' para receber as condicionais de masculino e feminino e fazer a singularidade de ano
 
-> pessoa.apresentacao = function(){
- let sexo;
-  let idade;
-  let caminhada;
-  if(pessoa.sexo === 'Feminino'){ sexo = 'Eu sou a ' } else if(pessoa.sexo === 'Masculino'){ sexo = 'Eu sou o ' }
-  if(pessoa.idade === 1){ idade = 'Ano '} else if(pessoa.idade >= 1 ){idade = 'Anos '}
-  if(pessoa.caminhouQuantosMetros === 1) { caminhada = ' Metro '} else if(pessoa.caminhouQuantosMetros > 1){caminha = ' Metros '}
- return 'Olá ' + sexo + pessoa.nome +''+ pessoa.sobrenome + ', tenho ' + pessoa.idade +''+ idade + ',' + pessoa.altura + ', ' + 'meu peso é ' + pessoa.peso +'kg '+ 'e' + ', só hoje, eu ja caminhei ' + pessoa.caminhouQuantosMetros + caminhada + '!'
-... }
+>pessoa.apresentacao = function(){
+    let sexo = 'o';
+    let idade = 'anos';
+    let metrosCaminhado = 'metros';
+    if(pessoa.sexo === 'Femninino'){
+        sexo = 'a';
+    }
+    if(pessoa.idade === 1) { idade = 'ano'}
+    if(pessoa.caminhouQuantosMetros === 1 ){
+        metrosCaminhado = 'metro'}
+    return 'Olá, eu sou ' + sexo +' ' + pessoa.nome + ' ' +pessoa.sobrenome + ', tenho' + pessoa.idade + ' ' + idade + ', ' + pessoa.altura + ', meu peso é ' + pessoa.peso + 'e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' ' + metrosCaminhado + '!';}
 // Agora, apresente-se ;)
-pessoa.apresentacao()
-```
+pessoa.apresentacao() 'Olá, eu sou o Pablo Henrique, tenho25 anos, 1.75, meu peso é 115e, só hoje, eu já caminhei 0 metros!'
