@@ -49,9 +49,8 @@ valor dessa propriedade a quantidade passada por parâmetro;
 booleano que representa "verdadeiro";
 */
 >pessoa.andar = function(metros){
-... if(pessoa.caminhouQuantosMetros > 0) {pessoa.andando = true} else if(pessoa.caminhouQuantosMetros >= 1){ pessoa.caminhouQuantosMetros + metros}
-... else if(metros === 0){pessoa.caminhouQuantosMetros = 0}
-... return pessoa.caminhouQuantosMetros +=metros;
+... pessoa.caminhouQuantosMetros += metros;
+pessoa.andando.true;
 ... }
 
 /*
