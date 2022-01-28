@@ -115,8 +115,9 @@ citado acima, no lugar de "pessoas".
 carro.addPessoas = function(pessoas)[
     carro.quantidadePessoas =+ pessoas;
     var lotado = 'O carro já está lotado!';
-    var naoLotado = 'Pessoas';
+    /*var naoLotado = 'Pessoas';*/
     var temos = 'Já temos ' + carro.quantidadePessoas + ' Pessoas no carro!';
+    var cabemMaisPessoas = carro.quantidadePessoas - (carro.assentos === 1 ? 'Pessoa' : 'Pessoas' )
     return if(carro.quantidadePessoas > 0 & < 5 ){temos} else if(carro.quantidadePessoas === 5){lotado} else if()
 
 ]
