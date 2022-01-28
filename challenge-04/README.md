@@ -46,23 +46,23 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `quantidadePessoas` - Number - zero por padrão
 */
  var carro = {
-... marca : 'VOLKSWAGEN',
-... modelo : 'polo',
-... placa : 'DTO1300',
-... ano : '2014',
-... cor : 'preto',
-... quantasPortas : 4,
-... assentos : 5,
-... quantidadePessoas : 0
-... }
+ marca : 'VOLKSWAGEN',
+ modelo : 'polo',
+ placa : 'DTO1300',
+ ano : '2014',
+ cor : 'preto',
+ quantasPortas : 4,
+ assentos : 5,
+ quantidadePessoas : 0
+ }
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
  carro.mudaCor = function(cor){
-... return carro.cor = cor ;
-... }
+ return carro.cor = cor ;
+ }
 
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
@@ -113,13 +113,10 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 citado acima, no lugar de "pessoas".
 */
 carro.addPessoas = function(pessoas)[
-    carro.quantidadePessoas =+ pessoas;
-    var lotado = 'O carro já está lotado!';
-    /*var naoLotado = 'Pessoas';*/
+    var quantidade = carro.quantidadePessoas + pessoas;
+    var lotado = quantidade === carro.assentos; 
     var temos = 'Já temos ' + carro.quantidadePessoas + ' Pessoas no carro!';
-    var cabemMaisPessoas = carro.quantidadePessoas - (carro.assentos === 1 ? 'Pessoa' : 'Pessoas' )
-    return if(carro.quantidadePessoas > 0 & < 5 ){temos} else if(carro.quantidadePessoas === 5){lotado} else if()
-
+    
 ]
 
 /*
