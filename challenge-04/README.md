@@ -91,9 +91,7 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 carro.obterMarcaModelo = function(){
-    var marca = carro.obterMarca();
-    var modelo = carro.obterModelo()
-    return "Esse carro é um " + marca +' '+ modelo
+    return "Esse carro é um " + carro.obterMarca +' '+ carro.obterModelo
 }
 
 /*
