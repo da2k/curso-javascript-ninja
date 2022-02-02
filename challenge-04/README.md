@@ -8,8 +8,8 @@ equivalente booleano para o valor passado no argumento for ``, ou `false`
 para o contrário.
 */
 var isTruthy = function(a){
-    !!a
-    return a?  : false;
+    return !!a;
+     
 }
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
