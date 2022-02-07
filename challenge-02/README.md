@@ -43,12 +43,19 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function multiplicaSomaDois(a,b,c){
+    //pode-se utilizar o undefined 
+    //myvar; //aqui é undefined
+    //myvar = null; // aqui é nulo
+    //if(a === undefined || b === undefined || c === undefined)
     if(!a || !b || !c){
         return 'Preencha todos os valores corretamente!';
     }else{
         return a * b * c + 2;
     }
 }
+
+    //pode ser feito sem utilizar o else, sempre que chega no return ignora o resto...
+    //se o if nao for satisfeito, vai diretamente ao segundo return
 
 // Invoque a função criada acima, passando só dois números como argumento.
 multiplicaSomaDois(2,2)
@@ -79,7 +86,7 @@ function tresArgumentos(a,b,c){
         return a + b;
     }else if (a !== undefined && b !== undefined && c !== undefined){
         return (a + b) / c;
-    }else if (a !== undefined && b !== undefined && c !== undefined) {
+    }else if (a === undefined && b === undefined && c === undefined) {
         return false;
     }else {
         return null
