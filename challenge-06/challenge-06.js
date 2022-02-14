@@ -39,7 +39,7 @@ const showTeamPosition = function (p) {
     }
 
     return 'O time que está em ' + p + 'º lugar é o ' + teams[p - 1] + '.';
-}
+};
 
 /*
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
@@ -96,7 +96,7 @@ const convertToHex = function (color) {
     }
 
     return 'O hexadecimal para a cor ' + color + ' é ' + hexadecimal + '.';
-}
+};
 
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
