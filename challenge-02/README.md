@@ -5,15 +5,21 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
 ?
+function somavalor(valora, valorb) {
+    return valora + valorb
+}
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
 ?
+var recebeFuncao = somavalor(3, 3 + 5)
 
 // Qual o valor atualizado dessa variável?
 ?
+11
 
 // Declare uma nova variável, sem valor.
 ?
+var novaVariavel
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
@@ -21,12 +27,17 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 ?
+novaVariavel = function fucAdiciona(valor) {
+    console.log(`O valor da variável agora é ${valor}`)
+}
 
 // Invoque a função criada acima.
 ?
+novaVariavel(8)
 
 // Qual o retorno da função? (Use comentários de bloco).
 ?
+/* 8 */
 
 /*
 Crie uma função com as seguintes características:
@@ -36,18 +47,28 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 ?
+var varMultiplica = function funcMultiplica(paramA, paramB, paramC) {
+    if(paramA ===  undefined || paramB === undefined || paramC === undefined) {
+        console.log(`Preencha todos os valores corretamente!`)
+    } else 
+    return paramA * paramB * paramC + 2
+}
 
 // Invoque a função criada acima, passando só dois números como argumento.
 ?
+varMultiplica( 3, 3)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 ?
+//Preencha todos os valores corretamente!
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 ?
+varMultiplica( 3, 3, 8)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 ?
+//74
 
 /*
 Crie uma função com as seguintes características:
@@ -59,7 +80,35 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 ?
+var varRecebeArgs = function funcRecebeTres(argA, argB, argC) {
+    if(argA === undefined && argB === undefined && argC === undefined) {
+        return false
+        }    
+        if (argB === undefined && argC === undefined) {
+            return argA 
+            } 
+            if (argC === undefined) {
+                return argA + argB
+                } if(argA !== undefined && argB !== undefined && argC !== undefined) {
+                     return (argA + argB) / argC               
+            } else return null               
+}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 ?
+//Com nenhum
+//varRecebeArgs()
+//false
+
+//Com um 
+//varRecebeArgs(2)
+//2
+
+//Com dois 
+//varRecebeArgs(2, 4)
+//6
+
+//Com tres
+//varRecebeArgs(2, 4, 2)
+//3
 ```
