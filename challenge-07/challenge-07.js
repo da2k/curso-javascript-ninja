@@ -67,17 +67,56 @@ while(numerosPares <= 20){
 /*
 Na mesma ideia do exercício acima: mostre agora os números ímpares.
 */
-//console.log( 'Números ímpares entre 10 e 20:' );
+var numerosImpares = 10
+console.log( '\nNúmeros Impares entre 10 e 20:');
+while(numerosImpares <= 20){
+    
+    if(numerosImpares%2!=0){
+        console.log(numerosImpares++)
+    }   
+    ++numerosImpares
+}
 // ?
 
 /*
 Repita os mesmos exercícios feitos acima, mas agora usando o loop "for".
 Só vamos mudar o range:
-- No primeiro "for", mostre os números pares entre 100 e 120, inclusive eles;
+- No primeiro "for", mostre os números pares entre 100 e 120, inclusive eles;  
 - No segundo "for", mostre os números ímpares entre 111 e 125, inclusive eles.
 */
+console.log( 'Números ímpares entre 10 e 20:' );
+for(i=10;i<=20;i++){
+    if(i%2===0){
+    console.log(i)
+    }
+}
+
 //console.log( 'Números pares entre 100 e 120:' );
+function mostraPar(inicio, fim) {
+  console.log("Números pares entre :", + inicio );
+  for (i = inicio; i <= fim; i++) {
+    if (i % 2 === 0) {
+      console.log(i);
+    }
+  }
+}
+
+//invocando a funcao
+mostraPar(100, 150)
+//invocando a funcao
+mostraPar(111, 125)
+
 // ?
 
 //console.log( 'Números ímpares entre 111 e 125:' );
 // ?
+function mostraImpar(inicio, fim) {
+    console.log("Números ímpares entre: "+ inicio + ' e ' + fim);
+    for (i = inicio; i <= fim; i++) {
+      if (i % 2 !== 0) {
+        console.log(i);
+      }
+    }
+  }
+
+  mostraImpar(111, 125)
