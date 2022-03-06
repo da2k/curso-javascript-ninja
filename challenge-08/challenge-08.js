@@ -20,7 +20,7 @@ Mostre no console o nome da função criada acima, com a frase:
 "O nome da função que faz a soma é [NOME DA FUNÇÃO]."
 */
 // ?
-console.log('O nome da função que faz a soma é ', sum)
+console.log('O nome da função que faz a soma é ', sum.name)
 /*
 Crie uma função literal chamada `showName`. Essa função deve retornar o
 seu nome.
@@ -40,7 +40,7 @@ atribuída a ela, com a seguinte frase:
 "A função [NOME DA FUNÇÃO] retorna [RETORNO DA FUNÇÃO]."
 */
 // ?
-console.log('\nA função ', showName, ' retorna ', varShowName)
+console.log('\nA função ', showName.name, ' retorna ', varShowName)
 
 /*
 Crie uma função literal chamada `calculator`, que funcione assim:
