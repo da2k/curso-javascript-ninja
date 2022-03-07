@@ -90,7 +90,7 @@ function calculator(operacao) {
         );
         break;
         default:
-        return 'Operação inválida'
+        return console.log('Operação inválida')
     }
   };
 }
@@ -125,7 +125,8 @@ correto por parâmetro para cada uma delas.
 */
 // ?
 
-var subtraction = calculator
+//forma atribuindo operacao
+var subtraction = calculator('-')
 var multiplication = calculator
 var division = calculator
 
@@ -134,6 +135,10 @@ Faça uma operação com cada uma das funções criadas acima, mostrando o resul
 no console.
 */
 // ?
-subtraction('-')(8, 4)
+
+subtraction(8, 4)
+//Nesses usei a Forma direto aqui na hora de invocar
 multiplication('*')(9, 3)
-division('/')(12, 2)
+
+//Aqui colocando operador invalido pra ver a mesagem
+division('#')(12, 2)
