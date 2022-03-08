@@ -40,7 +40,7 @@ correto da variável ou função chamada.
   function myFunction3() {
     var number1 = 40;
     var number2 = 50;
-    console.log("A soma de 40 e 50 é igual a", sum());
+    console.log("A soma de 40 e 50 é igual a ", sum());
     console.log("Na função myFunction3, number1 é igual a", number1);
     return sum();
 
@@ -64,13 +64,20 @@ por parâmetro, INVOCADA, e passando a ela por parâmetro os dois valores
 que foram passadas para a primeira função `calculator`.
 */
   // ?
+  function calculator(num1, num2) {
+    return function (callback) {
+      return callback(num1, num2);
+    };
+  }
+
+  // calculator(function callback(){ return callback})
 
   /*
 Declare uma variável chamada `sum`, e atribua a ela a função `calculator`,
 passando dois números por parâmetro.
 */
   // ?
-
+  var sum = calculator(3, 5);
   /*
 Sabemos que `sum` agora tem uma função atribuída a ela, que é o retorno de
 `calculator`. E essa função espera um parâmetro `callback`. O `callback`
@@ -80,7 +87,14 @@ para a chamada à `calculator` acima.
 uma função anônima que irá retornar a soma dos dois números que essa função
 anônima tem como seus argumentos.
 */
-  console.log("O resultado da soma é:");
+
+  console.log("O resultado da soma é: ");
+  console.log(
+    sum(function (number1, number2) {
+      return number1 + number2;
+    })
+  );
+
   // ?
 
   /*
@@ -88,6 +102,11 @@ Agora declare outra variáveis chamadas `subtraction`, `multiplication`,
 `division` e `mod`, e atribua à elas `calculator`, passando números
 diferentes para cada chamada.
 */
+
+  var subtraction = calculator(3, 5);
+  var multiplication = calculator(5, 5);
+  var division = calculator(100, 2);
+  var modulo = calculator(20, 3)
   // ?
 
   /*
@@ -97,15 +116,35 @@ divisão e módulo (resto de divisão), conforme a função utilizada.
 As suas respostas devem estar abaixo dos `console.log` referentes à cada
 chamada.
 */
-  console.log("O resultado da subtração é:");
+  console.log("O resultado da subtracao é: ");
+  console.log(
+    subtraction(function (number1, number2) {
+      return number1 - number2;
+    })
+  );
+
   // ?
 
-  console.log("O resultado da multiplicação é:");
+  console.log("O resultado da multiplicacao é: ");
+  console.log(
+    multiplication(function (number1, number2) {
+      return number1 * number2;
+    })
+  );
+  // ?
+  console.log("O resultado da divisao é: ");
+  console.log(
+    division(function (number1, number2) {
+      return number1 / number2;
+    })
+  );
   // ?
 
-  console.log("O resultado da divisão é:");
-  // ?
-
-  console.log("O resto da divisão é:");
+  console.log("O resultado do modulo é: ");
+  console.log(
+    modulo(function (number1, number2) {
+      return number1 % number2;
+    })
+  );
   // ?
 })();
