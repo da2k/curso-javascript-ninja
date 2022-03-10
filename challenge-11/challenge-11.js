@@ -59,13 +59,15 @@ Faça um loop de 0 a 20, que adicione cada número como um item de um
 array chamado `numbers`. Se o contador for maior que 10, saia do loop.
 Mostre no console os números no array.
 */
+
+var numbers = []
 for(var i=0; i<20; i++) {
-  var numbers = [ i ]
-  if ( i === 10 ) {
-    continue
+  if ( i > 10 ) {
+    break
   }
-  console.log("De 0 a 10:", numbers);
+  numbers.push(i)
 }
+console.log("De 0 a 10:", numbers);
 
   // ?
   console.log('\n')
@@ -75,13 +77,13 @@ criado acima, só precisa ser reiniciado) números de 0 a 20, inclusive
 esses. Se o número for ímpar, pular para o próximo número.
 Mostrar no console os números do array.
 */
+numbers = [0]
   for(i=0; i<20; i++) {
-    var numbers = [i]
     if (i%2 === 0) {
       continue
     }
-    console.log("Pares de 0 a 20:", numbers);
+    numbers.push(i)
   }
-
+  console.log("Pares de 0 a 20:", numbers);
   // ?
 })();
