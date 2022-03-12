@@ -121,4 +121,73 @@ Mostre todos os itens do array acima, odenados alfabéticamente.
 */
 console.log( '\nAgora em ordem alfabética:', myName.sort());
 
+
+//Daqui pra baixo é um previa do desavio 13 que sera feito logo mais muito importante
+
+var arrProdutos = [10, 35, 20, 5, 70]
+arrProdutos.push(10)
+var totalaPagar = 0
+
+arrProdutos.forEach(function( item ) {
+  totalaPagar += item
+})
+
+console.log(totalaPagar)
+
+//everi todos tem que ser true
+console.log('\nEvery pra ver se tem numero impar.')
+var arrDePares = [ 2, 4, 6, 8]
+var numPar = arrDePares.every(function(itemPar) {
+  console.log(itemPar)
+  return itemPar % 2 === 0
+})
+console.log('Exemplo do every')
+console.log( numPar )
+
+//some pelo menos um tem que ser true
+var arr = [1, 2, 3, 4, 5, 6]
+var some = arr.some(function(items) {
+  return items % 2 === 0
+})
+console.log('Exemplo do same')
+console.log(some)
+
+//map percorre e cria outro fazendo alguma coisa se quiser nesse caso pedi pra somar = 1 em cada item
+var arrm = [2, 4, 6, 8, 10]
+var map = arrm.map(function(item, index, arraym) {
+  //return item + 1
+  return { index: index, item: item, arraym: arraym}
+})
+console.log('usando map')
+console.log(arrm, map)
+
+//o map ja cria um novo array pra gente
+//enquanto o usando o forEach pra percorrer eu teria que criar uma novo array
+var newArray = []
+arrm.forEach(function(itemf, indexf, arrayf) {
+  newArray.push({indexf: indexf, itemf: itemf})
+})
+console.log('newArray usando forEach: ')
+console.log(newArray)
+
+//ja o filter filtra e coloca apenas o que vc quer em um novo array
+var varfilter = arrm.filter(function (itemft, indexft, arrayft) {
+  return itemft >= 6
+})
+console.log('Usando o filter ')
+console.log((varfilter))
+
+//Nesse exemplo to usando os dois juntos
+var arrjunto = [1, 2, 3, 4, 5]
+ var mapjunto = arrjunto.map(function(itemjunto) {
+   return itemjunto + 10
+ }).filter(function ( itemjunto ) {
+   return itemjunto > 13
+ })
+
+ console.log('Exemplo usando encadeado map e filter\n Onde o map fez a adicao do item + 10\n E o filter filtrou apenas os maiores que 13 ')
+ console.log(mapjunto)
+
 })()
+
+
