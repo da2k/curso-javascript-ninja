@@ -92,6 +92,15 @@ for(i = 0; i < books.length; i++) {
     console.log(propriedade + ': ' + books[i][propriedade] )
   }
 }
+console.log('\nUsando ForEach')
+books.forEach(function( index, item) {
+  console.log(item, index)
+})
+
+console.log('\nUsando for normal')
+for(i=0; i<books.length; i++) {
+  console.log( i, books[i])
+}
 
 /*
 Crie um array chamado `myName`. Cada item desse array deve ser uma letra do
