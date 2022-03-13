@@ -26,12 +26,8 @@ dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
     var counterId;
 
     function startCounter(){
-        if(counterId) return;
-        function addNum(){
-            $cronometro.value++;
-            counterId = setTimeout(addNum, 1000);
-        };
-        addNum();
+        $cronometro.value = +$cronometro.value + 1;
+        counterId = setTimeout(startCounter, 1000);
     };
 
     function stopCounter() {
@@ -44,7 +40,10 @@ dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
         stopCounter();
     };
 
-    $button_start.addEventListener('click', startCounter, false);
+    $button_start.addEventListener('click', function() {
+        if(!counterId)
+            startCounter();
+    }, false);
     $button_stop.addEventListener('click', stopCounter, false);
     $button_reset.addEventListener('click', resetCounter, false);
 
