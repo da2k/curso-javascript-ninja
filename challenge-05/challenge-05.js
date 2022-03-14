@@ -29,7 +29,7 @@ function duoP(arry, numero) {
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
-var comum = [ true , " string " , 159 , false ,   function(){} ] ; 
+var comum = [ true , " string " , 159 , false ,   function(){} ] ;  
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
