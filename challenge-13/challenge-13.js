@@ -1,4 +1,4 @@
-/*
+( function() {/*
 Envolva todo o código desse desafio em uma IIFE.
 */
 
@@ -6,7 +6,9 @@ Envolva todo o código desse desafio em uma IIFE.
 Crie um array e mostre no console a representação em String desse array,
 usando o método visto na aula 13.
 */
-console.log( 'O array em formato de string é:' );
+var arrStr = [1, 2, 3, 4, 5, 6]
+var arrayModificado = arrStr.toString();
+console.log( 'O array em formato de string é:', arrayModificado );
 // ?
 
 /*
@@ -14,12 +16,23 @@ Crie 2 arrays `sul` e `sudeste`, que serão as regiões do Brasil.
 Cada array deve conter os estados dessa região.
 */
 // ?
+var arrSul = [], arrSudeste = []
+arrSul.push('PR', 'SC', 'RS')
+arrSudeste.push('SP', 'RJ', 'MG')
+
 
 /*
 Crie uma variável chamada `brasil`, que irá receber as duas regiões
 concatenadas. Mostre o `brasil` no console.
 */
-console.log( '\nAlguns Estados do Brasil:' );
+/// concatenar usando desestructure
+var brasilDesestru = [...arrSudeste, ...arrSul]
+console.log( '\nAlguns Estados do Brasil usando desestructure:', brasilDesestru );
+
+/// concatenar usando concat
+var brasilConcat = arrSudeste.concat(arrSul)
+console.log(`\nAlguns estados do Brasil Usando concat`, brasilConcat)
+
 // ?
 
 /*
@@ -148,3 +161,4 @@ Mostre o array filtrado acima no console.
 */
 console.log( '\nEstados com ID par:' );
 // ?
+})()
