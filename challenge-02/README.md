@@ -71,7 +71,7 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function testeMaldito(x,y,z) { 
- if(!x &&!y &&!z) {
+ if(!x && !y && !z) {
 return false;
 
 } else if(!y && !z) {
@@ -81,9 +81,6 @@ return x + y
 
 } else if(x && y && z) { 
 return (x+y)/z
-
-} else if(!x || !y || !z) {
-return false;
 
 } else {
 return null;
