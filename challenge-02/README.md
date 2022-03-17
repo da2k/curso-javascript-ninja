@@ -25,14 +25,15 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 function addValue() { 
-newV = 'O valor da variável agora é VALOR'
+newV = 25
+return 'O valor da variável agora é' + newV
 }
 
 // Invoque a função criada acima.
 addValue()
 
 // Qual o retorno da função? (Use comentários de bloco).
-// 'O valor da variável agora é VALOR' 
+// 'O valor da variável agora é 25' 
 
 /*
 Crie uma função com as seguintes características:
@@ -42,7 +43,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function multipliqueThree(x,y,z) {
-if(!x || !y || !z ) { 
+if(x === undefined || y === undefined || z === undefined) {
 return 'Preencha todos os valores corretamente!' 
 } else { 
 return ( x * y * z ) + 2 
@@ -71,7 +72,7 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function testeMaldito(x,y,z) { 
- if(!x && !y && !z) {
+ if(x === undefined || y === undefined || z === undefined)  {
 return false;
 
 } else if(!y && !z) {
