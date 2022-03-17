@@ -184,20 +184,23 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao = () => { 
-if(pessoa.sexo === 'Feminino') { 
-var resposta = `Olá, eu sou a ${pessoa.nome}, tenho ${pessoa.idade} anos, ${pessoa.altura}, meu peso é ${pessoa.peso} e, só hoje, eu já caminhei ${pessoa.caminhouQuantosMetros} metros!` 
+var sexo = 'o';
+var idade = 'anos'; 
+var metros = 'metros'
 
-} else if (pessoa.idade === 1 || pessoa.sexo === 'Feminino') { 
-var resposta = `Olá, eu sou o ${pessoa.nome}, tenho ${pessoa.idade} ano, ${pessoa.altura}, meu peso é ${pessoa.peso} e, só hoje, eu já caminhei ${pessoa.caminhouQuantosMetros} metros!` 
-
-} else if (pessoa.caminhouQuantosMetros === 1 || pessoa.idade === 1 || pessoa.sexo === 'Feminino') { 
-var resposta = `Olá, eu sou o ${pessoa.nome}, tenho ${pessoa.idade} anos, ${pessoa.altura}, meu peso é ${pessoa.peso} e, só hoje, eu já caminhei ${pessoa.caminhouQuantosMetros} metro!` 
-
-} else { 
-  var resposta = `Olá, eu sou o ${pessoa.nome}, tenho ${pessoa.idade} anos, ${pessoa.altura}, meu peso é ${pessoa.peso} e, só hoje, eu já caminhei ${pessoa.caminhouQuantosMetros} metros!` 
+if(pessoa.sexo === 'Feminino') {
+  sexo = 'a';
 }
 
-return resposta;
+if(pessoa.idade === 1) {
+ idade = 'ano'; 
+}
+
+if(pessoa.caminhouQuantosMetros === 1) { 
+ metros = 'metro';
+}
+
+return `Olá, eu sou ${sexo} ${pessoa.nome}, tenho ${pessoa.idade} ${idade}, ${pessoa.altura}m, meu peso é ${pessoa.peso}kg e, só hoje, eu já caminhei ${pessoa.caminhouQuantosMetros} ${metros}!` 
 
 }
 
