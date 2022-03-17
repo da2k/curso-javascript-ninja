@@ -45,9 +45,9 @@ Crie uma função com as seguintes características:
 function multipliqueThree(x,y,z) {
 if(x === undefined || y === undefined || z === undefined) {
 return 'Preencha todos os valores corretamente!' 
-} else { 
-return ( x * y * z ) + 2 
 } 
+return ( x * y * z ) + 2 
+
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
@@ -72,7 +72,7 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function testeMaldito(x,y,z) { 
- if(x === undefined || y === undefined || z === undefined)  {
+ if(x === undefined && y === undefined && z === undefined)  {
 return false;
 
 } else if(!y && !z) {
