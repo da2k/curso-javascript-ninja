@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Challenge 23</title>
+</head>
+<body>
+
+    <style>
+        .btnStyle {
+            width:  50px;
+            height: 40px;
+        }
+        .line {
+            align-items: center;
+            margin: 5px;
+        }
+        .teste {
+            display: flex;
+            flex-direction: column;
+            background-color: black;
+            align-items: center;
+            justify-content: center;
+            width: 25%;   
+            padding: 2%;
+        }
+    </style>
+
+    <div class="teste">   
+    <input data-js="tela" type="text" value="0" readonly="readonly" style="width: 90%; height: 15px;"/> 
+        <div class="Buttons">
+            <div class="line">
+                <button data-js="btnNumbers" value="0" class="btnStyle"> 0 </button>
+                <button data-js="btnNumbers" value="1"  class="btnStyle"> 1 </button>
+                <button data-js="btnNumbers" value="2"  class="btnStyle"> 2 </button>
+                <button data-js="btnNumbers" value="3"  class="btnStyle"> 3 </button>
+            </div>
+            <div class="line">
+                <button data-js="btnNumbers" value="4"  class="btnStyle"> 4 </button>
+                <button data-js="btnNumbers" value="5"  class="btnStyle"> 5 </button>
+                <button data-js="btnNumbers" value="6"   class="btnStyle"> 6 </button>
+                <button data-js="btnNumbers" value="7" class="btnStyle"> 7 </button>
+            </div>
+            <div class="line"> 
+                <button data-js="btnNumbers" value="8" class="btnStyle"> 8 </button>
+                <button data-js="btnNumbers" value="9" class="btnStyle"> 9 </button>
+                <button data-js="btnPlus" class="btnStyle"> + </button>
+                <button data-js="btnMinus" class="btnStyle"> - </button>
+            </div>
+            <div class="line">
+                <button data-js="btnMult" class="btnStyle"> * </button>
+                <button data-js="btnDiv" class="btnStyle"> / </button>
+                <button data-js="btnEqual" class="btnStyle"> = </button>
+                <button data-js="btnClear" class="btnStyle"> CE </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="challenge-23.js"></script>
+
+</body>
+</html>
