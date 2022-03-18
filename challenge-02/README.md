@@ -23,8 +23,8 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 function addValue() {
-    newVar = 10
-    return 'O valor da variável agora é ' + newVar
+  newVar = 10
+  return 'O valor da variável agora é ' + newVar
 }
 
 // Invoque a função criada acima.
@@ -41,10 +41,10 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function threeArgument(a, b, c) {
-    if(!a, !b, !c) {
-        return 'Preencha todos os valores corretamente!'
-    }
-    return a * b * c + 2
+  if(!a, !b, !c) {
+    return 'Preencha todos os valores corretamente!'
+  }
+  return a * b * c + 2
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
@@ -69,17 +69,17 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function threeArgs(x, y, z) {
-    if(x && !y && !z){
-        return x;
-    } else if(x && y && !z) {
-        return x + y
-    } else if(x && y && z) {
-        return x + y / z
-    } else if(!x && !y && !z) {
-        return false
-    } else {
-        return null
-    }
+  if(x && !y && !z){
+    return x;
+  } else if(x && y && !z) {
+    return x + y
+  } else if(x && y && z) {
+    return x + y / z
+  } else if(!x && !y && !z) {
+    return false
+  } else {
+    return null
+  }
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
