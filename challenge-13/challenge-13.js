@@ -168,5 +168,14 @@ var itemsPar = somaId.filter( function(item, index) { // aqui nao precisei do pa
 Mostre o array filtrado acima no console.
 */
 console.log( '\nEstados com ID par:', itemsPar );
-// ?
+
+//mais uma de some pra treinar
+var nomes = ['Anderson', 'Andrew', 'Fabiana', 'Sueli']
+
+var selectNome = nomes.some(function(item) {
+    return item === 'Anderson'
+})
+
+console.log(selectNome)
+
 })()
