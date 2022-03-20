@@ -1,75 +1,66 @@
-/*
-Nossa calculadora agora está funcional! A ideia desse desafio é modularizar
-o código, conforme vimos na aula anterior. Quebrar as responsabilidades
-em funções, onde cada função faça somente uma única coisa, e faça bem feito.
+(function(doc) {
 
-- Remova as duplicações de código;
-- agrupe os códigos que estão soltos em funções (declarações de variáveis,
-listeners de eventos, etc);
-- faça refactories para melhorar esse código, mas de forma que o mantenha com a
-mesma funcionalidade.
-*/
+    'use strict';
 
-var $visor = document.querySelector('[data-js="visor"]');
-var $buttonsNumbers = document.querySelectorAll('[data-js="button-number"]');
-var $buttonsOperations = document.querySelectorAll('[data-js="button-operation"]');
-var $buttonCE = document.querySelector('[data-js="button-ce"]');
-var $buttonEqual = document.querySelector('[data-js="button-equal"]');
+    var $display = doc.querySelector('[data-js="tela"]');
+    var $btnNumbers = doc.querySelectorAll('[data-js="btnNumbers"]');
+    var $btnOperators = doc.querySelectorAll('[data-js="btnOperator"]');
 
-Array.prototype.forEach.call($buttonsNumbers, function(button) {
-  button.addEventListener('click', handleClickNumber, false);
-});
-Array.prototype.forEach.call($buttonsOperations, function(button) {
-  button.addEventListener('click', handleClickOperation, false);
-});
-$buttonCE.addEventListener('click', handleClickCE, false);
-$buttonEqual.addEventListener('click', handleClickEqual, false);
+    var $btnEqual = doc.querySelector('[data-js="btnEQ"]');
+    var $btnClear = doc.querySelector('[data-js="btnCE"]');
 
-function handleClickNumber() {
-  $visor.value += this.value;
-}
 
-function handleClickOperation() {
-  $visor.value = removeLastItemIfItIsAnOperator($visor.value);
-  $visor.value += this.value;
-}
+    function removeLastCharIfItIsAnOperator(){
+        var operator = $display.value.slice(-1); 
+        if(operator === '+' || operator === '-' || operator === '*' || operator === '/' ) {
+            $display.value = $display.value.slice(0, -1); 
+        };
+    };
 
-function handleClickCE() {
-  $visor.value = 0;
-}
+    function checkIfDisplayIsEmpty() {
+        return ($display.value === '0');
+    };
+    
+    function checkIfItHasDivisionByZero(){
+        for(var i = 0; i + 1 < $display.value.length; i++) {
+            if($display.value[i] == '/' && $display.value[i + 1] == '0') {
+                return true;
+            }
+        }
+        return false;
+    };
 
-function isLastItemAnOperation(number) {
-  var operations = ['+', '-', 'x', '÷'];
-  var lastItem = number.split('').pop();
-  return operations.some(function(operator) {
-    return operator === lastItem;
-  });
-}
+    function addNumber(){
+        if(checkIfDisplayIsEmpty()) 
+            $display.value = this.value;        
+        else 
+            $display.value += this.value;        
+    };
 
-function removeLastItemIfItIsAnOperator(number) {
-  if(isLastItemAnOperation(number)) {
-    return number.slice(0, -1);
-  }
-  return number;
-}
+    function addOperator() {
+        removeLastCharIfItIsAnOperator();
+        $display.value += this.value;
+    };
+    
+    $btnNumbers.forEach(function(button) {
+        button.addEventListener('click', addNumber, false);
+    });
 
-function handleClickEqual() {
-  $visor.value = removeLastItemIfItIsAnOperator($visor.value);
-  var allValues = $visor.value.match(/\d+[+x÷-]?/g);
-  $visor.value = allValues.reduce(function(accumulated, actual) {
-    var firstValue = accumulated.slice(0, -1);
-    var operator = accumulated.split('').pop();
-    var lastValue = removeLastItemIfItIsAnOperator(actual);
-    var lastOperator = isLastItemAnOperation(actual) ? actual.split('').pop() : '';
-    switch(operator) {
-      case '+':
-        return ( Number(firstValue) + Number(lastValue) ) + lastOperator;
-      case '-':
-        return ( Number(firstValue) - Number(lastValue) ) + lastOperator;
-      case 'x':
-        return ( Number(firstValue) * Number(lastValue) ) + lastOperator;
-      case '÷':
-        return ( Number(firstValue) / Number(lastValue) ) + lastOperator;
-    }
-  });
-}
+    $btnOperators.forEach(function(button){
+        button.addEventListener('click', addOperator, false);
+    });
+
+    $btnClear.addEventListener('click', function(){
+        $display.value = '0';
+    }, false);
+
+    $btnEqual.addEventListener('click', function(){
+        if(checkIfItHasDivisionByZero()) {
+            alert("Não é possivel realizar uma divisão por zero!\nLimpando os valores...");
+            $display.value = '0';
+        } else {
+            $display.value = eval($display.value);
+        }
+    }, false);
+    
+})(document);
