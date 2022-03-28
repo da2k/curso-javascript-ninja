@@ -1,7 +1,6 @@
 /*
 O desafio dessa semana é criar uma mini library (biblioteca) para
 reutilizarmos nossos códigos quando fizermos manipulação de DOM!
-
 Requisitos:
 - O nome da lib deve ser "DOM".
 - Ela deve ser uma função construtora, que receberá uma string por parâmetro.
@@ -15,17 +14,40 @@ selecionados.
 selecionados.
 - O método `get` deve retornar os elementos.
 - O código abaixo deve funcionar corretamente após a lib criada.
-
 Dica: olhe os erros que acontecem no console, e vá resolvendo um a um.
 Só passe para o próximo problema quando tiver resolvido o anterior :)
 */
 // ?
+(function(){
 
-var $a = new DOM('[data-js="link"]');
-$a.on('click', function(e) {
-  e.preventDefault();
-  console.log('clicou');
-});
+  function DOM(elements) {
+    this.element = document.querySelectorAll(elements);
 
-console.log('Elementos selecionados:', $a.get());
-console.log('$a é filho de body?', $a.get()[0].parentNode === document.body);
+    this.on = function(evento, func) {
+      this.element.forEach(function(element) {
+        element.addEventListener(evento, func, false);
+      })
+    };
+
+    this.off = function() {
+      this.element.forEach(function(element) {
+        element.removeEventListener(evento, func, false);
+      })
+    };
+
+    this.get = function() {
+      return this.element;
+    };
+
+  }
+
+  var $a = new DOM('[data-js="link"]');
+  $a.on('click', function(e) {
+    e.preventDefault();
+    console.log('clicou');
+  });
+
+  console.log('Elementos selecionados:', $a.get());
+  console.log('$a é filho de body?', $a.get()[0].parentNode === document.body);
+
+})();
