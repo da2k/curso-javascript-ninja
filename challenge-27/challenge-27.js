@@ -41,64 +41,64 @@ O método isNull deve retornar `true` se o valor for null ou undefined.
     };
   }
 
-  DOM.prototype.forEach = function() {
+  DOM.forEach = function() {
     return Array.prototype.forEach.apply(this.element, arguments);
   };
 
-  DOM.prototype.map = function() {
+  DOM.map = function() {
     return Array.prototype.map.apply(this.element, arguments);
   };
 
-  DOM.prototype.filter = function() {
+  DOM.filter = function() {
     return Array.prototype.filter.apply(this.element, arguments);
   };
 
-  DOM.prototype.reduce = function() {
+  DOM.reduce = function() {
     return Array.prototype.reduce.apply(this.element, arguments);
   };
 
-  DOM.prototype.reduceRight = function() {
+  DOM.reduceRight = function() {
     return Array.prototype.reduceRight.apply(this.element, arguments);
   };
 
-  DOM.prototype.every = function() {
+  DOM.every = function() {
     return Array.prototype.reduce.every(this.element, arguments);
   };
 
-  DOM.prototype.some = function() {
+  DOM.some = function() {
     return Array.prototype.reduce.some(this.element, arguments);
   };
 
-  DOM.prototype.is = function is(obj){
+  DOM.is = function is(obj){
     return Object.prototype.toString.call(obj);
   };
 
-  DOM.prototype.isArray = function(obj) {
-    return DOM.prototype.is(obj) === '[object Array]'
+  DOM.isArray = function(obj) {
+    return DOM.is(obj) === '[object Array]'
   };
 
-  DOM.prototype.isObject = function(obj) {
-    return DOM.prototype.is(obj) === '[object Object]'
+  DOM.isObject = function(obj) {
+    return DOM.is(obj) === '[object Object]'
   };
 
-  DOM.prototype.isFunction = function(obj) {
-    return DOM.prototype.is(obj) === '[object Function]'
+  DOM.isFunction = function(obj) {
+    return DOM.is(obj) === '[object Function]'
   };
 
-  DOM.prototype.isNumber = function(obj) {
-    return DOM.prototype.is(obj) === '[object Number]'
+  DOM.isNumber = function(obj) {
+    return DOM.is(obj) === '[object Number]'
   };
 
-  DOM.prototype.isString = function(obj) {
-    return DOM.prototype.is(obj) === '[object String]'
+  DOM.isString = function(obj) {
+    return DOM.is(obj) === '[object String]'
   };
 
-  DOM.prototype.isBoolean = function(obj) {
-    return DOM.prototype.is(obj) === '[object Boolean]'
+  DOM.isBoolean = function(obj) {
+    return DOM.is(obj) === '[object Boolean]'
   };
 
-  DOM.prototype.isNull = function(obj) {
-    var result = DOM.prototype.is(obj);
+  DOM.isNull = function(obj) {
+    var result = DOM.is(obj);
     return result === '[object Null]' || result === '[object Undefined]';
   };
 
