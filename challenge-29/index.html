@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS ninja</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="form">
+    <h4 data-js="nomeEmpresa"></h4>
+    <h4 data-js="telefoneEmpresa"></h4>
+
+    <label>Marca / Modelo</label> <br>
+    <input type="text" data-js="marca">
+
+    <br>
+
+    <label> Ano </label> <br>
+    <input type="text" data-js="ano">
+
+    <br>
+
+    <label> Placa </label> <br>
+    <input type="text" data-js="placa">
+
+    <br>
+
+    <label> Cor </label> <br>
+    <input type="text" data-js="cor">
+
+    <br>
+
+    <label> URL da Imagem </label> <br>
+    <input type="url" data-js="img">
+
+    <br> <br>
+
+    <input type="submit" value="Cadastrar" data-js="submit">
+  </div>
+
+  <div class="table">
+    <table data-js="table" style="line-height:100px;">
+      <tr>
+        <th> Marca / Modelo </th>
+        <th> Ano </th>
+        <th> Placa </th>
+        <th> Cor </th>
+        <th> Foto </th>
+      </tr>
+    </table> 
+  </div>
+
+  <script src="DOM.js"></script>
+  <script src="httpClient.js"></script>
+  <script src="challenge-29.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.form {
+    width: 30%;
+    height: 30%;
+}
+
+.table {
+    width: 70%;
+    height: 70%;
+}
