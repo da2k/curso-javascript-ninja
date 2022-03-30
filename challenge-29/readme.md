@@ -1,0 +1,1 @@
+## run with some server to avoid problems with CORS
