@@ -87,7 +87,7 @@ no formato abaixo:
     "[PROPRIEDADE]: [VALOR]"
 */
 console.log('\n')
-for(i = 0; i < books.length; i++) {
+for(let i = 0; i < books.length; i++) {
   for ( var propriedade in bookDesconvertido[i] ) {
     console.log(propriedade + ': ' + books[i][propriedade] )
   }
