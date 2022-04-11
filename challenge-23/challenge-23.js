@@ -1,4 +1,7 @@
-/*
+(function (_win, doc) {
+  "use strict";
+
+  /*
 Vamos desenvolver mais um projeto. A ideia é fazer uma mini-calculadora.
 As regras são:
 
@@ -23,3 +26,76 @@ multiplicação (x), então no input deve aparecer "1+2x".
 input;
 - Ao pressionar o botão "CE", o input deve ficar zerado.
 */
+  var $visor = document.querySelector('[data-js="visor"]');
+  var $buttonsNumbers = document.querySelectorAll('[data-js="button-number"]');
+  var $buttonsOpeation = document.querySelectorAll('[data-js="button-operation"]');
+  var $buttonCE = document.querySelector('[data-id="btnce"]');
+  var $buttonEqual = document.querySelector('[data-id="btnresult"]');
+
+  /*
+  A API DOM recebeu algumas atualizações, e uma delas foi o método `forEach`
+  para o objeto NodeList. Então não precisamos mais usar o
+  `Array.prototype.forEach` para transformar a NodeList em um array =)
+  */
+
+  Array.prototype.forEach.call($buttonsNumbers, function (button) {
+    button.addEventListener('click', handleClickNumber, false);
+  });
+
+  Array.prototype.forEach.call($buttonsOpeation, function (button) {
+    button.addEventListener('click', handleClickOperation, false);
+  });
+
+  $buttonCE.addEventListener('click', handleClickCE, false);
+  $buttonEqual.addEventListener('click', handleClickEqual, false);
+
+  function handleClickNumber() {
+    $visor.value += this.value;
+  }
+
+  function handleClickCE() {
+    $visor.value = 0;
+  }
+
+  function handleClickOperation() {
+    $visor.value = removeLastItemIfIsAnOperator($visor.value);
+    $visor.value += this.value;
+  }
+
+  function removeLastItemIfIsAnOperator(number) {
+    if (isLastItemAnOperation(number)) {
+      return number.slice(0, -1);
+    }
+    return number;
+  }
+
+  function isLastItemAnOperation(number) {
+    var operations = ['+', '-', 'x', '÷'];
+    var lastItem = number.split("").pop();
+    return operations.some.call(function (operator) {
+      return operator === lastItem;
+    });
+  }
+
+  function handleClickEqual() {
+    $visor.value = removeLastItemIfIsAnOperator($visor.value);
+    var allValues = $visor.value.match(/\d+[+-x÷]?/g);
+    $visor.value = allValues.reduce.call(function (accumulated, actual) {
+      var firstValue = accumulated.slice(0, -1);
+      var operator = accumulated.split('').pop();
+      var lastValue = removeLastItemIfIsAnOperator(actual);
+      var lastOperator = isLastItemAnOperation(actual) ? actual.split("").pop() : "";
+
+      switch (operator) {
+        case "+":
+          return (Number(firstValue) + Number(lastValue)) + lastOperator;
+        case "-":
+          return (Number(firstValue) - Number(lastValue)) + lastOperator;
+        case "x":
+          return (Number(firstValue) * Number(lastValue)) + lastOperator;
+        case "/":
+          return (Number(firstValue) / Number(lastValue)) + lastOperator;
+      }
+    });
+  }
+})(window, document);
