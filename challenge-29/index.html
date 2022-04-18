@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Desafio 29</title>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    header {
+      text-align: center;
+    }
+
+    form, table {
+      float: left;
+      width: 50%;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+    }
+
+    input {
+      padding: 5px;
+      width: 300px;
+    }
+
+    button {
+      background: green;
+      border: 0;
+      color: #fff;
+      padding: 10px 20px;
+    }
+
+    button:hover,
+    button:focus {
+      background: darkgreen;
+      cursor: pointer;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    td, th {
+      padding: 5px 15px;
+      border: 1px solid #ccc;
+    }
+
+    img {
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>
+      <span data-js="company-name"></span> -
+      <span data-js="company-phone"></span>
+    </h1>
+  </header>
+  <form action="/" data-js="form-register">
+    <ul>
+      <li>
+        <label>Imagem do carro:</label>
+        <input type="url" data-js="image" />
+      </li>
+      <li>
+        <label>Marca / Modelo:</label>
+        <input type="text" data-js="brand-model" />
+      </li>
+      <li>
+        <label>Ano:</label>
+        <input type="text" data-js="year" />
+      </li>
+      <li>
+        <label>Placa:</label>
+        <input type="text" data-js="plate" />
+      </li>
+      <li>
+        <label>Cor:</label>
+        <input type="text" data-js="color" />
+      </li>
+      <li>
+        <button type="submit">Cadastrar</button>
+      </li>
+    </ul>
+  </form>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Imagem</th>
+        <th>Marca / Modelo</th>
+        <th>Ano</th>
+        <th>Placa</th>
+        <th>Cor</th>
+      </tr>
+    </thead>
+
+    <tbody data-js="table-car"></tbody>
+  </table>
+
+  <script src="dom.js"></script>
+  <script src="challenge-29.js"></script>
+</body>
+</html>
