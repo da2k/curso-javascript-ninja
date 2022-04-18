@@ -4,29 +4,36 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-?
+function soma(numero1, numero2){
+	return numero1 + numero2;
+};
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-?
+var Soma = soma(12, 5987) + 5;
 
 // Qual o valor atualizado dessa variável?
-?
+6004;
 
 // Declare uma nova variável, sem valor.
-?
+var novaVariavel;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-?
+function modificaVariavel(){
+	novaVariavel = 457;
+	return 'O valor da variável agora é ' + novaVariavel;
+}
 
 // Invoque a função criada acima.
-?
+var modificaVariavel = modificaVariavel();
 
 // Qual o retorno da função? (Use comentários de bloco).
-?
+/*
+'O valor da variável agora é 457'
+*/
 
 /*
 Crie uma função com as seguintes características:
@@ -35,19 +42,24 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-?
+function multiplica3(argumento1, argumento2, argumento3){
+	if(argumento1 == undefined || argumento2 == undefined || argumento3 == undefined){
+		return 'Preencha todos os valores corretamente!';
+	}
+	return (argumento1 * argumento2 * argumento3) + 2;
+};
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+var multiplica3 = multiplica3(10, 2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+// 
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+var multiplica3 = multiplica3(39, 23, 74);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+
 
 /*
 Crie uma função com as seguintes características:
