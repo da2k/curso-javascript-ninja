@@ -74,7 +74,7 @@ function threeArgs(x, y, z) {
   } else if(x && y && !z) {
     return x + y
   } else if(x && y && z) {
-    return x + y / z
+    return ( x + y ) / z
   } else if(!x && !y && !z) {
     return false
   } else {
