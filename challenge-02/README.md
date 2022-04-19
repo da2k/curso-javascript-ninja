@@ -28,7 +28,7 @@ function modificaVariavel(){
 }
 
 // Invoque a função criada acima.
-var modificaVariavel = modificaVariavel();
+modificaVariavel();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
