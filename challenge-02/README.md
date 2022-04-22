@@ -95,7 +95,8 @@ function funcaoMaluca(argumento1, argumento2, argumento3){
 funcaoMaluca('sim')            //'sim'
 funcaoMaluca('sim', 2)         //'sim2'
 funcaoMaluca('sim', 57, 3)     //NaN
-
-
+funcaoMaluca()                 //false
+funcaoMaluca('sim', 57, 3)            //NaN (tentando forçar um resultado de retorno null...)
+funcaoMaluca('sim', 57, 3, 57, 100)   //NaN (sem sucesso)
 
 ```
