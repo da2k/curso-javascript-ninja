@@ -4,6 +4,7 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
+
 function soma(numero1, numero2){
 	return numero1 + numero2;
 };
@@ -45,14 +46,21 @@ Crie uma função com as seguintes características:
 */
 
 function multiplica3(argumento1, argumento2, argumento3){
-	if(argumento1 == undefined || argumento2 == undefined || argumento3 == undefined){
+	if(argumento1 === undefined || argumento2 === undefined || argumento3 === undefined){
 		return 'Preencha todos os valores corretamente!';
 	}
 	return (argumento1 * argumento2 * argumento3) + 2;
 }
 
+/* Mesmo retorno da função com a comparação de === e de == para o undefined dentro do if
+> multiplica3(undefined, undefined, undefined)
+'Preencha todos os valores corretamente!'
+> multiplica3('undefined', 'undefined', 'undefined')
+NaN
+*/
+
 // Invoque a função criada acima, passando só dois números como argumento.
-var multiplica3 = multiplica3(10, 2);
+multiplica3(10, 2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 // 'Preencha todos os valores corretamente!'
@@ -69,8 +77,8 @@ Crie uma função com as seguintes características:
 2. Se somente um argumento for passado, retorne o valor do argumento. ✓
 3. Se dois argumentos forem passados, retorne a soma dos dois argumentos. ✓
 4. Se todos os argumentos forem passados, retorne a soma do primeiro com o segundo, e o resultado, dividido pelo terceiro. ✓
-5. Se nenhum argumento for passado, retorne o valor booleano `false`.
-6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
+5. Se nenhum argumento for passado, retorne o valor booleano `false`. ✓
+6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`. ✓
 */
 
 function funcaoMaluca(argumento1, argumento2, argumento3){
@@ -92,6 +100,7 @@ function funcaoMaluca(argumento1, argumento2, argumento3){
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
+
 funcaoMaluca('sim')            //'sim'
 funcaoMaluca('sim', 2)         //'sim2'
 funcaoMaluca('sim', 57, 3)     //NaN
