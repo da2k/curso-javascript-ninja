@@ -22,13 +22,16 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-?
+function addValue() {
+    newvar = 25;
+    return 'O valor da variável agora é ' + newvar;
+}
 
 // Invoque a função criada acima.
-?
+addValue();
 
 // Qual o retorno da função? (Use comentários de bloco).
-?
+/* O valor da variável agora é 25 */
 
 /*
 Crie uma função com as seguintes características:
@@ -37,7 +40,7 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-?
+
 
 // Invoque a função criada acima, passando só dois números como argumento.
 ?
