@@ -27,3 +27,66 @@ Depois, envie um pull request no repositório do curso, colocando no console.log
 abaixo a URL do pull request no seu repositório.
 */
 console.log('Link do pull request do seu projeto');
+
+
+
+
+ var counter = 12; 
+undefined
+ do { 
+console.log(counter++ );
+ } while( counter < 10);
+
+ var counter = 9
+ while (counter <10){
+     console.log(counter++);
+ }
+
+ for( var instrucao = 0; instrucao< 10; instrucao++){
+     console.log(instrucao);
+ } 
+
+var car = {
+    brand: 'VW',model:'Gol',year:2022};
+
+for (var abacaxi in car ){console.log(abacaxi);}
+
+
+
+
+function myFunction() { 
+    var number = 200;
+    if( number === 10 ) { 
+        return true;
+    }
+    return false;
+}
+console.log(myFunction());
+
+
+
+function myFunction() { 
+    var number = 200;
+    if( number === 10 ) { 
+        return true;
+    }
+    return false;
+}
+console.log(myFunction());
+
+
+
+
+function myFunction() { 
+    var number = 5;
+    if( number === 10 ) { 
+        return true;
+        
+    }
+    var number2 = 5;
+    var name = 'Ariosvaldo de Azevedo Neto';
+    return name + ' ' + number2  ;
+}
+console.log(myFunction());
+
+
