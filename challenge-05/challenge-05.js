@@ -36,8 +36,16 @@ var arrayFiveValues = [true,undefined,'string',10,null]
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-// ?
+recebeDoisParametros(arrayFiveValues,4) 
+null
 
+/*
+ 
+ ASSISTIR AS DUAS ULTIMAS AULAS 
+ PARA ENTENDER MELHOR A PARTE 
+ MENCIONADA A BAIXO DA FUNÇÃO "BOOK"
+
+*/
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
 livro. Dentro dessa função, declare uma variável que recebe um objeto com as
@@ -52,19 +60,30 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-// ?
 
+// 
+?
+function book(argLivros){
+    return Livros = { 
+        mobi_Dick: {qtdPag: 384, autor: 'Herman', editora:'irene'},
+        naruto: {qtdPag: 10000, autor: 'Mashashi kishimoto', editora:'japão'},
+        janderson :{qtdPag: 1000, autor:'Janderson', editora:'Alvés'}
+    
+    }
+    
+}
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-// ?
+book();
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// ?
+var frase = 'O livro ' + book().naruto + ' tem ' + book().naruto.qtdPag + ' páginas !'
+//trazer o nome do livro na string 
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
