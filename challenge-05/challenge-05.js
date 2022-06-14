@@ -65,9 +65,9 @@ os livros.
 ?
 function book(argLivros){
     return Livros = { 
-        mobi_Dick: {qtdPag: 384, autor: 'Herman', editora:'irene'},
-        naruto: {qtdPag: 10000, autor: 'Mashashi kishimoto', editora:'japão'},
-        janderson :{qtdPag: 1000, autor:'Janderson', editora:'Alvés'}
+        mobi_Dick: {nomeDoLivro:'Mobi Dick', qtdPag: 384, autor: 'Herman', editora:'irene'},
+        naruto: {nomeDoLivro:'Naruto', qtdPag: 10000, autor: 'Mashashi kishimoto', editora:'japão'},
+        janderson :{nomeDoLivro:'Janderson', qtdPag: 1000, autor:'Janderson', editora:'Alvés'}
     
     }
     
@@ -82,16 +82,14 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-var frase = 'O livro ' + book().naruto + ' tem ' + book().naruto.qtdPag + ' páginas !'
-//trazer o nome do livro na string 
+'O livro ' + book().naruto.nomeDoLivro + ' tem ' + book().naruto.qtdPag + ' páginas !'
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
-
+ 'O autor do livro ' + book().naruto.nomeDoLivro + ' é ' + book().naruto.autor + '!';
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
