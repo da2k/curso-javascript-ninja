@@ -1,3 +1,6 @@
+(function () {
+  'use strict'; 
+
   /*
   No HTML:
   - Crie um formulário com um input de texto que receberá um CEP e um botão
@@ -25,3 +28,104 @@
   - Utilize a lib DOM criada anteriormente para facilitar a manipulação e
   adicionar as informações em tela.
   */
+
+
+
+   class DOM {
+     constructor(elements) {
+       this.element = document.querySelectorAll(elements); 
+     }
+   }
+
+ DOM.prototype.on = function on(eventType , callback) {
+   Array.prototype.forEach(this.element , function(element) {
+     element.addEventListener( eventType , callback , false );
+   }); 
+ } ; 
+
+ DOM.prototype.off = function off( eventType , callback){ 
+   Array.prototype.forEach(this.element , function(element){
+     element.removeEventListener( eventType , callback , false ); 
+   })} 
+
+ DOM.prototype.get = function get () {
+   return this.element; 
+}; 
+
+
+var $formCep = document.querySelector('[data-js="form-cep"]'); 
+var $inputCEP = document.querySelector('[data-js="input-cep"]');
+var $lagradouro = document.querySelector('[data-js="lagradouro"]'); 
+var $bairro = document.querySelector('[data-js="bairro"]');
+var $estado = document.querySelector('[data-js="estado"]');
+var $cep = document.querySelector('[data-js="cidade"]'); 
+
+$formCep.addEventListener('click', handleSubmitFormCep , false ); 
+var ajax = new XMLHttpRequest(); 
+
+
+function handleSubmitFormCep (event){ 
+   event.defaultPrevented(); 
+   var url =  getUrl(); 
+   ajax.open( 'get' , url); 
+   ajax.send(); 
+   ajax.addEventListener('readystatechange', handleReadyStateChange); 
+}
+
+
+function getUrl () { 
+   return 'http://cep.correiosControl.com.br/[cep].json'.replace(
+    'CEP',
+    cleanrCep()) 
+} 
+
+
+function handleReadyStateChange () { 
+  if( isrequestOk()) 
+    fillCepfilds(); 
+    getMenssage('ok'); 
+}
+
+function isrequestOk () { 
+  return ajax.readyState === 4 && ajax.status === 200; 
+}
+
+function fillCepfilds () { 
+  var data = parseData();
+   if (!data) 
+     getMenssage('erro'); 
+   console.log('DATA' , data );  
+  var $lagradouro = document.querySelector('[data-js="lagradouro"]'); 
+  var $bairro = document.querySelector('[data-js="bairro"]');
+  var $estado = document.querySelector('[data-js="estado"]');
+  var $cep = document.querySelector('[data-js="cidade"]');
+
+  $lagradouro.get()[0].responseText = data.lagradouro;  
+  $bairro.get()[0].responseText = data.lagradouro;  
+  $estado.get()[0].responseText = data.uf;  
+  $cep.get()[0].responseText = data.localidade;  
+}
+
+function parseData () { 
+  result = null ; 
+  try { 
+    result = JSON.parse(ajax.responseText) ; 
+  }
+  catch(e) { 
+    result = null; 
+  }
+  return result
+}
+
+function getMenssage(type) { 
+  var cep = $cep.get()[0].value ; 
+  var  mensagem = {  
+    loading: "Buscando informações para o CEP [CEP]...", 
+    ok: "Não encontramos o endereço para o CEP [CEP]." , 
+    erro: "Endereço referente ao CEP [CEP]:"
+  }
+   var $status = new DOM ('[data-js"status"]') 
+   $status.get()[0].responseText = mensagem[type]; 
+}; 
+
+})()
