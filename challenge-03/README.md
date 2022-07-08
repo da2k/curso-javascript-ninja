@@ -70,19 +70,26 @@ return 'ola! meu nome é' + pessoa.nome + pessoa.sobrenome + '!';
 Crie um método chamado `mostrarIdade`, que retorne a frase:
 - "Olá, eu tenho [IDADE] anos!"
 */
-?
+pessoa.mostrarIdade = function (){
+return 'Ola, eu tenho' + pessoa.idade + 'anos!';
+}
 
 /*
 Crie um método chamado `mostrarPeso`, que retorne a frase:
 - "Eu peso [PESO]Kg."
 */
-?
+pessoa.mostrarPeso = function (){
+return 'Eu peso' + pessoa.peso + 'kg';
+}
 
 /*
 Crie um método chamado `mostrarAltura` que retorne a frase:
 - "Minha altura é [ALTURA]m."
 */
-?
+pessoa.mostrarAltura = function(){
+return 'minha altura é' + pessoa.altura + 'm.';
+}
+
 
 /*
 Agora vamos brincar um pouco com o objeto criado:
