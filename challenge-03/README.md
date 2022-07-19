@@ -17,15 +17,15 @@ As propriedades e tipos de valores para cada propriedade desse objeto devem ser:
 - `caminhouQuantosMetros` - Number - recebe "zero" por padrão
 */
 var pessoa = {
-  nome : 'goku',
-  sobrenome : 'sayajin',
-  sexo : 'masculino',
-  idade : 20,
-  altura : 1.80,
-  peso : 95,
-  andando : false,
-  caminhouQuantosMetros : 0
-}
+  nome: "goku",
+  sobrenome: "sayajin",
+  sexo: "masculino",
+  idade: 20,
+  altura: 1.8,
+  peso: 95,
+  andando: false,
+  caminhouQuantosMetros: 0,
+};
 
 /*
 Adicione um método ao objeto `pessoa` chamado `fazerAniversario`. O método deve
@@ -33,8 +33,8 @@ alterar o valor da propriedade `idade` dessa pessoa, somando `1` a cada vez que
 for chamado.
 */
 pessoa.fazerAniversario = function () {
-  pessoa.idade++
-}
+  pessoa.idade++;
+};
 
 /*
 Adicione um método ao objeto `pessoa` chamado `andar`, que terá as seguintes
@@ -47,117 +47,117 @@ valor dessa propriedade a quantidade passada por parâmetro;
 booleano que representa "verdadeiro";
 */
 pessoa.andar = function (m) {
-  pessoa.caminhouQuantosMetros += m
-  pessoa.andando = true
-}
+  pessoa.caminhouQuantosMetros += m;
+  pessoa.andando = true;
+};
 
 /*
 Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o valor
 da propriedade `andando` para o valor booleano que representa "falso".
 */
 pessoa.parar = function () {
-  pessoa.andando = false
-}
+  pessoa.andando = false;
+};
 
 /*
 Crie um método chamado `nomeCompleto`, que retorne a frase:
 - "Olá! Meu nome é [NOME] [SOBRENOME]!"
 */
 pessoa.nomeCompleto = function () {
-  return `Olá! Meu nome é  ${pessoa.nome}  ${pessoa.sobrenome} !`
-}
+  return `Olá! Meu nome é  ${pessoa.nome}  ${pessoa.sobrenome} !`;
+};
 
 /*
 Crie um método chamado `mostrarIdade`, que retorne a frase:
 - "Olá, eu tenho [IDADE] anos!"
 */
 pessoa.mostrarIdade = function () {
-  return `Olá, eu tenho ${pessoa.idade} anos!` 
-}
+  return `Olá, eu tenho ${pessoa.idade} anos!`;
+};
 
 /*
 Crie um método chamado `mostrarPeso`, que retorne a frase:
 - "Eu peso [PESO]Kg."
 */
 pessoa.mostrarPeso = function () {
-  return `Eu peso ${pessoa.peso}Kg.`
-}
+  return `Eu peso ${pessoa.peso}Kg.`;
+};
 
 /*
 Crie um método chamado `mostrarAltura` que retorne a frase:
 - "Minha altura é [ALTURA]m."
 */
-pessoa.mostrarAltura = () => `Minha altura é ${pessoa.altura}m.`
+pessoa.mostrarAltura = () => `Minha altura é ${pessoa.altura}m.`;
 
 /*
 Agora vamos brincar um pouco com o objeto criado:
 Qual o nome completo da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.nomeCompleto() // 'Olá! Meu nome é goku sayajin !'
+pessoa.nomeCompleto(); // 'Olá! Meu nome é goku sayajin !'
 
 /*
 Qual a idade da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.mostrarIdade() // 'Olá, eu tenho 20 anos!'
+pessoa.mostrarIdade(); // 'Olá, eu tenho 20 anos!'
 
 /*
 Qual o peso da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.mostrarPeso() // 'Eu peso 95kg.'
+pessoa.mostrarPeso(); // 'Eu peso 95kg.'
 
 /*
 Qual a altura da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.mostrarAltura() // 'Minha altura é 1.8m.'
+pessoa.mostrarAltura(); // 'Minha altura é 1.8m.'
 
 /*
 Faça a `pessoa` fazer 3 aniversários.
 */
-pessoa.fazerAniversario()
-pessoa.fazerAniversario()
-pessoa.fazerAniversario()
+pessoa.fazerAniversario();
+pessoa.fazerAniversario();
+pessoa.fazerAniversario();
 
 /*
 Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
 comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
-pessoa.mostrarIdade() // 'Olá, eu tenho 23 anos!'
+pessoa.mostrarIdade(); // 'Olá, eu tenho 23 anos!'
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
 com metragens diferentes passadas por parâmetro.
 */
-pessoa.andar(30)
-pessoa.andar(10)
-pessoa.andar(1)
+pessoa.andar(30);
+pessoa.andar(10);
+pessoa.andar(1);
 
 /*
 A pessoa ainda está andando? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.andando // true
+pessoa.andando; // true
 
 /*
 Se a pessoa ainda está andando, faça-a parar.
 */
-pessoa.parar()
+pessoa.parar();
 
 /*
 E agora: a pessoa ainda está andando? (Use uma instrução para responder e
 comentários inline ao lado da instrução para mostrar a resposta retornada)
 */
-pessoa.andando //false
+pessoa.andando; //false
 
 /*
 Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
 inline ao lado da instrução para mostrar a resposta retornada)
 */
-pessoa.caminhouQuantosMetros // 41
+pessoa.caminhouQuantosMetros; // 41
 
 /*
 Agora vamos deixar a brincadeira um pouco mais divertida! :D
@@ -177,25 +177,25 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao = function () {
-  var sexo = 'o'
-  var anos = 'anos'
-  var metros = 'metros'
+  var sexo = "o";
+  var anos = "anos";
+  var metros = "metros";
 
-  if ( pessoa.sexo === 'feminino' ) {
-    sexo = 'a'
+  if (pessoa.sexo === "feminino") {
+    sexo = "a";
   }
 
-  if ( pessoa.idade === 1) {
-    anos = ano
+  if (pessoa.idade === 1) {
+    anos = ano;
   }
 
-  if ( pessoa.caminhouQuantosMetros === 1) {
-    metros = metro
-  } 
+  if (pessoa.caminhouQuantosMetros === 1) {
+    metros = metro;
+  }
 
-  return `Olá, eu sou ${sexo} ${pessoa.nome} ${pessoa.sobrenome}, tenho ${pessoa.idade} ${anos}, ${pessoa.altura}, meu peso é ${pessoa.peso}Kg e, só hoje, eu já caminhei ${pessoa.caminhouQuantosMetros} ${metros}`
-}
+  return `Olá, eu sou ${sexo} ${pessoa.nome} ${pessoa.sobrenome}, tenho ${pessoa.idade} ${anos}, ${pessoa.altura}, meu peso é ${pessoa.peso}Kg e, só hoje, eu já caminhei ${pessoa.caminhouQuantosMetros} ${metros}`;
+};
 
 // Agora, apresente-se ;)
-pessoa.apresentacao() /*'Olá, eu sou o goku sayajin, tenho 23 anos, 1.8, meu peso é 95Kg e, só hoje, eu já caminhei 41 metros'*/
+pessoa.apresentacao(); /*'Olá, eu sou o goku sayajin, tenho 23 anos, 1.8, meu peso é 95Kg e, só hoje, eu já caminhei 41 metros'*/
 ```
