@@ -146,19 +146,19 @@ carro.cor //verde musgo
 carro.obterMarcaModelo() // 'Esse carro é um audi Q8'
 
 // Adicione 2 pessoas no carro.
-entraPessoas(2) // 'Já temos 2 pessoas no carro!'
+carro.entraPessoas(2) // 'Já temos 2 pessoas no carro!'
 
 // Adicione mais 4 pessoas no carro.
-entraPessoas(4) // 'Só cabem mais 3 pessoas!'
+carro.entraPessoas(4) // 'Só cabem mais 3 pessoas!'
 
 // Faça o carro encher.
-entraPessoas(3) // 'Já temos 5 pessoas no carro!'
+carro.entraPessoas(3) // 'Já temos 5 pessoas no carro!'
 
 // Tire 4 pessoas do carro.
-entraPessoas(-4) // 'Já temos 1 pessoas no carro!'
+carro.entraPessoas(-4) // 'Já temos 1 pessoas no carro!'
 
 // Adicione 10 pessoas no carro.
-entraPessoas(10) // 'Só cabem mais 4 pessoas!'
+carro.entraPessoas(10) // 'Só cabem mais 4 pessoas!'
 
 // Quantas pessoas temos no carro?
 carro.quantidadePessoas //1
