@@ -35,7 +35,11 @@ var fiveValues = [ 1, '2', true, null, undefined]
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-console.log(fiveValues)
+console.log(doubleParam(fiveValues, 0))
+console.log(doubleParam(fiveValues, 1))
+console.log(doubleParam(fiveValues, 2))
+console.log(doubleParam(fiveValues, 3))
+console.log(doubleParam(fiveValues, 4))
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
