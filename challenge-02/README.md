@@ -69,16 +69,18 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-function funcaoFinal(x, y, z) {
-    if (x == null && y == null && z == null){
+function funcaoFinal( x, y, z ) {
+    if ( x !== undefined && y === undefined && z === undefined ) {
+        return x;
+    } else if ( x !== undefined && y !== undefined && z === undefined ) {
+        return x + y;
+    } else if ( x !== undefined && y !== undefined && z !== undefined ) {
+        return ( x + y ) / z;
+    } else if ( x === undefined && y === undefined && z === undefined ) {
         return false;
-    } else if (x != null && y != null && z != null){
-        return (x+y)/z;
-    } else if (z == null){
-        return x+y;
     } else {
         return null;
-    }
+    } 
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
