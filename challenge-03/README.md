@@ -46,37 +46,44 @@ valor dessa propriedade a quantidade passada por parâmetro;
 - Ele deverá modificar o valor da propriedade `andando` para o valor
 booleano que representa "verdadeiro";
 */
-?
+pessoa.andar = function(metrosCaminhados){
+  pessoa.andando = true
+  pessoa.caminhouQuantosMetros += metrosCaminhados
+}
 
 /*
 Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o valor
 da propriedade `andando` para o valor booleano que representa "falso".
 */
-?
+pessoa.parar = function(){
+  pessoa.andando = false
+}
 
 /*
 Crie um método chamado `nomeCompleto`, que retorne a frase:
 - "Olá! Meu nome é [NOME] [SOBRENOME]!"
 */
-?
+pessoa.nomeCompleto = () => `Olá! Meu nome é ${pessoa.nome} ${pessoa.sobrenome}!`
 
 /*
 Crie um método chamado `mostrarIdade`, que retorne a frase:
 - "Olá, eu tenho [IDADE] anos!"
 */
-?
+pessoa.mostrarIdade = () => `Olá, eu tenho ${pessoa.idade}`
 
 /*
 Crie um método chamado `mostrarPeso`, que retorne a frase:
 - "Eu peso [PESO]Kg."
 */
-?
+pessoa.mostrarPeso = () => `Eu peso ${pessoa.peso}Kg.`
+
 
 /*
 Crie um método chamado `mostrarAltura` que retorne a frase:
 - "Minha altura é [ALTURA]m."
 */
-?
+pessoa.mostrarAltura = () => `Minha altura é ${pessoa.altura}m.`
+
 
 /*
 Agora vamos brincar um pouco com o objeto criado:
