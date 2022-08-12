@@ -153,7 +153,8 @@ pessoa.parar()
 E agora: a pessoa ainda está andando? (Use uma instrução para responder e
 comentários inline ao lado da instrução para mostrar a resposta retornada)
 */
-não
+pessoa.andando
+
 
 /*
 Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
