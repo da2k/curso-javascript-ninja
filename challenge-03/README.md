@@ -181,5 +181,23 @@ correta, de acordo com os dados inseridos no objeto.
 ?
 
 // Agora, apresente-se ;)
-?
+pessoa.apresentacao = () => {
+  var artigo = 'o'
+  var idade = 'anos'
+  var metrica = 'metros'
+  if(pessoa.sexo === 'Feminino'){
+    artigo = 'a'
+   } 
+  if(pessoa.idade <=1){
+    idade = 'anos'
+    }
+  if(pessoa.caminhouQuantosMetros <=1){
+     metrica = 'metro'
+    }
+    
+  return `Olá, eu sou ${artigo} ${pessoa.nome} ${ pessoa.sobrenome}, tenho ${pessoa.idade} ${idade}, ${pessoa.altura}, meu peso é ${pessoa.peso} e, só hoje, eu já caminhei ${pessoa.caminhouQuantosMetros} ${metrica}!`
+  
+}
+
+
 ```
