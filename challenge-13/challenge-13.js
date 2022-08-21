@@ -77,7 +77,7 @@ Mostre no console os estados do nordeste.
 Remova de `brasil` os estados do `sudeste`, colocando-os em uma variável
 chamada `newSudeste`.
 */
-  let newSudeste = brasil.slice(5);
+  let newSudeste = brasil.splice(5);
 
   /*
 Adicione os estados do `nordeste` ao array `brasil`. Esses estados devem
