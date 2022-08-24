@@ -2,8 +2,7 @@
 
 ```js
 // Declarar uma variável qualquer, que receba um objeto vazio.
-objetoVazio = {}
-var variavelObjetoVazio = objetoVazio
+var variavelObjetoVazio = {}
 
 /*
 Declarar uma variável `pessoa`, que receba suas informações pessoais.
@@ -20,6 +19,7 @@ As propriedades e tipos de valores para cada propriedade desse objeto devem ser:
 pessoa = {
   nome: 'Rafael',
   sobrenome: 'Gomes',
+  sexo: 'M',
   idade: 42,
   altura: 1.77,
   peso: 88,
@@ -32,7 +32,7 @@ Adicione um método ao objeto `pessoa` chamado `fazerAniversario`. O método dev
 alterar o valor da propriedade `idade` dessa pessoa, somando `1` a cada vez que
 for chamado.
 */
-pessoa.aniversario = function() {
+pessoa.fazerAniversario = function() {
 	this.idade++;
 }
 
@@ -64,7 +64,7 @@ Crie um método chamado `nomeCompleto`, que retorne a frase:
 - "Olá! Meu nome é [NOME] [SOBRENOME]!"
 */
 pessoa.nomeCompleto = function() {
-... return "Olá! Meu nome é " + this.nome + " " + this.sobrenome;
+... return "Olá! Meu nome é " + this.nome + " " + this.sobrenome + "!";
 ... }
 
 /*
@@ -96,7 +96,7 @@ Agora vamos brincar um pouco com o objeto criado:
 Qual o nome completo da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.nomeCompleto() // 'Olá! Meu nome é Rafael Gomes'
+pessoa.nomeCompleto() // 'Olá! Meu nome é Rafael Gomes!'
 
 
 Qual a idade da pessoa? (Use a instrução para responder e comentários
@@ -119,9 +119,9 @@ pessoa.mostrarAltura() //'Minha altura é 1.77m.'
 /*
 Faça a `pessoa` fazer 3 aniversários.
 */
-pessoa.aniversario()
-pessoa.aniversario()
-pessoa.aniversario()
+pessoa.fazerAniversario()
+pessoa.fazerAniversario()
+pessoa.fazerAniversario()
 
 /*
 Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
