@@ -4,7 +4,8 @@ para começar o desafio.
 Declare uma variável chamada `championship` que receberá o nome do campeonato,
 e imprima o nome desse campeonato no console.
 */
-// ?
+var championship = 'Paulistão';
+console.log( championship ); // Paulistão
 
 /*
 Declare uma variável chamada `teams`, que receberá um array com 5 elementos.
@@ -12,10 +13,19 @@ Os elementos serão nomes de times do campeonato escolhido, e os nomes devem
 estar na ordem em que eles aparecem na tabela no momento da solução desse
 desafio.
 */
-// ?
+var teams = [ 'Corinthians', 'Palmeiras', 'São Paulo', 'Santos', 'Bragantino', 'Portuguesa']
 
 console.log( 'Times que estão participando do campeonato:', teams );
-
+/* Resultado:
+Times que estão participando do campeonato: [
+  'Corinthians',
+  'Palmeiras',
+  'São Paulo',
+  'Santos',
+  'Bragantino',
+  'Portuguesa'
+]
+*/
 /*
 Crie uma função chamada `showTeamPosition` com as seguintes características:
     - A função deve receber um número por parâmetro;
@@ -32,19 +42,53 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     - Se não houver time para a posição passada, deve retornar a mensagem:
     "Não temos a informação do time que está nessa posição."
 */
-// ?
+function showTeamPosition( x ) {
+    if ( x > 0 && x <= 5 ) {
+        return 'O time que está em ' + x + 'º lugar é o ' + teams[ x - 1 ] + '.';
+    } 
+    return 'Não temos a informação do time que está nessa posição.';
+}
 
 /*
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
-// ?
-
+console.log( showTeamPosition(1) );
+console.log( showTeamPosition(2) );
+console.log( showTeamPosition(4) );
+console.log( showTeamPosition(6) );
+console.log( showTeamPosition(3) );
+/* Resultado:
+O time que está em 1º lugar é o Corinthians.
+O time que está em 2º lugar é o Palmeiras.
+O time que está em 4º lugar é o Santos.
+Não temos a informação do time que está nessa posição.
+O time que está em 3º lugar é o São Paulo.
+*/
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
 repetição "while".
 */
-// ?
+var c = 0;
+while ( c < 31 ) {
+    if ( c >= 20 ) {
+        console.log( c );
+    }
+    c++;
+}
+/* Resultado: 
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+*/
 
 /*
 Crie uma função chamada `convertToHex`, com as seguintes características:
@@ -58,9 +102,44 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     a frase:
     "Não temos o equivalente hexadecimal para [COR]."
 */
-// ?
+function convertToHex( cor ) {
+    var corHexa;
+    switch ( cor ) {
+        case 'red':
+            corHexa = '#FF0000';
+            break;
+        case 'blue':
+            corHexa = '#0000FF';
+            break;
+        case 'black':
+            corHexa = '#000000';
+            break;
+        case 'green':
+            corHexa = '#00FF00';
+            break;
+        case 'white':
+            corHexa = '#FFFFFF';
+            break;
+        default:
+            return 'Não temos o equivalente hexadecimal para ' + cor + '.';
+    }
+    return 'O hexadecimal para a cor ' + cor + ' é ' + corHexa + '.';
+}
 
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-// ?
+console.log( convertToHex('blue') );
+console.log( convertToHex('yellow') );
+console.log( convertToHex('yelow') );
+console.log( convertToHex('red') );
+console.log( convertToHex('pink') );
+console.log( convertToHex('green') );
+/*Resultado
+O hexadecimal para a cor blue é #0000FF.
+Não temos o equivalente hexadecimal para yellow.
+Não temos o equivalente hexadecimal para yelow.
+O hexadecimal para a cor red é #FF0000.
+Não temos o equivalente hexadecimal para pink.
+O hexadecimal para a cor green é #00FF00.
+*/
