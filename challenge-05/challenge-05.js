@@ -2,17 +2,17 @@
 Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
-// ?
+var arrayQq = [ 5, 'Rafael', true, null, -5];
 
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
-// ?
+function funQq( x ) { return x; }
 
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-// ?
+console.log( funQq(arrayQq)[1] );
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -20,18 +20,22 @@ segundo, um número. A função deve retornar o valor de um índice do array que
 no primeiro parâmetro. O índice usado para retornar o valor, deve ser o número passado no
 segundo parâmetro.
 */
-// ?
+function arrayParmDois( a, n ) { return a[n-1]; }
 
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
-// ?
+var arrayCinco = arrayQq;
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-// ?
+console.log( arrayParmDois( arrayCinco, 1 ));
+console.log( arrayParmDois( arrayCinco, 2 ));
+console.log( arrayParmDois( arrayCinco, 3 ));
+console.log( arrayParmDois( arrayCinco, 4 ));
+console.log( arrayParmDois( arrayCinco, 5 ));
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -47,30 +51,42 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-// ?
+function book(x) {
+    var varBooks = { 'Casa de Pensão': { qtdPags: 200, autor: 'Aluizio de Azevedo', editora: 'Abril' },
+                     'Luzia-Homem': { qtdPags: 400, autor: 'Domingos Olimpio', editora: 'Record' },
+                     'Agua-Mae': { qtdPags: 350, autor: 'Jose Lins do Rego', editora: 'Nova Fronteira' } };
+    if ( x === undefined ) {
+        return varBooks;
+    }
+    return varBooks[x];
+}
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-// ?
+console.log( book() );
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// ?
+var nameBook = 'Agua-Mae'
+console.log( 'O livro ' + nameBook + ' tem ' + book( nameBook ).qtdPags + ' páginas!' );
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
+nameBook = 'Luzia-Homem'
+console.log( 'O autor do livro ' + nameBook + ' é ' + book( nameBook ).autor + '.' );
+
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-// ?
+nameBook = 'Casa de Pensão';
+console.log( 'O livro ' + nameBook + ' foi publicado pela editora ' + book ( nameBook ).editora + '.' );
