@@ -101,11 +101,13 @@ var subtraction = '-';
 var multiplication = '*';
 var division  = '/';
 var mod = '%';
+var qlqr = '#'
 
 calculator(subtraction);
 calculator(multiplication);
 calculator(division);
 calculator(mod);
+calculator(qlqr);
 
 /*
 Faça uma operação com cada uma das funções criadas acima, mostrando o resultado
@@ -122,3 +124,6 @@ console.log(div(10,2));
 
 var md = calculator(mod);
 console.log(md(2,2));
+
+var qlq = calculator(qlqr);
+console.log(qlq(3,3));
