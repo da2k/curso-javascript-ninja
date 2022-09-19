@@ -1,3 +1,5 @@
+const { array } = require("prop-types");
+
 (function() {/*
     Envolva todo o conteúdo desse arquivo em uma IIFE.
     */
