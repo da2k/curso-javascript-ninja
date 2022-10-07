@@ -35,13 +35,14 @@
     console.log para cada formato.
     */
     console.log( '\nNome convertido à partir de um slug:' );
-    var fullName = 'ana-sousa';
+    var fullName = 'ana-paula-sousa';
 
-    var posicaoTraco = fullName.indexOf('-') + 1;
-    var name = fullName.charAt(0).toUpperCase() + fullName.substring(1, posicaoTraco-1);
-    var lastName = fullName.charAt(posicaoTraco).toUpperCase() + fullName.slice(posicaoTraco + 1);
+    var newName = fullName.split('-').map(function(name) {
+        return name.charAt(0).toUpperCase() + name.slice(1);
+    }).join(' ');
     
-    console.log("Slug: " + fullName + " Modificado: " + name.concat(" " + lastName));
+    console.log(fullName);
+    console.log(newName);
 
     /*
     - Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
@@ -59,7 +60,7 @@
         var separator = arr.length - 1 === index ? " e " : ", ";
         return acumulado + separator + atual;
 
-    });
+    }).concat(' são meus amigos.');
     console.log(reduce);
 
     /*
