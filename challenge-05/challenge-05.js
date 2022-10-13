@@ -2,17 +2,19 @@
 Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
-// ?
+let newVariable = [true, 'Wilson', function () { }, null, 22];
 
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
-// ?
+function newFunction(arr) {
+  return arr;
+};
 
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-// ?
+console.log(newFunction(newVariable)[1]);
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -20,18 +22,24 @@ segundo, um número. A função deve retornar o valor de um índice do array que
 no primeiro parâmetro. O índice usado para retornar o valor, deve ser o número passado no
 segundo parâmetro.
 */
-// ?
+function twoParameter(arr, index) {
+  return arr[index];
+}
 
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
-// ?
+let varArray = [17, 'Wilson', [12, 3.7, 'Jr'], { prop: 'Stn' }, false]
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-// ?
+console.log(twoParameter(varArray, 0));
+console.log(twoParameter(varArray, 1));
+console.log(twoParameter(varArray, 2));
+console.log(twoParameter(varArray, 3));
+console.log(twoParameter(varArray, 4));
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -47,30 +55,52 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-// ?
+
+function book(nameBook) {
+  let obj = {
+    'Segredos do Ninja JavaScript': {
+      quantidadeDePaginas: 150,
+      autor: 'Wilson Jr',
+      editora: 'Ninja'
+    },
+    'Introdução ao HTML5': {
+      quantidadeDePaginas: 250,
+      autor: 'Fernando',
+      editora: 'Udemy'
+    },
+    'Smashing CSS': {
+      quantidadeDePaginas: 379,
+      autor: 'JavaSript',
+      editora: 'JS'
+    }
+  }
+  return !nameBook ? obj : obj[nameBook];
+};
+
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-// ?
+console.log(book())
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// ?
+let bookName = 'Introdução ao HTML5';
+console.log('O livro ' + bookName + ' tem ' + book(bookName).quantidadeDePaginas + ' página(s)');
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
+console.log('O autor do livro ' + bookName + ' é ' + book(bookName).autor + '.');
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-// ?
+console.log('O  livro ' + bookName + ' foi publicado pela editora ' + book(bookName).editora + '.');
