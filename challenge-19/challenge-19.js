@@ -1,10 +1,12 @@
-/*
+(() => {
+  "use strict";
+  /*
 1. Envolva todo o conteúdo desse desafio em uma IIFE.
 2. Adicione a diretiva 'use strict';
 3. Crie um arquivo index.html e adicione esse script à ele.
 */
 
-/*
+  /*
 Alguns detalhes importantes que faltou falar na aula:
 1. O objeto RegExp() pode receber um segundo parâmetro, que são as flags:
 - var justNumbersAndLetters = new RegExp( '[\\da-z]', 'gi' );
@@ -14,7 +16,7 @@ diferente da regex literal, onde toda a regex precisa estar pronta antes
 da utilização.
 */
 
-/*
+  /*
 - Usando o construtor de Regex, crie uma regex que case somente com números
 no início da string. O match precisa ser feito para todas as
 correspondências de qualquer string, não somente para a primeira, ainda que
@@ -23,19 +25,20 @@ linha, independente de quantos caracteres de número estiverem juntos.
 - Atribua essa regex à uma variável chamada `justNumbersRegex` e mostre-a
 no console:
 */
-console.log( 'Regex para números usando o construtor:' );
-// ?
-
-/*
+  console.log("Regex para números usando o construtor:");
+  let justNumbersRegex = new RegExp("^\\d+", "gm");
+  console.log(justNumbersRegex);
+  /*
 Verifique se a regex acima casa com o texto na variável `text`, mostrando o
 resultado no console. O resultado deve ser:
 "[ '10', '50' ]"
 */
-var text = '10 anos.\n50 discos vendidos.\nE nem 10% dos meus amigos o conhece.';
-console.log( '\nNúmeros no início da linha do texto:\n' + text, '\n' );
-// ?
+  var text =
+    "10 anos.\n50 discos vendidos.\nE nem 10% dos meus amigos o conhece.";
+  console.log("\nNúmeros no início da linha do texto:\n" + text, "\n");
+  console.log(text.match(justNumbersRegex));
 
-/*
+  /*
 - Crie uma regex que case com números no final de uma string. Atribua a
 regex à uma variável chamada `numbersAtTheEnd`.
 - A regex deve casar com todas as correspondências de qualquer string, ainda
@@ -43,20 +46,22 @@ que esta tenha muitas linhas, deve sempre casar com números no fim de cada
 linha, independente de quantos caracteres de número estiverem juntos.
 Mostre a regex no console:
 */
-console.log( '\nRegex para números somente no final das linhas:' );
-// ?
+  console.log("\nRegex para números somente no final das linhas:");
+  let numbersAtTheEnd = /\d+$/gm;
+  console.log(numbersAtTheEnd);
 
-/*
+  /*
 Verifique se a regex acima casa com o texto na variável `otherText`,
 mostrando o resultado no console.
 O resultado deve ser:
 "[ '12', '6' ]"
 */
-var otherText = 'Silvio Santos, nome artístico de Senor Abravanel (Rio de Janeiro, 12\n de dezembro de 1930), é um apresentador de televisão e empresário brasileiro.\n Proprietário do Grupo Silvio Santos, que inclui empresas como a Liderança\n Capitalização (administradora da loteria Tele Sena), a Jequiti Cosméticos e o\n Sistema Brasileiro de Televisão (mais conhecido como SBT), Silvio Santos possui\n um patrimônio avaliado em aproximadamente 6\n bilhões de reais.';
-console.log( '\nNúmeros no final da linha:\n\n', otherText, '\n' );
-// ?
+  var otherText =
+    "Silvio Santos, nome artístico de Senor Abravanel (Rio de Janeiro, 12\n de dezembro de 1930), é um apresentador de televisão e empresário brasileiro.\n Proprietário do Grupo Silvio Santos, que inclui empresas como a Liderança\n Capitalização (administradora da loteria Tele Sena), a Jequiti Cosméticos e o\n Sistema Brasileiro de Televisão (mais conhecido como SBT), Silvio Santos possui\n um patrimônio avaliado em aproximadamente 6\n bilhões de reais.";
+  console.log("\nNúmeros no final da linha:\n\n", otherText, "\n");
+  console.log(otherText.match(numbersAtTheEnd));
 
-/*
+  /*
 Vamos criar um método que vai testar se uma classe CSS existe em uma
 marcação HTML.
 - Primeiro, crie uma função chamada `hasClass`;
@@ -79,6 +84,19 @@ abaixo;
 qualquer classe que for testada. Os dados passados no exercício são somente
 para exemplificar.
 */
-var markup = '<main>\n  <div class="container">\n    <span class="text date"></span>\n    <p class=\'excerpt\'></p>\n  </div>\n</main>';
-console.log( '\nQuais classes CSS existem na marcação abaixo?\n\n', markup, '\n' );
-// ?
+  var markup =
+    '<main>\n  <div class="container">\n    <span class="text date"></span>\n    <p class=\'excerpt\'></p>\n  </div>\n</main>';
+  console.log(
+    "\nQuais classes CSS existem na marcação abaixo?\n\n",
+    markup,
+    "\n"
+  );
+  function hasClass(markup, cssClass) {
+    let regex = new RegExp('class=["\'].*' + cssClass + '.*["\']');
+    return regex.test(markup);
+  }
+  let classes = ["container", "text", "date", "excerpt", "main"];
+  classes.forEach((cssClass) => {
+    console.log(hasClass(markup, cssClass) + " para a classe " + cssClass);
+  });
+})();
