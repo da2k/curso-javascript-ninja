@@ -1,4 +1,4 @@
-# Desafio da semana #2
+ee# Desafio da semana #2
 
 Nesse exercício, você está livre para escolher os nomes para suas variáveis e funções! :smile:
 
@@ -43,7 +43,10 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-?
+function tresArgumentos(a,b,c){
+if(a )
+return a*b*c + 2 
+}
 
 // Invoque a função criada acima, passando só dois números como argumento.
 ?
