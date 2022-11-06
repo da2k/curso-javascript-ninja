@@ -79,7 +79,10 @@ Crie uma função com as seguintes características:
     if( a != undefined && b === undefined && c === undefined){ return "O valor do argumento passado é " + a}
     else if (a != undefined && b != undefined && c === undefined ){return " O valor dos dois parametros somados é " + " " + (a + b)}
     else if (a != undefined && b != undefined && c != undefined ) { return (a + b) / c }
-    return "false"
+    else if (a === undefined || b === undefined || c undefined) { return false; }
+    else {
+        return null  
+    }
 }
     
 
