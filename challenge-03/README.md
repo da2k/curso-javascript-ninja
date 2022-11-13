@@ -65,7 +65,6 @@ Crie um método chamado `nomeCompleto`, que retorne a frase:
 */
 function nomeCompleto(){
         return "Olá! Meu nome é " pessoa.nome " + " pessoa.sobrenome + '!'
-
 }
 
 /*
@@ -88,7 +87,9 @@ function motrarPeso(){
 Crie um método chamado `mostrarAltura` que retorne a frase:
 - "Minha altura é [ALTURA]m."
 */        
-?
+function mostrarAltura(){
+    return "Minha altura é " + pessoa.altura + "m."
+}
 
 /*
 Agora vamos brincar um pouco com o objeto criado:
