@@ -17,15 +17,15 @@ As propriedades e tipos de valores para cada propriedade desse objeto devem ser:
 - `caminhouQuantosMetros` - Number - recebe "zero" por padrão
 */
  var pessoa = {
-... nome : 'Pablo',
-... sobrenome: 'Henrique',
-... sexo: 'Masculino',
-... idade : 26,
-... altura: 1.75,
-... peso : 110,
-... andando : false,
-... caminhouQuantoMetros : 0
-... }
+ nome : 'Pablo',
+ sobrenome: 'Henrique',
+ sexo: 'Masculino',
+ idade : 26,
+ altura: 1.75,
+ peso : 110,
+ andando : false,
+ caminhouQuantoMetros : 0
+ }
 
 /*
 Adicione um método ao objeto `pessoa` chamado `fazerAniversario`. O método deve
@@ -177,8 +177,17 @@ deve conter no retorno da frase acima é "metro" no lugar de "metros".
 método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
-?
+function apresenta(){
+    var sexo;
+    var idade;
+    var metrage;
+    if(pessoa.sexo === 'Masculino'){ sexo = 'o' } else if(pessoa.sexo === 'Feminino'){ sexo = 'a'}
+    if(pessoa.idade > 1){ idade = 'anos'} else if( pessoa.idade === 1 ){ idade = 'ano'}
+    if(pessoa.caminhouQuantosMetros > 1 ){ metrage = 'Metros'} else if(pessoa.caminhouQuantosMetros = 1) {metrage = 'Metro'}
+    return 'Olá, eu sou' + ' ' + sexo + ' ' + pessoa.nome +' '+ pessoa.sobrenome + ',' + 'tenho ' + pessoa.idade + ' '+ idade + ',' + 'meu peso é ' + pessoa.peso +' '+ 'e, só hoje, já caminhei ' + pessoa.caminhouQuantosMetros +' '+ metrage +'!'
+    
+}
 
 // Agora, apresente-se ;)
-?
+apresenta() // 'Olá, eu sou o Pablo Henrique,tenho 26 anos,meu peso é 110 e, só hoje, já caminhei 1 Metro!'
 ```
