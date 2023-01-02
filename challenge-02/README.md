@@ -23,8 +23,8 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 function adiciona(){
-    adicao = 'VALOR';
-    return adicao;
+    adicao = 25;
+    return 'O valor da variável agora é' + adicao;
 }
 
 // Invoque a função criada acima.
@@ -32,7 +32,7 @@ adiciona();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /*
-'VALOR'
+'O valor da variável agora é 25'
 */
 
 /*
@@ -43,6 +43,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function multip(a, b, c){
+    //if(a === undefined || b === undefined || c === undefined){
     if(!a || !b || !c){
         return 'Preencha todos os valores corretamente!';
     }
