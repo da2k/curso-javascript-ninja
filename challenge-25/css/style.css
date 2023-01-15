@@ -1,0 +1,124 @@
+.content { float:left; width: 700px; margin:0 4%; padding: 20px 0; }
+/*Formulário*/
+
+.container_form {
+    width: 700px;
+    margin:30px auto;
+    display: flex;
+    flex-direction: column;
+    background:#ffffff;
+    border: 1px solid #d57ea5;
+    box-shadow: 1px 0px 1.2px 0px #e3e3e3;
+    border-radius:10px;
+    padding:1em;
+}
+
+.container_form h1 {
+    font-family:'open_sansregular';
+    text-align: center;
+    font-size: 2.3em;
+    color: #d57ea5;
+    border-bottom: 1px #f0eded solid;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.form_grupo {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.form_grupo .legenda {
+    width: 100%;
+    float: left;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* SUBMIT */
+
+.submit { width:100%; float:left; }
+
+.submit_btn {
+
+    float: right;
+    display: block;
+    padding: 5px 30px;
+    border: none;
+    outline: none;
+    background-color: #ef9ee1;
+    color: #fff;
+    text-shadow: 0 0 5px rgb(0, 0, 0);
+    font-family: inherit;
+    font-size: 25px;
+    font-family:'open_sansregular';
+    border-radius: 6px;
+    margin: 20px auto;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.submit_btn:hover {
+    background-color: #abf7ff;
+    transform: scale(1.03);
+}
+
+.form_grupo {
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form_input {
+    font-size: 16px;
+    font-family: inherit;
+    padding: 8px 15px;
+    border-radius: 4px;
+    border: 1px #f2f2f2 solid;
+    background: #fdfdfd;
+    outline: none;
+    width: 100%;
+    transition: all 0.3s;
+}
+
+/* Tabela */
+.image-table {
+    width: 900px;
+    margin:auto;
+    border: solid 1px #f1c2ec;
+    border-spacing: 0;
+    text-align: center;
+}
+.image-table thead th {
+    background-color: #eab5e5;
+    border: solid 1px #f0a1e3;
+    color: #000000;
+    padding: 10px;
+    text-shadow: 1px 1px 1px #fff;
+}
+.image-table tbody td {
+    border: solid 1px #DDEEEE;
+    color: #333;
+    padding: 10px;
+    text-shadow: 1px 1px 1px #fff;
+}
+.image-table tbody td input {
+    border: none;
+}
+
+.image-table tbody img {
+    width: 25px;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+}
+
+.actions-items {
+    margin: 0 10px;
+    width: 45%;
+}

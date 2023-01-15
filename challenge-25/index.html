@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+ <head>
+
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="content-language" content="pt-br" />
+	  <link rel="stylesheet" type="text/css" href="css/reset.css">
+	  <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/fonts-icones.css">
+
+	<title>Cadastro de Imagens</title>
+
+ </head>
+
+<body>
+<!--Inicio Formulário-->
+  <div class="container_form">
+
+    <h1> Cadastro de Imagens </h1>
+
+    <form class="form" action="" method="get">
+        <div class="form_grupo">
+          <label for="nome" class="form_label">Nome:</label>
+          <input data-js="nome" type="text" name="nome" class="form_input" id="nome" placeholder="Nome" required>
+        </div>
+
+        <div class="form_grupo">
+          <label for="e-mail" class="form_label">Email:</label>
+          <input data-js="email" type="email" name="email" class="form_input" id="email" placeholder="seuemail@email.com" required>
+        </div>
+
+        <div class="form_grupo">
+          <label for="data" class="form_label">Data:</label>
+          <input data-js="data" type="date" name="data" class="form_input" id="data" placeholder="Data" required>
+        </div>
+
+        <div class="form_grupo">
+          <span class="legenda">Fazer Upload de Imagem:</span>
+          <div class="check-btn">
+              <input data-js="image" type="file" name="imageUpload" id="imageUpload">
+          </div>
+
+          <div class="submit">
+            <input type="hidden" name="acao" value="enviar">
+            <button data-js="button" type="button" name="Submit" class="submit_btn" >Cadastrar</button>
+          </div>
+        </div>
+    </form>
+  </div>
+<!--Finaliza Formulário-->
+
+<!-- Inicio da Tabela  -->
+<table class="image-table">
+  <thead>
+    <tr>
+        <th>Nome do Usuário</th>
+        <th>Email</th>
+        <th>Data do Upload</th>
+        <th>Nome da Imagem</th>
+        <th>Ação</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+        <td><input data-js="nome-user" type="text" readonly></td>
+        <td><input data-js="email-user" type="email" readonly></td>
+        <td><input data-js="data-user" type="datetime" readonly></td>
+        <td><input data-js="image-user" type="text" readonly></td>
+        <td>
+          <div class="actions">
+            <div class="actions-items">
+              <input class="padding-3px" data-ja="edit" type="checkbox" id="editar" name="editar">
+              <img src="img/edit.png" alt="edit">
+            </div>
+
+            <div class="actions-items">
+              <input class="padding-3px" data-js="excluir" type="checkbox" id="excluir" name="excluir">
+              <img src="img/excluir.png" alt="excluir">
+            </div>
+          </div>
+        </td>
+    </tr>
+  </tbody>
+</table>
+<!-- Fim da Tabela -->
+
+<script src="challenge-25.js"></script>
+
+</body>
+</html>
