@@ -36,10 +36,10 @@ desafio os experimentos legais que você conseguir desenvolver :D
   }
 
   function handleClick() {
-  $nomeTable.value += $nome.value;
-  $emailTable.value += $email.value;
-  $dataTable.value += $data.value;
-  $imageTable.value += $image.value;
+  $nomeTable.textContent += $nome.value;
+  $emailTable.textContent += $email.value;
+  $dataTable.textContent += $data.value;
+  $imageTable.textContent += $image.value;
   }
 
   function initEvents(){
