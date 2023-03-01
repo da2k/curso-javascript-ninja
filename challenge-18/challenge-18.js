@@ -75,7 +75,7 @@
   */
   console.log( '\nMatch com tags HTML vazias (abertura e fechamento da tag):' );
   tags = '<div><ul><li></li><li></li><li><span></span></li></ul></div>';
-  console.log(tags.match(/<(\w+)><\/\1>/g));
+  console.log(tags.match(/<\w+><\/\w>/g));
   
   /*
   Vamos complicar um pouco agora :D
@@ -100,5 +100,6 @@
   corretas, para depois aplicar no código ;)
   */
   console.log( '\nFazer replace dos textos das tags:' );
-  // ?
+  var text = '<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>';
+  console.log(text.replace("/<(\w+)>([^<]+)<\/\w+>/g","/<(\w+)>O texto dentro da tag \"\1\" é \"([^<]+)\"<\/\w+>\n/g"));
 }());
