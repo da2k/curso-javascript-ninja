@@ -15,7 +15,7 @@ soma = 15 + 8;
 soma ++;
 
 // Atribua à variável `soma` todo o valor dela, multiplicando por 3, usando o operador de multiplicação abreviado.
-soma * 3
+soma * 3;
 
 // Qual é o valor da variável `soma` até aqui?
 72
@@ -35,8 +35,8 @@ comida [1];
 let soma = 1;
 let myvar = '1';
 
-soma == myvar  (Nesse caso será TRUE, pois o JS pega o dado dentro da variavel, independente do tipo;
-soma === myvar (Já nesse caso, será FALSE, pois aqui leva em consideração o tipo recebido do dado em cada variável;
+soma == myvar;  (Nesse caso será TRUE, pois o JS pega o dado dentro da variavel, independente do tipo;
+soma === myvar; (Já nesse caso, será FALSE, pois aqui leva em consideração o tipo recebido do dado em cada variável;
 
 // Digite o código que verifica se a variável `myvar` é menor ou igual à variável `soma`.
 myvar <= soma;
