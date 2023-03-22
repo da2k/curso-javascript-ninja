@@ -50,7 +50,7 @@ function multiplicar (x, y, z) {
   };
 
 // Invoque a função criada acima, passando só dois números como argumento.
-multiplicar();
+multiplicar(10,30);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 // Preencha todos os valores corretamente!;
