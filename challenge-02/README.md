@@ -59,7 +59,7 @@ multiplicar(10,30);
 multiplicar(10,20,30);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-6002; 
+//6002; 
 
 /*
 Crie uma função com as seguintes características:
