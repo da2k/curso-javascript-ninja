@@ -32,7 +32,9 @@ function retNovaVariavel() {
 retNovaVariavel();
 
 // Qual o retorno da função? (Use comentários de bloco).
+/*
 1000
+*/
 
 /*
 Crie uma função com as seguintes características:
@@ -51,7 +53,7 @@ function multiplicar (x, y, z) {
 multiplicar();
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-Preencha todos os valores corretamente!;
+// Preencha todos os valores corretamente!;
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 multiplicar(10,20,30);
