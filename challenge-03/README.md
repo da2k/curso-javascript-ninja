@@ -54,22 +54,23 @@ pessoa.andando = false;
 Crie um método chamado `nomeCompleto`, que retorne a frase:
 - "Olá! Meu nome é [NOME] [SOBRENOME]!"
 */
-pessoa.nomeCompleto = pessoa.nome + ' ' + pessoa.sobrenome;
-
+pessoa.nomeCompleto = function(){
+return `Olá! Meu nome é ${pessoa.nome} ${pessoa.sobrenome}`;
+};
 /*
 Crie um método chamado `mostrarIdade`, que retorne a frase:
 - "Olá, eu tenho [IDADE] anos!"
 */
 pessoa.mostrarIdade = function(){
   return `Olá, eu tenho ${idade} anos!`
-}
+};
 
 /*
 Crie um método chamado `mostrarPeso`, que retorne a frase:
 - "Eu peso [PESO]Kg."
 */
 pessoa.mostrarPeso = function(){
-	return pessoa.peso
+	return `Eu peso ${pessoa.peso}Kg.` 
 }
 
 /*
@@ -77,7 +78,7 @@ Crie um método chamado `mostrarAltura` que retorne a frase:
 - "Minha altura é [ALTURA]m."
 */
 pessoa.mostrarAltura = function(){
- 	return pessoa.altura
+ 	return `Minha altura é ${pessoa.altura}m`
 }
 
 /*
@@ -85,7 +86,7 @@ Agora vamos brincar um pouco com o objeto criado:
 Qual o nome completo da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.nomeCompleto(); / Tonho Leandro
+pessoa.nomeCompleto(); // Tonho Leandro
 
 /*
 Qual a idade da pessoa? (Use a instrução para responder e comentários
@@ -131,7 +132,7 @@ pessoa.andar(10);
 A pessoa ainda está andando? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.andando(); // sim
+pessoa.andando; // sim
 
 /*
 Se a pessoa ainda está andando, faça-a parar.
@@ -142,13 +143,13 @@ pessoa.parar();
 E agora: a pessoa ainda está andando? (Use uma instrução para responder e
 comentários inline ao lado da instrução para mostrar a resposta retornada)
 */
-pessoa.andando(); // não
+pessoa.andando; // não
 
 /*
 Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
 inline ao lado da instrução para mostrar a resposta retornada)
 */
-pessoa.andar(); // 30
+ pessoa.caminhoQuantosMetros // 30;
 
 /*
 Agora vamos deixar a brincadeira um pouco mais divertida! :D
@@ -168,8 +169,20 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao = function(){
+var sexo = 'o';
+var idadeAnos = 'anos';
+var metrosCaminhados = 'metros'
 
-return `Olá, eu sou o ${pessoa.nomeCompleto}, tenho ${pessoa.idade} anos, ${pessoa.altura}, meu peso é ${pessoa.peso} e, só hoje, eu já caminehi ${caminhouQuantosMetros} metros!`
+if(pessoa.sexo == 'Feminino'){
+	sexo = 'a';
+}
+if(pessoa.idade === 1){
+ idadeAnos = 'ano';
+}
+if(pessoa.caminhouQuantosMetros === 1){
+ mestrosCaminhados = 'metro';
+}
+return `Olá, eu sou ${sexo} ${pessoa.nomeCompleto}, tenho ${pessoa.idade} ${idadeAnos}, ${pessoa.altura}, meu peso é ${pessoa.peso} e, só hoje, eu já caminehi ${caminhouQuantosMetros} ${metrosCaminhados}!`
 }
 
 // Agora, apresente-se ;)
