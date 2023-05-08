@@ -1,0 +1,14 @@
+{
+  "name": "js-ninja",
+  "version": "1.0.0",
+  "description": "[![Curso Ninja JavaScript - Da2k](https://cloud.githubusercontent.com/assets/487669/6239059/58b94ab0-b6e7-11e4-8e5d-a5f2740870fd.png)](https://www.udemy.com/curso-javascript-ninja/?couponCode=JSNINJA)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
