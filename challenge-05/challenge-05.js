@@ -2,17 +2,22 @@
 Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
-// ?
+
+var array1 = ['Carlos Filipe', 27, {prop1: function() { return 'Lets code!' }, prop2: [10, 20, 30]}, ['a', 'b', 'c'], null ];
 
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
-// ?
+
+function fn1(array) {
+  return array;
+}
 
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-// ?
+
+console.log( fn1(array1)[1] );
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -20,18 +25,27 @@ segundo, um número. A função deve retornar o valor de um índice do array que
 no primeiro parâmetro. O índice usado para retornar o valor, deve ser o número passado no
 segundo parâmetro.
 */
-// ?
+
+function fn2(array, index) {
+  return array[index];
+}
 
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
-// ?
+
+var array2 = ['Flamengo', 1000, function() { return 'Função 2'}, {a: 1, b: 2}, [1, 2, 3]];
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-// ?
+
+console.log( fn2(array2, 0) );
+console.log( fn2(array2, 1) );
+console.log( fn2(array2, 2) );
+console.log( fn2(array2, 3) );
+console.log( fn2(array2, 4) );
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -47,30 +61,55 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-// ?
+
+function book(bookName) {
+  var infoBook = {
+    'Sapiens': {
+      quantidadePaginas: 472,
+      autor: 'Yuval Harari',
+      editora: 'Companhia das Letras'
+    },
+    'Cosmos': {
+      quantidadePaginas: 560,
+      autor: 'Carl Sagan',
+      editora: 'Companhia das Letras'
+    },
+    'Clean Code': {
+      quantidadePaginas: 425,
+      autor: 'Uncle Bob',
+      editora: 'Alta Books'
+    },
+  }
+
+  return bookName ? infoBook[bookName] : infoBook;
+}
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-// ?
+
+console.log( book() );
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// ?
+
+console.log( 'O livro Clean Code tem ' + book('Clean Code').quantidadePaginas + ' páginas!' );
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
+
+console.log('O autor do livro Sapiens é ' + book('Sapiens').autor + '.');
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-// ?
+
+console.log( 'O livro Cosmos foi publicado pela editora ' + book('Cosmos').editora + '.' );
