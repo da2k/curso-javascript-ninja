@@ -57,17 +57,17 @@ os livros.
 */
 function getBook(bookName) {
     var characteristics = {
-        readyPlayerOne: {
+        'Ready Player One': {
             quantidadePaginas: 250,
             autor: 'Ernest Cline',
             editora: 'Crown Publishing Group'
         },
-        oneThing: {
+        'One Thing': {
             quantidadePaginas: 500,
             autor: 'Gary Keller',
             editora: 'Bard Press'
         },
-        IDK: {
+        'IDK': {
             quantidadePaginas: 750,
             autor: 'idk',
             editora: 'idk'
