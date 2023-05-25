@@ -81,23 +81,17 @@ function convertToHex(color) {
 
   switch (color) {
     case 'blue':
-      console.log(`O hexadecimal para a cor blue é ${blue}`);
-      break;
+      return `O hexadecimal para a cor blue é ${blue}`;
     case 'red':
-      console.log(`O hexadecimal para a cor blue é ${red}`);
-      break;
+      return `O hexadecimal para a cor blue é ${red}`;
     case 'yellow':
-      console.log(`O hexadecimal para a cor blue é ${yellow}`);
-      break;
+      return `O hexadecimal para a cor blue é ${yellow}`;
     case 'green':
-      console.log(`O hexadecimal para a cor blue é ${green}`);
-      break;
+      return `O hexadecimal para a cor blue é ${green}`;
     case 'black':
-      console.log(`O hexadecimal para a cor blue é ${black}`);
-      break;
+      return `O hexadecimal para a cor blue é ${black}`;
     default:
-      console.log(`Não temos o equivalente hexadecimal para ${color}.`)
-      break;
+      return `Não temos o equivalente hexadecimal para ${color}.`;
   }
 
 }
