@@ -59,7 +59,7 @@ function calculator(operator) {
   return function calc (valueOne, valueTwo) {
     var result = eval(`${valueOne}${operator}${valueTwo}`);
     return `Resultado da operação: ${valueOne} ${operator} ${valueTwo} = ${result}`;
-  }
+  };
 }
 
 /*
