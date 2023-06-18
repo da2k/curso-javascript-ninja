@@ -62,11 +62,11 @@
   counter = 0;
   var numbers = [];
   do {
-    console.log(counter);
     numbers.push(counter);
     counter++;
     if(counter > 10) break;
   } while(counter <= 20)
+  console.log(numbers);
   /*
   Faça outro loop de 0 a 20, que adicione a um array chamado `numbers` (já
   criado acima, só precisa ser reiniciado) números de 0 a 20, inclusive
