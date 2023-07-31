@@ -72,10 +72,7 @@ function book(name) {
     },
   };
 
-  if (name !== undefined) {
-    return listOfBooks[name];
-  }
-  return listOfBooks;
+  return name !== undefined ? listOfBooks[name] : listOfBooks;
 }
 
 /*
