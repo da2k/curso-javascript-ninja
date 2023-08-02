@@ -41,14 +41,14 @@ function showName() {
 /*
 Declare uma variável chamada `varShowName` que recebe a função criada acima.
 */
-var varShowName = showName();
+var varShowName = showName;
 
 /*
 Usando a variável criada acima, mostre no console o nome e o retorno da função
 atribuída a ela, com a seguinte frase:
 "A função [NOME DA FUNÇÃO] retorna [RETORNO DA FUNÇÃO]."
 */
-console.log("A função " + showName.name + " retorna " + varShowName + ".");
+console.log("A função " + varShowName.name + " retorna " + varShowName() + ".");
 
 /*
 Crie uma função literal chamada `calculator`, que funcione assim:
@@ -64,70 +64,37 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
 */
 function calculator(oprd) {
   return function (x, y) {
+    var result;
     switch (oprd) {
       case "+":
-        return (
-          "Resultado da operação: " +
-          x +
-          " " +
-          oprd +
-          " " +
-          y +
-          " = " +
-          (x + y) +
-          "."
-        );
+        result = x + y;
+        break;
       case "-":
-        return (
-          "Resultado da operação: " +
-          x +
-          " " +
-          oprd +
-          " " +
-          y +
-          " = " +
-          (x - y) +
-          "."
-        );
+        result = x - y;
+        break;
       case "*":
-        return (
-          "Resultado da operação: " +
-          x +
-          " " +
-          oprd +
-          " " +
-          y +
-          " = " +
-          x * y +
-          "."
-        );
+        result = x * y;
+        break;
       case "/":
-        return (
-          "Resultado da operação: " +
-          x +
-          " " +
-          oprd +
-          " " +
-          y +
-          " = " +
-          x / y +
-          "."
-        );
+        result = x / y;
+        break;
       case "%":
-        return (
-          "Resultado da operação: " +
-          x +
-          " " +
-          oprd +
-          " " +
-          y +
-          " = " +
-          (x % y) +
-          "."
-        );
+        result = x % y;
+        break;
       default:
         return "Operação inválida.";
     }
+    return (
+      "Resultado da operação: " +
+      x +
+      " " +
+      oprd +
+      " " +
+      y +
+      " = " +
+      result +
+      "."
+    );
   };
 }
 
