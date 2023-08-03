@@ -101,7 +101,7 @@ Essa função deverá retornar a frase:
 'Operação "[OPERATOR]" não permitida!'
 */
   function showErrorMessage(oprd) {
-    return isOperatorValid(oprd) ? "" : "Operação " + oprd + " não permitida!";
+    return "Operação " + oprd + " não permitida!";
   }
 
   /*
@@ -135,11 +135,13 @@ parâmetros para o método "log" de "console":
 - O segundo, a função de soma, passando os dois operandos.
 - Se "sum" for "false", mostrar no console a mensagem de erro.
 */
-  if (!!sum) {
+  if (sum) {
     number1 = 2;
     number2 = 3;
-    console.log(showOperationMessage(operationSignal, number1, number2));
-    console.log(sum(number1, number2));
+    console.log(
+      showOperationMessage(operationSignal, number1, number2),
+      sum(number1, number2)
+    );
   } else {
     console.log(showErrorMessage(operationSignal));
   }
@@ -155,8 +157,10 @@ divisão e resto. Crie variáveis com os nomes "subtraction",
   if (!!subtraction) {
     number1 = 10;
     number2 = 5;
-    console.log(showOperationMessage(operationSignal, number1, number2));
-    console.log(subtraction(number1, number2));
+    console.log(
+      showOperationMessage(operationSignal, number1, number2),
+      subtraction(number1, number2)
+    );
   } else {
     console.log(showErrorMessage(operationSignal));
   }
@@ -167,8 +171,10 @@ divisão e resto. Crie variáveis com os nomes "subtraction",
   if (!!multiplication) {
     number1 = 4;
     number2 = 25;
-    console.log(showOperationMessage(operationSignal, number1, number2));
-    console.log(multiplication(number1, number2));
+    console.log(
+      showOperationMessage(operationSignal, number1, number2),
+      multiplication(number1, number2)
+    );
   } else {
     console.log(showErrorMessage(operationSignal));
   }
@@ -179,8 +185,10 @@ divisão e resto. Crie variáveis com os nomes "subtraction",
   if (!!division) {
     number1 = 25;
     number2 = 5;
-    console.log(showOperationMessage(operationSignal, number1, number2));
-    console.log(division(number1, number2));
+    console.log(
+      showOperationMessage(operationSignal, number1, number2),
+      division(number1, number2)
+    );
   } else {
     console.log(showErrorMessage(operationSignal));
   }
@@ -191,8 +199,10 @@ divisão e resto. Crie variáveis com os nomes "subtraction",
   if (!!mod) {
     number1 = 16;
     number2 = 5;
-    console.log(showOperationMessage(operationSignal, number1, number2));
-    console.log(mod(number1, number2));
+    console.log(
+      showOperationMessage(operationSignal, number1, number2),
+      mod(number1, number2)
+    );
   } else {
     console.log(showErrorMessage(operationSignal));
   }
