@@ -35,21 +35,9 @@ seguintes propriedades:
 `name`: String
 `pages`: Number
 */
-
-  books = [
-    {
-      name: "Sapiens",
-      pages: 459,
-    },
-    {
-      name: "Capitães da areia",
-      pages: 280,
-    },
-    {
-      name: "Rangers: A Ordem dos Arqueiros",
-      pages: 239,
-    },
-  ];
+  books.push({ name: "Sapiens", pages: 459 });
+  books.push({ name: "Capitães da areia", pages: 280 });
+  books.push({ name: "Rangers: A Ordem dos Arqueiros", pages: 239 });
   console.log("\nLista de livros:");
 
   /*
@@ -72,9 +60,10 @@ Mostre no console os livros restantes.
   /*
 Converta os objetos que ficaram em `books` para strings.
 */
-  for (var i = 0; i < books.length; i++) {
+  /*for (var i = 0; i < books.length; i++) {
     books[i] = JSON.stringify(books[i]);
-  }
+  }*/
+  books = JSON.stringify(books);
   console.log("\nLivros em formato string:");
 
   /*
@@ -85,9 +74,10 @@ Mostre os livros nesse formato no console:
   /*
 Converta os livros novamente para objeto.
 */
-  for (var i = 0; i < books.length; i++) {
+  /*for (var i = 0; i < books.length; i++) {
     books[i] = JSON.parse(books[i]);
-  }
+  }*/
+  books = JSON.parse(books);
   console.log("\nAgora os livros são objetos novamente:");
 
   /*
@@ -124,5 +114,5 @@ Ainda usando o objeto acima, mostre no console seu nome invertido.
   /*
 Mostre todos os itens do array acima, odenados alfabéticamente.
 */
-  console.log(myName.sort().join(""));
+  console.log(myName.sort());
 })();
