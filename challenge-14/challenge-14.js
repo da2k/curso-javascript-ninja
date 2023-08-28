@@ -10,19 +10,11 @@ elemento será um objeto no formato:
 Os números devem ser de 1 a 10.
 Mostre esse array no console.
 */
-  var numberObjects = [
-    { number: 1 },
-    { number: 2 },
-    { number: 3 },
-    { number: 4 },
-    { number: 5 },
-    { number: 6 },
-    { number: 7 },
-    { number: 8 },
-    { number: 9 },
-    { number: 10 },
-  ];
   console.log("Number Objects Array:");
+  var numberObjects = [];
+  for (var i = 1; i <= 10; i++) {
+    numberObjects.push({ number: i });
+  }
   console.log(numberObjects);
 
   /*
@@ -42,7 +34,7 @@ no console.
 */
   console.log("\nJust module of division by 2 or 3:");
   var justMod2Or3 = justNumbers.filter(function (index) {
-    return index % 2 === 0 || index % 3 === 0 ? true : false;
+    return index % 2 === 0 || index % 3 === 0;
   });
   console.log(justMod2Or3);
 
@@ -56,8 +48,7 @@ Mostre o resultado no console.
 */
   console.log("\nOperation:");
   var operation = justMod2Or3.reduce(function (acumulado, atual) {
-    acumulado++;
-    return acumulado * atual;
+    return ++acumulado * atual;
   }, 0);
   console.log(operation);
 
@@ -68,8 +59,7 @@ console.
 */
   console.log("\nOperation 2:");
   var operation2 = justMod2Or3.reduceRight(function (acumulado, atual) {
-    acumulado++;
-    return acumulado * atual;
+    return ++acumulado * atual;
   }, 0);
   console.log(operation2);
 
@@ -84,8 +74,7 @@ falada, como se você estivesse falando em código xD
   console.log('\nSeu nome na língua do "P":');
   var name = ["pe", "ther", "son"];
   var pLanguage = name.reduce(function (acumulado, atual) {
-    acumulado += "p";
-    return acumulado + atual;
+    return acumulado + "p" + atual;
   }, "");
   console.log(pLanguage);
 
