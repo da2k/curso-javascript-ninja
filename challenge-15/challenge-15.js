@@ -27,15 +27,15 @@ as seguintes características:
     this.lastName = lastName;
     this.age = age;
 
-    this.getFullName = function () {
+    this.getFullName = function getFullName() {
       return this.name + " " + this.lastName;
     };
-    this.getAge = function () {
+    this.getAge = function getAge() {
       return this.age;
     };
-    this.addAge = function () {
+    this.addAge = function addAge() {
       this.age += arguments[0];
-      return this.age;
+      return this;
     };
   }
 
@@ -79,8 +79,8 @@ cada um. A frase deverá ser no formato:
 */
   console.log("\nNova idade das pessoas:");
   console.log(
-    petherson.getFullName() + " tem " + petherson.addAge(6) + " anos."
+    petherson.getFullName() + " tem " + petherson.addAge(6).getAge() + " anos."
   );
-  console.log(isabelly.getFullName() + " tem " + isabelly.addAge(1) + " anos.");
-  console.log(victoria.getFullName() + " tem " + victoria.addAge(8) + " anos.");
+  console.log(isabelly.getFullName() + " tem " + isabelly.addAge(1).getAge() + " anos.");
+  console.log(victoria.getFullName() + " tem " + victoria.addAge(8).getAge() + " anos.");
 })();
