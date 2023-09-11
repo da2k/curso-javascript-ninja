@@ -34,13 +34,15 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `assentos` - Number - cinco por padrão
 - `quantidadePessoas` - Number - zero por padrão
 */
-?
+
+var carro = { marca: 'FORD', modelo: 'XLE', placa: 'FRD-3178', ano: 2017, cor: 'Azul', quantasPortas: 4, assentos: 5, quantidadePessoas: 4 }; 
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
-?
+
+
 
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
