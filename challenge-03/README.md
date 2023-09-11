@@ -197,19 +197,26 @@ correta, de acordo com os dados inseridos no objeto.
 
 pessoa.apresentacao = function() {
     pessoa.apresentacao = function() {
-  if(pessoa.sexo === 'Masculino') {
-        return "Olá, eu sou a " + pessoa.nome + ' ' + pessoa.sobrenome + ", tenho " + pessoa.idade + " anos, " + pessoa.altura + ", meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " metros!";
-  } else if {
+  if (pessoa.idade <= 1 && pessoa.sexo === 'Feminino') {
+    return "Olá, eu sou a " + pessoa.nome + ' ' + pessoa.sobrenome + ", tenho " + pessoa.idade + " ano, " + pessoa.altura + ", meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " metros!";
     
-  } else if {
+  } else if (pessoa.caminhouQuantosMetros <= 1 && pessoa.sexo === 'Feminino') {
+    return "Olá, eu sou a " + pessoa.nome + ' ' + pessoa.sobrenome + ", tenho " + pessoa.idade + " anos, " + pessoa.altura + ", meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " metro!";
     
-  } else if {
+  } else if(pessoa.sexo === 'Feminino') {
+    return "Olá, eu sou a " + pessoa.nome + ' ' + pessoa.sobrenome + ", tenho " + pessoa.idade + " anos, " + pessoa.altura + ", meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " metros!";
+  
+  } else if (pessoa.idade <= 1 && pessoa.sexo === 'Masculino') {
+    return "Olá, eu sou o " + pessoa.nome + ' ' + pessoa.sobrenome + ", tenho " + pessoa.idade + " ano, " + pessoa.altura + ", meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " metros!";
+    
+  } else if (pessoa.caminhouQuantosMetros <= 1 && pessoa.sexo === 'Masculino') {
+    return "Olá, eu sou a " + pessoa.nome + ' ' + pessoa.sobrenome + ", tenho " + pessoa.idade + " anos, " + pessoa.altura + ", meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " metro!";
     
   } else {
-    return "Olá, eu sou o " + pessoa.nome + ' ' + pessoa.sobrenome + ", tenho " + pessoa.idade + " anos, " + pessoa.altura + ", meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " metros!";
+    return "Olá, eu sou o " + pessoa.nome + ' ' + pessoa.sobrenome + ", tenho " + pessoa.idade + " anos, " + pessoa.altura + ", meu peso é " + pessoa.peso + "Kg e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " metros!";
   }
-};
+  };
 
 // Agora, apresente-se ;)
-?
-```
+
+"Olá, eu sou o Caio Camizao, tenho 30 anos, 1.71, meu peso é 78Kg e, só hoje, eu já caminhei 4 metros!"
