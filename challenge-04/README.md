@@ -14,7 +14,7 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `quantidadePessoas` - Number - zero por padrão
 */
 
-var carro = { marca: 'FORD', modelo: 'XLE', placa: 'FRD-3178', ano: 2017, cor: 'Azul', quantasPortas: 4, assentos: 5, quantidadePessoas: 4 }; 
+var carro = { marca: 'FORD', modelo: 'XLE', placa: 'FRD-3178', ano: 2017, cor: 'Azul', quantasPortas: 4, assentos: 5, quantidadePessoas: 0 }; 
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
@@ -78,6 +78,7 @@ citado acima, no lugar de "pessoas".
 */
 
 
+
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
 utilize sempre o formato de invocação do método (ou chamada da propriedade),
@@ -87,21 +88,38 @@ retornar algum valor.
 Qual a cor atual do carro?
 */
 
+carro.obterCor = function() {
+  return carro.cor;
+}; // Branco
 
 // Mude a cor do carro para vermelho.
 
+carro.mudarCor = function(cor) {
+  carro.cor = cor;
+};
+console.log(carro.mudarCor('Vermelho'))
 
 // E agora, qual a cor do carro?
 
+//Vermelho
 
 // Mude a cor do carro para verde musgo.
 
+carro.mudarCor = function(cor) {
+  carro.cor = cor;
+};
+console.log(carro.mudarCor('Verde Musgo'))
 
 // E agora, qual a cor do carro?
 
+//Verde Musgo
 
 // Qual a marca e modelo do carro?
 
+carro.obterMarcaModelo = function() {
+  return carro.marca + ' ' + carro.modelo;
+};
+console.log(carro.obterMarcaModelo()); //FORD XLE
 
 // Adicione 2 pessoas no carro.
 
@@ -120,4 +138,3 @@ Qual a cor atual do carro?
 
 // Quantas pessoas temos no carro?
 
-```
