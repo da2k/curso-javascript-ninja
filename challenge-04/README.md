@@ -77,7 +77,15 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 citado acima, no lugar de "pessoas".
 */
 
-
+carro.addPessoas = function(pessoasNoCarro) {
+  carro.quantidadePessoas += pessoasNoCarro;
+  if(carro.quantidadePessoas >= carro.assentos) {
+    return "O carro já está lotado!"
+  } else {
+    return "Já temos " + carro.quantidadePessoas + " pessoas no carro!"
+  };
+  
+};
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
@@ -123,18 +131,69 @@ console.log(carro.obterMarcaModelo()); //FORD XLE
 
 // Adicione 2 pessoas no carro.
 
+carro.addPessoas = function(pessoasNoCarro) {
+  carro.quantidadePessoas += pessoasNoCarro;
+  if(carro.quantidadePessoas >= carro.assentos) {
+    return "O carro já está lotado!"
+  } else {
+    return "Já temos " + carro.quantidadePessoas + " pessoas no carro!"
+  };
+  
+};
+console.log(carro.addPessoas(2)) // 2pessoas de 5 lugares
 
 // Adicione mais 4 pessoas no carro.
 
+carro.addPessoas = function(pessoasNoCarro) {
+  carro.quantidadePessoas += pessoasNoCarro;
+  if(carro.quantidadePessoas >= carro.assentos) {
+    return "O carro já está lotado!"
+  } else {
+    return "Já temos " + carro.quantidadePessoas + " pessoas no carro!"
+  };
+  
+};
+console.log(carro.addPessoas(4)) // O carro já está lotado!
 
 // Faça o carro encher.
 
+carro.addPessoas = function(pessoasNoCarro) {
+  carro.quantidadePessoas += pessoasNoCarro;
+  if(carro.quantidadePessoas >= carro.assentos) {
+    return "O carro já está lotado!"
+  } else {
+    return "Já temos " + carro.quantidadePessoas + " pessoas no carro!"
+  };
+  
+};
+console.log(carro.addPessoas(5)) // O carro já está lotado!
 
 // Tire 4 pessoas do carro.
 
+carro.addPessoas = function(pessoasNoCarro) {
+  carro.quantidadePessoas += pessoasNoCarro;
+  if(carro.quantidadePessoas >= carro.assentos) {
+    return "O carro já está lotado!"
+  } else {
+    return "Já temos " + carro.quantidadePessoas + " pessoas no carro!"
+  };
+  
+};
+console.log(carro.addPessoas(-4)) // O carro já está lotado!
 
 // Adicione 10 pessoas no carro.
 
+carro.addPessoas = function(pessoasNoCarro) {
+  carro.quantidadePessoas += pessoasNoCarro;
+  if(carro.quantidadePessoas >= carro.assentos) {
+    return "O carro já está lotado!"
+  } else {
+    return "Já temos " + carro.quantidadePessoas + " pessoas no carro!"
+  };
+  
+};
+console.log(carro.addPessoas(10)) // O carro já está lotado!
 
 // Quantas pessoas temos no carro?
 
+// 5 pessoas
