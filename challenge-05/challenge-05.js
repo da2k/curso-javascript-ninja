@@ -2,7 +2,7 @@
 Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
-var qualquer = [1, 2, 3];
+var qualquer = [1, 2, 3, 4, 5];
 
 
 /*
@@ -65,7 +65,26 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-// ?
+
+function book(nomeDoLivro) {
+    var obj = {
+      livro1: {
+        quantidadePaginas: 100,
+        autor: 'Caio Camizão',
+        editora: 'Nova Legião'
+      },
+      livro2: {
+        quantidadePaginas: 50
+        autor: 'Cauã Camizão',
+        editora: 'Nova Editora'
+      },
+      livro3: {
+        quantidadePaginas: 283,
+        autor: 'Vincenzo Milhomem Spoli Camizão,
+        editora: 'Nova Era'
+      }
+};
+}
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
