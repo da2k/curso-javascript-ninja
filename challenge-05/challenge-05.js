@@ -67,47 +67,52 @@ os livros.
 */
 
 function book(nomeDoLivro) {
-    var obj = {
-      livro1: {
+    var todosLivros = {
+      'livro1': {
         quantidadePaginas: 100,
         autor: 'Caio Camizão',
         editora: 'Nova Legião'
       },
-      livro2: {
-        quantidadePaginas: 50
+      'livro2': {
+        quantidadePaginas: 50,
         autor: 'Cauã Camizão',
         editora: 'Nova Editora'
       },
-      livro3: {
+      'livro3': {
         quantidadePaginas: 283,
-        autor: 'Vincenzo Milhomem Spoli Camizão,
+        autor: 'Vincenzo Milhomem Spoli Camizão',
         editora: 'Nova Era'
       }
 };
+  return !nomeDoLivro ? todosLivros : todosLivros [ nomeDoLivro ];
 }
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-// ?
+
+console.log(book());
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// ?
+
+console.log('O livro1 tem ' + book('livro1').quantidadePaginas + ' páginas!');
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
+
+console.log("O autor do livro1 é " + book("livro1").autor + ".");
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-// ?
+
+console.log("O livro1 foi publicado pela editora " + book("livro1").editora + ".");
