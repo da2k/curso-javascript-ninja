@@ -42,13 +42,26 @@ function showTeamPosition(numero, teams) {
     return "Não temos a informação do time que está nessa posição."
   };
 }
-console.log(showTeamPosition(2, teams[2]));
+console.log(showTeamPosition(3, teams[2]));
 
 /*
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
-// ?
+
+function showTeamPosition(numero, teams) {
+  if(numero <= 5) {
+    return "O time que está em " + numero + "º lugar é o " + teams + ".";
+  } else {
+    return "Não temos a informação do time que está nessa posição."
+  };
+}
+console.log(showTeamPosition(1, teams[0]));
+console.log(showTeamPosition(2, teams[1]));
+console.log(showTeamPosition(4, teams[3]));
+console.log(showTeamPosition(5, teams[4]));
+teams.push('Guarani');
+console.log(teams);
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
