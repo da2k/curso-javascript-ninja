@@ -18,7 +18,9 @@ console.log(addItem('Carro'), array);
 Adicione um novo array ao array criado no início do desafio, com ao menos 3
 itens de tipos diferentes, mostrando o resultado no console.
 */
-// ?
+
+var array = [1, 'Caio', true, null, {}, [undefined, [], NaN]];
+console.log(array);
 
 /*
 Mostre no console o segundo elemento desse último array, criado acima, com a
@@ -59,6 +61,9 @@ Só vamos mudar o range:
 - No segundo "for", mostre os números ímpares entre 111 e 125, inclusive eles.
 */
 console.log( 'Números pares entre 100 e 120:' );
+// ?
+
+console.log( 'Números ímpares entre 111 e 125:' );
 // ?
 
 console.log( 'Números ímpares entre 111 e 125:' );
