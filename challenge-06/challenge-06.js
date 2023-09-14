@@ -107,10 +107,10 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
        console.log("Não temos o equivalente hexadecimal para " + cor + ".")
    };
  }
-console.log(convertToHex('vermelho'));
+console.log(convertToHex('laranja'));//O hexadecimal para a cor laranja é #FFA500.
+console.log(convertToHex('rosa'));//Não temos o equivalente hexadecimal para rosa.
 
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
 // ?
-
