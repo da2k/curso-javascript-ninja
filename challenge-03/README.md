@@ -98,60 +98,66 @@ pessoa.nomeCompleto() // Ola! Meu nome é Aduilio Soares
 Qual a idade da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-
+pessoa.mostrarIdade() // Olá, eu tenho 20 anos!
 
 /*
 Qual o peso da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+pessoa.mostrarPeso() //Eu peso 88Kg
 
 /*
 Qual a altura da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+pessoa.mostrarAltura() // Minha altura é 1.83m
 
 /*
 Faça a `pessoa` fazer 3 aniversários.
 */
-?
+pessoa.aniversario() // 21
+pessoa.aniversario() // 22
+pessoa.aniversario() // 23
+
 
 /*
 Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
 comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
-?
+pessoa.aniversario() // 23
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
 com metragens diferentes passadas por parâmetro.
 */
-?
+pessoa.andar()
+pessoa.andar()
+pessoa.andar()
+
 
 /*
 A pessoa ainda está andando? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+pessoa.andar() // 3
 
 /*
 Se a pessoa ainda está andando, faça-a parar.
 */
-?
+pessoa.parar()
 
 /*
 E agora: a pessoa ainda está andando? (Use uma instrução para responder e
 comentários inline ao lado da instrução para mostrar a resposta retornada)
 */
-?
+pessoa.parar() // false
 
 /*
 Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
 inline ao lado da instrução para mostrar a resposta retornada)
 */
-?
+pessoa.andar() // a pessoa andou 3 metros
 
 /*
 Agora vamos deixar a brincadeira um pouco mais divertida! :D
@@ -170,8 +176,21 @@ deve conter no retorno da frase acima é "metro" no lugar de "metros".
 método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
-?
+pessoa.apressentacao = function() {
+    if (pessoa.sexo !== 'Masculino') { 
+    var v1 = 'A parte (eu sou o ) esta errado, a correta é:'
+    return v1, 'Olá, eu sou a '+ pessoa.nome + ' ' + pessoa.sobrenome+ ', tenho ' + pessoa.idade + ' anos, '+ pessoa.altura +'m, meu peso é '+ pessoa.peso +'kg e, só hoje, eu já caminhei '+ pessoa.caminhouQuantosMetros +' metros!';
+    } else if(pessoa.idade === 1 ) {
+        var v2 = 'Esta errado!! Se apenas tiver um numero e for anos, a correta e... '
+        return  v2, 'Olá, eu sou o '+ pessoa.nome + ' ' + pessoa.sobrenome+ ', tenho ' + pessoa.idade + ' ano, '+ pessoa.altura +'m, meu peso é '+ pessoa.peso +'kg e, só hoje, eu já caminhei '+ pessoa.caminhouQuantosMetros +' metros!';
+    } else if (pessoa.caminhouQuantosMetros === 1) {
+        var v3 = 'Esta errado!! Se apenas for 1 metro e for mestros, o correto e... '
+        return  v3, 'Olá, eu sou o ' + pessoa.nome + ' ' + pessoa.sobrenome+  ', tenho ' + pessoa.idade + ' anos, '+ pessoa.altura +'m, meu peso é '+ pessoa.peso +'kg e, só hoje, eu já caminhei '+ pessoa.caminhouQuantosMetros +' metro!';
+    } else {
+        return 'Olá, eu sou o '+ pessoa.nome + ' ' + pessoa.sobrenome+ ', tenho ' + pessoa.idade + ' anos, '+ pessoa.altura +'m, meu peso é '+ pessoa.peso +'kg e, só hoje, eu já caminhei '+ pessoa.caminhouQuantosMetros +' metros!'; 
+    }
+}
 
 // Agora, apresente-se ;)
-?
+pessoa.apresentacao() // Olá, eu sou o aduilio soares, tenho 20 anos, 1.83m, meu peso é 88kg e, só hoje, eu já caminhei 3 metros!
 ```
