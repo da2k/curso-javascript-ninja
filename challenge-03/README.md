@@ -176,7 +176,7 @@ deve conter no retorno da frase acima é "metro" no lugar de "metros".
 método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
-pessoa.apressentacao = function() {
+pessoa.apresentacao = function() {
     if (pessoa.sexo !== 'Masculino') { 
     var v1 = 'A parte (eu sou o ) esta errado, a correta é:'
     return v1, 'Olá, eu sou a '+ pessoa.nome + ' ' + pessoa.sobrenome+ ', tenho ' + pessoa.idade + ' anos, '+ pessoa.altura +'m, meu peso é '+ pessoa.peso +'kg e, só hoje, eu já caminhei '+ pessoa.caminhouQuantosMetros +' metros!';
