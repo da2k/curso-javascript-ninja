@@ -62,7 +62,12 @@ o retorno de `calculator`.
 por parâmetro, INVOCADA, e passando a ela por parâmetro os dois valores
 que foram passadas para a primeira função `calculator`.
 */
-// ?
+
+function calculator(number1, number2) {
+  return function(callback) {
+    return callback()
+  }
+}
 
 /*
 Declare uma variável chamada `sum`, e atribua a ela a função `calculator`,
@@ -103,9 +108,6 @@ console.log( 'O resultado da multiplicação é:' );
 // ?
 
 console.log( 'O resultado da divisão é:' );
-// ?
-
-console.log( 'O resto da divisão é:' );
 // ?
 
 console.log( 'O resto da divisão é:' );
