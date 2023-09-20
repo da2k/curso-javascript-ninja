@@ -66,7 +66,7 @@ que foram passadas para a primeira função `calculator`.
 function calculator(number1, number2) {
   return function(callback) {
     return callback(number1, number2);
-  }
+  };
 }
 
 /*
@@ -96,10 +96,10 @@ Agora declare outra variáveis chamadas `subtraction`, `multiplication`,
 `division` e `mod`, e atribua à elas `calculator`, passando números
 diferentes para cada chamada.
 */
-var subtraction = sum(1, 2)
-var multiplication = sum(1, 2)
-var division = sum(1, 2)
-var mod = sum(1, 2)
+var subtraction = calculator(1, 2)
+var multiplication = calculator(1, 2)
+var division = calculator(1, 2)
+var mod = calculator(1, 2)
 
 /*
 Mostre as variáveis acima no `console` (uma chamada de console por variável),
@@ -108,14 +108,27 @@ divisão e módulo (resto de divisão), conforme a função utilizada.
 As suas respostas devem estar abaixo dos `console.log` referentes à cada
 chamada.
 */
-console.log( 'O resultado da subtração é:' );
-// ?
 
-console.log( 'O resultado da multiplicação é:' );
-// ?
+console.log( 'O resultado da subtração é:' ,subtraction);
+console.log(subtraction(function(number1, number2) { 
+  return number1 - number2;
+}));
 
-console.log( 'O resultado da divisão é:' );
-// ?
 
-console.log( 'O resto da divisão é:' );
-// ?
+console.log( 'O resultado da multiplicação é:' ,multiplication);
+console.log(multiplication(function(number1, number2) { 
+  return number1 * number2;
+}));
+
+
+console.log( 'O resultado da divisão é:' ,division);
+console.log(division(function(number1, number2) { 
+  return number1 / number2;
+}));
+
+
+console.log( 'O resto da divisão é:' ,mod);
+console.log(mod(function(number1, number2) { 
+  return number1 % number2;
+}));
+
