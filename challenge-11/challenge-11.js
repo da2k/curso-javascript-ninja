@@ -61,7 +61,15 @@ Faça um loop de 0 a 20, que adicione cada número como um item de um
 array chamado `numbers`. Se o contador for maior que 10, saia do loop.
 Mostre no console os números no array.
 */
-console.log( 'De 0 a 10:' );
+
+var numbers = []
+for(i = 0; i < 20; i++) {
+  if(i > 10) {
+    break;
+  }
+  numbers.push(i);
+}
+console.log( 'De 0 a 10:' , numbers);
 // ?
 
 /*
