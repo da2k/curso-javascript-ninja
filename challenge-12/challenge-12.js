@@ -1,3 +1,4 @@
+(function() { 
 /*
 Envolva todo o conteúdo desse arquivo em uma IIFE.
 */
@@ -11,7 +12,13 @@ Preencha cada propriedade com os seus dados pessoais, respeitando o tipo
 de valor para cada propriedade.
 */
 // ?
-console.log( 'Propriedades de "person":' );
+
+var person = {
+  name: 'Caio',
+  lastname: 'Camizao',
+  age: 30
+}
+console.log( 'Propriedades de "person": ' );
 
 /*
 Mostre no console, em um array, todas as propriedades do objeto acima.
@@ -98,3 +105,4 @@ console.log( '\nAgora em ordem alfabética:' );
 Mostre todos os itens do array acima, odenados alfabéticamente.
 */
 // ?
+}) ();
