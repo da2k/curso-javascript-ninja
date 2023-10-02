@@ -42,41 +42,46 @@
   
   var books = [];
     books.push({name: 'Lord', pages: 50});
-  console.log( '\nLista de livros:' ,books);
+    books.push({name: 'Lord1', pages: 60});
+    books.push({name: 'Lord2', pages: 70});
+  
   
   /*
   Mostre no console todos os livros.
   */
   
   
-  console.log( '\nLivro que está sendo removido:' );
+  console.log( '\nLista de livros:' ,books);
   /*
   Remova o último livro, e mostre-o no console.
   */
   // ?
   
-  console.log( '\nAgora sobraram somente os livros:' );
+  console.log( '\nLivro que está sendo removido:' ,books.pop());
   /*
   Mostre no console os livros restantes.
   */
   // ?
   
+  console.log( '\nAgora sobraram somente os livros:' ,books);
   /*
   Converta os objetos que ficaram em `books` para strings.
   */
-  // ?
-  console.log( '\nLivros em formato string:' );
+
+  var str = JSON.stringify(books)
   
   /*
   Mostre os livros nesse formato no console:
   */
-  // ?
+
+  console.log( '\nLivros em formato string:' , str);
   
   /*
   Converta os livros novamente para objeto.
   */
   // ?
-  console.log( '\nAgora os livros são objetos novamente:' );
+  var parse = JSON.parse(str);
+  console.log( '\nAgora os livros são objetos novamente:' , parse);
   
   /*
   Mostre no console todas as propriedades e valores de todos os livros,
@@ -90,23 +95,24 @@
   seu nome. Adicione seu nome completo no array.
   */
   // ?
-  console.log( '\nMeu nome é:' );
+  
   
   /*
   Juntando todos os itens do array, mostre no console seu nome.
   */
   // ?
   
-  console.log( '\nMeu nome invertido é:' );
   
+  console.log( '\nMeu nome é:' );
   /*
   Ainda usando o objeto acima, mostre no console seu nome invertido.
   */
   // ?
   
-  console.log( '\nAgora em ordem alfabética:' );
+  console.log( '\nMeu nome invertido é:' );
   /*
   Mostre todos os itens do array acima, odenados alfabéticamente.
   */
   // ?
+  console.log( '\nAgora em ordem alfabética:' );
 }) ();
