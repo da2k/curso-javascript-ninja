@@ -57,25 +57,26 @@
   /*
   Mostre no console todos os estados que estão em `brasil`.
   */
-  console.log( '\nAlguns Estados do Brasil:' );
+  console.log( '\nAlguns Estados do Brasil:' , brasil);
   // ?
   
   /*
   Crie um novo array chamado `nordeste`, que tenha os estados do nordeste.
   */
-  // ?
+
+  var nordeste = ['Bahia', 'Amapá', 'Maranhão'];
   
   /*
   Mostre no console os estados do nordeste.
   */
-  console.log( '\nEstados do Nordeste:' );
-  // ?
+  
+  console.log( '\nEstados do Nordeste:' , nordeste);
   
   /*
   Remova de `brasil` os estados do `sudeste`, colocando-os em uma variável
   chamada `newSudeste`.
   */
-  // ?
+  
   
   /*
   Adicione os estados do `nordeste` ao array `brasil`. Esses estados devem
