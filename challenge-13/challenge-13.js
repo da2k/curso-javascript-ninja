@@ -76,24 +76,27 @@
   Remova de `brasil` os estados do `sudeste`, colocando-os em uma variável
   chamada `newSudeste`.
   */
-  
+
+  brasil.splice(6, 7, 8);
+  var newSudeste = ['São Paulo', 'Rio De Janeiro', 'Espirito Santo']
   
   /*
   Adicione os estados do `nordeste` ao array `brasil`. Esses estados devem
   ficar no mesmo nível que os estados já existentes, não em um array separado.
   */
-  // ?
+
+  brasil.concat(nordeste);
   
   /*
   Mostre no console os estados em `newSudeste`.
   */
-  console.log( '\nEstados em newSudeste:' );
+  console.log( '\nEstados em newSudeste:' , newSudeste);
   // ?
   
   /*
   Mostre no console os estados do `brasil`.
   */
-  console.log( '\nAlguns estados do Brasil:' );
+  console.log( '\nAlguns estados do Brasil:' , brasil);
   // ?
   
   /*
