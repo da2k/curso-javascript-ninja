@@ -77,15 +77,14 @@
   chamada `newSudeste`.
   */
 
-  brasil.splice(6, 7, 8);
-  var newSudeste = ['São Paulo', 'Rio De Janeiro', 'Espirito Santo']
+  var newSudeste = brasil.splice(5);
   
   /*
   Adicione os estados do `nordeste` ao array `brasil`. Esses estados devem
   ficar no mesmo nível que os estados já existentes, não em um array separado.
   */
 
-  brasil.concat(nordeste);
+  brasil = brasil.concat(nordeste);
   
   /*
   Mostre no console os estados em `newSudeste`.
@@ -106,12 +105,19 @@
   - `id`: que será o índice do array `brasil`,
   - `estado`: que será o estado do array `brasil`.
   */
-  // ?
+
+  var newBrasil = [];
+  brasil.forEach(function(item, index) {
+    newBrasil.push({
+      id: index,
+      estado: item
+    });
+  });
   
   /*
   Mostre o array `newBrasil` no console
   */
-  console.log( '\nnewBrasil:' );
+  console.log( '\nnewBrasil:' , newBrasil);
   // ?
   
   /*
@@ -122,7 +128,14 @@
   - "Nem todos os estados tem mais de 7 letras!"
   */
   console.log( '\nTodos os estados de `brasil` tem mais de 7 letras?' );
-  // ?
+  var every = brasil.every(function(item){
+    return item.length > 7;
+  });
+  console.log(
+    every
+    ? 'Sim, todos os estados tem mais de 7 letras!'
+    : 'Nem todos os estados tem mais de 7 letras!'
+  );
   
   /*
   Percorra o array `brasil` e verifique se o Ceará está incluído, atribuindo o
@@ -133,7 +146,14 @@
   - "Ceará não foi incluído :("
   */
   console.log( '\nCeará está incluído em `brasil`?' );
-  // ?
+  var some = brasil.some(function(item){
+    return item === 'Ceará';
+  });
+  console.log(
+    some
+    ? 'Ceará está incluído'
+    : 'Ceará não foi incluído'
+  );
   
   /*
   Percorra o array `newBrasil` e crie um novo array que some 1 no ID de cada
@@ -147,7 +167,12 @@
   Mostre no console o array criado acima:
   */
   console.log( '\nnewBrasil agora com mais informações:' );
-  // ?
+  var map = newBrasil.map(function(item, index){
+    return {
+      id: item.id + 1,
+      estado: item.estado + ' pertence ao Brasil.'
+    };
+  });
   
   /*
   Filtre o array criado acima, retornando somente os estados que tiverem
@@ -158,7 +183,7 @@
   /*
   Mostre o array filtrado acima no console.
   */
-  console.log( '\nEstados com ID par:' );
+  console.log( '\nEstados com ID par:' , map);
   // ?
   
 }());
