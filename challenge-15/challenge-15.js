@@ -37,7 +37,7 @@
     };
     
     this.addAge = function addAge() {
-      this.age += arguments;
+      this.age += arguments[0];
       return this;
     };
   }
@@ -48,31 +48,46 @@
   parâmetros corretamente para o construtor para criar as novas pessoas.
   Mostre as 3 novas pessoas criadas no console (Um console.log por pessoa).
   */
+  
   console.log( 'Novas pessoas criadas à partir de Person:' );
-  // ?
+  var p1 = new Person( 'João', 'Silva', 35 );
+  var p2 = new Person( 'Maria', 'Souza', 45 );
+  var p3 = new Person( 'Pedro', 'Pereira', 55 );
+  console.log( p1.getFullName() );
+  console.log( p2.getFullName() );
+  console.log( p3.getFullName() );
+  
   
   /*
   Mostre no console o nome completo de cada pessoa.
   */
+  
   console.log( '\nNomes das pessoas:' );
-  // ?
-  console.log();
+  console.log( p1.getFullName() );
+  console.log( p2.getFullName() );
+  console.log( p3.getFullName() );
+  
   /*
   Mostre no console as idades de cada pessoa, com a frase:
   - "[NOME COMPLETO] tem [IDADE] anos."
   */
+  
   console.log( '\nIdade das pessoas:' );
-  // ?
-  console.log('[NOME COMPLETO] tem [IDADE] anos.');
+  
+  console.log( p1.getFullName() + ' tem ' + p1.getAge() + ' anos.' );
+  console.log( p2.getFullName() + ' tem ' + p2.getAge() + ' anos.' );
+  console.log( p3.getFullName() + ' tem ' + p3.getAge() + ' anos.' );
   
   /*
   Adicione alguns anos à cada pessoa, e mostre no console a nova idade de
   cada um. A frase deverá ser no formato:
   - "[NOME COMPLETO] agora tem [NOVA IDADE] anos."
   */
+  
   console.log( '\nNova idade das pessoas:' );
-  // ?
-  console.log('[NOME COMPLETO] agora tem [NOVA IDADE] anos.')
-
+  
+  console.log( p1.getFullName() + ' agora tem ' + p1.addAge(5).getAge() + ' anos.' );
+  console.log( p2.getFullName() + ' agora tem ' + p2.addAge(5).getAge() + ' anos.' );
+  console.log( p3.getFullName() + ' agora tem ' + p3.addAge(5).getAge() + ' anos.' );
+  
 })();
-
