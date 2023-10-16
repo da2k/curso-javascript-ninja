@@ -23,18 +23,18 @@ var $stop = doc.querySelector('[data-js="stop"]');
 var $reset = doc.querySelector('[data-js="reset"]');
 var interval;
   
-start.addEventListener('click', startTimer, false);
-stop.addEventListener('click', stopTimer, false);
-reset.addEventListener('click', resetTimer, false);
+$start.addEventListener('click', startTimer, false);
+$stop.addEventListener('click', stopTimer, false);
+$reset.addEventListener('click', resetTimer, false);
 
 function startTimer(){
-  $timer.value = $timer.value += 1;
-  interval = setTimeOut(startTimer, 1000);
+  $timer.value = +$timer.value + 1;
+  interval = setTimeout(startTimer, 1000);
 }
   
 
 function stopTimer(){
-  clearTimeOut(interval);
+  clearTimeout(interval);
 }
 
 function resetTimer(){
@@ -43,20 +43,3 @@ function resetTimer(){
 }
   
 })(window, document);
-
-<!DOCTYPE html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="utf-8">
-    <title>Challenge 21</title>
-</head>
-<body>
-    <input type="text" value="0" data-js="timer" />
-    <button data-js="start">Start</button>
-    <button data-js="stop">Stop</button>
-    <button data-js="reset">Reset</button>
-    
-    <script scr="challenge 21"></script>
-      
-</body>
-</html>
