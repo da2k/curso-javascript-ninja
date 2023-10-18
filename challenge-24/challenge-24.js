@@ -16,14 +16,11 @@ var $buttonsOperations = document.querySelectorAll('[data-js="button-operation"]
 var $buttonCE = document.querySelector('[data-js="button-ce"]');
 var $buttonEqual = document.querySelector('[data-js="button-equal"]');
 
-Array.prototype.forEach.call($buttonsNumbers, function(button) {
-  button.addEventListener('click', handleClickNumber, false);
-});
-Array.prototype.forEach.call($buttonsOperations, function(button) {
-  button.addEventListener('click', handleClickOperation, false);
-});
-$buttonCE.addEventListener('click', handleClickCE, false);
-$buttonEqual.addEventListener('click', handleClickEqual, false);
+function addClickListenerToElements(elements, callback) {
+  Array.prototype.forEach.call(elements, function(element) {
+    element.addEventListener('click', callback, false);
+  });
+}
 
 function handleClickNumber() {
   $visor.value += this.value;
@@ -35,41 +32,46 @@ function handleClickOperation() {
 }
 
 function handleClickCE() {
-  $visor.value = 0;
+  $visor.value = '0';
 }
 
 function isLastItemAnOperation(number) {
   var operations = ['+', '-', 'x', '÷'];
-  var lastItem = number.split('').pop();
-  return operations.some(function(operator) {
-    return operator === lastItem;
-  });
+  var lastItem = number.slice(-1);
+  return operations.includes(lastItem);
 }
 
 function removeLastItemIfItIsAnOperator(number) {
-  if(isLastItemAnOperation(number)) {
+  if (isLastItemAnOperation(number)) {
     return number.slice(0, -1);
   }
   return number;
 }
 
+function calculate(accumulated, actual) {
+  var firstValue = accumulated.slice(0, -1);
+  var operator = accumulated.slice(-1);
+  var lastValue = removeLastItemIfItIsAnOperator(actual);
+  var lastOperator = isLastItemAnOperation(actual) ? actual.slice(-1) : '';
+  switch (operator) {
+    case '+':
+      return (Number(firstValue) + Number(lastValue)).toString() + lastOperator;
+    case '-':
+      return (Number(firstValue) - Number(lastValue)).toString() + lastOperator;
+    case 'x':
+      return (Number(firstValue) * Number(lastValue)).toString() + lastOperator;
+    case '÷':
+      return (Number(firstValue) / Number(lastValue)).toString() + lastOperator;
+  }
+}
+
 function handleClickEqual() {
   $visor.value = removeLastItemIfItIsAnOperator($visor.value);
   var allValues = $visor.value.match(/\d+[+x÷-]?/g);
-  $visor.value = allValues.reduce(function(accumulated, actual) {
-    var firstValue = accumulated.slice(0, -1);
-    var operator = accumulated.split('').pop();
-    var lastValue = removeLastItemIfItIsAnOperator(actual);
-    var lastOperator = isLastItemAnOperation(actual) ? actual.split('').pop() : '';
-    switch(operator) {
-      case '+':
-        return ( Number(firstValue) + Number(lastValue) ) + lastOperator;
-      case '-':
-        return ( Number(firstValue) - Number(lastValue) ) + lastOperator;
-      case 'x':
-        return ( Number(firstValue) * Number(lastValue) ) + lastOperator;
-      case '÷':
-        return ( Number(firstValue) / Number(lastValue) ) + lastOperator;
-    }
-  });
+  $visor.value = allValues.reduce(calculate);
 }
+
+addClickListenerToElements($buttonsNumbers, handleClickNumber);
+addClickListenerToElements($buttonsOperations, handleClickOperation);
+$buttonCE.addEventListener('click', handleClickCE, false);
+$buttonEqual.addEventListener('click', handleClickEqual, false);
