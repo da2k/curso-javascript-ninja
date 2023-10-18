@@ -1,3 +1,5 @@
+(function(win, doc){
+  'use strict';
 /*
 Vamos desenvolver mais um projeto. A ideia é fazer uma mini-calculadora.
 As regras são:
@@ -23,3 +25,77 @@ multiplicação (x), então no input deve aparecer "1+2x".
 input;
 - Ao pressionar o botão "CE", o input deve ficar zerado.
 */
+  var $visor = document.querySelector('[data-js="visor"]');
+  var $buttonsNumbers = document.querySelectorAll('[data-js="button-number"]');
+  var $buttonsOperations = document.querySelectorAll('[data-js="button-operation"]');
+  var $buttonCE = document.querySelector('[data-js="button-ce"]');
+  var $buttonEqual = document.querySelector('[data-js="button-equal"]');
+
+  Array.prototype.forEach.call($buttonsNumbers, function (button) {
+    button.addEventListener('click', handleClickNumber, false);
+  });
+
+  Array.prototype.forEach.call($buttonsOperations, function (button) {
+    button.addEventListener('click', handleClickOperation, false);
+  });
+
+  $buttonCE.addEventListener('click', handleClickCE, false);
+  $buttonEqual.addEventListener('click', handleClickEqual, false);
+
+  function handleClickNumber() {
+    if ($visor.value === '0') {
+      $visor.value = this.value;
+    } else {
+      $visor.value += this.value;
+    }
+  }
+
+  function handleClickOperation() {
+    $visor.value = removeLastItemIfIsAnOperator($visor.value);
+    $visor.value += this.value;
+  }
+
+  function handleClickCE() {
+    $visor.value = '0';
+  }
+
+  function isLastItemOperation(number) {
+    var operations = ['+', '-', 'x', '÷'];
+    var lastItem = number.slice(-1);
+    return operations.includes(lastItem);
+  }
+
+  function removeLastItemIfIsAnOperator(number) {
+    if (isLastItemOperation(number)) {
+      return number.slice(0, -1);
+    }
+    return number;
+  }
+
+  function handleClickEqual() {
+    $visor.value = removeLastItemIfIsAnOperator($visor.value);
+    var allValues = $visor.value.match(/\d+[+-x÷]?/g);
+    if (allValues) {
+      $visor.value = allValues.reduce(function (accumulated, actual) {
+        var firstValue = accumulated.slice(0, -1);
+        var operator = accumulated.slice(-1);
+        var lastValue = actual.slice(-1);
+        var lastOperator = isLastItemOperation(actual) ? actual.split('').pop() : false;
+        if (!isNaN(Number(lastValue))) {
+          switch (operator) {
+            case '+':
+              return String(Number(firstValue) + Number(lastValue));
+            case '-':
+              return String(Number(firstValue) - Number(lastValue));
+            case 'x':
+              return String(Number(firstValue) * Number(lastValue));
+            case '÷':
+              return String(Number(firstValue) / Number(lastValue));
+          }
+        } else {
+          return accumulated + actual;
+        }
+      });
+    }
+  }
+})(window, document);
