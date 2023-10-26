@@ -1,0 +1,57 @@
+<style>
+  body {
+    font-family: sans-serif;
+  }
+
+  header {
+    text-align: center;
+  }
+
+  form, table {
+    float: left;
+    width: 50%;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    margin-bottom: 10px;
+  }
+
+  label {
+    display: block;
+  }
+
+  input {
+    padding: 5px;
+    width: 300px;
+  }
+
+  button {
+    background: green;
+    border: 0;
+    color: #fff;
+    padding: 10px 20px;
+  }
+
+  button:hover,
+  button:focus {
+    background: darkgreen;
+    cursor: pointer;
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  td, th {
+    padding: 5px 15px;
+    border: 1px solid #ccc;
+  }
+
+  img {
+    width: 200px;
+  }
+</style>
