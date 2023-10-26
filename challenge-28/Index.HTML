@@ -1,34 +1,27 @@
- /*
-  No HTML:
-  - Crie um formulário com um input de texto que receberá um CEP e um botão
-  de submit;
-  - Crie uma estrutura HTML para receber informações de endereço:
-  "Logradouro, Bairro, Estado, Cidade e CEP." Essas informações serão
-  preenchidas com os dados da requisição feita no JS.
-  - Crie uma área que receberá mensagens com o status da requisição:
-  "Carregando, sucesso ou erro."
-  */
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>Desafio 28</title>
 </head>
 <body>
-  <form>
+  <form data-js="form-cep">
     <input type="text" data-js="input-cep">
-    <button type="submit" data-js="submit">Consultar CEP</button>
+    <button type="submit">Consultar CEP</button>
   </form>
-  
-  <div data-js="status"></div>
-  
-  <div data-js="cep-info">
-    <p><strong>Logradouro:</strong> <span data-js="logradouro">-</span><p>
-    <p><strong>Bairro:</strong> <span data-js="Bairro">-</span><p>
-    <p><strong>Estado:</strong> <span data-js="Estado">-</span><p>
-    <p><strong>Cidade:</strong> <span data-js="Cidade">-</span><p>
-    <p><strong>CEP:</strong> <span data-js="cep">-</span><p>
+
+  <div>
+    <h2 data-js="status"></h2>
   </div>
+
+  <div data-js="cep-info">
+    <p><strong>Logradouro:</strong> <span data-js="logradouro">-</span></p>
+    <p><strong>Bairro:</strong> <span data-js="bairro">-</span></p>
+    <p><strong>Estado:</strong> <span data-js="estado">-</span></p>
+    <p><strong>Cidade:</strong> <span data-js="cidade">-</span></p>
+    <p><strong>CEP:</strong> <span data-js="cep">-</span></p>
+  </div>
+
+  <script src="challenge-28.js"></script>
 </body>
 </html>
