@@ -52,16 +52,17 @@ function argumentos(x, y, z){
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+argumentos(10,20);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+//'Preencha todos os valores corretamente!' 
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+argumentos(10,20,30);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+//6002
+
 
 /*
 Crie uma função com as seguintes características:
@@ -72,8 +73,23 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+function finalTest(x, y, z){
+    if(x !== undefined && y === undefined && z === undefined){
+        return x;
+    }else if(x !== undefined && y !== undefined && z === undefined){
+        return x + y;
+    }else if(x !== undefined && y !== undefined && z !== undefined){
+        return (x + y) / z;
+    }else if(x === undefined && y === undefined && z === undefined){
+        return false;
+    } else {
+        return null;
+    }        
+}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+finalTest(); // false
+finalTest(1); // 1
+finalTest(1, 2); // 3
+finalTest(1, 2, 3); // 1
 ```
