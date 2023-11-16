@@ -12,19 +12,24 @@
   Preencha cada propriedade com os seus dados pessoais, respeitando o tipo
   de valor para cada propriedade.
   */
-  // ?
   console.log( 'Propriedades de "person":' );
+  var person = {
+    name: 'Aduilio',
+    lastname: 'Melo',
+    age: 21
+  }
+  console.log(person)
   
   /*
   Mostre no console, em um array, todas as propriedades do objeto acima.
   Não use nenhuma estrutura de repetição, nem crie o array manualmente.
   */
-  // ?
+  Object.keys(person)
   
   /*
   Crie um array vazio chamado `books`.
   */
-  // ?
+  var books = []
   
   /*
   Adicione nesse array 3 objetos, que serão 3 livros. Cada livro deve ter a
@@ -35,22 +40,40 @@
   // ?
   console.log( '\nLista de livros:' );
   
+  books.push({
+    name: 'O dia do amanha',
+    pages: 300
+  })
+  
+  books.push({
+    name: 'Pragramaçao',
+    pages: 510
+  })
+  
+  books.push({
+    name: 'Familia',
+    pages: 1060
+  })
+  
   /*
   Mostre no console todos os livros.
   */
-  // ?
+  console.log(books)
   
-  console.log( '\nLivro que está sendo removido:' );
   /*
   Remova o último livro, e mostre-o no console.
   */
-  // ?
+  console.log( '\nLivro que está sendo removido:' );
   
-  console.log( '\nAgora sobraram somente os livros:' );
+  console.log(books.pop())
+  
   /*
   Mostre no console os livros restantes.
   */
   // ?
+  console.log( '\nAgora sobraram somente os livros:' );
+  
+  console.log(books)
   
   /*
   Converta os objetos que ficaram em `books` para strings.
@@ -58,15 +81,26 @@
   // ?
   console.log( '\nLivros em formato string:' );
   
+  JSON.stringify(books)
+
+  JSON.stringify(books[0])
+
+  JSON.stringify(books[1])
+  
   /*
   Mostre os livros nesse formato no console:
   */
-  // ?
+  console.log(JSON.stringify(books))
+
+  console.log(JSON.stringify(books[0]))
+
+  console.log(JSON.stringify(books[1]))
   
   /*
   Converta os livros novamente para objeto.
   */
-  // ?
+  JSON.parse(books)
+  
   console.log( '\nAgora os livros são objetos novamente:' );
   
   /*
@@ -76,7 +110,7 @@
   */
   // ?
   
-  /*
+  /* 
   Crie um array chamado `myName`. Cada item desse array deve ser uma letra do
   seu nome. Adicione seu nome completo no array.
   */
