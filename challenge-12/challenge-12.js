@@ -18,18 +18,18 @@
     lastname: 'Melo',
     age: 21
   }
-  console.log(person)
+  console.log(person);
   
   /*
   Mostre no console, em um array, todas as propriedades do objeto acima.
   Não use nenhuma estrutura de repetição, nem crie o array manualmente.
   */
-  Object.keys(person)
+  Object.keys(person);
   
   /*
   Crie um array vazio chamado `books`.
   */
-  var books = []
+  var books = [];
   
   /*
   Adicione nesse array 3 objetos, que serão 3 livros. Cada livro deve ter a
@@ -58,14 +58,14 @@
   /*
   Mostre no console todos os livros.
   */
-  console.log(books)
+  console.log(books);
   
   /*
   Remova o último livro, e mostre-o no console.
   */
   console.log( '\nLivro que está sendo removido:' );
   
-  console.log(books.pop())
+  console.log(books.pop());
   
   /*
   Mostre no console os livros restantes.
@@ -73,7 +73,7 @@
   // ?
   console.log( '\nAgora sobraram somente os livros:' );
   
-  console.log(books)
+  console.log(books);
   
   /*
   Converta os objetos que ficaram em `books` para strings.
@@ -81,25 +81,25 @@
   // ?
   console.log( '\nLivros em formato string:' );
   
-  JSON.stringify(books)
+  JSON.stringify(books);
 
-  JSON.stringify(books[0])
+  JSON.stringify(books[0]);
 
-  JSON.stringify(books[1])
+  JSON.stringify(books[1]);
   
   /*
   Mostre os livros nesse formato no console:
   */
-  console.log(JSON.stringify(books))
+  console.log(JSON.stringify(books));
 
-  console.log(JSON.stringify(books[0]))
+  console.log(JSON.stringify(books[0]));
 
-  console.log(JSON.stringify(books[1]))
+  console.log(JSON.stringify(books[1]));
   
   /*
   Converta os livros novamente para objeto.
   */
-  JSON.parse(books)
+  JSON.parse(books);
   
   console.log( '\nAgora os livros são objetos novamente:' );
   
@@ -108,31 +108,41 @@
   no formato abaixo:
     "[PROPRIEDADE]: [VALOR]"
   */
-  // ?
+  for(var prop in books[0]) {
+    console.log(prop +': ' + books[0][prop] +'')
+  }
+  
+  for(var prop in books[1]) {
+    console.log(prop +': ' + books[1][prop] +'')
+  }
   
   /* 
   Crie um array chamado `myName`. Cada item desse array deve ser uma letra do
   seu nome. Adicione seu nome completo no array.
   */
-  // ?
+  var myName = ['A','d','u','i','l','i','o'];
+  
   console.log( '\nMeu nome é:' );
   
   /*
   Juntando todos os itens do array, mostre no console seu nome.
   */
-  // ?
+  console.log(myName.join(''));
   
-  console.log( '\nMeu nome invertido é:' );
+  
   
   /*
   Ainda usando o objeto acima, mostre no console seu nome invertido.
   */
-  // ?
+  console.log(myName.reverse());
+
+  console.log( '\nMeu nome invertido é:' );
   
-  console.log( '\nAgora em ordem alfabética:' );
   /*
   Mostre todos os itens do array acima, odenados alfabéticamente.
   */
-  // ?
-
+  console.log(myName.sort());
+  
+  console.log( '\nAgora em ordem alfabética:' );
+  
 })()
