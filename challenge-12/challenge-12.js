@@ -81,25 +81,17 @@
   // ?
   console.log( '\nLivros em formato string:' );
   
-  JSON.stringify(books);
-
-  JSON.stringify(books[0]);
-
-  JSON.stringify(books[1]);
+  books = JSON.stringify(books);
   
   /*
   Mostre os livros nesse formato no console:
   */
-  console.log(JSON.stringify(books));
-
-  console.log(JSON.stringify(books[0]));
-
-  console.log(JSON.stringify(books[1]));
+  console.log( books );
   
   /*
   Converta os livros novamente para objeto.
   */
-  JSON.parse(books);
+  books = JSON.parse(books);
   
   console.log( '\nAgora os livros são objetos novamente:' );
   
@@ -108,12 +100,10 @@
   no formato abaixo:
     "[PROPRIEDADE]: [VALOR]"
   */
-  for(var prop in books[0]) {
-    console.log(prop +': ' + books[0][prop] +'')
-  }
-  
-  for(var prop in books[1]) {
-    console.log(prop +': ' + books[1][prop] +'')
+  for(var i = 0; i < books.length; i++) {
+      for(var prop in books[i] ){
+          console.log(prop + ': ' + books[i][prop] + '' );
+      }
   }
   
   /* 
@@ -134,7 +124,7 @@
   /*
   Ainda usando o objeto acima, mostre no console seu nome invertido.
   */
-  console.log(myName.reverse());
+  console.log(myName.reverse().join( '' ));
 
   console.log( '\nMeu nome invertido é:' );
   
