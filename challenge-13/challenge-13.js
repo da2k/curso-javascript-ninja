@@ -7,6 +7,7 @@ Crie um array e mostre no console a representação em String desse array,
 usando o método visto na aula 13.
 */
 console.log( 'O array em formato de string é:' );
+
 var arr = [1,2,3,4,5];
 
 console.log(arr.toString());
@@ -25,6 +26,7 @@ Crie uma variável chamada `brasil`, que irá receber as duas regiões
 concatenadas. Mostre o `brasil` no console.
 */
 console.log( '\nAlguns Estados do Brasil:' );
+
 var Brasil = [sul.concat(sudeste)];
 
 console.log(Brasil);
@@ -33,13 +35,19 @@ console.log(Brasil);
 Adicione 3 novos estados da região Norte no início do array e mostre no console.
 */
 console.log( '\nMais estados adicionados:' );
-// ?
+
+Brasil.unshift('Amazonas', 'Para', 'Acre');
+
+console.log(brasil);
 
 /*
 Remova o primeiro estado do array `brasil` e mostre-o no console.
 */
 console.log( '\nEstado removido:' );
-// ?
+
+Brasil.shift();
+
+console.log(Brasil);
 
 /*
 Crie um novo array chamado `newSul`, que receba somente os estados do sul,
