@@ -51,9 +51,7 @@ console.log(Brasil.shift());
 Crie um novo array chamado `newSul`, que receba somente os estados do sul,
 pegando do array `brasil`. Não remova esses itens de `brasil`.
 */
-var newSul = Brasil.slice(2,5).map(function(item) {
-    return item
-});
+var newSul = Brasil.slice(2,5);
 
 
 /*
@@ -86,9 +84,7 @@ console.log(nordeste);
 Remova de `brasil` os estados do `sudeste`, colocando-os em uma variável
 chamada `newSudeste`.
 */
-var newSudeste = Brasil.splice(5,4).map(function(item) {
-    return item;
-});
+var newSudeste = Brasil.splice(5,4);
 
 /*
 Adicione os estados do `nordeste` ao array `brasil`. Esses estados devem
@@ -138,20 +134,13 @@ Senão, mostre no console:
 - "Nem todos os estados tem mais de 7 letras!"
 */
 console.log( '\nTodos os estados de `brasil` tem mais de 7 letras?' );
-Brasil.map(function(item) {
-    return item.length;
-}).every(function(item) {
-    return valid = item.length >= 7;
+var every = Brasil.every(function(item) {
+    return item.length > 7;
 });
 
-if( valid === true) {
-    valid = 'Sim, todos os estados tem mais de 7 letras!';
-} else valid = 'Nem todos os estados tem mais de 7 letras!';
+console.log(every ? 'Sim, todos os estados tem mais de 7 letras!' : 'Nem todos os estados tem mais de 7 letras!');
 
-console.log(valid);
-
-
-/*
+/*  
 Percorra o array `brasil` e verifique se o Ceará está incluído, atribuindo o
 resultado à uma variável. Se esse estado existir no array, mostrar a frase no
 console:
@@ -160,19 +149,11 @@ Senão, mostrar a frase:
 - "Ceará não foi incluído :("
 */
 console.log( '\nCeará está incluído em `brasil`?' );
-var temCeara;
-
-Brasil.map(function(item) {
-    return item;
-}).some(function(item) {
-    return temCeara = item === 'Ceara';
+var tem = Brasil.some(function(item) {
+    return item === 'Ceara'
 });
 
-if( temCeara === true) {
-    temCeara = 'Ceara está incluído!';
-} else temCeara =  'Ceara não foi incluído :(';
-
-console.log(temCeara);
+console.log(tem ? 'Ceará está incluído!' : 'Ceará não foi incluído :(' );
 
 /*
 Percorra o array `newBrasil` e crie um novo array que some 1 no ID de cada
@@ -180,22 +161,27 @@ objeto desse array, e adicione a frase abaixo na propriedade `estado`:
 - "[ESTADO] pertence ao Brasil."
 Atribua o novo array a uma variável chamada `map`.
 */
-// ?
+var map = newBrasil.map(function(item,index) {
+    return {Id: item.Id + 1, estado: item.estado + ' pertecem ao Brasil'};
+});
+
 
 /*
 Mostre no console o array criado acima:
 */
 console.log( '\nnewBrasil agora com mais informações:' );
-// ?
+console.log(map);
 
 /*
 Filtre o array criado acima, retornando somente os estados que tiverem
 ID par. Atribua o valor à uma variável chamada `filter`.
 */
-// ?
+var filter = map.filter(function(item,index) {
+    return item.Id % 2 === 0;
+});
 
 /*
 Mostre o array filtrado acima no console.
 */
 console.log( '\nEstados com ID par:' );
-// ?
+console.log(filter);
