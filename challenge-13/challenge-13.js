@@ -138,7 +138,18 @@ Senão, mostre no console:
 - "Nem todos os estados tem mais de 7 letras!"
 */
 console.log( '\nTodos os estados de `brasil` tem mais de 7 letras?' );
-// ?
+Brasil.map(function(item) {
+    return item.length;
+}).every(function(item) {
+    return valid = item.length >= 7;
+});
+
+if( valid === true) {
+    valid = 'Sim, todos os estados tem mais de 7 letras!';
+} else valid = 'Nem todos os estados tem mais de 7 letras!';
+
+console.log(valid);
+
 
 /*
 Percorra o array `brasil` e verifique se o Ceará está incluído, atribuindo o
@@ -149,7 +160,19 @@ Senão, mostrar a frase:
 - "Ceará não foi incluído :("
 */
 console.log( '\nCeará está incluído em `brasil`?' );
-// ?
+var temCeara;
+
+Brasil.map(function(item) {
+    return item;
+}).some(function(item) {
+    return temCeara = item === 'Ceara';
+});
+
+if( temCeara === true) {
+    temCeara = 'Ceara está incluído!';
+} else temCeara =  'Ceara não foi incluído :(';
+
+console.log(temCeara);
 
 /*
 Percorra o array `newBrasil` e crie um novo array que some 1 no ID de cada
