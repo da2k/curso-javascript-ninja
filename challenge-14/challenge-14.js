@@ -1,3 +1,6 @@
+(function() {
+  
+
 /*
 Envolva todo o código desse desafio em uma IIFE.
 */
@@ -10,14 +13,29 @@ Os números devem ser de 1 a 10.
 Mostre esse array no console.
 */
 console.log( 'Number Objects Array:' );
-// ?
+var numberObjects = [
+    {number: 1}, 
+    {number: 2}, 
+    {number: 3}, 
+    {number: 4}, 
+    {number: 5}, 
+    {number: 6}, 
+    {number: 7}, 
+    {number: 8}, 
+    {number: 9}, 
+    {number: 10}];
+
+console.log(numberObjects);
 
 /*
 Crie um array chamado `justNumbers`, que terá como elementos somente os
 números do array criado acima. Mostre esse novo array no console.
 */
 console.log( '\nJust Numbers:' );
-// ?
+var justNumbers = numberObjects.map(function(item) {
+    return item.number;
+});
+console.log(justNumbers);
 
 /*
 Crie um novo array chamado `justMod2Or3`, que receberá do array criado acima
@@ -25,7 +43,11 @@ somente os números que forem divisíveis por 2 ou 3. Mostre esse novo array
 no console.
 */
 console.log( '\nJust module of division by 2 or 3:' );
-// ?
+var justMod2Or3 = justNumbers.filter(function(item) {
+    return item % 2 === 0 ? item : item % 3 === 0 ? item : '';
+});
+
+console.log( justMod2Or3 );
 
 /*
 Declare uma variável chamada operation que receba, do array criado acima,
@@ -36,8 +58,12 @@ O cálculo deve começar com zero.
 Mostre o resultado no console.
 */
 console.log( '\nOperation:' );
-// ?
+var operation = justMod2Or3.reduce(function(acumulado, atual, index, array) {
+    return acumulado + atual * (atual) + 1 ;
+}, 0 );
 
+console.log(operation);
+  
 /*
 Faça o mesmo cálculo passado acima, mas começando do último item para o
 primeiro. O nome da variável deve ser operation2. Mostre o resultado no
@@ -95,3 +121,5 @@ formato de String.
 */
 console.log( '\njustMod2Or3 é um array? Se for, a representação dele em String é:' );
 // ?
+
+})();
