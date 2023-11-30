@@ -13,18 +13,12 @@
   Mostre esse array no console.
   */
   console.log( 'Number Objects Array:' );
-  var numberObjects = [
-      {number: 1}, 
-      {number: 2}, 
-      {number: 3}, 
-      {number: 4}, 
-      {number: 5}, 
-      {number: 6}, 
-      {number: 7}, 
-      {number: 8}, 
-      {number: 9}, 
-      {number: 10}];
+  var numberObjects = [];
   
+  for(var i = 1 ; i <= 10; i++) {
+    numberObjects.push( { number: i} )
+  }
+
   console.log(numberObjects);
   
   /*
@@ -59,7 +53,7 @@
   */
   console.log( '\nOperation:' );
   var operation = justMod2Or3.reduce(function(acumulado, atual, index, array) {
-      return acumulado + atual + 1  * (atual);
+      return (acumulado + 1) * atual;
   }, 0 );
   
   console.log( operation );
@@ -71,7 +65,7 @@
   */
   console.log( '\nOperation 2:' );
   var operation2 = justMod2Or3.reduceRight(function(acumulado, atual, index, array) {
-      return acumulado + atual + 1 * (atual) ;
+      return (acumulado + 1) * atual;
   }, 0);
   
   console.log( operation2 );
