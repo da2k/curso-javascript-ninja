@@ -52,7 +52,7 @@
   Mostre o resultado no console.
   */
   console.log( '\nOperation:' );
-  var operation = justMod2Or3.reduce(function(acumulado, atual, index, array) {
+  var operation = justMod2Or3.reduce(function(acumulado, atual) {
       return (acumulado + 1) * atual;
   }, 0 );
   
@@ -64,7 +64,7 @@
   console.
   */
   console.log( '\nOperation 2:' );
-  var operation2 = justMod2Or3.reduceRight(function(acumulado, atual, index, array) {
+  var operation2 = justMod2Or3.reduceRight(function(acumulado, atual) {
       return (acumulado + 1) * atual;
   }, 0);
   
@@ -79,12 +79,12 @@
   falada, como se você estivesse falando em código xD
   */
   console.log( '\nSeu nome na língua do "P":' );
-  var name = ['p-a', 'p-du', 'p-i', 'p-li', 'p-o'];
+  var name = ['a', 'du', 'i', 'li', 'o'];
   
   var juntando = name.reduce(function(acumulado,atual, index, array) {
-      return acumulado + atual;
-  });
-  
+    return acumulado + 'P' + atual;
+  }, '');
+
   console.log( juntando );
   
   
@@ -113,17 +113,16 @@
   o que acontece ;)
   */
   console.log( '\nExiste um { number: 2 } em numberObjects?' );
-  console.log(numberObjects.indexOf( numberObjects[1] ) > -1 ? 'Existe um objeto { number: 2 } em numberObjects!'
+  console.log(numberObjects.indexOf( {number: 2 } ) > -1 ? 'Existe um objeto { number: 2 } em numberObjects!'
   : 'Não existe um objeto { number: 2 } em numberObjects :(');
   
-  console.log('Eu usei o indexOf() para verificar se existe o index 1 que e a propriedade ( {number: 2} )');
     
   /*
   Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
   será que obtemos um resultado diferente? Faça a busca a partir do índice 2.
   */
   console.log( '\nE buscando a partir do último índice, o { number: 2 } existe?' );
-  console.log(numberObjects.lastIndexOf( numberObjects[1], 2) > -1 ? 'Existe um objeto { number: 2 } em numberObjects!'
+  console.log(numberObjects.lastIndexOf( { number: 2 }, 2) > -1 ? 'Existe um objeto { number: 2 } em numberObjects!'
   : 'Não existe um objeto { number: 2 } em numberObjects :('
   );
   
