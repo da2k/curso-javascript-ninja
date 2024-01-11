@@ -2,7 +2,7 @@
 
 ```js
 // Declarar uma variável qualquer, que receba um objeto vazio.
-var objeto = function() { } 
+var objeto = {};
 
 /*
 Declarar uma variável `pessoa`, que receba suas informações pessoais.
@@ -38,7 +38,7 @@ valor dessa propriedade a quantidade passada por parâmetro;
 booleano que representa "verdadeiro";
 */
 pessoa.andar = function( x ) {
-pessoa.caminhouQuantosMetros = pessoa.caminhouQuantosMetros + x;
+pessoa.caminhouQuantosMetros += x;
 pessoa.andando = true;
 }
 
@@ -55,9 +55,9 @@ Crie um método chamado `nomeCompleto`, que retorne a frase:
 - "Olá! Meu nome é [NOME] [SOBRENOME]!"
 */
 pessoa.nomeCompleto = function() {
-return `Olá! Meu nome é ` + pessoa.nome + ` ` + pessoa.sobrenome;
+return `Olá! Meu nome é ` + pessoa.nome + ` ` + pessoa.sobrenome + '!';
 }
-pe
+
 /*
 Crie um método chamado `mostrarIdade`, que retorne a frase:
 - "Olá, eu tenho [IDADE] anos!"
@@ -138,7 +138,7 @@ pessoa.andando // true
 /*
 Se a pessoa ainda está andando, faça-a parar.
 */
-pessoa.parar()
+pessoa.parar();
 
 /*
 E agora: a pessoa ainda está andando? (Use uma instrução para responder e
