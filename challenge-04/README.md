@@ -21,10 +21,10 @@ isTruthy("");     isTruthy(NaN);
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
 isTruthy(2);           isTruthy(-20);
-isTruthy(10);          isTruthy(-50);
+isTruthy(10);          isTruthy(function() {});
 isTruthy('Marco');     isTruthy("Vasco");
-isTruthy(true);        isTruthy(100); 
-isTruthy(11);          isTruthy(80);
+isTruthy(true);        isTruthy({}); 
+isTruthy(11);          isTruthy([]);
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
