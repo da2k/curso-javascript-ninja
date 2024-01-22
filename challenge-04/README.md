@@ -8,7 +8,7 @@ equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
 var isTruthy = function( a ) {
-return a ? true : false;
+return a ? true : false;     //    ou assim: return !!a;
 }
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
@@ -41,7 +41,7 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 let carro = {
 marca: 'Honda',
 modelo: 'Civic',
-placa: 'Vas2024',
+placa: 'Vas-2024',
 ano: 2024,
 cor: 'black',
 quantasPortas: 4,
@@ -105,10 +105,11 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 citado acima, no lugar de "pessoas".
 */
 carro.adcPessoas = function( a ) {
-let restam = carro.assentos - carro.quantidadePessoas;
+let restam = carro.assento - carro.quantidadePessoas;
 let pessoa = carro.quantidadePessoas === 4 ? 'pessoa' : 'pessoas';
 let pessoas = carro.quantidadePessoas >= 1 || a > 1 ? 'pessoas' : 'pessoa';
-if( carro.quantidadePessoas === 5 ) {
+
+if( carro.quantidadePessoas === 5 && a + carro.quantidadePessoas >= carro.assento ) {
 return 'O carro já está lotado!';
 } else if( carro.quantidadePessoas < 5 && a > restam  ) {
 return 'Só cabem mais ' + restam + ' ' + pessoa + '!';
@@ -126,7 +127,7 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-carro.obterCor(); // 'Preto Fosco'
+carro.obterCor(); // 'black'
 
 // Mude a cor do carro para vermelho.
 carro.mudarCor('Vermelho'); // undefined
@@ -153,7 +154,7 @@ carro.adcPessoas(4); // 'Só cabem mais 3 pessoas!'
 carro.adcPessoas(3); // 'Já temos 5 pessoas no carro!'
 
 // Tire 4 pessoas do carro.
-carro.quantidadePessoas -= 4;
+carro.adcPessoas(-4); // 'Já temos 1 pessoa no carro!' // Pulo do ninja para retirar pessoas com a msm verificação.
 
 // Adicione 10 pessoas no carro.
 carro.adcPessoas(10); // 'Só cabem mais 4 pessoas!'
