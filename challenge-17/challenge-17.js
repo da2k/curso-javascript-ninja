@@ -10,7 +10,7 @@ regulares! Para isso, iremos usar o texto abaixo. Coloque-o em uma
 variável chamada `text`:
 "Manuel Marques de Sousa, Conde de Porto Alegre (Rio Grande, 13 de junho de 1804 – Rio de Janeiro, 18 de julho de 1875), apelidado de "O Centauro de Luvas", foi um militar, político, abolicionista e monarquista brasileiro."
 */
-// ?
+var text = 'Manuel Marques de Sousa, Conde de Porto Alegre (Rio Grande, 13 de junho de 1804 - Rio de Janeiro, 18 de julho de 1875), apelidado de "O Centauro de Luvas", foi um militar, político, abolicionista e monarquista brasileiro.'
 
 /*
 Vamos começar com umas brincadeiras fáceis :D
@@ -18,7 +18,8 @@ Troque o nome "Manuel Marques de Sousa" pelo seu nome, e mostre o resultado
 no console:
 */
 console.log( 'Adicionando seu nome no texto:' );
-// ?
+console.log(text.replace('Manuel Marques de Sousa', 'Aduilio Soraes De Melo'));
+
 
 /*
 Agora, substitua a palavra "brasileiro" por sua cidade natal e mostre no
@@ -26,35 +27,37 @@ console.
 Ex: Se você for da São Paulo, substitua por "paulista".
 */
 console.log( '\nTrocando naturalidade:' );
-// ?
+console.log(text.replace('brasileiro', 'paulista'));
 
 /*
 Substitua todos os números por um traço `-`. Cada caractere de número deve
 ser um traço. Mostre o resultado no console:
 */
 console.log( '\nTrocando números por -:' );
-// ?
+console.log(text.replace(/\d/g,'-'));
 
 /*
 Substitua todas as letras (somente letras) de "D" maiúsculo até "h"
 minúsculo por "0" (número zero). Mostre o resultado no console:
 */
 console.log( '\nTrocando de "D" a "h" por "0":' );
-// ?
+console.log(text.replace(/[D-h]/g, '0'));
 
 /*
 Substitua todos os "A" (maiúsculos ou minúsculos) por "4".
 Mostre o resultado no console:
 */
 console.log( '\nTrocando "A" e "a" por "4":' );
-// ?
+console.log(text.replace(/a/gi, '4'));
 
 /*
 Substitua a frase "O Centauro de Luvas", deixando-a em caixa alta, usando
 o método `toUpperCase()`. Mostre o resultado no console:
 */
 console.log( '\n"O Centauro de Luvas" em caixa alta:' );
-// ?
+console.log(text.replace('O Centauro de Luvas', function(frase) {
+    return frase.toUpperCase();
+}));
 
 /*
 Agora iremos substituir as datas no formato "13 de junho de 1804" para
