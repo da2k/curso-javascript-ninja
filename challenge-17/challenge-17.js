@@ -41,7 +41,7 @@ Substitua todas as letras (somente letras) de "D" maiúsculo até "h"
 minúsculo por "0" (número zero). Mostre o resultado no console:
 */
 console.log( '\nTrocando de "D" a "h" por "0":' );
-console.log(text.replace(/[D-h]/g, '0'));
+console.log(text.replace(/[D-Hd-h]/g, 0));
 
 /*
 Substitua todos os "A" (maiúsculos ou minúsculos) por "4".
@@ -72,7 +72,27 @@ Use um console.log para cada mês, usando a frase:
 "O mês de [NOME DO MÊS] é representado pelo número [NÚMERO DO MÊS]."
 */
 console.log( '\nMeses representados por números:' );
-// ?
+function getMonthNumber(mes) {
+    var months = {
+        janeiro: '01',
+        feveiro: '02',
+        'março': '03',
+        abril: '04',
+        maio: '05',
+        junho: '06',
+        julho: '07',
+        agosto: '08',
+        setembro: '09',
+        outubro: '10',
+        novembro: '11',
+        dezembro: '12'
+    }
+    return months[mes];
+}
+
+console.log('O mês de março é representado pelo número.'+getMonthNumber('março'))
+console.log('O mês de setembro é representado pelo número.'+getMonthNumber('setembro'))
+console.log('O mês de dezembro é representado pelo número.'+getMonthNumber('dezembro'))
 
 /*
 Agora, declare uma variável chamada `regexDate` que irá receber a expressão
