@@ -47,10 +47,14 @@ function myFunction3() {
 }
 myFunction3();
 
+
+//teste branch
+
+//teste 2
 /*
 No desafio anterior criamos uma calculadora, usando uma estrutura funcional.
 Agora vamos criar uma outra calculadora, usando uma outra abordagem :D
-- Crie uma função `calculator` que recebe dois valores (números)
+- Crie uma função `calculator` que recebe dois valores (núgitmeros)
 por parâmetro.
 - Essa função deve retornar uma outra função, que recebe um parâmetro
 chamado `callback`.
