@@ -49,6 +49,8 @@ myFunction3();
 
 
 //teste branch
+
+//teste 2
 /*
 No desafio anterior criamos uma calculadora, usando uma estrutura funcional.
 Agora vamos criar uma outra calculadora, usando uma outra abordagem :D
