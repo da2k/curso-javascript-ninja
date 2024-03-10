@@ -10,9 +10,10 @@ das variáveis. Analise o que está sendo impresso no console para saber como
 resolver o problema corretamente.
 */
 var five = '5';
+five = Number(five)
 console.log( five + ' é número?', typeof five === 'number' );
 
-var concat = 10 + 10;
+var concat = String(10) + String(10);
 console.log( '"' + concat + '" é uma string? E é igual a "1010"?', typeof concat === 'string' );
 
 /*
@@ -20,11 +21,25 @@ Voltando ao exemplo da calculadora, vamos utilizar mais uma abordagem
 funcional, mas dessa vez, separando algumas responsabilidades.
 - Primeiro, crie um objeto chamado `operation` que terá as propriedades:
 '+', '-', '*', '/' e '%'.
+*/
+
+
+
+/*
 - Cada propriedade vai receber uma função (logo, elas serão métodos), e essa
 função receberá dois parâmetros e retornará a operação referente à sua
 propriedade, usando os valores passados por parâmetro.
 */
 // ?
+var operation = {
+    '+': function(x,y){return x+y},
+    '-': function(x,y){return x-y},
+    '*': function(x,y){return x*y},
+    '/': function(x,y){return x/y},
+    '%': function(x,y){return x%y},
+}
+
+
 
 /*
 Crie uma função chamada `isOperatorValid`, que receberá um operador por
@@ -37,7 +52,11 @@ Caso contrário, "false".
 - O desafio é fazer o retorno sem usar "if" ou "switch".
 */
 // ?
+function isOperatorValid(op){
+    return (op === '+' || op === '-' || op === '*' || op === '/' || op === '%')
+}
 
+console.log(isOperatorValid('+'))
 /*
 Agora vamos criar a calculadora.
 - Crie uma função chamada `calculator`, que receberá como parâmetro um
