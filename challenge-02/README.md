@@ -1,51 +1,39 @@
-# Desafio da semana #2
-
-Nesse exercício, você está livre para escolher os nomes para suas variáveis e funções! :smile:
-
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-function somaParametro(x, y) {
-  return x + y;
+
+function somaNum (x,y){
+return x + y;
 }
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-const recebeFunction = somaParametro(5, 5) + 5;
+let funSoma = somaNum(10,5) + 5
+
 
 // Qual o valor atualizado dessa variável?
-15;
+20
 
 // Declare uma nova variável, sem valor.
-var semValor;
+let newVar;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-
-function addValorVar(valor) {
-  semValor = valor;
-
-  return "o valor da variavel agora é:" + semValor;
+function addValueNewVar(x) {
+    newVar = x
+    return `O valor da variável agora é ${newVar}, onde ${newVar} é o novo valor da variável.`
 }
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////
-// correção: ele não pediu param, então deveria ficar:
-function addValor() {
-  var valor = 25;
-  return "o valor da variavel agora é:" + valor;
-}
-
-addValor(); // aqui estou chamando a função e quando chamo, ela atribui a var valor o numero 25 e retorna a mensagem.
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Invoque a função criada acima.
-addValorVar();
+// se invocado passando parametro:
+addValueNewVar(10)
+// `O valor da variável agora é 10, onde 10 é o novo valor da variável.
 
+// sem passar parametro:
+addValueNewVar()
 // Qual o retorno da função? (Use comentários de bloco).
-/* 'o valor da variavel agora éundefined' /*
-
+// O valor da variável agora é undefined, onde undefined é o novo valor da variável.
 
 /*
 Crie uma função com as seguintes características:
@@ -55,31 +43,28 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 
-function verificaParams(x, y, z) {
-  if (x === undefined || y === undefined || z === undefined) {
-    // quando não é passado nenhum valor para um var, ela é undefined. correto! > null é um valor 
-    return "Preencha todos os valores corretamente!";
-  }
+    function tresArgumentos(x,y,z){
+       
+       if(x === undefined || y === undefined || z === undefined){
+        return 'Preencha todos os valores corretamente!'
+       }
 
-  var multiplicaParams = x * y * z;
-
-  return multiplicaParams + 2;
-}
+        let somaTotal = 2
+        let multiArg = x * y * z
+        return multiArg + somaTotal 
+    }
 
 // Invoque a função criada acima, passando só dois números como argumento.
-
-verificaParams(5, 5);
+tresArgumentos(10,10)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-
 // 'Preencha todos os valores corretamente!'
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
+tresArgumentos(10,10,10)
 
-verificaParams(5, 5, 5);
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-
-// 127
+// 1002
 
 /*
 Crie uma função com as seguintes características:
@@ -91,24 +76,30 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 
-function tresArgumentos(x, y, z) {
-  if (x && y && z) {
-    return (x + y) / z;
-  } else if (x && y) {
-    return x + y;
-  } else if (!x && !y && !z) {
-    return false;
-  } else if (x) {
-    return x;
-  } else {
-    return null;
-  }
+function recebeTres(a,b,c){
+    if(a !== undefined  && b === undefined && c === undefined){
+        return a
+    } else if (a !== undefined && b !== undefined && c === undefined){
+        return a + b
+    } else if (a !== undefined && b !== undefined && c !== undefined){
+     return (a + b) / c
+    } else if (a === undefined && b === undefined && c === undefined){
+        return false
+    } else {
+        return null
+    }
+
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
+recebeTres(10)
+recebeTres(10,10)
+recebeTres(10,10,10)
+recebeTres()
+recebeTres(false)
 
-tresArgumentos(); // false
-tresArgumentos(5); // 5
-tresArgumentos(5, 10); // 15
-tresArgumentos(5, 10, 15); // 1
-```
+// 10
+// 20
+// 2
+// false
+// null
